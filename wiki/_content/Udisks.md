@@ -1,0 +1,212 @@
+# Udisks
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Related articles
+
+*   [udev](/index.php/Udev "Udev")
+*   [Mount](/index.php/Mount "Mount")
+*   [Polkit](/index.php/Polkit "Polkit")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+
+[udisks](http://www.freedesktop.org/wiki/Software/udisks/) provides a daemon _udisksd_, that implements D-Bus interfaces used to query and manipulate storage devices, and a command-line tool _udisksctl_, used to query and use the daemon.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 Mount helpers](#Mount_helpers)
+    *   [3.1 Devmon](#Devmon)
+    *   [3.2 inotify](#inotify)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Disable hiding of devices (udisks2)](#Disable_hiding_of_devices_.28udisks2.29)
+    *   [4.2 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
+    *   [4.3 Mount an ISO image](#Mount_an_ISO_image)
+    *   [4.4 Hide selected partitions](#Hide_selected_partitions)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 udisks: Devices do not remain unmounted](#udisks:_Devices_do_not_remain_unmounted)
+*   [6 See also](#See_also)
+
+## Installation
+
+There are two versions of _udisks_ called [udisks](https://www.archlinux.org/packages/?name=udisks) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of _udisks_ has ceased in favor of _udisks2_. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+
+_udisksd_ ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and _udisks-daemon_ ([udisks](https://www.archlinux.org/packages/?name=udisks)) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly (see `man udisksd` and `man udisks-daemon`). They can be controlled through the command-line with _udisksctl_ and _udisks_, respectively. See `man udisksctl` and `man udisks` for more information.
+
+## Configuration
+
+Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If your [session](/index.php/Session "Session") is not activated or present, configure policykit manually. The following file sets common udisks permissions for the `storage` group. [[2]](https://github.com/coldfix/udiskie#permissions)
+
+ `/etc/polkit-1/rules.d/50-udisks.rules` 
+
+```
+polkit.addRule(function(action, subject) {
+  var YES = polkit.Result.YES;
+  var permission = {
+    // only required for udisks1:
+    "org.freedesktop.udisks.filesystem-mount": YES,
+    "org.freedesktop.udisks.filesystem-mount-system-internal": YES,
+    "org.freedesktop.udisks.luks-unlock": YES,
+    "org.freedesktop.udisks.drive-eject": YES,
+    "org.freedesktop.udisks.drive-detach": YES,
+    // only required for udisks2:
+    "org.freedesktop.udisks2.filesystem-mount": YES,
+    "org.freedesktop.udisks2.filesystem-mount-system": YES,
+    "org.freedesktop.udisks2.encrypted-unlock": YES,
+    "org.freedesktop.udisks2.eject-media": YES,
+    "org.freedesktop.udisks2.power-off-drive": YES,
+    // required for udisks2 if using udiskie from another seat (e.g. systemd):
+    "org.freedesktop.udisks2.filesystem-mount-other-seat": YES,
+    "org.freedesktop.udisks2.encrypted-unlock-other-seat": YES,
+    "org.freedesktop.udisks2.eject-media-other-seat": YES,
+    "org.freedesktop.udisks2.power-off-drive-other-seat": YES
+  };
+  if (subject.isInGroup("storage")) {
+    return permission[action.id];
+  }
+});
+```
+
+See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. Note the `org.freedesktop.udisks2.filesystem-*` settings, which are required to start udiskie from a [systemd](/index.php/Systemd "Systemd") service.
+
+## Mount helpers
+
+Automatic mounting of devices is easily achieved with [udisks wrappers](/index.php/List_of_applications#Udisks "List of applications"). See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+
+### Devmon
+
+[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to _udisks_ and _udisks2_. It uses mount helpers with the following priority:
+
+1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
+2.  pmount (SUID)
+3.  udisks
+4.  udisks2
+
+To mount devices with _udisks_ or _udisks2_, remove the SUID permission from _udevil_:
+
+```
+# chmod -s /usr/bin/udevil
+
+```
+
+**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use _udisks_ for device monitoring
+
+**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@_user_.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run _devmon_ from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+
+### inotify
+
+You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by _udisksd_, such that no special action is required on deletion.
+
+```
+#!/bin/bash
+pattern='sd[b-z][1-9]$'
+coproc inotifywait --monitor --event create,delete --format '%e %w%f' /dev
+
+while read -r -u "${COPROC[0]}" event file; do
+    if [[ $file =~ $pattern ]]; then
+	case $event in
+	    CREATE)
+		echo "Settling..."; sleep 1
+		udisksctl mount --block-device $file --no-user-interaction
+		;;
+	    DELETE)
+		;;
+	esac
+    fi
+done
+
+```
+
+## Tips and tricks
+
+### Disable hiding of devices (udisks2)
+
+Udisks2 hides certain devices from the user by default. If this is undesired or otherwise problematic, copy `/usr/lib/udev/rules.d/80-udisks2.rules` to `/etc/udev/rules.d/80-udisks2.rules` and remove the following section in the copy:
+
+```
+# ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+# Devices which should not be display in the user interface
+[...]
+
+```
+
+### Mount to /media (udisks2)
+
+By default, udisks2 mounts removable drives under the ACL controlled directory `/run/media/$USER/`. If you wish to mount to `/media` instead, use this rule:
+
+ `/etc/udev/rules.d/99-udisks2.rules` 
+
+```
+# UDISKS_FILESYSTEM_SHARED
+# ==1: mount filesystem to a shared directory (/media/VolumeName)
+# ==0: mount filesystem to a private directory (/run/media/$USER/VolumeName)
+# See udisks(8)
+ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
+
+```
+
+### Mount an ISO image
+
+To easily mount ISO images, use the following command:
+
+```
+$ udisksctl loop-setup -r -f _image.iso_
+
+```
+
+This will create a loop device and show the ISO image ready to mount. Once unmounted, the loop device will be terminated by [udev](/index.php/Udev "Udev").
+
+### Hide selected partitions
+
+If you wish to prevent certain partitions or drives appearing on the desktop, you can create a udev rule, for example `/etc/udev/rules.d/10-local.rules`:
+
+```
+KERNEL=="sda1", ENV{UDISKS_PRESENTATION_HIDE}="1"
+KERNEL=="sda2", ENV{UDISKS_PRESENTATION_HIDE}="1"
+
+```
+
+shows all partitions with the exception of `sda1` and `sda2` on your desktop. Notice if you are using [udisks2](https://www.archlinux.org/packages/?name=udisks2) the above will not work as `UDISKS_PRESENTATION_HIDE` is no longer supported. Instead use `UDISKS_IGNORE` as follows:
+
+```
+KERNEL=="sda1", ENV{UDISKS_IGNORE}="1"
+KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
+
+```
+
+## Troubleshooting
+
+### udisks: Devices do not remain unmounted
+
+_udisks_ remounts devices after a given period, or _polls_ those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
+
+To disable polling for a given device, for example a CD/DVD device:
+
+```
+# udisks --inhibit-polling /dev/sr_0_
+
+```
+
+or for all devices:
+
+```
+# udisks --inhibit-all-polling
+
+```
+
+See `man udisks` for more information.
+
+## See also
+
+*   [gentoo wiki: udisks](http://wiki.gentoo.org/wiki/Udisks)
+*   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=404027](https://wiki.archlinux.org/index.php?title=Udisks&oldid=404027)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")

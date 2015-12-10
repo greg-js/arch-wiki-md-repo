@@ -1,0 +1,60 @@
+# Console TDM
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [CDM](/index.php/CDM "CDM")
+
+[Console TDM](http://code.google.com/p/t-display-manager/) is an extension for xorg-xinit written in pure bash. It is inspired by CDM, which aimed to be a replacement of display managers such as GDM.
+
+## Installation
+
+[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/console-tdm)]</sup> package.
+
+Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
+
+After installing Console TDM, you should modify your ~/.bash_profile, and add a line
+
+```
+source /usr/bin/tdm
+
+```
+
+If you use [zsh](/index.php/Zsh "Zsh"), add to your ~/.zprofile the following line
+
+```
+bash /usr/bin/tdm
+
+```
+
+or
+
+```
+tdm
+
+```
+
+and edit your ~/.xinitrc, replace your exec lines with
+
+```
+exec tdm --xstart
+
+```
+
+## Configuration
+
+You should copy the links to your WM/DE starter to ~/.tdm/sessions, and links to non-X programs to ~/.tdm/extra. For convenience, you can just run `tdmctl init`.
+
+The use of the program `tdmctl` is much like systemctl, and it's a powerful tool to configure Console TDM.
+
+You can customize Console TDM by editing `~/.tdm/tdminit`.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=392032](https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=392032)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

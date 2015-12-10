@@ -1,0 +1,208 @@
+# Snort
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Snort#](https://wiki.archlinux.org/index.php/Talk:Snort))
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Snort#](https://wiki.archlinux.org/index.php/Talk:Snort))
+
+From the project [home page](http://www.snort.org/):
+
+_Snort® is an open source network intrusion prevention and detection system ([IDS](https://en.wikipedia.org/wiki/Intrusion_detection_system "wikipedia:Intrusion detection system")/IPS) developed by Sourcefire. Combining the benefits of signature, protocol, and anomaly-based inspection, Snort is the most widely deployed IDS/IPS technology worldwide. With millions of downloads and nearly 400,000 registered users, Snort has become the de facto standard for IPS._
+
+## Contents
+
+*   [1 General Setup and Notes](#General_Setup_and_Notes)
+*   [2 Installation](#Installation)
+*   [3 Configuration](#Configuration)
+*   [4 Update the rules with Pulledpork](#Update_the_rules_with_Pulledpork)
+*   [5 Drop traffic with Pulledpork](#Drop_traffic_with_Pulledpork)
+*   [6 Disabling rules with Pulledpork](#Disabling_rules_with_Pulledpork)
+*   [7 Update the rules: Oinkmaster](#Update_the_rules:_Oinkmaster)
+    *   [7.1 Oinkmaster setup](#Oinkmaster_setup)
+    *   [7.2 Oinkmaster usage](#Oinkmaster_usage)
+*   [8 See also](#See_also)
+
+## General Setup and Notes
+
+*   A Snort setup that sniffs WAN <-> LAN is more difficult to use. It does not show you which computer triggered the alert, and it requires you to set HOME_NET as your WAN IP address, which can change if your modem uses DHCP.
+*   Snort will bridge the two interfaces for you, you will not need to configure this.
+
+You can use Snort to sniff wireless traffic with two routers. For simplicity I will call the router with DHCP on and wireless off "router A" and the router with wireless on and DHCP off "router B".
+
+*   Ensure the routers do not have the same IP address, but are on the same subnet.
+*   If the machine running Snort is configured for inline mode, you will need 3 network interface cards. One for management, one for incoming traffic, and one for outgoing traffic.
+*   Connect a ethernet cord from router B to a spare NIC on the Snort machine.
+*   Connect another ethernet cord from router A to a spare NIC on the Snort machine.
+*   Once Snort is running traffic should flow from router B <-> Snort machine <-> router A <-> internet.
+*   If you are not using inline mode, then the traffic will need to be forwarded to the Snort machine, see: [Port Mirroring](https://en.wikipedia.org/wiki/Port_mirroring)
+
+## Installation
+
+Install [snort](https://aur.archlinux.org/packages/snort/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+
+## Configuration
+
+The main configuration file is located at `/etc/snort/snort.conf`.
+
+Let Snort know what network (or networks) you want to monitor.
+
+```
+ipvar HOME_NET [10.8.0.0/24,192.168.1.0/24]   
+
+```
+
+At the bottom of the file, there is a list of includes. Pulledpork downloads all the rules to a single file. If you are going to use Pulledpork to download your rule set, then comment out all of the includes except for:
+
+```
+include $RULE_PATH/snort.rules
+
+```
+
+If you are planning on using Snort in inline mode add these lines to the bottom of the configuration:
+
+```
+config policy_mode:inline
+config daq: afpacket
+config daq_mode: inline
+config daq_var:  buffer_size_mb=1024
+
+```
+
+I have also uploaded a my `snort.conf` to [pastebin](http://pastebin.com/xNuVtni3) if you want to see a working example of inline mode.
+
+Then ensure your service file `/usr/lib/systemd/system/snort@.service` has the correct arguments for inline mode. This meant adding `-Q` to the service file. Also Snort advises you to turn off LRO and GRO, [source](http://manual.snort.org/node7.html).
+
+```
+[Unit]
+Description=Snort IDS system listening on '%I'
+
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/ip link set up dev %I
+ExecStartPre=/usr/bin/ethtool -K %I gro off
+ExecStart=/usr/bin/snort --daq-dir /usr/lib/daq/ -A fast -b -p -u snort -g snort -c /etc/snort/snort.conf -i %I -Q
+
+[Install]
+Alias=multi-user.target.wants/snort@%i.service
+
+```
+
+To start Snort that is configured for inline mode run:
+
+```
+systemctl start snort@ens1:ens4
+
+```
+
+Your network interfaces may vary.
+
+To start Snort in IDS mode run:
+
+```
+systemctl start snort@ens1
+
+```
+
+## Update the rules with Pulledpork
+
+Install [pulledpork](https://aur.archlinux.org/packages/pulledpork/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+
+The configuration files are located in `/etc/pulledpork`
+
+Edit `/etc/pulledpork/pulledpork.conf` and uncomment the rules you want to use. You will need an "oinkcode" to download some of the rules.
+
+Explanation of configuration files:
+
+*   `dropsid.conf` is used to drop the signatures traffic, rather only alert.
+*   `enablesid.conf` is used to enable signatures. All signatures seem to be enabled by default, no need to edit this file.
+*   `disablesid.conf` is used to completely remove a signature from Snort, this is useful when you encounter a false positive.
+
+The current categories that are within your rule set can be found by running the following:
+
+```
+pulledpork.pl -c /etc/snort/pulledpork.conf -Pw
+lz /var/tmp/*.gz | egrep '\.rules' | cut -d'/' -f3 | sort -u | perl -lne '/(.*).rules/ && print $1' > rules.`date +%F`
+
+```
+
+## Drop traffic with Pulledpork
+
+If you want to drop all traffic that matches a Snort signature instead of just alerting, add the following to your `dropsid.conf`:
+
+```
+pcre:.
+
+```
+
+## Disabling rules with Pulledpork
+
+If you want to disable a single signature add its gen_id and sig_id to `/etc/pulledpork/disablesid.conf`
+
+```
+118:22
+
+```
+
+If you want to disable an entire category add its name to `/etc/pulledpork/disablesid.conf`
+
+```
+deleted
+protocol-icmp
+policy-social
+policy-other
+
+```
+
+## Update the rules: Oinkmaster
+
+If you want to be able to download Snort's latest rules, you will need a subscription. This costs money. If you are happy enough with 5 days old rules, you just need to register for free. If you do not, the only updates you will get are the new rules distributed with a new Snort release. Go ahead and register at [Snort](https://www.snort.org/signup). If you really do not want to register, you can use the rules from [BleedingSnort.com](http://www.bleedingsnort.com/). They are bleeding edge, meaning they have not been tested thoroughly.
+
+[oinkmaster](https://aur.archlinux.org/packages/oinkmaster/)<sup><small>AUR</small></sup> is available as [AUR](/index.php/AUR "AUR") package.
+
+### Oinkmaster setup
+
+Edit `/etc/oinkmaster.conf` and look for the URL section and uncomment the 2.4 line. Make sure to replace _<oinkcode>_ by the Oink code you generated after logging into your Snort account. For Bleeding Snort rules, uncomment the appropriate line.
+
+When you log into your new account, create an "Oink code". Another thing to change is
+
+```
+use_external_bins=1 # 1 uses wget, tar, gzip instead of Perl modules
+
+```
+
+The rest of the configuration file is fine.
+
+### Oinkmaster usage
+
+```
+oinkmaster.pl -o /etc/snort/rules
+
+```
+
+Create an executable script with the exact command and place it in /etc/cron.daily to update the rules daily automatically.
+
+## See also
+
+*   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
+*   [Router](/index.php/Router "Router")
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Snort&oldid=410684](https://wiki.archlinux.org/index.php?title=Snort&oldid=410684)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Security](/index.php/Category:Security "Category:Security")

@@ -1,0 +1,312 @@
+# HiDPI
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Related articles
+
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+
+HiDPI (High Dots Per Inch) displays, also known by Apple's "[Retina Display](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display")" marketing name, are screens with a high resolution in a relatively small format. They are mostly found in high-end laptops and monitors.
+
+Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant.
+
+## Contents
+
+*   [1 Desktop environments](#Desktop_environments)
+    *   [1.1 GNOME](#GNOME)
+    *   [1.2 KDE](#KDE)
+    *   [1.3 Xfce](#Xfce)
+    *   [1.4 Cinnamon](#Cinnamon)
+    *   [1.5 Enlightenment](#Enlightenment)
+*   [2 X Server](#X_Server)
+*   [3 X Resources](#X_Resources)
+*   [4 GUI toolkits](#GUI_toolkits)
+    *   [4.1 Qt 5](#Qt_5)
+    *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
+*   [5 Applications](#Applications)
+    *   [5.1 Browsers](#Browsers)
+        *   [5.1.1 Firefox](#Firefox)
+        *   [5.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
+        *   [5.1.3 Opera](#Opera)
+    *   [5.2 Thunderbird](#Thunderbird)
+    *   [5.3 Wine applications](#Wine_applications)
+    *   [5.4 Skype](#Skype)
+    *   [5.5 Spotify](#Spotify)
+    *   [5.6 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [5.7 NetBeans](#NetBeans)
+    *   [5.8 Gimp 2.8](#Gimp_2.8)
+    *   [5.9 VLC](#VLC)
+    *   [5.10 Unsupported applications](#Unsupported_applications)
+*   [6 Multiple displays](#Multiple_displays)
+*   [7 Console](#Console)
+*   [8 See also](#See_also)
+
+## Desktop environments
+
+### GNOME
+
+To enable HiDPI, use gsettings:
+
+```
+gsettings set org.gnome.desktop.interface scaling-factor 2
+
+```
+
+### KDE
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** Needs to be updated for KDE 5\. (Discuss in [Talk:HiDPI#](https://wiki.archlinux.org/index.php/Talk:HiDPI))
+
+KDE still has its share of HiDPI [issues](https://community.kde.org/KDE/High-dpi_issues) but HiDPI support can be improved by changing the below settings:
+
+1.  Increase font dpi (System Settings → Application Appearance → Fonts → Force font dpi, enter a number such as 125, 144 or 150 etc)
+2.  Increase icon sizes (System Settings → Application Appearance → Icons → Advanced, here choose a higher icon size for all icons, eg. just increase each icon type by one step)
+3.  Set minimum size for new dialogue windows (System Settings → Window Management → Window Rules; create a new rule; choose _dialogue and utility windows_; under _Size & Position_ tab, force minimum size, for eg: 1024x1024)
+
+### Xfce
+
+Go to Settings Manager → Appearance → Fonts, and change the DPI parameter. The value of 180 or 192 seems to work well on Retina screens. To get a more precise number, you can use `xdpyinfo | grep resolution`, and then double it.
+
+To enlarge icons in system tray, right-click on it (aim for empty space / top pixels / bottom pixels, so that you will not activate icons themselves) → “Properties” → set “Maximum icon size” to 32, 48 or 64.
+
+### Cinnamon
+
+Supports HiDPI since 2.2\. Even without rebuilding GTK3, the support is pretty good (e.g. window borders are correctly sized, which is not the case under Xfce).
+
+### Enlightenment
+
+For E18, go to the E Setting panel. In Look → Scaling, you can control the UI scaling ratios. A ratio of 1.2 seems to work well for the native resolution of the MBPr 15" screen.
+
+## X Server
+
+Some programs use the DPI given by the X server. Examples are i3 ([source](https://github.com/i3/i3/blob/next/libi3/dpi.c)) and Chromium ([source](https://code.google.com/p/chromium/codesearch#chromium/src/ui/views/widget/desktop_aura/desktop_screen_x11.cc)).
+
+To verify that the X Server has properly detected the physical dimensions of your monitor, use the _xdpyinfo_ utility from the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package:
+
+```
+$ xdpyinfo | grep -B 2 resolution
+screen #0:
+  dimensions:    3200x1800 pixels (423x238 millimeters)
+  resolution:    192x192 dots per inch
+
+```
+
+This examples uses inaccurate dimensions (423mm x 328mm, even though the Dell XPS 9530 has 346mm x 194mm) to have a clean multiple of 96 dpi, in this case 192 dpi. This tends to work better than using the correct DPI — Pango renders fonts crisper in i3 for example.
+
+If the DPI displayed by xdpyinfo is not correct, see [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg") for how to fix it.
+
+## X Resources
+
+If you are not using a desktop environment such as GNOME, KDE, Xfce, or other that manipulates the X settings for you, you can set the desired Xft DPI setting manually in `~/.Xresources`:
+
+ `~/.Xresources` 
+
+```
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+```
+
+Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc`` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
+
+This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size!
+
+## GUI toolkits
+
+### Qt 5
+
+Qt5 applications can often be run at higher dpi by setting the QT_DEVICE_PIXEL_RATIO environment variable. Note that the variable has to be set to a whole integer, so setting it to 1.5 will not work.
+
+This can for instance be enabled by creating a file `/etc/profile.d/qt-hidpi.sh`
+
+```
+export QT_DEVICE_PIXEL_RATIO=2
+
+```
+
+And set the executable bit on it.
+
+### GDK 3 (GTK+ 3)
+
+To scale UI elements by a factor of two:
+
+```
+export GDK_SCALE=2
+
+```
+
+To undo scaling of text:
+
+```
+export GDK_DPI_SCALE=0.5
+
+```
+
+## Applications
+
+### Browsers
+
+#### Firefox
+
+Open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens).
+
+If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen.
+
+From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be taken into account.[[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=975919)
+
+#### Chromium / Google Chrome
+
+Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
+
+ `chromium --force-device-scale-factor=2` 
+
+Using this option, a scaling factor of 1 would be normal scaling. Floating point values can be used.
+
+#### Opera
+
+Since version 24 one can alter Opera's DPI by starting it with the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
+
+Generally speaking, Opera's HiDPI support is excellent. Since it is also built using Chromium's blink renderer, and has an extension which runs most Chrome extensions, it is a very viable alternative to Chromium/Chrome.
+
+### Thunderbird
+
+See [#Firefox](#Firefox). To access `about:config`, go to Edit → Preferences → Advanced → Config editor.
+
+### Wine applications
+
+Run
+
+```
+$ winecfg
+
+```
+
+and change the "dpi" setting found in the "Graphics" tab. This only affects the font size.
+
+### Skype
+
+Skype is a Qt program, and needs to be configured separately. You cannot change the DPI setting for it, but at least you can change font size. Install [qt4](https://www.archlinux.org/packages/?name=qt4) and run `qtconfig-qt4` to do it.
+
+### Spotify
+
+Spotify can be launched with a custom scaling factor, for example
+
+```
+$ spotify --force-device-scale-factor=1.5
+
+```
+
+### IntelliJ IDEA
+
+If HiDPI support does not work, you have to add `-Dhidpi=true` to your vmoptions file.[[2]](https://youtrack.jetbrains.com/issue/IDEA-114944)
+
+```
+/usr/share/intellij-idea-ultimate-edition/bin/idea.vmoptions
+/usr/share/intellij-idea-ultimate-edition/bin/idea64.vmoptions
+
+```
+
+Alternatively, you can add them to your `.vmoptions` file under your `$HOME` directory.
+
+```
+echo -Dhidpi=true >> $HOME/.IdeaIC14/idea64.vmoptions
+
+```
+
+### NetBeans
+
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[3]](http://wiki.netbeans.org/FaqFontSize)
+
+The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
+
+The output window fontsize can be controlled from Tools → Options → Miscelaneous → Output
+
+### Gimp 2.8
+
+Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icons-on-hidpi-screen?pid=39113#pid39113) `gtkrc` of an existing theme. For example set `GimpToolPalette::tool-icon-size` to `dialog`.
+
+### VLC
+
+As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/)<sup><small>AUR</small></sup> seems to solve some of the problems.
+
+### Unsupported applications
+
+One approach is to run the application full screen and without decoration in its own VNC desktop. Then scale the viewer. With Vncdesk ([vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")) you can set up a desktop per application, then start server and client with a simple command such as `vncdesk 2`.
+
+[x11vnc](/index.php/X11vnc "X11vnc") has an experimental option `-appshare`, which opens one viewer per application window. Perhaps something could be hacked up with that.
+
+## Multiple displays
+
+The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large. One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
+
+```
+xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
+
+```
+
+When extending above the internal display, you may see part of the internal display on the external monitor. In that case, specify the position manually, e.g. using [this script](https://gist.github.com/wvengen/178642bbc8236c1bdb67).
+
+You may run into problems with your mouse not being able to reach the whole screen. That is a [known bug](https://bugs.freedesktop.org/show_bug.cgi?id=39949) with an xserver-org patch (or try the panning option, but that might cause other problems).
+
+An example of the panning syntax for a 4k laptop with an external 1920x1080 monitor to the right:
+
+```
+xrandr --output eDP1 --auto --output HDMI1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP1
+
+```
+
+Generically if your hidpi monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF], the commandline for right-of is:
+
+```
+xrandr --output eDP1 --auto --output HDMI1 --auto --panning [C*E]x[D*F]+[A]+0 --scale [E]x[F] --right-of eDP1
+
+```
+
+If panning is not a solution for you it may be better to set position of monitors and fix manually the total display screen.
+
+An example of the syntax for a 2560x1440 WQHD 210 DPI laptop monitor (eDP1) using native resolution placed below a 1920x1080 FHD 96 DPI external monitor (HDMI) scaled to match global DPI settings:
+
+```
+xrandr --output eDP1 --auto --pos 0x1458 --output HDMI --scale 1.35x1.35 --auto --pos 0x0 --fb 2592x2898
+
+```
+
+The total screen size (--fb) and positioning (--pos) are to be calculated taking into account the scaling factor.
+
+In this case laptop monitor (eDP1) has no scaling and uses native mode for resolution so it will total 2560x1440, but external monitor (HDMI) is scaled and it has to be considered a larger screen so (1920*1.35)x(1080*1.35) from where the eDP1 Y position came 1080*1.35=1458 and the total screen size: since one on top of the other X=(greater between eDP1 and HDMI, so 1920*1.35=2592) and Y=(sum of the calculated heights of eDP1 and HDMI, so 1440+(1080*1.35)=2898).
+
+Generically if your hidpi monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF] and hidpi is placed below regular one, the commandline for right-of is:
+
+```
+xrandr --output eDP1 --auto --pos 0x(DxF) --output HDMI --auto --scale [E]x[F] --pos 0x0 --fb [greater between A and (C*E)]x[B+(D*F)]
+
+```
+
+You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
+
+## Console
+
+The default console font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `sun12x22` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives. See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for configuration details.
+
+## See also
+
+*   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
+*   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=409541](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=409541)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Graphics](/index.php/Category:Graphics "Category:Graphics")

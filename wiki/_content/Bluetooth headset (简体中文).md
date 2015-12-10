@@ -1,0 +1,721 @@
+# Bluetooth headset (简体中文)
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Related articles
+
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
+*   [Bluez4](/index.php/Bluez4 "Bluez4")
+
+**翻译状态：** 本文是英文页面 [Bluetooth_headset](/index.php/Bluetooth_headset "Bluetooth headset") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&diff=0&oldid=396614)可以查看翻译后英文页面的改动。
+
+Arch Linux现在默认支持A2DP profile (Audio Sink)，可以实现远程音频播放功能。
+
+**小贴士:**
+
+*   Bluez5 只能通过 [PulseAudio](/index.php/PulseAudio "PulseAudio") 来支持耳机的录音/播放，不支持[ALSA](/index.php/ALSA "ALSA")。如果你不想使用PulseAudio，你需要从AUR安装老版本的Bluez来支持。
+
+## Contents
+
+*   [1 通过 Bluez5/PulseAudio 支持耳机](#.E9.80.9A.E8.BF.87_Bluez5.2FPulseAudio_.E6.94.AF.E6.8C.81.E8.80.B3.E6.9C.BA)
+    *   [1.1 常见问题及解决方案](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88)
+        *   [1.1.1 已经选择音频配置，但耳机没有激活，不能重定向音频](#.E5.B7.B2.E7.BB.8F.E9.80.89.E6.8B.A9.E9.9F.B3.E9.A2.91.E9.85.8D.E7.BD.AE.EF.BC.8C.E4.BD.86.E8.80.B3.E6.9C.BA.E6.B2.A1.E6.9C.89.E6.BF.80.E6.B4.BB.EF.BC.8C.E4.B8.8D.E8.83.BD.E9.87.8D.E5.AE.9A.E5.90.91.E9.9F.B3.E9.A2.91)
+        *   [1.1.2 授权失败导致配对失败](#.E6.8E.88.E6.9D.83.E5.A4.B1.E8.B4.A5.E5.AF.BC.E8.87.B4.E9.85.8D.E5.AF.B9.E5.A4.B1.E8.B4.A5)
+        *   [1.1.3 配对成功, 但连接失败](#.E9.85.8D.E5.AF.B9.E6.88.90.E5.8A.9F.2C_.E4.BD.86.E8.BF.9E.E6.8E.A5.E5.A4.B1.E8.B4.A5)
+        *   [1.1.4 连接成功，但不能播放声音](#.E8.BF.9E.E6.8E.A5.E6.88.90.E5.8A.9F.EF.BC.8C.E4.BD.86.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE.E5.A3.B0.E9.9F.B3)
+        *   [1.1.5 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+*   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
+*   [3 Legacy method: PulseAudio](#Legacy_method:_PulseAudio)
+*   [4 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA.2C_bluez5_and_PulseAudio_method)
+*   [5 在 HSV 和 A2DP 配置间切换](#.E5.9C.A8_HSV_.E5.92.8C_A2DP_.E9.85.8D.E7.BD.AE.E9.97.B4.E5.88.87.E6.8D.A2)
+    *   [5.1 PulseAudio下A2DP不能工作](#PulseAudio.E4.B8.8BA2DP.E4.B8.8D.E8.83.BD.E5.B7.A5.E4.BD.9C)
+        *   [5.1.1 Socket Interface problem](#Socket_Interface_problem)
+        *   [5.1.2 Gnome with GDM](#Gnome_with_GDM)
+*   [6 Tested headsets](#Tested_headsets)
+*   [7 See also](#See_also)
+
+## 通过 Bluez5/PulseAudio 支持耳机
+
+PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), [bluez-firmware](https://www.archlinux.org/packages/?name=bluez-firmware). 如果没有安装 [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth)，蓝牙设备在配对完成后，连接会失败，而且你不会得到任何有用的提示。
+
+启动bluetooth服务:
+
+```
+# systemctl start bluetooth
+
+```
+
+现在我们可以使用 _bluetoothctl_ 命令来实现配对和连接。 如果在使用这个命令过程中出现问题或想了解_bluetoothctl_的更多帮助，参见 [Bluetooth](/index.php/Bluetooth "Bluetooth")。运行：
+
+```
+# bluetoothctl
+
+```
+
+进入内部命令行提示，然后输入：
+
+```
+# power on
+# agent on
+# default-agent
+# scan on
+
+```
+
+现在让你的蓝牙耳机进入配对模式，它很快就能发现新的设备。如：
+
+```
+[NEW] Device 00:1D:43:6D:03:26 Lasmex LBT10
+
+```
+
+这里发现了一个名字是"Lasmex LBT10"，对应MAC地址是_00:1D:43:6D:03:26_的设备。接下来我们使用这个MAC地址来配对：
+
+```
+# pair 00:1D:43:6D:03:26
+
+```
+
+配对成功后，你需要手动连接设备(every time?):
+
+```
+# connect 00:1D:43:6D:03:26
+
+```
+
+如果一切正常，你现在可以在[PulseAudio](/index.php/PulseAudio "PulseAudio")看到一个独立的输出设备。
+
+**小贴士:** 设备默认情况下可能是停止的。你可以在[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Configuration"标签页里选择配置(_OFF_, A2DP, HFP)
+
+你现在可以通过[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Playback"和"Pecording"标签页重定向音频的输入、输出了。
+
+除了[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)，这里也可以通过_pacmd_命令来选择配置:
+
+```
+# pacmd set-card-profile bluez_card.00_1E_7C_30_86_FA a2dp_sink
+a2dp_sink          -- High Fidelity Playback (A2DP Sink) (sinks: 1, sources: 0, priority: 10, available: yes)
+headset_head_unit  -- Headset Head Unit (HSP/HFP) (sinks: 1, sources: 1, priority: 20, available: yes)
+off                -- Off (sinks: 0, sources: 0, priority: 0, available: yes)
+
+```
+
+这里可选择"a2dp_sink"或"headset_head_unit"两种配置，其中"headset_head_unit"可以支持音频输入/输出，"a2dp_sink"只支持输出。
+
+**小贴士:** 如果shell安装了对应的自动补全包[bash-completion](https://www.archlinux.org/packages/?name=bash-completion)或[zsh-completions](https://www.archlinux.org/packages/?name=zsh-completions)，可以通过tab键快速补全命令
+
+你现在可以停止扫描，并退出_bluetoothctl_命令：
+
+```
+# scan off
+# exit
+
+```
+
+### 常见问题及解决方案
+
+有很多用户报告 A2DP/蓝牙耳机不能正常工作。
+
+#### 已经选择音频配置，但耳机没有激活，不能重定向音频
+
+音频配置的菜单项在设备还没有成功连接的时候就已经存在了，但它并不能起作用。这个菜单项似乎是在设备被发现的时候就马上创建了。
+
+确认一下bluetoothctl是在root用户下或在sudo环境下执行的；然后手动连接设备。有配置选项可以避免每次都需要手动连接，但是配对和信任并不会导致自动连接。
+
+#### 授权失败导致配对失败
+
+如果配对失败，你可以尝试[disabling SSPMode](https://stackoverflow.com/questions/12888589/linux-command-line-howto-accept-pairing-for-bluetooth-device-without-pin):
+
+```
+# hciconfig hci0 sspmode 0
+
+```
+
+#### 配对成功, 但连接失败
+
+你可能在 _bluetoothctl_ 里面看到下面的错误:
+
+```
+[bluetooth]# connect 00:1D:43:6D:03:26
+Attempting to connect to 00:1D:43:6D:03:26
+Failed to connect: org.bluez.Error.Failed
+
+```
+
+你可以通过以下命令查看日志以进一步定位问题：
+
+```
+# systemctl status bluetooth
+# journalctl -n 20
+
+```
+
+你可能会在日志里看到下面类似的信息:
+
+```
+bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available
+
+```
+
+这是因为没有安装[pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) 包导致的。 如果确实没有安装，安装一下这个包，然后重启一下[pulseaudio](/index.php/Pulseaudio "Pulseaudio")。
+
+如果不是因为缺失包导致的， 很可能是PulseAudio没收到消息，一般重启一下PulseAudio就可以解决问题。 注意_bluetoothctl_和PulseAudio不需要在相同的用户下运行，_bluetooth_在root环境下运行，而PulseAudio在用户环境下运行也可以很好的工作。 重启PulseAudio后，不需要重新配对，直接重连即可。
+
+如果重启PulseAudio后，仍然不能正常工作，你需要重新加载 module-bluetooth-discover 模块。
+
+```
+# pactl load-module module-bluetooth-discover
+
+```
+
+你可以把同样的加载命令添加到 `/etc/pulse/default.pa`，让PulseAudio启动时自动加载。
+
+如果仍然不能正常工作，或者你使用的是系统级别的PulseAudio，下面的模块也需要加载一下(同样可以把他们加到default.pa或system.pa里面):
+
+```
+module-bluetooth-policy
+module-bluez5-device
+module-bluez5-discover
+
+```
+
+你可以通过加载PulseAudio的 switch-on-connect 模块，使得蓝牙耳机连接后，自动切换到耳机上。添加如下加载语句:
+
+ `/etc/pulse/default.pa` 
+
+```
+# automatically switch to newly-connected devices
+load-module module-switch-on-connect
+
+```
+
+同时，你需要告诉_bluetoothctl_信任你的蓝牙耳机，否则你将会看到如下报错：
+
+```
+bluetoothd[487]: Authentication attempt without agent
+bluetoothd[487]: Access denied: org.bluez.Error.Rejected
+
+```
+
+```
+[bluetooth]# trust 00:1D:43:6D:03:26
+
+```
+
+重启后，你的蓝牙适配器默认是不会启用的，你需要添加udev规则来启用它：
+
+ `/etc/udev/rules.d/10-local.rules` 
+
+```
+# Set bluetooth power up
+ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
+```
+
+#### 连接成功，但不能播放声音
+
+确定你在系统日志里面可以看到如下信息:
+
+```
+bluetoothd[5556]: Endpoint registered: sender=:1.83 path=/MediaEndpoint/A2DPSource
+bluetoothd[5556]: Endpoint registered: sender=:1.83 path=/MediaEndpoint/A2DPSink
+
+```
+
+如果你可以看到类似的信息，说明蓝牙没有问题，你可以去检查PulseAudio的配置问题了。否则的话，退回来再次确认蓝牙是否已经连接成功。
+
+如果使用的是[GDM](/index.php/GDM "GDM")， PulseAudio 的另外一个实例可能已经启动，并捕获了你的蓝牙连接。 这种情况可以通过修改配置文件来解决：
+
+ `/var/lib/gdm/.pulse/client.conf` 
+
+```
+autospawn = no
+daemon-binary = /bin/true
+```
+
+需要确保这个文件的用户权限是 `gdm:gdm`， 如果不是，使用 [chown](/index.php/Chown "Chown") 修改。 这个问题在下次重启后解决。
+
+#### UUIDs has unsupported type
+
+在配对的时候，你可能会在_bluetoothctl_看到如下信息:
+
+```
+[CHG] Device 00:1D:43:6D:03:26 UUIDs has unsupported type
+
+```
+
+这种情况很常见，没有影响，可以被忽略。
+
+## Legacy method: ALSA-BTSCO
+
+bluez4相关，不翻译，直接参考英文版本[Bluetooth Headset#Legacy method: ALSA-BTSCO](/index.php/Bluetooth_Headset#Legacy_method:_ALSA-BTSCO "Bluetooth Headset")
+
+## Legacy method: PulseAudio
+
+bluez4相关，不翻译，直接参考英文版本[Bluetooth Headset#Legacy method: PulseAudio](/index.php/Bluetooth_Headset#Legacy_method:_PulseAudio "Bluetooth Headset")
+
+## Legacy documentation: ALSA, bluez5 and PulseAudio method
+
+争议章节，不翻译，直接参考英文版本[Bluetooth Headset#Legacy documentation: ALSA, bluez5 and PulseAudio method](/index.php/Bluetooth_Headset#Legacy_documentation:_ALSA.2C_bluez5_and_PulseAudio_method "Bluetooth Headset")
+
+## 在 HSV 和 A2DP 配置间切换
+
+通过下面命令可以很容易的在两者间做切换：
+
+```
+# pacmd set-card-profile 2 a2dp_sink
+
+```
+
+这里2是配置文件的索引，根据实际情况确定。更简单的方法是使用tab键来补全。
+
+### PulseAudio下A2DP不能工作
+
+#### Socket Interface problem
+
+If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseAudio 3.0+, you can try disabling the Socket interface from `/etc/bluetooth/audio.conf` by removing the line `Enable=Socket` and adding line `Disable=Socket`.
+
+#### Gnome with GDM
+
+**Note:** 下面的方法在 Gnome 3.16.2 和 PulseAudio 6.0 下已经验证过
+
+在GNOME和GDM下，如果PulseAudio切换到A2DP配置不能正常工作，你需要阻止GDM自己启动一个PulseAudio实例。参照[#连接成功，但不能播放声音](#.E8.BF.9E.E6.8E.A5.E6.88.90.E5.8A.9F.EF.BC.8C.E4.BD.86.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE.E5.A3.B0.E9.9F.B3)操作。
+
+**Note:** 针对这个问题的讨论可以参考 [这里](https://bbs.archlinux.org/viewtopic.php?id=194006) 和 [这里](https://bbs.archlinux.org/viewtopic.php?id=196689)
+
+## Tested headsets
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Model</th>
+
+<th>Version</th>
+
+<th>Comments</th>
+
+<th>Compatible</th>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB9150**</td>
+
+<td>bluez5, pulseaudio 5</td>
+
+<td>Pause and resume does not work. With at least mpv and Banshee hitting the pause button stops audio output but does not pause the player.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB9100**</td>
+
+<td>Pause and resume is flaky. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB7000**</td>
+
+<td>Pause and resume is flaky.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB7100**</td>
+
+<td>bluez 5.32, pulseaudio 6.0</td>
+
+<td>Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB7150**</td>
+
+<td>bluez 5.32, pulseaudio 6.0</td>
+
+<td>Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB5500BK/00**</td>
+
+<td>bluez 5.28, PulseAudio 6.0</td>
+
+<td>Pause and resume is not working.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Parrot Zik**</td>
+
+<td>Firmware 1.04\. The microphone is detected, but does not work. Sometimes it lags (but does not stutter); usually this is not noticeable unless playing games, in which case you may switch to a wired connection.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Sony DR-BT50**</td>
+
+<td>bluez{4,5}</td>
+
+<td>Works for a2dp, see [[2]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Sony SBH50**</td>
+
+<td>bluez5</td>
+
+<td>Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe").</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Sony MDR-XB950BT**</td>
+
+<td>pulseaudio</td>
+
+<td>Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Sony MUC-M1BT1**</td>
+
+<td>bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/)<sup><small>AUR</small></sup></td>
+
+<td>Both A2DP & HSP/HFP work fine.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**SoundBot SB220**</td>
+
+<td>bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/)<sup><small>AUR</small></sup></td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Auna Air 300**</td>
+
+<td>bluez5, pulseaudio-git</td>
+
+<td>For some reason, a few restarts were required, and eventually it just started working.</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**Sennheiser MM 400-X**</td>
+
+<td>bluez5, pulseaudio 4.0-6</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Sennheiser MM 550-X Travel**</td>
+
+<td>bluez 5.27-1, pulseaudio 5.0-1</td>
+
+<td>Next/Previous buttons work out-of-the-box, Play/Pause does not</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Audionic BlueBeats (B-777)**</td>
+
+<td>bluez5, pulseaudio 4.0-6</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Logitech Wireless Headset**</td>
+
+<td>bluez 5.14, pulseaudio-git</td>
+
+<td>part number PN 981-000381, advertised for use with iPad</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**HMDX Jam Classic Bluetooth**</td>
+
+<td>bluez, pulseaudio-git</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**PT-810**</td>
+
+<td>bluez 5.14, pulseaudio-git</td>
+
+<td>Generic USB-Powered Bluetooth Audio Receiver with 3.5mm headset jack and a2dp profile. Widely available as "USB Bluetooth Receiver." IDs as PT-810.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips SHB4000WT**</td>
+
+<td>bluez5</td>
+
+<td>A2DP works, HDP distorted.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Philips AEA2000/12**</td>
+
+<td>bluez5</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Nokia BH-104**</td>
+
+<td>bluez4</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Creative AirwaveHD**</td>
+
+<td>bluez 5.23</td>
+
+<td>Bluetooth adapter Atheros Communications usb: 0cf3:0036</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Creative HITZ WP380**</td>
+
+<td>bluez 5.27, pulseaudio 5.0-1</td>
+
+<td>A2DP Profile only. Buttons work (Play, Pause, Prev, Next). Volume buttons are hardware-only. Auto-connect works but you should include the bluetooth module in "pulseaudio" to switch to it automatically. Clear HD Music Audio (This device support APTx codec but it isn't supported in linux yet). You may have some latency problems which needs pulseaudio restart.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**deleyCON Bluetooth Headset**</td>
+
+<td>bluez 5.23</td>
+
+<td>Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with _xev_).</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
+
+</tr>
+
+<tr>
+
+<td>**UE BOOM**</td>
+
+<td>bluez 5.27, pulseaudio-git 5.99</td>
+
+<td>Update to latest UE BOOM fw 1.3.58\. Sound latency in video solved by configuring pavucontrol. Works with UE BOOM x2.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**LG HBS-730**</td>
+
+<td>bluez 5.30, pulseaudio 6.0</td>
+
+<td>Works out of box with A2DP profile.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**LG HBS-750**</td>
+
+<td>bluez 5.30, pulseaudio-git 6.0</td>
+
+<td>Works out of box with A2DP profile.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Beats Studio Wireless**</td>
+
+<td>bluez 5.28, pulseaudio 6.0</td>
+
+<td>Works out of box. Not tested multimedia buttons.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**AKG Y45BT**</td>
+
+<td>bluez 5.30, pulseaudio 6.0</td>
+
+<td>Pause and resume does not work. Needs `Enable=Socket` in `/etc/bluetooth/audio.conf` and `load-module module-bluetooth-discover` in `/etc/pulse/default.pa`.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Bluedio Turbine/Turbine 2+**</td>
+
+<td>bluez5.3, pulseaudio 6.0</td>
+
+<td>HSP/HFP work fine, A2DP work fine.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Sony SBH20**</td>
+
+<td>bluez 5.30, pulseaudio 6.0</td>
+
+<td>Works out of box with A2DP profile.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Nokia BH-111**</td>
+
+<td>bluez 5.30, pulseaudio 6.0</td>
+
+<td>Works with both HSP/HFP and A2DP. Buttons work in certain apps.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Sony MDR-ZX330BT**</td>
+
+<td>bluez 5.31, pulseaudio 6.0</td>
+
+<td>Works out of box (HSP/HFP and A2DP). Buttons work in certain apps.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>**Samsung Level Link**</td>
+
+<td>bluez 5.33, pulseaudio 6.0</td>
+
+<td>Works out of box (HSP/HFP and A2DP). Buttons work in certain apps.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## See also
+
+Using the same device on Windows and Linux without pairing the device over and over again
+
+*   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset_(简体中文)&oldid=399161](https://wiki.archlinux.org/index.php?title=Bluetooth_headset_(简体中文)&oldid=399161)"
+
+[Categories](/index.php/Special:Categories "Special:Categories"):
+
+*   [Sound](/index.php/Category:Sound "Category:Sound")
+*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")

@@ -1,0 +1,111 @@
+# Rust
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+[Rust](http://rust-lang.org/) is a systems programming language that runs blazingly fast, prevents nearly all segfaults, and guarantees thread and memory safety.
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Test your installation](#Test_your_installation)
+*   [2 Cross Compiling](#Cross_Compiling)
+    *   [2.1 Windows](#Windows)
+*   [3 Cargo](#Cargo)
+    *   [3.1 Usage](#Usage)
+*   [4 See also](#See_also)
+
+## Installation
+
+To [install](/index.php/Install "Install") the latest stable version of Rust, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package.
+
+If you would like to build the stable or Beta from source, visit [Rust Downloads](http://www.rust-lang.org/install.html). You may also obtain [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/)<sup><small>AUR</small></sup> via the [AUR](/index.php/AUR "AUR") for the latest development snapshot (provides Cargo).
+
+### Test your installation
+
+Check that Rust is installed correctly by building a simple program, as follows:
+
+ `~/hello.rs` 
+
+```
+ fn main() {
+     println!("Hello, World!");
+ }
+
+```
+
+You can compile it with `rustc`, then run it:
+
+ `$ rustc hello.rs && ./hello` 
+
+```
+Hello, World!
+
+```
+
+## Cross Compiling
+
+### Windows
+
+In this section, `$ARCH` is the target architecture (either `x86_64` or `i686`).
+
+1.  [Install](/index.php/Install "Install") [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) and [wine](https://www.archlinux.org/packages/?name=wine)
+2.  Add a binfmt definition for windows executables either manually or by installing [binfmt-wine](https://aur.archlinux.org/packages/binfmt-wine/)<sup><small>AUR</small></sup>.
+3.  Install a copy of rust's standard library for windows in your rustlib directory (`/usr/local/lib/rustlib` if you're using [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/)<sup><small>AUR</small></sup> and `/usr/lib/rustlib` if you're using the official [rust](https://www.archlinux.org/packages/?name=rust) package). The easiest way to do this is to download the rust installer for windows for your target architecture, install it under wine (`wine start my-rust-installer.msi`) and copy `$INSTALL_DIR/bin/rustlib/$ARCH-pc-windows-gnu` into your rustlib directory.
+4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your cargo config:
+
+ `~/.cargo/config` 
+
+```
+[target.$ARCH-pc-windows-gnu]
+linker = "/usr/bin/$ARCH-w64-mingw32-gcc"
+ar = "/usr/$ARCH-w64-mingw32/bin/ar"
+
+```
+
+Finally, you can cross compile for windows by passing the `--target $ARCH-pc-windows-gnu` to cargo:
+
+```
+$ # Build
+$ cargo build --release --target "$ARCH-pc-windows-gnu"
+$ # Run unit tests under wine
+$ cargo test --target "$ARCH-pc-windows-gnu"
+
+```
+
+## Cargo
+
+[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/)<sup><small>AUR</small></sup>.
+
+Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build.
+
+### Usage
+
+To create a new project using Cargo:
+
+ `$ cargo new hello_world --bin` 
+
+**Note:** Cargo uses a file named `Cargo.toml`, a manifest containing all of the metadata that Cargo needs to compile your project. `Cargo.toml` 
+
+```
+[package]
+name = "hello_world"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+```
+
+## See also
+
+*   [Official website of the Rust Programming Language](http://rust-lang.org/)
+*   [Wikipedia article](https://en.wikipedia.org/wiki/Rust_(programming_language) "wikipedia:Rust (programming language)")
+*   [Examples with small descriptions](http://rustbyexample.com/)
+*   [Official starting guide](http://doc.rust-lang.org/stable/book/)
+*   [Page listing of Rust tutorials](https://github.com/ctjhoa/rust-learning)
+*   [Libraries(crates) avalaible through Cargo](https://crates.io/)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rust&oldid=407129](https://wiki.archlinux.org/index.php?title=Rust&oldid=407129)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

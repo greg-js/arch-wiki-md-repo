@@ -1,0 +1,847 @@
+# Core utilities
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Related articles
+
+*   [Bash](/index.php/Bash "Bash")
+*   [Zsh](/index.php/Zsh "Zsh")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [sudo](/index.php/Sudo "Sudo")
+*   [cron](/index.php/Cron "Cron")
+*   [File system search](/index.php/File_system_search "File system search")
+*   [man page](/index.php/Man_page "Man page")
+*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
+This article deals with so-called _core_ utilities on a GNU/Linux system, such as _less_, _ls_, and _grep_. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
+
+## Contents
+
+*   [1 Basic commands](#Basic_commands)
+*   [2 cat](#cat)
+*   [3 dd](#dd)
+    *   [3.1 dd spin-offs](#dd_spin-offs)
+*   [4 grep](#grep)
+    *   [4.1 Colored output](#Colored_output)
+    *   [4.2 Standard error](#Standard_error)
+*   [5 find](#find)
+*   [6 locate](#locate)
+    *   [6.1 Keeping the database up-to-date](#Keeping_the_database_up-to-date)
+*   [7 iconv](#iconv)
+    *   [7.1 Convert a file in place](#Convert_a_file_in_place)
+*   [8 ip](#ip)
+*   [9 less](#less)
+    *   [9.1 Colored output through environment variables](#Colored_output_through_environment_variables)
+    *   [9.2 Colored output through wrappers](#Colored_output_through_wrappers)
+    *   [9.3 Vim as alternative pager](#Vim_as_alternative_pager)
+    *   [9.4 Colored output when reading from stdin](#Colored_output_when_reading_from_stdin)
+*   [10 ls](#ls)
+*   [11 mkdir](#mkdir)
+*   [12 mv](#mv)
+*   [13 od](#od)
+*   [14 pv](#pv)
+*   [15 rm](#rm)
+*   [16 sed](#sed)
+*   [17 seq](#seq)
+*   [18 which](#which)
+*   [19 See also](#See_also)
+
+## Basic commands
+
+The following table lists basic shell commands every Linux user should be familiar with. Commands in **bold** are part of the shell, others are separate programs called from the shell. See the below sections and _Related articles_ for details.
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Command</th>
+
+<th>Description</th>
+
+<th>Example</th>
+
+</tr>
+
+<tr>
+
+<td>man</td>
+
+<td>Show manual page for a command</td>
+
+<td>man ed</td>
+
+</tr>
+
+<tr>
+
+<td>**cd**</td>
+
+<td>Change directory</td>
+
+<td>cd /etc/pacman.d</td>
+
+</tr>
+
+<tr>
+
+<td>mkdir</td>
+
+<td>Create a directory</td>
+
+<td>mkdir ~/newfolder</td>
+
+</tr>
+
+<tr>
+
+<td>rmdir</td>
+
+<td>Remove empty directory</td>
+
+<td>rmdir ~/emptyfolder</td>
+
+</tr>
+
+<tr>
+
+<td>rm</td>
+
+<td>Remove a file</td>
+
+<td>rm ~/file.txt</td>
+
+</tr>
+
+<tr>
+
+<td>rm -r</td>
+
+<td>Remove directory and contents</td>
+
+<td>rm -r ~/.cache</td>
+
+</tr>
+
+<tr>
+
+<td>ls</td>
+
+<td>List files</td>
+
+<td>ls *.avi</td>
+
+</tr>
+
+<tr>
+
+<td>ls -a</td>
+
+<td>List hidden files</td>
+
+<td>ls -a /home/archie</td>
+
+</tr>
+
+<tr>
+
+<td>ls -al</td>
+
+<td>List hidden files and file properties</td>
+
+</tr>
+
+<tr>
+
+<td>mv</td>
+
+<td>Move a file</td>
+
+<td>mv ~/compressed.zip ~/archive/compressed2.zip</td>
+
+</tr>
+
+<tr>
+
+<td>cp</td>
+
+<td>Copy a file</td>
+
+<td>cp ~/.bashrc ~/.bashrc.bak</td>
+
+</tr>
+
+<tr>
+
+<td>chmod +x</td>
+
+<td>Make a file executable</td>
+
+<td>chmod +x ~/.local/bin/myscript.sh</td>
+
+</tr>
+
+<tr>
+
+<td>cat</td>
+
+<td>Show file contents</td>
+
+<td>cat /etc/hostname</td>
+
+</tr>
+
+<tr>
+
+<td>strings</td>
+
+<td>Show printable characters in binary files</td>
+
+<td>strings /usr/bin/free</td>
+
+</tr>
+
+<tr>
+
+<td>find</td>
+
+<td>Search for a file</td>
+
+<td>find ~ -name myfile</td>
+
+</tr>
+
+<tr>
+
+<td>mount</td>
+
+<td>Mount a partition</td>
+
+<td>mount /dev/sdc1 /media/usb</td>
+
+</tr>
+
+<tr>
+
+<td>df -h</td>
+
+<td>Show remaining space on all partitions</td>
+
+</tr>
+
+<tr>
+
+<td>ps -A</td>
+
+<td>Show all running processes</td>
+
+</tr>
+
+<tr>
+
+<td>killall</td>
+
+<td>Kill all running instances of a process</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## cat
+
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) "wikipedia:cat (Unix)") (_catenate_) is a standard Unix utility that concatenates and lists files.
+
+*   Because _cat_ is not a built-in shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< _file_` does the same as `cat _file_`.
+
+*   _cat_ is able to work with multiple lines, although this is sometimes regarded as bad practice:
+
+```
+$ cat << EOF >> _path/file_
+_first line_
+...
+_last line_
+EOF
+
+```
+
+A better alternative is the _echo_ command:
+
+```
+$ echo "\
+_first line_
+...
+_last line_" \
+>> _path/file_
+
+```
+
+*   If you need to list file lines in reverse order, there is a utility called [tac](https://en.wikipedia.org/wiki/tac_(Unix) "wikipedia:tac (Unix)") (_cat_ reversed).
+
+## dd
+
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) "wikipedia:dd (Unix)") is a command on Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
+
+By default, _dd_ outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. See the [manual](http://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html#dd-invocation) for more information.
+
+**Note:** _cp_ does the same as _dd_ without any operands but is not designed for more versatile disk wiping procedures.
+
+### dd spin-offs
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+**This article or section is a candidate for moving to [Disk cloning](/index.php/Disk_cloning "Disk cloning").**
+
+**Notes:** See [Talk:Disk_cloning#ddrescue](/index.php/Talk:Disk_cloning#ddrescue "Talk:Disk cloning"). (Discuss in [Talk:Core utilities#](https://wiki.archlinux.org/index.php/Talk:Core_utilities))
+
+Other _dd_-like programs feature periodical status output, e.g. a simple progress bar.
+
+dcfldd 
+
+[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.<sup>[[1]](http://dcfldd.sourceforge.net/)</sup>
+
+ddrescue 
+
+GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
+
+## grep
+
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")'s _g/re/p_, _global/regular expression/print_) is a command line text search utility originally written for Unix. The _grep_ command searches files or standard input globally for lines matching a given regular expression, and prints them to the program's standard output.
+
+*   Remember that _grep_ handles files, so a construct like `cat _file_ | grep _pattern_` is replaceable with `grep _pattern_ _file_`
+
+*   _grep_ alternatives optimized for VCS source code do exist, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
+
+### Colored output
+
+`grep`'s color output can be helpful for learning [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") and additional `grep` functionality.
+
+To enable _grep_ coloring write the following entry to the shell configuration file (e.g. if using [Bash](/index.php/Bash "Bash")):
+
+ `~/.bashrc`  `alias grep='grep --color=auto'` 
+
+To include file line numbers in the output, add the option `-n` to the line.
+
+The environment variable `GREP_COLOR` can be used to define the default highlight color (the default is red). To change the color find the [ANSI escape sequence](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) for the color liked and add it:
+
+```
+export GREP_COLOR="1;32"
+
+```
+
+`GREP_COLORS` may be used to define specific searches.
+
+### Standard error
+
+Some commands send their output to standard error, and grep has no apparent effect. In this case, redirect standard error next to standard out:
+
+```
+$ _command_ 2>&1 | grep _args_
+
+```
+
+or Bash 4 shorthand:
+
+```
+$ _command_ |& grep _args_
+
+```
+
+See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+
+## find
+
+_find_ is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
+
+One would probably expect a _find_ command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
+
+Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
+
+## locate
+
+`locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](http://en.wikipedia.org/wiki/Find) tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
+
+**Note:** Although in other distros `locate` and `updatedb` are in the [findutils](https://www.archlinux.org/packages/?name=findutils) package, they are no longer present in Arch's package. To use it, install the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. mlocate is a newer implementation of the tool, but is used in exactly the same way.
+
+Before `locate` can be used, the database will need to be created. To do this, simply run `updatedb` as root.
+
+See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/)
+
+### Keeping the database up-to-date
+
+When `mlocate` is installed, a script is automatically scheduled to run daily via `systemd`, to update the database. You can also manually run `updatedb` as root at any time.
+
+To save time, the `updatedb` can be (and by default is) configured to ignore certain filesystems and paths by editing `/etc/updatedb.conf`. `man updatedb.conf` will tell you about the semantics of this file. It is worth noting that among the paths ignored in the default configuration (i.e. those in the "PRUNEPATHS" string) are `/media` and `/mnt`, so `locate` may not discover files on external devices.
+
+## iconv
+
+`iconv` converts the encoding of characters from one codeset to another.
+
+The following command will convert the file `foo` from ISO-8859-15 to UTF-8 saving it to `foo.utf`:
+
+```
+$ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
+
+```
+
+See `man iconv` for more details.
+
+### Convert a file in place
+
+**Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
+
+Unlike [sed](#sed), _iconv_ does not provide an option to convert a file in place. However, `sponge` can be used to handle it, it comes with [moreutils](https://www.archlinux.org/packages/?name=moreutils).
+
+```
+$ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
+
+```
+
+See `man sponge` for details.
+
+## ip
+
+[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") allows you to show information about network devices, IP addresses, routing tables, and other objects in the Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") software stack. By appending various commands, you can also manipulate or configure most of these objects.
+
+**Note:** The _ip_ utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Object</th>
+
+<th>Purpose</th>
+
+<th>Manual Page Name</th>
+
+</tr>
+
+<tr>
+
+<td>ip addr</td>
+
+<td>protocol address management</td>
+
+<td>ip-address</td>
+
+</tr>
+
+<tr>
+
+<td>ip addrlabel</td>
+
+<td>protocol address label management</td>
+
+<td>ip-addrlabel</td>
+
+</tr>
+
+<tr>
+
+<td>ip l2tp</td>
+
+<td>tunnel Ethernet over IP (L2TPv3)</td>
+
+<td>ip-l2tp</td>
+
+</tr>
+
+<tr>
+
+<td>ip link</td>
+
+<td>network device configuration</td>
+
+<td>ip-link</td>
+
+</tr>
+
+<tr>
+
+<td>ip maddr</td>
+
+<td>multicast addresses management</td>
+
+<td>ip-maddress</td>
+
+</tr>
+
+<tr>
+
+<td>ip monitor</td>
+
+<td>watch for netlink messages</td>
+
+<td>ip-monitor</td>
+
+</tr>
+
+<tr>
+
+<td>ip mroute</td>
+
+<td>multicast routing cache management</td>
+
+<td>ip-mroute</td>
+
+</tr>
+
+<tr>
+
+<td>ip mrule</td>
+
+<td>rule in multicast routing policy db</td>
+
+</tr>
+
+<tr>
+
+<td>ip neigh</td>
+
+<td>neighbour/ARP tables management</td>
+
+<td>ip-neighbour</td>
+
+</tr>
+
+<tr>
+
+<td>ip netns</td>
+
+<td>process network namespace management</td>
+
+<td>ip-netns</td>
+
+</tr>
+
+<tr>
+
+<td>ip ntable</td>
+
+<td>neighbour table configuration</td>
+
+<td>ip-ntable</td>
+
+</tr>
+
+<tr>
+
+<td>ip route</td>
+
+<td>routing table management</td>
+
+<td>ip-route</td>
+
+</tr>
+
+<tr>
+
+<td>ip rule</td>
+
+<td>routing policy database management</td>
+
+<td>ip-rule</td>
+
+</tr>
+
+<tr>
+
+<td>ip tcp_metrics</td>
+
+<td>management for TCP Metrics</td>
+
+<td>ip-tcp_metrics</td>
+
+</tr>
+
+<tr>
+
+<td>ip tunnel</td>
+
+<td>tunnel configuration</td>
+
+<td>ip-tunnel</td>
+
+</tr>
+
+<tr>
+
+<td>ip tuntap</td>
+
+<td>manage TUN/TAP devices</td>
+
+</tr>
+
+<tr>
+
+<td>ip xfrm</td>
+
+<td>manage IPsec policies</td>
+
+<td>ip-xfrm</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+The `help` command is available for all objects. For example, typing `ip addr help` will show you the command syntax available for the address object. For advanced usage see the [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
+
+The [Network configuration](/index.php/Network_configuration "Network configuration") article shows how the _ip_ command is used in practice for various common tasks.
+
+**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which was used in older versions of Linux for interface configuration. It is now deprecated in Arch Linux; you should use _ip_ instead.
+
+## less
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** less is a complex beast, and this section should explain some of the basic less commands - not go on a bunch of tangents like colored output (Discuss in [Talk:Core utilities#](https://wiki.archlinux.org/index.php/Talk:Core_utilities))
+
+[less](https://en.wikipedia.org/wiki/less_(Unix) "wikipedia:less (Unix)") is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) "wikipedia:more (command)") and [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), _less_ offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
+
+See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
+
+### Colored output through environment variables
+
+Add the following lines to your shell configuration file:
+
+ `~/.bashrc` 
+
+```
+export LESS=-R
+export LESS_TERMCAP_mb=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;36m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[1;32m'
+```
+
+Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like.
+
+**Note:** The `LESS_TERMCAL__xx_` variables is currently undocumented in less(1), for a detailed explanation on these sequences, see this [anwser](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
+
+### Colored output through wrappers
+
+You can enable code syntax coloring in _less_. First, [install](/index.php/Install "Install") [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), then add these lines to your shell configuration file:
+
+ `~/.bashrc` 
+
+```
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS='-R '
+
+```
+
+Frequent users of the command line interface might want to install [lesspipe](https://www.archlinux.org/packages/?name=lesspipe).
+
+Users may now list the compressed files inside of an archive using their pager:
+
+ `$ less _compressed_file_.tar.gz` 
+
+```
+==> use tar_file:contained_file to view a file in the archive
+-rw------- _username_/_group_  695 2008-01-04 19:24 _compressed_file_/_content1_
+-rw------- _username_/_group_   43 2007-11-07 11:17 _compressed_file_/_content2_
+_compressed_file_.tar.gz (END)
+```
+
+_lesspipe_ also grants _less_ the ability of interfacing with files other than archives, serving as an alternative for the specific command associated for that file-type (such as viewing HTML via [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
+
+Re-login after installing _lesspipe_ in order to activate it, or source `/etc/profile.d/lesspipe.sh`.
+
+### Vim as alternative pager
+
+[Vim](/index.php/Vim "Vim") (_visual editor improved_) has a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
+
+ `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
+
+There is also an alternative to _less.sh_ macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
+
+ `~/.bashrc` 
+
+```
+export PAGER='vimpager'
+alias less=$PAGER
+```
+
+Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use _vim_ as pager.
+
+### Colored output when reading from stdin
+
+**Note:** It is recommended to add [#Colored output through environment variables](#Colored_output_through_environment_variables) to your `~/.bashrc` or `~/.zshrc`, as the below is based on `export LESS=R`
+
+When you run a command and pipe its [standard output](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (_stdout_) to _less_ for a paged view (e.g. `pacman -Qe | less`), you may find that the output is no longer colored. This is usually because the program tries to detect if its _stdout_ is an interactive terminal, in which case it prints colored text, and otherwise prints uncolored text. This is good behaviour when you want to redirect _stdout_ to a file, e.g. `pacman -Qe > pkglst-backup.txt`, but less suited when you want to view output in `less`.
+
+Some programs provide an option to disable the interactive tty detection:
+
+```
+# dmesg --color=always | less
+
+```
+
+In case that the program does not provide any similar option, it is possible to trick the program into thinking its _stdout_ is an interactive terminal with the following utilities:
+
+*   **stdoutisatty** — A small program which catches the `isatty` function call.
+
+[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)<sup><small>AUR</small></sup>
+
+Example: `stdoutisatty _program_ | less`
+
+*   **unbuffer** — A tclsh script comes with expect, it invokes desired program within a pty.
+
+[http://expect.sourceforge.net/example/unbuffer.man.html](http://expect.sourceforge.net/example/unbuffer.man.html) || [expect](https://www.archlinux.org/packages/?name=expect)
+
+Example: `unbuffer _program_ | less`
+
+Alternatively, using [zpty](http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzpty-Module) module from [zsh](/index.php/Zsh "Zsh"): [[2]](http://lilydjwg.is-programmer.com/2011/6/29/using-zpty-module-of-zsh.27677.html)
+
+ `~/.zshrc` 
+
+```
+zmodload zsh/zpty
+
+pty() {
+	zpty pty-${UID} ${1+$@}
+	if [[ ! -t 1 ]];then
+		setopt local_traps
+		trap '' INT
+	fi
+	zpty -r pty-${UID}
+	zpty -d pty-${UID}
+}
+
+ptyless() {
+	pty $@ | less
+}
+```
+
+Usage:
+
+```
+$ ptyless _program_
+
+```
+
+To pipe it to other pager (less in this example):
+
+```
+$ pty _program_ | less
+
+```
+
+## ls
+
+[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (_list_) is a command to list files in Unix and Unix-like operating systems.
+
+*   _ls_ can list [file permissions](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
+
+*   Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
+
+`alias ls='ls --color=auto'`
+
+The next step will further enhance the colored _ls_ output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
+
+`eval $(dircolors -b)`
+
+## mkdir
+
+[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (_make directory_) is a command to create directories.
+
+*   To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
+
+ `alias mkdir='mkdir -p -v'` 
+
+The `-v` switch make it verbose.
+
+*   Changing mode of a just created directory using _chmod_ is not necessary as the `-m` option lets you define the access permissions.
+
+**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (_make temporary_): `mktemp -p`.
+
+## mv
+
+[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (_move_) is a command to move and rename files and directories.
+
+*   It can be very dangerous so it is prudent to limit its scope:
+
+ `alias mv=' timeout 8 mv -iv'` 
+
+This alias suspends _mv_ after eight seconds, asks confirmation to delete three or more files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
+
+## od
+
+The [od](https://en.wikipedia.org/wiki/od_(Unix) "wikipedia:od (Unix)") (_o_ctal _d_ump) command is useful for visualizing data that is not in a human-readable format, like the executable code of a program, or the contents of an unformatted device. See the [manual](http://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html#od-invocation) for more information.
+
+## pv
+
+You can use [pv](https://www.archlinux.org/packages/?name=pv) (_pipe viewer_) to monitor the progress of data through a pipeline, for example:
+
+```
+# dd if=_/source/filestream_ | pv -_monitor_options_ -s _size_of_file_ | dd of=_/destination/filestream_
+
+```
+
+## rm
+
+[rm](https://en.wikipedia.org/wiki/rm_(Unix) "wikipedia:rm (Unix)") (_remove_) is a command to delete files and directories.
+
+*   It can be very dangerous, so it is prudent to limit its scope:
+
+ `alias rm=' timeout 3 rm -Iv --one-file-system'` 
+
+This alias suspends _rm_ after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
+
+Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
+
+*   To remove directories known to be empty, use _rmdir_ as it fails in case of files inside the target.
+
+## sed
+
+[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (_stream editor_) is a Unix utility that parses and transforms text.
+
+Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of _sed_ one-liners examples.
+
+**Tip:** More powerful alternatives are [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") and even [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") language.
+
+## seq
+
+**seq** (_sequence_) is a utility for generating a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+
+## which
+
+The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)") command is useful to determine the path to an executable, for example:
+
+```
+# journalctl $(which sshd)
+
+```
+
+## See also
+
+*   [A sampling of coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
+*   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
+*   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=406762](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=406762)"
+
+[Categories](/index.php/Special:Categories "Special:Categories"):
+
+*   [System administration](/index.php/Category:System_administration "Category:System administration")
+*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")

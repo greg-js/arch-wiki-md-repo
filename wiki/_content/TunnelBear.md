@@ -1,0 +1,92 @@
+# TunnelBear
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+
+[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+
+**This article is a stub.**
+
+**Notes:** Instructions to copy 3rd party configs into `/etc/openvpn/` is not the ArchWiki way. (Discuss in [Talk:TunnelBear#](https://wiki.archlinux.org/index.php/Talk:TunnelBear))
+
+[TunnelBear](https://www.tunnelbear.com) is a VPN provider that utilizes OpenVPN protocol.
+
+In order to use this tutorial, one must have Giant or Grizzly subscription.
+
+**Note:** There is an [easier](https://www.tunnelbear.com/updates/linux_support/) method to use TunnelBear service for Gnome users.
+
+## Walkthrough
+
+[Install](/index.php/Install "Install") [openvpn](https://www.archlinux.org/packages/?name=openvpn).
+
+Download [TunnelBear OpenVPN config files](https://s3.amazonaws.com/tunnelbear/linux/openvpn.zip).
+
+Unzip the folder, and copy all the files to
+
+```
+$ /etc/openvpn/
+
+```
+
+Do not forget to change the permission
+
+```
+$ sudo chmod 600 /etc/openvpn/*
+
+```
+
+Pick the corresponding **.ovpn** that will be used (TunnelBear Japan is used as an example)
+
+Rename the extension & remove the space
+
+```
+$ mv /etc/openvpn/TunnelBear\ Japan.ovpn /etc/openvpn/TunnelBearJapan.conf
+
+```
+
+Edit the **.conf** file
+
+ `/etc/openvpn/TunnelBearJapan.conf` 
+
+```
+.
+.
+keepalive 10 30
+auth-user-pass login.key
+.
+.
+
+```
+
+Create **login.key**
+
+ `/etc/openvpn/login.key` 
+
+```
+
+yourtunnelbearusername
+yourtunnelbearpassword
+
+```
+
+Start & add it to systemd boot process
+
+```
+$ sudo systemctl start openvpn@TunnelBearJapan.service
+$ sudo systemctl enable openvpn@TunnelBearJapan.service
+
+```
+
+## References
+
+*   [TunnelBear Helper](https://github.com/JenniferMack/TunnelBear-Helper)
+*   [Arch Wiki OpenVPN](https://wiki.archlinux.org/index.php/OpenVPN)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TunnelBear&oldid=378707](https://wiki.archlinux.org/index.php?title=TunnelBear&oldid=378707)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

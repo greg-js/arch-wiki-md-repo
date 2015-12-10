@@ -1,0 +1,193 @@
+# Broadcom wireless
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Related articles
+
+*   [Wireless](/index.php/Wireless "Wireless")
+
+This article details how to install and setup a Broadcom wireless network device.
+
+## Contents
+
+*   [1 History](#History)
+*   [2 Driver selection](#Driver_selection)
+*   [3 Installation](#Installation)
+    *   [3.1 brcm80211](#brcm80211)
+    *   [3.2 b43](#b43)
+    *   [3.3 broadcom-wl](#broadcom-wl)
+        *   [3.3.1 Offline installation](#Offline_installation)
+        *   [3.3.2 Manually](#Manually)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Device inaccessible after kernel upgrade](#Device_inaccessible_after_kernel_upgrade)
+    *   [4.2 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working.2Fshowing)
+    *   [4.3 Interfaces swapped with broadcom-wl](#Interfaces_swapped_with_broadcom-wl)
+    *   [4.4 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
+    *   [4.5 Suppressing console messages](#Suppressing_console_messages)
+    *   [4.6 Device BCM43241 non-detected](#Device_BCM43241_non-detected)
+    *   [4.7 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
+
+## History
+
+Broadcom has a noted history with its support for Wi-Fi devices regarding GNU/Linux. For a good portion of its initial history, Broadcom devices were either entirely unsupported or required the user to tinker with the firmware. The limited set of wireless devices that were supported were done so by a reverse-engineered driver. The reverse-engineered `b43` driver was introduced in the 2.6.24 kernel.
+
+In August 2008, Broadcom released the [802.11 Linux STA driver](http://www.broadcom.com/support/802.11/linux_sta.php) officially supporting Broadcom wireless devices on GNU/Linux. This is a restrictively licensed driver and it does not work with hidden ESSIDs, but Broadcom promised to work towards a more open approach in the future.
+
+In September 2010, Broadcom [released](http://thread.gmane.org/gmane.linux.kernel.wireless.general/55418) a fully open source driver. The [brcm80211](http://wireless.kernel.org/en/users/Drivers/brcm80211) driver was introduced in the 2.6.37 kernel and in the 2.6.39 kernel it was sub-divided into the `brcmsmac` and `brcmfmac` drivers.
+
+The types of available drivers are:
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Driver</th>
+
+<th>Description</th>
+
+</tr>
+
+<tr>
+
+<td>brcm80211</td>
+
+<td>Kernel driver open-source version</td>
+
+</tr>
+
+<tr>
+
+<td>b43</td>
+
+<td>Kernel driver reverse-engineered version</td>
+
+</tr>
+
+<tr>
+
+<td>broadcom-wl</td>
+
+<td>Broadcom driver restricted-license</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## Driver selection
+
+To know what driver(s) are operable on the computer's Broadcom wireless network device, the [device ID](https://en.wikipedia.org/wiki/PCI_configuration_space "wikipedia:PCI configuration space") and chipset name will need to be detected. Cross-reference them with the driver list of supported [brcm80211](https://wireless.wiki.kernel.org/en/users/Drivers/brcm80211#supported_chips) and [b43](https://wireless.wiki.kernel.org/en/users/Drivers/b43#list_of_hardware) devices.
+
+```
+$ lspci -vnn -d 14e4:
+
+```
+
+## Installation
+
+### brcm80211
+
+The kernel contains two built-in open-source drivers: **brcmsmac** for PCI backends and **brcmfmac** for SDIO/USB backends. They should be automatically loaded when booting.
+
+### b43
+
+Two reverse-engineered open-source drivers are built-in to the kernel: **b43** and **b43legacy**. b43 supports most newer Broadcom chipsets, while the b43legacy driver only supports the early BCM4301 and BCM4306 rev.2 chipsets. To avoid erroneous detection of your WiFi card's chipset, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the unused driver.
+
+Both of these drivers require non-free firmware to function. Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup>, [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/)<sup><small>AUR</small></sup> or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+
+**Note:**
+
+*   BCM4306 rev.3, BCM4311, BCM4312 noticed to have problems with **b43-firmware**. Use [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/)<sup><small>AUR</small></sup> for these cards instead.
+*   BCM4331 noticed to have problems with **b43-firmware-classic**. Use [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup> for this card instead.
+
+### broadcom-wl
+
+Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or its [DKMS](/index.php/DKMS "DKMS") variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the restrictively licensed driver.
+
+**Tip:** If you use [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, kernel upgrades may break wireless from time to time, and you may need to uninstall & reinstall the package. Using [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> helps avoid this.
+
+#### Offline installation
+
+An Internet connection is the ideal way to install the **broadcom-wl** driver; many newer laptops with Broadcom cards forgo Ethernet ports, so a USB Ethernet adapter or [Android tethering](/index.php/Android_tethering "Android tethering") may be helpful. If you have neither, you'll need to first install the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group during installation. Then, use another Internet-connected computer to download [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) and the driver tarball from the AUR, and install them in that order.
+
+#### Manually
+
+**Warning:** This method is not recommended. Drivers that are un-tracked can become problematic or nonfunctional on system updates.
+
+Install the appropriate driver for your system architecture from [Broadcom's website](https://www.broadcom.com/support/?gid=1). After this, to avoid driver/module collisions with similar modules and make the driver available, do:
+
+```
+# rmmod b43
+# rmmod ssb
+# modprobe wl
+
+```
+
+The _wl_ module should automatically load _lib80211_ or _lib80211_crypt_tkip_ otherwise they will have to be manually loaded.
+
+If the driver does not work at this point, you may need to update dependencies:
+
+```
+# depmod -a
+
+```
+
+To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_modules "Kernel modules"). It is recommending that you [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") conflicting modules.
+
+## Troubleshooting
+
+### Device inaccessible after kernel upgrade
+
+Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). It should be blackisted if using a **b43** driver.
+
+If you are using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, uninstall and reinstall it after upgrading your kernel.
+
+### Device with broadcom-wl driver not working/showing
+
+Be sure the correct modules are blacklisted and occasionally it may be necessary to blacklist the **brcm80211** drivers if accidentally detected before the **wl** driver is loaded. Furthermore, update the modules dependencies `depmod -a`, verify the wireless interface with `ip addr`, kernel upgrades will require an upgrade of the non-[DKMS](/index.php/DKMS "DKMS") package.
+
+### Interfaces swapped with broadcom-wl
+
+Users of the broadcom-wl driver may find their Ethernet and Wi-Fi interfaces have been swapped. See [device naming](/index.php/Network_configuration#Device_names "Network configuration") for an answer.
+
+### Interface is showing but not allowing connections
+
+Append the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
+
+```
+b43.allhwsupport=1
+
+```
+
+### Suppressing console messages
+
+You may continuously get some verbose and annoying messages during the boot, similar to
+
+```
+phy0: brcms_ops_bss_info_changed: arp filtering: enabled true, count 0 (implement)
+phy0: brcms_ops_bss_info_changed: qos enabled: false (implement)
+phy0: brcms_ops_bss_info_changed: arp filtering: enabled true, count 1 (implement)
+enabled, active
+
+```
+
+To disable those messages, increase the loglevel of printk messages that get through to the console - see [Silent boot#sysctl](/index.php/Silent_boot#sysctl "Silent boot").
+
+### Device BCM43241 non-detected
+
+This device will not display with either `lspci` nor `lsusb`; there is no known solution yet. Please remove this section when resolved.
+
+### Connection is unstable with some routers
+
+If no other approaches help, install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), or use a [previous driver version](/index.php/Downgrading_packages "Downgrading packages").
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=407237](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=407237)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")

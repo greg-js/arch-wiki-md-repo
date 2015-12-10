@@ -1,0 +1,25 @@
+{
+  "name": "arch-wiki-md-repo",
+  "version": "0.0.1",
+  "description": "All arch-wiki articles in markdown format, updated four times a day.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add-commit": "git add -A . && git commit -a -m 'auto-update'",
+    "push": "git push",
+    "update": "npm run add-commit && npm run push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greg-js/arch-wiki-md-repo.git"
+  },
+  "keywords": [
+    "arch",
+    "wiki"
+  ],
+  "author": "Gregory J. Scheerlinck",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/greg-js/arch-wiki-md-repo/issues"
+  },
+  "homepage": "https://github.com/greg-js/arch-wiki-md-repo#readme"
+}

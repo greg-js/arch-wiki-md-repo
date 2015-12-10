@@ -1,0 +1,230 @@
+# Acer Aspire E11 Series
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+<table class="wikitable" style="float: right;">
+
+<tbody>
+
+<tr>
+
+<td>**Device**</td>
+
+<td>**Working**</td>
+
+</tr>
+
+<tr>
+
+<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>[Network](/index.php/Network "Network")</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>[Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")</td>
+
+<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Manual</td>
+
+</tr>
+
+<tr>
+
+<td>Atheros Wireless</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>[ALSA](/index.php/ALSA "ALSA")</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>[Touchpad](/index.php/Touchpad "Touchpad")</td>
+
+<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Manual</td>
+
+</tr>
+
+<tr>
+
+<td>[Webcam](/index.php/Webcam "Webcam")</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>Card Reader</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
+<td>[Power management](/index.php/Power_management "Power management")</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+[Aspire E11 Series](http://us.acer.com/ac/en/US/content/models/laptops/aspire-e11)
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Create a recovery drive](#Create_a_recovery_drive)
+    *   [1.2 Booting](#Booting)
+        *   [1.2.1 Using UEFI](#Using_UEFI)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Wireless](#Wireless)
+    *   [2.2 Touchpad](#Touchpad)
+    *   [2.3 Power Management](#Power_Management)
+        *   [2.3.1 Suspend and Hibernate](#Suspend_and_Hibernate)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 GPU](#GPU)
+    *   [3.2 Start up and shutdown freeze](#Start_up_and_shutdown_freeze)
+*   [4 See also](#See_also)
+
+## Installation
+
+**Warning:** Should you wish to return to _Windows 8.1 with Bing_, it is imperative to [#Create a recovery drive](#Create_a_recovery_drive). The correct installation medium is only available to system manufacturers, and you will have to either use this recovery drive, or send the device back for repair to return to the original state.
+
+**Warning:** The BIOS firmware in Legacy mode (including latest versions) has several bugs (inability to turn off or suspend the computer, kernel panics, etc). Use UEFI instead.
+
+Prior to installation, download and install the latest firmware update from [Acer](http://us.acer.com/ac/en/US/content/drivers) under Windows. Older versions of the firmware can only boot from the (black) USB 2.0 port.
+
+To recover the Windows key at a later stage, run:
+
+```
+$ hexdump -C /sys/firmware/acpi/tables/MSDM
+
+```
+
+Note that this key is tied to the particular laptop model and [unusable elsewhere](http://arstechnica.com/civis/viewtopic.php?p=26623117#p26623117). See also [[1]](https://msdn.microsoft.com/en-us/library/windows/hardware/dn653305%28v=vs.85%29.aspx).
+
+### Create a recovery drive
+
+A recovery drive can made with the preinstalled _Acer eRecovery Management_ application. This requires a USB-attached flash drive or hard disk with at least 16 GB free space available, and presence of the `C:/OEM` directory. All present data on the target drive will be lost.
+
+Choose the option _Create Factory Default Backup_, select the partition Windows is installed on, and click _start_. Remove the drive afterwards - booting from the device will now start the recovery software. See [[2]](http://acer--uk.custhelp.com/app/answers/detail/a_id/14303/~/create-a-recovery-usb-flash-drive-with-acer-erecovery-management-5.x) for more information.
+
+### Booting
+
+The Acer E3-111 does not have an optical drive. See [Beginners' guide#Prepare the latest installation medium](/index.php/Beginners%27_guide#Prepare_the_latest_installation_medium "Beginners' guide") for alternative methods.
+
+Both [UEFI](/index.php/UEFI "UEFI") and Legacy (BIOS) boot are supported. To switch modes, press `F2` at the boot splash screen to enter the EFI setup, then select the _Boot_ tab. Alternatively, access the EFI setup by [rebooting in Windows](http://acer-au.custhelp.com/app/answers/detail/a_id/32048/~/accessing-uefi-in-windows-8.1).
+
+Follow the [installation guide](/index.php/Installation_guide "Installation guide"). An Ethernet connection is recommended, as the needed [wireless drivers](#Wireless) are not included in the installation medium.
+
+**Note:**
+
+*   Installation images prior to `archlinux-2015.05.01-dual.iso` return a row of errors when accessing the RPMB (Replay Protected Memory Block) partition from the eMMC. [[3]](https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1333140)
+*   eMMC device names start with `/dev/mmcblk` instead of the typical `/dev/sda`.
+*   Due to limited RAM, it is recommended to create a [swap](/index.php/Swap "Swap") partition of at least 2 GB in size.
+
+#### Using UEFI
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Use HashTool instead of a roundabout through supervisor settings? (Discuss in [Talk:Acer Aspire E11 Series#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_E11_Series))
+
+To use Arch Linux with UEFI, activate the F12 boot menu option in the EFI setup and disable 'Secure' Boot. To do the latter, you must set a supervisor password beforehand. After disabling 'Secure' Boot, save the settings and reboot, then press F12 and select the USB drive with the Arch Linux setup files.
+
+The first partition should be an EFI system partition. Make sure that the initramfs and vmlinuz-linux files are on the EFI partition, and that it is mounted at /boot. There is no way to specify kernel boot parameters in this computer's EFI setup so you have to go with a boot loader. Simple way is to install **gummiboot** and create a boot entry:
+
+```
+/boot/loader/entries/archlinux.conf:
+title		Arch Linux
+linux		/vmlinuz-linux
+initrd		/intel-ucode.img
+initrd		/initramfs-linux.img
+options		root=/dev/mmcblk0p2 rootwait
+
+```
+
+This assumes that your root is on the second partition (first partition is the EFI partition) and states **rootwait** because the integrated flash storage is not available instantly after kernel startup. When you are done with the Arch setup, reboot and press F2 to enter the EFI setup. Enable 'secure' boot again, then choose the option 'select an UEFI file as trusted for executing' and browse to the gummiboot/gummibootx64.efi file, then press ENTER. Now disable 'secure' boot again, put the gummiboot loader on top of the list in the boot priority menu, and remove the supervisor password. Save the settings and reboot into your fresh Arch system.
+
+**Note:** A UEFI boot entry may not appear upon booting the device. The solution is to copy the `.efi` file to the location Windows uses. See [UEFI#UEFI boot loader does not show up in firmware menu](/index.php/UEFI#UEFI_boot_loader_does_not_show_up_in_firmware_menu "UEFI") for details.
+
+## Configuration
+
+### Wireless
+
+To use the Broadcom BCM43142 chipset is, install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"), and load the module:
+
+```
+# modprobe wl
+
+```
+
+The system will now recognize the interface as `wlp2s0`. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") and [Wireless](/index.php/Wireless "Wireless") for details.
+
+### Touchpad
+
+The E11 series include a [Precision Touchpad](http://windows.microsoft.com/en-us/windows-8/touchpad), which supports a variety of touch gestures. To enable the touchpad, append the `i8042.nopnp` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for configuration details.
+
+### Power Management
+
+Install the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package
+
+#### Suspend and Hibernate
+
+Suspend and Hibernate should work after following [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
+
+## Troubleshooting
+
+### GPU
+
+See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
+
+### Start up and shutdown freeze
+
+If you have an issue where the computer freezes during start up and shutdown, requiring multiple reboots, try adding the following to `/etc/modprobe.d/blacklist.conf`
+
+```
+blacklist dw_dmac
+blacklist dw_dmac_core
+
+```
+
+See also [[4]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1341925) [[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1213216)
+
+## See also
+
+*   [Disassembly Acer E11 (RAM, HDD upgrade)](https://www.youtube.com/watch?v=5OT_RnjMess)
+*   [Installing Linux on Acer E11-111 (ES1-111-C3NT)](http://blog.mdda.net/oss/2014/11/16/acer-e11-es1-111-c3nt-linux/)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=401092](https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=401092)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Acer](/index.php/Category:Acer "Category:Acer")

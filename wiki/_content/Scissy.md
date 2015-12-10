@@ -1,0 +1,64 @@
+# Scissy
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+Scissy is a standalone and minimal git hosting service.
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Create certificate](#Create_certificate)
+    *   [1.2 Initialize git account](#Initialize_git_account)
+    *   [1.3 Start scissy](#Start_scissy)
+    *   [1.4 Login to scissy](#Login_to_scissy)
+    *   [1.5 Become admin](#Become_admin)
+
+## Installation
+
+**Warning:** Scissy is still in early and active development.
+
+[Install](/index.php/Install "Install") the [scissy](https://aur.archlinux.org/packages/scissy/)<sup><small>AUR</small></sup> package.
+
+### Create certificate
+
+You have to provide SSL certificate to run scissy, so you have to create them first:
+
+```
+# cd /etc/scissy
+# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt
+# chmod 600 server.key server.csr server.crt
+# chown scissy:scissy server.key server.csr server.crt
+
+```
+
+### Initialize git account
+
+```
+# su scissy - scissy-init
+
+```
+
+### Start scissy
+
+To start scissy at boot [enable](/index.php/Enable "Enable") `scissy.service`. You can also [start](/index.php/Start "Start") it now.
+
+### Login to scissy
+
+Now to try your setup, you can register and login into [https://localhost:19042](https://localhost:19042)
+
+### Become admin
+
+You can get admin by doing:
+
+```
+# su scissy - scissy-set-admin my-user-name
+
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Scissy&oldid=409711](https://wiki.archlinux.org/index.php?title=Scissy&oldid=409711)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")

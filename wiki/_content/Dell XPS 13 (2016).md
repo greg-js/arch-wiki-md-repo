@@ -1,0 +1,196 @@
+# Dell XPS 13 (2016)
+
+From ArchWiki
+
+Jump to: [navigation](#column-one), [search](#searchInput)
+
+[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+
+[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+
+**This article is a stub.**
+
+**Notes:** This page is a work in progress; you're warmly invited to contribute! (Discuss in [Talk:Dell XPS 13 (2016)#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13_(2016)))
+
+<table class="wikitable" style="float: right;">
+
+<tbody>
+
+<tr>
+
+<td>**Device**</td>
+
+<td>**Status**</td>
+
+<td>**Modules**</td>
+
+</tr>
+
+<tr>
+
+<td>Video</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
+
+<td>i915</td>
+
+</tr>
+
+<tr>
+
+<td>Wireless</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
+
+<td>brcmfmac</td>
+
+</tr>
+
+<tr>
+
+<td>Bluetooth</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after installing firmware</td>
+
+<td>btbcm</td>
+
+</tr>
+
+<tr>
+
+<td>Audio</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
+
+<td>snd_hda_intel</td>
+
+</tr>
+
+<tr>
+
+<td>Touchpad</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
+
+<td> ?</td>
+
+</tr>
+
+<tr>
+
+<td>Webcam</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
+
+<td>uvcvideo</td>
+
+</tr>
+
+<tr>
+
+<td>Card Reader</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
+
+<td>rtsx_pci</td>
+
+</tr>
+
+<tr>
+
+<td>Wireless switch</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Not supported yet</td>
+
+<td> ?</td>
+
+</tr>
+
+<tr>
+
+<td>Function/Multimedia Keys</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
+
+<td> ?</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. Unlike its predecessor, it has no official Linux support yet. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.
+
+The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
+
+As of kernel 4.3, the Intel Skylake architecture is supported.
+
+## Contents
+
+*   [1 SATA controller](#SATA_controller)
+*   [2 Wireless](#Wireless)
+*   [3 Bluetooth](#Bluetooth)
+*   [4 Video](#Video)
+*   [5 Touchpad](#Touchpad)
+*   [6 Microphone](#Microphone)
+*   [7 Kernel specific notes](#Kernel_specific_notes)
+*   [8 Links](#Links)
+
+## SATA controller
+
+When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least the 256GB SSD) is not recognized. Set to "Off" or "AHCI" before attempting to install Arch. If dual boot to Windows is intended, follow [[1]](https://support.microsoft.com/en-us/kb/2795397) to work around the "INACCESSIBLE_BOOT_DEVICE" error.
+
+## Wireless
+
+The built-in Broadcom BCM4350 is not supported in the current kernel(4.2.5) (and not by [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>) yet but marked for inclusion in 4.4 [[2]](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211)
+
+As a workaround [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> can be used with the patch applied from 4.4\. It also need a firmware from [[3]](https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/brcm/brcmfmac4350-pcie.bin) to be placed to /lib/firmware/brcm/brcmfmac4350-pcie.bin or install [linux-firmware-git](https://aur.archlinux.org/packages/linux-firmware-git/)<sup><small>AUR</small></sup>
+
+## Bluetooth
+
+**Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+
+The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[4]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [unzip](https://www.archlinux.org/packages/?name=unzip) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
+
+```
+$ unzip 9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE
+$ cp Win64/BCM4350C5_003.006.007.0095.1703.hex ./
+$ hex2hcd BCM4350C5_003.006.007.0095.1703.hex
+# mv BCM4350C5_003.006.007.0095.1703.hcd /lib/firmware/brcm/BCM-0a5c-6412.hcd
+
+```
+
+After reboot, the firmware should be available for your Bluetooth interface.
+
+## Video
+
+**Note:** some hardware only needs `i915`
+
+Works with kernel parameter `i915.preliminary_hw_support=1` [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). For kernels 4.3+ ([linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup>) the parameter is unnecessary, but you may face blank screen problem after booting - adding `i915` and `intel_agp` to initramfs fixes the problem, see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")
+
+## Touchpad
+
+Only key-presses work out of the box. Installing `xf86-input-synaptics` and restarting X fixes the problem (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). `xf86-input-libinput` may be a good alternative that also handles touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration.
+
+## Microphone
+
+**Note:** Not all hardware has the "Digital" channel
+
+For ALSA, increase "Digital" channel for microphone to work.
+
+## Kernel specific notes
+
+4.4.x requires adding "nvme" in modules to detect pcie ssd. The broadcom wifi driver patch is no longer needed.
+
+4.3.x requires the broadcom wifi patch for wifi to work.
+
+## Links
+
+General Discussion Thread on Arch Forum [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=410480](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=410480)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Dell](/index.php/Category:Dell "Category:Dell")
