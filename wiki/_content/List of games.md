@@ -918,7 +918,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://icculus.org/freespace2/](http://icculus.org/freespace2/) || [fs2_open](https://aur.archlinux.org/packages/fs2_open/)<sup><small>AUR</small></sup>
 
-*   **Minetest** — Voxel-based sandbox game engine and game.
+*   **[Minetest](/index.php/Minetest "Minetest")** — Voxel-based sandbox game engine and game.
 
 [http://www.minetest.net/](http://www.minetest.net/) || [minetest](https://www.archlinux.org/packages/?name=minetest)
 
@@ -1100,7 +1100,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=411086](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=411086)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=411441](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=411441)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

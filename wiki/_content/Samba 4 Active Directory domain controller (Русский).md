@@ -879,8 +879,8 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 [OpenChange server](/index.php/OpenChange_server "OpenChange server") - The OpenChange project provides a Microsoft Exchange compatible mail server using only open source software.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller_(Русский)&oldid=411411](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller_(Русский)&oldid=411411)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller_(Русский)&oldid=411420](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller_(Русский)&oldid=411420)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
+*   [Network sharing (Русский)](/index.php?title=Category:Network_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "Category:Network sharing (Русский) (page does not exist)")

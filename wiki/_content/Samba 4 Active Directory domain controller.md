@@ -372,14 +372,14 @@ The output should be the same as when testing password authentication above.
 You will also need to create a reverse lookup zone for each subnet in your environment in DNS. It is important that this is kept in Samba's DNS as opposed to BIND to allow for dynamic updates by cleints. For each subnet, create a reverse lookup zone with the following commands. Replace **server**.**internal**.**domain**.**tld** and **xxx**.**xxx**.**xxx** with appropriate values. For **xxx**.**xxx**.**xxx**, use the first three octets of the subnet in reverse order (for example: 192.168.0.0/24 becomes 0.168.192):
 
 ```
-# samba-tool dns zonecreate **server**.**internal**.**domain**.**tld** **xxx**.**xxx**.**xxx**.in-addr.arpa
+# samba-tool dns zonecreate **server**.**internal**.**domain**.**tld** **xxx**.**xxx**.**xxx**.in-addr.arpa -U Administrator
 
 ```
 
 Now, add a record for you server (if your server is multi-homed, add for each subnet) again substituting appropriate values as above. **zzz** will be replaced by the fourth octet of the IP for the server:
 
 ```
-# samba-tool dns add **server**.**internal**.**domain**.**tld** **xxx**.**xxx**.**xxx**.in-addr.arpa **zzz** PTR **server**.**internal**.**domain**.**tld**
+# samba-tool dns add **server**.**internal**.**domain**.**tld** **xxx**.**xxx**.**xxx**.in-addr.arpa **zzz** PTR **server**.**internal**.**domain**.**tld** -U Administrator
 
 ```
 
@@ -474,14 +474,14 @@ Export the users credentials to a private keytab:
 
 Modify the `dhcpd-update-samba-dns.conf` file with the following commands (substituting correct values for **server**, **internal**.**domain**.**tld**, and **INTERNAL**.**DOMAIN**.**TLD**):
 
- `/etc/dhcpd-update-samba-dns.conf` 
+ `/etc/dhcpd/dhcpd-update-samba-dns.conf` 
 
 ```
 # Variables
 KRB5CC="/run/dhcpd4.krb5cc"
 KEYTAB="/etc/dhcpd/dhcpd.keytab"
-DOMAIN="'''internal'''.'''domain'''.'''tld'''"
-REALM="'''INTERNAL'''.'''DOMAIN'''.'''TLD'''"
+DOMAIN="**internal**.**domain**.**tld**"
+REALM="**INTERNAL**.**DOMAIN**.**TLD**"
 PRINCIPAL="dhcp@${REALM}"
 NAMESERVER="'''server'''.${DOMAIN}"
 ZONE="${DOMAIN}"
@@ -562,7 +562,7 @@ If you have made it this far without any unexpected output from the tests above,
 
 [OpenChange server](/index.php/OpenChange_server "OpenChange server") - The OpenChange project provides a Microsoft Exchange compatible mail server using only open source software.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=411412](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=411412)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=411462](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=411462)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

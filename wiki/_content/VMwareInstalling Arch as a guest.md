@@ -27,20 +27,22 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
     *   [4.2 Installation (from guest)](#Installation_.28from_guest.29)
 *   [5 Xorg configuration](#Xorg_configuration)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Shared Folders](#Shared_Folders)
-        *   [6.1.1 Enable at boot](#Enable_at_boot)
-            *   [6.1.1.1 fstab](#fstab)
-            *   [6.1.1.2 Systemd](#Systemd)
-        *   [6.1.2 Prune mlocate DB](#Prune_mlocate_DB)
-    *   [6.2 3D Acceleration](#3D_Acceleration)
-        *   [6.2.1 OpenGL and GLSL support](#OpenGL_and_GLSL_support)
-    *   [6.3 Time synchronization](#Time_synchronization)
-        *   [6.3.1 Host machine as time source](#Host_machine_as_time_source)
-        *   [6.3.2 External server as time source](#External_server_as_time_source)
-    *   [6.4 Performance Tips](#Performance_Tips)
-        *   [6.4.1 Paravirtual SCSI adapter](#Paravirtual_SCSI_adapter)
-        *   [6.4.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
-        *   [6.4.3 Virtual Machine Settings](#Virtual_Machine_Settings)
+    *   [6.1 Shared Folders with vmhgfs-fuse utility](#Shared_Folders_with_vmhgfs-fuse_utility)
+        *   [6.1.1 Systemd](#Systemd)
+    *   [6.2 Legacy Shared Folders with vmhgfs module](#Legacy_Shared_Folders_with_vmhgfs_module)
+        *   [6.2.1 Enable at boot](#Enable_at_boot)
+            *   [6.2.1.1 fstab](#fstab)
+            *   [6.2.1.2 Systemd](#Systemd_2)
+        *   [6.2.2 Prune mlocate DB](#Prune_mlocate_DB)
+    *   [6.3 3D Acceleration](#3D_Acceleration)
+        *   [6.3.1 OpenGL and GLSL support](#OpenGL_and_GLSL_support)
+    *   [6.4 Time synchronization](#Time_synchronization)
+        *   [6.4.1 Host machine as time source](#Host_machine_as_time_source)
+        *   [6.4.2 External server as time source](#External_server_as_time_source)
+    *   [6.5 Performance Tips](#Performance_Tips)
+        *   [6.5.1 Paravirtual SCSI adapter](#Paravirtual_SCSI_adapter)
+        *   [6.5.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
+        *   [6.5.3 Virtual Machine Settings](#Virtual_Machine_Settings)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Mouse problems](#Mouse_problems)
         *   [7.1.1 Missing buttons](#Missing_buttons)
@@ -59,6 +61,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 *   `vmw_vmci` - The Virtual Machine Communication Interface. It enables high-speed communication between host and guest in a virtual environment via the VMCI virtual device.
 *   `vmwgfx` - For 3D acceleration. This is a KMS enabled DRM driver for the VMware SVGA2 virtual hardware.
 *   `vmxnet3` - For VMware's vmxnet3 virtual ethernet NIC.
+*   a fuse-based hgfs implementation has been added to `open-vm-tools` 10.0+ and is supported from kernel version 4.0+.
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
@@ -77,7 +80,7 @@ These drivers are only needed if you are running Arch Linux on a hypervisor like
 
 ```
 ...
-MODULES="... vmw_balloon vmw_pvscsi vmware_vmhgfs vsock vmw_vsock_vmci_transport ..."
+MODULES="... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ..."
 ```
 
 Make sure to rebuild with:
@@ -87,7 +90,7 @@ Make sure to rebuild with:
 
 ```
 
-Some modules, such as `vmware_vmhgfs`, will require additional work to manually `compile` and systemd `enable` in order to function properly.
+Some modules, such as the legacy `vmhgfs` shared folder module, will require additional work to manually `compile` and systemd `enable` in order to function properly.
 
 ## VMware Tools versus Open-VM-Tools
 
@@ -107,12 +110,13 @@ The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) pack
 *   `vmware-user-suid-wrapper` - Tool to enable clipboard sharing (copy/paste) between host and guest.
 *   `vmware-vmblock-fuse` - Filesystem utility. Enables drag & drop functionality between host and guest through [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (Filesystem in Userspace).
 *   `vmware-xferlogs` - Dumps logging/debugging information to the Virtual Machine logfile.
+*   `vmhgfs-fuse` - Utility for mounting vmhgfs shared folders.
 
 ### Modules
 
 The [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> package comes with the following modules:
 
-*   `vmhgfs` - Filesystem driver. Enables sharing between host and guest.
+*   `vmhgfs` - Legacy filesystem driver. Enables legacy sharing implementation between host and guest.
 *   `vmxnet` - for the old VMXNET network adapter.
 
 ### Installation
@@ -237,7 +241,68 @@ to give permission for loading drivers.
 
 ## Tips and tricks
 
-### Shared Folders
+### Shared Folders with `vmhgfs-fuse` utility
+
+**Note:** This functionality is only available with `open-vm-tools` v.10.x and kernel 4.x onwards and with VMware Workstation and Fusion.
+
+Share a folder by selecting _Edit virtual machine settings > Options > Shared Folders > Always enabled_, and creating a new share.
+
+You should be able to see the shared folders by running vmware-hgfsclient command:
+
+```
+$ vmware-hgfsclient
+
+```
+
+Now you can mount the folder:
+
+```
+# mkdir <shared folders root directory>
+# vmhgfs-fuse -o allow_other -o auto_unmount .host:/_<shared_folder>_ _<shared folders root directory>_
+
+```
+
+Other `vmhgfs-fuse` mount options can be viewed by using the `-h` input flag:
+
+```
+# vmhgfs-fuse -h
+
+```
+
+##### Systemd
+
+Create the following `.service`:
+
+ `/etc/systemd/system/_<shared folders root directory>_-_<shared_folder>_.service` 
+
+```
+[Unit]
+Description=Load VMware shared folders
+ConditionPathExists=.host:/_<shared_folder>_
+ConditionVirtualization=vmware
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=
+ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount .host:/_<shared_folder>_ _<shared folders root directory>_
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Make sure the `_<shared folders root directory>_` folder exists on your system. If this folder does not exist then you have to create it as the systemd service depends on it:
+
+```
+# mkdir -p _<shared folders root directory>_
+
+```
+
+[Enable](/index.php/Enable "Enable") the `<shared folders root directory>-<shared_folder>.service` mount target.
+
+If you want to mount all shared folders automatically then omit _<shared_folder>_.
+
+### Legacy Shared Folders with vmhgfs module
 
 **Note:** This functionality is only available in VMware Workstation and Fusion
 
@@ -589,7 +654,7 @@ This is probably only happens to [open-vm-tools](https://www.archlinux.org/packa
 
 If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=407575](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=407575)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411458](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411458)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

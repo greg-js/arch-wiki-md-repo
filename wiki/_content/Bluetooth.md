@@ -228,7 +228,7 @@ All examples have been moved to the [bluez4](/index.php/Bluez4 "Bluez4") article
 
 ### bluetoothctl
 
-If bluetoothctl cannot find any controller, the bluetooth device may be blocked. Try to unblock it using rfkill:
+If bluetoothctl cannot find any controller, the bluetooth device may be blocked. Try to unblock it using [rfkill](https://www.archlinux.org/packages/?name=rfkill):
 
 ```
 # rfkill unblock bluetooth
@@ -503,7 +503,7 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=410616](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=410616)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411418](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411418)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

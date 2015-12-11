@@ -733,7 +733,7 @@ Be sure to look at `/etc/udev/lomoco_mouse.conf` and set up the the options you 
 
 ### Logitech G600
 
-It is known that in xorg-server 1.18.0-3 side buttons of G600 are not recognized as a separate keyboard device, but another mouse which causes strange (moving mouse cursor to an edge of screen when one of main mouse buttons are clicked) behavior. To enforce xorg to recognize them as a keyboard buttons, add following section to your `/etc/X11/xorg.conf`:
+It is known that in xorg-server 1.18.0-3 side buttons of G600 are not recognized as a separate keyboard device, but another mouse which causes strange (moving mouse cursor to an edge of screen when one of main mouse buttons are clicked) behavior. To force xorg to recognize them as a keyboard buttons, add following section to your `/etc/X11/xorg.conf`:
 
 ```
 Section "InputClass"
@@ -777,7 +777,7 @@ For similar setup, specially for Logitech MX, see:
 
 *   [http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu](http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411337](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411337)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411426](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411426)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

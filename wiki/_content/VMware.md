@@ -425,12 +425,7 @@ And install using the VMware installer:
 
 ```
 
-If the above doesn't works for you, then try installing ncurses5-compat-libs from yaourt:
-
-```
-$ yaourt -S ncurses5-compat-libs
-
-```
+If the above does not work, try installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup>.
 
 ### Incorrect login/password when trying to access VMware remotely
 
@@ -545,7 +540,7 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 
 You may also want to have a look at the module directories in `/usr/lib/modules/_kernel_name_/misc/` for any leftovers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=411380](https://wiki.archlinux.org/index.php?title=VMware&oldid=411380)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=411466](https://wiki.archlinux.org/index.php?title=VMware&oldid=411466)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

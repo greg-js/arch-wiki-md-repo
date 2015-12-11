@@ -62,7 +62,7 @@ Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File mana
 
 *   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
-[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/thunar-shares-plugin)]</sup>
+[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)<sup><small>AUR</small></sup>
 
 *   **[Thunar Volume Manager](#Thunar_Volume_Manager)** — Automatic management of removeable devices in Thunar. Part of [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
@@ -356,7 +356,7 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 *   [Thunar Volume Manager](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
 *   This [list](http://goodies.xfce.org/projects/thunar-plugins/start) of plugins
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=408253](https://wiki.archlinux.org/index.php?title=Thunar&oldid=408253)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=411437](https://wiki.archlinux.org/index.php?title=Thunar&oldid=411437)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

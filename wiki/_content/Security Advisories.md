@@ -36,12 +36,11 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
-*   [10 December 2015] [ASA-201512-8](https://lists.archlinux.org/pipermail/arch-security/2015-December/000466.html) [keepassx](https://www.archlinux.org/packages/?name=keepassx) information disclosure
-
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
+*   [10 December 2015] [ASA-201512-8](https://lists.archlinux.org/pipermail/arch-security/2015-December/000466.html) [keepassx](https://www.archlinux.org/packages/?name=keepassx) information disclosure
 *   [09 December 2015] [ASA-201512-7](https://lists.archlinux.org/pipermail/arch-security/2015-December/000465.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [09 December 2015] [ASA-201512-6](https://lists.archlinux.org/pipermail/arch-security/2015-December/000464.html) [libxml2](https://www.archlinux.org/packages/?name=libxml2) multiple issues
 *   [09 December 2015] [ASA-201512-5](https://lists.archlinux.org/pipermail/arch-security/2015-December/000463.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
@@ -506,7 +505,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=411402](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=411402)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=411438](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=411438)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

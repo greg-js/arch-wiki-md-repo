@@ -73,7 +73,7 @@ See [here](http://blog.tklee.org/2014/10/arduino-ide-158-on-banana-pi.html) for 
 
 ### Accessing serial
 
-The arduino board communicates with the computer via a serial connection or a serial over USB connection. So the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files in `/dev/tts/` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access.
+The arduino board communicates with the computer via a serial connection or a serial over USB connection. So the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files in `/dev/tts/` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. If you are planing to use the default Java IDE, add your user to the lock group for `/var/lock/lockdev` access.
 
 ```
 # gpasswd -a $USER uucp
@@ -376,7 +376,7 @@ see [Java#Applications not resizing with WM, menus immediately closing](/index.p
 *   [https://bbs.archlinux.org/viewtopic.php?pid=981348](https://bbs.archlinux.org/viewtopic.php?pid=981348)
 *   [http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/](http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arduino&oldid=406362](https://wiki.archlinux.org/index.php?title=Arduino&oldid=406362)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arduino&oldid=411459](https://wiki.archlinux.org/index.php?title=Arduino&oldid=411459)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

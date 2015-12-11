@@ -52,20 +52,21 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.7 demz-repo-archiso](#demz-repo-archiso)
         *   [3.1.8 demz-repo-core](#demz-repo-core)
         *   [3.1.9 gnome-encfs-manager](#gnome-encfs-manager)
-        *   [3.1.10 haskell-core](#haskell-core)
-        *   [3.1.11 infinality-bundle](#infinality-bundle)
-        *   [3.1.12 ivasilev](#ivasilev_2)
-        *   [3.1.13 llvm-svn](#llvm-svn)
-        *   [3.1.14 markzz](#markzz)
-        *   [3.1.15 metalgamer](#metalgamer)
-        *   [3.1.16 miffe](#miffe)
-        *   [3.1.17 pipelight](#pipelight)
-        *   [3.1.18 repo-ck](#repo-ck)
-        *   [3.1.19 seblu](#seblu)
-        *   [3.1.20 sergej-repo](#sergej-repo)
-        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.22 herecura](#herecura)
-        *   [3.1.23 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.10 gS644](#gS644)
+        *   [3.1.11 haskell-core](#haskell-core)
+        *   [3.1.12 infinality-bundle](#infinality-bundle)
+        *   [3.1.13 ivasilev](#ivasilev_2)
+        *   [3.1.14 llvm-svn](#llvm-svn)
+        *   [3.1.15 markzz](#markzz)
+        *   [3.1.16 metalgamer](#metalgamer)
+        *   [3.1.17 miffe](#miffe)
+        *   [3.1.18 pipelight](#pipelight)
+        *   [3.1.19 repo-ck](#repo-ck)
+        *   [3.1.20 seblu](#seblu)
+        *   [3.1.21 sergej-repo](#sergej-repo)
+        *   [3.1.22 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.23 herecura](#herecura)
+        *   [3.1.24 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -385,6 +386,18 @@ Server = http://download.opensuse.org/repositories/home:/moritzmolch:/gencfsm/Ar
 
 ```
 
+#### gS644
+
+*   **Maintainers:** Sebastian Lau (gS644),
+*   **Description:** Packages I maintain for AUR that have a longer build time on some machines (like [veracrypt](/index.php?title=Veracrypt&action=edit&redlink=1 "Veracrypt (page does not exist)") or [plymouth](/index.php/Plymouth "Plymouth"))
+*   **Key-ID:** 1607AC45
+
+```
+[gS644]
+Server = https://www.slau.me/archlinux/mirrors/$repo/$arch
+
+```
+
 #### haskell-core
 
 *   **Maintainer:** Magnus Therning
@@ -431,6 +444,8 @@ Server = http://ivasilev.net/pacman/$arch
 *   **Maintainer:** [Luchesar V. ILIEV (kerberizer)](/index.php/User:Kerberizer "User:Kerberizer")
 *   **Description:** [llvm-svn](https://aur.archlinux.org/pkgbase/llvm-svn) and [lib32-llvm-svn](https://aur.archlinux.org/pkgbase/lib32-llvm-svn) from AUR: the LLVM compiler infrastructure, the Clang frontend, and the tools associated with it
 *   **Key-ID:** [0x76563F75679E4525](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x76563F75679E4525&fingerprint=on&exact=on), fingerprint <tt>D16C F22D 27D1 091A 841C 4BE9 7656 3F75 679E 4525</tt>
+
+**Warning:** This repo is temporarily unavailable due to technical problems. Expected to be back on-line on 12 Dec 2015.
 
 ```
 [llvm-svn]
@@ -1555,7 +1570,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411296](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411296)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411439](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411439)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

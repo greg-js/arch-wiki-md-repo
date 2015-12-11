@@ -17,7 +17,7 @@ Related articles
     *   [2.1 Arch-specific configuration](#Arch-specific_configuration)
     *   [2.2 Kolab configuration](#Kolab_configuration)
 *   [3 First steps](#First_steps)
-    *   [3.1 Creating an user](#Creating_an_user)
+    *   [3.1 Creating a user](#Creating_a_user)
     *   [3.2 Enabling proper TLS](#Enabling_proper_TLS)
 *   [4 Frontends](#Frontends)
     *   [4.1 Roundcubemail Plugin](#Roundcubemail_Plugin)
@@ -83,7 +83,7 @@ You can also list the steps with `setup-kolab help` and selectively run some of 
 
 ## First steps
 
-### Creating an user
+### Creating a user
 
 The web admin panel is located at `[http://localhost/kolab-webadmin/](http://localhost/kolab-webadmin/)`. You can login using `cn=Directory Manager` as the user, and the password you chose during the previous step. You can recover the password by running:
 
@@ -92,7 +92,7 @@ $ grep ^bind_pw /etc/kolab/kolab.conf
 
 ```
 
-You can then create an user and login as him in `[http://localhost/roundcube/](http://localhost/roundcube/)` by using the email address or the UID of the user and the assigned password.
+You can then create a user and login as him in `[http://localhost/roundcube/](http://localhost/roundcube/)` by using the email address or the UID of the user and the assigned password.
 
 More information in the Kolab documentation: [[1]](http://docs.kolab.org/installation-guide/first-login.html)
 
@@ -229,7 +229,7 @@ Changing folders in roundcube should be much faster now, while forcing TLS for r
 *   [http://mirror.kolabsys.com/pub/releases/](http://mirror.kolabsys.com/pub/releases/)
 *   [https://obs.kolabsys.com/project/show?project=Kolab%3A3.1](https://obs.kolabsys.com/project/show?project=Kolab%3A3.1)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kolab&oldid=373975](https://wiki.archlinux.org/index.php?title=Kolab&oldid=373975)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kolab&oldid=411465](https://wiki.archlinux.org/index.php?title=Kolab&oldid=411465)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

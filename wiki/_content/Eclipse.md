@@ -29,6 +29,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.4 Tooltips have dark background color with Gnome 3.6 Adwaita theme](#Tooltips_have_dark_background_color_with_Gnome_3.6_Adwaita_theme)
     *   [4.5 Toggle buttons states are the same for selected/not selected](#Toggle_buttons_states_are_the_same_for_selected.2Fnot_selected)
     *   [4.6 Change Default Window Title Font Size](#Change_Default_Window_Title_Font_Size)
+    *   [4.7 UI is buggy and sometimes unusable](#UI_is_buggy_and_sometimes_unusable)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -261,11 +262,20 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ```
 
+### UI is buggy and sometimes unusable
+
+You can try to disable the use of gtk3 with the SWT_GTK3=0 environment variable when you start eclipse:
+
+```
+SWT_GTK3=0 eclipse
+
+```
+
 ## See also
 
 *   [How to use Subversion with Eclipse](https://www.ibm.com/developerworks/library/os-ecl-subversion/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=410832](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=410832)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=411416](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=411416)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

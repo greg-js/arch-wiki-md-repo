@@ -130,7 +130,9 @@ The values refer to the `*colorname[]` array in the same file, you can use defau
 
 #### Backspace not working properly
 
-While virtual terminal and most popular terminal emulator for X bind `backscape` key to `^?` escape sequence, `st` bind it to `^H`, as explained in the FAQ.
+**Note:** According to the [FAQ](http://git.suckless.org/st/tree/FAQ), this behavior has been changed in the upstream, and the issue can be fixed upgrading to the latest version.
+
+While virtual terminal and most popular terminal emulator for X bind `backscape` key to `^?` escape sequence, older version of `st` bind it to `^H`, as explained in older version of the FAQ.
 
 If hitting the `backspace` key while typing on standard input of some programs (like `read`) prints `^H` instead of erasing, you can fix that with:
 
@@ -167,7 +169,7 @@ endif
 *   [Frequently asked questions](http://git.suckless.org/st/plain/FAQ)
 *   [Official git repository](http://git.suckless.org/st/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=410311](https://wiki.archlinux.org/index.php?title=St&oldid=410311)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=411449](https://wiki.archlinux.org/index.php?title=St&oldid=411449)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

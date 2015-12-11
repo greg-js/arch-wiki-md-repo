@@ -86,9 +86,16 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Packaging (TeXLive)
 *   Ronald van Haren
 *   Sébastien Luttringer
+    *   Packaging: [https://www.archlinux.org/packages/?maintainer=seblu](https://www.archlinux.org/packages/?maintainer=seblu)
+    *   Interested in:
+        *   devtools maintainership
+        *   archive project
+        *   infra team
 *   Sven-Hendrik Haase
     *   Packaging (NVIDIA stuff, multimedia stuff)
 *   Thomas Bächler
+    *   Key signing
+    *   <strike>Packaging</strike> inactive
 *   Thomas Dziedzic
 *   Tobias Powalowski
     *   Packaging (Kernel, Hardware support, Filesystems support, Boot process, Base components)
@@ -108,9 +115,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Connor Behan
     *   Packaging
 *   Daniel Micay
+    *   Packaging (including grsecurity/PaX which is a lot of work)
+    *   Wiki administration, but only with occasional bursts of activity now
 *   Daniel Wallace
     *   Packaging
 *   Evgeniy Alekseev
+    *   Packaging (mostly scientific packages and Qt applications)
+    *   AUR requests
 *   Fabio Castelli
     *   Packaging
 *   Ike Devolder
@@ -126,6 +137,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Jiachen Yang
     *   Packaging (cutegram, libqtelegram-ae, telegramqml, lsw)
 *   Johannes Löthberg
+    *   Packaging
+    *   AUR requests
+    *   IRC op
 *   Jonathan Steel
     *   Packaging
 *   Kyle Keen
@@ -149,6 +163,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Pierre Neidhardt
     *   Packaging (the day I'll have my PGP key signed... xD)
 *   Sébastien Luttringer
+    *   Packaging: [https://www.archlinux.org/packages/?maintainer=seblu](https://www.archlinux.org/packages/?maintainer=seblu)
 *   Sergej Pupykin
 *   speps
     *   Packaging (mostly Audio stuff)
@@ -175,7 +190,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Jason Ryan
     *   Forum Administration and Moderation
     *   Wiki Administration
-*   Johannes Löthberg
 *   Levente Polyak
     *   See above (TU)
 *   Remi Gacogne
@@ -186,7 +200,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Forum moderation
 *   Xyne
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411394](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411394)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411443](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411443)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

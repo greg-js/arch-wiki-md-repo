@@ -61,7 +61,7 @@ Archiso comes with two "profiles": _releng_ and _baseline_.
 Now, copy the profile of your choice to a directory where you can make adjustments and build it (we will use `~/archlive`). Execute the following, replacing `**profile**` with either `releng` or `baseline`.
 
 ```
-# cp -r /usr/share/archiso/configs/**profile** ~/archlive
+# cp -r /usr/share/archiso/configs/**profile**/ ~/archlive
 
 ```
 
@@ -455,7 +455,7 @@ After all of these, now you can follow the [Beginners' guide#Locale](/index.php/
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=409763](https://wiki.archlinux.org/index.php?title=Archiso&oldid=409763)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=411417](https://wiki.archlinux.org/index.php?title=Archiso&oldid=411417)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

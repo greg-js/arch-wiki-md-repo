@@ -807,6 +807,8 @@ If the console output is (_PID_ varies):
 
 ```
 
+Install the [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) package.
+
 In /etc/mkinitcpio.conf change the MODULES var to:
 
 ```
@@ -1040,7 +1042,7 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 
 Join us at #bumblebee at freenode.net.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=410530](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=410530)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=411421](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=411421)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
