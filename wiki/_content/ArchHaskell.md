@@ -47,6 +47,8 @@ There are currently two people with commit rights to the ArchHaskell repository 
 
 The [haskell-core] repository is the base repository of packages maintained by the ArchHaskell team. [haskell-core] can be accessed by adding the following entry to `/etc/pacman.conf` (above [community], to ensure the correct **ghc** package is picked):
 
+**Warning:** Placing [haskell-core] above [community] will cause packages from [haskell-core] to take precedence, and avoid dependency conflicts in case of duplicate packages. Overriding [official repositories](/index.php/Official_repositories "Official repositories") is however **not** supported.
+
 ```
 [haskell-core]
 Server = http://xsounds.org/~haskell/core/$arch
@@ -62,8 +64,6 @@ Server = http://orbitalfox.com/haskell/core/$arch
 ```
 
 The set of packages in the [haskell-core] repository is derived from the **habs** tree officially located [here](https://github.com/archhaskell/habs). A tool called [cblrepo](https://github.com/magthe/cblrepo) is used to keep the **habs** tree synchronized with the official Haskell packages from [Hackage](http://hackage.haskell.org/packages/hackage.html).
-
-**Warning:** Placing [haskell-core] above [extra] will cause packages from [haskell-core] to take precedence, and avoid dependency conflicts in case of duplicate packages. Overriding [official repositories](/index.php/Official_repositories "Official repositories") is however **not** supported.
 
 The repositories provide both file listings (by using `repo-add --files`), package deltas (`repo-add --delta`), and both packages and the database are signed. The fingerprint of the key used for signing is:
 
@@ -156,7 +156,7 @@ For example, for haskell-foo, ensure:
 
 There can be some problems switching to [ArchHaskell repository](#ArchHaskell_repository) when some Haskell packages are already installed from [official repositories](/index.php/Official_repositories "Official repositories"). The surest way is to remove all Haskell related packages, synchronize the [pacman](/index.php/Pacman "Pacman") packages database, and reinstall all the needed packages. Also for Xmonad users, be sure to install `haskell-xmonad` package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=411460](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=411460)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=411477](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=411477)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,7 +4,15 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-Archboot представляет собой набор скриптов для генерации загрузочного носителя для CD/USB/PXE, предназначенный для установки или спасательной операции.
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**Эта страница нуждается в сопроводителе**
+
+Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. [Команда переводчиков ArchWiki](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki "Команда переводчиков ArchWiki")
+
+Archboot представляет собой набор скриптов для генерации загрузочного носителя для CD/USB/PXE, предназначенного для установки или восстановления системы.
 
 Образ работает только в оперативной памяти, без каких-либо специальных файловых систем, таких как SquashFS, таким образом ограничиваясь только объёмом оперативной памяти, установленной в Вашей системе.
 
@@ -261,10 +269,11 @@ archboot-allinone.sh -g
 
 Have fun! tpowa (Archboot Developer)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Archboot_(Русский)&oldid=411056](https://wiki.archlinux.org/index.php?title=Archboot_(Русский)&oldid=411056)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Archboot_(Русский)&oldid=411478](https://wiki.archlinux.org/index.php?title=Archboot_(Русский)&oldid=411478)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [System recovery (Русский)](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)")
 *   [Getting and installing Arch (Русский)](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)")
 *   [Live Arch systems (Русский)](/index.php/Category:Live_Arch_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Live Arch systems (Русский)")
+*   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")

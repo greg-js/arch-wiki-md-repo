@@ -4,12 +4,20 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-Related articles
+Ссылки по теме
 
-*   [Xorg](/index.php/Xorg "Xorg")
+*   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
 *   [Multihead](/index.php/Multihead "Multihead")
 
-_xrandr_ это официальная программа конфигурации для [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System"). С помощью неё можно изменить параметры вывода изображения [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR"). Для настройки вывода изображения сразу на нескольких мониторов смотрите [Multihead](/index.php/Multihead "Multihead").
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**Эта страница нуждается в сопроводителе**
+
+Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. [Команда переводчиков ArchWiki](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki "Команда переводчиков ArchWiki")
+
+_xrandr_ - это официальная программа настройки [оконной системы X](https://en.wikipedia.org/wiki/ru:X_Window_System "wikipedia:ru:X Window System"). С ее помощью можно изменить параметры вывода изображения [RandR](https://en.wikipedia.org/wiki/ru:RandR "wikipedia:ru:RandR"). Для получения информации о настройке вывода изображения сразу на несколько мониторов смотрите статью [Multihead](/index.php/Multihead "Multihead").
 
 ## Contents
 
@@ -379,8 +387,9 @@ About the numbers: DELL on the left and Samsung on the right. So the virtual wid
 *   [Xorg RandR 1.2 on ThinkWiki](http://www.thinkwiki.org/wiki/Xorg_RandR_1.2)
 *   [FAQVideoModes - more information about modelines](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=411055](https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=411055)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=411483](https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=411483)"
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server (Русский)](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)")
+*   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")

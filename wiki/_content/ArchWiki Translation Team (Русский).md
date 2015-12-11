@@ -435,7 +435,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td>[Sshfs](/index.php/Sshfs "Sshfs")</td>
 
-<td style="background-color: LightSalmon;">0</td>
+<td style="background-color: Yellow;">3/7 (1 - 3)</td>
 
 <td>-</td>
 
@@ -459,7 +459,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td>[xrandr](/index.php/Xrandr "Xrandr")</td>
 
-<td style="background-color: LightSalmon;">0</td>
+<td style="background-color: Yellow;">3/5 (2, 3, 5)</td>
 
 <td>-</td>
 
@@ -1193,7 +1193,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=411436](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=411436)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=411480](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=411480)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

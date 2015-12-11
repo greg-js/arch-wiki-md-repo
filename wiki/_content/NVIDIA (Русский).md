@@ -4,14 +4,22 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-Related articles
+Ссылки по теме
 
-*   [Nouveau](/index.php/Nouveau "Nouveau")
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
+*   [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)")
+*   [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)")
 *   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
-*   [Xorg](/index.php/Xorg "Xorg")
+*   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
 
-Данная статья, описывает процесс установки и конфигурирования _закрытого_ драйвера для графических карт [NVIDIA](http://www.nvidia.com). Для информации о драйверах с открытым исходным кодом, обратитесь к статье [Nouveau](/index.php/Nouveau "Nouveau"). Так же, есть отдельная статья для обладателей ноутбуков с технологиями на базе [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**Эта страница нуждается в сопроводителе**
+
+Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. [Команда переводчиков ArchWiki](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki "Команда переводчиков ArchWiki")
+
+Данная статья описывает процесс установки и настройки проприетарного драйвера графических карт [NVIDIA](http://www.nvidia.com). Для получения информации о драйверах с открытым исходным кодом обратитесь к статье [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"). Также есть отдельная статья для обладателей ноутбуков с технологиями на базе [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 
 ## Contents
 
@@ -1534,10 +1542,10 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)&oldid=407740](https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)&oldid=407740)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)&oldid=411482](https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)&oldid=411482)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
+*   [Graphics (Русский)](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)")
+*   [X server (Русский)](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)")
 *   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")

@@ -262,7 +262,7 @@ Seeing its contents are still intact, we are good to go! It's amazing!
 *   [http://en.wikipedia.org/wiki/Sparse_file](http://en.wikipedia.org/wiki/Sparse_file)
 *   [http://www.apl.jhu.edu/Misc/Unix-info/tar/tar_85.html](http://www.apl.jhu.edu/Misc/Unix-info/tar/tar_85.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sparse_file&oldid=325255](https://wiki.archlinux.org/index.php?title=Sparse_file&oldid=325255)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sparse_file&oldid=411474](https://wiki.archlinux.org/index.php?title=Sparse_file&oldid=411474)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -135,9 +135,9 @@ in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Mo
 *   [Thinkwiki X220 reference](http://www.thinkwiki.org/wiki/Category:X220)
 *   ["Arch By Hand" UEFI GPT SSD LUKS Install Script](https://bbs.archlinux.org/viewtopic.php?id=129885), built on an x220 tablet with an SSD.
 *   [Power saving options for the X220 - Notebook Review Forum](http://forum.notebookreview.com/lenovo-ibm/575569-linux-x220-29.html#post8075286)
-*   See [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/)<sup><small>AUR</small></sup> for scripts for ThinkPad X220 Tablet rotation, docking, etc.
+*   [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/)<sup><small>AUR</small></sup> for ThinkPad X220 Tablet rotation, docking, etc scripts
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=410779](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=410779)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411470](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411470)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -8,6 +8,16 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.3.2-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.2](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.2)
+*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+
+**Bump to v4.3.1-3**
+
+*   Changelog: Incorporate [BFS 466](http://ck-hack.blogspot.com/2015/12/bfs-466-linux-43-ck2.html) in ck2
+*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+
 **Bump to v4.3.1-2**
 
 *   Changelog: Mirroring changes to official package's config
@@ -1829,7 +1839,7 @@ rebuild with mkinitcpio bump to 0.6.8 and gzipped modules saves 70MB space git-s
 
 fix udev crash, updated aufs, changed ext3 mount default git-svn-id: eb2447ed-0c53-47e4-bac8-5bc4a241df78
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=411425](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=411425)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=411484](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=411484)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

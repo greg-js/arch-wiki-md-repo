@@ -253,7 +253,7 @@ sync; sync
 
 ### /etc/sysctl.conf not found
 
-By default, `sysctl --system` is called to load the sysctl configuration. [[4]](https://github.com/OpenRC/openrc/blob/master/init.d/sysctl.Linux.in#L17) This includes `/etc/sysctl.conf`, which is not present in Arch by default. [[5]](https://www.archlinux.org/news/deprecation-of-etcsysctlconf/)
+By default, `sysctl --system` is called to load the sysctl configuration. [[4]](https://github.com/OpenRC/openrc/blob/master/init.d/sysctl.Linux.in#L17) This includes the `/etc/sysctl.conf` file, which was removed from Arch. [[5]](https://www.archlinux.org/news/deprecation-of-etcsysctlconf/)
 
 To prevent a missing file error, create the file:
 
@@ -281,7 +281,7 @@ See [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") for more information.
 *   [Blog: OpenRC on Arch Linux](http://blog.notfoss.com/posts/openrc-on-arch-linux/)
 *   [Manjaro wiki](https://wiki.manjaro.org/index.php?title=OpenRC,_an_alternative_to_systemd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=405242](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=405242)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -26,7 +26,7 @@ Related articles
 
 First install [package-query](https://aur.archlinux.org/packages/package-query/)<sup><small>AUR</small></sup> as a dependency, and then the [yaourt](https://aur.archlinux.org/packages/yaourt/)<sup><small>AUR</small></sup> package itself. Since both those packages are available from the AUR, you will have to install them with the official method for installing unsupported packages, which is exhaustively described in the [AUR](/index.php/AUR "AUR") article. It is important that you understand what "unsupported package" really means, and you can take this as an opportunity to learn what are the operations that [AUR helpers](/index.php/AUR_helpers "AUR helpers") like yaourt make automatic.
 
-Alternatively, add the (unsigned) _archlinuxfr_ repository as described on the [yaourt homepage](http://archlinux.fr/yaourt-en).
+Alternatively, add the unofficial [archlinuxfr](/index.php/Unofficial_user_repositories#archlinuxfr "Unofficial user repositories") repository.
 
 ## Configuration
 
@@ -69,7 +69,7 @@ EXPORTDIR="/var/cache/pacman/pkg-local"
 
 Yaourt uses `/tmp` (mounted as [tmpfs](/index.php/Tmpfs "Tmpfs"), limited to 50% of RAM) to compile packages, which may be problematic for systems with low RAM or limited swap space. Change the location in `/etc/yaourtrc` by uncommenting and changing the `TMPDIR` variable.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=404365](https://wiki.archlinux.org/index.php?title=Yaourt&oldid=404365)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=411471](https://wiki.archlinux.org/index.php?title=Yaourt&oldid=411471)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
