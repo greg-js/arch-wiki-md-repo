@@ -479,7 +479,7 @@ where hostname is the name of the particular host you want to forward to. See `m
 Be careful with some applications as they check for a running instance on the local machine. [Firefox](/index.php/Firefox "Firefox") is an example: either close the running Firefox instance or use the following start parameter to start a remote instance on the local machine:
 
 ```
-$ firefox -no-remote
+$ firefox --no-remote
 
 ```
 
@@ -1010,7 +1010,7 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=409552](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=409552)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411672](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411672)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

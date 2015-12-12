@@ -20,7 +20,7 @@ This article aims on providing information on flashing your system BIOS under Li
 *   [4 FreeDOS](#FreeDOS)
     *   [4.1 Unetbootin](#Unetbootin)
     *   [4.2 Gentoo](#Gentoo)
-    *   [4.3 Prebuilt Images](#Prebuilt_Images)
+    *   [4.3 Prebuilt images](#Prebuilt_images)
     *   [4.4 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
     *   [4.5 Usage](#Usage_3)
 *   [5 Geteltorito.pl](#Geteltorito.pl)
@@ -37,7 +37,7 @@ There are a few ways that you can use to flash the system BIOS under Linux.
 
 ### Installation
 
-[biosdisk-git](https://aur.archlinux.org/packages/biosdisk-git/)<sup><small>AUR</small></sup> is available from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [biosdisk-git](https://aur.archlinux.org/packages/biosdisk-git/)<sup><small>AUR</small></sup>.
 
 ### Usage
 
@@ -77,7 +77,7 @@ To use the biosdisk utility to create a BIOS flash image, first download the lat
 
 ### Installation
 
-[Install](/index.php/Pacman "Pacman") [flashrom](https://www.archlinux.org/packages/?name=flashrom). For the development version, install [flashrom-svn](https://aur.archlinux.org/packages/flashrom-svn/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Pacman "Pacman") the [flashrom](https://www.archlinux.org/packages/?name=flashrom) or [flashrom-svn](https://aur.archlinux.org/packages/flashrom-svn/)<sup><small>AUR</small></sup>.
 
 ### Usage
 
@@ -132,7 +132,7 @@ You should format a pendrive with FAT16 and flag it as "boot" (you may do this t
 
 Check out [FreeDOS Flash Drive](https://wiki.gentoo.org/wiki/BIOS_Update#FreeDOS_environment) on the Gentoo Wiki if you want to create a bootable FreeDOS Flash drive.
 
-### Prebuilt Images
+### Prebuilt images
 
 Yet another simple solution: [FreeDOS prebuilt bootable USB flash drive image by Christian Taube](http://chtaube.eu/computers/freedos/bootable-usb/)
 
@@ -282,7 +282,7 @@ This perl script will extract the El Torito boot image. It has worked on Lenovo 
 
 ### Installation
 
-[geteltorito](https://aur.archlinux.org/packages/geteltorito/)<sup><small>AUR</small></sup> is available from the [AUR](/index.php/AUR "AUR").
+Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/)<sup><small>AUR</small></sup>.
 
 ### Usage
 
@@ -302,7 +302,7 @@ Copy the image to the usb thumbdrive:
 
 Reboot and boot from the USB drive, follow vendor directions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_Linux&oldid=398457](https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_Linux&oldid=398457)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_Linux&oldid=411671](https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_Linux&oldid=411671)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

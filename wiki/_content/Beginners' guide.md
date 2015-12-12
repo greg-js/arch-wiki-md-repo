@@ -458,7 +458,7 @@ Not all tools from the live installation (see [packages.both](https://projects.a
 
 ```
 
-The `-i` switch ensures prompting before package installation.
+The `-i` switch ensures prompting before package installation. In case of key import errors run `pacman-key --populate archlinux`.
 
 ## Configuration
 
@@ -677,7 +677,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411502](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411502)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411670](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411670)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
