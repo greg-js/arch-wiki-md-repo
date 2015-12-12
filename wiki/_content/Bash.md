@@ -470,7 +470,6 @@ For example:
 *   [Bash Hackers Wiki](http://wiki.bash-hackers.org/doku.php)
 *   [Advanced Bash Scripting Guide](http://tldp.org/LDP/abs/html/)
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)
-*   [Introduction to Bash](http://linuxtutorial.todolistme.net)
 
 ### Community
 
@@ -481,7 +480,7 @@ For example:
 
 *   [How to change the title of an xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=409402](https://wiki.archlinux.org/index.php?title=Bash&oldid=409402)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=411779](https://wiki.archlinux.org/index.php?title=Bash&oldid=411779)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

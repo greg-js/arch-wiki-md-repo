@@ -29,9 +29,9 @@ XDM provides a simple and straightforward graphical login prompt.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm). Then [enable](/index.php/Enable "Enable") `xdm.service`.
+[Install](/index.php/Install "Install") the [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) package. Then [enable](/index.php/Enable "Enable") `xdm.service`.
 
-If you would like to use an Arch Linux theme for XDM, you can optionally install the [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) package, also available in the official repositories. If installing the latter package, then do **not** enable the `xdm` service, but instead enable the `xdm-archlinux` service.
+If you would like to use an Arch Linux theme for XDM, you can optionally install the [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) package. If installing the latter package, then do **not** enable `xdm.service`, but instead enable `xdm-archlinux.service`.
 
 ## Configuration
 
@@ -49,8 +49,6 @@ $ chmod 744 ~/.xinitrc
 ### Theming
 
 For the exact meanings of the options discussed below, see the manual page of xdm.
-
-**Tip:** To ensure that your configuration does not get overwritten, edit the `/etc/pacman.conf` file as shown: **NoUpgrade = etc/X11/xdm/Xsetup_0 etc/X11/xdm/Xresources**
 
 #### Background wallpaper
 
@@ -128,7 +126,7 @@ login*allowNullPasswd: true
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDM&oldid=410740](https://wiki.archlinux.org/index.php?title=XDM&oldid=410740)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDM&oldid=411748](https://wiki.archlinux.org/index.php?title=XDM&oldid=411748)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

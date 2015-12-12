@@ -777,7 +777,7 @@ For similar setup, specially for Logitech MX, see:
 
 *   [http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu](http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411426](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411426)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411773](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411773)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

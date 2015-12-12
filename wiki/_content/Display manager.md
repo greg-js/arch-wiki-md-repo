@@ -38,7 +38,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for _xinit_ written in pure Bash.
 
-[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/console-tdm)]</sup>
+[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)<sup><small>AUR</small></sup>
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Minimalistic display manager for automatic logins.
 
@@ -188,7 +188,7 @@ Some display managers are not fully compatible with systemd, because they reuse 
 *   PulseAudio volume cannot be adjusted,
 *   login failed into GNOME with another user.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=411105](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=411105)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=411746](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=411746)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

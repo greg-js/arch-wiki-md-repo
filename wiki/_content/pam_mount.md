@@ -122,7 +122,7 @@ session         required        pam_unix.so
 session         optional        pam_gnome_keyring.so auto_start
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pam_mount&oldid=400591](https://wiki.archlinux.org/index.php?title=Pam_mount&oldid=400591)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pam_mount&oldid=411749](https://wiki.archlinux.org/index.php?title=Pam_mount&oldid=411749)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

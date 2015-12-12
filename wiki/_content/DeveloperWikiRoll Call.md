@@ -186,6 +186,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Doug Newgard
     *   Bug tracker basic triage, sorting, correction, and assigning
 *   Eric Waller
+    *   Forum moderation
 *   Jakob Wadsager
 *   Jason Ryan
     *   Forum Administration and Moderation
@@ -200,7 +201,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Forum moderation
 *   Xyne
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411443](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411443)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411758](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411758)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

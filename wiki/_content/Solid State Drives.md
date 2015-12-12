@@ -19,39 +19,39 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
 *   [1 Overview](#Overview)
     *   [1.1 Advantages over HDDs](#Advantages_over_HDDs)
     *   [1.2 Limitations](#Limitations)
-    *   [1.3 Pre-Purchase Considerations](#Pre-Purchase_Considerations)
-*   [2 Tips for Maximizing SSD Performance](#Tips_for_Maximizing_SSD_Performance)
-    *   [2.1 Partition alignment](#Partition_alignment)
-    *   [2.2 TRIM](#TRIM)
-        *   [2.2.1 Verify TRIM Support](#Verify_TRIM_Support)
-        *   [2.2.2 Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim)
-        *   [2.2.3 Enable continuous TRIM by mount flag](#Enable_continuous_TRIM_by_mount_flag)
-        *   [2.2.4 Enable continuous TRIM with tune2fs (discouraged)](#Enable_continuous_TRIM_with_tune2fs_.28discouraged.29)
-        *   [2.2.5 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
-        *   [2.2.6 Enable TRIM for dm-crypt](#Enable_TRIM_for_dm-crypt)
-    *   [2.3 I/O Scheduler](#I.2FO_Scheduler)
-        *   [2.3.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
-        *   [2.3.2 systemd-tmpfiles](#systemd-tmpfiles)
-        *   [2.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
-    *   [2.4 Swap Space on SSDs](#Swap_Space_on_SSDs)
-*   [3 Tips for SSD Security](#Tips_for_SSD_Security)
-    *   [3.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
-    *   [3.2 SSD Memory Cell Clearing](#SSD_Memory_Cell_Clearing)
-*   [4 Tips for minimizing disk reads/writes](#Tips_for_minimizing_disk_reads.2Fwrites)
-    *   [4.1 Intelligent partition scheme](#Intelligent_partition_scheme)
-    *   [4.2 noatime mount option](#noatime_mount_option)
-    *   [4.3 Locate frequently used files to RAM](#Locate_frequently_used_files_to_RAM)
-        *   [4.3.1 Browser profiles](#Browser_profiles)
-        *   [4.3.2 Others](#Others)
-    *   [4.4 Compiling in tmpfs](#Compiling_in_tmpfs)
-    *   [4.5 Disabling journaling on the filesystem](#Disabling_journaling_on_the_filesystem)
-*   [5 Choice of Filesystem](#Choice_of_Filesystem)
-    *   [5.1 Btrfs](#Btrfs)
-    *   [5.2 Ext4](#Ext4)
-    *   [5.3 XFS](#XFS)
-    *   [5.4 JFS](#JFS)
-    *   [5.5 Other filesystems](#Other_filesystems)
-*   [6 Firmware Updates](#Firmware_Updates)
+    *   [1.3 Pre-purchase considerations](#Pre-purchase_considerations)
+*   [2 Choice of filesystem](#Choice_of_filesystem)
+    *   [2.1 Btrfs](#Btrfs)
+    *   [2.2 Ext4](#Ext4)
+    *   [2.3 XFS](#XFS)
+    *   [2.4 JFS](#JFS)
+    *   [2.5 Other filesystems](#Other_filesystems)
+*   [3 Tips for maximizing SSD performance](#Tips_for_maximizing_SSD_performance)
+    *   [3.1 Partition alignment](#Partition_alignment)
+    *   [3.2 TRIM](#TRIM)
+        *   [3.2.1 Verify TRIM support](#Verify_TRIM_support)
+        *   [3.2.2 Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim)
+        *   [3.2.3 Enable continuous TRIM by mount flag](#Enable_continuous_TRIM_by_mount_flag)
+        *   [3.2.4 Enable continuous TRIM with tune2fs (discouraged)](#Enable_continuous_TRIM_with_tune2fs_.28discouraged.29)
+        *   [3.2.5 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
+        *   [3.2.6 Enable TRIM for dm-crypt](#Enable_TRIM_for_dm-crypt)
+    *   [3.3 I/O scheduler](#I.2FO_scheduler)
+        *   [3.3.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
+        *   [3.3.2 systemd-tmpfiles](#systemd-tmpfiles)
+        *   [3.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
+    *   [3.4 Swap space on SSDs](#Swap_space_on_SSDs)
+*   [4 Tips for SSD security](#Tips_for_SSD_security)
+    *   [4.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
+    *   [4.2 SSD memory cell clearing](#SSD_memory_cell_clearing)
+*   [5 Tips for minimizing disk reads/writes](#Tips_for_minimizing_disk_reads.2Fwrites)
+    *   [5.1 Intelligent partition scheme](#Intelligent_partition_scheme)
+    *   [5.2 noatime mount option](#noatime_mount_option)
+    *   [5.3 Locate frequently used files to RAM](#Locate_frequently_used_files_to_RAM)
+        *   [5.3.1 Browser profiles](#Browser_profiles)
+        *   [5.3.2 Others](#Others)
+    *   [5.4 Compiling in tmpfs](#Compiling_in_tmpfs)
+    *   [5.5 Disabling journaling on the filesystem](#Disabling_journaling_on_the_filesystem)
+*   [6 Firmware updates](#Firmware_updates)
     *   [6.1 ADATA](#ADATA)
     *   [6.2 Crucial](#Crucial)
     *   [6.3 Intel](#Intel)
@@ -88,7 +88,7 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
 *   Firmwares and controllers are complex. They occasionally have bugs. Modern ones consume power comparable with HDDs. They [implement](https://lwn.net/Articles/353411/) the equivalent of a log-structured filesystem with garbage collection. They translate SATA commands traditionally intended for rotating media. Some of them do on the fly compression. They spread out repeated writes across the entire area of the flash, to prevent wearing out some cells prematurely. They also coalesce writes together so that small writes are not amplified into as many erase cycles of large cells. Finally they move cells containing data so that the cell does not lose its contents over time.
 *   Performance can drop as the disk gets filled. Garbage collection is not universally well implemented, meaning freed space is not always collected into entirely free cells.
 
-### Pre-Purchase Considerations
+### Pre-purchase considerations
 
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
 
@@ -103,13 +103,55 @@ There are several key features to look for prior to purchasing a contemporary SS
 *   Native [TRIM](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") support is a vital feature that both prolongs SSD lifetime and reduces loss of performance for write operations over time.
 *   Buying the right sized SSD is key. As with all filesystems, target <75 % occupancy for all SSD partitions to ensure efficient use by the kernel.
 
-## Tips for Maximizing SSD Performance
+## Choice of filesystem
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** [#TRIM](#TRIM) says that vfat supports TRIM (as per `mount(8)` it supports the `discard` option). This section mistakes "support" and "optimization". (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
+
+This section describes optimized [filesystems](/index.php/Filesystems "Filesystems") to use on a SSD.
+
+It's still possible/required to use other filesystems, e.g. FAT32 for the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI").
+
+### Btrfs
+
+[Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") support has been included with the mainline 2.6.29 release of the Linux kernel. Some feel that it is not mature enough for production use while there are also early adopters of this potential successor to ext4\. Users are encouraged to read the [Btrfs](/index.php/Btrfs "Btrfs") article for more info.
+
+### Ext4
+
+[Ext4](https://en.wikipedia.org/wiki/Ext4 "wikipedia:Ext4") is another filesystem that has support for SSD. It is considered as stable since 2.6.28 and is mature enough for daily use. ext4 users can enable the TRIM command support using the `discard` mount option in [fstab](/index.php/Fstab "Fstab") (or with `tune2fs -o discard /dev/sdaX`). See the [official in kernel tree documentation](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob;f=Documentation/filesystems/ext4.txt) for further information on ext4.
+
+### XFS
+
+Many users do not realize that in addition to ext4 and btrfs, [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") has TRIM support as well. This can be enabled in the usual ways. That is, the choice may be made of either using the discard option mentioned above, or by using the fstrim command. More information can be found on the [XFS wiki](http://xfs.org/index.php/FITRIM/discard).
+
+### JFS
+
+As of Linux kernel version 3.7, proper TRIM support has been added. So far, there is not a great wealth of information of the topic but it has certainly been picked up by [Linux news sites.](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) It is apparent that it can be enabled via the `discard` mount option, or by using the method of batch TRIMs with fstrim.
+
+### Other filesystems
+
+There are other filesystems specifically [designed for SSD](https://en.wikipedia.org/wiki/List_of_flash_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "wikipedia:List of flash file systems"), for example [F2FS](/index.php/F2FS "F2FS").
+
+## Tips for maximizing SSD performance
 
 ### Partition alignment
 
 See [Partitioning#Partition alignment](/index.php/Partitioning#Partition_alignment "Partitioning").
 
 ### TRIM
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Mention which options apply to which filesystems. (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
 
 Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. For more including some before and after benchmark, see [this](https://sites.google.com/site/lightrush/random-1/howtoconfigureext4toenabletrimforssdsonubuntu) tutorial.
 
@@ -119,9 +161,9 @@ As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3
 
 VFAT only supports TRIM by the mount option `discard`, not manually with _fstrim_.
 
-The [Choice of Filesystem](#Choice_of_Filesystem) section of this article offers more details.
+The [Choice of Filesystem](#Choice_of_filesystem) section of this article offers more details.
 
-#### Verify TRIM Support
+#### Verify TRIM support
 
 ```
 # hdparm -I /dev/sda | grep TRIM
@@ -208,7 +250,7 @@ For non-root filesystems, configure `/etc/crypttab` to include `discard` in the 
 
 For the root filesystem, follow the instructions from [Dm-crypt/TRIM support for SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") to add the right kernel parameter to the bootloader configuration.
 
-### I/O Scheduler
+### I/O scheduler
 
 Consider switching from the default [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing) to [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"). The latter two offer performance boosts for SSDs. The NOOP scheduler, for example, implements a simple queue for all incoming I/O requests, without re-ordering and grouping the ones that are physically closer on the disk. On SSDs seek times are identical for all sectors, thus invalidating the need to re-order I/O queues based on them. See also [Maximizing performance#Tuning IO schedulers](/index.php/Maximizing_performance#Tuning_IO_schedulers "Maximizing performance").
 
@@ -267,11 +309,11 @@ $ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in questio
 
 **Note:** In the example sixty is chosen because that is the number udev uses for its own persistent naming rules. Thus, it would seem that block devices are at this point able to be modified and this is a safe position for this particular rule. But the rule can be named anything so long as it ends in `.rules`.)
 
-### Swap Space on SSDs
+### Swap space on SSDs
 
 One can place a swap partition on an SSD. A recommended tweak for SSDs using a swap partition is to reduce the [swappiness](/index.php/Swappiness "Swappiness") of the system to some very low value (for example `1`), and thus avoiding writes to swap.
 
-## Tips for SSD Security
+## Tips for SSD security
 
 ### Hdparm shows "frozen" state
 
@@ -299,9 +341,9 @@ If you intend to set a password to a "frozen" device yourself, a motherboard BIO
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 
-If you intend to erase the SSD, see [Securely wipe disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk") and [below](#SSD_Memory_Cell_Clearing).
+If you intend to erase the SSD, see [Securely wipe disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk") and [below](#SSD_memory_cell_clearing).
 
-### SSD Memory Cell Clearing
+### SSD memory cell clearing
 
 On occasion, users may wish to completely reset an SSD's cells to the same virgin state they were at the time the device was installed thus restoring it to its [factory default write performance](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8). Write performance is known to degrade over time even on SSDs with native TRIM support. TRIM only safeguards against file deletes, not replacements such as an incremental save.
 
@@ -430,33 +472,7 @@ _"What the results show is that metadata-heavy workloads, such as make clean, do
 
 **Note:** The make clean example from the table above typifies the importance of intentionally doing compiling in tmpfs as recommended in the [preceding section](#Compiling_in_tmpfs) of this article!
 
-## Choice of Filesystem
-
-This section describes optimized [filesystems](/index.php/Filesystems "Filesystems") to use on a SSD.
-
-It's still possible/required to use other filesystems, e.g. FAT32 for the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI").
-
-### Btrfs
-
-[Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") support has been included with the mainline 2.6.29 release of the Linux kernel. Some feel that it is not mature enough for production use while there are also early adopters of this potential successor to ext4\. Users are encouraged to read the [Btrfs](/index.php/Btrfs "Btrfs") article for more info.
-
-### Ext4
-
-[Ext4](https://en.wikipedia.org/wiki/Ext4 "wikipedia:Ext4") is another filesystem that has support for SSD. It is considered as stable since 2.6.28 and is mature enough for daily use. ext4 users must explicitly enable the TRIM command support using the `discard` mount option in [fstab](/index.php/Fstab "Fstab") (or with `tune2fs -o discard /dev/sdaX`). See the [official in kernel tree documentation](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=blob;f=Documentation/filesystems/ext4.txt) for further information on ext4.
-
-### XFS
-
-Many users do not realize that in addition to ext4 and btrfs, [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") has TRIM support as well. This can be enabled in the usual ways. That is, the choice may be made of either using the discard option mentioned above, or by using the fstrim command. More information can be found on the [XFS wiki](http://xfs.org/index.php/FITRIM/discard).
-
-### JFS
-
-As of Linux kernel version 3.7, proper TRIM support has been added. So far, there is not a great wealth of information of the topic but it has certainly been picked up by [Linux news sites.](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) It is apparent that it can be enabled via the `discard` mount option, or by using the method of batch TRIMs with fstrim.
-
-### Other filesystems
-
-There are other filesystems specifically [designed for SSD](https://en.wikipedia.org/wiki/List_of_flash_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "wikipedia:List of flash file systems"), for example [F2FS](/index.php/F2FS "F2FS").
-
-## Firmware Updates
+## Firmware updates
 
 ### ADATA
 
@@ -519,7 +535,7 @@ SanDisk Ultra SSD [Firmware release notes](http://kb.sandisk.com/app/answers/det
 
 It is possible that the issue you are encountering is a firmware bug which is not Linux specific, so before trying to troubleshoot an issue affecting the SSD device, you should first check if updates are available for:
 
-*   The [SSD's firmware](#Firmware_Updates)
+*   The [SSD's firmware](#Firmware_updates)
 *   The [motherboard's BIOS/UEFI firmware](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux")
 
 Even if it is a firmware bug it might be possible to avoid it, so if there are no updates to the firmware or you hesitant on updating firmware then the following might help.
@@ -549,7 +565,7 @@ If this (and also updating the firmware) does not resolves the problem or cause 
 
 ### Resolving SATA power management related errors
 
-Some SSDs (e.g. Transcend MTS400) are failing when SATA Active Link Power Management, [ALPM](https://en.wikipedia.org/wiki/Aggressive_Link_Power_Management), is enabled. ALPM is disabled by default and enabled by a power saving daemon (e.g. [TLP](/index.php/TLP "TLP"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")).
+Some SSDs (e.g. Transcend MTS400) are failing when SATA Active Link Power Management, [ALPM](https://en.wikipedia.org/wiki/Aggressive_Link_Power_Management "wikipedia:Aggressive Link Power Management"), is enabled. ALPM is disabled by default and enabled by a power saving daemon (e.g. [TLP](/index.php/TLP "TLP"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")).
 
 If you starting to encounter SATA related errors when using such daemon then you should try to disable ALPM by setting its state to `max_performance` for both battery and AC powered profiles.
 
@@ -565,7 +581,7 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411223](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411223)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411764](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411764)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

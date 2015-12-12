@@ -276,12 +276,10 @@ To make Windows 8.X and above respect your boot order, you must enter a Windows 
 1.  Open a command prompt with admin privlages. Type in `bcdedit /enum firmware`
 2.  Find the Firmware Application that has "Linux" in the description, e.g. "Linux Boot Manager"
 3.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-4.  Open _gpedit_ and under _Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)_, choose _Startup_. That should open a window named _Startup Properties_.
-5.  Under the _Scripts_ tab, choose the _Add_ button
-6.  Give your script a name, e.g. `bootorder.bat`.
-7.  Under _Script Parameters_, type `bcdedit /set {fwbootmgr} DEFAULT {_identifier_copied_in_step_3_}` (e.g. `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
-
-If this does not work, create a batch file somewhere on your Windows system with the `bcdedit /set {fwbootmgr} DEFAULT {_identifier_copied_in_step_3_}` line in it and go back to step 6 and _Browse_ for that file.
+4.  Create a batch file (e.g. `bootorder.bat`) somewhere on your system with the following contents: `bcdedit /set {fwbootmgr} DEFAULT {_identifier_copied_in_step_3_}` (e.g. `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+5.  Open _gpedit_ and under _Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)_, choose _Startup_. That should open a window named _Startup Properties_.
+6.  Under the _Scripts_ tab, choose the _Add_ button
+7.  Click _Browse_ and select the batch file you created in step 4.
 
 Alternatively, you can make the default Windows boot loader load systemd-boot instead. In an administrator command prompt in Windows, one can change this entry as follows:
 
@@ -294,7 +292,7 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411662](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411662)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411781](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411781)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

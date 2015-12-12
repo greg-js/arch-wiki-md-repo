@@ -68,7 +68,7 @@ imwheel
 
 The program will print its PID and run in the background. You may wish to run imwheel in a startup script.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Imwheel&oldid=387960](https://wiki.archlinux.org/index.php?title=Imwheel&oldid=387960)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Imwheel&oldid=411757](https://wiki.archlinux.org/index.php?title=Imwheel&oldid=411757)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

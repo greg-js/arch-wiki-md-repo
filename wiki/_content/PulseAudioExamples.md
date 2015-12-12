@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [5 Surround sound systems](#Surround_sound_systems)
     *   [5.1 Splitting front/rear](#Splitting_front.2Frear)
     *   [5.2 Splitting 7.1 into 5.1+2.0](#Splitting_7.1_into_5.1.2B2.0)
-    *   [5.3 LFE remixing](#LFE_remixing)
+    *   [5.3 Disabling LFE remixing](#Disabling_LFE_remixing)
 *   [6 PulseAudio over network](#PulseAudio_over_network)
     *   [6.1 TCP support (networked sound)](#TCP_support_.28networked_sound.29)
     *   [6.2 TCP support with anonymous clients](#TCP_support_with_anonymous_clients)
@@ -327,19 +327,19 @@ Make sure to replace alsa_output.pci-0000_00_14.2 with your sound card name, get
 
 **Note:** The `remix=yes` parameter will only work if you also have `enable-remixing = yes` in your `/etc/pulse/daemon.conf` (default).
 
-### LFE remixing
+### Disabling LFE remixing
 
-By default, PulseAudio remixes the number of channels to the default-sample-channels; however, it does not do this for the LFE channel. To enable LFE remixing, uncomment the line:
-
-```
-; enable-lfe-remixing = no
+By default, PulseAudio remixes the number of channels to the default-sample-channels and since version 7 it also remixes the LFE channel. If you wish to disable LFE remixing, uncomment the line:
 
 ```
-
-and replace no with yes:
+; enable-lfe-remixing = yes
 
 ```
-enable-lfe-remixing = yes
+
+and replace yes with no:
+
+```
+enable-lfe-remixing = no
 
 ```
 
@@ -809,7 +809,7 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=407907](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=407907)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=411770](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=411770)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

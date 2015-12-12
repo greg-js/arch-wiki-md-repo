@@ -61,6 +61,13 @@ https://webdav.example.com/remote.php/webdav
 
 ```
 
+For box.com, the url is:
+
+```
+https://dav.box.com/dav
+
+```
+
 If you want to mount several disks from same server, you need specify mount points of this disks instead of server address in file ~/.davfs2/secrets, remember to put the password in double quotes.
 
 ```
@@ -98,7 +105,7 @@ use_locks 0
 
 [http://doc.owncloud.org/server/6.0/user_manual/files/files.html](http://doc.owncloud.org/server/6.0/user_manual/files/files.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Davfs&oldid=368686](https://wiki.archlinux.org/index.php?title=Davfs&oldid=368686)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Davfs&oldid=411765](https://wiki.archlinux.org/index.php?title=Davfs&oldid=411765)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

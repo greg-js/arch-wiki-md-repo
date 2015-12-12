@@ -59,7 +59,7 @@ For additional functionality, you may wish to install the following:
 
 [https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-If you have trouble adding applications to the panel, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
+Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
 
 ## Starting the desktop
 
@@ -122,7 +122,7 @@ As LXQt is a lightweight desktop, a plain install will not provide many desktop 
 *   [LXQt on deviantART](http://lxqt-de.deviantart.com/)
 *   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=411250](https://wiki.archlinux.org/index.php?title=LXQt&oldid=411250)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=411752](https://wiki.archlinux.org/index.php?title=LXQt&oldid=411752)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

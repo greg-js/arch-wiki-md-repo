@@ -64,7 +64,7 @@ There are few methods of exploring your device:
 
 For more advanced usage, development, flashing and restore:
 
-*   [ADB](#Connecting_to_a_real_device_-_Android_Debug_Bridge_.28ADB.29) mostly for development purposes.
+*   [ADB](#Android_Debug_Bridge_.28ADB.29) mostly for development purposes.
 *   [Restoring Android](#Restoring_Android) for flashing and restoring Android firmwares (includes fastboot).
 
 ## Android development
@@ -635,7 +635,7 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=411387](https://wiki.archlinux.org/index.php?title=Android&oldid=411387)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=411759](https://wiki.archlinux.org/index.php?title=Android&oldid=411759)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

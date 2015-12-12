@@ -176,6 +176,20 @@ According to [this](https://bbs.archlinux.org/viewtopic.php?id=149945) page.
 
 Go to _System Settings > Login Screen (LightDM)_ and change the background image for your theme.
 
+Alternatively, you can edit the `Background` variable in `lightdm-kde-greeter.conf` :
+
+ `/etc/lightdm/lightdm-kdm-greeter.conf` 
+
+```
+[greeter]
+theme-name=classic
+
+[greeter-settings]
+Background=/usr/share/archlinux/wallpaper/archlinux-underground.jpg
+BackgroundKeepAspectRatio=true
+GreetMessage=Welcome to %hostname%
+```
+
 ### Changing your avatar
 
 **Tip:** If you are using KDE, you can change your avatar in KDE System Settings.
@@ -403,7 +417,7 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=410621](https://wiki.archlinux.org/index.php?title=LightDM&oldid=410621)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=411772](https://wiki.archlinux.org/index.php?title=LightDM&oldid=411772)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

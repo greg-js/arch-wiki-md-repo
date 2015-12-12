@@ -52,14 +52,14 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.7 demz-repo-archiso](#demz-repo-archiso)
         *   [3.1.8 demz-repo-core](#demz-repo-core)
         *   [3.1.9 gnome-encfs-manager](#gnome-encfs-manager)
-        *   [3.1.10 gS644](#gS644)
-        *   [3.1.11 haskell-core](#haskell-core)
-        *   [3.1.12 infinality-bundle](#infinality-bundle)
-        *   [3.1.13 ivasilev](#ivasilev_2)
-        *   [3.1.14 llvm-svn](#llvm-svn)
-        *   [3.1.15 markzz](#markzz)
-        *   [3.1.16 metalgamer](#metalgamer)
-        *   [3.1.17 miffe](#miffe)
+        *   [3.1.10 haskell-core](#haskell-core)
+        *   [3.1.11 infinality-bundle](#infinality-bundle)
+        *   [3.1.12 ivasilev](#ivasilev_2)
+        *   [3.1.13 llvm-svn](#llvm-svn)
+        *   [3.1.14 markzz](#markzz)
+        *   [3.1.15 metalgamer](#metalgamer)
+        *   [3.1.16 miffe](#miffe)
+        *   [3.1.17 nullptr_t](#nullptr_t)
         *   [3.1.18 pipelight](#pipelight)
         *   [3.1.19 repo-ck](#repo-ck)
         *   [3.1.20 seblu](#seblu)
@@ -386,18 +386,6 @@ Server = http://download.opensuse.org/repositories/home:/moritzmolch:/gencfsm/Ar
 
 ```
 
-#### gS644
-
-*   **Maintainers:** Sebastian Lau (gS644),
-*   **Description:** Packages I maintain for AUR that have a longer build time on some machines (like [veracrypt](/index.php?title=Veracrypt&action=edit&redlink=1 "Veracrypt (page does not exist)") or [plymouth](/index.php/Plymouth "Plymouth"))
-*   **Key-ID:** 1607AC45
-
-```
-[gS644]
-Server = https://www.slau.me/archlinux/mirrors/$repo/$arch
-
-```
-
 #### haskell-core
 
 *   **Maintainer:** Magnus Therning
@@ -486,6 +474,18 @@ Server = http://repo.metalgamer.eu/$arch
 ```
 [miffe]
 Server = http://arch.miffe.org/$arch/
+
+```
+
+#### nullptr_t
+
+*   **Maintainers:** Sebastian Lau (nullptr_t),
+*   **Description:** Packages I maintain for AUR that have a longer build time on some machines (like [veracrypt](/index.php?title=Veracrypt&action=edit&redlink=1 "Veracrypt (page does not exist)") or [plymouth](/index.php/Plymouth "Plymouth"))
+*   **Key-ID:** 1607AC45
+
+```
+[nullptr_t]
+Server = https://www.slau.me/archlinux/mirrors/$repo/$arch
 
 ```
 
@@ -1568,7 +1568,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411684](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411684)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411751](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411751)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

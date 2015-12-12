@@ -420,7 +420,7 @@ The default uses a gtk dialog. There are other options - see `info pinentry`. To
 
 # PIN entry program
 # pinentry-program /usr/bin/pinentry-curses
-# pinentry-program /usr/bin/pinentry-qt4
+# pinentry-program /usr/bin/pinentry-qt
 # pinentry-program /usr/bin/pinentry-kwallet
 
 pinentry-program /usr/bin/pinentry-gtk-2
@@ -655,7 +655,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411643](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411643)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411766](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411766)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -15,6 +15,7 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
 *   [1 Article preface](#Article_preface)
 *   [2 System architecture](#System_architecture)
 *   [3 SD card performance](#SD_card_performance)
+    *   [3.1 Enable fsck on boot](#Enable_fsck_on_boot)
 *   [4 Installing Arch Linux ARM](#Installing_Arch_Linux_ARM)
 *   [5 Network](#Network)
     *   [5.1 Configure WLAN without ethernet](#Configure_WLAN_without_ethernet)
@@ -29,17 +30,15 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
     *   [8.2 Voltage](#Voltage)
     *   [8.3 Lightweight monitoring suite](#Lightweight_monitoring_suite)
 *   [9 Overclocking/underclocking](#Overclocking.2Funderclocking)
-*   [10 Tips for maximizing SD card performance](#Tips_for_maximizing_SD_card_performance)
-    *   [10.1 Enable fsck on boot](#Enable_fsck_on_boot)
-*   [11 Serial console](#Serial_console)
-*   [12 Raspberry Pi camera module](#Raspberry_Pi_camera_module)
-*   [13 Hardware random number generator](#Hardware_random_number_generator)
-*   [14 GPIO](#GPIO)
-    *   [14.1 SPI](#SPI)
-    *   [14.2 Python](#Python)
-*   [15 I2C](#I2C)
-*   [16 QEMU chroot](#QEMU_chroot)
-*   [17 See also](#See_also)
+*   [10 Serial console](#Serial_console)
+*   [11 Raspberry Pi camera module](#Raspberry_Pi_camera_module)
+*   [12 Hardware random number generator](#Hardware_random_number_generator)
+*   [13 GPIO](#GPIO)
+    *   [13.1 SPI](#SPI)
+    *   [13.2 Python](#Python)
+*   [14 I2C](#I2C)
+*   [15 QEMU chroot](#QEMU_chroot)
+*   [16 See also](#See_also)
 
 ## Article preface
 
@@ -57,6 +56,12 @@ The Raspberry Pi is an ARM-based device and therefore needs binaries compiled fo
 ## SD card performance
 
 System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the RPi or RPi2 bus, but are likely the bottle-neck due to a slow SD (or micro SD) card. See the [Benchmarking#Flash Media](/index.php/Benchmarking#Flash_Media "Benchmarking") for more.
+
+Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See especially [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") and [SSD#Tips for minimizing disk reads/writes](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD").
+
+### Enable fsck on boot
+
+Follow [fsck#Boot time checking](/index.php/Fsck#Boot_time_checking "Fsck"). Remember that kernel parameters are specified in `/boot/cmdline.txt`.
 
 ## Installing Arch Linux ARM
 
@@ -209,14 +214,6 @@ for src in arm core h264 isp v3d uart pwm emmc pixel vec hdmi dpi ; do
 done
 
 ```
-
-## Tips for maximizing SD card performance
-
-See [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") for the general performance improvements.
-
-### Enable fsck on boot
-
-Follow [fsck#Boot time checking](/index.php/Fsck#Boot_time_checking "Fsck"). Remember that kernel parameters are specified in `/boot/cmdline.txt`.
 
 ## Serial console
 
@@ -444,7 +441,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=410777](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=410777)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=411762](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=411762)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

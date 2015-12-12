@@ -36,7 +36,7 @@ If you also use [KDM](/index.php/KDM "KDM"), you need to install the [kdebase-wo
 
 If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/)<sup><small>AUR</small></sup>, which compiles gdm with plymouth support.
 
-Both packages are also available in the unofficial [gS644](/index.php/Unofficial_user_repositories#gS644 "Unofficial user repositories") repository.
+Both packages are also available in the unofficial [nullptr_t](/index.php/Unofficial_user_repositories#nullptr_t "Unofficial user repositories") repository.
 
 ### The plymouth hook
 
@@ -192,7 +192,7 @@ After installing and selecting your theme, you should rebuild the initrd image t
 *   [Original Spec](http://fedoraproject.org/wiki/Releases/FeatureBetterStartup)
 *   [Related forum thread](https://bbs.archlinux.org/viewtopic.php?id=81406)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Plymouth&oldid=411677](https://wiki.archlinux.org/index.php?title=Plymouth&oldid=411677)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Plymouth&oldid=411750](https://wiki.archlinux.org/index.php?title=Plymouth&oldid=411750)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
