@@ -64,7 +64,7 @@ _systemd_ is a system and service manager for Linux, compatible with SysV and LS
 
 ## Basic systemctl usage
 
-The main command used to introspect and control _systemd_ is _systemctl_. Some of its uses are examining the system state and managing the system and services. See `man 1 systemctl` for more details.
+The main command used to introspect and control _systemd_ is _systemctl_. Some of its uses are examining the system state and managing the system and services. See `man systemctl` for more details.
 
 **Tip:**
 
@@ -822,7 +822,7 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 *   [Gentoo Wiki systemd page](http://wiki.gentoo.org/wiki/Systemd)
 *   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=411196](https://wiki.archlinux.org/index.php?title=Systemd&oldid=411196)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=411730](https://wiki.archlinux.org/index.php?title=Systemd&oldid=411730)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -65,7 +65,7 @@ To enable the WOL feature in the driver:
 
 ```
 
-This command does not last beyond the next reboot, so it must be repeated via some mechanism. Common solutions are listed in the following subsections.
+This command might not last beyond the next reboot, so it must be repeated via some mechanism. Common solutions are listed in the following subsections.
 
 ### netctl
 
@@ -364,7 +364,7 @@ If the computer does not wake after suspend/hibernate when using [TLP](/index.ph
 
 *   [Wake-On-Lan](http://www.depicus.com/wake-on-lan/woli.aspx)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wake-on-LAN&oldid=409735](https://wiki.archlinux.org/index.php?title=Wake-on-LAN&oldid=409735)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wake-on-LAN&oldid=411740](https://wiki.archlinux.org/index.php?title=Wake-on-LAN&oldid=411740)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

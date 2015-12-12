@@ -131,7 +131,7 @@ Refer to [Firewalls](/index.php/Firewalls "Firewalls") for details regarding ava
 
 ### Protecting SSH
 
-Allowing remote log-on through SSH is good for administrative purposes, but can pose a threat to your server's security. Often the target of brute force attacks, SSH access needs to be limited properly to prevent third parties gaining access to your server. See [Secure Shell#Connecting to the server](/index.php/Secure_Shell#Connecting_to_the_server "Secure Shell") for how to configure it.
+Allowing remote log-on through SSH is good for administrative purposes, but can pose a threat to your server's security. Often the target of brute force attacks, SSH access needs to be limited properly to prevent third parties gaining access to your server. See [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell") for how to configure it.
 
 ### SELinux
 
@@ -164,7 +164,7 @@ Please refer to the [SELinux](/index.php/SELinux "SELinux") wiki page for instru
 *   [https://www.apache.org/](https://www.apache.org/)
 *   [https://www.php.net/](https://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Server&oldid=388211](https://wiki.archlinux.org/index.php?title=Server&oldid=388211)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Server&oldid=411723](https://wiki.archlinux.org/index.php?title=Server&oldid=411723)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

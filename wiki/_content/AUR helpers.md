@@ -133,6 +133,10 @@ This is a list of helper utilities that search and/or build packages.
 
 [https://aur.archlinux.org/packages/wrapaur/](https://aur.archlinux.org/packages/wrapaur/) || [wrapaur](https://aur.archlinux.org/packages/wrapaur/)<sup><small>AUR</small></sup>
 
+*   **yaah** — Yet another AUR helper
+
+[https://bitbucket.org/the_metalgamer/yaah](https://bitbucket.org/the_metalgamer/yaah) || [yaah](https://aur.archlinux.org/packages/yaah/)<sup><small>AUR</small></sup>
+
 *   **[yaourt](/index.php/Yaourt "Yaourt")** — A wrapper for the AUR and regular packages.
 
 [http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)<sup><small>AUR</small></sup>
@@ -501,6 +505,28 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 <tr>
 
+<th>yaah</th>
+
+<td>Bash</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes (bash)</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+
+<td>No automatic build support</td>
+
+</tr>
+
+<tr>
+
 <th>[yaourt](/index.php/Yaourt "Yaourt")</th>
 
 <td>Bash/C</td>
@@ -529,7 +555,7 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 *   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=408494](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=408494)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=411718](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=411718)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -207,7 +207,7 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
     *   [copy the public key to the remote system](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
     *   then enter the following command (on the remote system): `# cat /home/<user>/.ssh/authorized_keys > /etc/<dropbear or tinyssh>/root_key` 
 
-        **Tip:** This method can later be used to add other SSH public keys as needed; in that case verify the content of remote `~/.ssh/authorized_keys` contains only keys you agree to be used to unlock the remote machine. When adding additional keys, also regenerate your initrd with mkinitcpio. See also [SSH keys#Security](/index.php/SSH_keys#Security "SSH keys").
+        **Tip:** This method can later be used to add other SSH public keys as needed; in that case verify the content of remote `~/.ssh/authorized_keys` contains only keys you agree to be used to unlock the remote machine. When adding additional keys, also regenerate your initrd with mkinitcpio. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
 
 4.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` can be used to replace the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 
@@ -218,7 +218,7 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
     **Note:** Make sure to use kernel device names for the interface name (under the form _eth#_) and not _udev_ ones, as those will not work.
 
     Then update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders"), e.g. for [GRUB](/index.php/GRUB#Generating_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
-6.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Connecting_to_the_server "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/)<sup><small>AUR</small></sup> package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/)<sup><small>AUR</small></sup>, you **will** get a warning the first time you login, because tinyssh does not use the same host keys as openssh, and they will be created when you build the initramfs. They will not be recreated every time, just on the first build. In either case, you should be prompted for the passphrase to unlock the root device:
+6.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Client_usage "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/)<sup><small>AUR</small></sup> package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/)<sup><small>AUR</small></sup>, you **will** get a warning the first time you login, because tinyssh does not use the same host keys as openssh, and they will be created when you build the initramfs. They will not be recreated every time, just on the first build. In either case, you should be prompted for the passphrase to unlock the root device:
 
  `$ ssh **root**@192.168.1.1` 
 
@@ -227,7 +227,7 @@ Enter passphrase for /dev/sda2:
 Connection to 192.168.1.1 closed.
 ```
 
-Afterwards, the system will complete its boot process and you can ssh to it [as you normally would](/index.php/Secure_Shell#Connecting_to_the_server "Secure Shell") (with the remote user of your choice).
+Afterwards, the system will complete its boot process and you can ssh to it [as you normally would](/index.php/Secure_Shell#Client_usage "Secure Shell") (with the remote user of your choice).
 
 **Tip:** If you would simply like a nice solution to mount other encrypted partitions (such as `/home`) remotely, you may want to look at [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=880484).
 
@@ -573,7 +573,7 @@ To finish, following [Dm-crypt/Encrypting an entire system#Post-installation](/i
 
 **Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `name`. But you can still have a consistent mapping using the disk id under `/dev/disk/by-id/`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=399809](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=399809)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=411724](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=411724)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

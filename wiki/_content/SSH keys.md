@@ -24,35 +24,31 @@ SSH keys are not without their drawbacks and may not be appropriate for all envi
 *   [3 Copying the public key to the remote server](#Copying_the_public_key_to_the_remote_server)
     *   [3.1 Simple method](#Simple_method)
     *   [3.2 Manual method](#Manual_method)
-*   [4 Security](#Security)
-    *   [4.1 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
-    *   [4.2 Disabling password logins](#Disabling_password_logins)
-    *   [4.3 Two-factor authentication and public keys](#Two-factor_authentication_and_public_keys)
-*   [5 SSH agents](#SSH_agents)
-    *   [5.1 ssh-agent](#ssh-agent)
-        *   [5.1.1 Start ssh-agent with systemd user](#Start_ssh-agent_with_systemd_user)
-        *   [5.1.2 ssh-agent as a wrapper program](#ssh-agent_as_a_wrapper_program)
-    *   [5.2 GnuPG Agent](#GnuPG_Agent)
-    *   [5.3 Keychain](#Keychain)
-        *   [5.3.1 Installation](#Installation)
-        *   [5.3.2 Configuration](#Configuration)
-        *   [5.3.3 Tips](#Tips)
-    *   [5.4 envoy](#envoy)
-        *   [5.4.1 envoy with key passphrases stored in kwallet](#envoy_with_key_passphrases_stored_in_kwallet)
-    *   [5.5 x11-ssh-askpass](#x11-ssh-askpass)
-        *   [5.5.1 Calling x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add)
-        *   [5.5.2 Theming](#Theming)
-        *   [5.5.3 Alternative passphrase dialogs](#Alternative_passphrase_dialogs)
-    *   [5.6 pam_ssh](#pam_ssh)
-        *   [5.6.1 Using a different password to unlock the SSH key](#Using_a_different_password_to_unlock_the_SSH_key)
-        *   [5.6.2 Known issues with pam_ssh](#Known_issues_with_pam_ssh)
-    *   [5.7 GNOME Keyring](#GNOME_Keyring)
-    *   [5.8 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
-    *   [5.9 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Key ignored by the server](#Key_ignored_by_the_server)
-    *   [6.2 Using KDM](#Using_KDM)
-*   [7 See also](#See_also)
+*   [4 SSH agents](#SSH_agents)
+    *   [4.1 ssh-agent](#ssh-agent)
+        *   [4.1.1 Start ssh-agent with systemd user](#Start_ssh-agent_with_systemd_user)
+        *   [4.1.2 ssh-agent as a wrapper program](#ssh-agent_as_a_wrapper_program)
+    *   [4.2 GnuPG Agent](#GnuPG_Agent)
+    *   [4.3 Keychain](#Keychain)
+        *   [4.3.1 Installation](#Installation)
+        *   [4.3.2 Configuration](#Configuration)
+        *   [4.3.3 Tips](#Tips)
+    *   [4.4 envoy](#envoy)
+        *   [4.4.1 envoy with key passphrases stored in kwallet](#envoy_with_key_passphrases_stored_in_kwallet)
+    *   [4.5 x11-ssh-askpass](#x11-ssh-askpass)
+        *   [4.5.1 Calling x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add)
+        *   [4.5.2 Theming](#Theming)
+        *   [4.5.3 Alternative passphrase dialogs](#Alternative_passphrase_dialogs)
+    *   [4.6 pam_ssh](#pam_ssh)
+        *   [4.6.1 Using a different password to unlock the SSH key](#Using_a_different_password_to_unlock_the_SSH_key)
+        *   [4.6.2 Known issues with pam_ssh](#Known_issues_with_pam_ssh)
+    *   [4.7 GNOME Keyring](#GNOME_Keyring)
+    *   [4.8 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
+    *   [4.9 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Key ignored by the server](#Key_ignored_by_the_server)
+    *   [5.2 Using KDM](#Using_KDM)
+*   [6 See also](#See_also)
 
 ## Background
 
@@ -300,62 +296,6 @@ $ chmod 600 ~/.ssh/authorized_keys
 
 The last two commands remove the public key file from the server and set the permissions on the `authorized_keys` file such that it is only readable and writable by you, the owner.
 
-## Security
-
-### Securing the authorized_keys file
-
-For additional protection, you can prevent users from adding new public keys and connecting from them.
-
-In the server, make the `authorized_keys` file read-only for the user and deny all other permissions:
-
-```
-$ chmod 400 ~/.ssh/authorized_keys
-
-```
-
-To keep the user from simply changing the permissions back, [set the immutable bit](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes") on the `authorized_keys` file. After that the user could rename the `~/.ssh` directory to something else and create a new `~/.ssh` directory and `authorized_keys` file. To prevent this, set the immutable bit on the `~/.ssh` directory too.
-
-**Note:** If you find yourself needing to add a new key, you will first have to remove the immutable bit from `authorized_keys` and make it writable. Follow the steps above to secure it again.
-
-### Disabling password logins
-
-While copying your public key to the remote SSH server eliminates the need to transmit your password over the network, it does not give any added protection against a brute-force password attack. In the absence of a private key, the SSH server will fall back to password authentication by default, thus allowing a malicious user to attempt to gain access by guessing your password. To disable this behavior, edit the following lines in the `/etc/ssh/sshd_config` file on the remote server.
-
- `/etc/ssh/sshd_config` 
-
-```
-PasswordAuthentication no
-ChallengeResponseAuthentication no
-```
-
-### Two-factor authentication and public keys
-
-Since OpenSSH 6.2, you can add your own chain to authenticate with using the `AuthenticationMethods` option. This enables you to use public keys as well as a two-factor authorization.
-
-See [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") to set up Google Authenticator.
-
-To use PAM with OpenSSH, edit the following files:
-
- `/etc/ssh/sshd_config` 
-
-```
-ChallengeResponseAuthentication yes
-AuthenticationMethods publickey keyboard-interactive:pam
-
-```
-
-Then you can log in with either a publickey **or** the user authentication as required by your PAM setup.
-
-If, on the other hand, you want to authenticate the user on both a publickey **and** the user authentication as required by your PAM setup, use a comma instead of a space to separate the AuthenticationMethods:
-
- `/etc/ssh/sshd_config` 
-
-```
-ChallengeResponseAuthentication yes
-AuthenticationMethods publickey,keyboard-interactive:pam
-
-```
-
 ## SSH agents
 
 If your private key is encrypted with a passphrase, this passphrase must be entered every time you attempt to connect to an SSH server using public-key authentication. Each individual invocation of `ssh` or `scp` will need the passphrase in order to decrypt your private key before authentication can proceed.
@@ -410,7 +350,7 @@ ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias 
 
 ```
 
-This will run a `ssh-agent` process if there isn't one already, and save the output thereof. If there is one running already, we retrieve the cached `ssh-agent` output and evaluate it which will set the necessary environment variables. Also, if needed, we create an alias around `ssh` to add the key to the agent, then remove the alias. One downside to this approach is that the key will not be added by commands that use the private key other than `ssh`, such as `git`.
+This will run a `ssh-agent` process if there is not one already, and save the output thereof. If there is one running already, we retrieve the cached `ssh-agent` output and evaluate it which will set the necessary environment variables. Also, if needed, we create an alias around `ssh` to add the key to the agent, then remove the alias. One downside to this approach is that the key will not be added by commands that use the private key other than `ssh`, such as `git`.
 
 There also exist a number of front-ends to `ssh-agent` and alternative agents described later in this section which avoid this problem.
 
@@ -856,7 +796,7 @@ $ chmod 755 ~/.config/plasma-workspace/env/ssh-agent-startup.sh ~/.config/plasma
 *   [OpenSSH 5.7 Release Notes](http://www.openssh.com/txt/release-5.7)
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=411306](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=411306)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=411698](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=411698)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

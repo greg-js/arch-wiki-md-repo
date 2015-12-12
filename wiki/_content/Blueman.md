@@ -80,7 +80,7 @@ The last step is to change the line in _Blueman tray icon > Local Services > Tra
 
 ### Blueman and PulseAudio
 
-Users who want to use [PulseAudio](/index.php/PulseAudio "PulseAudio") with a Bluetooth headset may want to activate the PulseAudio plugin of Blueman. This automatically loads PulseAudio Bluetooth module after audio device is connected and plays all audio through the Bluetooth headset.
+Users who want to use [PulseAudio](/index.php/PulseAudio "PulseAudio") with a Bluetooth headset, in addition to [installing](/index.php/Install "Install") [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), may want to activate the PulseAudio plugin of Blueman. This automatically loads PulseAudio Bluetooth module after audio device is connected and plays all audio through the Bluetooth headset. For more information see [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
 
 ## Configuration
 
@@ -120,13 +120,13 @@ If your Bluetooth applet or manager doesn't show or detect any Bluetooth adapter
 
 If you can't send or receive files and you encounter a python-dbus-exception error similar or exactly like `process org.bluez.obex exited with status 1` then it is advised to start the obexd-service manually from `/usr/lib/bluetooth/obexd` and see if that helps. Since the default permissions assume 755 it is possible to start the daemon from a user-account and/or create an autostarter.
 
-Should the error persist or another occur then maybe installing [obexftp](https://www.archlinux.org/packages/?name=obexftp) is the solution.
+Should the error persist or another occur then try using [obexftp](https://www.archlinux.org/packages/?name=obexftp) for file transfers instead, see [Bluetooth#ObexFTP transfers](/index.php/Bluetooth#ObexFTP_transfers "Bluetooth").
 
 ## See also
 
 *   [Blueman development](https://github.com/blueman-project/blueman), on GitHub
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Blueman&oldid=411125](https://wiki.archlinux.org/index.php?title=Blueman&oldid=411125)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Blueman&oldid=411737](https://wiki.archlinux.org/index.php?title=Blueman&oldid=411737)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

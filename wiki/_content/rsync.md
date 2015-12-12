@@ -30,6 +30,8 @@ Related articles
 
 [Install](/index.php/Install "Install") the [rsync](https://www.archlinux.org/packages/?name=rsync) package.
 
+**Note:** _rsync_ must be installed on both the source and the destination machine.
+
 ## Usage
 
 For more examples, search the [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) and [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) forums.
@@ -339,7 +341,7 @@ To make things really, really simple this script can be run from a [systemd/Time
 
 [Install](/index.php/Install "Install") the [grsync](https://www.archlinux.org/packages/?name=grsync) package.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rsync&oldid=410750](https://wiki.archlinux.org/index.php?title=Rsync&oldid=410750)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rsync&oldid=411738](https://wiki.archlinux.org/index.php?title=Rsync&oldid=411738)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -122,8 +122,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
 
 **Note:**
 
-*   Plasma 5 is not co-installable with KDE 4 Workspace, provided by [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace).
-*   The KDE 4 Plasma Desktop is unmaintained since August 2015\. [[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php)
+*   Plasma 5 is not co-installable with KDE 4 Workspace.
+*   The KDE 4 Plasma Desktop is unmaintained since August 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) It is no longer in the official repositories since December 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
 
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
@@ -132,12 +132,12 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 ### Upgrading from Plasma 4 to 5
 
 1.  Isolate `multi-user.target` `# systemctl isolate multi-user.target` 
-2.  [Install](/index.php/Install "Install") package [sddm](https://www.archlinux.org/packages/?name=sddm) and [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm)
-3.  [Disable](/index.php/Disable "Disable") service `kdm` and [enable](/index.php/Enable "Enable") service `sddm`.
-4.  [Uninstall](/index.php/Pacman "Pacman") package [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
-5.  [Install](/index.php/Install "Install") package [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta)
-6.  reboot
-7.  Choose Plasma at SDDM logon screen
+2.  [Uninstall](/index.php/Pacman "Pacman") the kdebase-workspace package `# pacman -Rc kdebase-workspace` 
+3.  [Install](/index.php/Pacman "Pacman") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
+4.  If you use KDM as display manager, disable it `# systemctl disable kdm` and enable [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` or install and enable any other [display manager](/index.php/Display_manager "Display manager").
+5.  Reboot.
+
+**Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
 ### KDE applications and language packs
 
@@ -233,14 +233,14 @@ Now click the fine-tuning tab and use the drop-down list to select _only export_
 
 ##### Disable panel shadow
 
-As the plasma panel is on top of other windows, its shadow is drawn over them. [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the plasma panel is on top of other windows, its shadow is drawn over them. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[3]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
 
@@ -988,7 +988,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=411368](https://wiki.archlinux.org/index.php?title=KDE&oldid=411368)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=411731](https://wiki.archlinux.org/index.php?title=KDE&oldid=411731)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

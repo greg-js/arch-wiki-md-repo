@@ -634,7 +634,7 @@ Further points to note:
 *   [Chromium data protection](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data) (November 2009) - Design document detailing encryption options for Chromium OS, including explanation on its eCryptfs usage
 *   [eCryptfs design](http://ecryptfs.sourceforge.net/ecryptfs.pdf) by Michael Halcrow (May 2005) - Original design document detailing and discussing eCryptfs
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=400968](https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=400968)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=411741](https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=411741)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

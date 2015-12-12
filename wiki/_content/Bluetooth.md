@@ -25,7 +25,7 @@ Related articles
     *   [3.4 Blueman](#Blueman)
 *   [4 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
     *   [4.1 ObexFS](#ObexFS)
-    *   [4.2 ObexFTP Transfers](#ObexFTP_Transfers)
+    *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
 *   [5 Examples](#Examples)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -184,7 +184,7 @@ For more mounting options see [http://dev.zuckschwerdt.org/openobex/wiki/ObexFs]
 
 **Note:** Ensure that the bluetooth device you are mounting is **not** set to mount _read-only_. You should be able to do this from the device's settings. If the device is mounted _read-only_ you may encounter a permissions error when trying to transfer files to the device.
 
-### ObexFTP Transfers
+### ObexFTP transfers
 
 If your device supports the Obex FTP service but you do not wish to mount the device you can transfer files to and from the device using the obexftp command.
 
@@ -503,7 +503,7 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411418](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411418)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411736](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411736)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

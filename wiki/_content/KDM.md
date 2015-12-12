@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** KDM is no longer available in the official repositories.[[1]](https://www.archlinux.org/news/dropping-plasma-4/) (Discuss in [Talk:KDM#](https://wiki.archlinux.org/index.php/Talk:KDM))
+
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -197,7 +205,7 @@ as the last line.
 
 ### User picture not displayed
 
-For KDM to able to display user picture set in Account Information, proper source must be set in `System Settings > Login Screen > Users > User Image Source`, user's home directory must be world executable and `~/.face.icon` must be world readable [[1]](http://docs.kde.org/stable/en/kde-workspace/kdm/kdm-files.html#option-facesource):
+For KDM to able to display user picture set in Account Information, proper source must be set in `System Settings > Login Screen > Users > User Image Source`, user's home directory must be world executable and `~/.face.icon` must be world readable [[2]](http://docs.kde.org/stable/en/kde-workspace/kdm/kdm-files.html#option-facesource):
 
 ```
 $ chmod o+x ~/
@@ -220,7 +228,7 @@ As a workaround you disable background opacity for `kscreenlocker` and `kscreenl
 
 For `qt-curve`, go to `System Settings > Application Appearance > Style > Configure > Applications` and add `kscreenlocker` and `kscreenlocker_greet` to "No background opacity".
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=382767](https://wiki.archlinux.org/index.php?title=KDM&oldid=382767)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=411733](https://wiki.archlinux.org/index.php?title=KDM&oldid=411733)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

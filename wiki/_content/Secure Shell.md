@@ -20,25 +20,24 @@ SSH is typically used to log into a remote machine and execute commands, but it 
 
 An SSH server, by default, listens on the standard TCP port 22\. An SSH client program is typically used for establishing connections to an _sshd_ daemon accepting remote connections. Both are commonly present on most modern operating systems, including Mac OS X, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
 
-(Source: [Wikipedia:Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell"))
-
 ## Contents
 
 *   [1 OpenSSH](#OpenSSH)
-    *   [1.1 Installing OpenSSH](#Installing_OpenSSH)
-    *   [1.2 Configuring SSHD](#Configuring_SSHD)
-    *   [1.3 Hardening SSHD](#Hardening_SSHD)
-    *   [1.4 Managing the sshd daemon](#Managing_the_sshd_daemon)
-    *   [1.5 Connecting to the server](#Connecting_to_the_server)
-    *   [1.6 Protecting SSH](#Protecting_SSH)
-        *   [1.6.1 Force public key authentication](#Force_public_key_authentication)
-        *   [1.6.2 Two Step Authentication](#Two_Step_Authentication)
-        *   [1.6.3 Protecting against brute force attacks](#Protecting_against_brute_force_attacks)
-            *   [1.6.3.1 Using Iptabels to protect SSH](#Using_Iptabels_to_protect_SSH)
-            *   [1.6.3.2 Anti-Brute-Force Tools](#Anti-Brute-Force_Tools)
-        *   [1.6.4 Limit root login](#Limit_root_login)
-            *   [1.6.4.1 Deny](#Deny)
-            *   [1.6.4.2 Restrict](#Restrict)
+    *   [1.1 Installation](#Installation)
+    *   [1.2 Client usage](#Client_usage)
+    *   [1.3 Server usage](#Server_usage)
+        *   [1.3.1 Configuration](#Configuration)
+        *   [1.3.2 Daemon management](#Daemon_management)
+        *   [1.3.3 Protection](#Protection)
+            *   [1.3.3.1 Force public key authentication](#Force_public_key_authentication)
+            *   [1.3.3.2 Two-factor authentication and public keys](#Two-factor_authentication_and_public_keys)
+            *   [1.3.3.3 Protecting against brute force attacks](#Protecting_against_brute_force_attacks)
+                *   [1.3.3.3.1 Using Iptabels](#Using_Iptabels)
+                *   [1.3.3.3.2 Anti-Brute-Force Tools](#Anti-Brute-Force_Tools)
+            *   [1.3.3.4 Limit root login](#Limit_root_login)
+                *   [1.3.3.4.1 Deny](#Deny)
+                *   [1.3.3.4.2 Restrict](#Restrict)
+            *   [1.3.3.5 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
 *   [2 Other SSH clients and servers](#Other_SSH_clients_and_servers)
     *   [2.1 Dropbear](#Dropbear)
     *   [2.2 Mosh: Mobile Shell](#Mosh:_Mobile_Shell)
@@ -89,11 +88,24 @@ OpenSSH (OpenBSD Secure Shell) is a set of computer programs providing encrypted
 
 OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the projects have different purposes and are developed by different teams, the similar name is drawn only from similar goals.
 
-### Installing OpenSSH
+### Installation
 
-[Install](/index.php/Install "Install") [openssh](https://www.archlinux.org/packages/?name=openssh).
+[Install](/index.php/Install "Install") the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
 
-### Configuring SSHD
+### Client usage
+
+To connect to a server, run:
+
+```
+$ ssh -p port user@server-address
+
+```
+
+If the server only allows public-key authentication, follow [SSH keys](/index.php/SSH_keys "SSH keys").
+
+### Server usage
+
+#### Configuration
 
 The SSH daemon configuration file can be found and edited in `/etc/ssh/ssh**d**_config`.
 
@@ -120,14 +132,14 @@ PermitRootLogin no
 
 **Note:** `PermitRootLogin prohibit-password` is the default since version 7.0p1\. See `man sshd_config`.
 
-To add a nice welcome message edit the file `/etc/issue` and change the Banner line into this:
+To add a nice welcome message (e.g. from the `/etc/issue` file), configure the `Banner` option:
 
 ```
 Banner /etc/issue
 
 ```
 
-Host keys will be generated automatically by the sshd Systemd service. If you want sshd to use a particular key which you've provided, you can configure it manually:
+Host keys will be generated automatically by the sshd Systemd service. If you want sshd to use a particular key which you have provided, you can configure it manually:
 
 ```
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -145,16 +157,9 @@ For a discussion, see [security through obscurity](https://en.wikipedia.org/wiki
 
 **Note:** OpenSSH can also listen on multiple ports simply by having multiple **Port x** lines in the config file.
 
-It is also recommended to disable password logins entirely. This will greatly increase security, see [SSH keys#Disabling password logins](/index.php/SSH_keys#Disabling_password_logins "SSH keys") for more information.
+It is also recommended to disable password logins entirely. This will greatly increase security, see [#Disabling password logins](#Disabling_password_logins) for more information.
 
-### Hardening SSHD
-
-It is highly recommended to harden sshd. Several good guides are available on the topic and linked below:
-
-*   [Article by Mozilla Infosec Team](https://wiki.mozilla.org/Security/Guidelines/OpenSSH)
-*   [Secure sshd](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
-
-### Managing the sshd daemon
+#### Daemon management
 
 [openssh](https://www.archlinux.org/packages/?name=openssh) comes with two kinds of [systemd](/index.php/Systemd "Systemd") service files:
 
@@ -163,7 +168,7 @@ It is highly recommended to harden sshd. Several good guides are available on th
 
 You can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") either `sshd.service` **or** `sshd.socket` to begin using the daemon.
 
-If using the socket service, you will need to [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the unit file if you want it to listen on a port other than the default 22:
+If using the socket service, you will need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the unit file if you want it to listen on a port other than the default 22:
 
  `# systemctl edit sshd.socket` 
 
@@ -178,39 +183,60 @@ ListenStream=12345
 
 **Tip:** When using socket activation neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log, but executing `# journalctl /usr/bin/sshd` does.
 
-### Connecting to the server
-
-To connect to a server, run:
-
-```
-$ ssh -p port user@server-address
-
-```
-
-### Protecting SSH
+#### Protection
 
 Allowing remote log-on through SSH is good for administrative purposes, but can pose a threat to your server's security. Often the target of brute force attacks, SSH access needs to be limited properly to prevent third parties gaining access to your server.
 
-#### Force public key authentication
+Several other good guides are available on the topic, for example:
 
-One of the most effective ways to protect SSH is to disable password logins entirely, and force the use of [SSH keys](/index.php/SSH_keys "SSH keys"). This can be accomplished by adding the following setting to `sshd_config`:
+*   [Article by Mozilla Infosec Team](https://wiki.mozilla.org/Security/Guidelines/OpenSSH)
+*   [Secure sshd](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
+
+##### Force public key authentication
+
+If a client cannot authenticate through a public key, by default the SSH server falls back to password authentication, thus allowing a malicious user to attempt to gain access by [brute-forcing](#Protecting_against_brute_force_attacks) the password. One of the most effective ways to protect against this attack is to disable password logins entirely, and force the use of [SSH keys](/index.php/SSH_keys "SSH keys"). This can be accomplished by disabling the following options in `sshd_config`:
 
 ```
 PasswordAuthentication no
+ChallengeResponseAuthentication no
 
 ```
 
 Before adding this to your configuration, make sure that all accounts which require SSH access have public key authentication set up in the corresponding `authorized_keys` files. See [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") for more information.
 
-#### Two Step Authentication
+##### Two-factor authentication and public keys
 
-To enable two step authentication see [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") and [SSH keys#Two-factor authentication and public keys](/index.php/SSH_keys#Two-factor_authentication_and_public_keys "SSH keys") if you are authenticating with a SSH-key pair and have disabled password logins
+Since OpenSSH 6.2, you can add your own chain to authenticate with using the `AuthenticationMethods` option. This enables you to use public keys as well as a two-factor authorization.
 
-#### Protecting against brute force attacks
+See [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") to set up Google Authenticator.
+
+To use PAM with OpenSSH, edit the following files:
+
+ `/etc/ssh/sshd_config` 
+
+```
+ChallengeResponseAuthentication yes
+AuthenticationMethods publickey keyboard-interactive:pam
+
+```
+
+Then you can log in with either a publickey **or** the user authentication as required by your PAM setup.
+
+If, on the other hand, you want to authenticate the user on both a publickey **and** the user authentication as required by your PAM setup, use a comma instead of a space to separate the AuthenticationMethods:
+
+ `/etc/ssh/sshd_config` 
+
+```
+ChallengeResponseAuthentication yes
+AuthenticationMethods publickey,keyboard-interactive:pam
+
+```
+
+##### Protecting against brute force attacks
 
 Brute forcing is a simple concept: One continuously tries to log in to a webpage or server log-in prompt like SSH with a high number of random username and password combinations.
 
-##### Using Iptabels to protect SSH
+###### Using Iptabels
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
@@ -245,14 +271,14 @@ iptables -A INPUT -p tcp -m tcp --dport 42660 -m state --state NEW -m recent --u
 
 ```
 
-Now iptables decides what to do with TCP traffic to port 42660 which doesn't match the previous rule.
+Now iptables decides what to do with TCP traffic to port 42660 which does not match the previous rule.
 
 ```
 iptables -A INPUT -p tcp -m tcp --dport 42660 -j ACCEPT
 
 ```
 
-We're appending this rule to the LOG_AND_DROP table, and we use the -j (jump) operator to pass the packet's information to the logging facility
+We are appending this rule to the LOG_AND_DROP table, and we use the -j (jump) operator to pass the packet's information to the logging facility
 
 ```
 iptables -A LOG_AND_DROP -j LOG --log-prefix "iptables deny: " --log-level 7
@@ -266,7 +292,7 @@ iptables -A LOG_AND_DROP -j DROP
 
 ```
 
-##### Anti-Brute-Force Tools
+###### Anti-Brute-Force Tools
 
 You can protect yourself from brute force attacks by using an automated script that blocks anybody trying to brute force their way in, for example [fail2ban](/index.php/Fail2ban "Fail2ban") or [sshguard](/index.php/Sshguard "Sshguard").
 
@@ -274,11 +300,11 @@ You can protect yourself from brute force attacks by using an automated script t
 *   Use [fail2ban](/index.php/Fail2ban "Fail2ban") or [sshguard](/index.php/Sshguard "Sshguard") to automatically block IP addresses that fail password authentication too many times.
 *   Use [pam_shield](https://github.com/jtniehof/pam_shield) to block IP addresses that perform too many login attempts within a certain period of time. In contrast to [fail2ban](/index.php/Fail2ban "Fail2ban") or [sshguard](/index.php/Sshguard "Sshguard"), this program does not take login success or failure into account.
 
-#### Limit root login
+##### Limit root login
 
 It is generally considered bad practice to allow the root user to log in without restraint over SSH. There are two methods by which SSH root access can be restricted for increased security.
 
-##### Deny
+###### Deny
 
 Sudo selectively provides root rights for actions requiring these without requiring authenticating against the root account. This allows locking the root account against access via SSH and potentially functions as a security measure against brute force attacks, since now an attacker must guess the account name in addition to the password.
 
@@ -296,7 +322,7 @@ Next, [restart](/index.php/Restart "Restart") the SSH daemon.
 
 You will now be unable to log in through SSH under root, but will still be able to log in with your normal user and use [su](/index.php/Su "Su") or [sudo](/index.php/Sudo "Sudo") to do system administration.
 
-##### Restrict
+###### Restrict
 
 Some automated tasks such as remote, full-system backup require full root access. To allow these in a secure way, instead of disabling root login via SSH, it is possible to only allow root logins for selected commands. This can be achieved by editing `~root/.ssh/authorized_keys`, by prefixing the desired key, e.g. as follows:
 
@@ -323,6 +349,21 @@ PermitRootLogin without-password
 
 ```
 
+##### Securing the authorized_keys file
+
+For additional protection, you can prevent users from adding new public keys and connecting from them.
+
+In the server, make the `authorized_keys` file read-only for the user and deny all other permissions:
+
+```
+$ chmod 400 ~/.ssh/authorized_keys
+
+```
+
+To keep the user from simply changing the permissions back, [set the immutable bit](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes") on the `authorized_keys` file. After that the user could rename the `~/.ssh` directory to something else and create a new `~/.ssh` directory and `authorized_keys` file. To prevent this, set the immutable bit on the `~/.ssh` directory too.
+
+**Note:** If you find yourself needing to add a new key, you will first have to remove the immutable bit from `authorized_keys` and make it writable. Follow the steps above to secure it again.
+
 ## Other SSH clients and servers
 
 Apart from OpenSSH, there are many SSH [clients](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients "wikipedia:Comparison of SSH clients") and [servers](https://en.wikipedia.org/wiki/Comparison_of_SSH_servers "wikipedia:Comparison of SSH servers") available.
@@ -344,6 +385,14 @@ Remote terminal application that allows roaming, supports intermittent connectiv
 Mosh has an undocumented command line option `--predict=experimental` which produces more aggressive echoing of local keystrokes. Users interested in low-latency visual confirmation of keyboard input may prefer this prediction mode.
 
 ## Tips and tricks
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** According to the current layout, this section seems rather generic, but in fact most of the offered tips work only in _openssh_. For example _dropbear_ (listed in [#Other SSH clients and servers](#Other_SSH_clients_and_servers)) does not support SOCKS proxy.[[6]](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients#Technical) (Discuss in [Talk:Secure Shell#](https://wiki.archlinux.org/index.php/Talk:Secure_Shell))
 
 ### Encrypted SOCKS tunnel
 
@@ -809,7 +858,7 @@ ip a
 
 ```
 
-Find your interface device and look for the inet field. Then access your router's configuration web interface, using your router's IP (find this on the web). Tell your router to forward it to your inet IP. Go to [[6]](http://portforward.com/) for more instructions on how to do so for your particular router.
+Find your interface device and look for the inet field. Then access your router's configuration web interface, using your router's IP (find this on the web). Tell your router to forward it to your inet IP. Go to [[7]](http://portforward.com/) for more instructions on how to do so for your particular router.
 
 #### Is SSH running and listening?
 
@@ -964,7 +1013,7 @@ HostKey /etc/ssh/ssh_host_rsa_key
 
 ### id_dsa refused by OpenSSH 7.0
 
-OpenSSH 7.0 deprecated ssh-dss and [http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html) doesn't document how to reach server if id_dsa keys are used:
+OpenSSH 7.0 deprecated ssh-dss and [http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html) does not document how to reach server if id_dsa keys are used:
 
 ```
 PubkeyAcceptedKeyTypes +ssh-dss
@@ -1006,11 +1055,12 @@ or in the ~/.ssh/config file:
 
 ## See also
 
+*   [Wikipedia:Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell")
 *   [Defending against brute force ssh attacks](http://www.la-samhna.de/library/brutessh.html)
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411672](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411672)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411742](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411742)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

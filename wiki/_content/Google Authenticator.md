@@ -55,7 +55,7 @@ Enable challenge-response authentication in `/etc/ssh/**sshd_config**`:
 
 Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 
-**Warning:** OpenSSH will ignore all of this if you are authenticating with a SSH-key pair and have [disabled password logins](/index.php/SSH_keys#Disabling_password_logins "SSH keys"). However, as of OpenSSH 6.2, you can add `AuthenticationMethods` to allow both: two-factor and key-based authentication. See [SSH keys#Two-factor authentication and public keys](/index.php/SSH_keys#Two-factor_authentication_and_public_keys "SSH keys").
+**Warning:** OpenSSH will ignore all of this if you are authenticating with a SSH-key pair and have [disabled password logins](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). However, as of OpenSSH 6.2, you can add `AuthenticationMethods` to allow both: two-factor and key-based authentication. See [Secure Shell#Two-factor authentication and public keys](/index.php/Secure_Shell#Two-factor_authentication_and_public_keys "Secure Shell").
 
 ## Generating a secret key file
 
@@ -114,7 +114,7 @@ SSH to your host from another machine and/or from another terminal window:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=393374](https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=393374)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=411714](https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=411714)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -496,9 +496,9 @@ Kernel parameters which affect networking can be set using [Sysctl](/index.php/S
 
 ### SSH
 
-Avoid using [Secure Shell](/index.php/Secure_Shell "Secure Shell") without [requiring SSH keys](/index.php/SSH_keys#Disabling_password_logins "SSH keys"). This prevents [brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack "wikipedia:Brute-force attack"). Alternatively [Fail2ban](/index.php/Fail2ban "Fail2ban") or [Sshguard](/index.php/Sshguard "Sshguard") offer lesser forms of protection by monitoring logs and writing [iptables rules](/index.php/Iptables "Iptables") but open up the potential for a denial of serving, since an attacker can spoof packets as if they came from the administrator after identifying their address.
+Avoid using [Secure Shell](/index.php/Secure_Shell "Secure Shell") without [requiring SSH keys](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). This prevents [brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack "wikipedia:Brute-force attack"). Alternatively [Fail2ban](/index.php/Fail2ban "Fail2ban") or [Sshguard](/index.php/Sshguard "Sshguard") offer lesser forms of protection by monitoring logs and writing [iptables rules](/index.php/Iptables "Iptables") but open up the potential for a denial of serving, since an attacker can spoof packets as if they came from the administrator after identifying their address.
 
-[Denying root login](/index.php/Secure_Shell#Deny_root_login "Secure Shell") is good practice, both for tracing intrusions and adding an additional layer of security before root access.
+[Denying root login](/index.php/Secure_Shell#Deny "Secure Shell") is good practice, both for tracing intrusions and adding an additional layer of security before root access.
 
 ### DNS
 
@@ -596,7 +596,7 @@ Note that this will not work if there is some command running in the shell (eg.:
 *   [Linux Foundation's Linux workstation security checklist](https://github.com/lfit/itpol/blob/master/linux-workstation-security.md)
 *   [privacytools.io](https://www.privacytools.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=410615](https://wiki.archlinux.org/index.php?title=Security&oldid=410615)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=411713](https://wiki.archlinux.org/index.php?title=Security&oldid=411713)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

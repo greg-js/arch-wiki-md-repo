@@ -59,7 +59,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[KDE Plasma](/index.php/KDE "KDE")** — The KDE Plasma desktop environment is a familiar working environment. Plasma Desktop offers all the tools required for a modern desktop computing experience so you can be productive right from the start.
 
-[https://www.kde.org/workspaces/plasmadesktop/](https://www.kde.org/workspaces/plasmadesktop/) || KDE 4: [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace), Plasma 5: [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
+[https://www.kde.org/workspaces/plasmadesktop/](https://www.kde.org/workspaces/plasmadesktop/) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — The Lightweight X11 Desktop Environment is a fast and energy-saving desktop environment. It comes with a modern interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. Fundamentally designed to be lightweight, LXDE strives to be less CPU and RAM intensive than other environments.
 
@@ -515,46 +515,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 
 <tr>
 
-<td>[KDE](/index.php/KDE "KDE") 4</td>
-
-<td>[Qt](/index.php/Qt "Qt") 4/5  
-[qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)</td>
-
-<td>[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
-
-<td>[Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_4#Desktop "wikipedia:KDE Plasma 4")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
-
-<td>[Konsole](http://konsole.kde.org/)  
-[konsole](https://www.archlinux.org/packages/?name=konsole)</td>
-
-<td>[Dolphin](http://dolphin.kde.org/)  
-[dolphin](https://www.archlinux.org/packages/?name=dolphin)</td>
-
-<td>[KCalc](http://www.kde.org/applications/utilities/kcalc/)  
-[kcalc](https://www.archlinux.org/packages/?name=kcalc)</td>
-
-<td>[KWrite/Kate](http://kate-editor.org/)  
-[kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate)</td>
-
-<td>[Gwenview](http://gwenview.sourceforge.net/)  
-[gwenview](https://www.archlinux.org/packages/?name=gwenview)</td>
-
-<td>[Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)  
-[dragon](https://www.archlinux.org/packages/?name=dragon)</td>
-
-<td>[Konqueror](http://www.konqueror.org/)  
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)</td>
-
-<td>[KDM](/index.php/KDM "KDM")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
-
-</tr>
-
-<tr>
-
-<td>[KDE Plasma](/index.php/KDE "KDE") 5</td>
+<td>[KDE Plasma](/index.php/KDE "KDE")</td>
 
 <td>[Qt](/index.php/Qt "Qt") 5  
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)</td>
@@ -1037,7 +998,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411673](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411673)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411728](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411728)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

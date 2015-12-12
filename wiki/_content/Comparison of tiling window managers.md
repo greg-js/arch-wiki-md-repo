@@ -860,7 +860,7 @@ A number of common layout types appear in several tiling WMs, although the termi
 *   h-tab: one window shown fullscreen with all window titles shown horizontally (like browser tabs)
 *   v-tab: one window shown fullscreen with all window titles shown vertically. Aka: stack (wmii).
 *   h-split: a keybinding splits the current window horizontally creating space for another
-*   v-split: a keybinding splits the current window horizontally creating space for another
+*   v-split: a keybinding splits the current window vertically creating space for another
 *   columns: manual layout style which treats windows as belonging to vertical columns
 *   rows: manual layout style which treats windows as belonging to horizontal rows
 *   grid: window positions and sizes based on a regular NxM grid. May be automatic (like wmfs, monsterwm) or manual (like Subtle).
@@ -873,7 +873,7 @@ Tiling window managers are usually designed to be used entirely with the keyboar
 
 *   [Comparison of extensible window managers](http://sawfish.wikia.com/wiki/Comparison_of_extensible_window_managers) compares WMs "extensible" by scripting, like Xmonad and Sawfish.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=399225](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=399225)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=411722](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=411722)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
