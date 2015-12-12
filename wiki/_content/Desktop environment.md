@@ -245,7 +245,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 <td>[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")</td>
 
 <td>[GTK+](/index.php/GTK%2B "GTK+") 2/3, [Qt](/index.php/Qt "Qt") 5  
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) [qt5](https://www.archlinux.org/packages/?name=qt5)</td>
+[gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) [qt5](https://www.archlinux.org/groups/x86_64/qt5/)</td>
 
 <td>Deepin Window Manager  
 [deepin-wm](https://www.archlinux.org/packages/?name=deepin-wm)</td>
@@ -1037,7 +1037,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411400](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411400)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411638](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411638)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

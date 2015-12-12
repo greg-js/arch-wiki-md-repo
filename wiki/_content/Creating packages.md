@@ -242,7 +242,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 *   [Arch Linux Classroom IRC Logs of classes about creating PKGBUILDs](https://archwomen.org/media/project_classroom/classlogs/).
 *   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=410842](https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=410842)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=411505](https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=411505)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

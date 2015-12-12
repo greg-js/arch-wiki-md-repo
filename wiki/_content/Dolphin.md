@@ -48,7 +48,7 @@ Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packa
 
 ### KIO Slaves
 
-**Note:** This does not require [kdesdk-kioslaves](https://www.archlinux.org/packages/?name=kdesdk-kioslaves).
+**Note:** This does not require [kdesdk-kioslaves](https://www.archlinux.org/packages/?name=kdesdk-kioslaves)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>.
 
 Dolphin uses _KIO slaves_ for network access, trash and other functionality, unlike [GTK+](/index.php/GTK%2B "GTK+") file managers which use [GVFS](/index.php/GVFS "GVFS"). Available protocols are shown in the location bar (editable mode) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). To quickly bookmark them, right-click in the workspace, and select "Add to Places".
 
@@ -72,7 +72,7 @@ This was a general issue in Qt4 and [kdelibs](https://www.archlinux.org/packages
 *   [KDE userbase: Dolphin](https://userbase.kde.org/Dolphin)
 *   [Dolphin Handbook](https://docs.kde.org/stable/en/applications/dolphin/index.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=409992](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=409992)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=411639](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=411639)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

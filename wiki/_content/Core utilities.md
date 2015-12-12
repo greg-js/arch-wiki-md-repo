@@ -250,6 +250,14 @@ The following table lists basic shell commands every Linux user should be famili
 
 </tr>
 
+<tr>
+
+<td>ss -at</td>
+
+<td>Display a list of open TCP sockets</td>
+
+</tr>
+
 </tbody>
 
 </table>
@@ -839,7 +847,7 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)")
 *   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
 *   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=406762](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=406762)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=411649](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=411649)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -27,7 +27,7 @@ If you use [ALSA](/index.php/ALSA "ALSA") and want to use alsasink instead of th
 
 ### Enabling cover art, lyrics, and guitar tablature
 
-[gnome-python-extras](https://www.archlinux.org/packages/?name=gnome-python-extras) and [libgtkhtml](https://aur.archlinux.org/packages/libgtkhtml/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libgtkhtml)]</sup> are needed to enable the cover art, lyrics, guitar tablature, and wiki features of Exaile.
+[gnome-python-extras](https://www.archlinux.org/packages/?name=gnome-python-extras) and [libgtkhtml](https://aur.archlinux.org/packages/libgtkhtml/)<sup><small>AUR</small></sup> are needed to enable the cover art, lyrics, guitar tablature, and wiki features of Exaile.
 
 ### Playing audio CDs
 
@@ -77,7 +77,7 @@ You need to install the [python2-pylast](https://www.archlinux.org/packages/?nam
 
 Unfortunately, Exaile does **not** support smb protocol.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Exaile&oldid=393570](https://wiki.archlinux.org/index.php?title=Exaile&oldid=393570)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Exaile&oldid=411641](https://wiki.archlinux.org/index.php?title=Exaile&oldid=411641)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

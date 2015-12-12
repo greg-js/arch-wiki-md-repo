@@ -433,9 +433,9 @@ fi
 
 ## Additional Resources
 
-*   [Elite Proxy Config Example](http://gotux.net/arch-linux/squid-proxy-server/)
+*   [Elite Proxy Config Example(cached)](https://archive.is/oOdiT) ([cache-two](https://web.archive.org/web/20130425134032/http://gotux.net/arch-linux/squid-proxy-server/))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Squid&oldid=392679](https://wiki.archlinux.org/index.php?title=Squid&oldid=392679)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Squid&oldid=411660](https://wiki.archlinux.org/index.php?title=Squid&oldid=411660)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

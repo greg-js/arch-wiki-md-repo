@@ -251,7 +251,7 @@ A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of prote
 
 ### Resource sharing
 
-To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") article.
+To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [sshfs](/index.php/Sshfs "Sshfs") article.
 
 Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
 
@@ -383,7 +383,7 @@ To be able to save and view text which has scrolled off the screen, refer to [Sc
 
 Using terminal multiplexers like [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programs may be run under sessions composed of tabs and panes that can be detached at will, so when the user either kills the terminal emulator, terminates [X](/index.php/X "X"), or logs off, the programs associated with the session will continue to run in the background as long as the terminal multiplexer server is active. Interacting with the programs requires reattaching to the session.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=411419](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=411419)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=411510](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=411510)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

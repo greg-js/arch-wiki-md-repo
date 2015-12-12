@@ -340,7 +340,7 @@ $ grep -R "$(pwd)/src" pkg/
 *   [makepkg.conf(5) Manual Page](https://www.archlinux.org/pacman/makepkg.conf.5.html)
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=410620](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=410620)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411503](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411503)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

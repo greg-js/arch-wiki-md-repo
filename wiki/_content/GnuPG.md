@@ -496,7 +496,7 @@ The [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassa
 
 ### caff
 
-For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool _caff_. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/)<sup><small>AUR</small></sup> or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/)<sup><small>AUR</small></sup>. Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
+For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool _caff_. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/)<sup><small>AUR</small></sup> or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/signing-party-svn)]</sup>. Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
 
 ```
 cpanm Any::Moose
@@ -655,7 +655,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411036](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411036)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411643](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411643)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -1861,7 +1861,7 @@ Catatan: Terdapat banyak fungsi dan perintah tambahan yang tak terhitung jumlahn
 
 Jika setelah membaca ini kamu ingin sedikit memolesnya lagi, silakan menuju [Post Installation Tips](/index.php/Post_Installation_Tips "Post Installation Tips"). Untuk bantuan dan informasi lebih lanjut, kamu bisa menuju ke [Halaman utama Linux Arch](https://www.archlinux.org), menelusuri [wiki](https://wiki.archlinux.org/index.php/), [forum](https://bbs.archlinux.org), [IRC channel](/index.php/ArchChannel "ArchChannel"), dan [_mailing lists_](https://www.archlinux.org/mailman/listinfo/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Indonesia)&oldid=411463](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Indonesia)&oldid=411463)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Indonesia)&oldid=411524](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Indonesia)&oldid=411524)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

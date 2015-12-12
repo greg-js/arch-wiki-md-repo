@@ -220,7 +220,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(29)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411010](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411010)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411620](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411620)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

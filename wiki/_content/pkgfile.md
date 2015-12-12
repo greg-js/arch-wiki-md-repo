@@ -85,7 +85,7 @@ Since [version 2.2](https://github.com/fish-shell/fish-shell/releases/tag/2.2.0)
 
 By default, pkgfile will be updated daily. To change this schedule, [edit the unit file](/index.php/Systemd#Editing_provided_unit_files "Systemd").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=410345](https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=410345)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=411504](https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=411504)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

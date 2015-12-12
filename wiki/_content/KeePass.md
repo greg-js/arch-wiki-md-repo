@@ -27,7 +27,7 @@ There are two major implementations of KeePass, both of which are included in of
 
 *   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application _Keepass Password Safe (v1.x)_. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases.
 
-[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://aur.archlinux.org/packages/keepassx2/)<sup><small>AUR</small></sup>
+[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
 Other lesser known implementations are found in the AUR:
 
@@ -81,7 +81,7 @@ Extension allowing Google Chrome and Chromium to form-fill passwords stored in K
 
 *   [Pass](/index.php/Pass "Pass")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=409363](https://wiki.archlinux.org/index.php?title=KeePass&oldid=409363)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=411646](https://wiki.archlinux.org/index.php?title=KeePass&oldid=411646)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -86,6 +86,13 @@ Nothing, really. Almost all applications support 64-bit by now or are in the tra
 
 The biggest problem are packages that are either **closed source** or contain x86-specific assembly that is cumbersome to port to 64-bit (typical for emulators).
 
+For a quick overview on which currently installed packages from aur may need fixing, run the following (requires cower):
+
+```
+pacman -Q|while read -r pkg pkgver; do curl -s "[https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=${pkg}](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=${pkg})" | grep 'arch=(' | sed 's/any/x86_64/' | grep -qv 'x86_64' && echo "$pkg is missing x86_64 in @arch on aur (possible candidates: $(cower -s $pkg --format "%n\n" | grep -E '64$|^lib32|^bin32'| tr '\n' ' '))"; done
+
+```
+
 These applications were previously problematic but are now available in the [AUR](/index.php/AUR "AUR") and work fine:
 
 *   Acrobat Reader is not available in 64-bit, but you can run the 32-bit version in compatibility mode. There are also many other open source alternatives that can be used to read PDF files.
@@ -144,7 +151,7 @@ However, you can also start the system with the Arch64 installation CD, mount th
 
 You may also want to read [Migrating Between Architectures Without Reinstalling](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=394813](https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=394813)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=411499](https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=411499)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

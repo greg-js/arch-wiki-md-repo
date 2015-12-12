@@ -66,29 +66,29 @@ The AACS decryption process for a protected disc by a licensed player goes throu
 3.  This VUK is used to unscramble the disc's scrambled Title Keys.
 4.  Finally those Title Keys unscramble the disc's protected media content.
 
-Note that it is the disc that contains the MKB. MKB have been renewed since the first commercial BluRay release in 2006\. The latest MKB is version 30, but many MKB actually share the same key. The software player provides the Host key and certificate, whereas the drive contains a list of the Host key/certificates that have been revoked.
+Note that it is the disc that contains the MKB. MKBs have been renewed since the first commercial BluRay release in 2006\. The latest MKB is version 57, but many MKB actually share the same key. The software player provides the Host key and certificate, whereas the drive contains a list of the Host key/certificates that have been revoked. Host key/certification revocation occurs when a newer disc (containing a higher MKB than the previous played disc) is decrypted, or played, or attempted to decrypt or play (the mere insertion of a disc does not update the drive). When this happens, the drive forever loses its capability to use older Host key/certificates.
 
-Using libaacs, the decryption process can skip some of these stages to reach the last step, which allows the media player to play the disc. This is either by providing in the `KEYDB.cfg` file either (or both):
+Using [libaacs](https://www.archlinux.org/packages/?name=libaacs), the decryption process can skip some of these stages to reach the last step, which allows the media player to play the disc. This is either by providing in the `KEYDB.cfg` file either (or both):
 
 *   a valid (corresponding to the MKB version of the disc) Processing key and a valid (i.e. non revoked by the drive) Host key/certificate
 *   a valid VUK for the specific disc.
 
 If libaacs finds a valid processing key for the disc MKB version as well as a valid Host key and certificates, it can start the decryption process from step 2\. However, the Host key/certificates are regularly revoked through the propagation of new BluRay discs. Once revoked, a drive is not able to read both new and older discs. This is usually irreversible and can only be fixed by providing a more recent Host key/certificate (for Windows users, this corresponds to updating their software player). The advantage of this method is that until the Host key/certificate is revoked, and as long as the disc uses an MKB version for which the Processing key is known, libaacs is able to compute the VUK of any disc. As of today, the Processing keys for MKB versions 1 to 28 have been computed and made available on the Internet.
 
-Thankfully, in case no valid Processing key is available and/or the Host certificate has been revoked, libaacs has an alternative way to decrypt a disc: by providing a valid VUK in the `KEYDB.cfg` file. This allows libaacs to skip directly to step 3\. Contrary to the Processing keys, VUKs are disc specific. Therefore this is less efficient as the user will have to get the VUK from a third party. But the great advantage is that VUKs cannot be revoked. Note that if libaacs is able to perform step 2 (with a valid Host key/certificate), then it stores the VUK calculated in step 3 in `~/.cache/aacs/vuk`. At subsequent viewings of the same disc, libaacs can reuse the stored VUK. Thus it may be a good idea to backup these VUKs.
+Thankfully, in case no valid Processing key is available and/or the Host certificate has been revoked, libaacs has an alternative way to decrypt a disc: by providing a valid VUK in the `KEYDB.cfg` file. This allows libaacs to skip directly to step 3\. Contrary to the Processing keys, VUKs are disc specific. Therefore this is less efficient as the user will have to get the VUK from a third party. But the great advantage is that VUKs cannot be revoked. Note that if libaacs is able to perform step 2 (with a valid Host key/certificate), then it stores the VUK calculated in step 3 in `~/.cache/aacs/vuk`. At subsequent viewings of the same disc, libaacs can reuse the stored VUK. Thus it may be a good idea to backup these VUKs, or even better, to upload them to [[7]](http://www.labdv.com/aacs/).
 
-There have been several efforts to compile VUKs from various sources. Early attempts include forum threads, such as available at: [http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904](http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904) or [http://forum.doom9.org/showthread.php?p=1525922#post1525922](http://forum.doom9.org/showthread.php?p=1525922#post1525922). Recently, a centralised VUK database has been made available at [[7]](http://www.labdv.com/aacs/), with more than 11000 published VUKs. This is the most comprehensive source of public VUKs available.
+There have been several efforts to compile VUKs from various sources. Early attempts include forum threads, such as available at: [http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904](http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904) or [http://forum.doom9.org/showthread.php?p=1525922#post1525922](http://forum.doom9.org/showthread.php?p=1525922#post1525922). Recently, a centralised VUK database has been made available at [[8]](http://www.labdv.com/aacs/), with nearly 12000 published VUKs. This is the most comprehensive source of public VUKs available.
 
 #### BD+
 
-BD+ is an additional but optional component of the Blu-ray DRM. In December 2013, VideoLAN released the long awaited [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> which provides experimental support for BD+ decryption. The library does not provide keys or certificates required for BD+ decryption, you need to retrieve and install them separately, as explained at [[8]](http://www.labdv.com/aacs/) and [[9]](http://www.labdv.com/aacs/advanced-users.php).
+BD+ is an additional but optional component of the Blu-ray DRM. In December 2013, VideoLAN released the long awaited [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> which provides experimental support for BD+ decryption. The library does not provide keys or certificates required for BD+ decryption, you need to retrieve and install them separately, as explained at [[9]](http://www.labdv.com/aacs/) and [[10]](http://www.labdv.com/aacs/advanced-users.php).
 
 ## Playback
 
 ### Preparation
 
 1.  [install](/index.php/Pacman "Pacman") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
-2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[10]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for nearly 12000 discs.
+2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[11]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for nearly 12000 discs.
 3.  If necessary (_i.e._ if volumes are not mounted automatically on your system), mount the bluray to a directory, _e.g._: `# mount /dev/sr0 /media/blurays` 
 
 ### Decryption process
@@ -119,7 +119,7 @@ If none of these are true, then the software player will attempt decrypting the 
 
 The advantage of this method is that - when it works - it can decrypt any disc (up to a certain MBK version) and compute the VUK required to play it. Once the VUK is known, it is then stored for future usage.
 
-**Note:** As of December 2015, latest commercial Blu-ray discs come with MKB v56\. Incidentally, Method 1 has been obsolete for quite a long time. The method is presented for information purpose, but has little chance to be used with recent discs until newer PKs are made available. Therefore, Method 2 is now privileged, since it is irrevocable by the movie industry. However, this implies Linux users rely on discovery by third parties since there is no more any open source tool on Linux that can generate VUKs for discs with MKB v29 and above.
+**Note:** As of December 2015, latest commercial Blu-ray discs come with MKB v57\. Since no PK beyond MKB v28 has been made publicly available, this decryption method has been obsolete for quite a long time. It is presented for information purpose, but has little chance to be used with recent discs until newer PKs are made available. Therefore, decrypting using VUK lists is now privileged, since it is irrevocable by the movie industry. However, this implies Linux users rely on discovery by third parties since there is no more any open source tool on Linux that can generate VUKs for discs with MKB v29 and above.
 
 This method uses the Processing keys and a Host key/certificate present at the beginning of the `KEYDB.cfg` file. Currently, they will work for a disc up to MKB v28 but have been revoked in MKB v30 and above discs) in `~/.config/aacs/`. Further, this method will only work if your drive has not revoked the host key/certificate that is in this `KEYDB.cfg` file (_i.e._ if you have not tried to play a disc with MKB v30 and above).
 
@@ -127,7 +127,7 @@ If this method is successful, after you play the disc, libaacs will store the VU
 
 #### BD+ support
 
-These pages [[11]](http://www.labdv.com/aacs/) and [[12]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/)<sup><small>AUR</small></sup> or [DVDFab](/index.php/Blu-ray#See_also "Blu-ray") (under Wine).
+These pages [[12]](http://www.labdv.com/aacs/) and [[13]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/)<sup><small>AUR</small></sup> or [DVDFab](/index.php/Blu-ray#See_also "Blu-ray") (under Wine).
 
 ### Media players
 
@@ -234,7 +234,7 @@ Unfortunately, what may happen when trying to play a newer BluRay disc is the re
 This is part of the AACS protection scheme: editors are able to revoke old software player host keys that have leaked on the Internet and distribute the lists on newer commercial disc releases. This is irreversible and does cannot be fixed even after reflashing the drive. The only two ways to correct this would be:
 
 *   to update the host key/certificate part in `KEYDB.cfg` to ones that have not been revoked (yet)
-*   to add in `KEYDB.cfg` the VUK of each specific disc instead, [as explained above](#If_Fast_.26_Simple_does_not_work). VUKs cannot be revoked by the industry.
+*   to add in `KEYDB.cfg` the VUK of each specific disc instead, [as explained above](#Decrypting_using_VUK_.28step_3.1_or_3.2.1.29). VUKs cannot be revoked by the industry.
 
 When a disc (using mplayer or vlc) is succesfully decrypted, libaacs will store the VUK in `~/.cache/aacs/vuk`. If the host key/certificate in `KEYDB.cfg` is subsequently revoked, VLC will still be able to use the stored VUK, so it could be a good idea to backup the `~/.cache/aacs` directory for the future.
 
@@ -265,7 +265,7 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411497](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411497)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411637](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411637)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

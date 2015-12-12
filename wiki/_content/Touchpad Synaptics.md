@@ -941,7 +941,7 @@ Certain touchpads (elantech in particular) will fail to be recognized as a devic
 
 ### Trackpoint and Clickpad
 
-Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-evdev-trackpoint)]</sup> from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
+Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/)<sup><small>AUR</small></sup> from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
 
 ### Clickpad/Forcepad: double-click, click-and-drag
 
@@ -967,7 +967,7 @@ On newer laptops such as the HP Envy 15 x360 a `ButtonRelease` event is not sent
 *   [Synaptics touchpad driver](http://cgit.freedesktop.org/xorg/driver/xf86-input-synaptics/)
 *   [Synaptics manual on x.org](http://www.x.org/archive/X11R7.5/doc/man/man4/synaptics.4.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=409749](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=409749)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=411655](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=411655)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

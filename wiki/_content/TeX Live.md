@@ -354,7 +354,7 @@ Afterwards, you need to run `texhash` to update the TeX database:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=409434](https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=409434)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=411508](https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=411508)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

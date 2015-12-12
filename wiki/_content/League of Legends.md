@@ -73,9 +73,9 @@ When you first run it, playonlinux will install some necessary fonts. Afterwards
 PlayOnLinux seem to be missing a symlink from the generic version of [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) to the specific version it ships. That can be fixed by finding the folders of the affected Wine versions and creating the links manually. Replace ARCH with either x86 or amd64, and VERSION with the Wine version you intend to fix.
 
 ```
-# cd ~/.PlayOnLinux/wine/linux-ARCH/VERSION/lib
-# ln -s libgcrypt.so.11.* libgcrypt.so.11
-# ln -s libgcrypt.so.11 libgcrypt.so
+$ cd ~/.PlayOnLinux/wine/linux-ARCH/VERSION/lib
+$ ln -s libgcrypt.so.11.* libgcrypt.so.11
+$ ln -s libgcrypt.so.11 libgcrypt.so
 
 ```
 
@@ -347,7 +347,7 @@ For a permanent solution:
 
 If you have the proprietary AMD fglrx driver installed, you should install trough winetricks the `directx9` package (Not d3dx_y)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=League_of_Legends&oldid=407997](https://wiki.archlinux.org/index.php?title=League_of_Legends&oldid=407997)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=League_of_Legends&oldid=411663](https://wiki.archlinux.org/index.php?title=League_of_Legends&oldid=411663)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

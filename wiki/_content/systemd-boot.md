@@ -48,7 +48,7 @@ It is simple to configure, but can only start EFI executables, such as the Linux
     **Note:** systemd-boot cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
 4.  Copy your kernel and initramfs onto that ESP.
-5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=_$esp_ install` It will copy the systemd-boot binary to your EFI System Partition (`$esp/EFI/boot/systemd-bootx64.efi` on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=_$esp_ install` It will copy the systemd-boot binary to your EFI System Partition (`$esp/EFI/systemd/systemd-bootx64.efi` and `$esp/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 ### Legacy boot
 
@@ -61,7 +61,7 @@ You can also successfully install systemd-boot if booted with a legacy OS. Howev
 
 **Note:** E.g. on Dell's Latitude series, the firmware interface provides everything you need to setup EFI boot, and the EFI Shell won't be able to write to the computer's ROM.
 
-If you can do so, the installation is easier: go into your EFI shell or your firmware configuration interface, and change your machine's default EFI file to `/$esp/EFI/boot/systemd-bootx64.efi` (`systemd-bootia32.efi` on i686 systems).
+If you can do so, the installation is easier: go into your EFI shell or your firmware configuration interface, and change your machine's default EFI file to `$esp/EFI/systemd/systemd-bootx64.efi` (`systemd-bootia32.efi` on i686 systems).
 
 ### Updating
 
@@ -294,7 +294,7 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411004](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411004)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411662](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=411662)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

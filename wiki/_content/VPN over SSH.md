@@ -106,8 +106,9 @@ Next, replace the default route with the tunnel
 *   [Ssh](/index.php/Ssh "Ssh")
 *   [Router](/index.php/Router "Router")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VPN_over_SSH&oldid=376280](https://wiki.archlinux.org/index.php?title=VPN_over_SSH&oldid=376280)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VPN_over_SSH&oldid=411512](https://wiki.archlinux.org/index.php?title=VPN_over_SSH&oldid=411512)"
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
+*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

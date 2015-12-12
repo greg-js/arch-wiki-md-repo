@@ -328,8 +328,10 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs&oldid=410492](https://wiki.archlinux.org/index.php?title=Sshfs&oldid=410492)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs&oldid=411514](https://wiki.archlinux.org/index.php?title=Sshfs&oldid=411514)"
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
+*   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
+*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

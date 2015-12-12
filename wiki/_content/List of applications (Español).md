@@ -3631,7 +3631,7 @@ Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.or
 *   [Listado de juegos de Linux en Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games).
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=411215](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=411215)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=411587](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=411587)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

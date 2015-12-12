@@ -114,7 +114,7 @@ In addition to pacman's standard set of features, there are ways to extend its u
 
 *   **Muon** — A collection of package management tools for KDE, using PackageKit.
 
-[https://projects.kde.org/projects/extragear/sysadmin/muon](https://projects.kde.org/projects/extragear/sysadmin/muon) || [muon](https://www.archlinux.org/packages/?name=muon)
+[https://projects.kde.org/projects/extragear/sysadmin/muon](https://projects.kde.org/projects/extragear/sysadmin/muon) || [muon](https://www.archlinux.org/packages/?name=muon)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [discover](https://www.archlinux.org/packages/?name=discover)]</sup>
 
 *   **GNOME Software** — Gnome Software App.
 
@@ -964,7 +964,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=410421](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=410421)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411650](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411650)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -216,7 +216,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(17)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411015](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411015)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411607](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411607)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

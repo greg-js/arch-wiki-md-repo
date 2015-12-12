@@ -561,7 +561,7 @@ import XMonad.Util.Paste
 
 **Using xdotool** - command-line X11 automation tool
 
-With the [xdotool](https://www.archlinux.org/packages/?name=xdotool) it is possible to create a short cut which actually paste the content of the X-Selection buffer via triggering the middle mouse button. Instead of hit the text as separate key strokes. The command for the short cut is:
+With the [xdotool](https://www.archlinux.org/packages/?name=xdotool) it is possible to create a short cut which actually pastes the content of the X-Selection buffer via triggering the middle mouse button. Instead of hit the text as separate key strokes. The command for the short cut is:
 
 `xdotool getwindowfocus key --window %1 click 2`
 
@@ -577,7 +577,7 @@ The command get the window which has focus from the xserver and triggers a click
 *   [Linux Newbie Administrator Guide - Shortcuts and Commands](http://lnag.sourceforge.net/lnag_html/node5.html)
 *   [The Linux keyboard and console HOWTO](http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=408300](https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=408300)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=411511](https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=411511)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
