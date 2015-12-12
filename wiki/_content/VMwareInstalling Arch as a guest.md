@@ -278,6 +278,8 @@ Create the following `.service`:
 ```
 [Unit]
 Description=Load VMware shared folders
+Requires=vmware-vmblock-fuse.service
+After=vmware-vmblock-fuse.service
 ConditionPathExists=.host:/_<shared_folder>_
 ConditionVirtualization=vmware
 
@@ -654,7 +656,7 @@ This is probably only happens to [open-vm-tools](https://www.archlinux.org/packa
 
 If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411458](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411458)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411678](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411678)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

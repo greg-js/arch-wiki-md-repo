@@ -69,7 +69,7 @@ Finally, wipe it with pseudorandom (because encrypted) data. A use of `if=/dev/u
 
 **The factual accuracy of this article or section is disputed.**
 
-**Reason:** It is believed that dd will write out partial blocks so using a small bs is not needed and slows down the process. (Discuss in [Talk:Dm-crypt/Drive preparation#](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Drive_preparation))
+**Reason:** It is believed that dd will write out partial blocks so using a small bs is not needed and slows down the process. (Discuss in [Talk:Dm-crypt/Drive preparation#block size in notes](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Drive_preparation#block_size_in_notes))
 
 **Note:**
 
@@ -157,7 +157,7 @@ If more flexibility is needed, though, dm-crypt can coexist with other stacked b
 
 **Reason:** The GRUB bootloader's feature "early cryptodisks", allows for (a) an unlocking of a LUKS encrypted root partition to access the `/boot` mount point in it, or (b) an unlocking of a separate LUKS encrypted partition for `/boot`. Instructions to setup both should be added. Further, (c) the conversion of an existing unencrypted `/boot` partition to LUKS. (Discuss in [User_talk:Grazzolini](https://wiki.archlinux.org/index.php/User_talk:Grazzolini))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=411665](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=411665)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=411683](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=411683)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

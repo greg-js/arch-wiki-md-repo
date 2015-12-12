@@ -64,6 +64,26 @@ The PCI address is the first 7 characters of the line that mentions NVIDIA. It w
 
 **Note:** On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see [#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log).
 
+If X.Org X server version 1.17.2 or higher is installed ([[1]](http://us.download.nvidia.com/XFree86/Linux-x86/358.16/README/randr14.html))
+
+ `/etc/X11/xorg.conf` 
+
+```
+Section "Module"
+    Load "modesetting"
+EndSection
+
+Section "Device"
+    Identifier "nvidia"
+    Driver "nvidia"
+    BusID "<BusID for NVIDIA device here>"
+    Option "AllowEmptyInitialConfiguration"
+EndSection
+
+```
+
+For older X servers
+
  `/etc/X11/xorg.conf` 
 
 ```
@@ -150,7 +170,7 @@ $ lspci |grep VGA
 
 ```
 
-**Tip:** The three last commented out options may (without #) result in positive effects on the tearing, but exchange for some performance cost. Note the `TearFree` option may be used for `"sna"` acceleration only, see [Intel graphics](/index.php/Intel_graphics "Intel graphics"). You can use either `"sna"` or `"uxa"` in `"AccelMethod"` option. For further experimenting, a working `xorg.conf` from a Lenovo Ideapad Z50-70 59-432128 is here: [[1]](http://pastebin.com/tMtPz381).
+**Tip:** The three last commented out options may (without #) result in positive effects on the tearing, but exchange for some performance cost. Note the `TearFree` option may be used for `"sna"` acceleration only, see [Intel graphics](/index.php/Intel_graphics "Intel graphics"). You can use either `"sna"` or `"uxa"` in `"AccelMethod"` option. For further experimenting, a working `xorg.conf` from a Lenovo Ideapad Z50-70 59-432128 is here: [[2]](http://pastebin.com/tMtPz381).
 
 If X starts but nothing appears on the screen, check if `/var/log/xorg.conf` contains a following line or similar:
 
@@ -271,7 +291,7 @@ $ glxinfo | grep NVIDIA
 
 ### Further Information
 
-For more information, look at NVIDIA's official page on the topic [[2]](http://http.download.nvidia.com/XFree86/Linux-x86_64/340.32/README/randr14.html).
+For more information, look at NVIDIA's official page on the topic [[3]](http://http.download.nvidia.com/XFree86/Linux-x86_64/340.32/README/randr14.html).
 
 ## Troubleshooting
 
@@ -313,7 +333,7 @@ The open-source [nouveau](/index.php/Nouveau "Nouveau") driver ([xf86-video-nouv
 
 If you wish to use Bumblebee, which will implement powersaving and some other useful features, see the wiki article on [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=410685](https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=410685)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=411693](https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=411693)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

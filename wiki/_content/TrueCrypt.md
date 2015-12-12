@@ -14,6 +14,8 @@ Related articles
 
 **Warning:** On 2015/09/26 two critical security issues has been found in **Windows** version of TrueCrypt: CVE-2015-7358 and CVE-2015-7359\. Take this into account if you're planning to use this software to share encrypted volumes between Windows and ArchLinux. More information: [1](https://veracrypt.codeplex.com/SourceControl/changeset/cf4794372e5dea753b6310f1ca6912c6bfa86d45)[2](http://www.theregister.co.uk/2015/09/29/google_flaks_find_admin_elevation_holes_that_gave_truecrypt_audit_the_slip/)
 
+**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://aur.archlinux.org/packages/veracrypt/)<sup><small>AUR</small></sup> 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to _truecrypt_ 1:7.1a-2 works around the problem.
+
 TrueCrypt is a free open source on-the-fly encryption (OTFE) program. Some of its features are:
 
 *   Virtual encrypted disks within files that can be mounted as real disks.
@@ -716,7 +718,7 @@ If you cannot modify the filesystem, although permissions seem to be correct, th
 *   [Truecrypt tutorial on HowToForge](http://www.howtoforge.com/truecrypt_data_encryption)
 *   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=409974](https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=409974)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=411676](https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=411676)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

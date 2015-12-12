@@ -8,14 +8,6 @@ Related articles
 
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Blu-ray#](https://wiki.archlinux.org/index.php/Talk:Blu-ray))
-
 This article is designed to help Linux users to play the BluRay discs they have legally purchased on their computers. Since no official BluRay player software is available on their system, Linux users have to use open-source libraries capable of handling the DRM schemes that protect these disc contents. This is legal in most countries where interoperability allows this.
 
 ## Contents
@@ -265,7 +257,7 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411637](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411637)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411682](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411682)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

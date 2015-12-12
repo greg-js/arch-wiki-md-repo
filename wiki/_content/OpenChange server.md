@@ -66,13 +66,10 @@ This article explains how to setup a mail server using OpenChange server followi
 
 ### MySQL/MariaDB
 
-If you haven't already done so, create the MySQL database with the following commands:
+If you haven't already done so, create the first MySQL database with the following command:
 
 ```
-# install -d /var/lib/mysql
-# chown mysql:mysql /var/lib/mysql
 # mysql_install_db --user=mysql --basedir=/usr/ --ldata=/var/lib/mysql/
-# mysql_upgrade
 
 ```
 
@@ -339,11 +336,11 @@ To restore all user data, run the following commands:
 
 ```
 
-Simmply restart sogo to continue using the MySQL/MariaDB.
+Simply restart sogo to continue using the MySQL/MariaDB.
 
 ##### PostgreSQL
 
-If you've elected to use PostgreSQL over MySQL/MariaDB for whatever reason, the old instructions have been left for convenience. If this is a new installation, I'd recommend that you keep it all in MySQL/MariaDB.
+If you've elected to use PostgreSQL over MySQL/MariaDB, the old instructions have been left for convenience. If this is a new installation, it is recommended that you use only MySQL/MariaDB for sogo/openchange data.
 
 Initialize the default database and start PostgreSQl (be sure to replace **en_US.UTF-8** with the correct locale for your installation):
 
@@ -413,7 +410,7 @@ Next, edit the sogo configuration file, `/etc/httpd/conf/extra/SOGo.conf`, and c
 Give the root user the GNUStep configuration for the sogo user:
 
 ```
-# ln -s /etc/sogo/GNUStep /root/GNUStep
+# ln -s /etc/sogo/GNUstep /root/GNUstep
 
 ```
 
@@ -1286,7 +1283,7 @@ include conf/extra/ocsmanager-apache.conf
 
 Now just restart `httpd` and `samba`. If you have made it this far, and your DNS is configured correctly, you should be able to configure an Outlook client with only an email address, username, and password. For Outlook (or other MAPI clients that support RPC/HTTPS, you need open only port 443, at the edge. Obviously, you still need to consider additional configuration for Postfix (spam and virus filtering, more restrictive use of SMTPD and SMTP, open ports 25 and 587) if you intend to receive mail from the internet. You will probably also want to move the various HTTPD pieces into virtual hosts, provide redirection on 80 for secure services, etc., but those exercises are covered in great detail elsewhere.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenChange_server&oldid=411139](https://wiki.archlinux.org/index.php?title=OpenChange_server&oldid=411139)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenChange_server&oldid=411689](https://wiki.archlinux.org/index.php?title=OpenChange_server&oldid=411689)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

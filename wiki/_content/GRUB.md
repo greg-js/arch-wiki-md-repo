@@ -147,12 +147,10 @@ The following commands will:
 *   In the case of a GPT partitioned disk it will embed it in the BIOS Boot Partition , denoted by `bios_grub` flag in parted and EF02 type code in gdisk
 
 ```
-# grub-install --recheck /dev/sd_x_
+# grub-install --recheck --target=i386-pc /dev/sd_x_
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
-
-**Note:** `--target=i386-pc` is not needed since it is the default value, and besides GRUB will print for which platform it is installing providing an easy way to verify it.
 
 If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on multiple physical disks.
 
@@ -1151,7 +1149,7 @@ GRUB seems to be unable to write to root BTRFS partitions [[4]](https://bbs.arch
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=411260](https://wiki.archlinux.org/index.php?title=GRUB&oldid=411260)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=411692](https://wiki.archlinux.org/index.php?title=GRUB&oldid=411692)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

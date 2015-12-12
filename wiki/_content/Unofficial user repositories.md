@@ -445,8 +445,6 @@ Server = http://ivasilev.net/pacman/$arch
 *   **Description:** [llvm-svn](https://aur.archlinux.org/pkgbase/llvm-svn) and [lib32-llvm-svn](https://aur.archlinux.org/pkgbase/lib32-llvm-svn) from AUR: the LLVM compiler infrastructure, the Clang frontend, and the tools associated with it
 *   **Key-ID:** [0x76563F75679E4525](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x76563F75679E4525&fingerprint=on&exact=on), fingerprint <tt>D16C F22D 27D1 091A 841C 4BE9 7656 3F75 679E 4525</tt>
 
-**Warning:** This repo is temporarily unavailable due to technical problems. Expected to be back on-line on 12 Dec 2015.
-
 ```
 [llvm-svn]
 Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
@@ -549,7 +547,7 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 *   **Description:** systemd rebuilt with unofficial OpenVZ patch (kernel < 2.6.32-042stab111.1)
 *   **Key-ID:** Not required, as maintainer is a TU
 
-**Warning:** `[tredaelli-systemd]` must be put before `[core]` in `/etc/pacman.conf`
+**Note:** `[tredaelli-systemd]` must be put before `[core]` in `/etc/pacman.conf`
 
 ```
 [tredaelli-systemd]
@@ -1570,7 +1568,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411439](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411439)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411684](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411684)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
