@@ -43,7 +43,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")** — Deepin desktop interface and apps feature an intuitive and elegant design. Moving around, sharing and searching etc. has become simply a joyful experience.
 
-[http://www.deepin.org/](http://www.deepin.org/) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
+[http://www.deepin.org/?language=en](http://www.deepin.org/?language=en) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
 
 *   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — The Enlightenment desktop shell provides an efficient window manager based on the Enlightenment Foundation Libraries along with other essential desktop components like a file manager, desktop icons and widgets. It supports themes, while still being capable of performing on older hardware or embedded devices.
 
@@ -998,7 +998,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411728](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411728)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411844](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411844)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

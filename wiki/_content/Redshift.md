@@ -20,8 +20,9 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
     *   [2.2 Automatic location based on GPS](#Automatic_location_based_on_GPS)
     *   [2.3 Manual setup](#Manual_setup)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 redshift-gtk will not start](#redshift-gtk_will_not_start)
-    *   [3.2 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
+    *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
+    *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
+    *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -136,6 +137,10 @@ screen=1
 
 ## Troubleshooting
 
+### Screen 1 could not be found
+
+/home/username/.config, change Screen 1 to Screen 0, in redshift.conf
+
 ### redshift-gtk will not start
 
 redshift-gtk requires optional dependencies to work correctly. To verify any missing dependencies, run `redshift-gtk` in the command line. Similar output to the following would be produced:
@@ -170,7 +175,7 @@ users=
 *   [Redshift website](http://jonls.dk/redshift)
 *   [Redshift on github](http://github.com/jonls/redshift)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Redshift&oldid=410387](https://wiki.archlinux.org/index.php?title=Redshift&oldid=410387)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Redshift&oldid=411838](https://wiki.archlinux.org/index.php?title=Redshift&oldid=411838)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -16,7 +16,8 @@ Documentation is available in the Linux kernel tree under [Documentation/network
     *   [1.1 Built-in Configuration](#Built-in_Configuration)
     *   [1.2 Runtime configuration](#Runtime_configuration)
 *   [2 Receiver configuration](#Receiver_configuration)
-*   [3 See also](#See_also)
+*   [3 Usage](#Usage)
+*   [4 See also](#See_also)
 
 ## Sender configuration
 
@@ -131,11 +132,28 @@ socat - udp4-datagram:192.168.1.28:6666,bind=6666
 
 One may need to switch off PC and router firewall, and setup proper router port forwarding to monitor and input data in _Netconsole_. A more flexible configuration can be achieved if netconsole is setup on a [different subnet](http://archlinuxarm.org/forum/viewtopic.php?f=18&t=3355) so that if the device is moved to a different network IP's won't clash, however [it may require a more complex setup](http://archlinuxarm.org/platforms/armv5/seagate-goflex-home#qt-platform_tabs-ui-tabs3) on the receiver with aliased ethernet interface.
 
+## Usage
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** Moved from [Boot debugging](/index.php/Boot_debugging "Boot debugging") (Discuss in [Talk:Netconsole#](https://wiki.archlinux.org/index.php/Talk:Netconsole))
+
+**netconsole** is a kernel module which sends kernel logs over the network, which is useful for debugging slower computers. The setup process is:
+
+1.  Set up another computer (running Arch) to accept syslog requests on a remote port using `syslog.conf`
+2.  View the logs using your `/var/log/everything.log` file
+3.  On the computer you are debugging, add a kernel paramter like `netconsole=514@10.0.0.2/12:34:56:78:9a:bc` (along with whatever debugging parameters you want)
+4.  Restart the computer and view the logs
+
 ## See also
 
 *   [Boot debugging#netconsole](/index.php/Boot_debugging#netconsole "Boot debugging")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netconsole&oldid=410376](https://wiki.archlinux.org/index.php?title=Netconsole&oldid=410376)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netconsole&oldid=411793](https://wiki.archlinux.org/index.php?title=Netconsole&oldid=411793)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

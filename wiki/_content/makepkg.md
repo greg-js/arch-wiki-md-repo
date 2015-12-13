@@ -37,6 +37,7 @@ _makepkg_ is provided by the [pacman](https://www.archlinux.org/packages/?name=p
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
     *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
     *   [4.3 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_.24srcdir)
+    *   [4.4 Could not read ../PKGBUILD](#Could_not_read_...2FPKGBUILD)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -334,13 +335,18 @@ $ grep -R "$(pwd)/src" pkg/
 
 [Link](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html) to discussion thread.
 
+### Could not read ../PKGBUILD
+
+This is issue related to having `BUILDDIR` variable set while using yaourt for installing some package. Makepkg copies source files to `$BUILDDIR/package`, but it doesn't copy the `PKGBUILD`. If you don't build packages often and you are doing it mainly with yaourt, consider disabling (by commenting out) your `BUILDDIR` option in `makepkg.conf` - it should not affect your performance since yaourt builds packages in `/tmp` by default (having `BUILDDIR` set to `/tmp` affects only performance of manual building).
+
 ## See also
 
 *   [makepkg(8) Manual Page](https://www.archlinux.org/pacman/makepkg.8.html)
 *   [makepkg.conf(5) Manual Page](https://www.archlinux.org/pacman/makepkg.conf.5.html)
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
+*   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411503](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411503)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411841](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411841)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

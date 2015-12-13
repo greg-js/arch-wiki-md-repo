@@ -67,7 +67,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 让系统从 Arch 安装介质中启动。大多现代操作系统允许您在[POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test")时手动设置引导设备，在开机屏幕中一般会显示需要的按键。进入BIOS设置界面后，修改设备引导顺序。把包含 Arch ISO 的设备设为系统引导首选。再选 "Save & Exit" （或您 BIOS 相应的选项），您的计算机接着应该会开始常规的引导流程了。
 
-当Arch菜单出现时，选 "Boot Arch Linux" 并按 `Enter`进入安装环境。[启动参数](/index.php/Kernel_parameters#Configuration "Kernel parameters")页面提供了额外的参数修改。
+当Arch菜单出现时，选 "Boot Arch Linux" 并按 `Enter`进入安装环境。[启动参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE "Kernel parameters (简体中文)")页面提供了额外的参数修改。
 
 启动完成后会以 root 登录并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示， [grml config](http://grml.org/zsh/)提供了额外的配置。编辑配置文件时可以使用 [nano](/index.php/Nano#Usage "Nano") 或 [vim](/index.php/Vim#Usage "Vim") 。
 
@@ -629,7 +629,7 @@ timeout  5
 
 #### 有线网络
 
-如果您只用单一且固定的有线网络连接，启动 [dhcpcd](/index.php?title=Ic&action=edit&redlink=1 "Ic (page does not exist)") 服务，`_interface_` 是您的网络接口名：
+如果您只用单一且固定的有线网络连接，启动 [dhcpcd](/index.php?title=Ic&action=edit&redlink=1 "Ic（页面不存在）") 服务，`_interface_` 是您的网络接口名：
 
 ```
 # systemctl enable dhcpcd@_interface_.service
@@ -686,7 +686,7 @@ _systemd_ 在关机时会自动卸载分区，为了确保安全，可以用 `um
 
 [Arch Linux 中文化](/index.php/Arch_Linux_%E4%B8%AD%E6%96%87%E5%8C%96 "Arch Linux 中文化") 页面还包含了关于系统、软件中文支持的内容。
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=411541](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=411541)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=411839](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=411839)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

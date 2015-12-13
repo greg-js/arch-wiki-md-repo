@@ -24,9 +24,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(11)</small>
 
-<small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(28)</small>
+<small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(27)</small>
 
-<small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small>
+<small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(2)</small>
 
 <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small>
 
@@ -46,7 +46,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small>
 
-<small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(44)</small>
+<small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(46)</small>
 
 <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(65) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
@@ -76,11 +76,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small>
 
-<small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(12)</small>
+<small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small>
 
 <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small>
 
-<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(56)</small>
+<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(57)</small>
 
 <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
@@ -104,7 +104,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small>
 
-<small>4.4.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(30)</small>
+<small>4.4.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(29)</small>
 
 <small>4.5.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(9)</small>
 
@@ -120,7 +120,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(19)</small>
 
-<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small>
+<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small>
 
 <small>4.8.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(3)</small>
 
@@ -158,7 +158,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.11.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(20) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
-<small>4.12.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(20)</small>
+<small>4.12.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small>
 
 <small>4.13.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small>
 
@@ -196,7 +196,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.9.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small>
 
-<small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(13)</small>
+<small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(14)</small>
 
 <small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
@@ -246,9 +246,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(8)</small>
 
-<small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(78)</small>
+<small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(79)</small>
 
-<small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(14)</small>
+<small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small>
 
 <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(41)</small>
 
@@ -258,7 +258,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small>
 
-<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small>
+<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small>
 
 <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(27)</small>
 
@@ -270,15 +270,15 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
-<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(37)</small>
+<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(36)</small>
 
 <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(20)</small>
 
 <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(8)</small>
 
-<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(62)</small>
+<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(60)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=411108](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=411108)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=411843](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=411843)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

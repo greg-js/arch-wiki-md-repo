@@ -317,7 +317,7 @@ Adding the above command to the `Prnt Scr` key to Compiz allows to take the scre
 
 ```
 
-If the `Print` above does not work, then `0xDA` can be used instead.
+If the `Print` above does not work, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and use different _keysym_ or _keycode_.
 
 ## Terminal
 
@@ -356,7 +356,7 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=411776](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=411776)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=411819](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=411819)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

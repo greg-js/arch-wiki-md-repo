@@ -15,23 +15,32 @@ This article explains some methods for general troubleshooting. For application 
 
 ## Contents
 
-*   [1 Attention to detail](#Attention_to_detail)
-*   [2 Questions / checklist](#Questions_.2F_checklist)
-*   [3 Be more specific](#Be_more_specific)
-*   [4 Additional support](#Additional_support)
-*   [5 Session permissions](#Session_permissions)
-*   [6 Boot problems](#Boot_problems)
-*   [7 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
-*   [8 fuser](#fuser)
-*   [9 Why I can't write on NTFS partitions?](#Why_I_can.27t_write_on_NTFS_partitions.3F)
-*   [10 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
-*   [11 See also](#See_also)
+*   [1 General procedures](#General_procedures)
+    *   [1.1 Attention to detail](#Attention_to_detail)
+    *   [1.2 Questions / checklist](#Questions_.2F_checklist)
+    *   [1.3 Be more specific](#Be_more_specific)
+    *   [1.4 Additional support](#Additional_support)
+*   [2 Boot problems](#Boot_problems)
+    *   [2.1 Blank screen with Intel video](#Blank_screen_with_Intel_video)
+    *   [2.2 Stuck while loading the kernel](#Stuck_while_loading_the_kernel)
+    *   [2.3 Unbootable system](#Unbootable_system)
+    *   [2.4 Debugging kernel modules](#Debugging_kernel_modules)
+    *   [2.5 Debugging hardware](#Debugging_hardware)
+*   [3 Package management](#Package_management)
+*   [4 Session permissions](#Session_permissions)
+*   [5 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
+*   [6 fuser](#fuser)
+*   [7 Why I can't write on NTFS partitions?](#Why_I_can.27t_write_on_NTFS_partitions.3F)
+*   [8 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
+*   [9 See also](#See_also)
 
-## Attention to detail
+## General procedures
+
+### Attention to detail
 
 In order to resolve an issue that you are having, it is _absolutely crucial_ to have a firm understanding of how that specific system functions. How it works, and what does it need to run without error? If you cannot comfortably answer these question then it is strongly advised that you review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the function that you are having troubles with. Once you feel like you've understood the specific system, it will be easier for you to pin-point the problem.
 
-## Questions / checklist
+### Questions / checklist
 
 The following gives a number of questions for you whenever dealing with a malfunctioning system. Under each question there are notes explaining how you should be answering each question, followed by some light examples on how to easily gather data output and what tools can be used to review logs and the journal.
 
@@ -57,7 +66,7 @@ The following gives a number of questions for you whenever dealing with a malfun
 
     **Note:** Using `**>>**` will ensure any previous text in `$HOME/issue.log` will not be overwritten.
 
-## Be more specific
+### Be more specific
 
 When attempting to resolve an issue, **never** approach it as:
 
@@ -67,11 +76,39 @@ Instead, look at it in its entirety:
 
 _Application X produces Y error(s) when performing Z tasks under conditions A and B._
 
-## Additional support
+### Additional support
 
 With all the information in front of you. You should have a good idea as to what is going on with the system. And you can now start working on a proper fix.
 
 If you require any additional support, it can be found on [the forums](https://bbs.archlinux.org) or IRC at irc.freenode.net #archlinux
+
+## Boot problems
+
+See [Boot debugging](/index.php/Boot_debugging "Boot debugging") to retrieve additional information.
+
+### Blank screen with Intel video
+
+This is most likely due to a problem with [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Try [disabling modesetting](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") or changing the [video port](/index.php/Intel#KMS_Issue:_console_is_limited_to_small_area "Intel").
+
+### Stuck while loading the kernel
+
+Try disabling ACPI by adding the `acpi=off` kernel parameter.
+
+### Unbootable system
+
+If your system will not boot at all, simply boot from a [live image](https://www.archlinux.org/download/) and [change root](/index.php/Change_root "Change root") to log into the system and fix the issue.
+
+### Debugging kernel modules
+
+See [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
+
+### Debugging hardware
+
+See [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+
+## Package management
+
+See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for general topics, and [Pacman/Package_signing#Troubleshooting](/index.php/Pacman/Package_signing#Troubleshooting "Pacman/Package signing") for issues with PGP keys.
 
 ## Session permissions
 
@@ -89,10 +126,6 @@ This should contain `Remote=no` and `Active=yes` in the output. If it does not, 
 A D-Bus session should also be started along with X. See [D-Bus#Starting the user session](/index.php/D-Bus#Starting_the_user_session "D-Bus") for more information on this.
 
 Basic [polkit](/index.php/Polkit "Polkit") actions do not require further set-up. Some polkit actions require further authentication, even with a local session. A polkit authentication agent needs to be running for this to work. See [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit") for more information on this.
-
-## Boot problems
-
-See [Boot debugging](/index.php/Boot_debugging "Boot debugging").
 
 ## file: could not find any magic files!
 
@@ -196,7 +229,7 @@ en_GB:aspell
 *   [Fix the Most Common Problems](http://www.maximumpc.com/article/features/linux_troubleshooting_guide_fix_most_common_problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=406300](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=406300)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411804](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411804)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

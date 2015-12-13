@@ -29,8 +29,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Planet admin
     *   Helping with rebuilds
 *   Dan McGee
+    *   Packaging
+    *   Archweb (but fairly inactive on this front)
 *   Daniel Isenmann
 *   Dave Reisner
+    *   Packaging
 *   Eric Bélanger
 *   Evangelos Foutras
     *   Packaging (Xfce, LLVM/Clang)
@@ -85,6 +88,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Rémy Oudompheng
     *   Packaging (TeXLive)
 *   Ronald van Haren
+    *   Packaging (misc, scientific applications, enlightenment)
 *   Sébastien Luttringer
     *   Packaging: [https://www.archlinux.org/packages/?maintainer=seblu](https://www.archlinux.org/packages/?maintainer=seblu)
     *   Interested in:
@@ -201,7 +205,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Forum moderation
 *   Xyne
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411758](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411758)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411816](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411816)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

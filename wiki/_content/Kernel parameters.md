@@ -22,6 +22,7 @@ This page now explains in more detail the second method and shows a list of most
     *   [1.5 LILO](#LILO)
     *   [1.6 rEFInd](#rEFInd)
     *   [1.7 EFISTUB/efibootmgr](#EFISTUB.2Fefibootmgr)
+    *   [1.8 Hijacking cmdline](#Hijacking_cmdline)
 *   [2 Parameter list](#Parameter_list)
 *   [3 See also](#See_also)
 
@@ -130,6 +131,23 @@ For more information on configuring kernel parameters in rEFInd, see [Configurin
 ### EFISTUB/efibootmgr
 
 See [EFISTUB#Using UEFI directly (efibootmgr)](/index.php/EFISTUB#Using_UEFI_directly_.28efibootmgr.29 "EFISTUB").
+
+### Hijacking cmdline
+
+Even without access to your bootloader it is possible to change your kernel parameters to enable debugging (if you have root access). This can be accomplished by overwriting `/proc/cmdline` which stores the kernel parameters. However `/proc/cmdline` is not writable even as root, so this hack is accomplished by using a bind mount to mask the path.
+
+First create a file containing the desired kernel parameters
+
+ `/root/cmdline`  `root=/dev/disk/by-label/ROOT ro console=tty1 logo.nologo debug` 
+
+Then use a bind mount to overwrite the parameters
+
+```
+# mount -n --bind -o ro /root/cmdline /proc/cmdline
+
+```
+
+The `-n` option skips adding the mount to `/etc/mtab`, so it will work even if root is mounted read-only. You can `cat /proc/cmdline` to confirm that your change was successful.
 
 ## Parameter list
 
@@ -257,7 +275,7 @@ For a complete list of all options, please see the [kernel documentation](https:
 *   [Power saving#Kernel parameters](/index.php/Power_saving#Kernel_parameters "Power saving")
 *   [List of kernel parameters with further explanation and grouped by similar options](http://files.kroah.com/lkn/lkn_pdf/ch09.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_parameters&oldid=396938](https://wiki.archlinux.org/index.php?title=Kernel_parameters&oldid=396938)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_parameters&oldid=411785](https://wiki.archlinux.org/index.php?title=Kernel_parameters&oldid=411785)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

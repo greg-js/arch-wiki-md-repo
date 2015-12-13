@@ -11,9 +11,6 @@ Related articles
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
-*   [pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman")
-*   [pacman-key#Troubleshooting](/index.php/Pacman-key#Troubleshooting "Pacman-key")
 
 This document will guide you through the process of installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") using the [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Before installing, you are advised to skim over the [FAQ](/index.php/FAQ "FAQ").
 
@@ -677,7 +674,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411745](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411745)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411805](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411805)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

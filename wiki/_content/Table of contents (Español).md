@@ -22,7 +22,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.4.</small> [Eventos](/index.php/Category:Events_(Espa%C3%B1ol) "Category:Events (Español)") <small>(2)</small>
 
-<small>1.5.</small> [Obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") <small>(15)</small>
+<small>1.5.</small> [Obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") <small>(14)</small>
 
 <small>1.6.</small> [Sistemas live de Arch](/index.php/Category:Live_Arch_systems_(Espa%C3%B1ol) "Category:Live Arch systems (Español)") <small>(2)</small>
 
@@ -216,7 +216,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(17)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411607](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411607)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411845](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=411845)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

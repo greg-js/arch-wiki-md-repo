@@ -18,8 +18,6 @@ Related articles
 
 KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma (or Plasma Workspaces), a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/). Detailed information about most KDE applications can be found there.
 
-**Note:** In 2014, the KDE project changed the way it names and organizes itself. The older term _KDE Software Compilation_ was discontinued and the versioning and development cycles of the frameworks and applications were decoupled from the Plasma desktop itself.
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -34,8 +32,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
                 *   [3.1.1.1.1 Qt and GTK+ Applications Appearance](#Qt_and_GTK.2B_Applications_Appearance)
             *   [3.1.1.2 Widgets](#Widgets)
             *   [3.1.1.3 Sound applet in the system tray](#Sound_applet_in_the_system_tray)
-            *   [3.1.1.4 Adding a Global Menu to the desktop](#Adding_a_Global_Menu_to_the_desktop)
-            *   [3.1.1.5 Disable panel shadow](#Disable_panel_shadow)
+            *   [3.1.1.4 Disable panel shadow](#Disable_panel_shadow)
         *   [3.1.2 Window decorations](#Window_decorations)
         *   [3.1.3 Icon themes](#Icon_themes)
             *   [3.1.3.1 Qt 5 icons theme](#Qt_5_icons_theme)
@@ -77,13 +74,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [9.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [9.2 Integrate Android with the KDE Desktop](#Integrate_Android_with_the_KDE_Desktop)
     *   [9.3 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
-        *   [9.3.1 Plasma 4](#Plasma_4)
-        *   [9.3.2 Plasma 5](#Plasma_5)
     *   [9.4 Speed up application startup](#Speed_up_application_startup)
-    *   [9.5 Setting the background for lock screen](#Setting_the_background_for_lock_screen)
-    *   [9.6 Setting lockscreen wallpaper to arbitrary image](#Setting_lockscreen_wallpaper_to_arbitrary_image)
-    *   [9.7 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [9.8 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [9.5 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
+    *   [9.6 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 Graphics card related](#Graphics_card_related)
         *   [10.1.1 Intel](#Intel)
@@ -158,7 +151,7 @@ Alternatively, to start Plasma with _startx_, append `exec startkde` to your `.x
 
 ## Configuration
 
-Most settings for KDE 4 applications are stored in the `~/.kde4` folder, otherwise `~/.config` is used. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing _systemsettings_.
+Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing _systemsettings_.
 
 Frameworks 5 applications can use KDE 4 configuration however they expect the configuration files to be located in different places. To allow Frameworks 5 applications running in KDE 4 to share the same configurations they may be moved to the new locations and symlinked back to the old. Examples are:
 
@@ -214,22 +207,9 @@ Most plasmoids are not created officially by KDE developers. You can also try in
 
 ##### Sound applet in the system tray
 
-[Install](/index.php/Install "Install") Kmix ([kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) for Plasma 4, or [kmix](https://www.archlinux.org/packages/?name=kmix) AND [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) for Plasma 5) and start it from the application launcher. Since Plasma, by default, autostarts programs from the previous session, it does not need to be started manually upon every login.
+[Install](/index.php/Install "Install") Kmix ([kmix](https://www.archlinux.org/packages/?name=kmix) AND [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)) and start it from the application launcher. Since Plasma, by default, autostarts programs from the previous session, it does not need to be started manually upon every login.
 
 **Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.kde4/share/config/kmixrc`
-
-##### Adding a Global Menu to the desktop
-
-[Install](/index.php/Install "Install") the [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt) package, as well as the [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-gtk)]</sup> and [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt5)]</sup> packages in order to complete the preliminaries for a Mac OS X style always-on global menu. To get Firefox and LibreOffice to use the global menu as well, install the [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/firefox-extension-globalmenu)]</sup> and [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libreoffice-extension-menubar)]</sup> packages.
-
-**Note:**
-
-*   [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-gtk)]</sup> is orphaned and Canonical has abandoned appmenu-gtk in favor of unity-gtk-module that is depending on Unity desktop. As of October 2014 there is no way of exporting gtk2,3 menus in KDE.
-*   Install the [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/)<sup><small>AUR</small></sup> package, which has Canonical's patch for getting the global menu to work with the current version of Firefox (as of November 2013).
-
-To actually get the global menu, install the [kdeplasma-applets-menubar](https://aur.archlinux.org/packages/kdeplasma-applets-menubar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-menubar)]</sup> package. Create a plasma-panel on top of your screen and add the window menubar applet to the panel. To export the menus to your global menu, go to _System Settings > Application Appearance > Style_.
-
-Now click the fine-tuning tab and use the drop-down list to select _only export_ as your menubar style.
 
 ##### Disable panel shadow
 
@@ -303,7 +283,7 @@ The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE 
 
 You can also configure printers in _System Settings > Printer Configuration_. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups).
 
-The `avahi-daemon` and `cupsd` daemons must be started first; otherwise, you will get the following error:
+The `avahi-daemon.service` and `org.cups.cupsd.service` daemons must be started first; otherwise, you will get the following error:
 
 ```
 The service 'Printer Configuration' does not provide an interface 'KCModule'
@@ -355,8 +335,6 @@ A plasma bar presenting you the current existing Plasma Desktop Activities will 
 
 Plasma has an integrated power saving service called "**Powerdevil Power Management**" that may adjust the power saving profile of the system and/or the brightness of the screen (if supported).
 
-Since Plasma 4.6, CPU frequency scaling is no longer managed by Plasma. Instead it is assumed to be handled automatically by the the hardware and/or kernel. Arch has used `ondemand` as the default CPU frequency governor since kernel version 3.3, so no additional configuration is needed in most cases. For details on fine-tuning the governor, see [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
-
 ### Monitoring changes on local files and directories
 
 KDE now uses **inotify** directly from the kernel with **kdirwatch** (included in kdelibs), so Gamin or FAM are no longer needed. You may want to install this [kdirwatch](https://aur.archlinux.org/packages/kdirwatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdirwatch)]</sup> from AUR which is a GUI frontend for kdirwatch.
@@ -397,14 +375,6 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 *   [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub2-editor)]</sup>
 
-**Configuration for Synaptics touchpads.**
-
-*   [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
-*   [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)]</sup> (Plasma 5)
-*   [synaptiks](https://aur.archlinux.org/packages/synaptiks/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/synaptiks)]</sup>
-*   [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_touchpad)]</sup>
-*   [kcm-touchpad-git](https://aur.archlinux.org/packages/kcm-touchpad-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad-git)]</sup>
-
 **Configuration for the [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") (UFW)**
 
 *   [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)<sup><small>AUR</small></sup>
@@ -419,7 +389,7 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 **Configuration for systemd**
 
-*   [kcmsystemd](https://www.archlinux.org/packages/?name=kcmsystemd)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)]</sup> (Plasma 5)
+*   [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)
 
 More KCMs can be found at [kde-apps.org](http://kde-apps.org/index.php?xcontentmode=273).
 
@@ -602,12 +572,6 @@ You will need to install KDE Connect both on your computer and on your Android. 
 
 ### Configure KWin to use OpenGL ES
 
-#### Plasma 4
-
-Beginning with KWin version 4.8 it is possible to use the separately built binary **kwin_gles** as a replacement for kwin. It behaves almost the same as the kwin executable in OpenGL2 mode with the slight difference that it uses _egl_ instead of _glx_ as the native platform interface. To test kwin_gles you just have to run `kwin_gles --replace` in Konsole. If you want to make this change permanent you have to create a script in `$(kde4-config --localprefix)/env/` which exports `KDEWM=kwin_gles`.
-
-#### Plasma 5
-
 Due to QtQuick2, both the Qt OpenGL module and KWin have to be [compiled against OpenGL ES.](http://blog.martin-graesslin.com/blog/2013/11/kwin5-qtquick-2-and-the-caused-changes-for-opengl/)
 
 ### Speed up application startup
@@ -627,78 +591,6 @@ $ ln -sfv /run/user/$UID/ /home/$USER/.compose-cache
 ```
 
 **Note:** For those curious about what is going on here, this enables an optimization which Lubos (of general KDE speediness fame) came up with some time ago and was then rewritten and integrated into libx11\. Ordinarily, on startup, applications read input method information from `/usr/share/X11/locale/_your locale_/Compose`. This file is quite long (>5000 lines for the en_US.UTF-8 one) and takes some time to process. libX11 can create a cache of the parsed information which is much quicker to read subsequently, but it will only re-use an existing cache or create a new one in `~/.compose-cache` if the directory already exists.
-
-### Setting the background for lock screen
-
-In Plasma 5, you can set a custom wallpaper for the lock screen. This is [not possible](https://bugs.kde.org/show_bug.cgi?id=312828) in KDE 4, but here a workaround from OpenSUSE mailing lists: [http://lists.opensuse.org/opensuse-kde/2013-02/msg00082.html](http://lists.opensuse.org/opensuse-kde/2013-02/msg00082.html)
-
-For this you should modify the file `/usr/share/kde4/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/main.qml`, replacing a line
-
-```
-source: theme.wallpaperPathForSize(parent.width, parent.height)
-
-```
-
-with something like
-
-```
-source: "1920x1080.jpg"
-
-```
-
-Now you simply put a wallpaper image `1920x1080.jpg` to the `/usr/share/kde4/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui` directory.
-
-**Note:** You have to redo this for each update of the package [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace).
-
-### Setting lockscreen wallpaper to arbitrary image
-
-Copy an existing wallpaper profile as a template:
-
-```
-$ cp -r /usr/share/wallpapers/_ExistingWallpaper_ ~/.kde4/share/wallpapers/
-
-```
-
-Change the name of the directory, and edit `metadata.desktop`:
-
- `~/.kde4/share/wallpapers/_MyWallpaper_/metadata.desktop` 
-
-```
-[Desktop Entry]
-Name=MyWallpaper
-X-KDE-PluginInfo-Name=MyWallpaper
-```
-
-Remove existing images (`contents/screenshot.png` and `images/*`):
-
-```
-$ rm ~/.kde4/share/wallpapers/MyWallpaper/contents/screenshot.png
-$ rm ~/.kde4/share/wallpapers/MyWallpaper/contents/images/*
-
-```
-
-Copy new image in:
-
-```
-$ cp _path/to/MyWallpaper.png_ MyWallpaper/contents/images/1920x1080.png
-
-```
-
-Edit the metadata profile for the current theme:
-
- `~/.kde4/share/apps/desktoptheme/MyTheme/metadata.desktop` 
-
-```
-[Wallpaper]
-defaultWallpaperTheme=MyWallpaper
-defaultFileSuffix=.png
-defaultWidth=1920
-defaultHeight=1080
-```
-
-Lock the screen to check that it worked.
-
-**Note:** This method sets the lockscreen background without changing any system-wide settings. For a system-wide change, create the new wallpaper profile in `/usr/share/wallpapers`.
 
 ### Configuring monitor resolution / multiple monitors
 
@@ -988,7 +880,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=411731](https://wiki.archlinux.org/index.php?title=KDE&oldid=411731)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=411829](https://wiki.archlinux.org/index.php?title=KDE&oldid=411829)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

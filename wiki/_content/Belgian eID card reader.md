@@ -29,7 +29,7 @@ Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/)<sup><small>AUR<
 
 As a driver for the card reader hardware is required, install the [ccid](https://www.archlinux.org/packages/?name=ccid) package. In some cases, [acsccid](https://aur.archlinux.org/packages/acsccid/)<sup><small>AUR</small></sup> is needed instead.
 
-After installing the right driver, [start](/index.php/Start "Start") and enable the `pcsd` service.
+After installing the right driver, [start](/index.php/Start "Start") and enable the `pcscd` service.
 
 ### Import public keys
 
@@ -51,7 +51,7 @@ If you have installed eid-viewer, you can open it and (with card reader and your
 
 ### Firefox
 
-There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox plugin](https://addons.mozilla.org/nl/firefox/addon/belgium-eid/%7C) to your browser. You should now be able to use your eID reader in Firefox. Try it out using the [test page](http://test.eid.belgium.be%7C)
+There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox plugin](https://addons.mozilla.org/nl/firefox/addon/belgium-eid/%7C) to your browser. You should now be able to use your eID reader in Firefox. Try it out using the [test page](http://test.eid.belgium.be/%7C)
 
 ## Troubleshooting
 
@@ -71,7 +71,7 @@ You may find hints for troubleshooting in the [official documentation (Dutch)](h
 
  `# systemctl restart pcscd` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=411310](https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=411310)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=411837](https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=411837)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

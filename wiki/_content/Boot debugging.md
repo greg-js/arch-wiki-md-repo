@@ -14,23 +14,14 @@ Related articles
 *   [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting")
 *   [systemd](/index.php/Systemd "Systemd")
 
-A lot happens during the boot process, so it is a common time for errors to manifest. There are many methods for diagnosing and fixing boot problems but most of them involve changing the kernel parameters and rebooting the system. Ensure that you are familiar with how to change your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+A lot happens during the boot process, so it is a common time for errors to manifest. There are many methods for diagnosing and fixing boot problems, but most involve changing the kernel parameters and rebooting the system. Ensure that you are familiar with how to change your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). For common issues, see [General troubleshooting#Boot problems](/index.php/General_troubleshooting#Boot_problems "General troubleshooting").
 
 ## Contents
 
 *   [1 Console Clearing](#Console_Clearing)
 *   [2 Debug output](#Debug_output)
 *   [3 Recovery shells](#Recovery_shells)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Blank screen with Intel video](#Blank_screen_with_Intel_video)
-    *   [4.2 Stuck while loading the kernel](#Stuck_while_loading_the_kernel)
-    *   [4.3 Unbootable system](#Unbootable_system)
-    *   [4.4 Debugging kernel modules](#Debugging_kernel_modules)
-    *   [4.5 Debugging hardware](#Debugging_hardware)
-*   [5 Advanced methods](#Advanced_methods)
-    *   [5.1 netconsole](#netconsole)
-    *   [5.2 Hijacking cmdline](#Hijacking_cmdline)
-*   [6 See also](#See_also)
+*   [4 See also](#See_also)
 
 ## Console Clearing
 
@@ -62,88 +53,16 @@ Getting an interactive shell at some stage in the boot process can help you pinp
 
 Another option is to [enable](/index.php/Enable "Enable") `debug-shell.service`, which adds a root shell on `tty9` (accessible with Ctrl+Alt+F9). Take care to disable the service when done to avoid the security risk of leaving a root shell open on every boot.
 
-## Troubleshooting
-
-### Blank screen with Intel video
-
-This is most likely due to a problem with [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Try [disabling modesetting](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") or changing the [video port](/index.php/Intel#KMS_Issue:_console_is_limited_to_small_area "Intel").
-
-### Stuck while loading the kernel
-
-Try disabling ACPI by adding the `acpi=off` kernel parameter.
-
-### Unbootable system
-
-If your system will not boot at all, simply boot from a [live image](https://www.archlinux.org/download/) and [change root](/index.php/Change_root "Change root") to log into the system and fix the issue.
-
-### Debugging kernel modules
-
-See [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
-
-### Debugging hardware
-
-See [udev#Debug output](/index.php/Udev#Debug_output "Udev").
-
-## Advanced methods
-
-### netconsole
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [netconsole](/index.php/Netconsole "Netconsole").**
-
-**Notes:** The main article should have complete information for doing this, and it shouldn't be duplicated here. (Discuss in [Talk:Boot debugging#](https://wiki.archlinux.org/index.php/Talk:Boot_debugging))
-
-[netconsole](/index.php/Netconsole "Netconsole") is a kernel module which sends kernel logs over the network, which is useful for debugging slower computers. The setup process is:
-
-1.  Set up another computer (running Arch) to accept syslog requests on a remote port using `syslog.conf`
-2.  View the logs using your `/var/log/everything.log` file
-3.  On the computer you are debugging, add a kernel paramter like `netconsole=514@10.0.0.2/12:34:56:78:9a:bc` (along with whatever debugging parameters you want)
-4.  Restart the computer and view the logs
-
-Netconsole can view even more output than the `earlyprintk=vga` parameter allows, due to its extensive integration in the kernel. See also the [netconsole documentation](https://www.kernel.org/doc/Documentation/networking/netconsole.txt).
-
-### Hijacking cmdline
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").**
-
-**Notes:** This is really just a different way of changing kernel parameters. (Discuss in [Talk:Boot debugging#](https://wiki.archlinux.org/index.php/Talk:Boot_debugging))
-
-Even without access to your bootloader it is possible to change your kernel parameters to enable debugging (if you have root access). This can be accomplished by overwriting `/proc/cmdline` which stores the kernel parameters. However `/proc/cmdline` is not writable even as root, so this hack is accomplished by using a bind mount to mask the path.
-
-First create a file containing the desired kernel parameters
-
- `/root/cmdline`  `root=/dev/disk/by-label/ROOT ro console=tty1 logo.nologo debug` 
-
-Then use a bind mount to overwrite the parameters
-
-```
-# mount -n --bind -o ro /root/cmdline /proc/cmdline
-
-```
-
-The `-n` option skips adding the mount to `/etc/mtab`, so it will work even if root is mounted read-only. You can `cat /proc/cmdline` to confirm that your change was successful.
-
 ## See also
 
-*   [Kernel Parameters Documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt)
 *   [Memtest86+](http://www.memtest.org/)
 *   [List of Tools for UBCD](http://wiki.ultimatebootcd.com/index.php?title=Tools) - Can be added to custom menu.lst like memtest
-*   Official GRUB2 Manual - [https://www.gnu.org/software/grub/manual/grub.html](https://www.gnu.org/software/grub/manual/grub.html)
-*   Ubuntu wiki page for GRUB2 - [https://help.ubuntu.com/community/Grub2](https://help.ubuntu.com/community/Grub2)
-*   GRUB2 wiki page describing steps to compile for UEFI systems - [https://help.ubuntu.com/community/UEFIBooting](https://help.ubuntu.com/community/UEFIBooting)
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [QA/Sysrq](https://fedoraproject.org/wiki/QA/Sysrq) - Using sysrq
 *   systemd documentation: [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console)
 *   [How to Isolate Linux ACPI Issues](https://lesswatts.org/projects/acpi/debug.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=410488](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=410488)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411797](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411797)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
