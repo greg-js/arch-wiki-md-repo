@@ -18,12 +18,12 @@ A lot happens during the boot process, so it is a common time for errors to mani
 
 ## Contents
 
-*   [1 Console Clearing](#Console_Clearing)
+*   [1 Console clearing](#Console_clearing)
 *   [2 Debug output](#Debug_output)
 *   [3 Recovery shells](#Recovery_shells)
 *   [4 See also](#See_also)
 
-## Console Clearing
+## Console clearing
 
 If all you want is to be able to see error messages that are already being displayed, you should [disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages").
 
@@ -62,7 +62,7 @@ Another option is to [enable](/index.php/Enable "Enable") `debug-shell.service`,
 *   systemd documentation: [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console)
 *   [How to Isolate Linux ACPI Issues](https://lesswatts.org/projects/acpi/debug.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411797](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411797)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411909](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411909)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

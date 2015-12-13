@@ -56,7 +56,7 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 ## Themes
 
-In GTK+ 2, the default theme is _Raleigh_, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to _Adwaita_. In GTK+ 3, the default theme is _Adwaita_.
+In GTK+ 2, the default theme is _Raleigh_, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to _Adwaita_. In GTK+ 3, the default theme is _Adwaita_, but _HighContrast_ and _Raleigh_ themes are also included.
 
 To force a specific theme, you can set environment variables.
 
@@ -82,17 +82,17 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 **Both GTK+ 2 and GTK+ 3 are supported:**
 
-*   **Arc** — A flat theme with a modern look and transparent elements.
+*   **Breeze** — GTK+ version of KDE's default widget theme.
 
-[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)<sup><small>AUR</small></sup>
+[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
+
+*   **Deepin** — Default theme for the Deepin desktop.
+
+[https://gitcafe.com/Deepin/deepin-gtk-theme](https://gitcafe.com/Deepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
 *   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: _Adwaita_, _HighContrast_
 
 [https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
-
-*   **Orion** — A modern and light GTK theme.
-
-[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://www.archlinux.org/packages/?name=gtk-theme-orion)
 
 *   **MATE Themes** — Default themes for the MATE desktop. Includes: _BlackMATE_, _BlueMenta_, _Blue-Submarine_, _ContrastHigh_, _ContrastHighInverse_, _GreenLaguna_, _Green-Submarine_, _Menta_, _TraditionalGreen_, _TraditionalOk_, _TraditionalOkTest_
 
@@ -102,29 +102,37 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 [https://numixproject.org/](https://numixproject.org/) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
 
-*   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
+*   **Arc** — A flat theme with a modern look and transparent elements.
 
-[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)<sup><small>AUR</small></sup>
-
-*   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
-
-[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)<sup><small>AUR</small></sup>
-
-*   **Zukitwo** — Themes for GTK, gnome-shell and more.
-
-[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)<sup><small>AUR</small></sup>
+[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)<sup><small>AUR</small></sup>
 
 *   **Ceti-2** — Theme for GTK 3, GTK 2 and Gnome-Shell.
 
 [http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140](http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)<sup><small>AUR</small></sup>
 
-*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
+*   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
 
-[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)<sup><small>AUR</small></sup>
+[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)<sup><small>AUR</small></sup>
 
 *   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
 
 [https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>
+
+*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
+
+[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)<sup><small>AUR</small></sup>
+
+*   **Orion** — A modern and light GTK theme.
+
+[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)<sup><small>AUR</small></sup>
+
+*   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
+
+[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)<sup><small>AUR</small></sup>
+
+*   **Zukitwo** — Themes for GTK, gnome-shell and more.
+
+[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)<sup><small>AUR</small></sup>
 
 **Only GTK+ 2 is supported:**
 
@@ -596,7 +604,7 @@ gtk-xft-rgba=rgb
 *   [gtkmm Tutorial](http://developer.gnome.org/gtkmm-tutorial/stable/)
 *   [gtkmm Reference Manual](http://developer.gnome.org/gtkmm/stable/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=409615](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=409615)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=411914](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=411914)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

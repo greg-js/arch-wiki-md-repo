@@ -86,7 +86,7 @@ See the GCC man page for a complete list of available options. The Gentoo [Compi
 
 #### MAKEFLAGS
 
-يمكن إستعمال خيار `MAKEFLAGS` لتعين خيارات إضافية لـ make. المستخدمون ذوي الأنضمة متعددة-الأنوية/متعددة-المعالجات بإستطاعتهم تحديد عدد المهام الممكن تشغيلها بالتوازي. ويمكن تحقيق ذلك مع استخدام `nproc` لتحديد عدد المعالجات المتاحة, مثلاً. `-j4` حيث _4 هي خارج `nproc`_. بعض ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تتجاوز هذا بإستعمال `-j1`, وذلك بسبب التعارض في بعض الإصدارات أو ببساطة لأنها غير مدعومة أصلاً. الحزم التي تفشل في البناء لمثل هذا السبب ينبغي [التبليغ](/index.php/Reporting_Bug_Guidelines "Reporting Bug Guidelines") عنها على متتبع العلل وذلك طبعا بعد التأكد فعلا أن العلة تسببب بها MAKEFLAGS الخاص بك.
+يمكن إستعمال خيار `MAKEFLAGS` لتعين خيارات إضافية لـ make. المستخدمون ذوي الأنضمة متعددة-الأنوية/متعددة-المعالجات بإستطاعتهم تحديد عدد المهام الممكن تشغيلها بالتوازي. ويمكن تحقيق ذلك مع استخدام `nproc` لتحديد عدد المعالجات المتاحة, مثلاً. `-j4` حيث _4 هي خارج `nproc`_. بعض ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تتجاوز هذا بإستعمال `-j1`, وذلك بسبب التعارض في بعض الإصدارات أو ببساطة لأنها غير مدعومة أصلاً. الحزم التي تفشل في البناء لمثل هذا السبب ينبغي [التبليغ](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") عنها على متتبع العلل وذلك طبعا بعد التأكد فعلا أن العلة تسببب بها MAKEFLAGS الخاص بك.
 
 راجع `man make` للحصول على اللائحة الكاملة للخيارات المتاحة.
 
@@ -269,7 +269,7 @@ $ grep -R "$(pwd)/src" pkg/
 
 *   [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt): مخطوطة لعرض خيارات gcc المصممة خصيصاً لـ CPU الحالي
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(العربية)&oldid=411595](https://wiki.archlinux.org/index.php?title=Makepkg_(العربية)&oldid=411595)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(العربية)&oldid=411900](https://wiki.archlinux.org/index.php?title=Makepkg_(العربية)&oldid=411900)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

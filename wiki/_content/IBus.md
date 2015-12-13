@@ -269,7 +269,7 @@ If [Ibus does not let you write in a given language](https://code.google.com/p/i
 
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IBus&oldid=399193](https://wiki.archlinux.org/index.php?title=IBus&oldid=399193)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IBus&oldid=411922](https://wiki.archlinux.org/index.php?title=IBus&oldid=411922)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

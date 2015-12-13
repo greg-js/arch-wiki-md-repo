@@ -97,8 +97,7 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 
 Qt4 application will try to mimic the behavior of the desktop environment they are running on, unless they run into some problems or hard-coded settings.
 
-*   In KDE 4, it uses the actually selected Qt style in KDE. It can be configured using _KDE System Settings_ (_systemsettings_), the settings can be found in _Common Appearance and Behavior > Application Appearance > Style > Widget Style_
-*   In KDE Plasma 5, it uses Plastique.
+*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using _KDE System Settings_ (_systemsettings5_), the settings can be found in _Appearance > Application Style > Widget Style_.
 *   In Cinnamon, GNOME, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Windows.
 
@@ -127,30 +126,21 @@ The following styles are included in Qt4: _CDE_, _Cleanlooks_, _GTK+_, _Motif_, 
 
 *   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — KDE Oxygen style.
 
-[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen-kde4](https://www.archlinux.org/packages/?name=oxygen-kde4) or [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen-kde4](https://www.archlinux.org/packages/?name=oxygen-kde4)
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
 [https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt4](https://www.archlinux.org/packages/?name=qtcurve-qt4)
 
-*   **Phase** — Widget style designed to be functional but not drab, and aesthetic but not distracting.
+*   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
-[http://kde-look.org/content/show.php?content=11402](http://kde-look.org/content/show.php?content=11402) || [kdeartwork-styles](https://www.archlinux.org/packages/?name=kdeartwork-styles)
-
-*   **Skulpture** — A GUI style addon for KDE and Qt programs that features a classical three dimensional artwork with shadows and smooth gradients to enhance the visual experience.
-
-[http://kde-look.org/content/show.php/?content=59031](http://kde-look.org/content/show.php/?content=59031) || [skulpture](https://aur.archlinux.org/packages/skulpture/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/skulpture)]</sup>
-
-*   **Bespin** — A very configurable KDE theme.
-
-[http://cloudcity.sourceforge.net/frame.php](http://cloudcity.sourceforge.net/frame.php) || [bespin-svn](https://aur.archlinux.org/packages/bespin-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bespin-svn)]</sup>
+[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)<sup><small>AUR</small></sup>
 
 ### Qt5
 
 Qt5 decides the style to use based on what desktop environment is used:
 
-*   In KDE Plasma 5, it uses the actually selected Qt style in KDE Plasma 5\. It can be configured using _KDE 5 System Settings_ (_systemsettings5_), the settings can be found in _Appearance > Application Style > Widget Style_.
-*   In KDE 4, it uses Oxygen (if available) or Fusion.
+*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using _KDE System Settings_ (_systemsettings5_), the settings can be found in _Appearance > Application Style > Widget Style_.
 *   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Fusion.
 
@@ -169,6 +159,10 @@ The following styles are included in Qt5: _GTK+_, _Fusion_, _Windows_. Others ca
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
 [https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
+
+*   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
+
+[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)<sup><small>AUR</small></sup>
 
 Like with `qtconfig-qt4` for Qt4 apps, [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) can be used to customize the look and feel of Qt5 apps.
 
@@ -531,7 +525,7 @@ Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 *   [Planet Qt](http://planet.qt.io/)
 *   [Qt Applications](http://qt-apps.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Qt&oldid=409796](https://wiki.archlinux.org/index.php?title=Qt&oldid=409796)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Qt&oldid=411918](https://wiki.archlinux.org/index.php?title=Qt&oldid=411918)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

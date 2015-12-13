@@ -22,7 +22,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [2 Изменение корневого каталога](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B0)
 *   [3 Вспомогательные программы](#.D0.92.D1.81.D0.BF.D0.BE.D0.BC.D0.BE.D0.B3.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B)
 *   [4 Автоматическое монтирование](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [4.1 On demand](#On_demand)
+    *   [4.1 По запросу](#.D0.9F.D0.BE_.D0.B7.D0.B0.D0.BF.D1.80.D0.BE.D1.81.D1.83)
     *   [4.2 On boot](#On_boot)
     *   [4.3 Secure user access](#Secure_user_access)
 *   [5 Options](#Options)
@@ -123,29 +123,29 @@ Match User someuser
 
 **Самое главное** - используйте хотя бы раз каждую примонтированную файловую систему sshfs **в режиме суперпользователя**, таким образом сигнатуры хоста будут добавлены в файл `.ssh/known_hosts`.
 
-### On demand
+### По запросу
 
-With systemd on-demand mounting is possible using `/etc/fstab` entries.
+С помощью systemd возможно монтирование по запросу используя `/etc/fstab`.
 
-Example:
+Например:
 
 ```
 user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_netdev,users,idmap=user,IdentityFile=/home/user/.ssh/id_rsa,allow_other,reconnect 0 0
 
 ```
 
-The important mount options here are _noauto,x-systemd.automount,_netdev_.
+Главные опции здесь - _noauto,x-systemd.automount,_netdev_.
 
-*   _noauto_ tells it not to mount at boot
-*   _x-systemd.automount_ does the on-demand magic
-*   __netdev_ tells it that it is a network device, not a block device (without it "No such device" errors might happen)
+*   _noauto_ - монтирование не будет происходит при загрузке.
+*   _x-systemd.automount_ - делает магию связанную с запросом.
+*   __netdev_ - показывает, что это сетевое устройство, а не блочное (без этой опции может появится ошибка "No such device")
 
-**Tip:**
+**Совет:**
 
-There are two other ways to do this. Both do not require editing /etc/fstab to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`):
+Существует еще 2 способа для создания такого типа монтирования. Они не требуют редактировать `/etc/fstab`, чтобы создать новую точку монтирования. Вместо этого, обычные пользователи могут создавать точки монтирования, просто пытаясь получить к ним доступ (что-то вроде этого `ls ~/mnt/ssh/[user@]yourremotehost[:port]`):
 
-*   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/)<sup><small>AUR</small></sup> uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
-*   [afuse](https://aur.archlinux.org/packages/afuse/)<sup><small>AUR</small></sup> is a general-purpose userspace automounter for FUSE filesystems. It works well with sshfs. No user-activation is necessary. Example invocation: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
+*   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/)<sup><small>AUR</small></sup> - использует AutoFS. Пользователям нужно включить ее при помощи `autosshfs-user`.
+*   [afuse](https://aur.archlinux.org/packages/afuse/)<sup><small>AUR</small></sup> - универсальный пользовательский автомонтировщик для файловых систем FUSE. Он также прекрасно работает и с sshfs. Не требуется никаких активаций со стороны пользователя. Пример: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
 
 ### On boot
 
@@ -336,7 +336,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=411479](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=411479)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=411916](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=411916)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

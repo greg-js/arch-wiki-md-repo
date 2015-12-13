@@ -44,7 +44,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.7.</small> [图形和排版](/index.php/Category:Graphics_and_desktop_publishing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (简体中文)") <small>(4)</small>
 
-<small>2.8.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small>
+<small>2.8.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(15) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small>
 
 <small>2.8.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small>
 
@@ -136,7 +136,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(2) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small>
 
-<small>6.4.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small>
+<small>6.4.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(15) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small>
 
 <small>6.4.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small>
 
@@ -226,7 +226,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>8.8.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(6)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=411627](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=411627)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=411848](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=411848)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

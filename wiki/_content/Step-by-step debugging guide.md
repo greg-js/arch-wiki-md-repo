@@ -7,7 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-*   [Reporting Bug Guidelines](/index.php/Reporting_Bug_Guidelines "Reporting Bug Guidelines")
+*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
 *   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 
@@ -201,7 +201,7 @@ However, if you think there is something wrong with the application itself, and 
 
 *   [Gentoo guide for getting useful backtraces](https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Step-by-step_debugging_guide&oldid=376245](https://wiki.archlinux.org/index.php?title=Step-by-step_debugging_guide&oldid=376245)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Step-by-step_debugging_guide&oldid=411889](https://wiki.archlinux.org/index.php?title=Step-by-step_debugging_guide&oldid=411889)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

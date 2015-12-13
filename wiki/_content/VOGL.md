@@ -6,7 +6,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Related articles
 
-*   [Step By Step Debugging Guide](/index.php/Step_By_Step_Debugging_Guide "Step By Step Debugging Guide")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
 *   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
 
 [VOGL](https://github.com/ValveSoftware/vogl) is a tool created by Valve Software and RAD Game Tools for OpenGL debugging. It is able to capture, replay and inspect OpenGL call tracefiles.
@@ -68,7 +68,7 @@ Launch the vogleditor binary and open the tracefile.bin with the "File - Open Tr
 
 Read about the limitations on this [blog post.](http://richg42.blogspot.it/2014/03/current-vogl-limitations.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VOGL&oldid=363350](https://wiki.archlinux.org/index.php?title=VOGL&oldid=363350)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VOGL&oldid=411907](https://wiki.archlinux.org/index.php?title=VOGL&oldid=411907)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

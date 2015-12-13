@@ -96,7 +96,7 @@ Veja a página de manual do GCC para uma lista completa de opções disponíveis
 
 #### MAKEFLAGS
 
-A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` _(onde 4 é a saída de `nproc`)_. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_Bug_Guidelines "Reporting Bug Guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
+A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` _(onde 4 é a saída de `nproc`)_. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
 
 Consulte `man make` para obter uma lista completa das opções disponíveis.
 
@@ -285,7 +285,7 @@ $ grep -R "$(pwd)/src" pkg/
 
 *   [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt): Um script para mostrar as opções gcc específicas da CPU adaptados para a CPU atual.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=411591](https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=411591)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=411881](https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=411881)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

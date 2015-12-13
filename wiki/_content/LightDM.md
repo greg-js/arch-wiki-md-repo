@@ -63,11 +63,9 @@ You will probably want to install a greeter. A greeter is a GUI that prompts the
 
 The official repositories contain an alternative greeter, [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter). It is Qt-based and integrates well with KDE. Other greeters can be installed from the [AUR](/index.php/AUR "AUR"):
 
-*   [lightdm-another-gtk-greeter](https://aur.archlinux.org/packages/lightdm-another-gtk-greeter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lightdm-another-gtk-greeter)]</sup>: A GTK3 greeter with custom theme support
+*   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") project.
 *   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/)<sup><small>AUR</small></sup>: A greeter that uses Webkit for theming.
-*   [lightdm-crowd-greeter](https://aur.archlinux.org/packages/lightdm-crowd-greeter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lightdm-crowd-greeter)]</sup>: A 3D greeter that lets you select your profile from 3D characters walking around.
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/)<sup><small>AUR</small></sup>: The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
-*   [lightdm-razor-greeter](https://aur.archlinux.org/packages/lightdm-razor-greeter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lightdm-razor-greeter)]</sup>: A greeter for the [Razor-qt](/index.php/Razor-qt "Razor-qt") desktop environment.
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/)<sup><small>AUR</small></sup>: A greeter from the elementary OS project.
 
 You can set the default greeter by changing the `[Seat:*]` section of the LightDM configuration file, like so:
@@ -417,7 +415,7 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=411772](https://wiki.archlinux.org/index.php?title=LightDM&oldid=411772)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=411852](https://wiki.archlinux.org/index.php?title=LightDM&oldid=411852)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

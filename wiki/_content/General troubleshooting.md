@@ -6,10 +6,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Related articles
 
-*   [Reporting Bug Guidelines](/index.php/Reporting_Bug_Guidelines "Reporting Bug Guidelines")
-*   [Step By Step Debugging Guide](/index.php/Step_By_Step_Debugging_Guide "Step By Step Debugging Guide")
+*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
 *   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
 
 This article explains some methods for general troubleshooting. For application specific issues, please reference the particular wiki page for that program.
 
@@ -27,9 +28,9 @@ This article explains some methods for general troubleshooting. For application 
     *   [2.4 Debugging kernel modules](#Debugging_kernel_modules)
     *   [2.5 Debugging hardware](#Debugging_hardware)
 *   [3 Package management](#Package_management)
-*   [4 Session permissions](#Session_permissions)
-*   [5 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
-*   [6 fuser](#fuser)
+*   [4 fuser](#fuser)
+*   [5 Session permissions](#Session_permissions)
+*   [6 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
 *   [7 Why I can't write on NTFS partitions?](#Why_I_can.27t_write_on_NTFS_partitions.3F)
 *   [8 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
 *   [9 See also](#See_also)
@@ -110,6 +111,20 @@ See [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 
 See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for general topics, and [Pacman/Package_signing#Troubleshooting](/index.php/Pacman/Package_signing#Troubleshooting "Pacman/Package signing") for issues with PGP keys.
 
+## fuser
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Write an example how to use it. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
+
+_fuser_ is a command-line utility for identifying processes using resources such as files, filesystems and TCP/UDP ports.
+
+_fuser_ is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+
 ## Session permissions
 
 **Note:** You must be using [systemd](/index.php/Systemd "Systemd") as your init system for local sessions to work - which is required for polkit permissions and ACLs for various devices (see `/usr/lib/udev/rules.d/70-uaccess.rules` and [[1]](http://enotty.pipebreaker.pl/2012/05/23/linux-automatic-user-acl-management/))
@@ -135,7 +150,7 @@ Basic [polkit](/index.php/Polkit "Polkit") actions do not require further set-up
 
 **This article or section needs language, wiki syntax or style improvements.**
 
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
+**Reason:** See [Help:Style](/index.php/Help:Style "Help:Style") and related articles. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
 
 _Example:_ After an every-day routine update or following the installation of a package you are given the following error:
 
@@ -183,25 +198,27 @@ Typically a previously installed application had placed a configuration file wit
 
 ```
 
-## fuser
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Write an example how to use it. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
-
-_fuser_ is a command-line utility for identifying processes using resources such as files, filesystems and TCP/UDP ports.
-
-_fuser_ is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
-
 ## Why I can't write on NTFS partitions?
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** Alternatively I propose to add one question for each of the things that it's impossible to do without installing additional packages. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
 
 In clear system you can only read from NTFS file system. If you want to write, install [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package.
 
 ## Spellcheck is marking all of my text as incorrect!
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+**This article or section is a candidate for moving to [aspell](/index.php?title=Aspell&action=edit&redlink=1 "Aspell (page does not exist)").**
+
+**Notes:** This can't be considered "general", what about creating a new article, since _aspell_ is mentioned from [many](https://wiki.archlinux.org/index.php?title=Special%3ASearch&search=aspell) articles? (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
 
 Have you installed an [aspell](https://www.archlinux.org/packages/?name=aspell) dictionary? Use `pacman -Ss aspell` to see available dictionaries for downloading.
 
@@ -224,12 +241,10 @@ en_GB:aspell
 
 ## See also
 
-*   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
-*   [Step By Step Debugging Guide](/index.php/Step_By_Step_Debugging_Guide "Step By Step Debugging Guide")
 *   [Fix the Most Common Problems](http://www.maximumpc.com/article/features/linux_troubleshooting_guide_fix_most_common_problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411804](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411804)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411912](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411912)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

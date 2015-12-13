@@ -337,6 +337,14 @@ $ grep -R "$(pwd)/src" pkg/
 
 ### Could not read ../PKGBUILD
 
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** `makepkg.conf(5)` says: "BUILDDIR [...] Incorrect use of $startdir in a PKGBUILD may cause building with this option to fail." Hence it is most likely not problem of makepkg, but of the PKGBUILD you were trying to build. (Discuss in [Talk:Makepkg#](https://wiki.archlinux.org/index.php/Talk:Makepkg))
+
 This is issue related to having `BUILDDIR` variable set while using yaourt for installing some package. Makepkg copies source files to `$BUILDDIR/package`, but it doesn't copy the `PKGBUILD`. If you don't build packages often and you are doing it mainly with yaourt, consider disabling (by commenting out) your `BUILDDIR` option in `makepkg.conf` - it should not affect your performance since yaourt builds packages in `/tmp` by default (having `BUILDDIR` set to `/tmp` affects only performance of manual building).
 
 ## See also
@@ -346,7 +354,7 @@ This is issue related to having `BUILDDIR` variable set while using yaourt for i
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411841](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411841)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411923](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411923)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

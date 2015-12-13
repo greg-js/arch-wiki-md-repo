@@ -36,8 +36,7 @@ The following desktop environments use their own implementations to display noti
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon") provides a notification server itself. Notifications are displayed at the top right corner of the screen.
 *   [Enlightenment](/index.php/Enlightenment "Enlightenment") provides a notification server through its Notification extension. Notification options [are configurable](/index.php/Enlightenment#Notifications "Enlightenment").
 *   [GNOME](/index.php/GNOME "GNOME") provides a notification server itself. Notifications are displayed at the top of the screen.
-*   [KDE](/index.php/KDE "KDE") 4 uses **knotify4** from the [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime) package to display notifications. Notifications are displayed at the bottom right corner of the screen.
-*   [KDE Plasma](/index.php/KDE "KDE") 5 provides a notification server itself. Notifications are displayed at the bottom right corner of the screen.
+*   [KDE Plasma](/index.php/KDE "KDE") provides a notification server itself. Notifications are displayed at the bottom right corner of the screen.
 
 ### Standalone
 
@@ -48,6 +47,10 @@ You can choose one of the following implementations:
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — A notification-daemon applet is available for AWN.
 
 [https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)<sup><small>AUR</small></sup>
+
+*   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment").
+
+[https://github.com/linuxdeepin/deepin-notifications](https://github.com/linuxdeepin/deepin-notifications) || [deepin-notifications](https://www.archlinux.org/packages/?name=deepin-notifications)
 
 *   **Dunst** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
@@ -453,7 +456,7 @@ End Class
 *   [C example](http://milky.manishsinha.net/2009/03/29/working-with-libnotify/)
 *   [Python example](http://hashbang.fr/tutoriel-notify.html) (french article)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=410035](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=410035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=411920](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=411920)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

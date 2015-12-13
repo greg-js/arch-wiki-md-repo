@@ -46,14 +46,13 @@ An authentication agent is used to make the user of a session prove that the use
 
 If you are using a graphical environment, make sure that a graphical authentication agent is installed and [autostarted](/index.php/Autostarting "Autostarting") on login.
 
-[Cinnamon](/index.php/Cinnamon "Cinnamon"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE") and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
+[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE") and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
 
 *   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit), which provides `/usr/bin/lxqt-policykit-agent`
 *   [lxsession](https://www.archlinux.org/packages/?name=lxsession), which provides `/usr/bin/lxpolkit`
 *   [mate-polkit](https://www.archlinux.org/packages/?name=mate-polkit), which provides `/usr/lib/mate-polkit/polkit-mate-authentication-agent-1`
 *   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)<sup><small>AUR</small></sup>, which provides `/usr/bin/polkit-efl-authentication-agent-1`
 *   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome), which provides `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
-*   [polkit-kde](https://www.archlinux.org/packages/?name=polkit-kde), which provides `/usr/lib/kde4/libexec/polkit-kde-authentication-agent-1`
 *   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
 *   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/)<sup><small>AUR</small></sup>, which provides `/usr/lib/xfce-polkit/xfce-polkit`
 
@@ -264,7 +263,7 @@ polkit.addAdminRule(function(action, subject) {
 
 *   [Polkit manual page](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Polkit&oldid=409623](https://wiki.archlinux.org/index.php?title=Polkit&oldid=409623)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Polkit&oldid=411919](https://wiki.archlinux.org/index.php?title=Polkit&oldid=411919)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

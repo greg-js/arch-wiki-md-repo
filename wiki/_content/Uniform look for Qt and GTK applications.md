@@ -76,20 +76,15 @@ There are widget style sets available for the purpose of integration, where buil
 
 ### Breeze
 
-Breeze is the default Qt style of Plasma 5\. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, and the [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) package for Qt4\. There are two GTK+ 2 and GTK+ 3 themes similar to Breeze:
-
-*   [Orion](https://github.com/shimmerproject/Orion) is a modern light theme for Gnome and can be installed with the [gtk-theme-orion](https://www.archlinux.org/packages/?name=gtk-theme-orion) package. It is the GTK+ theme used on the Kubuntu live CD (15.04) for GTK+ applications on Plasma 5.
-*   [Gnome-breeze](https://github.com/dirruk1/gnome-breeze) is a GTK+ theme built to match Breeze and can be installed with the [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup> package. The package includes both light and dark versions.
+Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK+ 2 and GTK+ 3.
 
 Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
 
 ### Adwaita
 
-Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 theme. By default the GTK+ 2 theme is used for Qt applications (using [#QGtkStyle](#QGtkStyle)).
+Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is an unofficial Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)<sup><small>AUR</small></sup> package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)<sup><small>AUR</small></sup> for the Qt 4 version.
 
-See [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) for a native Qt theme made to look like the GTK+ 3 Adwaita. You can [install](/index.php/Install "Install") it with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)<sup><small>AUR</small></sup> package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)<sup><small>AUR</small></sup> for the Qt 4 version.
-
-To set it as default you can use [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) for Qt 5, or `qtconfig-qt4` (part of the [qt4](https://www.archlinux.org/packages/?name=qt4) package) for Qt 4.
+To set it as default, you can use [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) for Qt 5, or `qtconfig-qt4` (part of the [qt4](https://www.archlinux.org/packages/?name=qt4) package) for Qt 4.
 
 ## Tips and tricks
 
@@ -220,7 +215,7 @@ Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~
 
 Newer versions of [gtk-qt-engine](https://aur.archlinux.org/packages/gtk-qt-engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtk-qt-engine)]</sup> use `~/.gtkrc2.0-kde` and set the export variable in `~/.kde/env/gtk-qt-engine.rc.sh`. If you recently removed **gtk-qt-engine** and are trying to set a GTK+ theme then you must also remove `~/.kde/env/gtk-qt-engine.rc.sh` and reboot. Doing this will ensure that GTK+ looks for its settings in the standard `~/.gtkrc2.0` instead of the `~/.gtkrc2.0-kde` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=407763](https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=407763)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=411917](https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=411917)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

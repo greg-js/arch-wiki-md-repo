@@ -28,7 +28,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(2)</small>
 
-<small>5.2.</small> [Internet Applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(0)</small>
+<small>5.2.</small> [Internet Applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(1)</small>
 
 <small>5.2.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(2)</small>
 
@@ -74,7 +74,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>9.</small> [Website Resources](/index.php/Category:Website_Resources_(Portugu%C3%AAs) "Category:Website Resources (Português)") <small>(1)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=411615](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=411615)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=411846](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=411846)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

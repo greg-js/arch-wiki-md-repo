@@ -202,7 +202,7 @@ ChallengeResponseAuthentication no
 
 ```
 
-Before adding this to your configuration, make sure that all accounts which require SSH access have public key authentication set up in the corresponding `authorized_keys` files. See [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") for more information.
+**Warning:** Before adding this to your configuration, make sure that all accounts which require SSH access have public-key authentication set up in the corresponding `authorized_keys` files. See [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") for more information.
 
 ##### Two-factor authentication and public keys
 
@@ -1060,7 +1060,7 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411742](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411742)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411856](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411856)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

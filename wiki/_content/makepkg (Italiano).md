@@ -90,7 +90,7 @@ Vedere la pagina man di GCC per una lista completa delle opzioni disponibili. La
 
 #### MAKEFLAGS
 
-L'opzione `MAKEFLAGS` può essere utilizzata per specificare delle opzioni aggiuntive a "make". Gli utenti con sistemi multi-core/multi-processore possono specificare il numero di operazioni da eseguire simultaneamente. Generalmente `-j2`, più 1 per ogni core/processore aggiuntivo, è una scelta ragionevole. Alcuni [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") sono specificatamente contraddistinti con `-j1`, richiesto da alcune versioni, o semplicemente perchè non supportati. I pacchetti che, a causa di questo, non si riescono a compilare, vanno [segnalati](/index.php/Reporting_Bug_Guidelines "Reporting Bug Guidelines") tramite il bug tracker, dopo essersi assicurati che l'errore non è causato dal proprio MAKEFLAGS.
+L'opzione `MAKEFLAGS` può essere utilizzata per specificare delle opzioni aggiuntive a "make". Gli utenti con sistemi multi-core/multi-processore possono specificare il numero di operazioni da eseguire simultaneamente. Generalmente `-j2`, più 1 per ogni core/processore aggiuntivo, è una scelta ragionevole. Alcuni [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") sono specificatamente contraddistinti con `-j1`, richiesto da alcune versioni, o semplicemente perchè non supportati. I pacchetti che, a causa di questo, non si riescono a compilare, vanno [segnalati](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") tramite il bug tracker, dopo essersi assicurati che l'errore non è causato dal proprio MAKEFLAGS.
 
 Consultare `man make` per un elenco completo delle opzioni disponibili.
 
@@ -305,7 +305,7 @@ grep -R "$(pwd)/src" pkg/
 *   [makepkg(8) Manual Page](https://www.archlinux.org/pacman/makepkg.8.html)
 *   [makepkg.conf(5) Manual Page](https://www.archlinux.org/pacman/makepkg.conf.5.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(Italiano)&oldid=411589](https://wiki.archlinux.org/index.php?title=Makepkg_(Italiano)&oldid=411589)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(Italiano)&oldid=411871](https://wiki.archlinux.org/index.php?title=Makepkg_(Italiano)&oldid=411871)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

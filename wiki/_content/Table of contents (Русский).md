@@ -4,7 +4,7 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(391)</small>
+[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(394)</small>
 
 <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small>
 
@@ -20,9 +20,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.4.</small> [События](/index.php/Category:Events_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Events (Русский)") <small>(1)</small>
 
-<small>1.5.</small> [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)") <small>(9)</small>
+<small>1.5.</small> [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)") <small>(10)</small>
 
-<small>1.6.</small> [Live системы Arch](/index.php/Category:Live_Arch_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Live Arch systems (Русский)") <small>(1)</small>
+<small>1.6.</small> [Live системы Arch](/index.php/Category:Live_Arch_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Live Arch systems (Русский)") <small>(2)</small>
 
 <small>2.</small> [Приложения](/index.php/Category:Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Applications (Русский)") <small>(10)</small>
 
@@ -82,7 +82,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(5)</small>
 
-<small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(11)</small>
+<small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(12)</small>
 
 <small>4.5.</small> [Обнаружение устройств и решение проблем](/index.php/Category:Hardware_detection_and_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware detection and troubleshooting (Русский)") <small>(3)</small>
 
@@ -142,7 +142,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.9.</small> [Удалённый рабочий стол](/index.php/Category:Remote_desktop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Remote desktop (Русский)") <small>(1)</small>
 
-<small>5.10.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(5) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.10.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(6) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
 <small>5.11.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small>
 
@@ -208,19 +208,19 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.12.3.</small> [Прокси сервера](/index.php/Category:Proxy_servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Proxy servers (Русский)") <small>(1) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-<small>6.12.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(5) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
+<small>6.12.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(6) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
 <small>6.12.5.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-<small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(5)</small>
+<small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(6)</small>
 
 <small>6.14.</small> [Виртуализация](/index.php/Category:Virtualization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtualization (Русский)") <small>(2)</small>
 
 <small>6.14.1.</small> [Гипервизоры](/index.php/Category:Hypervisors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hypervisors (Русский)") <small>(2)</small>
 
-<small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(29)</small>
+<small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(31)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411620](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411620)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411847](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411847)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
