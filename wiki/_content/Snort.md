@@ -29,20 +29,24 @@ _Snort® is an open source network intrusion prevention and detection system ([I
 *   [1 General Setup and Notes](#General_Setup_and_Notes)
 *   [2 Installation](#Installation)
 *   [3 Configuration](#Configuration)
-*   [4 Update the rules with Pulledpork](#Update_the_rules_with_Pulledpork)
-*   [5 Drop traffic with Pulledpork](#Drop_traffic_with_Pulledpork)
-*   [6 Disabling rules with Pulledpork](#Disabling_rules_with_Pulledpork)
-*   [7 Update the rules: Oinkmaster](#Update_the_rules:_Oinkmaster)
-    *   [7.1 Oinkmaster setup](#Oinkmaster_setup)
-    *   [7.2 Oinkmaster usage](#Oinkmaster_usage)
-*   [8 See also](#See_also)
+    *   [3.1 Inline mode](#Inline_mode)
+    *   [3.2 IDS mode](#IDS_mode)
+*   [4 Updating the rules with Pulledpork](#Updating_the_rules_with_Pulledpork)
+    *   [4.1 Configuration](#Configuration_2)
+    *   [4.2 Drop traffic with Pulledpork](#Drop_traffic_with_Pulledpork)
+    *   [4.3 Disabling rules with Pulledpork](#Disabling_rules_with_Pulledpork)
+    *   [4.4 Running Pulledpork](#Running_Pulledpork)
+*   [5 Update the rules: Oinkmaster](#Update_the_rules:_Oinkmaster)
+    *   [5.1 Oinkmaster setup](#Oinkmaster_setup)
+    *   [5.2 Oinkmaster usage](#Oinkmaster_usage)
+*   [6 See also](#See_also)
 
 ## General Setup and Notes
 
 *   A Snort setup that sniffs WAN <-> LAN is more difficult to use. It does not show you which computer triggered the alert, and it requires you to set HOME_NET as your WAN IP address, which can change if your modem uses DHCP.
 *   Snort will bridge the two interfaces for you, you will not need to configure this.
 
-You can use Snort to sniff wireless traffic with two routers. For simplicity I will call the router with DHCP on and wireless off "router A" and the router with wireless on and DHCP off "router B".
+You can use Snort to sniff wireless traffic with two routers. For simplicity I will call the router with _DHCP on and wireless off_ "router A" and the router with _wireless on and DHCP off_ "router B".
 
 *   Ensure the routers do not have the same IP address, but are on the same subnet.
 *   If the machine running Snort is configured for inline mode, you will need 3 network interface cards. One for management, one for incoming traffic, and one for outgoing traffic.
@@ -66,12 +70,14 @@ ipvar HOME_NET [10.8.0.0/24,192.168.1.0/24]
 
 ```
 
-At the bottom of the file, there is a list of includes. Pulledpork downloads all the rules to a single file. If you are going to use Pulledpork to download your rule set, then comment out all of the includes except for:
+At the bottom of the file, there is a list of includes. If you are going to use Pulledpork to download your rule set, then comment out all of the includes except for:
 
 ```
 include $RULE_PATH/snort.rules
 
 ```
+
+### Inline mode
 
 If you are planning on using Snort in inline mode add these lines to the bottom of the configuration:
 
@@ -102,14 +108,14 @@ Alias=multi-user.target.wants/snort@%i.service
 
 ```
 
-To start Snort that is configured for inline mode run:
+To start Snort that is configured for inline mode run (_your network interfaces may vary_):
 
 ```
 systemctl start snort@ens1:ens4
 
 ```
 
-Your network interfaces may vary.
+### IDS mode
 
 To start Snort in IDS mode run:
 
@@ -118,19 +124,19 @@ systemctl start snort@ens1
 
 ```
 
-## Update the rules with Pulledpork
+## Updating the rules with Pulledpork
 
 Install [pulledpork](https://aur.archlinux.org/packages/pulledpork/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+
+### Configuration
 
 The configuration files are located in `/etc/pulledpork`
 
 Edit `/etc/pulledpork/pulledpork.conf` and uncomment the rules you want to use. You will need an "oinkcode" to download some of the rules.
 
-Explanation of configuration files:
-
-*   `dropsid.conf` is used to drop the signatures traffic, rather only alert.
+*   `dropsid.conf` any rules matched in this file will have its traffic dropped.
 *   `enablesid.conf` is used to enable signatures. All signatures seem to be enabled by default, no need to edit this file.
-*   `disablesid.conf` is used to completely remove a signature from Snort, this is useful when you encounter a false positive.
+*   `disablesid.conf` is used to completely remove a signature from Snort.
 
 The current categories that are within your rule set can be found by running the following:
 
@@ -140,16 +146,32 @@ lz /var/tmp/*.gz | egrep '\.rules' | cut -d'/' -f3 | sort -u | perl -lne '/(.*).
 
 ```
 
-## Drop traffic with Pulledpork
+### Drop traffic with Pulledpork
 
-If you want to drop all traffic that matches a Snort signature instead of just alerting, add the following to your `dropsid.conf`:
+If you want to drop _all_ traffic that matches a Snort signature instead of just alerting, add the following to your `dropsid.conf`:
 
 ```
 pcre:.
 
 ```
 
-## Disabling rules with Pulledpork
+Or if you want to drop all traffic matching an entire category:
+
+```
+policy-social
+policy-other
+file-other
+
+```
+
+If you only want to drop a single rule:
+
+```
+118:7
+
+```
+
+### Disabling rules with Pulledpork
 
 If you want to disable a single signature add its gen_id and sig_id to `/etc/pulledpork/disablesid.conf`
 
@@ -158,13 +180,22 @@ If you want to disable a single signature add its gen_id and sig_id to `/etc/pul
 
 ```
 
-If you want to disable an entire category add its name to `/etc/pulledpork/disablesid.conf`
+If you want to disable an entire category:
 
 ```
 deleted
 protocol-icmp
 policy-social
 policy-other
+
+```
+
+### Running Pulledpork
+
+This will pull the new rules and write them to `/etc/snort/rules/snort.rules`
+
+```
+pulledpork.pl -c /etc/pulledpork/pulledpork.conf  -P
 
 ```
 
@@ -201,7 +232,7 @@ Create an executable script with the exact command and place it in /etc/cron.dai
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Router](/index.php/Router "Router")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Snort&oldid=410684](https://wiki.archlinux.org/index.php?title=Snort&oldid=410684)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Snort&oldid=411939](https://wiki.archlinux.org/index.php?title=Snort&oldid=411939)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

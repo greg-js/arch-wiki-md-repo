@@ -295,7 +295,7 @@ Q) Why is it so much slower now than before? 
 
 **A)** You almost certainly have the `proxy_only` option turned off in one of the server sections of `pdnsd.conf`. By default, pdnsd frequently asks several DNS servers about a domain to get the most accurate response possible. The `proxy_only` option disables this feature. It should be turned on if you use the DNS server provided by your ISP.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pdnsd&oldid=403947](https://wiki.archlinux.org/index.php?title=Pdnsd&oldid=403947)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pdnsd&oldid=411942](https://wiki.archlinux.org/index.php?title=Pdnsd&oldid=411942)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

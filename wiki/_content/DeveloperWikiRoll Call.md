@@ -21,6 +21,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Andrew Gregory
     *   Pacman development
 *   Ángel Velásquez
+    *   Inactive
+    *   Packaging (python, wicd, subversion) -fairly inactive, felix have done most of the workload since he joined-
+    *   i18n for Spanish (pacman, aur)
+    *   archweb: design rebuild (was working on a bootstrapped website years ago, then bootstrap 3 was released, didn't completed the rewrite and make the patches, could do that soon with bootstrap 4 RC)
 *   Antonio Rojas
     *   Packaging (KDE, math stuff, orphans)
 *   Bartłomiej Piotrowski
@@ -205,7 +209,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Forum moderation
 *   Xyne
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411816](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411816)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411945](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411945)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -36,9 +36,8 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
         *   [3.2.5 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
         *   [3.2.6 Enable TRIM for dm-crypt](#Enable_TRIM_for_dm-crypt)
     *   [3.3 I/O scheduler](#I.2FO_scheduler)
-        *   [3.3.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
-        *   [3.3.2 systemd-tmpfiles](#systemd-tmpfiles)
-        *   [3.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
+        *   [3.3.1 systemd-tmpfiles](#systemd-tmpfiles)
+        *   [3.3.2 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
     *   [3.4 Swap space on SSDs](#Swap_space_on_SSDs)
 *   [4 Tips for SSD security](#Tips_for_SSD_security)
     *   [4.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
@@ -252,31 +251,7 @@ For the root filesystem, follow the instructions from [Dm-crypt/TRIM support for
 
 ### I/O scheduler
 
-Consider switching from the default [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing) to [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"). The latter two offer performance boosts for SSDs. The NOOP scheduler, for example, implements a simple queue for all incoming I/O requests, without re-ordering and grouping the ones that are physically closer on the disk. On SSDs seek times are identical for all sectors, thus invalidating the need to re-order I/O queues based on them. See also [Maximizing performance#Tuning IO schedulers](/index.php/Maximizing_performance#Tuning_IO_schedulers "Maximizing performance").
-
-The CFQ scheduler is enabled by default on Arch. Verify this by viewing the contents `/sys/block/sd**X**/queue/scheduler`:
-
- `$ cat /sys/block/sd**X**/queue/scheduler` 
-
-```
-noop deadline [cfq]
-
-```
-
-The scheduler currently in use is denoted from the available schedulers by the brackets.
-
-Users can change this on the fly without the need to reboot with:
-
-```
-# echo noop > /sys/block/sd**X**/queue/scheduler
-
-```
-
-This method is non-persistent (eg. change will be lost upon rebooting). Confirm the change was made by viewing the contents of the file again and ensuring "noop" is between brackets.
-
-#### Kernel parameter (for a single device)
-
-If the sole storage device in the system is an SSD, consider setting the I/O scheduler for the entire system via the `elevator=noop` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+See [Maximizing performance#Tuning IO schedulers](/index.php/Maximizing_performance#Tuning_IO_schedulers "Maximizing performance").
 
 #### systemd-tmpfiles
 
@@ -581,7 +556,7 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411764](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411764)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411925](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411925)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
