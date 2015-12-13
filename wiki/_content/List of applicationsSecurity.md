@@ -342,9 +342,9 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)<sup><small>AUR</small></sup>
 
-*   **KeePassX** — Free and open source Qt-based password manager (uses KeePass 1.x databases for storage).
+*   **KeePassX** — Free and open source Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
-[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx)
+[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
@@ -390,7 +390,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [http://upm.sourceforge.net/](http://upm.sourceforge.net/) || [upm](https://aur.archlinux.org/packages/upm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/upm)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=410936](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=410936)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=411959](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=411959)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

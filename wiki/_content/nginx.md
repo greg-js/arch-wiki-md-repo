@@ -491,6 +491,8 @@ location ~ \.cgi$ {
 
 The default socket file for `fcgiwrap` is `/run/fcgiwrap.sock`.
 
+If you keep getting a `502 - bad Gateway` error, you should check if your CGI-application first announces the mime-type of the following content. For html this needs to be `Content-type: text/html`.
+
 ## Installation in a chroot
 
 Installing nginx in a [chroot](/index.php/Chroot "Chroot") adds an additional layer of security. For maximum security the chroot should include only the files needed to run the nginx server and all files should have the most restrictive permissions possible, e.g., as much as possible should be owned by root, directories such as `/usr/bin` should be unreadable and unwriteable, etc.
@@ -917,7 +919,7 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Custom nginx indexer](http://blog.gotux.net/tutorial/custom-nginx-indexer/)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=411144](https://wiki.archlinux.org/index.php?title=Nginx&oldid=411144)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=411962](https://wiki.archlinux.org/index.php?title=Nginx&oldid=411962)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

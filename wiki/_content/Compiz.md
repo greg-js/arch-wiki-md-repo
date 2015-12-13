@@ -444,17 +444,7 @@ You may find that Emerald crashes when selecting certain themes (especially them
 
 You may find that the system bell (such as the drip sound played when pressing backspace at the beginning of a line in GNOME or MATE Terminal) will not sound if Compiz is running. See the following [upstream bug report](https://bugs.launchpad.net/ubuntu/+source/compiz/+bug/537703).
 
-For [PulseAudio](/index.php/PulseAudio "PulseAudio") users the following workaround is available:
-
-Append the following lines
-
-```
-load-sample-lazy bell /usr/share/sounds/freedesktop/stereo/bell.oga
-load-module module-x11-bell sample=bell
-
-```
-
-to your `/etc/pulse/default.pa` file and then restart Pulseaudio.
+[PulseAudio](/index.php/PulseAudio "PulseAudio") users, as a workaround, can force PulseAudio to handle the system bell, see [PulseAudio#X11 Bell Events](/index.php/PulseAudio#X11_Bell_Events "PulseAudio").
 
 ### Compiz crashes when enabling the Gnome Compatibility plugin (GSettings backend)
 
@@ -518,7 +508,7 @@ When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use
 *   [Compiz Home](http://compiz.org), including wiki and forum (website and wiki are unmaintained)
 *   [Troubleshooting - Compiz Wiki](http://wiki.compiz.org/Troubleshooting), (wiki is unmaintained)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz&oldid=408680](https://wiki.archlinux.org/index.php?title=Compiz&oldid=408680)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz&oldid=411952](https://wiki.archlinux.org/index.php?title=Compiz&oldid=411952)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

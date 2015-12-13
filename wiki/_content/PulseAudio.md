@@ -75,7 +75,7 @@ There is a number of front-ends available for controlling the PulseAudio daemon:
 
 *   GTK GUIs: [paprefs](https://www.archlinux.org/packages/?name=paprefs) and [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
 *   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)<sup><small>AUR</small></sup>
-*   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/)<sup><small>AUR</small></sup>
+*   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer](https://www.archlinux.org/packages/?name=pamixer)
 *   Console (curses) mixer: [pulsemixer-git](https://aur.archlinux.org/packages/pulsemixer-git/)<sup><small>AUR</small></sup>
 *   Web volume control: [PaWebControl](https://github.com/Siot/PaWebControl)
 *   System tray icon: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)<sup><small>AUR</small></sup>
@@ -614,7 +614,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=410159](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=410159)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=411953](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=411953)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

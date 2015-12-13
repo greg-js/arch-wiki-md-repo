@@ -18,6 +18,7 @@ _Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilte
 *   [6 User rules](#User_rules)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Disable remote ping](#Disable_remote_ping)
+    *   [7.2 Disable UFW logging](#Disable_UFW_logging)
 *   [8 GUI frontends](#GUI_frontends)
     *   [8.1 Gufw](#Gufw)
     *   [8.2 kcm-ufw](#kcm-ufw)
@@ -191,6 +192,15 @@ Change `ACCEPT` to `DROP` in the following lines:
 
 If you use IPv6, related rules are in `/etc/ufw/before6.rules`.
 
+### Disable UFW logging
+
+Disabling logging may be useful to stop UFW filling up the kernel (`dmesg`) and message logs:
+
+```
+# ufw logging off
+
+```
+
 ## GUI frontends
 
 ### Gufw
@@ -216,7 +226,7 @@ The module will appear under "Network and Connectivity" category.
 *   [Ubuntu UFW documentation](http://help.ubuntu.com/community/UFW)
 *   [UFW manual](http://manpages.ubuntu.com/manpages/natty/en/man8/ufw.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Uncomplicated_Firewall&oldid=381248](https://wiki.archlinux.org/index.php?title=Uncomplicated_Firewall&oldid=381248)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Uncomplicated_Firewall&oldid=411956](https://wiki.archlinux.org/index.php?title=Uncomplicated_Firewall&oldid=411956)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

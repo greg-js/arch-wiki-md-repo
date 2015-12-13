@@ -618,6 +618,14 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 
 ### Backing up and retrieving a list of installed packages
 
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Optional dependencies that are not required by any other package (`pacman -Qdtt`) are ignored by this procedure. (Discuss in [Talk:Pacman/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Pacman/Tips_and_tricks))
+
 **Tip:** You may want to use [pacbackup](https://aur.archlinux.org/packages/pacbackup/)<sup><small>AUR</small></sup> or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
 
 It is good practice to keep periodic backups of all pacman-installed packages. In the event of a system crash which is unrecoverable by other means, pacman can then easily reinstall the very same packages onto a new installation.
@@ -964,7 +972,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411650](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411650)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411954](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411954)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

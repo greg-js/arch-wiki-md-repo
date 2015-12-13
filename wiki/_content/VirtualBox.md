@@ -106,6 +106,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [6.19 No 64-bit OS client options](#No_64-bit_OS_client_options)
     *   [6.20 Host OS freezes on Virtual Machine start](#Host_OS_freezes_on_Virtual_Machine_start)
     *   [6.21 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
+    *   [6.22 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
 *   [7 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -1407,12 +1408,16 @@ This may occur after upgrading the [virtualbox](https://www.archlinux.org/packag
 
 ```
 
+### Analog microphone not working in guest
+
+If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
+
 ## See also
 
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=410548](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=410548)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=411951](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=411951)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -104,14 +104,6 @@ There are several key features to look for prior to purchasing a contemporary SS
 
 ## Choice of filesystem
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [#TRIM](#TRIM) says that vfat supports TRIM (as per `mount(8)` it supports the `discard` option). This section mistakes "support" and "optimization". (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
-
 This section describes optimized [filesystems](/index.php/Filesystems "Filesystems") to use on a SSD.
 
 It's still possible/required to use other filesystems, e.g. FAT32 for the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI").
@@ -216,6 +208,14 @@ Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM i
 ```
 
 The main benefit of continuous TRIM is speed; an SSD can perform more efficient [garbage collection](http://arstechnica.com/gadgets/2015/04/ask-ars-my-ssd-does-garbage-collection-so-i-dont-need-trim-right/). However, results vary and particularly earlier SSD generations may also show just the opposite effect. Also for this reason, some distributions decided against using it (e.g. Ubuntu: see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTUxOTY) and the [related blueprint](https://blueprints.launchpad.net/ubuntu/+spec/core-1311-ssd-trimming)).
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** 1) At least for ext4, `discard` is not enabled by default _at all_. 2) `mount(8)` indicates that ext3 does not support the `discard` option, which would explain any errors trying to use it. 3) Synchronous TRIM commands before SATA 3.1 are hardware property, so how can software adjustments make a difference? (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
 
 **Note:**
 
@@ -556,7 +556,7 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411925](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411925)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411965](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411965)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

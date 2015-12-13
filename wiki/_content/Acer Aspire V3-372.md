@@ -42,9 +42,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td>Wireless</td>
 
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">not working</td>
+<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
 
-<td>ath10k_pci</td>
+<td>ath10k_pci (Workaround, see below)</td>
 
 </tr>
 
@@ -64,7 +64,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
 
-<td>see below</td>
+<td>(see below)</td>
 
 </tr>
 
@@ -159,7 +159,7 @@ Set the touchpad to basic in the BIOS to get it working. Then enable it by press
 
 ### Wireless
 
-The driver _ath10k_pci_ needs to be installed manually. Firmware is available on Github by [Kvalo](https://github.com/kvalo/ath10k-firmware) and [Sumdog](https://github.com/sumdog/ath10k-firmware).
+**Note:** I got the device to work by following [these instructions](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1520343/comments/19) on the Ubuntu bugtracker. Please note that this is only a workaround.
 
 By enabling [testing] and updating the linux-firmware package the device is visible:
 
@@ -184,7 +184,7 @@ RTNETLINK answers: Resource temporarily unavailable
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-372&oldid=408427](https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-372&oldid=408427)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-372&oldid=411961](https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-372&oldid=411961)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

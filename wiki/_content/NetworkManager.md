@@ -21,9 +21,7 @@ Related articles
     *   [1.2 PPPoE / DSL support](#PPPoE_.2F_DSL_support)
 *   [2 Graphical front-ends](#Graphical_front-ends)
     *   [2.1 GNOME](#GNOME)
-    *   [2.2 KDE](#KDE)
-        *   [2.2.1 Plasma 4](#Plasma_4)
-        *   [2.2.2 Plasma 5](#Plasma_5)
+    *   [2.2 KDE Plasma](#KDE_Plasma)
     *   [2.3 Xfce](#Xfce)
     *   [2.4 Openbox](#Openbox)
     *   [2.5 Other desktops and window managers](#Other_desktops_and_window_managers)
@@ -73,7 +71,7 @@ Related articles
     *   [6.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
     *   [6.5 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
         *   [6.5.1 GNOME](#GNOME_2)
-        *   [6.5.2 KDE](#KDE_2)
+        *   [6.5.2 KDE](#KDE)
         *   [6.5.3 SLiM login manager](#SLiM_login_manager)
     *   [6.6 KDE and OpenConnect VPN with password authentication](#KDE_and_OpenConnect_VPN_with_password_authentication)
         *   [6.6.1 Troubleshooting](#Troubleshooting_2)
@@ -114,26 +112,7 @@ To store authentication details for connections (Wireless/DSL) install and confi
 
 Be aware that after enabling the tick-box option `Make available to other users` for a connection, NetworkManager stores the password in plain-text, though the respective file is accessible only to root (or other users via `nm-applet`). See [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
 
-### KDE
-
-#### Plasma 4
-
-Install [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) applet.
-
-**Note:** The older KNetworkManager is available in the [kdeplasma-applets-networkmanagement](https://aur.archlinux.org/packages/kdeplasma-applets-networkmanagement/)<sup><small>AUR</small></sup> package, but is considered as legacy.
-
-Activate the applet in the KDE Plasma [System Tray](https://userbase.kde.org/Plasma/SystemTray): right click somewhere in the System Tray outside of the service icons, then in the Display page, activate the network management checkbox. The applet can allow you to store encrypted WiFi passwords in [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet") and will prompt you to do this. As for GNOME, enabling `all users may connect to this network` for a connection lets NetworkManager store the password in plain text.
-
-If you have both the KDE Plasma widget and GNOME's `nm-applet` installed and do not want to start `nm-applet` when using KDE, add the following line to `~/.config/autostart/nm-applet.desktop`:
-
-```
-NotShowIn=KDE
-
-```
-
-See [Userbase page](http://userbase.kde.org/NetworkManagement) for more info.
-
-#### Plasma 5
+### KDE Plasma
 
 [Install](/index.php/Pacman "Pacman") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) applet.
 
@@ -845,7 +824,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=409726](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=409726)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=411960](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=411960)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

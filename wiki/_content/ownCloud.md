@@ -518,12 +518,12 @@ You can also create an entry for this in `/etc/fstab`
 
 ### Android
 
-There is an official Android app available for a small fee on the Play Store and for free [on F-Droid](https://f-droid.org/repository/browse/?fdfilter=owncloud&fdid=com.owncloud.android).
+There is an official Android app available for a [small donation on the Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid) and for free [on F-Droid](https://f-droid.org/app/at.bitfire.davdroid).
 
 To enable contacts and calendar sync:
 
 *   if using Android 4+:
-    1.  download [DAVdroid](http://davdroid.bitfire.at/what-is-davdroid) (available in [F-Droid](https://f-droid.org/repository/browse/?fdfilter=owncloud&fdid=at.bitfire.davdroid))
+    1.  download [[1]](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
     2.  Enable mod_rewrite.so in httpd.conf
     3.  create a new DAVdroid account in the _Account_ settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; _DAVdroid_ will find itself the right URLs)
 
@@ -554,7 +554,7 @@ Afterwards restart httpd:
 
 log into your server go to the app sections you should see the new apps in there,
 
-*   If you are protecting access to your ownCloud location with HTTP basic auth, the file "status.php" must be excluded from auth and be publicly accessible. [[1]](https://github.com/owncloud/mirall/issues/734)
+*   If you are protecting access to your ownCloud location with HTTP basic auth, the file "status.php" must be excluded from auth and be publicly accessible. [[2]](https://github.com/owncloud/mirall/issues/734)
 
 ### SABnzbd
 
@@ -607,7 +607,7 @@ Should this not work, consider disabling `mod_curl` in `/etc/php/php.ini`.
 
 ### Self-signed certificate for Android devices
 
-Once you have followed the setup for SSL, as on [LAMP](https://wiki.archlinux.org/index.php/LAMP#TLS.2FSSL) for example, [davdroid](https://f-droid.org/repository/browse/?fdfilter=davdroid&fdid=at.bitfire.davdroid) will fail to work because the certificate is not accepted. A certificate can be made as follows on your server:
+Once you have followed the setup for SSL, as on [LAMP](https://wiki.archlinux.org/index.php/LAMP#TLS.2FSSL) for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
 
 ```
  # openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt
@@ -626,7 +626,7 @@ Then import `CA.der.crt` to your Android device:
 
 Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to _Settings > Security > Credential storage_ and select _Install from device storage_. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in _Settings > Security > Credential storage > Trusted credentials > User_.
 
-Thanks to: [[2]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
+Thanks to: [[3]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
 
 ### Cannot write into config directory!
 
@@ -674,7 +674,7 @@ This should delete the relevant configuration from the table and add it again.
 
 ### GUI sync client fails to connect
 
-If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[3]](https://github.com/owncloud/mirall/issues/734)
+If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[4]](https://github.com/owncloud/mirall/issues/734)
 
 ### Server waits forever after creating admin account, before giving a 503 error
 
@@ -819,7 +819,7 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=411284](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=411284)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=411966](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=411966)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,13 +4,13 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-**This article is a stub.**
+**This article or section needs expansion.**
 
-**Notes:** Work in progress (Discuss in [Talk:Gogs#](https://wiki.archlinux.org/index.php/Talk:Gogs))
+**Reason:** Work in progress (Discuss in [Talk:Gogs#](https://wiki.archlinux.org/index.php/Talk:Gogs))
 
 [Gogs](http://gogs.io/) (Go Git Service) is a Self Hosted Git service, which was written in the [Go](/index.php/Go "Go") programming language.
 
@@ -18,7 +18,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   [1 Packages](#Packages)
 *   [2 Installation](#Installation)
-    *   [2.1 OpenRC](#OpenRC)
 *   [3 First start](#First_start)
 *   [4 Configuration](#Configuration)
     *   [4.1 .gitignore and license files](#.gitignore_and_license_files)
@@ -53,27 +52,9 @@ Also before installing the Gogs package from the [AUR](/index.php/AUR "AUR"), yo
 *   PostgreSQL: [postgresql](https://www.archlinux.org/packages/?name=postgresql) - Read [PostgreSQL#Installing PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL") to set it up and start the [daemon](/index.php/Daemon "Daemon") and for configuration of Gogs with PostgreSQL see [#PostgreSQL](#PostgreSQL).
 *   MariaDB: [mariadb](https://www.archlinux.org/packages/?name=mariadb) - Read [MariaDB#Installation](/index.php/MariaDB#Installation "MariaDB") to set it up and start the [daemon](/index.php/Daemon "Daemon") and for configuration of Gogs with MariaDB see [#MariaDB](#MariaDB).
 
-### OpenRC
-
-To use OpenRC init scripts [install](/index.php/Install "Install") the [gogs-openrc](https://aur.archlinux.org/packages/gogs-openrc/)<sup><small>AUR</small></sup> package. Then add Gogs to a run level to start on boot:
-
-```
-rc-service add gogs default
-
-```
-
-And if you want to remove [gogs-openrc](https://aur.archlinux.org/packages/gogs-openrc/)<sup><small>AUR</small></sup> remember to disable it on boot:
-
-```
-rc-service del gogs default
-
-```
-
-If Gogs fails to start then check paths and user settings in `/etc/conf.d/gogs`.
-
 ## First start
 
-After starting of the Gogs service (`systemctl start gogs.service` or `rc-service gogs start`), you can access the running service over the url `http://[server]:3000`. At the first execute, you will redirect to the installation page. Here you can configure some minor configuration options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
+After starting of the Gogs service (`systemctl start gogs.service`), you can access the running service over the url `http://[server]:3000`. At the first execute, you will redirect to the installation page. Here you can configure some minor configuration options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
 
 ## Configuration
 
@@ -109,7 +90,7 @@ The current package (gogs-git* and gogs>=0.4.2) support custom themes. The locat
 
 *   [Official Documentation](http://gogs.io/docs/intro/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gogs&oldid=411941](https://wiki.archlinux.org/index.php?title=Gogs&oldid=411941)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gogs&oldid=411950](https://wiki.archlinux.org/index.php?title=Gogs&oldid=411950)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
