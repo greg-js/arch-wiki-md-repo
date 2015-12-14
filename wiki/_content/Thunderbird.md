@@ -185,6 +185,8 @@ _See upstream Wiki: [Using webmail with your email client](http://kb.mozillazine
 
 ### Migrate profile to another system
 
+**Tip:** The [ImportExportTools](https://addons.mozilla.org/en-US/thunderbird/addon/importexporttools) addon offers an option to export and import a profile folder.
+
 Before you start with Importing or Exporting tasks, backup your complete `~/.thunderbird` profile:
 
 ```
@@ -287,7 +289,7 @@ $ pacman -S thunderbird
 
 8\. Import all your data.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=410731](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=410731)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=412266](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=412266)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

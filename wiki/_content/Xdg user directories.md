@@ -23,9 +23,25 @@ User directories are a set of common user directories located within the `$HOME`
 
 ## Installation
 
-[Install](/index.php/Install "Install") package [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) from [Official repositories](/index.php/Official_repositories "Official repositories").
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Installing the package does not seem to be necessary in order to e.g. prevent applications from creating directories with unwanted names: creating the files in `~/.config` manually should be equally effective. This should be clarified here, but the whole article might need a review. (Discuss in [Talk:Xdg user directories#](https://wiki.archlinux.org/index.php/Talk:Xdg_user_directories))
+
+[Install](/index.php/Install "Install") the [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) package.
 
 ## Creating default directories
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** This needs a technical review, as e.g. `/etc/xdg/user-dirs.defaults` is installed by the package, obviously not created by a command run by a normal user. (Discuss in [Talk:Xdg user directories#](https://wiki.archlinux.org/index.php/Talk:Xdg_user_directories))
 
 To create a full suite of localized default user directories within the `$HOME` directory, enter the following command:
 
@@ -78,7 +94,7 @@ $ xdg-user-dir TEMPLATES
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412218](https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412218)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412259](https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412259)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

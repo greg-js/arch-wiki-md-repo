@@ -597,6 +597,15 @@ Another user reported that _KGpg_ failed to start until the `~/.gnupg` folder is
 
 While the Gnome keyring implements a GPG agent component, as of GnuPG version 2.1, GnuPG ignores the `GPG_AGENT_INFO` environment variable, so that Gnome keyring can no longer be used as a GPG agent.
 
+However, recent versions of the package pinentry provide the `pinentry-gnome3` program. You may set the following option in your `gpg-agent.conf` file
+
+```
+ pinentry-program /usr/bin/pinentry-gnome3
+
+```
+
+in order to make use of that pinentry program. Since version `0.9.2` all pinentry programs can be configured to optionally save a passphrase with libsecret. For example, when the user is asked for a passphrase via `pinentry-gnome3`, a checkbox is shown whether to save the passphrase using a password manager. Unfortunately, the package [pinentry](https://www.archlinux.org/packages/?name=pinentry) does not have this feature enabled (see [FS#46059](https://bugs.archlinux.org/task/46059) for the reasons). You may use [pinentry-libsecret](https://aur.archlinux.org/packages/pinentry-libsecret/)<sup><small>AUR</small></sup> as a replacement for it, which has support for libsecret enabled.
+
 ### mutt and gpg
 
 To be asked for your GnuPG password only once per session as of GnuPG 2.1, see [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821).
@@ -655,7 +664,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411766](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=411766)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=412253](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=412253)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

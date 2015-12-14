@@ -227,27 +227,7 @@ See also [[2]](http://alien.slackbook.org/blog/make-firefox-understand-downloade
 
 ### Firefox keeps creating ~/Desktop even when this is not desired
 
-Firefox uses `~/Desktop` as the default place for download and upload files. To set it to another folder, create `~/.config/user-dirs.dirs` and add:
-
-```
-XDG_DESKTOP_DIR="$HOME/.local/share/Desktop"
-
-```
-
-Optionally customize the rest:
-
-```
-XDG_DOWNLOAD_DIR="$HOME/Downloads"
-XDG_TEMPLATES_DIR="$HOME/.local/share/Templates"
-XDG_PUBLICSHARE_DIR="$HOME/Public"
-XDG_DOCUMENTS_DIR="$HOME/Documents"
-XDG_MUSIC_DIR="$HOME/Music"
-XDG_PICTURES_DIR="$HOME/Pictures"
-XDG_VIDEOS_DIR="$HOME/Videos"
-
-```
-
-(Note that paths _must_ start with either `/` or `$HOME/` in this file.)
+Firefox uses `~/Desktop` as the default place for download and upload files. To change it to another folder, set the `XDG_DESKTOP_DIR` option as explained in [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories").
 
 ### Make plugins respect blocked pop-ups
 
@@ -394,7 +374,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=410171](https://wiki.archlinux.org/index.php?title=Firefox&oldid=410171)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=412258](https://wiki.archlinux.org/index.php?title=Firefox&oldid=412258)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

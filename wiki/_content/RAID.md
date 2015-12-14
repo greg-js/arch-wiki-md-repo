@@ -376,6 +376,8 @@ The array can now be formatted like any other disk, just keep in mind that:
 
 Stride = (chunk size/block size).
 
+**Note:** Arch's default block size for many filesystems is 4096, see: `/etc/mke2fs.conf` for details.
+
 Stripe-width = (# of physical **data** disks * stride).
 
 ##### Example 1\. RAID0
@@ -860,7 +862,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 
 *   [Linux/Fedora: Encrypt /home and swap over RAID with dm-crypt](http://www.shimari.com/dm-crypt-on-raid/) by Justin Wells
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RAID&oldid=411166](https://wiki.archlinux.org/index.php?title=RAID&oldid=411166)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RAID&oldid=412254](https://wiki.archlinux.org/index.php?title=RAID&oldid=412254)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
