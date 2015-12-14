@@ -35,7 +35,7 @@ Some of the capabilities of version 0.7.0 (as of Feb 2012) are limited compared 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfs-fuse)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfs-fuse)]</sup> from the [AUR](/index.php/AUR "AUR").
 
 Read the messages after installation and be sure to edit the configuration files as per your needs.
 
@@ -145,7 +145,7 @@ The exported shares and their options can be listed as follows:
 *   To enable sharing after reboot, put `zfs share -a" to your /etc/rc.local`.
 *   It is possible to use also the regular way of exporting NFS shares via `/etc/exports`, however, do not set it up for the shares, which are exported by ZFS directly!
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS_on_FUSE&oldid=392870](https://wiki.archlinux.org/index.php?title=ZFS_on_FUSE&oldid=392870)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS_on_FUSE&oldid=412227](https://wiki.archlinux.org/index.php?title=ZFS_on_FUSE&oldid=412227)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

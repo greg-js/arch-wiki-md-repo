@@ -35,7 +35,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [irssi](https://www.archlinux.org/packages/?name=irssi) package.
+[Install](/index.php/Install "Install") the [irssi](https://www.archlinux.org/packages/?name=irssi) package.
 
 Several scripts are available in the AUR under [**irssi-script**](https://aur.archlinux.org/packages/?O=0&K=irssi-script), and in the [irssi script repository](http://scripts.irssi.org/).
 
@@ -449,7 +449,7 @@ Another way would be to set your hostname (vhost) with the 'set' command which w
 *   [awesome Wiki Irssi tips](http://awesome.naquadah.org/wiki/Irssi_tips)
 *   [irssi systemd unit](https://github.com/GutenYe/systemd-units/tree/master/irssi)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Irssi&oldid=407555](https://wiki.archlinux.org/index.php?title=Irssi&oldid=407555)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Irssi&oldid=412107](https://wiki.archlinux.org/index.php?title=Irssi&oldid=412107)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

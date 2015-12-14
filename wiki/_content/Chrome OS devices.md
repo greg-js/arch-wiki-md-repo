@@ -594,7 +594,7 @@ Power key and lid switch events will still be logged to journald by logind. See 
 
 #### Ignore by Gnome
 
-[Install](/index.php/Pacman "Pacman") [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), open the Tweak Tool and under Power change the Power Button Action.
+[Install](/index.php/Install "Install") [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), open the Tweak Tool and under Power change the Power Button Action.
 
 ## Known issues
 
@@ -610,7 +610,7 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=408193](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=408193)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=412052](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=412052)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -22,7 +22,7 @@ Backups are granularly incremental, meaning that only changes in files (since th
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [duplicity](https://www.archlinux.org/packages/?name=duplicity) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [duplicity](https://www.archlinux.org/packages/?name=duplicity) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 *   [duply](https://aur.archlinux.org/packages/duply/)<sup><small>AUR</small></sup>, a shell front-end, is available in [AUR](/index.php/AUR "AUR").
 *   [deja-dup](https://www.archlinux.org/packages/?name=deja-dup), an easy-to-use front-end, is available in the [Official repositories](/index.php/Official_repositories "Official repositories"). It provides the command-line tool `deja-dup` and the GTK frontend `deja-dup-preferences`.
@@ -143,7 +143,7 @@ gpg_start
 *   [Wikipedia:Duplicity (software)](https://en.wikipedia.org/wiki/Duplicity_(software) "wikipedia:Duplicity (software)")
 *   [Déjà Dup home page](https://launchpad.net/deja-dup)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Duplicity&oldid=315932](https://wiki.archlinux.org/index.php?title=Duplicity&oldid=315932)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Duplicity&oldid=412067](https://wiki.archlinux.org/index.php?title=Duplicity&oldid=412067)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

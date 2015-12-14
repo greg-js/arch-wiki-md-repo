@@ -38,7 +38,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you don't trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/)<sup><small>AUR</small></sup>. Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
 
-[Install](/index.php/Pacman "Pacman") [skype](https://www.archlinux.org/packages/?name=skype) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository first as Skype is 32-bit only.
+[Install](/index.php/Install "Install") [skype](https://www.archlinux.org/packages/?name=skype) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository first as Skype is 32-bit only.
 
 Running Skype is just as easy. Type `skype` into a terminal or double-click the Skype icon on your desktop or in your DE's application menu.
 
@@ -875,7 +875,7 @@ $ echo _username_ _password_ | skype --pipelogin
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Skype&oldid=411369](https://wiki.archlinux.org/index.php?title=Skype&oldid=411369)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Skype&oldid=412173](https://wiki.archlinux.org/index.php?title=Skype&oldid=412173)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [pass](https://www.archlinux.org/packages/?name=pass) package.
+[Install](/index.php/Install "Install") the [pass](https://www.archlinux.org/packages/?name=pass) package.
 
 ## Basic usage
 
@@ -81,7 +81,7 @@ There is now a stable release of [qtpass](https://aur.archlinux.org/packages/qtp
 
 *   [A more comprehensive pass tutorial](http://blog.sanctum.geek.nz/linux-crypto-passwords/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pass&oldid=409362](https://wiki.archlinux.org/index.php?title=Pass&oldid=409362)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pass&oldid=412153](https://wiki.archlinux.org/index.php?title=Pass&oldid=412153)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

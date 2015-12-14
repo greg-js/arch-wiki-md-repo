@@ -42,7 +42,7 @@ Related articles
 
 ## Installing
 
-[Install](/index.php/Pacman "Pacman") [weechat](https://www.archlinux.org/packages/?name=weechat) from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version [weechat-git](https://aur.archlinux.org/packages/weechat-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [weechat](https://www.archlinux.org/packages/?name=weechat) from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version [weechat-git](https://aur.archlinux.org/packages/weechat-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
 
 ## Running WeeChat
 
@@ -339,7 +339,7 @@ and the help will be displayed in the main buffer (usually buffer 1).
 *   [Pascalpoitras Weechat Tips](http://pascalpoitras.com/)
 *   [Thoughtbot article on weechat and slack](http://robots.thoughtbot.com/weechat-for-slacks-irc-gateway)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=WeeChat&oldid=409438](https://wiki.archlinux.org/index.php?title=WeeChat&oldid=409438)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=WeeChat&oldid=412210](https://wiki.archlinux.org/index.php?title=WeeChat&oldid=412210)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -139,7 +139,7 @@ Advanced network settings can be found on the `about:config` page (try searching
 
 **Note:** Deleting files from your profile folder is potentially dangerous, so it is recommended that you back it up first.
 
-The anti-phishing features of Firefox may cause Firefox to become slow to start or exit. The problem is that Firefox maintains an [Sqlite](/index.php/Sqlite "Sqlite") database that can grow quite big which makes reading and writing slower after repeated use. If you feel that you do not need Firefox to tell you which sites may be suspect you can disable this feature:
+The anti-phishing features of Firefox may cause Firefox to become slow to start or exit. The problem is that Firefox maintains an [SQLite](/index.php/SQLite "SQLite") database that can grow quite big which makes reading and writing slower after repeated use. If you feel that you do not need Firefox to tell you which sites may be suspect you can disable this feature:
 
 *   Turn off the following options under the security tab in preferences: _"Block reported attack sites"_ and _"Block reported web forgeries"_.
 
@@ -830,7 +830,7 @@ Then consider checking [how your SSL is](https://www.howsmyssl.com/).
 *   [Firefox tuneup: configuration necessities](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 *   [Firefox: Defining font type and size](http://linuxtidbits.wordpress.com/2013/03/08/firefox-defining-font-type-and-size/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=410705](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=410705)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=411990](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=411990)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

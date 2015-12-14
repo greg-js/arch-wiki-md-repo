@@ -32,7 +32,7 @@ _VLC is a free and open source cross-platform multimedia player and framework th
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [vlc](https://www.archlinux.org/packages/?name=vlc) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [vlc](https://www.archlinux.org/packages/?name=vlc) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Notable variants are:
 
@@ -247,7 +247,7 @@ in the vlc.desktop file. [[2]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bu
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
 *   [Control VLC via a browser](http://wiki.videolan.org/Control_VLC_via_a_browser)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=411509](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=411509)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=412203](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=412203)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -12,7 +12,7 @@ Related articles
 
 ## Creating a F2FS partition
 
-In order to create a F2FS partition, [install](/index.php/Pacman "Pacman") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
+In order to create a F2FS partition, [install](/index.php/Install "Install") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Create the partition:
 
@@ -51,7 +51,7 @@ With the latest [installation media](https://www.archlinux.org/download/) it is 
 
 It is no longer necessary to modify `/etc/mkinitpcio.conf`, as the `filesystems` hook adds the f2fs module to the initramfs image.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=F2FS&oldid=395902](https://wiki.archlinux.org/index.php?title=F2FS&oldid=395902)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=F2FS&oldid=412074](https://wiki.archlinux.org/index.php?title=F2FS&oldid=412074)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

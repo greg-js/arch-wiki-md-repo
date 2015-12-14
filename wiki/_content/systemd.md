@@ -605,7 +605,7 @@ See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") and [Syslog-
 
 ### Forward journald to /dev/tty12
 
-Create a [drop-in directory](#Editing_provided_unit_files) `/etc/systemd/journald.conf.d` and create a `fw-tty12.conf` file in it:
+Create a [drop-in directory](#Editing_provided_units) `/etc/systemd/journald.conf.d` and create a `fw-tty12.conf` file in it:
 
  `/etc/systemd/journald.conf.d/fw-tty12.conf` 
 
@@ -745,7 +745,7 @@ Environment=SYSTEMD_LOG_LEVEL=debug
 ....
 ```
 
-If debug information is required long-term, add the variable the [regular](#Editing_provided_unit_files) way.
+If debug information is required long-term, add the variable the [regular](#Editing_provided_units) way.
 
 ### Shutdown/reboot takes terribly long
 
@@ -822,7 +822,7 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 *   [Gentoo Wiki systemd page](http://wiki.gentoo.org/wiki/Systemd)
 *   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=411730](https://wiki.archlinux.org/index.php?title=Systemd&oldid=411730)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=412014](https://wiki.archlinux.org/index.php?title=Systemd&oldid=412014)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

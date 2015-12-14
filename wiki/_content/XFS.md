@@ -78,7 +78,7 @@ Yep, so simple - since all of the ["boost knobs" are already "on" by default](ht
 
 **Warning:** Disabling barriers, disabling atime, and other performance enhancements make data corruption and failure much more likely.
 
-As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E), consider changing the default CFQ [I/O scheduler](/index.php/Solid_State_Drives#I.2FO_Scheduler "Solid State Drives") (for example to [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"), [Noop](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck")) to enjoy all of the benefits of XFS, especially on [SSDs](/index.php/SSD "SSD").
+As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E), consider changing the default CFQ [I/O scheduler](/index.php/Solid_State_Drives#I.2FO_scheduler "Solid State Drives") (for example to [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"), [Noop](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck")) to enjoy all of the benefits of XFS, especially on [SSDs](/index.php/SSD "SSD").
 
 ### Stripe size and width
 
@@ -141,7 +141,7 @@ According to the developers, the above _-m crc=1,finobt=1_ option will be the de
 *   [Improving Metadata Performance By Reducing Journal Overhead](http://xfs.org/index.php/Improving_Metadata_Performance_By_Reducing_Journal_Overhead)
 *   [XFS Wikipedia Entry](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XFS&oldid=393521](https://wiki.archlinux.org/index.php?title=XFS&oldid=393521)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XFS&oldid=412024](https://wiki.archlinux.org/index.php?title=XFS&oldid=412024)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

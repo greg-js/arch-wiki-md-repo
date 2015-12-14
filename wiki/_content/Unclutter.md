@@ -26,7 +26,7 @@ Unclutter hides your X mouse cursor when you do not need it, to prevent it from 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [unclutter](https://www.archlinux.org/packages/?name=unclutter) from the [official repositories](/index.php/Official_repositories "Official repositories") or the modern rewrite [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [unclutter](https://www.archlinux.org/packages/?name=unclutter) from the [official repositories](/index.php/Official_repositories "Official repositories") or the modern rewrite [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 
@@ -64,7 +64,7 @@ Unclutter is a tool from the early 90s and has not been updated since. It works 
 
 [http://linuxappfinder.com/package/unclutter](http://linuxappfinder.com/package/unclutter) - Unclutter on Linux App Finder
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unclutter&oldid=387983](https://wiki.archlinux.org/index.php?title=Unclutter&oldid=387983)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unclutter&oldid=412197](https://wiki.archlinux.org/index.php?title=Unclutter&oldid=412197)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

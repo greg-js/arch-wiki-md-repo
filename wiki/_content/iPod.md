@@ -157,13 +157,13 @@ This is a Ruby script to convert video files to an mp4 suitable for an iPod or i
 
 #### Avidemux
 
-[Install](/index.php/Pacman "Pacman") [avidemux-gtk](https://www.archlinux.org/packages/?name=avidemux-gtk) or [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt) from the official repositories.
+[Install](/index.php/Install "Install") [avidemux-gtk](https://www.archlinux.org/packages/?name=avidemux-gtk) or [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt) from the official repositories.
 
 This can convert to mp4 files. If you enforce a hard max of bit rate @ 700ish and keep the video size to 720x480 or 320x240 than it works fine for video file exporting.
 
 #### Mencoder
 
-[Install](/index.php/Pacman "Pacman") the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package from the official repositories.
+[Install](/index.php/Install "Install") the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package from the official repositories.
 
 Has _extremely_ comprehensive configuration support, which will be able to spit out iPod-compatible video files. Check out `man mencoder`; a lot of MPlayer opts will also affect encoding.
 
@@ -182,7 +182,7 @@ mencoder INPUT -o output.mp4 \
 
 #### FFMpeg
 
-[Install](/index.php/Pacman "Pacman") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package from the official repositories.
+[Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package from the official repositories.
 
 Another encoder with comprehensive configuration support. Example command to encode for 5G iPod:
 
@@ -512,7 +512,7 @@ Your iPod can now be managed with Amarok or gtkpod.
 *   *   [More information about iPhone/iPod Touch support](http://help.ubuntu.com/community/PortableDevices/iPhone)
     *   [Apple trailers downloader script](http://wiki.gotux.net/code/perl/atget)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=392245](https://wiki.archlinux.org/index.php?title=IPod&oldid=392245)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=412099](https://wiki.archlinux.org/index.php?title=IPod&oldid=412099)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

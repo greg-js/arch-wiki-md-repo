@@ -23,7 +23,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Installing](/index.php/Pacman "Pacman") [unison](https://www.archlinux.org/packages/?name=unison) from the [official repositories](/index.php/Official_repositories "Official repositories"), which provides CLI, GTK+ and GTK+ 2.0 interfaces. For offline documentation install [unison-doc](https://aur.archlinux.org/packages/unison-doc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/unison-doc)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Installing](/index.php/Installing "Installing") [unison](https://www.archlinux.org/packages/?name=unison) from the [official repositories](/index.php/Official_repositories "Official repositories"), which provides CLI, GTK+ and GTK+ 2.0 interfaces. For offline documentation install [unison-doc](https://aur.archlinux.org/packages/unison-doc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/unison-doc)]</sup> from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -183,7 +183,7 @@ When syncing configuration files which would vary (e.g., due to endemic applicat
 *   _[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)_ by Philip Guo
 *   _[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)_ on TWiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unison&oldid=392764](https://wiki.archlinux.org/index.php?title=Unison&oldid=392764)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unison&oldid=412198](https://wiki.archlinux.org/index.php?title=Unison&oldid=412198)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

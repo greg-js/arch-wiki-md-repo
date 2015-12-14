@@ -21,7 +21,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Prerequisites
 
-You need to [install](/index.php/Pacman "Pacman") [libcap](https://www.archlinux.org/packages/?name=libcap), for setting file capabilities that are extended attributes, with the utility _setcap_.
+You need to [install](/index.php/Install "Install") [libcap](https://www.archlinux.org/packages/?name=libcap), for setting file capabilities that are extended attributes, with the utility _setcap_.
 
 ## Implementation
 
@@ -99,7 +99,7 @@ $ find /usr/bin /usr/lib -perm /2000 -group root
 *   Man Page capabilities(7) setcap(8) getcap(8)
 *   [DeveloperWiki:Security#Replacing setuid with capabilities](/index.php/DeveloperWiki:Security#Replacing_setuid_with_capabilities "DeveloperWiki:Security")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Capabilities&oldid=407370](https://wiki.archlinux.org/index.php?title=Capabilities&oldid=407370)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Capabilities&oldid=412049](https://wiki.archlinux.org/index.php?title=Capabilities&oldid=412049)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

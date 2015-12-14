@@ -24,9 +24,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [python2-pygame](https://www.archlinux.org/packages/?name=python2-pygame) package for Python 2 pygame, or install the from the AUR [python-pygame](https://aur.archlinux.org/packages/python-pygame/)<sup><small>AUR</small></sup> for python 3 compatibility.
+[Install](/index.php/Install "Install") the [python2-pygame](https://www.archlinux.org/packages/?name=python2-pygame) package for Python 2 pygame, or install the from the AUR [python-pygame](https://aur.archlinux.org/packages/python-pygame/)<sup><small>AUR</small></sup> for python 3 compatibility.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pygame&oldid=408471](https://wiki.archlinux.org/index.php?title=Pygame&oldid=408471)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pygame&oldid=412163](https://wiki.archlinux.org/index.php?title=Pygame&oldid=412163)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -47,7 +47,7 @@ _virtualenv_ supports Python 2.6+ and Python 3.x. See [Python#Python 3](/index.p
 
 ### Installation
 
-[Install](/index.php/Pacman "Pacman") [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv), or [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) for the legacy version.
+[Install](/index.php/Install "Install") [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv), or [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) for the legacy version.
 
 ### Basic Usage
 
@@ -88,7 +88,7 @@ _virtualenvwrapper_ allows more natural command line interaction with your virtu
 
 ### Installation
 
-[Install](/index.php/Pacman "Pacman") the [python-virtualenvwrapper](https://www.archlinux.org/packages/?name=python-virtualenvwrapper) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [python-virtualenvwrapper](https://www.archlinux.org/packages/?name=python-virtualenvwrapper) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Now add the following lines to your `~/.bashrc`:
 
@@ -151,7 +151,7 @@ $ workon my_env
 *   [Tutorial for virtualenv](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox)
 *   [virtualenvwrapper page at Doug Hellmann's](http://www.doughellmann.com/docs/virtualenvwrapper/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Python_VirtualEnv&oldid=389590](https://wiki.archlinux.org/index.php?title=Python_VirtualEnv&oldid=389590)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Python_VirtualEnv&oldid=412164](https://wiki.archlinux.org/index.php?title=Python_VirtualEnv&oldid=412164)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

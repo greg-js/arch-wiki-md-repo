@@ -95,7 +95,7 @@ The next few steps will begin the process of configuring the Host. You will need
 
 ### Installation
 
-[Install](/index.php/Pacman "Pacman") the following packages:
+[Install](/index.php/Install "Install") the following packages:
 
 *   [samba](https://www.archlinux.org/packages/?name=samba), see also [Samba](/index.php/Samba "Samba")
 *   [pam-krb5](https://aur.archlinux.org/packages/pam-krb5/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
@@ -852,7 +852,7 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 *   Centrify
 *   Likewise
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=407563](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=407563)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=412031](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=412031)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

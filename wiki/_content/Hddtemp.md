@@ -20,7 +20,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -37,7 +37,7 @@ Running the daemon allows to access the temperature via TCP/IP, to use for examp
 
 The daemon is [controlled](/index.php/Systemd#Using_units "Systemd") by `hddtemp.service`.
 
-**Note:** Arguments to `hddtemp` are directly given in `/usr/lib/systemd/system/hddtemp.service`. This is especially important with multiple disks, as the default configuration only monitors `/dev/sda`. Change `ExecStart` [to override](/index.php/Systemd#Editing_provided_unit_files "Systemd") `hddtemp.service`:
+**Note:** Arguments to `hddtemp` are directly given in `/usr/lib/systemd/system/hddtemp.service`. This is especially important with multiple disks, as the default configuration only monitors `/dev/sda`. Change `ExecStart` [to override](/index.php/Systemd#Editing_provided_units "Systemd") `hddtemp.service`:
 
 *   Create a directory in `/etc/systemd/system`:
 
@@ -127,7 +127,7 @@ $ echo '"Samsung SSD 840 EVO 250G B" 190 C "Samsung SSD 840 EVO 250GB"' >> /usr/
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hddtemp&oldid=380948](https://wiki.archlinux.org/index.php?title=Hddtemp&oldid=380948)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hddtemp&oldid=412096](https://wiki.archlinux.org/index.php?title=Hddtemp&oldid=412096)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -46,7 +46,7 @@ Related articles
 
 ### Base package
 
-[Install](/index.php/Pacman "Pacman") [wicd](https://www.archlinux.org/packages/?name=wicd), available in the [official repositories](/index.php/Official_repositories "Official repositories"). It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
+[Install](/index.php/Install "Install") [wicd](https://www.archlinux.org/packages/?name=wicd), available in the [official repositories](/index.php/Official_repositories "Official repositories"). It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
 
 ### GTK+ client
 
@@ -255,7 +255,7 @@ WantedBy=suspend.target
 
 ### Importing pynotify failed, notifications disabled
 
-In case the [python2-notify](https://www.archlinux.org/packages/?name=python2-notify) package did not get installed automatically. You can [install](/index.php/Pacman "Pacman") it from [official repositories](/index.php/Official_repositories "Official repositories").
+In case the [python2-notify](https://www.archlinux.org/packages/?name=python2-notify) package did not get installed automatically. You can [install](/index.php/Install "Install") it from [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### D-Bus connection error message
 
@@ -347,7 +347,7 @@ Alternatively, as a workaround you might consider switching to [dhclient](https:
 *   [Forum post](https://bbs.archlinux.org/viewtopic.php?id=114803) about two instances of wicd-client and `/etc/xdg/autostart`
 *   [Bug report mentioning /etc/xdg/autostart and wicd-client behavior](https://bugs.archlinux.org/task/22423)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wicd&oldid=406910](https://wiki.archlinux.org/index.php?title=Wicd&oldid=406910)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211](https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

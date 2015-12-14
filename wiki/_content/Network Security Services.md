@@ -20,7 +20,7 @@ Applications built with NSS can support [SSL](https://en.wikipedia.org/wiki/SSL 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [nss](https://www.archlinux.org/packages/?name=nss), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [nss](https://www.archlinux.org/packages/?name=nss), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Certificate management
 
@@ -87,7 +87,7 @@ $ certutil -d sql:$HOME/.pki/nssdb -D -n _certificate_nickname_
 *   [Certificate management](http://code.google.com/p/chromium/wiki/LinuxCertManagement) on Chromium help.
 *   [Managing Certificate Trust flags in NSS Database](http://blogs.oracle.com/meena/entry/notes_about_trust_flags) on Meena's blog.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Security_Services&oldid=407375](https://wiki.archlinux.org/index.php?title=Network_Security_Services&oldid=407375)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Security_Services&oldid=412137](https://wiki.archlinux.org/index.php?title=Network_Security_Services&oldid=412137)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

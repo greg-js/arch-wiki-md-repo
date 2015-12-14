@@ -25,7 +25,7 @@ The goal of this article is to teach the configuration of procmail. This article
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the package [procmail](https://www.archlinux.org/packages/?name=procmail) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the package [procmail](https://www.archlinux.org/packages/?name=procmail) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -165,7 +165,7 @@ $HOME/mail/jokes
 
 *   [Procmail Homepage](http://www.procmail.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Procmail&oldid=381164](https://wiki.archlinux.org/index.php?title=Procmail&oldid=381164)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Procmail&oldid=412160](https://wiki.archlinux.org/index.php?title=Procmail&oldid=412160)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

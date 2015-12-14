@@ -60,7 +60,7 @@ To ease the installation process you may find useful to install an AUR helper:
 
 #### Required packages for Oracle database installation
 
-[Install](/index.php/Pacman "Pacman") packages [unzip](https://www.archlinux.org/packages/?name=unzip) [sudo](https://www.archlinux.org/packages/?name=sudo) [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [icu](https://www.archlinux.org/packages/?name=icu) [gawk](https://www.archlinux.org/packages/?name=gawk) [gdb](https://www.archlinux.org/packages/?name=gdb) [elfutils](https://www.archlinux.org/packages/?name=elfutils) [sysstat](https://www.archlinux.org/packages/?name=sysstat) [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5).
+[Install](/index.php/Install "Install") packages [unzip](https://www.archlinux.org/packages/?name=unzip) [sudo](https://www.archlinux.org/packages/?name=sudo) [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [icu](https://www.archlinux.org/packages/?name=icu) [gawk](https://www.archlinux.org/packages/?name=gawk) [gdb](https://www.archlinux.org/packages/?name=gdb) [elfutils](https://www.archlinux.org/packages/?name=elfutils) [sysstat](https://www.archlinux.org/packages/?name=sysstat) [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5).
 
 Install a [Java](/index.php/Java "Java") runtime environment, like [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) and [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).
 
@@ -848,7 +848,7 @@ The make will succeed and you can now choose continue in the Oracle installer.
 
 Most of the steps are based on this oracle installation guide for ubuntu users. This guide includes step by step graphical examples: [http://www.pythian.com/blogs/1355/installing-oracle-11gr1-on-ubuntu-810-intrepid-ibex](http://www.pythian.com/blogs/1355/installing-oracle-11gr1-on-ubuntu-810-intrepid-ibex)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Oracle&oldid=409025](https://wiki.archlinux.org/index.php?title=Oracle&oldid=409025)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Oracle&oldid=412148](https://wiki.archlinux.org/index.php?title=Oracle&oldid=412148)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

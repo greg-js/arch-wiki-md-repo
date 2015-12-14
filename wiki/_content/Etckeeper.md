@@ -40,7 +40,7 @@ Etckeeper supports using pacman as a `LOWLEVEL_PACKAGE_MANAGER` in `etckeeper.co
 
 Service and timer units are included in the package. Simply [enable](/index.php/Systemd/Timers#Management "Systemd/Timers") `etckeeper.timer`.
 
-See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") for more informations and [Systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") if you wish to edit the provided units.
+See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") for more informations and [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you wish to edit the provided units.
 
 ### Cron
 
@@ -121,7 +121,7 @@ Change to `etc/.git` and add your remote Github repository:
 
 Now each time you run your wrapper script or alias from above, changes will be automatically commited to your Github repo.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=407525](https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=407525)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=411988](https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=411988)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

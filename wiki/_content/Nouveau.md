@@ -34,7 +34,7 @@ Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a mo
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
+[Install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
 
 For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) when using [multilib](/index.php/Multilib "Multilib").
 
@@ -273,7 +273,7 @@ Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_c
 
 Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with _dmesg_. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nouveau&oldid=410840](https://wiki.archlinux.org/index.php?title=Nouveau&oldid=410840)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nouveau&oldid=412140](https://wiki.archlinux.org/index.php?title=Nouveau&oldid=412140)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

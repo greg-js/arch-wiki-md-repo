@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-To get a minimal desktop interface, you may start by [installing](/index.php/Pacman "Pacman") [deepin](https://www.archlinux.org/groups/x86_64/deepin/) group. This will pull all the basic components.
+To get a minimal desktop interface, you may start by [installing](/index.php/Installing "Installing") [deepin](https://www.archlinux.org/groups/x86_64/deepin/) group. This will pull all the basic components.
 
 However, it is recommended to also install [deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) group to get a fully working DDE:
 
@@ -59,7 +59,7 @@ Execute `startx` or `xinit` to start DDE.
 
 Any upstream or arch packaging related bugs should be reported [here](https://github.com/fasheng/arch-deepin/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&oldid=411326](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&oldid=411326)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&oldid=412059](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&oldid=412059)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

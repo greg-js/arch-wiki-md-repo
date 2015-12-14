@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [OpenVPN](/index.php/OpenVPN "OpenVPN") describes configuration from scratch for both servers and clients, including generating keys and certificates.
 
-If you're interested in simply getting openvpn to work with credentials provided by a third-party VPN service, just [install](/index.php/Pacman "Pacman") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package available in the [official repositories](/index.php/Official_repositories "Official repositories").
+If you're interested in simply getting openvpn to work with credentials provided by a third-party VPN service, just [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Airvpn generates your config for you, if you have an account and are logged in. You can choose a server, port, and proxy settings, and download a zip file with certificates and settings. I downloaded it from ["Access without a client"](https://airvpn.org/index.php?option=com_air&view=access&Itemid=100) on 01.20.2012\.
 
@@ -110,7 +110,7 @@ verb 3
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Airvpn&oldid=366759](https://wiki.archlinux.org/index.php?title=Airvpn&oldid=366759)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Airvpn&oldid=412033](https://wiki.archlinux.org/index.php?title=Airvpn&oldid=412033)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

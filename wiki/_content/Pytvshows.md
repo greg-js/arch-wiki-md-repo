@@ -15,7 +15,7 @@ Pytvshows is a python script for downloading .torrent files from trvrss.net or e
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [pytvshows](https://aur.archlinux.org/packages/pytvshows/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytvshows)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [pytvshows](https://aur.archlinux.org/packages/pytvshows/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytvshows)]</sup> from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -79,7 +79,7 @@ Please use a other time otherwise it will get to many hits at the same time.
 
 [http://sourceforge.net/projects/pytvshows/](http://sourceforge.net/projects/pytvshows/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pytvshows&oldid=392607](https://wiki.archlinux.org/index.php?title=Pytvshows&oldid=392607)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pytvshows&oldid=412165](https://wiki.archlinux.org/index.php?title=Pytvshows&oldid=412165)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

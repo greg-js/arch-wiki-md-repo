@@ -30,7 +30,7 @@ This document describes how to set up Ampache on an Arch Linux LAMP server. Ampa
 
 You need three things to run Ampache. A webserver, [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL"). Please refere to the [LAMP](/index.php/LAMP "LAMP") article for more information.
 
-[Install](/index.php/Pacman "Pacman") one Ampache package:
+[Install](/index.php/Install "Install") one Ampache package:
 
 *   [ampache](https://aur.archlinux.org/packages/ampache/)<sup><small>AUR</small></sup> - Stable release
 
@@ -181,7 +181,7 @@ In Amarok, go to _Settings > Services_. Make sure the Ampache Service is enabled
 
 [https://github.com/ampache/ampache/](https://github.com/ampache/ampache/) - Official site
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ampache&oldid=388008](https://wiki.archlinux.org/index.php?title=Ampache&oldid=388008)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ampache&oldid=412037](https://wiki.archlinux.org/index.php?title=Ampache&oldid=412037)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

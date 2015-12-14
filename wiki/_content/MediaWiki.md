@@ -28,7 +28,7 @@ You need to have a web server, such as [Apache](/index.php/Apache "Apache") inst
 
 [Install](/index.php/Install "Install") the [php-gd](https://www.archlinux.org/packages/?name=php-gd), [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) packages.
 
-You will also need a database system, such as [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [Sqlite](/index.php/Sqlite "Sqlite").
+You will also need a database system, such as [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite").
 
 ## Configuration
 
@@ -219,7 +219,7 @@ parsoidConfig.setInterwiki( 'localhost', 'http://localhost/mediawiki/api.php' );
 
 After that simply [enable](/index.php/Enable "Enable") and start `parsoid.service`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=409807](https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=409807)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=412002](https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=412002)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

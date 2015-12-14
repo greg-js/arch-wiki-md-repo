@@ -25,7 +25,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want the development build from git, install the [dmenu-git](https://aur.archlinux.org/packages/dmenu-git/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want the development build from git, install the [dmenu-git](https://aur.archlinux.org/packages/dmenu-git/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Various patched variants exist which extend dmenu's default functionality. Consider installing one of the following packages from the [AUR](/index.php/AUR "AUR"):
 
@@ -85,7 +85,7 @@ $ dmenu_run -fn 'Droid Sans Mono-9'
 
 ### Support for shell aliases
 
-_dmenu_ does not support [shell aliases](/index.php/Bash#Aliases "Bash"). To have _dmenu_ recognize your aliases, [install](/index.php/Pacman "Pacman") the [dmenu-recent-aliases](https://aur.archlinux.org/packages/dmenu-recent-aliases/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-recent-aliases)]</sup> package from the [AUR](/index.php/AUR "AUR") and run `dmenu_run_aliases`. Your aliases must be in either `~/.bash_aliases` or `~/.zsh_aliases` to be recognized by _dmenu_run_aliases_.
+_dmenu_ does not support [shell aliases](/index.php/Bash#Aliases "Bash"). To have _dmenu_ recognize your aliases, [install](/index.php/Install "Install") the [dmenu-recent-aliases](https://aur.archlinux.org/packages/dmenu-recent-aliases/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-recent-aliases)]</sup> package from the [AUR](/index.php/AUR "AUR") and run `dmenu_run_aliases`. Your aliases must be in either `~/.bash_aliases` or `~/.zsh_aliases` to be recognized by _dmenu_run_aliases_.
 
 ## Troubleshooting
 
@@ -119,7 +119,7 @@ Note that there will most likely be only one cache file, depending on if `$XDG_C
 *   [dmenu](http://tools.suckless.org/dmenu) – The official dmenu website
 *   [Dmenu Hacking thread](https://bbs.archlinux.org/viewtopic.php?id=80145) – Dmenu hacking thread in arch linux forums. An overview of scripts is provided in the [dmenu_scripts collection](https://github.com/orschiro/dmenu-scripts-collection).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dmenu&oldid=410923](https://wiki.archlinux.org/index.php?title=Dmenu&oldid=410923)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dmenu&oldid=412065](https://wiki.archlinux.org/index.php?title=Dmenu&oldid=412065)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

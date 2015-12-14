@@ -31,7 +31,7 @@ As of August 26 2008 the development of Alpine seems to have ended. Another fork
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [re-alpine](https://aur.archlinux.org/packages/re-alpine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/re-alpine)]</sup>.
+[Install](/index.php/Install "Install") [re-alpine](https://aur.archlinux.org/packages/re-alpine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/re-alpine)]</sup>.
 
 You might also want to grab something to check your spelling, like [aspell](https://www.archlinux.org/packages/?name=aspell).
 
@@ -179,7 +179,7 @@ Replace _YOURPRINTER_ with the name of your printer. Note that these settings ca
 
 *   [http://www.washington.edu/alpine/](http://www.washington.edu/alpine/) - Official Alpine Page. This page includes links to un-official Alpine pages that have some handy tutorials (argue better than the one provided here), hit `C` to open the config menu.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Alpine&oldid=391903](https://wiki.archlinux.org/index.php?title=Alpine&oldid=391903)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Alpine&oldid=412035](https://wiki.archlinux.org/index.php?title=Alpine&oldid=412035)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

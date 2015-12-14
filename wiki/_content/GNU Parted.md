@@ -33,7 +33,7 @@ GNU Parted is a program for creating and manipulating partition tables. [GParted
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [parted](https://www.archlinux.org/packages/?name=parted) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [parted](https://www.archlinux.org/packages/?name=parted) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -329,7 +329,7 @@ The warning means the partition start is not aligned. Enter "Ignore" to go ahead
 *   [How to align partitions for best performance using parted](http://rainbow.chard.org/2013/01/30/how-to-align-partitions-for-best-performance-using-parted/)
 *   [Resize an ext3/ext4 partition](http://positon.org/resize-an-ext3-ext4-partition)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Parted&oldid=391451](https://wiki.archlinux.org/index.php?title=GNU_Parted&oldid=391451)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Parted&oldid=412084](https://wiki.archlinux.org/index.php?title=GNU_Parted&oldid=412084)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

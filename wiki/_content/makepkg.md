@@ -168,7 +168,7 @@ $ makepkg -s
 
 ```
 
-Adding the `-r`/`--rmdeps` flag causes _makepkg_ to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman tips#Removing orphaned packages](/index.php/Pacman_tips#Removing_orphaned_packages "Pacman tips") once in a while instead.
+Adding the `-r`/`--rmdeps` flag causes _makepkg_ to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman tips#Removing unused packages](/index.php/Pacman_tips#Removing_unused_packages "Pacman tips") once in a while instead.
 
 **Note:**
 
@@ -341,7 +341,7 @@ $ grep -R "$(pwd)/src" pkg/
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411946](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=411946)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=412001](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=412001)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

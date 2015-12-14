@@ -555,7 +555,7 @@ See main article: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding "SSH").
 
 With the help of _xinput_ you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
 
-[Install](/index.php/Pacman "Pacman") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Find the ID of the device you want to disable:
 
@@ -808,7 +808,7 @@ Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See
 
 Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=409858](https://wiki.archlinux.org/index.php?title=Xorg&oldid=409858)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=412223](https://wiki.archlinux.org/index.php?title=Xorg&oldid=412223)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

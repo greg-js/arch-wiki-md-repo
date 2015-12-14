@@ -16,7 +16,7 @@ This article explains how to create a transparent Squid proxy server using mogri
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [squid](https://www.archlinux.org/packages/?name=squid), [apache](https://www.archlinux.org/packages/?name=apache), and [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [squid](https://www.archlinux.org/packages/?name=squid), [apache](https://www.archlinux.org/packages/?name=apache), and [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -134,7 +134,7 @@ Read [Daemons](/index.php/Daemons "Daemons") for more information.
 *   [Transparent Proxy with DD-WRT](http://www.dd-wrt.com/wiki/index.php/Squid_Transparent_Proxy)
 *   [Upside-Down-Ternet XKCD](http://xkcd.com/341/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Upside_Down_Ternet&oldid=324783](https://wiki.archlinux.org/index.php?title=Upside_Down_Ternet&oldid=324783)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Upside_Down_Ternet&oldid=412200](https://wiki.archlinux.org/index.php?title=Upside_Down_Ternet&oldid=412200)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

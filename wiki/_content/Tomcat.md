@@ -234,7 +234,7 @@ As said in the introduction, **Tomcat 7 does not deprecate Tomcat 6**. They are 
 
 Apart from installing the desired JRE/JDK, the only requirement is to set the TOMCAT_JAVA_HOME variable in Tomcat's `systemd` service file.
 
-The variable can be overridden by a custom configuration, as described in [Systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd"):
+The variable can be overridden by a custom configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"):
 
 1.  create the directory _/etc/systemd/system/tomcat7.service.d_
 2.  in that directory, save a _start.conf_ file with this content (this is the configuration for Oracle JDK installed with the AUR package):
@@ -339,7 +339,7 @@ Note that this may not be relevant because only root and/or tomcat is supposed t
 
 *   Always know what you are deploying
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomcat&oldid=388060](https://wiki.archlinux.org/index.php?title=Tomcat&oldid=388060)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomcat&oldid=412019](https://wiki.archlinux.org/index.php?title=Tomcat&oldid=412019)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

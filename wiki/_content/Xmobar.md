@@ -20,7 +20,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"). Available variants are:
+[Install](/index.php/Install "Install") [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"). Available variants are:
 
 *   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> - Development version.
 *   [xmobar-gmail](https://aur.archlinux.org/packages/xmobar-gmail/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail)]</sup> - GMail monitoring.
@@ -334,7 +334,7 @@ in your `.xmobarrc`.
 *   [xmobar project](http://projects.haskell.org/xmobar/)
 *   [dzen and xmobar hacking thread](https://bbs.archlinux.org/viewtopic.php?pid=304851)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=392860](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=392860)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=412222](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=412222)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

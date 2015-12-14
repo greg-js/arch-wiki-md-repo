@@ -79,7 +79,7 @@ BD+ is an additional but optional component of the Blu-ray DRM. In December 2013
 
 ### Preparation
 
-1.  [install](/index.php/Pacman "Pacman") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
+1.  [install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
 2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[11]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for nearly 12000 discs.
 3.  If necessary (_i.e._ if volumes are not mounted automatically on your system), mount the bluray to a directory, _e.g._: `# mount /dev/sr0 /media/blurays` 
 
@@ -119,7 +119,7 @@ If this method is successful, after you play the disc, libaacs will store the VU
 
 #### BD+ support
 
-These pages [[12]](http://www.labdv.com/aacs/) and [[13]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/)<sup><small>AUR</small></sup> or [DVDFab](/index.php/Blu-ray#See_also "Blu-ray") (under Wine).
+These pages [[12]](http://www.labdv.com/aacs/) and [[13]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/)<sup><small>AUR</small></sup> or [DVDFab](#See_also) (under Wine).
 
 ### Media players
 
@@ -257,7 +257,7 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411682](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=411682)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412044](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412044)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

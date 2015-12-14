@@ -17,7 +17,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Package installation
 
-[Install](/index.php/Pacman "Pacman") [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Encoding examples
 
@@ -55,7 +55,7 @@ ULTRAFAST TESTING
 
 *   [Official CLI Guide](https://trac.handbrake.fr/wiki/CLIGuide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=HandBrakeCLI&oldid=402503](https://wiki.archlinux.org/index.php?title=HandBrakeCLI&oldid=402503)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HandBrakeCLI&oldid=412094](https://wiki.archlinux.org/index.php?title=HandBrakeCLI&oldid=412094)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

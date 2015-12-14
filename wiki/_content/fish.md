@@ -27,11 +27,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [fish](https://www.archlinux.org/packages/?name=fish) package from the [official repositories](/index.php/Official_repositories "Official repositories") for the stable version of the [mainstream fork](http://fishshell.com/) of the project.
+[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package from the [official repositories](/index.php/Official_repositories "Official repositories") for the stable version of the [mainstream fork](http://fishshell.com/) of the project.
 
-[Install](/index.php/Pacman "Pacman") [fish-shell-git](https://aur.archlinux.org/packages/fish-shell-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fish-shell-git)]</sup> from the [AUR](/index.php/AUR "AUR") for the latest development version.
+[Install](/index.php/Install "Install") [fish-shell-git](https://aur.archlinux.org/packages/fish-shell-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fish-shell-git)]</sup> from the [AUR](/index.php/AUR "AUR") for the latest development version.
 
-[Install](/index.php/Pacman "Pacman") [fish-git](https://aur.archlinux.org/packages/fish-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the legacy version that was [discontinued](http://www.mail-archive.com/fish-users@lists.sourceforge.net/msg02893.html) by its [original developer](https://github.com/liljencrantz) in 2011.
+[Install](/index.php/Install "Install") [fish-git](https://aur.archlinux.org/packages/fish-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the legacy version that was [discontinued](http://www.mail-archive.com/fish-users@lists.sourceforge.net/msg02893.html) by its [original developer](https://github.com/liljencrantz) in 2011.
 
 To make fish the default shell, run `chsh -s /usr/bin/fish`.
 
@@ -264,7 +264,7 @@ end
 *   [http://fishshell.com/](http://fishshell.com/) - Home page
 *   [http://fishshell.com/docs/2.1/index.html](http://fishshell.com/docs/2.1/index.html) - Documentation
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fish&oldid=406559](https://wiki.archlinux.org/index.php?title=Fish&oldid=406559)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fish&oldid=412079](https://wiki.archlinux.org/index.php?title=Fish&oldid=412079)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

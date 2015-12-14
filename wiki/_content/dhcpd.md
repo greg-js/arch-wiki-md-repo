@@ -22,7 +22,7 @@ dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) D
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -152,7 +152,7 @@ filename "/pxelinux.0";
 
 This section can either be in an entire `subnet` or just in a `host` definition. `next-server` is the IP of the TFTP Server, and `filename` is the filename of the image to boot. For more information see [PXE](/index.php/PXE "PXE").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpd&oldid=385598](https://wiki.archlinux.org/index.php?title=Dhcpd&oldid=385598)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpd&oldid=412063](https://wiki.archlinux.org/index.php?title=Dhcpd&oldid=412063)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

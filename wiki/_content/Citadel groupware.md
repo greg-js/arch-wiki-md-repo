@@ -36,7 +36,7 @@ This guide will help you install and configure Citadel groupware server and web 
 
 ## Installing
 
-First [Install](/index.php/Pacman "Pacman") the following dependences:
+First [Install](/index.php/Install "Install") the following dependences:
 
 ```
    pacman -S curl expat libical libsieve perl-berkeleydb
@@ -50,7 +50,7 @@ Then run the easy install script with curl:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Citadel_groupware&oldid=388072](https://wiki.archlinux.org/index.php?title=Citadel_groupware&oldid=388072)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Citadel_groupware&oldid=412053](https://wiki.archlinux.org/index.php?title=Citadel_groupware&oldid=412053)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

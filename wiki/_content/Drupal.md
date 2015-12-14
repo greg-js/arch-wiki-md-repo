@@ -29,7 +29,7 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 
 ### Arch repositories
 
-[Install](/index.php/Pacman "Pacman") the [drupal](https://www.archlinux.org/packages/?name=drupal) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [drupal](https://www.archlinux.org/packages/?name=drupal) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Edit `/etc/php/php.ini`:
 
@@ -163,7 +163,7 @@ See [this link](https://httpd.apache.org/docs/current/mod/core.html#allowoverrid
 *   [Simple guide to install Drupal on Xampp](http://drupal.org/node/307956)
 *   [LAMP (How to setup an Apache server)](/index.php/LAMP "LAMP")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=409161](https://wiki.archlinux.org/index.php?title=Drupal&oldid=409161)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=412066](https://wiki.archlinux.org/index.php?title=Drupal&oldid=412066)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -33,7 +33,7 @@ Apache 2.4 (available in the [official repositories](/index.php/Official_reposit
 
 ## mod_fastcgi
 
-[Install](/index.php/Pacman "Pacman") [mod_fastcgi](https://www.archlinux.org/packages/?name=mod_fastcgi) from the official repositories.
+[Install](/index.php/Install "Install") [mod_fastcgi](https://www.archlinux.org/packages/?name=mod_fastcgi) from the official repositories.
 
 First you need to load the fastcgi module. Make sure that the following is **present** and **uncommented** in your `httpd.conf`:
 
@@ -87,7 +87,7 @@ It doesn't work? Apache error log (`/var/log/httpd/error_log`) should help you f
 
 *   [lighttpd#FastCGI](/index.php/Lighttpd#FastCGI "Lighttpd")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_and_FastCGI&oldid=388011](https://wiki.archlinux.org/index.php?title=Apache_and_FastCGI&oldid=388011)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_and_FastCGI&oldid=412040](https://wiki.archlinux.org/index.php?title=Apache_and_FastCGI&oldid=412040)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

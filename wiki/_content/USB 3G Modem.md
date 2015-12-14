@@ -205,7 +205,7 @@ Granted this does not work very well if your SMS contains the word "Text", but y
 
 If you are getting low quality images while browsing the web over a mobile broadband connection with the hints "shift+r improves the quality of this image" and "shift+a improves the quality of all images on this page", follow these instructions:
 
-[Install](/index.php/Pacman "Pacman") [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Edit /etc/tinyproxy/tinyproxy.conf and insert the following two lines:
 
@@ -224,7 +224,7 @@ systemctl start tinyproxy
 
 Configure your browser to use localhost:8888 as a proxy server and you are all done. This is especially useful if you are using, for example, Google Chrome which, unlike Firefox, does not allow you to modify the Pragma and Cache-Control headers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_3G_Modem&oldid=406629](https://wiki.archlinux.org/index.php?title=USB_3G_Modem&oldid=406629)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_3G_Modem&oldid=412194](https://wiki.archlinux.org/index.php?title=USB_3G_Modem&oldid=412194)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

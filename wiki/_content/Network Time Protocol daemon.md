@@ -168,7 +168,7 @@ The delay, offset and jitter columns should be non-zero. The servers _ntpd_ is s
 
 Alternatively, [enable](/index.php/Enable "Enable") `ntpdate.service` to synchronize time once (option `-q`) and non-forking (option `-n`) per boot, instead of running the daemon in the background. This method is discouraged on servers, and in general on machines that run without rebooting for more than a few days.
 
-If the synchronized time should be written to the hardware clock as well, configure the provided unit as described in [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") before starting it:
+If the synchronized time should be written to the hardware clock as well, configure the provided unit as described in [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") before starting it:
 
  `/etc/systemd/system/ntpdate.service.d/hwclock.conf` 
 
@@ -346,7 +346,7 @@ It is relatively difficult to be sure that your driftfile configuration is actua
 *   [https://www.eecis.udel.edu/~mills/ntp/html/index.html](https://www.eecis.udel.edu/~mills/ntp/html/index.html)
 *   [http://www.akadia.com/services/ntp_synchronize.html](http://www.akadia.com/services/ntp_synchronize.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&oldid=401244](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&oldid=401244)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&oldid=412005](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&oldid=412005)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

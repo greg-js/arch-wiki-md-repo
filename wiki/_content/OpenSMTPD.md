@@ -30,7 +30,7 @@ This article explains how to install and configure a simple OpenSMTPD server.
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Simple OpenSMTPD/mbox configuration
 
@@ -233,7 +233,7 @@ There are also several handy web sites that can help you test DNS records, deliv
 *   [OpenSMTPD project page](http://opensmtpd.org/)
 *   [Simple SMTP server with OpenSMTPD](https://coderwall.com/p/eejzja)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSMTPD&oldid=401924](https://wiki.archlinux.org/index.php?title=OpenSMTPD&oldid=401924)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSMTPD&oldid=412145](https://wiki.archlinux.org/index.php?title=OpenSMTPD&oldid=412145)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

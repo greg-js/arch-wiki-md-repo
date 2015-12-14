@@ -46,7 +46,7 @@ $ firejail --seccomp --private firefox
 
 ### Using Firejail by Default
 
-For most applications launched from the console, or from .desktop files, you can place your own launcher proxies for each in /usr/local/bin. For example, to create one for firefox, create /usr/share/bin/firefox:
+For most applications launched from the console, or from .desktop files, you can place your own launcher proxies for each in /usr/local/bin. For example, to create one for firefox, create /usr/local/bin/firefox:
 
 ```
 # echo "firejail --seccomp /usr/bin/firefox $@" > /usr/local/bin/firefox
@@ -72,7 +72,7 @@ Other configurations exist; it is suggested you check out the man page for firej
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/)<sup><small>AUR</small></sup>.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=410964](https://wiki.archlinux.org/index.php?title=Firejail&oldid=410964)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=411972](https://wiki.archlinux.org/index.php?title=Firejail&oldid=411972)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

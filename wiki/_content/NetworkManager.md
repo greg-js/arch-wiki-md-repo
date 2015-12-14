@@ -114,7 +114,7 @@ Be aware that after enabling the tick-box option `Make available to other users`
 
 ### KDE Plasma
 
-[Install](/index.php/Pacman "Pacman") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) applet.
+[Install](/index.php/Install "Install") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) applet.
 
 ### Xfce
 
@@ -807,7 +807,7 @@ After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager
 
 DNS requests can be sped up by caching previous requests locally for subsequent lookup. NetworkManager has a plugin to enable DNS caching using dnsmasq, but it is not enabled in the default configuration. It is, however, easy to enable using the following instructions.
 
-Start by [installing](/index.php/Pacman "Pacman") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq). Then, edit `/etc/NetworkManager/NetworkManager.conf` and add the following line under the `[main]` section:
+Start by [installing](/index.php/Installing "Installing") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq). Then, edit `/etc/NetworkManager/NetworkManager.conf` and add the following line under the `[main]` section:
 
 ```
 dns=dnsmasq
@@ -824,7 +824,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=411960](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=411960)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412138](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412138)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

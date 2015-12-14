@@ -311,14 +311,14 @@ To have it wait indefinetely, let the unit restart after it exited:
 Restart=always
 ```
 
-After making changes, [reload the configuration](/index.php/Systemd#Editing_provided_unit_files "Systemd").
+After making changes, [reload the configuration](/index.php/Systemd#Editing_provided_units "Systemd").
 
 ## See also
 
 *   [dhcpcd(8)](http://roy.marples.name/man/html8/dhcpcd.html)
 *   [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=406050](https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=406050)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=411985](https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=411985)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

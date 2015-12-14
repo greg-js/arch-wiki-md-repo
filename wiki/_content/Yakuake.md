@@ -20,7 +20,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [yakuake](https://www.archlinux.org/packages/?name=yakuake), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [yakuake](https://www.archlinux.org/packages/?name=yakuake), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -112,7 +112,7 @@ $ dbus-send  --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.y
 
 *   [Yakuake scripting on coderwall.com](https://coderwall.com/p/kq9ghg/yakuake-scripting)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Yakuake&oldid=377106](https://wiki.archlinux.org/index.php?title=Yakuake&oldid=377106)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Yakuake&oldid=412226](https://wiki.archlinux.org/index.php?title=Yakuake&oldid=412226)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -21,7 +21,7 @@ Related articles
 
 ## Installation
 
-To install kexec, [install](/index.php/Pacman "Pacman") the [kexec-tools](https://www.archlinux.org/packages/?name=kexec-tools) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+To install kexec, [install](/index.php/Install "Install") the [kexec-tools](https://www.archlinux.org/packages/?name=kexec-tools) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Rebooting using kexec
 
@@ -117,7 +117,7 @@ It is also possible to load kernel manually and then let systemd handle service 
 *   [kdump: a kexec based crash dumping mechansim for Linux](http://lse.sourceforge.net/kdump/)
 *   [Reboot Linux faster using kexec](https://web.archive.org/web/20090505132901/http://www.ibm.com/developerworks/linux/library/l-kexec.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kexec&oldid=409129](https://wiki.archlinux.org/index.php?title=Kexec&oldid=409129)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kexec&oldid=412115](https://wiki.archlinux.org/index.php?title=Kexec&oldid=412115)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

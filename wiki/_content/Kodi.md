@@ -539,7 +539,7 @@ If your setup doesn't or can't make use of hardware acceleration, disable it and
 
 Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful tips to consider:
 
-*   [Install](/index.php/Pacman "Pacman") the _kodi-rbp_ package instead of _kodi_ from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
+*   [Install](/index.php/Install "Install") the _kodi-rbp_ package instead of _kodi_ from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 *   This package ships with a systemd service to run in standalone mode.
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended.
 *   Install _omxplayer-git_, _xorg-xrefresh_ and _xorg-xset_ to get hardware acceleration working.
@@ -554,7 +554,7 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 
 **Note:** xbmc-addons-chinese:Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=409607](https://wiki.archlinux.org/index.php?title=Kodi&oldid=409607)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=412116](https://wiki.archlinux.org/index.php?title=Kodi&oldid=412116)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

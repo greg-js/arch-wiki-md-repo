@@ -15,7 +15,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [vnstat](https://www.archlinux.org/packages/?name=vnstat) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [vnstat](https://www.archlinux.org/packages/?name=vnstat) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -65,7 +65,7 @@ To find more options, use:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VnStat&oldid=383956](https://wiki.archlinux.org/index.php?title=VnStat&oldid=383956)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VnStat&oldid=412208](https://wiki.archlinux.org/index.php?title=VnStat&oldid=412208)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -18,7 +18,7 @@ PowerDNS is a DNS server, written in C++ and licensed under the GPL. PowerDNS fe
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [powerdns](https://www.archlinux.org/packages/?name=powerdns) package which can be found in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [powerdns](https://www.archlinux.org/packages/?name=powerdns) package which can be found in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Next you can review the configuration file located at `/etc/powerdns/pdns.conf`.
 
@@ -93,7 +93,7 @@ You could also use localhost instead of 127.0.0.1, but this causes PowerDNS to u
 
 *   [PowerDNS manual](http://doc.powerdns.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=386112](https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=386112)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=412157](https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=412157)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -102,7 +102,7 @@ $ dm-tool --help
 
 ## Testing
 
-First, [install](/index.php/Pacman "Pacman") [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr) from the [official repositories](/index.php/Official_repositories "Official repositories").
+First, [install](/index.php/Install "Install") [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Then, run LightDM as an X application:
 
@@ -415,7 +415,7 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=411852](https://wiki.archlinux.org/index.php?title=LightDM&oldid=411852)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=412123](https://wiki.archlinux.org/index.php?title=LightDM&oldid=412123)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

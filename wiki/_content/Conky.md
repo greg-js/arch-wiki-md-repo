@@ -51,7 +51,7 @@ _Conky_ is a system monitor software for the X Window System. It is available fo
 
 ## Installation and configuration
 
-*   [Install](/index.php/Pacman "Pacman") the [conky](https://www.archlinux.org/packages/?name=conky) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+*   [Install](/index.php/Install "Install") the [conky](https://www.archlinux.org/packages/?name=conky) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** This does not have lua support. See [#AUR packages](#AUR_packages)
 
@@ -710,7 +710,7 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=401237](https://wiki.archlinux.org/index.php?title=Conky&oldid=401237)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=412055](https://wiki.archlinux.org/index.php?title=Conky&oldid=412055)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -23,7 +23,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -46,7 +46,7 @@ Run `wifi-radar` from your application menu. If you want to view the available n
 
 [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") -- The wireless setup wiki page
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=408103](https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=408103)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=412212](https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=412212)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

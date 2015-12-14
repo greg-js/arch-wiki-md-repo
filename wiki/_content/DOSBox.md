@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [dosbox](https://www.archlinux.org/packages/?name=dosbox) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [dosbox](https://www.archlinux.org/packages/?name=dosbox) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -66,7 +66,7 @@ If DOSBox traps your focus, use `Ctrl+F10` to free it.
 *   [http://www.abandonia.com/](http://www.abandonia.com/) - Abandonia: large repository of old and abandoned DOS games.
 *   [http://www.dosgames.com/](http://www.dosgames.com/) - DosGames.com: large repository of DOS games.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DOSBox&oldid=363978](https://wiki.archlinux.org/index.php?title=DOSBox&oldid=363978)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DOSBox&oldid=412056](https://wiki.archlinux.org/index.php?title=DOSBox&oldid=412056)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

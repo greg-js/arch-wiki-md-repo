@@ -23,7 +23,7 @@ Machine check exceptions (MCEs) can occur for a variety of reasons ranging from 
 
 The [mcelog](http://www.mcelog.org/) daemon written by Andi Kleen is one of the tools one can use to gather MCE information.
 
-[Install](/index.php/Pacman "Pacman") the [mcelog](https://www.archlinux.org/packages/?name=mcelog) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [mcelog](https://www.archlinux.org/packages/?name=mcelog) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuring mcelog
 
@@ -53,7 +53,7 @@ Finally, start the mcelog service and enable it to start automatically on boot:
 *   [mcelog daemon page by Andi Kleen](http://www.mcelog.org/)
 *   [References page from mcelog site](http://www.mcelog.org/references.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MCE_Handling&oldid=392997](https://wiki.archlinux.org/index.php?title=MCE_Handling&oldid=392997)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MCE_Handling&oldid=412126](https://wiki.archlinux.org/index.php?title=MCE_Handling&oldid=412126)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

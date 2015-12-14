@@ -46,7 +46,7 @@ Wordpress requires [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MyS
 
 ### Installation using pacman
 
-[Install](/index.php/Pacman "Pacman") [wordpress](https://www.archlinux.org/packages/?name=wordpress) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [wordpress](https://www.archlinux.org/packages/?name=wordpress) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Warning:** While it is easier to let pacman manage updating your Wordpress install, this is not necessary. Wordpress has functionality built-in for managing updates, themes, and plugins. If you decide to install the official community package, you will not be able to install plugins and themes using the Wordpress admin panel without a needlessly complex permissions setup, or logging into FTP as root. pacman does not delete the Wordpress install directory when uninstalling it from your system regardless of whether or not you have added data to the directory manually or otherwise.
 
@@ -236,7 +236,7 @@ Another option is changing a value in the database table of your Wordpress, spec
 *   [Wordpress](https://en.wikipedia.org/wiki/WordPress "wikipedia:WordPress")
 *   [Content management system](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=411073](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=411073)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=412216](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=412216)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

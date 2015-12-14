@@ -15,7 +15,7 @@ Delta updates save time and size in downloading and updating the system. Package
 
 ## Install
 
-[Install](/index.php/Pacman "Pacman") [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -92,7 +92,7 @@ kdeartwork-kscreensaver-4.6.3-1-x86_64.pkg.tar.xz	2011-May-06 08:57:57	589.2K	 a
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Deltup&oldid=409441](https://wiki.archlinux.org/index.php?title=Deltup&oldid=409441)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Deltup&oldid=412061](https://wiki.archlinux.org/index.php?title=Deltup&oldid=412061)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

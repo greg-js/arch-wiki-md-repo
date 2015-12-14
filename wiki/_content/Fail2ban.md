@@ -36,7 +36,7 @@ Currently, fail2ban must be run as root. Therefore, you may wish to consider har
 
 ### Capabilities
 
-For added security, consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_unit_files "Systemd") for the provided `fail2ban.service`:
+For added security, consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_units "Systemd") for the provided `fail2ban.service`:
 
  `/etc/systemd/system/fail2ban.service.d/capabilities.conf` 
 
@@ -116,7 +116,7 @@ in your `/etc/ssh/sshd_config`. Else, password failures are not logged correctly
 
 *   [sshguard](/index.php/Sshguard "Sshguard")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=390411](https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=390411)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=411989](https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=411989)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

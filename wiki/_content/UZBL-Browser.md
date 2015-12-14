@@ -25,7 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser) or [uzbl-tabbed](https://www.archlinux.org/packages/?name=uzbl-tabbed) available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser) or [uzbl-tabbed](https://www.archlinux.org/packages/?name=uzbl-tabbed) available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Plugins
 
@@ -169,7 +169,7 @@ Parcellite can cause problems at the time of selecting text under uzbl - just di
 *   [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=70700)
 *   [Configuration file](https://github.com/Dieterbe/uzbl/raw/master/examples/config/config)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=387909](https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=387909)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=412195](https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=412195)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

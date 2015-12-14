@@ -32,9 +32,8 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
         *   [3.2.1 Verify TRIM support](#Verify_TRIM_support)
         *   [3.2.2 Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim)
         *   [3.2.3 Enable continuous TRIM by mount flag](#Enable_continuous_TRIM_by_mount_flag)
-        *   [3.2.4 Enable continuous TRIM with tune2fs (discouraged)](#Enable_continuous_TRIM_with_tune2fs_.28discouraged.29)
-        *   [3.2.5 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
-        *   [3.2.6 Enable TRIM for dm-crypt](#Enable_TRIM_for_dm-crypt)
+        *   [3.2.4 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
+        *   [3.2.5 Enable TRIM for dm-crypt](#Enable_TRIM_for_dm-crypt)
     *   [3.3 I/O scheduler](#I.2FO_scheduler)
         *   [3.3.1 systemd-tmpfiles](#systemd-tmpfiles)
         *   [3.3.2 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
@@ -192,7 +191,7 @@ juin 08 00:00:18 arch-clevo systemd[1]: Started Discard unused blocks.
 
 **Note:** Specify the `.timer` suffix if you specifically want to inquire about it.
 
-If you wish to change the periodicity of the timer or the command run, simply [edit the provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd").
+If you wish to change the periodicity of the timer or the command run, simply [edit the provided unit files](/index.php/Systemd#Editing_provided_units "Systemd").
 
 #### Enable continuous TRIM by mount flag
 
@@ -215,25 +214,24 @@ The main benefit of continuous TRIM is speed; an SSD can perform more efficient 
 
 **The factual accuracy of this article or section is disputed.**
 
-**Reason:** 1) At least for ext4, `discard` is not enabled by default _at all_. 2) `mount(8)` indicates that ext3 does not support the `discard` option, which would explain any errors trying to use it. 3) Synchronous TRIM commands before SATA 3.1 are hardware property, so how can software adjustments make a difference? (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
+**Reason:** 1) `mount(8)` indicates that ext3 does not support the `discard` option, which would explain any errors trying to use it. 2) Synchronous TRIM commands before SATA 3.1 are hardware property, so how can software adjustments make a difference? (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
 
 **Note:**
 
-*   TRIM is not by default activated when using block-device encryption on a SSD; for more information see [Dm-crypt/TRIM support for SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
 *   There is no need for the `discard` flag if you run `fstrim` periodically.
 *   Using the `discard` flag for an ext3 root partition will result in it being mounted read-only.
 *   Before SATA 3.1, TRIM commands are synchronous and will block all I/O while running. This may cause short freezes while this happens, for example during a filesystem sync. You may not want to use `discard` in that case but [#Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim) instead. One way to check your SATA version is with `smartctl --info /dev/sd_X_`.
 
-#### Enable continuous TRIM with tune2fs (discouraged)
-
-One can set the trim flag statically with tune2fs:
+On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using _tune2fs_:
 
 ```
 # tune2fs -o discard /dev/sd**XY**
 
 ```
 
-**Warning:** This method will cause the `discard` option to [not show up](https://bbs.archlinux.org/viewtopic.php?id=137314) with `mount`.
+Using the default mount options instead of an entry in `/etc/fstab` is useful for external drives, because such partition will be mounted with the default options also on other machines. There is no need to edit `/etc/fstab` on every machine.
+
+**Note:** The default mount options are not listed in `/proc/mounts`.
 
 #### Enable TRIM for LVM
 
@@ -259,7 +257,7 @@ If you have more than one storage device, or wish to avoid clutter on the kernel
 
  `/etc/tmpfiles.d/10_ioscheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - noop` 
 
-For more detail on `systemd-tmpfiles` see [Systemd#Temporary_files](/index.php/Systemd#Temporary_files "Systemd").
+For more detail on `systemd-tmpfiles` see [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd").
 
 #### Using udev for one device or HDD/SSD mixed environment
 
@@ -556,7 +554,7 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411965](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=411965)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=412010](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=412010)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

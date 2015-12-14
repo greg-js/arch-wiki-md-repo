@@ -83,9 +83,9 @@ Since [version 2.2](https://github.com/fish-shell/fish-shell/releases/tag/2.2.0)
 
 **pkgfile** ships with a [systemd](/index.php/Systemd "Systemd") service and [timer](/index.php/Systemd/Timers "Systemd/Timers") for automatically synchronizing the pkgfile database. To activate automatic updates [enable](/index.php/Enable "Enable") `pkgfile-update.timer`.
 
-By default, pkgfile will be updated daily. To change this schedule, [edit the unit file](/index.php/Systemd#Editing_provided_unit_files "Systemd").
+By default, pkgfile will be updated daily. To change this schedule, [edit the unit file](/index.php/Systemd#Editing_provided_units "Systemd").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=411504](https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=411504)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=412007](https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=412007)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

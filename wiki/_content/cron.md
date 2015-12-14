@@ -67,7 +67,7 @@ Check `/etc/cron.daily/` and similar directories to see which jobs are present. 
 
 cron registers the output from _stdout_ and _stderr_ and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. In order for mail to be written to a user's spool, there must be an smtp daemon running on the system, e.g. [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd). Otherwise, you can install a package that provides the sendmail command, and configure it to send mail to a remote mail exchanger. You can also log the messages by using the `-m` option and writing a custom script.
 
-1.  [Edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `cronie.service` unit.
+1.  [Edit](/index.php/Systemd#Editing_provided_units "Systemd") the `cronie.service` unit.
 2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) or write a custom script.
 
 #### Example with msmtp
@@ -105,7 +105,7 @@ default: your@email.com
 
 ```
 
-Then [modify the configuration](/index.php/Systemd#Editing_provided_unit_files "Systemd") of _cronie_ daemon by replacing the `ExecStart` command with:
+Then [modify the configuration](/index.php/Systemd#Editing_provided_units "Systemd") of _cronie_ daemon by replacing the `ExecStart` command with:
 
 ```
 ExecStart=/usr/bin/crond -n -m '/usr/bin/msmtp -t'
@@ -522,7 +522,7 @@ See the crontab [man page](/index.php/Man_page "Man page") for further informati
 
 *   [Gentoo Linux Cron Guide](http://www.gentoo.org/doc/en/cron-guide.xml)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cron&oldid=392039](https://wiki.archlinux.org/index.php?title=Cron&oldid=392039)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cron&oldid=411983](https://wiki.archlinux.org/index.php?title=Cron&oldid=411983)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

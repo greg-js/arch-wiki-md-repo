@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [yed](https://aur.archlinux.org/packages/yed/)<sup><small>AUR</small></sup>, which is available in the [AUR](/index.php/AUR "AUR"). It requires an installed Java runtime environment, such as [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [yed](https://aur.archlinux.org/packages/yed/)<sup><small>AUR</small></sup>, which is available in the [AUR](/index.php/AUR "AUR"). It requires an installed Java runtime environment, such as [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup>.
 
 Once installed, yEd can be run using the `yed` command.
 
@@ -23,7 +23,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd_hrgb'
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=YEd&oldid=409255](https://wiki.archlinux.org/index.php?title=YEd&oldid=409255)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=YEd&oldid=412225](https://wiki.archlinux.org/index.php?title=YEd&oldid=412225)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

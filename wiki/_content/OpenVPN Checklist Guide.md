@@ -16,7 +16,7 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 ## Install
 
-[Install](/index.php/Pacman "Pacman") the packages [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the packages [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Prepare data
 
@@ -118,7 +118,7 @@ Optionally, enable for autostart on boot the daemon. (In this example, is `openv
 
 Read [Daemon](/index.php/Daemon "Daemon") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_Checklist_Guide&oldid=384333](https://wiki.archlinux.org/index.php?title=OpenVPN_Checklist_Guide&oldid=384333)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_Checklist_Guide&oldid=412147](https://wiki.archlinux.org/index.php?title=OpenVPN_Checklist_Guide&oldid=412147)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

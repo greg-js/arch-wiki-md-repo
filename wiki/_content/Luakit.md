@@ -29,7 +29,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [luakit](https://www.archlinux.org/packages/?name=luakit) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [luakit](https://www.archlinux.org/packages/?name=luakit) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 To use the latest development version, install [luakit-git](https://aur.archlinux.org/packages/luakit-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/luakit-git)]</sup> available from the [AUR](/index.php/AUR "AUR").
 
@@ -481,7 +481,7 @@ domain_props = {
 *   [Home page](http://mason-larobina.github.com/luakit/)
 *   [Cheatsheet](http://shariebeth.com/computers/luakitcheatsheet.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Luakit&oldid=392410](https://wiki.archlinux.org/index.php?title=Luakit&oldid=392410)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Luakit&oldid=412125](https://wiki.archlinux.org/index.php?title=Luakit&oldid=412125)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

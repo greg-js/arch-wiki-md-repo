@@ -184,7 +184,7 @@ In addition, you can suspend or store inactive Tabs with extensions such as [Tab
 
 ## Profile maintenance
 
-Chromium uses [Sqlite](/index.php/Sqlite "Sqlite") databases to manage history and the like. Sqlite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve startup and some other bookmarks- and history-related tasks is to defragment and trim unused space from these databases.
+Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history and the like. Sqlite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve startup and some other bookmarks- and history-related tasks is to defragment and trim unused space from these databases.
 
 [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/)<sup><small>AUR</small></sup> and [browser-vacuum](https://aur.archlinux.org/packages/browser-vacuum/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR") do just this.
 
@@ -350,7 +350,7 @@ Below is an example `chromium-flags.conf` file that defines the flags `--start-m
 *   [Tmpfs](/index.php/Tmpfs#tmpfs "Tmpfs") - Tmpfs Filesystem in `/etc/fstab`
 *   [Official tmpfs kernel Documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=410129](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=410129)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=411981](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=411981)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [mercurial](https://www.archlinux.org/packages/?name=mercurial), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [mercurial](https://www.archlinux.org/packages/?name=mercurial), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -114,7 +114,7 @@ You can then create a `~/.hgignore` to ensure that only the files you wish to in
 *   [Bitbucket](http://bitbucket.org) - free and commercial hosting of mercurial repositories
 *   [Intuxication](http://mercurial.intuxication.org/) - free mercurial hosting
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mercurial&oldid=393557](https://wiki.archlinux.org/index.php?title=Mercurial&oldid=393557)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mercurial&oldid=412131](https://wiki.archlinux.org/index.php?title=Mercurial&oldid=412131)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

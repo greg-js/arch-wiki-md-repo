@@ -18,7 +18,7 @@ Stalonetray is a stand-alone freedesktop.org and KDE system tray for the [X Wind
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) from the [official repositories](/index.php/Official_repositories "Official repositories"). Once installed, copy the `stalonetrayrc` file to your home directory. Note that you should do this as a regular user.
+[Install](/index.php/Install "Install") [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) from the [official repositories](/index.php/Official_repositories "Official repositories"). Once installed, copy the `stalonetrayrc` file to your home directory. Note that you should do this as a regular user.
 
 ```
 $ cp /etc/stalonetrayrc ~/.stalonetrayrc
@@ -94,7 +94,7 @@ kludges force_icons_size
 
 *   [http://stalonetray.sourceforge.net/manpage.html](http://stalonetray.sourceforge.net/manpage.html) - Stalonetray manual page
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Stalonetray&oldid=377117](https://wiki.archlinux.org/index.php?title=Stalonetray&oldid=377117)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Stalonetray&oldid=412179](https://wiki.archlinux.org/index.php?title=Stalonetray&oldid=412179)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -28,7 +28,7 @@ To use the web console, you must install [virtualbox-ext-oracle](https://aur.arc
 
 ### VirtualBox web interface (phpvirtualbox)
 
-[Install](/index.php/Pacman "Pacman") [phpvirtualbox](https://www.archlinux.org/packages/?name=phpvirtualbox) from [Official repositories](/index.php/Official_repositories "Official repositories") on a php-capable web server of your choice ([Apache](/index.php/Apache "Apache") is suitable choice).
+[Install](/index.php/Install "Install") [phpvirtualbox](https://www.archlinux.org/packages/?name=phpvirtualbox) from [Official repositories](/index.php/Official_repositories "Official repositories") on a php-capable web server of your choice ([Apache](/index.php/Apache "Apache") is suitable choice).
 
 ## Configuration
 
@@ -189,7 +189,7 @@ on virtualization server and set username and password to empty strings and set 
 *   [Manage your VirtualBox VMs via the web with phpVirtualBox](http://www.torrent-invites.com/software/101718-manage-your-virtualbox-vms-via-web-phpvirtualbox.html)
 *   [systemd vboxweb.service mod when needing to start as non-root user](https://bbs.archlinux.org/viewtopic.php?id=147175)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=393561](https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=393561)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=412154](https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=412154)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

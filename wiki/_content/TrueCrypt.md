@@ -57,7 +57,7 @@ For more details on how TrueCrypt compares to other disk encryption solution, se
 
 **Note:** For opening and accessing an existing TrueCrypt container [cryptsetup](#Accessing_a_TrueCrypt_container_using_cryptsetup) is the preferred way, since it is well integrated with the rest of the system. Creating a new TrueCrypt container can be done using `truecrypt`, after which it can be opened using `cryptsetup`.
 
-[Install](/index.php/Pacman "Pacman") [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you use any kernel other than [linux](https://www.archlinux.org/packages/?name=linux) install the corresponding kernel module.
+[Install](/index.php/Install "Install") [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you use any kernel other than [linux](https://www.archlinux.org/packages/?name=linux) install the corresponding kernel module.
 
 If you are using truecrypt to encrypt a virtual filesystem (e.g. a file), the module will be automatically loaded whenever you run the _truecrypt_ command.
 
@@ -718,7 +718,7 @@ If you cannot modify the filesystem, although permissions seem to be correct, th
 *   [Truecrypt tutorial on HowToForge](http://www.howtoforge.com/truecrypt_data_encryption)
 *   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=411676](https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=411676)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=412193](https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=412193)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

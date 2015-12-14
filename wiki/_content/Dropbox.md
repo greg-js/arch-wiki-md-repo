@@ -81,7 +81,7 @@ If that does not work, you can start the Dropbox sync client along with your win
 
 To have Dropbox automatically start when your system boots, simply [enable](/index.php/Enable "Enable") the systemd service, passing your username as the instance identifier. The service unit to be enabled takes the format `dropbox@_username_`.
 
-By default, running the service does not give you an icon in the system tray because it does not know which X display to use. If you want to have tray support, you must [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the provided service:
+By default, running the service does not give you an icon in the system tray because it does not know which X display to use. If you want to have tray support, you must [edit](/index.php/Systemd#Editing_provided_units "Systemd") the provided service:
 
  `# systemctl edit dropbox@_username_` 
 
@@ -95,7 +95,7 @@ Environment=DISPLAY=:0
 
 To have Dropbox automatically start when you log in, simply [enable](/index.php/Enable "Enable") the [user service](/index.php/Systemd/User "Systemd/User").
 
-If you want Dropbox to appear in your system tray, you will need to [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the service unit so that it knows which X display the system tray is in:
+If you want Dropbox to appear in your system tray, you will need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service unit so that it knows which X display the system tray is in:
 
  `$ systemctl --user edit dropbox` 
 
@@ -360,7 +360,7 @@ install -dm0 ~/.dropbox-dist
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=411188](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=411188)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=411987](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=411987)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -22,7 +22,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [powertop](https://www.archlinux.org/packages/?name=powertop), available in [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") package [powertop](https://www.archlinux.org/packages/?name=powertop), available in [official repositories](/index.php/Official_repositories "Official repositories").
 
 PowerTOP features are detailed on the release notes for each version on the [PowerTOP blog](https://01.org/powertop/blogs).
 
@@ -82,7 +82,7 @@ If you experience inaccurate measurement, then it is likely that you need to cal
 *   [Official site](https://01.org/powertop/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Powertop "wikipedia:Powertop")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Powertop&oldid=406943](https://wiki.archlinux.org/index.php?title=Powertop&oldid=406943)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Powertop&oldid=412158](https://wiki.archlinux.org/index.php?title=Powertop&oldid=412158)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

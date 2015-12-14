@@ -30,7 +30,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [ipset](https://www.archlinux.org/packages/?name=ipset) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [ipset](https://www.archlinux.org/packages/?name=ipset) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -101,7 +101,7 @@ To delete all sets:
 
 Please see the man page for ipset for further information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ipset&oldid=408693](https://wiki.archlinux.org/index.php?title=Ipset&oldid=408693)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ipset&oldid=412106](https://wiki.archlinux.org/index.php?title=Ipset&oldid=412106)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

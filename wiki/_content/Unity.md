@@ -49,7 +49,7 @@ Additional packages are available from [Unity-for-Arch-Extra](/index.php/Unoffic
 
 All of the PKGBUILDs can be browsed on the [GitHub repository](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/)<sup><small>AUR</small></sup> ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/)<sup><small>AUR</small></sup>, _unity-tweak-tool_ (a popular Unity configuration tool) and more.
 
-[Install](/index.php/Pacman "Pacman") [git](https://www.archlinux.org/packages/?name=git) and navigate to a directory in which the sources can be built, then do:
+[Install](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) and navigate to a directory in which the sources can be built, then do:
 
 ```
 $ git clone [https://github.com/chenxiaolong/Unity-for-Arch.git](https://github.com/chenxiaolong/Unity-for-Arch.git)
@@ -235,7 +235,7 @@ As of February 2015, the required package _perlxml_ is unavailable, try _pidgin-
 *   [Unity home page](http://unity.ubuntu.com/)
 *   [Unity in Launchpad](https://launchpad.net/unity)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity&oldid=400067](https://wiki.archlinux.org/index.php?title=Unity&oldid=400067)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity&oldid=412199](https://wiki.archlinux.org/index.php?title=Unity&oldid=412199)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

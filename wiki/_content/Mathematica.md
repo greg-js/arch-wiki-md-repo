@@ -138,7 +138,7 @@ The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit 
 
 ### Mathematica 10
 
-[Install](/index.php/Pacman "Pacman") [mathematica](https://aur.archlinux.org/packages/mathematica/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). The _Mathematica_10.XX.YY_LINUX.sh_ installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). The _Mathematica_10.XX.YY_LINUX.sh_ installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
 
 #### HiDPI / Retina Screens
 
@@ -154,7 +154,7 @@ If you have a [HiDPI](/index.php/HiDPI "HiDPI") screen, such as an Apple Retina 
 *   [Official site](http://www.wolfram.com/mathematica/)
 *   [Official Support](http://www.wolfram.com/support/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mathematica&oldid=409952](https://wiki.archlinux.org/index.php?title=Mathematica&oldid=409952)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mathematica&oldid=412130](https://wiki.archlinux.org/index.php?title=Mathematica&oldid=412130)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

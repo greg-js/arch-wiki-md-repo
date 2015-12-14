@@ -39,7 +39,7 @@ Doesn't cover modem setup, could use a section on that. -- [mulesryan](https://w
 
 #### Easy Installation
 
-Make sure [Xorg](/index.php/Xorg "Xorg") is installed, and then [install](/index.php/Pacman "Pacman") [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Make sure [Xorg](/index.php/Xorg "Xorg") is installed, and then [install](/index.php/Install "Install") [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the following contents:  
 
@@ -231,7 +231,7 @@ to `~/.xmodmap`.
 
 *   [Thinkwiki](http://www.thinkwiki.org/wiki/Category:T23)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T23&oldid=392241](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T23&oldid=392241)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T23&oldid=412098](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T23&oldid=412098)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

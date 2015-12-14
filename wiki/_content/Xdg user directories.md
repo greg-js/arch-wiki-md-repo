@@ -23,7 +23,7 @@ User directories are a set of common user directories located within the `$HOME`
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) from [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") package [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) from [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Creating default directories
 
@@ -78,7 +78,7 @@ $ xdg-user-dir TEMPLATES
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=381960](https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=381960)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412218](https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412218)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

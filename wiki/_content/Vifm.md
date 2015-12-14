@@ -33,7 +33,7 @@ If you use vi, Vifm gives you complete keyboard control over your files without 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [vifm](https://www.archlinux.org/packages/?name=vifm) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [vifm](https://www.archlinux.org/packages/?name=vifm) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Optional, for file previews:
 
@@ -202,7 +202,7 @@ Single stroke to access command line
 
 `vifm` assumes that you are using `vim` and will throw errors if it doesn't find it. If you are using {`vi`, you need to edit your `~/.vifm/vifmrc` file. Comment out the line `set vicmd=vim` and replace it with `set vicmd=vi`. Note that, just like `.exrc`, comment lines are introduced by double quotes.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vifm&oldid=393558](https://wiki.archlinux.org/index.php?title=Vifm&oldid=393558)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vifm&oldid=412206](https://wiki.archlinux.org/index.php?title=Vifm&oldid=412206)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

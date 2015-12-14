@@ -19,7 +19,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [beets](https://www.archlinux.org/packages/?name=beets) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [beets-git](https://aur.archlinux.org/packages/beets-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [beets](https://www.archlinux.org/packages/?name=beets) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [beets-git](https://aur.archlinux.org/packages/beets-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -95,9 +95,9 @@ Beets includes support for Bash shell [command completion](/index.php/Bash#Tab_c
 
  `~/.bashrc`  `eval "$(beet completion)"` 
 
-You will also need to [install](/index.php/Pacman "Pacman") [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) for this to work.
+You will also need to [install](/index.php/Install "Install") [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) for this to work.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beets&oldid=389779](https://wiki.archlinux.org/index.php?title=Beets&oldid=389779)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beets&oldid=412043](https://wiki.archlinux.org/index.php?title=Beets&oldid=412043)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

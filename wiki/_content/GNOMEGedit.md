@@ -29,7 +29,7 @@ Related articles
 
 ## Installing
 
-[Install](/index.php/Pacman "Pacman") [gedit](https://www.archlinux.org/packages/?name=gedit), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [gedit](https://www.archlinux.org/packages/?name=gedit), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -50,7 +50,7 @@ To enable this behaviour, access gedit's Preferences panel (for GNOME Shell user
 
 ## Spell Checking
 
-In order to use spell checking in gedit [install](/index.php/Pacman "Pacman") the according language, e.g., [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
+In order to use spell checking in gedit [install](/index.php/Install "Install") the according language, e.g., [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
 
 ## Plugins
 
@@ -64,7 +64,7 @@ A plugin that shows errors while you type for languages like C, C++, etc, availa
 
 *   [Apps/Gedit - GNOME Wiki!](https://wiki.gnome.org/Apps/Gedit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME/Gedit&oldid=408102](https://wiki.archlinux.org/index.php?title=GNOME/Gedit&oldid=408102)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME/Gedit&oldid=412082](https://wiki.archlinux.org/index.php?title=GNOME/Gedit&oldid=412082)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

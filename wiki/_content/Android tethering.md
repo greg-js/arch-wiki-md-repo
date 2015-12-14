@@ -112,7 +112,7 @@ It does not require changes to your browser. In fact, all network traffic is tra
 
 ### Tools Needed
 
-For Arch, you need to [install](/index.php/Pacman "Pacman") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. It is also required to have the Android SDK installed (which can be obtained [here](http://developer.android.com/sdk/index.html) or from the AUR). On the phone, you need the [azilink](http://code.google.com/p/azilink/) application, which is a Java-based NAT that will communicate with OpenVPN on your computer.
+For Arch, you need to [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. It is also required to have the Android SDK installed (which can be obtained [here](http://developer.android.com/sdk/index.html) or from the AUR). On the phone, you need the [azilink](http://code.google.com/p/azilink/) application, which is a Java-based NAT that will communicate with OpenVPN on your computer.
 
 #### Configuring the phone connection in Arch Linux
 
@@ -222,7 +222,7 @@ Clockworkmod Tether is a tethering app for android, but also requires software i
 
 When _adb_ is working, the command line will repeated say "Checking phone status...". Make sure you launch the android app as well.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android_tethering&oldid=409114](https://wiki.archlinux.org/index.php?title=Android_tethering&oldid=409114)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android_tethering&oldid=412038](https://wiki.archlinux.org/index.php?title=Android_tethering&oldid=412038)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

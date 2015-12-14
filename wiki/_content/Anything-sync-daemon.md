@@ -138,7 +138,7 @@ Both a [systemd](/index.php/Systemd "Systemd") [service](/index.php/Daemon "Daem
 
 ### Sync at more frequent intervals (optional)
 
-The package provided timer syncs once per hour. Users may optionally redefine this behavior simply by [extending the systemd unit](/index.php/Systemd#Editing_provided_unit_files "Systemd"). The example below changes the timer to sync once every ten minutes:
+The package provided timer syncs once per hour. Users may optionally redefine this behavior simply by [extending the systemd unit](/index.php/Systemd#Editing_provided_units "Systemd"). The example below changes the timer to sync once every ten minutes:
 
  `/etc/systemd/system/asd-resync.timer.d/frequency.conf` 
 
@@ -194,7 +194,7 @@ Yes, run asd with the "clean" switch to delete snapshots.
 
 Post in the [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=139141) with comments or concerns.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&oldid=409420](https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&oldid=409420)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&oldid=411975](https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&oldid=411975)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

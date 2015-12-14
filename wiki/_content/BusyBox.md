@@ -32,7 +32,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [busybox](https://www.archlinux.org/packages/?name=busybox) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [busybox](https://www.archlinux.org/packages/?name=busybox) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Busybox commands are symbolic links to `/usr/bin/busybox` and thus take very little space. This is especially interesting for low-footprint systems. Several packages in the [AUR](/index.php/AUR "AUR") replace the GNU utilities with these symbolic links.
 
@@ -130,7 +130,7 @@ diff3 sdiff
 
 See [Gentoo wiki](https://wiki.gentoo.org/wiki/Mdev).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=BusyBox&oldid=391991](https://wiki.archlinux.org/index.php?title=BusyBox&oldid=391991)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=BusyBox&oldid=412048](https://wiki.archlinux.org/index.php?title=BusyBox&oldid=412048)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

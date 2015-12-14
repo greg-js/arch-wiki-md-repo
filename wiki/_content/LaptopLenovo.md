@@ -938,7 +938,7 @@ Install CD Version
 
 <tr>
 
-<td>[Lenovo ThinkPad T450s](/index.php/Thinkpad_T450s "Thinkpad T450s")</td>
+<td>[Lenovo ThinkPad T450s](/index.php/Lenovo_ThinkPad_T450s "Lenovo ThinkPad T450s")</td>
 
 <td>2015.10.01</td>
 
@@ -1873,7 +1873,7 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 
 *   [Think wiki](http://www.thinkwiki.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=410788](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=410788)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=411998](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=411998)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

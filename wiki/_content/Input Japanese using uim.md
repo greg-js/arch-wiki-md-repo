@@ -103,7 +103,7 @@ If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2chann
 
 #### Using pacman
 
-[Install](/index.php/Pacman "Pacman") [uim](https://www.archlinux.org/packages/?name=uim) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [uim](https://www.archlinux.org/packages/?name=uim) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 #### Compiling uim from source using PKGBUILD
 
@@ -590,7 +590,7 @@ Fonts
 
 [modified Japanese fonts](http://www.geocities.jp/ep3797/modified_fonts_01.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=406953](https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=406953)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=412103](https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=412103)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

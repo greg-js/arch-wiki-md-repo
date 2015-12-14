@@ -71,7 +71,7 @@ Used in conjunction with the [cpupower](/index.php/Cpupower "Cpupower") package,
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:**
 
@@ -782,7 +782,7 @@ If you're using KDE, log off once and the hibernation option should be gone.
 *   [Acpid](/index.php/Acpid "Acpid") - daemon for delivering ACPI events
 *   [Hibernate after sleep](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep) - An example of a custom pm-utils hook where hibernation is triggered after a period of time in suspension
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pm-utils&oldid=410957](https://wiki.archlinux.org/index.php?title=Pm-utils&oldid=410957)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pm-utils&oldid=412156](https://wiki.archlinux.org/index.php?title=Pm-utils&oldid=412156)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

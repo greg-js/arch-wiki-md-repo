@@ -137,7 +137,7 @@ in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Mo
 *   [Power saving options for the X220 - Notebook Review Forum](http://forum.notebookreview.com/lenovo-ibm/575569-linux-x220-29.html#post8075286)
 *   [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/)<sup><small>AUR</small></sup> for ThinkPad X220 Tablet rotation, docking, etc scripts
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411470](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411470)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411999](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411999)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

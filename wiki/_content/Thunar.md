@@ -44,7 +44,7 @@ _Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar ha
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [thunar](https://www.archlinux.org/packages/?name=thunar) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
+[Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
 
 ### Automounting
 
@@ -356,7 +356,7 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 *   [Thunar Volume Manager](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
 *   This [list](http://goodies.xfce.org/projects/thunar-plugins/start) of plugins
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=411437](https://wiki.archlinux.org/index.php?title=Thunar&oldid=411437)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=412189](https://wiki.archlinux.org/index.php?title=Thunar&oldid=412189)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

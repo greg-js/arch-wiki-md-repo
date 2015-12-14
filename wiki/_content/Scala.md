@@ -14,7 +14,7 @@ _Scala is an object-functional programming and scripting language for general so
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [scala](https://www.archlinux.org/packages/?name=scala) package available in the [official repositories](/index.php/Official_repositories "Official repositories"). Additionally you can install the packages [scala-docs](https://www.archlinux.org/packages/?name=scala-docs) and/or [scala-sources](https://www.archlinux.org/packages/?name=scala-sources) for further reference.
+[Install](/index.php/Install "Install") the [scala](https://www.archlinux.org/packages/?name=scala) package available in the [official repositories](/index.php/Official_repositories "Official repositories"). Additionally you can install the packages [scala-docs](https://www.archlinux.org/packages/?name=scala-docs) and/or [scala-sources](https://www.archlinux.org/packages/?name=scala-sources) for further reference.
 
 Since Scala runs on the [JVM](https://en.wikipedia.org/wiki/JVM) (Java Virtual Machine), you'll need a fully functional [Java Runtime Environment](/index.php/Java#Installation "Java") (JRE) in order to execute or compile your programs.
 
@@ -49,7 +49,7 @@ Many different [IDEs](/index.php/IDE#Integrated_development_environments "IDE") 
 *   [Scala Tutorial](http://tutorials.jenkov.com/scala/index.html) - a series of small Scala tutorials
 *   [Learn X=Scala in Y minutes](http://learnxinyminutes.com/docs/scala/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Scala&oldid=388124](https://wiki.archlinux.org/index.php?title=Scala&oldid=388124)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Scala&oldid=412171](https://wiki.archlinux.org/index.php?title=Scala&oldid=412171)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

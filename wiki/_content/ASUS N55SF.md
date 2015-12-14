@@ -185,7 +185,7 @@ There is a BIOS update (v207) on Asus support website (go to the english one if 
 
 Works out of the box.
 
-Follow the [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") guide to enable speed-stepping. Processor has Intel Turbo Boost which works out of the box, but you can't see the frequencies above 2.4GHz in `/proc/cpuinfo`. To see the actual frequency [install](/index.php/Pacman "Pacman") [i7z](https://www.archlinux.org/packages/?name=i7z).
+Follow the [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") guide to enable speed-stepping. Processor has Intel Turbo Boost which works out of the box, but you can't see the frequencies above 2.4GHz in `/proc/cpuinfo`. To see the actual frequency [install](/index.php/Install "Install") [i7z](https://www.archlinux.org/packages/?name=i7z).
 
 ### Video
 
@@ -353,7 +353,7 @@ Should be working out of the box - just remember to install [bluez-firmware](htt
 
 The USB unbind hook is no longer necessary as of [Linux 3.5](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commitdiff;h=dbf0e4c7257f8d684ec1a3c919853464293de66e).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N55SF&oldid=400607](https://wiki.archlinux.org/index.php?title=ASUS_N55SF&oldid=400607)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N55SF&oldid=412029](https://wiki.archlinux.org/index.php?title=ASUS_N55SF&oldid=412029)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

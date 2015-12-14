@@ -52,7 +52,7 @@ The performance of both depends on the type of disk activity. While eCryptFS can
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [encfs](https://www.archlinux.org/packages/?name=encfs) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [encfs](https://www.archlinux.org/packages/?name=encfs) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Warning:** A security [review](https://defuse.ca/audits/encfs.htm) (February 2014) of _encfs_ discovered a number of security issues in the stable release 1.7.4 (June 2014). Please consider the report and the references in it for updated information before using the release.
 
@@ -298,7 +298,7 @@ rm "$lock" 2>/dev/null
 
 ### Mount using KDE KWallet
 
-This can be done in KDE 4 with the [kdeencfs](http://jaxartes.net/files/kdeencfs) script, with more usage information [here](http://jaxartes.net/linux/kdeencfs.html). You will also have to [install](/index.php/Pacman "Pacman") the [kdebase-kdialog](https://www.archlinux.org/packages/?name=kdebase-kdialog) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+This can be done in KDE 4 with the [kdeencfs](http://jaxartes.net/files/kdeencfs) script, with more usage information [here](http://jaxartes.net/linux/kdeencfs.html). You will also have to [install](/index.php/Install "Install") the [kdebase-kdialog](https://www.archlinux.org/packages/?name=kdebase-kdialog) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 There are no known solutions for Plasma 5.
 
@@ -364,7 +364,7 @@ $ ls -la ~/restoremythesis
 *   [EncFS](https://vgough.github.io/encfs/) - project homepage
 *   [Security audit](https://defuse.ca/audits/encfs.htm) of EncFS by Taylor Hornby (January 14, 2014).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=EncFS&oldid=408744](https://wiki.archlinux.org/index.php?title=EncFS&oldid=408744)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=EncFS&oldid=412072](https://wiki.archlinux.org/index.php?title=EncFS&oldid=412072)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

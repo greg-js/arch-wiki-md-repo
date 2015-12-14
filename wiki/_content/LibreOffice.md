@@ -45,7 +45,7 @@ Official support for [OpenOffice.org](/index.php/OpenOffice.org "OpenOffice.org"
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") one of the following packages from the [official repositories](/index.php/Official_repositories "Official repositories"):
+[Install](/index.php/Install "Install") one of the following packages from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
 *   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements.
 *   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) is the maintenance branch.
@@ -266,7 +266,7 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=407411](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=407411)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412122](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412122)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

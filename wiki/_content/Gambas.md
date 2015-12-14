@@ -32,11 +32,11 @@ There are currently two versions of Gambas: Gambas 3 and the older Gambas 2.
 
 Gambas 3 is the latest version of the language, and is distinct from earlier versions of Gambas although most projects can be converted and ran on the latest version.
 
-To install the latest stable version of Gambas 3, [install](/index.php/Pacman "Pacman") the [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Development versions can be grabbed by installing the [gambas3-svn](https://aur.archlinux.org/packages/gambas3-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gambas3-svn)]</sup> package from the [AUR](/index.php/AUR "AUR").
+To install the latest stable version of Gambas 3, [install](/index.php/Install "Install") the [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Development versions can be grabbed by installing the [gambas3-svn](https://aur.archlinux.org/packages/gambas3-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gambas3-svn)]</sup> package from the [AUR](/index.php/AUR "AUR").
 
 ### Gambas 2
 
-To install the latest version of Gambas 2, [install](/index.php/Pacman "Pacman") the [gambas2](https://www.archlinux.org/packages/?name=gambas2)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> package from the [official repositories](/index.php/Official_repositories "Official repositories").
+To install the latest version of Gambas 2, [install](/index.php/Install "Install") the [gambas2](https://www.archlinux.org/packages/?name=gambas2)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Gambas 2 will happily run alongside Gambas 3.
 
@@ -53,7 +53,7 @@ Gambas supports both the [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt
 *   [White Island Software](http://whiteislandsoftware.com/) - an active and friendly Gambas community.
 *   [Gambas Examples](http://piga.tropicalwikis.com/wiki/Gambas_Examples) - several pieces of example code geared to game development.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gambas&oldid=392189](https://wiki.archlinux.org/index.php?title=Gambas&oldid=392189)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gambas&oldid=412087](https://wiki.archlinux.org/index.php?title=Gambas&oldid=412087)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

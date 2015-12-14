@@ -32,7 +32,7 @@ If you have a patch (fixing a bug or a new namcap module), then you can send it 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [namcap](https://www.archlinux.org/packages/?name=namcap) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") package [namcap](https://www.archlinux.org/packages/?name=namcap) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## How to use it
 
@@ -202,7 +202,7 @@ How it works:
 *   The packages in core, extra and community are put in files named core, extra and community respectively (using `pacman -Slq`).
 *   `namcap-report.py` takes the code and prepares the report and RSS feeds, which is then copied to the webserver.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Namcap&oldid=376934](https://wiki.archlinux.org/index.php?title=Namcap&oldid=376934)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Namcap&oldid=412134](https://wiki.archlinux.org/index.php?title=Namcap&oldid=412134)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

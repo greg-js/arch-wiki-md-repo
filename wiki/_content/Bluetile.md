@@ -22,7 +22,7 @@ You can create pretty much the same effect with a standard xmonad installation, 
 
 ## Installation
 
-1\. [Install](/index.php/Pacman "Pacman") the following packages from the [official repositories](/index.php/Official_repositories "Official repositories"): [ghc](https://www.archlinux.org/packages/?name=ghc) [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) [gtk2hs-buildtools](https://www.archlinux.org/packages/?name=gtk2hs-buildtools) [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib).
+1\. [Install](/index.php/Install "Install") the following packages from the [official repositories](/index.php/Official_repositories "Official repositories"): [ghc](https://www.archlinux.org/packages/?name=ghc) [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) [gtk2hs-buildtools](https://www.archlinux.org/packages/?name=gtk2hs-buildtools) [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib).
 
 2\. Update cabal:
 
@@ -133,7 +133,7 @@ Once that is finished:
 
 [http://www.haskell.org/haskellwiki/Bluetile](http://www.haskell.org/haskellwiki/Bluetile) - Wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetile&oldid=375977](https://wiki.archlinux.org/index.php?title=Bluetile&oldid=375977)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetile&oldid=412045](https://wiki.archlinux.org/index.php?title=Bluetile&oldid=412045)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

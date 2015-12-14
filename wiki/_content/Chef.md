@@ -118,7 +118,7 @@ Install the [ruby-chef](https://aur.archlinux.org/packages/ruby-chef/)<sup><smal
 
 This is one of easiest ways to install Chef, but it is highly not recommended. If you already have gem versions of the dependencies installed to the system you could run into conflicts.
 
-Ensure you first [install](/index.php/Pacman "Pacman") the [ruby](https://www.archlinux.org/packages/?name=ruby) package from the [official repositories](/index.php/Official_repositories "Official repositories"). This also provides RubyGems.
+Ensure you first [install](/index.php/Install "Install") the [ruby](https://www.archlinux.org/packages/?name=ruby) package from the [official repositories](/index.php/Official_repositories "Official repositories"). This also provides RubyGems.
 
 Next, install the Chef RubyGem:
 
@@ -127,7 +127,7 @@ Next, install the Chef RubyGem:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chef&oldid=404050](https://wiki.archlinux.org/index.php?title=Chef&oldid=404050)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chef&oldid=412051](https://wiki.archlinux.org/index.php?title=Chef&oldid=412051)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -31,7 +31,7 @@ This article describes how to access an iSCSI target with the [Open-iSCSI](http:
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** An older initiator, [Linux-iSCSI](http://sourceforge.net/projects/linux-iscsi/), was merged with Open-iSCSI in April 2005. This should not be confused with [linux-iscsi.org](http://linux-iscsi.org/), the website for the LIO [target](/index.php/ISCSI_Target "ISCSI Target").
 
@@ -156,7 +156,7 @@ Many of the `iscsiadm` operations require that the iSCSI daemon `iscsid` is runn
 
 *   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") Booting Arch Linux with / on an iSCSI target.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&oldid=409230](https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&oldid=409230)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&oldid=412101](https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&oldid=412101)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -174,7 +174,7 @@ $ mplayer -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=15 tv://
 
 SATA power management settings are aggressively conservative by default. This can produce a clicking or ticking sound every few seconds as the hard drive head attempts to 'park' itself. Not only is this annoying, it can shorten the life of your hard drive. To avoid this:
 
-[Install](/index.php/Pacman "Pacman") the [hdparm](https://www.archlinux.org/packages/?name=hdparm) utility.
+[Install](/index.php/Install "Install") the [hdparm](https://www.archlinux.org/packages/?name=hdparm) utility.
 
 Add the following to `/etc/rc.local`:
 
@@ -275,7 +275,7 @@ Power Button
 *   [MSI Notebook Official Website](http://www.msimobile.com/)
 *   [MSIWind.net](http://msiwind.net/) - Community website dedicated to MSI Wind netbooks, includes forums and a wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MSI_Wind_U120&oldid=376430](https://wiki.archlinux.org/index.php?title=MSI_Wind_U120&oldid=376430)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MSI_Wind_U120&oldid=412127](https://wiki.archlinux.org/index.php?title=MSI_Wind_U120&oldid=412127)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

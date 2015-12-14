@@ -34,7 +34,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [opennebula](https://aur.archlinux.org/packages/opennebula/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennebula)]</sup> package from the [AUR](/index.php/AUR "AUR"). For those interested in running the latest bleeding edge version of OpenNebula, install the [opennebula-unstable](https://aur.archlinux.org/packages/opennebula-unstable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennebula-unstable)]</sup> package, also in the AUR.
+[Install](/index.php/Install "Install") the [opennebula](https://aur.archlinux.org/packages/opennebula/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennebula)]</sup> package from the [AUR](/index.php/AUR "AUR"). For those interested in running the latest bleeding edge version of OpenNebula, install the [opennebula-unstable](https://aur.archlinux.org/packages/opennebula-unstable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennebula-unstable)]</sup> package, also in the AUR.
 
 ## Configuration
 
@@ -68,7 +68,7 @@ TODO
 
 *   [OpenNebula's Official Website](http://www.opennebula.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenNebula&oldid=392519](https://wiki.archlinux.org/index.php?title=OpenNebula&oldid=392519)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenNebula&oldid=412144](https://wiki.archlinux.org/index.php?title=OpenNebula&oldid=412144)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

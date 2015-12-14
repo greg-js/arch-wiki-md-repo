@@ -81,7 +81,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Emacs comes in several variants (sometimes referred to as _emacsen_). The most common of these is [GNU Emacs](http://www.gnu.org/software/emacs/).
 
-[Install](/index.php/Pacman "Pacman") [emacs](https://www.archlinux.org/packages/?name=emacs), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you usually work in a terminal, you may prefer the [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox) variant without GTK+ (nor sound and other fancy stuff). Be aware that the text version comes with some drawbacks: it supports less colors and less features for font handling (size change in live, various sizes in one document, and so on). Besides, emacs-nox has some limitation with advanced features like the Speedbar or GUD (the debugging environment), and is somewhat slower when handling complex faces (a "face" is the visual appearance of text in Emacs).
+[Install](/index.php/Install "Install") [emacs](https://www.archlinux.org/packages/?name=emacs), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you usually work in a terminal, you may prefer the [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox) variant without GTK+ (nor sound and other fancy stuff). Be aware that the text version comes with some drawbacks: it supports less colors and less features for font handling (size change in live, various sizes in one document, and so on). Besides, emacs-nox has some limitation with advanced features like the Speedbar or GUD (the debugging environment), and is somewhat slower when handling complex faces (a "face" is the visual appearance of text in Emacs).
 
 If you want to fully enjoy all the extended features of Emacs without installing a daunting amount of dependencies, you can use the PKGBUILD to customize your needs. Using anything else than `gtk3` you can get rid of gconf. Image and sound support can be disabled as well. Run `./configure --help` in Emacs source folder to list all available options.
 
@@ -1634,7 +1634,7 @@ The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Softw
 *   [The Church of Emacs (via Google drive)](https://d0edfcdc0ccc1cd13cdab5eb986fb92e8660dbef.googledrive.com/host/0B6LMD0u8OhYYZEotN2QyR1hwR1k/)
 *   [Official reference card](http://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs&oldid=411374](https://wiki.archlinux.org/index.php?title=Emacs&oldid=411374)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs&oldid=412071](https://wiki.archlinux.org/index.php?title=Emacs&oldid=412071)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -202,7 +202,7 @@ Since psd is just a bash script with a systemd service, it should run on any fla
 
 ### Sync at more frequent intervals (optional)
 
-The package provided re-sync timer triggers once per hour. Users may optionally redefine this behavior simply by [extending the systemd unit](/index.php/Systemd#Editing_provided_unit_files "Systemd"). The example below changes the timer to sync once every ten minutes:
+The package provided re-sync timer triggers once per hour. Users may optionally redefine this behavior simply by [extending the systemd unit](/index.php/Systemd#Editing_provided_units "Systemd"). The example below changes the timer to sync once every ten minutes:
 
  `~/.config/systemd/user/psd-resync.timer.d/frequency.conf` 
 
@@ -288,7 +288,7 @@ _psd_ is a bash script and should therefore run on any Linux distro. Around a do
 *   [http://www.webupd8.org/2013/02/keep-your-browser-profiles-in-tmpfs-ram.html](http://www.webupd8.org/2013/02/keep-your-browser-profiles-in-tmpfs-ram.html)
 *   [http://bernaerts.dyndns.org/linux/250-ubuntu-tweaks-ssd](http://bernaerts.dyndns.org/linux/250-ubuntu-tweaks-ssd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=411103](https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=411103)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=412009](https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=412009)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

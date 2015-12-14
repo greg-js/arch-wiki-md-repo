@@ -27,7 +27,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), _dnscrypt-proxy_ accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is _dnscrypt.eu-nl_. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
 
-To change the default, [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
+To change the default, [edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
 
 Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with _localhost_:
 
@@ -56,7 +56,7 @@ ListenStream=127.0.0.1:40
 ListenDatagram=127.0.0.1:40
 ```
 
-**Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be _added_ to the list of sockets. See [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") for details.
+**Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be _added_ to the list of sockets. See [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") for details.
 
 Then restart `dnscrypt-proxy.socket` and _stop_ `dnscrypt-proxy.service` if already running to let it be started by the _.socket_ unit.
 
@@ -259,7 +259,7 @@ If successful, your two selected dns providers should be the only ones found whe
 
 If you can accomplish this with only a single .service and .socket file, please post your simplified example. The SystemD documentation seems to indicate that it should be possible. Here in lies a challenge to the more educated systemd folks out there.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=407952](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=407952)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=411984](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=411984)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

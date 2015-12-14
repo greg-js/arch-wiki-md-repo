@@ -43,7 +43,7 @@ Download the Windows Automated Installation Kit (WAIK) from [Microsoft's website
 *   If you have an installation media of Windows 7 or later versions, you can use that iso file / optical disc instead of WAIK. `mkwinpeimg` accepts both WAIK image and Windows installation media. Note that different versions of Windows installation media contains different versions of Windows PE. For the relationship between Windows versions and Windows PE versions, refer to [Wikipedia](https://en.wikipedia.org/wiki/Windows_Preinstallation_Environment#Versions).
 *   WAIK has been renamed to WADK since Windows 8 and is now distributed via `adksetup.exe`. In order to get Windows PE 4.0 and later versions, you have to use installation media of Windows 8 and later versions. The installation media iso files are avaiable for MSDN subscribers, but you can download otherwhere and compare the hash value with the those published on MSDN.
 
-[Install](/index.php/Pacman "Pacman") [fuse](https://www.archlinux.org/packages/?name=fuse), [cdrkit](https://www.archlinux.org/packages/?name=cdrkit), and [cabextract](https://www.archlinux.org/packages/?name=cabextract) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [fuse](https://www.archlinux.org/packages/?name=fuse), [cdrkit](https://www.archlinux.org/packages/?name=cdrkit), and [cabextract](https://www.archlinux.org/packages/?name=cabextract) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 Install [wimlib](https://aur.archlinux.org/packages/wimlib/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
@@ -155,7 +155,7 @@ You may want to do this to add additional Windows applications that you want to 
 *   [Microsoft's documentation for Windows PE](http://technet.microsoft.com/en-us/library/cc766093(v=ws.10).aspx)
 *   [Another article about making Windows PE images on Linux](http://www.thinkwiki.org/wiki/Windows_PE)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=409844](https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=409844)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=412213](https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=412213)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

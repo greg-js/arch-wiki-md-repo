@@ -33,7 +33,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [mpv](https://www.archlinux.org/packages/?name=mpv) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [mpv-git](https://aur.archlinux.org/packages/mpv-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [mpv](https://www.archlinux.org/packages/?name=mpv) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [mpv-git](https://aur.archlinux.org/packages/mpv-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### Front ends
 
@@ -175,7 +175,7 @@ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=408986](https://wiki.archlinux.org/index.php?title=Mpv&oldid=408986)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=412133](https://wiki.archlinux.org/index.php?title=Mpv&oldid=412133)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

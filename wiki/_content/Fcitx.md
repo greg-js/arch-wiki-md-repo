@@ -50,7 +50,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [fcitx](https://www.archlinux.org/packages/?name=fcitx) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") package [fcitx](https://www.archlinux.org/packages/?name=fcitx) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 Additionally, you might want to install [input method modules](#Configuration) for GTK+ and Qt applications.
 
@@ -278,7 +278,7 @@ To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-con
 *   [Fcitx GitHub](https://github.com/fcitx/fcitx/)
 *   [Fcitx Wiki](http://fcitx-im.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx&oldid=409450](https://wiki.archlinux.org/index.php?title=Fcitx&oldid=409450)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412076](https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412076)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

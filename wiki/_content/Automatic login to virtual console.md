@@ -21,13 +21,13 @@ This article describes how to automatically log in to a [virtual console](https:
 
 ## Configuration
 
-Configuration relies on systemd [drop-in files](/index.php/Systemd#Editing_provided_unit_files "Systemd") to override the default parameters passed to _agetty_.
+Configuration relies on systemd [drop-in files](/index.php/Systemd#Editing_provided_units "Systemd") to override the default parameters passed to _agetty_.
 
 Configuration differs for virtual versus serial consoles. In most cases, you want to set up automatic login on a virtual console, (whose device name is `tty_N_`, where `_N_` is a number). The configuration of automatic login for serial consoles will be slightly different. Device names of the serial consoles look like `ttyS_N_`, where `_N_` is a number.
 
 ### Virtual console
 
-[Edit the provided unit](/index.php/Systemd#Editing_provided_unit_files "Systemd") either manually by creating the following drop-in snippet, or by running `systemctl edit getty@tty1` and pasting its content:
+[Edit the provided unit](/index.php/Systemd#Editing_provided_units "Systemd") either manually by creating the following drop-in snippet, or by running `systemctl edit getty@tty1` and pasting its content:
 
  `/etc/systemd/system/getty@tty1.service.d/override.conf` 
 
@@ -57,7 +57,7 @@ ExecStart=-/usr/bin/agetty --autologin _username_ -s %I 115200,38400,9600 vt102
 
 *   [Change default runlevel/target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=389367](https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=389367)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=411976](https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=411976)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -17,7 +17,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [rss2email-wking](https://aur.archlinux.org/packages/rss2email-wking/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [rss2email-wking](https://aur.archlinux.org/packages/rss2email-wking/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
 ## Adding feeds
 
@@ -155,7 +155,7 @@ SMTP_PASS = _password_
 *   [http://www.allthingsrss.com/rss2email/?page_id=31#unix](http://www.allthingsrss.com/rss2email/?page_id=31#unix) - Official getting started page
 *   [http://www.linux.com/archive/feed/50469](http://www.linux.com/archive/feed/50469) - linux.com article.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rss2email&oldid=391160](https://wiki.archlinux.org/index.php?title=Rss2email&oldid=391160)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rss2email&oldid=412168](https://wiki.archlinux.org/index.php?title=Rss2email&oldid=412168)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

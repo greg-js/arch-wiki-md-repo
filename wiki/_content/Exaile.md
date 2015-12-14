@@ -21,9 +21,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [exaile](https://aur.archlinux.org/packages/exaile/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [exaile](https://aur.archlinux.org/packages/exaile/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
-If you use [ALSA](/index.php/ALSA "ALSA") and want to use alsasink instead of the default one, [install](/index.php/Pacman "Pacman") [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) available in the [Official repositories](/index.php/Official_repositories "Official repositories"). This may solve problem if no sound is heard after installation and also when trying to play several sources simultaneously.
+If you use [ALSA](/index.php/ALSA "ALSA") and want to use alsasink instead of the default one, [install](/index.php/Install "Install") [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) available in the [Official repositories](/index.php/Official_repositories "Official repositories"). This may solve problem if no sound is heard after installation and also when trying to play several sources simultaneously.
 
 ### Enabling cover art, lyrics, and guitar tablature
 
@@ -77,7 +77,7 @@ You need to install the [python2-pylast](https://www.archlinux.org/packages/?nam
 
 Unfortunately, Exaile does **not** support smb protocol.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Exaile&oldid=411641](https://wiki.archlinux.org/index.php?title=Exaile&oldid=411641)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Exaile&oldid=412073](https://wiki.archlinux.org/index.php?title=Exaile&oldid=412073)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

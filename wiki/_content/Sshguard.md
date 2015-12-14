@@ -104,7 +104,7 @@ sshguard does not have its own configuration file. All options are supplied as a
 
 [Enable](/index.php/Enable "Enable") and start the `sshguard.service`.
 
-To add optional sshguard arguments, modify the provided service with drop-in snippets as described in [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd").
+To add optional sshguard arguments, modify the provided service with drop-in snippets as described in [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
 
 ### With syslog-ng
 
@@ -123,7 +123,7 @@ Both temporary and permanent bans are done by adding an entry into the "sshguard
 
 By default in the archlinux package, offenders become permanently banned once they have reached a "danger" level of 40 (or 4 failed logins; see [terminology](http://www.sshguard.net/docs/terminology/) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
 
-[Edit the provided systemd unit](/index.php/Systemd#Editing_provided_unit_files "Systemd") and change the `ExecStart=` line:
+[Edit the provided systemd unit](/index.php/Systemd#Editing_provided_units "Systemd") and change the `ExecStart=` line:
 
 ```
 [Service]
@@ -138,7 +138,7 @@ Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
 
 ### Aggressive banning
 
-For some users under constant attack, it may be beneficial to enable a more aggressive banning policy. If you can be reasonably sure that accidental failed logins are unlikely, then you can instruct SSHGuard to automatically ban hosts with a single failed login. [Edit the provided systemd unit](/index.php/Systemd#Editing_provided_unit_files "Systemd") in the following way:
+For some users under constant attack, it may be beneficial to enable a more aggressive banning policy. If you can be reasonably sure that accidental failed logins are unlikely, then you can instruct SSHGuard to automatically ban hosts with a single failed login. [Edit the provided systemd unit](/index.php/Systemd#Editing_provided_units "Systemd") in the following way:
 
 ```
 [Service]
@@ -169,7 +169,7 @@ Then use the following command to unban, with the line-number as identified in t
 
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshguard&oldid=382349](https://wiki.archlinux.org/index.php?title=Sshguard&oldid=382349)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshguard&oldid=412011](https://wiki.archlinux.org/index.php?title=Sshguard&oldid=412011)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

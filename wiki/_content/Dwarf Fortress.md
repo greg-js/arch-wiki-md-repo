@@ -20,7 +20,7 @@ The game is played with keyboard only, though there exist [mods](http://dwarffor
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [dwarffortress](https://www.archlinux.org/packages/?name=dwarffortress) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") package [dwarffortress](https://www.archlinux.org/packages/?name=dwarffortress) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bitmap tilesets:
 
@@ -98,7 +98,7 @@ If you don't install Stonesense via the AUR you will need following librarys:
 
 or else StoneSense will not load.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=410287](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=410287)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412069](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412069)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

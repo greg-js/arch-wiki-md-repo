@@ -28,7 +28,7 @@ If you are installing on a recent Thinkpad that has an Ivy Bridge processor or l
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) package that recently moved to the community repository. For the custom [linux-ck](/index.php/Linux-ck "Linux-ck") kernel there exist the [tp_smapi-ck](https://aur.archlinux.org/packages/tp_smapi-ck/)<sup><small>AUR</small></sup> which can be installed from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) package that recently moved to the community repository. For the custom [linux-ck](/index.php/Linux-ck "Linux-ck") kernel there exist the [tp_smapi-ck](https://aur.archlinux.org/packages/tp_smapi-ck/)<sup><small>AUR</small></sup> which can be installed from the [AUR](/index.php/AUR "AUR").
 
 It's providing you 3 new [Kernel modules](/index.php/Kernel_modules "Kernel modules").
 
@@ -266,7 +266,7 @@ The example values 40 and 80 given here are in percent of the full battery capac
 
 [tp_smapi on ThinkWiki](http://www.thinkwiki.org/wiki/Tp_smapi)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=409437](https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=409437)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=412192](https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=412192)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

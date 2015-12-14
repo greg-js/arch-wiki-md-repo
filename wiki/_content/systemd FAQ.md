@@ -69,7 +69,7 @@ Any messages are logged to the system log and if you want to find out about the 
 
 ### How do I avoid clearing the console after boot?
 
-Create a directory called `/etc/systemd/system/getty@.service.d` and place `nodisallocate.conf` in there to [override](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `TTYVTDisallocate` option to `no`.
+Create a directory called `/etc/systemd/system/getty@.service.d` and place `nodisallocate.conf` in there to [override](/index.php/Systemd#Editing_provided_units "Systemd") the `TTYVTDisallocate` option to `no`.
 
  `/etc/systemd/system/getty@.service.d/nodisallocate.conf` 
 
@@ -153,7 +153,7 @@ This happens when using `systemctl enable` and the symlink it tries to create in
 
 To solve this problem, either first disable the relevant display manager before enabling the new one, or use `systemctl -f enable` to overwrite an existing symlink.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=389522](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=389522)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=412016](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=412016)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

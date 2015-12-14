@@ -22,7 +22,7 @@ Mono is an open source, cross-platform, implementation of C# and the CLR that is
 
 Mono can be [installed](/index.php/Pacman "Pacman") with the package [mono](https://www.archlinux.org/packages/?name=mono), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-If you need VisualBasic.Net support you have to [install](/index.php/Pacman "Pacman") the VisualBasic.Net interpreter with the package [mono-basic](https://www.archlinux.org/packages/?name=mono-basic), available in the official repositories.
+If you need VisualBasic.Net support you have to [install](/index.php/Install "Install") the VisualBasic.Net interpreter with the package [mono-basic](https://www.archlinux.org/packages/?name=mono-basic), available in the official repositories.
 
 MonoDevelop calls [xterm](/index.php/Xterm "Xterm") when you run your project. You might install it, when you're writing a console application.
 
@@ -71,7 +71,7 @@ Hello world!
 
 ## Development
 
-Starting to develop in Mono/C# is very easy. Just [install](/index.php/Pacman "Pacman") the [MonoDevelop IDE](http://monodevelop.com/) and debugger support with packages [monodevelop](https://www.archlinux.org/packages/?name=monodevelop), [monodevelop-debugger-gdb](https://www.archlinux.org/packages/?name=monodevelop-debugger-gdb), available in the official repositories.
+Starting to develop in Mono/C# is very easy. Just [install](/index.php/Install "Install") the [MonoDevelop IDE](http://monodevelop.com/) and debugger support with packages [monodevelop](https://www.archlinux.org/packages/?name=monodevelop), [monodevelop-debugger-gdb](https://www.archlinux.org/packages/?name=monodevelop-debugger-gdb), available in the official repositories.
 
 If you want the API documentation browser and some testing and development tools you have to install [mono-tools](https://www.archlinux.org/packages/?name=mono-tools).
 
@@ -100,7 +100,7 @@ Try `mozroots --import --ask-remove` which should update monos certificates. `mo
 *   [ECMA-335: Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/ECMA-335.HTM)
 *   [Instructions for running Mono applications](http://www.mono-project.com/Guide:Running_Mono_Applications)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mono&oldid=400346](https://wiki.archlinux.org/index.php?title=Mono&oldid=400346)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mono&oldid=412132](https://wiki.archlinux.org/index.php?title=Mono&oldid=412132)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

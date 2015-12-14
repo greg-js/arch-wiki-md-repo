@@ -191,7 +191,7 @@ $ mythtv-setup
 
 ```
 
-If your backend runs on a headless server, _mythtv-setup_ can be run via [Secure_Shell#X11_forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") by running:
+If your backend runs on a headless server, _mythtv-setup_ can be run via [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") by running:
 
 ```
 $ ssh -X user@backend '. /etc/profile.d/perlbin.sh && LANG=C mythtv-setup'
@@ -355,7 +355,7 @@ Be sure to have a look at MythTV's extensive wiki documentation on how to keep y
 *   [http://wilsonet.com/mythtv/fcmyth.php](http://wilsonet.com/mythtv/fcmyth.php)
 *   [http://www.linhes.org](http://www.linhes.org) [A user friendly MythTV and Linux install that uses Arch Linux]
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MythTV&oldid=410776](https://wiki.archlinux.org/index.php?title=MythTV&oldid=410776)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MythTV&oldid=412004](https://wiki.archlinux.org/index.php?title=MythTV&oldid=412004)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

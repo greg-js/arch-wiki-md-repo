@@ -21,7 +21,7 @@ From the project [web page](http://ck.kolivas.org/apps/lrzip/):
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [lrzip](https://www.archlinux.org/packages/?name=lrzip), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [lrzip](https://www.archlinux.org/packages/?name=lrzip), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -105,7 +105,7 @@ See the [README](http://ck.kolivas.org/apps/lrzip/README) included with the sour
 
 On [https://github.com/ckolivas/lrzip](https://github.com/ckolivas/lrzip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lrzip&oldid=383871](https://wiki.archlinux.org/index.php?title=Lrzip&oldid=383871)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lrzip&oldid=412124](https://wiki.archlinux.org/index.php?title=Lrzip&oldid=412124)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

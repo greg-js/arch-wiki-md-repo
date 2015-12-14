@@ -23,7 +23,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the package [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the package [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Install [st-git-zsh](https://aur.archlinux.org/packages/st-git-zsh/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/st-git-zsh)]</sup> package for a _zsh_ preconfigured _st_.
 
@@ -169,7 +169,7 @@ endif
 *   [Frequently asked questions](http://git.suckless.org/st/plain/FAQ)
 *   [Official git repository](http://git.suckless.org/st/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=411449](https://wiki.archlinux.org/index.php?title=St&oldid=411449)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=412178](https://wiki.archlinux.org/index.php?title=St&oldid=412178)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

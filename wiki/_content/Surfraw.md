@@ -84,11 +84,11 @@ $ sr google foo
 
 ```
 
-That happens because you haven't specified a browser. Add your graphical browser's location to config file, like this:
+That happens because you haven't specified a browser, and you haven't got Firefox (the default) installed. You can configure your browser in the conf file:
 
- `/etc/xdg/surfraw/conf`  `def SURFRAW_graphical_browser /usr/bin/firefox` 
+ `~/.config/surfraw/conf`  `SURFRAW_graphical_browser /usr/bin/chromium` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=406542](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=406542)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=412236](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=412236)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

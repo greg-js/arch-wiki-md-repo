@@ -136,7 +136,7 @@ auto_login          yes
 
 ### Theming
 
-[Install](/index.php/Pacman "Pacman") the [slim-themes](https://www.archlinux.org/packages/?name=slim-themes) package. The [archlinux-themes-slim](https://www.archlinux.org/packages/?name=archlinux-themes-slim) packages contains several different themes ([slimthemes.png](https://sr.ht/bbe6.png)). Look in the directory of `/usr/share/slim/themes` to see the themes available. Enter the theme name on the `current_theme` line in `/etc/slim.conf`:
+[Install](/index.php/Install "Install") the [slim-themes](https://www.archlinux.org/packages/?name=slim-themes) package. The [archlinux-themes-slim](https://www.archlinux.org/packages/?name=archlinux-themes-slim) packages contains several different themes ([slimthemes.png](https://sr.ht/bbe6.png)). Look in the directory of `/usr/share/slim/themes` to see the themes available. Enter the theme name on the `current_theme` line in `/etc/slim.conf`:
 
 ```
 #current_theme       default
@@ -977,7 +977,7 @@ Here is a list of all the slim configuration options and their default values.
 *   [SLiM on SourceForge](http://sourceforge.net/projects/slim.berlios/)
 *   [SLiM on GitHub](https://github.com/data-modul/slim)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SLiM&oldid=400992](https://wiki.archlinux.org/index.php?title=SLiM&oldid=400992)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SLiM&oldid=412170](https://wiki.archlinux.org/index.php?title=SLiM&oldid=412170)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

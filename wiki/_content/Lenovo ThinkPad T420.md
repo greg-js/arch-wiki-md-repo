@@ -214,7 +214,7 @@ You must find a workaround and bind the keys yourself for the rest of them.
 
 Keys forward and back (next to cursor keys) can be easily remapped to PageDown/PageUp.
 
-[Install](/index.php/Pacman "Pacman") xmodmap with the package [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils)
+[Install](/index.php/Install "Install") xmodmap with the package [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils)
 
 Create a `~/.Xmodmap` file with content:
 
@@ -276,7 +276,7 @@ This is a problem on many laptops and can be fixed by [blacklisting](/index.php/
 *   [Lenovo ThinkPad T420s](/index.php/Lenovo_ThinkPad_T420s "Lenovo ThinkPad T420s")
 *   [Arch Linux on ThinkPad T420i](http://sysphere.org/~anrxc/j/articles/thinkpad-t420/index.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=400981](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=400981)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=412120](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=412120)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

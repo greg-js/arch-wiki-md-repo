@@ -27,7 +27,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 #### Packages
 
-You need to [install](/index.php/Pacman "Pacman") [wine](https://www.archlinux.org/packages/?name=wine), [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng) and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap). If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) available in [multilib](/index.php/Multilib "Multilib"). Optionally, instead of regular Wine, you might prefer [Wine-Staging](/index.php/Wine#CSMT_via_wine-staging "Wine") - enabling CSMT via the Staging tab in winecfg may greatly improve performance, but is not required. You'll also need to use [winetricks](https://www.archlinux.org/packages/?name=winetricks) and install the following components (to use the Map Editor and avoid crashes on certain system configurations):
+You need to [install](/index.php/Install "Install") [wine](https://www.archlinux.org/packages/?name=wine), [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng) and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap). If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) available in [multilib](/index.php/Multilib "Multilib"). Optionally, instead of regular Wine, you might prefer [Wine-Staging](/index.php/Wine#CSMT_via_wine-staging "Wine") - enabling CSMT via the Staging tab in winecfg may greatly improve performance, but is not required. You'll also need to use [winetricks](https://www.archlinux.org/packages/?name=winetricks) and install the following components (to use the Map Editor and avoid crashes on certain system configurations):
 
 ```
 $ winetricks corefonts vcrun2005 vcrun2008
@@ -175,7 +175,7 @@ Then add alternate key SCII hotkeys for:
 *   [starcraft2 fails to update to patch 1.03](https://bbs.archlinux.org/viewtopic.php?id=103354) (Arch Linux forums)
 *   [Patch News](http://eu.battle.net/sc2/en/forum/topic/283440977) (battle.net EU forums)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=StarCraft_2&oldid=408995](https://wiki.archlinux.org/index.php?title=StarCraft_2&oldid=408995)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=StarCraft_2&oldid=412180](https://wiki.archlinux.org/index.php?title=StarCraft_2&oldid=412180)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

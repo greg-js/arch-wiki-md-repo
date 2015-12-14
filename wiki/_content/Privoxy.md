@@ -27,7 +27,7 @@ Using Privoxy is necessary when they use a [SOCKS](https://en.wikipedia.org/wiki
 
 ## Installation and setup
 
-[Install](/index.php/Pacman "Pacman") the [privoxy](https://www.archlinux.org/packages/?name=privoxy) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [privoxy](https://www.archlinux.org/packages/?name=privoxy) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 When Privoxy is used in conjunction with [Tor](/index.php/Tor "Tor") the two applications need to exchange information through a chain, which requires the specification of forwarding rules.
 
@@ -142,7 +142,7 @@ http_proxy="http://localhost:8118"
 *   [Privoxy Official Website](http://www.privoxy.org/)
 *   [Tor Official Website](https://www.torproject.org/index.html.en)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Privoxy&oldid=406645](https://wiki.archlinux.org/index.php?title=Privoxy&oldid=406645)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Privoxy&oldid=412159](https://wiki.archlinux.org/index.php?title=Privoxy&oldid=412159)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

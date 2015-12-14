@@ -29,7 +29,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### Using a separate service
 
-*   [Install](/index.php/Pacman "Pacman") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").  
+*   [Install](/index.php/Install "Install") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").  
     Then [enable](/index.php/Enable "Enable") the `numLockOnTty` service.
 
 *   Alternatively, if you do not want to install an aur package to implement this, you can simply create a service file in `/etc/systemd/system` like:
@@ -174,7 +174,7 @@ fi
 
 When not using the GDM login manager, numlockx can be added to GNOME's start-up applications.
 
-[Install](/index.php/Pacman "Pacman") [numlockx](https://www.archlinux.org/packages/?name=numlockx) from the [official repositories](/index.php/Official_repositories "Official repositories"). Then, add a start-up command to launch `numlockx`.
+[Install](/index.php/Install "Install") [numlockx](https://www.archlinux.org/packages/?name=numlockx) from the [official repositories](/index.php/Official_repositories "Official repositories"). Then, add a start-up command to launch `numlockx`.
 
 ```
 $ gnome-session-properties
@@ -277,7 +277,7 @@ numlock=1
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&oldid=411244](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&oldid=411244)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&oldid=412030](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&oldid=412030)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

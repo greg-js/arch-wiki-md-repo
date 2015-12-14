@@ -49,7 +49,7 @@ Download Arch Linux ISO image [[1]](https://www.archlinux.org/download/) and boo
 
 1\. Unfortunately ISO install image does not include modules for iSCSI, you have to install and setup them at first.
 
-Before you continue to "Partition the disks", [install](/index.php/Pacman "Pacman") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package from the [official repositories](/index.php/Official_repositories "Official repositories") and connect to target.
+Before you continue to "Partition the disks", [install](/index.php/Install "Install") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package from the [official repositories](/index.php/Official_repositories "Official repositories") and connect to target.
 
 In the following, server's(target's) IP address is 192.168.1.100, client's(initiator's) IP address is 192.168.1.101, iSCSI initiator name is "iSCSI.Initiator.Name" and target name is "iSCSI.Target.Name". You should, of course, be sure to your network configration and so on.
 
@@ -87,7 +87,7 @@ Now your local host connects to the drive of target host (see dmesg output).
 
 3\. You can create a partition table and partitions in the same way as a local drive. And continue to install Arch Linux in the usual way.
 
-4\. [Install](/index.php/Pacman "Pacman") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in the "future" root file system.
+4\. [Install](/index.php/Install "Install") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in the "future" root file system.
 
 ```
 pacman -Sy
@@ -193,7 +193,7 @@ Now your new system can mount the file systems from iSCSI target drive after reb
 
 If you are having problems with detecting your eth0 interface you may need to explicitly install the kernel module for your NIC in the MODULES line in [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Boot&oldid=390166](https://wiki.archlinux.org/index.php?title=ISCSI_Boot&oldid=390166)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Boot&oldid=412100](https://wiki.archlinux.org/index.php?title=ISCSI_Boot&oldid=412100)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

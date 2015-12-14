@@ -31,7 +31,7 @@ These are considered unstable and insecure. They are however the only way to get
 
 The most advanced and developed driver for Unichromes. Supports CLE266, KM400/KN400/KM400A/P4M800, CN400/PM800/PN800/PM880, K8M800, CN700/VM800/P4M800Pro, CX700, P4M890, K8M890 and P4M900/VN896 chipsets. Accelerates 2D, 3D, Xvideo and mpeg2 decoding using [XvMC](/index.php/XvMC "XvMC"). This driver is the only way to go if you want to be on the bleeding edge.
 
-To get the OpenChrome driver, [install](/index.php/Pacman "Pacman") the [xf86-video-openchrome](https://www.archlinux.org/packages/?name=xf86-video-openchrome) package.
+To get the OpenChrome driver, [install](/index.php/Install "Install") the [xf86-video-openchrome](https://www.archlinux.org/packages/?name=xf86-video-openchrome) package.
 
 The `xorg.conf` driver name is `openchrome`.
 
@@ -106,7 +106,7 @@ If your computer crashes when closing X, you may try not using vesa driver for k
 *   [OpenChrome-project](http://www.freedesktop.org/wiki/Openchrome/)
 *   [Unichrome-project](http://unichrome.sourceforge.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Via&oldid=392785](https://wiki.archlinux.org/index.php?title=Via&oldid=392785)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Via&oldid=412205](https://wiki.archlinux.org/index.php?title=Via&oldid=412205)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

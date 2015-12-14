@@ -27,7 +27,7 @@ If you are always compiling the same programs over and over again — such as tr
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [ccache](https://www.archlinux.org/packages/?name=ccache) package.
+[Install](/index.php/Install "Install") the [ccache](https://www.archlinux.org/packages/?name=ccache) package.
 
 ### Enable ccache for makepkg
 
@@ -115,7 +115,7 @@ $ ccache -C
 *   [ccache homepage](http://ccache.samba.org/)
 *   [ccache manual](http://ccache.samba.org/manual.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ccache&oldid=391691](https://wiki.archlinux.org/index.php?title=Ccache&oldid=391691)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ccache&oldid=412050](https://wiki.archlinux.org/index.php?title=Ccache&oldid=412050)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -139,7 +139,7 @@ Be careful about having dhcpcd enabled separately (ie. dhcpcd@eth0.service) at t
 
 ## Static Bridge Installation
 
-The first thing you want to do is [install](/index.php/Pacman "Pacman") these packages: [openvpn](https://www.archlinux.org/packages/?name=openvpn), [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [netctl](https://www.archlinux.org/packages/?name=netctl).
+The first thing you want to do is [install](/index.php/Install "Install") these packages: [openvpn](https://www.archlinux.org/packages/?name=openvpn), [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [netctl](https://www.archlinux.org/packages/?name=netctl).
 
 ## Static Bridge Configuration
 
@@ -222,7 +222,7 @@ Any additions, clarifications, reorganizations, feedback etc. etc. are more than
 
 * * *
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_Bridge&oldid=378598](https://wiki.archlinux.org/index.php?title=OpenVPN_Bridge&oldid=378598)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_Bridge&oldid=412146](https://wiki.archlinux.org/index.php?title=OpenVPN_Bridge&oldid=412146)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

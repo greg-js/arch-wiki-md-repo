@@ -322,7 +322,7 @@ where _<pin>_ is your headset's PIN. Then try to connect to the headset.
 
 ### Headset and ALSA Devices
 
-1\. First if you have not already, [install](/index.php/Pacman "Pacman") [bluez](https://www.archlinux.org/packages/?name=bluez) from the [official repositories](/index.php/Official_repositories "Official repositories").
+1\. First if you have not already, [install](/index.php/Install "Install") [bluez](https://www.archlinux.org/packages/?name=bluez) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 2\. Scan for your device
 
@@ -1163,7 +1163,7 @@ Using the same device on Windows and Linux without pairing the device over and o
 
 *   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=410706](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=410706)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=412046](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=412046)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

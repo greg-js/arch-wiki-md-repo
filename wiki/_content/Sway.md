@@ -21,13 +21,13 @@ $ sway
 
 ```
 
-However, if you want to start _sway_ in an X session for testing purposes it is possible to start it as a regular program or even from a [Display Manager](/index.php/Display_Manager "Display Manager").
+However, if you want to start _sway_ in an X session for testing purposes it is possible to start it as a regular program or even from a [Display manager](/index.php/Display_manager "Display manager").
 
 ## See also
 
 *   [Github project](https://github.com/SirCmpwn/sway)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=410951](https://wiki.archlinux.org/index.php?title=Sway&oldid=410951)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=412012](https://wiki.archlinux.org/index.php?title=Sway&oldid=412012)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

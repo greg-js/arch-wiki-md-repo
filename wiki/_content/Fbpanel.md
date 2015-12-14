@@ -16,7 +16,7 @@ fbpanel is a lightweight NETWM compliant desktop panel. This article describes t
 
 ## Installing
 
-[Install](/index.php/Pacman "Pacman") the [fbpanel](https://www.archlinux.org/packages/?name=fbpanel) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [fbpanel](https://www.archlinux.org/packages/?name=fbpanel) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Starting
 
@@ -58,7 +58,7 @@ Plugin {
 
 *   [Official Website](http://fbpanel.sourceforge.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=290315](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=290315)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412075](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412075)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

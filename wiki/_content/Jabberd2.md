@@ -15,7 +15,7 @@ jabberd2 is an [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") serve
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [jabberd2](https://aur.archlinux.org/packages/jabberd2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jabberd2)]</sup> package from the [AUR](/index.php/AUR "AUR"),
+[Install](/index.php/Install "Install") the [jabberd2](https://aur.archlinux.org/packages/jabberd2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jabberd2)]</sup> package from the [AUR](/index.php/AUR "AUR"),
 
 ## Configuration
 
@@ -53,7 +53,7 @@ Read [Daemons](/index.php/Daemons "Daemons") for more information.
 
 *   [Jabberd2 homepage](http://jabberd2.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=392286](https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=392286)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=412110](https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=412110)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

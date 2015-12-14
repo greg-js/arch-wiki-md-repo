@@ -21,7 +21,7 @@ This document describes how to install the APC UPS daemon. The main advantage of
 
 ## Install the package
 
-[Install](/index.php/Pacman "Pacman") [apcupsd](https://www.archlinux.org/packages/?name=apcupsd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [apcupsd](https://www.archlinux.org/packages/?name=apcupsd) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configure APC UPS
 
@@ -224,7 +224,7 @@ For example, the default KDE setting is to put the computer in sleep if it has b
 *   [Forcing hibernate](http://ubuntuforums.org/showthread.php?p=4302102)
 *   [apcupsd manual](http://www.apcupsd.com/manual/manual.html#the-shutdown-sequence-and-its-discontents)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=APC_UPS&oldid=378586](https://wiki.archlinux.org/index.php?title=APC_UPS&oldid=378586)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=APC_UPS&oldid=412028](https://wiki.archlinux.org/index.php?title=APC_UPS&oldid=412028)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

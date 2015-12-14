@@ -30,7 +30,7 @@ Some of the customizable features include:
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [pypanel](https://www.archlinux.org/packages/?name=pypanel), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [pypanel](https://www.archlinux.org/packages/?name=pypanel), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -141,7 +141,7 @@ $ touch ~/.Xauthority
 
 *   [PyPanel SourceForge page](http://pypanel.sourceforge.net)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPanel&oldid=281629](https://wiki.archlinux.org/index.php?title=PyPanel&oldid=281629)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPanel&oldid=412162](https://wiki.archlinux.org/index.php?title=PyPanel&oldid=412162)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

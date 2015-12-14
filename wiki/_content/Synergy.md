@@ -42,7 +42,7 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
 
 ### Arch Linux
 
-You can [install](/index.php/Pacman "Pacman") the [synergy](https://www.archlinux.org/packages/?name=synergy) package.
+You can [install](/index.php/Install "Install") the [synergy](https://www.archlinux.org/packages/?name=synergy) package.
 
 ### Windows and OS X
 
@@ -496,7 +496,7 @@ You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt"
 *   Synergy website: [http://synergy-project.org](http://synergy-project.org)
 *   Official documentation: [http://synergy-project.org/wiki/User_Guide](http://synergy-project.org/wiki/User_Guide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Synergy&oldid=410185](https://wiki.archlinux.org/index.php?title=Synergy&oldid=410185)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Synergy&oldid=412184](https://wiki.archlinux.org/index.php?title=Synergy&oldid=412184)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

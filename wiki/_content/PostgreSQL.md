@@ -186,7 +186,7 @@ PIDFile=_/pathto/pgroot/_data/postmaster.pid
 
 ```
 
-Alternatively, the variables can be overridden by a custom configuration, as described in [Systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd"):
+Alternatively, the variables can be overridden by a custom configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"):
 
 1.  create the directory _/etc/systemd/system/postgresql.service.d_
 2.  create a file _start.conf_:
@@ -468,7 +468,7 @@ PostgreSQL periodically updates its internal "statistics" file. By default, this
 
 Install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and edit the `php.ini` file uncommenting the lines `extension=pdo_pgsql.so` and `extension=pgsql.so`, then restart `httpd`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=409748](https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=409748)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412008](https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412008)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -23,7 +23,7 @@ The components required are:
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [emacs](https://www.archlinux.org/packages/?name=emacs) and [sbcl](https://www.archlinux.org/packages/?name=sbcl) from the [official repositories](/index.php/Official_repositories "Official repositories") and [slime-git](https://aur.archlinux.org/packages/slime-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Alternatively, slime can be installed with [quicklisp](https://www.quicklisp.org/beta/).
+[Install](/index.php/Install "Install") [emacs](https://www.archlinux.org/packages/?name=emacs) and [sbcl](https://www.archlinux.org/packages/?name=sbcl) from the [official repositories](/index.php/Official_repositories "Official repositories") and [slime-git](https://aur.archlinux.org/packages/slime-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Alternatively, slime can be installed with [quicklisp](https://www.quicklisp.org/beta/).
 
 ## Configuration
 
@@ -58,7 +58,7 @@ Alternatively, for a fancier slime setup, you can change the above lines to:
 *   [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html)
 *   [Paul Graham's Lisp resources](http://www.paulgraham.com/lisp.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Slime&oldid=402634](https://wiki.archlinux.org/index.php?title=Slime&oldid=402634)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Slime&oldid=412174](https://wiki.archlinux.org/index.php?title=Slime&oldid=412174)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

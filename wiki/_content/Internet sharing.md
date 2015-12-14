@@ -93,7 +93,7 @@ Afterwards it is advisable to double-check forwarding is enabled as required aft
 
 ### Enable NAT
 
-[Install](/index.php/Pacman "Pacman") the package [iptables](https://www.archlinux.org/packages/?name=iptables) from the [official repositories](/index.php/Official_repositories "Official repositories"). Use iptables to enable NAT:
+[Install](/index.php/Install "Install") the package [iptables](https://www.archlinux.org/packages/?name=iptables) from the [official repositories](/index.php/Official_repositories "Official repositories"). Use iptables to enable NAT:
 
 ```
 # iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE
@@ -137,7 +137,7 @@ If you are able to connect the two PCs but cannot send data (for example, if the
 
 *   [Xyne's guide and scripts for launching a subnet with DHCP and DNS](http://xyne.archlinux.ca/notes/network/dhcp_with_dns.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Internet_sharing&oldid=409968](https://wiki.archlinux.org/index.php?title=Internet_sharing&oldid=409968)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Internet_sharing&oldid=412105](https://wiki.archlinux.org/index.php?title=Internet_sharing&oldid=412105)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

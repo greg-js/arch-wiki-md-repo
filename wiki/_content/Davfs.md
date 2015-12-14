@@ -17,7 +17,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installing DAVfs
 
-[Install](/index.php/Pacman "Pacman") [davfs2](https://www.archlinux.org/packages/?name=davfs2) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [davfs2](https://www.archlinux.org/packages/?name=davfs2) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Mounting the partition
 
@@ -105,7 +105,7 @@ use_locks 0
 
 [http://doc.owncloud.org/server/6.0/user_manual/files/files.html](http://doc.owncloud.org/server/6.0/user_manual/files/files.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Davfs&oldid=411765](https://wiki.archlinux.org/index.php?title=Davfs&oldid=411765)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Davfs&oldid=412058](https://wiki.archlinux.org/index.php?title=Davfs&oldid=412058)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

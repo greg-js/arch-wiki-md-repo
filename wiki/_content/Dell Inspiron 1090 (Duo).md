@@ -137,11 +137,11 @@ Works out of the box. Uses the `uvcvideo` module, see [Kernel modules](/index.ph
 
 ### Graphics controller
 
-[Install](/index.php/Pacman "Pacman") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), available in the [Official repositories](/index.php/Official_repositories "Official repositories"), see [Intel](/index.php/Intel "Intel").
+[Install](/index.php/Install "Install") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), available in the [Official repositories](/index.php/Official_repositories "Official repositories"), see [Intel](/index.php/Intel "Intel").
 
 ### Touchpad
 
-[Install](/index.php/Pacman "Pacman") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Bluetooth
 
@@ -235,7 +235,7 @@ Install [florence](https://aur.archlinux.org/packages/florence/)<sup><small>AUR<
 
 #### Gnome 3.2.x
 
-[Install](/index.php/Pacman "Pacman") [caribou](https://www.archlinux.org/packages/?name=caribou), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [caribou](https://www.archlinux.org/packages/?name=caribou), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Gesture recognition
 
@@ -376,7 +376,7 @@ exit 0
 *   Thread in the [Ubuntu Forums](http://ubuntuforums.org/showthread.php?t=1658635).
 *   [Luke Ross' website](http://lukeross.name/dell/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(Duo)&oldid=392050](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(Duo)&oldid=392050)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(Duo)&oldid=412060](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(Duo)&oldid=412060)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

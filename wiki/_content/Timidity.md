@@ -30,7 +30,7 @@ TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_sy
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 You should also install a [SoundFont](https://en.wikipedia.org/wiki/SoundFont "wikipedia:SoundFont") to be able to produce sound. Here is a list of SoundFonts:
 
@@ -154,7 +154,7 @@ $ aplaymidi filename.mid --port 128:0
 
 Another example is **vkeybd**, a virtual MIDI keyboard for X.
 
-You can [install](/index.php/Pacman "Pacman") [vkeybd](https://aur.archlinux.org/packages/vkeybd/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+You can [install](/index.php/Install "Install") [vkeybd](https://aur.archlinux.org/packages/vkeybd/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
 ```
 $ vkeybd --addr 128:0
@@ -309,7 +309,7 @@ Restart DOSBox within a terminal so you can see its debug messages, by no accide
 
 *   [USB MIDI keyboards](/index.php/USB_MIDI_keyboards "USB MIDI keyboards")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Timidity&oldid=407050](https://wiki.archlinux.org/index.php?title=Timidity&oldid=407050)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Timidity&oldid=412190](https://wiki.archlinux.org/index.php?title=Timidity&oldid=412190)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

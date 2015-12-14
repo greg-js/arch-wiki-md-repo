@@ -87,7 +87,7 @@ After restarting your wallet should unlock automatically if your user password i
 
 ## Using the KDE Wallet to store ssh keys
 
-First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") running. For instructions on how to start and stop `ssh-agent` on login and logout respectively follow [SSH_keys#Using_KDM](/index.php/SSH_keys#Using_KDM "SSH keys").
+First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") running. For instructions on how to start and stop `ssh-agent` on login and logout respectively follow [SSH keys#Using KDM](/index.php/SSH_keys#Using_KDM "SSH keys").
 
 [Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 
@@ -195,7 +195,7 @@ Chromium has built in wallet integration. To enable it, run Chromium with the `-
 
 *   [Unlocking KWallet with PAM](https://www.dennogumi.org/2014/04/unlocking-kwallet-with-pam/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=409723](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=409723)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=411994](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=411994)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

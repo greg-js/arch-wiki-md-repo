@@ -15,7 +15,7 @@ Korn Shell (ksh) is a standard/restricted command and programming language devel
 
 ## Installation
 
-First, [install](/index.php/Pacman "Pacman") an implementation from the [official repositories](/index.php/Official_repositories "Official repositories"):
+First, [install](/index.php/Install "Install") an implementation from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
 *   **MirBSD™ Korn Shell** — Enhanced version of the public domain ksh.
 
@@ -94,7 +94,7 @@ _username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
 *   [mksh - The MirBSD Korn Shell](https://www.mirbsd.org/mksh.htm)
 *   [pdksh - the Public Domain Korn Shell](http://www.cs.mun.ca/~michael/pdksh/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ksh&oldid=392318](https://wiki.archlinux.org/index.php?title=Ksh&oldid=392318)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ksh&oldid=412117](https://wiki.archlinux.org/index.php?title=Ksh&oldid=412117)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

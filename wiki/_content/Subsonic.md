@@ -23,7 +23,7 @@ After performing any configuration, remember to [restart](/index.php/Restart "Re
 
 ### Install transcoders
 
-By default, Subsonic uses FFmpeg to transcode videos and songs to an appropriate format and bitrate on-the-fly. After installation, you can change these defaults so that, for example, Subsonic will transcode FLAC files using FLAC and LAME instead of FFmpeg. You should therefore [Install](/index.php/Pacman "Pacman") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg), and you may also want to install [flac](https://www.archlinux.org/packages/?name=flac) and [lame](https://www.archlinux.org/packages/?name=lame).
+By default, Subsonic uses FFmpeg to transcode videos and songs to an appropriate format and bitrate on-the-fly. After installation, you can change these defaults so that, for example, Subsonic will transcode FLAC files using FLAC and LAME instead of FFmpeg. You should therefore [Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg), and you may also want to install [flac](https://www.archlinux.org/packages/?name=flac) and [lame](https://www.archlinux.org/packages/?name=lame).
 
 For security reasons, Subsonic will not search the system for any transcoders. Instead, the user must create symlinks to the transcoders in the `/var/lib/subsonic/transcode` folder. Create the symlinks like so:
 
@@ -131,7 +131,7 @@ Once you start the server, pay close attention to the Transcoding options, as yo
 
 *   [Official web site](http://www.subsonic.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Subsonic&oldid=391791](https://wiki.archlinux.org/index.php?title=Subsonic&oldid=391791)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Subsonic&oldid=412181](https://wiki.archlinux.org/index.php?title=Subsonic&oldid=412181)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

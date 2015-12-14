@@ -193,7 +193,7 @@ vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
 *   The trailing commas are important! They tell MPlayer to fall back on other drivers and codecs should the specified ones not be found.
 *   `-vo` option selects VDPAU video output driver, `-vc` option selects VDPAU video codecs.
 
-**Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [the NVIDIA page](/index.php/NVIDIA#Enabling_Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") for more information.
+**Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [the NVIDIA page](/index.php/NVIDIA#Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") for more information.
 
 #### Using a wrapper script
 
@@ -506,7 +506,7 @@ The `:1` is to lower the CDROM speed for a constant spin and less noise.
 *   [How to configure MPlayer](http://how-to.wikia.com/wiki/How_to_configure_MPlayer)
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MPlayer&oldid=408713](https://wiki.archlinux.org/index.php?title=MPlayer&oldid=408713)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412000](https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412000)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

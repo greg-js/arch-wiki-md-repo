@@ -20,7 +20,7 @@ This document describes how to set up your Arch system so MySQL Databases can be
 
 ### Installing MySQL
 
-[Install](/index.php/Pacman "Pacman") a [MySQL](/index.php/MySQL "MySQL") implementation.
+[Install](/index.php/Install "Install") a [MySQL](/index.php/MySQL "MySQL") implementation.
 
 There are now two "fixes" you have to make. Firstly edit the file `/etc/mysql/my.cnf` to allow network access. Find the line with skip_networking in and comment it out so it looks like this:
 
@@ -121,7 +121,7 @@ It works !
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=JDBC_and_MySQL&oldid=382283](https://wiki.archlinux.org/index.php?title=JDBC_and_MySQL&oldid=382283)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=JDBC_and_MySQL&oldid=412108](https://wiki.archlinux.org/index.php?title=JDBC_and_MySQL&oldid=412108)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -21,7 +21,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [sxiv](https://www.archlinux.org/packages/?name=sxiv), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [sxiv](https://www.archlinux.org/packages/?name=sxiv), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Assigning keyboard shortcuts to sxiv
 
@@ -113,7 +113,7 @@ echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
 *   Arch Linux [forum thread](https://bbs.archlinux.org/viewtopic.php?id=112643).
 *   Sxiv for keyboard layout [bépo](https://en.wikipedia.org/wiki/Keyboard_layout#B.C3.89PO "wikipedia:Keyboard layout") (keyboard layout in the spirit of [Dvorak](https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard "wikipedia:Dvorak Simplified Keyboard") for french speakers) : [Sxiv bépo](http://bepo.fr/wiki/Vim#Visionneuse_d.27image_Sxiv).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sxiv&oldid=401990](https://wiki.archlinux.org/index.php?title=Sxiv&oldid=401990)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sxiv&oldid=412183](https://wiki.archlinux.org/index.php?title=Sxiv&oldid=412183)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

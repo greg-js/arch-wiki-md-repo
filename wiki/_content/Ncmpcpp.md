@@ -27,7 +27,7 @@ To use it, a functional _mpd_ must be present on the system since _ncmpcpp_/_mpd
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Basic configuration
 
@@ -147,7 +147,7 @@ A listing of key bindings and their respective functions is available from withi
 
 [dotshare.it configurations](http://dotshare.it/category/mpd/ncmpcpp/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=389770](https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=389770)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=412135](https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=412135)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

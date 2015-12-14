@@ -42,9 +42,9 @@ _R is a free software environment for statistical computing and graphics_ ([http
 
 ### Basic package
 
-[Install](/index.php/Pacman "Pacman") the [r](https://www.archlinux.org/packages/?name=r) package available in the [official repositories](/index.php/Official_repositories "Official repositories")
+[Install](/index.php/Install "Install") the [r](https://www.archlinux.org/packages/?name=r) package available in the [official repositories](/index.php/Official_repositories "Official repositories")
 
-Some external packages may require to be compiled in Fortran as well, so [installing](/index.php/Pacman "Pacman") the [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) can be a good idea
+Some external packages may require to be compiled in Fortran as well, so [installing](/index.php/Installing "Installing") the [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) can be a good idea
 
 ### Initial configuration
 
@@ -269,7 +269,7 @@ The numerical libraries that comes with the R (generic [blas](https://www.archli
 
 **If your processors are Intel**, it is strongly advised to use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors, with performance far superior to traditional libraries.
 
-Please first [Install](/index.php/Pacman "Pacman") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/)<sup><small>AUR</small></sup> package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/)<sup><small>AUR</small></sup> package.
+Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/)<sup><small>AUR</small></sup> package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/)<sup><small>AUR</small></sup> package.
 
 **Note:**
 
@@ -307,7 +307,7 @@ make
 
 *   [RSeek](http://www.rseek.org/) A search engine for R related material.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=410741](https://wiki.archlinux.org/index.php?title=R&oldid=410741)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=412166](https://wiki.archlinux.org/index.php?title=R&oldid=412166)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

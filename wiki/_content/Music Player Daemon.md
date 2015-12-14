@@ -112,7 +112,7 @@ Test everything by starting a client application ([ncmpc](https://www.archlinux.
 
 If the `mpd.socket` unit (provided by [mpd](https://www.archlinux.org/packages/?name=mpd)) is enabled while `mpd.service` is disabled, systemd will not start mpd immediately, but it will listen on the appropriate sockets. When an mpd client attempts to connect on one of those sockets, systemd will start `mpd.service` and transparently hand over control of those ports to the mpd process.
 
-If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see `man 5 mpd.conf` for details).
+If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see `man 5 mpd.conf` for details).
 
 #### Configure audio
 
@@ -258,7 +258,7 @@ If you do not use a DE, place the line from [#Autostart on tty login](#Autostart
 
 **Note:** It is assumed that you already have systemd user-session manager running (which should be default). See the [systemd/User](/index.php/Systemd/User "Systemd/User") page for details.
 
-The package [mpd](https://www.archlinux.org/packages/?name=mpd) provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
+The package [mpd](https://www.archlinux.org/packages/?name=mpd) provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
 
 All you have to do is enable and start the `mpd` [user service](/index.php/Systemd/User#User_Services "Systemd/User").
 
@@ -352,7 +352,7 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 *   [MPD User Manual](http://www.musicpd.org/doc/user/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=409500](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=409500)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=412003](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=412003)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

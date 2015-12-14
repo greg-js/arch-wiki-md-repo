@@ -15,7 +15,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installing the basic features
 
-2D and Xv acceleration in X can be achieved [installing](/index.php/Pacman "Pacman") [xf86-video-mach64](https://www.archlinux.org/packages/?name=xf86-video-mach64) from the [official repositories](/index.php/Official_repositories "Official repositories").
+2D and Xv acceleration in X can be achieved [installing](/index.php/Installing "Installing") [xf86-video-mach64](https://www.archlinux.org/packages/?name=xf86-video-mach64) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## 3D acceleration and direct rendering
 
@@ -115,7 +115,7 @@ OpenGL renderer string: Mesa DRI Mach64 [Rage Pro] 20051019 AGP 2x x86/MMX/SSE
 
 If OpenGL renderer string says "Software Rasterizer", DRI is not working, even if direct rendering says "yes".
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mach64&oldid=387966](https://wiki.archlinux.org/index.php?title=Mach64&oldid=387966)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mach64&oldid=412129](https://wiki.archlinux.org/index.php?title=Mach64&oldid=412129)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

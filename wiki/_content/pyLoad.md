@@ -29,7 +29,7 @@ pyLoad is divided into core and clients, to make it easily remote accessible. Cu
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [pyload](https://aur.archlinux.org/packages/pyload/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/)<sup><small>AUR</small></sup> for a development build of the new pyload 0.5 version.
+[Install](/index.php/Install "Install") [pyload](https://aur.archlinux.org/packages/pyload/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/)<sup><small>AUR</small></sup> for a development build of the new pyload 0.5 version.
 
 ### Headless servers
 
@@ -180,7 +180,7 @@ To have it started automatically on boot, enable _pyload_ service.
 
 [FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/)<sup><small>AUR</small></sup> (Java).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PyLoad&oldid=392599](https://wiki.archlinux.org/index.php?title=PyLoad&oldid=392599)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PyLoad&oldid=412161](https://wiki.archlinux.org/index.php?title=PyLoad&oldid=412161)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

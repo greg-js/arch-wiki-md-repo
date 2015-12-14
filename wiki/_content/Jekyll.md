@@ -58,7 +58,7 @@ Alternately, [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/)<sup>
 
 ### Rubygems binary repository
 
-[Install](/index.php/Pacman "Pacman") _ruby-jekyll_ from the unofficial [quarry](/index.php/Unofficial_user_repositories#quarry "Unofficial user repositories") repository.
+[Install](/index.php/Install "Install") _ruby-jekyll_ from the unofficial [quarry](/index.php/Unofficial_user_repositories#quarry "Unofficial user repositories") repository.
 
 ## Select a markup language
 
@@ -232,7 +232,7 @@ It is recommended to define server options in your `_config.yml`. The default wi
     *   [http://pygments.org/](http://pygments.org/) - Pygments
     *   [http://rubygems.org/gems/directory_watcher](http://rubygems.org/gems/directory_watcher) - Directory Watcher
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=400978](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=400978)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412111](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412111)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

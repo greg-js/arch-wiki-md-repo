@@ -54,7 +54,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the correct dependencies:
+[Install](/index.php/Install "Install") the correct dependencies:
 
 *   [fuse](https://www.archlinux.org/packages/?name=fuse) - the `vmware-vmblock-fuse` service is [favored](https://www.mail-archive.com/open-vm-tools-devel@lists.sourceforge.net/msg00213.html) over the `vmblock` module, and the vmblock module not built anymore without disabling [fuse](http://cateee.net/lkddb/web-lkddb/FUSE_FS.html) in the kernel
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
@@ -540,7 +540,7 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 
 You may also want to have a look at the module directories in `/usr/lib/modules/_kernel_name_/misc/` for any leftovers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=411466](https://wiki.archlinux.org/index.php?title=VMware&oldid=411466)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=412204](https://wiki.archlinux.org/index.php?title=VMware&oldid=412204)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

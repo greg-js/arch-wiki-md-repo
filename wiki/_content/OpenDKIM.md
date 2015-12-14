@@ -31,7 +31,7 @@ For more info see [RFC 6376](http://tools.ietf.org/html/rfc6376)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the package [opendkim](https://www.archlinux.org/packages/?name=opendkim) from the [Official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can build and install the [opendkim-opendbx](https://aur.archlinux.org/packages/opendkim-opendbx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opendkim-opendbx)]</sup> package from the [AUR](/index.php/AUR "AUR") which adds opendbx support for communicating with several databases, including [mariadb](https://www.archlinux.org/packages/?name=mariadb), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [sqlite](https://www.archlinux.org/packages/?name=sqlite) and Firebird.
+[Install](/index.php/Install "Install") the package [opendkim](https://www.archlinux.org/packages/?name=opendkim) from the [Official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can build and install the [opendkim-opendbx](https://aur.archlinux.org/packages/opendkim-opendbx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opendkim-opendbx)]</sup> package from the [AUR](/index.php/AUR "AUR") which adds opendbx support for communicating with several databases, including [mariadb](https://www.archlinux.org/packages/?name=mariadb), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [sqlite](https://www.archlinux.org/packages/?name=sqlite) and Firebird.
 
 ## Basic configuration
 
@@ -227,7 +227,7 @@ WantedBy=multi-user.target
 
 While you're about to fight spam and increase people's trust in your server, you might want to take a look at [Sender Policy Framework](http://en.wikipedia.org/wiki/Sender_Policy_Framework), which basically means adding a DNS Record stating which servers are authorized to send email for your domain.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=392517](https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=392517)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=412143](https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=412143)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

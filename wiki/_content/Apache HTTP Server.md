@@ -395,7 +395,7 @@ Include conf/extra/httpd-mpm.conf
 
 ```
 
-*   [Install](/index.php/Pacman "Pacman") the [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
+*   [Install](/index.php/Install "Install") the [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 *   Create `/etc/httpd/conf/extra/php5_fcgid.conf` with following content:
 
@@ -507,7 +507,7 @@ and restart `httpd.service`.
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=409236](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=409236)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412039](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412039)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -15,7 +15,7 @@ p7zip is command line port of [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipe
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [p7zip](https://www.archlinux.org/packages/?name=p7zip) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [p7zip](https://www.archlinux.org/packages/?name=p7zip) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 The command to run the program is the following:
 
@@ -61,7 +61,7 @@ The package includes three binaries, `/usr/bin/7z`, `/usr/bin/7za`, and `/usr/bi
 *   [7zip homepage.](http://www.7-zip.org/download.html)
 *   [How to use 7zip on Linux command Line.](https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/how_to_use_7zip_on_linux_command_line144?lang=en)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=P7zip&oldid=398973](https://wiki.archlinux.org/index.php?title=P7zip&oldid=398973)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=P7zip&oldid=412149](https://wiki.archlinux.org/index.php?title=P7zip&oldid=412149)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

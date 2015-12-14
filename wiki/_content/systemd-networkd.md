@@ -349,7 +349,7 @@ Most common keys are:
 
 The service is available with [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. You will want to [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") the `systemd-networkd.service` on the host and container.
 
-For debugging purposes, it is strongly advised to [install](/index.php/Pacman "Pacman") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
+For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
 
 If you are using _systemd-nspawn_, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to `man 1 systemd-nspawn` for an exhaustive list of options.
 
@@ -646,7 +646,7 @@ Gateway=192.168.1.254
 *   [Tom Gundersen posts on Core OS blog](https://coreos.com/blog/intro-to-systemd-networkd/)
 *   [How to set up systemd-networkd with wpa_supplicant](https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759) (WonderWoofy's walkthrough on Arch forums)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=410725](https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=410725)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=412185](https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=412185)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -68,7 +68,7 @@ You should check your "Load cycle count" in [SMART](/index.php/SMART "SMART") wh
 
 [Install](/index.php/Install "Install") [hdapsd](https://www.archlinux.org/packages/?name=hdapsd). You can [start](/index.php/Start "Start") the hdapsd daemon with `hdapsd.service`.
 
-You can adjust the parameters, with which hdapsd is run by providing your own unit file as explained in the [systemd article](/index.php/Systemd#Editing_provided_unit_files "Systemd"), for example the following file will adjust sensitivity and logging behaviour of the hdaps daemon:
+You can adjust the parameters, with which hdapsd is run by providing your own unit file as explained in the [systemd article](/index.php/Systemd#Editing_provided_units "Systemd"), for example the following file will adjust sensitivity and logging behaviour of the hdaps daemon:
 
  `/etc/systemd/system/hdapsd.service.d/sensitivity.conf` 
 
@@ -118,7 +118,7 @@ Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to 
 *   [How to protect the harddisk through APS at ThinkWiki](http://www.thinkwiki.org/wiki/How_to_protect_the_harddisk_through_APS)
 *   [HDAPS at ThinkWiki](http://www.thinkwiki.org/wiki/HDAPS)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&oldid=392225](https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&oldid=392225)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&oldid=411992](https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&oldid=411992)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

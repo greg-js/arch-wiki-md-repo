@@ -25,7 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### GNOME
 
-[Install](/index.php/Pacman "Pacman") the package [vino](https://www.archlinux.org/packages/?name=vino), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the package [vino](https://www.archlinux.org/packages/?name=vino), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 You need to restart GNOME so that `vino-server` is started automatically when enabling the remote desktop feature. The remote desktop feature can usually be enabled in Settings > Sharing, however this only seems to be functional when [NetworkManager](/index.php/NetworkManager "NetworkManager") is installed and functional.
 
@@ -55,7 +55,7 @@ If you use a standalone [window manager](/index.php/Window_manager "Window manag
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vino&oldid=387939](https://wiki.archlinux.org/index.php?title=Vino&oldid=387939)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vino&oldid=412207](https://wiki.archlinux.org/index.php?title=Vino&oldid=412207)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

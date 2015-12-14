@@ -24,7 +24,7 @@ oidentd is an ident (rfc1413 compliant) daemon that runs on Linux, Darwin, FreeB
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [oidentd](https://www.archlinux.org/packages/?name=oidentd), available in the [Official repositories](/index.php/Official_repositories "Official repositories")。
+[Install](/index.php/Install "Install") [oidentd](https://www.archlinux.org/packages/?name=oidentd), available in the [Official repositories](/index.php/Official_repositories "Official repositories")。
 
 ## Configuration
 
@@ -90,7 +90,7 @@ systemctl enable oidentd.socket
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Oidentd&oldid=301530](https://wiki.archlinux.org/index.php?title=Oidentd&oldid=301530)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Oidentd&oldid=412142](https://wiki.archlinux.org/index.php?title=Oidentd&oldid=412142)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

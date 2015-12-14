@@ -118,7 +118,7 @@ To enable one of these, follow the instructions in [Unofficial user repositories
 
 Repository mirroring can be easily achieved using `rsync://mirror.rts-informatique.fr::archlinux-catalyst`.
 
-Once you have added some Catalyst repository, update pacman's database and [install](/index.php/Pacman "Pacman") these packages (see [#Tools](#Tools) for more information):
+Once you have added some Catalyst repository, update pacman's database and [install](/index.php/Install "Install") these packages (see [#Tools](#Tools) for more information):
 
 *   _catalyst-hook_
 *   _catalyst-utils_
@@ -1275,7 +1275,7 @@ To solve this, you should downgrade Xorg. A helpful list of steps can be found o
 *   [Unofficial Wiki for the ATI Linux Driver](http://wiki.cchtml.com/index.php/Main_Page)
 *   [Unofficial ATI Linux Driver Bugzilla](http://ati.cchtml.com/query.cgi)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=409713](https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=409713)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=412027](https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=412027)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

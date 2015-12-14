@@ -126,7 +126,7 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 
 1.  Isolate `multi-user.target` `# systemctl isolate multi-user.target` 
 2.  [Uninstall](/index.php/Pacman "Pacman") the kdebase-workspace package `# pacman -Rc kdebase-workspace` 
-3.  [Install](/index.php/Pacman "Pacman") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
+3.  [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
 4.  If you use KDM as display manager, disable it `# systemctl disable kdm` and enable [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` or install and enable any other [display manager](/index.php/Display_manager "Display manager").
 5.  Reboot.
 
@@ -151,7 +151,7 @@ Alternatively, to start Plasma with _startx_, append `exec startkde` to your `.x
 
 ## Configuration
 
-Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing _systemsettings_.
+Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing _systemsettings5_.
 
 Frameworks 5 applications can use KDE 4 configuration however they expect the configuration files to be located in different places. To allow Frameworks 5 applications running in KDE 4 to share the same configurations they may be moved to the new locations and symlinked back to the old. Examples are:
 
@@ -191,7 +191,7 @@ For Qt4 applications to have a consistent appearance, you need to install [breez
 
 GTK+
 
-The recommended theme for a pleasant appearance in GTK+ applications is [gtk-theme-orion](https://www.archlinux.org/packages/?name=gtk-theme-orion). Also see [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Once you've installed a theme, choose it in _System Settings > Application Style > GNOME Application Style_. If you don't see those settings, install and run one of the [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") such as [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) to change the theme.
+The recommended theme for a pleasant appearance in GTK+ applications is [gtk-theme-orion](https://www.archlinux.org/packages/?name=gtk-theme-orion). Also see [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)/[gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Once you've installed a theme, choose it in _System Settings > Application Style > GNOME Application Style_. If you don't see those settings, install and run one of the [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") such as [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) to change the theme.
 
 ##### Widgets
 
@@ -880,7 +880,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=411829](https://wiki.archlinux.org/index.php?title=KDE&oldid=411829)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412230](https://wiki.archlinux.org/index.php?title=KDE&oldid=412230)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

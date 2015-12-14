@@ -34,7 +34,7 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") a JHBuild variant from the [AUR](/index.php/AUR "AUR"):
+[Install](/index.php/Install "Install") a JHBuild variant from the [AUR](/index.php/AUR "AUR"):
 
 *   [jhbuild](https://aur.archlinux.org/packages/jhbuild/)<sup><small>AUR</small></sup> - Stable version.
 *   [jhbuild-git](https://aur.archlinux.org/packages/jhbuild-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jhbuild-git)]</sup> - Development version.
@@ -286,7 +286,7 @@ This list includes modules transitively depending on broken modules (i.e. some o
 
 [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=JHBuild&oldid=392285](https://wiki.archlinux.org/index.php?title=JHBuild&oldid=392285)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=JHBuild&oldid=412109](https://wiki.archlinux.org/index.php?title=JHBuild&oldid=412109)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

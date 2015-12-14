@@ -28,7 +28,7 @@ You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [sshfs](https://www.archlinux.org/packages/?name=sshfs) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [sshfs](https://www.archlinux.org/packages/?name=sshfs) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Mounting
 
@@ -328,7 +328,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs&oldid=411514](https://wiki.archlinux.org/index.php?title=Sshfs&oldid=411514)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs&oldid=412177](https://wiki.archlinux.org/index.php?title=Sshfs&oldid=412177)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

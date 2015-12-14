@@ -19,7 +19,7 @@ _"[KDevelop](http://kdevelop.org/) is a free, open source IDE (Integrated Develo
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [kdevelop](https://www.archlinux.org/packages/?name=kdevelop) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [kdevelop](https://www.archlinux.org/packages/?name=kdevelop) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Building additional plugins
 
@@ -70,7 +70,7 @@ As of June 18 2009, the following plugins are available from KDE's svn repositor
 
 **Warning:** As of June 17 2009, do not install the php-docs plugin because it causes the php plugin to stop working.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDevelop_4&oldid=408101](https://wiki.archlinux.org/index.php?title=KDevelop_4&oldid=408101)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDevelop_4&oldid=412114](https://wiki.archlinux.org/index.php?title=KDevelop_4&oldid=412114)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

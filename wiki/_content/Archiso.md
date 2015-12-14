@@ -51,7 +51,7 @@ Related articles
 *   To use Archiso you must be running on a x86_64 platform. [[1]](https://projects.archlinux.org/archiso.git/tree/docs/README.build#n67)
 *   It is recommended to act as root in all the following steps. If not, it is very likely to have problems with false permissions later.
 
-Before we begin, we need to [install](/index.php/Pacman "Pacman") [archiso](https://www.archlinux.org/packages/?name=archiso) from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, [archiso-git](https://aur.archlinux.org/packages/archiso-git/)<sup><small>AUR</small></sup> can be found in the [AUR](/index.php/AUR "AUR").
+Before we begin, we need to [install](/index.php/Install "Install") [archiso](https://www.archlinux.org/packages/?name=archiso) from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, [archiso-git](https://aur.archlinux.org/packages/archiso-git/)<sup><small>AUR</small></sup> can be found in the [AUR](/index.php/AUR "AUR").
 
 Archiso comes with two "profiles": _releng_ and _baseline_.
 
@@ -455,7 +455,7 @@ After all of these, now you can follow the [Beginners' guide#Locale](/index.php/
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=411417](https://wiki.archlinux.org/index.php?title=Archiso&oldid=411417)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=412041](https://wiki.archlinux.org/index.php?title=Archiso&oldid=412041)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

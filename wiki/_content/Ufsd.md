@@ -36,7 +36,7 @@ $ makepkg -si
 
 ### With dkms
 
-*   [Install](/index.php/Pacman "Pacman") the [dkms](https://www.archlinux.org/packages/?name=dkms) package, found in the [official repositories](/index.php/Official_repositories "Official repositories")
+*   [Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package, found in the [official repositories](/index.php/Official_repositories "Official repositories")
 *   Start and enable the dkms service
 
 ```
@@ -102,7 +102,7 @@ To load the ufsd driver at startup, create a `*.conf` file (e.g. `ufsd.conf`) in
 
 *   [Ufsd options](http://kb.paragon-software.com/paragon/include/templ/object2.jsp?objId=5833)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ufsd&oldid=399134](https://wiki.archlinux.org/index.php?title=Ufsd&oldid=399134)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ufsd&oldid=412196](https://wiki.archlinux.org/index.php?title=Ufsd&oldid=412196)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

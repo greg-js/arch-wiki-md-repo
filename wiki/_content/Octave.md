@@ -187,7 +187,7 @@ Since [octave-io](https://aur.archlinux.org/packages/octave-io/)<sup><small>AUR<
 
 The steps necessary to make it work are:
 
-1\. [Install](/index.php/Pacman "Pacman") [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+1\. [Install](/index.php/Install "Install") [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** A common problem is that Octave cannot find the JDK path. To fix this execute the following commands in your shell:
 
@@ -247,7 +247,7 @@ The output should be > 0:
 
 To make this permanent add the `javaaddpath` commands to your `~/.octaverc` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=408886](https://wiki.archlinux.org/index.php?title=Octave&oldid=408886)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=412141](https://wiki.archlinux.org/index.php?title=Octave&oldid=412141)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

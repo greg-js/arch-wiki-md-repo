@@ -32,7 +32,7 @@ By default, arch has the `getty@tty1` service enabled. The service file already 
 TTYVTDisallocate=no
 ```
 
-This overrides only `TTYVTDisallocate` for agetty on TTY1 and let the global service file `/usr/lib/systemd/system/getty@.service` untouched. This is the recommended way to [edit systemd unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd").
+This overrides only `TTYVTDisallocate` for agetty on TTY1 and let the global service file `/usr/lib/systemd/system/getty@.service` untouched. This is the recommended way to [edit systemd unit files](/index.php/Systemd#Editing_provided_units "Systemd").
 
 Late KMS starting may still cause the first few boot messages to clear. If this is the case, try enabling [early KMS start](/index.php/KMS#Early_KMS_start "KMS").
 
@@ -47,7 +47,7 @@ If you have an old `/etc/issue` that has the "clear TTY" escape sequences, remov
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disable_clearing_of_boot_messages&oldid=382721](https://wiki.archlinux.org/index.php?title=Disable_clearing_of_boot_messages&oldid=382721)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disable_clearing_of_boot_messages&oldid=411986](https://wiki.archlinux.org/index.php?title=Disable_clearing_of_boot_messages&oldid=411986)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

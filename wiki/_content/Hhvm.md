@@ -26,7 +26,7 @@ HHVM runs much of the world’s existing PHP. Developers and hosts are adopting 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [hhvm](https://www.archlinux.org/packages/?name=hhvm) in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") package [hhvm](https://www.archlinux.org/packages/?name=hhvm) in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Running
 
@@ -86,7 +86,7 @@ fastcgi.server = (
 
 Restart `lighttpd.service` to apply any changes.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hhvm&oldid=388114](https://wiki.archlinux.org/index.php?title=Hhvm&oldid=388114)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hhvm&oldid=412097](https://wiki.archlinux.org/index.php?title=Hhvm&oldid=412097)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

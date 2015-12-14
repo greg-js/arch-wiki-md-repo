@@ -159,7 +159,7 @@ extension=pgsql.so
 
 ### Sqlite
 
-Install and configure [Sqlite](/index.php/Sqlite "Sqlite"), then install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and uncomment the following lines in `/etc/php/php.ini`:
+Install and configure [SQLite](/index.php/SQLite "SQLite"), then install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and uncomment the following lines in `/etc/php/php.ini`:
 
 ```
 extension=pdo_sqlite.so
@@ -248,7 +248,7 @@ If your `php.ini` is not parsed, the ini file is named after the sapi it is usin
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=410888](https://wiki.archlinux.org/index.php?title=PHP&oldid=410888)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=412006](https://wiki.archlinux.org/index.php?title=PHP&oldid=412006)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

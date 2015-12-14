@@ -89,13 +89,13 @@ Alternatively, (un)check _Window Manager Tweaks_ > _Accessibility_ > _Automatica
 
 ### Extra settings provided by the xfce settings manager
 
-[Install](/index.php/Pacman "Pacman") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories")
+[Install](/index.php/Install "Install") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories")
 
 **Warning:** Installing `xfce4-settings` may change the default applications for certain tasks. See [xdg-open](/index.php/Xdg-open "Xdg-open") to set the default applications to your liking.
 
 ### Additional Themes
 
-[Install](/index.php/Pacman "Pacman") [xfwm4-themes](https://www.archlinux.org/packages/?name=xfwm4-themes) from the [official repositories](/index.php/Official_repositories "Official repositories")
+[Install](/index.php/Install "Install") [xfwm4-themes](https://www.archlinux.org/packages/?name=xfwm4-themes) from the [official repositories](/index.php/Official_repositories "Official repositories")
 
 The themes installed will be shown in the `xfwm4-settings` window.
 
@@ -111,7 +111,7 @@ Go to `Accessibility` and check `Hide title of windows when maximized`.
 
 ### No icons shown in browser for downloaded items
 
-This is fixed by [installing](/index.php/Pacman "Pacman") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories").
+This is fixed by [installing](/index.php/Installing "Installing") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Number of workspaces changes unexpectedly
 
@@ -148,7 +148,7 @@ If this does not fix the tearing, consider disabling Xfwm's composite manager an
 
 *   [Xfwm - Introduction](http://docs.xfce.org/xfce/xfwm4/introduction)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfwm&oldid=396453](https://wiki.archlinux.org/index.php?title=Xfwm&oldid=396453)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfwm&oldid=412220](https://wiki.archlinux.org/index.php?title=Xfwm&oldid=412220)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

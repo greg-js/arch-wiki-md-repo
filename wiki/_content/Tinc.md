@@ -31,7 +31,7 @@ _**tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and enc
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [tinc](https://www.archlinux.org/packages/?name=tinc) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [tinc](https://www.archlinux.org/packages/?name=tinc) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuring a private network
 
@@ -213,7 +213,7 @@ In case of a linux kernel update you have to either restart your system or reins
 
 Make sure you have [TUN/TAP support](/index.php/OpenVPN#Configure_the_system_for_TUN.2FTAP_support "OpenVPN") enabled.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tinc&oldid=408033](https://wiki.archlinux.org/index.php?title=Tinc&oldid=408033)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tinc&oldid=412191](https://wiki.archlinux.org/index.php?title=Tinc&oldid=412191)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

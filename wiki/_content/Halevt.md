@@ -15,7 +15,7 @@ This document describes a method to configure halevt and traydevice in order to 
 
 ## Installation
 
-First you need to [install](/index.php/Pacman "Pacman") [halevt](https://aur.archlinux.org/packages/halevt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/halevt)]</sup> and [traydevice](https://aur.archlinux.org/packages/traydevice/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/traydevice)]</sup> from [AUR](/index.php/AUR "AUR").
+First you need to [install](/index.php/Install "Install") [halevt](https://aur.archlinux.org/packages/halevt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/halevt)]</sup> and [traydevice](https://aur.archlinux.org/packages/traydevice/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/traydevice)]</sup> from [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -87,7 +87,7 @@ It is better to start halevt individually per user rather than as a system daemo
 
 Instead of halevt you can use another program based on UDisks - [UDisksEvt](https://bbs.archlinux.org/viewtopic.php?pid=786153). With the most recent version of Traydevice you can setup a complete hal-less (hal is deprecated after all) automounting system. UDisksEvt example configuration file already contains appropriate setup for Traydevice, so it should work out-of-the-box.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Halevt&oldid=392221](https://wiki.archlinux.org/index.php?title=Halevt&oldid=392221)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Halevt&oldid=412093](https://wiki.archlinux.org/index.php?title=Halevt&oldid=412093)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

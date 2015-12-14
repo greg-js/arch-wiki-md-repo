@@ -41,7 +41,7 @@ It should support as much hardware as vesafb.
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [v86d](https://aur.archlinux.org/packages/v86d/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [v86d](https://aur.archlinux.org/packages/v86d/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
 
 ## Prepare the system
 
@@ -229,7 +229,7 @@ pci=nocrs
 *   [Gentoo's uvesafb Page](http://dev.gentoo.org/~spock/projects/uvesafb)
 *   [VESA mode numbers](http://infosnews.5cz.de/VESA_BIOS_Extensions.html#VBE_mode_numbers)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Uvesafb&oldid=392773](https://wiki.archlinux.org/index.php?title=Uvesafb&oldid=392773)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Uvesafb&oldid=412201](https://wiki.archlinux.org/index.php?title=Uvesafb&oldid=412201)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -21,7 +21,7 @@ It is not yet (September 2014) possible to initialize a QMI modem for use on Lin
 
 ## Procedure
 
-[Install](/index.php/Pacman "Pacman") the [libqmi](https://www.archlinux.org/packages/?name=libqmi) package available in the [official repositories](/index.php/Official_repositories "Official repositories"), which provides the `qmicli` and `qmi-network` programs. Also install [net-tools](https://www.archlinux.org/packages/?name=net-tools), which provides the `ifconfig` command.
+[Install](/index.php/Install "Install") the [libqmi](https://www.archlinux.org/packages/?name=libqmi) package available in the [official repositories](/index.php/Official_repositories "Official repositories"), which provides the `qmicli` and `qmi-network` programs. Also install [net-tools](https://www.archlinux.org/packages/?name=net-tools), which provides the `ifconfig` command.
 
 There is a [helper script](https://raw.githubusercontent.com/penguin2716/qmi_setup/master/qmi_setup.sh) for `qmi-network` available on GitHub. Save the script to somewhere in your `$PATH` and make it executable, and then review the script. The values of some of the variables might need to be changed, especially `WWAN_DEV`.
 
@@ -46,7 +46,7 @@ Finally, running `qmi_setup.sh start` should start the cellular internet connect
 
 *   [Thinkwiki](http://www.thinkwiki.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_internet&oldid=399309](https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_internet&oldid=399309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_internet&oldid=412188](https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_internet&oldid=412188)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

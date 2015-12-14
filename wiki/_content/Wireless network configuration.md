@@ -1125,7 +1125,7 @@ You can also try to blacklist the module asus_nb_wmi (tested with ASUSPRO P550C)
 
 #### ipw2100 and ipw2200
 
-These modules are fully supported in the kernel, but they require additional firmware. Depending on which of the chipsets you have, [install](/index.php/Pacman "Pacman") either [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) or [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Then [reload](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the appropriate module.
+These modules are fully supported in the kernel, but they require additional firmware. Depending on which of the chipsets you have, [install](/index.php/Install "Install") either [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) or [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Then [reload](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the appropriate module.
 
 **Tip:** You may use the following [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"):
 
@@ -1221,7 +1221,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[8]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Pacman "Pacman") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[8]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 
@@ -1317,7 +1317,7 @@ Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any oth
 *   [The Linux Wireless project](http://wireless.kernel.org/)
 *   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=409567](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=409567)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=412214](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=412214)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

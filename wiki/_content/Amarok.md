@@ -30,7 +30,7 @@ Amarok 2 has not yet and will not implement all features from [Amarok 1.4](/inde
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [amarok](https://www.archlinux.org/packages/?name=amarok) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [amarok](https://www.archlinux.org/packages/?name=amarok) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Amarok now depends on Phonon, so you will have to have a working back-end selected for it. See [KDE#Phonon](/index.php/KDE#Phonon "KDE"). You may also need to install a few [codecs](/index.php/Codecs "Codecs") for use by the chosen back-end.
 
@@ -103,7 +103,7 @@ Not yet supported, [see more](http://amarok.kde.org/blog/archives/812-MySQL-in-A
 
 ## Audio CD Playback
 
-If you are not using KDE as your Desktop Environment, Amarok may not have the utilities it needs to play back Audio CDs. [Install](/index.php/Pacman "Pacman") [kdemultimedia-audiocd-kio](https://www.archlinux.org/packages/?name=kdemultimedia-audiocd-kio) from the [official repositories](/index.php/Official_repositories "Official repositories") to obtain this functionality.
+If you are not using KDE as your Desktop Environment, Amarok may not have the utilities it needs to play back Audio CDs. [Install](/index.php/Install "Install") [kdemultimedia-audiocd-kio](https://www.archlinux.org/packages/?name=kdemultimedia-audiocd-kio) from the [official repositories](/index.php/Official_repositories "Official repositories") to obtain this functionality.
 
 ## Firefly/Daap share
 
@@ -122,7 +122,7 @@ start `avahi-daemon` [systemd](/index.php/Systemd "Systemd") service.
 
 [List of applications#Audio players](/index.php/List_of_applications#Audio_players "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Amarok&oldid=407533](https://wiki.archlinux.org/index.php?title=Amarok&oldid=407533)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Amarok&oldid=412036](https://wiki.archlinux.org/index.php?title=Amarok&oldid=412036)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

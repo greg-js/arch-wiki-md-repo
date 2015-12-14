@@ -87,7 +87,7 @@ While many people are happy with the traditional beep sound, some may like to ch
 
 *   [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beep&oldid=410101](https://wiki.archlinux.org/index.php?title=Beep&oldid=410101)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beep&oldid=411977](https://wiki.archlinux.org/index.php?title=Beep&oldid=411977)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -25,7 +25,7 @@ Given the ever decreasing cost of disks and raid systems, it is now practical an
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [backuppc](https://www.archlinux.org/packages/?name=backuppc) from the [official repositories](/index.php/Official_repositories "Official repositories"). Install [rsync](https://www.archlinux.org/packages/?name=rsync) and [perl-file-rsyncp](https://www.archlinux.org/packages/?name=perl-file-rsyncp) if you want to use [rsync](/index.php/Rsync "Rsync") as a transport.
+[Install](/index.php/Install "Install") [backuppc](https://www.archlinux.org/packages/?name=backuppc) from the [official repositories](/index.php/Official_repositories "Official repositories"). Install [rsync](https://www.archlinux.org/packages/?name=rsync) and [perl-file-rsyncp](https://www.archlinux.org/packages/?name=perl-file-rsyncp) if you want to use [rsync](/index.php/Rsync "Rsync") as a transport.
 
 Start **backuppc** [systemd](/index.php/Systemd "Systemd") [daemon](/index.php/Daemon "Daemon") and, if you wish to have running at boot time enable it.
 
@@ -73,7 +73,7 @@ where you have to replace 192.168.0 to your corresponding IP-Adresses you want t
 
 #### Single-purpose Apache settings
 
-[Install](/index.php/Pacman "Pacman") [mod_perl](https://aur.archlinux.org/packages/mod_perl/)<sup><small>AUR</small></sup> from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [mod_perl](https://aur.archlinux.org/packages/mod_perl/)<sup><small>AUR</small></sup> from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Edit the Apache configuration file to load mod_perl, tell Apache to run as user backuppc and to include `/etc/httpd/conf/extra/backuppc.conf`:
 
@@ -260,7 +260,7 @@ Alias           /BackupPC/images        /usr/share/BackupPC/files/
 *   [BackupPC Home page](http://backuppc.sourceforge.net/index.html)
 *   [BackupPC documentation](http://backuppc.sourceforge.net/faq/BackupPC.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=BackupPC&oldid=406752](https://wiki.archlinux.org/index.php?title=BackupPC&oldid=406752)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=BackupPC&oldid=412042](https://wiki.archlinux.org/index.php?title=BackupPC&oldid=412042)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

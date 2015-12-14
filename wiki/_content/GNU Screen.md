@@ -265,7 +265,7 @@ termcapinfo xterm* ti@:te@
 
 If you started a program outside screen, but now you would like it to be inside, you can use **reptyr** to reparent the process from it's current tty to one inside screen.
 
-[Install](/index.php/Pacman "Pacman") the package [reptyr](https://www.archlinux.org/packages/?name=reptyr) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the package [reptyr](https://www.archlinux.org/packages/?name=reptyr) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Get the PID of the process (you can use `ps ax` for that). Now just enter the PID as argument to reptyr inside a screen window.
 
@@ -330,7 +330,7 @@ add following to ~/.screenrc
 *   [Ratpoison - A window manager based on gnu screen](/index.php/Ratpoison "Ratpoison")
 *   [Xpra - An utility to detach/reattach X programs, in a way similar as screen does for command line based programs](/index.php/Xpra "Xpra")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Screen&oldid=403688](https://wiki.archlinux.org/index.php?title=GNU_Screen&oldid=403688)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Screen&oldid=412085](https://wiki.archlinux.org/index.php?title=GNU_Screen&oldid=412085)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

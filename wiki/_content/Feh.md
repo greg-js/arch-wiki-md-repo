@@ -29,7 +29,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [feh](https://www.archlinux.org/packages/?name=feh), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [feh](https://www.archlinux.org/packages/?name=feh), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -300,7 +300,7 @@ Activate the `feh-wallpaper.timer` and `feh-wallpaper.service` daemons. Read [Da
 
 *   [Forum post with original script for feh_browser](https://bbs.archlinux.org/viewtopic.php?pid=884635#p884635)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Feh&oldid=394158](https://wiki.archlinux.org/index.php?title=Feh&oldid=394158)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Feh&oldid=412077](https://wiki.archlinux.org/index.php?title=Feh&oldid=412077)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

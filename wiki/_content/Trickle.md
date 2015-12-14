@@ -46,7 +46,7 @@ Otherwise also specify upload and download limit as well as other configuration 
 
 ### Modifying other systemd services
 
-[Modify](/index.php/Systemd#Editing_provided_unit_files "Systemd") `ExecStart` for a desired systemd service, appending `/usr/bin/trickle`. For example:
+[Modify](/index.php/Systemd#Editing_provided_units "Systemd") `ExecStart` for a desired systemd service, appending `/usr/bin/trickle`. For example:
 
 ```
 ExecStart=/usr/bin/_daemon_
@@ -151,7 +151,7 @@ TRICKLE_SLENGTH=10
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Trickle&oldid=394309](https://wiki.archlinux.org/index.php?title=Trickle&oldid=394309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021](https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

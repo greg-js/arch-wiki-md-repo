@@ -26,7 +26,7 @@ The suspend, poweroff and hibernate button presses and lid close events are hand
 
 ## Using systemd-logind
 
-If you're using [systemd](/index.php/Systemd "Systemd") (which is default in Arch Linux) and [install](/index.php/Pacman "Pacman") [polkit](https://www.archlinux.org/packages/?name=polkit), users with non-remote session can issue power-related commands as long as [the session is not broken](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
+If you're using [systemd](/index.php/Systemd "Systemd") (which is default in Arch Linux) and [install](/index.php/Install "Install") [polkit](https://www.archlinux.org/packages/?name=polkit), users with non-remote session can issue power-related commands as long as [the session is not broken](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 To check if your session is active
 
@@ -47,7 +47,7 @@ Other commands can be used as well, including `systemctl suspend` and `systemctl
 
 ## Using sudo
 
-[Install](/index.php/Pacman "Pacman") [sudo](https://www.archlinux.org/packages/?name=sudo), and give the user [sudo privileges](/index.php/Sudo "Sudo"). The user will then be able to use _sudo systemctl_ commands in the command line or in menus:
+[Install](/index.php/Install "Install") [sudo](https://www.archlinux.org/packages/?name=sudo), and give the user [sudo privileges](/index.php/Sudo "Sudo"). The user will then be able to use _sudo systemctl_ commands in the command line or in menus:
 
 ```
 $ sudo systemctl poweroff
@@ -81,7 +81,7 @@ alias halt="sudo systemctl halt"
 
 This can also be done by installing [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat). This package creates symbolic links of the respective name to systemctl.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Allow_users_to_shutdown&oldid=394829](https://wiki.archlinux.org/index.php?title=Allow_users_to_shutdown&oldid=394829)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Allow_users_to_shutdown&oldid=412034](https://wiki.archlinux.org/index.php?title=Allow_users_to_shutdown&oldid=412034)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

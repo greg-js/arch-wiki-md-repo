@@ -130,13 +130,13 @@ to `~/.config/fish/config.fish` and relogin or reload the config via:
 
 ### Ctrl+Shift+t
 
-If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME#New_terminals_adopt_current_directory](/index.php/GNOME#New_terminals_adopt_current_directory "GNOME").
+If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME#New terminals adopt current directory](/index.php/GNOME#New_terminals_adopt_current_directory "GNOME").
 
 ## See also
 
 *   [Termite readme](https://github.com/thestinger/termite/blob/master/README.rst)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Termite&oldid=411308](https://wiki.archlinux.org/index.php?title=Termite&oldid=411308)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Termite&oldid=412018](https://wiki.archlinux.org/index.php?title=Termite&oldid=412018)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

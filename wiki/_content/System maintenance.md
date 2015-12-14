@@ -140,7 +140,7 @@ Also, think about other configuration files you may have copied or created. If a
 
 If a package update is expected/known to cause problems, packagers will ensure that pacman displays an appropriate message when the package is updated. If experiencing trouble after an update, double-check pacman's output by looking at `/var/log/pacman.log`.
 
-At this point, only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update, consider seeking help on the [forum](https://bbs.archlinux.org), over [IRC](/index.php/IRC "IRC"), or by [downgrading](/index.php/Downgrading_packages "Downgrading packages") the offending package.
+At this point, only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update, consider seeking help on the [forum](https://bbs.archlinux.org), over [IRC](/index.php/IRC "IRC"), or by [downgrading](/index.php/Downgrading "Downgrading") the offending package.
 
 ## Use the package manager to install software
 
@@ -236,7 +236,7 @@ The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is a
 
 To make it available as a boot option, you will need to update your [bootloader](/index.php/Bootloader "Bootloader")'s configuration file to use the LTS kernel and ram disk: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=408000](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=408000)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=412013](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=412013)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

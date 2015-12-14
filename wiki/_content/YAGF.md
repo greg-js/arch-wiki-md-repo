@@ -24,7 +24,7 @@ Related articles
 
 YAGF requires Qt 4 and the [aspell](https://www.archlinux.org/packages/?name=aspell) spellchecking package. If you want to acquire images from a scanner into YAGF directly, you should install [XSane](/index.php/SANE "SANE") software. And of course you will need cuneiform for the text recognition.
 
-[Install](/index.php/Pacman "Pacman") [yagf](https://www.archlinux.org/packages/?name=yagf) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [yagf](https://www.archlinux.org/packages/?name=yagf) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Supported languages
 
@@ -62,7 +62,7 @@ The recognized text may be saved to disc as a text or html file in UTF-8 encodin
 *   [http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) - YAGF home page
 *   [https://launchpad.net/cuneiform-linux](https://launchpad.net/cuneiform-linux) - Linux port of Cuneiform
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=YAGF&oldid=381019](https://wiki.archlinux.org/index.php?title=YAGF&oldid=381019)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=YAGF&oldid=412224](https://wiki.archlinux.org/index.php?title=YAGF&oldid=412224)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

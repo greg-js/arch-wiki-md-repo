@@ -299,7 +299,7 @@ This indicates that the standard `nl80211` driver does not support the given har
 
 ```
 
-If the command works to connect, and the user wishes to use [systemd](/index.php/Systemd "Systemd") to manage the wireless connection, it is necessary to [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `wpa_supplicant@.service` unit provided by the package and modify the `ExecStart` line accordingly:
+If the command works to connect, and the user wishes to use [systemd](/index.php/Systemd "Systemd") to manage the wireless connection, it is necessary to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `wpa_supplicant@.service` unit provided by the package and modify the `ExecStart` line accordingly:
 
  `/etc/systemd/system/wpa_supplicant@.service.d/wext.conf` 
 
@@ -336,7 +336,7 @@ This bug is not fixed in version 2.3 of [wpa_supplicant](https://www.archlinux.o
 *   [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli)
 *   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=410845](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=410845)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=412022](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=412022)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

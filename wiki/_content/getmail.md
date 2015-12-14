@@ -25,7 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the package [getmail](https://www.archlinux.org/packages/?name=getmail) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the package [getmail](https://www.archlinux.org/packages/?name=getmail) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 
@@ -112,7 +112,7 @@ Then configure [procmail](/index.php/Procmail "Procmail") to filter your mail.
 *   [Documentation on Configuring Getmail with rcfiles](http://pyropus.ca/software/getmail/configuration.html#running)
 *   How to [Backup Gmail with getmail](/index.php/Backup_Gmail_with_getmail "Backup Gmail with getmail").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Getmail&oldid=388078](https://wiki.archlinux.org/index.php?title=Getmail&oldid=388078)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Getmail&oldid=412089](https://wiki.archlinux.org/index.php?title=Getmail&oldid=412089)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

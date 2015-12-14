@@ -23,7 +23,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installing
 
-[Install](/index.php/Pacman "Pacman") [dillo](https://www.archlinux.org/packages/?name=dillo), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [dillo](https://www.archlinux.org/packages/?name=dillo), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Starting
 
@@ -49,7 +49,7 @@ Second, get rid of the permanent cookies by removing or editing your ~/.dillo/co
 
 *   [Dillo Home Page](http://www.dillo.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dillo&oldid=401448](https://wiki.archlinux.org/index.php?title=Dillo&oldid=401448)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dillo&oldid=412064](https://wiki.archlinux.org/index.php?title=Dillo&oldid=412064)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

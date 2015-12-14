@@ -145,7 +145,7 @@ On non-English installations, the templates directory might have another name. O
 
 GNOME Files lacks the ability to display metadata for music files in list view mode. A [Python](/index.php/Python "Python") script is available which adds list view columns for the artist, album, track title, bit rate and more.
 
-To use the script you first need to [install](/index.php/Pacman "Pacman") the following: [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus), [mutagen](https://www.archlinux.org/packages/?name=mutagen), [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), [kaa-metadata](https://www.archlinux.org/packages/?name=kaa-metadata) and [python2-exiv2](https://www.archlinux.org/packages/?name=python2-exiv2).
+To use the script you first need to [install](/index.php/Install "Install") the following: [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus), [mutagen](https://www.archlinux.org/packages/?name=mutagen), [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), [kaa-metadata](https://www.archlinux.org/packages/?name=kaa-metadata) and [python2-exiv2](https://www.archlinux.org/packages/?name=python2-exiv2).
 
 Once the dependencies are installed, save the [bsc-v2.py](http://pastebin.com/zN69twVP) script to `~/.local/share/nautilus-python/extensions` (create the directory if it does not exist) and restart Files.
 
@@ -173,7 +173,7 @@ inode/directory=org.gnome.Nautilus.desktop
 
 **Tip:** If you want the change to be system-wide, run the command above as root or create/edit the file `/usr/share/applications/mimeapps.list` and add the line there.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=403897](https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=403897)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=412081](https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=412081)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

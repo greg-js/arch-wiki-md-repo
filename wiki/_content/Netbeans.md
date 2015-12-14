@@ -27,7 +27,7 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/Netbeans "wikipedia:Netbe
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
+[Install](/index.php/Install "Install") the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
 
 ## Tips and tricks
 
@@ -115,7 +115,7 @@ $ ln -s /etc/xdg/qtchooser/4.conf ~/.config/qtchooser/default.conf
 
 See forum discussion [[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1374434#p1374434)]
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netbeans&oldid=409023](https://wiki.archlinux.org/index.php?title=Netbeans&oldid=409023)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netbeans&oldid=412136](https://wiki.archlinux.org/index.php?title=Netbeans&oldid=412136)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -21,7 +21,7 @@ Groove Basin works with your personal music library; not an external music servi
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [nodejs-groovebasin](https://aur.archlinux.org/packages/nodejs-groovebasin/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [nodejs-groovebasin](https://aur.archlinux.org/packages/nodejs-groovebasin/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 
@@ -73,7 +73,7 @@ location /groove/ {
 *   [Github Repository](https://github.com/andrewrk/groovebasin)
 *   [Screenshots](http://groovebasin.com/#screenshots)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Groovebasin&oldid=389760](https://wiki.archlinux.org/index.php?title=Groovebasin&oldid=389760)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Groovebasin&oldid=412092](https://wiki.archlinux.org/index.php?title=Groovebasin&oldid=412092)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

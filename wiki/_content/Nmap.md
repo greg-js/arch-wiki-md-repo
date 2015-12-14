@@ -45,7 +45,7 @@ _Nmap (“Network Mapper”) is an open source tool for network exploration and 
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [nmap](https://www.archlinux.org/packages/?name=nmap) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [nmap](https://www.archlinux.org/packages/?name=nmap) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 Nmap package comes with a GUI called `zenmap`, but this article will cover only command-line usage.
 
@@ -619,7 +619,7 @@ $ nmap -oN output.txt -oX output.xml scanme.nmap.org
 *   [Nmap Network Scanning book](http://nmap.org/book/)
 *   [Nmap on Wikipedia](https://en.wikipedia.org/wiki/Nmap "wikipedia:Nmap")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nmap&oldid=401108](https://wiki.archlinux.org/index.php?title=Nmap&oldid=401108)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nmap&oldid=412139](https://wiki.archlinux.org/index.php?title=Nmap&oldid=412139)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

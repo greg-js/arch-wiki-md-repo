@@ -51,7 +51,7 @@ To start developing in Haskell easily, one option is the [haskell-platform](http
 
 _The easiest way to get started with programming Haskell. It comes with all you need to get up and running. Think of it as "Haskell: batteries included"._
 
-Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-platform)]</sup>), the Haskell Platform can be advantageously replaced by [installing](/index.php/Pacman "Pacman") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
+Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-platform)]</sup>), the Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
 *   ghc ([ghc](https://www.archlinux.org/packages/?name=ghc)) — The compiler
 *   cabal-install ([cabal-install](https://www.archlinux.org/packages/?name=cabal-install)) — A command line interface for _Cabal_ and _Hackage_
@@ -172,7 +172,7 @@ It is possible to install a package system–wide with the `--global` flag, but 
 
 There is no easy way to do it.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell&oldid=392227](https://wiki.archlinux.org/index.php?title=Haskell&oldid=392227)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell&oldid=412095](https://wiki.archlinux.org/index.php?title=Haskell&oldid=412095)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

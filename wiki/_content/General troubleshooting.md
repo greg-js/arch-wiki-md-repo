@@ -109,7 +109,7 @@ See [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 
 ## Package management
 
-See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for general topics, and [Pacman/Package_signing#Troubleshooting](/index.php/Pacman/Package_signing#Troubleshooting "Pacman/Package signing") for issues with PGP keys.
+See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for general topics, and [pacman/Package signing#Troubleshooting](/index.php/Pacman/Package_signing#Troubleshooting "Pacman/Package signing") for issues with PGP keys.
 
 ## fuser
 
@@ -244,7 +244,7 @@ en_GB:aspell
 *   [Fix the Most Common Problems](http://www.maximumpc.com/article/features/linux_troubleshooting_guide_fix_most_common_problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411912](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411912)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411991](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411991)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

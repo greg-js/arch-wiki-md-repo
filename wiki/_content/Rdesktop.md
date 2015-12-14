@@ -39,7 +39,7 @@ Support for the additional features available in RDP 5.1 and RDP 6 (including mu
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [rdesktop](https://www.archlinux.org/packages/?name=rdesktop) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [rdesktop](https://www.archlinux.org/packages/?name=rdesktop) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 
@@ -158,7 +158,7 @@ See [Cursor themes#Supplying missing cursors](/index.php/Cursor_themes#Supplying
 *   [rdesktop official homepage](http://www.rdesktop.org/)
 *   [freerdp](https://www.archlinux.org/packages/?name=freerdp) a rdesktop fork that supports RDP 7.1 features including network level authentication (NLA). See also [[1]](http://askubuntu.com/a/97932/217269).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rdesktop&oldid=387937](https://wiki.archlinux.org/index.php?title=Rdesktop&oldid=387937)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rdesktop&oldid=412167](https://wiki.archlinux.org/index.php?title=Rdesktop&oldid=412167)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

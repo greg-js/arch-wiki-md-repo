@@ -137,7 +137,7 @@ EndSection
 ACTION=="add",SUBSYSTEM=="input",ATTR{name}=="TPPS/2 IBM TrackPoint",ATTR{device/sensitivity}="240"
 ```
 
-*   Touchpad can be used after [installing](/index.php/Pacman "Pacman") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
+*   Touchpad can be used after [installing](/index.php/Installing "Installing") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
     *   other Xorg Drivers can conflict with the synaptics driver causing an synclient error and unresponsiveness to Gnome Settings, this should be resolved by [removing](/index.php/Pacman "Pacman") [xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse)
 
 ## Other
@@ -156,7 +156,7 @@ video.use_native_backlight=0
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_W520&oldid=376878](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_W520&oldid=376878)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_W520&oldid=412121](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_W520&oldid=412121)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -233,7 +233,7 @@ Initialize pacman:
 
 ## Schroot
 
-[Install](/index.php/Pacman "Pacman") [schroot](https://www.archlinux.org/packages/?name=schroot) to the native **64-bit** installation:
+[Install](/index.php/Install "Install") [schroot](https://www.archlinux.org/packages/?name=schroot) to the native **64-bit** installation:
 
 Edit `/etc/schroot/schroot.conf`, and create an _[Arch32]_ section.
 
@@ -426,7 +426,7 @@ Simply make sure the `/var/run/cups` directory exists in the chroot environment 
 
 and printers should be available from 32-bit chroot applications immediately.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_bundled_32-bit_system_in_64-bit_system&oldid=404384](https://wiki.archlinux.org/index.php?title=Install_bundled_32-bit_system_in_64-bit_system&oldid=404384)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_bundled_32-bit_system_in_64-bit_system&oldid=412104](https://wiki.archlinux.org/index.php?title=Install_bundled_32-bit_system_in_64-bit_system&oldid=412104)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

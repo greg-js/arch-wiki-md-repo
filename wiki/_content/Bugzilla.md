@@ -24,7 +24,7 @@ Related articles
 
 ## Installation
 
-You can [install](/index.php/Pacman "Pacman") [bugzilla](https://www.archlinux.org/packages/?name=bugzilla) from the [official repositories](/index.php/Official_repositories "Official repositories").
+You can [install](/index.php/Install "Install") [bugzilla](https://www.archlinux.org/packages/?name=bugzilla) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 It requires a bunch of [perl](https://www.archlinux.org/packages/?name=perl) modules to be installed too, but some required modules still need to be installed manually
 
@@ -133,7 +133,7 @@ Access [http://server-domain-or-ip/bugzilla/](http://server-domain-or-ip/bugzill
 *   [bugzilla documentation](http://www.bugzilla.org/docs/)
 *   [http://blog.samsonis.me/2009/04/bugzilla-on-archlinux/](http://blog.samsonis.me/2009/04/bugzilla-on-archlinux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=388016](https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=388016)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=412047](https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=412047)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

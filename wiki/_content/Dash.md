@@ -17,7 +17,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [dash](https://www.archlinux.org/packages/?name=dash) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [dash](https://www.archlinux.org/packages/?name=dash) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Use DASH as default shell
 
@@ -71,7 +71,7 @@ NoExtract   = usr/bin/sh
 *   [https://launchpad.net/ubuntu/+spec/dash-as-bin-sh](https://launchpad.net/ubuntu/+spec/dash-as-bin-sh)
 *   [https://wiki.ubuntu.com/DashAsBinSh](https://wiki.ubuntu.com/DashAsBinSh)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dash&oldid=377759](https://wiki.archlinux.org/index.php?title=Dash&oldid=377759)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dash&oldid=412057](https://wiki.archlinux.org/index.php?title=Dash&oldid=412057)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

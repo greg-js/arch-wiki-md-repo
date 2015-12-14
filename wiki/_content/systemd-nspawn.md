@@ -109,7 +109,7 @@ then you can
 
 ```
 
-*   To customize the startup of a container, [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `systemd-nspawn@_MyContainer_` unit instance. See `systemd-nspawn(1)` for all options.
+*   To customize the startup of a container, [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `systemd-nspawn@_MyContainer_` unit instance. See `systemd-nspawn(1)` for all options.
 
 ### Building and Testing packages
 
@@ -254,7 +254,7 @@ Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container
 *   [Presentation by Lennart Pottering on systemd-nspawn](https://www.youtube.com/results?search_query=systemd-nspawn&aq=f)
 *   [Running Firefox in a systemd-nspawn container](http://dabase.com/e/12009/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=411193](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=411193)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412015](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412015)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

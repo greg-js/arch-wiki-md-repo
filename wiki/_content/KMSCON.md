@@ -90,11 +90,11 @@ You need to have [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejav
 
 *   You may want to add `hwaccel` to `/etc/kmscon/kmscon.conf` if you have problems with switching between [Xorg](/index.php/Xorg "Xorg") and kmscon.
 
-The file and folder are not part of the package and therefore have to be created manually. Another possibility would be [editing the systemd service file](/index.php/Systemd#Editing_provided_unit_files "Systemd").
+The file and folder are not part of the package and therefore have to be created manually. Another possibility would be [editing the systemd service file](/index.php/Systemd#Editing_provided_units "Systemd").
 
 *   As version 7, if you cannot control the audio, add your user to **audio** [group](/index.php/Group "Group"). Be aware of the [shortcomings](/index.php/Alsa#Installation "Alsa") of this choice.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KMSCON&oldid=409722](https://wiki.archlinux.org/index.php?title=KMSCON&oldid=409722)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KMSCON&oldid=411995](https://wiki.archlinux.org/index.php?title=KMSCON&oldid=411995)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

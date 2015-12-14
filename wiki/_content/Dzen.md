@@ -19,7 +19,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [dzen2](https://www.archlinux.org/packages/?name=dzen2) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories") which includes Xft, XPM, and Xinerama support.
+[Install](/index.php/Install "Install") the [dzen2](https://www.archlinux.org/packages/?name=dzen2) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories") which includes Xft, XPM, and Xinerama support.
 
 **Note:** Xft doesn't seem to work with the official package. Alternatively, you can install the [dzen2-xft-xpm-xinerama-git](https://aur.archlinux.org/packages/dzen2-xft-xpm-xinerama-git/)<sup><small>AUR</small></sup> package located in the [AUR](/index.php/AUR "AUR") with Xft, XPM and Xinerama support.
 
@@ -151,7 +151,7 @@ echo "hello world" | dzen2 -fn 'Times New Roman' -p
 
 *   2007-12-04 - Arch Linux - [dzen & xmobar Hacking Thread](https://bbs.archlinux.org/viewtopic.php?id=40637)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dzen&oldid=393582](https://wiki.archlinux.org/index.php?title=Dzen&oldid=393582)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dzen&oldid=412070](https://wiki.archlinux.org/index.php?title=Dzen&oldid=412070)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

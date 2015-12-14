@@ -380,7 +380,7 @@ From the Mosh [website](http://mosh.mit.edu/):
 
 Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. Mosh is a replacement for SSH. It is more robust and responsive, especially over slow connections such as Wi-Fi, cellular, and long-distance.
 
-[Install](/index.php/Pacman "Pacman") [mosh](https://www.archlinux.org/packages/?name=mosh) from the [official repositories](/index.php/Official_repositories "Official repositories") or the latest revision [mosh-git](https://aur.archlinux.org/packages/mosh-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [mosh](https://www.archlinux.org/packages/?name=mosh) from the [official repositories](/index.php/Official_repositories "Official repositories") or the latest revision [mosh-git](https://aur.archlinux.org/packages/mosh-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
 
 Mosh has an undocumented command line option `--predict=experimental` which produces more aggressive echoing of local keystrokes. Users interested in low-latency visual confirmation of keyboard input may prefer this prediction mode.
 
@@ -1060,7 +1060,7 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411856](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=411856)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=412172](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=412172)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

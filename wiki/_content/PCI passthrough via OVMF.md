@@ -521,7 +521,7 @@ For more information regarding this example see [this email at Red Hat's vfio-us
 
 [Synergy](http://synergy-project.org/) lets you easily share a single mouse and keyboard between multiple computers (even with different operating systems) without the need for special hardware. It is intended for users with multiple computers on their desk since each system uses its own monitor(s). See [Synergy](/index.php/Synergy "Synergy") arch wiki page for more information.
 
-To control the VM using Synergy, first [install](/index.php/Pacman "Pacman") the [synergy](https://www.archlinux.org/packages/?name=synergy) package.
+To control the VM using Synergy, first [install](/index.php/Install "Install") the [synergy](https://www.archlinux.org/packages/?name=synergy) package.
 
 Additionally, ensure that you are not passing your keyboard or mouse through to the VM, as the Synergy server will be running on the host and thus need access to those devices.
 
@@ -611,7 +611,7 @@ options kvm ignore_msrs=1
 *   [Example script from https://www.youtube.com/watch?v=37D2bRsthfI](http://pastebin.com/rcnUZCv7)
 *   [Complete tutorial for PCI passthrough](http://vfio.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=410602](https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=410602)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=412150](https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=412150)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

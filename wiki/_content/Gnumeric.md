@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installing
 
-[Install](/index.php/Pacman "Pacman") [gnumeric](https://www.archlinux.org/packages/?name=gnumeric) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [gnumeric](https://www.archlinux.org/packages/?name=gnumeric) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 Optional dependencies are [psiconv](https://www.archlinux.org/packages/?name=psiconv) (for Psion 5 file support), [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) (for python plugin support) and [yelp](https://www.archlinux.org/packages/?name=yelp) (for viewing the help manual).
 
@@ -41,7 +41,7 @@ To start Gnumeric with a different locale, just run
 
 *   [Gnumeric Official Website](http://projects.gnome.org/gnumeric/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=411370](https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=411370)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=412091](https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=412091)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

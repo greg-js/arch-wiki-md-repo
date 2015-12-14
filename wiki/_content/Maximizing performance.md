@@ -34,6 +34,7 @@ This article provides information on basic system diagnostics relating to perfor
             *   [2.5.1.1 Reiserfs](#Reiserfs)
     *   [2.6 Tuning kernel parameters](#Tuning_kernel_parameters)
     *   [2.7 Tuning IO schedulers](#Tuning_IO_schedulers)
+        *   [2.7.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
     *   [2.8 RAM disks](#RAM_disks)
     *   [2.9 USB storage devices](#USB_storage_devices)
 *   [3 CPU](#CPU)
@@ -172,6 +173,14 @@ There are several key tunables affecting the performance of block devices, see [
 
 ### Tuning IO schedulers
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** Theoretical background should be described at the top or the bottom, not in the middle. Use subsections to make the structure more clear. (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
+
 The kernel officially supports the following schedulers for storage disk in-/output (IO):
 
 *   [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing)
@@ -204,7 +213,35 @@ CFQ (the default scheduler nowadays) aggregates all ideas from above and adds `c
 
 The characteristics of a SSD are different. It does not have moving parts. Random access is as fast as sequential one. An SSD can handle multiple requests at the same time. Modern devices' throughput ~10K IO/s, which is higher than workload on most systems. Essentially a user cannot generate enough requests to saturate a SDD, the requests queue is effectively always empty. In this case IO scheduler does not provide any improvements. Thus, it is recommended to use the noop scheduler for an SSD.
 
-It is possible to change the scheduler at runtime and even to use different schedulers for separate storage devices at the same time. See [SSD IO scheduler](/index.php/Solid_State_Drives#I.2FO_Scheduler "Solid State Drives") for commands and examples.
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Bits below were restored from [[1]](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&diff=next&oldid=411764). The blk-mq scheduler discussed above may be activated differently. (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
+
+It is possible to change the scheduler at runtime and even to use different schedulers for separate storage devices at the same time. Available schedulers can be queried by viewing the contents of `/sys/block/sd**X**/queue/scheduler` (the active scheduler is denoted by brackets):
+
+ `$ cat /sys/block/sd**X**/queue/scheduler` 
+
+```
+noop deadline [cfq]
+
+```
+
+Users can change the active scheduler at runtime without the need to reboot, for example:
+
+```
+# echo noop > /sys/block/sd**X**/queue/scheduler
+
+```
+
+This method is non-persistent and will be lost upon rebooting.
+
+#### Kernel parameter (for a single device)
+
+If the sole storage device in the system is an SSD, consider setting the I/O scheduler for the entire system via the `elevator=noop` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 ### RAM disks
 
@@ -216,7 +253,7 @@ It is possible to change the scheduler at runtime and even to use different sche
 
 **Notes:** Post from 2009, check if still relevant (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
 
-See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=493773#p493773).
+See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=493773#p493773).
 
 ### USB storage devices
 
@@ -239,7 +276,7 @@ w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
 
 ```
 
-See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[3]](http://lwn.net/Articles/572911/).
+See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[3]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[4]](http://lwn.net/Articles/572911/).
 
 ## CPU
 
@@ -401,7 +438,7 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=411924](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=411924)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=411974](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=411974)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

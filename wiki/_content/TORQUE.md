@@ -32,7 +32,7 @@ Related articles
 
 **Note:** Although TORQUE is a very powerful queuing system, if the goal of the cluster is solely to increase compilation throughput, [distcc](/index.php/Distcc "Distcc") is a much easier and elegant solution.
 
-[Install](/index.php/Pacman "Pacman") the [torque](https://aur.archlinux.org/packages/torque/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/torque)]</sup> package found in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [torque](https://aur.archlinux.org/packages/torque/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/torque)]</sup> package found in the [AUR](/index.php/AUR "AUR").
 
 ## Must haves
 
@@ -322,7 +322,7 @@ localhost.localdomain:
 *   [TORQUE mailing lists](http://www.adaptivecomputing.com/support/download-center/torque-download/mailing-lists/) - The TORQUE community is very knowledgeable and a key asset.
 *   [TORQUE users mailing list archives](http://www.clusterresources.com/pipermail/torqueusers/) - Searchable archive of TORQUE-users.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TORQUE&oldid=408197](https://wiki.archlinux.org/index.php?title=TORQUE&oldid=408197)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TORQUE&oldid=412187](https://wiki.archlinux.org/index.php?title=TORQUE&oldid=412187)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

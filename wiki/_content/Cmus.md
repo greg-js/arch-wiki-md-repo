@@ -29,7 +29,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 # Installation
 
-[Install](/index.php/Pacman "Pacman") [cmus](https://www.archlinux.org/packages/?name=cmus), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [cmus](https://www.archlinux.org/packages/?name=cmus), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 Alternatively, there is also a development version available in the [AUR](/index.php/AUR "AUR") called [cmus-git](https://aur.archlinux.org/packages/cmus-git/)<sup><small>AUR</small></sup>.
 
@@ -171,7 +171,7 @@ Change settings. See configuration for further information.
 1.  [Git Repository](https://github.com/cmus/cmus)
 2.  [Website](https://cmus.github.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=398117](https://wiki.archlinux.org/index.php?title=Cmus&oldid=398117)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=412054](https://wiki.archlinux.org/index.php?title=Cmus&oldid=412054)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

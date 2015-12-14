@@ -29,7 +29,7 @@ Related articles
 
 ## Installation on Arch
 
-[Install](/index.php/Pacman "Pacman") [gparted](https://www.archlinux.org/packages/?name=gparted) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [gparted](https://www.archlinux.org/packages/?name=gparted) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Optional dependencies
 
@@ -234,7 +234,7 @@ You need rebuild package using following configuration:
 
 ./configure --enable-online-resize --enable-libparted-dmraid
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GParted&oldid=400641](https://wiki.archlinux.org/index.php?title=GParted&oldid=400641)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GParted&oldid=412086](https://wiki.archlinux.org/index.php?title=GParted&oldid=412086)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -15,7 +15,7 @@ $ rm -r /srv/http/adminer
 
 ```
 
-[Install](/index.php/Pacman "Pacman") [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and add the following line to `/etc/httpd/conf/httpd.conf`:
+[Install](/index.php/Install "Install") [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and add the following line to `/etc/httpd/conf/httpd.conf`:
 
 ## Configuration under Apache
 
@@ -57,7 +57,7 @@ Restart the [restart](/index.php/Restart "Restart") [apache](/index.php/Apache "
 *   [Official Adminer webpage](http://www.adminer.org/en/)
 *   [Author's weblog](http://php.vrana.cz/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=407001](https://wiki.archlinux.org/index.php?title=Adminer&oldid=407001)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=412032](https://wiki.archlinux.org/index.php?title=Adminer&oldid=412032)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -23,7 +23,7 @@ Xbindkeys is a program that enables us to bind commands to certain keys or key c
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") Xbindkeys with the package [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") Xbindkeys with the package [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 For those who prefer a GUI, there is the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR").
 
@@ -177,7 +177,7 @@ $ xbindkeys -n
 
 By pressing the non-working key, you will be able to see any error _xbindkeys_ encounter (e.g: mistyped command/keycode,...).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=399147](https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=399147)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=412217](https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=412217)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

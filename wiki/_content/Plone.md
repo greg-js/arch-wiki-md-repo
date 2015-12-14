@@ -18,7 +18,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [plone](https://aur.archlinux.org/packages/plone/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/plone)]</sup> from the [AUR](/index.php/AUR "AUR"). Please be aware, that the AUR package copies the Plone Unified Installer to `/opt/plone`, which is then run by Pacman upon initial install. The Unified Installer compiles and installs Plone in `/opt/plone`. The package provides a convenient way to quickly install and get up and running with Plone, as it handles the dependencies and bundles a systemd unit file.
+[Install](/index.php/Install "Install") package [plone](https://aur.archlinux.org/packages/plone/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/plone)]</sup> from the [AUR](/index.php/AUR "AUR"). Please be aware, that the AUR package copies the Plone Unified Installer to `/opt/plone`, which is then run by Pacman upon initial install. The Unified Installer compiles and installs Plone in `/opt/plone`. The package provides a convenient way to quickly install and get up and running with Plone, as it handles the dependencies and bundles a systemd unit file.
 
 Note, that Plone site version upgrades are not handled by [Pacman](/index.php/Pacman "Pacman") using the AUR package, because the files in `/opt/plone` are not managed by Pacman directly. Re-running the installer is not the recommended way to upgrade Plone (see below for instructions on how to upgrade a Plone site).
 
@@ -118,7 +118,7 @@ For more information on upgrades, especially between major versions of Plone rea
 *   [Official Documentation](http://plone.org/documentation)
 *   [Plone Wikipedia Article](https://en.wikipedia.org/wiki/Plone_(software) "wikipedia:Plone (software)")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Plone&oldid=392571](https://wiki.archlinux.org/index.php?title=Plone&oldid=392571)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Plone&oldid=412155](https://wiki.archlinux.org/index.php?title=Plone&oldid=412155)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

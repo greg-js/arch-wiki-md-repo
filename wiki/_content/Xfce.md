@@ -582,7 +582,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 Most applications rely on [xdg-open](/index.php/Xdg-open "Xdg-open") for opening a preferred application for a given file or URL.
 
-In order for xdg-open and xdg-settings to detect and integrate with the Xfce desktop environment correctly, you need to [install](/index.php/Pacman "Pacman") the [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
+In order for xdg-open and xdg-settings to detect and integrate with the Xfce desktop environment correctly, you need to [install](/index.php/Install "Install") the [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
 
 If you do not do that, your preferred applications preferences (set by exo-preferred-applications) will not be obeyed. Installing the package and allowing _xdg-open_ to detect that you are running Xfce makes it forward all calls to _exo-open_ instead, which correctly uses all your preferred applications preferences.
 
@@ -653,7 +653,7 @@ Note that each time the laptop lid settings are changed in the power manager, th
 *   [Xfce Wikia](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) - How to edit the auto generated menu with the menu editor
 *   [Xfce Wiki](http://wiki.xfce.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=410313](https://wiki.archlinux.org/index.php?title=Xfce&oldid=410313)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=412219](https://wiki.archlinux.org/index.php?title=Xfce&oldid=412219)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

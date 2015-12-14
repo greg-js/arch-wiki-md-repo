@@ -180,6 +180,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Packaging
 *   Timothy Redaelli
 *   Xyne
+    *   Packaging
+    *   Forum Moderation
 *   Михаил Страшун
     *   Packaging (dlang group only)
 
@@ -199,8 +201,12 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Jason Ryan
     *   Forum Administration and Moderation
     *   Wiki Administration
+*   Jesse McClure (Trilby)
+    *   Forum moderation
 *   Levente Polyak
     *   See above (TU)
+*   Phillip Smith (fukawi2)
+    *   Forum Moderation
 *   Remi Gacogne
     *   Security team
     *   Reproducible builds
@@ -208,8 +214,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   WorMzy Tykashi
     *   Forum moderation
 *   Xyne
+    *   Packaging
+    *   Forum Moderation
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411945](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=411945)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=412235](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=412235)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

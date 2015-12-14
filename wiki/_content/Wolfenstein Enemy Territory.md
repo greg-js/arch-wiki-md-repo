@@ -82,7 +82,7 @@ To execute the CFG file:
 
 Enemy Territory was developed during a time when [OSS](/index.php/OSS "OSS") was still the 'official' Linux's sound system but was superseded by [ALSA](/index.php/ALSA "ALSA"). As a result, Enemy Territory might not be able to emit sound.
 
-This problem can be solved by installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/)<sup><small>AUR</small></sup>. If you are using an x86_64 architecture, you might need to [install](/index.php/Pacman "Pacman") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) before installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/)<sup><small>AUR</small></sup>. Once et-sdl-sound is installed, you can launch the game using the following command:
+This problem can be solved by installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/)<sup><small>AUR</small></sup>. If you are using an x86_64 architecture, you might need to [install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) before installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/)<sup><small>AUR</small></sup>. Once et-sdl-sound is installed, you can launch the game using the following command:
 
 ```
 $ enemy-territory.sdl
@@ -147,7 +147,7 @@ To fix it:
 2.  Append the following line: `seta com_hunkMegs 192    // sets the allowed memory for the graphics of the game` 
 3.  Execute the CFG and restart ET.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wolfenstein:_Enemy_Territory&oldid=390432](https://wiki.archlinux.org/index.php?title=Wolfenstein:_Enemy_Territory&oldid=390432)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wolfenstein:_Enemy_Territory&oldid=412215](https://wiki.archlinux.org/index.php?title=Wolfenstein:_Enemy_Territory&oldid=412215)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

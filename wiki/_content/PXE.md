@@ -58,7 +58,7 @@ Bring up your wired NIC, and assign it an address appropriately.
 
 You will need both a DHCP and TFTP server to configure networking on the install target and to facilitate the transfer of files between the PXE server and client; dnsmasq does both, and is extremely easy to set up.
 
-[Install](/index.php/Pacman "Pacman") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 Configure dnsmasq:
 
@@ -83,7 +83,7 @@ Start the `dnsmasq` [systemd service](/index.php/Systemctl#Using_units "Systemct
 
 Thanks to recent changes in [archiso](/index.php/Archiso "Archiso"), it is now possible to boot from HTTP (archiso_pxe_http initcpio hook) or NFS (archiso_pxe_nfs initcpio hook); among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
 
-First, [install](/index.php/Pacman "Pacman") [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) from [official repositories](/index.php/Official_repositories "Official repositories").
+First, [install](/index.php/Install "Install") [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 Then start [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) using our `/mnt/archiso` as the document root:
 
@@ -218,7 +218,7 @@ It highly recommended to leave this option alone, and should only be disabled if
 
 **Note:** As this requires loop-mounting squashfs from a mounted remote filesystem, `copytoram=n` and `[archiso_pxe_http](#HTTP)` are mutually exclusive.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PXE&oldid=411389](https://wiki.archlinux.org/index.php?title=PXE&oldid=411389)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PXE&oldid=412151](https://wiki.archlinux.org/index.php?title=PXE&oldid=412151)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

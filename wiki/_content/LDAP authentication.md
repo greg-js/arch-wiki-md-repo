@@ -170,7 +170,7 @@ $ ldapadd -D "cn=Manager,dc=example,dc=org" -W -f user_joe.ldif
 
 Install the OpenLDAP client as described in [OpenLDAP](/index.php/OpenLDAP "OpenLDAP"). Make sure you can query the server with `ldapsearch`.
 
-Next, [install](/index.php/Pacman "Pacman") [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Next, [install](/index.php/Install "Install") [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### NSS Configuration
 
@@ -459,7 +459,7 @@ Once you have logged in with a user the credentials will be cached and you will 
 *   [Discussion on suse's mailing lists about nss-pam-ldapd](http://readlist.com/lists/suse.com/suse-linux-e/36/182642.html)
 *   [Fedora's SSSD User Guide](https://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/chap-SSSD_User_Guide-Introduction.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=379561](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=379561)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=412118](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=412118)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

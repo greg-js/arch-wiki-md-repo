@@ -154,7 +154,7 @@ This method uses the MacBook's native EFI bootloader, i.e. the one the can be re
 
 At the end of the Arch Linux install process we would normally install GRUB (or a variation) to a partition on the drive. For this method we will place a `boot.efi` file on an extra partition used by the MacBook's native bootloader.
 
-First, [install](/index.php/Pacman "Pacman") the [grub](https://www.archlinux.org/packages/?name=grub) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Make sure to follow the steps for setting up grub on a partition using the `grub-install` and `grub-mkconfig` commands, like normal. We will use the config file that `grub-mkconfig` creates to generate a standalone `boot.efi` file using the `grub-mkstandalone` command, then we will wipe your just-created grub partition and set it up for Mac's native bootloader (or you can simply create a new partition and leave the grub partition alone, it is up to you).
+First, [install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Make sure to follow the steps for setting up grub on a partition using the `grub-install` and `grub-mkconfig` commands, like normal. We will use the config file that `grub-mkconfig` creates to generate a standalone `boot.efi` file using the `grub-mkstandalone` command, then we will wipe your just-created grub partition and set it up for Mac's native bootloader (or you can simply create a new partition and leave the grub partition alone, it is up to you).
 
 When generating a grub config file, GRUB looks to `/etc/default/grub` for its configuration. Edit the parameter `GRUB_CMDLINE_LINUX_DEFAULT` to look something like this:
 
@@ -611,7 +611,7 @@ Updated 2015-04-08
 *   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
 *   [MacBook](/index.php/MacBook "MacBook")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=409485](https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=409485)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=412128](https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=412128)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -19,7 +19,7 @@ Gcin is a new generation of Chinese input method server developed by Edward Liu.
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [gcin](https://www.archlinux.org/packages/?name=gcin) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [gcin](https://www.archlinux.org/packages/?name=gcin) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Installing other input tables
 
@@ -92,7 +92,7 @@ gcin &
 1.  If you run wine or Crossover Office, it's better to use Windows 2000 emulation instead of Windows 98, and you have to start gcin and wine/cxoffice with at least LC_CTYPE=zh_TW.utf8, otherwise wine won't be able to show Chinese correctly.
 2.  In wine+IE6 with Windows 98 emulation, LC_CTYPE isn't enough if you want to input Chinese on the web-pages - you have to set either LANG or LC_ALL to zh_TW.utf8, which slows down wine a lot. However, you can always type Chinese in the location bar or other places and paste it.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gcin&oldid=374382](https://wiki.archlinux.org/index.php?title=Gcin&oldid=374382)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gcin&oldid=412088](https://wiki.archlinux.org/index.php?title=Gcin&oldid=412088)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

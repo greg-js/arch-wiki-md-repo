@@ -36,7 +36,7 @@ See also [Apache](/index.php/Apache "Apache").
 
 ### Installation
 
-[Install](/index.php/Pacman "Pacman") [wtorrent-svn](https://aur.archlinux.org/packages/wtorrent-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wtorrent-svn)]</sup> and its the dependencies: [rtorrent](https://www.archlinux.org/packages/?name=rtorrent), [apache](https://www.archlinux.org/packages/?name=apache), [php](https://www.archlinux.org/packages/?name=php), [php-apache](https://www.archlinux.org/packages/?name=php-apache), [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite), [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [wtorrent-svn](https://aur.archlinux.org/packages/wtorrent-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wtorrent-svn)]</sup> and its the dependencies: [rtorrent](https://www.archlinux.org/packages/?name=rtorrent), [apache](https://www.archlinux.org/packages/?name=apache), [php](https://www.archlinux.org/packages/?name=php), [php-apache](https://www.archlinux.org/packages/?name=php-apache), [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite), [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/)<sup><small>AUR</small></sup>.
 
 ### Configuration
 
@@ -150,7 +150,7 @@ Include conf/extra/php5_module.conf
 
 And make sure that `SCGIMount /RPC2 127.0.0.1:5000` is added after the Supplemental configuration section.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=WTorrent&oldid=406908](https://wiki.archlinux.org/index.php?title=WTorrent&oldid=406908)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=WTorrent&oldid=412209](https://wiki.archlinux.org/index.php?title=WTorrent&oldid=412209)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

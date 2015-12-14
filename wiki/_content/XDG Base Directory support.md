@@ -1455,7 +1455,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <tr>
 
-<td>[sqlite](/index.php/Sqlite "Sqlite")</td>
+<td>[SQLite](/index.php/SQLite "SQLite")</td>
 
 <td>`~/.sqlite_history`</td>
 
@@ -1625,7 +1625,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <tr>
 
-<td>[cups](/index.php/Cups "Cups")</td>
+<td>[CUPS](/index.php/CUPS "CUPS")</td>
 
 <td>`~/.cups`</td>
 
@@ -1686,7 +1686,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=410610](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=410610)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412023](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412023)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

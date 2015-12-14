@@ -19,7 +19,7 @@ Uwsgi is a fast, self-healing and developer/sysadmin-friendly application contai
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") package [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) in the [official repositories](/index.php/Official_repositories "Official repositories"). Note, the package does not come with plugins as it is just a compact package. External plugins have to be installed separately. It is a very efficient software due to the reason it is written in C. There are alternatives written in Python like gunicorn, but they are slower inherently.
+[Install](/index.php/Install "Install") package [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) in the [official repositories](/index.php/Official_repositories "Official repositories"). Note, the package does not come with plugins as it is just a compact package. External plugins have to be installed separately. It is a very efficient software due to the reason it is written in C. There are alternatives written in Python like gunicorn, but they are slower inherently.
 
 ## Starting service
 
@@ -284,7 +284,7 @@ At this point your application should be served, issue `127.0.0.1` on your brows
 *   [Flask with uwsgi and nginx video](http://www.youtube.com/watch?v=tD6UCfPCVLA)
 *   [Apache and uwsgi](http://uwsgi-docs.readthedocs.org/en/latest/Apache.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Uwsgi&oldid=388063](https://wiki.archlinux.org/index.php?title=Uwsgi&oldid=388063)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Uwsgi&oldid=412202](https://wiki.archlinux.org/index.php?title=Uwsgi&oldid=412202)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

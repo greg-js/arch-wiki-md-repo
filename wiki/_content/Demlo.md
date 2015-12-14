@@ -16,7 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") the [demlo](https://aur.archlinux.org/packages/demlo/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [demlo](https://aur.archlinux.org/packages/demlo/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -97,7 +97,7 @@ See `demlo -h` and the demlo(1) man page.
 *   [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?id=186890)
 *   [Development page](https://bitbucket.org/ambrevar/demlo)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Demlo&oldid=389788](https://wiki.archlinux.org/index.php?title=Demlo&oldid=389788)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Demlo&oldid=412062](https://wiki.archlinux.org/index.php?title=Demlo&oldid=412062)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

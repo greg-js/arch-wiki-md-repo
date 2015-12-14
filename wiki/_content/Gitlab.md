@@ -783,7 +783,7 @@ Finally, (re)start the `gitlab.target`, `resque.target` and `nginx.service`.
 
 #### Apache and unicorn
 
-[Install](/index.php/Pacman "Pacman") [apache](https://www.archlinux.org/packages/?name=apache) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [apache](https://www.archlinux.org/packages/?name=apache) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ##### Configure Unicorn
 
@@ -1072,7 +1072,7 @@ ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_s
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=410880](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=410880)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412090](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412090)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

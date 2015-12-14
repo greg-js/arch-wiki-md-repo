@@ -34,7 +34,7 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
 
 ## Installation
 
-Web can be installed by [installing](/index.php/Pacman "Pacman") the [epiphany](https://www.archlinux.org/packages/?name=epiphany) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want to save login passwords, install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
+Web can be installed by [installing](/index.php/Install "Install") the [epiphany](https://www.archlinux.org/packages/?name=epiphany) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want to save login passwords, install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
 
 ## Configuration
 
@@ -87,7 +87,7 @@ and populate it with URLs in a semicolon formatted list. On next startup, the ap
 
 *   [Apps/Web - GNOME Wiki!](https://wiki.gnome.org/Apps/Web)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME/Web&oldid=403594](https://wiki.archlinux.org/index.php?title=GNOME/Web&oldid=403594)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME/Web&oldid=412083](https://wiki.archlinux.org/index.php?title=GNOME/Web&oldid=412083)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

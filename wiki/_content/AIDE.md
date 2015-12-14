@@ -22,7 +22,7 @@ AIDE only does file integrity checks. It does not check for rootkits or parse lo
 
 ### Installation
 
-[Install](/index.php/Pacman "Pacman") [aide](https://www.archlinux.org/packages/?name=aide) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [aide](https://www.archlinux.org/packages/?name=aide) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Configuration
 
@@ -75,7 +75,7 @@ Since the database is stored on the root filesystem, attackers can easily modify
 *   [Gentoo Docs - Intrusion detection](http://www.gentoo.org/doc/en/security/security-handbook.xml?part=1&chap=13#doc_chap1)
 *   [Samhain Labs - file integrity checkers](http://www.la-samhna.de/library/scanners.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AIDE&oldid=409787](https://wiki.archlinux.org/index.php?title=AIDE&oldid=409787)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AIDE&oldid=412026](https://wiki.archlinux.org/index.php?title=AIDE&oldid=412026)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

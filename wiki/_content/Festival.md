@@ -28,7 +28,7 @@ Festival offers a general framework for building speech synthesis systems as wel
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [festival](https://www.archlinux.org/packages/?name=festival) from [official repositories](/index.php/Official_repositories "Official repositories"). You need a voice package like [festival-english](https://www.archlinux.org/packages/?name=festival-english) or [festival-us](https://www.archlinux.org/packages/?name=festival-us). Further languages are available in official repositories and in [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [festival](https://www.archlinux.org/packages/?name=festival) from [official repositories](/index.php/Official_repositories "Official repositories"). You need a voice package like [festival-english](https://www.archlinux.org/packages/?name=festival-english) or [festival-us](https://www.archlinux.org/packages/?name=festival-us). Further languages are available in official repositories and in [AUR](/index.php/AUR "AUR").
 
 Test festival:
 
@@ -318,7 +318,7 @@ Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 
 *   [Festival manual](http://www.cstr.ed.ac.uk/projects/festival/manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Festival&oldid=404435](https://wiki.archlinux.org/index.php?title=Festival&oldid=404435)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Festival&oldid=412078](https://wiki.archlinux.org/index.php?title=Festival&oldid=412078)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

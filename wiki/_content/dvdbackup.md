@@ -24,7 +24,7 @@ There are several ways to backup DVD videos; see [DVD Ripping](/index.php/DVD_Ri
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 [dvdauthor](https://www.archlinux.org/packages/?name=dvdauthor) is available in the official repositories, but it is only required if backing up specific titles or title sets.
 
@@ -209,7 +209,7 @@ $ growisofs -dvd-video -udf -Z /dev/dvd ~/_movie_name_
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dvdbackup&oldid=389790](https://wiki.archlinux.org/index.php?title=Dvdbackup&oldid=389790)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dvdbackup&oldid=412068](https://wiki.archlinux.org/index.php?title=Dvdbackup&oldid=412068)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

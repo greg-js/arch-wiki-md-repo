@@ -88,7 +88,7 @@ $ transmission-remote --exit
 
 [Enable](/index.php/Enable "Enable") `transmission.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
-The daemon is started after `network.service` was initialised. However, if you enable the service `dhcpcd` as opposed to the device-specific service, such as `dhcpcd@enp1s0.service` for example, it may happen that Transmission is started too early and cannot bind to the network interface. Thus, the web interface is unreachable. A possible solution is to add the `Requires` line to the unit's [configuration file](/index.php/Systemd#Editing_provided_unit_files "Systemd"):
+The daemon is started after `network.service` was initialised. However, if you enable the service `dhcpcd` as opposed to the device-specific service, such as `dhcpcd@enp1s0.service` for example, it may happen that Transmission is started too early and cannot bind to the network interface. Thus, the web interface is unreachable. A possible solution is to add the `Requires` line to the unit's [configuration file](/index.php/Systemd#Editing_provided_units "Systemd"):
 
  `/etc/systemd/system/transmission.service.d/fixdep.conf` 
 
@@ -186,7 +186,7 @@ By default, _transmission_ creates a user and a group `transmission`, with its h
 
 *   Under the user's own user name.
 
-To set this up, [override](/index.php/Systemd#Editing_provided_unit_files "Systemd") the provided service file and specify your username:
+To set this up, [override](/index.php/Systemd#Editing_provided_units "Systemd") the provided service file and specify your username:
 
  `/etc/systemd/system/transmission.service.d/username.conf` 
 
@@ -258,7 +258,7 @@ To load the new configuration run `# sysctl --system` and then reload Transmissi
 *   [Transmission wiki](https://trac.transmissionbt.com/wiki)
 *   [HeadlessUsage](https://trac.transmissionbt.com/wiki/HeadlessUsage/General)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Transmission&oldid=408030](https://wiki.archlinux.org/index.php?title=Transmission&oldid=408030)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Transmission&oldid=412020](https://wiki.archlinux.org/index.php?title=Transmission&oldid=412020)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -103,7 +103,7 @@ Add the working ones to configuration files in `/etc/modules-load.d` according t
 
 ## Getting information
 
-To read out battery information, you can simply [install](/index.php/Pacman "Pacman") the package [acpi](https://www.archlinux.org/packages/?name=acpi) in the [official repositories](/index.php/Official_repositories "Official repositories") and run:
+To read out battery information, you can simply [install](/index.php/Install "Install") the package [acpi](https://www.archlinux.org/packages/?name=acpi) in the [official repositories](/index.php/Official_repositories "Official repositories") and run:
 
 ```
 acpi -i
@@ -146,7 +146,7 @@ If notebook does not start, just remove the AC adapter and battery for 5 seconds
 
 *   [Wikipedia:Advanced Configuration and Power Interface](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ACPI_modules&oldid=362958](https://wiki.archlinux.org/index.php?title=ACPI_modules&oldid=362958)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ACPI_modules&oldid=412025](https://wiki.archlinux.org/index.php?title=ACPI_modules&oldid=412025)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -24,7 +24,7 @@ The _fuseiso_ command line program is a simple tool that uses [FUSE](https://en.
 
 ## Installation
 
-[Install](/index.php/Pacman "Pacman") [fuseiso](https://www.archlinux.org/packages/?name=fuseiso) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [fuseiso](https://www.archlinux.org/packages/?name=fuseiso) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Basic functions
 
@@ -110,7 +110,7 @@ This second action will unmount the mounted iso and remove the folder from the d
 
 Sometimes you have to logout to be able to mount any image of the given types simply by right clicking it in Files and selecting _Mount ISO_. To unmount it again, just right click the corresponding folder on your desktop and select _Unmount ISO_.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=411328](https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=411328)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=412080](https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=412080)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

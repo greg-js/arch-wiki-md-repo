@@ -74,7 +74,7 @@ See [Chrome OS devices#Alternative installation, Install Arch Linux in addition 
 
 [Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> package for Linux 4.1 support. You will need to regenerate your GRUB configuration after installing linux-samus4\. See [[2]](https://github.com/raphael/linux-4.1-samus) for information on how to enable audio and microphone support.
 
-If the `linux-samus4` kernel hangs after `Loading initial ramdisk...` and you have an encrypted disk then try adding `i915` to `MODULES` in `/etc/mkinitcpio.conf` according to [Intel_graphics](/index.php/Intel_graphics "Intel graphics") and then run `mkinitcpio -p linux-samus4` to regenerate the image.
+If the `linux-samus4` kernel hangs after `Loading initial ramdisk...` and you have an encrypted disk then try adding `i915` to `MODULES` in `/etc/mkinitcpio.conf` according to [Intel graphics](/index.php/Intel_graphics "Intel graphics") and then run `mkinitcpio -p linux-samus4` to regenerate the image.
 
 ### Linux 3.19
 
@@ -109,7 +109,7 @@ $ xmodmap -e "keycode 133 = Tab Tab Tab Tab Tab Tab"
 
 Add this to your .xinitrc to load at login.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=411012](https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=411012)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=411980](https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=411980)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
