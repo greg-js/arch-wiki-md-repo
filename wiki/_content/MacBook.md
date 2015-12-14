@@ -448,7 +448,7 @@ Some models may need EFI_ARCH set to i386.
 
         **Warning:** Do not install GRUB onto _/dev/sda_ !!! Doing so is likely to lead to an unstable post-environment.
 
-    *   In the [configure system](/index.php/Installation_guide#Configure_System "Installation guide") stage, edit /etc/mkinitcpio.conf and add the **usbinput** hook to the **HOOKS** line somewhere after the **autodetect** hook. This will load the drivers for your keyboard in case you need to use it before Arch boots (e.g. entering a [LUKS](/index.php/LUKS "LUKS") password or using the troubleshooting shell).
+    *   In the [configure system](/index.php/Installation_guide#Configure_System "Installation guide") stage, edit /etc/mkinitcpio.conf and ensure the **keyboard** hook is in the **HOOKS** line somewhere after the **autodetect** hook. This will load the drivers for your keyboard in case you need to use it before Arch boots (e.g. entering a [LUKS](/index.php/LUKS "LUKS") password or using the troubleshooting shell).
 
 *   When the install process is complete, reboot your computer.
 
@@ -1595,7 +1595,7 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=409633](https://wiki.archlinux.org/index.php?title=MacBook&oldid=409633)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=412251](https://wiki.archlinux.org/index.php?title=MacBook&oldid=412251)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

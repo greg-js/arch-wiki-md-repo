@@ -714,8 +714,9 @@ and use `__git_ps1` inside `PS1` or `PROMPT_COMMAND`. See [Don't Reinvent the Wh
 *   [Bash Prompt HOWTO](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html)
 *   [Giles Orr's collection of sample prompts](http://gilesorr.com/bashprompt/prompts/index.html)
 *   [Bash tips: Colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
+*   [Liquid Prompt — a useful adaptive prompt for Bash & zsh](https://github.com/nojhan/liquidprompt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=408799](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=408799)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=412243](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=412243)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

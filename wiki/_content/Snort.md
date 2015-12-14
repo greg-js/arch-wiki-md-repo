@@ -46,14 +46,14 @@ _Snort® is an open source network intrusion prevention and detection system ([I
 *   A Snort setup that sniffs WAN <-> LAN is more difficult to use. It does not show you which computer triggered the alert, and it requires you to set HOME_NET as your WAN IP address, which can change if your modem uses DHCP.
 *   Snort will bridge the two interfaces for you, you will not need to configure this.
 
-You can use Snort to sniff wireless traffic with two routers. For simplicity I will call the router with _DHCP on and wireless off_ "router A" and the router with _wireless on and DHCP off_ "router B".
+You can use Snort to sniff wireless traffic with two routers. For simplicity the router with _DHCP on and wireless off_ will be called "router A" and the router with _wireless on and DHCP off_ "router B".
 
 *   Ensure the routers do not have the same IP address, but are on the same subnet.
 *   If the machine running Snort is configured for inline mode, you will need 3 network interface cards. One for management, one for incoming traffic, and one for outgoing traffic.
 *   Connect a ethernet cord from router B to a spare NIC on the Snort machine.
 *   Connect another ethernet cord from router A to a spare NIC on the Snort machine.
 *   Once Snort is running traffic should flow from router B <-> Snort machine <-> router A <-> internet.
-*   If you are not using inline mode, then the traffic will need to be forwarded to the Snort machine, see: [Port Mirroring](https://en.wikipedia.org/wiki/Port_mirroring)
+*   If you are not using inline mode, then the traffic will need to be forwarded to the Snort machine, see: [Port Mirroring](https://en.wikipedia.org/wiki/Port_mirroring "wikipedia:Port mirroring")
 
 ## Installation
 
@@ -89,7 +89,7 @@ config daq_var:  buffer_size_mb=1024
 
 ```
 
-I have also uploaded a my `snort.conf` to [pastebin](http://pastebin.com/xNuVtni3) if you want to see a working example of inline mode.
+A working example of inline mode in `snort.conf` is also available on [pastebin](http://pastebin.com/xNuVtni3).
 
 Then ensure your service file `/usr/lib/systemd/system/snort@.service` has the correct arguments for inline mode. This meant adding `-Q` to the service file. Also Snort advises you to turn off LRO and GRO, [source](http://manual.snort.org/node7.html).
 
@@ -232,7 +232,7 @@ Create an executable script with the exact command and place it in /etc/cron.dai
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Router](/index.php/Router "Router")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Snort&oldid=411939](https://wiki.archlinux.org/index.php?title=Snort&oldid=411939)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Snort&oldid=412239](https://wiki.archlinux.org/index.php?title=Snort&oldid=412239)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

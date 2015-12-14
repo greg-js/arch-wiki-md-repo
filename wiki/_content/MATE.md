@@ -210,7 +210,7 @@ Additional packages need to be installed to take advantage of some of Caja's adv
 
 ### GTK+ 3 version
 
-An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/) and [mate-extra-gtk3](https://www.archlinux.org/groups/x86_64/mate-extra-gtk3/) groups. While it works mostly, there are some known issues with [caja](https://github.com/mate-desktop/caja/milestones/Gtk+3), [eom](https://github.com/mate-desktop/eom/milestones/Gtk+3) [marco](https://github.com/mate-desktop/marco/milestones/Gtk+3), [mate-applets](https://github.com/mate-desktop/mate-applets/milestones/Gtk+3), [mate-control-center](https://github.com/mate-desktop/mate-control-center/milestones/Gtk+3), [mate-netbook](https://github.com/mate-desktop/mate-netbook/issues/26), [mate-notification-daemon](https://github.com/mate-desktop/mate-notification-daemon/milestones/Gtk+3), [mate-panel](https://github.com/mate-desktop/mate-panel/milestones/Gtk+3), [mate-terminal](https://github.com/mate-desktop/mate-terminal/milestones/Gtk+3) and [pluma](https://github.com/mate-desktop/pluma/milestones/Gtk+3).
+An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/) and [mate-extra-gtk3](https://www.archlinux.org/groups/x86_64/mate-extra-gtk3/) groups. While it works mostly, there are some known issues with [caja](https://github.com/mate-desktop/caja/milestones/Gtk+3), [eom](https://github.com/mate-desktop/eom/milestones/Gtk+3), [marco](https://github.com/mate-desktop/marco/milestones/Gtk+3), [mate-applets](https://github.com/mate-desktop/mate-applets/milestones/Gtk+3), [mate-control-center](https://github.com/mate-desktop/mate-control-center/milestones/Gtk+3), [mate-netbook](https://github.com/mate-desktop/mate-netbook/milestones/Gtk+3), [mate-notification-daemon](https://github.com/mate-desktop/mate-notification-daemon/milestones/Gtk+3), [mate-panel](https://github.com/mate-desktop/mate-panel/milestones/Gtk+3) and [pluma](https://github.com/mate-desktop/pluma/milestones/Gtk+3).
 
 ## Starting MATE
 
@@ -549,7 +549,7 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 *   [_MATE desktop screenshots_](http://mate-desktop.org/gallery/1.8/)
 *   [_The MATE Desktop Environment_](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MATE&oldid=409465](https://wiki.archlinux.org/index.php?title=MATE&oldid=409465)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MATE&oldid=412249](https://wiki.archlinux.org/index.php?title=MATE&oldid=412249)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

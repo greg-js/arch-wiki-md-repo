@@ -19,6 +19,7 @@ Related articles
 *   [5 Using Guake on multiple monitors](#Using_Guake_on_multiple_monitors)
 *   [6 Throubleshooting](#Throubleshooting)
     *   [6.1 'Ctrl' keybind problem](#.27Ctrl.27_keybind_problem)
+    *   [6.2 In Floating WM](#In_Floating_WM)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -139,11 +140,20 @@ As of [guake](https://www.archlinux.org/packages/?name=guake) 0.4.2-7 there has 
 
 To solve the problem you should manually fix the value of the GConf key `/apps/guake/keybindings/global/show_hide`. Open a _gconf-editor_, navigate to _apps > guake > keybindings > global > show_hide_ and replace `<Primary>` with `<Control>`.
 
+### In Floating WM
+
+If you are using Tilda and a floating WM, you may find out that you can use class string "Tilda" to set the window keep floating. But that Guake's WM_CLASS(STRING)'s out put is "Main.py", so you should use "Main.py" to do this. For example, in i3wm, add this to your .i3/config:
+
+```
+for_window [class="Main.py"] floating enable
+
+```
+
 ## See also
 
 *   [man guake(1)](http://linux.die.net/man/1/guake) on die.net
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Guake&oldid=363492](https://wiki.archlinux.org/index.php?title=Guake&oldid=363492)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Guake&oldid=412246](https://wiki.archlinux.org/index.php?title=Guake&oldid=412246)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

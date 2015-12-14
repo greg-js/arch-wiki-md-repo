@@ -183,9 +183,9 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 ### GNOME applications in Wayland
 
-Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND=wayland <command>`.
+Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND='wayland,x11' <command>`.
 
-**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work - _gnome-session_ will exit immediately.
+**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work - _gnome-session_ will exit immediately. Instead, use `export GDK_BACKEND='wayland,x11'` in your bash profile, or use `env GDK_BACKEND='wayland,x11' gnome-session --session=gnome-wayland` on the command line. But in general, neither of these environment settings are necessary, and running `gnome-session` with the `--session=gnome-wayland` switch is sufficient. Without the `GDK_BACKEND` environment variable, the GNOME Application must be "Wayland aware" to run as a Wayland application, or default to running on Xwayland otherwise. See also `GDK_BACKEND` under GNOME [Environment variables](https://developer.gnome.org/gtk3/stable/gtk-running.html).
 
 See the following page for the status of [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
 
@@ -1122,7 +1122,7 @@ The dash is the "toolbar" that appears, by default, [on the left](https://en.wik
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME&oldid=411267](https://wiki.archlinux.org/index.php?title=GNOME&oldid=411267)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME&oldid=412237](https://wiki.archlinux.org/index.php?title=GNOME&oldid=412237)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
