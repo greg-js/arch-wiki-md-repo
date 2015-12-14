@@ -189,10 +189,10 @@ Try to change `kernel.io_delay_type` (x86 only):
 *   The [sysctl(8)](http://linux.die.net/man/8/sysctl) and [sysctl.conf(5)](http://www.unixlore.net/cgi-bin/man/man2html?5+sysctl.conf) man pages
 *   Linux kernel documentation (`<kernel source dir>/Documentation/sysctl/`)
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
-*   SysCtl.conf Tweaked for Security and Cable Speed (Broken Link) [[1]](http://blog.gotux.net/code/config/sysctl/)
+*   SysCtl.conf Tweaked for Security and Cable Speed [[1]](http://blog.gotux.net/code/config/sysctl/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-12-14]</sup>
 *   Kernel network parameters for sysctl [[2]](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412255](https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412255)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412288](https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412288)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

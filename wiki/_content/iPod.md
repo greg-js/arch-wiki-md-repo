@@ -209,7 +209,7 @@ By default, neither the iPhone nor the iPod Touch present mass storage capabilit
 
 The first is to mount your device through the FUSE file system SSHFS. This requires jailbreaking, which can be done on any major OS using e.g. [Absinthe](http://www.ijailbreak.com/how-to/how-to-jailbreak-iphone-4s-absinthe-linux/) for recent iOS versions. After jailbreaking, an SSH server will also need to be installed on the device, which can be done through the Cydia program, installed on the device during the jailbreak process.
 
-The second is to use a different FUSE file system called [iFuse](http://www.libimobiledevice.org/), which allows you to mount your device through USB, as you normally would. This method requires no hacking and is in general the better solution, though be aware that the software is still under heavy development. As of late, however, it has proven to be rather reliable and stable.
+The second is to use a FUSE file system called [ifuse](https://www.archlinux.org/packages/?q=ifuse), which allows you to mount your device through USB, as you normally would. After installing ifuse, for instance, you should see your iPhone appear in the left navigation of Gnome Files and other supporting file managers. This method requires no hacking and is in general the better solution, though be aware that the software is still under heavy development. As of late, however, it has proven to be rather reliable and stable.
 
 **Note:** The current releases of [libgpod](https://www.archlinux.org/packages/?name=libgpod) and [gtkpod](https://www.archlinux.org/packages/?name=gtkpod) support the iPod Touch and the iPhone OS 3.1.x up to iOS 4.3.x. It is possible to transfer pictures and music without limitations.
 
@@ -512,7 +512,7 @@ Your iPod can now be managed with Amarok or gtkpod.
 *   *   [More information about iPhone/iPod Touch support](http://help.ubuntu.com/community/PortableDevices/iPhone)
     *   [Apple trailers downloader script](http://wiki.gotux.net/code/perl/atget)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=412099](https://wiki.archlinux.org/index.php?title=IPod&oldid=412099)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=412289](https://wiki.archlinux.org/index.php?title=IPod&oldid=412289)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

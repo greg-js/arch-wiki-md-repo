@@ -1073,6 +1073,16 @@ set record = $XDG_DATA_HOME/mutt/record/sent
 
 <tr>
 
+<td>[python-setuptools](https://pypi.python.org/pypi/setuptools)</td>
+
+<td>`~/.python-eggs`</td>
+
+<td>`$ export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs`</td>
+
+</tr>
+
+<tr>
+
 <td>[readline](http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html)</td>
 
 <td>`~/.inputrc`</td>
@@ -1686,7 +1696,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412023](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412023)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412269](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412269)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

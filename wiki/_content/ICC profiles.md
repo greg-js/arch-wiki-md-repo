@@ -26,7 +26,8 @@ As it pertains to general desktop use, an ICC profile is a binary file which con
     *   [2.2 dispwin](#dispwin)
         *   [2.2.1 Xinitrc Example](#Xinitrc_Example_2)
         *   [2.2.2 JWM <StartupCommand> Example](#JWM_.3CStartupCommand.3E_Example_2)
-*   [3 See also](#See_also)
+*   [3 Applications that can use ICC profiles](#Applications_that_can_use_ICC_profiles)
+*   [4 See also](#See_also)
 
 ## Profile Generation
 
@@ -56,7 +57,7 @@ Once the appropriate `.icc/.icm` files have been copied, install the device prof
 
 ```
 
-**Note:** Ensure that the calibrated contrast, brightness and RGB settings of the monitor do not change between the time of calibration and the loading of the ICC profile.
+**Note:** Ensure that the calibrated contrast, brightness and RGB settings of the monitor do not change between the time of calibration and the loading of the ICC profile. Use this method only if you are absolutely certain that neither Linux nor the other OS does anything behind your back (in video drivers or vendor utilities) that alters the signal actually sent to the display, or the way the display interprets the signal. Watch out for "Broadcast RGB" or similar settings. One concrete example where profiling in Windows and Linux yields [significantly different results](https://bugzilla.kernel.org/show_bug.cgi?id%3d70721) is the Lenovo Ideapad Yoga 2 Pro laptop, because these OSes program the flat panel controller in very different ways.
 
 ### Gnome Color Manager
 
@@ -192,6 +193,13 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 
 ```
 
+## Applications that can use ICC profiles
+
+*   [GIMP](https://www.archlinux.org/packages/?name=gimp) can use ICC profiles for color-corrected display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
+*   [mpv](/index.php/Mpv "Mpv") can take an ICC profile into account when playing a video. The command line argument is: `--vo=opengl:icc-profile=/path/to/profile.icc`.
+*   [Firefox](/index.php/Firefox "Firefox"), by default, uses the system-wide ICC profile only when displaying images that are already tagged with an ICC profile. To assume that untagged images use sRGB and apply color correction also to them, set the `gfx.color_management.mode` preference to 1.
+*   Both [Eye of Gnome](https://www.archlinux.org/packages/?name=eog) and [Eye of MATE](https://www.archlinux.org/packages/?name=eom) automatically use the system-installed ICC profile.
+
 ## See also
 
 *   [Using LPROF to profile monitors](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors") - Additional details on how to profile monitors
@@ -201,7 +209,7 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 *   [dispcalGUI: Basic concept of display calibration and profiling](http://dispcalgui.hoech.net/#concept)
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=400500](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=400500)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412287](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412287)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

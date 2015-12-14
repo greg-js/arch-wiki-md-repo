@@ -806,6 +806,15 @@ You can use [pv](https://www.archlinux.org/packages/?name=pv) (_pipe viewer_) to
 
 ```
 
+In most cases `pv` functions as a drop-in replacement for `cat`, however there are undocumented differences. For example, under both Zsh and Bash, the following command hangs forever:
+
+```
+# cat <(pv /usr/share/dict/words)
+
+```
+
+Use of _strace_ shows that `pv` is stopped with `SIGTTOU`.
+
 ## rm
 
 [rm](https://en.wikipedia.org/wiki/rm_(Unix) "wikipedia:rm (Unix)") (_remove_) is a command to delete files and directories.
@@ -847,7 +856,7 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)")
 *   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
 *   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=411649](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=411649)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=412278](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=412278)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

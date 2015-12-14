@@ -301,7 +301,7 @@ International discussions are available at the following channels, also located 
 
 <tr>
 
-<td>[#archlinux.it](irc://irc.freenode.net/archlinux.it)</td>
+<td>[#archlinux-it](irc://irc.freenode.net/archlinux-it)</td>
 
 <td>Discussion (Italian); also on **[irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux)**</td>
 
@@ -391,7 +391,7 @@ International discussions are available at the following channels, also located 
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channels&oldid=398212](https://wiki.archlinux.org/index.php?title=IRC_channels&oldid=398212)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channels&oldid=412276](https://wiki.archlinux.org/index.php?title=IRC_channels&oldid=412276)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

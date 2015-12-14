@@ -72,7 +72,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [9.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
         *   [9.1.2 Compiz custom](#Compiz_custom)
         *   [9.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
-    *   [9.2 Integrate Android with the KDE Desktop](#Integrate_Android_with_the_KDE_Desktop)
+    *   [9.2 Integrate Android](#Integrate_Android)
     *   [9.3 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
     *   [9.4 Speed up application startup](#Speed_up_application_startup)
     *   [9.5 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
@@ -82,29 +82,28 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [10.1.1 Intel](#Intel)
         *   [10.1.2 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
     *   [10.2 Configuration related](#Configuration_related)
-        *   [10.2.1 Reset all KDE configuration (Plasma 4 and kdelib4 apps)](#Reset_all_KDE_configuration_.28Plasma_4_and_kdelib4_apps.29)
+        *   [10.2.1 Reset all kdelib4 apps configuration](#Reset_all_kdelib4_apps_configuration)
         *   [10.2.2 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
         *   [10.2.3 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
     *   [10.3 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
     *   [10.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-    *   [10.5 Plasma 4 does not finish loading](#Plasma_4_does_not_finish_loading)
-    *   [10.6 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
-    *   [10.7 KF5/Qt5 applications don't display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_don.27t_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [10.8 Graphical related problems](#Graphical_related_problems)
-        *   [10.8.1 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
-            *   [10.8.1.1 GPU driver problem](#GPU_driver_problem)
-            *   [10.8.1.2 The Raster engine workaround](#The_Raster_engine_workaround)
-        *   [10.8.2 Low 3D desktop performance](#Low_3D_desktop_performance)
-        *   [10.8.3 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
-        *   [10.8.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [10.8.5 Screen Tearing with desktop compositing enabled](#Screen_Tearing_with_desktop_compositing_enabled)
-        *   [10.8.6 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
-    *   [10.9 Sound problems under KDE](#Sound_problems_under_KDE)
-        *   [10.9.1 ALSA related problems](#ALSA_related_problems)
-            *   [10.9.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
-            *   [10.9.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [10.10 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
-    *   [10.11 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [10.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
+    *   [10.6 KF5/Qt5 applications don't display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_don.27t_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [10.7 Graphical related problems](#Graphical_related_problems)
+        *   [10.7.1 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
+            *   [10.7.1.1 GPU driver problem](#GPU_driver_problem)
+            *   [10.7.1.2 The Raster engine workaround](#The_Raster_engine_workaround)
+        *   [10.7.2 Low 3D desktop performance](#Low_3D_desktop_performance)
+        *   [10.7.3 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
+        *   [10.7.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [10.7.5 Screen Tearing with desktop compositing enabled](#Screen_Tearing_with_desktop_compositing_enabled)
+        *   [10.7.6 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
+    *   [10.8 Sound problems under KDE](#Sound_problems_under_KDE)
+        *   [10.8.1 ALSA related problems](#ALSA_related_problems)
+            *   [10.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
+            *   [10.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [10.9 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
+    *   [10.10 Inotify folder watch limit](#Inotify_folder_watch_limit)
 *   [11 Unstable releases](#Unstable_releases)
 *   [12 Bugs](#Bugs)
 *   [13 See also](#See_also)
@@ -115,8 +114,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
 
 **Note:**
 
-*   Plasma 5 is not co-installable with KDE 4 Workspace.
-*   The KDE 4 Plasma Desktop is unmaintained since August 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) It is no longer in the official repositories since December 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
+*   Plasma 5 is not co-installable with Plasma 4.
+*   The Plasma 4 desktop is unmaintained since August 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) It is no longer in the official repositories since December 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
 
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
@@ -475,9 +474,11 @@ Name=/home/username/.local/akonadi/akonadi.db
 
 ## Phonon
 
-From [Wikipedia](https://en.wikipedia.org/wiki/Phonon "wikipedia:Phonon"):
+From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
 
-_"Phonon is the multimedia API for KDE 4\. Phonon was created to allow KDE 4 to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for KDE 4's lifetime. It was done for various reasons: to create a simple KDE/Qt style multimedia API, to better support native multimedia frameworks on Windows and Mac OS X, and to fix problems of frameworks becoming unmaintained or having API or ABI instability."_
+_“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications._
+
+Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
 
 **Phonon** is being widely used within KDE, for both audio (e.g., the System notifications or KDE audio apps) and video (e.g., the Dolphin video thumbnails).
 
@@ -556,9 +557,9 @@ $ chmod +x /usr/local/bin/compiz-kde-launcher
 
 When replacing Kwin with a window manager which does not provide a Compositor (such as Openbox), any desktop compositing effects e.g. transparency will be lost. In this case, install and run a separate Composite manager to provide the effects such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Compton](/index.php/Compton "Compton").
 
-### Integrate Android with the KDE Desktop
+### Integrate Android
 
-KDE connect provides several features for you:
+KDE Connect provides several features for you:
 
 *   Share files and URLs to/from KDE from/to any app, without wires.
 *   Touchpad emulation: Use your phone screen as your computer's touchpad.
@@ -624,9 +625,9 @@ Then go to the system-settings -> Startup and Shutdown -> Autostart and Check/Ad
 
 Many problems in KDE are related to configuration.
 
-#### Reset all KDE configuration (Plasma 4 and kdelib4 apps)
+#### Reset all kdelib4 apps configuration
 
-To test whether your config is the problem try quitting your KDE session by logging out and, in a tty, run:
+To test whether your config is the problem try quitting all kdelib4 apps and run:
 
 ```
 $ cp -r ~/.kde4 ~/.kde4.safekeeping
@@ -634,9 +635,9 @@ $ rm .kde4/{cache,socket,tmp}-$(hostname)
 
 ```
 
-The _rm_ command just removes symbolic links which will be recreated by KDE automatically. Now start a new KDE session to see the results.
+The _rm_ command just removes symbolic links which will be recreated automatically.
 
-If the problem does not manifest itself, gradually move parts from the saved configuration back, and restart the session regularly to test and identify problematic parts. Some files here are named after their applications, and can be tested without the need to restart KDE.
+If the problem does not manifest itself, gradually move parts from the saved configuration back, and restart the application(s) regularly to test and identify problematic parts.
 
 #### Plasma desktop behaves strangely
 
@@ -644,7 +645,7 @@ Plasma problems are usually caused by unstable **Plasma widgets** (colloquially 
 
 So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report (bugs.kde.org) **only if it is an official widget**. If it is not, it is recommended you find the entry on kde-look.org and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
 
-If you cannot find the problem, but you do not want _all_ the KDE settings to be lost, navigate to either `~/.kde4/share/config` (for Plasma 4) or `~/.config` (for Plasma 5):
+If you cannot find the problem, but you do not want _all_ the settings to be lost, navigate to `~/.config`:
 
 ```
 $ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
@@ -689,23 +690,6 @@ This command prints out a wonderful summary of the current state of KWin includi
 $ qdbus org.kde.kwin /KWin supportInformation
 
 ```
-
-### Plasma 4 does not finish loading
-
-There might be a situation in which the graphic driver might create a conflict when starting KDE4\. This situation happens after the login but before finishing loading the desktop, making the user wait indefinitely at the loading screen. Until now the only users confirmed to be affected by this are the ones that use [Nvidia drivers](/index.php/NVIDIA "NVIDIA") and KDE4.
-
-A solution for Nvidia users:
-
- `~/.kde4/share/config/kwinrc` 
-
-```
-[Compositing]
-Enabled=false
-```
-
-For more information, see [this](https://bbs.archlinux.org/viewtopic.php?pid=932598) thread.
-
-If a minimal install was done, make sure you installed the required font by your phonon backend listed in [#Minimal install](#Minimal_install)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-07-26]</sup>.
 
 ### KDE and Qt programs look bad when in a different window manager
 
@@ -880,7 +864,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412230](https://wiki.archlinux.org/index.php?title=KDE&oldid=412230)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412274](https://wiki.archlinux.org/index.php?title=KDE&oldid=412274)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

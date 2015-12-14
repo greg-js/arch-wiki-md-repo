@@ -926,9 +926,9 @@ Command successful.
 
 ### Unlocking a secondary partition at boot
 
-If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). Following above first example
+If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). Following on from the first example above
 
- `/etc/crypttab`  `home    /dev/sda2     /etc/mykeyfile` 
+ `/etc/crypttab`  `home    /dev/sda2    /etc/mykeyfile    luks` 
 
 is all needed for unlocking, and
 
@@ -1017,7 +1017,7 @@ On the next reboot you should only have to enter your container decryption passp
 
 ([source](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/#bonus-login-once))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=410913](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=410913)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=412277](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=412277)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
