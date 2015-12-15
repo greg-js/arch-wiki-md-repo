@@ -7,6 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
+*   [Sysstat](/index.php/Sysstat "Sysstat")
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
@@ -225,7 +226,7 @@ $ iozone -e -I -a -s 10M -r 4k -i 0 -i 1 -i 2
 *   [Interbench Homepage](http://users.on.net/~ckolivas/interbench/)
 *   [Unigine.com](http://unigine.com/download/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=409043](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=409043)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412330](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412330)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

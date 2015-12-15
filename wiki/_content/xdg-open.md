@@ -20,7 +20,7 @@ Related articles
 
 **xdg-open** is a desktop-independent tool for configuring the [default applications](/index.php/Default_applications "Default applications") of a user. Many applications invoke the `xdg-open` command internally.
 
-Inside a [desktop environments](/index.php/Desktop_environments "Desktop environments") like [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), or [Xfce](/index.php/Xfce "Xfce")), _xdg-open_ simply passes the arguments to those desktop environment's file-opener application (eg. _gvfs-open_, _kde-open_, or _exo-open_). which means that the associations are left up to the desktop environment.
+Inside a [desktop environment](/index.php/Desktop_environment "Desktop environment") (like [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), or [Xfce](/index.php/Xfce "Xfce")), _xdg-open_ simply passes the arguments to those desktop environment's file-opener application (eg. _gvfs-open_, _kde-open_, or _exo-open_). which means that the associations are left up to the desktop environment.
 
 When no desktop environment is detected (for example when one runs a standalone [window manager](/index.php/Window_manager "Window manager") like eg. [Openbox](/index.php/Openbox "Openbox")), _xdg-open_ will use its own configuration files.
 
@@ -312,7 +312,7 @@ When _xdg-open_ fails to detect one of the [desktop environments](/index.php/Des
 
 Some environment variables, such as `BROWSER`, `DE`, and `DESKTOP_SESSION`, will change the behaviour of the default _xdg-open_. See [Environment variables](/index.php/Environment_variables "Environment variables") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=406554](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=406554)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=412318](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=412318)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
