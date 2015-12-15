@@ -143,7 +143,9 @@ More information on this topic in the [GNOME Keyring](/index.php/GNOME_Keyring "
 
 #### Enabling the system tray
 
-Enlightenment has support for a system tray but it is disabled by default. To enable the system tray, open the Enlightenment main menu, navigate to the _Settings_ submenu and click on the _Modules_ option. Scroll down until you see the _Systray_ option. Highlight that option and click the _Load_ button. Now that the module has been loaded, it can be added to the shelf. Right click on the shelf you wish to add the Systray to, hightlight the _Shelf_ submenu and click on the _Contents_ option. Scroll down until you see _Systray_. Highlight that option and click the 'Add' button. Finally, you need to enable Xembed otherwise icons will not show in the Systray. To do so, right click on the empty Systray and highlight the _Systray_ submenu. Choose the settings option and tick the _Enable Xembed_ box. Now try starting your tray icons - they should appear in the Systray.
+**Note:** Since Enlightenment 20, Xembed support has been removed [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) meaning that many 'legacy' applets can no longer be displayed in the Systray. To use these applets, you will need to use a standalone system tray application such as [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) instead.
+
+Enlightenment has support for a system tray but it is disabled by default. To enable the system tray, open the Enlightenment main menu, navigate to the _Settings_ submenu and click on the _Modules_ option. Scroll down until you see the _Systray_ option. Highlight that option and click the _Load_ button. Now that the module has been loaded, it can be added to the shelf. Right click on the shelf you wish to add the Systray to, hightlight the _Shelf_ submenu and click on the _Contents_ option. Scroll down until you see _Systray_. Highlight that option and click the _Add_ button.
 
 #### Notifications
 
@@ -283,7 +285,7 @@ Shadows, Transparent effects _et all_ can be found in MMB or RMB /Settings, unde
 *   [Enlightenment developer mail list](https://lists.sourceforge.net/lists/listinfo/enlightenment-devel)
 *   [irc://irc.freenode.net#e](irc://irc.freenode.net#e)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=410778](https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=410778)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=412390](https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=412390)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

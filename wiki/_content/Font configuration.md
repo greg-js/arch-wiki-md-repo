@@ -40,18 +40,15 @@ The font rendering packages on Arch Linux includes support for _freetype2_ with 
     *   [2.10 Create bold and italic styles for incomplete fonts](#Create_bold_and_italic_styles_for_incomplete_fonts)
     *   [2.11 Change rule overriding](#Change_rule_overriding)
     *   [2.12 Query the current settings](#Query_the_current_settings)
-*   [3 Patched packages](#Patched_packages)
-    *   [3.1 Infinality](#Infinality)
-    *   [3.2 Reverting to unpatched packages](#Reverting_to_unpatched_packages)
-*   [4 Applications without fontconfig support](#Applications_without_fontconfig_support)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Distorted fonts](#Distorted_fonts)
-    *   [5.2 Calibri, Cambria, Monaco, etc. not rendering properly](#Calibri.2C_Cambria.2C_Monaco.2C_etc._not_rendering_properly)
-    *   [5.3 Applications overriding hinting](#Applications_overriding_hinting)
-    *   [5.4 Applications not picking up hinting from DE's settings](#Applications_not_picking_up_hinting_from_DE.27s_settings)
-    *   [5.5 Incorrect hinting in GTK applications on non-Gnome systems](#Incorrect_hinting_in_GTK_applications_on_non-Gnome_systems)
-    *   [5.6 Font problem in Generated PDFs](#Font_problem_in_Generated_PDFs)
-*   [6 See also](#See_also)
+*   [3 Applications without fontconfig support](#Applications_without_fontconfig_support)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Distorted fonts](#Distorted_fonts)
+    *   [4.2 Calibri, Cambria, Monaco, etc. not rendering properly](#Calibri.2C_Cambria.2C_Monaco.2C_etc._not_rendering_properly)
+    *   [4.3 Applications overriding hinting](#Applications_overriding_hinting)
+    *   [4.4 Applications not picking up hinting from DE's settings](#Applications_not_picking_up_hinting_from_DE.27s_settings)
+    *   [4.5 Incorrect hinting in GTK applications on non-Gnome systems](#Incorrect_hinting_in_GTK_applications_on_non-Gnome_systems)
+    *   [4.6 Font problem in Generated PDFs](#Font_problem_in_Generated_PDFs)
+*   [5 See also](#See_also)
 
 ## Font paths
 
@@ -562,25 +559,9 @@ hinting: True(s)
 
 Look up the meaning of the numbers at [http://www.freedesktop.org/software/fontconfig/fontconfig-user.html](http://www.freedesktop.org/software/fontconfig/fontconfig-user.html). Eg. 'hintstyle: 3' means 'hintfull'
 
-## Patched packages
-
-These patched packages are available in the [AUR](/index.php/AUR "AUR"). A few considerations:
-
-*   Configuration is usually necessary.
-*   The new font rendering will not kick in until applications restart.
-*   Applications which [statically link](https://en.wikipedia.org/wiki/Static_library "wikipedia:Static library") to a library will not be affected by patches applied to the system library.
-
-### Infinality
-
-See [Infinality](/index.php/Infinality "Infinality").
-
-### Reverting to unpatched packages
-
-To restore the unpatched packages, reinstall the original packages [freetype2](https://www.archlinux.org/packages/?name=freetype2), [cairo](https://www.archlinux.org/packages/?name=cairo), and [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) as dependencies (use the `--asdeps` flag with pacman when reinstalling). Include [lib32-cairo](https://www.archlinux.org/packages/?name=lib32-cairo), [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig), and [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) if you also installed 32-bit versions.
-
 ## Applications without fontconfig support
 
-Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. This is very apparent when using the infinality patches which are heavily reliant on proper configuration. You can work around this by using `~/.Xresources`, but it is not nearly as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
+Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
 
  `~/.Xresources` 
 
@@ -641,7 +622,7 @@ Some scalable fonts have embedded bitmap versions which are rendered instead, ma
 
 ### Applications overriding hinting
 
-Some applications or desktop environments may override default fontconfig hinting and anti-aliasing settings. This may happen with [GNOME](/index.php/GNOME "GNOME") 3, for example while you are using Qt applications like [vlc](https://www.archlinux.org/packages/?name=vlc) or [smplayer](https://www.archlinux.org/packages/?name=smplayer). Use the specific configuration program for the application in such cases. For GNOME, try [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) and set the anti-aliasing to `Rgba` instead of the default `Grayscale` while using infinality.
+Some applications or desktop environments may override default fontconfig hinting and anti-aliasing settings. This may happen with [GNOME](/index.php/GNOME "GNOME") 3, for example while you are using Qt applications like [vlc](https://www.archlinux.org/packages/?name=vlc) or [smplayer](https://www.archlinux.org/packages/?name=smplayer). Use the specific configuration program for the application in such cases. For GNOME, try [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 
 ### Applications not picking up hinting from DE's settings
 
@@ -715,7 +696,7 @@ You may also experience similar problem when you open a PDF which requires Helve
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=410125](https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=410125)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=412418](https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=412418)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

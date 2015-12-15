@@ -100,149 +100,150 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [23.1.1 Game does not start](#Game_does_not_start_5)
         *   [23.1.2 Opening some menus causes the game to crash](#Opening_some_menus_causes_the_game_to_crash)
     *   [23.2 Game crashes after attempting to join server](#Game_crashes_after_attempting_to_join_server)
-*   [24 Half-Life 2 & episodes](#Half-Life_2_.26_episodes)
-    *   [24.1 Cyrillic fonts problem](#Cyrillic_fonts_problem)
-*   [25 Hammerwatch](#Hammerwatch)
-    *   [25.1 Troubleshooting](#Troubleshooting_10)
-        *   [25.1.1 The game not starting from Steam GUI](#The_game_not_starting_from_Steam_GUI)
-        *   [25.1.2 No sound](#No_sound_3)
-*   [26 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
-    *   [26.1 Dependencies](#Dependencies_10)
-    *   [26.2 Compatibility](#Compatibility_4)
-*   [27 Hatoful Boyfriend](#Hatoful_Boyfriend)
-    *   [27.1 Japanese text invisible](#Japanese_text_invisible)
-*   [28 The inner world](#The_inner_world)
-    *   [28.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
-    *   [28.2 Dependencies](#Dependencies_11)
-        *   [28.2.1 Sound support](#Sound_support)
-        *   [28.2.2 Cutscenes](#Cutscenes)
-*   [29 Invisible Apartment](#Invisible_Apartment)
-    *   [29.1 Dependencies](#Dependencies_12)
-    *   [29.2 Game does not run](#Game_does_not_run)
-*   [30 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
+*   [24 Hacker Evolution [Untold, Duality]](#Hacker_Evolution_.5BUntold.2C_Duality.5D)
+    *   [24.1 Dependencies](#Dependencies_10)
+*   [25 Half-Life 2 & episodes](#Half-Life_2_.26_episodes)
+    *   [25.1 Cyrillic fonts problem](#Cyrillic_fonts_problem)
+*   [26 Hammerwatch](#Hammerwatch)
+    *   [26.1 Troubleshooting](#Troubleshooting_10)
+        *   [26.1.1 The game not starting from Steam GUI](#The_game_not_starting_from_Steam_GUI)
+        *   [26.1.2 No sound](#No_sound_3)
+*   [27 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
+    *   [27.1 Dependencies](#Dependencies_11)
+    *   [27.2 Compatibility](#Compatibility_4)
+*   [28 Hatoful Boyfriend](#Hatoful_Boyfriend)
+    *   [28.1 Japanese text invisible](#Japanese_text_invisible)
+*   [29 The inner world](#The_inner_world)
+    *   [29.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
+    *   [29.2 Dependencies](#Dependencies_12)
+        *   [29.2.1 Sound support](#Sound_support)
+        *   [29.2.2 Cutscenes](#Cutscenes)
+*   [30 Invisible Apartment](#Invisible_Apartment)
     *   [30.1 Dependencies](#Dependencies_13)
-    *   [30.2 Compatibility](#Compatibility_5)
-*   [31 Kerbal Spaaaaaace Program](#Kerbal_Spaaaaaace_Program)
-    *   [31.1 Troubleshooting](#Troubleshooting_11)
-    *   [31.2 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
-    *   [31.3 No text display](#No_text_display)
-    *   [31.4 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
-    *   [31.5 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
-    *   [31.6 Locale settings](#Locale_settings)
-    *   [31.7 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
-    *   [31.8 Black ingame textures](#Black_ingame_textures)
-    *   [31.9 See also](#See_also)
-*   [32 Killing Floor](#Killing_Floor)
-    *   [32.1 Troubleshooting](#Troubleshooting_12)
-        *   [32.1.1 Screen resolution](#Screen_resolution)
-        *   [32.1.2 Windowed mode](#Windowed_mode)
-        *   [32.1.3 Stuttering Sound](#Stuttering_Sound)
-*   [33 Metro: Last Light](#Metro:_Last_Light)
-    *   [33.1 Attempted fixes](#Attempted_fixes)
-    *   [33.2 Hacky solution](#Hacky_solution)
-    *   [33.3 Possible solutions](#Possible_solutions)
-*   [34 Mark of the Ninja](#Mark_of_the_Ninja)
-    *   [34.1 Troubleshooting](#Troubleshooting_13)
-        *   [34.1.1 Bad sound](#Bad_sound)
-*   [35 Multiwinia](#Multiwinia)
-    *   [35.1 Dependencies](#Dependencies_14)
-    *   [35.2 Crash on startup](#Crash_on_startup)
-*   [36 Natural Selection 2](#Natural_Selection_2)
-    *   [36.1 No Sound](#No_Sound_4)
-*   [37 Penumbra: Overture](#Penumbra:_Overture)
-    *   [37.1 Dependencies](#Dependencies_15)
-    *   [37.2 Troubleshooting](#Troubleshooting_14)
-        *   [37.2.1 Windowed mode](#Windowed_mode_2)
-*   [38 Portal 2](#Portal_2)
-    *   [38.1 Troubleshooting](#Troubleshooting_15)
-        *   [38.1.1 Game does not start](#Game_does_not_start_6)
-*   [39 Prison Architect](#Prison_Architect)
-    *   [39.1 Troubleshooting](#Troubleshooting_16)
-        *   [39.1.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [40 Project Zomboid](#Project_Zomboid)
-    *   [40.1 Dependencies](#Dependencies_16)
-*   [41 Redshirt](#Redshirt)
-    *   [41.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
-*   [42 Revenge of the Titans](#Revenge_of_the_Titans)
-    *   [42.1 Dependencies](#Dependencies_17)
-*   [43 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+    *   [30.2 Game does not run](#Game_does_not_run)
+*   [31 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
+    *   [31.1 Dependencies](#Dependencies_14)
+    *   [31.2 Compatibility](#Compatibility_5)
+*   [32 Kerbal Space Program](#Kerbal_Space_Program)
+    *   [32.1 Troubleshooting](#Troubleshooting_11)
+    *   [32.2 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
+    *   [32.3 No text display](#No_text_display)
+    *   [32.4 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
+    *   [32.5 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
+    *   [32.6 Locale settings](#Locale_settings)
+    *   [32.7 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
+    *   [32.8 Black ingame textures](#Black_ingame_textures)
+    *   [32.9 See also](#See_also)
+*   [33 Killing Floor](#Killing_Floor)
+    *   [33.1 Troubleshooting](#Troubleshooting_12)
+        *   [33.1.1 Screen resolution](#Screen_resolution)
+        *   [33.1.2 Windowed mode](#Windowed_mode)
+        *   [33.1.3 Stuttering Sound](#Stuttering_Sound)
+*   [34 Metro: Last Light](#Metro:_Last_Light)
+    *   [34.1 Attempted fixes](#Attempted_fixes)
+    *   [34.2 Hacky solution](#Hacky_solution)
+    *   [34.3 Possible solutions](#Possible_solutions)
+*   [35 Mark of the Ninja](#Mark_of_the_Ninja)
+    *   [35.1 Troubleshooting](#Troubleshooting_13)
+        *   [35.1.1 Bad sound](#Bad_sound)
+*   [36 Multiwinia](#Multiwinia)
+    *   [36.1 Dependencies](#Dependencies_15)
+*   [37 Natural Selection 2](#Natural_Selection_2)
+    *   [37.1 No Sound](#No_Sound_4)
+*   [38 Penumbra: Overture](#Penumbra:_Overture)
+    *   [38.1 Dependencies](#Dependencies_16)
+    *   [38.2 Troubleshooting](#Troubleshooting_14)
+        *   [38.2.1 Windowed mode](#Windowed_mode_2)
+*   [39 Portal 2](#Portal_2)
+    *   [39.1 Troubleshooting](#Troubleshooting_15)
+        *   [39.1.1 Game does not start](#Game_does_not_start_6)
+*   [40 Prison Architect](#Prison_Architect)
+    *   [40.1 Troubleshooting](#Troubleshooting_16)
+        *   [40.1.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [41 Project Zomboid](#Project_Zomboid)
+    *   [41.1 Dependencies](#Dependencies_17)
+*   [42 Redshirt](#Redshirt)
+    *   [42.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
+*   [43 Revenge of the Titans](#Revenge_of_the_Titans)
     *   [43.1 Dependencies](#Dependencies_18)
-*   [44 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+*   [44 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
     *   [44.1 Dependencies](#Dependencies_19)
-    *   [44.2 Troubleshooting](#Troubleshooting_17)
-        *   [44.2.1 No audio](#No_audio_2)
-*   [45 Sir, you are being hunted](#Sir.2C_you_are_being_hunted)
+*   [45 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
     *   [45.1 Dependencies](#Dependencies_20)
-*   [46 Spacechem](#Spacechem)
+    *   [45.2 Troubleshooting](#Troubleshooting_17)
+        *   [45.2.1 No audio](#No_audio_2)
+*   [46 Sir, you are being hunted](#Sir.2C_you_are_being_hunted)
     *   [46.1 Dependencies](#Dependencies_21)
-    *   [46.2 Troubleshooting](#Troubleshooting_18)
-        *   [46.2.1 Game crash](#Game_crash)
-*   [47 Spaaaaaace Pirates and Zombies](#Spaaaaaace_Pirates_and_Zombies)
+*   [47 Spacechem](#Spacechem)
     *   [47.1 Dependencies](#Dependencies_22)
-    *   [47.2 Troubleshooting](#Troubleshooting_19)
-        *   [47.2.1 No audio](#No_audio_3)
-*   [48 Splice](#Splice)
+    *   [47.2 Troubleshooting](#Troubleshooting_18)
+        *   [47.2.1 Game crash](#Game_crash)
+*   [48 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
     *   [48.1 Dependencies](#Dependencies_23)
-*   [49 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [49.1 Troubleshooting](#Troubleshooting_20)
-        *   [49.1.1 Start with black screen](#Start_with_black_screen)
-        *   [49.1.2 No English fonts](#No_English_fonts)
-*   [50 Strike Suite Zero](#Strike_Suite_Zero)
-    *   [50.1 Dependencies](#Dependencies_24)
-*   [51 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+    *   [48.2 Troubleshooting](#Troubleshooting_19)
+        *   [48.2.1 No audio](#No_audio_3)
+*   [49 Splice](#Splice)
+    *   [49.1 Dependencies](#Dependencies_24)
+*   [50 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [50.1 Troubleshooting](#Troubleshooting_20)
+        *   [50.1.1 Start with black screen](#Start_with_black_screen)
+        *   [50.1.2 No English fonts](#No_English_fonts)
+*   [51 Strike Suite Zero](#Strike_Suite_Zero)
     *   [51.1 Dependencies](#Dependencies_25)
-*   [52 Team Fortress 2](#Team_Fortress_2)
+*   [52 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
     *   [52.1 Dependencies](#Dependencies_26)
-    *   [52.2 Making HRTF work](#Making_HRTF_work)
-    *   [52.3 Troubleshooting](#Troubleshooting_21)
-        *   [52.3.1 Loading screen freeze](#Loading_screen_freeze)
-        *   [52.3.2 No audio](#No_audio_4)
-        *   [52.3.3 Slow loading textures](#Slow_loading_textures)
-*   [53 Terraria](#Terraria)
-    *   [53.1 Troubleshooting](#Troubleshooting_22)
-        *   [53.1.1 Failed to start game (missing executable)](#Failed_to_start_game_.28missing_executable.29)
-*   [54 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
-    *   [54.1 Dependencies](#Dependencies_27)
-*   [55 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
-*   [56 The Clockwork Man](#The_Clockwork_Man)
-    *   [56.1 Dependencies](#Dependencies_28)
-*   [57 The Polynomial](#The_Polynomial)
+*   [53 Team Fortress 2](#Team_Fortress_2)
+    *   [53.1 Dependencies](#Dependencies_27)
+    *   [53.2 Making HRTF work](#Making_HRTF_work)
+    *   [53.3 Troubleshooting](#Troubleshooting_21)
+        *   [53.3.1 Loading screen freeze](#Loading_screen_freeze)
+        *   [53.3.2 No audio](#No_audio_4)
+        *   [53.3.3 Slow loading textures](#Slow_loading_textures)
+*   [54 Terraria](#Terraria)
+    *   [54.1 Troubleshooting](#Troubleshooting_22)
+        *   [54.1.1 Failed to start game (missing executable)](#Failed_to_start_game_.28missing_executable.29)
+*   [55 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
+    *   [55.1 Dependencies](#Dependencies_28)
+*   [56 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
+*   [57 The Clockwork Man](#The_Clockwork_Man)
     *   [57.1 Dependencies](#Dependencies_29)
-    *   [57.2 Troubleshooting](#Troubleshooting_23)
-        *   [57.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [58 This War of Mine](#This_War_of_Mine)
-    *   [58.1 Troubleshooting](#Troubleshooting_24)
-        *   [58.1.1 Game doesn't load](#Game_doesn.27t_load)
-*   [59 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [59.1 Crash on launch](#Crash_on_launch)
-*   [60 Transistor](#Transistor)
-    *   [60.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [61 Trine 2](#Trine_2)
-    *   [61.1 Dependencies](#Dependencies_30)
-    *   [61.2 Troubleshooting](#Troubleshooting_25)
-*   [62 Unity3D](#Unity3D)
-    *   [62.1 Locale Settings](#Locale_Settings_2)
-    *   [62.2 Unity 5 and PulseAudio](#Unity_5_and_PulseAudio)
-*   [63 Unity of Command](#Unity_of_Command)
-    *   [63.1 Dependencies](#Dependencies_31)
-    *   [63.2 Troubleshooting](#Troubleshooting_26)
-        *   [63.2.1 No audio](#No_audio_5)
-*   [64 Unrest](#Unrest)
+*   [58 The Polynomial](#The_Polynomial)
+    *   [58.1 Dependencies](#Dependencies_30)
+    *   [58.2 Troubleshooting](#Troubleshooting_23)
+        *   [58.2.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [59 This War of Mine](#This_War_of_Mine)
+    *   [59.1 Troubleshooting](#Troubleshooting_24)
+        *   [59.1.1 Game doesn't load](#Game_doesn.27t_load)
+*   [60 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [60.1 Crash on launch](#Crash_on_launch)
+*   [61 Transistor](#Transistor)
+    *   [61.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [62 Trine 2](#Trine_2)
+    *   [62.1 Dependencies](#Dependencies_31)
+    *   [62.2 Troubleshooting](#Troubleshooting_25)
+*   [63 Unity3D](#Unity3D)
+    *   [63.1 Locale Settings](#Locale_Settings_2)
+    *   [63.2 Unity 5 and PulseAudio](#Unity_5_and_PulseAudio)
+*   [64 Unity of Command](#Unity_of_Command)
     *   [64.1 Dependencies](#Dependencies_32)
-*   [65 War Thunder](#War_Thunder)
-    *   [65.1 Troubleshooting](#Troubleshooting_27)
-*   [66 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [66.1 Dependencies](#Dependencies_33)
-    *   [66.2 Troubleshooting](#Troubleshooting_28)
-*   [67 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [64.2 Troubleshooting](#Troubleshooting_26)
+        *   [64.2.1 No audio](#No_audio_5)
+*   [65 Unrest](#Unrest)
+    *   [65.1 Dependencies](#Dependencies_33)
+*   [66 War Thunder](#War_Thunder)
+    *   [66.1 Troubleshooting](#Troubleshooting_27)
+*   [67 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
     *   [67.1 Dependencies](#Dependencies_34)
-*   [68 World of Goo](#World_of_Goo)
-    *   [68.1 Changing resolution](#Changing_resolution)
-*   [69 Worms Reloaded](#Worms_Reloaded)
-    *   [69.1 Dependencies](#Dependencies_35)
-*   [70 XCOM](#XCOM)
-    *   [70.1 Hangs on startup](#Hangs_on_startup)
-    *   [70.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+    *   [67.2 Troubleshooting](#Troubleshooting_28)
+*   [68 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [68.1 Dependencies](#Dependencies_35)
+*   [69 World of Goo](#World_of_Goo)
+    *   [69.1 Changing resolution](#Changing_resolution)
+*   [70 Worms Reloaded](#Worms_Reloaded)
+    *   [70.1 Dependencies](#Dependencies_36)
+*   [71 XCOM](#XCOM)
+    *   [71.1 Hangs on startup](#Hangs_on_startup)
+    *   [71.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Air Brawl
 
@@ -605,7 +606,7 @@ SDL_GL_LoadLibrary(NULL) failed: Failed loading libGL.so.1: /usr/lib32/libxcb-dr
 
 ```
 
-Simply remove the bundled libxcb to horse Steam to use the system-wide version. Restart Steam to apply.
+Simply remove the bundled libxcb to force Steam to use the system-wide version. Restart Steam to apply.
 
 ```
 $ find ~/.local/share/Steam -name 'libxcb*' -type f | grep -v installed | xargs rm
@@ -788,6 +789,12 @@ This issue arises more often when joining servers with many addons like DarkRP s
 
 The Problem seems to correlate with a weak GPU and the game is timing out from the server, so if the GPU is the problem, lowering the graphics settings to minimum fixes the problem until you can upgrade ;).
 
+## Hacker Evolution [Untold, Duality]
+
+### Dependencies
+
+*   [lib32-sdl2_mixer](https://aur.archlinux.org/packages/lib32-sdl2_mixer/)<sup><small>AUR</small></sup>
+
 ## Half-Life 2 & episodes
 
 ### Cyrillic fonts problem
@@ -906,7 +913,7 @@ where for <username> you put your Linux username.
 
 Game only worked after obtaining from the [Humble Bundle](https://www.humblebundle.com/‎) directly and [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) was installed.
 
-## [Kerbal Spaaaaaace Program](/index.php?title=Kerbal_Spaaaaaace_Program&action=edit&redlink=1 "Kerbal Spaaaaaace Program (page does not exist)")
+## [Kerbal Space Program](/index.php/Kerbal_Space_Program "Kerbal Space Program")
 
 ### Troubleshooting
 
@@ -931,7 +938,7 @@ Run with PRIMUS_SYNC=2 (but you will get reduced frame rate this way)
 
 ### Game crashes when accessing settings or saves on 64 bit systems on Steam
 
-In the properties for Kerbal Spaaaaaace program, set a launch option of:
+In the properties for Kerbal Space program, set a launch option of:
 
 ```
 LC_ALL=C %command%_64
@@ -949,7 +956,7 @@ Run the 64-bit executable.
 Steam launches the KSP.x86 executable vs. the KSP.x86_64 executable. Navigate to:
 
 ```
-/home/$USER/.local/share/Steam/SteamApps/common/Kerbal\ Spaaaaaace\ Program/ 
+/home/$USER/.local/share/Steam/SteamApps/common/Kerbal\ Space\ Program/ 
 
 ```
 
@@ -960,7 +967,7 @@ Launch with:
 
 ```
 
-Or you can simply right click on "Kerbal Spaaaaaace Program" in your game list, click _Properties_, click _SET LAUNCH OPTIONS_, then add this:
+Or you can simply right click on "Kerbal Space Program" in your game list, click _Properties_, click _SET LAUNCH OPTIONS_, then add this:
 
 ```
 LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" LC_ALL=C %command%_64
@@ -973,7 +980,7 @@ Disable "Edge Highlighting (PPFX)" in graphics settings ingame.
 
 ### See also
 
-*   [Kerbal Spaaaaaace Program](/index.php?title=Kerbal_Spaaaaaace_Program&action=edit&redlink=1 "Kerbal Spaaaaaace Program (page does not exist)")
+*   [Kerbal Space Program](/index.php/Kerbal_Space_Program "Kerbal Space Program")
 *   [http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread](http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread)!
 
 ## Killing Floor
@@ -1031,7 +1038,7 @@ This game is not allowing to change its resolution on a multimonitor setup on GN
 
 ### Attempted fixes
 
-Various changes to the games config file was tried without success. `wmctrl` was not able to horse the games resolution.
+Various changes to the games config file was tried without success. `wmctrl` was not able to force the games resolution.
 
 ### Hacky solution
 
@@ -1059,27 +1066,6 @@ LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
 ### Dependencies
 
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
-
-### Crash on startup
-
-It appears Multiwinia will crash on startup on X64 systems this can be fixed by replacing `~/.local/share/Steam/steamapps/common/Multiwinia/run_steam.sh` with `~/.local/share/Steam/steamapps/common/Multiwinia/run_steam.sh` 
-
-```
-#!/bin/bash
-
-# Steam claims they are going to put us in the app directory.
-
-# only 32bit for now until valve releases a 64bit sdk
-
-#if [ `arch` == "x86_64" ]; then
-# ./multiwinia.bin.x86_64
-#else
-./multiwinia.bin.x86
-#fi
-
-```
-
-[source](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396)
 
 ## Natural Selection 2
 
@@ -1219,7 +1205,7 @@ The shipped x86 version of Spacechem does not work on x64 with the game's own li
 
 To solve this just remove or move the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.so.0`, `libSDL_mixer-1.2.so.0` from `~/.steam/root/SteamApps/common/SpaceChem`
 
-## Spaaaaaace Pirates and Zombies
+## Space Pirates and Zombies
 
 ### Dependencies
 
@@ -1581,7 +1567,7 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412313](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412313)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412423](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412423)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

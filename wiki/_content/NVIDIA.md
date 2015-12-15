@@ -16,10 +16,10 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
 ## Contents
 
 *   [1 Installing](#Installing)
-    *   [1.1 Pure Video HD (VDPAU/VAAPI)](#Pure_Video_HD_.28VDPAU.2FVAAPI.29)
-    *   [1.2 Unsupported drivers](#Unsupported_drivers)
-    *   [1.3 Alternate install: custom kernel](#Alternate_install:_custom_kernel)
-        *   [1.3.1 Automatic re-compilation of the NVIDIA module with kernel update](#Automatic_re-compilation_of_the_NVIDIA_module_with_kernel_update)
+    *   [1.1 Unsupported drivers](#Unsupported_drivers)
+    *   [1.2 Alternate install: custom kernel](#Alternate_install:_custom_kernel)
+        *   [1.2.1 Automatic re-compilation of the NVIDIA module with kernel update](#Automatic_re-compilation_of_the_NVIDIA_module_with_kernel_update)
+    *   [1.3 Pure Video HD (VDPAU/VAAPI)](#Pure_Video_HD_.28VDPAU.2FVAAPI.29)
 *   [2 Configuring](#Configuring)
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
@@ -120,10 +120,6 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 Once the driver has been installed, continue to [#Configuring](#Configuring).
 
-### Pure Video HD (VDPAU/VAAPI)
-
-At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required to use [VDPAU](/index.php/VDPAU "VDPAU") and [VA-API](/index.php/VA-API "VA-API").
-
 ### Unsupported drivers
 
 If you have a GeForce 5 FX series card or older, Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
@@ -205,6 +201,10 @@ The hook will call the _dkms_ command to update the NVIDIA module for the versio
 
 *   If you are using this functionality it is **important** to look at the installation process of the [linux](https://www.archlinux.org/packages/?name=linux) (or any other kernel) package. nvidia hook will tell you if anything goes wrong.
 *   If you would like to do this manually please see [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support").
+
+### Pure Video HD (VDPAU/VAAPI)
+
+At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required to use [VDPAU](/index.php/VDPAU "VDPAU") and [VA-API](/index.php/VA-API "VA-API").
 
 ## Configuring
 
@@ -1485,7 +1485,7 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=411228](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=411228)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=412393](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=412393)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

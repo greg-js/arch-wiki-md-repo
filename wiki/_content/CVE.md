@@ -101,6 +101,8 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td><= 1:2.02.beta2-5</td>
 
+<td>**Vulnerable** ([FS#47386](https://bugs.archlinux.org/task/47386))</td>
+
 </tr>
 
 <tr>
@@ -7435,7 +7437,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=412368](https://wiki.archlinux.org/index.php?title=CVE&oldid=412368)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=412391](https://wiki.archlinux.org/index.php?title=CVE&oldid=412391)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

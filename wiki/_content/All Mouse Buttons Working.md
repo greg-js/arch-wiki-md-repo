@@ -510,6 +510,14 @@ Here is an example for xbindkeys to enable x selection paste(third click pasting
 
 ```
 
+This is an example for a keybinding for Meta+M:
+
+```
+ "xvkbd  -text "\{+Super_L}m\{-Super_L}""
+ b:10
+
+```
+
 ### Why standard methods are not enough?
 
 This will work great for X servers, but it seems not to work in some specific situations, like in Enemy Territory game. So I will describe a bit more advanced configuration, which work with my logitech G5 buttons - I can use all my 5 additional buttons along with 3 standard and a scroll, which gives overall 10 events to use in Enemy Territory. So here we go:
@@ -777,7 +785,7 @@ For similar setup, specially for Logitech MX, see:
 
 *   [http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu](http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411773](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=411773)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=412405](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=412405)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

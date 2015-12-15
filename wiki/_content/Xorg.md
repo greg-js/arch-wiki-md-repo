@@ -21,7 +21,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 _The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work._
 
-**Xorg** is the open-source reference implementation of the X window system version 11\. Since Xorg is the most popular choice among Linux users, its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
+**Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
 ## Contents
 
@@ -808,7 +808,7 @@ Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See
 
 Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=412223](https://wiki.archlinux.org/index.php?title=Xorg&oldid=412223)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=412384](https://wiki.archlinux.org/index.php?title=Xorg&oldid=412384)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -262,7 +262,7 @@ See the [mounting without a password](/index.php/Polkit#Mounting_storage_without
 
 See the General troubleshooting article on [Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PCManFM&oldid=388516](https://wiki.archlinux.org/index.php?title=PCManFM&oldid=388516)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PCManFM&oldid=412422](https://wiki.archlinux.org/index.php?title=PCManFM&oldid=412422)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

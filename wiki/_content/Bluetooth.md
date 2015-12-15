@@ -146,9 +146,9 @@ To receive files, you must install the [gnome-user-share](https://www.archlinux.
 
 ### Bluedevil
 
-[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) is [KDE](/index.php/KDE "KDE")'s Bluetooth tool. It can be [installed](/index.php/Installed "Installed") with the package [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5) or [bluedevil4](https://www.archlinux.org/packages/?name=bluedevil4) (KDE 4).
+[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) is [KDE](/index.php/KDE "KDE")'s Bluetooth tool. It can be [installed](/index.php/Installed "Installed") with the package [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
 
-If there is no Bluetooth icon visible in Dolphin and in the system tray, add it manually. You can configure Bluedevil and detect Bluetooth devices by clicking the icon. An interface is also available from the KDE System Settings.
+If there is no Bluetooth icon visible in Dolphin and in the system tray, enable it in the system tray options or add a widget. You can configure Bluedevil and detect Bluetooth devices by clicking the icon. An interface is also available from the KDE System Settings.
 
 ### Blueberry
 
@@ -503,7 +503,7 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411736](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=411736)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=412421](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=412421)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

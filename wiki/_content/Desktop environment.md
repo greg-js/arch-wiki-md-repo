@@ -9,9 +9,10 @@ Related articles
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Xorg](/index.php/Xorg "Xorg")
+*   [Wayland](/index.php/Wayland "Wayland")
 *   [Default applications](/index.php/Default_applications "Default applications")
 
-A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") provides a _complete_ graphical user interface (GUI) for a system by bundling together a variety of X clients written using a common widget toolkit and set of libraries.
+A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") provides a _complete_ graphical user interface (GUI) for a system by bundling together a variety of components written using a common widget toolkit and set of libraries.
 
 ## Contents
 
@@ -25,13 +26,13 @@ A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikip
 
 ## Overview
 
-A desktop environment bundles together a variety of X clients to provide common graphical user interface elements such as icons, toolbars, wallpapers, and desktop widgets. Additionally, most desktop environments include a set of integrated applications and utilities. Most importantly, desktop environments provide their own [window manager](/index.php/Window_manager "Window manager"), which can however usually be replaced with another compatible one.
+A desktop environment bundles together a variety of components to provide common graphical user interface elements such as icons, toolbars, wallpapers, and desktop widgets. Additionally, most desktop environments include a set of integrated applications and utilities. Most importantly, desktop environments provide their own [window manager](/index.php/Window_manager "Window manager"), which can however usually be replaced with another compatible one.
 
 The user is free to configure their GUI environment in any number of ways. Desktop environments simply provide a complete and convenient means of accomplishing this task. Note that users are free to mix-and-match applications from multiple desktop environments. For example, a KDE user may install and run GNOME applications such as the Epiphany web browser, should he/she prefer it over KDE's Konqueror web browser. One drawback of this approach is that many applications provided by desktop environment projects rely heavily upon their DE's respective underlying libraries. As a result, installing applications from a range of desktop environments will require installation of a larger number of dependencies. Users seeking to conserve disk space and avoid [software bloat](https://en.wikipedia.org/wiki/software_bloat "wikipedia:software bloat") often avoid such mixed environments, or look into lightweight alternatives.
 
 Furthermore, DE-provided applications tend to integrate better with their native environments. Superficially, mixing environments with different widget toolkits will result in visual discrepancies (that is, interfaces will use different icons and widget styles). In terms of user experience, mixed environments may not behave similarly (e.g. single-clicking versus double-clicking icons; drag-and-drop functionality) potentially causing confusion or unexpected behavior.
 
-Prior to installing a desktop environment, a functional X server installation is required. See [Xorg](/index.php/Xorg "Xorg") for detailed information.
+Prior to installing a desktop environment, a functional X server installation is required. See [Xorg](/index.php/Xorg "Xorg") for detailed information. Some desktop environments may also support [Wayland](/index.php/Wayland "Wayland") as an alternative to X, but most of these are still experimental.
 
 ## List of desktop environments
 
@@ -99,7 +100,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 [http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/)<sup><small>AUR</small></sup>
 
-*   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in QT 5 for FreeBSD that uses Fluxbox for window management.
+*   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
 [http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)<sup><small>AUR</small></sup>
 
@@ -998,7 +999,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411844](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=411844)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412383](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412383)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

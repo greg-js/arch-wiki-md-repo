@@ -90,10 +90,6 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 [http://flwm.sourceforge.net/](http://flwm.sourceforge.net/) || [flwm](https://aur.archlinux.org/packages/flwm/)<sup><small>AUR</small></sup>
 
-*   **Fusilli** — Fusilli is an OpenGL compositing window manager for the X Window System. It is a fork of Compiz (0.8)
-
-[https://github.com/noodlylight/fusilli](https://github.com/noodlylight/fusilli) || [fusilli-git](https://aur.archlinux.org/packages/fusilli-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fusilli-git)]</sup>
-
 *   **[FVWM](/index.php/FVWM "FVWM")** — Extremely powerful ICCCM-compliant multiple virtual desktop window manager for the X Window system. Development is active, and support is excellent.
 
 [http://www.fvwm.org/](http://www.fvwm.org/) || [fvwm](https://www.archlinux.org/packages/?name=fvwm)
@@ -124,7 +120,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — The standard KDE window manager in KDE 4.0, ships with the first version of built-in support for compositing, making it also a compositing manager. This allows KWin to provide advanced graphical effects, similar to Compiz, while also providing all the features from previous KDE releases (such as very good integration with the rest of KDE, advanced configurability, focus stealing prevention, a well-tested window manager, robust handling of misbehaving applications/toolkits, etc.).
 
-[https://techbase.kde.org/Projects/KWin](https://techbase.kde.org/Projects/KWin) || [kwin](https://www.archlinux.org/packages/?name=kwin) [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace) [kwin-git](https://aur.archlinux.org/packages/kwin-git/)<sup><small>AUR</small></sup>
+[https://techbase.kde.org/Projects/KWin](https://techbase.kde.org/Projects/KWin) || [kwin](https://www.archlinux.org/packages/?name=kwin)
 
 *   **lwm** — Window manager for X that tries to keep out of your face. There are no icons, no button bars, no icon docks, no root menus, no nothing: if you want all that, then other programs can provide it. There is no configurability either: if you want that, you want a different window manager; one that helps your operating system in its evil conquest of your disc space and its annexation of your physical memory.
 
@@ -162,17 +158,9 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 [http://www.pekwm.org/projects/pekwm](http://www.pekwm.org/projects/pekwm) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 
-*   **rio** — Plan9-like window manager for X11\. Actually, it is a fork of [9wm](https://aur.archlinux.org/packages/9wm/)<sup><small>AUR</small></sup> with some changes. There are no icons, no buttons, no titlebars, no configurability. It supports moving, reshaping, deleting (closing), hiding windows and virtual desktops (not NetWM compatible) from simple root menu. Rio utilizes all three mouse buttons, not keyboard-oriented and not similar to another WMs.
-
-[http://swtch.com/plan9port/](http://swtch.com/plan9port/) || [rio](https://aur.archlinux.org/packages/rio/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rio)]</sup>
-
 *   **[Sawfish](/index.php/Sawfish "Sawfish")** — Extensible window manager using a Lisp-based scripting language. Its policy is very minimal compared to most window managers. Its aim is simply to manage windows in the most flexible and attractive manner possible. All high-level WM functions are implemented in Lisp for future extensibility or redefinition.
 
 [http://sawfish.wikia.com/wiki/Main_Page](http://sawfish.wikia.com/wiki/Main_Page) || [sawfish](https://aur.archlinux.org/packages/sawfish/)<sup><small>AUR</small></sup>
-
-*   **TinyWM** — Tiny window manager created as an exercise in minimalism. It may be helpful in learning some of the very basics of creating a window manager. It is comprised of approximately 50 lines of C. There is also a Python version using python-xlib.
-
-[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tinywm)]</sup>
 
 *   **[twm](/index.php/Twm "Twm")** — Window manager for the X Window System. It provides titlebars, shaped windows, several forms of icon management, user-defined macro functions, click-to-type and pointer-driven keyboard focus, and user-specified key and pointer button bindings.
 
@@ -204,10 +192,6 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 [https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) || [bspwm](https://www.archlinux.org/packages/?name=bspwm)
 
-*   **dswm** — Deep Space Window Manager is an offshoot of [Stumpwm](/index.php/Stumpwm "Stumpwm").
-
-[https://github.com/dss-project/dswm](https://github.com/dss-project/dswm) || [dswm](https://aur.archlinux.org/packages/dswm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dswm)]</sup>
-
 *   **[Herbstluftwm](/index.php/Herbstluftwm "Herbstluftwm")** — Manual tiling window manager for X11 using Xlib and Glib. The layout is based on splitting frames into subframes which can be split again or can be filled with windows (similar to i3/ musca). Tags (or workspaces or virtual desktops or …) can be added/removed at runtime. Each tag contains an own layout. Exactly one tag is viewed on each monitor. The tags are monitor independent (similar to xmonad). It is configured at runtime via ipc calls from herbstclient. So the configuration file is just a script which is run on startup. (similar to wmii/musca).
 
 [http://herbstluftwm.org](http://herbstluftwm.org) || [herbstluftwm](https://www.archlinux.org/packages/?name=herbstluftwm)
@@ -232,10 +216,6 @@ Notion is a fork of Ion3.
 *   **[Ratpoison](/index.php/Ratpoison "Ratpoison")** — Simple Window Manager with no fat library dependencies, no fancy graphics, no window decorations, and no rodent dependence. It is largely modeled after GNU Screen which has done wonders in the virtual terminal market. Ratpoison is configured with a simple text file. The information bar in Ratpoison is somewhat different, as it shows only when needed. It serves as both an application launcher as well as a notification bar. Ratpoison does not include a system tray.
 
 [http://www.nongnu.org/ratpoison/](http://www.nongnu.org/ratpoison/) || [ratpoison](https://www.archlinux.org/packages/?name=ratpoison)
-
-*   **[Stumpwm](/index.php/Stumpwm "Stumpwm")** — Tiling, keyboard driven X11 Window Manager written entirely in Common Lisp. Stumpwm attempts to be customizable yet visually minimal. It does have various hooks to attach your personal customizations, and variables to tweak, and can be reconfigured and reloaded while running. There are no window decorations, no icons, no buttons, and no system tray. Its information bar can be set to show constantly or only when needed.
-
-[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup>
 
 *   **[subtle](/index.php/Subtle "Subtle")** — Manual tiling window manager with a rather uncommon approach of tiling: Per default there is no typical layout enforcement, windows are placed on a position (gravity) in a custom grid. The user can change the gravity of each window either directly per grabs or with rules defined by tags in the config. It has workspace tags and automatic client tagging, mouse and keyboard control as well as an extendable statusbar.
 
@@ -267,29 +247,13 @@ Notion is a fork of Ion3.
 
 [http://plhk.ru](http://plhk.ru) || [echinus](https://aur.archlinux.org/packages/echinus/)<sup><small>AUR</small></sup>
 
-*   **euclid-wm** — Simple and lightweight tiling and floating window manager for X11, with support for minimizing windows. A text configuration file controls key bindings and settings. It started as a dwm fork with easier configuration, and became a full-featured reparenting window manager with EWMH support. It has an EWMH-compatible panel/taskbar called [ourico](https://aur.archlinux.org/packages/ourico/)<sup><small>AUR</small></sup>.
-
-[http://euclid-wm.sourceforge.net/index.php](http://euclid-wm.sourceforge.net/index.php) || [euclid-wm](https://aur.archlinux.org/packages/euclid-wm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/euclid-wm)]</sup>
-
 *   **[i3](/index.php/I3 "I3")** — Tiling window manager, completely written from scratch. i3 was created because wmii, our favorite window manager at the time, did not provide some features we wanted (multi-monitor done right, for example), had some bugs, did not progress for quite some time, and was not easy to hack at all (source code comments/documentation completely lacking). Notable differences are in the areas of multi-monitor support and the tree metaphor. For speed the Plan 9 interface of wmii is not implemented.
 
 [http://i3wm.org/](http://i3wm.org/) || [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)
 
-*   **[monsterwm](/index.php/Monsterwm "Monsterwm")** — Minimal, lightweight, tiny but monsterous dynamic tiling window manager. It will try to stay as small as possible. Currently under 700 lines with the config file included. It provides a set of four different layout modes (vertical stack, bottom stack, grid and monocle/fullscreen) by default, and has floating mode support. It also features multi-monitor support. Each monitor and virtual desktop have their own properties, unaffected by other monitors' or desktops' settings. Configuration is done entirely by modifying the C source code, and it must be recompiled and restarted each time it is changed. There are many available patches supported upstream, in the form of different git branches.
-
-[https://github.com/c00kiemon5ter/monsterwm](https://github.com/c00kiemon5ter/monsterwm) || [monsterwm-git](https://aur.archlinux.org/packages/monsterwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/monsterwm-git)]</sup>
-
 *   **[FrankenWM](/index.php/FrankenWM "FrankenWM")** — Basically monsterwm with floating done right. Features that are added on top of basic mwm include: more layouts (fibonacci, equal stack, dual stack), gaps (and borders) are adjustable on the fly, minimize/maximize single windows, hide/show all windows, resizing master and stack individually, invert stack.
 
 [https://github.com/sulami/FrankenWM](https://github.com/sulami/FrankenWM) || [frankenwm-git](https://aur.archlinux.org/packages/frankenwm-git/)<sup><small>AUR</small></sup>
-
-*   **[Musca](/index.php/Musca "Musca")** — Simple dynamic window manager for X, with features nicked from ratpoison and dwm. Musca operates as a tiling window manager by default. The user determines how the screen is divided into non-overlapping frames, with no restrictions on layout. Application windows always fill their assigned frame, with the exception of transient windows and popup dialog boxes which float above their parent application at the appropriate size. Once visible, applications do not change frames unless so instructed.
-
-[http://aerosuidae.net/musca.html](http://aerosuidae.net/musca.html) || [musca](https://aur.archlinux.org/packages/musca/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/musca)]</sup>
-
-*   **[snapwm](/index.php/Snapwm "Snapwm")** — Lightweight dynamic tiling window manager with an emphasis on easy configurability and choice. It has a built in bar with clickable workspaces and space for external text. There's five tiling modes: vertical, fullscreen, horizontal, grid and stacking. It has other features, like color support, independent desktops, choice of window placement strategy, reloadable config files, transparency support, dmenu integration, multi monitor support and more.
-
-[https://github.com/moetunes/Nextwm](https://github.com/moetunes/Nextwm) || [snapwm-git](https://aur.archlinux.org/packages/snapwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/snapwm-git)]</sup>
 
 *   **[spectrwm](/index.php/Spectrwm "Spectrwm")** — Small dynamic tiling window manager for X11, largely inspired by xmonad and dwm. It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and is configured with a text file. It was written by hackers for hackers and it strives to be small, compact and fast. It has a built-in status bar fed from a user-defined script.
 
@@ -298,10 +262,6 @@ Notion is a fork of Ion3.
 *   **[Qtile](/index.php/Qtile "Qtile")** — Full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
 
 [https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile-git](https://aur.archlinux.org/packages/qtile-git/)<sup><small>AUR</small></sup>
-
-*   **[Wingo](/index.php/Wingo "Wingo")** — Fully featured true hybrid window manager that supports per-monitor workspaces, and neither the floating or tiling modes are after thoughts. This allows one to have tiling on one workspace while floating on the other. Wingo can be scripted with its own command language, is completely themeable, and supports user defined hooks. Wingo is written in Go and has no runtime dependencies.
-
-[https://github.com/BurntSushi/wingo](https://github.com/BurntSushi/wingo) || [wingo-git](https://aur.archlinux.org/packages/wingo-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wingo-git)]</sup>
 
 *   **[wmii](/index.php/Wmii "Wmii")** — Small, dynamic window manager for X11\. It is scriptable, has a 9P filesystem interface and supports classic and tiling (Acme-like) window management. It aims to maintain a small and clean (read hackable and beautiful) codebase. The default configuration is in bash and [rc (the Plan 9 shell)](http://rc.cat-v.org), but programs exist written in ruby, and any program that can work with text can configure it. It has a status bar and launcher built in, and also an optional system tray (`witray`).
 
@@ -315,8 +275,9 @@ Notion is a fork of Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 *   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux)
+*   [http://incise.org/tinywm.html](http://incise.org/tinywm.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=411096](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=411096)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=412431](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=412431)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

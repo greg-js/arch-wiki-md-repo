@@ -177,11 +177,9 @@ Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-
 
 ### Multimedia playback
 
-If `media.gstreamer.enabled` is `true` in `about:config`, Firefox will try to use [GStreamer](/index.php/GStreamer "GStreamer") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the optional dependencies of the [firefox](https://www.archlinux.org/packages/?name=firefox) package need to be installed (see [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins") for details).
+Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package need to be installed.
 
 Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5) or [this page](http://www.quirksmode.org/html5/tests/video.html) to verify that it is correctly installed and is in use.
-
-Alternatively, to force Firefox to rely on the Adobe Flash Player to play HTML5 audio, set `media.gstreamer.enabled` to `false` in your `about:config`.
 
 ## Troubleshooting
 
@@ -374,7 +372,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=412369](https://wiki.archlinux.org/index.php?title=Firefox&oldid=412369)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=412433](https://wiki.archlinux.org/index.php?title=Firefox&oldid=412433)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

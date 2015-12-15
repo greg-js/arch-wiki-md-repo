@@ -65,7 +65,7 @@ A number of presets are included and can be used by setting the USE_STYLE variab
 
 **Reason:** Not clear from this section what bohoomil's bundle **does**. How are the patches different from stock infinality, apart from working with newer freetype versions? "presets" etc. (Discuss in [Talk:Infinality#](https://wiki.archlinux.org/index.php/Talk:Infinality))
 
-**Infinality-bundle** is a collection of software aiming to improve text rendering in Arch Linux. The packages are fully compatible with system libraries available in the _extra_ repository and are meant to be used as drop-in replacements for them.
+**Infinality-bundle** is a collection of software aiming to improve text rendering in Arch Linux.
 
 Currently, the bundle comprises:
 
@@ -358,7 +358,7 @@ This will remove the entire font cache and recreate it from scratch.
 *   [infinality-bundle: good looking fonts made (even) easier](https://bbs.archlinux.org/viewtopic.php?id=162098) - _infinality-bundle_ support thread in the Arch Linux Forums
 *   [infinality-bundle-fonts: a free multilingual font collection for Arch](https://bbs.archlinux.org/viewtopic.php?id=170976) - _infinality-bundle-fonts_ support thread in the Arch Linux Forums
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Infinality&oldid=408067](https://wiki.archlinux.org/index.php?title=Infinality&oldid=408067)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Infinality&oldid=412413](https://wiki.archlinux.org/index.php?title=Infinality&oldid=412413)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

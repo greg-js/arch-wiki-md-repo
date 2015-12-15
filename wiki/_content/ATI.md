@@ -15,7 +15,7 @@ Related articles
 
 **This article or section is out of date.**
 
-**Reason:** Owners of newer cards need [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) instead of [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). (Discuss in [Talk:ATI#](https://wiki.archlinux.org/index.php/Talk:ATI))
+**Reason:** Owners of newer cards need [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) instead of [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). (Discuss in [Talk:ATI#Adding xf86-video-amdgpu](https://wiki.archlinux.org/index.php/Talk:ATI#Adding_xf86-video-amdgpu))
 
 Owners of **AMD** (previously **ATI**) video cards have a choice between AMD's [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) and the open source driver ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the open source driver.
 
@@ -746,7 +746,7 @@ Try booting with the [kernel parameter](/index.php/Kernel_parameter "Kernel para
 
 Since kernel 4.1.4, [dpm](#Dynamic_power_management) is broken on certain R9 270X cards (chip device number 6810, subsystem 174b:e271, shown as Curacao XT, PC Partner Limited / Sapphire Technology Device e271 in lspci). The regression is caused by a [fix](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=ea039f927524e36c15b5905b4c9469d788591932) for cards with the same PCI ids. Disabling dpm (add `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")) solves the problem.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ATI&oldid=411162](https://wiki.archlinux.org/index.php?title=ATI&oldid=411162)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ATI&oldid=412385](https://wiki.archlinux.org/index.php?title=ATI&oldid=412385)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -525,16 +525,7 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-You can store this rule by saving the iptables rule with the following command [[3]](https://wiki.archlinux.org/index.php/Iptables#Configuration_and_usage):
-
-```
-# iptables-save > /etc/iptables/iptables.rules
-
-```
-
-then don't forget to enable the iptables systemd service on startup.
-
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[4]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[3]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
@@ -550,9 +541,7 @@ If you have difficulty pinging the server through the VPN, you may need to add e
 
 ```
 
-Additionally edit `/etc/conf.d/iptables` and change IPTABLES_FORWARD=1\.
-
-When you are satisfied make the changes permanent in the [iptables#Configuration file](/index.php/Iptables#Configuration_file "Iptables").
+When you are satisfied make the changes permanent as shown in [iptables#Configuration and usage](/index.php/Iptables#Configuration_and_usage "Iptables").
 
 ### Prevent leaks if vpn goes down
 
@@ -813,7 +802,7 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412367](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412367)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412412](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412412)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

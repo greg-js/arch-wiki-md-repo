@@ -493,7 +493,6 @@ See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
 ### Apple OS X fonts
 
 *   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/)<sup><small>AUR</small></sup> - Mac OS X TrueType fonts
-*   [ttf-mac](https://aur.archlinux.org/packages/ttf-mac/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-mac)]</sup> - Mac OS X TrueType fonts (This package does not come with the ttf fonts (only the otf fonts), they have to be provided on their own.
 
 ### Monospaced
 
@@ -671,7 +670,7 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 
 *   [State of Text Rendering](http://behdad.org/text/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=410924](https://wiki.archlinux.org/index.php?title=Fonts&oldid=410924)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=412432](https://wiki.archlinux.org/index.php?title=Fonts&oldid=412432)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
