@@ -448,6 +448,8 @@ For other network connectivity needs, four network types exist that can be creat
 
 `virsh` has the ability to create networking with numerous options for most users, however, it is easier to create network connectivity with a graphic user interface (like `virt-manager`), or to do so on [creation with virt-install](#Create_a_new_domain_using_virt-install).
 
+A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
+
 **Note:** libvirt handles DHCP and DNS with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), launching a separate instance for every virtual network. It also adds iptables rules for proper routing, and enables the `ip_forward` kernel parameter.
 
 ### Snapshots
@@ -598,7 +600,7 @@ if (__name__ == "__main__"):
 *   [Slackware KVM and libvirt](http://docs.slackware.com/howtos:general_admin:kvm_libvirt)
 *   [IBM KVM](http://www-01.ibm.com/support/knowledgecenter/linuxonibm/liaat/liaatkvm.htm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=407256](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=407256)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412365](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412365)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

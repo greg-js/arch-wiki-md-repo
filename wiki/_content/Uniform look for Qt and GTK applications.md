@@ -104,7 +104,9 @@ e.g. with [GIMP](/index.php/GIMP "GIMP"), edit the `/usr/share/applications/gimp
 
 ### Using a GTK+ icon theme in Qt apps
 
-If you are not using GNOME, run `gconf-editor`, look under _desktop > gnome > interface_ for the `icon_theme` key and change it to your preference. As you are not using GNOME, it is possible that you will have to set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using [LightDM](/index.php/LightDM "LightDM"), in `/etc/environment`.
+If running [KDE](/index.php/KDE "KDE"), install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under _System Settings > Application Style > GTK_.
+
+If you are not using [GNOME](/index.php/GNOME "GNOME"), run `gconf-editor`, look under _desktop > gnome > interface_ for the `icon_theme` key and change it to your preference. As you are not using GNOME, it is possible that you will have to set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using [LightDM](/index.php/LightDM "LightDM"), in `/etc/environment`.
 
 ### Improve subpixel rendering of GTK apps under KDE Plasma
 
@@ -215,7 +217,7 @@ Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~
 
 Newer versions of [gtk-qt-engine](https://aur.archlinux.org/packages/gtk-qt-engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtk-qt-engine)]</sup> use `~/.gtkrc2.0-kde` and set the export variable in `~/.kde/env/gtk-qt-engine.rc.sh`. If you recently removed **gtk-qt-engine** and are trying to set a GTK+ theme then you must also remove `~/.kde/env/gtk-qt-engine.rc.sh` and reboot. Doing this will ensure that GTK+ looks for its settings in the standard `~/.gtkrc2.0` instead of the `~/.gtkrc2.0-kde` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=411917](https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=411917)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=412376](https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=412376)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

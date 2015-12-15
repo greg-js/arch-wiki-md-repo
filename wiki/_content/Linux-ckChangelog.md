@@ -8,20 +8,26 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.3.3-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.3)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d113cb8e26a51107a34b444bd1f170ee41c47348](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d113cb8e26a51107a34b444bd1f170ee41c47348)
+*   Note from CK: [http://ck-hack.blogspot.com/2015/12/bfs-467-linux-43-ck3.html](http://ck-hack.blogspot.com/2015/12/bfs-467-linux-43-ck3.html)
+
 **Bump to v4.3.2-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.2](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.2)
-*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d699754e9a9331d4a6d1ab1e3ef1c19c58498b11](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d699754e9a9331d4a6d1ab1e3ef1c19c58498b11)
 
 **Bump to v4.3.1-3**
 
 *   Changelog: Incorporate [BFS 466](http://ck-hack.blogspot.com/2015/12/bfs-466-linux-43-ck2.html) in ck2
-*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=ee7278626215b82172617c3079319a6c136690a1](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=ee7278626215b82172617c3079319a6c136690a1)
 
 **Bump to v4.3.1-2**
 
 *   Changelog: Mirroring changes to official package's config
-*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=90a4baa0616aff61145e6ca348070e003cfc7296](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=90a4baa0616aff61145e6ca348070e003cfc7296)
 
 **Bump to v4.3.1-1**
 
@@ -1839,7 +1845,7 @@ rebuild with mkinitcpio bump to 0.6.8 and gzipped modules saves 70MB space git-s
 
 fix udev crash, updated aufs, changed ext3 mount default git-svn-id: eb2447ed-0c53-47e4-bac8-5bc4a241df78
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=411484](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=411484)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=412345](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=412345)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

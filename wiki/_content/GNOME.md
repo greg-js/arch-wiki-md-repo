@@ -105,12 +105,11 @@ GNOME (pronounced _gah-nohm_ or _nohm_) is a [desktop environment](/index.php/De
     *   [7.14 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
     *   [7.15 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
     *   [7.16 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
-    *   [7.17 Passwords are not remembered](#Passwords_are_not_remembered)
-    *   [7.18 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
-    *   [7.19 Mouse cursor missing](#Mouse_cursor_missing)
-    *   [7.20 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
-    *   [7.21 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
-    *   [7.22 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+    *   [7.17 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
+    *   [7.18 Mouse cursor missing](#Mouse_cursor_missing)
+    *   [7.19 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
+    *   [7.20 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
+    *   [7.21 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -182,6 +181,14 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 **Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using _startx_ and `~/.xinitrc`. Instead, run `gnome-session --session=gnome-wayland`. For more information, see [Wayland](/index.php/Wayland "Wayland").
 
 ### GNOME applications in Wayland
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** Note is too long (more content in the note than in the section itself). (Discuss in [Talk:GNOME#](https://wiki.archlinux.org/index.php/Talk:GNOME))
 
 Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND='wayland,x11' <command>`.
 
@@ -1066,20 +1073,6 @@ $ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 
 ```
 
-### Passwords are not remembered
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:GNOME#](https://wiki.archlinux.org/index.php/Talk:GNOME))
-
-If you get a password prompt every time you login, and you find that passwords are not saved, you might need to create/set a default keyring.
-
-Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select _View_ > _By Keyring_ If there is no keyring in the left column (it will be marked with a lock icon), go to _File_ > _New_ > _Password Keyring_ and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
-
 ### GNOME Shell keyboard sources menu not visible
 
 A menu showing the keyboard input sources (for example 'en' for an English keyboard layout) should be visible next to the status area containing icons for network, volume and power sources. If the keyboard sources menu is not visible, this is probably because you have configured your [Xorg](/index.php/Xorg "Xorg") keyboard layout in a way which GNOME does not recognise.
@@ -1122,7 +1115,7 @@ The dash is the "toolbar" that appears, by default, [on the left](https://en.wik
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME&oldid=412237](https://wiki.archlinux.org/index.php?title=GNOME&oldid=412237)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME&oldid=412355](https://wiki.archlinux.org/index.php?title=GNOME&oldid=412355)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

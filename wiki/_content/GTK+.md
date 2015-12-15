@@ -190,7 +190,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 [https://projects.kde.org/kde-gtk-config](https://projects.kde.org/kde-gtk-config) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-After installation, `kde-gtk-config` can also be found in _System Settings > Application Appearance > GTK_.
+After installation, `kde-gtk-config` can also be found in _System Settings > Application Style > GTK_.
 
 *   **LXAppearance** — Desktop independent GTK+2 and GTK+3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
 
@@ -604,7 +604,7 @@ gtk-xft-rgba=rgb
 *   [gtkmm Tutorial](http://developer.gnome.org/gtkmm-tutorial/stable/)
 *   [gtkmm Reference Manual](http://developer.gnome.org/gtkmm/stable/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=411914](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=411914)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=412375](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=412375)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

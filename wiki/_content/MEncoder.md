@@ -343,7 +343,7 @@ The official MPlayer homepage has a comprehensive list of available front-ends [
 
     This program is a simple java front-end for the free and very useful MPlayer software, for the purpose of encoding video. Initially the focus is on converting DVD into MPEG-4.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MEncoder&oldid=392417](https://wiki.archlinux.org/index.php?title=MEncoder&oldid=392417)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412349](https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412349)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

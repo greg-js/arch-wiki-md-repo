@@ -141,7 +141,7 @@ Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome
 
 ### KDE integration
 
-*   To bring the KDE look to GTK apps (including Firefox), install [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). After that, go to System Settings -> Application Style -> GTK. Be sure to choose 'oxygen-gtk' in 'Select a GTK2 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK menus'. For KDE 5, use the [gtk-theme-orion](https://www.archlinux.org/packages/?name=gtk-theme-orion) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup> themes instead of [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2).
+*   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
 *   To use KDE's KPart technology with Firefox, by embedding different KDE file viewers into the browser, you can install [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
 
@@ -374,7 +374,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=412258](https://wiki.archlinux.org/index.php?title=Firefox&oldid=412258)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=412369](https://wiki.archlinux.org/index.php?title=Firefox&oldid=412369)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -75,6 +75,8 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 ```
 
+This fixes the console warning `WARNING **: Can not determine workarea, guessing at layout` for tiling window managers (such as i3).
+
 ### Change application for "Open in terminal" context menu entry
 
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) is set as the default, if it is not installed this feature will not work.
@@ -194,7 +196,7 @@ fi
 
 By default, Nemo does not escape filenames. This means that actions for multiple files with some names containing spaces are broken. To fix this, use `Quote=double`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nemo&oldid=388529](https://wiki.archlinux.org/index.php?title=Nemo&oldid=388529)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nemo&oldid=412366](https://wiki.archlinux.org/index.php?title=Nemo&oldid=412366)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

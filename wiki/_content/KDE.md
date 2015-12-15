@@ -190,7 +190,7 @@ For Qt4 applications to have a consistent appearance, you need to install [breez
 
 GTK+
 
-The recommended theme for a pleasant appearance in GTK+ applications is [gtk-theme-orion](https://www.archlinux.org/packages/?name=gtk-theme-orion). Also see [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)/[gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Once you've installed a theme, choose it in _System Settings > Application Style > GNOME Application Style_. If you don't see those settings, install and run one of the [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") such as [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) to change the theme.
+The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in _System Settings > Application Style > GNOME Application Style_.
 
 ##### Widgets
 
@@ -206,7 +206,7 @@ Most plasmoids are not created officially by KDE developers. You can also try in
 
 ##### Sound applet in the system tray
 
-[Install](/index.php/Install "Install") Kmix ([kmix](https://www.archlinux.org/packages/?name=kmix) AND [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)) and start it from the application launcher. Since Plasma, by default, autostarts programs from the previous session, it does not need to be started manually upon every login.
+[Install](/index.php/Install "Install") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) or [kmix](https://www.archlinux.org/packages/?name=kmix) (start Kmix from the Application Launcher).
 
 **Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.kde4/share/config/kmixrc`
 
@@ -252,7 +252,9 @@ Official logos, icons, CD labels and other artwork for Arch Linux are provided i
 
 ##### Qt 5 icons theme
 
-If you are on Plasma 5, use _System Settings > Icons_, while if you are on Plasma 4 use `kcmshell5 icons` to set the icons theme.
+Icon-themes can be installed and changed on _System Settings > Icons_.
+
+**Note:** [Gnome](/index.php/Gnome "Gnome") and KDE4 installed icon-themes may not be (fully) compatible with Plasma. It's recommended to install Plasma compatible icon-themes instead.
 
 #### Fonts
 
@@ -864,7 +866,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412274](https://wiki.archlinux.org/index.php?title=KDE&oldid=412274)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412374](https://wiki.archlinux.org/index.php?title=KDE&oldid=412374)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

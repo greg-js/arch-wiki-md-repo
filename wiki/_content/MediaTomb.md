@@ -269,7 +269,7 @@ From [http://mediatomb.cc/pages/documentation#id2856362](http://mediatomb.cc/pag
 
 The "-i" command-line option to bind to a specific IP address does not work. Bug reported in 2010 to [Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=693301) and [Upstream](http://sourceforge.net/p/mediatomb/bugs/76). The webserver remains accessible on all interfaces.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaTomb&oldid=398573](https://wiki.archlinux.org/index.php?title=MediaTomb&oldid=398573)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaTomb&oldid=412346](https://wiki.archlinux.org/index.php?title=MediaTomb&oldid=412346)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

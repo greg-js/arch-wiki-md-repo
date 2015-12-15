@@ -56,7 +56,7 @@ There are many uPNP or DLNA-compliant server and you can use Mpd too. Some of th
 *   [Plex](/index.php/Plex "Plex")
 *   [GNOME Videos](https://wiki.gnome.org/Apps/Videos) ([totem](https://www.archlinux.org/packages/?name=totem)), via the "Channels" tab, after having installed [grilo-plugins](https://www.archlinux.org/packages/?name=grilo-plugins), [gupnp-av](https://www.archlinux.org/packages/?name=gupnp-av) and [dleyna-server](https://www.archlinux.org/packages/?name=dleyna-server)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=410479](https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=410479)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=412344](https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=412344)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

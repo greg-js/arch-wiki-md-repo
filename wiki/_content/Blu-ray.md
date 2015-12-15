@@ -8,7 +8,7 @@ Related articles
 
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
 
-This article is designed to help Linux users to play the BluRay discs they have legally purchased on their computers. Since no official BluRay player software is available on their system, Linux users have to use open-source libraries capable of handling the DRM schemes that protect these disc contents. This is legal in most countries where interoperability allows this.
+This article is designed to help Linux users to play the Blu-ray discs they have legally purchased on their computers. Since no official Blu-ray player software is available on their system, Linux users have to use open-source libraries capable of handling the DRM schemes that protect these disc contents. This is legal in most countries where interoperability allows this.
 
 ## Contents
 
@@ -41,13 +41,13 @@ This article is designed to help Linux users to play the BluRay discs they have 
 
 ### Blu-ray DRM
 
-Contrary to the DVD CSS, which was definitely compromised once the unique encryption key had been discovered, BluRay uses stronger DRM mechanisms, which makes it a lot more difficult to manage. Firstly, the AACS standard uses a lot more complicated cryptographic process to protect the disc content, but also allows the industry to revoke compromised keys and distribute new keys through new BR discs. Secondly, BluRay may also use another layer of protection: BD+. Although most of commercial discs use AACS, a few of them additionally use BD+. In 2007, the AACS system was compromised and decryption keys were published on the Internet. Many decryption programs were made available, but the interest to Linux users was the capability of playing their discs - legally purchased - on their computers. Although the industry was able to revoke the first leaked decryption keys, new keys are regularly published in a cat and mouse play.
+Contrary to the DVD CSS, which was definitely compromised once the unique encryption key had been discovered, Blu-ray uses stronger DRM mechanisms, which makes it a lot more difficult to manage. Firstly, the AACS standard uses a lot more complicated cryptographic process to protect the disc content, but also allows the industry to revoke compromised keys and distribute new keys through new discs. Secondly, Blu-ray may also use another layer of protection: BD+. Although most of commercial discs use AACS, a few of them additionally use BD+. In 2007, the AACS system was compromised and decryption keys were published on the Internet. Many decryption programs were made available, but the interest to Linux users was the capability of playing their discs - legally purchased - on their computers. Although the industry was able to revoke the first leaked decryption keys, new keys are regularly published in a cat and mouse play.
 
 #### AACS
 
 The AACS specification and decryption process are publicly available at [[1]](http://www.aacsla.com/specifications/). Many articles and research papers describe it in detail at [[2]](http://forum.doom9.org/showthread.php?t=122363), [[3]](http://cacr.uwaterloo.ca/~dstinson/papers/AACS-journal.pdf) or [[4]](http://www.iis.sinica.edu.tw/papers/lcs/5007-F.pdf).
 
-[libaacs](https://www.archlinux.org/packages/?name=libaacs) is a research project from the VideoLAN developer team to implement the Advanced Access Content System specification, and distributed as an open-source library [[5]](http://www.videolan.org/developers/libaacs.html). This project does not offer any key or certificate that could be used to decode encrypted copyrighted material. However, combined with a key database file, it is possible to use it to play BluRay discs that use the AACS standard. This file is called `KEYDB.cfg` and is accessed by libaacs in `~/.config/aacs`. The format of this file is available at [[6]](http://git.videolan.org/?p=libaacs.git;a=blob_plain;f=KEYDB.cfg;hb=HEAD).
+[libaacs](https://www.archlinux.org/packages/?name=libaacs) is a research project from the VideoLAN developer team to implement the Advanced Access Content System specification, and distributed as an open-source library [[5]](http://www.videolan.org/developers/libaacs.html). This project does not offer any key or certificate that could be used to decode encrypted copyrighted material. However, combined with a key database file, it is possible to use it to play Blu-ray discs that use the AACS standard. This file is called `KEYDB.cfg` and is accessed by libaacs in `~/.config/aacs`. The format of this file is available at [[6]](http://git.videolan.org/?p=libaacs.git;a=blob_plain;f=KEYDB.cfg;hb=HEAD).
 
 ##### AACS decryption process
 
@@ -58,14 +58,14 @@ The AACS decryption process for a protected disc by a licensed player goes throu
 3.  This VUK is used to unscramble the disc's scrambled Title Keys.
 4.  Finally those Title Keys unscramble the disc's protected media content.
 
-Note that it is the disc that contains the MKB. MKBs have been renewed since the first commercial BluRay release in 2006\. The latest MKB is version 57, but many MKB actually share the same key. The software player provides the Host key and certificate, whereas the drive contains a list of the Host key/certificates that have been revoked. Host key/certification revocation occurs when a newer disc (containing a higher MKB than the previous played disc) is decrypted, or played, or attempted to decrypt or play (the mere insertion of a disc does not update the drive). When this happens, the drive forever loses its capability to use older Host key/certificates.
+Note that it is the disc that contains the MKB. MKBs have been renewed since the first commercial Blu-ray release in 2006\. The latest MKB is version 57, but many MKB actually share the same key. The software player provides the Host key and certificate, whereas the drive contains a list of the Host key/certificates that have been revoked. Host key/certification revocation occurs when a newer disc (containing a higher MKB than the previous played disc) is decrypted, or played, or attempted to decrypt or play (the mere insertion of a disc does not update the drive). When this happens, the drive forever loses its capability to use older Host key/certificates.
 
 Using [libaacs](https://www.archlinux.org/packages/?name=libaacs), the decryption process can skip some of these stages to reach the last step, which allows the media player to play the disc. This is either by providing in the `KEYDB.cfg` file either (or both):
 
 *   a valid (corresponding to the MKB version of the disc) Processing key and a valid (i.e. non revoked by the drive) Host key/certificate
 *   a valid VUK for the specific disc.
 
-If libaacs finds a valid processing key for the disc MKB version as well as a valid Host key and certificates, it can start the decryption process from step 2\. However, the Host key/certificates are regularly revoked through the propagation of new BluRay discs. Once revoked, a drive is not able to read both new and older discs. This is usually irreversible and can only be fixed by providing a more recent Host key/certificate (for Windows users, this corresponds to updating their software player). The advantage of this method is that until the Host key/certificate is revoked, and as long as the disc uses an MKB version for which the Processing key is known, libaacs is able to compute the VUK of any disc. As of today, the Processing keys for MKB versions 1 to 28 have been computed and made available on the Internet.
+If libaacs finds a valid processing key for the disc MKB version as well as a valid Host key and certificates, it can start the decryption process from step 2\. However, the Host key/certificates are regularly revoked through the propagation of new Blu-ray discs. Once revoked, a drive is not able to read both new and older discs. This is usually irreversible and can only be fixed by providing a more recent Host key/certificate (for Windows users, this corresponds to updating their software player). The advantage of this method is that until the Host key/certificate is revoked, and as long as the disc uses an MKB version for which the Processing key is known, libaacs is able to compute the VUK of any disc. As of today, the Processing keys for MKB versions 1 to 28 have been computed and made available on the Internet. Thus, this method is now very outdated.
 
 Thankfully, in case no valid Processing key is available and/or the Host certificate has been revoked, libaacs has an alternative way to decrypt a disc: by providing a valid VUK in the `KEYDB.cfg` file. This allows libaacs to skip directly to step 3\. Contrary to the Processing keys, VUKs are disc specific. Therefore this is less efficient as the user will have to get the VUK from a third party. But the great advantage is that VUKs cannot be revoked. Note that if libaacs is able to perform step 2 (with a valid Host key/certificate), then it stores the VUK calculated in step 3 in `~/.cache/aacs/vuk`. At subsequent viewings of the same disc, libaacs can reuse the stored VUK. Thus it may be a good idea to backup these VUKs, or even better, to upload them to [[7]](http://www.labdv.com/aacs/).
 
@@ -79,15 +79,15 @@ BD+ is an additional but optional component of the Blu-ray DRM. In December 2013
 
 ### Preparation
 
-1.  [install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
+1.  [Install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
 2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[11]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for nearly 12000 discs.
-3.  If necessary (_i.e._ if volumes are not mounted automatically on your system), mount the bluray to a directory, _e.g._: `# mount /dev/sr0 /media/blurays` 
+3.  If necessary (_i.e._ if volumes are not mounted automatically on your system), mount the disc to a directory, _e.g._: `# mount /dev/sr0 /media/blurays` 
 
 ### Decryption process
 
 Launch a Blu-ray software player, such as VLC, and try to play the disc (on VLC, select Media -> Open Disc, then in the Disc tab, chose Blu-ray. Be sure "No disc Menus" is checked.). The software player will then apply the decryption process described below:
 
-1.  The user starts playing a BluRay with a video player having libbluray and libaacs support.
+1.  The user starts playing a Blu-ray with a video player having libbluray and libaacs support.
 2.  If the BR disc is not scrambled with AACS, go to 4.1.
 3.  If the BR disc is scrambled with AACS, libaacs will:
     1.  Check if a valid VUK for the disc is already available in `~/.cache/aacs/vuk/`. If yes, go to step 4.1, if not continue to next step.
@@ -123,11 +123,11 @@ These pages [[12]](http://www.labdv.com/aacs/) and [[13]](http://www.labdv.com/a
 
 ### Media players
 
-These are media players capable of using libbluray and libaacs to play AACS-scrambled BluRay discs.
+These are media players capable of using libbluray and libaacs to play AACS-scrambled Blu-ray discs.
 
 #### mplayer
 
-To play blurays in mplayer the basic playback command is:
+To play Blu-ray discs in mplayer the basic playback command is:
 
 ```
 $ mplayer br:///</bluray/mount/dir>
@@ -143,7 +143,7 @@ $ mplayer br://<title number> -bluray-device </bluray/mount/dir>
 
 ##### Stuttering video
 
-It is likely that you will need to enable hardware acceleration and multi core CPU support for the bluray to play smoothly.
+It is likely that you will need to enable hardware acceleration and multi core CPU support for the Blu-ray to play smoothly.
 
 For nvidia cards, enable hardware acceleration by installing libvdpau and using the option '-vo vdpau' with mplayer. e.g:
 
@@ -165,7 +165,7 @@ You can scroll through the playback languages using the '#' key.
 
 ##### Out-of-sync audio
 
-From your first mplayer output, you must find the codec used for the bluray. It will be at the end of the line "Selected video codec".
+From your first mplayer output, you must find the codec used for the Blu-ray. It will be at the end of the line "Selected video codec".
 
 For H.264 discs use the option '-vc ffh264vdpau'. e.g:
 
@@ -190,7 +190,7 @@ $ mplayer -vc ffmpeg12vdpau br:///</bluray/mount/dir>
 
 #### VLC
 
-Since version 2.0.0, vlc has had experimental bluray playback support. Bluray menus can be used if you install [libbluray-git](https://aur.archlinux.org/packages/libbluray-git/)<sup><small>AUR</small></sup> instead of [libbluray](https://www.archlinux.org/packages/?name=libbluray).
+Since version 2.0.0, vlc has had experimental Blu-ray playback support. Blu-ray menus can be used if you install [libbluray-git](https://aur.archlinux.org/packages/libbluray-git/)<sup><small>AUR</small></sup> instead of [libbluray](https://www.archlinux.org/packages/?name=libbluray).
 
 Start playback with:
 
@@ -216,7 +216,7 @@ If a valid VUK is found in `~/.cache/aacs/vuk`, then libaacs does not need to us
 
 #### Revoked Host key/certificate
 
-Unfortunately, what may happen when trying to play a newer BluRay disc is the revocation of host key/certificates (which are keys of licensed software players) by your drive. When this happens, [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup> will return this message:
+Unfortunately, what may happen when trying to play a newer Blu-ray disc is the revocation of host key/certificates (which are keys of licensed software players) by your drive. When this happens, [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup> will return this message:
 
 ```
  The given Host Certficate / Private Key has been revoked by your drive.
@@ -236,19 +236,19 @@ Install [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR<
 
  `cd /usr/share/aacskeys` and run: `aacskeys </bluray/mount/dir>` eg: `cd /usr/share/aacskeys && aacskeys /media/blurays` 
 
-If you wish, you may add the BR to the key database: edit `~/.config/aacs/KEYDB.cfg` and add the information output by aacskeys using this syntax:
+If you wish, you may add the Blu-ray to the key database: edit `~/.config/aacs/KEYDB.cfg` and add the information output by aacskeys using this syntax:
 
  `0x<unit key file hash> = Film Title    | V | 0x<volume unique key>` 
 
 ##### If aacskeys is not able to generate the key
 
-Try to generate the VolumeID with [DumpVID](http://forum.doom9.org/showthread.php?p=993782) using wine. The VolumeID can now be used to generate the bluray key with aacskeys with the VolumeID option
+Try to generate the VolumeID with [DumpVID](http://forum.doom9.org/showthread.php?p=993782) using wine. The VolumeID can now be used to generate the Blu-ray VUK with aacskeys with the VolumeID option
 
  `Usage: aacskeys [options] <mountpath> [volume id / binding nonce]` 
 
 ## See also
 
-For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) package supplies the needed decryption libs. Below are some options for BluRay/HD-DVD decryption. Users can employ to backup a commercial BluRay movie under Fair Use guidelines:
+For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) package supplies the needed decryption libs. Below are some options for Blu-ray/HD-DVD decryption. Users can employ to backup a commercial Blu-ray movie under Fair Use guidelines:
 
 *   [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup> - Opensource
 *   [dumphd](https://aur.archlinux.org/packages/dumphd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dumphd)]</sup> - Opensource
@@ -257,7 +257,7 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412044](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412044)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412351](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412351)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
