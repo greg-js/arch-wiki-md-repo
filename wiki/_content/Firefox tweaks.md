@@ -827,10 +827,9 @@ Then consider checking [how your SSL is](https://www.howsmyssl.com/).
 
 *   [MozillaZine Wiki](http://kb.mozillazine.org/Knowledge_Base)
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
-*   [Firefox tuneup: configuration necessities](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
-*   [Firefox: Defining font type and size](http://linuxtidbits.wordpress.com/2013/03/08/firefox-defining-font-type-and-size/)
+*   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=411990](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=411990)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=412316](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=412316)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

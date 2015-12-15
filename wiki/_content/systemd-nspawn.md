@@ -40,6 +40,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [4.4 Running on a non-systemd system](#Running_on_a_non-systemd_system)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
+    *   [5.2 unable to upgrade some packages on the container](#unable_to_upgrade_some_packages_on_the_container)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -246,6 +247,10 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[1]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow always root to login, see [[2]](https://github.com/systemd/systemd/issues/852).
 
+### unable to upgrade some packages on the container
+
+It can't sometimes be impossible to upgrade some packages on the container, [filesystem](https://www.archlinux.org/packages/?name=filesystem) being a perfect example. The issue is due to `/sys` being mounted as Read Only. The workaround is to remount the directory in Read Write when running `# mount -o remount,rw -t sysfs sysfs /sys`, do the upgrade then reboot the container.
+
 ## See also
 
 *   [machinectl man page](http://www.freedesktop.org/software/systemd/man/machinectl.html)
@@ -254,7 +259,7 @@ Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container
 *   [Presentation by Lennart Pottering on systemd-nspawn](https://www.youtube.com/results?search_query=systemd-nspawn&aq=f)
 *   [Running Firefox in a systemd-nspawn container](http://dabase.com/e/12009/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412015](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412015)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412298](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412298)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

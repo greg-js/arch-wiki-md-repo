@@ -1002,7 +1002,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[MegaGlest](https://en.wikipedia.org/wiki/MegaGlest "wikipedia:MegaGlest")** — Fork of Glest, a 3D real-time strategy game in a fantastic world.
 
-[http://sourceforge.net/projects/megaglest/](http://sourceforge.net/projects/megaglest/) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
+[http://github.com/megaglest](http://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
 
 *   **[Netpanzer](https://en.wikipedia.org/wiki/Netpanzer "wikipedia:Netpanzer")** — Realtime Strategy game like Command and Conquer but without building bases.
 
@@ -1100,7 +1100,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=411441](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=411441)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=412312](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=412312)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

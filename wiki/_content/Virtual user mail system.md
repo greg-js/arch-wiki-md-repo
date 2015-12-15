@@ -258,7 +258,7 @@ Run _postmap_ on _transport_ to generate its db:
 
 ### Dovecot
 
-Instead of using the provided Dovecot example config file, we'll create our own `/etc/dovecot/dovecot.conf`.
+Instead of using the provided Dovecot example config file, we'll create our own `/etc/dovecot/dovecot.conf`. Please note that the user and group here might be vmail **instead of postfix**!
 
  `/etc/dovecot/dovecot.conf` 
 
@@ -573,7 +573,7 @@ $rcmail_config['create_default_folders'] = true;
 $rcmail_config['protect_default_folders'] = true;
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_user_mail_system&oldid=408028](https://wiki.archlinux.org/index.php?title=Virtual_user_mail_system&oldid=408028)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_user_mail_system&oldid=412299](https://wiki.archlinux.org/index.php?title=Virtual_user_mail_system&oldid=412299)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

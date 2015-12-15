@@ -66,7 +66,7 @@ rm community/g15daemon/*.patch
 
 ```
 
-Then download the [libg15](http://pastebin.com/5VQixu64) and [g15daemon](http://pastebin.com/0HBfp7XY) patches and modify to your will. The color profiles per M-Led settings are hard coded into the libg15 patch at line 341, 344, 347 and 350 in R,G,B color code.
+Then download the [libg15](http://pastebin.com/5VQixu64) and [g15daemon](http://pastebin.com/QeMVGnSU) patches and modify to your will. The color profiles per M-Led settings are hard coded into the libg15 patch at line 341, 344, 347 and 350 in R,G,B color code.
 
 Then place the files (libg15.patch and g15daemon.patch) into the folders that your packages were downloaded into, after this you must replace the PKGBUILDS with the new ones: [g15daemon](http://pastebin.com/Ff2vAEkd), [libg15](http://pastebin.com/56a3cHhf) These new PKGBUILDS refer to local sources only, this means they do not fetch sources from the net if they are not present so make sure you hold on to your tar.bz2 files. If you want them to fetch these from the net you can refer to the original PKGBUILDs.
 
@@ -92,7 +92,7 @@ sudo g15daemon && sleep 3 && g15stats
 
 And congratulations! you have a working G510 keyboard on Linux :) With a few issues of course (known issues are in the forum thread linked to at the start of this section)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Gaming_Keyboards&oldid=399630](https://wiki.archlinux.org/index.php?title=Logitech_Gaming_Keyboards&oldid=399630)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Gaming_Keyboards&oldid=412317](https://wiki.archlinux.org/index.php?title=Logitech_Gaming_Keyboards&oldid=412317)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

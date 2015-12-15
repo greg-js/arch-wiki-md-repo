@@ -17,18 +17,7 @@ It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). 
 
 ## Installation
 
-Ensure you do not have a manually downloaded copy of Adminer installed!
-
-[Install](/index.php/Install "Install") [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup>.
-
-Adminer will be installed as `/usr/share/webapps/adminer/index.php`.
-
-Don't forget to enable `mysqli.so` in your `/etc/php/php.ini` by uncommenting following line:
-
-```
- extension=mysqli.so
-
-```
+[Install](/index.php/Install "Install") [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> - Adminer will be installed as `/usr/share/webapps/adminer/index.php`. Ensure the correct extensions in `/etc/php/php.ini` are uncommenting, e.g. `extension=pdo_mysql.so` should provide [MySQL](/index.php/MySQL "MySQL") database management.
 
 **Warning:** As of PHP 5.5, `mysql.so` is [deprecated](http://www.php.net/manual/de/migration55.deprecated.php) and will fill up your log files with error messages. It is no longer available in PHP 7.0.
 
@@ -50,30 +39,13 @@ Then [restart](/index.php/Restart "Restart") your [apache](/index.php/Apache "Ap
 
 **Note:** The Adminer can be accessed by your browser on [http://localhost/adminer](http://localhost/adminer).
 
-In case there is an (403) error, change the following lines inside the `/etc/httpd/conf/extra/httpd-adminer.conf` file:
-
-```
-Alias /adminer "/usr/share/webapps/adminer"
-<Directory "/usr/share/webapps/adminer">
-     AllowOverride All
-     Require all granted
-     #php_admin_value open_basedir "/srv/:/tmp/:/usr/share/webapps/:/etc/webapps:/usr/share/pear/"
-</Directory>
-
-```
-
-Restart the [restart](/index.php/Restart "Restart") [apache](/index.php/Apache "Apache") daemon again.
-
-```
-# systemctl restart httpd
-
-```
+In case there is an (403) error, comment the `php_admin_value` line inside `/etc/httpd/conf/extra/httpd-adminer.conf`.
 
 ## Configuration under Nginx
 
 Ensure that the [php FastCGI interface](/index.php/Nginx#PHP_configuration "Nginx") is configured correct.
 
-Then ad the folwing `server` block to your `/etc/nginx/nginx.conf` or place it in a file under `/etc/nginx/servers-available/` and [enable](/index.php/Nginx#Managing_server_entries "Nginx") it.
+Then add the following `server` block to your `/etc/nginx/nginx.conf` or place it in a file under `/etc/nginx/servers-available/` and [enable](/index.php/Nginx#Managing_server_entries "Nginx") it.
 
 Afterwards restart the server with `systemctl restart nginx.service`.
 
@@ -94,14 +66,14 @@ server {
         location / {
                 index index.php;
                 try_files $uri $uri/ /index.php?$args;
-                }
+        }
 
-location ~ .php$ {
-        include fastcgi.conf;
-        #fastcgi_pass localhost:9000;
-        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME /usr/share/webapps/adminer$fastcgi_script_name;
+       location ~ .php$ {
+             include fastcgi.conf;
+             #fastcgi_pass localhost:9000;
+             fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+             fastcgi_index index.php;
+             fastcgi_param SCRIPT_FILENAME /usr/share/webapps/adminer$fastcgi_script_name;
         }
 }
 
@@ -112,7 +84,7 @@ location ~ .php$ {
 *   [Official Adminer webpage](http://www.adminer.org/en/)
 *   [Author's weblog](http://php.vrana.cz/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=412265](https://wiki.archlinux.org/index.php?title=Adminer&oldid=412265)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=412309](https://wiki.archlinux.org/index.php?title=Adminer&oldid=412309)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

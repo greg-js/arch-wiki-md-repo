@@ -14,7 +14,7 @@ Support for other sound servers is provided by [projectm-jack](https://www.archl
 
 ## Run
 
-Once everything is install just do the following from the command line:
+Once everything is installed just do the following from the command line:
 
 ```
 $ projectM-pulseaudio
@@ -54,7 +54,7 @@ Some information on usage and configuration can be found in the [ProjectM FAQ](h
 
 Otherwise a good place to ask question are the projectM [help forums on Sourceforge](http://sourceforge.net/projects/projectm/forums/forum/358774/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ProjectM&oldid=389813](https://wiki.archlinux.org/index.php?title=ProjectM&oldid=389813)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ProjectM&oldid=412295](https://wiki.archlinux.org/index.php?title=ProjectM&oldid=412295)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

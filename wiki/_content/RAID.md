@@ -299,6 +299,8 @@ When replacing a failed disk of a RAID, the new disk has to be exactly the same 
 
 ### Build the Array
 
+**Warning:** Kernel versions 4.2.x and 4.3.x currently have an active and bug that prevents them from assembling a RAID10 array; users needing this layout are encouraged to use kernel version 4.1.x series provided by [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) until this bug is fixed. References are provided in the [RAID#See_also](/index.php/RAID#See_also "RAID") section.
+
 Use `mdadm` to build the array. Several examples are given below.
 
 **Warning:** Do not simply copy/paste the examples below; use your brain and substitute the correct options/drive letters!
@@ -845,6 +847,11 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 *   [HowTo: Speed Up Linux Software Raid Building And Re-syncing](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html)
 *   [RAID5-Server to hold all your data](http://fomori.org/blog/?p=94)
 
+**Active bugs**
+
+*   [linux-raid ML #1](http://marc.info/?l=linux-raid&m=144960710718870&w=2)
+*   [linux-raid ML #2](http://marc.info/?l=linux-raid&m=144830809503689&w=2)
+
 **mdadm**
 
 *   [Debian mdadm FAQ](http://anonscm.debian.org/gitweb/?p=pkg-mdadm/mdadm.git;a=blob_plain;f=debian/FAQ;hb=HEAD)
@@ -862,7 +869,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 
 *   [Linux/Fedora: Encrypt /home and swap over RAID with dm-crypt](http://www.shimari.com/dm-crypt-on-raid/) by Justin Wells
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RAID&oldid=412254](https://wiki.archlinux.org/index.php?title=RAID&oldid=412254)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RAID&oldid=412293](https://wiki.archlinux.org/index.php?title=RAID&oldid=412293)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

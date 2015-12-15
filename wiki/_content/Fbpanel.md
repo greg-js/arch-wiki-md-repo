@@ -4,7 +4,7 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-fbpanel is a lightweight NETWM compliant desktop panel. This article describes the installation and configuration of fbpanel.
+[fbpanel](http://aanatoly.github.io/fbpanel/) is a lightweight NETWM compliant desktop panel. This article describes the installation and configuration of fbpanel.
 
 ## Contents
 
@@ -12,7 +12,6 @@ fbpanel is a lightweight NETWM compliant desktop panel. This article describes t
 *   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 wincmd plugin (show desktop button)](#wincmd_plugin_.28show_desktop_button.29)
-*   [4 See also](#See_also)
 
 ## Installing
 
@@ -54,11 +53,7 @@ Plugin {
 
 ```
 
-## See also
-
-*   [Official Website](http://fbpanel.sourceforge.net/)
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412075](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412075)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412301](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412301)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

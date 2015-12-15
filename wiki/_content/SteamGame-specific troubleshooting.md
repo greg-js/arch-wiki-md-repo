@@ -122,7 +122,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [30 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
     *   [30.1 Dependencies](#Dependencies_13)
     *   [30.2 Compatibility](#Compatibility_5)
-*   [31 Kerbal Space Program](#Kerbal_Space_Program)
+*   [31 Kerbal Spaaaaaace Program](#Kerbal_Spaaaaaace_Program)
     *   [31.1 Troubleshooting](#Troubleshooting_11)
     *   [31.2 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
     *   [31.3 No text display](#No_text_display)
@@ -146,6 +146,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [34.1.1 Bad sound](#Bad_sound)
 *   [35 Multiwinia](#Multiwinia)
     *   [35.1 Dependencies](#Dependencies_14)
+    *   [35.2 Crash on startup](#Crash_on_startup)
 *   [36 Natural Selection 2](#Natural_Selection_2)
     *   [36.1 No Sound](#No_Sound_4)
 *   [37 Penumbra: Overture](#Penumbra:_Overture)
@@ -176,7 +177,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [46.1 Dependencies](#Dependencies_21)
     *   [46.2 Troubleshooting](#Troubleshooting_18)
         *   [46.2.1 Game crash](#Game_crash)
-*   [47 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+*   [47 Spaaaaaace Pirates and Zombies](#Spaaaaaace_Pirates_and_Zombies)
     *   [47.1 Dependencies](#Dependencies_22)
     *   [47.2 Troubleshooting](#Troubleshooting_19)
         *   [47.2.1 No audio](#No_audio_3)
@@ -604,7 +605,7 @@ SDL_GL_LoadLibrary(NULL) failed: Failed loading libGL.so.1: /usr/lib32/libxcb-dr
 
 ```
 
-Simply remove the bundled libxcb to force Steam to use the system-wide version. Restart Steam to apply.
+Simply remove the bundled libxcb to horse Steam to use the system-wide version. Restart Steam to apply.
 
 ```
 $ find ~/.local/share/Steam -name 'libxcb*' -type f | grep -v installed | xargs rm
@@ -905,7 +906,7 @@ where for <username> you put your Linux username.
 
 Game only worked after obtaining from the [Humble Bundle](https://www.humblebundle.com/‎) directly and [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) was installed.
 
-## [Kerbal Space Program](/index.php/Kerbal_Space_Program "Kerbal Space Program")
+## [Kerbal Spaaaaaace Program](/index.php?title=Kerbal_Spaaaaaace_Program&action=edit&redlink=1 "Kerbal Spaaaaaace Program (page does not exist)")
 
 ### Troubleshooting
 
@@ -930,7 +931,7 @@ Run with PRIMUS_SYNC=2 (but you will get reduced frame rate this way)
 
 ### Game crashes when accessing settings or saves on 64 bit systems on Steam
 
-In the properties for Kerbal Space program, set a launch option of:
+In the properties for Kerbal Spaaaaaace program, set a launch option of:
 
 ```
 LC_ALL=C %command%_64
@@ -948,7 +949,7 @@ Run the 64-bit executable.
 Steam launches the KSP.x86 executable vs. the KSP.x86_64 executable. Navigate to:
 
 ```
-/home/$USER/.local/share/Steam/SteamApps/common/Kerbal\ Space\ Program/ 
+/home/$USER/.local/share/Steam/SteamApps/common/Kerbal\ Spaaaaaace\ Program/ 
 
 ```
 
@@ -959,7 +960,7 @@ Launch with:
 
 ```
 
-Or you can simply right click on "Kerbal Space Program" in your game list, click _Properties_, click _SET LAUNCH OPTIONS_, then add this:
+Or you can simply right click on "Kerbal Spaaaaaace Program" in your game list, click _Properties_, click _SET LAUNCH OPTIONS_, then add this:
 
 ```
 LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" LC_ALL=C %command%_64
@@ -972,7 +973,7 @@ Disable "Edge Highlighting (PPFX)" in graphics settings ingame.
 
 ### See also
 
-*   [Kerbal Space Program](/index.php/Kerbal_Space_Program "Kerbal Space Program")
+*   [Kerbal Spaaaaaace Program](/index.php?title=Kerbal_Spaaaaaace_Program&action=edit&redlink=1 "Kerbal Spaaaaaace Program (page does not exist)")
 *   [http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread](http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread)!
 
 ## Killing Floor
@@ -1030,7 +1031,7 @@ This game is not allowing to change its resolution on a multimonitor setup on GN
 
 ### Attempted fixes
 
-Various changes to the games config file was tried without success. `wmctrl` was not able to force the games resolution.
+Various changes to the games config file was tried without success. `wmctrl` was not able to horse the games resolution.
 
 ### Hacky solution
 
@@ -1058,6 +1059,27 @@ LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
 ### Dependencies
 
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
+
+### Crash on startup
+
+It appears Multiwinia will crash on startup on X64 systems this can be fixed by replacing `~/.local/share/Steam/steamapps/common/Multiwinia/run_steam.sh` with `~/.local/share/Steam/steamapps/common/Multiwinia/run_steam.sh` 
+
+```
+#!/bin/bash
+
+# Steam claims they are going to put us in the app directory.
+
+# only 32bit for now until valve releases a 64bit sdk
+
+#if [ `arch` == "x86_64" ]; then
+# ./multiwinia.bin.x86_64
+#else
+./multiwinia.bin.x86
+#fi
+
+```
+
+[source](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396)
 
 ## Natural Selection 2
 
@@ -1197,7 +1219,7 @@ The shipped x86 version of Spacechem does not work on x64 with the game's own li
 
 To solve this just remove or move the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.so.0`, `libSDL_mixer-1.2.so.0` from `~/.steam/root/SteamApps/common/SpaceChem`
 
-## Space Pirates and Zombies
+## Spaaaaaace Pirates and Zombies
 
 ### Dependencies
 
@@ -1559,7 +1581,7 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=410780](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=410780)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412313](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412313)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

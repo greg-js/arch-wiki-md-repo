@@ -42,7 +42,7 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
     *   [6.5 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
     *   [6.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
     *   [6.7 Correct the TERM variable according to terminal type](#Correct_the_TERM_variable_according_to_terminal_type)
-    *   [6.8 Changing the configuration with tmux started](#Changing_the_configuration_with_tmux_started)
+    *   [6.8 Reload an updated configuration without restarting tmux](#Reload_an_updated_configuration_without_restarting_tmux)
     *   [6.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
     *   [6.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
     *   [6.11 Automatic layouting](#Automatic_layouting)
@@ -729,7 +729,7 @@ if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
 fi
 ```
 
-### Changing the configuration with tmux started
+### Reload an updated configuration without restarting tmux
 
 By default tmux reads `~/.tmux.conf` only if it was not already running. To have tmux load a configuration file afterwards, execute:
 
@@ -813,7 +813,7 @@ See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configur
 *   [man page (OpenBSD)](http://www.openbsd.org/cgi-bin/man.cgi?query=tmux)
 *   [Tmux tutorial Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) and [Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=409931](https://wiki.archlinux.org/index.php?title=Tmux&oldid=409931)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=412311](https://wiki.archlinux.org/index.php?title=Tmux&oldid=412311)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

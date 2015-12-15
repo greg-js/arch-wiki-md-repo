@@ -4,14 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Need to update style to follow [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Weewx#](https://wiki.archlinux.org/index.php/Talk:Weewx))
-
 [Weewx](http://weewx.com/) is a free, open source, software program, written in Python, which interacts with your weather station to produce graphs, reports, and HTML pages.
 
 ## Contents
@@ -20,10 +12,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [1.1 Using Pacman to Install Prerequisites](#Using_Pacman_to_Install_Prerequisites)
     *   [1.2 Using PIP to Install Prerequisites](#Using_PIP_to_Install_Prerequisites)
 *   [2 Build and install](#Build_and_install)
-    *   [2.1 Getting graphs to work on Arch RaspberryPi](#Getting_graphs_to_work_on_Arch_RaspberryPi)
-    *   [2.2 Running Weewx with systemctl](#Running_Weewx_with_systemctl)
-        *   [2.2.1 As a Simple Service](#As_a_Simple_Service)
-        *   [2.2.2 As a Forking Service](#As_a_Forking_Service)
+*   [3 Running Weewx with systemd](#Running_Weewx_with_systemd)
+    *   [3.1 As a Simple Service](#As_a_Simple_Service)
+    *   [3.2 As a Forking Service](#As_a_Forking_Service)
+*   [4 Getting graphs to work on Arch RaspberryPi](#Getting_graphs_to_work_on_Arch_RaspberryPi)
 
 ## Prerequisites
 
@@ -75,7 +67,7 @@ sudo python2 ./setup.py install
 
 ```
 
-You will also need PyUSB. I could not find a package for Arch, but it is easy enough to install from [sourceforge.net/projects/pyusb](http://sourceforge.net/projects/pyusb/files/). Make sure you get the 1.0 version, not the legacy 0.4\. It uses setup.py, and installation instructions are included with the tarball. If you have installed [python2-pip](https://www.archlinux.org/packages/?name=python2-pip) you can use pip to download, build and install pyusb as follows:
+You will also need PyUSB. I could not find a package for Arch, but it is easy enough to install from [https://walac.github.io/pyusb/](https://walac.github.io/pyusb/) . It uses setup.py, and installation instructions are included with the tarball. If you have installed [python2-pip](https://www.archlinux.org/packages/?name=python2-pip) you can use pip to download, build and install pyusb as follows:
 
 ```
 sudo pip2 install pyusb
@@ -103,7 +95,7 @@ sudo chmod -R g+w /home/weewx
 
 In retrospect it might have been easier just to chown all the files to myself, since I ended up running the weewx daemon as me. You could also create a weewx user to own the files and run the daemon, which would be the more "unixy" way.
 
-After this it was just a matter of following the configuration instructions from the weewx docs, then running the daemon. You could make a service for it but I just run it in a [tmux](/index.php/Tmux "Tmux") window.
+After this it was just a matter of following the configuration instructions from the weewx docs, then running the daemon. Test the installation by running it in a terminal:
 
 ```
 cd /home/weewx
@@ -111,17 +103,9 @@ cd /home/weewx
 
 ```
 
-### Getting graphs to work on Arch RaspberryPi
+## Running Weewx with systemd
 
-To get the graphs to work on the RaspberryPI (arm6) you will need to compile your own version of PIL (not pillow) and have the truetype2 headers installed. For some reason the pillow version in the arch arm6 repository is compiled without truetype fonts.
-
-To install PIL download the source from here: [http://www.pythonware.com/products/pil/](http://www.pythonware.com/products/pil/)
-
-Then, after installing the arch developer tools: `pacman -S base-devel` Install the freetype2 tools: `pacman -S freetype2` You will then need to symbolic link the freetype2 directory to freetype because the PIL build looks for the freetype header files in the freetype directoy not in freetype2.: `ln -s /usr/include/freetype2 /usr/include/freetype` THEN you can build and install PIL from your build directory: `./setup.py install` 
-
-### Running Weewx with systemctl
-
-#### As a Simple Service
+### As a Simple Service
 
 Create a new file /etc/systemd/system/weewx.service containing:
 
@@ -143,7 +127,7 @@ This file is meant for the RaspberryPi - because the RPi has no system clock, sy
 
  `systemctl start weewx` 
 
-#### As a Forking Service
+### As a Forking Service
 
 **Note:** Change the _After_ condition to match your setup, i.e., ntpd.service or ntpdate.service, etc.
 
@@ -167,7 +151,15 @@ WantedBy=multi-user.target
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Weewx&oldid=400321](https://wiki.archlinux.org/index.php?title=Weewx&oldid=400321)"
+## Getting graphs to work on Arch RaspberryPi
+
+To get the graphs to work on the RaspberryPI (arm6) you will need to compile your own version of PIL (not pillow) and have the truetype2 headers installed. For some reason the pillow version in the arch arm6 repository is compiled without truetype fonts.
+
+To install PIL download the source from here: [http://www.pythonware.com/products/pil/](http://www.pythonware.com/products/pil/)
+
+Then, after installing the arch developer tools: `pacman -S base-devel` Install the freetype2 tools: `pacman -S freetype2` You will then need to symbolic link the freetype2 directory to freetype because the PIL build looks for the freetype header files in the freetype directoy not in freetype2.: `ln -s /usr/include/freetype2 /usr/include/freetype` THEN you can build and install PIL from your build directory: `./setup.py install` 
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Weewx&oldid=412306](https://wiki.archlinux.org/index.php?title=Weewx&oldid=412306)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

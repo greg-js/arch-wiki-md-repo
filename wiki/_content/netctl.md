@@ -43,6 +43,7 @@ Related articles
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
     *   [5.4 Connection timeout issues](#Connection_timeout_issues)
     *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
+    *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -706,6 +707,19 @@ WantedBy=suspend.target
 
 To [enable](/index.php/Enable "Enable") this service for your wireless card, for example, enable `netctl-auto-resume@wlan0.service` as root. Change `wlan0` to the required network interface.
 
+### netctl-auto suddenly stopped working for WiFi adapters
+
+This problem seems to be related to a recent wpa_supplicant update (see [https://bugs.archlinux.org/task/44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
+
+ `/etc/netctl/interfaces/wlp3s0` 
+
+```
+WPAOptions="-m ''"
+
+```
+
+After that, try to restart your netctl-auto service and WiFi auto detection should work well again.
+
 ## See also
 
 *   [Initial mailing list announcement](https://lists.archlinux.org/pipermail/arch-projects/2012-December/003473.html)
@@ -713,7 +727,7 @@ To [enable](/index.php/Enable "Enable") this service for your wireless card, for
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=408351](https://wiki.archlinux.org/index.php?title=Netctl&oldid=408351)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=412294](https://wiki.archlinux.org/index.php?title=Netctl&oldid=412294)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

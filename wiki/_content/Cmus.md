@@ -9,22 +9,22 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Using cmus with alsa](#Using_cmus_with_alsa)
-*   [3 Usage](#Usage)
-    *   [3.1 Starting Cmus](#Starting_Cmus)
-    *   [3.2 Adding Music](#Adding_Music)
-    *   [3.3 Playing Tracks](#Playing_Tracks)
-    *   [3.4 Keybindings](#Keybindings)
-    *   [3.5 Remote Control](#Remote_Control)
-*   [4 Tabs](#Tabs)
-    *   [4.1 Library tab (1)](#Library_tab_.281.29)
-    *   [4.2 Sorted library tab (2)](#Sorted_library_tab_.282.29)
-    *   [4.3 Playlist tab (3)](#Playlist_tab_.283.29)
-    *   [4.4 Play Queue tab (4)](#Play_Queue_tab_.284.29)
-    *   [4.5 Browser (5)](#Browser_.285.29)
-    *   [4.6 Filters tab (6)](#Filters_tab_.286.29)
-    *   [4.7 Settings tab (7)](#Settings_tab_.287.29)
+    *   [1.1 Using cmus with alsa](#Using_cmus_with_alsa)
+*   [2 Usage](#Usage)
+    *   [2.1 Starting Cmus](#Starting_Cmus)
+    *   [2.2 Adding Music](#Adding_Music)
+    *   [2.3 Playing Tracks](#Playing_Tracks)
+    *   [2.4 Keybindings](#Keybindings)
+*   [3 Tabs](#Tabs)
+    *   [3.1 Library tab (1)](#Library_tab_.281.29)
+    *   [3.2 Sorted library tab (2)](#Sorted_library_tab_.282.29)
+    *   [3.3 Playlist tab (3)](#Playlist_tab_.283.29)
+    *   [3.4 Play Queue tab (4)](#Play_Queue_tab_.284.29)
+    *   [3.5 Browser (5)](#Browser_.285.29)
+    *   [3.6 Filters tab (6)](#Filters_tab_.286.29)
+    *   [3.7 Settings tab (7)](#Settings_tab_.287.29)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Remote Control](#Remote_Control)
 *   [5 Links](#Links)
 
 # Installation
@@ -33,13 +33,18 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Alternatively, there is also a development version available in the [AUR](/index.php/AUR "AUR") called [cmus-git](https://aur.archlinux.org/packages/cmus-git/)<sup><small>AUR</small></sup>.
 
-# Configuration
-
-To configure cmus start it and switch to the configuration tab by pressing `7`. Now you can see a list of default keybindings. Select a field in the list with the arrow keys and press`Enter` to edit the values. You can also remove bindings with `D` or `del`. To edit unbound commands and option variables scroll down in the list to the relevant section. Variables can also be toggled instead of edited with `space`. Cmus allows changing the color of nearly every interface element. You can prefix colors with "light" to make them appear brighter and set attributes for some text elements.
-
 ## Using cmus with alsa
 
-When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. To fix it change three variables, set `dsp.alsa.device` to `default` , set `mixer.alsa.channel` to `Master`, set `mixer.alsa.device` to `default` and set `output_plugin` to `alsa`.
+When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. What you might encounter when when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
+
+ `~/.config/cmus/rc` 
+
+```
+set output_plugin=alsa
+set dsp.alsa.device=default
+set mixer.alsa.device=default
+set mixer.alsa.channel=Master
+```
 
 # Usage
 
@@ -75,7 +80,7 @@ To add music to your cmus library, use the arrow keys to highlight a file or fol
 
 ## Playing Tracks
 
-Press `1` to go to the simple library view. Use the `up` and `down` arrow keys (or `k`, `j`) to select a track you'd like to hear, and press `Enter` to play it. Here's some keys to control play:
+Press `1` to go to the simple library view. Use the `up` and `down` arrow keys (or `k`, `j`) to select an artist and album you would like to hear. Pressing `space` on the artist name will collapse or expand the albums it contains. Switch between list of tracks and artist/album view by pressing `Tab` and press `Enter` to play the selected track. Here's some keys to control the playback:
 
 Press `c` to pause/unpause
 
@@ -86,6 +91,42 @@ Press `<`/`>` seek by one minute
 ## Keybindings
 
 See the configuration section on how to change keybindings.
+
+# Tabs
+
+There are 7 tabs in cmus. Press keys `1`-`7` to change active tab.
+
+## Library tab (1)
+
+Display all tracks in so-called **library**. Tracks are sorted artist/album tree. Artist sorting is done alphabetically. Albums are sorted by year.
+
+## Sorted library tab (2)
+
+Displays same content as view, but as a simple list which is automatically sorted by user criteria.
+
+## Playlist tab (3)
+
+Displays editable playlist with optional sorting.
+
+## Play Queue tab (4)
+
+Displays queue of tracks which are played next. These tracks are played before anything else (i.e. the playlist or library).
+
+## Browser (5)
+
+Directory browser. In this tab, music can be added to either the library, playlist or queue from the filesystem.
+
+## Filters tab (6)
+
+Lists user defined filters.
+
+## Settings tab (7)
+
+Change settings. See configuration for further information.
+
+# Configuration
+
+To configure cmus start it and switch to the configuration tab by pressing `7`. Now you can see a list of default keybindings. Select a field in the list with the arrow keys and press`Enter` to edit the values. You can also remove bindings with `D` or `del`. To edit unbound commands and option variables scroll down in the list to the relevant section. Variables can also be toggled instead of edited with `space`. Cmus allows changing the color of nearly every interface element. You can prefix colors with "light" to make them appear brighter and set attributes for some text elements.
 
 ## Remote Control
 
@@ -134,44 +175,12 @@ To use the previous script in [Openbox](/index.php/Openbox "Openbox"), copy the 
 
 Now when you use the `XF86AudioPlay` key on your keyboard, cmus will open up. If it's opened already it will then start playing. Using the XF86AudioNext and XF86AudioPrev keys will change tracks.
 
-# Tabs
-
-There are 7 tabs in cmus. Press keys `1`-`7` to change active tab.
-
-## Library tab (1)
-
-Display all tracks in so-called **library**. Tracks are sorted artist/album tree. Artist sorting is done alphabetically. Albums are sorted by year.
-
-## Sorted library tab (2)
-
-Displays same content as view, but as a simple list which is automatically sorted by user criteria.
-
-## Playlist tab (3)
-
-Displays editable playlist with optional sorting.
-
-## Play Queue tab (4)
-
-Displays queue of tracks which are played next. These tracks are played before anything else (i.e. the playlist or library).
-
-## Browser (5)
-
-Directory browser. In this tab, music can be added to either the library, playlist or queue from the filesystem.
-
-## Filters tab (6)
-
-Lists user defined filters.
-
-## Settings tab (7)
-
-Change settings. See configuration for further information.
-
 # Links
 
 1.  [Git Repository](https://github.com/cmus/cmus)
 2.  [Website](https://cmus.github.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=412054](https://wiki.archlinux.org/index.php?title=Cmus&oldid=412054)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=412314](https://wiki.archlinux.org/index.php?title=Cmus&oldid=412314)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
