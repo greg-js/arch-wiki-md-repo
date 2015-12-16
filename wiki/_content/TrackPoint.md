@@ -28,14 +28,19 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but mi
 
 For those using the `evdev` driver, middle-button scrolling is supported via the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package, with the following sane config:
 
- `~/.xinitrc` 
+ `~/.xprofile` 
 
 ```
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
-xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
+#get the device ID for the trackpad. We know it contains the string "TPPS"
+ibm_trackpad_id=$(xinput | grep 'TPPS' | cut -d"=" -f2 | cut -f1)
+echo $ibm_trackpad_id > ~/temp/ibm_trackpad_id
+
+#set desired params for trackpoint
+xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation" 1
+xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation Button" 2
+xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation Timeout" 200
+xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation Axes" 6 7 5 4
+xinput set-prop $ibm_trackpad_id "Device Accel Constant Deceleration" 0.35
 
 ```
 
@@ -90,8 +95,9 @@ EndSection
 
 *   [How to configure the TrackPoint - ThinkWiki](http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint)
 *   [Trackpoint speed](https://gist.githubusercontent.com/noromanba/11261595/raw/478cf4c4d9b63f1e59364a6f427ffccd63db5e1e/thinkpad-trackpoint-speed.mkd)
+*   [What is the best way to configure a Thinkpad's TrackPoint?](https://askubuntu.com/questions/37824/what-is-the-best-way-to-configure-a-thinkpads-trackpoint/553926)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=409777](https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=409777)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412521](https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412521)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

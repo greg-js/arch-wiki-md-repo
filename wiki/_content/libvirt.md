@@ -8,11 +8,7 @@ Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 
-From [libvirt: The virtualization API](http://wiki.libvirt.org/page/FAQ#Libvirt_FAQ):
-
-Libvirt is collection of software that provides a convenient way to manage virtual machines and other virtualization functionality, such as storage and network interface management. These software pieces include an API library, a daemon (libvirtd), and a command line utility (virsh).
-
-A primary goal of libvirt is to provide a single way to manage multiple different virtualization providers/hypervisors.
+Libvirt is collection of software that provides a convenient way to manage virtual machines and other virtualization functionality, such as storage and network interface management. These software pieces include a long term stable C API, a daemon (libvirtd), and a command line utility (virsh). A primary goal of libvirt is to provide a single way to manage multiple different virtualization providers/hypervisors, such as the [KVM/QEMU](/index.php/QEMU "QEMU"), [Xen](/index.php/Xen "Xen"), [LXC](/index.php/LXC "LXC"), [OpenVZ](http://openvz.org) or [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") ([among others](http://libvirt.org/drivers.html)).
 
 Some of the major libvirt features are:
 
@@ -21,10 +17,6 @@ Some of the major libvirt features are:
 *   **Storage management**: Any host running the libvirt daemon can be used to manage various types of storage: create file images of various formats (qcow2, vmdk, raw, ...), mount NFS shares, enumerate existing LVM volume groups, create new LVM volume groups and logical volumes, partition raw disk devices, mount iSCSI shares, and much more.
 *   **Network interface management**: Any host running the libvirt daemon can be used to manage physical and logical network interfaces. Enumerate existing interfaces, as well as configure (and create) interfaces, bridges, vlans, and bond devices.
 *   **Virtual NAT and Route based networking**: Any host running the libvirt daemon can manage and create virtual networks. Libvirt virtual networks use firewall rules to act as a router, providing VMs transparent access to the host machines network.
-
-libvirt provides a unified abstraction layer for the local and remote management of multiple [virtualization](/index.php/Category:Hypervisors "Category:Hypervisors") backends, such as the [KVM/QEMU](/index.php/QEMU "QEMU"), [Xen](/index.php/Xen "Xen"), [LXC](/index.php/LXC "LXC"), [OpenVZ](http://openvz.org) or [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") ([among others](http://libvirt.org/drivers.html)).
-
-By offering a long term stable C API, it allows [a wide variety of tools](http://libvirt.org/apps.html) to be used to manage the various virtualization engines by connecting to its daemon _libvirtd_, while offering its own default client called _virsh_.
 
 ## Contents
 
@@ -59,7 +51,7 @@ By offering a long term stable C API, it allows [a wide variety of tools](http:/
 
 ## Installation
 
-Because of its daemon/client architecture, _libvirt_ needs only be installed on the machine _which will host the virtualized system_. Note that the server and client can be the same physical machine.
+Because of its daemon/client architecture, libvirt needs only be installed on the machine which will host the virtualized system. Note that the server and client can be the same physical machine.
 
 ### Server
 
@@ -104,7 +96,7 @@ For _**system**_-level administration (i.e. global settings and image-_volume_ l
 
 From [libvirt: Connection authentication](http://libvirt.org/auth.html#ACL_server_config):
 
-_The_ libvirt _daemon allows the administrator to choose the authentication mechanisms used for client connections on each network socket independently. This is primarily controlled via the libvirt daemon master config file in `/etc/libvirt/libvirtd.conf`. Each of the libvirt sockets can have its authentication mechanism configured independently. There is currently a choice of `none`, `polkit` and `sasl`._
+The libvirt daemon allows the administrator to choose the authentication mechanisms used for client connections on each network socket independently. This is primarily controlled via the libvirt daemon master config file in `/etc/libvirt/libvirtd.conf`. Each of the libvirt sockets can have its authentication mechanism configured independently. There is currently a choice of `none`, `polkit` and `sasl`.
 
 Because [libvirt](https://www.archlinux.org/packages/?name=libvirt) pulls [polkit](https://www.archlinux.org/packages/?name=polkit) as a dependency during installation, [polkit](#Using_polkit) is used as the default value for the `unix_sock_auth` parameter ([source](http://libvirt.org/auth.html#ACL_server_polkit)). [File-based permissions](#Authenticate_with_file-based_permissions) remain nevertheless available.
 
@@ -185,7 +177,7 @@ It is also necessary to start the server in listening mode by editing `/etc/conf
 
 ## Test
 
-To test if the daemon is working properly on a _system_ level:
+To test if libvirt is working properly on a _system_ level:
 
 ```
 $ virsh -c qemu:///system
@@ -201,7 +193,7 @@ $ virsh -c qemu:///session
 
 ## Management
 
-Libvirt management is done mostly with three tools: one GUI [virt-manager](https://www.archlinux.org/packages/?name=virt-manager); and two command line tools: `virsh`, and `guestfish` (part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)<sup><small>AUR</small></sup>).
+Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)<sup><small>AUR</small></sup>).
 
 ### virsh
 
@@ -311,9 +303,9 @@ Then you can use this image as the base for your new domain and it will use the 
 
 ### Domains
 
-To libvirt what some term as virtual machines, it calls _domains_. If working from the command line, `virsh` can be used to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
+Virtual machines are called _domains_. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
 
-To create a new domain, installation media is typically used, loaded after the domain creation process. An `.iso` can be referenced to from the storage pool, or an optical drive can be referenced to.
+Creating a new domain typically involves using some installation media, such as an `.iso` from the storage pool or an optical drive.
 
 Print active and inactive domains:
 
@@ -426,7 +418,7 @@ Shutdown domain on host shutdown:
 
 Running domains can be automatically suspended/shutdown at host shutdown using the `libvirt-guests.service` systemd service. This same service will resume/startup the suspended/shutdown domain automatically at host startup. Read `/etc/conf.d/libvirt-guests` for service options.
 
-Edit a domains configuration:
+Edit a domain's XML configuration:
 
 ```
 $ virsh edit _domain_
@@ -437,9 +429,9 @@ $ virsh edit _domain_
 
 ### Networks
 
-By default, when the `libvird` systemd service is started, a NAT bridge is created called _default_ to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)).
+A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
 
-For other network connectivity needs, four network types exist that can be created to connect a domain to:
+By default, when the `libvird` systemd service is started, a NAT bridge is created called _default_ to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
 
 *   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has _static_ networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficing, and the domain is running on a _system_-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
 *   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has _dynamic_ networking (e.g. NetworkManager), or using wireless.
@@ -447,8 +439,6 @@ For other network connectivity needs, four network types exist that can be creat
 *   user — local ability networking. Use this only for a user _session_.
 
 `virsh` has the ability to create networking with numerous options for most users, however, it is easier to create network connectivity with a graphic user interface (like `virt-manager`), or to do so on [creation with virt-install](#Create_a_new_domain_using_virt-install).
-
-A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
 
 **Note:** libvirt handles DHCP and DNS with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), launching a separate instance for every virtual network. It also adds iptables rules for proper routing, and enables the `ip_forward` kernel parameter.
 
@@ -599,8 +589,9 @@ if (__name__ == "__main__"):
 *   [Red Hat Virtualization Tuning and Optimization Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Tuning_and_Optimization_Guide/index.html)
 *   [Slackware KVM and libvirt](http://docs.slackware.com/howtos:general_admin:kvm_libvirt)
 *   [IBM KVM](http://www-01.ibm.com/support/knowledgecenter/linuxonibm/liaat/liaatkvm.htm)
+*   [libvirt Networking Handbook](https://jamielinux.com/docs/libvirt-networking-handbook/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412365](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412365)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412510](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412510)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

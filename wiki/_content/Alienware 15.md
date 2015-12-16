@@ -210,7 +210,7 @@ to
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Alienware_15&oldid=404719](https://wiki.archlinux.org/index.php?title=Alienware_15&oldid=404719)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Alienware_15&oldid=412507](https://wiki.archlinux.org/index.php?title=Alienware_15&oldid=412507)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

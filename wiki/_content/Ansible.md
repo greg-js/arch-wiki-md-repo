@@ -20,7 +20,7 @@ Since Arch Linux defaults to Python 3, you need to tell Ansible where to find Py
 
 More information about this is available in [[1]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[2]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ansible&oldid=378695](https://wiki.archlinux.org/index.php?title=Ansible&oldid=378695)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ansible&oldid=412506](https://wiki.archlinux.org/index.php?title=Ansible&oldid=412506)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

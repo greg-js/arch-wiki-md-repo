@@ -549,7 +549,7 @@ If you prefer using a [Window manager](/index.php/Window_manager "Window manager
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=408956](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=408956)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=412514](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=412514)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

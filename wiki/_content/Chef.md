@@ -127,7 +127,7 @@ Next, install the Chef RubyGem:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chef&oldid=412051](https://wiki.archlinux.org/index.php?title=Chef&oldid=412051)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chef&oldid=412525](https://wiki.archlinux.org/index.php?title=Chef&oldid=412525)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

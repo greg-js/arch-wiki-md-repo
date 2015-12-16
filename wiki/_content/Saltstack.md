@@ -120,7 +120,7 @@ for more commands see documentation or run:
 
 *   [http://docs.saltstack.com/](http://docs.saltstack.com/) - Official documentation
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Saltstack&oldid=406906](https://wiki.archlinux.org/index.php?title=Saltstack&oldid=406906)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Saltstack&oldid=412505](https://wiki.archlinux.org/index.php?title=Saltstack&oldid=412505)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

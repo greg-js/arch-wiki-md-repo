@@ -114,7 +114,7 @@ load-module module-alsa-sink device=hw:0,0
 
 ```
 
-Determine the correct index of the new source:
+Determine the name of the new source, which has a * in front of index:
 
  `$ pacmd list-sinks | grep -e 'name:' -e 'index'` 
 
@@ -129,7 +129,7 @@ Determine the correct index of the new source:
 For setting it as default in the `/etc/pulse/default.pa` you can use
 
 ```
-set-default-sink 0
+set-default-sink alsa_output.pci-0000_04_01.0.analog-stereo
 
 ```
 
@@ -139,6 +139,7 @@ When done then you can logout/login or restart PulseAudio manually for these cha
 
 *   The index number corresponds to the 'alsa_output.hw_0_0' sink.
 *   The sinks that are set as default are marked with ***** in front of index.
+*   The numbering of sinks cannot be guaranteed repeatable, hence the use of the name with `set-default-sink`.
 *   You can use the index number to manage sound volume:
 
 ```
@@ -809,7 +810,7 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=411770](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=411770)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412526](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412526)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

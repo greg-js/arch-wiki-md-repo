@@ -37,11 +37,11 @@ LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,My
 ## 安装
 
 ```
-# pacman -S apache php php-apache mysql
+# pacman -S apache php php-apache mariadb
 
 ```
 
-你可以只单独安装Apache，PHP或者MySQL，也可以安装所有包。这个文档假设你安装全部，当然你可以忽略任何部分。
+你可以只单独安装Apache，PHP或者mariadb(MySQL)，也可以安装所有包。这个文档假设你安装全部，当然你可以忽略任何部分。
 
 **注意:** 新默认用户和用户组: 取代了原先的用户组group "nobody" ,现在默认以user/group "http" 来运行Apache。根据这个变化，需要调整httpd.conf，虽然仍然能够用nobody来运行httpd。
 
@@ -566,7 +566,7 @@ cgi.fix_pathinfo=1
 *   [生成ssh_test_certificate的教程](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache故障排除Wiki](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server_(简体中文)&oldid=411410](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server_(简体中文)&oldid=411410)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server_(简体中文)&oldid=412520](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server_(简体中文)&oldid=412520)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
