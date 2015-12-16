@@ -287,7 +287,7 @@ The laptop folds fully into a tablet. Out of the box, the keyboard is automatica
 
 There is also a Windows button by the screen, however key down events are only reported when the button is released (in tandem with the key release event).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Yoga_2_11&oldid=376892](https://wiki.archlinux.org/index.php?title=Lenovo_Yoga_2_11&oldid=376892)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Yoga_2_11&oldid=412582](https://wiki.archlinux.org/index.php?title=Lenovo_Yoga_2_11&oldid=412582)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

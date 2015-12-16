@@ -23,7 +23,6 @@ This article was written to assist you with getting archlinux run on the Lenovo 
     *   [2.9 Fingerprint scanner](#Fingerprint_scanner)
     *   [2.10 Suspend](#Suspend)
     *   [2.11 Power consumption](#Power_consumption)
-        *   [2.11.1 Automatic brightness control](#Automatic_brightness_control)
 
 ## Prerequisites
 
@@ -113,29 +112,7 @@ Works flawlessly with with [pm-utils](https://www.archlinux.org/packages/?name=p
 
 With [cpupower](https://www.archlinux.org/packages/?name=cpupower), [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup> and [acpid](https://www.archlinux.org/packages/?name=acpid) installed and graphics switched to intel gpu, I get over 9 hours battery life.
 
-#### Automatic brightness control
-
-If you want to change the brightness on ac-adaper plug-on/off, add the following in /etc/acpi/handler.sh:
-
-```
- ac_adapter)
-     case "$2" in
-         AC|ACAD|ADP0|ACPI0003:00)
-             case "$4" in
-                 00000000)
-                     logger 'AC unpluged'
-                     echo "20" > /sys/class/backlight/acpi_video0/brightness
-                     ;;
-                 00000001)
-                     logger 'AC pluged'
-                     echo "50" > /sys/class/backlight/acpi_video0/brightness
-                     ;;
-             esac
-             ;;
-
-```
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=393528](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=393528)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=412556](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=412556)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

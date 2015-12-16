@@ -24,7 +24,6 @@ Related articles
     *   [1.6 Microphone](#Microphone)
 *   [2 Power Saving](#Power_Saving)
     *   [2.1 TLP](#TLP)
-    *   [2.2 Example results](#Example_results)
 *   [3 Not Working](#Not_Working)
 *   [4 See also](#See_also)
 
@@ -194,74 +193,6 @@ STOP_CHARGE_THRESH_BAT0=100
 
 ```
 
-### Example results
-
-This section is intended to share average power use of the X230 with different system configurations. Average power use was estimated with the discharge rate reported by [Powertop](/index.php/Powertop "Powertop"). Please include links to your configuration files.
-
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Model</th>
-
-<th>DE/WM</th>
-
-<th>[Power management](/index.php/Power_management "Power management")</th>
-
-<th>GRUB Parameters</th>
-
-<th>Discharge rate (Watt)</th>
-
-</tr>
-
-<tr>
-
-<td>X230</td>
-
-<td>Pantheon (elementary OS)</td>
-
-<td>[TLP](/index.php/TLP "TLP") [(config)](https://gist.github.com/orschiro/7dcb6079091fd413a272#file-tlp)</td>
-
-<td>none</td>
-
-<td>9.27</td>
-
-</tr>
-
-<tr>
-
-<td>X230</td>
-
-<td>[MATE](/index.php/MATE "MATE")</td>
-
-<td>[TLP](/index.php/TLP "TLP")</td>
-
-<td>none</td>
-
-<td>12</td>
-
-</tr>
-
-<tr>
-
-<td>X230</td>
-
-<td>[GNOME](/index.php/GNOME "GNOME")</td>
-
-<td>`powertop --auto-tune`</td>
-
-<td>acpi_osi="!Windows 2012"</td>
-
-<td>12</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
 ## Not Working
 
 *   Microphone on-off key does not work out of the box
@@ -270,7 +201,7 @@ This section is intended to share average power use of the X230 with different s
 
 *   [A Hacker's Ongoing Review for Lenovo ThinkPad X230](https://gist.github.com/bassu/8478346)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X230&oldid=402894](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X230&oldid=402894)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X230&oldid=412581](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X230&oldid=412581)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

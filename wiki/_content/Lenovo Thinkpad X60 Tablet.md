@@ -24,25 +24,15 @@ Installation instructions for the Lenovo Thinkpad X60 Tablet.
 *   [1 Pre installation notes](#Pre_installation_notes)
 *   [2 Accessing the recovery partition with GRUB](#Accessing_the_recovery_partition_with_GRUB)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Sound](#Sound)
-    *   [3.2 Ethernet](#Ethernet)
-    *   [3.3 WiFi](#WiFi)
-    *   [3.4 Firewire](#Firewire)
-    *   [3.5 USB](#USB)
-    *   [3.6 Bluetooth](#Bluetooth)
-    *   [3.7 SD-card reader](#SD-card_reader)
-    *   [3.8 Graphics card](#Graphics_card)
-    *   [3.9 Stylus](#Stylus)
-    *   [3.10 Automatic rotation](#Automatic_rotation)
-        *   [3.10.1 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_.28wheel_emulation.29)
-    *   [3.11 ThinkFinger](#ThinkFinger)
-    *   [3.12 Backlight](#Backlight)
-*   [4 Hardware info](#Hardware_info)
-    *   [4.1 Specifications](#Specifications)
-    *   [4.2 lspci](#lspci)
-    *   [4.3 lsusb](#lsusb)
+    *   [3.1 Graphics card](#Graphics_card)
+    *   [3.2 Stylus](#Stylus)
+    *   [3.3 Automatic rotation](#Automatic_rotation)
+    *   [3.4 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_.28wheel_emulation.29)
+*   [4 ThinkFinger](#ThinkFinger)
+*   [5 Backlight](#Backlight)
+*   [6 Specifications](#Specifications)
 
-# Pre installation notes
+## Pre installation notes
 
 Remember to back up the restore partition if you plan to restore to Microsoft Windows, or even leave it.
 
@@ -50,7 +40,7 @@ As the laptop does not have a built-in CD/DVD drive you might have to use a USB 
 
 Follow the [Installation guide](/index.php/Installation_guide "Installation guide")
 
-# Accessing the recovery partition with GRUB
+## Accessing the recovery partition with GRUB
 
 Edit your **/boot/grub/menu.lst** file and add the following:
 
@@ -63,77 +53,13 @@ chainloader +1
 
 ```
 
-# Configuration
+## Configuration
 
-## Sound
-
-Sound works out of the box. All modules are loaded upon boot.
-
-Refer to following guides to set it up:
-
-[OSS](/index.php/OSS "OSS")
-
-[ALSA](/index.php/ALSA "ALSA")
-
-[PulseAudio](/index.php/PulseAudio "PulseAudio")
-
-There might be others. Personally I use ALSA and Pulseaudio, but some say that OSS has better sound, try for yourself.
-
-## Ethernet
-
-Works out of the box.
-
-Modules used:
-
-*   e1000e
-
-## WiFi
-
-Works out of the box, no extra firmware needs to be installed. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
-
-## Firewire
-
-Works out of the box.
-
-## USB
-
-Works out of the box.
-
-Following modules are used:
-
-*   uhci_hcd
-*   ehci_hcd
-*   usbhid
-
-## Bluetooth
-
-Works out of the box.
-
-Following modules are used:
-
-*   bluetooth
-*   btusb
-*   l2cap
-*   rfcomm
-*   hci_usb
-*   ehci-hcd
-*   uhci-hcd
-
-## SD-card reader
-
-Works out of the box.
-
-Following modules are used:
-
-*   usb-storage
-*   sdhci
-*   sdhci_pci
-
-## Graphics card
+### Graphics card
 
 See [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 
-## Stylus
+### Stylus
 
 You can get the stylus to work by installing [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom).
 
@@ -196,26 +122,9 @@ EndSection
 
 ```
 
-## Automatic rotation
+### Automatic rotation
 
-Refer to [Acpid](/index.php/Acpid "Acpid") on how to edit **handler.sh**.
-
-I've written a set of small scripts to help rotating the screen if the screen is swiveled down, up and when the rotate button is pressed.
-
-Automatic rotation needs acpi daemon in order to work. Install it:
-
-```
-pacman -S acpid
-
-```
-
-Now use systemd to start the daemon and enable it to be automatically loaded at boot.
-
-```
-# systemctl start acpid
-# systemctl enable acpid
-
-```
+Refer to [acpid](/index.php/Acpid "Acpid") on how to edit **handler.sh**.
 
 Now you should be able to grab events with **acpi_listen**. My tablet creates the following events when swivelling it down:
 
@@ -395,29 +304,7 @@ You might also want to take a look at [this rotate script](http://luke.no-ip.org
 
 ### TrackPoint scrolling (wheel emulation)
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo Thinkpad X60 Tablet#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Thinkpad_X60_Tablet))
-
-To enable scrolling with the TrackPoint while holding down the middle mouse button, create a new file /etc/X11/xorg.conf.d/20-thinkpad.conf with the following content:
-
-```
-Section "InputClass"
-    Identifier	"Trackpoint Wheel Emulation"
-    MatchProduct	"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB Trackpoint pointing device"
-    MatchDevicePath	"/dev/input/event*"
-    Option		"EmulateWheel"		"true"
-    Option		"EmulateWheelButton"	"2"
-    Option		"Emulate3Buttons"	"false"
-    Option		"XAxisMapping"		"6 7"
-    Option		"YAxisMapping"		"4 5"
-EndSection
-
-```
+See [TrackPoint](/index.php/TrackPoint "TrackPoint")
 
 ## ThinkFinger
 
@@ -491,13 +378,11 @@ Restart acpid:
 
 ```
 
-# Hardware info
-
 ## Specifications
 
 Specifications can be found here [on ThinkWiki](http://www.thinkwiki.org/wiki/Category:X60_Tablet)
 
-## lspci
+lspci
 
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
@@ -526,7 +411,7 @@ Specifications can be found here [on ThinkWiki](http://www.thinkwiki.org/wiki/Ca
 
 ```
 
-## lsusb
+lsusb
 
 ```
 Bus 005 Device 003: ID 0a5c:2110 Broadcom Corp. 
@@ -539,7 +424,7 @@ Bus 001 Device 001: ID 1d6b:0002
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_X60_Tablet&oldid=376485](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_X60_Tablet&oldid=376485)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_X60_Tablet&oldid=412583](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_X60_Tablet&oldid=412583)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

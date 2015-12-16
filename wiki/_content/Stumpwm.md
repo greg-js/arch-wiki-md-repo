@@ -87,7 +87,7 @@ If you are an emacs user, you will find an emacs minor mode for editing StumpWM 
 
 in the REPL, it can be solved by deleting `~/.Xauthority`. See [this issue on github](https://github.com/sabetts/stumpwm/issues/1)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=401992](https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=401992)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=412585](https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=412585)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

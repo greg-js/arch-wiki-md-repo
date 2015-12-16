@@ -4,13 +4,21 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
-**This article is a stub.**
+**This article or section is out of date.**
 
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad x121e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_x121e))
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo ThinkPad x121e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_x121e))
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo ThinkPad x121e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_x121e))
 
 [ThinkWiki x121e reference](http://www.thinkwiki.org/wiki/Category:X121e)
 
@@ -136,7 +144,7 @@ If you cannot power off when running on battery, see this thread for a possible 
 
 If you get errors on boot or resume complaining about the TPM, try changing the settings for the security chip in the BIOS as described in [this thread](https://bbs.archlinux.org/viewtopic.php?id=139415).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121e&oldid=376116](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121e&oldid=376116)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121e&oldid=412576](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121e&oldid=412576)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

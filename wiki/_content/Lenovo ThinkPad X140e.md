@@ -9,21 +9,27 @@ Related articles
 *   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
 *   [IBM ThinkPad X120e](/index.php/IBM_ThinkPad_X120e "IBM ThinkPad X120e")
 
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
+
+**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad X140e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X140e))
+
 Installation instructions for the Lenovo ThinkPad X140e. Should work for E145 as well.
 
 ## Contents
 
 *   [1 Video drivers](#Video_drivers)
 *   [2 Wireless](#Wireless)
-*   [3 Audio](#Audio)
-*   [4 Input](#Input)
-    *   [4.1 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_.28wheel_emulation.29)
-    *   [4.2 TrackPad](#TrackPad)
-    *   [4.3 TrackPoint speed and sensitivity](#TrackPoint_speed_and_sensitivity)
-*   [5 Power saving](#Power_saving)
-    *   [5.1 Disable Bluetooth](#Disable_Bluetooth)
-    *   [5.2 ATI video card powersaving](#ATI_video_card_powersaving)
-    *   [5.3 Fan control](#Fan_control)
+*   [3 Input](#Input)
+    *   [3.1 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_.28wheel_emulation.29)
+    *   [3.2 TrackPad](#TrackPad)
+    *   [3.3 TrackPoint speed and sensitivity](#TrackPoint_speed_and_sensitivity)
+*   [4 Power saving](#Power_saving)
+    *   [4.1 Disable Bluetooth](#Disable_Bluetooth)
+    *   [4.2 ATI video card powersaving](#ATI_video_card_powersaving)
 
 ## Video drivers
 
@@ -39,16 +45,6 @@ The Thinkpad x140e is available from Lenovo with one of two wireless cards:
 *   A Broadcom ABGN Wifi / BT4.0 card which is currently not supported by the `b43` driver. Ideally, use driver `broadcom-wl`. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
 
 As of BIOS 2.05, the X140e supports Lenovo branded mPCIe Intel 802.11 ac/a/b/g/n. However no X140e is currently sold with this wifi option. This card is supported out of the box by Arch. The only tested and confirmed FRU is 04W3814.
-
-## Audio
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** WIP (Discuss in [Talk:Lenovo ThinkPad X140e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X140e))
 
 ## Input
 
@@ -78,17 +74,7 @@ See [Power saving#Bluetooth](/index.php/Power_saving#Bluetooth "Power saving").
 
 For the open-source driver, follow the information in [ATI#Powersaving](/index.php/ATI#Powersaving "ATI").
 
-### Fan control
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** WIP (Discuss in [Talk:Lenovo ThinkPad X140e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X140e))
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X140e&oldid=400982](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X140e&oldid=400982)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X140e&oldid=412579](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X140e&oldid=412579)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

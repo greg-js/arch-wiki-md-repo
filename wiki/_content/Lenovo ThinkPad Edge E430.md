@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** blog post (Discuss in [Talk:Lenovo ThinkPad Edge E430#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_Edge_E430))
+
 The following is regarding the Lenovo Thinkpad Edge E430 with 3rd Generation Ivy Bridge Intel processor, released in mid 2012\. The E430 is intended to be an affordable, yet still entirely capable business machine. Unlike some of its siblings, it is not to military specs, but is still a well built and quite durable machine. If you are reading this with the intention of ordering yourself this machine, do yourself a favor and opt for the Intel WiFi card for the extra ~$20\. The default Realtek works, albiet with a bit of coaxing. Ergo, this article is meant to suppliment the current [Installation guide](/index.php/Installation_guide "Installation guide") or [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
 ## Contents
@@ -25,7 +33,7 @@ With the release of 2012.07.15 and chroot installation process, the documented i
 
 ### UEFI
 
-For UEFI info to E430 go to [HCL/Firmwares/UEFI#Lenovo Thinkpad Edge E430 3254-DAQ](/index.php?title=HCL/Firmwares/UEFI&action=edit&redlink=1 "HCL/Firmwares/UEFI (page does not exist)").
+For UEFI info to E430 go to [UEFI/Hardware#Lenovo Thinkpad Edge E430 3254-DAQ](/index.php/UEFI/Hardware#Lenovo_Thinkpad_Edge_E430_3254-DAQ "UEFI/Hardware").
 
 ## Hardware
 
@@ -180,32 +188,7 @@ The '147e:1002 Upek' being the relevant information here. For help setting up th
 
 ## Trackpoint
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad Edge E430#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_Edge_E430))
-
-The trackpoint works out of the box, though scroll wheel emulation button needs a bit of configuring. The following will set the middle Trackpoint button to scroll, though it will also disable the possibility of using it to generate a middle click, to enable middle click with scroll set "Emulate3Buttons" to "true"(01/07/13). Create the file /etc/X11/xorg.conf.d/20-thinkpad.conf as root with the following:
-
-```
-Section "InputClass"
-	Identifier	"Trackpoint Wheel Emulation"
-	MatchProduct	"TPPS/2 IBM TrackPoint"
-	MatchDevicePath	"/dev/input/event*"
-	Option		"EmulateWheel"		"true"
-	Option		"EmulateWheelButton"	"2"
-        ## set Emulate3Buttons to true to allow middle click (01/07/13)
-	Option		"Emulate3Buttons"	"false" 
-	Option		"XAxisMapping"		"6 7"
-	Option		"YAxisMapping"		"4 5"
-EndSection
-
-```
-
-This information was taken from Thinkwiki's page regarding the Trackpoint. You can find it here: [http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint](http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint) . Keep in mind that your Trackpoint might be identified by a different "MatchProduct", so you may want to determine the exact indentifier. The easiest way to do this is with the [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) package available in the [Official repositories](/index.php/Official_repositories "Official repositories"). Simply run 'hwinfo' as a normal user or root and look for the PS/2 information.
+See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ## Fans
 
@@ -248,7 +231,7 @@ $ cat /proc/acpi/ibm/fan
 
 Starting X on an E430 with an Intel Core i7-3612QM and monitors plugged into both the HDMI and VGA ports results in a crash. Only "fix" I've found is to wait until starting X before plugging in one of the monitors.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E430&oldid=376872](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E430&oldid=376872)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E430&oldid=412554](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E430&oldid=412554)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

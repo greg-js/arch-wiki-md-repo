@@ -754,10 +754,6 @@ There is a [bug](https://bugs.kde.org/show_bug.cgi?id=346961) in kscreen that ma
 *   For Nouveau you can use the template at [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau"), just edit it to suit your setup.
 *   For the proprietary nvidia driver you can use the [nvidia-settings](/index.php/NVIDIA#Using_NVIDIA_Settings "NVIDIA") utility as root to write the config file.
 
-**Other suggestion**
-
-Installing [kscreen4](https://www.archlinux.org/packages/?name=kscreen4) might fix the problem unless your screens share the same EDID. Kscreen is the improved screen management software for KDE, more information can be found [here](https://fedoraproject.org/wiki/Changes/KScreen?rd=Features/KScreen).
-
 ### Sound problems under KDE
 
 #### ALSA related problems
@@ -850,7 +846,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412438](https://wiki.archlinux.org/index.php?title=KDE&oldid=412438)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412591](https://wiki.archlinux.org/index.php?title=KDE&oldid=412591)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

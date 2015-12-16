@@ -19,7 +19,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Model description
 
-Lenovo ThinkPad X1, Sandy Bridge (Core i5, 2,5 GHz), NWG2MRT This model has SSD 80/HDD 320 pair. Comes without optical drive. Has UEFI BIOS with BIOS-legacy fallback mode. Has Windows 7 Pro pre-installed, with tons of bloatware (bing toolbar, big Lenovo superbar button et all) pre-installed, too.
+Lenovo ThinkPad X1, Sandy Bridge (Core i5, 2,5 GHz), NWG2MRT This model has SSD 80/HDD 320 pair. Comes without optical drive. Has UEFI BIOS with BIOS-legacy fallback mode.
 
 ## Installation method
 
@@ -87,7 +87,7 @@ The Firmware and it's installer can be found on station-drivers.com: [[1]](http:
 *   The Installation can only be done from a 64bit Windows! so no 32bit BartPE Windows XP livecd will work and 64 Windows (tested with 64bit Win 7 Pro) has to be installed on the Laptop once to install the Firmware!
 *   Since this is not officially propagated from Lenovo proceed with caution!
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1&oldid=351832](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1&oldid=351832)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1&oldid=412571](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1&oldid=412571)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -8,6 +8,14 @@ Related articles
 
 *   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** rc.conf, kernel 2.6 (Discuss in [Talk:Lenovo ThinkPad X120e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X120e))
+
 Installation instructions for the Lenovo ThinkPad X120e. Should work for X121e too.
 
 ## Contents
@@ -66,31 +74,7 @@ By specifying index you should no longer specify the default in `~/.asoundrc`.
 
 ### TrackPoint scrolling (wheel emulation)
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad X120e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X120e))
-
-To enable scrolling with the TrackPoint while holding down the middle mouse button, create a new file /etc/X11/xorg.conf.d/20-thinkpad.conf with the following content:
-
-```
-Section "InputClass"
-    Identifier	"Trackpoint Wheel Emulation"
-    MatchProduct	"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB Trackpoint pointing device"
-    MatchDevicePath	"/dev/input/event*"
-    Option		"EmulateWheel"		"true"
-    Option		"EmulateWheelButton"	"2"
-    Option		"Emulate3Buttons"	"false"
-    Option		"XAxisMapping"		"6 7"
-    Option		"YAxisMapping"		"4 5"
-EndSection
-
-```
-
-There are more details about how this works on the [Xorg](/index.php/Xorg#InputClasses "Xorg") page.
+See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ### Disabling the TrackPad
 
@@ -220,7 +204,7 @@ HIBERNATE_MODE="shutdown"
 
 [X120e on ThinkWiki](http://www.thinkwiki.org/wiki/Category:X120e) [Undervolting the AMD Fusion with PHC-tool](http://www.linux-phc.org/forum/viewtopic.php?f=7&t=269)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X120e&oldid=392340](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X120e&oldid=392340)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X120e&oldid=412575](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X120e&oldid=412575)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

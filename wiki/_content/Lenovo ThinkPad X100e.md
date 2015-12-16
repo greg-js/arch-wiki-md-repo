@@ -14,33 +14,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Contents
 
-*   [1 Live notes & install instructions](#Live_notes_.26_install_instructions)
-*   [2 Preface](#Preface)
-*   [3 Configuration Notes](#Configuration_Notes)
-*   [4 Known Issues](#Known_Issues)
-*   [5 Pre-install](#Pre-install)
-*   [6 Wireless network device](#Wireless_network_device)
-
-## Live notes & install instructions
-
-I've made good progress on getting the x100e working and all hotkeys are working, it's stable. There are only a few issues that are still being ironed out. I've been using gdocs for a scratch pad and if you want to see the current status of my notes (rough as they are) see: [http://ethanschoonover.com/x100e](http://ethanschoonover.com/x100e)
-
-Note that once I iron things out (particularly on the power management front) I'll do a bit of editing and post the final content here.
-
-## Preface
-
-The Lenovo Thinkpad x100e is the first netbook-form factor unit in the Thinkpad series and makes an appealing Arch Linux laptop. Key features:
-
-*   excellent keyboard
-*   solid build quality
-*   easily accessible system components (disk, ram, wifi/wwan PCI slots)
-*   cheaply available wifi card upgrades (Intel 5100 for 5ghz N support, see caveats below)
-*   WWAN card availability (can be ordered built in or purchased later, untested in this initial write up)
-
-Possible negatives include:
-
-*   The unit does run hot and ejects a steady stream of hot air from the left hand vents. The following write up does not yet include experiments with undervolting or fan/power control which may help address that issue.
-*   Battery life is not “netbook” class. With a six cell 17+ battery (default when ordered) 2-3 hours are reasonable. With a three cell 17 battery pack, the unit gets about 1.5 hours (at full brightness, wifi up, no power savings, max CPU speed, so this might change with later tweaking).
+*   [1 Configuration Notes](#Configuration_Notes)
+*   [2 Known Issues](#Known_Issues)
+*   [3 Pre-install](#Pre-install)
+*   [4 Wireless network device](#Wireless_network_device)
 
 ## Configuration Notes
 
@@ -102,7 +79,7 @@ Try these steps:
 
 Currently able to get power usage to under 12W with wifi *on*: [[1]](http://lh6.ggpht.com/_6-8K9TAVt1M/TMoagwDkKuI/AAAAAAAAAGk/q4EWZtotYUQ/s800/2010-10-28-175113_1366x768_scrot.png)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X100e&oldid=363584](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X100e&oldid=363584)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X100e&oldid=412573](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X100e&oldid=412573)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -7,15 +7,12 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ## Contents
 
 *   [1 System Specification](#System_Specification)
-*   [2 Network](#Network)
-    *   [2.1 Wired Ethernet](#Wired_Ethernet)
-    *   [2.2 Wireless](#Wireless)
-*   [3 Graphics](#Graphics)
-*   [4 TouchScreen](#TouchScreen)
-*   [5 SD Card Reader](#SD_Card_Reader)
-*   [6 Accelerometer](#Accelerometer)
+*   [2 Wired Ethernet](#Wired_Ethernet)
+*   [3 Wireless](#Wireless)
+*   [4 Graphics](#Graphics)
+*   [5 Accelerometer](#Accelerometer)
 
-# System Specification
+## System Specification
 
 *   CPU: Intel Atom N450 (1.66 GHz) or N470?
 *   Memory: 1GB DDR2 - can be upgraded to max of 2GB
@@ -31,8 +28,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Webcam: Lenovo Easycam?
 *   Bluetooth: USI Co., Ltd (10ab:0816)?
 
-# Network
-
 ## Wired Ethernet
 
 See [Network configuration#Broadcom BCM57780](/index.php/Network_configuration#Broadcom_BCM57780 "Network configuration").
@@ -45,23 +40,14 @@ Intel Corporation WiMAX/WiFi Link 6050 Series works out of the box (2.6.34).
 
 For WiMAX requires the kernel 2.6.35, [i2400m-firmware](https://aur.archlinux.org/packages.php?ID=39403)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-26]</sup>, [libeap](https://aur.archlinux.org/packages/libeap/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libeap)]</sup>, [wimax-tools](https://aur.archlinux.org/packages/wimax-tools/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wimax-tools)]</sup> and [wimax-network-service](https://aur.archlinux.org/packages/wimax-network-service/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wimax-network-service)]</sup> which is available in the AUR.
 
-# Graphics
+## Graphics
 
-*   This came from [Lenovo ideapad s10](https://wiki.archlinux.org/index.php/Lenovo_ideapad_s10) ...
 *   So far I have not been able to get keyboard/touchpad to work with or without xorg.conf
 *   use **vga=866** for the kernel line in `menu.lst`
 
 See [Xorg](/index.php/Xorg "Xorg"), [Intel graphics](/index.php/Intel_graphics "Intel graphics") and [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
-# TouchScreen
-
-Cando TouchScreen works out of the box from kernel 2.6.35\. OneTouch.
-
-# SD Card Reader
-
-Works right out of the box (in fact you can even install arch directly on it with grub.)
-
-# Accelerometer
+## Accelerometer
 
 The [IAPS](http://gitorious.org/iaps) driver works.
 
@@ -111,7 +97,7 @@ waiting for events
 
 Here are some [ideas](http://www.thinkwiki.org/wiki/HDAPS#Applications) what to do with it.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_s10-3t&oldid=392336](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_s10-3t&oldid=392336)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_s10-3t&oldid=412540](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_s10-3t&oldid=412540)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

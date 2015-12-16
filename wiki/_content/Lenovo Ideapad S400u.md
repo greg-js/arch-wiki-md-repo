@@ -12,14 +12,9 @@ This article covers the Arch Linux support for the [Lenovo Ideapad S400u ultrabo
     *   [1.1 inxi](#inxi)
     *   [1.2 lspci](#lspci)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Touchpad](#Touchpad)
-    *   [2.2 Jumping cursor on touchpad release](#Jumping_cursor_on_touchpad_release)
-    *   [2.3 Video](#Video)
-    *   [2.4 Wireless](#Wireless)
-    *   [2.5 Sound](#Sound)
-    *   [2.6 Webcam](#Webcam)
-    *   [2.7 Power Management](#Power_Management)
-    *   [2.8 Brightness Control](#Brightness_Control)
+    *   [2.1 Jumping cursor on touchpad release](#Jumping_cursor_on_touchpad_release)
+    *   [2.2 Video](#Video)
+    *   [2.3 Brightness Control](#Brightness_Control)
 
 ## Hardware
 
@@ -81,10 +76,6 @@ Info:      Processes: 178 Uptime: 10:04 Memory: 2089.3/3826.2MB Client: Shell (z
 
 ## Configuration
 
-### Touchpad
-
-Works out-of-the-box with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
-
 ### Jumping cursor on touchpad release
 
 It might be solved with synclient FingerHigh and FingerLow:
@@ -98,27 +89,11 @@ synclient FingerLow=40
 
 Drivers: [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) and [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 
-### Wireless
-
-Works out-of-the-box. There is also a Fn button to toggle airplane mode ON and OFF.
-
-### Sound
-
-Works out-of-the-box. Kernel module: `snd_hda_intel`
-
-### Webcam
-
-Works out-of-the-box (tested using [cheese](https://www.archlinux.org/packages/?name=cheese) and Google Hangouts' [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/)<sup><small>AUR</small></sup>)
-
-### Power Management
-
-Works okay with [systemd](/index.php/Systemd "Systemd") and [TLP](/index.php/TLP "TLP").
-
 ### Brightness Control
 
 Works okay with the corresponding Fn keys.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S400u&oldid=376868](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S400u&oldid=376868)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S400u&oldid=412542](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S400u&oldid=412542)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

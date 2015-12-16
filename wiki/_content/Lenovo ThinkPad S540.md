@@ -11,7 +11,7 @@ This page outlines installation tips for Archlinux on the Lenovo Thinkpad S540, 
 *   [1 Installation](#Installation)
     *   [1.1 Before Installation](#Before_Installation)
     *   [1.2 During Installation](#During_Installation)
-*   [2 Known Cavaets](#Known_Cavaets)
+*   [2 Known issues](#Known_issues)
 
 ## Installation
 
@@ -29,14 +29,14 @@ By default the system won't boot due to issues with the intel video chip.
 
 Edit `/etc/default/grub` and change `GRUB_CMDLINE_LINUX` to the value `"intel.modeset=0"` and re-run `grub-mkconfig`. This will fix the video bug.
 
-## Known Cavaets
+## Known issues
 
 Currently known cavets with Arch Linux on the s540 are:
 
 *   Touch screen sometimes doesn't re-activate after system is placed in sleep mode (requires reboot)
 *   Default soft-buttons on the touch pad don't match the markings.This page outlines installation tips for Archlinux on the Lenovo Thinkpad S540, and tips on getting the best setup, and known cavaets.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S540&oldid=351907](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S540&oldid=351907)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S540&oldid=412557](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S540&oldid=412557)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -35,8 +35,6 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 
 <th>Driver Package</th>
 
-<th>Free Software?</th>
-
 </tr>
 
 <tr>
@@ -44,8 +42,6 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 <td>Video</td>
 
 <td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-<td>Yes</td>
 
 </tr>
 
@@ -55,8 +51,6 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 
 <td>[libinput](/index.php/Libinput "Libinput")</td>
 
-<td>Yes</td>
-
 </tr>
 
 <tr>
@@ -65,8 +59,6 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 
 <td>iwlwifi*</td>
 
-<td>Yes</td>
-
 </tr>
 
 <tr>
@@ -74,8 +66,6 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 <td>Finger Print Reader</td>
 
 <td>[Fprint](/index.php/Fprint "Fprint") since V 0.6.0</td>
-
-<td>yes</td>
 
 </tr>
 
@@ -107,34 +97,13 @@ Otherwise the defalut resolution is set to 96dpi.
 
 ### Backlight
 
-Controlling the backlight can be a little tricky- on my T440s, KDE's default brightness controls would only do 0%, 50%, and 100% brightness. GNOME 3 worked out of the box, but it would never save the last-used brightness value on reboot. A workaround for both of these issues is to use [[1]](https://www.archlinux.org/packages/extra/x86_64/xorg-xbacklight/). An example script for setting the backlight on boot is:
-
- `~/.config/autostart/backlight-hack.desktop` 
-
-```
-[Desktop Entry]
-Comment=backlight
-Exec=xbacklight -set 40
-GenericName=backlight hack
-Name=Backlight hack
-Terminal=false
-TerminalOptions=
-Type=Application
-
-```
-
-If you just want to set the current brightness level, run:
-
-```
-xbacklight -set <value>
-
-```
+See [Backlight](/index.php/Backlight "Backlight").
 
 ### Touchpad
 
 *   [Good configuration for touchpad](http://rscircus.org/post/72978821261/t440s-clickpad-fix-which-feels-good)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T440s&oldid=410922](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T440s&oldid=410922)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T440s&oldid=412536](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T440s&oldid=412536)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

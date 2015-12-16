@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
-**This article or section is a candidate for merging with [HCL/Laptops/Lenovo](/index.php?title=HCL/Laptops/Lenovo&action=edit&redlink=1 "HCL/Laptops/Lenovo (page does not exist)").**
+**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
 
 **Notes:** Too little unique content to warrant a separate page (Discuss in [Talk:Lenovo ThinkPad T430s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T430s))
 
@@ -49,7 +49,7 @@ The following are known problems and workarounds for the Lenovo Thinkpad T430s, 
 
 Other options can be found from [Lenovo ThinkPad T420#Volume up/down not changing volume](/index.php/Lenovo_ThinkPad_T420#Volume_up.2Fdown_not_changing_volume "Lenovo ThinkPad T420")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T430s&oldid=346316](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T430s&oldid=346316)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T430s&oldid=412567](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T430s&oldid=412567)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

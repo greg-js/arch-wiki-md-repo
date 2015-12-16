@@ -12,8 +12,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [2.2 Switching configurations when the device is docked at boot](#Switching_configurations_when_the_device_is_docked_at_boot)
 *   [3 Sound](#Sound)
 *   [4 TrackPoint](#TrackPoint)
-    *   [4.1 Setting](#Setting)
-    *   [4.2 Configuration Tool](#Configuration_Tool)
 
 ## Fans
 
@@ -222,37 +220,9 @@ To make sound work, make sure all channels are unmuted via alsamixer or similar,
 
 ## TrackPoint
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad T420s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T420s))
-
-### Setting
-
-Create 20-thinkpad.conf under /etc/X11/xorg.conf.d/.
-
-```
-Section "InputClass"
-        Identifier      "Trackpoint Wheel Emulation"
-        MatchProduct    "TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB Trackpoint pointing device|Composite TouchPad / TrackPoint"
-        MatchDevicePath "/dev/input/event*"
-        Option          "EmulateWheel"          "true"
-        Option          "EmulateWheelButton"    "2"
-        Option          "Emulate3Buttons"       "false"
-        Option          "XAxisMapping"          "6 7"
-        Option          "YAxisMapping"          "4 5"
-EndSection
-
-```
-
-### Configuration Tool
-
-The GPointing Device Settings is a great tool for configuring the Track Point. You may install it via AUR: [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings).
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420s&oldid=351811](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420s&oldid=351811)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420s&oldid=412566](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420s&oldid=412566)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

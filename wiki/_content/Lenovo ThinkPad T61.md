@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo ThinkPad T61#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T61))
+
 ## Contents
 
 *   [1 System Specifications](#System_Specifications)
@@ -343,29 +351,7 @@ Following modules are used:
 
 ### TrackPoint scrolling (wheel emulation)
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad T61#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T61))
-
-To enable scrolling with the TrackPoint while holding down the middle mouse button, create a new file /etc/X11/xorg.conf.d/20-thinkpad.conf with the following content:
-
-```
-Section "InputClass"
-    Identifier	"Trackpoint Wheel Emulation"
-    MatchProduct	"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB Trackpoint pointing device"
-    MatchDevicePath	"/dev/input/event*"
-    Option		"EmulateWheel"		"true"
-    Option		"EmulateWheelButton"	"2"
-    Option		"Emulate3Buttons"	"false"
-    Option		"XAxisMapping"		"6 7"
-    Option		"YAxisMapping"		"4 5"
-EndSection
-
-```
+See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ### Touchpad
 
@@ -589,7 +575,7 @@ Details: [http://www.thinkwiki.org/wiki/Problem_with_hard_drive_clicking](http:/
 *   [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
 *   This report is listed at the [TuxMobil: Linux Laptop and Notebook Installation Guides Survey: Fujitsu-Siemens - FSC](http://tuxmobil.org/fujitsu.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T61&oldid=376876](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T61&oldid=376876)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T61&oldid=412570](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T61&oldid=412570)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

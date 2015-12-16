@@ -42,8 +42,6 @@ The article describes the installation of Arch Linux on a ThinkPad T400s.
         *   [2.3.4 Wireless](#Wireless)
     *   [2.4 Web camera](#Web_camera)
     *   [2.5 Sound](#Sound)
-    *   [2.6 5 in 1 card reader](#5_in_1_card_reader)
-    *   [2.7 Fingerprint reader](#Fingerprint_reader)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 9 seconds reboot delay](#9_seconds_reboot_delay)
 *   [4 See also](#See_also)
@@ -227,9 +225,7 @@ See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 #### TrackPoint
 
-TrackPoint works out of the box with `evdev` driver.
-
-See [How to configure the TrackPoint](http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint).
+See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ### Network
 
@@ -250,6 +246,14 @@ Ethernet controller is identified as `00:19.0 Ethernet controller: Intel Corpora
 **This article or section needs language, wiki syntax or style improvements.**
 
 **Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo ThinkPad T400s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T400s))
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [[]].**
+
+**Notes:** Out of scope, move to a page in [Category:Modems](/index.php/Category:Modems "Category:Modems")? (Discuss in [Talk:Lenovo ThinkPad T400s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T400s))
 
 The UMTS device is a Ericsson F3507g MiniPCIe WWAN/GPS card. The vendor identifier is 0bdb, while the device identifier is 1900 (both values are hexadecimal values). You can get more information about the card by using lsusb/usbview. In order to use the UTMS modem you will have to activate the device. You can edit and verify the settings of your UMTS modem by using minicom or another terminal emulation program like [picocom](http://code.google.com/p/picocom/) or [dterm](http://www.knossos.net.nz/dterm.html). I've used [tinycom](http://brokestream.com/tinyserial.html) which is inspired by the well known FreeBSD program 'tips'.
 
@@ -387,28 +391,6 @@ As of September 2010 the module must be loaded with the option `model=thinkpad` 
 
 This is due to the update to kernel 2.6.35\. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=822626) and [[2]](http://groups.google.com/group/linux.kernel/browse_thread/thread/379459c155b31b20/f4c6ebddbdfc5806?show_docid=f4c6ebddbdfc5806). This also enables muting of the internal speakers when a speaker is attached to the **docking station**.
 
-### 5 in 1 card reader
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad T400s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T400s))
-
-### Fingerprint reader
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad T400s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T400s))
-
-The builtin fingerprint reader is a Upek Biometric Touchchip/Touchstrip Fingerprint Sensor.
-
 ## Troubleshooting
 
 ### 9 seconds reboot delay
@@ -449,7 +431,7 @@ There are a few installation guides for Linux on a Lenovo ThinkPad T400s.
 *   English [review](http://hothardware.com/Articles/Lenovo-ThinkPad-T400s-Notebook-Review/) by [hothardware.com](http://hothardware.com/)
 *   A german [review](http://www.notebookcheck.com/Test-Lenovo-ThinkPad-T400s-Notebook.20960.0.html) by [notebookcheck.com](http://www.notebookcheck.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400s&oldid=376873](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400s&oldid=376873)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400s&oldid=412562](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400s&oldid=412562)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

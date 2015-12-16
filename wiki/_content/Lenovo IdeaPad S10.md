@@ -4,18 +4,22 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
+
+**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo IdeaPad S10#](https://wiki.archlinux.org/index.php/Talk:Lenovo_IdeaPad_S10))
+
 ## Contents
 
 *   [1 System Specification](#System_Specification)
-*   [2 Networking](#Networking)
-    *   [2.1 Wired Ethernet](#Wired_Ethernet)
-    *   [2.2 Wireless](#Wireless)
-*   [3 Graphics](#Graphics)
-*   [4 Sound](#Sound)
-*   [5 SD Card Reader](#SD_Card_Reader)
-*   [6 Webcam](#Webcam)
+*   [2 Wireless](#Wireless)
+*   [3 Sound](#Sound)
+*   [4 SD Card Reader](#SD_Card_Reader)
 
-# System Specification
+## System Specification
 
 *   CPU: Intel Atom N270 (1.6 GHz) - works with i686 only
 *   Memory: 512 MB internal - can be expanded to max of 2GB
@@ -28,8 +32,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   SD Card Reader
 *   Express Card 34 Slot
 *   Webcam: Lenovo Easycam
-
-Here's my lspci for more details:
 
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GME Express Memory Controller Hub (rev 03)
@@ -54,33 +56,19 @@ Here's my lspci for more details:
 
 ```
 
-# Networking
-
-## Wired Ethernet
-
-This works out of the box.
-
 ## Wireless
 
 The Broadcom BCM4312 card requires the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> module which is available in the [AUR](/index.php/AUR "AUR"). See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
 
-# Graphics
-
-See [Xorg](/index.php/Xorg "Xorg"), [Intel graphics](/index.php/Intel_graphics "Intel graphics") and [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
-
-# Sound
+## Sound
 
 Works out of the box but the internal microphone is not turned on by default. To make the internal microphone work, turn the capture channel on (using the spacebar in alsamixer if you are using that), unmute the internal microphone channel and turn it up.
 
-# SD Card Reader
+## SD Card Reader
 
 Works out of the box but you cannot boot from it.
 
-# Webcam
-
-Works out of the box.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S10&oldid=371092](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S10&oldid=371092)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S10&oldid=412538](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S10&oldid=412538)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

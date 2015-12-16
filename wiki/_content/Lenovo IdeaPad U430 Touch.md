@@ -4,8 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-The Lenovo IdeaPad U430 Touch offers great compatibility with Arch Linux.
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -100,7 +98,7 @@ DO NOT install laptop-mode, cpupower, or any other power-management tools in add
 
 There are also a lot of tools and services especially for Thinkpads – none of these worked on my Ideapad.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_U430_Touch&oldid=376866](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_U430_Touch&oldid=376866)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_U430_Touch&oldid=412543](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_U430_Touch&oldid=412543)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

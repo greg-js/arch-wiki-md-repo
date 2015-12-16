@@ -18,35 +18,40 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but mi
 
 ## Contents
 
-*   [1 Middle button scroll](#Middle_button_scroll)
-*   [2 Tap to select](#Tap_to_select)
-*   [3 udev configuration rule](#udev_configuration_rule)
-*   [4 Xorg configuration](#Xorg_configuration)
-*   [5 See also](#See_also)
+*   [1 GUI configuration](#GUI_configuration)
+*   [2 Middle button scroll](#Middle_button_scroll)
+*   [3 Tap to select](#Tap_to_select)
+*   [4 udev configuration rule](#udev_configuration_rule)
+*   [5 Xorg configuration](#Xorg_configuration)
+*   [6 See also](#See_also)
+
+## GUI configuration
+
+[Install](/index.php/Install "Install") the [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings) package.
 
 ## Middle button scroll
 
-For those using the `evdev` driver, middle-button scrolling is supported via the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package, with the following sane config:
+When using [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), middle-button scrolling is enabled by default.
 
- `~/.xprofile` 
+When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), middle-button scrolling is supported via _xinput_ from the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package. For example:
 
-```
-#get the device ID for the trackpad. We know it contains the string "TPPS"
-ibm_trackpad_id=$(xinput | grep 'TPPS' | cut -d"=" -f2 | cut -f1)
-echo $ibm_trackpad_id > ~/temp/ibm_trackpad_id
-
-#set desired params for trackpoint
-xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation" 1
-xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation Button" 2
-xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation Timeout" 200
-xinput set-prop $ibm_trackpad_id "Evdev Wheel Emulation Axes" 6 7 5 4
-xinput set-prop $ibm_trackpad_id "Device Accel Constant Deceleration" 0.35
+ `~/.xinitrc` 
 
 ```
+xprop() { xinput set-prop "_TPPS/2 IBM TrackPoint_" "$@"; }
 
-The `"Device Accel Constant Deceleration"` line configures the sensitivity of the trackpoint. Note that you can just type these commands into the shell, changing sensitivity on the fly to find a value that's sensible.
+xprop "Evdev Wheel Emulation" 1
+xprop "Evdev Wheel Emulation Button" 2
+xprop "Evdev Wheel Emulation Timeout" 200
+xprop "Evdev Wheel Emulation Axes" 6 7 4 5
+xprop "Device Accel Constant Deceleration" 0.95
 
-For those using the `libinput` driver, middle-button scrolling is enabled by default.
+```
+
+**Note:**
+
+*   Devices names can be listed with `xinput --list` or [hwinfo](https://www.archlinux.org/packages/?name=hwinfo).
+*   The `"Device Accel Constant Deceleration"` line configures the sensitivity of the trackpoint.
 
 ## Tap to select
 
@@ -75,12 +80,12 @@ This rule increases the trackpoint **speed** and enables **tap to select** (see 
 
 ## Xorg configuration
 
-To enable scrolling with the TrackPoint while holding down the middle mouse button, create a new file `/etc/X11/xorg.conf.d/20-thinkpad.conf` with the following content:
+To enable scrolling with the TrackPoint while holding down the middle mouse button, create `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from _xinput_:
 
 ```
 Section "InputClass"
     Identifier	"Trackpoint Wheel Emulation"
-    MatchProduct	"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB Trackpoint pointing device"
+    MatchProduct	"_TPPS/2 IBM TrackPoint_"
     MatchDevicePath	"/dev/input/event*"
     Option		"EmulateWheel"		"true"
     Option		"EmulateWheelButton"	"2"
@@ -97,7 +102,7 @@ EndSection
 *   [Trackpoint speed](https://gist.githubusercontent.com/noromanba/11261595/raw/478cf4c4d9b63f1e59364a6f427ffccd63db5e1e/thinkpad-trackpoint-speed.mkd)
 *   [What is the best way to configure a Thinkpad's TrackPoint?](https://askubuntu.com/questions/37824/what-is-the-best-way-to-configure-a-thinkpads-trackpoint/553926)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412521](https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412521)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412565](https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412565)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

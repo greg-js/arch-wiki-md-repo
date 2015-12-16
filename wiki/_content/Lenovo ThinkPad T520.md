@@ -4,13 +4,13 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
-**This article is a stub.**
+**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
 
-**Notes:** similar articles are generally more detailed. (Discuss in [Talk:Lenovo ThinkPad T520#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T520))
+**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad T520#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T520))
 
 ## Contents
 
@@ -62,7 +62,7 @@ You might also try to set the nomodeset kernel commandline flags:
 
 Although, currently (Oct 2013, kernel 3.11.6), my T520 boots in "Discrete Graphics" mode only when i disable the GRUB2 framebuffer, but **do not** set any of the nomodeset kernel options.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T520&oldid=376875](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T520&oldid=376875)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T520&oldid=412568](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T520&oldid=412568)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,13 +4,13 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
-**This article is a stub.**
+**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
 
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo IdeaPad Yoga 13#](https://wiki.archlinux.org/index.php/Talk:Lenovo_IdeaPad_Yoga_13))
+**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo IdeaPad Yoga 13#](https://wiki.archlinux.org/index.php/Talk:Lenovo_IdeaPad_Yoga_13))
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
@@ -18,7 +18,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **This article or section needs language, wiki syntax or style improvements.**
 
-**Reason:** not defined rules how to fill such articles (Discuss in [Talk:Lenovo IdeaPad Yoga 13#](https://wiki.archlinux.org/index.php/Talk:Lenovo_IdeaPad_Yoga_13))
+**Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Lenovo IdeaPad Yoga 13#](https://wiki.archlinux.org/index.php/Talk:Lenovo_IdeaPad_Yoga_13))
 
 Models covered: Lenovo IdeaPad Yoga 13
 
@@ -246,7 +246,7 @@ Internal Wi-Fi driver (r8723au) is working with a huge troubles with current ker
 *   [https://wiki.debian.org/InstallingDebianOn/Lenovo/IdeaPad_Yoga_13_(Wheezy)](https://wiki.debian.org/InstallingDebianOn/Lenovo/IdeaPad_Yoga_13_(Wheezy))
 *   [Lenovo IdeaPad Yoga 13](https://en.wikipedia.org/wiki/Lenovo_IdeaPad_Yoga_13 "wikipedia:Lenovo IdeaPad Yoga 13")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=392334](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=392334)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=412547](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=412547)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

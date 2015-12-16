@@ -4,6 +4,22 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** Kernel 2.6 (Discuss in [Talk:Lenovo Thinkpad SL500#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Thinkpad_SL500))
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Lenovo Thinkpad SL500#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Thinkpad_SL500))
+
 The support for this laptop is not as bad as it first seems. In fact, pretty much everything works fine. I am very happy with this machine!
 
 While this guide if for the Thinkpad SL500, the steps should be easily applicable to the SL300 and SL400 models.
@@ -308,7 +324,7 @@ fi
 
 [Thread](https://bbs.archlinux.org/viewtopic.php?id=82447) on the forums concerning configuration of Arch Linux on the SL series
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_SL500&oldid=376428](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_SL500&oldid=376428)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_SL500&oldid=412558](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_SL500&oldid=412558)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

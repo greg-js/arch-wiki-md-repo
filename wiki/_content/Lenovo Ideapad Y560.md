@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo Ideapad Y560#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Ideapad_Y560))
+
 The Lenovo Ideapad Y560 is a multimedia laptop available with several different option packages. This wiki will focus on support for as many variations as possible. At the time of writing, the Ideapad Y560 is available with the following options:
 
 **CPU:** Intel® Core™ i3-370M Processor ( 2.40GHz 1066MHz 3MB )
@@ -27,9 +35,8 @@ Intel® Core™ i7-740QM Processor ( 1.73GHz 1333MHz 6MB )
 *   [3 Networking](#Networking)
     *   [3.1 Wireless](#Wireless)
     *   [3.2 Ethernet](#Ethernet)
-*   [4 The Linux-Ideapad Kernel](#The_Linux-Ideapad_Kernel)
-*   [5 Sound](#Sound)
-*   [6 Touchpad](#Touchpad)
+*   [4 Sound](#Sound)
+*   [5 Touchpad](#Touchpad)
 
 ## Initial Installation
 
@@ -62,25 +69,6 @@ MODULES=(broadcom tg3)
 
 Now the ethernet interface, eth0, should load without issue.
 
-## The Linux-Ideapad Kernel
-
-The [linux-ideapad](https://aur.archlinux.org/packages/linux-ideapad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-ideapad)]</sup> kernel is optimized for the Lenovo Y5xx laptops, though it should work on any laptop that uses the same chipset as the Ideapad. Includes all changes from the parent package by graysky [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup>, as well as:
-
-*   Optimized for Intel Core2/i3/i5/i7 processors
-*   BFQ I/O enabled by default
-*   tun/tap driver for VPN use
-*   1000MHz timer (reduced latency)
-*   Low-latency preemptible kernel options
-*   Networking filesystems: CIFS, <s>NFS client/server</s> **As of version 3.6.8-1, CFS is re-enabled**
-*   Filesystem support added for NTFS, EXT4, EXT3, EXT2, VFAT, iso9660, as well as USB mass storage devices
-*   FUSE module for network filesystems
-*   iwlwifi driver
-*   broadcom/tg3
-*   Ideapad rfkill switch support
-*   Ideapad switchable graphics (non-i7 models that included the intel integrated graphics card with the ATi/nVidia)
-*   other small tweaks for performance, constantly being updated. Suggestions should be left on the [linux-ideapad](https://aur.archlinux.org/packages/linux-ideapad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-ideapad)]</sup> page.
-*   Many unused drivers switched on by default are disabled, reducing the final kernel size significantly
-
 ## Sound
 
 [ALSA](/index.php/ALSA "ALSA") works fine with the sound card, using the snd_hda_intel module.
@@ -89,7 +77,7 @@ The [linux-ideapad](https://aur.archlinux.org/packages/linux-ideapad/)<sup><smal
 
 See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Y560&oldid=392335](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Y560&oldid=392335)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Y560&oldid=412545](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Y560&oldid=412545)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -8,26 +8,21 @@ This article covers the Arch Linux support for the Lenovo ThinkPad Edge E330s la
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Review](#Review)
-*   [3 Hardware](#Hardware)
-    *   [3.1 lspci](#lspci)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Clickpad](#Clickpad)
-    *   [4.2 Jumping cursor on touchpad release](#Jumping_cursor_on_touchpad_release)
-    *   [4.3 Video](#Video)
-    *   [4.4 Wireless](#Wireless)
-        *   [4.4.1 Intel Centrino Wireless-N 2230 (rev c4)](#Intel_Centrino_Wireless-N_2230_.28rev_c4.29)
-    *   [4.5 Sound](#Sound)
-    *   [4.6 Webcam](#Webcam)
-    *   [4.7 Power](#Power)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Brightness control](#Brightness_control)
-    *   [5.2 USB 2.0 not working or giving kernel traces](#USB_2.0_not_working_or_giving_kernel_traces)
-
-## Installation
-
-I've fully copied the system from my former notebook to the new disc and made it booting with grub rescue shell.
+*   [1 Review](#Review)
+*   [2 Hardware](#Hardware)
+    *   [2.1 lspci](#lspci)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Clickpad](#Clickpad)
+    *   [3.2 Jumping cursor on touchpad release](#Jumping_cursor_on_touchpad_release)
+    *   [3.3 Video](#Video)
+    *   [3.4 Wireless](#Wireless)
+        *   [3.4.1 Intel Centrino Wireless-N 2230 (rev c4)](#Intel_Centrino_Wireless-N_2230_.28rev_c4.29)
+    *   [3.5 Sound](#Sound)
+    *   [3.6 Webcam](#Webcam)
+    *   [3.7 Power](#Power)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Brightness control](#Brightness_control)
+    *   [4.2 USB 2.0 not working or giving kernel traces](#USB_2.0_not_working_or_giving_kernel_traces)
 
 ## Review
 
@@ -232,7 +227,7 @@ blacklist thinkpad_acpi # it not used by this model and gives warnings about unk
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E330&oldid=351794](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E330&oldid=351794)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E330&oldid=412548](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E330&oldid=412548)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

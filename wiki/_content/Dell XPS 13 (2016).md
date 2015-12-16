@@ -145,17 +145,17 @@ When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least th
 
 The built-in Broadcom BCM4350 is not supported in the current kernel(4.2.5) (and not by [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>) yet but marked for inclusion in 4.4 [[2]](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211)
 
-As a workaround [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> can be used with the patch applied from 4.4\. It also need a firmware from [[3]](https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/brcm/brcmfmac4350-pcie.bin) to be placed to /lib/firmware/brcm/brcmfmac4350-pcie.bin or install [linux-firmware-git](https://aur.archlinux.org/packages/linux-firmware-git/)<sup><small>AUR</small></sup>
+As a workaround, use [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> which includes the patch applied from 4.4 or get the 4.4 (or latest) kernel from [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>. It also need a firmware from [[3]](https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/brcm/brcmfmac4350-pcie.bin) to be placed to /lib/firmware/brcm/brcmfmac4350-pcie.bin or install the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package from the testing repository or [linux-firmware-git](https://aur.archlinux.org/packages/linux-firmware-git/)<sup><small>AUR</small></sup>.
 
 ## Bluetooth
 
 **Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[4]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [unzip](https://www.archlinux.org/packages/?name=unzip) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
+The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[4]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
 
 ```
-$ unzip 9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE
-$ cp Win64/BCM4350C5_003.006.007.0095.1703.hex ./
+$ 7z x 9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE
+$ cp Win32/BCM4350C5_003.006.007.0095.1703.hex ./
 $ hex2hcd BCM4350C5_003.006.007.0095.1703.hex
 # mv BCM4350C5_003.006.007.0095.1703.hcd /lib/firmware/brcm/BCM-0a5c-6412.hcd
 
@@ -189,7 +189,7 @@ For ALSA, increase "Digital" channel for microphone to work.
 
 General Discussion Thread on Arch Forum [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=410480](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=410480)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=412592](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=412592)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

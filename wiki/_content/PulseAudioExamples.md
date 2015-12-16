@@ -259,7 +259,7 @@ Having identified which HDMI device is working, PulseAudio can be forced to use 
 
 ```
 
-where the 1 is the card and the 7 is the deivce found to work in the previous section
+where the 1 is the card and the 7 is the device found to work in the previous section
 
 restart pulse audio
 
@@ -269,7 +269,7 @@ restart pulse audio
 
 ```
 
-open the sound settings manager, make sure that under the hardware tab the graphics cards HDMI audio is set to "Digital Stereo (HDMI) Output" ( My graphics card audio is called "GF100 High Definition Audio Controller"
+open the sound settings manager, make sure that under the hardware tab the graphics cards HDMI audio is set to "Digital Stereo (HDMI) Output" (My graphics card audio is called "GF100 High Definition Audio Controller").
 
 Then, open the output tab. There should now be two HDMI outputs for the graphics card. Test which one works by selecting one of them, and then using a program to play audio. For example, use VLC to play a movie, and if it does not work, then select the other.
 
@@ -810,7 +810,7 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412526](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412526)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412595](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412595)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
