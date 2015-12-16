@@ -47,6 +47,7 @@ You can use the following website to get your device's coordinates along with a 
 ## List
 
 ```
+19.100030, 72.908897 "rihbyne" # Mumbai, Maharashtra, India
 3.392083, -76.545803 "roadev" # Cali, Valle del Cauca, Colombia
 37.834638, -82.478598 "osendott" # Inez, KY, USA
 49.574583, 17.956361 "deu439" # Starý Jičín, Czech Republic
@@ -1008,7 +1009,7 @@ You can use the following website to get your device's coordinates along with a 
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=411338](https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=411338)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=412469](https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=412469)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -57,7 +57,7 @@ Refer to [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk"
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
-**This article or section is a candidate for merging with [Benchmarking disk wipes](/index.php/Benchmarking_disk_wipes "Benchmarking disk wipes").**
+**This article or section is a candidate for merging with [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes").**
 
 **Notes:** Maybe anyone can bring this to nicer Formatting, move it there and link to it? (Discuss in [Talk:Frandom#](https://wiki.archlinux.org/index.php/Talk:Frandom))
 
@@ -155,7 +155,7 @@ This makes frandom 10-20 times faster on this machine, meaning it would take app
 
 **Summary:** 500 GB in approx. 6.85 hours (connected on USB3)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Frandom&oldid=376066](https://wiki.archlinux.org/index.php?title=Frandom&oldid=376066)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Frandom&oldid=412478](https://wiki.archlinux.org/index.php?title=Frandom&oldid=412478)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -362,13 +362,15 @@ listen.group = http
 <FilesMatch \.php$>
     SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
 </FilesMatch>
+<Proxy "fcgi://localhost/" enablereuse=on max=10>
+</Proxy>
 <IfModule dir_module>
     DirectoryIndex index.php index.html
 </IfModule>
 
 ```
 
-The pipe between sock and fcgi is not allowed to be surrounded by a space!
+The pipe between sock and fcgi is not allowed to be surrounded by a space! "localhost" after fcgi: can be replaced by any string but it should match in SetHandler and Proxy directives. More here: [https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html) SetHandler and Proxy can be used per vhost configs but the name after fcgi:// should differ for each vhost setup.
 
 *   If you have it added, remove the php module, as this is no longer needed.
 
@@ -507,7 +509,7 @@ and restart `httpd.service`.
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412039](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412039)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412466](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412466)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

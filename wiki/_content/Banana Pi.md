@@ -208,7 +208,7 @@ Of course the following values might differ from yours, as they are dependend on
 
 ### SATA HDD
 
-I connected two different external HDDs (3,5" with external energy source) via SATA-L to eSATA-I cable to the Banana Pi. My reading/writing results using [dd](/index.php/SSD_benchmarking#Using_dd "SSD benchmarking") (average of 3 run times):
+I connected two different external HDDs (3,5" with external energy source) via SATA-L to eSATA-I cable to the Banana Pi. My reading/writing results using [dd](/index.php/Benchmarking/Data_storage_devices#Using_dd "Benchmarking/Data storage devices") (average of 3 run times):
 
 <table style="text-align: center;" class="wikitable">
 
@@ -256,7 +256,7 @@ Benchmarking was done using `iperf` (average of 3 run times). Client BPi and Ser
 
 *   [Manufacturers FAQ](http://wiki.lemaker.org/FAQ)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Banana_Pi&oldid=409752](https://wiki.archlinux.org/index.php?title=Banana_Pi&oldid=409752)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Banana_Pi&oldid=412488](https://wiki.archlinux.org/index.php?title=Banana_Pi&oldid=412488)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

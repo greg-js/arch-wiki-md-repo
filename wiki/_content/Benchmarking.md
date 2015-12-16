@@ -6,16 +6,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Related articles
 
+*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
+*   [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes")
 *   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
 *   [Sysstat](/index.php/Sysstat "Sysstat")
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Too many "See also" sections. (Discuss in [Talk:Benchmarking#](https://wiki.archlinux.org/index.php/Talk:Benchmarking))
 
 Benchmarking is the act of measuring performance and comparing the results to another system's results or a widely accepted standard through a unified procedure. This unified method of evaluating system performance can help answer questions such as:
 
@@ -27,34 +21,24 @@ Many tools can be used to determine system performance, the following provides a
 
 ## Contents
 
-*   [1 Stand alone tools](#Stand_alone_tools)
+*   [1 Standalone tools](#Standalone_tools)
     *   [1.1 glxgears](#glxgears)
     *   [1.2 UnixBench](#UnixBench)
-        *   [1.2.1 See also](#See_also)
     *   [1.3 interbench](#interbench)
-        *   [1.3.1 See also](#See_also_2)
     *   [1.4 ttcp](#ttcp)
-        *   [1.4.1 See also](#See_also_3)
     *   [1.5 iperf](#iperf)
     *   [1.6 time](#time)
     *   [1.7 hdparm](#hdparm)
-        *   [1.7.1 See also](#See_also_4)
     *   [1.8 Unigine Engine](#Unigine_Engine)
-        *   [1.8.1 See also](#See_also_5)
 *   [2 Software suites](#Software_suites)
     *   [2.1 Bonnie++](#Bonnie.2B.2B)
-        *   [2.1.1 See also](#See_also_6)
     *   [2.2 IOzone](#IOzone)
-        *   [2.2.1 See also](#See_also_7)
     *   [2.3 HardInfo](#HardInfo)
-        *   [2.3.1 See also](#See_also_8)
     *   [2.4 Phoronix Test Suite](#Phoronix_Test_Suite)
     *   [2.5 PTS Desktop Live](#PTS_Desktop_Live)
-        *   [2.5.1 See also](#See_also_9)
-*   [3 Flash Media](#Flash_Media)
-*   [4 See also](#See_also_10)
+*   [3 Flash media](#Flash_media)
 
-## Stand alone tools
+## Standalone tools
 
 ### glxgears
 
@@ -66,7 +50,7 @@ glxgears can be installed via the [mesa-demos](https://www.archlinux.org/package
 
 A unixbench package is available in the [AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux.org/packages/unixbench/)<sup><small>AUR</small></sup>. To run benchmark run _ubench_ in terminal.
 
-#### See also
+See also:
 
 *   [https://code.google.com/p/byte-unixbench/](https://code.google.com/p/byte-unixbench/)
 *   [https://code.google.com/p/byte-unixbench/source/browse/trunk/UnixBench/USAGE](https://code.google.com/p/byte-unixbench/source/browse/trunk/UnixBench/USAGE)
@@ -79,7 +63,7 @@ interbench is an application designed to benchmark interactivity in Linux. It is
 
 interbench is available in the [AUR](/index.php/AUR "AUR"): [interbench](https://aur.archlinux.org/packages/interbench/)<sup><small>AUR</small></sup>.
 
-#### See also
+See also:
 
 *   [Realtime process management](/index.php/Realtime_process_management "Realtime process management")
 *   [Advanced traffic control](/index.php/Advanced_traffic_control "Advanced traffic control")
@@ -92,7 +76,7 @@ interbench is available in the [AUR](/index.php/AUR "AUR"): [interbench](https:/
 
 Various flavors of ttcp can be found in the [AUR](/index.php/AUR "AUR") (see links below).
 
-#### See also
+See also:
 
 *   [ttcp](https://aur.archlinux.org/packages/ttcp/)<sup><small>AUR</small></sup>
 *   [nttcp](https://aur.archlinux.org/packages/nttcp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nttcp)]</sup>
@@ -117,9 +101,7 @@ $ time tar -zxvf archive.tar.gz
 
 Storage media can be benchmarked with [Hdparm](/index.php/Hdparm "Hdparm") ([hdparm](https://www.archlinux.org/packages/?name=hdparm)).
 
-#### See also
-
-*   [Benchmarking disk wipes](/index.php/Benchmarking_disk_wipes "Benchmarking disk wipes")
+See also [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes").
 
 ### Unigine Engine
 
@@ -137,7 +119,7 @@ Unigine benchmarks have found recent usage by those looking to overclock their s
 
 These benchmarks can be found in the [AUR](/index.php/AUR "AUR") (see links below).
 
-#### See also
+See also:
 
 *   [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>
 *   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)<sup><small>AUR</small></sup>
@@ -152,7 +134,7 @@ These benchmarks can be found in the [AUR](/index.php/AUR "AUR") (see links belo
 
 **Note:** The original Bonnie suite does not appear to have been released under the GPL or other compatible license.
 
-#### See also
+See also:
 
 *   [Author's site](http://www.coker.com.au/bonnie++/)
 *   [Wikipedia:Bonnie++](https://en.wikipedia.org/wiki/Bonnie%2B%2B "wikipedia:Bonnie++")
@@ -163,17 +145,13 @@ IOzone is useful for performing a broad filesystem analysis of a vendor’s comp
 
 This program is available in the [AUR](/index.php/AUR "AUR"): [iozone](https://aur.archlinux.org/packages/iozone/)<sup><small>AUR</small></sup>.
 
-#### See also
-
-*   BBS Article: [iozone to evaluate I/O schedulers... results NOT what you'd expect!](https://bbs.archlinux.org/viewtopic.php?pid=969463)
+See also BBS Article: [iozone to evaluate I/O schedulers... results NOT what you'd expect!](https://bbs.archlinux.org/viewtopic.php?pid=969463).
 
 ### HardInfo
 
 [hardinfo](https://www.archlinux.org/packages/?name=hardinfo) can gather information about your system's hardware and operating system, perform benchmarks, and generate printable reports either in HTML or in plain text formats. HardInfo performs CPU and FPU benchmarks and has a very clean GTK-based interface.
 
-#### See also
-
-*   [Author's site](http://wiki.hardinfo.org/HomePage)
+See also [Author's site](http://wiki.hardinfo.org/HomePage).
 
 ### Phoronix Test Suite
 
@@ -193,12 +171,12 @@ This suite can be [installed](/index.php/Pacman "Pacman") with the package [phor
 
 As an alternative to the installation of the Phoronix Test Suite to the system, Phoronix also provides a Live-CD. This Live-CD offers all the features of the Phoronix Test Suite and includes the latest [ATI](/index.php/ATI "ATI") and [NVIDIA](/index.php/NVIDIA "NVIDIA") binary drivers. It will allow you to run 40+ benchmarks from a live environment without the need to store anything on your hard drive and includes a working GUI interface.
 
-#### See also
+See also:
 
 *   [Official link](http://www.phoronix-test-suite.com/?k=pts_desktop_live)
 *   [Documentation](http://www.phoronix-test-suite.com/documentation/2.4/pts_desktop_live.html)
 
-## Flash Media
+## Flash media
 
 Performance characteristics can be measured quantitatively using [iozone](https://aur.archlinux.org/packages/iozone/)<sup><small>AUR</small></sup>. _Sustained_ read and write values can, but often do not, correlate to real-world use cases of I/O heavy operations, such as unpacking and writing a number of files on a system update. A relevant metric to consider in these cases is the **random write** speed for small files.
 
@@ -219,14 +197,14 @@ $ iozone -e -I -a -s 10M -r 4k -i 0 -i 1 -i 2
 *   Test values are reported in KB/s.
 *   For performance charts on SD cards and other flash media, see for example [Tom's Hardware](http://www.tomshardware.com/charts/memory-cards,39.html).
 
-## See also
+See also:
 
 *   [Linux Benchmarking Homepage](http://lbs.sourceforge.net/)
 *   [Phoronix.com](http://www.phoronix.com/)
 *   [Interbench Homepage](http://users.on.net/~ckolivas/interbench/)
 *   [Unigine.com](http://unigine.com/download/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412330](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412330)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412491](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412491)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

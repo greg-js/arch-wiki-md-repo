@@ -195,7 +195,7 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 
 ## Applications that can use ICC profiles
 
-*   [GIMP](https://www.archlinux.org/packages/?name=gimp) can use ICC profiles for color-corrected display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
+*   [GIMP](/index.php/GIMP "GIMP") can use ICC profiles for color-corrected display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
 *   [mpv](/index.php/Mpv "Mpv") can take an ICC profile into account when playing a video. The command line argument is: `--vo=opengl:icc-profile=/path/to/profile.icc`.
 *   [Firefox](/index.php/Firefox "Firefox"), by default, uses the system-wide ICC profile only when displaying images that are already tagged with an ICC profile. To assume that untagged images use sRGB and apply color correction also to them, set the `gfx.color_management.mode` preference to 1.
 *   Both [Eye of Gnome](https://www.archlinux.org/packages/?name=eog) and [Eye of MATE](https://www.archlinux.org/packages/?name=eom) automatically use the system-installed ICC profile.
@@ -209,7 +209,7 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 *   [dispcalGUI: Basic concept of display calibration and profiling](http://dispcalgui.hoech.net/#concept)
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412287](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412287)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412463](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412463)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

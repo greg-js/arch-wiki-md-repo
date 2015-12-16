@@ -118,7 +118,7 @@ Once you have configured your `_config.yml` to your liking you need to create th
 
 ## Usage
 
-Next you need to create templates that Jekyll can process. These templates make use of the Liquid templating system to input data. For a full explanation check [GitHub](https://github.com/mojombo/jekyll/wiki/template-data).
+Next you need to create templates that Jekyll can process. These templates make use of the Liquid templating system to input data. For a full explanation check [GitHub](http://jekyllrb.com/docs/variables/).
 
 Additionally, each file besides `/_layouts/layout.html` requires a [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/yaml-front-matter) heading.
 
@@ -232,7 +232,7 @@ It is recommended to define server options in your `_config.yml`. The default wi
     *   [http://pygments.org/](http://pygments.org/) - Pygments
     *   [http://rubygems.org/gems/directory_watcher](http://rubygems.org/gems/directory_watcher) - Directory Watcher
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412111](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412111)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412499](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412499)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

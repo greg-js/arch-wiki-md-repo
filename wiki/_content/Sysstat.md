@@ -27,8 +27,8 @@ The [sysstat](https://www.archlinux.org/packages/?name=sysstat) is a collection 
 
 `sa1` and `sa2` will read `/etc/conf.d/sysstat`. Use their respective man pages, and [cronie](https://www.archlinux.org/packages/?name=cronie), to create a `crontab` entry.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sysstat&oldid=412342](https://wiki.archlinux.org/index.php?title=Sysstat&oldid=412342)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sysstat&oldid=412498](https://wiki.archlinux.org/index.php?title=Sysstat&oldid=412498)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Maximizing Performance](/index.php?title=Category:Maximizing_Performance&action=edit&redlink=1 "Category:Maximizing Performance (page does not exist)")
+*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")

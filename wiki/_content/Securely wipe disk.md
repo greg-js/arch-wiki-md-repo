@@ -8,7 +8,7 @@ Related articles
 
 *   [Securely wipe disk/Tips and tricks](/index.php/Securely_wipe_disk/Tips_and_tricks "Securely wipe disk/Tips and tricks")
 *   [File recovery](/index.php/File_recovery "File recovery")
-*   [Benchmarking disk wipes](/index.php/Benchmarking_disk_wipes "Benchmarking disk wipes")
+*   [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes")
 *   [Frandom](/index.php/Frandom "Frandom")
 *   [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption")
 *   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
@@ -416,7 +416,7 @@ The [secure-delete](https://aur.archlinux.org/packages/secure-delete/)<sup><smal
 
 See [the tools list](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) for more info.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=410002](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=410002)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412477](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412477)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
