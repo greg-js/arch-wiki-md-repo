@@ -398,10 +398,6 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 ###### others
 
-*   **QTorrent** — BitTorrent client written in PyQt3.
-
-[http://thegraveyard.org/qtorrent.php](http://thegraveyard.org/qtorrent.php)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2012-09-20]</sup> || [qtorrent](https://aur.archlinux.org/packages/qtorrent/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtorrent)]</sup>
-
 *   **Tixati** — P2P client that uses the BitTorrent protocol.
 
 [http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)<sup><small>AUR</small></sup>
@@ -1116,10 +1112,6 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 [http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)<sup><small>AUR</small></sup>
 
-*   **tyrs** — Simple client for Twitter and Identi.ca supporting virtually all its features with nice console UI (unmaintained).
-
-[http://tyrs.nicosphere.net/](http://tyrs.nicosphere.net/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-07-17]</sup> || [tyrs](https://aur.archlinux.org/packages/tyrs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tyrs)]</sup>
-
 *   **turses** — Twitter client for the console based off [tyrs](https://aur.archlinux.org/packages/tyrs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tyrs)]</sup> with major improvements.
 
 [http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)<sup><small>AUR</small></sup>
@@ -1228,7 +1220,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 [https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=411049](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=411049)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=412446](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=412446)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

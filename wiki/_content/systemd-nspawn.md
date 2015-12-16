@@ -249,7 +249,7 @@ Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container
 
 ### unable to upgrade some packages on the container
 
-It can't sometimes be impossible to upgrade some packages on the container, [filesystem](https://www.archlinux.org/packages/?name=filesystem) being a perfect example. The issue is due to `/sys` being mounted as Read Only. The workaround is to remount the directory in Read Write when running `# mount -o remount,rw -t sysfs sysfs /sys`, do the upgrade then reboot the container.
+It can sometimes be impossible to upgrade some packages on the container, [filesystem](https://www.archlinux.org/packages/?name=filesystem) being a perfect example. The issue is due to `/sys` being mounted as Read Only. The workaround is to remount the directory in Read Write when running `mount -o remount,rw -t sysfs sysfs /sys`, do the upgrade then reboot the container.
 
 ## See also
 
@@ -259,7 +259,7 @@ It can't sometimes be impossible to upgrade some packages on the container, [fil
 *   [Presentation by Lennart Pottering on systemd-nspawn](https://www.youtube.com/results?search_query=systemd-nspawn&aq=f)
 *   [Running Firefox in a systemd-nspawn container](http://dabase.com/e/12009/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412298](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412298)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412459](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412459)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

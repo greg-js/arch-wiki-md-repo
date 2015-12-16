@@ -14,7 +14,7 @@ pkgstats sends a list of all installed packages, [kernel modules](https://www.ar
 
 _pkgstats_ is set up to automatically run every week using [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Once installed, it will be activated after the next reboot.
 
-If you do not want to wait for a reboot cycle, you can manually [start](/index.php/Start "Start") `pkgstats._**timer**_`.
+If you do not want to wait for a reboot cycle, you can manually [start](/index.php/Start "Start") `pkgstats.timer`.
 
 _pkgstats_ can also be run manually: see `pkgstats -h` for usage information.
 
@@ -24,7 +24,7 @@ Statistics are available at [https://www.archlinux.de/?page=Statistics](https://
 
 You can read the official [forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431) for more info.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgstats&oldid=404880](https://wiki.archlinux.org/index.php?title=Pkgstats&oldid=404880)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgstats&oldid=412444](https://wiki.archlinux.org/index.php?title=Pkgstats&oldid=412444)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -40,6 +40,8 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
+*   [16 December 2015] [ASA-201512-10](https://lists.archlinux.org/pipermail/arch-security/2015-December/000468.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
+*   [15 December 2015] [ASA-201512-9](https://lists.archlinux.org/pipermail/arch-security/2015-December/000467.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 *   [10 December 2015] [ASA-201512-8](https://lists.archlinux.org/pipermail/arch-security/2015-December/000466.html) [keepassx](https://www.archlinux.org/packages/?name=keepassx) information disclosure
 *   [09 December 2015] [ASA-201512-7](https://lists.archlinux.org/pipermail/arch-security/2015-December/000465.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [09 December 2015] [ASA-201512-6](https://lists.archlinux.org/pipermail/arch-security/2015-December/000464.html) [libxml2](https://www.archlinux.org/packages/?name=libxml2) multiple issues
@@ -505,7 +507,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=411438](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=411438)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=412451](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=412451)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

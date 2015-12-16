@@ -35,7 +35,6 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [3.1.1.4 Disable panel shadow](#Disable_panel_shadow)
         *   [3.1.2 Window decorations](#Window_decorations)
         *   [3.1.3 Icon themes](#Icon_themes)
-            *   [3.1.3.1 Qt 5 icons theme](#Qt_5_icons_theme)
         *   [3.1.4 Fonts](#Fonts)
             *   [3.1.4.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
             *   [3.1.4.2 Fonts are huge or seem disproportional](#Fonts_are_huge_or_seem_disproportional)
@@ -96,8 +95,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [10.7.2 Low 3D desktop performance](#Low_3D_desktop_performance)
         *   [10.7.3 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
         *   [10.7.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [10.7.5 Screen Tearing with desktop compositing enabled](#Screen_Tearing_with_desktop_compositing_enabled)
-        *   [10.7.6 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
+        *   [10.7.5 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
     *   [10.8 Sound problems under KDE](#Sound_problems_under_KDE)
         *   [10.8.1 ALSA related problems](#ALSA_related_problems)
             *   [10.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
@@ -245,12 +243,6 @@ $ kcmshell4 autostart
 There you can also directly download and install more themes with one click, and some are available in the [AUR](https://aur.archlinux.org/packages.php?O=0&K=kdestyle&do_Search=Go&PP=25&SO=d&SB=v).
 
 #### Icon themes
-
-Not many full system icons themes are available for KDE 4\. You can open up _System Settings > Application Appearance > Icons_ and browse for new ones or install them manually. Many of them can be found on [kde-look.org](http://www.kde-look.org/).
-
-Official logos, icons, CD labels and other artwork for Arch Linux are provided in the [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/)<sup><small>AUR</small></sup> package. After installing you can find such artwork at `/usr/share/archlinux/`.
-
-##### Qt 5 icons theme
 
 Icon-themes can be installed and changed on _System Settings > Icons_.
 
@@ -404,9 +396,9 @@ KDE implements desktop search with a software called Baloo, a file indexing and 
 
 In order to search using Baloo on the KDE Plasma Desktop, press `ALT+F2` and type in your query. Within Dolphin press `CTRL+F`.
 
-By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and, as of 4.13.1, a way to disable it with one click.
+By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click.
 
-Alternatively you can edit your `~/.kde4/share/config/baloofilerc` (KDE4) or `~/.config/baloofilerc` (KF5) file ([info](https://community.kde.org/Baloo/Configuration)). Additionally the `balooctl` process can also be used. In order to disable Baloo run `balooctl disable`.
+Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)). Additionally the `balooctl` process can also be used. In order to disable Baloo run `balooctl disable`.
 
 Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
 
@@ -444,7 +436,7 @@ Akonadi does not store any data by itself: the storage format depends on the nat
 
 #### Disabling Akonadi
 
-See this [section in the KDE userbase](http://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem). Alternatively, install [akonadi-fake](https://aur.archlinux.org/packages/akonadi-fake/)<sup><small>AUR</small></sup>.
+See this [section in the KDE userbase](http://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
 
 #### Database configuration
 
@@ -575,7 +567,7 @@ You will need to install KDE Connect both on your computer and on your Android. 
 
 ### Configure KWin to use OpenGL ES
 
-Due to QtQuick2, both the Qt OpenGL module and KWin have to be [compiled against OpenGL ES.](http://blog.martin-graesslin.com/blog/2013/11/kwin5-qtquick-2-and-the-caused-changes-for-opengl/)
+Set environment variable `KWIN_COMPOSE` to 'O2ES' to force the OpenGL ES backend. Please note that OpenGL ES is not supported by all drivers.
 
 ### Speed up application startup
 
@@ -755,14 +747,6 @@ Sometimes, KWin may have settings in its configuration file (`kwinrc`) that _may
 
 As of KDE SC 4.6.0, there is an option in _Sytem Settings > Desktop Effect > Advanced > Suspend desktop effects for fullscreen windows_. Uncheck it would tell kwin to disable unredirect fullscren.
 
-#### Screen Tearing with desktop compositing enabled
-
-KWin may suffer from [screen tearing](https://en.wikipedia.org/wiki/Screen_tearing "wikipedia:Screen tearing") while desktop effects are enabled. Uncheck the VSync option under _System Settings > Desktop Effects > Advanced > Use Vsync_.
-
-**Note:** With the release of Plasma 4.11, several new Vsync options have been added, which may help with screen tearing.
-
-For proprietary driver users, ensure that the driver's VSync option is enabled (_amdccle_ for [Catalyst](/index.php/Catalyst "Catalyst") users, and _nvidia-settings_ for [NVIDIA](/index.php/NVIDIA "NVIDIA") users).
-
 #### Display settings lost on reboot (multiple monitors)
 
 There is a [bug](https://bugs.kde.org/show_bug.cgi?id=346961) in kscreen that makes it forget dual screen settings after reboot with certain displays. A possible workaround is to delete kscreen and make sure that your screen resolution is specified in a xorg.conf file:
@@ -866,7 +850,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412374](https://wiki.archlinux.org/index.php?title=KDE&oldid=412374)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412438](https://wiki.archlinux.org/index.php?title=KDE&oldid=412438)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

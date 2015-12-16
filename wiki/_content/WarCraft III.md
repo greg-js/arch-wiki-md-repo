@@ -80,7 +80,7 @@ Please follow the same procedure as above, using the CD of The Frozen Throne ins
 
 You can try updating via Battle.net or use an offline patch. For the first solution just hit the Battle.net button in the main menu after you have started the game. Be sure you have read the post installation tipps before running WarCraft III the first time. If you want to patch offline, follow these steps:
 
-*   Look [here](http://us.blizzard.com/support/article.xml?articleId=20673) for the patch.
+*   Look [here](https://us.battle.net/support/en/article/classic-game-patches) for the patch.
 *   Download the current patch and save it in the directory you installed WarCraft III.
 *   Open a terminal, change into that directory and run the patch via
 
@@ -189,7 +189,7 @@ install following packages: [lib32-alsa-lib](https://www.archlinux.org/packages/
 *   [WineHQ's AppDB entry](http://appdb.winehq.org/objectManager.php?sClass=application&iId=897)
 *   [Snoopy](/index.php/Snoopy "Snoopy")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=WarCraft_III&oldid=360571](https://wiki.archlinux.org/index.php?title=WarCraft_III&oldid=360571)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=WarCraft_III&oldid=412449](https://wiki.archlinux.org/index.php?title=WarCraft_III&oldid=412449)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

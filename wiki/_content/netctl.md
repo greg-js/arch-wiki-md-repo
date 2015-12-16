@@ -374,7 +374,7 @@ This example describes how to use _bonding_ to fallback to wireless when the wir
 
 You will need additional packages from the official repositories: [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 
-First enable the bonding module to be loaded upon boot time, as instructed on [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules"):
+First enable the bonding module to be loaded upon boot time, as instructed on [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules"):
 
  `/etc/modules-load.d/bonding.conf`  `bonding` 
 
@@ -647,7 +647,7 @@ Save it and try to connect with the profile:
 
 ### dhcpcd: ipv4_addroute: File exists
 
-On some systems dhcpcd in combination with netctl causes timeout issues on resume, particularly when having switched networks in the meantime. netctl will report that you are successfully connected but you still receive timeout issues. In this case, the old default route still exists and is not being renewed. A workaround to avoid this misbehaviour is to switch to [dhclient](#Set_default_dhcp_client_for_all_profiles) as the default dhcp client. More information on the issue can be found [here](https://bbs.archlinux.org/viewtopic.php?pid=1399842#p1399842).
+On some systems dhcpcd in combination with netctl causes timeout issues on resume, particularly when having switched networks in the meantime. netctl will report that you are successfully connected but you still receive timeout issues. In this case, the old default route still exists and is not being renewed. A workaround to avoid this misbehaviour is to switch to [dhclient](#Set_default_DHCP_client) as the default dhcp client. More information on the issue can be found [here](https://bbs.archlinux.org/viewtopic.php?pid=1399842#p1399842).
 
 ### DHCP timeout issues
 
@@ -709,7 +709,7 @@ To [enable](/index.php/Enable "Enable") this service for your wireless card, for
 
 ### netctl-auto suddenly stopped working for WiFi adapters
 
-This problem seems to be related to a recent wpa_supplicant update (see [https://bugs.archlinux.org/task/44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
+This problem seems to be related to a recent wpa_supplicant update (see [FS#44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
 
  `/etc/netctl/interfaces/wlp3s0` 
 
@@ -727,7 +727,7 @@ After that, try to restart your netctl-auto service and WiFi auto detection shou
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=412294](https://wiki.archlinux.org/index.php?title=Netctl&oldid=412294)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=412460](https://wiki.archlinux.org/index.php?title=Netctl&oldid=412460)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

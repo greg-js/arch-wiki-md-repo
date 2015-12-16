@@ -86,7 +86,7 @@ It is recommended to enable secure SMTP as described in [#Secure SMTP](#Secure_S
 
 *   `mydestination` is the lookup for local users.
 
- `mydestination = $myhostname, localhost.$mydomain, localhost` 
+ `mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain` 
 
 *   `mynetworks` and `mynetwork_style` control relaying, and whom is allowed to. We do not want any relaying.
 
@@ -102,7 +102,7 @@ For our sakes, we will simply set `mynetwork_style` to host, as we are trying to
 
 If set, `mail_spool_directory` specifies an absolute path where mail gets delivered. By default Postfix stores mails in `/var/spool/mail`.
 
- `home_spool_directory = /home/vmailer` 
+ `mail_spool_directory = /home/vmailer` 
 
 Alternatively, if set, `home_mailbox` specifies a mailbox relative to the user's home directory where mail gets delivered (eg: /home/vmailer).
 
@@ -539,7 +539,7 @@ Finally, restart postfix.service
 *   [Postfix Ubuntu documentation](https://help.ubuntu.com/community/Postfix)
 *   [Use Gmail as an SMTP relay](http://sherlock.heroku.com/blog/2012/02/03/setting-up-postfix-to-use-gmail-as-an-smtp-relay-host-in-archlinux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Postfix&oldid=409948](https://wiki.archlinux.org/index.php?title=Postfix&oldid=409948)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Postfix&oldid=412441](https://wiki.archlinux.org/index.php?title=Postfix&oldid=412441)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

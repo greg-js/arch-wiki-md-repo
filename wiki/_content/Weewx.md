@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** Need to update style to follow [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Weewx#](https://wiki.archlinux.org/index.php/Talk:Weewx))
+
 [Weewx](http://weewx.com/) is a free, open source, software program, written in Python, which interacts with your weather station to produce graphs, reports, and HTML pages.
 
 ## Contents
@@ -159,7 +167,7 @@ To install PIL download the source from here: [http://www.pythonware.com/product
 
 Then, after installing the arch developer tools: `pacman -S base-devel` Install the freetype2 tools: `pacman -S freetype2` You will then need to symbolic link the freetype2 directory to freetype because the PIL build looks for the freetype header files in the freetype directoy not in freetype2.: `ln -s /usr/include/freetype2 /usr/include/freetype` THEN you can build and install PIL from your build directory: `./setup.py install` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Weewx&oldid=412306](https://wiki.archlinux.org/index.php?title=Weewx&oldid=412306)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Weewx&oldid=412457](https://wiki.archlinux.org/index.php?title=Weewx&oldid=412457)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

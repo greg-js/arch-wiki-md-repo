@@ -209,7 +209,7 @@ By default, neither the iPhone nor the iPod Touch present mass storage capabilit
 
 The first is to mount your device through the FUSE file system SSHFS. This requires jailbreaking, which can be done on any major OS using e.g. [Absinthe](http://www.ijailbreak.com/how-to/how-to-jailbreak-iphone-4s-absinthe-linux/) for recent iOS versions. After jailbreaking, an SSH server will also need to be installed on the device, which can be done through the Cydia program, installed on the device during the jailbreak process.
 
-The second is to use a FUSE file system called [ifuse](https://www.archlinux.org/packages/?q=ifuse), which allows you to mount your device through USB, as you normally would. After installing ifuse, for instance, you should see your iPhone appear in the left navigation of Gnome Files and other supporting file managers. This method requires no hacking and is in general the better solution, though be aware that the software is still under heavy development. As of late, however, it has proven to be rather reliable and stable.
+The second is to use a FUSE file system called [ifuse](https://www.archlinux.org/packages/?name=ifuse), which allows you to mount your device through USB, as you normally would. After installing ifuse, for instance, you should see your iPhone appear in the left navigation of Gnome Files and other supporting file managers. This method requires no hacking and is in general the better solution, though be aware that the software is still under heavy development. As of late, however, it has proven to be rather reliable and stable.
 
 **Note:** The current releases of [libgpod](https://www.archlinux.org/packages/?name=libgpod) and [gtkpod](https://www.archlinux.org/packages/?name=gtkpod) support the iPod Touch and the iPhone OS 3.1.x up to iOS 4.3.x. It is possible to transfer pictures and music without limitations.
 
@@ -255,7 +255,7 @@ PROCESS=`ssh root@$IPADDRESS ps ax | grep MobileMusicPlayer | grep -v grep | awk
 
 After that, edit the `/etc/default/ipod-convenience` file with details of your device's IP address, and create the mount point, which is `/media/ipod` by default (make sure to set the permissions correctly if you want it accessible by a regular user)
 
-To actually mount the device, run `ipod-touch-mount` or `iphone-mount` (they both do exactly the same thing so it doesn't matter which). This should prompt for the root password of the device twice, which is 'alpine' by default in firmware versions 1.1 and up. This will need to be done every time you want to sync. (This can be done without having to type the password each time by using SSH keys - see [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") for more information)
+To actually mount the device, run `ipod-touch-mount` or `iphone-mount` (they both do exactly the same thing so it does not matter which). This should prompt for the root password of the device twice, which is 'alpine' by default in firmware versions 1.1 and up. This will need to be done every time you want to sync. (This can be done without having to type the password each time by using SSH keys - see [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") for more information)
 
 #### The iFuse Way
 
@@ -272,7 +272,7 @@ You will need to install **usbmuxd**, **libplist**, **libimobiledevice**, **ifus
 
 Now make sure that you have the fuse module loaded by doing `modprobe fuse`, assuming that you do not have it in `/etc/rc.conf` already.
 
-You can now mount your device. Make sure it is unlocked before you plug it in, or it won't be recognized.
+You can now mount your device. Make sure it is unlocked before you plug it in, or it will not be recognized.
 
 ```
 # ifuse <mountpoint>
@@ -281,7 +281,7 @@ You can now mount your device. Make sure it is unlocked before you plug it in, o
 
 The mountpoint field is where you want to have it mounted.
 
-And you're done! You should be able to point your syncing software of choice to the mount point and be able to transfer files.
+And you are done! You should be able to point your syncing software of choice to the mount point and be able to transfer files.
 
 To unmount your device:
 
@@ -320,7 +320,7 @@ If syncing fails with "ERROR: Unsupported checksum type '0' in cbk file generati
 
 Use your favourite [iPod-compatible program](#iPod_management_apps). Individual configuration will vary, but in general, pointing your program to your specified mount point should yield good results.
 
-After you've synced, run `ipod-touch-umount` (or `iphone-umount`, depending on your taste) to unmount the SSHFS file system and restart the `MobileMusicPlayer` process on the device, so that the new music database is read.
+After you have synced, run `ipod-touch-umount` (or `iphone-umount`, depending on your taste) to unmount the SSHFS file system and restart the `MobileMusicPlayer` process on the device, so that the new music database is read.
 
 If you used iFuse, simply type:
 
@@ -512,7 +512,7 @@ Your iPod can now be managed with Amarok or gtkpod.
 *   *   [More information about iPhone/iPod Touch support](http://help.ubuntu.com/community/PortableDevices/iPhone)
     *   [Apple trailers downloader script](http://wiki.gotux.net/code/perl/atget)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=412289](https://wiki.archlinux.org/index.php?title=IPod&oldid=412289)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=412462](https://wiki.archlinux.org/index.php?title=IPod&oldid=412462)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

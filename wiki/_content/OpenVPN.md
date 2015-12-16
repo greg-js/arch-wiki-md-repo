@@ -547,7 +547,7 @@ When you are satisfied make the changes permanent as shown in [iptables#Configur
 
 The idea is simple: prevent all traffic through our default interface (enp3s0 for example) and only allow tun0. If the openvpn connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.
 
-Be sure to set up a script to restart openvpn if it goes down if you don't want to manually restart it.
+Be sure to set up a script to restart openvpn if it goes down if you do not want to manually restart it.
 
 #### ufw
 
@@ -570,7 +570,7 @@ Be sure to set up a script to restart openvpn if it goes down if you don't want 
 
 ```
 
-**Warning:** DNS **won't** work **unless** you run your own dns server like [BIND](/index.php/BIND "BIND")
+**Warning:** DNS **will not** work **unless** you run your own dns server like [BIND](/index.php/BIND "BIND")
 
 Otherwise, you will need to allow dns leak. **Be sure to trust your dns server!**
 
@@ -738,7 +738,7 @@ RESOLVE: Cannot resolve host address: example.com: Name or service not known
 
 **The factual accuracy of this article or section is disputed.**
 
-**Reason:** Ordering "After=network.target" does not work universally. See [network.target](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/). Further, not the original unit in `/usr/lib` should be modified but a copy, cross-referencing [Systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd"). (Discuss in [Talk:OpenVPN#](https://wiki.archlinux.org/index.php/Talk:OpenVPN))
+**Reason:** Ordering "After=network.target" does not work universally. See [network.target](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/). Further, not the original unit in `/usr/lib` should be modified but a copy, cross-referencing [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"). (Discuss in [Talk:OpenVPN#](https://wiki.archlinux.org/index.php/Talk:OpenVPN))
 
 Then, **only if your network setup can be started before OpenVPN**, you should force OpenVPN to wait for the network by adding `Requires=network.target` and `After=network.target` to the OpenVPN systemd service file:
 
@@ -802,7 +802,7 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412412](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412412)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412455](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412455)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
