@@ -69,6 +69,7 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 
 *   The Xorg video driver for your specific hardware is an assumed dependency.
 *   No additional configuration is required.
+*   If errors persist, add the suggested lines to /etc/X11/Xwrapper.config (as outlined in next section)
 
 #### Xsession with LightDM
 
@@ -554,7 +555,7 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 
 **Note:** xbmc-addons-chinese:Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=412116](https://wiki.archlinux.org/index.php?title=Kodi&oldid=412116)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=412655](https://wiki.archlinux.org/index.php?title=Kodi&oldid=412655)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

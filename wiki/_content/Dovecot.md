@@ -31,7 +31,7 @@ This article describes how to set up a mail server suitable for personal or smal
 
 ## Installation
 
-[Install](/index.php/Install "Install") the packages [dovecot](https://www.archlinux.org/packages/?name=dovecot).
+[Install](/index.php/Install "Install") the [dovecot](https://www.archlinux.org/packages/?name=dovecot) package.
 
 ## Configuration
 
@@ -208,7 +208,7 @@ default_pass_scheme = SHA512-CRYPT
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dovecot&oldid=408298](https://wiki.archlinux.org/index.php?title=Dovecot&oldid=408298)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dovecot&oldid=412648](https://wiki.archlinux.org/index.php?title=Dovecot&oldid=412648)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

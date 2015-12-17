@@ -143,7 +143,7 @@ fi
 You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
 
 1.  Configuration files of your shell, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Configuration files](/index.php/Zsh#Configuration_files "Zsh").
-2.  `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files for shells](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files_for_shells "wikipedia:Unix shell").
+2.  `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 3.  `~/.pam_environment` is the user specific equivalent of `/etc/environment`, used by PAM-env module. See `pam_env(8)` for details.
 
 To add a directory to the `PATH` for local usage, put following in `~/.bash_profile`:
@@ -183,7 +183,7 @@ $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
 *   [Default applications](/index.php/Default_applications "Default applications")
 *   [Xdg-open](/index.php/Xdg-open "Xdg-open")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=391421](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=391421)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=412685](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=412685)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -102,7 +102,7 @@ exit 0
 After rebooting to your new 64-bit system, run this command to find out what 32-bit binaries you still have and reinstall them:
 
 ```
-find /usr/bin -type f -exec bash -c 'file {} | grep 32-bit' \;
+find /usr/bin -type f -exec bash -c 'file "{}" | grep 32-bit' \;
 
 ```
 
@@ -314,7 +314,7 @@ If, after completion, you find that mutt hangs on opening mail folders, try rena
 
 *   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=403724](https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=403724)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=412684](https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=412684)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -29,7 +29,7 @@ This document outlines the procedure needed to set up AutoFS, a package that pro
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [autofs](https://www.archlinux.org/packages/?name=autofs).
+[Install](/index.php/Install "Install") the [autofs](https://www.archlinux.org/packages/?name=autofs) package.
 
 **Note:** You no longer need to load `autofs4` module.
 
@@ -404,7 +404,7 @@ With certain versions of util-linux, you may not be able to unmount a fuse file 
 *   FTP and SFTP usage with AutoFS is based on this Gentoo Wiki article: [https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares](https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares)
 *   More information on SSH can be found on the [SSH](/index.php/SSH "SSH") and [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") pages of this wiki.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Autofs&oldid=406360](https://wiki.archlinux.org/index.php?title=Autofs&oldid=406360)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Autofs&oldid=412681](https://wiki.archlinux.org/index.php?title=Autofs&oldid=412681)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

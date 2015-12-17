@@ -38,6 +38,7 @@ These options are explained in detail below.
     *   [3.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
     *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
     *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
+    *   [3.4 Steam, dmenu, lightdm not working with xorg-server-1.18](#Steam.2C_dmenu.2C_lightdm_not_working_with_xorg-server-1.18)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
 
@@ -325,6 +326,10 @@ If Xorg wont start try swapping out all references of CRT to DFB. card0 is the i
 
 Alternatively you can generate your edid with tools like [read-edid](https://www.archlinux.org/packages/?name=read-edid) and point the driver to this file. Even modelines can be used, but then be sure to change "UseEDID" and "IgnoreEDID".
 
+### Steam, dmenu, lightdm not working with xorg-server-1.18
+
+[FS#47151](https://bugs.archlinux.org/task/47151) explains how to downgrade Xorg to work around issues with nvidia proprietary driver and Xorg 1.18\. If you do not have the needed packages in your pacman cache, you may download them from the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
+
 ## Using nouveau
 
 The open-source [nouveau](/index.php/Nouveau "Nouveau") driver ([xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau)) can dynamically switch with the Intel driver ([xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)) using a technology called PRIME. For more information, see the wiki article on [PRIME](/index.php/PRIME "PRIME").
@@ -333,7 +338,7 @@ The open-source [nouveau](/index.php/Nouveau "Nouveau") driver ([xf86-video-nouv
 
 If you wish to use Bumblebee, which will implement powersaving and some other useful features, see the wiki article on [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=411693](https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=411693)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=412654](https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=412654)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

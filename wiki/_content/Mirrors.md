@@ -23,28 +23,21 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 Unofficial mirrors](#Unofficial_mirrors)
     *   [5.1 Austria](#Austria)
-    *   [5.2 Belarus](#Belarus)
-    *   [5.3 Bulgaria](#Bulgaria)
-    *   [5.4 China](#China)
-    *   [5.5 France](#France)
-    *   [5.6 Germany](#Germany)
-    *   [5.7 Hong Kong](#Hong_Kong)
-    *   [5.8 India](#India)
-    *   [5.9 Indonesia](#Indonesia)
-    *   [5.10 Iran](#Iran)
-    *   [5.11 Italy](#Italy)
-    *   [5.12 Japan](#Japan)
-    *   [5.13 Kazakhstan](#Kazakhstan)
-    *   [5.14 Malaysia](#Malaysia)
-    *   [5.15 New Zealand](#New_Zealand)
-    *   [5.16 Poland](#Poland)
-    *   [5.17 Russia](#Russia)
-    *   [5.18 Singapore](#Singapore)
-    *   [5.19 South Africa](#South_Africa)
-    *   [5.20 South Korea](#South_Korea)
-    *   [5.21 United States](#United_States)
-    *   [5.22 Viet Nam](#Viet_Nam)
-    *   [5.23 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.2 China](#China)
+    *   [5.3 France](#France)
+    *   [5.4 Germany](#Germany)
+    *   [5.5 Hong Kong](#Hong_Kong)
+    *   [5.6 Indonesia](#Indonesia)
+    *   [5.7 Iran](#Iran)
+    *   [5.8 Italy](#Italy)
+    *   [5.9 Japan](#Japan)
+    *   [5.10 Malaysia](#Malaysia)
+    *   [5.11 New Zealand](#New_Zealand)
+    *   [5.12 Poland](#Poland)
+    *   [5.13 Russia](#Russia)
+    *   [5.14 South Africa](#South_Africa)
+    *   [5.15 United States](#United_States)
+    *   [5.16 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
@@ -203,16 +196,6 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 *   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) - _Vienna University of Technology_
 *   [ftp://gd.tuwien.ac.at/opsys/linux/archlinux/](ftp://gd.tuwien.ac.at/opsys/linux/archlinux/)
 
-### Belarus
-
-*   [http://ftp.byfly.by/pub/archlinux/](http://ftp.byfly.by/pub/archlinux/)
-*   [ftp://ftp.byfly.by/pub/archlinux/](ftp://ftp.byfly.by/pub/archlinux/)
-
-### Bulgaria
-
-*   [http://mirror.telepoint.bg/archlinux/](http://mirror.telepoint.bg/archlinux/)
-*   [ftp://mirror.telepoint.bg/archlinux/](ftp://mirror.telepoint.bg/archlinux/)
-
 ### China
 
 **Telecom**
@@ -240,27 +223,16 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 ### Germany
 
-*   [http://ftp.uni-erlangen.de/mirrors/archlinux/](http://ftp.uni-erlangen.de/mirrors/archlinux/)
-*   [ftp://ftp.uni-erlangen.de/mirrors/archlinux/](ftp://ftp.uni-erlangen.de/mirrors/archlinux/)
 *   [http://ftp.u-tx.net/archlinux/](http://ftp.u-tx.net/archlinux/)
 *   [ftp://ftp.u-tx.net/archlinux/](ftp://ftp.u-tx.net/archlinux/)
-*   [http://mirror.michael-eckert.net/archlinux/](http://mirror.michael-eckert.net/archlinux/)
-*   [http://linux.rz.rub.de/archlinux/](http://linux.rz.rub.de/archlinux/)
 
 ### Hong Kong
 
 *   [http://hk.mirrors.linaxe.net/archlinux/](http://hk.mirrors.linaxe.net/archlinux/)
 
-### India
-
-*   [http://ftp.iitm.ac.in/archlinux/](http://ftp.iitm.ac.in/archlinux/)
-*   [ftp://ftp.iitm.ac.in/archlinux/](ftp://ftp.iitm.ac.in/archlinux/)
-
 ### Indonesia
 
-*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - _only from Indonesia_
 *   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)
-*   [http://repo.ukdw.ac.id/archlinux/](http://repo.ukdw.ac.id/archlinux/)
 
 ### Iran
 
@@ -276,20 +248,12 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 *   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
 *   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
 
-### Kazakhstan
-
-*   [http://archlinux.kz/](http://archlinux.kz/)
-*   [http://mirror.neolabs.kz/archlinux/](http://mirror.neolabs.kz/archlinux/)
-*   [http://mirror-kt.neolabs.kz/archlinux/](http://mirror-kt.neolabs.kz/archlinux/)
-
 ### Malaysia
 
 *   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
-*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - _ISO and Core_
 
 ### New Zealand
 
-*   [http://mirror.ihug.co.nz/archlinux/](http://mirror.ihug.co.nz/archlinux/)
 *   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) _NZ only_
 
 ### Poland
@@ -300,13 +264,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 ### Russia
 
-*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - _Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo_
 *   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - _Krasnoyarsk, Classica-Service Ltd_
-*   [http://mirror.yandex.ru/archlinux/](http://mirror.yandex.ru/archlinux/) - _Moscow, [Yandex](http://www.yandex.ru/) LLC_
-
-### Singapore
-
-*   [http://mirror.nus.edu.sg/archlinux/](http://mirror.nus.edu.sg/archlinux/)
 
 ### South Africa
 
@@ -314,35 +272,20 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 *   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
 *   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - _University of the Free State_
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
-*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) - _Web Africa Networks_
-*   [ftp://ftp.wa.co.za/pub/archlinux/](ftp://ftp.wa.co.za/pub/archlinux/)
 *   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - _TENET - Tertiary Education and Research Network of South Africa_
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
 
-### South Korea
-
-*   [http://mirror.star4u.org/archlinux/](http://mirror.star4u.org/archlinux/)
-*   [http://ftp2.lecl.net/pub/archlinux](http://ftp2.lecl.net/pub/archlinux)
-
 ### United States
 
-*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - _Contains numerous ISO images but does not contain the ISO dated 2011.08.19_
 *   [http://mirror.clarkson.edu/archlinux/](http://mirror.clarkson.edu/archlinux/)
 *   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
 *   [http://il.mirrors.linaxe.net/archlinux/](http://il.mirrors.linaxe.net/archlinux/) - _Server location - Chicago, IL_
-*   [https://archlinux.gfrh.net/](https://archlinux.gfrh.net/) - _Seattle, Washington_
-
-### Viet Nam
-
-**FPT TELECOM**
-
-*   [http://mirror-fpt-telecom.fpt.net/archlinux/](http://mirror-fpt-telecom.fpt.net/archlinux/)
 
 ### Sourceforge (old ISOs)
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=411316](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=411316)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412678](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412678)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
