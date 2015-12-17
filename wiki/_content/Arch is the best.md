@@ -16,7 +16,7 @@ The **Arch is the best** project is a very sophisticated and exquisite, ego-boos
 
 ## History
 
-The visionary project was originally devised in April 2008 by long time Arch community member [lucke](//bbs.archlinux.org/profile.php?id=2529) as a simple shell script which provided irrefutable proof that "Arch is the best". It was announced to the world with a [forum post](//bbs.archlinux.org/viewtopic.php?id=47306), thus illuminating other people's minds, who immediately started porting it to multiple different languages, both programming and verbal, so that every human being on the planet could fully appreciate and benefit from this revolutionary discovery.
+The visionary project was originally devised in April 2008 by long time Arch community member [lucke](https://bbs.archlinux.org/profile.php?id=2529) as a simple shell script which provided irrefutable proof that "Arch is the best". It was announced to the world with a [forum post](https://bbs.archlinux.org/viewtopic.php?id=47306), thus illuminating other people's minds, who immediately started porting it to multiple different languages, both programming and verbal, so that every human being on the planet could fully appreciate and benefit from this revolutionary discovery.
 
 ## Installation
 
@@ -1712,7 +1712,7 @@ Arch%20is%20the%20best!
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_is_the_best&oldid=412513](https://wiki.archlinux.org/index.php?title=Arch_is_the_best&oldid=412513)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_is_the_best&oldid=412617](https://wiki.archlinux.org/index.php?title=Arch_is_the_best&oldid=412617)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

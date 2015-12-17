@@ -53,14 +53,6 @@ Refer to [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk"
 
 ## Example
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes").**
-
-**Notes:** Maybe anyone can bring this to nicer Formatting, move it there and link to it? (Discuss in [Talk:Frandom#](https://wiki.archlinux.org/index.php/Talk:Frandom))
-
 1) On a 1.73 GHZ Thinkpad T43 with 2 GB ram:
 
 ```
@@ -155,7 +147,7 @@ This makes frandom 10-20 times faster on this machine, meaning it would take app
 
 **Summary:** 500 GB in approx. 6.85 hours (connected on USB3)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Frandom&oldid=412478](https://wiki.archlinux.org/index.php?title=Frandom&oldid=412478)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Frandom&oldid=412611](https://wiki.archlinux.org/index.php?title=Frandom&oldid=412611)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

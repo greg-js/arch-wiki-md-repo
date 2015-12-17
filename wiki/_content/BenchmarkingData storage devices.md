@@ -26,6 +26,7 @@ This article covers several Linux-native apps that benchmark I/O devices such as
 *   [3 Using gnome-disks](#Using_gnome-disks)
 *   [4 Using systemd-analyze](#Using_systemd-analyze)
 *   [5 Using dd](#Using_dd)
+*   [6 Using dcfldd](#Using_dcfldd)
 
 ## Overview
 
@@ -113,7 +114,26 @@ $ rm tempfile
 
 **Note:** Some SSD controllers have compression hardware, which may skew benchmark results. See [http://www.pugetsystems.com/labs/articles/SSDs-Advertised-vs-Actual-Performance-179/](http://www.pugetsystems.com/labs/articles/SSDs-Advertised-vs-Actual-Performance-179/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=412493](https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=412493)"
+See also [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities").
+
+## Using dcfldd
+
+Dcfldd doesn't print the average speed in MB/s like good old dd does but with [time](/index.php/Benchmarking#time "Benchmarking") you can work around that.
+
+Time the run clearing the disk:
+
+```
+# time dcfldd if=/dev/zero of=/dev/sdX bs=4M
+18944 blocks (75776Mb) written.dcfldd:: No space left of device
+real     16m17.033s
+user     0m0.377s
+sys      0m51.160s
+
+```
+
+Calculate MB/s by dividing the output of the dcfldd command by the time in seconds. For this example: 75776Mb / (16.4 min * 60) = 77.0 MB/s.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=412621](https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=412621)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

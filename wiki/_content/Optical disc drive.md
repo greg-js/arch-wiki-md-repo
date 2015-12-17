@@ -694,6 +694,10 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 [http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
 
+*   **ripright** — Minimal CD ripper modeled on autorip.
+
+[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)<sup><small>AUR</small></sup>
+
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
 [http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
@@ -916,7 +920,7 @@ Rebuild the kernel image so that it includes the newly added module:
 *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 *   [Main page of the project Libburnia](http://libburnia-project.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=407174](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=407174)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=412629](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=412629)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

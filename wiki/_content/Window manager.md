@@ -283,9 +283,8 @@ Notion is a fork of Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 *   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux)
-*   [http://incise.org/tinywm.html](http://incise.org/tinywm.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=412586](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=412586)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=412618](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=412618)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

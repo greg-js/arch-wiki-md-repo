@@ -7,7 +7,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
-*   [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes")
 *   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
 *   [Sysstat](/index.php/Sysstat "Sysstat")
 
@@ -101,7 +100,7 @@ $ time tar -zxvf archive.tar.gz
 
 Storage media can be benchmarked with [Hdparm](/index.php/Hdparm "Hdparm") ([hdparm](https://www.archlinux.org/packages/?name=hdparm)).
 
-See also [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes").
+See also [Benchmarking/Data storage devices#Using hdparm](/index.php/Benchmarking/Data_storage_devices#Using_hdparm "Benchmarking/Data storage devices").
 
 ### Unigine Engine
 
@@ -204,7 +203,7 @@ See also:
 *   [Interbench Homepage](http://users.on.net/~ckolivas/interbench/)
 *   [Unigine.com](http://unigine.com/download/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412491](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412491)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412627](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412627)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

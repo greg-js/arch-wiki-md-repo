@@ -838,6 +838,10 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 [http://batchbin.ueuo.com/projects/trayfreq-archlinux/](http://batchbin.ueuo.com/projects/trayfreq-archlinux/) || [paramano](https://aur.archlinux.org/packages/paramano/)<sup><small>AUR</small></sup>
 
+*   **Sysstat** — A collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
+
+[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
+
 ### System information viewers
 
 #### Console
@@ -1046,7 +1050,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 [https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=410301](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=410301)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=412637](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=412637)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

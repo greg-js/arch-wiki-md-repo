@@ -8,7 +8,7 @@ Related articles
 
 *   [Securely wipe disk/Tips and tricks](/index.php/Securely_wipe_disk/Tips_and_tricks "Securely wipe disk/Tips and tricks")
 *   [File recovery](/index.php/File_recovery "File recovery")
-*   [Benchmarking/Disk wipes](/index.php/Benchmarking/Disk_wipes "Benchmarking/Disk wipes")
+*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
 *   [Frandom](/index.php/Frandom "Frandom")
 *   [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption")
 *   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
@@ -267,8 +267,6 @@ If you want to setup block device encryption afterwards, you should always wipe 
 
 For data that is not truly random your disk's writing speed should be the only limiting factor. If you need random data, the required system performance to generate it may extremely depend on what you choose as source of entropy.
 
-**Note:** Everything regarding [Benchmarking disk wipes](/index.php/Benchmarking_disk_wipes "Benchmarking disk wipes") should get merged there.
-
 ### Non-random data
 
 Overwriting with `/dev/zero` or simple patterns is considered secure in most resources. In the case of current HDD's it should be sufficient for fast disk wipes.
@@ -416,7 +414,7 @@ The [secure-delete](https://aur.archlinux.org/packages/secure-delete/)<sup><smal
 
 See [the tools list](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) for more info.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412477](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412477)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412626](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412626)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
