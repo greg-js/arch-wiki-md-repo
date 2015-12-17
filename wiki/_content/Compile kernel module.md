@@ -30,7 +30,7 @@ Next you will need to get source code for exact kernel version you are running. 
 Find kernel version with
 
 ```
- $ uname -r
+$ uname -r
 
 ```
 
@@ -41,15 +41,15 @@ Then acquire kernel source code, see [Kernels/Compilation/Traditional#Fetching s
 When you have source code, enter that directory and clean it with (note it will delete .config.old and rename .config to .config.old)
 
 ```
- $ make mrproper
+$ make mrproper
 
 ```
 
 Then you need to copy your current existing kernel configuration to this build dir
 
 ```
- $ cp /usr/lib/modules/`uname -r`/build/.config ./
- $ cp /usr/lib/modules/`uname -r`/build/Module.symvers ./
+$ cp /usr/lib/modules/`uname -r`/build/.config ./
+$ cp /usr/lib/modules/`uname -r`/build/Module.symvers ./
 
 ```
 
@@ -58,7 +58,7 @@ Next ensure configuration is adjusted for kernel sources (if you are using kerne
 Also if module you want to compile have some compilation options such as debug build you can also adjust them with any of make config/menuconfig/xconfig (see README)
 
 ```
- $ make oldconfig
+$ make oldconfig
 
 ```
 
@@ -67,14 +67,14 @@ Also if module you want to compile have some compilation options such as debug b
 Then prepare source for compilation with
 
 ```
- $ make prepare && make scripts
+$ make prepare && make scripts
 
 ```
 
 And finally compile wanted module by specifying its directory. (You can find module location with modinfo or find)
 
 ```
- $ make M=fs/btrfs
+$ make M=fs/btrfs
 
 ```
 
@@ -83,22 +83,22 @@ And finally compile wanted module by specifying its directory. (You can find mod
 Now after successful compilation you just need to gzip and copy it over for your current kernel. If you are replacing some existing module you will need to overwrite it (and remember that reinstalling [linux](https://www.archlinux.org/packages/?name=linux) will replace it with default module)
 
 ```
- $ gzip fs/btrfs/btrfs.ko
- $ sudo cp -f fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/kernel/fs/btrfs/
+$ gzip fs/btrfs/btrfs.ko
+# cp -f fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/kernel/fs/btrfs/
 
 ```
 
 But if you are adding new module you can just copy it to extramodules (note, this is just example as btrfs will not get loaded from here)
 
 ```
- $ sudo cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/extramodules/
+# cp fs/btrfs/btrfs.ko.gz /usr/lib/modules/`uname -r`/extramodules/
 
 ```
 
 If you are compiling module for early boot which is copied to [Initramfs](/index.php/Initramfs "Initramfs") then you must remember to regenerate it with (otherwise your compiled module will not be loaded)
 
 ```
- $ sudo mkinitcpio -p linux
+# mkinitcpio -p linux
 
 ```
 
@@ -107,7 +107,7 @@ If you are compiling module for early boot which is copied to [Initramfs](/index
 *   [Linux Kernel Newbies](http://kernelnewbies.org/)
 *   [The Linux Kernel Module Programming Guide](http://www.tldp.org/LDP/lkmpg/2.6/html/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Compile_kernel_module&oldid=410286](https://wiki.archlinux.org/index.php?title=Compile_kernel_module&oldid=410286)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Compile_kernel_module&oldid=412599](https://wiki.archlinux.org/index.php?title=Compile_kernel_module&oldid=412599)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -20,33 +20,20 @@ By default, logrotate's _rotation_ consists of renaming existing log files with 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 logs not being rotated](#logs_not_being_rotated)
-    *   [3.2 exim log not rotated](#exim_log_not_rotated)
+    *   [3.1 exim log not rotated](#exim_log_not_rotated)
 *   [4 See also](#See_also)
 
 ## Installation
 
-[logrotate](https://www.archlinux.org/packages/?name=logrotate) is available in the [official repositories](/index.php/Official_repositories "Official repositories") and is installed by default as a member of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+Logrotate can be installed with the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package. It is installed by default as it is member of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
-[logrotate](https://www.archlinux.org/packages/?name=logrotate) no longer uses a daily [cron](/index.php/Cron "Cron") job. Instead, it uses a systemd timer: `systemctl status logrotate.timer`
+By default, logrotate runs daily using a [systemd timer](/index.php/Systemd/Timers "Systemd/Timers"): `logrotate.timer`.
 
 ## Configuration
 
 The primary configuration file for logrotate is `/etc/logrotate.conf`; additional configuration files are included from the `/etc/logrotate.d` directory.
 
 ## Troubleshooting
-
-### logs not being rotated
-
-If you find that your logs aren't being rotated via the cronjob, one reason for that can be wrong `user` and `group` ownership. Both need to be `root`. To fix this either do:
-
-```
-# chown root:root /etc/logrotate.conf
-# chown -R root:root /etc/logrotate.d
-
-```
-
-or, set the `su` variable to the user and group you desire in `/etc/logrotate.conf`.
 
 ### exim log not rotated
 
@@ -60,7 +47,7 @@ To fix this, add the user `exim` to the group `log`. Then change the group of th
 
 *   [Logrotate on Gentoo Linux Wiki](http://wiki.gentoo.org/wiki/Logrotate)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logrotate&oldid=381840](https://wiki.archlinux.org/index.php?title=Logrotate&oldid=381840)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logrotate&oldid=412607](https://wiki.archlinux.org/index.php?title=Logrotate&oldid=412607)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

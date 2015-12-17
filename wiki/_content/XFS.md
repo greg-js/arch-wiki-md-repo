@@ -54,10 +54,10 @@ Once unmounted, run the _xfs_repair_ tool.
 
 ## Integrity
 
-xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is not enabled by default when using _mkfs.xfs_ tool. It can be easily done using the `-m crc=1` switch when calling _mkfs.xfs_.
+xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling _mkfs.xfs_.
 
 ```
-# mkfs.xfs -m crc=1 /dev/_target_partition_
+# mkfs.xfs -m crc=0 /dev/_target_partition_
 
 ```
 
@@ -126,14 +126,19 @@ Starting Linux 3.16, XFS has added a btree that tracks free inodes. It is equiva
 
 This feature relies on the new v5 on-disk format that has been considered stable for production workloads starting Linux Kernel 3.15\. It does not change existing on-disk structures, but adds a new one that must remain consistent with the inode allocation btree; for this reason older kernels will only be able to mount read-only filesystems with the free inode btree feature.
 
-The feature can be enabled with _finobt=1_ switch when formatting a XFS partition but requires the metadata checksum to be enabled as well via the _crc=1_ switch. Therefore the following options are required to take advantage of both the free inode btree and metadata checksum
+The feature enabled by default when using xfsprogs 3.2.3 or later. If you need writable filesystem for older kernel, it cab be disable with `finobt=0` switch when formatting a XFS partition. You will need `crc=0` together.
 
 ```
- # mkfs.xfs -m crc=1,finobt=1 /dev/_target_partition_
+ # mkfs.xfs -m crc=0,finobt=0 /dev/_target_partition_
 
 ```
 
-According to the developers, the above _-m crc=1,finobt=1_ option will be the default mkfs option with the upcoming xfsprogs 3.3 release.
+or shortly (`finobt` depends `crc`)
+
+```
+ # mkfs.xfs -m crc=0 /dev/_target_partition_
+
+```
 
 ## See also
 
@@ -141,7 +146,7 @@ According to the developers, the above _-m crc=1,finobt=1_ option will be the de
 *   [Improving Metadata Performance By Reducing Journal Overhead](http://xfs.org/index.php/Improving_Metadata_Performance_By_Reducing_Journal_Overhead)
 *   [XFS Wikipedia Entry](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XFS&oldid=412024](https://wiki.archlinux.org/index.php?title=XFS&oldid=412024)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XFS&oldid=412601](https://wiki.archlinux.org/index.php?title=XFS&oldid=412601)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
