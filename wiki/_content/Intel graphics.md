@@ -320,10 +320,10 @@ i915.semaphores=1
 
 to your boot parameters.
 
-If you are using kernel 4.0.X or above on Baytrail architecture and frequently encounter complete system freezes (especially when watching video or using GFX intensivelly), you should try adding the following kernel option as a workaround, until [this bug](https://bugs.freedesktop.org/show_bug.cgi?id=88012) will be fixed permanently.
+If you are using kernel 4.0.X or above on Baytrail architecture and frequently encounter complete system freezes (especially when watching video or using GFX intensivelly), you should try adding the following kernel option as a workaround, until [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) will be fixed permanently.
 
 ```
-intel_pstate=disable
+ intel_idle.max_cstate=1
 
 ```
 
@@ -425,7 +425,7 @@ For the driver to work on the new Intel Skylake (6th gen.) GPUs, `i915.prelimina
 
 *   [https://01.org/linuxgraphics/documentation](https://01.org/linuxgraphics/documentation) (includes a list of supported hardware)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=411226](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=411226)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=412647](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=412647)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

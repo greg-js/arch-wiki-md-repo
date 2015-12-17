@@ -17,8 +17,9 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 
 *   [1 Brother](#Brother)
     *   [1.1 Network printers](#Network_printers)
-    *   [1.2 Custom drivers](#Custom_drivers)
-        *   [1.2.1 Manually installing from the RPM packages](#Manually_installing_from_the_RPM_packages)
+    *   [1.2 Install Script](#Install_Script)
+    *   [1.3 Custom drivers](#Custom_drivers)
+        *   [1.3.1 Manually installing from the RPM packages](#Manually_installing_from_the_RPM_packages)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 CAPT](#CAPT)
@@ -316,6 +317,10 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 For network printers, use `ipp://**printer_ip**/ipp/port1` as printer address. For some older printers, this might not work. If not, try `lpd://**printer_ip**/BINARY_P1` instead.
 
 Some printers use the socket protocol. For these printers, use `socket:**printer_ip**:9100`. For http, use `http://**printer_ip**/POSTSCRIPT_P1`.
+
+### Install Script
+
+Brother provides a Driver Installer [[1]](http://download.brother.com/welcome/dlf006893/linux-brprinter-installer-2.0.0-1.gz) which works on Arch (at least for some of their printers, such as the FAX-1835C). It does, however, require and use dpkg, so drivers packaged for Arch are still to be preferred if available.
 
 ### Custom drivers
 
@@ -1313,7 +1318,7 @@ Now install the driver:
 
 Again, on an x86_64 install, 32 bit libraries will be needed.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=411127](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=411127)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=412646](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=412646)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

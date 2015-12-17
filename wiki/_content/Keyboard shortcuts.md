@@ -453,6 +453,8 @@ GNU readline is a commonly used library for line-editing; it is used for example
 
 <th>Description</th>
 
+<th>Notes</th>
+
 </tr>
 
 <tr>
@@ -468,7 +470,9 @@ GNU readline is a commonly used library for line-editing; it is used for example
 <td>`Shift+Insert`  
 `Mouse Button 2`</td>
 
-<td>Copy selected text to clipboard, or paste from clipboard</td>
+<td>Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard")</td>
+
+<td>By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)).</td>
 
 </tr>
 
@@ -509,6 +513,14 @@ See [Keyboard configuration in Xorg#Frequently used XKB options](/index.php/Keyb
 Use the [customizable-shortcuts](https://addons.mozilla.org/en-us/firefox/addon/customizable-shortcuts/) add-on.
 
 ### Key binding for X-selection-paste
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** The shortcuts presented here are mixed up or outdated: `F12` in Firefox toggles the developer tools [[2]](https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly?redirectlocale=en-US&redirectslug=Keyboard+shortcuts#w_tools) and `Shift+Insert` pastes the PRIMARY buffer. (Discuss in [Talk:Keyboard shortcuts#](https://wiki.archlinux.org/index.php/Talk:Keyboard_shortcuts))
 
 Users who prefer to work rather with the keyboard than the mouse may benefit from a key binding to the paste operation of the **middle mouse button**. This is especially useful in a keyboard-centered environment. A workflow example is:
 
@@ -577,7 +589,7 @@ The command get the window which has focus from the xserver and triggers a click
 *   [Linux Newbie Administrator Guide - Shortcuts and Commands](http://lnag.sourceforge.net/lnag_html/node5.html)
 *   [The Linux keyboard and console HOWTO](http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=411997](https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=411997)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=412643](https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=412643)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

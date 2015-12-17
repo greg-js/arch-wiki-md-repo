@@ -972,7 +972,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411954](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=411954)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=412639](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=412639)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
