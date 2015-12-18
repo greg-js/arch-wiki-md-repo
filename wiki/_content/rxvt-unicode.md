@@ -132,6 +132,7 @@ If there is no need for true transparency, or if compositing uses too many resou
 ```
 ! Xresources file
 
+URxvt*inheritPixmap: true
 URxvt*.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 110
@@ -1186,7 +1187,7 @@ URxvt*skipBuiltinGlyphs:    true
 *   [rxvt-unicode Reference](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod) - Official manual page
 *   [urxvtperl](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/src/urxvt.pm) - Official Perl extension reference
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rxvt-unicode&oldid=409102](https://wiki.archlinux.org/index.php?title=Rxvt-unicode&oldid=409102)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rxvt-unicode&oldid=412689](https://wiki.archlinux.org/index.php?title=Rxvt-unicode&oldid=412689)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

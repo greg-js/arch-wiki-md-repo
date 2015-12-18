@@ -194,7 +194,32 @@ forward-zone:
 
 ```
 
-Create a copy of the dnscrypt-proxy.service and dnscrypt-proxy.socket in the /etc/systemd/system folder. The names dnscrypt-proxy-backup.service and dnscrypt-proxy-backup.socket are used in this example. The names don't really matter, but they must be unique and the socket must use the same prefix as the service. Edit **dnscrypt-proxy-backup.socket** and change the port to 41, as follows:
+We will use an instanced systemd service to accomplish this. This will use one dnscrypt-proxy@.service systemd service to handle as many distinct DNSCrypt resolves as we want.
+
+First, we need /etc/systemd/system/dnscrypt-proxy@.service, containing:
+
+```
+[Unit]
+Description=DNSCrypt client proxy
+Documentation=man:dnscrypt-proxy(8)
+Requires=dnscrypt-proxy@%i.socket
+
+[Service]
+Type=notify
+NonBlocking=true
+ExecStart=/usr/sbin/dnscrypt-proxy \
+    --resolver-name=%i
+Restart=always
+
+```
+
+This specifies an instanced systemd service that starts a dnscrypt-proxy using the service name specified after the @ symbol of a corresponding .socket file.
+
+You can now create two (or more!) socket files, specifying different DNSCrypt providers.
+
+For the first proxy, listening on 127.0.0.1@40 and connecting to the default dnscrypt.eu-nl provider, copy /lib/systemd/system/dnscrypt-proxy.socket to /etc/systemd/system/dnscrypt-proxy@dnscrypt.eu-nl.socket.
+
+For the second proxy, copy /lib/systemd/system/dnscrypt-proxy.socket /etc/systemd/system/dnscrypt-proxy@cloudns-syd.socket (you can replace **cloudns-syd** with any of the provider names in /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv; choosing a provider geographically close is generally a good idea) and edit it to specify port 41 instead of port 40:
 
 ```
 [Unit]
@@ -209,42 +234,26 @@ WantedBy=sockets.target
 
 ```
 
-Edit **dnscrypt-proxy-backup.service** , as follows indicating a different dnscrypt server name and listening on the the port entered above, 41:
-
-```
-[Unit]
-Description=DNSCrypt client proxy
-Requires=dnscrypt-proxy-backup.socket
-
-[Install]
-Also=dnscrypt-proxy.socket
-WantedBy=multi-user.target
-
-[Service]
-Type=simple
-NonBlocking=true
-ExecStart=/usr/bin/dnscrypt-proxy -R cloudns-can
-
-```
-
-You must force systemd to read the new service and socket files:
+Now we need to reload the systemd configuration.
 
 ```
 systemctl daemon-reload
 
 ```
 
-Then enable the service and socket:
+Since we are replacing the default service with a different name, we need to explicitly stop and disable the default service:
 
 ```
-systemctl enable dnscrypt-proxy-backup.service dnscrypt-proxy-backup.socket
+systemctl disable dnscrypt-proxy dnscrypt-proxy.socket
+systemctl stop dnscrypt-proxy dnscrypt-proxy.socket
 
 ```
 
-Start the service and socket. It's not really necessary to start the service as the socket will automatically launch it, but it does no harm.:
+Now we enable and start the sockets:
 
 ```
-systemctl start dnscrypt-proxy-backup.service dnscrypt-proxy-backup.socket
+systemctl enable dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
+systemctl start dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
 
 ```
 
@@ -257,9 +266,7 @@ systemctl restart unbound
 
 If successful, your two selected dns providers should be the only ones found when using one of the dns leak test websites.
 
-If you can accomplish this with only a single .service and .socket file, please post your simplified example. The SystemD documentation seems to indicate that it should be possible. Here in lies a challenge to the more educated systemd folks out there.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=411984](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=411984)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412688](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412688)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
