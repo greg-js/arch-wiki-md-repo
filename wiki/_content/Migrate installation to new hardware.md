@@ -63,7 +63,17 @@ $ pacman -Qqm > Packages.aur
 
 ```
 
-gives you a nice list of explicitly installed packages. Don't forget the software _not_ installed through pacman.
+gives you a nice list of explicitly installed packages. Don't forget the software _not_ installed through pacman (also see [AUR FAQ](/index.php/Arch_User_Repository#Why_has_foo_disappeared_from_the_AUR.3F "Arch User Repository")). You may also use the following script to give you a better overview of the binaries and libraries installed unbeknownst to pacman (e. g. installed via Steam, Desura or using their own install methods):
+
+```
+find / -regextype posix-extended -regex "/(sys|srv|proc)|.*/\.ccache/.*" -prune -o -type f \
+-exec bash -c 'file "{}" | grep -E "(32|64)-bit"' \; | \
+awk -F: '{print $1}' | \
+while read -r bin; \
+do pacman -Qo "$bin" &>/dev/null || echo "$bin"; \
+done
+
+```
 
 #### Copy to some backup space.
 
@@ -165,7 +175,7 @@ For the first two options, consider that you might need adapters to connect the 
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 *   [Howto clone a linux system](http://positon.org/clone-a-linux-system-install-to-another-computer)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrate_installation_to_new_hardware&oldid=393510](https://wiki.archlinux.org/index.php?title=Migrate_installation_to_new_hardware&oldid=393510)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrate_installation_to_new_hardware&oldid=412687](https://wiki.archlinux.org/index.php?title=Migrate_installation_to_new_hardware&oldid=412687)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
