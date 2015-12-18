@@ -753,15 +753,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 ##### Graphical
 
-See also: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [mpv](/index.php/Mpv "Mpv").
-
-*   **Baka MPlayer** — A free and open source, cross-platform, libmpv based multimedia player (Qt5).
-
-[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)<sup><small>AUR</small></sup>
-
-*   **bomi** — Powerful and easy to use multimedia player (mpv backend) (Qt 5).
-
-[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup> (previously [cmplayer](https://aur.archlinux.org/packages/cmplayer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cmplayer)]</sup>), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
+See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [mpv#Front ends](/index.php/Mpv#Front_ends "Mpv").
 
 *   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Simple video player for KDE. Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
 
@@ -782,10 +774,6 @@ See also: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [m
 *   **Snappy** — Powerful media player with a minimalistic interface.
 
 [https://wiki.gnome.org/Apps/Snappy](https://wiki.gnome.org/Apps/Snappy) || [snappy-player](https://www.archlinux.org/packages/?name=snappy-player)
-
-*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer_(software) "wikipedia:SMPlayer (software)")** — SMPlayer is a cross-platform graphical front-end for MPlayer and forks of Mplayer using GUI widgets offered by Qt.
-
-[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses GStreamer. Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
@@ -975,7 +963,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 [http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=412697](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=412697)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=412707](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=412707)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -481,7 +481,7 @@ domain_props = {
 *   [Home page](http://mason-larobina.github.com/luakit/)
 *   [Cheatsheet](http://shariebeth.com/computers/luakitcheatsheet.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Luakit&oldid=412125](https://wiki.archlinux.org/index.php?title=Luakit&oldid=412125)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Luakit&oldid=412706](https://wiki.archlinux.org/index.php?title=Luakit&oldid=412706)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

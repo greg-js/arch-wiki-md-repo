@@ -51,8 +51,8 @@ A unixbench package is available in the [AUR](/index.php/AUR "AUR"): [unixbench]
 
 See also:
 
-*   [https://code.google.com/p/byte-unixbench/](https://code.google.com/p/byte-unixbench/)
-*   [https://code.google.com/p/byte-unixbench/source/browse/trunk/UnixBench/USAGE](https://code.google.com/p/byte-unixbench/source/browse/trunk/UnixBench/USAGE)
+*   [https://github.com/kdlucas/byte-unixbench](https://github.com/kdlucas/byte-unixbench)
+*   [https://github.com/kdlucas/byte-unixbench/blob/master/UnixBench/USAGE](https://github.com/kdlucas/byte-unixbench/blob/master/UnixBench/USAGE)
 
 ### interbench
 
@@ -203,7 +203,7 @@ See also:
 *   [Interbench Homepage](http://users.on.net/~ckolivas/interbench/)
 *   [Unigine.com](http://unigine.com/download/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412627](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412627)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412704](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412704)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

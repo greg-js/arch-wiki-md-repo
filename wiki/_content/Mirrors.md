@@ -21,30 +21,31 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [3.2 Server-side ranking](#Server-side_ranking)
     *   [3.3 List mirrors only for a specific country](#List_mirrors_only_for_a_specific_country)
 *   [4 Troubleshooting](#Troubleshooting)
-*   [5 Add your own mirror](#Add_your_own_mirror)
-*   [6 Unofficial mirrors](#Unofficial_mirrors)
-    *   [6.1 Austria](#Austria)
-    *   [6.2 China](#China)
-    *   [6.3 France](#France)
-    *   [6.4 Germany](#Germany)
-    *   [6.5 Hong Kong](#Hong_Kong)
-    *   [6.6 Indonesia](#Indonesia)
-    *   [6.7 Iran](#Iran)
-    *   [6.8 Italy](#Italy)
-    *   [6.9 Japan](#Japan)
-    *   [6.10 Malaysia](#Malaysia)
-    *   [6.11 New Zealand](#New_Zealand)
-    *   [6.12 Poland](#Poland)
-    *   [6.13 Russia](#Russia)
-    *   [6.14 South Africa](#South_Africa)
-    *   [6.15 United States](#United_States)
-    *   [6.16 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+*   [5 Unofficial mirrors](#Unofficial_mirrors)
+    *   [5.1 Austria](#Austria)
+    *   [5.2 China](#China)
+    *   [5.3 France](#France)
+    *   [5.4 Germany](#Germany)
+    *   [5.5 Hong Kong](#Hong_Kong)
+    *   [5.6 Indonesia](#Indonesia)
+    *   [5.7 Iran](#Iran)
+    *   [5.8 Italy](#Italy)
+    *   [5.9 Japan](#Japan)
+    *   [5.10 Malaysia](#Malaysia)
+    *   [5.11 New Zealand](#New_Zealand)
+    *   [5.12 Poland](#Poland)
+    *   [5.13 Russia](#Russia)
+    *   [5.14 South Africa](#South_Africa)
+    *   [5.15 United States](#United_States)
+    *   [5.16 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
 The official Arch Linux mirror list is available from the [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) package. To get an even more up-to-date list of mirrors, use the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) page on the main site.
 
 Check the status of the Arch mirrors by visiting the [Mirror Status](https://www.archlinux.org/mirrors/status/) page. It is recommended to only use mirrors that are up to date, i.e. not out of sync.
+
+If you want your mirror to be added to the official list, see [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors"). In the meantime, add it to the [#Unofficial mirrors](#Unofficial_mirrors) list at the end of this page.
 
 ### IPv6-ready mirrors
 
@@ -186,10 +187,6 @@ Architecture = x86_64
 
 **Note:** You can also use the values `auto` and `i686` for the `Architecture` variable.
 
-## Add your own mirror
-
-If you want your mirror to be added to the official list, see [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors"). In the meantime, add it to the [#Unofficial mirrors](#Unofficial_mirrors) list at the end of this page.
-
 ## Unofficial mirrors
 
 These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
@@ -288,7 +285,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412693](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412693)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412705](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412705)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -41,11 +41,11 @@ _mpv_ provides an elegant User Interface called OSC which appears when moving th
 
 *   **Baka MPlayer** — Free and open source, cross-platform, _libmpv_ based multimedia player (Qt 5).
 
-[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)<sup><small>AUR</small></sup>, [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer)
+[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)<sup><small>AUR</small></sup>
 
 *   **bomi** — Powerful and easy to use multimedia player (Qt 5).
 
-[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup> (previously [cmplayer](https://aur.archlinux.org/packages/cmplayer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cmplayer)]</sup>), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
+[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup>, [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
 
 *   **GNOME MPV** — A simple frontend for _mpv_ (GTK+ 3).
 
@@ -175,7 +175,7 @@ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=412133](https://wiki.archlinux.org/index.php?title=Mpv&oldid=412133)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=412710](https://wiki.archlinux.org/index.php?title=Mpv&oldid=412710)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

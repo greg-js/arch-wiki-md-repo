@@ -9,7 +9,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [VA-API (Русский)](/index.php/VA-API_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VA-API (Русский)")
 *   [XvMC](/index.php/XvMC "XvMC")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [GnuPG](/index.php/GnuPG "GnuPG"). Дата последней синхронизации: 12 декабря 2015‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=411185).
+**Состояние перевода:** На этой странице представлен перевод статьи [VDPAU](/index.php/VDPAU "VDPAU"). Дата последней синхронизации: 12 декабря 2015‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=VDPAU&diff=0&oldid=411185).
 
 [![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
 
@@ -210,7 +210,7 @@ $ vdpauinfo
 
 ### Настройка
 
-**Note:** Можно не экспортировать `VDPAU_DRIVER`, так как большинство (современные) приложений и сред умеют находить VDPAU библиотеку [автоматически](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0).
+**Note:** Можно не экспортировать переменную `VDPAU_DRIVER`, так как большинство (современных) приложений и сред умеют находить библиотеку VDPAU [автоматически](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
 
 В переменной окружения `VDPAU_DRIVER` должен быть указан файл драйвера. Вы можете установить [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") [глобально](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.BE.D0.BC_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5 "Environment variables (Русский)") или [для отдельного пользователя](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D1.83.D0.BE.D0.B2.D0.BD.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F "Environment variables (Русский)").
 
@@ -272,7 +272,7 @@ $ export DRI_PRIME=1
 
 || [vlc](https://www.archlinux.org/packages/?name=vlc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU_(Русский)&oldid=411778](https://wiki.archlinux.org/index.php?title=VDPAU_(Русский)&oldid=411778)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU_(Русский)&oldid=412719](https://wiki.archlinux.org/index.php?title=VDPAU_(Русский)&oldid=412719)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

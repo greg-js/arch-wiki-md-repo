@@ -122,10 +122,12 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 ### Upgrading from Plasma 4 to 5
 
 1.  Isolate `multi-user.target` `# systemctl isolate multi-user.target` 
-2.  [Uninstall](/index.php/Pacman "Pacman") the kdebase-workspace package `# pacman -Rc kdebase-workspace` 
-3.  [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
-4.  If you use KDM as display manager, disable it `# systemctl disable kdm` and enable [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` or install and enable any other [display manager](/index.php/Display_manager "Display manager").
-5.  Reboot.
+2.  If you use KDM as display manager, disable it `# systemctl disable kdm` 
+3.  [Uninstall](/index.php/Pacman "Pacman") the kdebase-workspace package `# pacman -Rc kdebase-workspace` 
+4.  [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
+5.  Enable [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` or install and enable any other [display manager](/index.php/Display_manager "Display manager").
+6.  If `# systemctl disable kdm` is not run first, you will receive `# systemctl enable sddm`  `Failed to execute operation: File exists` If file `/usr/lib/systemd/system/kdm.service`, or similar, no longer exists, manually run `# rm /etc/systemd/system/display-manager.service` and then re-run `# systemctl enable sddm` 
+7.  Reboot or simply run `# systemctl start sddm` 
 
 **Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
@@ -846,7 +848,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412591](https://wiki.archlinux.org/index.php?title=KDE&oldid=412591)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412712](https://wiki.archlinux.org/index.php?title=KDE&oldid=412712)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

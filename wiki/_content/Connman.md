@@ -64,7 +64,7 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 [http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)<sup><small>AUR</small></sup>
 
-*   **LXQT-Connman-Applet** — LXQT desktop panel applet.
+*   **LXQt-Connman-Applet** — LXQt desktop panel applet.
 
 [https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
 
@@ -322,7 +322,7 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 For further detailed information on ConnMan you may refer to the documentation in its git repo at [[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=411982](https://wiki.archlinux.org/index.php?title=Connman&oldid=411982)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=412713](https://wiki.archlinux.org/index.php?title=Connman&oldid=412713)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
