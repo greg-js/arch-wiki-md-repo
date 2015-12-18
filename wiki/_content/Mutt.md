@@ -1538,7 +1538,7 @@ Newcomers may find it quite hard to find help for Mutt. Actually most of the top
 *   [Steve Losh on Mutt, offlineimap, msmtp, notmuch (focused on Gmail)](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 *   [muttrc builder](http://www.muttrcbuilder.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=409220](https://wiki.archlinux.org/index.php?title=Mutt&oldid=409220)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=412700](https://wiki.archlinux.org/index.php?title=Mutt&oldid=412700)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

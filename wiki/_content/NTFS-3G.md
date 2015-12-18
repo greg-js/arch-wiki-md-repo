@@ -233,18 +233,13 @@ If you cannot mount your NTFS partition even when following this guide, try usin
 **Warning:** As always, double check the device path.
 
 ```
-# mkfs.ntfs -L myCoolDiskName /dev/sd_XY_
-
-```
-
-If you do not want this to take ages on modern harddrives use:
-
-```
 # mkfs.ntfs -Q -L myCoolDiskName /dev/sd_XY_
 
 ```
 
 **Note:** Manual page on `-Q`: Perform quick (fast) format. This will skip both zeroing of the volume and bad sector checking.
+
+Users may consider omitting the -Q switch but may take ages on modern harddrives.
 
 ### Created files do not respect umask
 
@@ -274,7 +269,7 @@ build() {
 
 *   [Official NTFS-3G manual](http://www.tuxera.com/community/ntfs-3g-manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=397579](https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=397579)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412695](https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412695)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -125,7 +125,7 @@ xinput --map-to-output 14 LVDS1
 
 [Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=409712](https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=409712)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=412702](https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=412702)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

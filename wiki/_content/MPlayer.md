@@ -70,6 +70,10 @@ Notable variants are:
 
 ## Frontends/GUIs
 
+*   **Baka MPlayer** — A free and open source, cross-platform, libmpv based multimedia player (Qt5).
+
+[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)<sup><small>AUR</small></sup>
+
 *   **Deepin Media Player** — Rich GTK2/Python interface for the Deepin desktop.
 
 [http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/deepin-media-player)]</sup>
@@ -506,7 +510,7 @@ The `:1` is to lower the CDROM speed for a constant spin and less noise.
 *   [How to configure MPlayer](http://how-to.wikia.com/wiki/How_to_configure_MPlayer)
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412000](https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412000)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412698](https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412698)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

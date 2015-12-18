@@ -664,8 +664,8 @@ You can use the **show-paren** mode. By default, there’s a small delay before 
  `~/.emacs` 
 
 ```
-(show-paren-mode 1)
 (setq show-paren-delay 0)
+(show-paren-mode 1)
 
 ```
 
@@ -1634,7 +1634,7 @@ The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Softw
 *   [The Church of Emacs (via Google drive)](https://d0edfcdc0ccc1cd13cdab5eb986fb92e8660dbef.googledrive.com/host/0B6LMD0u8OhYYZEotN2QyR1hwR1k/)
 *   [Official reference card](http://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs&oldid=412071](https://wiki.archlinux.org/index.php?title=Emacs&oldid=412071)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs&oldid=412694](https://wiki.archlinux.org/index.php?title=Emacs&oldid=412694)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

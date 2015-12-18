@@ -587,7 +587,7 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 *   [Gnus, Dovecot, OfflineIMAP, search: a HOWTO](http://roland.entierement.nu/blog/2010/09/08/gnus-dovecot-offlineimap-search-a-howto.html)
 *   [Mutt + Gmail + Offlineimap](http://pbrisbin.com/posts/mutt_gmail_offlineimap/) - An outline of brisbin's simple gmail/mutt setup using cron to keep offlineimap syncing.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OfflineIMAP&oldid=403739](https://wiki.archlinux.org/index.php?title=OfflineIMAP&oldid=403739)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OfflineIMAP&oldid=412699](https://wiki.archlinux.org/index.php?title=OfflineIMAP&oldid=412699)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

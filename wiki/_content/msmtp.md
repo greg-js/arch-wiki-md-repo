@@ -304,7 +304,7 @@ auth plain
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Msmtp&oldid=400810](https://wiki.archlinux.org/index.php?title=Msmtp&oldid=400810)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Msmtp&oldid=412701](https://wiki.archlinux.org/index.php?title=Msmtp&oldid=412701)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
