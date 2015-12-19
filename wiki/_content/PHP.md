@@ -30,7 +30,6 @@ Related articles
     *   [4.8 Sqlite](#Sqlite)
 *   [5 Caching](#Caching)
     *   [5.1 OPCache + APCu](#OPCache_.2B_APCu)
-    *   [5.2 XCache](#XCache)
 *   [6 Development tools](#Development_tools)
     *   [6.1 Aptana Studio](#Aptana_Studio)
     *   [6.2 Eclipse PDT](#Eclipse_PDT)
@@ -202,12 +201,6 @@ Its author recommends a few [suggested settings](https://github.com/krakjoe/apcu
 
 **Tip:** You can add those settings either to APCu's own `/etc/php/conf.d/apcu.ini` **or** directly to your [PHP configuration file](#Configuration). Just make sure not to enable the extension twice as it will result in errors being diplayed in the system logs.
 
-### XCache
-
-[XCache](http://xcache.lighttpd.net/) can be installed with the [php-xcache](https://www.archlinux.org/packages/?name=php-xcache) package.
-
-It may be enabled like APCu, by uncommenting its line in `/etc/php/conf.d/xcache.ini` or by directly adding it to the [PHP configuration file](#Configuration).
-
 ## Development tools
 
 ### Aptana Studio
@@ -248,7 +241,7 @@ If your `php.ini` is not parsed, the ini file is named after the sapi it is usin
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=412006](https://wiki.archlinux.org/index.php?title=PHP&oldid=412006)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=412778](https://wiki.archlinux.org/index.php?title=PHP&oldid=412778)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

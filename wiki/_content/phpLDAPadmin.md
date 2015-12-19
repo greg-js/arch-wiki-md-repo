@@ -55,7 +55,7 @@ By default, everyone can see the phpLDAPadmin page, to change this, edit `/etc/h
 
 ### PHP
 
-You need to enable the `php-ldap` extension in PHP by editing `/etc/php/php.ini` and uncommenting the line
+You need to enable the `ldap` extension in PHP by editing `/etc/php/php.ini` and uncommenting the line
 
 ```
 ;extension=ldap.so
@@ -93,7 +93,7 @@ Your phpLDAPadmin installation is now complete. Before start using it you need t
 
 You can access your phpLDAPadmin installation by going to [http://localhost/phpldapadmin/](http://localhost/phpldapadmin/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpLDAPadmin&oldid=388048](https://wiki.archlinux.org/index.php?title=PhpLDAPadmin&oldid=388048)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpLDAPadmin&oldid=412779](https://wiki.archlinux.org/index.php?title=PhpLDAPadmin&oldid=412779)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

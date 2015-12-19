@@ -593,7 +593,7 @@ MESA_GL_VERSION_OVERRIDE=2.1
 
 #### Everything seems OK but the game doesn't start
 
-If you run the game from the terminal and, although no error is shown, the **disabling**: _Steam > Settings > In-Game > Enable Steam Community In-Game_. Apparently the game [The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales) has the same problem. It also describes a workaround that is untested in Dota 2.
+If you run the game from the terminal and, although no error is shown, try **disabling**: _Steam > Settings > In-Game > Enable Steam Community In-Game_. Apparently the game [The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales) has the same problem. It also describes a workaround that is untested in Dota 2.
 
 #### Game runs on the wrong screen
 
@@ -1575,7 +1575,7 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412523](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412523)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412769](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412769)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -286,6 +286,8 @@ A very basic vhost file will look like this:
 
 ### PHP
 
+**Tip:** If you are using PHP 7 (to hit the repositories soon), replace all `php5` mentions below with `php7`.
+
 To install [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-apache](https://www.archlinux.org/packages/?name=php-apache) packages.
 
 **Note:** `libphp5.so` included with [php-apache](https://www.archlinux.org/packages/?name=php-apache) does not work with `mod_mpm_event` ([FS#39218](https://bugs.archlinux.org/task/39218)). You will have to use `mod_mpm_prefork` instead. Otherwise you will get the following error:
@@ -509,7 +511,7 @@ and restart `httpd.service`.
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412466](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412466)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412777](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412777)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

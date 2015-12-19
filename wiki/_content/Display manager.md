@@ -88,13 +88,13 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 ## Loading the display manager
 
-To enable graphical login, [enable](/index.php/Enable "Enable") the appropriate systemd service. For example, for KDM, enable `kdm.service`.
+To enable graphical login, [enable](/index.php/Enable "Enable") the appropriate systemd service. For example, for [SDDM](/index.php/SDDM "SDDM"), enable `sddm.service`.
 
 This should work out of the box. If not, you might have to reset a custom `default.target` symlink to point to the default `graphical.target`.
 
-After enabling KDM a symlink `display-manager.service` should be set in `/etc/systemd/system/`. You may need to use `--force` to override old symlinks.
+After enabling [SDDM](/index.php/SDDM "SDDM") a symlink `display-manager.service` should be set in `/etc/systemd/system/`. You may need to use `--force` to override old symlinks.
 
- `$ ls -l /etc/systemd/system/display-manager.service`  `[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/kdm.service` 
+ `$ ls -l /etc/systemd/system/display-manager.service`  `[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/sddm.service` 
 
 ### Using systemd-logind
 
@@ -188,7 +188,7 @@ Some display managers are not fully compatible with systemd, because they reuse 
 *   PulseAudio volume cannot be adjusted,
 *   login failed into GNOME with another user.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=411746](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=411746)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=412774](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=412774)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

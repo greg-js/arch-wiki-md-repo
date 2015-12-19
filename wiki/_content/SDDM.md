@@ -27,10 +27,9 @@ _Simple Desktop Display Manager (SDDM) is a display manager (a graphical login p
     *   [2.4 Configuration GUI](#Configuration_GUI)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
-    *   [3.2 No desktop effects in KDE Plasma](#No_desktop_effects_in_KDE_Plasma)
-    *   [3.3 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
-    *   [3.4 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
-    *   [3.5 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
+    *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
+    *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
 
 ## Installation
 
@@ -122,10 +121,6 @@ Try removing _~/.Xauthority_.
 
 Alternatively, if your cursor turns to a black cross at the same time, and you are using zsh as your shell, you may be experiencing [this bug](https://github.com/sddm/sddm/issues/352). Follow the instructions in the previous link to fix the issue. This bug is expected to be fixed in the SDDM version subsequent to 0.11.0.
 
-### No desktop effects in KDE Plasma
-
-When I changed from KDM to SDDM and logged into KDE Plasma 4, desktop effects were disabled and could not be enabled. It turned out that SDDM wrongly started KDE Plasma in _Failsafe_ mode. If you cannot enable desktop effects, log out and check the session selection in SDDM before logging back in.
-
 ### SDDM starts on tty1 instead of tty7
 
 SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, add the following to your `sddm.conf`:
@@ -138,6 +133,8 @@ MinimumVT=7
 ```
 
 ### One or more users do not show up on the greeter
+
+**Warning:** Users set with a lower or higher `UID` range should generally not be exposed to a [Display Manager](/index.php/Display_Manager "Display Manager").
 
 SDDM only displays users with a UID in the range of 1000 to 65000 by default, if the UIDs of the desired users are below this value then you will have to modify this range. Modify your `sddm.conf` to (for a UID of 501, say):
 
@@ -160,7 +157,7 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=396543](https://wiki.archlinux.org/index.php?title=SDDM&oldid=396543)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=412776](https://wiki.archlinux.org/index.php?title=SDDM&oldid=412776)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -169,7 +169,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   Maxime Gauduin
     *   Packaging (Pantheon, emulators, music players and stuff)
 *   Pierre Neidhardt
-    *   Packaging (the day I'll have my PGP key signed... xD)
+    *   Packaging
 *   Sébastien Luttringer
     *   Packaging: [https://www.archlinux.org/packages/?maintainer=seblu](https://www.archlinux.org/packages/?maintainer=seblu)
 *   Sergej Pupykin
@@ -217,7 +217,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   Packaging
     *   Forum Moderation
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=412235](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=412235)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=412768](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Roll_Call&oldid=412768)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

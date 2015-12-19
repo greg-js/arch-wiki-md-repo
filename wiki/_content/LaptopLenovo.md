@@ -1368,7 +1368,7 @@ Install CD Version
 
 <tr>
 
-<td>[Lenovo IdeaPad U430p](/index.php?title=Lenovo_IdeaPad_U430p&action=edit&redlink=1 "Lenovo IdeaPad U430p (page does not exist)")</td>
+<td>Lenovo IdeaPad U430p</td>
 
 <td>Yes</td>
 
@@ -1390,7 +1390,7 @@ Install CD Version
 
 <tr>
 
-<td>[Lenovo IdeaPad Y700](/index.php?title=Lenovo_IdeaPad_Y700&action=edit&redlink=1 "Lenovo IdeaPad Y700 (page does not exist)")</td>
+<td>Lenovo IdeaPad Y700</td>
 
 <td>2015.12.01</td>
 
@@ -1873,7 +1873,7 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 
 *   [Think wiki](http://www.thinkwiki.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=411998](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=411998)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=412767](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=412767)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -717,7 +717,7 @@ modprobe: ERROR: could not insert 'phram': Input/output error
 *   Syslinux:
     *   [Boot an ISO image](http://www.syslinux.org/wiki/index.php/Boot_an_Iso_image)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Multiboot_USB_drive&oldid=409365](https://wiki.archlinux.org/index.php?title=Multiboot_USB_drive&oldid=409365)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Multiboot_USB_drive&oldid=412780](https://wiki.archlinux.org/index.php?title=Multiboot_USB_drive&oldid=412780)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
