@@ -10,10 +10,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   [1 安裝](#.E5.AE.89.E8.A3.9D)
 *   [2 基本功能](#.E5.9F.BA.E6.9C.AC.E5.8A.9F.E8.83.BD)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Buttons and trackball](#Buttons_and_trackball)
-        *   [3.1.1 Assigning buttons](#Assigning_buttons)
-        *   [3.1.2 "Both-large-buttons" combination-click](#.22Both-large-buttons.22_combination-click)
+*   [3 配置](#.E9.85.8D.E7.BD.AE)
+    *   [3.1 按鍵與軌跡球](#.E6.8C.89.E9.8D.B5.E8.88.87.E8.BB.8C.E8.B7.A1.E7.90.83)
+        *   [3.1.1 指定按鍵](#.E6.8C.87.E5.AE.9A.E6.8C.89.E9.8D.B5)
+        *   [3.1.2 雙擊大按鍵](#.E9.9B.99.E6.93.8A.E5.A4.A7.E6.8C.89.E9.8D.B5)
         *   [3.1.3 Scroll modifier](#Scroll_modifier)
     *   [3.2 Right-side or left-side](#Right-side_or_left-side)
     *   [3.3 System-wide or per-user](#System-wide_or_per-user)
@@ -226,78 +226,78 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 在「滾輪模式」使用軌跡球時，也可使用一些滑鼠手勢的功能，例如，在同時按壓Ctrl鍵跟滾動滾輪可以縮放瀏覽器中的字體。使用軌跡球時，則需同時按壓Ctrl與「滾輪模式按壓鍵」來觸發功能。
 
-## Configuration
+## 配置
 
-You may find it helpful to simply jump to the [sample configuration](#Sample_configuration) and try it.
+你可以參考及嘗試這個 [簡易配置](#Sample_configuration)。
 
-The configuration sections contain information which may not be of interest to you. Most Arch users will be using a modern version of the X server which requires udev hot plugging.
+這個配置含有一些資訊，大部份的Arch使用者使用的現行X server的配置是需要udev熱插拔。
 
-**Note:** There is currently (as at May 2012) an issue with [Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html). See [#"Both-large-buttons" combination-click](#.22Both-large-buttons.22_combination-click) below.
+**Note:** 可參考May 2012五月的這篇[Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html). See [#"Both-large-buttons" combination-click](#.22Both-large-buttons.22_combination-click)
 
-Gnome 3 is used, for example, in Ubuntu 12.04.
+可在Ubuntu 12.04 的Gnome 3環境下使用。
 
-### Buttons and trackball
-
-After you locate the [sample configuration file](#Configuration_file) you may wish to alter it. You need only concern yourself with three or four setup lines.
-
-#### Assigning buttons
-
-You may want to assign new actions for button presses. This is done by setting positional parameters.
-
-Values may be changed for buttons **1, 2, 3, 8,** and **9**. (Button **2** is simply a combination press of the two large buttons.) Do not alter parameters 4, 5, 6, or 7.
+### 按鍵與軌跡球
 
 ```
-# This line makes the default button assignments.
+[簡單配置](#Configuration_file)依照你的喜好修改後，放置在正確位置即可使用。
 
+```
+
+#### 指定按鍵
+
+藉由設定參數，你可以指定功能給不同按鍵。
+
+按鍵的值可以修改為1、2、3、8、及9（2是雙擊兩個大按鍵），但不要調整成4、5、6、或7。
+
+```
+# 此行是不同的按鈕配置
 Option "ButtonMapping" "1 2 3 4 5 6 7 8 9"
 
 ```
 
-One obvious reason to assign different button actions is to accommodate left-handed placement:
+左手使用需要使用不同的按鈕動作。
 
 ```
-# This line switches the left and right large buttons, and nothing else. For left-handed user.
-
+# 此行是左手使用都的按鈕配置（僅按鍵左右交換）
 Option "ButtonMapping" "3 2 1 4 5 6 7 8 9"
 
 ```
 
-Another reason to reassign is when you do not like the "normal" assignments — especially the small buttons.
+對小按鈕，不喜歡「原始」配置可以修改按鍵的值
 
-The line below changes the button **2** action to _**browser forward**_. Parameter two (both-large-button click) is given value **9** for _browser forward_. The line below also reassigns both small buttons. We want them to emit _**middle-click**_. (Either button may be clicked separately.) Parameters eight and nine are given values of **2** for _middle-click_.
+這一行修改按鈕2成「上一頁」。參數2（雙擊大按鈕）的值修改9，改成「上一頁」。此行也將參數8、9的值都改為2，使兩個小按鈕都各別修改成「中鍵」。
 
 ```
-# Three buttons are given new assignments. For right-handed user.
-
+# 這是給右手使用者的，修改了三個按鈕
 Option "ButtonMapping" "1 9 3 4 5 6 7 2 2"
 
 ```
 
-Parameters are positioned in numeric order. Parameters you might modify are 1, 2, 3, 8, and 9\. Parameters 4, 5, 6, and 7 should be left alone; they correspond to trackball movements.
+參數按順序排列，參數1、2、3、8、9可修改，但軌跡的移動的參數4、5、6、7 不要修改。
 
-#### "Both-large-buttons" combination-click
+#### 雙擊大按鍵
 
-As stated, button **2** is a simultaneous press of the two large buttons.
+如前述，參數2是表示兩個大按鍵同時按下。
 
-Experimentation shows, in the absence of a configuration directive, this action produces an indeterminate result. It appears to issue _some_ command, but the result is inconsistent with my expectation of _middle-click._ The result seems dependent on whichever object is foremost. It is inconsistent regardless. You need to enable the combination-click:
+經試驗，在缺少設定的情形下，會產生不可確定的結果， 而非預期的「中鍵」。然而，若要雙擊能正確使用，你需要啟用「相黏鍵」功能：
 
 ```
-# Emulate3Buttons refers to the act of pressing buttons A and D
-# simultaneously to emulate a middle-click or wheel click.
+# Emulate3Buttons 係指同時按下按鍵A與D
+# 同時按可以模擬「中鍵」或「滾輪鍵」
 Option "Emulate3Buttons" "true"
 
 ```
 
-This is sufficient to enable the default mapping of button **2**, which is _wheel-click_. See [minimal configuration](#Minimal_configuration).
+可以使用預設2（滾輪鍵），請參[minimal configuration](#Minimal_configuration)。
 
-As at May 2012, there is an issue with [Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html). Gnome 3 is used, for example, in Ubuntu 12.04\. Gnome 3 also sets the middle click property, and defaults to "false". Since Gnome does its settings **after** Xorg, the Gnome setting overrides the xorg setting, and emulation is disabled. The Gnome setting can be changed with this command:
+在2012五月些文章[Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html)顯示，在ubuntu 12.04 Gnome 3的環境下，預設值會變成 「false」而成為「中鍵」，原因是Gnome在Xorg進行設定（即Gnome的設定覆蓋了Xorg的設定），使的模擬被取消了。可由以下令命修正Gnome的行為：
 
 ```
 gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
 
 ```
 
-You only need to do this once (per user) as Gnome remembers the settings between sessions. There is a [launchpad bug](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-evdev/+bug/874237/comments/13) on the issue in case you are interested.
+每個使用者僅需下一次令命即可，Gnome會記得這個設定。如果你感興趣可以參考 [launchpad bug](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-evdev/+bug/874237/comments/13)。
 
 #### Scroll modifier
 
@@ -676,7 +676,7 @@ The slightest horizontal motion triggers a URL redirection. To fix this:
 *   Ubuntu community: [Logitech Marble Mouse](https://help.ubuntu.com/community/Logitech_Marblemouse_USB)
 *   Chrome web store: [AutoScroll extension](https://chrome.google.com/webstore/detail/occjjkgifpmdgodlplnacmkejpdionan)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412737](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412737)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412763](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412763)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

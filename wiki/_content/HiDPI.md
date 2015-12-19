@@ -56,19 +56,12 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 ### KDE
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+Though some issues still prevail , KDE plasma 5 provides a decent support for HiDPI screens . To view development activities of KDE regarding HiDPI support please visit [https://community.kde.org/KDE/High-dpi_issues](https://community.kde.org/KDE/High-dpi_issues)
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+Please follow these guidelines for HiDPI support in KDE plasma 5
 
-**This article or section is out of date.**
-
-**Reason:** Needs to be updated for KDE 5\. (Discuss in [Talk:HiDPI#](https://wiki.archlinux.org/index.php/Talk:HiDPI))
-
-KDE still has its share of HiDPI [issues](https://community.kde.org/KDE/High-dpi_issues) but HiDPI support can be improved by changing the below settings:
-
-1.  Increase font dpi (System Settings → Application Appearance → Fonts → Force font dpi, enter a number such as 125, 144 or 150 etc)
-2.  Increase icon sizes (System Settings → Application Appearance → Icons → Advanced, here choose a higher icon size for all icons, eg. just increase each icon type by one step)
-3.  Set minimum size for new dialogue windows (System Settings → Window Management → Window Rules; create a new rule; choose _dialogue and utility windows_; under _Size & Position_ tab, force minimum size, for eg: 1024x1024)
+1.  Increase font dpi (System Settings → Font → Force font dpi, enter a number such as 125, 144 or 150 etc)
+2.  Change Scale ( System Settings → Display and Monitor → Display Configuration → Scale Display , scroll to value 2 )
 
 ### Xfce
 
@@ -305,7 +298,7 @@ The default console font will be very small on hidpi displays, the largest font 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=409541](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=409541)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=412747](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=412747)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

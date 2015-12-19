@@ -25,7 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Configuration
 
-When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), _dnscrypt-proxy_ accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is _dnscrypt.eu-nl_. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
+When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), _dnscrypt-proxy_ accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is _dnscrypt.eu-nl_. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` (a potentially more up-to-date list is available directly on the [upstream page](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv)).
 
 To change the default, [edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
 
@@ -266,7 +266,7 @@ systemctl restart unbound
 
 If successful, your two selected dns providers should be the only ones found when using one of the dns leak test websites.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412688](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412688)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412765](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412765)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

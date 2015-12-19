@@ -15,21 +15,20 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Manual mounting](#Manual_mounting)
-*   [3 Configuring](#Configuring)
-    *   [3.1 Default settings](#Default_settings)
-    *   [3.2 Linux compatible permissions](#Linux_compatible_permissions)
-    *   [3.3 Allowing group/user](#Allowing_group.2Fuser)
-    *   [3.4 Basic NTFS-3G options](#Basic_NTFS-3G_options)
-    *   [3.5 Allowing user to mount](#Allowing_user_to_mount)
-    *   [3.6 ntfs-config](#ntfs-config)
-*   [4 Resizing NTFS partition](#Resizing_NTFS_partition)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
-    *   [5.2 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache.2C_refused_to_mount)
-    *   [5.3 Mount failure](#Mount_failure)
-    *   [5.4 Format NTFS](#Format_NTFS)
-    *   [5.5 Created files do not respect umask](#Created_files_do_not_respect_umask)
-*   [6 See also](#See_also)
+*   [3 Formatting](#Formatting)
+*   [4 Configuring](#Configuring)
+    *   [4.1 Default settings](#Default_settings)
+    *   [4.2 Linux compatible permissions](#Linux_compatible_permissions)
+    *   [4.3 Allowing group/user](#Allowing_group.2Fuser)
+    *   [4.4 Basic NTFS-3G options](#Basic_NTFS-3G_options)
+    *   [4.5 Allowing user to mount](#Allowing_user_to_mount)
+    *   [4.6 ntfs-config](#ntfs-config)
+*   [5 Resizing NTFS partition](#Resizing_NTFS_partition)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
+    *   [6.2 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache.2C_refused_to_mount)
+    *   [6.3 Mount failure](#Mount_failure)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -52,6 +51,17 @@ The second option is to call `ntfs-3g` directly:
 # ntfs-3g /dev/_your_NTFS_partition_ _/mount/point_
 
 ```
+
+## Formatting
+
+**Warning:** As always, double check the device path.
+
+```
+# mkfs.ntfs -Q -L diskLabel /dev/sd_XY_
+
+```
+
+**Note:** `-Q` speeds up the formatting by not zeroing the drive and not checking for bad sectors.
 
 ## Configuring
 
@@ -228,48 +238,11 @@ You can check the current settings on _Control Panel > Hardware and Sound > Powe
 
 If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. Here's an fstab [example](/index.php/Fstab#UUIDs "Fstab").
 
-### Format NTFS
-
-**Warning:** As always, double check the device path.
-
-```
-# mkfs.ntfs -Q -L myCoolDiskName /dev/sd_XY_
-
-```
-
-**Note:** Manual page on `-Q`: Perform quick (fast) format. This will skip both zeroing of the volume and bad sector checking.
-
-Users may consider omitting the -Q switch but may take ages on modern harddrives.
-
-### Created files do not respect umask
-
-With the `permissions` option set in `/etc/fstab`, NTFS-3G volumes can handle regular Linux permissions. However, created files [do not respect the user's umask](http://tuxera.com/forum/viewtopic.php?p=38385&sid=33a8f1830c44d26a8d53090b1bec1d82#p38385) for versions up to 2014.2.15-1.
-
-As a workaround, use the [ABS](/index.php/ABS "ABS") to recompile NTFS-3G without ACL support (--enable-posix-acls):
-
- `PKGBUILD` 
-
-```
-build() {
-	cd "${srcdir}/${_pkgname}-${pkgver}"
-	./configure \
-		--prefix=/usr \
-		--sbin=/usr/bin \
-		--mandir=/usr/share/man \
-		--disable-ldconfig \
-		--disable-static \
-		--with-fuse=external \
-		--enable-extras \
-
-	make
-}
-```
-
 ## See also
 
 *   [Official NTFS-3G manual](http://www.tuxera.com/community/ntfs-3g-manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412695](https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412695)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412749](https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412749)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
