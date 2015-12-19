@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-proot can be installed from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") under the package [proot](https://aur.archlinux.org/packages/proot/). [pacstrap](/index.php?title=Pacstrap&action=edit&redlink=1 "Pacstrap (page does not exist)") can be used to initialize the directory with an Arch environment before running proot.
+proot can be installed from the [proot](https://aur.archlinux.org/packages/proot/)<sup><small>AUR</small></sup> package. _pacstrap_ can be used to initialize the directory with an Arch environment before running proot.
 
 ## Usage
 
@@ -44,7 +44,7 @@ proot internally utilizes the qemu user-mode emulator to allow programs to be ru
 
 Like chroot, proot provides only filesystem level isolation. Programs inside the proot "jail" share the same kernel, hardware, process space, and networking subsystem. chroot and proot are not designed to be substitutes for real [virtualization](/index.php?title=Virtualization&action=edit&redlink=1 "Virtualization (page does not exist)") applications, such as hypervisors and paravirtualizers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Proot&oldid=408371](https://wiki.archlinux.org/index.php?title=Proot&oldid=408371)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Proot&oldid=412743](https://wiki.archlinux.org/index.php?title=Proot&oldid=412743)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

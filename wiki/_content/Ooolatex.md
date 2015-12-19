@@ -8,7 +8,7 @@ From [- OOoLatex](http://ooolatex.sourceforge.net/):
 
 _OOoLatex is a set of macros designed to bring the power of LaTeX into OpenOffice. It contains two main modules: the first one, Equation, allows to insert LaTeX equations into Writer and Impress documents as png or emf images while the second one, Expand, can be used for simpler equations to expand LaTeX code into appropriated symbol characters and insert them as regular text._
 
-The macro is especially useful for the preparation of presentations with a lot of mathematical formula. Instead of using beamer class in LaTeX, one can enjoy the flexibility of Impress in organizing texts and graphs while at the same time harness the power of LaTeX in typesetting and inserting equations.
+The macros are especially useful for the preparation of presentations with a lot of mathematical formulæ. Instead of using beamer class in LaTeX, one can enjoy the flexibility of Impress in organizing texts and graphs while at the same time harnessing the power of LaTeX in typesetting and inserting equations.
 
 ## Contents
 
@@ -26,7 +26,7 @@ This article explains how to install OOoLatex for Arch Linux, assuming one has a
 
 ## Installation
 
-The easiest way to obtain OOoLatex macro package is from the [project's website](http://ooolatex.sourceforge.net/). Select the package according to the system architecture. Then, open the "oxt" file with OpenOffice or LibreOffice, the extension manager should take care of the rest.
+The easiest way to obtain OOoLatex macro package is from the [project's website](http://ooolatex.sourceforge.net/). Select the package according to the system architecture. Then, open the "oxt" file with OpenOffice or LibreOffice; the extension manager should take care of the rest.
 
 ## Fonts
 
@@ -34,7 +34,7 @@ To render the equations correctly, one must have the required fonts installed in
 
 To install the fonts, follow the Wiki guide on [fonts](/index.php/Fonts "Fonts"). For example, a system-wide installation (available for all users) can be performed by unzipping and moving the fonts folder to the `/usr/share/fonts/` directory.
 
-Then one needs to update the font cache: (from within the fonts folder)
+Then one needs to update the font cache (from within the fonts folder):
 
 ```
 # fc-cache -vf
@@ -52,7 +52,7 @@ For the EMF option to work, it is particularly important to install the "libstdc
 
 ```
 
-For 64 bit users, in addition to the above package, one also needs
+For 64-bit users, in addition to the above package, one also needs
 
 ```
 # pacman -S lib32-libstdc++5
@@ -61,9 +61,9 @@ For 64 bit users, in addition to the above package, one also needs
 
 ## Initial setup
 
-After installation, one can start the macro by choosing Tools > Macros... > Run Macros and selects the required routine from within a document. Also, an OOoLatex toolbar should be available which allows easy insertion of equations. (If it is not automatically enabled, check OOoLatex in View > Toolbars > OOoLatex.)
+After installation, one can start the macro by choosing Tools > Macros... > Run Macros and selecting the required routine from within a document. Also, an OOoLatex toolbar should be available which allows easy insertion of equations. (If it is not automatically enabled, check OOoLatex in View > Toolbars > OOoLatex.)
 
-To successfully compile the LaTeX code, one needs to supply the paths to LaTeX and ghostscript (gs) binaries to OOoLatex in the "Config" tab. The usual location for both of these are in
+To successfully compile the LaTeX code, one needs to supply the paths to LaTeX and ghostscript (gs) binaries to OOoLatex in the "Config" tab. The usual location for both of these is in
 
 ```
 # /usr/bin
@@ -90,7 +90,7 @@ For more information on how to use the macro, consult the [project's website](ht
 *   [OOoLatex for Ubuntu](http://ubuntuforums.org/showthread.php?t=334218)
 *   [project's website](http://ooolatex.sourceforge.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=376942](https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=376942)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=412744](https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=412744)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

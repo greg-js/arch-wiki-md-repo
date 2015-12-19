@@ -308,11 +308,15 @@ Make sure to [reload](/index.php/Reload "Reload") the systemd daemon and [restar
 
 ### Blacklist interfaces
 
-If something like [Docker](/index.php/Docker "Docker") is creating virtual interfaces Connman may attempt to connect to one of these instead of your physical adapter if the connection drops. A simple way of avoiding this is to blacklist the interfaces you do not want to use. Connman will by default blacklist interfaces starting with "vmnet", "vboxnet", "virbr" and "ifb" so those need to be included as well. If it does not already exist, create `/etc/connman/main.conf`:
+If something like [Docker](/index.php/Docker "Docker") is creating virtual interfaces Connman may attempt to connect to one of these instead of your physical adapter if the connection drops. A simple way of avoiding this is to blacklist the interfaces you do not want to use. Connman will by default blacklist interfaces starting with "vmnet", "vboxnet", "virbr" and "ifb" so those need to be included as well.
+
+Blacklisting interface names is also useful to avoid a race condition where connman may access `eth#` or `wlan#` before systemd/udev can change it to use a [predictable interface name](/index.php/Network_configuration#Device_names "Network configuration") like `enp4s0`. Blacklisting the conventional (and unpredictable) interface prefixes makes connman wait until they are renamed.
+
+If it does not already exist, create `/etc/connman/main.conf`:
 
 ```
 [General]
-NetworkInterfaceBlacklist=vmnet,vboxnet,virbr,ifb,docker,veth
+NetworkInterfaceBlacklist=vmnet,vboxnet,virbr,ifb,docker,veth,eth,wlan
 
 ```
 
@@ -322,7 +326,7 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 For further detailed information on ConnMan you may refer to the documentation in its git repo at [[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=412713](https://wiki.archlinux.org/index.php?title=Connman&oldid=412713)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=412739](https://wiki.archlinux.org/index.php?title=Connman&oldid=412739)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

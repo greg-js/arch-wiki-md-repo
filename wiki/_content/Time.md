@@ -192,6 +192,12 @@ Example:
 
 This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually, keep in mind that it must be a symbolic link, not hard, as specified in archlinux(7).
 
+```
+# rm /etc/localtime
+# ln -s /usr/share/zoneinfo/zone/subzone /etc/localtime
+
+```
+
 See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more details.
 
 **Note:** If the pre-systemd configuration file `/etc/timezone` still exists in your system, you can remove it safely, since it is no longer used.
@@ -270,7 +276,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 *   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=406783](https://wiki.archlinux.org/index.php?title=Time&oldid=406783)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=412745](https://wiki.archlinux.org/index.php?title=Time&oldid=412745)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

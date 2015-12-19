@@ -395,7 +395,7 @@ chmod +x ~/bin/history_import_kopete2pidgin.sh
 *   [Pidgin homepage](http://pidgin.im)
 *   [History import Kopete to Pidgin](http://lukav.com/wordpress/2008/03/30/history-import-kopete-to-pidgin)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pidgin&oldid=403193](https://wiki.archlinux.org/index.php?title=Pidgin&oldid=403193)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pidgin&oldid=412742](https://wiki.archlinux.org/index.php?title=Pidgin&oldid=412742)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
