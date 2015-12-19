@@ -432,7 +432,12 @@ Copy the QEMU executable, which will handle the translation from ARM, to the SD 
 
 ```
 
-Finally chroot into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root").
+Finally chroot into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"), keeping in mind you need to call `qemu-arm-static` in the `chroot` command i.e.:
+
+```
+# chroot /mnt/arch /usr/bin/qemu-arm-static /bin/bash
+
+```
 
 ## See also
 
@@ -441,7 +446,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=411762](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=411762)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=412784](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=412784)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

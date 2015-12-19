@@ -88,17 +88,15 @@ Quickfort is a utility for Dwarf Fortress that helps you build fortresses from "
 
 ### StoneSense
 
-Stonesense is a visualizer for Dwarf Fortress and is build in with ([dfhack](https://aur.archlinux.org/packages/dfhack/)<sup><small>AUR</small></sup> in [AUR](/index.php/AUR "AUR")). Which is also part of the [lazynoobpack](http://lazynewbpack.com/).
+StoneSense is an isometric world visualizer for Dwarf Fortress, and can be installed with the [dfhack](https://aur.archlinux.org/packages/dfhack/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package.
 
-If you don't install Stonesense via the AUR you will need following librarys:
+If you choose to install StoneSense manually instead of using the AUR package, you'll need the following dependencies:
 
 *   [lib32-libjpeg6-turbo](https://aur.archlinux.org/packages/lib32-libjpeg6-turbo/)<sup><small>AUR</small></sup>
 *   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)<sup><small>AUR</small></sup>
 *   [lib-32-allegro](https://aur.archlinux.org/packages/lib-32-allegro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
-or else StoneSense will not load.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412069](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412069)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412782](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412782)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

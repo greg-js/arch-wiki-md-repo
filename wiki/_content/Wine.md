@@ -567,7 +567,7 @@ $ WINEARCH=win32 WINEPREFIX=~/win32 winetricks -q msxml3 dotnet40 corefonts
 
 #### Office 2010
 
-Microsoft Office 2010 works without any problems (tested with Microsoft Office Home and Student 2010, Wine 1.5.27 and 1.7.5; Microsoft Office Professional Plus 2010, Wine 1.7.50 and 1.7.51). Activation over Internet also works.
+Microsoft Office 2010 works without any problems (tested with Microsoft Office Home and Student 2010, Wine 1.7.5; Microsoft Office Professional Plus 2010, Wine 1.7.51). Activation over Internet also works.
 
 Start by installing [wine-mono](https://www.archlinux.org/packages/?name=wine-mono), [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko), [samba](https://www.archlinux.org/packages/?name=samba), [lib32-libxslt](https://www.archlinux.org/packages/?name=lib32-libxslt) and [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2).
 
@@ -640,7 +640,7 @@ It is recommended using winetricks by default to open _.exe_ files, so you can c
 *   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=409922](https://wiki.archlinux.org/index.php?title=Wine&oldid=409922)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=412783](https://wiki.archlinux.org/index.php?title=Wine&oldid=412783)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -26,7 +26,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 #### Alternatives:
 
-*   [Network Shared Pacman Cache](/index.php/Network_Shared_Pacman_Cache "Network Shared Pacman Cache")
+*   [Network Shared Pacman Cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks")
 
 ## Local Mirror
 
@@ -188,7 +188,7 @@ Then to update your partial mirror, simply execute pacman -Syu. Note this doesn'
 *   Add the proper Server= variable in /etc/pacman.d/mirrorlist
 *   For physical media (such as flash drive) the following can be used: Server = file:///mnt/media/repo/$repo/os/$arch (_where /mnt/media/repo is directory where local mirror located_)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Local_Mirror&oldid=379973](https://wiki.archlinux.org/index.php?title=Local_Mirror&oldid=379973)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Local_Mirror&oldid=412781](https://wiki.archlinux.org/index.php?title=Local_Mirror&oldid=412781)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
