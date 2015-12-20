@@ -122,7 +122,7 @@ _X为GUI环境提供基本的框架：在屏幕上描绘、体现图像与移动
 
 *   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — KWin, the standard KDE window manager in KDE 4.0, ships with the first version of built-in support for compositing, making it also a compositing manager. This allows KWin to provide advanced graphical effects, similar to Compiz, while also providing all the features from previous KDE releases (such as very good integration with the rest of KDE, advanced configurability, focus stealing prevention, a well-tested window manager, robust handling of misbehaving applications/toolkits, etc.).
 
-[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **lwm** — lwm is a window manager for X that tries to keep out of your face. There are no icons, no button bars, no icon docks, no root menus, no nothing: if you want all that, then other programs can provide it. There is no configurability either: if you want that, you want a different window manager; one that helps your operating system in its evil conquest of your disc space and its annexation of your physical memory.
 
@@ -265,7 +265,7 @@ Notion is a fork of Ion3.
 
 [http://xmonad.org/](http://xmonad.org/) || [xmonad](https://www.archlinux.org/packages/?name=xmonad)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(简体中文)&oldid=411636](https://wiki.archlinux.org/index.php?title=Window_manager_(简体中文)&oldid=411636)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(简体中文)&oldid=412839](https://wiki.archlinux.org/index.php?title=Window_manager_(简体中文)&oldid=412839)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

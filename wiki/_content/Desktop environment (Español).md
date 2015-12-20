@@ -50,7 +50,7 @@ Además, las aplicaciones proporcionadas por los DE tienden a integrarse mejor c
 
 *   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — El escritorio Enlightenment proporciona un gestor de ventanas eficiente, a la vez que impresionante, sobre la base de las bibliotecas Enlightenment Foundation Libraries (EFL), junto con otros componentes de escritorio esenciales como un gestor de archivos, iconos del escritorio y widgets. Cuenta con un nivel sin precedentes de capacidad para ejecutar temas gráficos, sin dejar por ello de ser capaz de ejecutarse en hardware antiguo o dispositivos integrados.
 
-[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment17](https://www.archlinux.org/packages/?name=enlightenment17)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)]</sup>
+[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment17](https://www.archlinux.org/packages/?name=enlightenment17)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
 *   **[GNOME](/index.php/GNOME "GNOME")** — El proyecto GNOME proporciona dos cosas: El entorno de escritorio GNOME, un escritorio intuitivo y atractivo para los usuarios, y la plataforma de desarrollo GNOME, un amplio marco para la creación de aplicaciones que se integran en el resto del escritorio. GNOME es libre, usable, accesible, internacional, amistoso para el desarrollador, organizado, sostenido por la comunidad.
 
@@ -58,7 +58,7 @@ Además, las aplicaciones proporcionadas por los DE tienden a integrarse mejor c
 
 *   **[KDE Plasma](/index.php/KDE "KDE")** — El entorno de escritorio KDE Plasma es un entorno de trabajo familiar. El escritorio Plasma ofrece todas las herramientas necesarias para una experiencia de escritorio moderna con enfasis en la productividad
 
-[http://www.kde.org/workspaces/plasmadesktop/](http://www.kde.org/workspaces/plasmadesktop/) || KDE 4:[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace), Plasma 5:[plasma](https://www.archlinux.org/groups/x86_64/plasma/)
+[http://www.kde.org/workspaces/plasmadesktop/](http://www.kde.org/workspaces/plasmadesktop/) || KDE 4:[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>, Plasma 5:[plasma](https://www.archlinux.org/groups/x86_64/plasma/)
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — The "Lightweight X11 Desktop Environment" es un entorno de escritorio rápido y de bajo consumo. Mantenido por una comunidad internacional de desarrolladores, viene con una interfaz atractiva, soporte multi-idioma, teclas de acceso rápido estándar y funciones adicionales como la navegación por pestañas de los archivos. Fundamentalmente diseñado para ser ligero, LXDE utiliza menos CPU y memoria RAM que otros entornos. Es especialmente beneficioso para los ordenadores con especificaciones de hardware de bajo rendimiento, tales como netbooks, dispositivos móviles (por ejemplo, MIDs) u otros ordenadores.
 
@@ -531,10 +531,10 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)</td>
 
 <td>[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_4#Desktop "wikipedia:KDE Plasma 4")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Konsole](http://konsole.kde.org/)  
 [konsole](https://www.archlinux.org/packages/?name=konsole)</td>
@@ -558,7 +558,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)</td>
 
 <td>[KDM](/index.php/KDM "KDM")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 </tr>
 
@@ -1036,7 +1036,7 @@ Muchos usuarios de KDE describen a éste como _más similar a Windows_ y a GNOME
 
 Los entornos de escritorio representan el medio más sencillo de instalar una _completa_ interfaz gráfica. Sin embargo, cada cual es libre de crear y personalizar su propio entorno gráfico de muchas maneras, si ninguno de los entornos de escritorio más populares satisface sus necesidades. En general, la construcción de un entorno personalizado implica, al menos, la selección de un adecuado [gestor de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)"), una [barra de tareas](https://en.wikipedia.org/wiki/es:Barra_de_tareas "wikipedia:es:Barra de tareas") y un número variable de [aplicaciones](/index.php/List_of_Applications_(Espa%C3%B1ol) "List of Applications (Español)") (una selección minimalista, por lo general incluye un [emulador de terminal](/index.php/List_of_applications#Terminal_emulators "List of applications"), [administrador de archivos](/index.php/List_of_applications#File_managers "List of applications"), y [editor de texto](/index.php/List_of_applications#Text_editors "List of applications")).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(Español)&oldid=411566](https://wiki.archlinux.org/index.php?title=Desktop_environment_(Español)&oldid=411566)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(Español)&oldid=412790](https://wiki.archlinux.org/index.php?title=Desktop_environment_(Español)&oldid=412790)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -45,7 +45,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE") Display Manager
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LXDM](/index.php/LXDM "LXDM")** — [LXDE](/index.php/LXDE "LXDE") Display Manager. Can be used independent of the LXDE desktop environment.
 
@@ -111,7 +111,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 في المرة التالية التي تعيد بها التشغيل ، يجب أن يعمل مدير الدخول. سيتم تحميل مدير الدخول تلقائيا بعد الإقلاع وسوف يعاود الظهور إذا حدث أي عطل.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(العربية)&oldid=411578](https://wiki.archlinux.org/index.php?title=Display_manager_(العربية)&oldid=411578)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(العربية)&oldid=412799](https://wiki.archlinux.org/index.php?title=Display_manager_(العربية)&oldid=412799)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -136,7 +136,7 @@ The following section lists packages that, whilst not required for the Unity she
 
 <td>HUD & menubar integration</td>
 
-<td>[appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt), [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/)<sup><small>AUR</small></sup>, [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/)<sup><small>AUR</small></sup></td>
+<td>[appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt)]</sup>, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/)<sup><small>AUR</small></sup>, [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/)<sup><small>AUR</small></sup></td>
 
 </tr>
 
@@ -235,7 +235,7 @@ As of February 2015, the required package _perlxml_ is unavailable, try _pidgin-
 *   [Unity home page](http://unity.ubuntu.com/)
 *   [Unity in Launchpad](https://launchpad.net/unity)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity&oldid=412199](https://wiki.archlinux.org/index.php?title=Unity&oldid=412199)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity&oldid=412834](https://wiki.archlinux.org/index.php?title=Unity&oldid=412834)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -123,7 +123,7 @@ KDE 上游维护了一份 [UserBase Wiki](http://userbase.kde.org/)。用户能�
 
 **Note:**
 
-*   Plasma 5 和 kde4 [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)不兼容。
+*   Plasma 5 和 kde4 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>不兼容。
 *   KDE 4 Plasma 桌面到2015年八月停止维护。
 
 在安装Plasma之前，请确保[Xorg](/index.php/Xorg "Xorg")已经被安装到您的系统中
@@ -196,7 +196,7 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 ##### Adding a Global Menu to the desktop
 
-Install [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt) from the official repositories and [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-gtk)]</sup> and [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt5)]</sup> from the AUR in order to complete the preliminaries for a Mac OS X style always-on global menu.
+Install [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt)]</sup> from the official repositories and [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-gtk)]</sup> and [appmenu-qt5](https://aur.archlinux.org/packages/appmenu-qt5/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt5)]</sup> from the AUR in order to complete the preliminaries for a Mac OS X style always-on global menu.
 
 *   To get LibreOffice to use the global menu as well, install [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libreoffice-extension-menubar)]</sup> from the AUR.
 *   [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-gtk)]</sup> is orphaned and Canonical has abandoned appmenu-gtk in favor of unity-gtk-module that is depending on Unity desktop. As of October 2014 there is no way of exporting gtk2,3 menus in KDE.
@@ -368,7 +368,7 @@ KCM 意为 KDE 控制模块（**KC**onfig **M**odule）。这些模块在系统�
 
 **配置基于 Synaptics 驱动程序的触摸板**
 
-*   [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
+*   [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup>
 *   [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)]</sup> (Plasma 5)
 
 **配置 [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") (UFW)**
@@ -399,7 +399,7 @@ KCM 意为 KDE 控制模块（**KC**onfig **M**odule）。这些模块在系统�
 
 要在 KDE 桌面中使用 Baloo 搜索，按 `ALT+F2` 并输入你的查询内容。
 
-By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and, as of 4.13.1, a way to disable it with one click. More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/)<sup><small>AUR</small></sup>.
+By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and, as of 4.13.1, a way to disable it with one click. More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_baloo_advanced)]</sup>.
 
 Alternatively you may edit to your `~/.kde4/share/config/baloofilerc` file. For example to disable Baloo add:
 
@@ -617,7 +617,7 @@ WebKit 是一个由 Apple 公司开发的开源浏览器引擎。它衍生自 KH
 
 现在把你当前的背景图片复制到 `"1920x1080.jpg"`。
 
-注意，你必须在每次更新软件包 [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace) 后重复这些步骤。
+注意，你必须在每次更新软件包 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup> 后重复这些步骤。
 
 ### Setting lockscreen wallpaper to arbitrary image
 
@@ -970,7 +970,7 @@ KDE 到了 beta 或者 RC milestone 时，“不稳定的” KDE 软件包被上
 *   [[3]](https://bugs.archlinux.org) - Arch Linux 缺陷跟踪页
 *   [[4]](https://projects.kde.org) - KDE 项目
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=412233](https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=412233)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=412814](https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=412814)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

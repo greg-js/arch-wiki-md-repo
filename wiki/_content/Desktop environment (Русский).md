@@ -526,10 +526,10 @@ _В этом разделе приведена сравнительная таб
 [qt4](https://www.archlinux.org/packages/?name=qt4)</td>
 
 <td>[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_4#Desktop "wikipedia:KDE Plasma 4")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Konsole](http://konsole.kde.org/)  
 [kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole)<sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [konsole](https://www.archlinux.org/packages/?name=konsole)]</sup></td>
@@ -553,7 +553,7 @@ _В этом разделе приведена сравнительная таб
 [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)</td>
 
 <td>[KDM](/index.php/KDM "KDM")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 </tr>
 
@@ -1006,7 +1006,7 @@ Enlightenment, LXDE, LXQt и Xfce, напротив, являются легко
 *   Блокировщик экрана: [Список приложений#Блокировка экрана](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0 "Список приложений")
 *   Микшер: [Список приложений#Управление громкостью](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D1.80.D0.BE.D0.BC.D0.BA.D0.BE.D1.81.D1.82.D1.8C.D1.8E "Список приложений")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(Русский)&oldid=411568](https://wiki.archlinux.org/index.php?title=Desktop_environment_(Русский)&oldid=411568)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(Русский)&oldid=412792](https://wiki.archlinux.org/index.php?title=Desktop_environment_(Русский)&oldid=412792)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

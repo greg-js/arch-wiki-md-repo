@@ -41,7 +41,7 @@ KDM (KDE Display Manager) is the login manager of [KDE](/index.php/KDE "KDE"). I
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace).
+[Install](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>.
 
 Then follow [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager") to start KDM at boot.
 
@@ -228,7 +228,7 @@ As a workaround you disable background opacity for `kscreenlocker` and `kscreenl
 
 For `qt-curve`, go to `System Settings > Application Appearance > Style > Configure > Applications` and add `kscreenlocker` and `kscreenlocker_greet` to "No background opacity".
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=411733](https://wiki.archlinux.org/index.php?title=KDM&oldid=411733)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=412815](https://wiki.archlinux.org/index.php?title=KDM&oldid=412815)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

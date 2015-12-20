@@ -51,7 +51,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE") 顯示管理員。
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — 跨桌面環境的顯示管理員，能使用以任何工具集所寫的各種前端。
 
@@ -156,7 +156,7 @@ Type=XSession
 *   SDDM: [[2]](https://github.com/sddm/sddm/pull/95) (已於 git master 修復)
 *   SLiM: [[3]](https://bugs.archlinux.org/task/34329) [[4]](http://developer.berlios.de/bugs/?func=detailbug&bug_id=19102&group_id=2663)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=411579](https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=411579)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=412800](https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=412800)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

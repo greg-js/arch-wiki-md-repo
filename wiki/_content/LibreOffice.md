@@ -115,7 +115,7 @@ For spell checking, please make sure [hunspell](https://www.archlinux.org/packag
 
 Finnish
 
-Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/)<sup><small>AUR</small></sup>, [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/)<sup><small>AUR</small></sup>, [hfstospell](https://aur.archlinux.org/packages/hfstospell/)<sup><small>AUR</small></sup>, [libvoikko](https://aur.archlinux.org/packages/libvoikko/)<sup><small>AUR</small></sup> and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/)<sup><small>AUR</small></sup>.
+Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/)<sup><small>AUR</small></sup>, [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/suomi-malaga-voikko)]</sup>, [hfstospell](https://aur.archlinux.org/packages/hfstospell/)<sup><small>AUR</small></sup>, [libvoikko](https://www.archlinux.org/packages/?name=libvoikko) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/)<sup><small>AUR</small></sup>.
 
 ### Hyphenation rules
 
@@ -266,7 +266,7 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412122](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412122)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412817](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412817)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

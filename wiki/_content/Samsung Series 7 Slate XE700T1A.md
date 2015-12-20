@@ -233,7 +233,7 @@ Then add. You can now set a shortcut by clicking on it, and pressing the keys yo
 
 8 point multitouch now seems to work without [xf86-input-evdev-multitouch-git](https://aur.archlinux.org/packages/xf86-input-evdev-multitouch-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-evdev-multitouch-git)]</sup> and [mtdev](https://www.archlinux.org/packages/?name=mtdev) is a dependancy of [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev). Out of the box with Gnome 3.14, some apps, such as Eye of Gnome (Gnome Image Viewer) supported multitouch actions such as pinch-to-zoom.
 
-I also installed [ginn](https://aur.archlinux.org/packages/ginn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ginn)]</sup> and all Ubuntu's uTouch (dependencies of ginn). The default setup gave me 2 finger scrolling in all the apps I tested.
+I also installed [ginn](https://aur.archlinux.org/packages/ginn/)<sup><small>AUR</small></sup> and all Ubuntu's uTouch (dependencies of ginn). The default setup gave me 2 finger scrolling in all the apps I tested.
 
 You can test multitouch by running [mtview-git](https://aur.archlinux.org/packages/mtview-git/)<sup><small>AUR</small></sup>:
 
@@ -294,7 +294,7 @@ $ xinput set-prop 13 "Device Enabled" 1
 
 While the touch screen is disabled, the pen still works as expected, meaning that you can write your notes, whilst resting you hand on the tablet.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_Series_7_Slate_XE700T1A&oldid=392652](https://wiki.archlinux.org/index.php?title=Samsung_Series_7_Slate_XE700T1A&oldid=392652)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_Series_7_Slate_XE700T1A&oldid=412830](https://wiki.archlinux.org/index.php?title=Samsung_Series_7_Slate_XE700T1A&oldid=412830)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

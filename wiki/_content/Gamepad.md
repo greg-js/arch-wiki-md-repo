@@ -251,7 +251,7 @@ EndSection
 
 ## Using Joystick to send keystrokes
 
-A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rejoystick)]</sup>, [qjoypad](https://aur.archlinux.org/packages/qjoypad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qjoypad)]</sup> or [antimicro-qt4](https://aur.archlinux.org/packages/antimicro-qt4/)<sup><small>AUR</small></sup>, all work well without the need for X.org configuration.
+A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rejoystick)]</sup>, [qjoypad](https://aur.archlinux.org/packages/qjoypad/)<sup><small>AUR</small></sup> or [antimicro-qt4](https://aur.archlinux.org/packages/antimicro-qt4/)<sup><small>AUR</small></sup>, all work well without the need for X.org configuration.
 
 ### via X.org
 
@@ -556,7 +556,7 @@ Assuming the device in question is `/dev/input/js0`. After you placed the rule r
 
 Then replug the device making you trouble. The joystick and event devices should be gone, although their number will still be reserved. But the files are out of the way.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=411356](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=411356)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412808](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412808)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

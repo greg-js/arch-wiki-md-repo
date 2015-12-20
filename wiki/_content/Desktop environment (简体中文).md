@@ -526,10 +526,10 @@ ROX是一个高效、友好的桌面环境。它的核心是文件浏览器，�
 [qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)</td>
 
 <td>[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_4#Desktop "wikipedia:KDE Plasma 4")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Konsole](http://konsole.kde.org/)  
 [konsole](https://www.archlinux.org/packages/?name=konsole)</td>
@@ -553,7 +553,7 @@ ROX是一个高效、友好的桌面环境。它的核心是文件浏览器，�
 [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)</td>
 
 <td>[KDM](/index.php/KDM "KDM")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 </tr>
 
@@ -1048,7 +1048,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(简体中文)&oldid=411570](https://wiki.archlinux.org/index.php?title=Desktop_environment_(简体中文)&oldid=411570)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(简体中文)&oldid=412793](https://wiki.archlinux.org/index.php?title=Desktop_environment_(简体中文)&oldid=412793)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

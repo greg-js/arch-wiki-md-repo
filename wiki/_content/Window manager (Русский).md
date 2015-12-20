@@ -120,7 +120,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — Стандартный оконный менеджер KDE 4.0\. Имеет встроенную поддержку композитного режима, что делает его также композитным менеджером. Это позволяет KWin использовать разнообразные графические эффекты, подобно Compiz, при этом также предоставляя все возможности с предыдущих релизов KDE (например, очень неплохую интеграцию со средой, гибкость в настройке, предотвращения потери фокуса, надежный механизм обработки сбоев приложений/тулкитов и т. д.).
 
-[https://techbase.kde.org/Projects/KWin](https://techbase.kde.org/Projects/KWin) || [kwin](https://www.archlinux.org/packages/?name=kwin) [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace) [kwin-git](https://aur.archlinux.org/packages/kwin-git/)<sup><small>AUR</small></sup>
+[https://techbase.kde.org/Projects/KWin](https://techbase.kde.org/Projects/KWin) || [kwin](https://www.archlinux.org/packages/?name=kwin) [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup> [kwin-git](https://aur.archlinux.org/packages/kwin-git/)<sup><small>AUR</small></sup>
 
 *   **lwm** — Оконный менеджер для X, который всеми силами прячется от вас. Вы не увидите значков, кнопок, панелей, меню, ничего: если вам что-нибудь из этого нужно, устанавливайте сторонние программы. Здесь нет никаких настроек вообще: если они вам нужны, используйте другой оконный менеджер — такой, который поможет вашей операционной системе оккупировать все свободное пространство на вашем жестком диске, а потом примется за вашу оперативную память.
 
@@ -303,7 +303,7 @@ Notion — форк Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=411633](https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=411633)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=412837](https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=412837)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -80,9 +80,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [10.1.1 Intel](#Intel)
         *   [10.1.2 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
     *   [10.2 Configuration related](#Configuration_related)
-        *   [10.2.1 Reset all kdelib4 apps configuration](#Reset_all_kdelib4_apps_configuration)
-        *   [10.2.2 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
-        *   [10.2.3 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
+        *   [10.2.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
+        *   [10.2.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
     *   [10.3 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
     *   [10.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
     *   [10.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
@@ -113,7 +112,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
 
 *   Plasma 5 is not co-installable with Plasma 4.
 *   The Plasma 4 desktop is unmaintained since August 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) It is no longer in the official repositories since December 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
-*   KDM is no longer available for Plasma 5 and has been replaced with [SDDM](/index.php/SDDM "SDDM").
+*   [KDM](/index.php/KDM "KDM") is no longer available for Plasma 5\. KDE upstream [recommends](http://blog.davidedmundson.co.uk/blog/display_managers_finale) using the [SDDM](/index.php/SDDM "SDDM") display manager as it provides integration with the Plasma 5 theme.
 
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
@@ -127,10 +126,7 @@ If you need language files, install `kde-l10n-**yourlanguagehere**` (e.g. [kde-l
 
 ## Starting Plasma
 
-**Tip:**
-
-*   [KDM](/index.php/KDM "KDM") is not available in Plasma 5\. KDE upstream [recommends](http://blog.davidedmundson.co.uk/blog/display_managers_finale) using the [SDDM](/index.php/SDDM "SDDM") display manager as it provides integration with the Plasma 5 theme.
-*   To better integrate SDDM with Plasma, it is recommended to edit `/etc/sddm.conf` to use the breeze theme. Refer to [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") for instructions.
+**Tip:** To better integrate SDDM with Plasma, it is recommended to edit `/etc/sddm.conf` to use the breeze theme. Refer to [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") for instructions.
 
 **Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
@@ -394,7 +390,7 @@ Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://com
 
 Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
 
-More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/)<sup><small>AUR</small></sup>.
+More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_baloo_advanced)]</sup>.
 
 #### How do I index a removable device?
 
@@ -611,20 +607,6 @@ Then go to the system-settings -> Startup and Shutdown -> Autostart and Check/Ad
 
 Many problems in KDE are related to configuration.
 
-#### Reset all kdelib4 apps configuration
-
-To test whether your config is the problem try quitting all kdelib4 apps and run:
-
-```
-$ cp -r ~/.kde4 ~/.kde4.safekeeping
-$ rm .kde4/{cache,socket,tmp}-$(hostname)
-
-```
-
-The _rm_ command just removes symbolic links which will be recreated automatically.
-
-If the problem does not manifest itself, gradually move parts from the saved configuration back, and restart the application(s) regularly to test and identify problematic parts.
-
 #### Plasma desktop behaves strangely
 
 Plasma problems are usually caused by unstable **Plasma widgets** (colloquially called _plasmoids_) or **Plasma themes**. First, find which was the last widget or theme you had installed and disable it or uninstall it.
@@ -712,6 +694,14 @@ See [Qt#Configuration of Qt apps under environments other than KDE](/index.php/Q
 Make sure you have the proper driver for your card installed, so that your desktop is at least 2D accelerated. Follow these articles for more information: [ATI](/index.php/ATI "ATI"), [NVIDIA](/index.php/NVIDIA "NVIDIA"), [Intel](/index.php/Intel "Intel") for more information, in order to make sure that everything is all right. The open-source ATI and Intel drivers and the proprietary (binary) Nvidia driver should theoretically provide the best 2D and 3D acceleration.
 
 ##### The Raster engine workaround
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** xrender is not default in plasma 5\. XRender should not be recommended anymore. (Discuss in [Talk:KDE#](https://wiki.archlinux.org/index.php/Talk:KDE))
 
 If this does not solve your problems, your driver may not provide a good **XRender** acceleration which the current Qt painter engine relies on by default.
 
@@ -838,7 +828,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412773](https://wiki.archlinux.org/index.php?title=KDE&oldid=412773)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412865](https://wiki.archlinux.org/index.php?title=KDE&oldid=412865)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

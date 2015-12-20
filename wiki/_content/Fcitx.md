@@ -188,7 +188,7 @@ Install these packages:
 
 *   [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) - a kcontrol module for fcitx.
 
-*   [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
+*   [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
 
 ## Clipboard Access
 
@@ -278,7 +278,7 @@ To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-con
 *   [Fcitx GitHub](https://github.com/fcitx/fcitx/)
 *   [Fcitx Wiki](http://fcitx-im.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412076](https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412076)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412803](https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412803)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

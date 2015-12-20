@@ -16,8 +16,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [2.1.2 dhcpcd](#dhcpcd)
         *   [2.1.3 dhclient](#dhclient)
     *   [2.2 NetworkManager](#NetworkManager)
-        *   [2.2.1 IPv6](#IPv6)
-        *   [2.2.2 Other methods](#Other_methods)
+        *   [2.2.1 Custom Configuration](#Custom_Configuration)
+        *   [2.2.2 IPv6](#IPv6)
+        *   [2.2.3 Other methods](#Other_methods)
 *   [3 DHCP server setup](#DHCP_server_setup)
 *   [4 Start the daemon](#Start_the_daemon)
 *   [5 Test](#Test)
@@ -28,6 +29,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [6.2 View leases](#View_leases)
     *   [6.3 Adding a custom domain](#Adding_a_custom_domain)
     *   [6.4 Override addresses](#Override_addresses)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -143,24 +145,27 @@ prepend domain-name-servers 127.0.0.1;
 
 ### NetworkManager
 
-[NetworkManager](/index.php/NetworkManager "NetworkManager") has the ability to start _dnsmasq_ from its configuration file. Add the option `dns=dnsmasq` to `NetworkManager.conf` in the `[main]` section then disable the `dnsmasq.service` from being loaded by [systemd](/index.php/Systemd "Systemd"):
+DNS requests can be sped up by caching previous requests locally for subsequent lookup. [NetworkManager](/index.php/NetworkManager "NetworkManager") has a plugin to enable DNS caching using dnsmasq, but it is not enabled in the default configuration.
+
+Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed, but has been disabled. Then, edit `/etc/NetworkManager/NetworkManager.conf` and change the `dns` in the `[main]` section:
 
  `/etc/NetworkManager/NetworkManager.conf` 
 
 ```
 [main]
 plugins=keyfile
+dhcp=dhclient
 dns=dnsmasq
 
 ```
 
+Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/var/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ dig example.com` that can be installed with [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) and verifying the server and query times.
+
+#### Custom Configuration
+
 Custom configurations can be created for _dnsmasq_ by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
 
  `/etc/NetworkManager/dnsmasq.d/cache`  `cache-size=1000` 
-
-When _dnsmasq_ is started by `NetworkManager`, the config file in this directory is used instead of the default config file.
-
-**Tip:** This method can allow you to enable custom DNS settings on particular domains. For instance: `server=/example1.com/example2.com/xx.xxx.xxx.x` change the first DNS address to `xx.xxx.xxx.xx` while browsing only the following websites `example1.com, example2.com`. This method is preferred to a global DNS configuration when using particular DNS nameservers which lack of speed, stability, privacy and security.
 
 #### IPv6
 
@@ -294,7 +299,11 @@ address=/#/1.2.3.4
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=409048](https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=409048)"
+## See also
+
+*   [Caching Nameserver using dnsmasq, and a few other tips and tricks.](http://www.g-loaded.eu/2010/09/18/caching-nameserver-using-dnsmasq/)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=412847](https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=412847)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -119,7 +119,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 *   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — KWin, el gestor de ventanas estándar de KDE en KDE 4.0, viene con la primera versión del soporte integrado para la composición, por lo que es también un gestor de composición. Esto permite a KWin proporcionar efectos gráficos avanzados, similar a Compiz, mientras que también proporciona todas las características de las versiones anteriores de KDE (como muy buena integración con el resto de KDE, configuración avanzada, prevención del enfoque, un gestor de ventanas bien testado y con un robusto manejo de las aplicaciones/herramientas con comportamiento anómalo, etc).
 
-[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **lwm** — lwm es un gestor de ventanas para X que trata de mantenerse fuera de lo común. No hay iconos, ni barras de botones, ni soporte para iconos, ni menú principal, nada de nada: si quiere todo eso, tendrá que optar por otros programas que se lo proporcionen. No hay ninguna opción de configurabilidad: un gestor de ventanas diferente, si tiene un sistema operativo con poco espacio de disco y escasa memoria física.
 
@@ -278,7 +278,7 @@ Nocion es un fork de Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Español)&oldid=411631](https://wiki.archlinux.org/index.php?title=Window_manager_(Español)&oldid=411631)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Español)&oldid=412835](https://wiki.archlinux.org/index.php?title=Window_manager_(Español)&oldid=412835)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

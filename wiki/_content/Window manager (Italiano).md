@@ -106,7 +106,7 @@ Consultare [Comparison of tiling window managers](/index.php/Comparison_of_tilin
 
 **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — KWin, il gestore di finestre KDE standard in KDE 4.0, fornito con la prima versione di supporto integrato per la composizione, lo rende anche un compositing manager. Questo permette a KWin di fornire effetti grafici avanzati, simili a Compiz, fornendo nel contempo tutte le caratteristiche delle precedenti versioni di KDE (come una buona integrazione con il resto di KDE, configurabilità avanzata, la prevenzione del focus, un window manager ben testato, manipolazione del comportamento anomalo di applicazioni/toolkit, ecc.).
 
-[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 **[lwm](https://en.wikipedia.org/wiki/Lightweight_window_manager "wikipedia:Lightweight window manager")** — lwm è un window manager per X che cerca di mantenersi completamente fuori dai piedi! Non ci sono icone, ne barre ne pulsanti, nessun menu principale, niente di niente: se si desiderano queste cose, bisognerà rivolgersi verso altri programmi che le possano offrire. Non c'è nemmeno una opzione di configurabilità: se la si vuole, bisognerà scegliere un window manager diverso: uno che aiuti il sistema operativo ad aumentare lo spazio occupato su disco e la memoria fisica occupata!
 
@@ -234,7 +234,7 @@ Notion è un fork di Ion3.
 
 [http://xmonad.org/](http://xmonad.org/) || [xmonad](https://www.archlinux.org/packages/?name=xmonad)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=411632](https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=411632)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=412836](https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=412836)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

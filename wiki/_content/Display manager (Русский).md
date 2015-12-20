@@ -58,7 +58,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)")** — экранный менеджер [KDE](/index.php/KDE "KDE").
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — независимый от среды рабочего стола экранный менеджер, основанный на WebKit.
 
@@ -178,7 +178,7 @@ _Это относится к Entrance и MDM._
 *   уровень громкости в PulseAudio не может быть отрегулирован,
 *   невозможно зайди в GNOME под другим пользователем.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=411575](https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=411575)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=412798](https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=412798)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

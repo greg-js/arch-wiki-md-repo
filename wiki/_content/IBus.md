@@ -140,7 +140,7 @@ to `~/.xprofile` and restart your X user session.
 
 ### Kimpanel
 
-IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. The package [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) is compiled to support IBus, but IBus needs to be launched as following to be able to communicate with the panel:
+IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. The package [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> is compiled to support IBus, but IBus needs to be launched as following to be able to communicate with the panel:
 
 ```
 $ ibus-daemon --xim --panel=/usr/lib/kde4/libexec/kimpanel-ibus-panel
@@ -269,7 +269,7 @@ If [Ibus does not let you write in a given language](https://code.google.com/p/i
 
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IBus&oldid=411922](https://wiki.archlinux.org/index.php?title=IBus&oldid=411922)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IBus&oldid=412809](https://wiki.archlinux.org/index.php?title=IBus&oldid=412809)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

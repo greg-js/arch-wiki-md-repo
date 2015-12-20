@@ -58,7 +58,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.3.</small> [輸入裝置](/index.php/Category:Input_devices_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Input devices (正體中文)") <small>(1)</small>
 
-<small>4.3.1.</small> [滑鼠](/index.php/Category:Mice_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mice (正體中文)") <small>(1)</small>
+<small>4.3.1.</small> [滑鼠](/index.php/Category:Mice_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mice (正體中文)") <small>(2)</small>
 
 <small>4.4.</small> [印表機](/index.php/Category:Printers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Printers (正體中文)") <small>(1)</small>
 
@@ -112,7 +112,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.12.</small> [X 伺服器](/index.php/Category:X_server_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:X server (正體中文)") <small>(5)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(正體中文)&oldid=411626](https://wiki.archlinux.org/index.php?title=Table_of_contents_(正體中文)&oldid=411626)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(正體中文)&oldid=412854](https://wiki.archlinux.org/index.php?title=Table_of_contents_(正體中文)&oldid=412854)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

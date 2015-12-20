@@ -41,7 +41,7 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager "wiki
 
 *   **[KDM](/index.php/KDM "KDM")** — Gestor de inicio de sesión de [KDE](/index.php/KDE "KDE")
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Gestor de pantalla multiescritorio, que puede utilizar varios frontends escritos en cualquier conjunto de herramientas
 
@@ -146,7 +146,7 @@ Véanse los siguientes informes bugtacker para más detalles:
 *   SDDM: [[2]](https://github.com/sddm/sddm/pull/95) (fixed in git master)
 *   SLiM: [[3]](https://bugs.archlinux.org/task/34329) [[4]](http://developer.berlios.de/bugs/?func=detailbug&bug_id=19102&group_id=2663)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Español)&oldid=411571](https://wiki.archlinux.org/index.php?title=Display_manager_(Español)&oldid=411571)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Español)&oldid=412795](https://wiki.archlinux.org/index.php?title=Display_manager_(Español)&oldid=412795)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

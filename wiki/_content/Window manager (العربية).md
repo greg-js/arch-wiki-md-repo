@@ -153,7 +153,7 @@ _يوفر الخادم إكس الإطار الأساسي، أو البدائي�
 
 *   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — KWin, مدير النوافذ المعياري في KDE4, التكوين فيه مدمج من النسخة الاولى ,يجعل منه مدير تكوين كذلك. هذا يسمح لـ KWin بتوفير تأثيرات رسومية متقدمة, مشابها لـ Compiz,بينما يوفر أيضا جميع الميزات السابقة من إصدارات KDE (مثل التكامل الجيد مع بقية إصدارات KDE,قابلية التكوين المتقدم, معالجة قوية من الفاسقة التطبيقات / الأدوات, ألخ.).
 
-[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://techbase.kde.org/Projects/KWin](http://techbase.kde.org/Projects/KWin) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **lwm** — lwm مدير نوافذ لـ إكس قد لا ترغب في إستعماله . ليس هنالك إيقونات, لا شريط الازرار,لا ايقونات الدوكي,لا قوائم اساسية , لا شيئ : إذا كنت تريد هذا , فالبرامج الاخرى يمكن ان توفر لك مما سبق.لا يوجد قابلية للتخصيص: إذا كنت لا تريد هذا استعمل مدير نوافذ اخر.
 
@@ -312,7 +312,7 @@ Notion فرع من Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=411635](https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=411635)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=412838](https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=412838)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

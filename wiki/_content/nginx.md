@@ -914,12 +914,9 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 ## See also
 
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
-*   [nginx official site](http://nginx.org/)
-*   [nginx HowTo](http://calomel.org/nginx.html)
-*   [Custom nginx indexer](http://blog.gotux.net/tutorial/custom-nginx-indexer/)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=411962](https://wiki.archlinux.org/index.php?title=Nginx&oldid=411962)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=412848](https://wiki.archlinux.org/index.php?title=Nginx&oldid=412848)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

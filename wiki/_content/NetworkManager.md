@@ -71,8 +71,7 @@ Related articles
     *   [6.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
     *   [6.5 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
         *   [6.5.1 GNOME](#GNOME_2)
-        *   [6.5.2 KDE](#KDE)
-        *   [6.5.3 SLiM login manager](#SLiM_login_manager)
+        *   [6.5.2 SLiM login manager](#SLiM_login_manager)
     *   [6.6 KDE and OpenConnect VPN with password authentication](#KDE_and_OpenConnect_VPN_with_password_authentication)
         *   [6.6.1 Troubleshooting](#Troubleshooting_2)
     *   [6.7 Ignore specific devices](#Ignore_specific_devices)
@@ -652,7 +651,7 @@ The passwords are accessible to the root user in the filesystem and to users wit
 
 If it is preferable to save the passwords in encrypted form instead of clear text, this can be achieved by storing them in a keyring which NetworkManager then queries for the passwords. A suggested keyring daemon is [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") or (for KDE specifically) [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet"). The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
 
-Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`. Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm), click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
+Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`. Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-plasma-nm)]</sup>, click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
 
 If the option was selected previously and you un-tick it, you may have to use the `reset` option first to make the password disappear from the file. Alternatively, delete the connection first and set it up again.
 
@@ -740,39 +739,17 @@ Log out and log back in to complete.
 
 Next time you log in, you should be asked if you want the password to be unlocked automatically on login.
 
-#### KDE
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The described approach seems to be very old. pam_keyring is unmaintained and [pam-keyring-tool](https://aur.archlinux.org/packages/pam-keyring-tool/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pam-keyring-tool)]</sup> has been flaged out of date since the end of 2012\. See if the approach described on the [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet") page helps you. (Discuss in [Talk:NetworkManager#](https://wiki.archlinux.org/index.php/Talk:NetworkManager))
-
-**Note:** See [https://wiki.gnome.org/Projects/GnomeKeyring/Pam/Manual](https://wiki.gnome.org/Projects/GnomeKeyring/Pam/Manual) for reference, and if you are using [KDE](/index.php/KDE "KDE") with KDM, you can use [pam-keyring-tool](https://aur.archlinux.org/packages/pam-keyring-tool/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pam-keyring-tool)]</sup>.
-
-Put a script like the following in `~/.kde4/Autostart`:
-
-```
- #!/bin/sh
- echo PASSWORD | /usr/bin/pam-keyring-tool --unlock --keyring=default -s
-
-```
-
-Similar should work with Openbox, LXDE, etc.
-
 #### SLiM login manager
 
 See [SLiM#SLiM and Gnome Keyring](/index.php/SLiM#SLiM_and_Gnome_Keyring "SLiM").
 
 ### KDE and OpenConnect VPN with password authentication
 
-[kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) now supports configuring username and password for OpenConnect VPN connections. Open your VPN connection, accept the certificate, and connection fields will appear. If not, see the instructions below. Now enter the correct username and password.
+[kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-plasma-nm)]</sup> now supports configuring username and password for OpenConnect VPN connections. Open your VPN connection, accept the certificate, and connection fields will appear. If not, see the instructions below. Now enter the correct username and password.
 
 #### Troubleshooting
 
-While you may type both values at connection time, [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
+While you may type both values at connection time, [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-plasma-nm)]</sup> 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
 
 Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace _username_ and _password_ accordingly):
 
@@ -797,24 +774,7 @@ After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager
 
 ### Enable DNS Caching
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq").**
-
-**Notes:** should be covered only in one place (Discuss in [Talk:NetworkManager#](https://wiki.archlinux.org/index.php/Talk:NetworkManager))
-
-DNS requests can be sped up by caching previous requests locally for subsequent lookup. NetworkManager has a plugin to enable DNS caching using dnsmasq, but it is not enabled in the default configuration. It is, however, easy to enable using the following instructions.
-
-Start by [installing](/index.php/Installing "Installing") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq). Then, edit `/etc/NetworkManager/NetworkManager.conf` and add the following line under the `[main]` section:
-
-```
-dns=dnsmasq
-
-```
-
-Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/var/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with dig and verifying the server and query times.
+See [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq") to enable the plugin that allows DNS caching using [dnsmasq](/index.php/Dnsmasq "Dnsmasq").
 
 ### Enable IPv6 Privacy Extensions
 
@@ -824,7 +784,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412138](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412138)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412845](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412845)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

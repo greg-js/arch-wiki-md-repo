@@ -155,7 +155,7 @@ As of installation nxserver is set to start up automatically, however, you are l
 
 #### Arch Linux
 
-Install one or both of [opennx](https://aur.archlinux.org/packages/opennx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennx)]</sup> and [nx-all](https://aur.archlinux.org/packages/nx-all/)<sup><small>AUR</small></sup> packages.
+Install one or both of [opennx](https://aur.archlinux.org/packages/opennx/)<sup><small>AUR</small></sup> and [nx-all](https://aur.archlinux.org/packages/nx-all/)<sup><small>AUR</small></sup> packages.
 
 #### Windows
 
@@ -508,7 +508,7 @@ Start eclipse using (see [https://bugs.eclipse.org/bugs/show_bug.cgi?id=386955](
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=FreeNX&oldid=400290](https://wiki.archlinux.org/index.php?title=FreeNX&oldid=400290)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=FreeNX&oldid=412805](https://wiki.archlinux.org/index.php?title=FreeNX&oldid=412805)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

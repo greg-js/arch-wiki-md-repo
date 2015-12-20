@@ -96,7 +96,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>3.5.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small>
 
-<small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small>
+<small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small>
 
 <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(5)</small>
 
@@ -140,7 +140,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.10.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small>
 
-<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(69)</small>
+<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(65)</small>
 
 <small>4.8.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(2)</small>
 
@@ -232,11 +232,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.3.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(1)</small>
 
-<small>6.3.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(17)</small>
+<small>6.3.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(14)</small>
 
-<small>6.3.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small>
+<small>6.3.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(16)</small>
 
-<small>6.3.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(22)</small>
+<small>6.3.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(20)</small>
 
 <small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles") <small>(4)</small>
 
@@ -258,7 +258,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small>
 
-<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small>
+<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(69)</small>
 
 <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(27)</small>
 
@@ -278,7 +278,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(60)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=411843](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=411843)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=412850](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=412850)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

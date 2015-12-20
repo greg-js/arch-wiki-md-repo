@@ -47,7 +47,7 @@ Um [gestor de display](https://en.wikipedia.org/wiki/X_display_manager_(program_
 
 *   **[KDM](/index.php/KDM "KDM")** — Gestor de Display do [KDE](/index.php/KDE "KDE")
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LXDM](/index.php/LXDM "LXDM")** — Gestor de Display do [LXDE](/index.php/LXDE "LXDE"). Pode ser usado independente do ambiente desktop LXDE.
 
@@ -83,7 +83,7 @@ session 	required 	pam_systemd.so
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Português)&oldid=411573](https://wiki.archlinux.org/index.php?title=Display_manager_(Português)&oldid=411573)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Português)&oldid=412797](https://wiki.archlinux.org/index.php?title=Display_manager_(Português)&oldid=412797)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

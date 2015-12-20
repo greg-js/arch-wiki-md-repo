@@ -49,7 +49,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 [http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)<sup><small>AUR</small></sup>
 
 *   [GDM](/index.php/GDM "GDM"): [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 显示管理器 。[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/)[gdm](https://www.archlinux.org/packages/?name=gdm)
-*   [KDM](/index.php/KDM "KDM"): [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") 显示管理器 ([kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)）
+*   [KDM](/index.php/KDM "KDM"): [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") 显示管理器 ([kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>）
 *   [LightDM](/index.php/LightDM "LightDM"):Ubuntu 开发的 GDM 替代品，使用 WebKit。跨桌面的显示管理器，可以使用各种前端写的任何工具。[http://www.freedesktop.org/wiki/Software/LightDM](http://www.freedesktop.org/wiki/Software/LightDM)[lightdm](https://www.archlinux.org/packages/?name=lightdm)||[lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/)<sup><small>AUR</small></sup>
 *   [LXDM](/index.php/LXDM "LXDM"): [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)") 显示管理器 (独立于桌面环境) ([lxdm](https://www.archlinux.org/packages/?name=lxdm))
 *   **MDM** — MDM 显示管理器使用在Linux Mint, a fork of GDM 2.
@@ -180,7 +180,7 @@ Some display managers are not fully compatible with systemd, because they reuse 
 *   PulseAudio volume cannot be adjusted,
 *   login failed into GNOME with another user.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(简体中文)&oldid=411580](https://wiki.archlinux.org/index.php?title=Display_manager_(简体中文)&oldid=411580)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(简体中文)&oldid=412801](https://wiki.archlinux.org/index.php?title=Display_manager_(简体中文)&oldid=412801)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -56,7 +56,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE") display manager.
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Cross-desktop display manager, can use various front-ends written in any toolkit.
 
@@ -188,7 +188,7 @@ Some display managers are not fully compatible with systemd, because they reuse 
 *   PulseAudio volume cannot be adjusted,
 *   login failed into GNOME with another user.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=412774](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=412774)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=412794](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=412794)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

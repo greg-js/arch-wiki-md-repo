@@ -118,8 +118,8 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Para obtener una lista de las aplicaciones que pueden ser de su interés, consulte [List of Applications (Español)](/index.php/List_of_Applications_(Espa%C3%B1ol) "List of Applications (Español)").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Installation_guide_(Español)&oldid=411585](https://wiki.archlinux.org/index.php?title=Installation_guide_(Español)&oldid=411585)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Installation_guide_(Español)&oldid=412855](https://wiki.archlinux.org/index.php?title=Installation_guide_(Español)&oldid=412855)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Descargando e Instalando Arch (Español)](/index.php?title=Category:Descargando_e_Instalando_Arch_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Descargando e Instalando Arch (Español) (page does not exist)")
+*   [Getting and installing Arch (Español)](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)")

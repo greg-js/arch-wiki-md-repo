@@ -67,7 +67,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Full featured clipboard manager for the KDE desktop.
 
-[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **Parcellite** — Lightweight yet feature-rich clipboard manager.
 
@@ -98,7 +98,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 *   [Cut-and-paste in X](http://standards.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 *   [X Selections, Cut Buffers, and Kill Rings.](http://www.jwz.org/doc/x-cut-and-paste.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Clipboard&oldid=410234](https://wiki.archlinux.org/index.php?title=Clipboard&oldid=410234)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Clipboard&oldid=412789](https://wiki.archlinux.org/index.php?title=Clipboard&oldid=412789)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

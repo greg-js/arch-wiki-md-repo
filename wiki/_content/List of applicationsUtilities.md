@@ -816,7 +816,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — Also known as KSysguard, is the [KDE](/index.php/KDE "KDE") task manager and performance monitor.
 
-[http://userbase.kde.org/KSysGuard](http://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://userbase.kde.org/KSysGuard](http://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **linux process explorer** — Graphical process explorer for Linux.
 
@@ -1050,7 +1050,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 [https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=412637](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=412637)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=412820](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=412820)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

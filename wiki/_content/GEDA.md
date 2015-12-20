@@ -34,7 +34,7 @@ The gEDA project was started because of the lack of free EDA tools for POSIX sys
 
 Installing [geda-gaf](https://www.archlinux.org/packages/?name=geda-gaf) will give you the schematic editor and attribute editor, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). It may also be necessary to install [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) to get the correct font scaling.
 
-Installing [pcb](https://aur.archlinux.org/packages/pcb/)<sup><small>AUR</small></sup> will give you the PCB editor, available from the [AUR](/index.php/AUR "AUR").
+Installing [pcb](https://www.archlinux.org/packages/?name=pcb) will give you the PCB editor, available from the [AUR](/index.php/AUR "AUR").
 
 Also you can install [xgsch2pcb](https://aur.archlinux.org/packages/xgsch2pcb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xgsch2pcb)]</sup> ([AUR](/index.php/AUR "AUR")), graphical interface to the gsch2pcb command-line tool for converting *.sch to *.pcb.
 
@@ -123,7 +123,7 @@ gsch2pcb will tell you what to do next or if there were any errors.
 
 ### Export to gerber
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GEDA&oldid=392150](https://wiki.archlinux.org/index.php?title=GEDA&oldid=392150)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GEDA&oldid=412806](https://wiki.archlinux.org/index.php?title=GEDA&oldid=412806)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

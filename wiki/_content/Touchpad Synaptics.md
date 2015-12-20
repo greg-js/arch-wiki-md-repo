@@ -186,7 +186,7 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 *   **kcm-touchpad** — A new touchpad configuration tool for [KDE](/index.php/KDE "KDE"), provides a module under input devices in system settings. Released in February 2014, works under KDE SC 4.12+. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/synaptiks)]</sup> and [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_touchpad)]</sup>.
 
-[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
+[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup>
 
 ### GNOME/Cinnamon
 
@@ -499,7 +499,7 @@ touchpad-state [--off] [--on]
 
 #### KDE
 
-If using KDE, the package [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad) can be set to disable the touchpad on mouse detection.
+If using KDE, the package [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup> can be set to disable the touchpad on mouse detection.
 
 If using Plasma, the package [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)]</sup> can be used to manage the touchpad.
 
@@ -967,7 +967,7 @@ On newer laptops such as the HP Envy 15 x360 a `ButtonRelease` event is not sent
 *   [Synaptics touchpad driver](http://cgit.freedesktop.org/xorg/driver/xf86-input-synaptics/)
 *   [Synaptics manual on x.org](http://www.x.org/archive/X11R7.5/doc/man/man4/synaptics.4.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=411655](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=411655)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=412831](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=412831)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -51,9 +51,7 @@ In GNOME, these settings are managed by gnome-settings-daemon, and the configura
 
 ## Systemd
 
-To enable bootup, shutdown and reboot sounds using canberra, run:
-
-`# systemctl enable canberra-system-bootup.service`
+To enable bootup, shutdown and reboot sounds using canberra, [enable](/index.php/Enable "Enable") `canberra-system-bootup` service.
 
 ## Tips and tricks
 
@@ -139,7 +137,7 @@ public class HelloWorld {
 
 *   [Libcanberra Reference Manual](http://0pointer.de/lennart/projects/libcanberra/gtkdoc/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Libcanberra&oldid=363490](https://wiki.archlinux.org/index.php?title=Libcanberra&oldid=363490)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Libcanberra&oldid=412860](https://wiki.archlinux.org/index.php?title=Libcanberra&oldid=412860)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -79,7 +79,7 @@ If that does not work, you can start the Dropbox sync client along with your win
 
 ### Starting on boot with systemd
 
-**Note:** systemd can start dropbox, but will not be correctly aware of it's status. You can follow this issue at [dropbox forum](https://www.dropboxforum.com/hc/en-us/community/posts/202917115-dropbox-will-not-start-under-systemd-on-linux).
+**Note:** _systemd_ can start Dropbox, but will not be correctly aware of its status. You can follow this issue on the [Dropbox forum](https://www.dropboxforum.com/hc/en-us/community/posts/202917115-dropbox-will-not-start-under-systemd-on-linux).
 
 To have Dropbox automatically start when your system boots, simply [enable](/index.php/Enable "Enable") the systemd service, passing your username as the instance identifier. The service unit to be enabled takes the format `dropbox@_username_`.
 
@@ -362,7 +362,7 @@ install -dm0 ~/.dropbox-dist
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=412766](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=412766)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=412851](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=412851)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

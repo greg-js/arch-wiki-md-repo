@@ -214,7 +214,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>8.5.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small>
 
-<small>8.6.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(13)</small>
+<small>8.6.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(12)</small>
 
 <small>8.6.1.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(2) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small>
 
@@ -226,7 +226,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>8.8.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(6)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=411848](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=411848)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=412852](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=412852)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

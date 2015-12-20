@@ -488,10 +488,10 @@ _Questa sezione cerca di tracciare un confronto tra i più diffusi ambienti desk
 [qt4](https://www.archlinux.org/packages/?name=qt4)</td>
 
 <td>[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_Workspaces#Desktop "wikipedia:KDE Plasma Workspaces")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 <td>[Konsole](http://konsole.kde.org/)  
 [kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [konsole](https://www.archlinux.org/packages/?name=konsole)]</sup></td>
@@ -515,7 +515,7 @@ _Questa sezione cerca di tracciare un confronto tra i più diffusi ambienti desk
 [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)</td>
 
 <td>[KDM](/index.php/KDM "KDM")  
-[kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)</td>
+[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup></td>
 
 </tr>
 
@@ -879,7 +879,7 @@ Molti utenti descrivono KDE come ambiente _simile a Windows_ e GNOME come _Simil
 
 Gli ambienti desktop rappresentano il mezzo più semplice di installare un_ambiente_grafico completo. Tuttavia, gli utenti sono liberi di costruire e personalizzare il proprio ambiente grafico in molti modi, se nessuno dei più diffusi ambienti desktop soddisfano le proprie esigenze. In generale, la costruzione di un ambiente personalizzato comporta la selezione di un idoneo [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") un [List of Applications#Taskbars / Panels / Docks|taskbar]], e un numero di applicazioni leggere (una scelta minimalista di solito comprende un [emulatore di terminale](/index.php/List_of_Applications_(Italiano)#Emulatori_di_terminale "List of Applications (Italiano)"), un [file manager](/index.php/List_of_Applications_(Italiano)#File_manager "List of Applications (Italiano)") e un [editor di testi](/index.php/List_of_Applications_(Italiano)#Editor_di_Testi "List of Applications (Italiano)")).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(Italiano)&oldid=411567](https://wiki.archlinux.org/index.php?title=Desktop_environment_(Italiano)&oldid=411567)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment_(Italiano)&oldid=412791](https://wiki.archlinux.org/index.php?title=Desktop_environment_(Italiano)&oldid=412791)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
