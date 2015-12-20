@@ -248,7 +248,7 @@ You can use [#agetpkg](#agetpkg) to easily download a specific package version f
 
 Or you can do it manually:
 
-1.  Run your favorite internet browser and go to [http://ala.seblu.net/packages](http://ala.seblu.net/packages);
+1.  Run your favorite internet browser and go to [https://archive.archlinux.org/packages](https://archive.archlinux.org/packages);
 2.  Go to the package you need and download it;
 3.  Run `pacman -U _pkgname_.pkg.tar.xz` as root.
 
@@ -259,15 +259,15 @@ To restore all the package you have at a specific date, let says 30th March 2014
 ```
 [core]
 SigLevel = PackageRequired
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 [extra]
 SigLevel = PackageRequired
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 [community]
 SigLevel = PackageRequired
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ```
 
@@ -278,7 +278,7 @@ or by replace your `/etc/pacman.d/mirrorlist` by the following content:
 ## Arch Linux repository mirrorlist                                             
 ## Generated on 2042-01-01                                                      
 ##
-Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
+Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch
 
 ```
 
@@ -308,7 +308,7 @@ Then update the database and force downgrade:
 *   The original ARM (_Archlinux Rollback Machine_) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412871](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412871)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412886](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412886)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

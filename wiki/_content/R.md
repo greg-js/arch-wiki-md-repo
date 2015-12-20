@@ -34,7 +34,7 @@ _R is a free software environment for statistical computing and graphics_ ([http
     *   [4.6 Vim-R](#Vim-R)
 *   [5 Optimized packages](#Optimized_packages)
     *   [5.1 OpenBLAS](#OpenBLAS)
-    *   [5.2 Intel mkl](#Intel_mkl)
+    *   [5.2 Intel MKL](#Intel_MKL)
     *   [5.3 intel-parallel-studio-xe](#intel-parallel-studio-xe)
 *   [6 See also](#See_also)
 
@@ -259,13 +259,13 @@ The [vim-r](https://aur.archlinux.org/packages/vim-r/)<sup><small>AUR</small></s
 
 ## Optimized packages
 
-The numerical libraries that comes with the R (generic [blas](https://www.archlinux.org/packages/?name=blas), LAPACK) do not have multithreading capabilities. Replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) package with an optimized BLAS can produce dramatic speed increases for many common computations in R. However the available optimized BLAS packages all have drawbacks such as requiring a commercial license or potentially interfering the standard R functionality for parallel processing. If you really need faster linear algebra in R you may consider the following options.
+The numerical libraries that comes with the R (generic [blas](https://www.archlinux.org/packages/?name=blas), LAPACK) do not have multithreading capabilities. Replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) package with an optimized BLAS can produce dramatic speed increases for many common computations in R. However the available optimized BLAS packages all have drawbacks such as requiring a commercial license or [potentially interfering with the standard R functionality for parallel processing](http://blog.revolutionanalytics.com/2015/10/edge-cases-in-using-the-intel-mkl-and-parallel-programming.html). If you really need faster linear algebra in R you may consider the following options.
 
 ### OpenBLAS
 
 [openblas](https://aur.archlinux.org/packages/openblas/)<sup><small>AUR</small></sup> can be installed from the [AUR](/index.php/AUR "AUR"), replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) from extra. If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
 
-### Intel mkl
+### Intel MKL
 
 **If your processors are Intel**, it is strongly advised to use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors, with performance far superior to traditional libraries.
 
@@ -307,7 +307,7 @@ make
 
 *   [RSeek](http://www.rseek.org/) A search engine for R related material.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=412166](https://wiki.archlinux.org/index.php?title=R&oldid=412166)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=412883](https://wiki.archlinux.org/index.php?title=R&oldid=412883)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

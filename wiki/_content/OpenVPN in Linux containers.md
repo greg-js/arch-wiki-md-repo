@@ -161,7 +161,7 @@ Start ufw and [enable](/index.php/Enable "Enable") `ufw.service` to start at boo
 
 #### pgl
 
-Additional protection can be had via using [pgl](/index.php/Pgl "Pgl") within the container. See the [PeerGuardian Linux#Running pgl from within a container](/index.php/PeerGuardian_Linux#Running_pgl_from_within_a_container "PeerGuardian Linux") article.
+Additional protection can be had via using [pgl](/index.php/Pgl "Pgl") within the container. See: [PeerGuardian Linux#Running pgl from within a container](/index.php/PeerGuardian_Linux#Running_pgl_from_within_a_container "PeerGuardian Linux").
 
 ## Test the service
 
@@ -176,7 +176,7 @@ The result should be a firefox window in the host's X server with the title, "Mo
 
 At this point, the IP and DNS entries corresponding to `/etc/openvpn/myprofile.conf` should be displayed.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412877](https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412877)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412878](https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412878)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

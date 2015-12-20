@@ -145,9 +145,9 @@ VoxForge
 
 Dragon Naturally Speaking in Wine
 
-Dragon Naturally Speaking software by Nuance is a well-functioning and popular implementation of speech dictation. It is developed for Windows, but has been run sucsessfully in a a linux enviornment using wine. It can be used independently for dictation into other wine programs such as notepad or it can be paired with Platypus to interface with any native linux program. Platypus also provides a feature to control of your OS using voice commands, similar to the programs described in [#List of voiced commands applications](#List_of_voiced_commands_applications).
+Dragon Naturally Speaking software by Nuance is a well-functioning and popular implementation of speech dictation. It is developed for Windows, but has been run successfully in a Linux enviornment using wine. It can be used independently for dictation into other wine programs such as notepad or it can be paired with Platypus to interface with any native linux program. Platypus also provides a feature to control of your OS using voice commands, similar to the programs described in [#List of voiced commands applications](#List_of_voiced_commands_applications).
 
-Nuance's software is non-free, so you will have to purchase a copy. Note that Dragon provides you with the ability to install it on a set number of machines. Installing/Reinstalling in wine may use up some of these licenses.
+Nuance's software is non-free, so you will have to purchase a copy. Note that Dragon provides you with the ability to install it on a set number of machines.Installing/Reinstalling in wine may use up some of these licenses.
 
 [Platypus Project](http://thenerdshow.com/platypus.html)
 
@@ -161,7 +161,7 @@ LumenVox Speech Engine
 
 VoxSigma
 
-[http://www.vocapia.com](http://www.vocapia.com) and [http://[wikipedia:VoxSigma](https://en.wikipedia.org/wiki/VoxSigma "wikipedia:VoxSigma") Wikipedia]
+[http://www.vocapia.com](http://www.vocapia.com) and [Wikipedia](https://en.wikipedia.org/wiki/VoxSigma "wikipedia:VoxSigma")
 
 VoxSigma is a speech-to-text software suite by Vocapia Research. It is well suited for broadcast monitoring, audio visual archive indexing, telephone speech analytics, transcription of business conference calls, and video subtitling.
 
@@ -169,7 +169,7 @@ VoxSigma is a speech-to-text software suite by Vocapia Research. It is well suit
 
 *   [Synthèse vocale en français sous Linux - KubuntuBlog (french)](http://kubuntu.free.fr/blog/index.php/2006/09/24/121-synthese-vocale-en-francais-sous-linux)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Speech_recognition&oldid=410173](https://wiki.archlinux.org/index.php?title=Speech_recognition&oldid=410173)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Speech_recognition&oldid=412882](https://wiki.archlinux.org/index.php?title=Speech_recognition&oldid=412882)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -64,7 +64,7 @@ _ownCloud_ needs a [web server](/index.php/Category:Web_server "Category:Web ser
 
 [Install](/index.php/Install "Install") the [owncloud](https://www.archlinux.org/packages/?name=owncloud) package.
 
-Uncomment the following **required** extensions in `/etc/php/php.ini`:
+Uncomment the following [required](https://doc.owncloud.org/server/8.2/admin_manual/installation/source_installation.html#prerequisites) extensions in `/etc/php/php.ini`:
 
 ```
 gd.so
@@ -75,7 +75,7 @@ zip.so
 
 ```
 
-It is also [recommended](https://doc.owncloud.org/server/8.1/admin_manual/installation/source_installation.html#prerequisites) to install [php-intl](https://www.archlinux.org/packages/?name=php-intl), [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) and uncomment the following extensions:
+It is also [recommended](https://doc.owncloud.org/server/8.2/admin_manual/installation/source_installation.html#prerequisites) to install [php-intl](https://www.archlinux.org/packages/?name=php-intl), [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) and uncomment the following extensions:
 
 ```
 bz2.so
@@ -819,7 +819,7 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=411966](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=411966)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=412887](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=412887)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

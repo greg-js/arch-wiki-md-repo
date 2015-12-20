@@ -82,7 +82,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie Desktop is a lightweight Desktop Environment designed with the modern user in mind, it focuses on simplicity and elegance. Also it resembles the Chrome/Chromium OS desktop layout.
 
-[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)<sup><small>AUR</small></sup>
+[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup>
 
 *   **[Common Desktop Environment](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
@@ -174,10 +174,10 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [gtk3](https://www.archlinux.org/packages/?name=gtk3)</td>
 
 <td>budgie-wm  
-[budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)<sup><small>AUR</small></sup></td>
+[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup></td>
 
 <td>budgie-panel  
-[budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)<sup><small>AUR</small></sup></td>
+[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup></td>
 
 <td>[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")  
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)</td>
@@ -1002,7 +1002,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412874](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412874)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412879](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412879)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
