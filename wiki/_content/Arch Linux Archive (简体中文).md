@@ -1,25 +1,27 @@
-# Arch Linux Archive
+# Arch Linux Archive (简体中文)
 
 From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+**翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-11，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=408495)可以查看翻译后英文页面的改动。
+
 Related articles
 
-*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
+*   [Downgrading packages (简体中文)](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")
 
-The **A**rch **L**inux **Archive** (_a.k.a ala_), formerly known as _Arch Linux Rollback Machine_ (_a.k.a ARM_), stores _official repositories snapshots_, _iso images_ and _bootstrap tarballs_ across time.
+Arch Linux 存档（**A**rch **L**inux **Archive**，_简称 ala_），以前称为 _Arch Linux 回滚机器（Arch Linux Rollback Machine_，_简称 ARM_），保存了 _官方仓库快照_、_iso 镜像_ 和 _引导程序包_ 的历史版本。
 
-**You can use it to**
+**用途**
 
-*   Downgrade to a previous version of one package (last version is broken, I want the previous one)
-*   Restore all your packages at a precise moment (All theses packages are broken, I want to go back 2 months ago)
-*   Find a previous version of an ISO image
+*   将某个包降级到某个早期版本（最新版本不能用，我需要之前的版本）
+*   将所有包恢复到某个指定的历史时刻（所有包都不能用，我要恢复到两个月之前的状态）
+*   查找某个历史版本的 ISO 镜像
 
 ## Contents
 
-*   [1 Location](#Location)
-*   [2 Directories](#Directories)
+*   [1 位置](#.E4.BD.8D.E7.BD.AE)
+*   [2 目录](#.E7.9B.AE.E5.BD.95)
     *   [2.1 /repos](#.2Frepos)
     *   [2.2 /packages](#.2Fpackages)
     *   [2.3 /iso](#.2Fiso)
@@ -29,30 +31,30 @@ The **A**rch **L**inux **Archive** (_a.k.a ala_), formerly known as _Arch Linux 
     *   [3.3 List all zsh versions](#List_all_zsh_versions)
     *   [3.4 Install all gvfs packages in version 1.26.0 release 3](#Install_all_gvfs_packages_in_version_1.26.0_release_3)
     *   [3.5 Download all pwgen packages](#Download_all_pwgen_packages)
-*   [4 FAQ](#FAQ)
-    *   [4.1 How to downgrade one package](#How_to_downgrade_one_package)
-    *   [4.2 How to restore all my packages at a specific date](#How_to_restore_all_my_packages_at_a_specific_date)
-*   [5 Sources](#Sources)
-*   [6 Future plan](#Future_plan)
-*   [7 History](#History)
+*   [4 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
+    *   [4.1 如何降级某个包](#.E5.A6.82.E4.BD.95.E9.99.8D.E7.BA.A7.E6.9F.90.E4.B8.AA.E5.8C.85)
+    *   [4.2 如何恢复所有包到指定日期](#.E5.A6.82.E4.BD.95.E6.81.A2.E5.A4.8D.E6.89.80.E6.9C.89.E5.8C.85.E5.88.B0.E6.8C.87.E5.AE.9A.E6.97.A5.E6.9C.9F)
+*   [5 源码](#.E6.BA.90.E7.A0.81)
+*   [6 未来计划](#.E6.9C.AA.E6.9D.A5.E8.AE.A1.E5.88.92)
+*   [7 历史](#.E5.8E.86.E5.8F.B2)
 
-## Location
+## 位置
 
-The Arch Linux Archive is currently available at [https://archive.archlinux.org/](https://archive.archlinux.org/) (former [http://ala.seblu.net/](http://ala.seblu.net/)).
+Arch Linux 存档目前位于 [https://archive.archlinux.org/](https://archive.archlinux.org/) (即以前的 [http://ala.seblu.net/](http://ala.seblu.net/) ) 。
 
-Previous locations listed below are deprecated and will be closed soon:
+此前的下列网址即将关闭，建议不要再使用：
 
 *   [http://seblu.net/a/archive](http://seblu.net/a/archive)
 *   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
 
-The following locations listed below are now closed:
+下列网址已关闭：
 
 *   [http://seblu.net/a/arm](http://seblu.net/a/arm)
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
 
-## Directories
+## 目录
 
-The **Archive** is split into 3 main directories detailed below.
+**存档**分为下列三个主目录：
 
 ```
 ├── iso
@@ -63,7 +65,7 @@ The **Archive** is split into 3 main directories detailed below.
 
 ### /repos
 
-The [repos](http://ala.seblu.net/repos) directory contains daily snapshots of official mirror organized by date like in the following example.
+[repos](http://ala.seblu.net/repos) 这个目录包含官方仓库镜像的每日快照，按下例结构组织：
 
 ```
 repos
@@ -116,11 +118,11 @@ repos
 
 ```
 
-Note: The last 3 special directories (**last**, **week** and **month**) which links respectively to the last synced repository, to the last monday and to the first of the current month.
+注意: 最下面的三个特定目录（**last**、**week** 和 **month**）分别链接到**已同步的最新仓库版本**、**本周星期一版本**和**本月一日版本**。
 
 ### /packages
 
-The [packages](http://ala.seblu.net/packages) directory contains all versions of each package with their signatures. One directory by package and package directories are grouped by their first letter.
+[packages](http://ala.seblu.net/packages) 这个目录包含每个包的所有版本及其相应的数字签名。每个包一个目录，按首字母排序。
 
 ```
 ├── packages
@@ -144,7 +146,7 @@ The [packages](http://ala.seblu.net/packages) directory contains all versions of
 
 ```
 
-You can use the magic subdirectory [.all](http://ala.seblu.net/packages/.all) to access all packages by their name. In a nutshell, all versions of each package in one flat directory. No clear-text listing allowed here.
+你可以使用“魔法目录”[.all](http://ala.seblu.net/packages/.all) 按包名访问所有包。In a nutshell, all versions of each package in one flat directory. No clear-text listing allowed here.
 
 ```
 ├── packages
@@ -201,7 +203,7 @@ The [iso](http://ala.seblu.net/iso) directory contains official ISO images and b
 
 **This article or section is out of date.**
 
-**Reason:** As of October 2015, the fate of the package is discussed in [arch-dev-public](https://lists.archlinux.org/pipermail/arch-dev-public/2015-October/027480.html). (Discuss in [Talk:Arch Linux Archive#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_Archive))
+**Reason:** As of October 2015, the fate of the package is discussed in [arch-dev-public](https://lists.archlinux.org/pipermail/arch-dev-public/2015-October/027480.html). (Discuss in [Talk:Arch Linux Archive (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_Archive_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 [agetpkg](https://www.archlinux.org/packages/?name=agetpkg)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> is a command line tool used to quickly list/get/install packages stored in the Archive.
 
@@ -240,9 +242,9 @@ agetpkg -g -a pwgen
 
 ```
 
-## FAQ
+## 常见问题
 
-### How to downgrade one package
+### 如何降级某个包
 
 You can use [#agetpkg](#agetpkg) to easily download a specific package version from the Archive.
 
@@ -252,9 +254,9 @@ Or you can do it manually:
 2.  Go to the package you need and download it;
 3.  Run `pacman -U _pkgname_.pkg.tar.xz` as root.
 
-### How to restore all my packages at a specific date
+### 如何恢复所有包到指定日期
 
-To restore all the package you have at a specific date, let says 30th March 2014, you have to stuck [pacman](/index.php/Pacman "Pacman") at this date, by editing your `/etc/pacman.conf` and use the following server directive:
+如果想恢复所有包到指定日期（比如2014年3月30日），你必须如下例所示编辑 `/etc/pacman.conf`，从而让 [pacman](/index.php/Pacman "Pacman") 保持在这个时间点并且直接使用指定的服务器：
 
 ```
 [core]
@@ -271,7 +273,7 @@ Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
 
 ```
 
-or by replace your `/etc/pacman.d/mirrorlist` by the following content:
+或者如下例编辑 `/etc/pacman.d/mirrorlist`：
 
 ```
 ##                                                                              
@@ -282,34 +284,35 @@ Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
 
 ```
 
-Then update the database and force downgrade:
+然后同步包数据库以强制降级：
 
 ```
 # pacman -Syyuu
 
 ```
 
-**Note:** It's not safe to mix Archive and up-to-date mirrors. In case of download failure, you can fall-back on an upstream package and you will have packages not from the same epoch as the rest of the system.
+**注意:** 混用归档和更新镜像很不安全。万一降级失败，In case of download failure, you can fall-back on an upstream package and you will have packages not from the same epoch as the rest of the system.
 
-## Sources
+## 源码
 
 *   [archivetools](https://github.com/seblu/archivetools) -- Software to run an Archive server
 *   [agetpkg](https://github.com/seblu/agetpkg) -- Software to easy downgrade package from the Archive
 
-## Future plan
+## 未来计划
 
 *   Move to official infrastructure.
 *   Automatic clean-up after a defined amount of time?
 *   Archive more stuff?
 
-## History
+## 历史
 
 *   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
 *   The original ARM (_Archlinux Rollback Machine_) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412871](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412871)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive_(简体中文)&oldid=412873](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive_(简体中文)&oldid=412873)"
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
+*   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
+*   [Package management (简体中文)](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)")

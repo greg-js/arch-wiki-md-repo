@@ -194,6 +194,9 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 <td>[Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")  
 [eog](https://www.archlinux.org/packages/?name=eog)</td>
 
+<td>[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")  
+[totem](https://www.archlinux.org/packages/?name=totem)</td>
+
 <td>[Chromium](/index.php/Chromium "Chromium")  
 [chromium](https://www.archlinux.org/packages/?name=chromium)</td>
 
@@ -767,17 +770,17 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 <td>[Pantheon Files](https://launchpad.net/pantheon-files)  
 [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files)</td>
 
-<td>[GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")  
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator)</td>
+<td>[Pantheon Calculator](https://launchpad.net/pantheon-calculator)  
+[pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/)<sup><small>AUR</small></sup></td>
 
 <td>[Scratch](https://launchpad.net/scratch)  
 [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor)</td>
 
-<td>[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")  
-[shotwell](https://www.archlinux.org/packages/?name=shotwell)</td>
+<td>[Pantheon Photos](https://launchpad.net/pantheon-photos)  
+[pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)</td>
 
-<td>[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")  
-[totem](https://www.archlinux.org/packages/?name=totem)</td>
+<td>[Audience](https://launchpad.net/audience)  
+[audience](https://www.archlinux.org/packages/?name=audience)</td>
 
 <td>[Midori](/index.php/Midori "Midori")  
 [midori](https://www.archlinux.org/packages/?name=midori)</td>
@@ -999,7 +1002,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412383](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412383)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412874](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412874)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

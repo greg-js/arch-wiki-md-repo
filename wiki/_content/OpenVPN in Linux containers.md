@@ -11,11 +11,10 @@ Related articles
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 *   [PeerGuardian_Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")
+*   [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 *   [ufw](/index.php/Ufw "Ufw")
 
 This article describes how to setup a [Linux Container](/index.php/Linux_Container "Linux Container") to run OpenVPN with a "kill switch" for secure/private internet use. Doing so offers a distinct advantage over using full-blown virtualization like [VirtualBox](/index.php/VirtualBox "VirtualBox") or [QEMU](/index.php/QEMU "QEMU") in that the resource overhead is minimal by comparison and able to run on low powered devices.
-
-An easier abstraction on LXC is [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") and the [OpenVPN systemd container tutorial](https://www.youtube.com/watch?v=7Obl8_dozh0&) is a walkthrough on how to set one up.
 
 ## Contents
 
@@ -85,7 +84,7 @@ lxc.cgroup.devices.allow = c 10:200 rwm
 
 ```
 
-**Note:** This example requires the use of the **autodev** hook which calls the corresponding `/var/lib/lxc/playtime/autodev` script which users need to create and make executable. For the sake of completeness, this script is provided below. Refer to the [Linux Containers](/index.php/Linux_Containers "Linux Containers") article for additional discussion if needed.
+**Note:** This example requires the use of the **autodev** hook which calls the corresponding `/var/lib/lxc/playtime/autodev` script which users need to create and make executable. For the sake of completeness, this script is provided below. Refer to [Linux Containers](/index.php/Linux_Containers "Linux Containers") for additional discussion if needed.
 
  `/var/lib/lxc/playtime/autodev` 
 
@@ -177,7 +176,7 @@ The result should be a firefox window in the host's X server with the title, "Mo
 
 At this point, the IP and DNS entries corresponding to `/etc/openvpn/myprofile.conf` should be displayed.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=410534](https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=410534)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412877](https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412877)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
