@@ -25,22 +25,21 @@ _Conky_ is a system monitor software for the X Window System. It is available fo
     *   [3.4 Custom colors](#Custom_colors)
     *   [3.5 Dual Screen](#Dual_Screen)
     *   [3.6 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
-    *   [3.7 Integrate with Gnome 3](#Integrate_with_Gnome_3)
-    *   [3.8 Integrate with KDE](#Integrate_with_KDE)
+    *   [3.7 Integrate with GNOME](#Integrate_with_GNOME)
+    *   [3.8 Integrate with KDE 4](#Integrate_with_KDE_4)
     *   [3.9 Integrate with Razor-qt](#Integrate_with_Razor-qt)
     *   [3.10 Display package update information](#Display_package_update_information)
     *   [3.11 Display weather forecast](#Display_weather_forecast)
     *   [3.12 Display a countdown timer](#Display_a_countdown_timer)
     *   [3.13 Display RSS feeds](#Display_RSS_feeds)
-    *   [3.14 Display Distrowatch Arch Linux ranking](#Display_Distrowatch_Arch_Linux_ranking)
-    *   [3.15 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [3.16 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [3.17 Display number of new emails (Gmail)](#Display_number_of_new_emails_.28Gmail.29)
-        *   [3.17.1 Other Methods](#Other_Methods)
-    *   [3.18 Display new emails (IMAP + SSL) using Perl](#Display_new_emails_.28IMAP_.2B_SSL.29_using_Perl)
-    *   [3.19 Display new emails (IMAP) using PHP](#Display_new_emails_.28IMAP.29_using_PHP)
-    *   [3.20 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-    *   [3.21 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
+    *   [3.14 Display rTorrent stats](#Display_rTorrent_stats)
+    *   [3.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+    *   [3.16 Display number of new emails (Gmail)](#Display_number_of_new_emails_.28Gmail.29)
+        *   [3.16.1 Other Methods](#Other_Methods)
+    *   [3.17 Display new emails (IMAP + SSL) using Perl](#Display_new_emails_.28IMAP_.2B_SSL.29_using_Perl)
+    *   [3.18 Display new emails (IMAP) using PHP](#Display_new_emails_.28IMAP.29_using_PHP)
+    *   [3.19 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+    *   [3.20 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
 *   [4 User-contributed configuration examples](#User-contributed_configuration_examples)
     *   [4.1 Graysky](#Graysky)
     *   [4.2 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
@@ -51,31 +50,26 @@ _Conky_ is a system monitor software for the X Window System. It is available fo
 
 ## Installation and configuration
 
-*   [Install](/index.php/Install "Install") the [conky](https://www.archlinux.org/packages/?name=conky) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [conky](https://www.archlinux.org/packages/?name=conky) package. For alternative packages with more features, see [#AUR packages](#AUR_packages).
 
-**Note:** This does not have lua support. See [#AUR packages](#AUR_packages)
-
-*   Edit the `~/.conkyrc` config file using an example configuration file from [homeproject-screenshot](http://conky.sourceforge.net/screenshots.html)
-
-When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your _conky_ window, and correct if your change is unappropriated.
-
-*   Alternatively, you can use the default configuration:
+Create a local configuration file:
 
 ```
+$ mkdir -p ~/.config/conky
 $ conky -C > ~/.config/conky/conky.conf
 
 ```
 
-Best is to use a local `~/.conkyrc` file. As many apps, _conky_ will first try to look for a local `.conkyrc` file. If this one does not exist, then it will read the default configuration.
+Now you can edit `~/.config/conky/conky.conf` to customize conky as you wish. For a few example configuration files, see [this page](https://github.com/brndnmtthws/conky/wiki/User-Configs).
 
-In case you store your configuration locally, e.g. in your home directory, you will not be able to read any log files unless you do some changes. One of the nice features of _conky_ is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, and you will thus need to `sudo` _conky_. Starting _conky_ as `root` is not recommended, so you will need to make this following changes:
+When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your _conky_ window, and correct if your change is unappropriated.
+
+One of the nice features of _conky_ is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, but running _conky_ as `root` is not recommended, so you will need to add `_username_` to the `log` group:
 
 ```
 # usermod -aG log _username_
 
 ```
-
-You add `_username_` to the `log` group. Now `_username_` can read log files, and you will be able to redirect log messages with _conky_ on your desktop.
 
 ## AUR packages
 
@@ -101,7 +95,7 @@ In addition to the basic _conky_ package, there are various [AUR](/index.php/AUR
 
 ### Enable real transparency in KDE4 and Xfce4
 
-Since version 1.8.0 _conky_ supports real transparency. To enable it add this line to `~/.conkyrc`:
+Since version 1.8.0 _conky_ supports real transparency. To enable it add this line to `conky.conf`:
 
 ```
 own_window_transparent yes
@@ -114,7 +108,7 @@ The above option is not desired with the `OWN_WINDOW_ARGB_VISUAL yes` option. Th
 
 ### Autostart with Xfce4
 
-In `.conkyrc` file:
+In `conky.conf` file:
 
 ```
 background yes
@@ -151,7 +145,7 @@ Hidden=false
 
 _Conky_ needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. _DBE_ is loaded automatically.
 
-To enable double buffering add `double_buffer yes` option to your `~/.conkyrc`.
+To enable double buffering add `double_buffer yes` option to your `conky.conf`.
 
 ### Custom colors
 
@@ -182,7 +176,7 @@ The `alignment` option is trivial, and `gap_X` option is the distance, in pixels
 
 **Using Compiz:** If the 'Show Desktop' button or key-binding minimizes Conky along with all other windows, start the Compiz configuration settings manager, go to "General Options" and uncheck the "Hide Skip Taskbar Windows" option.
 
-If you do not use Compiz, try editing `~/.conkyrc` and adding/changing the following line:
+If you do not use Compiz, try editing `conky.conf` and adding/changing the following line:
 
 ```
 own_window_type override
@@ -198,11 +192,11 @@ own_window_type desktop
 
 Refer to _conky_s man page for the exact differences. But the latter option enables you to snap windows to _conky_s border using resize key-binds in e.g. Openbox, which the first one does not.
 
-### Integrate with Gnome 3
+### Integrate with GNOME
 
-Some have experienced problems with _conky_ showing up under Gnome 3.
+Some have experienced problems with _conky_ showing up under [GNOME](/index.php/GNOME "GNOME").
 
-*   Add these lines to `~/.conkyrc`:
+*   Add these lines to `conky.conf`:
 
 ```
 own_window yes
@@ -220,11 +214,11 @@ own_window_argb_value 255
 
 ```
 
-### Integrate with KDE
+### Integrate with KDE 4
 
 _Conky_ with screenshot configuration generate problems with icons visualization. So there are some steps to follow:
 
-*   Add these lines to `~/.conkyrc`:
+*   Add these lines to `conky.conf`:
 
 ```
 own_window yes
@@ -243,68 +237,35 @@ minimum_size
 
 *   To automatically start _conky_, create this symlink:
 
-*   *   KDE4:
-
 ```
 $ ln -s /usr/bin/conky ~/.kde4/Autostart/conkylink
 
 ```
 
-*   *   KDE3:
+*   Install the [feh](https://www.archlinux.org/packages/?name=feh) package.
 
-```
-$ ln -s /usr/bin/conky ~/.kde/share/autostart/conkylink
+*   Make a script to allow transparency with the desktop:
 
-```
-
-*   Install the [feh](https://www.archlinux.org/packages/?name=feh) package which is available in the official repositories.
-*   Make a script to allow transparency with the desktop
-
-In KDE4 edit `~/.kde4/Autostart/fehconky`:
+ `~/.kde4/Autostart/fehconky` 
 
 ```
 #!/bin/bash
 feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"
-
-```
-
-In KDE3 edit `~/.kde/share/autostart/fehconky`:
-
-```
-#!/bin/bash
-feh --bg-scale $(dcop kdesktop KBackgroundIface currentWallpaper 1)
-
 ```
 
 use `--bg-center` if you use a centered wallpaper.
 
 *   Make it executable:
-    *   KDE4:
 
 ```
 $ chmod +x ~/.kde4/Autostart/fehconky
 
 ```
 
-*   *   KDE3:
-
-```
-$ chmod +x ~/.kde/share/autostart/fehconky
-
-```
-
-*   Instead of using a script, you can add the corresponding line to the bottom of `~/.conkyrc`
-    *   For KDE4
+*   Instead of using a script, you can add the corresponding line to the bottom of `conky.conf`
 
 ```
 ${exec feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"}
-
-```
-
-*   *   For KDE3
-
-```
-${exec feh --bg-scale $(dcop kdesktop KBackgroundIface currentWallpaper 1)}
 
 ```
 
@@ -312,7 +273,7 @@ ${exec feh --bg-scale $(dcop kdesktop KBackgroundIface currentWallpaper 1)}
 
 With _conky'_s default configuration, its window might disappear from the desktop when you click on the latter. Add these lines to:
 
- `~/.conkyrc` 
+ `conky.conf` 
 
 ```
 own_window yes
@@ -338,21 +299,13 @@ See [this thread](https://bbs.archlinux.org/viewtopic.php?id=37381).
 
 ### Display a countdown timer
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Dead link "conkytimer". (Discuss in [Talk:Conky#](https://wiki.archlinux.org/index.php/Talk:Conky))
-
-[conkytimer](https://github.com/orschiro/scriptlets/tree/master/conkytimer) is a simple countdown timer that displays the remaining time of a defined task.
+[ConkyTimer](https://github.com/orschiro/scriptlets/tree/master/ConkyTimer) is a simple countdown timer that displays the remaining time of a defined task.
 
 Start the timer using `conkytimer "<task description>" <min>`.
 
 ### Display RSS feeds
 
-_Conky_ has the ability to display RSS feeds natively without the need for an outside script to run and output into Conky. For example, to display the titles of the ten most recent Planet Arch updates and refresh the feed every minute, you would put this into your `~/.conkyrc` in the `TEXT` section:
+_Conky_ has the ability to display RSS feeds natively without the need for an outside script to run and output into Conky. For example, to display the titles of the ten most recent Planet Arch updates and refresh the feed every minute, you would put this into your `conky.conf` in the `TEXT` section:
 
 ```
 ${rss [https://planet.archlinux.org/rss20.xml](https://planet.archlinux.org/rss20.xml) 1 item_titles 10 }
@@ -367,18 +320,6 @@ ${rss [https://bbs.archlinux.org/extern.php?action=feed&type=rss](https://bbs.ar
 ```
 
 where 1 is in minutes the refresh interval (15 mn is default),4 the number of items you wish to show.
-
-### Display Distrowatch Arch Linux ranking
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Old thread, should be renewed. (Discuss in [Talk:Conky#](https://wiki.archlinux.org/index.php/Talk:Conky))
-
-See [this thread](https://bbs.archlinux.org/viewtopic.php?id=88779).
 
 ### Display rTorrent stats
 
@@ -449,7 +390,7 @@ print(fullcount + ' new')
 
 ```
 
-Add the following string to your `~/.conkyrc` in order the check your Gmail account for new email every five minutes (300 seconds) and display:
+Add the following string to your `conky.conf` in order the check your Gmail account for new email every five minutes (300 seconds) and display:
 
 ```
 ${execpi 300 python ~/.scripts/gmail.py}
@@ -469,7 +410,7 @@ replace _email_ and _password_ with your data.
 
 Alternatively, you can use [stunnel](http://www.stunnel.org/) which is provided by the [stunnel](https://www.archlinux.org/packages/?name=stunnel) package.
 
-The following configuration is taken from [Conky's FAQ](http://conky.sourceforge.net/faq.html)
+The following configuration is taken from [Conky's FAQ](https://github.com/brndnmtthws/conky/wiki/FAQ)
 
 Modify `/etc/stunnel/stunnel.conf` as follows, and then start the `stunnel` [daemon](/index.php/Daemon "Daemon"):
 
@@ -489,7 +430,7 @@ connect = imap.gmail.com:993
 
 ```
 
-The only thing left is our `~/.conkyrc`:
+The only thing left is our `conky.conf`:
 
 ```
 imap localhost username * -i 120 -p 993
@@ -544,7 +485,7 @@ $client->logout();
 
 ```
 
-Add to `~/.conkyrc`:
+Add to `conky.conf`:
 
 ```
 ${execpi 300 ~/.conky/imap.pl} 
@@ -559,19 +500,7 @@ Alternatively, you can use stunnel as shown above: [#Display number of new email
 
 ### Display new emails (IMAP) using PHP
 
-Another alternative using PHP needs PHP to be installed and the imap extension to be activated. Just edit `/etc/php/php.ini` and uncomment this line:
-
-```
-;extension=imap.so
-
-```
-
-so that it reads
-
-```
-extension=imap.so
-
-```
+Another alternative using PHP. PHP needs to be installed and `extension=imap.so` must be uncommented in `/etc/php/php.ini`.
 
 Then create a file named `imap.php` in a location to be read by _conky_. Make the file executable:
 
@@ -609,7 +538,7 @@ imap_close($mbox);
 
 ```
 
-Add to `~/.conkyrc`:
+Add to `conky.conf`:
 
 ```
 ${execpi 300 ~/.conky/imap.php} 
@@ -639,13 +568,13 @@ This is the expected result :
 
 ### Fix scrolling with UTF-8 multibyte characters
 
-The current version of _conky_ (1.9.0) suffers from a bug ([http://sourceforge.net/p/conky/bugs/341/](http://sourceforge.net/p/conky/bugs/341/)) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)<sup><small>AUR</small></sup>
+The current version of _conky_ (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)<sup><small>AUR</small></sup>
 
 ## User-contributed configuration examples
 
 ### Graysky
 
-[Here](https://raw.github.com/graysky2/configs/5fbe513918dfe8066f87e670108318464902afae/dotfiles/.conkyrc) it is - modify to fit your system. Optimized for a quad core chip w/ several hdds (although one of them is not connected for this screenshot) and an nvidia graphics card. You can easily modify this to a dual or single core system with one or whatever number of hdds.
+[conky.conf Here](https://raw.github.com/graysky2/configs/5fbe513918dfe8066f87e670108318464902afae/dotfiles/) it is - modify to fit your system. Optimized for a quad core chip w/ several hdds (although one of them is not connected for this screenshot) and an nvidia graphics card. You can easily modify this to a dual or single core system with one or whatever number of hdds.
 
 ### A sample rings script with nvidia support
 
@@ -653,7 +582,7 @@ See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
 
 ## A note about symbolic fonts
 
-Many of the more decorated `.conkyrc`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/)<sup><small>AUR</small></sup> and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-piechartsformaps)]</sup> respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
+Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/)<sup><small>AUR</small></sup> and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-piechartsformaps)]</sup> respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
 
 ## Fonts appear smaller than they should
 
@@ -690,7 +619,7 @@ verify that _conky_ is running, and use _xprop_ and click on the _conky_ window 
 
  `$ xprop | grep WM_NAME`  `WM_NAME(STRING) = "Conky (ArchitectLinux)"` 
 
-In this case, _conky_ is right, but for you it may be different, so be sure to use your output instead. If `~/.conkyrc` has an option `own_window_type` set to `panel`, then this _xprop_ invocation may show no output. Try using `dock`, `normal`, `override` or `desktop` instead.
+In this case, _conky_ is right, but for you it may be different, so be sure to use your output instead. If `conky.conf` has an option `own_window_type` set to `panel`, then this _xprop_ invocation may show no output. Try using `dock`, `normal`, `override` or `desktop` instead.
 
 Use this in `~/.xinitrc` to have transparent _conky_ after [X](/index.php/X "X") starts up:
 
@@ -702,15 +631,14 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 
 ## See also
 
+*   [Official website](https://github.com/brndnmtthws/conky)
 *   [Official Conky variables for configuration](http://conky.sourceforge.net/config_settings.html)
 *   [Conky Configs on arch forums](https://bbs.archlinux.org/viewtopic.php?id=39906)
-*   [Official website](http://conky.sourceforge.net/)
 *   [Conky](http://freshmeat.net/projects/conky/) on [Freshmeat](https://en.wikipedia.org/wiki/Freshmeat "wikipedia:Freshmeat")
-*   [Conky](http://sourceforge.net/projects/conky/) on [SourceForge](https://en.wikipedia.org/wiki/sourceforge.net "wikipedia:sourceforge.net")
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=412055](https://wiki.archlinux.org/index.php?title=Conky&oldid=412055)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=412923](https://wiki.archlinux.org/index.php?title=Conky&oldid=412923)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

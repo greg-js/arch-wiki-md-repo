@@ -475,7 +475,7 @@ If you own a PS3 controller and can connect with USB, xboxdrv has the mappings b
 
 With your controller connected via Bluetooth, find the device address with `bluetoothctl`. Then create a new udev rule with the following content:
 
- `/etc/udev/rules.d/99-dualshock.rules`  `output=KERNEL=="event*", SUBSYSTEM=="input", ATTRS{uniq}=="<device_addr_you_got_on_pairing>", SYMLINK+="input/dualshock3"` 
+ `/etc/udev/rules.d/99-dualshock.rules`  `KERNEL=="event*", SUBSYSTEM=="input", ATTRS{uniq}=="<device_addr_you_got_on_pairing>", SYMLINK+="input/dualshock3"` 
 
 The address must be in lowercase, like `06:9a:b4:c8:ef:8b`.
 
@@ -556,7 +556,7 @@ Assuming the device in question is `/dev/input/js0`. After you placed the rule r
 
 Then replug the device making you trouble. The joystick and event devices should be gone, although their number will still be reserved. But the files are out of the way.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412808](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412808)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412927](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412927)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

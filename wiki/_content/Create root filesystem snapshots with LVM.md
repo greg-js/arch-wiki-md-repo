@@ -122,7 +122,7 @@ PIDFile=/run/dmeventd.pid
 OOMScoreAdjust=-1000
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Create_root_filesystem_snapshots_with_LVM&oldid=391034](https://wiki.archlinux.org/index.php?title=Create_root_filesystem_snapshots_with_LVM&oldid=391034)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Create_root_filesystem_snapshots_with_LVM&oldid=412894](https://wiki.archlinux.org/index.php?title=Create_root_filesystem_snapshots_with_LVM&oldid=412894)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

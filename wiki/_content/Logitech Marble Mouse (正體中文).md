@@ -14,7 +14,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [3.1 按鍵與軌跡球](#.E6.8C.89.E9.8D.B5.E8.88.87.E8.BB.8C.E8.B7.A1.E7.90.83)
         *   [3.1.1 指定按鍵](#.E6.8C.87.E5.AE.9A.E6.8C.89.E9.8D.B5)
         *   [3.1.2 雙擊大按鍵](#.E9.9B.99.E6.93.8A.E5.A4.A7.E6.8C.89.E9.8D.B5)
-        *   [3.1.3 Scroll modifier](#Scroll_modifier)
+        *   [3.1.3 滾輪修正鍵](#.E6.BB.BE.E8.BC.AA.E4.BF.AE.E6.AD.A3.E9.8D.B5)
     *   [3.2 Right-side or left-side](#Right-side_or_left-side)
     *   [3.3 System-wide or per-user](#System-wide_or_per-user)
     *   [3.4 Xorg input hotplugging](#Xorg_input_hotplugging)
@@ -299,38 +299,35 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled 
 
 每個使用者僅需下一次令命即可，Gnome會記得這個設定。如果你感興趣可以參考 [launchpad bug](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-evdev/+bug/874237/comments/13)。
 
-#### Scroll modifier
+#### 滾輪修正鍵
 
-One huge limitation for the Marble Mouse is the lack of a scroll wheel or scroll ring. This limitation is overcome by assigning a _scroll modifier_: a mouse button which allows the trackball to scroll. When the scroll modifier is held, the trackball scrolls. Although a scroll modifier is _assigned_ by default (see [basic function](#Basic_function)), the scroll modifier is **not enabled** by default. In addition to enabling the scroll modifier, you may _also_ assign it to a different button.
+羅技木星軌跡球的一個嚴重缺點是沒有滾輪或是滾輪環，但可以藉由設定「滾輪修正鍵」來克服這個問題，即按下一個按鈕，使得軌跡球的滾動變成滾輪。雖然，預設已有提供滾輪修正鍵的功能(參 [基本功能](#Basic_function))，但滾動修正鍵並沒有被啟用。若要啟用，必需設定給不同的按鍵。
 
-**Note:** The scroll button has a "click" function in addition to its scroll function. The scroll modifier is a "press and hold" function separate from the "click" function. The best choice for scroll modifier is one of the small buttons. Unfortunately, standard "click" actions for those buttons are awkward. I recommend you reassign click actions for the small buttons.
+**Note:** 除了滾動功能外，滾輪鍵還有「點」的功能。滾輪修正鍵的「長壓」與「點」的功能是分開的，較佳可將兩個小按鍵之一設定成滾輪修正鍵。 原本小按鍵的預設功能也不甚方便，我建議你重新設定它們。
 
-The standard scroll setting defines the small button for scrolling — that is good, — but the same button has a default _"click"_ action that is _**browser back**_. A better choice is _**middle-click**_. _Middle-click_ corresponds to what you would expect from years of wheel mouse usage.
+小按鍵的原設定是滾動修正鍵，但同時該小按鍵的「點」的預設功能是「上一頁」，根據多年的使用經驗，建議設成「中鍵」。
 
-Putting complaints aside (these are addressed by reassigning small buttons), you specify a button to be the _**scroll modifier**_:
+撇開關於小按鍵的抱怨不談，你可以如下設定「滾輪修正鍵」
 
 ```
 Option "EmulateWheel" "true"
 Option "EmulateWheelButton" "8"
 
-# Button 8 is the small button on the left side, which works well for right-handed users.
-# Button 9 is the small button on the right side, which works well for left-handed users.
-# Button 2 cannot be assigned as the scroll modifier; AKA "EmulateWheelButton".
+# 按鍵8是左邊的小按鍵，適合右手使用者。
+# 按鍵9是右邊的小按鍵，適合左手使用者。
+# 按鍵2不可設定成「滾輪修正鍵」（又稱做"EmulateWheelButton"）
 
 ```
 
-**Disable horizontal scrolling**
-
-A particular configuration line enables horizontal scrolling. You disable horizontal scrolling by commenting that line out.
+**取消水平捲動** 你可以取消下行的註解，來取消水平捲動。
 
 ```
-# A hash mark disables a configuration line.
-
+# 井字號是註解
 # Option "XAxisMapping" "6 7"
 
 ```
 
-I use both scrolling directions, but some may find this restriction helpful. You cannot disable vertical scrolling in a similar fashion — not that you would want to, anyway.
+雖然我使用兩個方向的捲動，但不少人認為單一方向的捲動比較好用。 也許你想嘗試取消垂直方向的捲動，但是類似設定是不能取消垂直方向捲動的。
 
 ### Right-side or left-side
 
@@ -676,7 +673,7 @@ The slightest horizontal motion triggers a URL redirection. To fix this:
 *   Ubuntu community: [Logitech Marble Mouse](https://help.ubuntu.com/community/Logitech_Marblemouse_USB)
 *   Chrome web store: [AutoScroll extension](https://chrome.google.com/webstore/detail/occjjkgifpmdgodlplnacmkejpdionan)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412763](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412763)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412889](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412889)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

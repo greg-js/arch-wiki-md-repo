@@ -83,9 +83,7 @@ For this initialization, [entropy](https://en.wikipedia.org/wiki/Entropy_(comput
 
 The randomness created is used to set up a keyring (`/etc/pacman.d/gnupg`) and the GPG signing key of your system.
 
-**Note:** If you need to run `pacman-key --init` on computer that does not generate much entropy (e.g. a headless server), key generation may take a very long time. To generate pseudo-entropy, either install the [haveged](https://www.archlinux.org/packages/?name=haveged) or the [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) package on the target machine.
-
-[Start](/index.php/Start "Start") `haveged.service` before running `pacman-key --init` as root.
+**Note:** If you need to run `pacman-key --init` on computer that does not generate much entropy (e.g. a headless server), key generation may take a very long time. To generate pseudo-entropy, install either [haveged](/index.php/Haveged "Haveged") or [rng-tools](/index.php/Rng-tools "Rng-tools") on the target machine and start the corresponding service before running `pacman-key --init`.
 
 ## Managing the keyring
 
@@ -260,7 +258,7 @@ to `/etc/pacman.d/gnupg/gpg.conf`.
 *   [Pacman Package Signing – 3: Pacman](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)
 *   [Pacman Package Signing – 4: Arch Linux](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=409728](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=409728)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=412903](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=412903)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

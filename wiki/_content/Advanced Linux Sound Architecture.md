@@ -81,7 +81,21 @@ If you need [high quality resampling](#High_quality_resampling) install the [als
 
 ### OSS compatibility
 
-If you want [OSS](/index.php/OSS "OSS") applications to work with [dmix](#Dmix), install the [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss) package as well. Then load the [kernel modules](/index.php/Kernel_modules "Kernel modules") `snd_seq_oss`, `snd_pcm_oss` and `snd_mixer_oss` to enable OSS emulation.
+**IMPORTANT if your application complains of missing /dev/dsp or /dev/snd/seq!**
+
+ALSA has some ability to intercept [OSS](/index.php/OSS "OSS") calls and re-route them through ALSA instead. This emulation layer is useful e.g. for legacy applications which try to open /dev/dsp and write sound data to them directly. Without OSS or the emulation library, /dev/dsp will be missing, and the application will not produce any sound.
+
+If you want [OSS](/index.php/OSS "OSS") applications to work with [dmix](#Dmix), install the [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss) package as well. Then load the [kernel modules](/index.php/Kernel_modules "Kernel modules") `snd-seq-oss`, `snd-pcm-oss` and `snd-mixer-oss` to enable OSS emulation. To have these modules available from system startup, create a file as follows:
+
+ `/etc/modules-load.d/alsa-oss.conf` 
+
+```
+# ALSA-OSS emulation
+snd-seq-oss
+snd-pcm-oss
+snd-mixer-oss
+
+```
 
 ### ALSA and Systemd
 
@@ -882,7 +896,7 @@ amixer set Master toggle
 *   [A close look at ALSA: ALSA concept introduction](http://www.volkerschatz.com/noise/alsa.html)
 *   [Linux ALSA sound notes](http://www.sabi.co.uk/Notes/linuxSoundALSA.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=403814](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=403814)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=412924](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=412924)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

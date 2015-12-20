@@ -46,13 +46,6 @@ The default configuration file specifies `/srv/http/` as the document directory 
 
  `/srv/http/index.html`  `Hello world!` 
 
-Fix the permissions of the logs path, which is owned by root by default:
-
-```
-# chown -R http:http /var/log/lighttpd
-
-```
-
 Then [start/enable](/index.php/Start/enable "Start/enable") the `lighttpd.service` and point your browser to `localhost`, where you should see the test page.
 
 Example configuration files are available in `/usr/share/doc/lighttpd/`.
@@ -479,7 +472,7 @@ include "conf.d/compress.conf"
 
 *   [Lighttpd wiki](http://redmine.lighttpd.net/projects/lighttpd/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lighttpd&oldid=392352](https://wiki.archlinux.org/index.php?title=Lighttpd&oldid=392352)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lighttpd&oldid=412896](https://wiki.archlinux.org/index.php?title=Lighttpd&oldid=412896)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

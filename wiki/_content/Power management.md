@@ -36,6 +36,7 @@ The purpose of this page is to provide general overview of power management in A
 *   [2 Power management with systemd](#Power_management_with_systemd)
     *   [2.1 ACPI events](#ACPI_events)
         *   [2.1.1 Power managers](#Power_managers)
+        *   [2.1.2 xss-lock](#xss-lock)
     *   [2.2 Suspend and hibernate](#Suspend_and_hibernate)
         *   [2.2.1 Hybrid sleep](#Hybrid_sleep)
     *   [2.3 Sleep hooks](#Sleep_hooks)
@@ -184,6 +185,17 @@ To apply any changes, [restart](/index.php/Restart "Restart") the `systemd-login
 Some [desktop environments](/index.php/Desktop_environment "Desktop environment") include power managers which [inhibit](http://www.freedesktop.org/wiki/Software/systemd/inhibit/) (temporarily turn off) some or all of the _systemd_ ACPI settings. If such a power manager is running, then the actions for ACPI events can be configured in the power manager alone. Changes to `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` need be made only if you wish to configure behaviour for a particular event that is not inhibited by the power manager.
 
 Note that if the power manager does not inhibit _systemd_ for the appropriate events you can end up with a situation where _systemd_ suspends your system and then when the system is woken up the other power manager suspends it again. Currently, only the power managers of [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME") and [Xfce](/index.php/Xfce "Xfce") issue the necessary _inhibited_ commands. If the _inhibited_ commands are not being issued, such as when using [acpid](/index.php/Acpid "Acpid") or others to handle ACPI events, set the `Handle` options to `ignore`. See also `man systemd-inhibit`.
+
+#### xss-lock
+
+[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/)<sup><small>AUR</small></sup> subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). _xss-lock_ also reacts to the [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") and runs or kills the locker in response to the x-server signals.
+
+Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for example
+
+```
+xss-lock -- i3lock -n -i _background_image.png_ &
+
+```
 
 ### Suspend and hibernate
 
@@ -767,7 +779,7 @@ done
 *   [ThinkWiki:How to reduce power consumption](http://www.thinkwiki.org/wiki/How_to_reduce_power_consumption)
 *   [Ubuntu Wiki's Power Saving Tweaks](https://wiki.ubuntu.com/Kernel/PowerManagement/PowerSavingTweaks)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management&oldid=410947](https://wiki.archlinux.org/index.php?title=Power_management&oldid=410947)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management&oldid=412937](https://wiki.archlinux.org/index.php?title=Power_management&oldid=412937)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

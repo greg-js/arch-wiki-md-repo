@@ -179,7 +179,7 @@ optdepends=('cups: printing support'
 
 ### makedepends
 
-An array of packages that are **only** required to build the software. The minimum dependency version can be specified in the same format as in the `depends` array.
+An array of packages that are **only** required to build the software. The minimum dependency version can be specified in the same format as in the `depends` array. The packages in the `depends` array are implicitly required to build the package, they should not be duplicated here.
 
 **Tip:** The following can be used to see if a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or pulled in by a members of the group:
 
@@ -337,7 +337,7 @@ An array of SHA-2 checksums with digest sizes 224, 384, and 512 bits, respective
 *   [PKGBUILD(5) Manual Page](https://www.archlinux.org/pacman/PKGBUILD.5.html)
 *   [Example PKGBUILD file](http://ix.io/kXu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=410746](https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=410746)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=412917](https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=412917)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
