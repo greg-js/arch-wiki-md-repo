@@ -460,7 +460,7 @@ NoExtract = usr/share/vim/vim74/lang/*
 
 ```
 
-Later rules override previous ones, and you can negate a rule by prepending `!` -- this allows you to keep the locales you need.
+Later rules override previous ones, and you can negate a rule by prepending `!` — this allows you to keep the locales you need.
 
 #### Maintain several configuration files
 
@@ -684,7 +684,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=412866](https://wiki.archlinux.org/index.php?title=Pacman&oldid=412866)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=412954](https://wiki.archlinux.org/index.php?title=Pacman&oldid=412954)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

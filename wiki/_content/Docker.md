@@ -28,7 +28,7 @@ Related articles
         *   [4.1.2 i686](#i686)
         *   [4.1.3 Build Image](#Build_Image)
     *   [4.2 Debian](#Debian)
-*   [5 ArchLinux image with snapshot repository](#ArchLinux_image_with_snapshot_repository)
+*   [5 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
 *   [6 Useful tips](#Useful_tips)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Docker info errors out](#Docker_info_errors_out)
@@ -168,7 +168,7 @@ Build Debian image with [debootstrap](https://aur.archlinux.org/packages/deboots
 
 ```
 
-## ArchLinux image with snapshot repository
+## Arch Linux image with snapshot repository
 
 Archlinux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions a [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
 
@@ -236,7 +236,7 @@ Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `dock
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/installation/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=411173](https://wiki.archlinux.org/index.php?title=Docker&oldid=411173)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=412953](https://wiki.archlinux.org/index.php?title=Docker&oldid=412953)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -10,7 +10,7 @@ Related articles
 *   [MPlayer](/index.php/MPlayer "MPlayer")
 *   [Video2dvdiso](/index.php/Video2dvdiso "Video2dvdiso")
 
-An overview of [Wikipedia:MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder"), the video encoding/decoding tool provided by [MPlayer](/index.php/MPlayer "MPlayer") as part of the [mencoder](https://www.archlinux.org/packages/?name=mencoder) package.
+An overview of [MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder"), the video encoding/decoding tool provided by [MPlayer](/index.php/MPlayer "MPlayer") as part of the [mencoder](https://www.archlinux.org/packages/?name=mencoder) package.
 
 ## Contents
 
@@ -343,7 +343,7 @@ The official MPlayer homepage has a comprehensive list of available front-ends [
 
     This program is a simple java front-end for the free and very useful MPlayer software, for the purpose of encoding video. Initially the focus is on converting DVD into MPEG-4.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412349](https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412349)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412959](https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412959)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

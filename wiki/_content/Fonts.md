@@ -484,7 +484,8 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
 *   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/)<sup><small>AUR</small></sup> - MathType fonts
-*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/)<sup><small>AUR</small></sup>
+*   [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/)<sup><small>AUR</small></sup> - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) (of TeX fame)
+*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/)<sup><small>AUR</small></sup> - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with math support
 
 ### Microsoft fonts
 
@@ -515,7 +516,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   Cousine ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup> or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>) - Chrome/Chromium OS replacement for Courier New (metric-compatible)
 *   [DejaVu Sans Mono](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
 *   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) "wikipedia:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>)
-*   Envy Code R ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)<sup><small>AUR</small></sup>)
+*   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)<sup><small>AUR</small></sup>)
 *   Fantasque Sans Mono ([ttf-fantasque-sans](https://aur.archlinux.org/packages/ttf-fantasque-sans/)<sup><small>AUR</small></sup> or [ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/)<sup><small>AUR</small></sup>)
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>) - Excellent programming font
@@ -584,6 +585,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
 *   Tinos ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup> or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>) - Chrome/Chromium OS replacement for Times New Roman (metric-compatible)
+*   [XITS](https://en.wikipedia.org/wiki/XITS_font_project "wikipedia:XITS font project") ([otf-xits](https://aur.archlinux.org/packages/otf-xits/)<sup><small>AUR</small></sup>)
 
 ### Unsorted
 
@@ -670,7 +672,7 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 
 *   [State of Text Rendering](http://behdad.org/text/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=412432](https://wiki.archlinux.org/index.php?title=Fonts&oldid=412432)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=412958](https://wiki.archlinux.org/index.php?title=Fonts&oldid=412958)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

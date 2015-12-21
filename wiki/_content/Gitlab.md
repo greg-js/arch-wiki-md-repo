@@ -815,6 +815,8 @@ Enable your Gitlab virtual host and reload [Apache](/index.php/Apache "Apache"):
 
  `/etc/httpd/conf/httpd.conf`  ` Include /etc/httpd/conf/extra/gitlab.conf` 
 
+Copy the Apache gitlab.conf file [Template:Sudo cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf](/index.php?title=Template:Sudo_cp_/etc/webapps/gitlab/apache.conf.example_/etc/httpd/conf/extra/gitlab.conf&action=edit&redlink=1 "Template:Sudo cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf (page does not exist)")
+
 Finally start unicorn:
 
 ```
@@ -1072,7 +1074,7 @@ ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_s
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412090](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412090)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412963](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412963)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

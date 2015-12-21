@@ -393,7 +393,7 @@ lxc.network.link = `bridge`
 
 ```
 
-And then assign your IP through your preferred method **inside** the container, see also [Configure IP](https://wiki.archlinux.org/index.php/Network_configuration#Configure_the_IP_address)
+And then assign your IP through your preferred method **inside** the container, see also [Network_configuration#Configure_the_IP_address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration").
 
 ## See also
 
@@ -401,7 +401,7 @@ And then assign your IP through your preferred method **inside** the container, 
 *   [LXC@developerWorks](http://www.ibm.com/developerworks/linux/library/l-lxc-containers/)
 *   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=412947](https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=412947)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=412960](https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=412960)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
