@@ -47,6 +47,13 @@ More advanced invocation with username and password:
 
 ```
 
+Often VPN provider are offering different authentication groups for different access configurations like for example for a full tunnel or split tunnel connection. To show the different offered auth-groups and to get more information about the connection to the server in general use:
+
+```
+# openconnect --authenticate _vpnserver_
+
+```
+
 ### Integration in netctl
 
 A simple <tt>tuntap</tt> netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow.
@@ -86,7 +93,7 @@ $ netctl stop vpn
 
 *   [OpenConnect](http://www.infradead.org/openconnect.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenConnect&oldid=402332](https://wiki.archlinux.org/index.php?title=OpenConnect&oldid=402332)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenConnect&oldid=412968](https://wiki.archlinux.org/index.php?title=OpenConnect&oldid=412968)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

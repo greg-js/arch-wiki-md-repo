@@ -9,6 +9,14 @@ Related articles
 *   [Gitolite](/index.php/Gitolite "Gitolite")
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 
+[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+
+[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+
+**This article is a stub.**
+
+**Notes:** Commands are incomplete/incorrect, reported upgrade issues (Discuss in [Talk:Gitlab#](https://wiki.archlinux.org/index.php/Talk:Gitlab))
+
 From [GitLab's homepage:](https://about.gitlab.com/)
 
 _GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers._
@@ -629,7 +637,7 @@ password: 5iveL!fe
 
 you should replace that with:
 
- `listen "examle.yourhost.com:8080, :tcp_nopush => true` 
+ `listen "example.yourhost.com:8080, :tcp_nopush => true` 
 
 ## Advanced Configuration
 
@@ -815,7 +823,12 @@ Enable your Gitlab virtual host and reload [Apache](/index.php/Apache "Apache"):
 
  `/etc/httpd/conf/httpd.conf`  ` Include /etc/httpd/conf/extra/gitlab.conf` 
 
-Copy the Apache gitlab.conf file [Template:Sudo cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf](/index.php?title=Template:Sudo_cp_/etc/webapps/gitlab/apache.conf.example_/etc/httpd/conf/extra/gitlab.conf&action=edit&redlink=1 "Template:Sudo cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf (page does not exist)")
+Copy the Apache gitlab.conf file
+
+```
+# sudo cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf
+
+```
 
 Finally start unicorn:
 
@@ -1074,7 +1087,7 @@ ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_s
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412963](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=412963)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413008](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413008)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

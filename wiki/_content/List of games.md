@@ -717,11 +717,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://zerowing.idsoftware.com/linux/etqw/](http://zerowing.idsoftware.com/linux/etqw/) || [etqw](https://aur.archlinux.org/packages/etqw/)<sup><small>AUR</small></sup>
 
-*   **Half-Life** — Science-fiction FPS. The two extensions, _Opposing Force_ and _Blue Shift_, are also available.
+*   **[Half-Life](https://en.wikipedia.org/wiki/Half-Life_(video_game) "wikipedia:Half-Life (video game)")** — Science-fiction FPS. The two extensions, _Opposing Force_ and _Blue Shift_, are also available.
 
 [http://store.steampowered.com/app/70/](http://store.steampowered.com/app/70/) || Steam
 
-*   **Half-Life 2** — Science-fiction FPS. Lost Coast, Episode One and Episode Two are also available. In beta as of July 2013
+*   **[Half-Life 2](https://en.wikipedia.org/wiki/Half-Life_2 "wikipedia:Half-Life 2")** — Science-fiction FPS. Lost Coast, Episode One and Episode Two are also available. In beta as of July 2013
 
 [http://store.steampowered.com/app/220/](http://store.steampowered.com/app/220/) || Steam
 
@@ -795,7 +795,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://redeclipse.net](http://redeclipse.net) || [redeclipse](https://aur.archlinux.org/packages/redeclipse/)<sup><small>AUR</small></sup>
 
-*   **Ricochet** — Futuristic arena battles.
+*   **[Ricochet](https://en.wikipedia.org/wiki/Ricochet_(2000_video_game) "wikipedia:Ricochet (2000 video game)")** — Futuristic arena battles.
 
 [http://store.steampowered.com/app/60/](http://store.steampowered.com/app/60/) || Steam
 
@@ -815,11 +815,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.serioussam.com](http://www.serioussam.com) || Steam
 
-*   **Team Fortress Classic** — Class-based online FPS.
+*   **[Team Fortress Classic](https://en.wikipedia.org/wiki/Team_Fortress_Classic "wikipedia:Team Fortress Classic")** — Class-based online FPS.
 
 [http://store.steampowered.com/app/20/](http://store.steampowered.com/app/20/) || Steam
 
-*   **Team Fortress 2** — Class-based online FPS with cartoonish style. Using Source Engine.
+*   **[Team Fortress 2](https://en.wikipedia.org/wiki/Team_Fortress_2 "wikipedia:Team Fortress 2")** — Class-based online FPS with cartoonish style. Using Source Engine.
 
 [http://store.steampowered.com/app/440/](http://store.steampowered.com/app/440/) || Steam
 
@@ -843,7 +843,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.unrealtournament2004.com](http://www.unrealtournament2004.com) || [ut2004](https://aur.archlinux.org/packages/ut2004/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ut2004)]</sup> for the retail version, [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ut2004-anthology)]</sup> for the anthology version
 
-*   **Unvanquished** — Team-based fps/rts hybrid game which pits aliens against humans. Monthly release that can be played on official servers.
+*   **[Unvanquished](https://en.wikipedia.org/wiki/Unvanquished_(video_game) "wikipedia:Unvanquished (video game)")** — Team-based fps/rts hybrid game which pits aliens against humans. Monthly release that can be played on official servers.
 
 [http://unvanquished.net/](http://unvanquished.net/) || [unvanquished](https://aur.archlinux.org/packages/unvanquished/)<sup><small>AUR</small></sup>
 
@@ -860,11 +860,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   Completely free, standalone, team-based, multiplayer FPS – [enemy-territory](https://aur.archlinux.org/packages/enemy-territory/)<sup><small>AUR</small></sup>
 *   Advanced open source project and fully compatible client and server – [etlegacy32](https://aur.archlinux.org/packages/etlegacy32/)<sup><small>AUR</small></sup>
 
-*   **World Of Padman** — Stand slone somplex – cartoon-style multiplayer first-person shooter.
+*   **[World of Padman](https://en.wikipedia.org/wiki/World_of_Padman "wikipedia:World of Padman")** — Stand slone somplex – cartoon-style multiplayer first-person shooter.
 
 [http://worldofpadman.net/website](http://worldofpadman.net/website) || [worldofpadman](https://aur.archlinux.org/packages/worldofpadman/)<sup><small>AUR</small></sup>
 
-*   **Xonotic** — Free, open-source first person shooter (a fork of Nexuiz but with modified gameplay).
+*   **[Xonotic](https://en.wikipedia.org/wiki/Xonotic "wikipedia:Xonotic")** — Free, open-source first person shooter (a fork of Nexuiz but with modified gameplay).
 
 [http://xonotic.org](http://xonotic.org) || [xonotic](https://www.archlinux.org/packages/?name=xonotic)
 
@@ -890,7 +890,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 ## Simulation
 
-*   **Beyond The Red Line** — Completely free stand-alone conversion of Freespace 2 based on the TV show Battlestar Galactica. Presumed abandoned, see Diaspora: Shattered Armistice for an alternative.
+*   **[Beyond the Red Line](https://en.wikipedia.org/wiki/Beyond_the_Red_Line "wikipedia:Beyond the Red Line")** — Completely free stand-alone conversion of Freespace 2 based on the TV show Battlestar Galactica. Presumed abandoned, see Diaspora: Shattered Armistice for an alternative.
 
 [http://www.beyondtheredline.net/](http://www.beyondtheredline.net/) || [btrl](https://aur.archlinux.org/packages/btrl/)<sup><small>AUR</small></sup>
 
@@ -934,7 +934,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.stepmania.com/](http://www.stepmania.com/) || [stepmania](https://aur.archlinux.org/packages/stepmania/)<sup><small>AUR</small></sup>
 
-*   **VegaStrike** — 3D action-space-sim allowing player to trade and bounty hunt in a vast universe.
+*   **[Vega Strike](https://en.wikipedia.org/wiki/Vega_Strike "wikipedia:Vega Strike")** — 3D action-space-sim allowing player to trade and bounty hunt in a vast universe.
 
 [http://vegastrike.sourceforge.net/](http://vegastrike.sourceforge.net/) || [vegastrike](https://aur.archlinux.org/packages/vegastrike/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vegastrike)]</sup>
 
@@ -1068,7 +1068,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://scoutshonour.com/donttakeitpersonallybabeitjustaintyourstory/](http://scoutshonour.com/donttakeitpersonallybabeitjustaintyourstory/) || [donttakeitpersonally](https://aur.archlinux.org/packages/donttakeitpersonally/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/donttakeitpersonally)]</sup>
 
-*   **Juniper's Knot** — Short game about boy and fiend.
+*   **[Juniper's Knot](https://en.wikipedia.org/wiki/Juniper%27s_Knot "wikipedia:Juniper's Knot")** — Short game about boy and fiend.
 
 [http://junipersknot.dischan.org/](http://junipersknot.dischan.org/) || [junipersknot](https://aur.archlinux.org/packages/junipersknot/)<sup><small>AUR</small></sup>
 
@@ -1100,7 +1100,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=412312](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=412312)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=413010](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=413010)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

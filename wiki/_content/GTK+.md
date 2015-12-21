@@ -604,7 +604,7 @@ gtk-xft-rgba=rgb
 *   [gtkmm Tutorial](http://developer.gnome.org/gtkmm-tutorial/stable/)
 *   [gtkmm Reference Manual](http://developer.gnome.org/gtkmm/stable/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=412375](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=412375)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=413014](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=413014)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

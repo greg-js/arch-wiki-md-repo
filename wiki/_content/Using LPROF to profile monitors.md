@@ -86,7 +86,7 @@ The phosphors, or _primaries_ as they are often called, are three sets of values
 
 ## Building lprof
 
-Install [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lprof)]</sup>, which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup>, which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Calibrating the monitor
 
@@ -199,7 +199,7 @@ None of the locations seem to be standard. It is recommended that you put your p
 *   [VIGRA](http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/)
 *   [lcms](http://www.littlecms.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profile_monitors&oldid=394171](https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profile_monitors&oldid=394171)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profile_monitors&oldid=413011](https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profile_monitors&oldid=413011)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

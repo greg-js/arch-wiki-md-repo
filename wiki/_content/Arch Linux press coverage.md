@@ -25,6 +25,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## 2015
 
+*   [DistroWatch Weekly Feature Story about Arch Linux](http://distrowatch.com/weekly.php?issue=20151221#arch) Jesse Smith - distrowatch.com 1015-12-21
 *   [Why you should try Arch Linux](http://www.dbailey.uk.to/2015/10/why-you-should-try-arch-linux/) David Bailey - www.dbailey.uk.to 2015-10-04
 *   [1+ Year Running Arch Linux on a Lenovo Yoga 2](http://keithcu.com/wordpress/?p=3641) Keith Curtis - keithcu.com 2015-04-07
 *   [The grumpy editor's Arch Linux experience](https://lwn.net/Articles/638069/) Jonathan Corbet - LWN.net 2015-04-01
@@ -278,7 +279,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 *   [Distribution Release: Arch Linux 0.2](http://distrowatch.com/?newsid=00201) DistroWatch.com 2002-04-18
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=403240](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=403240)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=413003](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=413003)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

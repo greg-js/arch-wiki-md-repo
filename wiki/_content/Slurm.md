@@ -23,7 +23,7 @@ Related articles
 
 **Note:** Although slurm is a very powerful job scheduler, if the goal of the cluster is solely to increase compilation throughput, [distcc](/index.php/Distcc "Distcc") is a much easier and elegant solution.
 
-[Install](/index.php/Install "Install") the [slurm-llnl](https://aur.archlinux.org/packages/slurm-llnl/)<sup><small>AUR</small></sup> package found in the [AUR](/index.php/AUR "AUR"). It pulls in [munge](https://aur.archlinux.org/packages/munge/)<sup><small>AUR</small></sup>, an authenticatin service, as a dependecy. It is started as a requierement through slurmd's systemd service and encrypts the connection between the various hosts. Therefore make sure that all nodes in your cluster have the same munge.key in `/etc/munge/munge.key`.
+[Install](/index.php/Install "Install") the [slurm-llnl](https://aur.archlinux.org/packages/slurm-llnl/)<sup><small>AUR</small></sup> package found in the [AUR](/index.php/AUR "AUR"). It pulls in [munge](https://aur.archlinux.org/packages/munge/)<sup><small>AUR</small></sup>, an authenticatin service, as a dependecy. It is started as a requierement through slurmd's systemd service and encrypts the connection between the various hosts. Therefore make sure that all nodes in your cluster have the same key in `/etc/munge/munge.key`.
 
 The package slurm itself has many more optional dependencies, though slurm has to be recompiled to make use of them, after they have been installed.
 
@@ -50,6 +50,8 @@ Start/enable the `slurmctld.service`.
 
 To complete an entrerprise like solution you may want to start/enable `slurmdbd.service`, which handles a mysql database for easier management thereby logging somewhat essential process information.
 
+**Note:** Additional arguments may be passed to the program by adapting `/etc/default/slurm-llnl` though still utilizing the power of systemd. This file is handled as the environment file for the various services and simply passes any arguments on to the program.
+
 ## See also
 
 *   [slurm tutorials](http://slurm.schedmd.com/tutorials.html) - Introduction to the Slurm Workload Manager for users and system administrators, plus some material for Slurm programmers.
@@ -57,7 +59,7 @@ To complete an entrerprise like solution you may want to start/enable `slurmdbd.
 *   [SLURM to manage jobs](https://rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/) - Convenient SLURM Commands.
 *   [Running Jobs](https://rc.fas.harvard.edu/resources/running-jobs/) - How slurm is used at harvard university.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Slurm&oldid=412175](https://wiki.archlinux.org/index.php?title=Slurm&oldid=412175)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Slurm&oldid=413002](https://wiki.archlinux.org/index.php?title=Slurm&oldid=413002)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

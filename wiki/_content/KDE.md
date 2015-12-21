@@ -828,7 +828,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=412865](https://wiki.archlinux.org/index.php?title=KDE&oldid=412865)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413009](https://wiki.archlinux.org/index.php?title=KDE&oldid=413009)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
