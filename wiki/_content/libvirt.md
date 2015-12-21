@@ -154,7 +154,7 @@ While some guides mention changed permissions of certain libvirt directories to 
 
 ### Daemon
 
-[Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `libvirtd.service` to begin system-level administration.
+[Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `libvirtd.service` and `virtlogd.service` to begin system-level administration.
 
 ### Unencrypt TCP/IP sockets
 
@@ -591,7 +591,7 @@ if (__name__ == "__main__"):
 *   [IBM KVM](http://www-01.ibm.com/support/knowledgecenter/linuxonibm/liaat/liaatkvm.htm)
 *   [libvirt Networking Handbook](https://jamielinux.com/docs/libvirt-networking-handbook/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412510](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=412510)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=413036](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=413036)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

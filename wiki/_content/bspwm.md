@@ -145,6 +145,8 @@ bspc rule -a scratchpad sticky=on state=floating
 
 See also [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1338582#p1338582) and [[2]](http://yuri-rage.github.io/geekery/2015/01/26/bleeding-edge-bspwm/).
 
+For a scratch-pad which can use any window type without pre-defined rules, see: [[3]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
+
 For a more sophisticated scratchpad script that supports many terminals out of the box and has flags for doing things like optionally starting a tmuxinator/tmux session, turning any window into a scratchpad on the fly, and automatically resizing a scratchpad to fit the current monitor see [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/)<sup><small>AUR</small></sup>.
 
 ### Different monitor conifgurations for different machines
@@ -237,7 +239,7 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 *   [https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies) - earsplit's "bspwm for dummies"
 *   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - smlb's wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=408981](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=408981)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413023](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413023)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

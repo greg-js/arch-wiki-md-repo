@@ -230,7 +230,7 @@ Proper partition alignment is essential for optimal performance and longevity. T
 
 ### Hard disk drives
 
-Historically, hard drives were addressed by indicating the _cylinder_, the _head_, and the _sector_ at which data was to be read or written (also known as [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")). These represented the radial position, the drive head (platter and side) and the axial position of the data respectively. Nowadays, with [logical block addressing](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing"), the entire hard drive is addressed as one continuous stream of data and the term [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designates the smallest addressable unit.
+Historically, hard drives were addressed by indicating the _cylinder_, the _head_, and the _sector_ at which data was to be read or written (also known as [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")). These represented the radial position (cylinder), the axial position (drive head: platter and side), and the azimuth (sector) of the data respectively. Nowadays, with [logical block addressing](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing"), the entire hard drive is addressed as one continuous stream of data and the term [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designates the smallest addressable unit.
 
 The standard _sector size_ is 512B, but modern high-capacity hard drives use greater value, commonly 4KiB. Using values greater than 512B is referred to as the [Advanced Format](/index.php/Advanced_Format "Advanced Format").
 
@@ -277,7 +277,7 @@ Or alternatively:
 *   [Manually Partitioning Your Hard Drive with fdisk](http://www.novell.com/coolsolutions/feature/19350.html)
 *   [Partition Alignment](http://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Partitioning&oldid=412589](https://wiki.archlinux.org/index.php?title=Partitioning&oldid=412589)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Partitioning&oldid=413044](https://wiki.archlinux.org/index.php?title=Partitioning&oldid=413044)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

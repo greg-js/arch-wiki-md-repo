@@ -9,13 +9,13 @@ Related articles
 *   [Gitolite](/index.php/Gitolite "Gitolite")
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
 
-**This article is a stub.**
+**The factual accuracy of this article or section is disputed.**
 
-**Notes:** Commands are incomplete/incorrect, reported upgrade issues (Discuss in [Talk:Gitlab#](https://wiki.archlinux.org/index.php/Talk:Gitlab))
+**Reason:** Commands are incomplete/incorrect, reported upgrade issues (Discuss in [Talk:Gitlab#](https://wiki.archlinux.org/index.php/Talk:Gitlab))
 
 From [GitLab's homepage:](https://about.gitlab.com/)
 
@@ -826,16 +826,11 @@ Enable your Gitlab virtual host and reload [Apache](/index.php/Apache "Apache"):
 Copy the Apache gitlab.conf file
 
 ```
-# sudo cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf
+# cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf
 
 ```
 
-Finally start unicorn:
-
-```
-# systemctl start gitlab-unicorn
-
-```
+Finally [start](/index.php/Start "Start") `gitlab-unicorn.service`.
 
 ### Redis
 
@@ -1087,7 +1082,7 @@ ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_s
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413008](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413008)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413042](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413042)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

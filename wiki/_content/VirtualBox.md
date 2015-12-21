@@ -226,7 +226,7 @@ Boot the Arch installation media through one of the virtual machine's virtual dr
 
 #### Installation in EFI mode
 
-If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, go in the _Settings_ tab, and check the checkbox _Enable EFI (special OSes only)_. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
+If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose _**System**_ item from the panel on the left and _**Motherboard**_ tab from the right panel, and check the checkbox _**Enable EFI (special OSes only)**_. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
 
 Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the ESP. If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
 
@@ -1417,7 +1417,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=411951](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=411951)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413035](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413035)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

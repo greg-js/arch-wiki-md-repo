@@ -7,7 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
-*   [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv")
+*   [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv")
 *   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
@@ -261,7 +261,7 @@ to autostart the browser and run the IPython kernel. You can select the python v
 *   [Think Python: How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/) A great introduction to Python programming for beginners.
 *   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Python&oldid=411377](https://wiki.archlinux.org/index.php?title=Python&oldid=411377)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Python&oldid=413030](https://wiki.archlinux.org/index.php?title=Python&oldid=413030)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
