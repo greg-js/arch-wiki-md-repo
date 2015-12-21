@@ -36,6 +36,7 @@ Related articles
 *   [3 Running Xorg programs](#Running_Xorg_programs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 root login fails](#root_login_fails)
+    *   [4.2 no network-connection with veth in container config](#no_network-connection_with_veth_in_container_config)
 *   [5 See also](#See_also)
 
 ## Setup
@@ -368,13 +369,39 @@ Alternatively, create a new user in lxc-attach and use it for logging in to the 
 
 ```
 
+### no network-connection with veth in container config
+
+If you can't access your LAN or WAN with a networking interface configured as **veth** and setup through `/etc/lxc/_containername_/config`. If the virtual interface gets the ip assigned and should be connected to the network correctly.
+
+```
+ip addr show veth0 
+inet 192.168.1.111/24
+
+```
+
+You may disable all the relevant static ip formulas and try setting the ip through the booted container-os like you would normaly do.
+
+Example `_container_/config`
+
+```
+...
+lxc.network.type = veth
+lxc.network.name = veth0
+lxc.network.flags = up
+lxc.network.link = `bridge`
+...
+
+```
+
+And then assign your IP through your preferred method **inside** the container, see also [Configure IP](https://wiki.archlinux.org/index.php/Network_configuration#Configure_the_IP_address)
+
 ## See also
 
 *   [LXC 1.0 Blog Post Series](https://www.stgraber.org/2013/12/20/lxc-1-0-blog-post-series/)
 *   [LXC@developerWorks](http://www.ibm.com/developerworks/linux/library/l-lxc-containers/)
 *   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=407803](https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=407803)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=412947](https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=412947)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

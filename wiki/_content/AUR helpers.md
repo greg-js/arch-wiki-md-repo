@@ -509,9 +509,9 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 <td>Bash</td>
 
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Optional</td>
 
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+<td style="background: #aaf; color: inherit; vertical-align: middle; text-align: center;">N/A</td>
 
 <td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
 
@@ -555,7 +555,7 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 *   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=411718](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=411718)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=412949](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=412949)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

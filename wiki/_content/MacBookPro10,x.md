@@ -170,16 +170,11 @@ setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
 
 #### Switching to/from GPUs with gpu-switch
 
-You can switch the display output to and from the discrete or integrated intel GPU from _within_ Arch Linux with [gpu-switch](https://github.com/0xbb/gpu-switch) if you are using the open-source `xf86-video-nouveau` and `xf86-video-intel` drivers.
+You can switch the display output to and from the discrete or integrated intel GPU from _within_ Arch Linux with [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/)<sup><small>AUR</small></sup> if you are using the open-source `xf86-video-nouveau` and `xf86-video-intel` drivers.
 
 **Installation**
 
-To install, clone the repo from github:
-
-```
-git clone [https://github.com/0xbb/gpu-switch](https://github.com/0xbb/gpu-switch)
-
-```
+You can install [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/)<sup><small>AUR</small></sup> from the AUR.
 
 Then, just run the script as root.
 
@@ -411,7 +406,7 @@ Here are a couple of interesting threads:
 
 *   A [Puppet](/index.php/Puppet "Puppet") module for installing and configuring Arch (optionally with KDE) on the MBP Retina 10,2, along with initial install instructions, is available at [https://github.com/jantman/puppet-archlinux-macbookretina](https://github.com/jantman/puppet-archlinux-macbookretina). It is updated quite frequently, and run daily on its author's laptop.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=411199](https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=411199)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=412950](https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=412950)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -210,6 +210,10 @@ External devices that are to be mounted when present but ignored if absent may r
 
 As of systemd 219, the `nofail` option is best combined with the `x-systemd.device-timeout` option. This is because the default device timeout is 90 seconds, so a disconnected external device with only `nofail` will make your boot take 90 seconds longer, unless you reconfigure the timeout as shown. Make sure not to set the timeout to 0, as this translates to infinite timeout.
 
+If your external device requires another systemd unit to be loaded (for example the network for a network share) you can use `x-systemd.requires=x` combined with `x-systemd.automount`to postpone automounting until after the unit is available. For example:
+
+ `/etc/fstab`  `//host/share        /net/share        cifs        noauto,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-system.device-timeout=10,workgroup=workgroup,credentials=/foo/credentials        0 0` 
+
 ### Filepath spaces
 
 Since spaces are used in `fstab` to delimit fields, if any field (_PARTLABEL_, _LABEL_ or the mount point) contains spaces, these spaces must be replaced by escape characters `\` followed by the 3 digit octal code `040`:
@@ -289,7 +293,7 @@ Sometimes programs or users cannot access one specific directory due to insuffic
 *   [30x Faster Web-Site Speed](http://www.askapache.com/web-hosting/super-speed-secrets.html) (Detailed tmpfs)
 *   [Adding Samba shares to /etc/fstab](/index.php/Samba#Add_Share_to_.2Fetc.2Ffstab "Samba")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fstab&oldid=394311](https://wiki.archlinux.org/index.php?title=Fstab&oldid=394311)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fstab&oldid=412945](https://wiki.archlinux.org/index.php?title=Fstab&oldid=412945)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

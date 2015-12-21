@@ -69,6 +69,8 @@ Most of the new Hybrid-graphics technologies involves two graphic cards as the b
 *   [PRIME](/index.php/PRIME "PRIME") -- long-term Optimus solution in progress -- by David Airlie
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee") -- allows you to run specific programs on the discrete graphic card, inside of an X session using the integrated graphic card. Works on Nvidia Optimus cards -- by Martin Juhl
 *   hybrid-windump -- dump window using Nvidia onto Intel display -- by Florian Berger and Joakim Gebart
+*   [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/)<sup><small>AUR</small></sup> -- gpu-switch is an application to switch between the integrated and dedicated GPU of dual-GPU MacBook Pro models for the next reboot
+*   [systemd-vgaswitcheroo-units](https://aur.archlinux.org/packages/systemd-vgaswitcheroo-units/)<sup><small>AUR</small></sup> -- Disable discrete GPU at boot for AMD/NVIDIA & Intel dual GPU setups.
 
 ### ATI Dynamic Switchable Graphics
 
@@ -172,7 +174,7 @@ The above config will be loaded at boot by systemd. What it does is write the sp
 *   [ATI commercial presentation](http://www.amd.com/us/products/technologies/switchable-graphics/Pages/dynamic-switchable-graphics.aspx)
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hybrid_graphics&oldid=407982](https://wiki.archlinux.org/index.php?title=Hybrid_graphics&oldid=407982)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hybrid_graphics&oldid=412951](https://wiki.archlinux.org/index.php?title=Hybrid_graphics&oldid=412951)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -36,8 +36,9 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [5.12 Poland](#Poland)
     *   [5.13 Russia](#Russia)
     *   [5.14 South Africa](#South_Africa)
-    *   [5.15 United States](#United_States)
-    *   [5.16 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.15 Sweden](#Sweden)
+    *   [5.16 United States](#United_States)
+    *   [5.17 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
@@ -275,6 +276,11 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 *   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - _TENET - Tertiary Education and Research Network of South Africa_
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
 
+### Sweden
+
+*   [http://foss.dhyrule.se/linux/archlinux/](http://foss.dhyrule.se/linux/archlinux/)
+*   [ftp://foss.dhyrule.se/linux/archlinux/](ftp://foss.dhyrule.se/linux/archlinux/)
+
 ### United States
 
 *   [http://mirror.clarkson.edu/archlinux/](http://mirror.clarkson.edu/archlinux/)
@@ -285,7 +291,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412705](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412705)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412939](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412939)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

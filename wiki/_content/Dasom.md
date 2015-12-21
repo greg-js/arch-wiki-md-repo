@@ -48,12 +48,20 @@ dasom-indicator
 
 Re-login to make these environment changes effective.
 
+Note : If you are using GNOME Desktop, You may need to run the following commands to use dasom.
+
+```
+gsettings set org.gnome.settings-daemon.plugins.keyboard active false
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'dasom'>}"
+
+```
+
 ## See also
 
 *   [Dasom GitHub](https://github.com/dasom-im/dasom/)
 *   [Dasom Homepage](http://dasom-im.github.io)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dasom&oldid=411219](https://wiki.archlinux.org/index.php?title=Dasom&oldid=411219)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dasom&oldid=412952](https://wiki.archlinux.org/index.php?title=Dasom&oldid=412952)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
