@@ -518,7 +518,7 @@ ufw allow 1194
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
@@ -530,16 +530,14 @@ If you have difficulty pinging the server through the VPN, you may need to add e
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
 ```
- # Allow TUN interface connections to OpenVPN server
- iptables -A INPUT -i tun+ -j ACCEPT
- # Allow TUN interface connections to be forwarded through other interfaces
- iptables -A FORWARD -i tun+ -j ACCEPT
- # Allow TAP interface connections to OpenVPN server
- iptables -A INPUT -i tap+ -j ACCEPT
- # Allow TAP interface connections to be forwarded through other interfaces
- iptables -A FORWARD -i tap+ -j ACCEPT
+iptables -A INPUT -i tun+ -j ACCEPT
+iptables -A FORWARD -i tun+ -j ACCEPT
+iptables -A INPUT -i tap+ -j ACCEPT
+iptables -A FORWARD -i tap+ -j ACCEPT
 
 ```
+
+Additionally be sure to accept connections from the OpenVPN port (default 1194) and through the physical interface.
 
 When you are satisfied make the changes permanent as shown in [iptables#Configuration and usage](/index.php/Iptables#Configuration_and_usage "Iptables").
 
@@ -802,7 +800,7 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412455](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=412455)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413068](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413068)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

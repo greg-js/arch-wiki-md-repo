@@ -72,7 +72,7 @@ pkgdesc="Foo bar (mingw-w64)"
 arch=('any')
 url="http://www.foo.bar"
 license=('GPL')
-makedepends=('mingw-w64-configure')
+makedepends=('mingw-w64-gcc' 'mingw-w64-configure')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
@@ -112,7 +112,7 @@ pkgdesc="Foo bar (mingw-w64)"
 arch=('any')
 url="http://www.foo.bar"
 license=('GPL')
-makedepends=('mingw-w64-cmake')
+makedepends=('mingw-w64-gcc' 'mingw-w64-cmake')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
@@ -144,7 +144,7 @@ package() {
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=401365](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=401365)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=413045](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=413045)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

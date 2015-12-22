@@ -28,10 +28,10 @@ Apache is often used together with a scripting language such as PHP and database
         *   [2.4.1 Managing many virtual hosts](#Managing_many_virtual_hosts)
 *   [3 Extensions](#Extensions)
     *   [3.1 PHP](#PHP)
-        *   [3.1.1 Using php5 with php-fpm and mod_proxy_fcgi](#Using_php5_with_php-fpm_and_mod_proxy_fcgi)
-        *   [3.1.2 Using php5 with apache2-mpm-worker and mod_fcgid](#Using_php5_with_apache2-mpm-worker_and_mod_fcgid)
+        *   [3.1.1 Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi)
+        *   [3.1.2 Using apache2-mpm-worker and mod_fcgid](#Using_apache2-mpm-worker_and_mod_fcgid)
         *   [3.1.3 MySQL/MariaDB](#MySQL.2FMariaDB)
-        *   [3.1.4 SPDY](#SPDY)
+    *   [3.2 HTTP2](#HTTP2)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Apache Status and Logs](#Apache_Status_and_Logs)
     *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
@@ -148,36 +148,7 @@ Restart `httpd.service` to apply any changes. See also [Umask#Set the mask value
 
 [openssl](https://www.archlinux.org/packages/?name=openssl) provides TLS/SSL support and is installed by default on Arch installations.
 
-Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"):
-
-```
-# cd /etc/httpd/conf
-# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout apache.key -out apache.crt -days 1095
-# chmod 400 apache.key
-# chmod 444 apache.crt
-
-```
-
-Then edit `/etc/httpd/conf/extra/httpd-ssl.conf` to reflect the new key and certificate:
-
-*   `SSLCertificateFile "/etc/httpd/conf/server.crt" => SSLCertificateFile "/etc/httpd/conf/apache.crt",`,
-*   `SSLCertificateKeyFile "/etc/httpd/conf/server.key" => SSLCertificateKeyFile "/etc/httpd/conf/apache.key",`
-
-**Note:** The -days switch is optional and RSA keysize can be as low as 2048 (default).
-
-If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"), follow these keygen instructions instead of the above:
-
-```
-# openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out apache.key
-# chmod 400 apache.key
-# openssl req -new -sha256 -key apache.key -out apache.csr
-# openssl x509 -req -days 1095 -in apache.csr -signkey apache.key -out apache.crt
-
-```
-
-**Note:** For more openssl options, read the [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse openssl's [extensive documentation](https://www.openssl.org/docs/).
-
-Then, in `/etc/httpd/conf/httpd.conf`, uncomment the following three lines:
+In `/etc/httpd/conf/httpd.conf`, uncomment the following three lines:
 
 ```
 LoadModule ssl_module modules/mod_ssl.so
@@ -185,6 +156,32 @@ LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
 Include conf/extra/httpd-ssl.conf
 
 ```
+
+Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"):
+
+```
+# cd /etc/httpd/conf
+# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt -days 1095
+# chmod 400 server.key
+# chmod 444 server.crt
+
+```
+
+**Note:** The -days switch is optional and RSA keysize can be as low as 2048 (default).
+
+Then make sure the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in `/etc/httpd/conf/extra/httpd-ssl.conf` point to the key and certificate you have just created.
+
+If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"), follow these keygen instructions instead of the above:
+
+```
+# openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out server.key
+# chmod 400 server.key
+# openssl req -new -sha256 -key server.key -out server.csr
+# openssl x509 -req -days 1095 -in server.csr -signkey server.key -out server.crt
+
+```
+
+**Note:** For more openssl options, read the [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse openssl's [extensive documentation](https://www.openssl.org/docs/).
 
 **Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to the web server, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
@@ -290,7 +287,23 @@ A very basic vhost file will look like this:
 
 To install [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-apache](https://www.archlinux.org/packages/?name=php-apache) packages.
 
-**Note:** `libphp5.so` included with [php-apache](https://www.archlinux.org/packages/?name=php-apache) does not work with `mod_mpm_event` ([FS#39218](https://bugs.archlinux.org/task/39218)). You will have to use `mod_mpm_prefork` instead. Otherwise you will get the following error:
+In `/etc/httpd/conf/httpd.conf`, comment the line:
+
+```
+LoadModule mpm_event_module modules/mod_mpm_event.so
+
+```
+
+and uncomment the line:
+
+```
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+```
+
+**Note:** The above is required, because `libphp5.so` included with [php-apache](https://www.archlinux.org/packages/?name=php-apache) does not work with `mod_mpm_event`, but will only work `mod_mpm_prefork` instead. ([FS#39218](https://bugs.archlinux.org/task/39218))
+
+Otherwise you will get the following error:
 
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
@@ -298,13 +311,7 @@ AH00013: Pre-configuration failed
 httpd.service: control process exited, code=exited status=1
 ```
 
-As the configuration of `/etc/httpd/conf/httpd.conf` has for standard the `mod_mpm_event` you will have to use `mod_mpm_prefork` in order for `libphp5.so` to work properly. To do so open `/etc/httpd/conf/httpd.conf` comment the line:
-
- `LoadModule mpm_event_module modules/mod_mpm_event.so` 
-
-and uncomment the line:
-
- `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` As an alternative, you can use `mod_proxy_fcgi` (see [#Using php5 with php-fpm and mod_proxy_fcgi](#Using_php5_with_php-fpm_and_mod_proxy_fcgi) below).
+As an alternative, you can use `mod_proxy_fcgi` (see [#Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi) below).
 
 To enable PHP, add these lines to `/etc/httpd/conf/httpd.conf`:
 
@@ -342,23 +349,24 @@ To see if it works go to: [http://localhost/test.php](http://localhost/test.php)
 
 For advanced configuration and extensions, please read [PHP](/index.php/PHP "PHP").
 
-#### Using php5 with php-fpm and mod_proxy_fcgi
+#### Using php-fpm and mod_proxy_fcgi
 
 **Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp5, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
 
-*   [Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
+[Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
 
-*   Set `listen` in `/etc/php/php-fpm.conf` like this (these values are currently the defaults):
+In `/etc/php/php-fpm.conf`, uncommented the following lines:
 
 ```
-;listen = 127.0.0.1:9000
 listen = /run/php-fpm/php-fpm.sock
 listen.owner = http
 listen.group = http
 
 ```
 
-*   Append following to `/etc/httpd/conf/httpd.conf`:
+Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
+
+ `/etc/httpd/conf/extra/php-fpm.conf` 
 
 ```
 <FilesMatch \.php$>
@@ -372,38 +380,46 @@ listen.group = http
 
 ```
 
-The pipe between sock and fcgi is not allowed to be surrounded by a space! "localhost" after fcgi: can be replaced by any string but it should match in SetHandler and Proxy directives. More here: [https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html) SetHandler and Proxy can be used per vhost configs but the name after fcgi:// should differ for each vhost setup.
+**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string but it should match in `SetHandler` and `Proxy` directives. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). `SetHandler` and `Proxy` can be used per vhost configs but the name after `fcgi://` should differ for each vhost setup.
 
-*   If you have it added, remove the php module, as this is no longer needed.
+And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
+
+```
+Include conf/extra/php-fpm.conf
+
+```
+
+If you have it added, remove the following lines from `httpd.conf`, as they are no longer needed:
 
 ```
 LoadModule php5_module modules/libphp5.so
+Include conf/extra/php5_module.conf
 
 ```
 
-*   [Restart](/index.php/Restart "Restart") the apache php-fpm daemon again.
+[Restart](/index.php/Restart "Restart") `httpd.service` and `php-fpm.service`.
 
-#### Using php5 with apache2-mpm-worker and mod_fcgid
+#### Using apache2-mpm-worker and mod_fcgid
 
-*   Uncomment following in `/etc/conf.d/apache`:
+[Install](/index.php/Install "Install") the [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) packages.
+
+Uncomment following in `/etc/conf.d/apache`:
 
 ```
 HTTPD=/usr/bin/httpd.worker
 
 ```
 
-*   Uncomment following in `/etc/httpd/conf/httpd.conf`:
+Uncomment following in `/etc/httpd/conf/httpd.conf`:
 
 ```
 Include conf/extra/httpd-mpm.conf
 
 ```
 
-*   [Install](/index.php/Install "Install") the [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
+Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
 
-*   Create `/etc/httpd/conf/extra/php5_fcgid.conf` with following content:
-
- `/etc/httpd/conf/extra/php5_fcgid.conf` 
+ `/etc/httpd/conf/extra/php-fcgid.conf` 
 
 ```
 # Required modules: fcgid_module
@@ -431,7 +447,7 @@ Include conf/extra/httpd-mpm.conf
 
 ```
 
-*   Create the needed directory and symlink it for the PHP wrapper:
+Create the needed directory and symlink it for the PHP wrapper:
 
 ```
 # mkdir /srv/http/fcgid-bin
@@ -439,18 +455,23 @@ Include conf/extra/httpd-mpm.conf
 
 ```
 
-*   Edit `/etc/httpd/conf/httpd.conf`:
+Edit `/etc/httpd/conf/httpd.conf`, and add the following line:
 
 ```
-#LoadModule php5_module modules/libphp5.so
 LoadModule fcgid_module modules/mod_fcgid.so
-Include conf/extra/php5_fcgid.conf
+Include conf/extra/php-fcgid.conf
 
 ```
 
-and [restart](/index.php/Daemons "Daemons") **httpd**.
+If you've added the following lines, you can remove them:
 
-**Note:** As of Apache 2.4 you can now use [mod_proxy_fcgi](http://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html) (part of the official distribution) with PHP-FPM (and the new event MPM). See this [configuration example](http://wiki.apache.org/httpd/PHP-FPM).
+```
+LoadModule php5_module modules/libphp5.so
+Include conf/extra/php5_module.conf
+
+```
+
+[Restart](/index.php/Restart "Restart") `httpd.service`.
 
 #### MySQL/MariaDB
 
@@ -458,11 +479,23 @@ Follow the instructions in [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "P
 
 When configuration is complete, [restart](/index.php/Restart "Restart") `httpd.service` to apply all the changes.
 
-#### SPDY
+### HTTP2
 
-mod_spdy is a SPDY module for Apache 2.2 that allows your web server to take advantage of SPDY features like stream multiplexing and header compression.
+To enable HTTP/2 support, uncomment the following line in `httpd.conf`:
 
-Follow the instructions in [Apache and spdy](/index.php/Apache_and_spdy "Apache and spdy").
+```
+LoadModule http2_module modules/mod_http2.so
+
+```
+
+And add the following line:
+
+```
+Protocols h2 http/1.1
+
+```
+
+For more information, see the [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html) documentation.
 
 ## Troubleshooting
 
@@ -478,7 +511,7 @@ Comment out the unique_id_module: `#LoadModule unique_id_module modules/mod_uniq
 
 ### Upgrading Apache to 2.4 from 2.2
 
-If you use `php-apache`, follow the introductory note to [Apache with PHP](#PHP) above.
+If you use [php-apache](https://www.archlinux.org/packages/?name=php-apache), follow the instructions at [#PHP](#PHP) above.
 
 Access Control has changed. Convert all `Order`, `Allow`, `Deny` and `Satisfy` directives to the new `Require` syntax. [mod_access_compat](http://httpd.apache.org/docs/2.4/mod/mod_access_compat.html) allows you to use the deprecated format during a transition phase.
 
@@ -511,7 +544,7 @@ and restart `httpd.service`.
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412777](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=412777)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=413076](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=413076)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

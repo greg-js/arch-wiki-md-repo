@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** SPDY is deprecated in favour of HTTP/2, which is supported natively by Apache (Discuss in [Talk:Apache and spdy#](https://wiki.archlinux.org/index.php/Talk:Apache_and_spdy))
+
 mod_spdy is a SPDY module for Apache 2.2 that allows your web server to take advantage of SPDY features like stream multiplexing and header compression.
 
 *   [mod_spdy](http://code.google.com/p/mod-spdy/) dev site
@@ -72,7 +80,7 @@ SpdyDebugUseSpdyForNonSslConnections - Use SPDY even over non-SSL connections; D
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_and_spdy&oldid=391914](https://wiki.archlinux.org/index.php?title=Apache_and_spdy&oldid=391914)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_and_spdy&oldid=413075](https://wiki.archlinux.org/index.php?title=Apache_and_spdy&oldid=413075)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

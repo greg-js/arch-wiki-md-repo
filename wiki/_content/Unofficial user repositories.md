@@ -110,29 +110,28 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.3 bioinformatics](#bioinformatics)
         *   [5.1.4 blackleg](#blackleg)
         *   [5.1.5 boyska64](#boyska64)
-        *   [5.1.6 carstene1ns](#carstene1ns)
-        *   [5.1.7 coderkun-aur](#coderkun-aur)
-        *   [5.1.8 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.9 coderkun-aur-java](#coderkun-aur-java)
-        *   [5.1.10 coderkun-aur-nonfree](#coderkun-aur-nonfree)
-        *   [5.1.11 eatabrick](#eatabrick)
-        *   [5.1.12 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.13 gustawho](#gustawho)
-        *   [5.1.14 Linux-pf](#Linux-pf)
-        *   [5.1.15 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.16 kc9ydn](#kc9ydn)
-        *   [5.1.17 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.18 linux-lts31x](#linux-lts31x)
-        *   [5.1.19 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.20 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.21 linux-tresor](#linux-tresor)
-        *   [5.1.22 qt-debug](#qt-debug)
-        *   [5.1.23 quarry](#quarry)
-        *   [5.1.24 rstudio](#rstudio)
-        *   [5.1.25 siosm-aur](#siosm-aur)
-        *   [5.1.26 siosm-selinux](#siosm-selinux)
-        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.6 coderkun-aur](#coderkun-aur)
+        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.8 coderkun-aur-java](#coderkun-aur-java)
+        *   [5.1.9 coderkun-aur-nonfree](#coderkun-aur-nonfree)
+        *   [5.1.10 eatabrick](#eatabrick)
+        *   [5.1.11 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.12 gustawho](#gustawho)
+        *   [5.1.13 Linux-pf](#Linux-pf)
+        *   [5.1.14 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.15 kc9ydn](#kc9ydn)
+        *   [5.1.16 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.17 linux-lts31x](#linux-lts31x)
+        *   [5.1.18 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.19 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.20 linux-tresor](#linux-tresor)
+        *   [5.1.21 qt-debug](#qt-debug)
+        *   [5.1.22 quarry](#quarry)
+        *   [5.1.23 rstudio](#rstudio)
+        *   [5.1.24 siosm-aur](#siosm-aur)
+        *   [5.1.25 siosm-selinux](#siosm-selinux)
+        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -1031,19 +1030,6 @@ Server = http://boyska.degenerazione.xyz/archrepo
 
 ```
 
-#### carstene1ns
-
-*   **Maintainer:** [Carsten Teibes](/index.php/User:Carstene1ns "User:Carstene1ns")
-*   **Description:** AUR packages maintained and/or used by carstene1ns (games/Wii/lib32/Python)
-*   **Upstream page:** [http://repo.carsten-teibes.de](http://repo.carsten-teibes.de)
-*   **Key-ID:** 2476B20B
-
-```
-[carstene1ns]
-Server = http://repo.carsten-teibes.de/$arch
-
-```
-
 #### coderkun-aur
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
@@ -1156,7 +1142,7 @@ Server = http://download.opensuse.org/repositories/home:/gustawho/Arch_Extra/$ar
 
 **Reason:** Signed repositories should not use `SigLevel = Optional` (by definition). (Discuss in [Talk:Unofficial user repositories#](https://wiki.archlinux.org/index.php/Talk:Unofficial_user_repositories))
 
-*   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (page does not exist)")
+*   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (Seite nicht vorhanden)")
 *   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf, just like [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") but additionally optimized for intel CPUs Sandy Bridge, Ivy Bridge, Haswell and generic of course, and some extra packages
 *   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox).
 
@@ -1568,7 +1554,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411853](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=411853)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413062](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413062)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -174,10 +174,26 @@ xterm-screen-256color|GNU Screen with 256 colors bce and tmux xterm-keys,
 
 ### Other Settings
 
-Set scrollback to 10000 lines with
+To limit the scrollback buffer to 10000 lines:
 
 ```
 set -g history-limit 10000
+
+```
+
+Terminal emulator settings can be overridden with
+
+```
+set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
+set -ga terminal-override ',rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007'
+
+```
+
+Mouse can be toggled with
+
+```
+bind-key m set-option -g mouse on \; display 'Mouse: ON'
+bind-key M set-option -g mouse off \; display 'Mouse: OFF'
 
 ```
 
@@ -273,6 +289,14 @@ You can set scroll History with:
 
 ```
 set -g history-limit 30000
+
+```
+
+For mouse wheel scrolling as from tmux 2.1 try adding one or both of these to ~/.tmux.conf
+
+```
+   bind-key -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+   bind-key -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
 
 ```
 
@@ -813,7 +837,7 @@ See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configur
 *   [man page (OpenBSD)](http://www.openbsd.org/cgi-bin/man.cgi?query=tmux)
 *   [Tmux tutorial Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) and [Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=412311](https://wiki.archlinux.org/index.php?title=Tmux&oldid=412311)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=413051](https://wiki.archlinux.org/index.php?title=Tmux&oldid=413051)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

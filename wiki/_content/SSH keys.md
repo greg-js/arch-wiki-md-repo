@@ -47,7 +47,6 @@ SSH keys are not without their drawbacks and may not be appropriate for all envi
     *   [4.9 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Key ignored by the server](#Key_ignored_by_the_server)
-    *   [5.2 Using KDM](#Using_KDM)
 *   [6 See also](#See_also)
 
 ## Background
@@ -765,28 +764,6 @@ Failing this, run the sshd in debug mode and monitor the output while connecting
 
 ```
 
-### Using KDM
-
-KDM does not launch the _ssh-agent_ process directly, [kde-agent](https://www.archlinux.org/packages/?name=kde-agent)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> used to start _ssh-agent_ on login, but since version 20140102-1 it got [removed](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/kde-agent&id=1070467b0f74b2339ceca2b9471d1c4e2b9c9c8f).
-
-In order to start _ssh-agent_ on KDE startup for a user, create scripts to start _ssh-agent_ on startup and one to kill it on logoff:
-
-```
-$ echo -e '#!/bin/sh\n[ -n "$SSH_AGENT_PID" ] || eval "$(ssh-agent -s)"' > ~/.kde4/env/ssh-agent-startup.sh
-$ echo -e '#!/bin/sh\n[ -z "$SSH_AGENT_PID" ] || eval "$(ssh-agent -k)"' > ~/.kde4/shutdown/ssh-agent-shutdown.sh
-$ chmod 755 ~/.kde4/env/ssh-agent-startup.sh ~/.kde4/shutdown/ssh-agent-shutdown.sh
-
-```
-
-If you are using [Plasma 5](/index.php/KDE#Plasma_5 "KDE"), you must create the scripts in the `~/.config/plasma-workspace/` directory, instead of `~/.kde4`:
-
-```
-$ echo -e '#!/bin/sh\n[ -n "$SSH_AGENT_PID" ] || eval "$(ssh-agent -s)"' > ~/.config/plasma-workspace/env/ssh-agent-startup.sh
-$ echo -e '#!/bin/sh\n[ -z "$SSH_AGENT_PID" ] || eval "$(ssh-agent -k)"' > ~/.config/plasma-workspace/shutdown/ssh-agent-shutdown.sh
-$ chmod 755 ~/.config/plasma-workspace/env/ssh-agent-startup.sh ~/.config/plasma-workspace/shutdown/ssh-agent-shutdown.sh
-
-```
-
 ## See also
 
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/linux/library/l-keyc.html)
@@ -796,7 +773,7 @@ $ chmod 755 ~/.config/plasma-workspace/env/ssh-agent-startup.sh ~/.config/plasma
 *   [OpenSSH 5.7 Release Notes](http://www.openssh.com/txt/release-5.7)
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=411698](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=411698)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=413059](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=413059)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
