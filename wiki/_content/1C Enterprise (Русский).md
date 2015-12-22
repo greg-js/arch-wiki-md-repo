@@ -12,7 +12,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. [Команда переводчиков ArchWiki](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki "Команда переводчиков ArchWiki")
 
-**1C:Предприятие** - программный продукт компании «1С», предназначенный для автоматизации деятельности на предприятии. Здесь мы рассмотрим установку технологической платформы 1С:Предприятие 8.3
+**1C:Предприятие** - программный продукт компании «1С», предназначенный для автоматизации деятельности на предприятии.
 
 ## Contents
 
@@ -126,7 +126,7 @@ $ makepkg -s
 *   [Кто соберет 1С Предприятие 8.3 для АУР ?](http://archlinux.org.ru/forum/topic/12594/)
 *   [Yaourt (Русский)](/index.php/Yaourt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Yaourt (Русский)")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=1C_Enterprise_(Русский)&oldid=411435](https://wiki.archlinux.org/index.php?title=1C_Enterprise_(Русский)&oldid=411435)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=1C_Enterprise_(Русский)&oldid=413094](https://wiki.archlinux.org/index.php?title=1C_Enterprise_(Русский)&oldid=413094)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -24,9 +24,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-Install [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) from the [official repositories](/index.php/Official_repositories "Official repositories"). Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")) and a [web server](/index.php/Category:Web_server "Category:Web server") with [PHP](/index.php/PHP "PHP")-support (this guide will assume the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")).
-
-Since 1.1.0 roundcube needs iconv and/or mbstring PHP extensions.
+Install the [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) package. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")) and a [web server](/index.php/Category:Web_server "Category:Web server") with [PHP](/index.php/PHP "PHP")-support (this guide will assume the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")).
 
 ## Configuration
 
@@ -34,17 +32,18 @@ Since 1.1.0 roundcube needs iconv and/or mbstring PHP extensions.
 
 Here's an example on how you could setup a database for Roundcube with [MariaDB](/index.php/MariaDB "MariaDB") called `roundcubemail` for the user `roundcube` identified by the password `password`:
 
+ `$ mysql -u root -p` 
+
 ```
 CREATE DATABASE roundcubemail;
 GRANT ALL PRIVILEGES ON roundcubemail.* TO 'roundcube'@'localhost' IDENTIFIED BY 'password';
-FLUSH PRIVILEGES;
 
 ```
 
 For any database you use, you will need to initialize the roundcubemail database tables. Here is an example of how to do this with [MariaDB](/index.php/MariaDB "MariaDB"):
 
 ```
- mysql -u root -p roundcubemail < /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
+$ mysql -u root -p roundcubemail < /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
 
 ```
 
@@ -53,7 +52,7 @@ For any database you use, you will need to initialize the roundcubemail database
 Copy the example configuration file and adjust it to your configuration:
 
 ```
-cp /etc/webapps/roundcubemail/config/config.inc.php.sample /etc/webapps/roundcubemail/config/config.inc.php
+# cp /etc/webapps/roundcubemail/config/config.inc.php.sample /etc/webapps/roundcubemail/config/config.inc.php
 
 ```
 
@@ -76,7 +75,7 @@ Make sure to adjust following variables to these minimal values in your PHP conf
  `/etc/php/php.ini` 
 
 ```
- date.timezone = "UTC"
+date.timezone = "UTC"
 
 ```
 
@@ -84,6 +83,7 @@ and uncomment
 
 ```
 extension=iconv.so
+extension=mbstring.so
 
 ```
 
@@ -92,7 +92,7 @@ extension=iconv.so
 Copy the configuration file for Apache to its configuration directory:
 
 ```
-cp /etc/webapps/roundcubemail/apache.conf /etc/httpd/conf/extra/roundcube.conf
+# cp /etc/webapps/roundcubemail/apache.conf /etc/httpd/conf/extra/roundcube.conf
 
 ```
 
@@ -101,7 +101,7 @@ And include it at the bottom of
  `/etc/httpd/conf/httpd.conf` 
 
 ```
- Include conf/extra/roundcube.conf
+Include conf/extra/roundcube.conf
 
 ```
 
@@ -252,7 +252,7 @@ Further usage instructions can be found [here](https://github.com/blind-coder/rc
 *   [Offical web page](http://roundcube.net)
 *   [Official installation manual](http://trac.roundcube.net/wiki/Howto_Install)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Roundcube&oldid=403218](https://wiki.archlinux.org/index.php?title=Roundcube&oldid=403218)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Roundcube&oldid=413100](https://wiki.archlinux.org/index.php?title=Roundcube&oldid=413100)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

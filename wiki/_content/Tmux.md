@@ -150,6 +150,20 @@ set -g default-terminal "screen-256color"
 
 ```
 
+or:
+
+```
+set -g default-terminal "xterm-256color"
+
+```
+
+Also, if tmux messes up, you can force tmux to assume that the terminal support 256 colors, by adding this in your .bashrc:
+
+```
+alias tmux="tmux -2"
+
+```
+
 If you enable xterm-keys in your `tmux.conf`, then you need to build a custom terminfo to declare the new escape codes or applications will not know about them. Compile the following with `tic` and you can use "xterm-screen-256color" as your TERM:
 
 ```
@@ -837,7 +851,7 @@ See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configur
 *   [man page (OpenBSD)](http://www.openbsd.org/cgi-bin/man.cgi?query=tmux)
 *   [Tmux tutorial Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) and [Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=413051](https://wiki.archlinux.org/index.php?title=Tmux&oldid=413051)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=413104](https://wiki.archlinux.org/index.php?title=Tmux&oldid=413104)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

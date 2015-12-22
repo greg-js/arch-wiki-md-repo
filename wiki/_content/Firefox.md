@@ -328,6 +328,8 @@ Another workaround is to force firefox to use light theme:
 
 **Note:** You may need to redo the work everytime after you update firefox.
 
+**Note:** You can copy this modified file to `$HOME/.local/share/applications/firefox.desktop` in order to override global configuration. This should avoid any change when updating Firefox for the given user.
+
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 
 From the [Mozilla support](http://support.mozilla.com/en-US/questions/767751) site:
@@ -380,7 +382,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=412690](https://wiki.archlinux.org/index.php?title=Firefox&oldid=412690)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413095](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413095)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

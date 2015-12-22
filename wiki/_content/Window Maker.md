@@ -58,7 +58,7 @@ Select the _windowmaker_ session from the display manager's session menu.
 
 ### Manually
 
-Once installed create or edit the file [~/.xinitrc](/index.php/%7E/.xinitrc "~/.xinitrc") as follows:
+Once installed create or edit the file [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") as follows:
 
 ```
 exec wmaker
@@ -209,7 +209,7 @@ Some applications such as [Chromium](/index.php/Chromium "Chromium") will not di
 *   [Official website](http://www.windowmaker.org/)
 *   [Window Maker (Wikipedia)](http://en.wikipedia.org/wiki/Window_Maker)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_Maker&oldid=378513](https://wiki.archlinux.org/index.php?title=Window_Maker&oldid=378513)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_Maker&oldid=413096](https://wiki.archlinux.org/index.php?title=Window_Maker&oldid=413096)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
