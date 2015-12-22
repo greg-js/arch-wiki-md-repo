@@ -25,13 +25,13 @@ Rsu-client is an unofficial RuneScape Unix/Linux Client and it's currently the r
 
 ### HTML5 RuneScape 3 Beta Client
 
-[There is an official HTML5 webclient available for RuneScape](https://www.runescape.com/game?html5=1) which can be used in your browser of choice. RuneScape officially recommend [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup>/[chromium](https://www.archlinux.org/packages/?name=chromium) for the client. As the client is currently in beta it's liable to crashes and bugs, please take additional care during challenging gameplay that could result in the loss of your items. More information and about the client can be found at: [http://www.runescape.com/beta/html5](http://www.runescape.com/beta/html5)
+[There is an official HTML5 webclient available for RuneScape](https://www.runescape.com/game?html5=1) which can be used in your browser of choice. RuneScape cannot be played with [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup>/[chromium](https://www.archlinux.org/packages/?name=chromium) because they no longer support the Java plug-in required for the client. As the client is currently in beta and still being optimized, it's liable to crashes and bugs, please take additional care during challenging gameplay that could result in the loss of your items. More information and about browser support can be found at: [https://www.runescape.com/browser-support](https://www.runescape.com/browser-support)
 
 ### OSBuddy (Old School RuneScape only)
 
 OSBuddy is a third-party toolkit for Old School RuneScape which in addition to a client offers useful features, such as highscores, notes, price checker etc. It's available for installation from the AUR, [osbuddy](https://aur.archlinux.org/packages/osbuddy/)<sup><small>AUR</small></sup>. More information and about the toolkit can be found at: [https://rsbuddy.com/osbuddy/](https://rsbuddy.com/osbuddy/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RuneScape&oldid=390687](https://wiki.archlinux.org/index.php?title=RuneScape&oldid=390687)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RuneScape&oldid=413080](https://wiki.archlinux.org/index.php?title=RuneScape&oldid=413080)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

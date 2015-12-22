@@ -317,7 +317,7 @@ chmod +x build-db
 
 ```
 
-This mimics what the Makefile would do if one were building all of avahi. It creates a file named build-b.
+This mimics what the Makefile would do if one were building all of avahi. It creates a file named build-db.
 
 ```
 $./whatever_you_named_the_script.sh
@@ -377,7 +377,7 @@ The entry in `avahi-browse` should now be:
 *   [Bonjour for Windows](http://www.apple.com/support/downloads/bonjourforwindows.html) - Enable Zeroconf on Windows
 *   [http://www.zeroconf.org/](http://www.zeroconf.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Avahi&oldid=409808](https://wiki.archlinux.org/index.php?title=Avahi&oldid=409808)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Avahi&oldid=413078](https://wiki.archlinux.org/index.php?title=Avahi&oldid=413078)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

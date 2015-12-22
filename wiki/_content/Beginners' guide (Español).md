@@ -19,7 +19,7 @@ Artículos relacionados
 
 Este documento le guiará a través del proceso de instalación de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") usando los [Scripts de Instalación de Arch](https://github.com/falconindy/arch-install-scripts). Antes de proceder a la instalación, es recomendable la lectura del artículo sobre las preguntas más frecuentes ([FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")).
 
-La [wiki de Arch](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)"), mantenida por la comunidad, es un recurso excelente que debería ser consultada para realizar los primeros pasos. También están disponibles el canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) y el [fórum](https://bbs.archlinux.org/) los cuales son igualmente buenos recursos si no ha podido encontrar la respuesta en otro lugar. Siguiendo [el método de Arch](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), se le aconseja que escriba `man _orden_` para leer la página del manual ([man page](/index.php/Man_page "Man page")), respecto de cualquier orden con la que no esté familiarizado.
+La [wiki de Arch](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)"), mantenida por la comunidad, es un recurso excelente que debería ser consultada para realizar los primeros pasos. También están disponibles el canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) y el [fórum](https://bbs.archlinux.org/) los cuales son igualmente buenos recursos si no ha podido encontrar la respuesta en otro lugar. Siguiendo [el método de Arch](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), se le aconseja que escriba `man _orden_` para leer la página del manual ([man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)")), respecto de cualquier orden con la que no esté familiarizado.
 
 ## Contents
 
@@ -62,7 +62,7 @@ La [wiki de Arch](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)"), m
 
 Arch Linux puede ser ejecutado en cualquier máquina [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") compatible, con un mínimo de 256 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) puede tomar alrededor de 800 MB de espacio en disco.
 
-Vease [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") para obtener instrucciones sobre cómo descargar el soporte de instalación y los métodos para iniciarlo en la máquina(s) de destino. Esta guía asume que utiliza la última versión disponible.
+Vease [Category:Getting and installing Arch (Español)](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") para obtener instrucciones sobre cómo descargar el soporte de instalación y los métodos para iniciarlo en la máquina(s) de destino. Esta guía asume que utiliza la última versión disponible.
 
 ## Iniciar el soporte de instalación
 
@@ -70,7 +70,7 @@ Hay que indicar el dispositivo de arranque donde se encuentre el que contiene el
 
 Cuando aparezca el menú de Arch, seleccione _Boot Arch Linux_ y pulse `Intro` para entrar en el entorno live de la instalación. Vea [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) para conocer un listado de los [parámetros de arranque](/index.php/Kernel_parameters_(Espa%C3%B1ol)#Configuraci.C3.B3n "Kernel parameters (Español)").
 
-Iniciará sesión automáticamente como usuario root y aparecerá un intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"). _Zsh_ le permitirá acceder a opciones avanzadas mediante la tecla Tab ([tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html)) además de otras características como parte de la [configuración grml](http://grml.org/zsh/). Para la creación o modificación de archivos de configuración, normalmente en `/etc`, se sugiere utilizar [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)") y [vim](/index.php/Vim#Usage "Vim").
+Iniciará sesión automáticamente como usuario root y aparecerá un intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"). _Zsh_ le permitirá acceder a opciones avanzadas mediante la tecla Tab ([tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html)) además de otras características como parte de la [configuración grml](http://grml.org/zsh/). Para la creación o modificación de archivos de configuración, normalmente en `/etc`, se sugiere utilizar [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)") y [vim](/index.php/Vim_(Espa%C3%B1ol)#Gu.C3.ADa_r.C3.A1pida_de_VIM "Vim (Español)").
 
 ### Arrancar en modalidad UEFI
 
@@ -83,7 +83,7 @@ Para asegurarnos de que hemos arrancado en modo UEFI, compruebe que el directori
 
 ```
 
-Consulte [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") para obtener más detalles.
+Consulte [UEFI#Variables de UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Variables_de_UEFI "Unified Extensible Firmware Interface (Español)") para obtener más detalles.
 
 ### Cambiar la distribución del teclado
 
@@ -488,7 +488,7 @@ El archivo `fstab` siempre se debe revisar después de su generación, y modific
 
 ### Chroot
 
-Los pasos siguientes se realizan enjaulando el nuevo sistema mediante [change root](/index.php/Change_root "Change root"), esto es, cambiando la raíz:
+Los pasos siguientes se realizan enjaulando el nuevo sistema mediante [change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)"), esto es, cambiando la raíz:
 
 ```
 # arch-chroot /mnt /bin/bash
@@ -688,7 +688,7 @@ Su nuevo sistema base Arch Linux es ahora un entorno GNU/Linux funcional listo p
 
 Para obtener una lista de aplicaciones que pueden serle de interés, consulte [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=411522](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=411522)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=413082](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=413082)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

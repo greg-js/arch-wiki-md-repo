@@ -9,11 +9,9 @@ Related articles
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
 *   [Bluez4](/index.php/Bluez4 "Bluez4")
 
-**Note:**
-
-*   Bluez5 is only supported by [PulseAudio](/index.php/PulseAudio "PulseAudio") and not by [ALSA](/index.php/ALSA "ALSA"). If you do not want to use PulseAudio, you need to install an older Bluez version from the AUR.
-
 Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio playback with the default installation.
+
+**Note:** Bluez5 is only supported by [PulseAudio](/index.php/PulseAudio "PulseAudio") and not by [ALSA](/index.php/ALSA "ALSA"). If you do not want to use PulseAudio, you need to install an older Bluez version from the AUR.
 
 ## Contents
 
@@ -1162,7 +1160,7 @@ Using the same device on Windows and Linux without pairing the device over and o
 
 *   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=413077](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=413077)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=413091](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=413091)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

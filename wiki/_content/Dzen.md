@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** The current official package works with Xft but not X Logical Font Description (Discuss in [Talk:Dzen#](https://wiki.archlinux.org/index.php/Talk:Dzen))
+
 [Dzen](http://robm.github.com/dzen/) is "a general purpose messaging, notification and menuing program for X11\. It was designed to be scriptable in any language and integrate well with window managers like [dwm](/index.php/Dwm "Dwm"), [wmii](/index.php/Wmii "Wmii") and [xmonad](/index.php/Xmonad "Xmonad") though it will work with any window manager."
 
 ## Contents
@@ -151,7 +159,7 @@ echo "hello world" | dzen2 -fn 'Times New Roman' -p
 
 *   2007-12-04 - Arch Linux - [dzen & xmobar Hacking Thread](https://bbs.archlinux.org/viewtopic.php?id=40637)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dzen&oldid=412070](https://wiki.archlinux.org/index.php?title=Dzen&oldid=412070)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dzen&oldid=413083](https://wiki.archlinux.org/index.php?title=Dzen&oldid=413083)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
