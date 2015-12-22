@@ -20,7 +20,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Basic usage
 
-**Note:** To be able to use pass you need to **set up gnupg** as described in [GnuPG#Basic keys management](/index.php/GnuPG#Basic_keys_management "GnuPG")
+**Note:** To be able to use pass, set up gnupg as described in [GnuPG#Basic keys management](/index.php/GnuPG#Basic_keys_management "GnuPG")
 
 *   Initialize the password store
 
@@ -55,19 +55,21 @@ $ pass generate archlinux.org/wiki/username <n>
 
 ```
 
-*   Retrieve password, you will be prompted for the gpg passphrase
+*   Retrieve password, enter the gpg passphrase at the prompt
 
 ```
 $ pass archlinux.org/wiki/username
 
 ```
 
-*   If you're using Xorg and have [xclip](https://www.archlinux.org/packages/?name=xclip) installed, the retrieved password can be put on the clipboard temporarily to paste into web forms via:
+*   Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily to paste into web forms via:
 
 ```
 $ pass -c archlinux.org/wiki/username
 
 ```
+
+**Note:** Users preferring the classical middle-click/paste can add the following to their respective ~/.shellrc for this behavior: `export PASSWORD_STORE_X_SELECTION=primary`
 
 ## Migrating to pass
 
@@ -81,7 +83,7 @@ There is now a stable release of [qtpass](https://aur.archlinux.org/packages/qtp
 
 *   [A more comprehensive pass tutorial](http://blog.sanctum.geek.nz/linux-crypto-passwords/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pass&oldid=412153](https://wiki.archlinux.org/index.php?title=Pass&oldid=412153)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pass&oldid=413133](https://wiki.archlinux.org/index.php?title=Pass&oldid=413133)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

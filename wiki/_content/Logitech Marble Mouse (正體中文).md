@@ -15,7 +15,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [3.1.1 指定按鍵](#.E6.8C.87.E5.AE.9A.E6.8C.89.E9.8D.B5)
         *   [3.1.2 雙擊大按鍵](#.E9.9B.99.E6.93.8A.E5.A4.A7.E6.8C.89.E9.8D.B5)
         *   [3.1.3 滾輪修正鍵](#.E6.BB.BE.E8.BC.AA.E4.BF.AE.E6.AD.A3.E9.8D.B5)
-    *   [3.2 Right-side or left-side](#Right-side_or_left-side)
+    *   [3.2 左撇子或右撇子](#.E5.B7.A6.E6.92.87.E5.AD.90.E6.88.96.E5.8F.B3.E6.92.87.E5.AD.90)
     *   [3.3 System-wide or per-user](#System-wide_or_per-user)
     *   [3.4 Xorg input hotplugging](#Xorg_input_hotplugging)
     *   [3.5 Without Xorg hotplugging](#Without_Xorg_hotplugging)
@@ -329,18 +329,18 @@ Option "EmulateWheelButton" "8"
 
 雖然我使用兩個方向的捲動，但不少人認為單一方向的捲動比較好用。 也許你想嘗試取消垂直方向的捲動，但是類似設定是不能取消垂直方向捲動的。
 
-### Right-side or left-side
+### 左撇子或右撇子
 
-Previous sections explain how to modify your configuration file for either left or right placement.
+前面章節已經說明如何設定給右手或左手使用的設置。
 
-*   On occasion, you may wish to switch between left-handed and right-handed usage.
-*   I do this when I feel the early signs of repetitive strain injury.
+*   你可能經常的左右手交替使用
+*   我會在我感到不適前交替
 
-To switch to the opposite placement, I manually edit my configuration file and [restart the X server.](#Restarting_X) Comments in the file remind me which lines to change. You could devise a script to make switching more automatic, if you wanted to.
+為了左右手交替，我會手動修改配置（加註一些內容）後[重啟X server](#Restarting_X)。你也可以依你需要自已寫一些Script自動化這些步驟。
 
-*   With Arch Linux, I prefer a lightweight or non-existent desktop environment running the **[Openbox](/index.php/Openbox "Openbox")** window manager.
+*   在Arch Linux上，我建議使用輕量的**[Openbox](/index.php/Openbox "Openbox")**做視窗管理。
 
-Other desktop environments may have widgets to simplify — or complicate, depending how you view it — switching between right and left. With Ubuntu 10.10, for example, you need only mark a box in the mouse control panel to effect a button switch. _(You must change the configuration file to get the correct scroll modifier assignment, however. Also, Ubuntu ignores large button assignments in the configuration file; the control panel makes them unnecessary.)_
+在其他的桌面環境中，可能有一些簡單（或複雜）的小工具做左右手交替的設定。例如，Ubuntu 10.10中，你可以點擊一個滑鼠控制的面版按鈕即進行交替。
 
 ### System-wide or per-user
 
@@ -673,7 +673,7 @@ The slightest horizontal motion triggers a URL redirection. To fix this:
 *   Ubuntu community: [Logitech Marble Mouse](https://help.ubuntu.com/community/Logitech_Marblemouse_USB)
 *   Chrome web store: [AutoScroll extension](https://chrome.google.com/webstore/detail/occjjkgifpmdgodlplnacmkejpdionan)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412889](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=412889)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=413123](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse_(正體中文)&oldid=413123)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

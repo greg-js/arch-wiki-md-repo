@@ -678,7 +678,7 @@ The slightest horizontal motion triggers a URL redirection. To fix this:
 *   Ubuntu community: [Logitech Marble Mouse](https://help.ubuntu.com/community/Logitech_Marblemouse_USB)
 *   Chrome web store: [AutoScroll extension](https://chrome.google.com/webstore/detail/occjjkgifpmdgodlplnacmkejpdionan)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse&oldid=412468](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse&oldid=412468)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse&oldid=413115](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse&oldid=413115)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

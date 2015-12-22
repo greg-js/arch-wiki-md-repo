@@ -93,6 +93,20 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
+<td>[CVE-2015-8369](https://access.redhat.com/security/cve/CVE-2015-8369)</td>
+
+<td>[cacti](https://www.archlinux.org/packages/?name=cacti)</td>
+
+<td>2015-12-17</td>
+
+<td><= 0.8.8_f-3</td>
+
+<td>**Vulnerable**</td>
+
+</tr>
+
+<tr>
+
 <td>[[1]](https://blog.fuzzing-project.org/32-Out-of-bounds-read-in-OpenVPN.html)</td>
 
 <td>[openvpn](https://www.archlinux.org/packages/?name=openvpn)</td>
@@ -7531,7 +7545,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=412714](https://wiki.archlinux.org/index.php?title=CVE&oldid=412714)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413126](https://wiki.archlinux.org/index.php?title=CVE&oldid=413126)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

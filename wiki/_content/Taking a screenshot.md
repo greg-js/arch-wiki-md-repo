@@ -28,7 +28,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
     *   [3.8 FFmpeg](#FFmpeg)
     *   [3.9 Weston](#Weston)
 *   [4 Details: desktop environment specific](#Details:_desktop_environment_specific)
-    *   [4.1 KSnapshot](#KSnapshot)
+    *   [4.1 Spectacle](#Spectacle)
     *   [4.2 Xfce Screenshooter](#Xfce_Screenshooter)
     *   [4.3 GNOME](#GNOME)
     *   [4.4 Cinnamon](#Cinnamon)
@@ -43,9 +43,9 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 [http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
-*   **[KSnapshot](https://en.wikipedia.org/wiki/KSnapshot "wikipedia:KSnapshot")** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
+*   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
 
-[http://kde.org/applications/graphics/ksnapshot/](http://kde.org/applications/graphics/ksnapshot/) || [kdegraphics-ksnapshot](https://www.archlinux.org/packages/?name=kdegraphics-ksnapshot)
+[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
 
 *   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
 
@@ -54,10 +54,6 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 *   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 
 [https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)<sup><small>AUR</small></sup>
-
-*   **kscreengenie** — KDE screenshot capture utility (Qt5/KF5).
-
-[https://blogs.kde.org/2015/08/12/ksnapshot-next](https://blogs.kde.org/2015/08/12/ksnapshot-next) || [kscreengenie](https://www.archlinux.org/packages/?name=kscreengenie)
 
 *   **maim** — A simple command line utility that takes screenshots using imlib2\. It's meant to replace scrot and performs better than scrot in many ways.
 
@@ -272,11 +268,11 @@ In the [Weston](/index.php/Wayland#Weston "Wayland") Wayland compositor, screens
 
 ## Details: desktop environment specific
 
-### KSnapshot
+### Spectacle
 
-If you use [KDE](/index.php/KDE "KDE"), you might want to use `KSnapshot`, which can also be activated using `Prnt Scr`.
+If you use [KDE](/index.php/KDE "KDE"), you might want to use `Spectacle`.
 
-KSnapshot is provided by the [kdegraphics-ksnapshot](https://www.archlinux.org/packages/?name=kdegraphics-ksnapshot).
+Spectacle is provided by the [spectacle](https://www.archlinux.org/packages/?name=spectacle).
 
 ### Xfce Screenshooter
 
@@ -356,7 +352,7 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=411819](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=411819)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413125](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413125)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

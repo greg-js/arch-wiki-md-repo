@@ -211,7 +211,7 @@ If _cinnamon-settings_ does not start with the message that it cannot find a cer
 
 ### Video tearing
 
-Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon [mutter](https://www.archlinux.org/packages/?name=mutter), video tearing fixes for [GNOME](/index.php/GNOME "GNOME") should also work work in Cinnamon. See [GNOME#Tear-free video with Intel HD Graphics](/index.php/GNOME#Tear-free_video_with_Intel_HD_Graphics "GNOME") for more information.
+Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon [mutter](https://www.archlinux.org/packages/?name=mutter), video tearing fixes for [GNOME](/index.php/GNOME "GNOME") should also work in Cinnamon. See [GNOME#Tear-free video with Intel HD Graphics](/index.php/GNOME#Tear-free_video_with_Intel_HD_Graphics "GNOME") for more information.
 
 ### Disable the NetworkManager applet
 
@@ -226,7 +226,7 @@ $ ln -s /bin/true /usr/local/bin/nm-applet
 
 The ability to blacklist particular icons from the system tray (such as the _nm-applet_ icon) has been [requested upstream](https://github.com/linuxmint/Cinnamon/issues/3318).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=410622](https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=410622)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=413124](https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=413124)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

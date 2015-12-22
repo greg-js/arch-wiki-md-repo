@@ -25,7 +25,7 @@ ClamAV can be [installed](/index.php/Install "Install") with package [clamav](ht
 
 ## Starting the daemon
 
-The service is called `clamd.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information about starting it and enabling it to start at boot.
+The service is called `clamd.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information about starting it and enabling it to start at boot. You will need to run `freshclam` prior to starting the service.
 
 ## Updating database
 
@@ -175,7 +175,7 @@ Correct permissions:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ClamAV&oldid=390042](https://wiki.archlinux.org/index.php?title=ClamAV&oldid=390042)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ClamAV&oldid=413129](https://wiki.archlinux.org/index.php?title=ClamAV&oldid=413129)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

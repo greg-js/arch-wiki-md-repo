@@ -36,6 +36,7 @@ Related articles
     *   [4.3 Disable Ctrl+z in terminal](#Disable_Ctrl.2Bz_in_terminal)
     *   [4.4 Clear the screen after logging out](#Clear_the_screen_after_logging_out)
     *   [4.5 Auto "cd" when entering just a path](#Auto_.22cd.22_when_entering_just_a_path)
+    *   [4.6 Autojump](#Autojump)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Line wrap on window resize](#Line_wrap_on_window_resize)
     *   [5.2 Shell exits even if ignoreeof set](#Shell_exits_even_if_ignoreeof_set)
@@ -429,6 +430,12 @@ cd /etc
 
 ```
 
+### Autojump
+
+[autojump](https://www.archlinux.org/packages/?name=autojump) allows navigating the file system by searching for strings in a database with the user's most-visited paths.
+
+After installation, `/etc/profile.d/autojump.bash` must be [sourced](/index.php/Source "Source") in order to start using the application.
+
 ## Troubleshooting
 
 ### Line wrap on window resize
@@ -480,7 +487,7 @@ For example:
 
 *   [How to change the title of an xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=411779](https://wiki.archlinux.org/index.php?title=Bash&oldid=411779)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=413121](https://wiki.archlinux.org/index.php?title=Bash&oldid=413121)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
