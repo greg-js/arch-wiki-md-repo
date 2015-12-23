@@ -40,6 +40,7 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
+*   [22 December 2015] [ASA-201512-13](https://lists.archlinux.org/pipermail/arch-security/2015-December/000473.html) [claws-mail](https://www.archlinux.org/packages/?name=claws-mail) buffer overflow
 *   [17 December 2015] [ASA-201512-12](https://lists.archlinux.org/pipermail/arch-security/2015-December/000472.html) [python2-pyamf](https://www.archlinux.org/packages/?name=python2-pyamf) XML external entity injection
 *   [17 December 2015] [ASA-201512-11](https://lists.archlinux.org/pipermail/arch-security/2015-December/000471.html) [ruby](https://www.archlinux.org/packages/?name=ruby) unsafe tainted string usage
 *   [16 December 2015] [ASA-201512-10](https://lists.archlinux.org/pipermail/arch-security/2015-December/000468.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
@@ -509,7 +510,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=412652](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=412652)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413139](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413139)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

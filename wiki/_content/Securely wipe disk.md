@@ -317,6 +317,13 @@ The file copy command `cp` can also be used to rewrite the device, because it ig
  cp: failed to extend ‘/dev/sd"XY"’: No space left on device
 ```
 
+To show speed and time you can use [pv](https://www.archlinux.org/packages/?name=pv):
+
+```
+# pv --timer --rate /dev/zero > /dev/sd"X"
+
+```
+
 **Tip:** The `cp` and the `cat` command are the fastest. But as an alternative you can create a small partition in just a few megabytes on the device that need to be wiped and use the `time` command in front of them to find out which of them will work faster on your device.
 
 ### dd
@@ -414,7 +421,7 @@ The [secure-delete](https://aur.archlinux.org/packages/secure-delete/)<sup><smal
 
 See [the tools list](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) for more info.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412626](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=412626)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=413142](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=413142)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -193,14 +193,9 @@ The `-c` operand tells makepkg to clean left over files after building the packa
 
 #### Automatic re-compilation of the NVIDIA module with kernel update
 
-This is possible with the [nvidia-hook](https://aur.archlinux.org/packages/nvidia-hook/)<sup><small>AUR</small></sup> package. You will need to install the module sources: [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms). In _nvidia-hook_, the 'automatic re-compilation' functionality is done by a `nvidia` hook on [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") after forcing to update the [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) package. You will need to add `nvidia` to the HOOKS array in `/etc/mkinitcpio.conf`.
+This used to be done with the [nvidia-hook](https://aur.archlinux.org/packages/nvidia-hook/)<sup><small>AUR</small></sup> package. Now, all you need to install is the dkms-version of the nvidia-driver for your videocard and the [dkms](https://www.archlinux.org/packages/?name=dkms) package.
 
-The hook will call the _dkms_ command to update the NVIDIA module for the version of your new kernel.
-
-**Note:**
-
-*   If you are using this functionality it is **important** to look at the installation process of the [linux](https://www.archlinux.org/packages/?name=linux) (or any other kernel) package. nvidia hook will tell you if anything goes wrong.
-*   If you would like to do this manually please see [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support").
+More info on how to use DKMS can be found on the wiki: [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support").
 
 ### Pure Video HD (VDPAU/VAAPI)
 
@@ -1485,7 +1480,7 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=412393](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=412393)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413140](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413140)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

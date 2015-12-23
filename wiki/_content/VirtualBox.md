@@ -226,7 +226,7 @@ Boot the Arch installation media through one of the virtual machine's virtual dr
 
 #### Installation in EFI mode
 
-If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose _**System**_ item from the panel on the left and _**Motherboard**_ tab from the right panel, and check the checkbox _**Enable EFI (special OSes only)**_. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
+If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose _System_ item from the panel on the left and _Motherboard_ tab from the right panel, and check the checkbox _Enable EFI (special OSes only)_. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
 
 Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the ESP. If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
 
@@ -457,7 +457,7 @@ VirtualBox supports the following virtual disk formats:
 
 *   QCOW: The QEMU Copy On Write format is the current format for QEMU. The QCOW format does support zlib-based transparent compression and encryption (the latter has flaw and is not recommended). QCOW is available in two versions: QCOW and QCOW2\. The latter tends to supersede the first one. QCOW is [currently fully supported by VirtualBox](https://www.virtualbox.org/manual/ch15.html#idp63002176). QCOW2 comes in two revisions: QCOW2 0.10 and QCOW2 1.1 (which is the default when you create a virtual disk with QEMU). VirtualBox does not support this QCOW2 format (both revisions have been tried).
 
-*   OVF: The Open Virtualization Format is an open format which has been designed for interoperability and distributions of virtual machines between different hypervisors. VirtualBox supports all revisions of this format via the [`VBoxManage` import/export feature](https://www.virtualbox.org/manual/ch08.html#idp55423424) but with [known limitations](https://www.virtualbox.org/manual/ch14.html#KnownProblems).
+*   OVF: The Open Virtualization Format is an open format which has been designed for interoperability and distributions of virtual machines between different hypervisors. VirtualBox supports all revisions of this format via the [VBoxManage import/export feature](https://www.virtualbox.org/manual/ch08.html#idp55423424) but with [known limitations](https://www.virtualbox.org/manual/ch14.html#KnownProblems).
 
 *   RAW: This is the mode when the virtual disk is exposed directly to the disk without being contained in a specific file format container. VirtualBox supports this feature in several ways: converting RAW disk [to a specific format](https://www.virtualbox.org/manual/ch08.html#idp59139136), or by [cloning a disk to RAW](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi), or by using directly a VMDK file [which points to a physical disk or a simple file](https://www.virtualbox.org/manual/ch09.html#idp57804112).
 
@@ -465,7 +465,7 @@ VirtualBox supports the following virtual disk formats:
 
 #### VMDK to VDI and VDI to VMDK
 
-VirtualBox can handle back and forth conversion between VDI and VMDK by itself with [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
+VirtualBox can handle back and forth conversion between VDI and VMDK by itself with [VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
 
 VMDK to VDI:
 
@@ -483,7 +483,7 @@ $ VBoxManage clonehd _source.vdi_ _destination.vmdk_ --format VMDK
 
 #### VHD to VDI and VDI to VHD
 
-VirtualBox can handle conversion back and forth this format with [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) too.
+VirtualBox can handle conversion back and forth this format with [VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) too.
 
 VHD to VDI:
 
@@ -501,7 +501,7 @@ $ VBoxManage clonehd _source.vdi_ _destination.vhd_ --format VHD
 
 #### QCOW2 to VDI and VDI to QCOW2
 
-[`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) cannot handle the QEMU format conversion; we will thus rely on another tool. The `qemu-img` command from [qemu](https://www.archlinux.org/packages/?name=qemu) can be used to convert images back and forth from VDI to QCOW2\.
+[VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) cannot handle the QEMU format conversion; we will thus rely on another tool. The `qemu-img` command from [qemu](https://www.archlinux.org/packages/?name=qemu) can be used to convert images back and forth from VDI to QCOW2\.
 
 **Note:** `qemu-img` can handle a bunch of other formats too. According to the `qemu-img --help`, here are the supported formats this tool supports: "_vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'"._
 
@@ -615,7 +615,7 @@ The next time you boot your virtual machine, it is recommended to do a filesyste
 *   either `chkdsk _c:_ /F` where `_c:_` needs to be replaced by each disk you need to scan and fix errors;
 *   or `FsckDskAll` [from here](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) which is basically the same software as `chkdsk`, but without the need to repeat the command for all drives;
 
-Now, remove the zeros from the `vdi` file with `[VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi)`:
+Now, remove the zeros from the `vdi` file with [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
 
 ```
 $ VBoxManage modifyhd _your_disk.vdi_ --compact
@@ -626,7 +626,7 @@ $ VBoxManage modifyhd _your_disk.vdi_ --compact
 
 ### Increase virtual disks
 
-If you are running out of space due to the small hard drive size you selected when you created your virtual machine, the solution adviced by the VirtualBox manual is to use [`VBoxManage modifyhd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi). However this command only works for VDI and VHD disks and only for the dynamically allocated variants. If you want to resize a fixed size virtual disk disk too, read on this trick which works either for a Windows or UNIX-like virtual machine.
+If you are running out of space due to the small hard drive size you selected when you created your virtual machine, the solution adviced by the VirtualBox manual is to use [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi). However this command only works for VDI and VHD disks and only for the dynamically allocated variants. If you want to resize a fixed size virtual disk disk too, read on this trick which works either for a Windows or UNIX-like virtual machine.
 
 First, create a new virtual disk next to the one you want to increase:
 
@@ -733,7 +733,7 @@ else print $0}' "$Filename"
 
 ### Clone a virtual disk and assigning a new UUID to it
 
-UUIDs are widely used by VirtualBox. Each virtual machines and each virtual disk of a virtual machine must have a different UUID. When you launch a virtual machine in VirtualBox, the latter will keep track of all UUID of your virtual machine instance. See the [`VBoxManage list`](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) to list the items registered with VirtualBox.
+UUIDs are widely used by VirtualBox. Each virtual machines and each virtual disk of a virtual machine must have a different UUID. When you launch a virtual machine in VirtualBox, the latter will keep track of all UUID of your virtual machine instance. See the [VBoxManage list](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) to list the items registered with VirtualBox.
 
 If you cloned a virtual disk manually by copying the virtual disk file, you will need to assign a new UUID to the cloned virtual drive if you want to use the disk in the same virtual machine or even in another (if that one has already been opened, and thus registered, with VirtualBox).
 
@@ -744,7 +744,7 @@ $ VBoxManage internalcommands sethduuid _/path/to/disk.vdi_
 
 ```
 
-**Tip:** In the future, to avoid copying the virtual disk and assigning a new UUID to your file manually, use `[VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi)` instead.
+**Tip:** In the future, to avoid copying the virtual disk and assigning a new UUID to your file manually, use [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) instead.
 
 **Note:** The commands above supports [all virtual disk formats supported by VirtualBox](#Formats_supported_by_VirtualBox).
 
@@ -1417,7 +1417,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413035](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413143](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413143)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
