@@ -4,6 +4,8 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+**Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)").
+
 <table class="wikitable" style="float: right;">
 
 <tbody>
@@ -278,7 +280,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=410647](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=410647)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413147](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413147)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
