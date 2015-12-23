@@ -281,7 +281,7 @@ modify IgnorePkg array</td>
 
 <td>apt-mark unhold pkg</td>
 
-<td>Remove package name from /etc/zypp/locks</td>
+<td>Remove package name from /etc/zypp/locks or zypper rl</td>
 
 <td>/etc/portage/package.mask (or package.unmask)</td>
 
@@ -295,7 +295,7 @@ modify IgnorePkg array</td>
 
 <td>/etc/apt/preferences</td>
 
-<td>View /etc/zypp/locks</td>
+<td>View /etc/zypp/locks or zypper ll</td>
 
 <td>cat /etc/portage/package.mask</td>
 
@@ -1175,7 +1175,7 @@ mock (in chroot)</td>
 
 *   [Changes in DNF CLI compared to Yum](http://dnf.readthedocs.org/en/latest/cli_vs_yum.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=409661](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=409661)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=413149](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=413149)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

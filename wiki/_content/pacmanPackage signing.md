@@ -243,7 +243,7 @@ This might actually be the solution if you get a message like `error: linux: sig
 There was a [bug](https://bugs.g10code.com/gnupg/issue1786) in [GnuPG](/index.php/GnuPG "GnuPG") which prevents updating keys via http proxies. As of v.2.1.9, while the bug appears handled, _gnupg_ may not honour the `http_proxy` environment variable. As a workaround, add:
 
 ```
-keyserver-options http-proxy = "http://server:port" 
+keyserver-options http-proxy = "http://user:password@server:port" 
 keyserver hkp://keyserver.kjsl.com:80
 
 ```
@@ -258,7 +258,7 @@ to `/etc/pacman.d/gnupg/gpg.conf`.
 *   [Pacman Package Signing – 3: Pacman](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)
 *   [Pacman Package Signing – 4: Arch Linux](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=412903](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=412903)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=413163](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=413163)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -138,6 +138,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Configuration
 
+**Tip:** Some latest desktop environments has it's own configurations regarding to Audio, Video, Keyboard and more. Before you begin configuring settings written below, make sure you really need them.
+
 ### Video
 
 #### Install
@@ -549,7 +551,7 @@ If you prefer using a [Window manager](/index.php/Window_manager "Window manager
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=412514](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=412514)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=413151](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=413151)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

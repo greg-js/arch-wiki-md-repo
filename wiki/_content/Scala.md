@@ -49,7 +49,7 @@ Many different [IDEs](/index.php/IDE#Integrated_development_environments "IDE") 
 *   [Scala Tutorial](http://tutorials.jenkov.com/scala/index.html) - a series of small Scala tutorials
 *   [Learn X=Scala in Y minutes](http://learnxinyminutes.com/docs/scala/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Scala&oldid=412171](https://wiki.archlinux.org/index.php?title=Scala&oldid=412171)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Scala&oldid=413155](https://wiki.archlinux.org/index.php?title=Scala&oldid=413155)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

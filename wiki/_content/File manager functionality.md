@@ -179,7 +179,7 @@ File managers using [udisks](/index.php/Udisks "Udisks") require a [polkit](/ind
 
 The need to enter a password to access other partitions or mounted removable media will likely be due to the default permission settings of [udisks2](https://www.archlinux.org/packages/?name=udisks2). More specifically, permission may be set to the root account only, not the user account. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=404035](https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=404035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=413162](https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=413162)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

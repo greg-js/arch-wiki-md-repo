@@ -33,6 +33,8 @@ Follow the instructions to install [LAMP](/index.php/LAMP "LAMP").
 
 ## Download and install Moodle
 
+There is also an AUR package [moodle](https://aur.archlinux.org/packages/moodle/)<sup><small>AUR</small></sup> for the installation. Eighter you can use this way:
+
 Download the most current version of Moodle from [http://download.moodle.org/](http://download.moodle.org/) - this installation was done with 2.3.1+, and there may be minor changes to the install routine in later versions.
 
 Unzip it into `/srv/http`:
@@ -129,7 +131,7 @@ Happy Moodling !
 *   [http://www.php.net/](http://www.php.net/)
 *   [http://www.mysql.com/](http://www.mysql.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=388042](https://wiki.archlinux.org/index.php?title=Moodle&oldid=388042)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=413153](https://wiki.archlinux.org/index.php?title=Moodle&oldid=413153)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -77,6 +77,8 @@ exit 0
 
 Theme settings can be changed in the `[Theme]` section.
 
+Set to `breeze` for the default Plasma theme.
+
 Some themes are available in the [AUR](/index.php/AUR "AUR"), for example [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/)<sup><small>AUR</small></sup>.
 
 #### Main theme
@@ -90,6 +92,8 @@ The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your 
 #### Mouse cursor
 
 To set the mouse cursor theme, set `CursorTheme` to your preferred cursor theme.
+
+Valid [Plasma](/index.php/Plasma "Plasma") mouse cursor theme names are `breeze_cursors`, `Breeze_Snow` and `breeze-dark`.
 
 #### Changing your avatar
 
@@ -157,7 +161,7 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=412776](https://wiki.archlinux.org/index.php?title=SDDM&oldid=412776)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=413160](https://wiki.archlinux.org/index.php?title=SDDM&oldid=413160)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

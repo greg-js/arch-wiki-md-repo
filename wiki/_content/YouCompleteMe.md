@@ -241,7 +241,7 @@ Due to [a bug](https://bugs.kde.org/show_bug.cgi?id=341157) in KDE Framework5/Qt
 *   [GitHub page](https://github.com/Valloric/YouCompleteMe)
 *   [Project homepage](http://valloric.github.io/YouCompleteMe/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=YouCompleteMe&oldid=371634](https://wiki.archlinux.org/index.php?title=YouCompleteMe&oldid=371634)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=YouCompleteMe&oldid=413167](https://wiki.archlinux.org/index.php?title=YouCompleteMe&oldid=413167)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

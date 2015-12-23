@@ -77,7 +77,7 @@ userid@remoteMachine:/remoteDirectory /home/userid/remoteDirectory shfs rw,user,
 
 *   [http://www.openssh.com/](http://www.openssh.com/) for a really complete reference ;)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shfs&oldid=411513](https://wiki.archlinux.org/index.php?title=Shfs&oldid=411513)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shfs&oldid=413159](https://wiki.archlinux.org/index.php?title=Shfs&oldid=413159)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

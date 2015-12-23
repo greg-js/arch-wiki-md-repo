@@ -36,6 +36,21 @@ Installing the program [i3status](https://www.archlinux.org/packages/?name=i3sta
 
 ```
 
+If you want to achieve colored output of i3status, you can adjust following part in the i3status configuration:
+
+ `~/.config/i3status/config` 
+
+```
+general {
+	output_format = i3bar
+        colors = true
+        interval = 5
+}
+
+```
+
+In both examples, the system-wide installed configuration files has been copied over to the user directory and then modified.
+
 ### Wallpaper
 
 This line, which can be appended at the end of your sway configuration, sets a background image on all displays (output matches all with name `"*"`):
@@ -64,7 +79,7 @@ However, if you want to start _sway_ in an X session for testing purposes it is 
 
 *   [Github project](https://github.com/SirCmpwn/sway)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=412999](https://wiki.archlinux.org/index.php?title=Sway&oldid=412999)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=413150](https://wiki.archlinux.org/index.php?title=Sway&oldid=413150)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

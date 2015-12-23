@@ -341,7 +341,7 @@ Because of the limit on `outgoing-range` thus also limits `num-queries-per-threa
 
 *   [Block hosts that contain advertisements](https://github.com/jodrell/unbound-block-hosts/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unbound&oldid=410201](https://wiki.archlinux.org/index.php?title=Unbound&oldid=410201)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unbound&oldid=413164](https://wiki.archlinux.org/index.php?title=Unbound&oldid=413164)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

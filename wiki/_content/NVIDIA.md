@@ -193,9 +193,9 @@ The `-c` operand tells makepkg to clean left over files after building the packa
 
 #### Automatic re-compilation of the NVIDIA module with kernel update
 
-This used to be done with the [nvidia-hook](https://aur.archlinux.org/packages/nvidia-hook/)<sup><small>AUR</small></sup> package. Now, all you need to install is the dkms-version of the nvidia-driver for your videocard and the [dkms](https://www.archlinux.org/packages/?name=dkms) package.
+This is possible with [DKMS](/index.php/DKMS "DKMS"). Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)) and make sure that the `dkms.service` systemd unit is enabled.
 
-More info on how to use DKMS can be found on the wiki: [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support").
+See [Dynamic Kernel Module Support#Usage](/index.php/Dynamic_Kernel_Module_Support#Usage "Dynamic Kernel Module Support") for more information on how to use DKMS.
 
 ### Pure Video HD (VDPAU/VAAPI)
 
@@ -1480,7 +1480,7 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413140](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413140)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413166](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413166)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
