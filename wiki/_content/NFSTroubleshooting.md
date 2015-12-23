@@ -568,9 +568,7 @@ Method = nsswitch
 
 If nfs-idmapd.service refuses to start because it cannot open the Pipefs-directory (defined in /etc/idmapd.conf and appended with '/nfs'), issue a mkdir-command and restart the daemon.
 
-Please refer to [Nfs#ID_mapping](/index.php/Nfs#ID_mapping "Nfs") for more information.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=396989](https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=396989)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=413169](https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=413169)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

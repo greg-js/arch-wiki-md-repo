@@ -22,7 +22,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
 
 *   [1 Installation](#Installation)
     *   [1.1 Plasma Desktop](#Plasma_Desktop)
-    *   [1.2 KDE applications and language packs](#KDE_applications_and_language_packs)
+    *   [1.2 Upgrading from Plasma 4 to 5](#Upgrading_from_Plasma_4_to_5)
+    *   [1.3 KDE applications and language packs](#KDE_applications_and_language_packs)
 *   [2 Starting Plasma](#Starting_Plasma)
 *   [3 Configuration](#Configuration)
     *   [3.1 Personalization](#Personalization)
@@ -117,6 +118,17 @@ KDE is a software project currently comprising of a [desktop environment](/index
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
 Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) meta-package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group. For differences between [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) and [plasma](https://www.archlinux.org/groups/x86_64/plasma/) reference [KDE Packages](/index.php/KDE_Packages "KDE Packages"). Alternatively, for a more minimal Plasma installation, install the [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) package.
+
+### Upgrading from Plasma 4 to 5
+
+1.  Isolate `multi-user.target` `# systemctl isolate multi-user.target` 
+2.  If you use KDM as display manager, disable it `# systemctl disable kdm` 
+3.  [Uninstall](/index.php/Pacman "Pacman") the kdebase-workspace package `# pacman -Rc kdebase-workspace` 
+4.  [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
+5.  Enable [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` or install and enable any other [display manager](/index.php/Display_manager "Display manager").
+6.  Reboot or simply run `# systemctl start sddm` 
+
+**Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
 ### KDE applications and language packs
 
@@ -828,7 +840,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413009](https://wiki.archlinux.org/index.php?title=KDE&oldid=413009)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413174](https://wiki.archlinux.org/index.php?title=KDE&oldid=413174)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

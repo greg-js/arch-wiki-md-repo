@@ -9,7 +9,7 @@ Related articles
 *   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
 *   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
 
-[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") is a sound server commonly used by desktop environments like [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE") or [Cinnamon](/index.php/Cinnamon "Cinnamon"). It serves as a proxy to sound applications using existing kernel sound components like [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). Since ALSA is included in Arch Linux by default, the most common deployment scenarios include PulseAudio with ALSA.
+[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") serves as a proxy to sound applications using existing kernel sound components like [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). Since ALSA is included in Arch Linux by default, the most common deployment scenarios include PulseAudio with ALSA.
 
 ## Contents
 
@@ -614,7 +614,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413144](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413144)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413173](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413173)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

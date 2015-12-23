@@ -1532,13 +1532,14 @@ Newcomers may find it quite hard to find help for Mutt. Actually most of the top
 ## See also
 
 *   [The official Mutt website](http://www.mutt.org/)
+*   [offical manual](http://www.mutt.org/doc/devel/manual.html)
 *   [The Mutt wiki](http://wiki.mutt.org/)
 *   [Brisbin's great guide on how to setup different IMAP accounts with Mutt, offlineimap, msmtp](http://pbrisbin.com/posts/two_accounts_in_mutt/)
 *   [A Quick Guide to Mutt](http://srobb.net/mutt.html)
 *   [Steve Losh on Mutt, offlineimap, msmtp, notmuch (focused on Gmail)](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 *   [muttrc builder](http://www.muttrcbuilder.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=412700](https://wiki.archlinux.org/index.php?title=Mutt&oldid=412700)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=413170](https://wiki.archlinux.org/index.php?title=Mutt&oldid=413170)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -108,7 +108,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 3\. Install the appropriate driver for your card:
 
 *   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package along with [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl).
-*   For GeForce 8000/9000 and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package along with [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
+*   For GeForce 8000/9000, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package along with [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
 *   For GeForce 6000/7000 series cards [NV4x and NV6x] from around 2004-2006, [install](/index.php/Install "Install") the [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) package along with [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
 
 *   For even older cards, have a look at [#Unsupported drivers](#Unsupported_drivers).
@@ -1480,7 +1480,7 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413166](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413166)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413168](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413168)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
