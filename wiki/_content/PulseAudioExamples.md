@@ -135,20 +135,20 @@ set-default-sink alsa_output.pci-0000_04_01.0.analog-stereo
 
 When done then you can logout/login or restart PulseAudio manually for these changes to take effect.
 
-**Note:** .
+**Note:**
 
-*   The index number corresponds to the 'alsa_output.hw_0_0' sink.
-*   The sinks that are set as default are marked with ***** in front of index.
-*   The numbering of sinks cannot be guaranteed repeatable, hence the use of the name with `set-default-sink`.
-*   You can use the index number to manage sound volume:
+*   The sinks that are set as default are marked with `*` in front of the index.
+*   The numbering of sinks is not guaranteed to be persistent, so all sinks in the `default.pa` file should be identified by the name.
+*   For quick identification at runtime (e.g. to manage sound volume), you can use the sink index instead of the sink name:
 
-```
- $ pactl set-sink-volume **0** +3%
- $ pactl set-sink-volume **0** -- -3%
- $ pactl set-sink-mute **0** toggle
-```
+    ```
+    $ pactl set-sink-volume 0 +3%
+    $ pactl set-sink-volume 0 -- -3%
+    $ pactl set-sink-mute 0 toggle
 
-*   To avoid unnecessary overriding of 100% normal volume is better to use alternative utilities for managing of sound. See the [arch forum](https://bbs.archlinux.org/viewtopic.php?id=124513) for more info.
+    ```
+
+*   To avoid unnecessary overriding of 100% normal volume it is better to use alternative utilities for managing of sound. See the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=124513) for more information.
 
 ## Simultaneous HDMI and analog output
 
@@ -810,7 +810,7 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412595](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=412595)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=413206](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=413206)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

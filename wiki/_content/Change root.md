@@ -115,7 +115,7 @@ Mount the temporary api filesystems:
 
 ```
 # cd /mnt/arch
-# mount -t proc /proc proc/
+# mount -t proc proc proc/
 # mount --rbind /sys sys/
 # mount --rbind /dev dev/
 
@@ -238,7 +238,7 @@ Chroot requires root privileges, which may not be desirable or possible for the 
 
 *   [Basic Chroot](https://help.ubuntu.com/community/BasicChroot)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Change_root&oldid=413187](https://wiki.archlinux.org/index.php?title=Change_root&oldid=413187)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Change_root&oldid=413191](https://wiki.archlinux.org/index.php?title=Change_root&oldid=413191)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -484,7 +484,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
 *   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/)<sup><small>AUR</small></sup> - MathType fonts
-*   [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/)<sup><small>AUR</small></sup> - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) (of TeX fame)
+*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/)<sup><small>AUR</small></sup>, [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/)<sup><small>AUR</small></sup> - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
 *   [otf-xits](https://aur.archlinux.org/packages/otf-xits/)<sup><small>AUR</small></sup> - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with math support
 
 ### Microsoft fonts
@@ -585,7 +585,6 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
 *   Tinos ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup> or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>) - Chrome/Chromium OS replacement for Times New Roman (metric-compatible)
-*   [XITS](https://en.wikipedia.org/wiki/XITS_font_project "wikipedia:XITS font project") ([otf-xits](https://aur.archlinux.org/packages/otf-xits/)<sup><small>AUR</small></sup>)
 
 ### Unsorted
 
@@ -672,7 +671,7 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 
 *   [State of Text Rendering](http://behdad.org/text/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=412958](https://wiki.archlinux.org/index.php?title=Fonts&oldid=412958)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=413203](https://wiki.archlinux.org/index.php?title=Fonts&oldid=413203)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

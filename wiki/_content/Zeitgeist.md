@@ -40,7 +40,7 @@ The following applications can be used to browse or search for recent activity u
 
 For more information see [http://zeitgeist-project.com/experience/](http://zeitgeist-project.com/experience/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Zeitgeist&oldid=392871](https://wiki.archlinux.org/index.php?title=Zeitgeist&oldid=392871)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Zeitgeist&oldid=413190](https://wiki.archlinux.org/index.php?title=Zeitgeist&oldid=413190)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

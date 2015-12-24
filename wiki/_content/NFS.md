@@ -196,9 +196,13 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 [Start](/index.php/Start "Start") `rpcbind.service`,`nfs-client.target` and `remote-fs.target` and [enable](/index.php/Enable "Enable") them to start at boot.
 
+Users intending to use NFS4 with Kerberos, also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rpc-gssd.service`. Setting up `/etc/krb5.keytab /etc/krb5.conf` are beyond the scope of this article.
+
 #### Error from systemd
 
-During boot you may get warning about "Dependency failed for pNFS block layout mapping daemon." While the failure is benign (NFS will usually still work) it ends up turning on systemd messages for the rest of the boot. The service is not needed and may be turned off by using systemd's service masking.
+Users experiencing the following may consider turning off the service using system's masking feature: "Dependency failed for pNFS block layout mapping daemon."
+
+Example:
 
 ```
 # systemctl mask nfs-blkmap.service
@@ -272,7 +276,7 @@ Another method is using the systemd `automount` service. This is a better option
 
  `/etc/fstab`  `servername:/home   _/mountpoint/on/client_  nfs  noauto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0` 
 
-One might have to reboot the client to make systemd aware of the changes to fstab. Alternatively, you can try [reloading](/index.php/Systemd#Using_units "Systemd") systemd and restarting `_mountpoint-on-client_.automount` to reload the `/etc/fstab` configuration.
+One might have to reboot the client to make systemd aware of the changes to fstab. Alternatively, try [reloading](/index.php/Systemd#Using_units "Systemd") systemd and restarting `_mountpoint-on-client_.automount` to reload the `/etc/fstab` configuration.
 
 **Tip:**
 
@@ -322,7 +326,7 @@ The `noauto` mount option tells systemd not to automatically mount the shares at
 
 In order to mount NFS shares with non-root users the `user` option has to be added.
 
-Create the `auto_share` script that will be used by _cron_ or _systemd/Timers_ to use ICMP ping to check if the NFS host is reachable you can use:
+Create the `auto_share` script that will be used by _cron_ or _systemd/Timers_ to use ICMP ping to check if the NFS host is reachable:
 
  `/usr/local/bin/auto_share` 
 
@@ -533,7 +537,7 @@ There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshootin
 *   [Microsoft Services for Unix NFS Client info](http://blogs.msdn.com/sfu/archive/2008/04/14/all-well-almost-about-client-for-nfs-configuration-and-performance.aspx)
 *   [NFS on Snow Leopard](https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS&oldid=411011](https://wiki.archlinux.org/index.php?title=NFS&oldid=411011)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS&oldid=413209](https://wiki.archlinux.org/index.php?title=NFS&oldid=413209)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -320,15 +320,10 @@ select {
 }
 ```
 
-Another workaround is to force firefox to use light theme:
+Another workaround is to force Firefox to use a light theme (e.g. "Adwaita:light"):
 
-1.  edit `/usr/share/applications/firefox.desktop`, replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`
-2.  close all running firefox instances
-3.  restart gnome shell(press Alt + F2, r, Enter)
-
-**Note:** You may need to redo the work everytime after you update firefox.
-
-**Note:** You can copy this modified file to `$HOME/.local/share/applications/firefox.desktop` in order to override global configuration. This should avoid any change when updating Firefox for the given user.
+1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
+2.  Close all running instances of Firefox and restart your window manager/desktop environment.
 
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 
@@ -382,7 +377,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413095](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413095)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413201](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413201)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
