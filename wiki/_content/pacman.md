@@ -684,7 +684,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=412954](https://wiki.archlinux.org/index.php?title=Pacman&oldid=412954)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=413189](https://wiki.archlinux.org/index.php?title=Pacman&oldid=413189)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
