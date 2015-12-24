@@ -101,6 +101,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [10.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [10.9 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
     *   [10.10 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [10.11 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
 *   [11 Unstable releases](#Unstable_releases)
 *   [12 Bugs](#Bugs)
 *   [13 See also](#See_also)
@@ -806,6 +807,10 @@ fs.inotify.max_user_watches = 10000
 
 ```
 
+### Freezes when using Automount on a NFS volume
+
+Using [Fstab#Automount_with_systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
+
 ## Unstable releases
 
 When KDE is reaching beta or RC milestone, KDE "unstable" packages are uploaded to the _kde-unstable_ repository. They stay there until KDE is declared stable and passes to the _extra_ repository.
@@ -840,7 +845,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413174](https://wiki.archlinux.org/index.php?title=KDE&oldid=413174)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413186](https://wiki.archlinux.org/index.php?title=KDE&oldid=413186)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

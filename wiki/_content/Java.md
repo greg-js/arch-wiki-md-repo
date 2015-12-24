@@ -429,7 +429,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 ### Better font rendering
 
-Both closed source and open source implementations of Java are known to have improperly implemented anti-aliasing of fonts. This can be fixed with the following options: `awt.useSystemAAFontSettings=on`, `swing.aatext=true`
+Both closed source and open source implementations of Java are known to have improperly implemented anti-aliasing of fonts. This can be fixed with the following options: `-Dawt.useSystemAAFontSettings=on`, `-Dswing.aatext=true`
 
 See [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts") for more detailed information.
 
@@ -465,7 +465,7 @@ Non-reparenting window managers user should set the following environment variab
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=411061](https://wiki.archlinux.org/index.php?title=Java&oldid=411061)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=413181](https://wiki.archlinux.org/index.php?title=Java&oldid=413181)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

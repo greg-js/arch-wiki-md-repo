@@ -97,6 +97,10 @@ This is a list of helper utilities that search and/or build packages.
 
 [http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)<sup><small>AUR</small></sup>
 
+*   **bauerbill** — Powerpill/pacman extension with support for building packages from ABS and AUR, with full dependency resolution.
+
+[http://xyne.archlinux.ca/projects/bauerbill](http://xyne.archlinux.ca/projects/bauerbill) || [bauerbill](https://aur.archlinux.org/packages/bauerbill/)<sup><small>AUR</small></sup>
+
 *   **burgaur** — A front-end for cower written in Python.
 
 [https://github.com/m45t3r/burgaur](https://github.com/m45t3r/burgaur) || [burgaur](https://aur.archlinux.org/packages/burgaur/)<sup><small>AUR</small></sup>
@@ -164,6 +168,10 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 *   **haskell-archlinux** — library to programmatically access the AUR and package metadata from the Haskell programming language
 
 [http://hackage.haskell.org/package/archlinux](http://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)<sup><small>AUR</small></sup>
+
+*   **python3-aur** — Python 3 modules for accessing AUR package information and automating AUR interactions.
+
+[http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)<sup><small>AUR</small></sup>
 
 ## Graphical
 
@@ -302,6 +310,28 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 <td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
 
 <td>-</td>
+
+</tr>
+
+<tr>
+
+<th>bauerbill</th>
+
+<td>Python</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes (bash/zsh)</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
+
+<td>ABS Support, full AUR searches and package lists</td>
 
 </tr>
 
@@ -555,7 +585,7 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 *   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=412949](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=412949)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=413185](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=413185)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

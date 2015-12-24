@@ -288,6 +288,16 @@ vboxvideo
 
 Alternatively, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
 
+Note that depending on your choice of paravirtualization in VirtualBox, you may need to edit the service file to get it to load: `/usr/lib/systemd/system/vboxservice.service` 
+
+```
+...
+ConditionVirtualization=_paravirtualization_
+...
+```
+
+Run `systemd-detect-virt` in the console to determine your paravirtualization.
+
 ### Launch the VirtualBox guest services
 
 After the rather big installation step dealing with VirtualBox kernel modules, now you need to start the guest services. The guest services are actually just a binary executable called `VBoxClient` which will interact with your X Window System. `VBoxClient` manages the following features:
@@ -1417,7 +1427,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413143](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413143)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413179](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413179)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
