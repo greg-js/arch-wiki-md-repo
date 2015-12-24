@@ -8,6 +8,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.3.3-2**
+
+*   Changelog: fix #46968
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=f18e1e813ddac6c3bcc8040902aba3129f223eea](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=f18e1e813ddac6c3bcc8040902aba3129f223eea)
+
 **Bump to v4.3.3-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.3)
@@ -1845,7 +1850,7 @@ rebuild with mkinitcpio bump to 0.6.8 and gzipped modules saves 70MB space git-s
 
 fix udev crash, updated aufs, changed ext3 mount default git-svn-id: eb2447ed-0c53-47e4-bac8-5bc4a241df78
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=412345](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=412345)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=413214](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog&oldid=413214)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
