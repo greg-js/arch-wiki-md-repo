@@ -44,7 +44,7 @@ Lumina's features include:
 
 **Warning:** Lumina is still beta software and thus potentially unstable. Additionally, the DE is primarily targeted at FreeBSD, not Linux.
 
-To install the Lumina Desktop environment, simply install [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)<sup><small>AUR</small></sup> from the AUR.
+To install the Lumina Desktop environment, simply install [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)<sup><small>AUR</small></sup> or [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)<sup><small>AUR</small></sup> from the AUR.
 
 ## Launching the Lumina Desktop Environment
 
@@ -68,7 +68,7 @@ Bugs should be reported to Lumina's repository on [Github](https://github.com/pc
 *   [About Lumina](http://lumina-desktop.org/)
 *   [Lumina Handbook](http://lumina-desktop.org/handbook/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lumina&oldid=404479](https://wiki.archlinux.org/index.php?title=Lumina&oldid=404479)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lumina&oldid=413269](https://wiki.archlinux.org/index.php?title=Lumina&oldid=413269)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

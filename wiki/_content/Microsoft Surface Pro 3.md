@@ -190,7 +190,7 @@ If after doing these steps doesn't still work. Flash the archiso image once more
 
 This can happen sometimes when you restart. The solution was to shutdown and reboot. (not restart)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413253](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413253)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413260](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413260)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

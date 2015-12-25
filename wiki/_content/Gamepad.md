@@ -44,6 +44,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
     *   [8.3 Joystick not recognized by all programs](#Joystick_not_recognized_by_all_programs)
+    *   [8.4 Steam Controller Not Pairing](#Steam_Controller_Not_Pairing)
 
 ## Joystick Input Systems
 
@@ -556,7 +557,21 @@ Assuming the device in question is `/dev/input/js0`. After you placed the rule r
 
 Then replug the device making you trouble. The joystick and event devices should be gone, although their number will still be reserved. But the files are out of the way.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412927](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=412927)"
+### Steam Controller Not Pairing
+
+If the steam controller will not pair wirelessly but works when wired make you may need to create the following udev rule.
+
+`/lib/udev/rules.d/99-steam-controller-perms.rules`
+
+```
+# USB devices
+SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
+# Oculus HID Sensor naming and permissioning
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2833", MODE="0666"
+
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413261](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413261)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
