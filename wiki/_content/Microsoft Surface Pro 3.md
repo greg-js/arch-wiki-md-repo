@@ -14,7 +14,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Warning:** The warranty of the device is only valid if the OEM image of Windows is still present. A dual boot, however, will not invalidate the warranty as explained [here](http://answers.microsoft.com/en-us/surface/forum/surfpro-surfusingpro/would-dual-booting-the-surface-pro-void-its/da549e24-f986-4984-b081-25c029882163).
 
-This page aims to document all relevant information on getting Archlinux working on the Microsoft Surface Pro 3 tablet.
+This page aims to document all relevant information on getting Arch Linux working on the Microsoft Surface Pro 3 tablet.
 
 ## Contents
 
@@ -35,7 +35,7 @@ This page aims to document all relevant information on getting Archlinux working
 
 To boot from USB, you will need to instruct the tablet to boot from USB or SD Card. Also, you may want to avoid disabling [Secure Boot](/index.php/UEFI#Secure_Boot "UEFI") as this will cause each boot to display an ugly bright red background intentionally clashing with the "Surface" splash logo.
 
-There are three types of boots in the surface pro 3 [explained here](http://www.microsoft.com/surface/en-us/support/storage-files-and-folders/boot-surface-pro-from-usb-recovery-device):
+There are three types of boots in the Surface Pro 3 [explained here](http://www.microsoft.com/surface/en-us/support/storage-files-and-folders/boot-surface-pro-from-usb-recovery-device):
 
 1.  Normal mode
     1.  Just leave the computer go. You can change it from "Alternate Boot order" in the UEFI Setup
@@ -190,7 +190,7 @@ If after doing these steps doesn't still work. Flash the archiso image once more
 
 This can happen sometimes when you restart. The solution was to shutdown and reboot. (not restart)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=411292](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=411292)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413253](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413253)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

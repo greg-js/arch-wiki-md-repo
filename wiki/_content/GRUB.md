@@ -87,7 +87,7 @@ Related articles
     *   [7.10 GRUB loads slowly](#GRUB_loads_slowly)
     *   [7.11 error: unknown filesystem](#error:_unknown_filesystem)
     *   [7.12 grub-reboot not resetting](#grub-reboot_not_resetting)
-    *   [7.13 old BTRFS prevents installation](#old_BTRFS_prevents_installation)
+    *   [7.13 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
 *   [8 See also](#See_also)
 
 ## Preface
@@ -154,6 +154,10 @@ The following commands will:
 ```
 
 If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on multiple physical disks.
+
+If you see "failed to get canonical path of `airootfs'", it may be because you are not in the chroot. Use "--root-directory=/mnt" or go in the chroot.
+
+If your chroot doesn't have grub, install grub with `pacman -S grub`
 
 ##### Install to external USB stick
 
@@ -1142,7 +1146,7 @@ GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons
 
 GRUB seems to be unable to write to root BTRFS partitions [[4]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (don't forget `grub-mkconfig`).
 
-### old BTRFS prevents installation
+### Old BTRFS prevents installation
 
 If a drive is formatted with BTRFS without creating a partition table (eg. /dev/sdx), then later has partition table written to, there are parts of the BTRFS format that persist. Most utilities and OS's do not see this, but GRUB will refuse to install, even with --force
 
@@ -1162,7 +1166,7 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=413212](https://wiki.archlinux.org/index.php?title=GRUB&oldid=413212)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=413258](https://wiki.archlinux.org/index.php?title=GRUB&oldid=413258)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

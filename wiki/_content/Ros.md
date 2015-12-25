@@ -73,7 +73,7 @@ export LANG=C;grep -r "libboost" /opt/ros/indigo |  awk '{ print $3 }' | grep op
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ros&oldid=408251](https://wiki.archlinux.org/index.php?title=Ros&oldid=408251)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ros&oldid=413254](https://wiki.archlinux.org/index.php?title=Ros&oldid=413254)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

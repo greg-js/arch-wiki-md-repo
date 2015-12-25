@@ -224,7 +224,7 @@ then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/vi
 
 ```
 #!/bin/bash
-for WID in $(xwininfo -root -tree | sed '/"plasma-desktop": ("Plasma" "Plasma")/!d; s/^  *\([^ ]*\) .*/\1/g'); do
+for WID in $(xwininfo -root -tree | sed '/"Plasma": ("plasmashell" "plasmashell")/!d; s/^  *\([^ ]*\) .*/\1/g'); do
    xprop -id $WID -remove _KDE_NET_WM_SHADOW
 done
 
@@ -233,7 +233,7 @@ done
 The script can be run on login with _Add Script_ in _Autostart_:
 
 ```
-$ kcmshell4 autostart
+$ kcmshell5 autostart
 
 ```
 
@@ -357,7 +357,7 @@ Navigate to the submenu _System Settings > Input Devices > Keyboard > Advanced (
 
 ### KCM
 
-KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings.
+KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings, or through the command line with _kcmshell5_.
 
 **Configuration for look and feel of GTK applications.**
 
@@ -602,11 +602,11 @@ Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey
 
 #### Intel
 
-If you use 3D-accelerated composition with Intel, you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's _OpenGL interface_ setting to GLX instead (in System Settings under _Display and Monitor_ -> _Compositor_. If that does not work, see _[Intel graphics SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics")_ for alternative solutions.
+If you use 3D-accelerated composition with Intel, you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's _OpenGL interface_ setting to GLX instead (in System Settings under _Display and Monitor_ -> _Compositor_. If that does not work, see [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
 #### Plasma keeps crashing with legacy Nvidia
 
-There is a bug in Plasma with using the Nvidia-304xx driver described [here.](https://bugs.kde.org/show_bug.cgi?id=348753) Rather than disabling compositing, try creating a file kwin.sh in ~/.config/plasma-workspace/env/ with the following content
+This is caused by a [bug in Plasma](https://bugs.kde.org/show_bug.cgi?id=348753) when using the Nvidia-304xx driver. Rather than disabling compositing, create a file `kwin.sh` in `~/.config/plasma-workspace/env/` with the following contents:
 
 ```
 #!/bin/sh
@@ -614,7 +614,7 @@ export KWIN_EXPLICIT_SYNC=0
 
 ```
 
-Then go to the system-settings -> Startup and Shutdown -> Autostart and Check/Add the script as a pre-kde startup file
+Then go to _system-settings > Startup and Shutdown > Autostart_ and _Check/Add_ the script as a pre-KDE startup file.
 
 ### Configuration related
 
@@ -637,7 +637,7 @@ This command will **rename all Plasma related configs** to *.bak (e.g. `plasmarc
 
 #### Clean cache to resolve upgrade problems
 
-The [problem](https://bbs.archlinux.org/viewtopic.php?id=135301) may be caused by old cache. Sometimes after an upgrade, the old cache might introduce strange, hard to debug behaviour such as unkillable shells, hangs when changing various settings and several other problems such as ark being unable to unrar or unzip or amarok not recognizing any of your musics. This solution can also resolve problems with KDE and Qt programmes looking bad following upgrade.
+The [problem](https://bbs.archlinux.org/viewtopic.php?id=135301) may be caused by old cache. Sometimes after an upgrade, the old cache might introduce strange, hard to debug behaviour such as unkillable shells, hangs when changing various settings and several other problems such as ark being unable to unrar or unzip or amarok not recognizing any of your music. This solution can also resolve problems with KDE and Qt programmes looking bad following upgrade.
 
 Rebuild your cache with the following commands:
 
@@ -845,7 +845,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413186](https://wiki.archlinux.org/index.php?title=KDE&oldid=413186)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413252](https://wiki.archlinux.org/index.php?title=KDE&oldid=413252)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

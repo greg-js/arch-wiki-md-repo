@@ -288,6 +288,14 @@ vboxvideo
 
 Alternatively, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** This is not the correct way to modify a service, see [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"). (Discuss in [Talk:VirtualBox#](https://wiki.archlinux.org/index.php/Talk:VirtualBox))
+
 Note that depending on your choice of paravirtualization in VirtualBox, you may need to edit the service file to get it to load: `/usr/lib/systemd/system/vboxservice.service` 
 
 ```
@@ -1427,7 +1435,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413179](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413179)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413256](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413256)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
