@@ -107,6 +107,8 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>Fixed</td>
 
+<td>[ASA-201512-14](https://lists.archlinux.org/pipermail/arch-security/2015-December/000474.html)</td>
+
 </tr>
 
 <tr>
@@ -133,7 +135,13 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td><= 1.5.0-2</td>
 
-<td>**Vulnerable**</td>
+<td>1.6.0-1</td>
+
+<td>1d</td>
+
+<td>Fixed</td>
+
+<td>[ASA-201512-16](https://lists.archlinux.org/pipermail/arch-security/2015-December/000476.html)</td>
 
 </tr>
 
@@ -189,7 +197,13 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td><= 1.26.0-1</td>
 
-<td>**Vulnerable**</td>
+<td>1.26.2-1</td>
+
+<td>8d</td>
+
+<td>Fixed</td>
+
+<td>[ASA-201512-15](https://lists.archlinux.org/pipermail/arch-security/2015-December/000475.html)</td>
 
 </tr>
 
@@ -7667,7 +7681,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413199](https://wiki.archlinux.org/index.php?title=CVE&oldid=413199)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413395](https://wiki.archlinux.org/index.php?title=CVE&oldid=413395)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -26,13 +26,14 @@ Related articles
     *   [1.10 Reduce memory usage](#Reduce_memory_usage)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
-    *   [3.1 Disable insecure RC4 cipher](#Disable_insecure_RC4_cipher)
-    *   [3.2 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [3.3 User Agent](#User_Agent)
-    *   [3.4 SSL certificates](#SSL_certificates)
-        *   [3.4.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
-        *   [3.4.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
-        *   [3.4.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
+    *   [3.1 WebRTC](#WebRTC)
+    *   [3.2 Disable insecure RC4 cipher](#Disable_insecure_RC4_cipher)
+    *   [3.3 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
+    *   [3.4 User Agent](#User_Agent)
+    *   [3.5 SSL certificates](#SSL_certificates)
+        *   [3.5.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
+        *   [3.5.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
+        *   [3.5.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -189,6 +190,12 @@ Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history a
 [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/)<sup><small>AUR</small></sup> and [browser-vacuum](https://aur.archlinux.org/packages/browser-vacuum/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR") do just this.
 
 ## Security
+
+### WebRTC
+
+WebRTC is a communication protocol that relies on JavaScript that can leak one's actual IP address from behind a VPN. While software like NoScript prevents this, it's probably a good idea to block this protocol directly as well, just to be safe. An [option to disable it](https://code.google.com/p/chromium/issues/detail?id=457492) is available via an [extension](https://goo.gl/74pT1m).
+
+One can test this via [this page](https://www.privacytools.io/webrtc.html).
 
 ### Disable insecure RC4 cipher
 
@@ -350,7 +357,7 @@ Below is an example `chromium-flags.conf` file that defines the flags `--start-m
 *   [Tmpfs](/index.php/Tmpfs#tmpfs "Tmpfs") - Tmpfs Filesystem in `/etc/fstab`
 *   [Official tmpfs kernel Documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=411981](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=411981)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413398](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413398)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

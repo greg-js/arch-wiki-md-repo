@@ -8,27 +8,18 @@ Related articles
 
 *   [x11vnc](/index.php/X11vnc "X11vnc")
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Makes a lot of claims, particularly concerning security, with no citation whatsoever (Discuss in [Talk:TigerVNC#](https://wiki.archlinux.org/index.php/Talk:TigerVNC))
-
 [TigerVNC](http://tigervnc.org/) is an implementation of the [VNC](https://en.wikipedia.org/wiki/VNC "wikipedia:VNC") protocol. This article focuses on the server functionality.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Running vncserver for virtual (headless) sessions](#Running_vncserver_for_virtual_.28headless.29_sessions)
-    *   [2.1 First time setup](#First_time_setup)
-        *   [2.1.1 Create environment and password files](#Create_environment_and_password_files)
-        *   [2.1.2 Edit the xstartup file](#Edit_the_xstartup_file)
-    *   [2.2 Starting the server](#Starting_the_server)
-    *   [2.3 Starting and stopping vncserver via systemd](#Starting_and_stopping_vncserver_via_systemd)
-        *   [2.3.1 System mode](#System_mode)
-        *   [2.3.2 User mode](#User_mode)
+    *   [2.1 Create environment, config, and password files](#Create_environment.2C_config.2C_and_password_files)
+        *   [2.1.1 Edit the environment file](#Edit_the_environment_file)
+        *   [2.1.2 Edit the optional config file](#Edit_the_optional_config_file)
+    *   [2.2 Starting and stopping vncserver via systemd](#Starting_and_stopping_vncserver_via_systemd)
+        *   [2.2.1 User mode](#User_mode)
+        *   [2.2.2 System mode](#System_mode)
 *   [3 Running vncserver to directly control the local display](#Running_vncserver_to_directly_control_the_local_display)
     *   [3.1 Using tigervnc's x0vncserver](#Using_tigervnc.27s_x0vncserver)
     *   [3.2 Using x11vnc](#Using_x11vnc)
@@ -40,10 +31,11 @@ Related articles
     *   [5.2 On the client](#On_the_client)
     *   [5.3 Connecting to a vncserver from Android devices over SSH](#Connecting_to_a_vncserver_from_Android_devices_over_SSH)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Toggling Fullscreen](#Toggling_Fullscreen)
+    *   [6.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
     *   [6.2 Copying clipboard contents from the remote machine to the local](#Copying_clipboard_contents_from_the_remote_machine_to_the_local)
     *   [6.3 Fix for no mouse cursor](#Fix_for_no_mouse_cursor)
-    *   [6.4 Connecting to an OSX system](#Connecting_to_an_OSX_system)
+    *   [6.4 Recommended security settings](#Recommended_security_settings)
+    *   [6.5 Toggling Fullscreen](#Toggling_Fullscreen)
 
 ## Installation
 
@@ -58,11 +50,9 @@ Vncserver provides two major remote control abilities:
 
 ## Running vncserver for virtual (headless) sessions
 
-### First time setup
+### Create environment, config, and password files
 
-#### Create environment and password files
-
-Vncserver will create its initial environment file and user password file the first time it is run. These will be stored in `~/.vnc` which will be created if not present.
+Vncserver will create its initial environment file, config, and user password file the first time it is run. These will be stored in `~/.vnc` which will be created if not present.
 
  `$ vncserver` 
 
@@ -91,7 +81,7 @@ $ vncserver -kill :1
 
 ```
 
-#### Edit the xstartup file
+#### Edit the environment file
 
 Vncserver sources `~/.vnc/xstartup` which functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. At a minimum, users should start a DE from this file. For more, see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
@@ -105,42 +95,55 @@ exec startlxqt
 
 ```
 
-### Starting the server
+#### Edit the optional config file
 
-Vncserver offers flexibility via switches. The below example starts vncserver in a specific resolution, allowing multiple users to view/control simultaneously, and sets the dpi on the virtual server to 96:
+With the release of tigervnc 1.60-1, a user service unit and support for parsing options in `~/.vnc/config` has been implemented. The aforementioned file holds options to be passed to the server without hard-coding them to the physical invocation. The format is one per line. An example is provided:
 
-```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 :1
-
-```
-
-**Note:**
-
-*   One need not use a standard monitor resolution for vncserver; 1440x900 can be replaced with something odd like 2000x1200, 1200x700, etc.
-*   If using TigerVNC's vncviewer, one can freely resize the VNC window any time without the need to specify the geometry switch at all.
-*   The alwaysshared option allows more than one clients to connect to a _single_ VNC session. One do not need this option if running multiple servers, each with single client.
-
-For a complete list of options, pass the -help switch to vncserver.
-
-```
-$ vncserver -help
+ `~/.vnc.config` 
 
 ```
 
-SecurityTypes controls the preferred security algorithms. The default in the current version 1.5.0 is "X509Plain,TLSPlain,X509Vnc,TLSVnc,X509None,TLSNone,VncAuth,None". A more secure alternative is "X509Vnc,TLSVnc", which will disable all unencrypted data traffic.
-
-It is recommended to use X509Vnc, as TLSVnc lacks identity verification.
+## Supported server options to pass to vncserver upon invocation can be listed
+## in this file. See the following manpages for more: vncserver(1) Xvnc(1).
+## Several common ones are shown below. Uncomment and modify to your liking.
+##
+securitytypes=tlsvnc
+desktop=sandbox
+geometry=1200x700
+dpi=96
+localhost
+alwaysshared
 
 ```
-$ vncserver -x509key /path/to/key.pem -x509cert /path/to/cerm.pem -SecurityTypes X509Vnc :1
 
-```
-
-Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of Let's Encrypt [[1]](https://en.wikipedia.org/wiki/Let%27s_Encrypt). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance.
+**Note:** Users are not required to use `~/.vnc/config` for passing options to the server. The full set of switches are still supported.
 
 ### Starting and stopping vncserver via systemd
 
-Systemd can manage the vncserver via a service in one of two modes using either a system service or a user service. Both are presented below.
+Systemd can manage the vncserver via a service in one of two modes using either a user or system service. Both are presented below.
+
+#### User mode
+
+Start the service in usermode:
+
+```
+$ systemctl --user start vncserver@:1
+
+```
+
+Enable the service in usermode:
+
+```
+$ systemctl --user enable vncserver@:1
+
+```
+
+In order to keep the vncserver alive when the user logs out (physically or via ssh), one must enable the linger option for loginctl:
+
+```
+# loginctl enable-linger username
+
+```
 
 #### System mode
 
@@ -184,66 +187,6 @@ WantedBy=multi-user.target
 ```
 
 [Start](/index.php/Start "Start") `vncserver@:1.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
-
-#### User mode
-
-Create `~/.config/systemd/user/vncserver@.service` and modify it with the desired options.
-
- `~/.config/systemd/user/vncserver@.service` 
-
-```
-
-# The vncserver service unit file for user mode
-#
-# 1\. Copy this file to $XDG_CONFIG_HOME/systemd/users/vncserver@.service
-# 2\. Edit the vncserver parameters appropriately
-#   ("/usr/bin/vncserver %i -arg1 -arg2 -argn")
-# 3\. Run `systemctl --user daemon-reload`
-# 4\. Run `systemctl --user enable vncserver@:<display>.service`
-# 5\. If you wish to continue running after your user logs out of the box
-#    you must enable linger for your user with loginctl like this
-#    `loginctl enable-linger username` prior to using the service
-#    
-# DO NOT RUN THIS SERVICE if your local area network is untrusted! 
-#
-# See the wiki page for more on security
-# https://wiki.archlinux.org/index.php/Vncserver
-
-[Unit]
-Description=Remote desktop service (VNC)
-After=syslog.target network.target
-
-[Service]
-Type=forking
-ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-ExecStart=/usr/bin/vncserver -geometry 1440x900 -alwaysshared %i
-ExecStop=/usr/bin/vncserver -kill %i
-
-[Install]
-WantedBy=default.target
-
-```
-
-Start the service in usermode:
-
-```
-$ systemctl --user start vncserver@:1
-
-```
-
-Enable the service in usermode:
-
-```
-$ systemctl --user enable vncserver@:1
-
-```
-
-In order to keep the vncserver alive when the user logs out (physically or via ssh), one must enable the linger option for loginctl (this is not necessary in server mode):
-
-```
-# loginctl enable-linger username
-
-```
 
 ## Running vncserver to directly control the local display
 
@@ -318,6 +261,23 @@ $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 
 ```
 
+Alternatively, simply add the "localhost" option as a single line in `~/.vnc/config`. Below is the example above in this format:
+
+ `~/.vnc.config` 
+
+```
+
+## Supported server options to pass to vncserver upon invocation can be listed
+## in this file. See the following manpages for more: vncserver(1) Xvnc(1).
+## Several common ones are shown below. Uncomment and modify to your liking.
+##
+geometry=1200x700
+alwaysshared
+dpi=96
+localhost
+
+```
+
 ### On the client
 
 With the server now only accepting connection from the localhost, connect to the box via ssh using the -L switch to enable tunnels. For more on this feature, see the manpage for ssh itself. For example:
@@ -389,9 +349,9 @@ Connect.
 
 ## Tips and tricks
 
-### Toggling Fullscreen
+### Connecting to an OSX system
 
-This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
+See [https://help.ubuntu.com/community/AppleRemoteDesktop](https://help.ubuntu.com/community/AppleRemoteDesktop). Tested with Remmina.
 
 ### Copying clipboard contents from the remote machine to the local
 
@@ -417,11 +377,26 @@ $ vncviewer DotWhenNoCursor=1 <server>
 
 Or put `DotWhenNoCursor=1` in the tigervnc configuration file, which is at `~/.vnc/default.tigervnc` by default.
 
-### Connecting to an OSX system
+### Recommended security settings
 
-See [https://help.ubuntu.com/community/AppleRemoteDesktop](https://help.ubuntu.com/community/AppleRemoteDesktop). Tested with Remmina.
+**Note:** If using ssh tunnels (i.e. [TigerVNC#Accessing_vncserver_via_SSH_tunnels](/index.php/TigerVNC#Accessing_vncserver_via_SSH_tunnels "TigerVNC")), X509Vnc is not required since the encryption is handled by the sshd.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=405622](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=405622)"
+SecurityTypes controls the preferred security algorithms. The default in the current version 1.5.0 is "X509Plain,TLSPlain,X509Vnc,TLSVnc,X509None,TLSNone,VncAuth,None". A more secure alternative is "X509Vnc,TLSVnc", which will disable all unencrypted data traffic.
+
+It is recommended to use X509Vnc, as TLSVnc lacks identity verification.
+
+```
+$ vncserver -x509key /path/to/key.pem -x509cert /path/to/cerm.pem -SecurityTypes X509Vnc :1
+
+```
+
+Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of Let's Encrypt [[1]](https://en.wikipedia.org/wiki/Let%27s_Encrypt). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance.
+
+### Toggling Fullscreen
+
+This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413382](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413382)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

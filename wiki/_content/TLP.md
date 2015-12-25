@@ -29,7 +29,7 @@ TLP brings you the benefits of advanced power management for Linux without the n
 
 [Install](/index.php/Install "Install") [tlp](https://www.archlinux.org/packages/?name=tlp) from the [official repositories](/index.php/Official_repositories "Official repositories") - pay attention to its optional dependencies that may help provide additional power saving.
 
-To complete TLP's install, you must [enable](/index.php/Enable "Enable") the systemd services `tlp.service` and `tlp-sleep.service`. You should also [disable](/index.php/Disable "Disable") the systemd service `systemd-rfkill@.service` to avoid conflicts and assure proper operation of TLP's radio device switching options.
+To complete TLP's install, you must [enable](/index.php/Enable "Enable") the systemd services `tlp.service` and `tlp-sleep.service`. You should also [disable](/index.php/Disable "Disable") the systemd service `systemd-rfkill.service` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 
 **Note:** `tlp.service` starts `NetworkManager.service` if it is available: [FS#43733](https://bugs.archlinux.org/task/43733). Should you use a different [network manager](/index.php/List_of_applications#Network_managers "List of applications"), [edit](/index.php/Systemd#Editing_provided_units "Systemd") `tlp.service` to remove the service from `Wants=`, or [mask](/index.php/Mask "Mask") it.
 
@@ -82,7 +82,7 @@ TLP provides several command line tools. See [TLP commands](http://linrunner.de/
 
 *   [TLP - Linux Advanced Power Management](http://linrunner.de/tlp) - Project homepage & documentation.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TLP&oldid=412186](https://wiki.archlinux.org/index.php?title=TLP&oldid=412186)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TLP&oldid=413400](https://wiki.archlinux.org/index.php?title=TLP&oldid=413400)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

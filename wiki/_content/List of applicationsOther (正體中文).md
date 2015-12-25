@@ -108,7 +108,7 @@ See the main article: [Desktop environment#List of desktop environments](/index.
 
 [http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
-*   see also [Other#Terminal_multiplexers](/index.php?title=Other&action=edit&redlink=1 "Other (page does not exist)") which offer some of the functions of window managers for the console
+*   see also [#Terminal_multiplexers](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.A4.9A.E5.B7.A5.E5.99.A8) which offer some of the functions of window managers for the console
 
 ##### 圖形
 
@@ -609,7 +609,7 @@ See the [Wikipedia](https://en.wikipedia.org/wiki/Main_Page "wikipedia:Main Page
 
 See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Software_list "Amateur radio")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(正體中文)&oldid=413341](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(正體中文)&oldid=413341)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(正體中文)&oldid=413391](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(正體中文)&oldid=413391)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
