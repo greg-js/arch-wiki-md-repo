@@ -139,7 +139,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 ## SATA controller
 
-When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least the 256GB SSD) is not recognized. Set to "Off" or "AHCI" before attempting to install Arch. If dual boot to Windows is intended, follow [[1]](https://support.microsoft.com/en-us/kb/2795397) to work around the "INACCESSIBLE_BOOT_DEVICE" error.
+When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least the SSD) is not recognized. Set to "Off" or "AHCI" before attempting to install Arch. If dual boot to Windows is intended, follow [[1]](https://support.microsoft.com/en-us/kb/2795397) to work around the "INACCESSIBLE_BOOT_DEVICE" error.
 
 ## Wireless
 
@@ -189,7 +189,7 @@ For ALSA, increase "Digital" channel for microphone to work.
 
 General Discussion Thread on Arch Forum [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=412592](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=412592)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=413301](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=413301)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

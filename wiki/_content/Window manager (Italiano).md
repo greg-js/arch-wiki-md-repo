@@ -134,7 +134,7 @@ Consultare [Comparison of tiling window managers](/index.php/Comparison_of_tilin
 
 **TinyWM** — TinyWM è un gestore di finestra molto ridotto, creato come un esercizio di minimalismo. Può inoltre essere utile per imparare alcune delle basi per la creazione di un gestore di finestre. È composto da sole 50 righe circa di C. Esiste anche una versione di Python che utilizza python-Xlib.
 
-[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tinywm)]</sup> [unsupported]
+[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup> [unsupported]
 
 **[twm](/index.php/Twm_(Italiano) "Twm (Italiano)")** — Twm è un window manager per l'X Window System. Fornisce la barra del titolo, finestre ridimensionabili, gestione per iconizzare le finestre, macro per le funzioni definite dall'utente, clic per la messa a fuoco, personalizzazione del comportamento del mouse, di tasti di scelta rapida e del menu.
 
@@ -194,7 +194,7 @@ Notion è un fork di Ion3.
 
 **[Stumpwm](/index.php/Stumpwm "Stumpwm")** — Stumpwm è un tiling window manager per X11, orientato all'uso della tastiera. Interamente scritto in Common Lisp, stumpwm cerca di essere minimamente personalizzabile in senso visuale. Non ci sono decorazioni di finestre, non le icone, e nessun tasto. Fornisce vari hooks per le proprie personalizzazioni, e variabili di ottimizzazione.
 
-[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup> [unsupported]
+[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup> [unsupported]
 
 **[subtle](/index.php/Subtle "Subtle")** — subtle è un "tiling window manager" manuale con un approccio piuttosto raro di tiling: Per default non c'è il tipico layout d'esecuzione, le finestre sono posizionate in alcun punto (gravità) di una griglia personalizzata. Si può cambiare la gravità di ogni finestra direttamente o per mezzo di regole definite dai tags nella configurazione. Ha i tag di lavoro e il tagging automatico dei client, controllo di mouse e tastiera, nonché una barra di stato estensibile.
 
@@ -234,7 +234,7 @@ Notion è un fork di Ion3.
 
 [http://xmonad.org/](http://xmonad.org/) || [xmonad](https://www.archlinux.org/packages/?name=xmonad)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=412836](https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=412836)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=413348](https://wiki.archlinux.org/index.php?title=Window_manager_(Italiano)&oldid=413348)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

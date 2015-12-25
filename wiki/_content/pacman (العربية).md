@@ -545,7 +545,7 @@ Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` e
 
 *   [Common Applications/Utilities#Package management](/index.php/Common_Applications/Utilities#Package_management "Common Applications/Utilities")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(العربية)&oldid=411899](https://wiki.archlinux.org/index.php?title=Pacman_(العربية)&oldid=411899)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(العربية)&oldid=413300](https://wiki.archlinux.org/index.php?title=Pacman_(العربية)&oldid=413300)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

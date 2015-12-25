@@ -687,7 +687,7 @@ You will then need to reinstall all the foreign packages, which can be listed wi
 
 *   [Common Applications/Utilities#Package management](/index.php/Common_Applications/Utilities#Package_management "Common Applications/Utilities")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Українська)&oldid=411892](https://wiki.archlinux.org/index.php?title=Pacman_(Українська)&oldid=411892)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Українська)&oldid=413299](https://wiki.archlinux.org/index.php?title=Pacman_(Українська)&oldid=413299)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,8 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[rs:Pacman](/index.php?title=Rs:Pacman&action=edit&redlink=1 "Rs:Pacman (page does not exist)")
-
 <table style="margin-left: 5px; padding: 5px; border-spacing: 0px 4px; float: right; clear: right; width: 25%;" cellpadding="0">
 
 <tbody>
@@ -417,7 +415,7 @@ Pogledajte [preuzimanje liste fajlova koje nisu u posedu ni jednog paketa](/inde
 
 U slucaju da je pacman slomljen bez mogucnosti da se popravi, rucno preuzmite i napravite neophodne pakete (openssl, libarchive, libfetch i pacman) i otpakujte ih u root. Pacman binarni kod ce biti obnovljen zajedno sa svojim difolt konfiguracionim fajlom. Nakon toga, reinstalirajte ove pakete sa pacman-om da odrzite integritet baze paketa. Dodatne informacije i primer (zastarele) skripte koja automatizuje proces je dostupna u [ovom](https://bbs.archlinux.org/viewtopic.php?id=95007) forum postu.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Српски)&oldid=411885](https://wiki.archlinux.org/index.php?title=Pacman_(Српски)&oldid=411885)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Српски)&oldid=413312](https://wiki.archlinux.org/index.php?title=Pacman_(Српски)&oldid=413312)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -654,7 +654,7 @@ Gateway=192.168.1.254
 *   [Tom Gundersen posts on Core OS blog](https://coreos.com/blog/intro-to-systemd-networkd/)
 *   [How to set up systemd-networkd with wpa_supplicant](https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759) (WonderWoofy's walkthrough on Arch forums)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd_(Español)&oldid=413177](https://wiki.archlinux.org/index.php?title=Systemd-networkd_(Español)&oldid=413177)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd_(Español)&oldid=413307](https://wiki.archlinux.org/index.php?title=Systemd-networkd_(Español)&oldid=413307)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

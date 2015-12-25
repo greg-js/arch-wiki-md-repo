@@ -539,7 +539,7 @@ KWin 版本 4.8 开始，可以使用单独编译的二进制文件 **kwin_gles*
 
 ### Konqueror/Dolphin 文件管理器中开启视频缩略图
 
-对于 Konqueror 和 Dolphin 中的视频缩略图，安装 [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) 或者 [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs)。
+对于 Konqueror 和 Dolphin 中的视频缩略图，安装 [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) 或者 [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs)]</sup>。
 
 ### 加速应用启动
 
@@ -970,7 +970,7 @@ KDE 到了 beta 或者 RC milestone 时，“不稳定的” KDE 软件包被上
 *   [[3]](https://bugs.archlinux.org) - Arch Linux 缺陷跟踪页
 *   [[4]](https://projects.kde.org) - KDE 项目
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=412814](https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=412814)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=413323](https://wiki.archlinux.org/index.php?title=KDE_(简体中文)&oldid=413323)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

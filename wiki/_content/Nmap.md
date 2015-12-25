@@ -619,7 +619,7 @@ $ nmap -oN output.txt -oX output.xml scanme.nmap.org
 *   [Nmap Network Scanning book](http://nmap.org/book/)
 *   [Nmap on Wikipedia](https://en.wikipedia.org/wiki/Nmap "wikipedia:Nmap")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nmap&oldid=412139](https://wiki.archlinux.org/index.php?title=Nmap&oldid=412139)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nmap&oldid=413277](https://wiki.archlinux.org/index.php?title=Nmap&oldid=413277)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -184,7 +184,7 @@ If you are using the Separate plug-in package from AUR, you already have the pro
 
 #### Installing from AUR
 
-To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinux.org/packages/eci-icc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eci-icc)]</sup> and/or [adobe-icc](https://aur.archlinux.org/packages/adobe-icc/)<sup><small>AUR</small></sup> packages (and optionally [srgb-icc](https://aur.archlinux.org/packages/srgb-icc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/srgb-icc)]</sup> package) and install them with [makepkg](/index.php/Makepkg "Makepkg").
+To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinux.org/packages/eci-icc/)<sup><small>AUR</small></sup> and/or [adobe-icc](https://aur.archlinux.org/packages/adobe-icc/)<sup><small>AUR</small></sup> packages (and optionally [srgb-icc](https://aur.archlinux.org/packages/srgb-icc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/srgb-icc)]</sup> package) and install them with [makepkg](/index.php/Makepkg "Makepkg").
 
 #### Install manually
 
@@ -279,7 +279,7 @@ Although Adobe RGB is a common profile, sRGB profiles (especially the new v4 ver
 *   [Separate+ plugin (v0.5.5)](http://cue.yellowmagic.info/softwares/separate-plus/)
 *   [cmyktool](http://www.blackfiveimaging.co.uk/index.php?article=02Software%2F05CMYKTool) is a standalone program for soft-proofing in CMYK which may be useful if you need to send CMYK to a printer (especially where you want to tweak pure black to avoid halos)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_GIMP&oldid=403044](https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_GIMP&oldid=403044)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_GIMP&oldid=413314](https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_GIMP&oldid=413314)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -160,7 +160,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **TinyWM** — Оконный менеджер Tiny, который автор создал, чтобы поупражняться в минимализме. Он может быть весьма полезен в обучении основ построения оконных менеджеров. Включает в себя около 50 строк кода на C. Есть также версия на [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)"), которая использует python-xlib.
 
-[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tinywm)]</sup>
+[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup>
 
 *   **[twm](/index.php/Twm "Twm")** — Оконный менеджер для X Window System. Он предоставляет заголовки окон, рамки, несколько способов управления значками, макросы, а также поддержку горячих клавиш
 
@@ -223,7 +223,7 @@ Notion — форк Ion3.
 
 *   **[Stumpwm](/index.php/Stumpwm "Stumpwm")** — Фреймовый оконный менеджер для X11, нацеленный на управление с клавиатуры, и написанный целиком на Common Lisp. Stumpwm старается одновременно быть гибок в настройке и кастомизации, и при этом визуально минималистичен. Различные хуки позволяют подключить вашу собственную функциональность, а сам менеджер может быть перенастроен и перезагружен без полного перезапуска. Здесь нет декораций окон, значков, кнопок и системного трея. Информационная панель может быть настроена для постоянного отображения, либо появляться только по требованию.
 
-[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup>
+[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>
 
 *   **[subtle](/index.php/Subtle "Subtle")** — Фреймовый оконный менеджер с несколько нестандартным подходом.
 
@@ -303,7 +303,7 @@ Notion — форк Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=412837](https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=412837)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=413349](https://wiki.archlinux.org/index.php?title=Window_manager_(Русский)&oldid=413349)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

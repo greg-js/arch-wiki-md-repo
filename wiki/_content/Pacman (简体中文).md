@@ -619,7 +619,7 @@ _pacman_ 在更新软件包数据库时，比如安装软件包时会创建一�
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=411867](https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=411867)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=413303](https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=413303)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

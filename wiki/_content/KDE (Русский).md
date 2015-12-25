@@ -566,7 +566,7 @@ $ chmod +x /usr/local/bin/compiz-kde-launcher
 
 ### Отображение миниатюр для аудио- и видеофайлов в Konqueror/Dolphin
 
-Для отображения миниатюр файлов видео установите [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) или [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs) и включите миниатюры в _Settings > Configure Konqueror > General > Previews > Video Files_.
+Для отображения миниатюр файлов видео установите [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) или [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs)<sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs)]</sup> и включите миниатюры в _Settings > Configure Konqueror > General > Previews > Video Files_.
 
 Для отображения миниатюр аудиофайлов в Konqueror и Dolphin установите [audiothumbs](https://aur.archlinux.org/packages/audiothumbs/)<sup><small>AUR</small></sup> из AUR.
 
@@ -982,7 +982,7 @@ Include = /etc/pacman.d/mirrorlist
 *   [Баг-трекер KDE](https://bugs.kde.org)
 *   [Проекты KDE](https://projects.kde.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(Русский)&oldid=412813](https://wiki.archlinux.org/index.php?title=KDE_(Русский)&oldid=412813)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(Русский)&oldid=413321](https://wiki.archlinux.org/index.php?title=KDE_(Русский)&oldid=413321)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

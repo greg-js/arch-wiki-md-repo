@@ -24,7 +24,7 @@ The game is played with keyboard only, though there exist [mods](http://dwarffor
 
 Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bitmap tilesets:
 
-*   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwarffortress-ironhand)]</sup>
+*   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)<sup><small>AUR</small></sup>
 *   [dwarffortress-mayday](https://aur.archlinux.org/packages/dwarffortress-mayday/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwarffortress-mayday)]</sup>
 *   [dwarffortress-myne](https://aur.archlinux.org/packages/dwarffortress-myne/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwarffortress-myne)]</sup>
 *   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/)<sup><small>AUR</small></sup>
@@ -96,7 +96,7 @@ If you choose to install StoneSense manually instead of using the AUR package, y
 *   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)<sup><small>AUR</small></sup>
 *   [lib-32-allegro](https://aur.archlinux.org/packages/lib-32-allegro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412782](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=412782)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=413316](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=413316)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

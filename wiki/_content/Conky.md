@@ -17,36 +17,39 @@ _Conky_ is a system monitor software for the X Window System. It is available fo
 ## Contents
 
 *   [1 Installation and configuration](#Installation_and_configuration)
-*   [2 AUR packages](#AUR_packages)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Enable real transparency in KDE4 and Xfce4](#Enable_real_transparency_in_KDE4_and_Xfce4)
-    *   [3.2 Autostart with Xfce4](#Autostart_with_Xfce4)
-    *   [3.3 Prevent flickering](#Prevent_flickering)
-    *   [3.4 Custom colors](#Custom_colors)
-    *   [3.5 Dual Screen](#Dual_Screen)
-    *   [3.6 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
-    *   [3.7 Integrate with GNOME](#Integrate_with_GNOME)
-    *   [3.8 Integrate with KDE 4](#Integrate_with_KDE_4)
-    *   [3.9 Integrate with Razor-qt](#Integrate_with_Razor-qt)
-    *   [3.10 Display package update information](#Display_package_update_information)
-    *   [3.11 Display weather forecast](#Display_weather_forecast)
-    *   [3.12 Display a countdown timer](#Display_a_countdown_timer)
-    *   [3.13 Display RSS feeds](#Display_RSS_feeds)
-    *   [3.14 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [3.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [3.16 Display number of new emails (Gmail)](#Display_number_of_new_emails_.28Gmail.29)
-        *   [3.16.1 Other Methods](#Other_Methods)
-    *   [3.17 Display new emails (IMAP + SSL) using Perl](#Display_new_emails_.28IMAP_.2B_SSL.29_using_Perl)
-    *   [3.18 Display new emails (IMAP) using PHP](#Display_new_emails_.28IMAP.29_using_PHP)
-    *   [3.19 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-    *   [3.20 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
-*   [4 User-contributed configuration examples](#User-contributed_configuration_examples)
-    *   [4.1 Graysky](#Graysky)
-    *   [4.2 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
-*   [5 A note about symbolic fonts](#A_note_about_symbolic_fonts)
-*   [6 Fonts appear smaller than they should](#Fonts_appear_smaller_than_they_should)
-*   [7 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
-*   [8 See also](#See_also)
+    *   [1.1 AUR packages](#AUR_packages)
+*   [2 Tips and tricks](#Tips_and_tricks)
+    *   [2.1 Enable real transparency in KDE4 and Xfce4](#Enable_real_transparency_in_KDE4_and_Xfce4)
+    *   [2.2 Autostart with Xfce4](#Autostart_with_Xfce4)
+    *   [2.3 Prevent flickering](#Prevent_flickering)
+    *   [2.4 Custom colors](#Custom_colors)
+    *   [2.5 Dual Screen](#Dual_Screen)
+    *   [2.6 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
+    *   [2.7 Integrate with GNOME](#Integrate_with_GNOME)
+    *   [2.8 Integrate with KDE 4](#Integrate_with_KDE_4)
+    *   [2.9 Integrate with Razor-qt](#Integrate_with_Razor-qt)
+    *   [2.10 Display package update information](#Display_package_update_information)
+    *   [2.11 Display weather forecast](#Display_weather_forecast)
+    *   [2.12 Display a countdown timer](#Display_a_countdown_timer)
+    *   [2.13 Display RSS feeds](#Display_RSS_feeds)
+    *   [2.14 Display rTorrent stats](#Display_rTorrent_stats)
+    *   [2.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+    *   [2.16 Display number of new emails](#Display_number_of_new_emails)
+        *   [2.16.1 Gmail](#Gmail)
+            *   [2.16.1.1 method 1](#method_1)
+            *   [2.16.1.2 method 2](#method_2)
+            *   [2.16.1.3 method 3](#method_3)
+            *   [2.16.1.4 method 4](#method_4)
+        *   [2.16.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [2.16.3 IMAP using PHP](#IMAP_using_PHP)
+    *   [2.17 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+    *   [2.18 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
+*   [3 User-contributed configuration examples](#User-contributed_configuration_examples)
+    *   [3.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
+*   [4 A note about symbolic fonts](#A_note_about_symbolic_fonts)
+*   [5 Fonts appear smaller than they should with Infinality](#Fonts_appear_smaller_than_they_should_with_Infinality)
+*   [6 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
+*   [7 See also](#See_also)
 
 ## Installation and configuration
 
@@ -71,7 +74,7 @@ One of the nice features of _conky_ is to pipe to your desktop some `/var/log/` 
 
 ```
 
-## AUR packages
+### AUR packages
 
 In addition to the basic _conky_ package, there are various [AUR](/index.php/AUR "AUR") packages available with extra compile options enabled:
 
@@ -329,7 +332,11 @@ See [this thread](https://bbs.archlinux.org/viewtopic.php?id=67304).
 
 This can be achieved by using the in python written extension named [ConkyPress](http://evilshit.wordpress.com/2013/04/20/conkypress-a-wordpress-stats-visualization-tool-for-your-desktop/).
 
-### Display number of new emails (Gmail)
+### Display number of new emails
+
+#### Gmail
+
+##### method 1
 
 Create a file named `gmail.py` in a convenient location (this example uses `~/.scripts/`) with the following [Python](/index.php/Python "Python") code:
 
@@ -358,6 +365,8 @@ fullcount = contents[ifrom:ito]
 print(fullcount + ' new')
 
 ```
+
+##### method 2
 
 The following script does less "by hand", and uses more of the capabilities of Python.
 
@@ -397,7 +406,7 @@ ${execpi 300 python ~/.scripts/gmail.py}
 
 ```
 
-#### Other Methods
+##### method 3
 
 The same way, but with using `curl`, `grep` and `sed`:
 
@@ -408,11 +417,13 @@ $ curl -s -u '''email''':'''password''' https://mail.google.com/mail/feed/atom |
 
 replace _email_ and _password_ with your data.
 
+##### method 4
+
 Alternatively, you can use [stunnel](http://www.stunnel.org/) which is provided by the [stunnel](https://www.archlinux.org/packages/?name=stunnel) package.
 
 The following configuration is taken from [Conky's FAQ](https://github.com/brndnmtthws/conky/wiki/FAQ)
 
-Modify `/etc/stunnel/stunnel.conf` as follows, and then start the `stunnel` [daemon](/index.php/Daemon "Daemon"):
+Modify `/etc/stunnel/stunnel.conf` as follows, and then [start](/index.php/Start "Start") `stunnel.service`:
 
 ```
 # Service-level configuration for TLS server
@@ -441,7 +452,7 @@ Inbox: ${imap_unseen}/${imap_messages}
 
 Here I used `*` as the password for _conky_ to ask for it at start, but you do **not** have to do it.
 
-### Display new emails (IMAP + SSL) using Perl
+#### IMAP + SSL using Perl
 
 _Conky_ has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/)<sup><small>AUR</small></sup> and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
 
@@ -498,7 +509,7 @@ If you use Gmail you might need to [generate](http://www.google.com/accounts/Iss
 
 Alternatively, you can use stunnel as shown above: [#Display number of new emails (Gmail)](#Display_number_of_new_emails_.28Gmail.29)
 
-### Display new emails (IMAP) using PHP
+#### IMAP using PHP
 
 Another alternative using PHP. PHP needs to be installed and `extension=imap.so` must be uncommented in `/etc/php/php.ini`.
 
@@ -572,10 +583,6 @@ The current version of _conky_ (1.9.0) suffers from a [bug](https://github.com/b
 
 ## User-contributed configuration examples
 
-### Graysky
-
-[conky.conf Here](https://raw.github.com/graysky2/configs/5fbe513918dfe8066f87e670108318464902afae/dotfiles/) it is - modify to fit your system. Optimized for a quad core chip w/ several hdds (although one of them is not connected for this screenshot) and an nvidia graphics card. You can easily modify this to a dual or single core system with one or whatever number of hdds.
-
 ### A sample rings script with nvidia support
 
 See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
@@ -584,7 +591,7 @@ See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
 
 Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/)<sup><small>AUR</small></sup> and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-piechartsformaps)]</sup> respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
 
-## Fonts appear smaller than they should
+## Fonts appear smaller than they should with Infinality
 
 If you notice that your _conky_ fonts appear smaller than they should, or they do not align properly, it could be caused by a default setting in the infinality freetype2 patch. This setting can cause some programs to display fonts at 72 DPI instead of 96 even if the rest of your system is set to 96\. If you notice a problem open `/etc/fonts/infinality/infinality.conf` search for the section on DPI and change 72 to 96.
 
@@ -638,7 +645,7 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=412923](https://wiki.archlinux.org/index.php?title=Conky&oldid=412923)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=413358](https://wiki.archlinux.org/index.php?title=Conky&oldid=413358)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

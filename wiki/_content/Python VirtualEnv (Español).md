@@ -155,7 +155,7 @@ $ (mi_env)$ pip install django
 *   [Tutorial de virtualenv](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox) (en inglés).
 *   [Página de Doug Hellmman sobre virtualenvwrapper](http://www.doughellmann.com/docs/virtualenvwrapper/) (en inglés).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Python_VirtualEnv_(Español)&oldid=413116](https://wiki.archlinux.org/index.php?title=Python_VirtualEnv_(Español)&oldid=413116)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Python_VirtualEnv_(Español)&oldid=413305](https://wiki.archlinux.org/index.php?title=Python_VirtualEnv_(Español)&oldid=413305)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

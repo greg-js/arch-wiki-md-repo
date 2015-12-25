@@ -493,7 +493,7 @@ In order to configure your ufw settings for VPN traffic first add the following 
 
  `/etc/default/ufw`  `DEFAULT_FORWARD_POLICY="ACCEPT"` 
 
-Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Do not forget to change the IP/subnet mask to match the one in `/etc/openvpn/server.conf`.
+Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Do not forget to change the IP/subnet mask to match the one in `/etc/openvpn/server.conf`. The adapter ID in the example is generically called `eth0` so edit it for your system accordingly.
 
  `/etc/ufw/before.rules` 
 
@@ -502,8 +502,8 @@ Now change `/etc/ufw/before.rules`, and add the following code after the header 
 *nat
 :POSTROUTING ACCEPT [0:0]
 
-# Allow traffic from clients to enp1s0
--A POSTROUTING -s 10.8.0.0/24 -o enp1s0 -j MASQUERADE
+# Allow traffic from clients to eth0
+-A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 # do not delete the "COMMIT" line or the NAT table rules above will not be processed
 COMMIT
@@ -800,7 +800,7 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413068](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413068)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413360](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413360)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -31,7 +31,7 @@ Want to see it in action? A StumpWM user created a [video](http://www.archive.or
 
 ## Installation
 
-[Install](/index.php/Install "Install") [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup>. It supports multiple common-lisp implementations.
+[Install](/index.php/Install "Install") [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>. It supports multiple common-lisp implementations.
 
 SBCL is recommended for maximum performance.
 
@@ -42,7 +42,7 @@ Install these packages in the following order:
 *   [sbcl](https://www.archlinux.org/packages/?name=sbcl)
 *   [clx-git](https://aur.archlinux.org/packages/clx-git/)<sup><small>AUR</small></sup>
 *   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)<sup><small>AUR</small></sup>
-*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup>
+*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>
 
 ### With Clisp
 
@@ -51,7 +51,7 @@ Install these packages from AUR in the following order:
 *   [clisp-new-clx](https://aur.archlinux.org/packages/clisp-new-clx/)<sup><small>AUR</small></sup>
 *   [cl-asdf](https://aur.archlinux.org/packages/cl-asdf/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cl-asdf)]</sup>
 *   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)<sup><small>AUR</small></sup>
-*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup>
+*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>
 
 Also, look at [this post](https://bbs.archlinux.org/viewtopic.php?pid=543537#p543537) if you run into troubles.
 
@@ -87,7 +87,7 @@ If you are an emacs user, you will find an emacs minor mode for editing StumpWM 
 
 in the REPL, it can be solved by deleting `~/.Xauthority`. See [this issue on github](https://github.com/sabetts/stumpwm/issues/1)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=412585](https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=412585)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=413346](https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=413346)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

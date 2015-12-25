@@ -185,7 +185,7 @@ _يوفر الخادم إكس الإطار الأساسي، أو البدائي�
 
 *   **TinyWM** — TinyWM هو مدير نافذة صغيرة صنع كاتمرين في بساطته.. قد يكون مفيد في تعلم بعض أساسيات إنشاء مدير نوافذ. لأن ملفه المصدري يحتوي على حوالي 50 سطر C. هناك أيضا نسخة بايثون باستخدام python-xlib.
 
-[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tinywm)]</sup> [غير معتمد]
+[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup> [غير معتمد]
 
 *   **[twm](/index.php/Twm "Twm")** — twm مدير نوافذ لنظام إكس.يوفر شريط العناوين , تشكيل النوافذ ,عدة أشكال من إدارة الايقونات, وظائف معرفة من قبل المستخدم,إضغط-لـ-نوع و مؤشر يحركها تركيز لوحة المفاتيح, مفاتيح محدد من المستخدم لتحريك المؤشر.
 
@@ -236,7 +236,7 @@ Notion فرع من Ion3.
 
 *   **[Stumpwm](/index.php/Stumpwm "Stumpwm")** — Stumpwm مدير نوافذ لخادم إكس يستعمل لوحة المفاتيح اكثر كتب كامل بـ Lisp. مدير Stumpwm صمم ليكون قابل للتخصيص و حد أدنى بصريا. لا يملك معالم او متغيرات لتتغيير في خصائصه,لكن يمكن إعادة تخصيصه وإعادة تحميل أثناء تشغيل. ليس هناك تنسيق للنوافذ, لا ايقونات , لا ازرار, لا شريط المهام. شريط معلومات يمكن تعينه لإظهاره باستمرار أو عند الحاجة فقط.
 
-[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stumpwm-git)]</sup> [غير معتمد]
+[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup> [غير معتمد]
 
 *   **[subtle](/index.php/Subtle "Subtle")** — subtle هو مدير نوافذ تبليط يدوي مع نهج مألوف بدلا من التبليط: افتراضيا ليس هناك تخطيط نموذجي,يتم وضع النوافذ في موقع (جاذبية)في شبكة مخصصة. يمكن للمستخدم تغيير الجاذبية لكل نافذة إما مباشرة أو بتغيير البيانات الموجودة في ملف الاعدادات. السيطرة بالماوس ولوحة المفاتيح فضلا عن شريط الحالة قابل للتمديد.
 
@@ -312,7 +312,7 @@ Notion فرع من Ion3.
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=412838](https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=412838)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=413350](https://wiki.archlinux.org/index.php?title=Window_manager_(العربية)&oldid=413350)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

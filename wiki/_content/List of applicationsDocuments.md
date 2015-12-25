@@ -760,7 +760,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Small program which is handy for keeping and organizing miscellaneous notes, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://www.kde.org/applications/utilities/kjots/](http://www.kde.org/applications/utilities/kjots/) || [kdepim-kjots](https://www.archlinux.org/packages/?name=kdepim-kjots)
+[http://www.kde.org/applications/utilities/kjots/](http://www.kde.org/applications/utilities/kjots/) || [kdepim-kjots](https://www.archlinux.org/packages/?name=kdepim-kjots)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
 *   **NoteCase** — Portable hierarchical note manager, coded in C++ using bindings to the GTK+ toolkit.
 
@@ -864,7 +864,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 [http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=411313](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=411313)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413324](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413324)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

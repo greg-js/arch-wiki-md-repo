@@ -81,7 +81,7 @@ gcm-calibrate --device "_xrandr-Lenovo Group Limited_"
 
 ### LPROF ICC Profiler
 
-[LPROF](http://lprof.sourceforge.net/) is an ICC profiler with a graphical user interface listed under [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lprof)]</sup> in the [AUR](/index.php/AUR "AUR").
+[LPROF](http://lprof.sourceforge.net/) is an ICC profiler with a graphical user interface listed under [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
 
 **Note:** The following walkthrough has been modified from the ArchWiki article [Using LPROF to profile monitors](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors").
 
@@ -209,7 +209,7 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 *   [dispcalGUI: Basic concept of display calibration and profiling](http://dispcalgui.hoech.net/#concept)
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412463](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=412463)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=413317](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=413317)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

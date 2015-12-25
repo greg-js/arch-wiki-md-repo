@@ -572,7 +572,7 @@ Então você terá que reinstalar todos os pacotes externos, que podem ser lista
 
 *   [Common Applications/Utilities#Package management](/index.php/Common_Applications/Utilities#Package_management "Common Applications/Utilities")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Português)&oldid=411870](https://wiki.archlinux.org/index.php?title=Pacman_(Português)&oldid=411870)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Português)&oldid=413293](https://wiki.archlinux.org/index.php?title=Pacman_(Português)&oldid=413293)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

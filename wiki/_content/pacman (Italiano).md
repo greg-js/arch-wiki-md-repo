@@ -579,7 +579,7 @@ Per reinstallare tutti i pacchetti ufficiali: `pacman -S $(pacman -Qnq)` (l'opzi
 *   [manuale pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [manuale repo-add(8)](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Italiano)&oldid=411869](https://wiki.archlinux.org/index.php?title=Pacman_(Italiano)&oldid=411869)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Italiano)&oldid=413290](https://wiki.archlinux.org/index.php?title=Pacman_(Italiano)&oldid=413290)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

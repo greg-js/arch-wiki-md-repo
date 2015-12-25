@@ -558,7 +558,7 @@ se volete rendere questo cambiamento permanente dovete create uno script in `$(k
 
 Per usufruire delle anteprima audio nei file manager Konqueror e Dolphin, installare il pacchetto [audiothumbs](https://aur.archlinux.org/packages/audiothumbs/)<sup><small>AUR</small></sup> da AUR.
 
-Per avere le anteprime dei video in konqueror e dolphin, installare [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) o [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs).
+Per avere le anteprime dei video in konqueror e dolphin, installare [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) o [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs)]</sup>.
 
 ### Velocizzare l'avvio delle applicazioni
 
@@ -995,7 +995,7 @@ Nel caso in cui si abbiano problemi e si scriva sul forum di Arch, assicurarsi i
 *   [[5]](https://bugs.archlinux.org) - Arch Linux bug tracker
 *   [[6]](https://projects.kde.org) - KDE Projects
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(Italiano)&oldid=412812](https://wiki.archlinux.org/index.php?title=KDE_(Italiano)&oldid=412812)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_(Italiano)&oldid=413320](https://wiki.archlinux.org/index.php?title=KDE_(Italiano)&oldid=413320)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

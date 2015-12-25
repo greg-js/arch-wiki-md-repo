@@ -500,7 +500,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Programa de calendario y agenda, parte de [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)
+[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [korganizer](https://www.archlinux.org/packages/?name=korganizer)]</sup>
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extensión para Mozilla Thunderbird que da soporte para calendario y lista de tareas.
 
@@ -669,7 +669,7 @@ Vea el artículo principal: [Amateur radio#Software list](/index.php/Amateur_rad
 
 Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=408695](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=408695)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413337](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413337)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

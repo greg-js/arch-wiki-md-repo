@@ -580,7 +580,7 @@ A continuación, tendrá que volver a instalar todos los paquetes foráneos manu
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Español)&oldid=411866](https://wiki.archlinux.org/index.php?title=Pacman_(Español)&oldid=411866)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Español)&oldid=413288](https://wiki.archlinux.org/index.php?title=Pacman_(Español)&oldid=413288)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

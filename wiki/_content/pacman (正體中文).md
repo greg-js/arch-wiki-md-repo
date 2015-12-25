@@ -582,7 +582,7 @@ Errors occured, no packages were upgraded.
 *   [pacman.conf(5) 手冊頁面](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) 手冊頁面](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(正體中文)&oldid=411874](https://wiki.archlinux.org/index.php?title=Pacman_(正體中文)&oldid=411874)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(正體中文)&oldid=413302](https://wiki.archlinux.org/index.php?title=Pacman_(正體中文)&oldid=413302)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

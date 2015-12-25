@@ -101,7 +101,7 @@ These components combine to the init _system_. Some inits include the service ma
 
 *   **daemontools** — Collection of tools for managing UNIX services.
 
-[http://cr.yp.to/daemontools.html](http://cr.yp.to/daemontools.html) || [daemontools](https://aur.archlinux.org/packages/daemontools/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/daemontools)]</sup>
+[http://cr.yp.to/daemontools.html](http://cr.yp.to/daemontools.html) || [daemontools](https://aur.archlinux.org/packages/daemontools/)<sup><small>AUR</small></sup>
 
 *   **[Monit](https://en.wikipedia.org/wiki/Monit "wikipedia:Monit")** — Monit is a process supervision tool for Unix and Linux. With monit, system status can be viewed directly from the command line, or via the native HTTP(S) web server.
 
@@ -213,7 +213,7 @@ To setup a chroot with a new PID namespace you can use jchroot.[[6]](http://vinc
 *   [Demystifying the init system](https://felipec.wordpress.com/2013/11/04/init/)
 *   [A history of modern init systems (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=409137](https://wiki.archlinux.org/index.php?title=Init&oldid=409137)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=413318](https://wiki.archlinux.org/index.php?title=Init&oldid=413318)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

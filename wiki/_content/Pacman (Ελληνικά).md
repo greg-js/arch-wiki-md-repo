@@ -559,7 +559,7 @@ errors occured, no packages were upgraded.
 
 [GUI Frontends](https://bbs.archlinux.org/viewtopic.php?id=14849)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Ελληνικά)&oldid=411873](https://wiki.archlinux.org/index.php?title=Pacman_(Ελληνικά)&oldid=411873)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(Ελληνικά)&oldid=413295](https://wiki.archlinux.org/index.php?title=Pacman_(Ελληνικά)&oldid=413295)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

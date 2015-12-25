@@ -10,7 +10,7 @@ Related articles
 *   [dwm](/index.php/Dwm "Dwm")
 *   [i3](/index.php/I3 "I3")
 
-[Alopex](https://github.com/TrilbyWhite/alopex) (formerly, TTWM) is a minimal tiling window manager combining concepts or elements from [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tinywm)]</sup>, [dwm](/index.php/Dwm "Dwm"), and [i3wm](/index.php/I3wm "I3wm"). Inspiration has also been drawn from other great tilers like [monsterwm](/index.php/Monsterwm "Monsterwm"). It manages windows using tiling, horizontal or vertical stacking layouts with transient floating and fullscreen modes.
+[Alopex](https://github.com/TrilbyWhite/alopex) (formerly, TTWM) is a minimal tiling window manager combining concepts or elements from [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup>, [dwm](/index.php/Dwm "Dwm"), and [i3wm](/index.php/I3wm "I3wm"). Inspiration has also been drawn from other great tilers like [monsterwm](/index.php/Monsterwm "Monsterwm"). It manages windows using tiling, horizontal or vertical stacking layouts with transient floating and fullscreen modes.
 
 **Note:** This page will remain focused on Alopex 2.x until 3.x moves to a usable/testable state. From then on, this page will be edited to reflect documentation of the most recent version.
 
@@ -358,7 +358,7 @@ You can replace either `"name"` or `"class"` with `NULL` to ignore those values 
 *   The [Alopex thread](https://bbs.archlinux.org/viewtopic.php?id=146889) on the forums
 *   The [Interrobang thread](https://bbs.archlinux.org/viewtopic.php?id=160182) on the forums
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Alopex&oldid=401235](https://wiki.archlinux.org/index.php?title=Alopex&oldid=401235)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Alopex&oldid=413313](https://wiki.archlinux.org/index.php?title=Alopex&oldid=413313)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
