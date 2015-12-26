@@ -6,7 +6,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
-Depending on requirements, different methods may be used to encrypt the swap partition which are described in the following. A setup where the swap encryption is re-initialised on reboot (with a new encryption) provides higher data protection, because it avoids sensitive file fragments which may have been swapped out a long time ago without being overwritten. However, re-encrypting swap also forbids using a suspend-to-disk feature generally.
+Depending on requirements, different methods may be used to encrypt the [swap](/index.php/Swap "Swap") partition which are described in the following. A setup where the swap encryption is re-initialised on reboot (with a new encryption) provides higher data protection, because it avoids sensitive file fragments which may have been swapped out a long time ago without being overwritten. However, re-encrypting swap also forbids using a suspend-to-disk feature generally.
 
 ## Contents
 
@@ -278,7 +278,7 @@ HOOKS="... **keyboard** encrypt ..."
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Swap_encryption&oldid=410695](https://wiki.archlinux.org/index.php?title=Dm-crypt/Swap_encryption&oldid=410695)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Swap_encryption&oldid=413438](https://wiki.archlinux.org/index.php?title=Dm-crypt/Swap_encryption&oldid=413438)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

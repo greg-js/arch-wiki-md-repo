@@ -185,7 +185,7 @@ Note that the [SDDM](/index.php/SDDM "SDDM") login screen is not part of this th
 
 Qt4
 
-For Qt4 applications to have a consistent appearance, you need to install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and then pick Breeze as GUI Style in `qtconfig-qt4`.
+For Qt4 applications to have a consistent appearance, there are two options: Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and then pick Breeze as GUI Style in `qtconfig-qt4`; or install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style.
 
 GTK+
 
@@ -845,7 +845,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413405](https://wiki.archlinux.org/index.php?title=KDE&oldid=413405)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413420](https://wiki.archlinux.org/index.php?title=KDE&oldid=413420)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

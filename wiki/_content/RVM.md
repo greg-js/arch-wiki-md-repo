@@ -591,7 +591,7 @@ $ rvm install 1.9.1-p378 -C --with-openssl-dir=$HOME/.rvm/usr
 *   [RVM project website](http://rvm.io/).
 *   [The Perfect Rails Setup](/index.php/RubyOnRails#Option_C:_The_Perfect_Rails_Setup "RubyOnRails").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RVM&oldid=410603](https://wiki.archlinux.org/index.php?title=RVM&oldid=410603)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RVM&oldid=413440](https://wiki.archlinux.org/index.php?title=RVM&oldid=413440)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

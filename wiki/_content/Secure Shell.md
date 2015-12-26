@@ -632,24 +632,6 @@ AddressFamily inet
 
 ```
 
-Changing the ciphers used by SSH to less cpu-demanding ones can improve speed. In this respect, the best choices are arcfour and blowfish-cbc.
-
-**Warning:** Please do not do this unless you know what you are doing; arcfour has a number of known weaknesses.
-
-To use alternative ciphers, run SSH with the `-c` flag:
-
-```
-$ ssh -c arcfour,blowfish-cbc user@server-address
-
-```
-
-To use them permanently, add this line under the proper host in `/etc/ssh/ssh_config`:
-
-```
-Ciphers arcfour,blowfish-cbc
-
-```
-
 ### Mounting a remote filesystem with SSHFS
 
 Please refer to the [Sshfs](/index.php/Sshfs "Sshfs") article to use sshfs to mount a remote system - accessible via SSH - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). Using sshfs instead of shfs is generally preferred as a new version of shfs has not been released since 2004.
@@ -1060,7 +1042,7 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=412172](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=412172)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=413435](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=413435)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

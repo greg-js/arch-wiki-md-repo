@@ -17,42 +17,58 @@ Hopefully this will provide a source of information about exactly what certain k
 
 ## Contents
 
-*   [1 The XDG Base Directory Specification](#The_XDG_Base_Directory_Specification)
-    *   [1.1 User Directories](#User_Directories)
-    *   [1.2 System Directories](#System_Directories)
+*   [1 The XDG Base Directory specification](#The_XDG_Base_Directory_specification)
+    *   [1.1 User directories](#User_directories)
+    *   [1.2 System directories](#System_directories)
 *   [2 Exceptions](#Exceptions)
 *   [3 Contributing](#Contributing)
 *   [4 Supported](#Supported)
 *   [5 Partial](#Partial)
 *   [6 Hardcoded](#Hardcoded)
-*   [7 Library and Language Support](#Library_and_Language_Support)
+*   [7 Library and language support](#Library_and_language_support)
 *   [8 See also](#See_also)
 
-## The XDG Base Directory Specification
+## The XDG Base Directory specification
 
 Please read the [full specification](http://standards.freedesktop.org/basedir-spec/latest/). This section will attempt to break down the essence of what it tries to achieve.
 
-None of the `XDG_` environments should be set by default except some systems do set `XDG_RUNTIME_DIR` such as systemd (logind).
-
 All paths defined must be absolute and valid.
 
-### User Directories
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** The "Some systems however do set `XDG_RUNTIME_DIR` such as systemd (logind)" statement needs some references. (Discuss in [Talk:XDG Base Directory support#](https://wiki.archlinux.org/index.php/Talk:XDG_Base_Directory_support))
+
+**Note:** On Arch, none of the `XDG_*` variables are set by default: it is up to the user to [define](/index.php/Define "Define") them, see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html). Some systems however do set `XDG_RUNTIME_DIR` such as systemd (logind).
+
+### User directories
 
 *   `XDG_CONFIG_HOME`
-    *   Defaults to `HOME/.config`
-    *   Where user-specific configurations should be written. (Like `/etc`)
+    *   Should default to `HOME/.config`.
+    *   Where user-specific configurations should be written (analogous to `/etc`).
 
 *   `XDG_CACHE_HOME`
-    *   Defaults to `HOME/.cache`
-    *   Where user-specific non-essential (cached) data should be written. (Like `/var/cache`)
+    *   Should default to `HOME/.cache`.
+    *   Where user-specific non-essential (cached) data should be written (analogous to `/var/cache`).
 
 *   `XDG_DATA_HOME`
-    *   Defaults to `HOME/.local/share`
-    *   Where user-specific data files should be written. (Like `/usr/share`)
+    *   Should default to `HOME/.local/share`.
+    *   Where user-specific data files should be written (analogous to `/usr/share`).
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** What about suggesting to set `XDG_RUNTIME_DIR` to `/run/user/$UID` in a [Tip](/index.php/Template:Tip "Template:Tip")? (Discuss in [Talk:XDG Base Directory support#](https://wiki.archlinux.org/index.php/Talk:XDG_Base_Directory_support))
 
 *   `XDG_RUNTIME_DIR`
     *   Used for non-essential, user-specific data files such as sockets, named pipes, etc.
-    *   Defaults to nothing, warnings should be issued if not set or equivalents provided.
+    *   Not required to have a default value; warnings should be issued if not set or equivalents provided.
     *   Must be owned by the user with an access mode of `0700`.
     *   Filesystem fully featured by standards of OS.
     *   Must be on the local filesystem.
@@ -61,15 +77,15 @@ All paths defined must be absolute and valid.
     *   Can only exist for the duration of the user's login.
     *   Should not store large files as it may be mounted as a tmpfs.
 
-### System Directories
+### System directories
 
 *   `XDG_DATA_DIRS`
-    *   List of directories seperated by `:` (Like `PATH`)
-    *   Defaults to `/usr/local/share:/usr/share`
+    *   List of directories seperated by `:` (analogous to `PATH`).
+    *   Should default to `/usr/local/share:/usr/share`.
 
 *   `XDG_CONFIG_DIRS`
-    *   List of directories seperated by `:` (Like `PATH`)
-    *   Defaults to `/etc/xdg`
+    *   List of directories seperated by `:` (analogous to `PATH`).
+    *   Should default to `/etc/xdg`.
 
 ## Exceptions
 
@@ -137,7 +153,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[edba864](https://github.com/Ryochan7/antimicro/commit/edba864)</td>
 
-<td>[[1]](https://github.com/Ryochan7/antimicro/issues/5)</td>
+<td>[[2]](https://github.com/Ryochan7/antimicro/issues/5)</td>
 
 </tr>
 
@@ -149,7 +165,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[8bc1d37](https://github.com/tatsuhiro-t/aria2/commit/8bc1d37)</td>
 
-<td>[[2]](https://github.com/tatsuhiro-t/aria2/issues/27)</td>
+<td>[[3]](https://github.com/tatsuhiro-t/aria2/issues/27)</td>
 
 </tr>
 
@@ -161,7 +177,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473)</td>
 
-<td>[[3]](https://developer.blender.org/T28943)</td>
+<td>[[4]](https://developer.blender.org/T28943)</td>
 
 </tr>
 
@@ -181,7 +197,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[23057](https://src.chromium.org/viewvc/chrome?revision=23057&view=revision)</td>
 
-<td>[[4]](https://groups.google.com/forum/#!topic/chromium-dev/QekVQxF3nho) [[5]](https://code.google.com/p/chromium/issues/detail?id=16976)</td>
+<td>[[5]](https://groups.google.com/forum/#!topic/chromium-dev/QekVQxF3nho) [[6]](https://code.google.com/p/chromium/issues/detail?id=16976)</td>
 
 </tr>
 
@@ -217,7 +233,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[a498c68](https://github.com/dolphin-emu/dolphin/commit/a498c68)</td>
 
-<td>[[6]](https://github.com/dolphin-emu/dolphin/pull/2304)</td>
+<td>[[7]](https://github.com/dolphin-emu/dolphin/pull/2304)</td>
 
 </tr>
 
@@ -227,7 +243,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[78b6e2b1](https://github.com/knopwob/dunst/commit/78b6e2b1)</td>
 
-<td>[[7]](https://github.com/knopwob/dunst/issues/22)</td>
+<td>[[8]](https://github.com/knopwob/dunst/issues/22)</td>
 
 </tr>
 
@@ -255,7 +271,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[e4c2cc7432](https://github.com/fontforge/fontforge/commit/e4c2cc7432)</td>
 
-<td>[[8]](https://github.com/fontforge/fontforge/issues/847) [[9]](https://github.com/fontforge/fontforge/issues/991)</td>
+<td>[[9]](https://github.com/fontforge/fontforge/issues/847) [[10]](https://github.com/fontforge/fontforge/issues/991)</td>
 
 </tr>
 
@@ -277,7 +293,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[fc28caa7](https://git.gnome.org/browse/gconf/commit/?id=fc28caa7)</td>
 
-<td>[[10]](https://bugzilla.gnome.org/show_bug.cgi?id=674803)</td>
+<td>[[11]](https://bugzilla.gnome.org/show_bug.cgi?id=674803)</td>
 
 </tr>
 
@@ -297,7 +313,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[4e36f93924cf](http://cgit.freedesktop.org/gstreamer/gstreamer/commit/?id=4e36f93924cf)</td>
 
-<td>[[11]](https://bugzilla.gnome.org/show_bug.cgi?id=518597)</td>
+<td>[[12]](https://bugzilla.gnome.org/show_bug.cgi?id=518597)</td>
 
 </tr>
 
@@ -351,7 +367,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[0.47](http://wiki.inkscape.org/wiki/index.php/Release_notes/0.47#Preferences)</td>
 
-<td>[[12]](https://bugs.launchpad.net/inkscape/+bug/199720)</td>
+<td>[[13]](https://bugs.launchpad.net/inkscape/+bug/199720)</td>
 
 </tr>
 
@@ -363,7 +379,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[d430af63d000](https://github.com/Sude-/lgogdownloader/commit/d430af63d000)</td>
 
-<td>[[13]](https://github.com/Sude-/lgogdownloader/issues/4)</td>
+<td>[[14]](https://github.com/Sude-/lgogdownloader/issues/4)</td>
 
 </tr>
 
@@ -375,7 +391,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[ea805917](https://github.com/chrippa/livestreamer/commit/ea805917)</td>
 
-<td>[[14]](https://github.com/chrippa/livestreamer/pull/106)</td>
+<td>[[15]](https://github.com/chrippa/livestreamer/pull/106)</td>
 
 </tr>
 
@@ -397,7 +413,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[1b9957058](https://www.midnight-commander.org/changeset/1b9957058) [0b7115647](https://www.midnight-commander.org/changeset/0b7115647) [ce401d797](https://www.midnight-commander.org/changeset/ce401d797)</td>
 
-<td>[[15]](https://www.midnight-commander.org/ticket/1851)</td>
+<td>[[16]](https://www.midnight-commander.org/ticket/1851)</td>
 
 </tr>
 
@@ -419,7 +435,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[cb250d490](https://github.com/mpv-player/mpv/commit/cb250d490)</td>
 
-<td>[[16]](https://github.com/mpv-player/mpv/pull/864)</td>
+<td>[[17]](https://github.com/mpv-player/mpv/pull/864)</td>
 
 </tr>
 
@@ -441,9 +457,9 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[3c57824c5](https://github.com/akrennmair/newsbeuter/commit/3c57824c5)</td>
 
-<td>[[17]](https://github.com/akrennmair/newsbeuter/pull/39)</td>
+<td>[[18]](https://github.com/akrennmair/newsbeuter/pull/39)</td>
 
-<td>It is required to create both `"$XDG_DATA_HOME"/newsbeuter` and `"$XDG_CONFIG_HOME"/newsbeuter` [[18]](http://newsbeuter.org/doc/newsbeuter.html#_xdg_base_directory_support)</td>
+<td>It is required to create both `"$XDG_DATA_HOME"/newsbeuter` and `"$XDG_CONFIG_HOME"/newsbeuter` [[19]](http://newsbeuter.org/doc/newsbeuter.html#_xdg_base_directory_support)</td>
 
 </tr>
 
@@ -455,7 +471,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[5150de5](https://github.com/OfflineIMAP/offlineimap/commit/5150de5)</td>
 
-<td>[[19]](https://github.com/OfflineIMAP/offlineimap/issues/32)</td>
+<td>[[20]](https://github.com/OfflineIMAP/offlineimap/issues/32)</td>
 
 </tr>
 
@@ -467,7 +483,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[87f1e8f77](https://github.com/PCSX2/pcsx2/commit/87f1e8f77) [a9020c606](https://github.com/PCSX2/pcsx2/commit/a9020c606) [3b22f0fb0](https://github.com/PCSX2/pcsx2/commit/3b22f0fb0) [0a012aec2](https://github.com/PCSX2/pcsx2/commit/0a012aec2)</td>
 
-<td>[[20]](https://github.com/PCSX2/pcsx2/issues/352) [[21]](https://github.com/PCSX2/pcsx2/issues/381)</td>
+<td>[[21]](https://github.com/PCSX2/pcsx2/issues/352) [[22]](https://github.com/PCSX2/pcsx2/issues/381)</td>
 
 </tr>
 
@@ -479,7 +495,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[132fe47c7d](https://github.com/hrydgard/ppsspp/commit/132fe47c7d)</td>
 
-<td>[[22]](https://github.com/hrydgard/ppsspp/issues/4623)</td>
+<td>[[23]](https://github.com/hrydgard/ppsspp/issues/4623)</td>
 
 </tr>
 
@@ -497,7 +513,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[80eca94c8](https://projects.archlinux.org/pacman.git/commit/?id=80eca94c8)</td>
 
-<td>[[23]](https://mailman.archlinux.org/pipermail/pacman-dev/2014-July/019178.html)</td>
+<td>[[24]](https://mailman.archlinux.org/pipermail/pacman-dev/2014-July/019178.html)</td>
 
 </tr>
 
@@ -509,7 +525,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[59a8618dcd9](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=59a8618dcd9) [87ae8307057](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=87ae8307057) [9ab510a6921](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=9ab510a6921) [4c195bcc9d5](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=4c195bcc9d5)</td>
 
-<td>[[24]](https://bugzilla.redhat.com/show_bug.cgi?id=845607)</td>
+<td>[[25]](https://bugzilla.redhat.com/show_bug.cgi?id=845607)</td>
 
 </tr>
 
@@ -539,7 +555,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[5517](https://trac.transmissionbt.com/changeset/5517)</td>
 
-<td>[[25]](https://trac.transmissionbt.com/ticket/684)</td>
+<td>[[26]](https://trac.transmissionbt.com/ticket/684)</td>
 
 </tr>
 
@@ -581,7 +597,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[f7c3193fec](https://github.com/citra-emu/citra/commit/f7c3193fec)</td>
 
-<td>[[26]](https://github.com/citra-emu/citra/pull/575)</td>
+<td>[[27]](https://github.com/citra-emu/citra/pull/575)</td>
 
 </tr>
 
@@ -599,7 +615,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[21dc400](https://github.com/lavv17/lftp/commit/21dc400)</td>
 
-<td>[[27]](https://www.mail-archive.com/lftp@uniyar.ac.ru/msg04301.html)</td>
+<td>[[28]](https://www.mail-archive.com/lftp@uniyar.ac.ru/msg04301.html)</td>
 
 </tr>
 
@@ -631,7 +647,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[eb487c55](https://github.com/Deltafire/MilkyTracker/commit/eb487c55)</td>
 
-<td>[[28]](https://github.com/Deltafire/MilkyTracker/issues/12)</td>
+<td>[[29]](https://github.com/Deltafire/MilkyTracker/issues/12)</td>
 
 </tr>
 
@@ -643,7 +659,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[614393c09](https://github.com/SirCmpwn/sway/commit/614393c09)</td>
 
-<td>[[29]](https://github.com/SirCmpwn/sway/issues/5)</td>
+<td>[[30]](https://github.com/SirCmpwn/sway/issues/5)</td>
 
 </tr>
 
@@ -661,7 +677,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[8d45ff2](https://bitbucket.org/opentyrian/opentyrian/commits/8d45ff2)</td>
 
-<td>[[30]](https://web.archive.org/web/20140815181350/http://code.google.com/p/opentyrian/issues/detail?id=125)</td>
+<td>[[31]](https://web.archive.org/web/20140815181350/http://code.google.com/p/opentyrian/issues/detail?id=125)</td>
 
 </tr>
 
@@ -673,7 +689,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[1ca5646bb](https://github.com/neovim/neovim/commit/1ca5646bb)</td>
 
-<td>[[31]](https://github.com/neovim/neovim/issues/78) [[32]](https://github.com/neovim/neovim/pull/3198)</td>
+<td>[[32]](https://github.com/neovim/neovim/issues/78) [[33]](https://github.com/neovim/neovim/pull/3198)</td>
 
 </tr>
 
@@ -685,7 +701,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[02e7d41e](https://github.com/mozilla/rr/commit/02e7d41e)</td>
 
-<td>[[33]](https://github.com/mozilla/rr/issues/1455)</td>
+<td>[[34]](https://github.com/mozilla/rr/issues/1455)</td>
 
 </tr>
 
@@ -757,7 +773,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>`~/.cargo`</td>
 
-<td>[[34]](https://github.com/rust-lang/cargo/pull/148) [[35]](https://github.com/rust-lang/cargo/issues/1734)</td>
+<td>[[35]](https://github.com/rust-lang/cargo/pull/148) [[36]](https://github.com/rust-lang/cargo/issues/1734)</td>
 
 <td>`$ export CARGO_HOME="$XDG_DATA_HOME"/cargo`</td>
 
@@ -781,7 +797,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[00481ee](https://github.com/brndnmtthws/conky/commit/00481ee9a97025e8e2acd7303d080af1948f7980)</td>
 
-<td>[[36]](https://github.com/brndnmtthws/conky/issues/144)</td>
+<td>[[37]](https://github.com/brndnmtthws/conky/issues/144)</td>
 
 <td>`$ conky --config="$XDG_CONFIG_HOME"/conky/conkyrc`</td>
 
@@ -845,7 +861,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>[60e0cfe](https://git.gnome.org/browse/gimp/commit/?id=60e0cfe)</td>
 
-<td>[[37]](https://bugzilla.gnome.org/show_bug.cgi?id=166643) [[38]](https://mail.gnome.org/archives/gimp-developer-list/2012-October/msg00028.html)</td>
+<td>[[38]](https://bugzilla.gnome.org/show_bug.cgi?id=166643) [[39]](https://mail.gnome.org/archives/gimp-developer-list/2012-October/msg00028.html)</td>
 
 <td>`$ export GIMP2_DIRECTORY="$XDG_CONFIG_HOME"/gimp`</td>
 
@@ -901,7 +917,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>`~/.httpie`</td>
 
-<td>[[39]](https://github.com/jakubroztocil/httpie/issues/145)</td>
+<td>[[40]](https://github.com/jakubroztocil/httpie/issues/145)</td>
 
 <td>`$ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME"/httpie`</td>
 
@@ -1001,7 +1017,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
 <td>`~/.mutt`</td>
 
-<td>[[40]](http://dev.mutt.org/trac/ticket/3207)</td>
+<td>[[41]](http://dev.mutt.org/trac/ticket/3207)</td>
 
 <td>`$ mutt -F "$XDG_CONFIG_HOME"/mutt/muttrc` `muttrc` 
 
@@ -1033,7 +1049,7 @@ set record = $XDG_DATA_HOME/mutt/record/sent
 
 <td>`~/.notmuch-config`</td>
 
-<td>[[41]](http://notmuchmail.org/pipermail/notmuch/2011/007007.html)</td>
+<td>[[42]](http://notmuchmail.org/pipermail/notmuch/2011/007007.html)</td>
 
 <td>`$ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc`
 
@@ -1107,7 +1123,7 @@ set record = $XDG_DATA_HOME/mutt/record/sent
 
 <td>`~/.tmux.conf`</td>
 
-<td>[[42]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/6013) [[43]](http://sourceforge.net/p/tmux/mailman/message/30619546/)</td>
+<td>[[43]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/6013) [[44]](http://sourceforge.net/p/tmux/mailman/message/30619546/)</td>
 
 <td>`$ tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf`
 
@@ -1133,7 +1149,7 @@ set record = $XDG_DATA_HOME/mutt/record/sent
 
 <td>`~/.weechat`</td>
 
-<td>[[44]](http://savannah.nongnu.org/task/?10934)</td>
+<td>[[45]](http://savannah.nongnu.org/task/?10934)</td>
 
 <td>`$ export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat`
 
@@ -1149,7 +1165,7 @@ set record = $XDG_DATA_HOME/mutt/record/sent
 
 <td>`~/.wine`</td>
 
-<td>[[45]](https://bugs.winehq.org/show_bug.cgi?id=20888)</td>
+<td>[[46]](https://bugs.winehq.org/show_bug.cgi?id=20888)</td>
 
 <td>`$ export WINEPREFIX="$XDG_DATA_HOME"/wine`</td>
 
@@ -1203,9 +1219,9 @@ set record = $XDG_DATA_HOME/mutt/record/sent
 
 <td>[7c3077b0f](https://github.com/openscad/openscad/commit/7c3077b0f)</td>
 
-<td>[[46]](https://github.com/openscad/openscad/issues/125)</td>
+<td>[[47]](https://github.com/openscad/openscad/issues/125)</td>
 
-<td>Does not fully honour XDG Base Directory Specification, see [[47]](https://github.com/openscad/openscad/issues/373)
+<td>Does not fully honour XDG Base Directory Specification, see [[48]](https://github.com/openscad/openscad/issues/373)
 
 Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/PlatformUtils-posix.cc#L20) `~/.local/share`.
 
@@ -1219,7 +1235,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.dvdcss`</td>
 
-<td>[[48]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html)</td>
+<td>[[49]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html)</td>
 
 <td>`$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss`</td>
 
@@ -1241,7 +1257,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.*_history`</td>
 
-<td>[[49]](https://github.com/hanslub42/rlwrap/issues/25)</td>
+<td>[[50]](https://github.com/hanslub42/rlwrap/issues/25)</td>
 
 <td>`$ export RLWRAP_HOME="$XDG_DATA_HOME"/rlwrap`</td>
 
@@ -1263,7 +1279,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.xsel.log`</td>
 
-<td>[[50]](https://github.com/kfish/xsel/issues/10)</td>
+<td>[[51]](https://github.com/kfish/xsel/issues/10)</td>
 
 <td>`$ xsel --logfile "$XDG_CACHE_HOME"/xsel/xsel.log`</td>
 
@@ -1291,7 +1307,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.stack`</td>
 
-<td>[[51]](https://github.com/commercialhaskell/stack/issues/342)</td>
+<td>[[52]](https://github.com/commercialhaskell/stack/issues/342)</td>
 
 <td>`$ export STACK_ROOT="$XDG_DATA_HOME"/stack`</td>
 
@@ -1303,7 +1319,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.subversion`</td>
 
-<td>[[52]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[53]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e)</td>
+<td>[[53]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[54]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e)</td>
 
 <td>`$ svn --config-dir "$XDG_CONFIG_HOME"/subversion`</td>
 
@@ -1365,7 +1381,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.cabal`</td>
 
-<td>[[54]](https://github.com/haskell/cabal/issues/680)</td>
+<td>[[55]](https://github.com/haskell/cabal/issues/680)</td>
 
 <td>See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance.</td>
 
@@ -1377,7 +1393,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.juliarc.jl` `~/.julia_history`</td>
 
-<td>[[55]](https://github.com/JuliaLang/julia/issues/4630) [[56]](https://github.com/JuliaLang/julia/issues/10016)</td>
+<td>[[56]](https://github.com/JuliaLang/julia/issues/4630) [[57]](https://github.com/JuliaLang/julia/issues/10016)</td>
 
 </tr>
 
@@ -1387,7 +1403,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.milkytracker_config`</td>
 
-<td>[[57]](https://github.com/Deltafire/MilkyTracker/issues/12)</td>
+<td>[[58]](https://github.com/Deltafire/MilkyTracker/issues/12)</td>
 
 </tr>
 
@@ -1397,7 +1413,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.mozilla`</td>
 
-<td>[[58]](https://bugzil.la/259356)</td>
+<td>[[59]](https://bugzil.la/259356)</td>
 
 </tr>
 
@@ -1427,7 +1443,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 <td>`~/.toprc`</td>
 
-<td>[[59]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265)</td>
+<td>[[60]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265)</td>
 
 </tr>
 
@@ -1485,7 +1501,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.xmonad`</td>
 
-<td>[[60]](https://code.google.com/p/xmonad/issues/detail?id=484)</td>
+<td>[[61]](https://code.google.com/p/xmonad/issues/detail?id=484)</td>
 
 </tr>
 
@@ -1495,7 +1511,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.eclipse`</td>
 
-<td>[[61]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809)</td>
+<td>[[62]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809)</td>
 
 <td>Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`)</td>
 
@@ -1517,7 +1533,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.zsh_history` `~/.zhistory`</td>
 
-<td>[[62]](http://www.zsh.org/mla/workers/2013/msg00692.html)</td>
+<td>[[63]](http://www.zsh.org/mla/workers/2013/msg00692.html)</td>
 
 <td>Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
@@ -1533,7 +1549,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.bashrc` `~/.bash_history` `~/.bash_profile` `~/.bash_login` `~/.bash_logout`</td>
 
-<td>[[63]](http://savannah.gnu.org/support/?108134)</td>
+<td>[[64]](http://savannah.gnu.org/support/?108134)</td>
 
 <td>`export HISTFILE="$XDG_DATA_HOME"/bash/history`</td>
 
@@ -1553,7 +1569,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.emacs` `~/.emacs.d`</td>
 
-<td>[[64]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583)</td>
+<td>[[65]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583)</td>
 
 <td>It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly.</td>
 
@@ -1575,7 +1591,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.mongorc.js` `~/.dbshell`</td>
 
-<td>[[65]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22)</td>
+<td>[[66]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22)</td>
 
 <td>[This Stack Overflow](http://stackoverflow.com/a/22349050/4200039) thread suggests a partial workaround using command-line switch `--norc`.</td>
 
@@ -1587,7 +1603,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.xombrero`</td>
 
-<td>[[66]](https://github.com/conformal/xombrero/issues/74)</td>
+<td>[[67]](https://github.com/conformal/xombrero/issues/74)</td>
 
 </tr>
 
@@ -1613,7 +1629,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.moonchild productions`</td>
 
-<td>[[67]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639)</td>
+<td>[[68]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639)</td>
 
 </tr>
 
@@ -1623,7 +1639,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.vimperatorrc`</td>
 
-<td>[[68]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html)</td>
+<td>[[69]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html)</td>
 
 <td>`$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
@@ -1639,7 +1655,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.cups`</td>
 
-<td>[[69]](http://www.cups.org/str.php?L4243)</td>
+<td>[[70]](http://www.cups.org/str.php?L4243)</td>
 
 </tr>
 
@@ -1649,7 +1665,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 <td>`~/.dbus`</td>
 
-<td>[[70]](https://bugs.freedesktop.org/show_bug.cgi?id=35887)</td>
+<td>[[71]](https://bugs.freedesktop.org/show_bug.cgi?id=35887)</td>
 
 <td>This should be avoidable with kdbus [citation needed].</td>
 
@@ -1659,7 +1675,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
 </table>
 
-## Library and Language Support
+## Library and language support
 
 C
 
@@ -1696,7 +1712,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412875](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=412875)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413434](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413434)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

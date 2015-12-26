@@ -66,16 +66,12 @@ This document is an annotated index of popular articles and important informatio
     *   [10.3 Printing](#Printing)
 *   [11 Appearance](#Appearance)
     *   [11.1 Fonts](#Fonts)
-        *   [11.1.1 Console fonts](#Console_fonts)
-        *   [11.1.2 Patched font packages](#Patched_font_packages)
     *   [11.2 GTK and Qt themes](#GTK_and_Qt_themes)
 *   [12 Console improvements](#Console_improvements)
     *   [12.1 Aliases](#Aliases)
     *   [12.2 Alternative shells](#Alternative_shells)
     *   [12.3 Bash additions](#Bash_additions)
     *   [12.4 Colored output](#Colored_output)
-        *   [12.4.1 Core utilities](#Core_utilities)
-        *   [12.4.2 Man pages](#Man_pages)
     *   [12.5 Compressed files](#Compressed_files)
     *   [12.6 Console prompt](#Console_prompt)
     *   [12.7 Emacs shell](#Emacs_shell)
@@ -319,11 +315,7 @@ You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts
 
 A plethora of information on the subject can be found in the [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") articles.
 
-#### Console fonts
-
 If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
-
-#### Patched font packages
 
 Font rendering libraries can be patched to provide improved rendering compared to the standard packages; see [Font configuration#Patched packages](/index.php/Font_configuration#Patched_packages "Font configuration").
 
@@ -351,11 +343,7 @@ A list of miscellaneous Bash settings, including completion enhancements, histor
 
 Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/)<sup><small>AUR</small></sup> package. The [acoc](https://aur.archlinux.org/packages/acoc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acoc)]</sup> package provides a similar application.
 
-#### Core utilities
-
 Colorizing the output of specific core utilities such as `grep` and `ls` is covered in the [Core utilities](/index.php/Core_utilities "Core utilities") article.
-
-#### Man pages
 
 Man pages (or manual pages) are one of the most useful resources available to GNU/Linux users. To aid readability, the pager can be configured to render colored text as explained in [man page#Colored man pages](/index.php/Man_page#Colored_man_pages "Man page").
 
@@ -383,7 +371,7 @@ To be able to save and view text which has scrolled off the screen, refer to [Sc
 
 Using terminal multiplexers like [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programs may be run under sessions composed of tabs and panes that can be detached at will, so when the user either kills the terminal emulator, terminates [X](/index.php/X "X"), or logs off, the programs associated with the session will continue to run in the background as long as the terminal multiplexer server is active. Interacting with the programs requires reattaching to the session.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=411510](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=411510)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413424](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413424)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
