@@ -240,28 +240,7 @@ $ schroot -p -- makepkg -src
 
 #### Multilib GCC method (not recommended)
 
-**Warning:** Errors have been reported when using this method to build the i686 linux package from a native x86_64 system! The chroot method is preferred and has been verified to work building the kernel packages.
-
-Enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package.
-
-Compile packages on x86_64 for i686 is as easy as adding the following lines to `$HOME/.makepkg.conf`
-
-```
-CARCH="i686"
-CHOST="i686-pc-linux-gnu"
-CFLAGS="-march=i686 -O2 -pipe -m32"
-CXXFLAGS="${CFLAGS}"
-
-```
-
-and invoking makepkg via the following
-
-```
-$ linux32 makepkg -src
-
-```
-
-Remember to remove or modify `$HOME/.makepkg.conf` when finished compiling i686 packages!
+See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg").
 
 ### Other architectures
 
@@ -399,7 +378,7 @@ d /tmp/.distcc 0755 <username> users -
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Distcc&oldid=408220](https://wiki.archlinux.org/index.php?title=Distcc&oldid=408220)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Distcc&oldid=413498](https://wiki.archlinux.org/index.php?title=Distcc&oldid=413498)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

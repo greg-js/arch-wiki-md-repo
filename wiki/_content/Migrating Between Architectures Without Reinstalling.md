@@ -47,7 +47,7 @@ If you are already running x86_64 but want to install i686 this is not relevant 
 In order to run 64-bit software, you must have a 64-bit capable CPU. Most modern CPUs are capable of running 64-bit software. You may check your CPU with the following command:
 
 ```
-grep --color '\<lm\>' /proc/cpuinfo
+grep --color -w lm /proc/cpuinfo
 
 ```
 
@@ -314,7 +314,7 @@ If, after completion, you find that mutt hangs on opening mail folders, try rena
 
 *   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=412684](https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=412684)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=413508](https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=413508)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

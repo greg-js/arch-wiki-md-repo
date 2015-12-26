@@ -33,6 +33,7 @@ _makepkg_ is provided by the [pacman](https://www.archlinux.org/packages/?name=p
     *   [3.3 Generate new checksums](#Generate_new_checksums)
     *   [3.4 Create uncompressed packages](#Create_uncompressed_packages)
     *   [3.5 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
+    *   [3.6 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
     *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
@@ -276,6 +277,31 @@ COMPRESSXZ=(xz -c -z - **--threads=0**)
 
 ```
 
+### Build 32-bit packages on a 64-bit system
+
+**Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package. The [chroot method](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") is preferred and has been verified to work for building the kernel packages.
+
+First, enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
+
+Then create a 32-bit configuration file
+
+ `~/.makepkg.i686.conf` 
+
+```
+CARCH="i686"
+CHOST="i686-unknown-linux-gnu"
+CFLAGS="-m32 -march=i686 -mtune=generic -O2 -pipe -fstack-protector-strong"
+CXXFLAGS="${CFLAGS}"
+LDFLAGS="-m32 -Wl,-O1,--sort-common,--as-needed,-z,relro"
+```
+
+and invoke makepkg as such
+
+```
+$ linux32 makepkg --config ~/.makepkg.i686.conf
+
+```
+
 ## Troubleshooting
 
 ### Makepkg sometimes fails to sign a package without asking for signature passphrase
@@ -341,7 +367,7 @@ $ grep -R "$(pwd)/src" pkg/
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=412001](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=412001)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=413496](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=413496)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

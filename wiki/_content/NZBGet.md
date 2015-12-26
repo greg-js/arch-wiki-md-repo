@@ -19,7 +19,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-Install the [nzbget](https://www.archlinux.org/packages/?name=nzbget) package, or install [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") to get the latest build and a [systemd](/index.php/Systemd "Systemd") `nzbget` service file.
+Install the [nzbget](https://www.archlinux.org/packages/?name=nzbget) package and the additional [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/)<sup><small>AUR</small></sup> that provides a `nzbget` [systemd](/index.php/Systemd "Systemd") service.
+
+To have the latest [NZBGet Git](https://github.com/nzbget/nzbget) version with a [systemd](/index.php/Systemd "Systemd") service file, install [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") instead.
 
 ## Configuring NZBGet
 
@@ -44,7 +46,7 @@ NZBGet should now be accessible on [http://localhost:6789](http://localhost:6789
 
 ## Running NZBGet under a different user
 
-**Tip:** The [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/)<sup><small>AUR</small></sup> provides already a `nzbget` user/group, so there is no need of adding a system user.
+**Tip:** The [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/)<sup><small>AUR</small></sup> and [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/)<sup><small>AUR</small></sup> provides already a `nzbget` user and group, so there is no need of adding a system user.
 
 For better security it is better to run NZBGet under a [system user](/index.php/Users_and_groups#Example_adding_a_system_user "Users and groups").
 
@@ -100,7 +102,7 @@ This may happen when the user edited the NZBGet configuration by the Web-interfa
 *   [NZBGet Documentation](http://nzbget.net/Documentation)
 *   [Performance Tips](http://nzbget.net/Performance_tips)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NZBGet&oldid=399919](https://wiki.archlinux.org/index.php?title=NZBGet&oldid=399919)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413472](https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413472)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

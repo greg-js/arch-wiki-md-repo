@@ -284,6 +284,20 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 <tr>
 
+<td>[Kloud51](https://www.Kloud51.com)</td>
+
+<td>2015.12.xx</td>
+
+<td>OpenVZ</td>
+
+<td>US-CA, Canada, UAE</td>
+
+<td>Also includes ArchLinux desktop with pre-installed desktop and RDP enabled. Providing direct support for each ArchLinux OS.</td>
+
+</tr>
+
+<tr>
+
 <td>[Leapswitch Networks](https://leapswitch.com)</td>
 
 <td>[2013.10.xx]</td>
@@ -663,7 +677,7 @@ At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (do not
 
 See [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_.28PVHVM_mode.29 "Xen") and/or [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_.28PV_mode.29 "Xen").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=407201](https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=407201)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=413473](https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=413473)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

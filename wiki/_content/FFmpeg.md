@@ -38,7 +38,8 @@ _FFmpeg is a complete, cross-platform solution to record, convert and stream aud
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
             *   [3.1.1.1 Two-pass MPEG-4 (very high quality)](#Two-pass_MPEG-4_.28very_high_quality.29)
 *   [4 Package removal](#Package_removal)
-*   [5 See also](#See_also)
+*   [5 FFserver](#FFserver)
+*   [6 See also](#See_also)
 
 ## Package installation
 
@@ -479,11 +480,70 @@ $ ffmpeg -i _video_.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
 *   `-aq 7` = 224 kb/s
 *   `-aq 8` = 256 kb/s
 
-*   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages.php?ID=6155) in the [AUR](/index.php/AUR "AUR").
+*   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages/libvorbis-aotuv/)<sup><small>AUR</small></sup>.
 
 ## Package removal
 
 [pacman](/index.php/Pacman "Pacman") will not [remove](/index.php/Remove "Remove") configuration files outside of the defaults that were created during package installation. This includes user-created preset files.
+
+## FFserver
+
+The FFmpeg package includes FFserver, which can be used to stream media over a network. To use it, you first need to create the config file `/etc/ffserver.conf` to define your _feeds_ and _streams_. Each feed specifies how the media will be sent to ffserver and each stream specifies how a particular feed will be transcoded for streaming over the network. You can start with the [sample configuration file](https://www.ffmpeg.org/sample.html) or check the `ffserver(1)` man page for feed and stream examples. Here is a simple configuration file for streaming flash video:
+
+ `/etc/ffserver.conf` 
+
+```
+HTTPPort 8090
+HTTPBindAddress 0.0.0.0
+MaxHTTPConnections 2000
+MaxClients 1000
+MaxBandwidth 10000
+CustomLog -
+
+<Feed av_feed.ffm>
+        File /tmp/av_feed.ffm
+        FileMaxSize 1G
+        ACL allow 127.0.0.1
+</Feed>
+
+<Stream av_stream.flv>
+        Feed av_feed.ffm
+        Format flv
+
+        VideoCodec libx264
+        VideoFrameRate 25
+        VideoSize hd1080
+        VideoBitRate 400
+        AVOptionVideo qmin 10
+        AVOptionVideo qmax 42
+        AVOptionVideo flags +global_header
+
+        AudioCodec libmp3lame
+        AVOptionAudio flags +global_header
+
+        Preroll 15
+</Stream>
+
+<Stream stat.html>
+        Format status
+        ACL allow localhost
+        ACL allow 192.168.0.0 192.168.255.255
+</Stream>
+
+<Redirect index.html>
+        URL http://www.ffmpeg.org/
+</Redirect>
+```
+
+Once you have created your config file, you can start the server and send media to your feeds. For the previous config example, this would look like
+
+```
+$ ffserver &
+$ ffmpeg -i myvideo.mkv [http://localhost:8090/av_feed.ffm](http://localhost:8090/av_feed.ffm)
+
+```
+
+You can then stream your media using the URL `http://yourserver.net:8090/av_stream.flv`.
 
 ## See also
 
@@ -494,7 +554,7 @@ $ ffmpeg -i _video_.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
 *   [Using FFmpeg](http://howto-pages.org/ffmpeg/) - Linux how to pages
 *   [List](http://ffmpeg.org/general.html#Supported-File-Formats-and-Codecs) of supported audio and video streams
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=FFmpeg&oldid=411300](https://wiki.archlinux.org/index.php?title=FFmpeg&oldid=411300)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=FFmpeg&oldid=413476](https://wiki.archlinux.org/index.php?title=FFmpeg&oldid=413476)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

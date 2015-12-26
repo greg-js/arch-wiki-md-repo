@@ -56,7 +56,7 @@ All paths defined must be absolute and valid.
 
 **This article or section needs expansion.**
 
-**Reason:** What about suggesting to set `XDG_RUNTIME_DIR` to `/run/user/$UID` in a [Tip](/index.php/Template:Tip "Template:Tip")? (Discuss in [Talk:XDG Base Directory support#](https://wiki.archlinux.org/index.php/Talk:XDG_Base_Directory_support))
+**Reason:** What about suggesting to set `XDG_RUNTIME_DIR` to `/run/user/$UID` in a [Tip](/index.php/Template:Tip "Template:Tip")? (Discuss in [Talk:XDG Base Directory support#Expansion](https://wiki.archlinux.org/index.php/Talk:XDG_Base_Directory_support#Expansion))
 
 *   `XDG_RUNTIME_DIR`
     *   Used for non-essential, user-specific data files such as sockets, named pipes, etc.
@@ -1704,7 +1704,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413442](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413442)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413478](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413478)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

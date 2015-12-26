@@ -25,7 +25,7 @@ Sources, kernel and firmware images can be downloaded from the companies [suppor
 
 ### Base system
 
-Unfortunately, this board is only supported by the companys own linux kernel 3.0.35, which is to old to run the newest stock ArchLinuxARM image ([systemd requires at least kernel 3.15/3.16](http://archlinuxarm.org/forum/viewtopic.php?f=47&t=9225#p48367)). The company is looking forward to provide a newer kernel in the [first quarter of 2016](http://forum.fs-net.de/index.php/Thread/3842-armStoneA9-Linux-development-state-and-releases/?postID=13176#post13176). So usually we could use [ArchLinuxARM-armv7-latest](http://os.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz) base system but following packages has to be downgraded and recompiled:
+Unfortunately, this board is only supported by the companys own [linux kernel 3.0.35](http://forum.fs-net.de/index.php/Thread/3972-fsimx6-V2-1-released/), which is too old to run the newest stock ArchLinuxARM image ([systemd requires at least kernel 3.15/3.16](http://archlinuxarm.org/forum/viewtopic.php?f=47&t=9225#p48367)). The company is looking forward to provide a newer kernel in the [first quarter of 2016](http://forum.fs-net.de/index.php/Thread/3842-armStoneA9-Linux-development-state-and-releases/?postID=13176#post13176). So usually we could use [ArchLinuxARM-armv7-latest](http://os.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz) base system but following packages has to be downgraded and recompiled:
 
 ```
 libsystemd ~221-1
@@ -81,7 +81,7 @@ The command `run bootcmd` initiates the boot process by starting the kernel.
 *   [Hardware documentation (pdf)](https://www.fs-net.de/assets/download/docu/armstone/en/armStoneA9_Hardware_eng.pdf)
 *   [Linux documentation (pdf)](https://www.fs-net.de/assets/download/docu/common/en/FSiMX6_FirstSteps_eng.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=412990](https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=412990)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=413510](https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=413510)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
