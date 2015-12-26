@@ -58,7 +58,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 [https://wiki.gnome.org/GnomeFlashback](https://wiki.gnome.org/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
-*   **[KDE Plasma](/index.php/KDE "KDE")** — The KDE Plasma desktop environment is a familiar working environment. Plasma Desktop offers all the tools required for a modern desktop computing experience so you can be productive right from the start.
+*   **[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")** — The KDE Plasma desktop environment is a familiar working environment. Plasma Desktop offers all the tools required for a modern desktop computing experience so you can be productive right from the start.
 
 [https://www.kde.org/workspaces/plasmadesktop/](https://www.kde.org/workspaces/plasmadesktop/) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
 
@@ -519,7 +519,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 
 <tr>
 
-<td>[KDE Plasma](/index.php/KDE "KDE")</td>
+<td>[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")</td>
 
 <td>[Qt](/index.php/Qt "Qt") 5  
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)</td>
@@ -1002,7 +1002,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412879](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=412879)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=413403](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=413403)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

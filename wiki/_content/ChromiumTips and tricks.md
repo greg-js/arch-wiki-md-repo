@@ -193,7 +193,7 @@ Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history a
 
 ### WebRTC
 
-WebRTC is a communication protocol that relies on JavaScript that can leak one's actual IP address from behind a VPN. While software like NoScript prevents this, it's probably a good idea to block this protocol directly as well, just to be safe. An [option to disable it](https://code.google.com/p/chromium/issues/detail?id=457492) is available via an [extension](https://goo.gl/74pT1m).
+WebRTC is a communication protocol that relies on JavaScript that can leak one's actual IP address from behind a VPN. While software like NoScript prevents this, it's probably a good idea to block this protocol directly as well, just to be safe. An [option to disable it](https://code.google.com/p/chromium/issues/detail?id=457492) is available via an [extension](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia).
 
 One can test this via [this page](https://www.privacytools.io/webrtc.html).
 
@@ -357,7 +357,7 @@ Below is an example `chromium-flags.conf` file that defines the flags `--start-m
 *   [Tmpfs](/index.php/Tmpfs#tmpfs "Tmpfs") - Tmpfs Filesystem in `/etc/fstab`
 *   [Official tmpfs kernel Documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413398](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413398)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413402](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413402)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

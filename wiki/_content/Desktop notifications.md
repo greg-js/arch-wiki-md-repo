@@ -36,7 +36,7 @@ The following desktop environments use their own implementations to display noti
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon") provides a notification server itself. Notifications are displayed at the top right corner of the screen.
 *   [Enlightenment](/index.php/Enlightenment "Enlightenment") provides a notification server through its Notification extension. Notification options [are configurable](/index.php/Enlightenment#Notifications "Enlightenment").
 *   [GNOME](/index.php/GNOME "GNOME") provides a notification server itself. Notifications are displayed at the top of the screen.
-*   [KDE Plasma](/index.php/KDE "KDE") provides a notification server itself. Notifications are displayed at the bottom right corner of the screen.
+*   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides a notification server itself. Notifications are displayed at the bottom right corner of the screen.
 
 ### Standalone
 
@@ -456,7 +456,7 @@ End Class
 *   [C example](http://milky.manishsinha.net/2009/03/29/working-with-libnotify/)
 *   [Python example](http://hashbang.fr/tutoriel-notify.html) (french article)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=411920](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=411920)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413404](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413404)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

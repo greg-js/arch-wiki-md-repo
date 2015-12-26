@@ -52,8 +52,9 @@ Related articles
     *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
-    *   [7.2 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
+    *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
+    *   [7.2 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
+    *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
 
 ## Exploring Android device
 
@@ -615,6 +616,10 @@ You can install Debian like in this [thread](http://forum.xda-developers.com/sho
 
 ## Troubleshooting
 
+### Android Studio: Android Virtual Devices show 'failed to load'.
+
+Make sure you've exported the variable `ANDROID_HOME` as explained in [Android Studio](/index.php/Android_Studio "Android Studio").
+
 ### aapt: No such file or directory
 
 The build tools include 32-bit binaries. For this reason they require 32-bit libraries. If you happened to install the SDK manually, you will additionally need to install **multilib/lib32-libstdc++5** and **multilib/lib32-zlib**.
@@ -635,7 +640,7 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=411759](https://wiki.archlinux.org/index.php?title=Android&oldid=411759)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=413411](https://wiki.archlinux.org/index.php?title=Android&oldid=413411)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

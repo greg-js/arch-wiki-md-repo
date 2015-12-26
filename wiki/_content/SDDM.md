@@ -138,7 +138,7 @@ MinimumVT=7
 
 ### One or more users do not show up on the greeter
 
-**Warning:** Users set with a lower or higher `UID` range should generally not be exposed to a [Display Manager](/index.php/Display_Manager "Display Manager").
+**Warning:** Users set with a lower or higher `UID` range should generally not be exposed to a [Display manager](/index.php/Display_manager "Display manager").
 
 SDDM only displays users with a UID in the range of 1000 to 65000 by default, if the UIDs of the desired users are below this value then you will have to modify this range. Modify your `sddm.conf` to (for a UID of 501, say):
 
@@ -161,7 +161,7 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=413160](https://wiki.archlinux.org/index.php?title=SDDM&oldid=413160)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=413409](https://wiki.archlinux.org/index.php?title=SDDM&oldid=413409)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

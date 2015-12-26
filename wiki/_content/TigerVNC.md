@@ -52,7 +52,7 @@ Vncserver provides two major remote control abilities:
 
 ### Create environment, config, and password files
 
-Vncserver will create its initial environment file, config, and user password file the first time it is run. These will be stored in `~/.vnc` which will be created if not present.
+Vncserver will create its initial environment, config, and user password file the first time it is run. These will be stored in `~/.vnc` which will be created if not present.
 
  `$ vncserver` 
 
@@ -72,7 +72,7 @@ Log file is /home/facade/.vnc/mars:1.log
 
 Notice the :1 trailing the hostname. This is indicating the TCP port number on which the virtual vncserver is running. In this case, :1 is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in :2 as above.
 
-**Note:** Linux systems can have as many VNC servers as physical memory allows -- all of which running in parallel to each other.
+**Note:** Linux systems can have as many VNC servers as physical memory allows, all of which running in parallel to each other.
 
 Shutdown the vncserver by using the -kill switch:
 
@@ -97,7 +97,7 @@ exec startlxqt
 
 #### Edit the optional config file
 
-With the release of tigervnc 1.60-1, a user service unit and support for parsing options in `~/.vnc/config` has been implemented. The aforementioned file holds options to be passed to the server without hard-coding them to the physical invocation. The format is one per line. An example is provided:
+With the release of tigervnc 1.60-1, support for parsing options in `~/.vnc/config` has been implemented which obviates the need to call `vncserver` with command line switches. The format is one option per line. An example is provided:
 
  `~/.vnc.config` 
 
@@ -115,8 +115,6 @@ localhost
 alwaysshared
 
 ```
-
-**Note:** Users are not required to use `~/.vnc/config` for passing options to the server. The full set of switches are still supported.
 
 ### Starting and stopping vncserver via systemd
 
@@ -192,7 +190,7 @@ WantedBy=multi-user.target
 
 ### Using tigervnc's x0vncserver
 
-[tigervnc](https://www.archlinux.org/packages/?name=tigervnc) provides the x0vncserver binary which allows users direct control over a physical X session. Invoke it like so:
+[tigervnc](https://www.archlinux.org/packages/?name=tigervnc) provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
 
 ```
 $ x0vncserver -display :0 -passwordfile ~/.vnc/passwd
@@ -208,11 +206,11 @@ man x0vncserver
 
 ### Using x11vnc
 
-Another option is to use [x11vnc](https://www.archlinux.org/packages/?name=x11vnc) which has the advantage or disadvantage, depending on your perspective, of requiring root to initiate the access. For more, see: [X11vnc](/index.php/X11vnc "X11vnc").
+Another option is to use [x11vnc](https://www.archlinux.org/packages/?name=x11vnc) which has the advantage or disadvantage, depending on one's perspective, of requiring root to initiate the access. For more, see: [X11vnc](/index.php/X11vnc "X11vnc").
 
 ## Connecting to vncserver
 
-**Warning:** It is ill-advised to connect insecurely to a vncserver outside of the LAN; readers are encouraged read the rest of this article in its entirety if use cases require connections outside of one's LAN. That being said, TigerVNC _is encrypted by default_ unless it is specifically instructed otherwise by setting SecurityTypes to a non secure option, although this lacks identity verification and will not prevent MITM attack during the connection setup. X509Vnc is the recommended option for a secure connection.
+**Warning:** It is ill-advised to connect insecurely to a vncserver outside of the LAN; readers are encouraged read the rest of this article in its entirety if use cases require connections outside of one's LAN. That being said, TigerVNC _is encrypted by default_ unless it is specifically instructed otherwise by setting SecurityTypes to a non-secure option, although this lacks identity verification and will not prevent MITM attack during the connection setup. X509Vnc is the recommended option for a secure connection.
 
 Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 on port 5901 (:1) in shorthand notation:
 
@@ -248,7 +246,7 @@ $ vncviewer
 
 ## Accessing vncserver via SSH tunnels
 
-An advantage of SSH tunneling is one does not need to open up another port to the outside, since the traffic is literally tunneled through the SSH port which the user already has open to the WAN. It is highly recommended to use the `-localhost` switch when running vncserver with this method since this switch only allows connections _from the localhost_ -- and by analogy only by users physically ssh'ed and authenticated on the box.
+An advantage of SSH tunneling is one does not need to open up another port to the outside, since the traffic is literally tunneled through the SSH port which the user already has open to the WAN. It is highly recommended to use the `-localhost` switch when running vncserver with this method since this switch only allows connections _from the localhost_ and by analogy, only by users physically ssh'ed and authenticated on the box.
 
 **Note:** TigerVNC uses TLSVnc encryption by default, unless specifically instructed via the SecurityTypes parameter. Authentication and traffic is encrypted, but there is no identity verification. TigerVNC supports alternative encryption schemes such as X509Vnc that allows the client to verify the identity of the server. When the SecurityTypes on the server side is set to a non-secure option as high-priority (such as None, VncAuth, Plain, TLSNone, TLSPlain, X509None, X509Plain; which is ill-advised), it is not possible to use encryption. In that case, one can tunnel the VNC over SSH. When running vncviewer, it is a good idea to explicitly set SecurityTypes and not accept any unencrypted traffic.
 
@@ -379,7 +377,7 @@ Or put `DotWhenNoCursor=1` in the tigervnc configuration file, which is at `~/.v
 
 ### Recommended security settings
 
-**Note:** If using ssh tunnels (i.e. [TigerVNC#Accessing_vncserver_via_SSH_tunnels](/index.php/TigerVNC#Accessing_vncserver_via_SSH_tunnels "TigerVNC")), X509Vnc is not required since the encryption is handled by the sshd.
+**Note:** If using ssh tunnels (i.e. [#Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels)), X509Vnc is not required since the encryption is handled by the sshd.
 
 SecurityTypes controls the preferred security algorithms. The default in the current version 1.5.0 is "X509Plain,TLSPlain,X509Vnc,TLSVnc,X509None,TLSNone,VncAuth,None". A more secure alternative is "X509Vnc,TLSVnc", which will disable all unencrypted data traffic.
 
@@ -396,7 +394,7 @@ Issuing x509 certificates is beyond the scope of this guide. However, this is ex
 
 This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413382](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413382)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413410](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413410)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

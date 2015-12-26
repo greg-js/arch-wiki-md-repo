@@ -24,6 +24,27 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Wireless NIC:** Intel Corporation Dual Band Wireless AC 3160 (rev 83)
 
+```
+lspci -nn
+00:00.0 Host bridge [0600]: Intel Corporation Device [8086:2280] (rev 21)
+00:02.0 VGA compatible controller [0300]: Intel Corporation Device [8086:22b1] (rev 21)
+00:0b.0 Signal processing controller [1180]: Intel Corporation Device [8086:22dc] (rev 21)
+00:10.0 SD Host controller [0805]: Intel Corporation Device [8086:2294] (rev 21)
+00:14.0 USB controller [0c03]: Intel Corporation Device [8086:22b5] (rev 21)
+00:18.0 DMA controller [0801]: Intel Corporation Device [8086:22c0] (rev 21)
+00:18.1 Serial bus controller [0c80]: Intel Corporation Device [8086:22c1] (rev 21)
+00:1a.0 Encryption controller [1080]: Intel Corporation Device [8086:2298] (rev 21)
+00:1b.0 Audio device [0403]: Intel Corporation Device [8086:2284] (rev 21)
+00:1c.0 PCI bridge [0604]: Intel Corporation Device [8086:22c8] (rev 21)
+00:1c.2 PCI bridge [0604]: Intel Corporation Device [8086:22cc] (rev 21)
+00:1e.0 DMA controller [0801]: Intel Corporation Device [8086:2286] (rev 21)
+00:1e.4 Communication controller [0780]: Intel Corporation Device [8086:228c] (rev 21)
+00:1f.0 ISA bridge [0601]: Intel Corporation Device [8086:229c] (rev 21)
+00:1f.3 SMBus [0c05]: Intel Corporation Device [8086:2292] (rev 21)
+02:00.0 Network controller [0280]: Intel Corporation Wireless 3160 [8086:08b3] (rev 83)
+
+```
+
 ## Installation
 
 _**Installation made with the 2015_12_01 image, which includes the kernel version 4.2.5.**_
@@ -81,7 +102,7 @@ WaylandEnable=false
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413367](https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413367)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413419](https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413419)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -43,6 +43,7 @@ Related articles
     *   [5.14 Javascript context menu doesn't appear on some sites](#Javascript_context_menu_doesn.27t_appear_on_some_sites)
     *   [5.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
     *   [5.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
+    *   [5.17 YouTube only plays videos with 240p, 320p and 720p](#YouTube_only_plays_videos_with_240p.2C_320p_and_720p)
 *   [6 See also](#See_also)
 
 ## Installing
@@ -369,6 +370,10 @@ You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: 
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details.
 
+### YouTube only plays videos with 240p, 320p and 720p
+
+You probably have enabled the HTML5 mode for YouTube, which isn't fully supported for Firefox under Linux yet. One solution would be to just turn off the HTML5 mode on [YouTube.com/HTML5](https://www.youtube.com/html5) and use Flash. However if you want to watch videos in 60 fps, don't want to install flash or want better performance, you might want to try activating experimental features (especially MSE) instead with which YouTube works quite well. In order to do this, follow the steps on [Firefox_tweaks#Enable_additional_media_codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks"). If you encounter any problems (e.g. crashes, green screen or no sound) it is advised to use Flash instead.
+
 ## See also
 
 *   [Official website](http://www.mozilla.org/firefox/)
@@ -377,7 +382,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413201](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413201)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413416](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413416)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

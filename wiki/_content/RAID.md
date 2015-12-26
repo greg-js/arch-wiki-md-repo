@@ -299,7 +299,7 @@ When replacing a failed disk of a RAID, the new disk has to be exactly the same 
 
 ### Build the Array
 
-**Warning:** Kernel versions 4.2.x and 4.3.x currently have an active bug that prevents them from assembling a RAID10 array; users needing this layout are encouraged to use kernel version 4.1.x series provided by [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) until this bug is fixed. References are provided in the [RAID#See_also](/index.php/RAID#See_also "RAID") section.
+**Warning:** Kernel versions 4.2.x and 4.3.x currently have an active bug that prevents them from assembling a RAID10 array; users needing this layout are encouraged to use kernel version 4.1.x series provided by [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) until this bug is fixed. References are provided in the [#See also](#See_also) section.
 
 Use `mdadm` to build the array. Several examples are given below.
 
@@ -869,7 +869,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 
 *   [Linux/Fedora: Encrypt /home and swap over RAID with dm-crypt](http://www.shimari.com/dm-crypt-on-raid/) by Justin Wells
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RAID&oldid=412461](https://wiki.archlinux.org/index.php?title=RAID&oldid=412461)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RAID&oldid=413408](https://wiki.archlinux.org/index.php?title=RAID&oldid=413408)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

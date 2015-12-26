@@ -507,6 +507,8 @@ Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the serve
 
 [nginx](/index.php/Nginx "Nginx") can be used to proxy requests to official upstream mirrors and cache the results to local disk. All subsequent requests for that file will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of servers with minimal effort.
 
+**Warning:** This method has two limitations. The first one is that you must use mirrors that use the same relative path and you must configure your cache to use the same. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting is configured similarly. The second limitation is that you can only use non virtual hosted mirrors. This is because the `Host` header sent by nginx upstream block is `"mirrors"`, so a virtually hosted mirror will not resolve with this virtual hostname. The example given above only works because mirror.rit.edu is uniquely mapped to it's ip address is resolves to: it is not a virtual host. Make sure you replace the other two servers when you use this example.
+
 In this example, we will run the cache server on `http://cache.domain.local:8080/` and storing the packages in `/srv/http/pacman-cache/`.
 
 Create the directory for the cache and adjust the permissions to nginx can write files to it:
@@ -578,8 +580,6 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 ...
 
 ```
-
-**Warning:** A limitation of this method is that you must use mirrors that use the same relative path and you must configure your cache to use the same. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting is configured similarly.
 
 **Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time.
 
@@ -972,7 +972,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=412867](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=412867)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413418](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413418)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

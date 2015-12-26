@@ -314,9 +314,30 @@ Just remind to disconnect the device once you are done, once it will stay connec
 
 ### Steam Controller
 
-The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay also needs to be enabled and working in order for gamepad emulation to work.
+The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay also needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam.
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> to have controller and mouse emulation without Steam.
+
+The latter one can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
+
+ `xbox360cemu.ini` 
+
+```
+Right Analog X=4
+Right Analog Y=-5
+A=1
+B=2
+X=3
+Y=4
+Back=7
+Start=8
+Left Thumb=10
+Right Thumb=11
+Left Trigger=a3
+Right Trigger=a6
+```
+
+Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0.rar` to the same directory and run it with Wine in order to test if it works. However neither the mouse nor the keyboard emulation is working with this method.
 
 ### Xbox 360 controller
 
@@ -571,7 +592,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2833", MODE="0666"
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413261](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413261)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413414](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413414)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

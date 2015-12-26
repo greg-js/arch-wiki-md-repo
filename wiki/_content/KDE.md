@@ -247,7 +247,7 @@ There you can also directly download and install more themes with one click, and
 
 Icon-themes can be installed and changed on _System Settings > Icons_.
 
-**Note:** [Gnome](/index.php/Gnome "Gnome") and KDE4 installed icon-themes may not be (fully) compatible with Plasma. It's recommended to install Plasma compatible icon-themes instead.
+**Note:** [GNOME](/index.php/GNOME "GNOME") and KDE4 installed icon-themes may not be (fully) compatible with Plasma. It's recommended to install Plasma compatible icon-themes instead.
 
 #### Fonts
 
@@ -602,7 +602,7 @@ Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey
 
 #### Intel
 
-If you use 3D-accelerated composition with Intel, you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's _OpenGL interface_ setting to GLX instead (in System Settings under _Display and Monitor_ -> _Compositor_. If that does not work, see [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
+If you use 3D-accelerated composition with Intel, you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's _OpenGL interface_ setting to GLX instead (in System Settings under _Display and Monitor_ -> _Compositor_. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
 #### Plasma keeps crashing with legacy Nvidia
 
@@ -809,7 +809,7 @@ fs.inotify.max_user_watches = 10000
 
 ### Freezes when using Automount on a NFS volume
 
-Using [Fstab#Automount_with_systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
+Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
 
 ## Unstable releases
 
@@ -845,7 +845,7 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413252](https://wiki.archlinux.org/index.php?title=KDE&oldid=413252)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413405](https://wiki.archlinux.org/index.php?title=KDE&oldid=413405)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
