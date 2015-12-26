@@ -95,7 +95,7 @@ The [su](/index.php/Su "Su") (substitute user) command allows you to assume the 
 
 ### Service management
 
-Arch Linux uses [systemd](/index.php/Systemd "Systemd") as the init process, which is a system and service manager for Linux. For maintaining your Arch Linux installation, it is a good idea to learn the basics about it. Interaction with _systemd_ is done through the _systemctl_ command. Read [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") for more information.
+Arch Linux uses [systemd](/index.php/Systemd "Systemd") as the [init](/index.php/Init "Init") process, which is a system and service manager for Linux. For maintaining your Arch Linux installation, it is a good idea to learn the basics about it. Interaction with _systemd_ is done through the _systemctl_ command. Read [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") for more information.
 
 ### System maintenance
 
@@ -135,9 +135,7 @@ Every package in the repositories along with those present in the AUR are subjec
 
 ### Arch User Repository
 
-While the ABS tree allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or by an AUR helper.
-
-An [AUR helper](/index.php/AUR_helper "AUR helper") can add seamless access to the AUR. They may vary in features, but all ease in searching, fetching, building, and installing from tens of thousands PKGBUILDs found in the unofficial repository.
+While the ABS tree allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or by an [AUR helper](/index.php/AUR_helper "AUR helper").
 
 ## Booting
 
@@ -317,8 +315,6 @@ A plethora of information on the subject can be found in the [Fonts](/index.php/
 
 If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
 
-Font rendering libraries can be patched to provide improved rendering compared to the standard packages; see [Font configuration#Patched packages](/index.php/Font_configuration#Patched_packages "Font configuration").
-
 ### GTK and Qt themes
 
 A big part of the applications with a graphical interface for Linux systems are based on the [GTK+](/index.php/GTK%2B "GTK+") or the [Qt](/index.php/Qt "Qt") toolkits. See those articles and [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for ideas to improve the appearance of your installed programs and adapt it to your liking.
@@ -371,7 +367,7 @@ To be able to save and view text which has scrolled off the screen, refer to [Sc
 
 Using terminal multiplexers like [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programs may be run under sessions composed of tabs and panes that can be detached at will, so when the user either kills the terminal emulator, terminates [X](/index.php/X "X"), or logs off, the programs associated with the session will continue to run in the background as long as the terminal multiplexer server is active. Interacting with the programs requires reattaching to the session.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413424](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413424)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413465](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413465)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

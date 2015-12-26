@@ -415,7 +415,7 @@ Browser Plugins can be enabled and disabled through the new [dwb:plugins dwb:plu
 
 If you are having problems with they layout of websites not loading correctly then give [dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup> a shot.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwb&oldid=404626](https://wiki.archlinux.org/index.php?title=Dwb&oldid=404626)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwb&oldid=413447](https://wiki.archlinux.org/index.php?title=Dwb&oldid=413447)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -201,7 +201,7 @@ $ vdpauinfo
 
 **Note:** There may no need to export the `VDPAU_DRIVER`, since most (modern) applications and environments will find the VDPAU library automatically.
 
-The environment variable `VDPAU_DRIVER` determines the driver file used. You can enable the [environment variable](/index.php/Environment_variable "Environment variable") [globally](/index.php/Environment_variables#Globally "Environment variables") or [locally per user](/index.php/Environment_variables#Per_user "Environment variables").
+The environment variable `VDPAU_DRIVER` determines the driver file used. See [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") for configuration details.
 
 The correct driver name depends on your setup:
 
@@ -261,7 +261,7 @@ For more information, see the [PRIME](/index.php/PRIME "PRIME") wiki page.
 
 || [vlc](https://www.archlinux.org/packages/?name=vlc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU&oldid=411185](https://wiki.archlinux.org/index.php?title=VDPAU&oldid=411185)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413451](https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413451)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

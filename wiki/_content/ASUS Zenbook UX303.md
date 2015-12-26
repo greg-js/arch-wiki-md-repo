@@ -223,8 +223,6 @@ All function keys except the backlight and "plane" mode seem to work out of the 
 
  `GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi="` 
 
-On UX303LB you can also try to instead use `acpi_backlight=legacy` to at least get xbacklight to work (brightness keys do not work for me).
-
 On UX303LA (kernel 4.1.13) xev does not return any events for the standard brightness keys, but F3 and F4 seem to be detected as XF86KbdBrightnessDown and XF86KbdBrightnessUp, respectively.
 
 ## Troubleshooting
@@ -237,7 +235,7 @@ If the USB Ports are only working with USB 2.0 devices, disable "XHCI Pre-Boot M
 
 Be aware, that after deactivating "XHCI Pre-Boot Mode" the ports will only work in USB 2.0 mode.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=411051](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=411051)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=413448](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=413448)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

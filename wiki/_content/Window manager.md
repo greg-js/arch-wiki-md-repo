@@ -74,7 +74,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 [http://monkey.org/~marius/cwm/cwm.1.a](http://monkey.org/~marius/cwm/cwm.1.a) || [cwm](https://aur.archlinux.org/packages/cwm/)<sup><small>AUR</small></sup>
 
-*   **eggwm** — A lightwieght QT4/QT5 window manager
+*   **eggwm** — A lightweight QT4/QT5 window manager
 
 [eggwm-qt5](https://aur.archlinux.org/packages/eggwm-qt5/)<sup><small>AUR</small></sup> || [eggwm](https://aur.archlinux.org/packages/eggwm/)<sup><small>AUR</small></sup>
 
@@ -288,7 +288,7 @@ Notion is a fork of Ion3.
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 *   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413426](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413426)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413467](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413467)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

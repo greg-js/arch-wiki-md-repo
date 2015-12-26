@@ -112,26 +112,24 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.5 boyska64](#boyska64)
         *   [5.1.6 coderkun-aur](#coderkun-aur)
         *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.8 coderkun-aur-java](#coderkun-aur-java)
-        *   [5.1.9 coderkun-aur-nonfree](#coderkun-aur-nonfree)
-        *   [5.1.10 eatabrick](#eatabrick)
-        *   [5.1.11 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.12 gustawho](#gustawho)
-        *   [5.1.13 Linux-pf](#Linux-pf)
-        *   [5.1.14 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.15 kc9ydn](#kc9ydn)
-        *   [5.1.16 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.17 linux-lts31x](#linux-lts31x)
-        *   [5.1.18 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.19 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.20 linux-tresor](#linux-tresor)
-        *   [5.1.21 qt-debug](#qt-debug)
-        *   [5.1.22 quarry](#quarry)
-        *   [5.1.23 rstudio](#rstudio)
-        *   [5.1.24 siosm-aur](#siosm-aur)
-        *   [5.1.25 siosm-selinux](#siosm-selinux)
-        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.8 eatabrick](#eatabrick)
+        *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.10 gustawho](#gustawho)
+        *   [5.1.11 Linux-pf](#Linux-pf)
+        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.13 kc9ydn](#kc9ydn)
+        *   [5.1.14 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.15 linux-lts31x](#linux-lts31x)
+        *   [5.1.16 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.17 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.18 linux-tresor](#linux-tresor)
+        *   [5.1.19 qt-debug](#qt-debug)
+        *   [5.1.20 quarry](#quarry)
+        *   [5.1.21 rstudio](#rstudio)
+        *   [5.1.22 siosm-aur](#siosm-aur)
+        *   [5.1.23 siosm-selinux](#siosm-selinux)
+        *   [5.1.24 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.25 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -1034,9 +1032,9 @@ Server = http://boyska.degenerazione.xyz/archrepo
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
 *   **Description:** AUR packages with random software. Supporting package deltas and package and database signing.
-*   **Upstream page:** [https://arch.coderkun.de](https://arch.coderkun.de)
+*   **Upstream page:** [https://www.coderkun.de/arch](https://www.coderkun.de/arch)
 *   **Key-ID:** A6BEE374
-*   **Keyfile:** [http://arch.coderkun.de/coderkun.asc](http://arch.coderkun.de/coderkun.asc)
+*   **Keyfile:** [https://www.coderkun.de/coderkun.asc](https://www.coderkun.de/coderkun.asc)
 
 ```
 [coderkun-aur]
@@ -1048,40 +1046,12 @@ Server = http://arch.coderkun.de/$repo/$arch/
 
 *   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
 *   **Description:** AUR packages with audio-related (realtime kernels, lv2-plugins, …) software. Supporting package deltas and package and database signing.
-*   **Upstream page:** [https://arch.coderkun.de](https://arch.coderkun.de)
+*   **Upstream page:** [https://www.coderkun.de/arch](https://www.coderkun.de/arch)
 *   **Key-ID:** A6BEE374
-*   **Keyfile:** [http://arch.coderkun.de/coderkun.asc](http://arch.coderkun.de/coderkun.asc)
+*   **Keyfile:** [https://www.coderkun.de/coderkun.asc](https://www.coderkun.de/coderkun.asc)
 
 ```
 [coderkun-aur-audio]
-Server = http://arch.coderkun.de/$repo/$arch/
-
-```
-
-#### coderkun-aur-java
-
-*   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
-*   **Description:** AUR packages with java related software. Supporting package deltas and package and database signing.
-*   **Upstream page:** [https://arch.coderkun.de](https://arch.coderkun.de)
-*   **Key-ID:** A6BEE374
-*   **Keyfile:** [http://arch.coderkun.de/coderkun.asc](http://arch.coderkun.de/coderkun.asc)
-
-```
-[coderkun-aur-java]
-Server = http://arch.coderkun.de/$repo/$arch/
-
-```
-
-#### coderkun-aur-nonfree
-
-*   **Maintainer:** [coderkun](https://aur.archlinux.org/account/coderkun/)
-*   **Description:** AUR packages with proprietary (dropbox, nvidia, …) software. Supporting package deltas and package and database signing.
-*   **Upstream page:** [https://arch.coderkun.de](https://arch.coderkun.de)
-*   **Key-ID:** A6BEE374
-*   **Keyfile:** [http://arch.coderkun.de/coderkun.asc](http://arch.coderkun.de/coderkun.asc)
-
-```
-[coderkun-aur-nonfree]
 Server = http://arch.coderkun.de/$repo/$arch/
 
 ```
@@ -1554,7 +1524,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413062](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413062)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413462](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413462)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

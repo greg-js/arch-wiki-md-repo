@@ -372,6 +372,14 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 
 ### YouTube only plays videos with 240p, 320p and 720p
 
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks").**
+
+**Notes:** Beats around the bush, any technical details should be merged (Discuss in [Talk:Firefox#](https://wiki.archlinux.org/index.php/Talk:Firefox))
+
 You probably have enabled the HTML5 mode for YouTube, which isn't fully supported for Firefox under Linux yet. One solution would be to just turn off the HTML5 mode on [YouTube.com/HTML5](https://www.youtube.com/html5) and use Flash. However if you want to watch videos in 60 fps, don't want to install flash or want better performance, you might want to try activating experimental features (especially MSE) instead with which YouTube works quite well. In order to do this, follow the steps on [Firefox_tweaks#Enable_additional_media_codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks"). If you encounter any problems (e.g. crashes, green screen or no sound) it is advised to use Flash instead.
 
 ## See also
@@ -382,7 +390,7 @@ You probably have enabled the HTML5 mode for YouTube, which isn't fully supporte
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413416](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413416)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=413466](https://wiki.archlinux.org/index.php?title=Firefox&oldid=413466)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

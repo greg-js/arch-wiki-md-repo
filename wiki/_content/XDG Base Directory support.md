@@ -34,15 +34,7 @@ Please read the [full specification](http://standards.freedesktop.org/basedir-sp
 
 All paths defined must be absolute and valid.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The "Some systems however do set `XDG_RUNTIME_DIR` such as systemd (logind)" statement needs some references. (Discuss in [Talk:XDG Base Directory support#](https://wiki.archlinux.org/index.php/Talk:XDG_Base_Directory_support))
-
-**Note:** On Arch, none of the `XDG_*` variables are set by default: it is up to the user to [define](/index.php/Define "Define") them, see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html). Some systems however do set `XDG_RUNTIME_DIR` such as systemd (logind).
+**Note:** On Arch, none of the `XDG_*` variables are set by default: it is up to the user to [define](/index.php/Define "Define") them, see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html). Some systems however do set `XDG_RUNTIME_DIR` such as systemd ([pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html)).
 
 ### User directories
 
@@ -1712,7 +1704,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413434](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413434)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413442](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413442)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

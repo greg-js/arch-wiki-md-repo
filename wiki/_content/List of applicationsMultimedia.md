@@ -669,7 +669,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 *   **Qoobar** — Universal QT-based audio tagger (specialized for classical music)
 
-[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qoobar)]</sup>
+[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)<sup><small>AUR</small></sup>
 
 #### Sound editing
 
@@ -963,7 +963,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 [http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=412707](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=412707)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413443](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413443)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
