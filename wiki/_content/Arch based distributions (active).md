@@ -21,8 +21,9 @@ Related articles
     *   [1.8 Bluestar Linux](#Bluestar_Linux)
     *   [1.9 Bridge Linux](#Bridge_Linux)
     *   [1.10 Papyros](#Papyros)
-    *   [1.11 TalkingArch](#TalkingArch)
-    *   [1.12 Tux Hat Linux](#Tux_Hat_Linux)
+    *   [1.11 Ninja OS](#Ninja_OS)
+    *   [1.12 TalkingArch](#TalkingArch)
+    *   [1.13 Tux Hat Linux](#Tux_Hat_Linux)
 *   [2 Counterpart distributions](#Counterpart_distributions)
     *   [2.1 Arch Linux ARM](#Arch_Linux_ARM)
     *   [2.2 MSYS2](#MSYS2)
@@ -147,6 +148,15 @@ Bridge Linux provides pre-installed versions of LXDE, Openbox, GNOME, Cinnamon, 
 Papyros is an operating system which adheres to Google's Material Design guidelines and is based on Arch Linux, KDE and Wayland.
 
 *   Homepage: [http://papyros.io/](http://papyros.io/)
+
+### Ninja OS
+
+Ninja OS is a Live OS based on Arch Linux and XFCE 4.
+
+*   Homepage: [http://ninjaos.org](http://ninjaos.org)
+*   Onion: [http://ninjaos4xt6nc2ft.onion//ninjaos](http://ninjaos4xt6nc2ft.onion//ninjaos)
+*   Git: [https://gitlab.com/ninjaos/ninjaos](https://gitlab.com/ninjaos/ninjaos)
+*   Sourceforge: [http://sourceforge.net/projects/ninjaos/](http://sourceforge.net/projects/ninjaos/)
 
 ### TalkingArch
 
@@ -345,7 +355,7 @@ Manjaro-based operating system developed by Blue Systems. Offers customised KDE 
 
 *   List at distrowatch.com - [http://distrowatch.com/search.php?basedon=Arch&status=Active](http://distrowatch.com/search.php?basedon=Arch&status=Active)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413228](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413228)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413514](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413514)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

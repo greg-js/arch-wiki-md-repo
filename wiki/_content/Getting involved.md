@@ -169,6 +169,10 @@ Arch Linux Blogs, to register read [this forum post](https://bbs.archlinux.org/v
 
 VPS-based @archlinux.info emails.
 
+[ProjectArch.tk](https://bbs.archlinux.org/viewtopic.php?id=206735&)
+
+Free ZNC accounts for Arch Linux users.
+
 ### Other
 
 [Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
@@ -206,7 +210,7 @@ Feel free to share wallpapers, splash screens, color palettes, widgets, themes, 
 
 See also [Arch Linux Art](https://www.archlinux.org/art/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Getting_involved&oldid=397993](https://wiki.archlinux.org/index.php?title=Getting_involved&oldid=397993)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Getting_involved&oldid=413525](https://wiki.archlinux.org/index.php?title=Getting_involved&oldid=413525)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

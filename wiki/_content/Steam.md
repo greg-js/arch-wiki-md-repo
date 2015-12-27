@@ -195,6 +195,8 @@ Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issue
 
 To close the Steam window (and remove it from the taskbar) when you press **x**, but keep Steam running in the tray, export the environment variable `STEAM_FRAME_FORCE_CLOSE=1`. See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
 
+Steam provides a script located at `/usr/bin/steam` that will be run when launching Steam; adding `export STEAM_FRAME_FORCE_CLOSE=1` to this file will export the environment variable for Steam on application launch.
+
 ### Audio not working
 
 First try to install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) and if you run a x86_64 system [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
@@ -531,7 +533,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=410848](https://wiki.archlinux.org/index.php?title=Steam&oldid=410848)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=413532](https://wiki.archlinux.org/index.php?title=Steam&oldid=413532)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

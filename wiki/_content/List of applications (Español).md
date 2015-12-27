@@ -724,7 +724,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Cliente de email, maduro y rico en funciones. Parte del grupo [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)
+[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [kmail](https://www.archlinux.org/packages/?name=kmail)]</sup>
 
 *   **Manitou Mail** — Sistema de correo electrónico con bases de datos.
 
@@ -794,7 +794,7 @@ _«Un lector o recopilador de contenidos (también conocido como agregador, agre
 
 *   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — Agregador de noticias de KDE, parte del grupo [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [kdepim-akregator](https://www.archlinux.org/packages/?name=kdepim-akregator)
+[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [kdepim-akregator](https://www.archlinux.org/packages/?name=kdepim-akregator)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [akregator](https://www.archlinux.org/packages/?name=akregator)]</sup>
 
 *   **Blam** — Lector de noticias simple para GNOME escrito en C Sharp.
 
@@ -1939,7 +1939,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Gestor de portapapeles con todas las características para el escritorio KDE.
 
-[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **loliclip** — Sincronizador de portapapeles desarrollado para los usuarios de WM.
 
@@ -2395,7 +2395,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Pandoc** — Navaja suiza para convertir de un formato de marcadores en otro (compatibles con Markdown).
 
-[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://aur.archlinux.org/packages/haskell-pandoc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-pandoc)]</sup>
+[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc)
 
 *   **Pathetic Writer** — Procesador de texto mejorado basado en X incluido en Siag Office.
 
@@ -3010,7 +3010,7 @@ Vea también [Wikipedia:es:Bootsplash](https://en.wikipedia.org/wiki/es:Bootspla
 
 #### Intérpretes de comandos
 
-Vea el artículo principal: [Línea de comandos](/index.php?title=Command-line_shell_(Espa%C3%B1ol)&action=edit&redlink=1 "Command-line shell (Español) (page does not exist)").
+Vea el artículo principal: [Línea de comandos](/index.php?title=Command-line_shell_(Espa%C3%B1ol)&action=edit&redlink=1 "Command-line shell (Español) (la página no existe)").
 
 Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
 
@@ -3092,7 +3092,7 @@ Vea también [Comparación de gestores de ventanas de X (en Inglés)](https://en
 
 Vea también [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") y otros gestores de ventanas.
+*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (la página no existe)") y otros gestores de ventanas.
 
 [http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 
@@ -3164,7 +3164,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 [http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
 
-*   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (page does not exist)").
+*   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (la página no existe)").
 
 [https://wiki.gnome.org/GnomePanel](https://wiki.gnome.org/GnomePanel) || [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 
@@ -3276,7 +3276,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 [http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 
-*   **slingshot** — Un lanzador de aplicaciones con estilo que forma parte del entorno de escritorio [pantheon](/index.php?title=Pantheon_(Espa%C3%B1ol)&action=edit&redlink=1 "Pantheon (Español) (page does not exist)").
+*   **slingshot** — Un lanzador de aplicaciones con estilo que forma parte del entorno de escritorio [pantheon](/index.php?title=Pantheon_(Espa%C3%B1ol)&action=edit&redlink=1 "Pantheon (Español) (la página no existe)").
 
 [https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
 
@@ -3444,7 +3444,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Programa de calendario y agenda, parte de [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)
+[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [korganizer](https://www.archlinux.org/packages/?name=korganizer)]</sup>
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extensión para Mozilla Thunderbird que da soporte para calendario y lista de tareas.
 
@@ -3631,8 +3631,8 @@ Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.or
 *   [Listado de juegos de Linux en Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games).
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=411587](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=411587)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413522](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413522)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Applications (Español)](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)")
+*   [Applicaciones (Español)](/index.php?title=Category:Applicaciones_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Applicaciones (Español) (page does not exist)")

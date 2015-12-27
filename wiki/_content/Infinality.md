@@ -37,7 +37,7 @@ The [infinality](http://www.infinality.net/) patchset aims to greatly improve fr
 
 ## Features
 
-Infinality's settings are all configurable at runtime via environment variables in `/etc/X11/xinit/xinitrc.d/infinality-settings.sh`, and include the following:
+Infinality's settings are all configurable at runtime via environment variables in `/etc/X11/xinit/xinitrc.d/xft-settings.sh`, and include the following:
 
 *   **Emboldening Enhancement**: Disables Y emboldening, producing a much nicer result on fonts without bold versions. Works on native TT hinter and autohinter.
 *   **Auto-Autohint**: Automatically forces autohint on fonts that contain no TT instructions.
@@ -51,7 +51,7 @@ Infinality's settings are all configurable at runtime via environment variables 
 
 See the [README](http://www.infinality.net/forum/viewtopic.php?f=2&t=18) for details.
 
-A number of presets are included and can be used by setting the USE_STYLE variable in `/etc/X11/xinit/xinitrc.d/infinality-settings.sh`.
+A number of presets are included and can be used by setting the USE_STYLE variable in `/etc/X11/xinit/xinitrc.d/xft-settings.sh`.
 
 ## Installation
 
@@ -112,7 +112,7 @@ Below you will find a list of fonts that cannot be freely redistributed and thus
 
 #### Usage
 
-Users of popular Desktop Environments (GNOME, KDE, Xfce4, Cinnamon, LXDE) should adjust font settings via their DE's control panel. Basically, the settings should duplicate those found in the freetype2 configuration file (`/etc/X11/xinit/xinitrc.d/infinality-settings.sh`):
+Users of popular Desktop Environments (GNOME, KDE, Xfce4, Cinnamon, LXDE) should adjust font settings via their DE's control panel. Basically, the settings should duplicate those found in the freetype2 configuration file (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`):
 
 ```
 Xft.antialias: 1
@@ -358,7 +358,7 @@ This will remove the entire font cache and recreate it from scratch.
 *   [infinality-bundle: good looking fonts made (even) easier](https://bbs.archlinux.org/viewtopic.php?id=162098) - _infinality-bundle_ support thread in the Arch Linux Forums
 *   [infinality-bundle-fonts: a free multilingual font collection for Arch](https://bbs.archlinux.org/viewtopic.php?id=170976) - _infinality-bundle-fonts_ support thread in the Arch Linux Forums
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Infinality&oldid=412413](https://wiki.archlinux.org/index.php?title=Infinality&oldid=412413)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Infinality&oldid=413518](https://wiki.archlinux.org/index.php?title=Infinality&oldid=413518)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
