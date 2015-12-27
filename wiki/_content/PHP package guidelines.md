@@ -24,7 +24,7 @@ PHP packages should install files into `/usr/share/pear/`. This path is in the A
 
 In most cases, the `arch` array should contain `'any'` because most PHP packages are architecture independent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=386378](https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=386378)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=413554](https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=413554)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

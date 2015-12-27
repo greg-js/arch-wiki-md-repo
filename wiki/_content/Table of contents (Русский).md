@@ -138,19 +138,21 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.7.</small> [Сетевой мониторинг](/index.php/Category:Network_monitoring_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network monitoring (Русский)") <small>(2)</small>
 
-<small>5.8.</small> [Прокси сервера](/index.php/Category:Proxy_servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Proxy servers (Русский)") <small>(1) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.8.</small> [Network sharing](/index.php/Category:Network_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network sharing (Русский)") <small>(1)</small>
 
-<small>5.9.</small> [Удалённый рабочий стол](/index.php/Category:Remote_desktop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Remote desktop (Русский)") <small>(1)</small>
+<small>5.9.</small> [Прокси сервера](/index.php/Category:Proxy_servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Proxy servers (Русский)") <small>(1) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
-<small>5.10.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(6) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.10.</small> [Удалённый рабочий стол](/index.php/Category:Remote_desktop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Remote desktop (Русский)") <small>(1)</small>
 
-<small>5.11.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small>
+<small>5.11.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(6) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
-<small>5.12.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.12.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small>
 
-<small>5.13.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small>
+<small>5.13.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
-<small>5.14.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small>
+<small>5.14.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small>
+
+<small>5.15.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small>
 
 <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(6)</small>
 
@@ -220,7 +222,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(31)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411847](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=411847)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=413536](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=413536)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

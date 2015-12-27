@@ -34,33 +34,28 @@ Please read the [full specification](http://standards.freedesktop.org/basedir-sp
 
 All paths defined must be absolute and valid.
 
-**Note:** On Arch, none of the `XDG_*` variables are set by default: it is up to the user to [define](/index.php/Define "Define") them, see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html). Some systems however do set `XDG_RUNTIME_DIR` such as systemd ([pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html)).
+**Note:** On Arch systems, only `XDG_RUNTIME_DIR` is set by default (see below): it is up to the user to [define](/index.php/Define "Define") the other variables, see [FS#31204](https://bugs.archlinux.org/task/31204) and [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-February/032980.html).
 
 ### User directories
 
 *   `XDG_CONFIG_HOME`
-    *   Should default to `HOME/.config`.
     *   Where user-specific configurations should be written (analogous to `/etc`).
+    *   Should default to `HOME/.config`.
 
 *   `XDG_CACHE_HOME`
-    *   Should default to `HOME/.cache`.
     *   Where user-specific non-essential (cached) data should be written (analogous to `/var/cache`).
+    *   Should default to `HOME/.cache`.
 
 *   `XDG_DATA_HOME`
-    *   Should default to `HOME/.local/share`.
     *   Where user-specific data files should be written (analogous to `/usr/share`).
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** What about suggesting to set `XDG_RUNTIME_DIR` to `/run/user/$UID` in a [Tip](/index.php/Template:Tip "Template:Tip")? (Discuss in [Talk:XDG Base Directory support#Expansion](https://wiki.archlinux.org/index.php/Talk:XDG_Base_Directory_support#Expansion))
+    *   Should default to `HOME/.local/share`.
 
 *   `XDG_RUNTIME_DIR`
     *   Used for non-essential, user-specific data files such as sockets, named pipes, etc.
     *   Not required to have a default value; warnings should be issued if not set or equivalents provided.
+
+        **Note:** This variable is already set by [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html) (`/run/user/$UID` with [systemd](https://www.archlinux.org/packages/?name=systemd) 228).
+
     *   Must be owned by the user with an access mode of `0700`.
     *   Filesystem fully featured by standards of OS.
     *   Must be on the local filesystem.
@@ -1704,7 +1699,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413478](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413478)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413544](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413544)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

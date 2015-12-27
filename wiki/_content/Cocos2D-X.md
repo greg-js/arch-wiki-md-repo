@@ -74,7 +74,7 @@ $ sdkbox update
 *   [Texture Rendering + Blur Tutorial](http://discuss.cocos2d-x.org/t/cocos3-8-tutorial-rendertexture-blur/13622)
 *   [Particle2DX](http://particle2dx.com/) - Cocos2D-X Particle Generator
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cocos2D-X&oldid=413025](https://wiki.archlinux.org/index.php?title=Cocos2D-X&oldid=413025)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cocos2D-X&oldid=413552](https://wiki.archlinux.org/index.php?title=Cocos2D-X&oldid=413552)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

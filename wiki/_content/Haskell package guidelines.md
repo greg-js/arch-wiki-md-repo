@@ -24,7 +24,7 @@ This document aims to cover standards and guidelines for producing good [Haskell
 
 [cabal2pkgbuild-git](https://aur.archlinux.org/packages/cabal2pkgbuild-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cabal2pkgbuild-git)]</sup>, available in the [AUR](/index.php/AUR "AUR"), may be used to automatically generate Arch packages from [cabal](/index.php/Haskell#cabal-install "Haskell") build files. It is a wrapper around [cblrepo](https://github.com/magthe/cblrepo). Generally there should be one package (i.e., one [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) per `.cabal` file for a package.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell_package_guidelines&oldid=392228](https://wiki.archlinux.org/index.php?title=Haskell_package_guidelines&oldid=392228)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell_package_guidelines&oldid=413553](https://wiki.archlinux.org/index.php?title=Haskell_package_guidelines&oldid=413553)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

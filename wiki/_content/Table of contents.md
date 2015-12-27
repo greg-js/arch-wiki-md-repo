@@ -98,7 +98,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small>
 
-<small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(5)</small>
+<small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small>
 
 <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(9)</small>
 
@@ -120,7 +120,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(19)</small>
 
-<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small>
+<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(36)</small>
 
 <small>4.8.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(3)</small>
 
@@ -272,13 +272,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(36)</small>
 
-<small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(20)</small>
+<small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(21)</small>
 
 <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(8)</small>
 
 <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(60)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=412850](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=412850)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=413533](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=413533)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -222,11 +222,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>8.6.3.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small>
 
-<small>8.7.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(11)</small>
+<small>8.7.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(12)</small>
 
 <small>8.8.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(6)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=412852](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=412852)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=413537](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=413537)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

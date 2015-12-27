@@ -273,7 +273,7 @@ Notion is a fork of Ion3.
 
 *   **[Qtile](/index.php/Qtile "Qtile")** — Full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
 
-[https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile-git](https://aur.archlinux.org/packages/qtile-git/)<sup><small>AUR</small></sup>
+[https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile](https://aur.archlinux.org/packages/qtile/)<sup><small>AUR</small></sup>
 
 *   **[wmii](/index.php/Wmii "Wmii")** — Small, dynamic window manager for X11\. It is scriptable, has a 9P filesystem interface and supports classic and tiling (Acme-like) window management. It aims to maintain a small and clean (read hackable and beautiful) codebase. The default configuration is in bash and [rc (the Plan 9 shell)](http://rc.cat-v.org), but programs exist written in ruby, and any program that can work with text can configure it. It has a status bar and launcher built in, and also an optional system tray (`witray`).
 
@@ -288,7 +288,7 @@ Notion is a fork of Ion3.
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 *   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413467](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413467)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413548](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413548)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
