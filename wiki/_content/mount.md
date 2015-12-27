@@ -110,7 +110,9 @@ Here are a few examples about how to extend mount functionality and modify defau
 *   [By creating udev / udisks rules](/index.php/Udev "Udev") - device manager for the Linux kernel.
 *   Manually mounting as shown above
 
-The _mount.X_ scripts or symbolic links, where _X_ is the name of a file system, can be used to alter the default _mount_ options for almost any of its supported file systems. Use the `-i` option to ignore _mount.X_ scripts, `mount -i -t reiserfs /dev/sd_XY_ /mnt/sd_XY_`, to avoid looping you must use with the `-i` inside _mount.X_ scripts. There are two ways to list available altered settings:
+The _mount.X_ scripts or symbolic links, where _X_ is the name of a file system, can be used to alter the default _mount_ options for almost any of its supported file systems. Use the `-i` option to ignore _mount.X_ scripts and also for avoiding of the loops(starting _mount.X_ non-stop) when _mount_ is inside the script, e.g. `mount -i -t reiserfs /dev/sd_XY_ /mnt/sd_XY_`.
+
+There are two ways to list available altered mount settings:
 
 *   Write _mount_ and press a `Tab` key.
 *   Execute `ls /usr/bin/mount.*`.
@@ -197,7 +199,7 @@ You can add more actions for when an external storage device, such as a USB driv
 *   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
 *   Creating and using disk images mini-howto: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mount&oldid=413578](https://wiki.archlinux.org/index.php?title=Mount&oldid=413578)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mount&oldid=413579](https://wiki.archlinux.org/index.php?title=Mount&oldid=413579)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

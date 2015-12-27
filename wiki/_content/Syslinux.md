@@ -693,7 +693,9 @@ To clear the screen when exiting the menu, add the following line:
 
 ### Keyboard layout
 
-If you often have to edit your boot parameters, you might want to remap your keyboard layout. This allows you to enter "=", "/" and other characters easily on a non-US keyboard.
+If you often have to edit your boot command with diverse parameters in the Syslinux boot prompt, then you might want to remap your keyboard layout. This allows you to enter "=", "/" and other characters easily on a non-US keyboard.
+
+**Note:** keytab-lilo is a perl script invoking the "loadkeys" program.
 
 First you have to create a compatible keymap, in this example German:
 
@@ -714,6 +716,13 @@ Copy `de.ktl` as root to `/boot/syslinux/` and set ownership to root:
 
 ```
 # chown root:root /boot/syslinux/de.ktl
+
+```
+
+A generic example:
+
+```
+# keytab-lilo.pl _/path/to/_us.kmap.gz _/path/to/_dvorak.kmap.gz > _/path/to/_dvorak.ktl
 
 ```
 
@@ -990,7 +999,7 @@ invalid or corrupt kernel image.
 *   [PXELinux configuration](http://www.josephn.net/scrapbook/pxelinux_stuff)
 *   [Multiboot USB using Syslinux](http://blog.jak.me/2013/01/03/creating-a-multiboot-usb-stick-using-syslinux/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-05-15]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslinux&oldid=410194](https://wiki.archlinux.org/index.php?title=Syslinux&oldid=410194)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslinux&oldid=413588](https://wiki.archlinux.org/index.php?title=Syslinux&oldid=413588)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

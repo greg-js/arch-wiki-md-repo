@@ -65,7 +65,7 @@ DefaultDependencies=no
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/local/bin/ldmtool create all
+ExecStart=/usr/bin/ldmtool create all
 [Install]
 WantedBy=local-fs-pre.target
 
@@ -75,7 +75,7 @@ Then [enable](/index.php/Enable "Enable") `ldmtool.service`.
 
 Once this setup is complete, you can add entries to `/etc/fstab` that reference Dynamic Disk volumes and have those mounted like any other volume.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_Disks&oldid=400289](https://wiki.archlinux.org/index.php?title=Dynamic_Disks&oldid=400289)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_Disks&oldid=413580](https://wiki.archlinux.org/index.php?title=Dynamic_Disks&oldid=413580)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

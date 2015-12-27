@@ -74,7 +74,7 @@ Once it exits, unplug the stick and plug it back in and it should be seen as a m
 
 Create the following [udev](/index.php/Udev "Udev") rule:
 
- `/etc/udev/rules.d/90-zte.conf` 
+ `/etc/udev/rules.d/90-zte.conf.rules` 
 
 ```
 ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0031", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0031", MODE="660", GROUP="network"
@@ -181,7 +181,7 @@ Thanks to the following webpages that gave me all this information:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&oldid=294838](https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&oldid=294838)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&oldid=413593](https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&oldid=413593)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

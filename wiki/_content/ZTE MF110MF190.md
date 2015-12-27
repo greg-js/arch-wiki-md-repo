@@ -111,7 +111,7 @@ Once it exits, unplug the stick and plug it back in and it should be seen as a m
 
 Create the following [udev](/index.php/Udev "Udev") rule:
 
- `/etc/udev/rules.d/90-zte.conf` 
+ `/etc/udev/rules.d/90-zte.conf.rules` 
 
 ```
  # This is the Modem part of the card, let's load usbserial with the correct vendor and product IDs so we get our usb serial devices
@@ -177,7 +177,7 @@ Thanks to the following web pages that gave me all this information:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZTE_MF110/MF190&oldid=386320](https://wiki.archlinux.org/index.php?title=ZTE_MF110/MF190&oldid=386320)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZTE_MF110/MF190&oldid=413594](https://wiki.archlinux.org/index.php?title=ZTE_MF110/MF190&oldid=413594)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

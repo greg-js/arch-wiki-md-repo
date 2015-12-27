@@ -43,10 +43,9 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [7.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_.22GLX.22_missing_on_display_.22:0.0.22)
     *   [7.3 [ERROR]Cannot access secondary GPU: No devices detected](#.5BERROR.5DCannot_access_secondary_GPU:_No_devices_detected)
         *   [7.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
-        *   [7.3.2 systemd-logind: failed to get session: PID XXX does not belong to any known session](#systemd-logind:_failed_to_get_session:_PID_XXX_does_not_belong_to_any_known_session)
-        *   [7.3.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-        *   [7.3.4 Could not load GPU driver](#Could_not_load_GPU_driver)
-        *   [7.3.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
+        *   [7.3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
+        *   [7.3.3 Could not load GPU driver](#Could_not_load_GPU_driver)
+        *   [7.3.4 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
     *   [7.4 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
     *   [7.5 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
     *   [7.6 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
@@ -797,41 +796,6 @@ Option "ConnectedMonitor" "CRT"
 
 ```
 
-#### systemd-logind: failed to get session: PID XXX does not belong to any known session
-
-If the console output is (_PID_ varies):
-
-```
-[ERROR]Cannot access secondary GPU - error: [XORG] (EE) systemd-logind: failed to get session: PID 753 does not belong to any known session
-[ERROR]Aborting because fallback start is disabled.
-
-```
-
-Install the [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) package.
-
-In /etc/mkinitcpio.conf change the MODULES var to:
-
-```
-MODULES="i915 bbswitch"
-
-```
-
-Or:
-
-```
-MODULES="i915 nouveau bbswitch"
-
-```
-
-And run:
-
-```
-# mkinitcpio -p linux
-
-```
-
-Additionally, the kernel parameter described [below](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29) may need to be added to the [bootloader](/index.php/Bootloader "Bootloader") configuration.
-
 #### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 
 Add `rcutree.rcu_idle_gp_delay=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") of the [bootloader](/index.php/Bootloader "Bootloader") configuration (see also the original [BBS post](https://bbs.archlinux.org/viewtopic.php?id=169742) for a configuration example).
@@ -1042,7 +1006,7 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 
 Join us at #bumblebee at freenode.net.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=411979](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=411979)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=413582](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=413582)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -807,7 +807,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **subdl** — Automatic subtitle downloader.
 
-[http://code.google.com/p/subdl/](http://code.google.com/p/subdl/) || [subdl](https://www.archlinux.org/packages/?name=subdl)
+[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
 
 *   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
 
@@ -963,7 +963,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 [http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413443](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413443)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413581](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413581)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

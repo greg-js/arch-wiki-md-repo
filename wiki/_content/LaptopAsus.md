@@ -788,11 +788,35 @@ Install CD Version
 
 </tr>
 
+<tr>
+
+<td>[N550JX](/index.php/ASUS_N550JX "ASUS N550JX")</td>
+
+<td>2015.12.01</td>
+
+<td>Works</td>
+
+<td>Works</td>
+
+<td>Works</td>
+
+<td>Works</td>
+
+<td>Works</td>
+
+<td>Works</td>
+
+<td>N/A</td>
+
+<td>Read [N550JX](/index.php/ASUS_N550JX "ASUS N550JX")</td>
+
+</tr>
+
 </tbody>
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Asus&oldid=399061](https://wiki.archlinux.org/index.php?title=Laptop/Asus&oldid=399061)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Asus&oldid=413584](https://wiki.archlinux.org/index.php?title=Laptop/Asus&oldid=413584)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
