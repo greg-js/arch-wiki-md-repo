@@ -27,7 +27,6 @@ Related articles
     *   [3.8 Use as a browser plugin](#Use_as_a_browser_plugin)
     *   [3.9 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
     *   [3.10 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
-    *   [3.11 YouTube and DASH](#YouTube_and_DASH)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 
@@ -139,12 +138,6 @@ Alternatively, [livestreamer](https://www.archlinux.org/packages/?name=livestrea
 
 Another alternative based on Livestreamer is this Lua script: [https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc](https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc)
 
-### YouTube and DASH
-
-When making use of mpv's [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) capabilities, one might wish to enable the experimental youtube-dl support for DASH, since YouTube only offers full HD resolution content in DASH format. This can be done with `--ytdl-format=bestvideo+bestaudio`.
-
-**Note:** The support for DASH is currently experimental. Some things do not work, most notably mpv will no longer be able to show how long the total video is and what the current seek position is. Seeking still works though, but you may experience some audio glitches.
-
 ## Vapoursynth
 
 Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for _mpv_.
@@ -175,7 +168,7 @@ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=412710](https://wiki.archlinux.org/index.php?title=Mpv&oldid=412710)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=413571](https://wiki.archlinux.org/index.php?title=Mpv&oldid=413571)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -382,9 +382,7 @@ To build Android 6+, you need to install these additional packages:
 
 *   32-bit and 64-bit systems: [rsync](https://www.archlinux.org/packages/?name=rsync)
 
-**Note:** You must now also install [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)<sup><small>AUR</small></sup> & [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> since ncurses was updated to ncurses6 and android's prebuilt clang still depends on ncurses5\. You can check what libs are still needed:
-
-`ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` and ``ldd prebuilts/clang/linux-x86/host/3.6/bin/clang`
+**Note:** You must now also install [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)<sup><small>AUR</small></sup> & [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> since ncurses was updated to ncurses6 and android's prebuilt clang still depends on ncurses5\. You can check what libs are still needed: `ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 
 
 ### Java Development Kit
 
@@ -486,6 +484,15 @@ $ make -j4
 If you run **lunch** without arguments, it will ask what build you want to create. Use -j with a number between one and two times number of cores/threads.
 
 The build takes a very long time.
+
+**Note:** If `make` fails with something like
+
+```
+flex-2.5.39: loadlocale.c:131: _nl_intern_locale_data: Assertion `cnt < (sizeof (_nl_value_type_LC_COLLATE) / sizeof (_nl_value_type_LC_COLLATE[0]))' failed.
+
+```
+
+try running `LANG=C make` instead.
 
 **Note:** Make sure you have enough RAM.
 
@@ -640,7 +647,7 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=413411](https://wiki.archlinux.org/index.php?title=Android&oldid=413411)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=413573](https://wiki.archlinux.org/index.php?title=Android&oldid=413573)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

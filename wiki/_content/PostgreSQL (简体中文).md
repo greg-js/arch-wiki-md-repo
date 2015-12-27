@@ -21,23 +21,26 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 *   [1 安装PostgreSQL](#.E5.AE.89.E8.A3.85PostgreSQL)
 *   [2 创建第一个数据库/用户](#.E5.88.9B.E5.BB.BA.E7.AC.AC.E4.B8.80.E4.B8.AA.E6.95.B0.E6.8D.AE.E5.BA.93.2F.E7.94.A8.E6.88.B7)
 *   [3 熟悉PostgreSQL](#.E7.86.9F.E6.82.89PostgreSQL)
-    *   [3.1 Access the database shell](#Access_the_database_shell)
-*   [4 配置 PostgreSQL 被远程访问](#.E9.85.8D.E7.BD.AE_PostgreSQL_.E8.A2.AB.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AE)
-*   [5 Configure PostgreSQL to work with PHP](#Configure_PostgreSQL_to_work_with_PHP)
-*   [6 Change default data dir (optional)](#Change_default_data_dir_.28optional.29)
-*   [7 Change default encoding of new databases to UTF-8 (optional)](#Change_default_encoding_of_new_databases_to_UTF-8_.28optional.29)
-*   [8 管理工具](#.E7.AE.A1.E7.90.86.E5.B7.A5.E5.85.B7)
-*   [9 Postgresql升级配置](#Postgresql.E5.8D.87.E7.BA.A7.E9.85.8D.E7.BD.AE)
-    *   [9.1 快速指南](#.E5.BF.AB.E9.80.9F.E6.8C.87.E5.8D.97)
-    *   [9.2 详细说明](#.E8.AF.A6.E7.BB.86.E8.AF.B4.E6.98.8E)
-*   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
-    *   [10.2 空闲时防止磁盘写入](#.E7.A9.BA.E9.97.B2.E6.97.B6.E9.98.B2.E6.AD.A2.E7.A3.81.E7.9B.98.E5.86.99.E5.85.A5)
-*   [11 See also](#See_also)
+    *   [3.1 连接数据库shell](#.E8.BF.9E.E6.8E.A5.E6.95.B0.E6.8D.AE.E5.BA.93shell)
+*   [4 选择配置](#.E9.80.89.E6.8B.A9.E9.85.8D.E7.BD.AE)
+    *   [4.1 配置 PostgreSQL 被远程访问](#.E9.85.8D.E7.BD.AE_PostgreSQL_.E8.A2.AB.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AE)
+    *   [4.2 Configure PostgreSQL to work with PHP](#Configure_PostgreSQL_to_work_with_PHP)
+    *   [4.3 Change default data dir (optional)](#Change_default_data_dir_.28optional.29)
+    *   [4.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
+*   [5 管理工具](#.E7.AE.A1.E7.90.86.E5.B7.A5.E5.85.B7)
+*   [6 Postgresql升级配置](#Postgresql.E5.8D.87.E7.BA.A7.E9.85.8D.E7.BD.AE)
+    *   [6.1 快速指南](#.E5.BF.AB.E9.80.9F.E6.8C.87.E5.8D.97)
+    *   [6.2 详细说明](#.E8.AF.A6.E7.BB.86.E8.AF.B4.E6.98.8E)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
+    *   [7.2 空闲时防止磁盘写入](#.E7.A9.BA.E9.97.B2.E6.97.B6.E9.98.B2.E6.AD.A2.E7.A3.81.E7.9B.98.E5.86.99.E5.85.A5)
+*   [8 See also](#See_also)
 
 ## 安装PostgreSQL
 
 [安装](/index.php/Pacman "Pacman") [postgresql](https://www.archlinux.org/packages/?name=postgresql)，并为新用户_postgres_[设置一个密码](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)") 。
+
+**注意:** 在本篇文章中需要以postgres用户运行的命令以`[postgres]$`作为前置符号。你可以以root用户执行`su - postgres`登陆postgres用户。如果你使用[sudo](/index.php/Sudo "Sudo")，可以以普通用户执行`sudo -i -u postgres`。
 
 在PostgreSQL可以正确使用之前，数据库集群必须被初始化:
 
@@ -49,8 +52,8 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 启动PostgreSQL，(可选)，添加 PostgreSQL 到daemons列表里作为守护进程同时启动：
 
 ```
-# systemctl start postgresql
-# systemctl enable postgresql
+# systemctl start postgresql.service
+# systemctl enable postgresql.service
 
 ```
 
@@ -58,17 +61,15 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 
 ## 创建第一个数据库/用户
 
-以postgres用户身份, 添加一个新的数据库用户使用[createuser](http://www.postgresql.org/docs/9.0/static/app-createuser.html) 命令
+**提示:** 如果创建一个与你的 Arch 用户 ($USER) 同名的数据库用户，并允许其访问 PostgreSQL 数据库的 shell，那么在使用PostgreSQL 数据库 shell 的时候无需指定用户登录（这样做会比较方便）。
 
-如果一个创建与你的Arch用户($USER)同名的数据库用户，并允许访问PostgreSQL数据库的shell，那么在使用PostgreSQL数据库shell的时候无需指定用户登录（这样做会比较方便）。
+以 postgres 用户身份, 添加一个新的数据库用户使用 [createuser](http://www.postgresql.org/docs/9.0/static/app-createuser.html) 命令
 
-例如:创建一个超级用户
-
- `$ createuser -s -U postgres --interactive`  `输入要增加的角色名称: 我登录Arch的用户名` 
+ `[postgres]$ createuser --interactive`  `输入要增加的角色名称: 我登录 Arch 的用户名` 
 
 以具备读写权限的用户身份，创建一个新的数据库,使用[createdb](http://www.postgresql.org/docs/9.0/static/app-createdb.html) 命令。
 
-从你的shell (**不是** 以postrgres用户的身份)
+从你的 shell (**不是** 以 postrgres 用户的身份)
 
 ```
 $ createdb myDatabaseName
@@ -77,12 +78,12 @@ $ createdb myDatabaseName
 
 ## 熟悉PostgreSQL
 
-### Access the database shell
+### 连接数据库shell
 
-Become the postgres user. Start the primary db shell, [psql](http://www.postgresql.org/docs/8.3/static/app-psql.html), where you can do all your creation of databases/tables, deletion, set permissions, and run raw SQL commands. Use the "-d" option to connect to the database you created (without specifying a database, psql will try to access a database that matches your username)
+登陆为postgres用户，启动主要数据库shell [psql](http://www.postgresql.org/docs/current/static/app-psql.html)，你可以创建数据库或表、设计权限和运行原始的SQL命令。使用`-d`选项连接你创建的数据库（如果没有指定数据库，`psql`会尝试连接与你用户名同名的数据库）。
 
 ```
-$ psql -d myDatabaseName
+[postgres]$ psql -d myDatabaseName
 
 ```
 
@@ -125,44 +126,47 @@ $ psql -d myDatabaseName
 
 当然也有更多元命令，但这些应该能够帮助您开始。
 
-## 配置 PostgreSQL 被远程访问
+## 选择配置
 
-PostgreSQL Server 的配置文件是 `postgresql.conf`。此文件在数据库数据目录中，通常在 `/var/lib/postgres/data`. 这个目录也包含其他主要的配置文件，包括 `pg_hba.conf`。
+#### 配置 PostgreSQL 被远程访问
 
-**Note:** 默认这个目录不能被普通用户浏览或进入，这就是 `find` 或 `locate` 没有找到这些配置文件的原因。
+PostgreSQL Server 的配置文件是 `postgresql.conf`。此文件在数据库数据目录中，通常在 `/var/lib/postgres/data`。这个目录也包含其他主要的配置文件，包括 `pg_hba.conf`。
 
-As root user edit the file `/var/lib/postgres/data/postgresql.conf`. In the connections and authentications section uncomment or edit the `listen_addresses` line to your needs:
+**注意:** 默认情况下这个目录不能被普通用户访问，这就是 `find` 或 `locate` 没有找到这些配置文件的原因。
+
+编辑文件`/var/lib/postgres/data/postgresql.conf`。在_connections and authentications_选项中，按照你的需要添加`listen_addresses`行:
 
 ```
-listen_addresses = '*'
+listen_addresses = 'localhost,my_remote_server_ip_address'
 
 ```
 
-Take a careful look at the other lines. Hereafter insert the following line in the host-based authentication file `/var/lib/postgres/data/pg_hba.conf`. This file controls which hosts are allowed to connect, so **be careful**.
+仔细检查其他行。
+
+`/var/lib/postgres/data/pg_hba.conf`配置基于主机的认证。这个文件控制哪些主机允许连接。要注意默认情况下**允许所有本地用户连接任何数据库用户**，包括数据库的超级用户。根据下面的描述添加一行:
 
 ```
 # IPv4 local connections:
-host   all   all   your_desired_ip_address/32   trust
+host   all   all   _my_remote_client_ip_address_/32   md5
 
 ```
 
-where `your_desired_ip_address` is the IP address of the client. After this you should restart the daemon process for the changes to take effect with:
+`my_remote_client_ip_address`是客户端的IP地址。
+
+如需更多帮助请查看[pg_hba.conf](http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)的文档。
+
+在完成编辑后你需要[重启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `postgresql.service`服务使你的配置生效。
+
+**注意:** PostgreSQL默认使用`5432`端口作为远程连接。确保打开这个端口并可以接受入口连接
+
+如果遇到麻烦，使用下面的命令查看服务器日志:
 
 ```
-# systemctl restart postgresql
+$ journalctl -u postgresql
 
 ```
 
-**Note:** Postgresql uses port 5432 by default for remote connections. So make sure this port is open and able to receive incoming connections.
-
-For troubleshooting take a look in the server log file
-
-```
-tail /var/log/postgresql.log
-
-```
-
-## Configure PostgreSQL to work with PHP
+#### Configure PostgreSQL to work with PHP
 
 Install the PHP-PostgreSQL modules [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql). Edit the file `/etc/php/php.ini`. Find the line that starts with:
 
@@ -182,7 +186,7 @@ If you need PDO, do the same thing with `;extension=pdo.so` and `;extension=pdo_
 
 1.  systemctl restart httpd
 
-## Change default data dir (optional)
+#### Change default data dir (optional)
 
 The default directory where all your newly created databases will be stored is `/var/lib/postgres/data`. To change this, follow these steps:
 
@@ -224,7 +228,7 @@ PIDFile=/pathto/pgroot/data/postmaster.pid
 
 ```
 
-## Change default encoding of new databases to UTF-8 (optional)
+#### Change default encoding of new databases to UTF-8
 
 **Note:** If you ran initdb with -E UTF8 these steps are not required
 
@@ -453,7 +457,7 @@ stats_temp_directory = '/run/postgresql'
 
 *   [Official PostgreSQL Homepage](http://www.postgresql.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL_(简体中文)&oldid=413551](https://wiki.archlinux.org/index.php?title=PostgreSQL_(简体中文)&oldid=413551)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL_(简体中文)&oldid=413577](https://wiki.archlinux.org/index.php?title=PostgreSQL_(简体中文)&oldid=413577)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

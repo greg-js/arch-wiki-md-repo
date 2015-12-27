@@ -114,8 +114,6 @@ http_proxy="http://192.168.0.1:80"
 
 ## Defining variables
 
-See also [Systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User").
-
 ### Globally
 
 Most Linux distributions tell you to change or add environment variable definitions in `/etc/profile` or other locations. Be sure to maintain and manage the environment variables and pay attention to the numerous files that can contain environment variables. In principle, any shell script can be used for initializing environmental variables, but following traditional UNIX conventions, these statements should be only be present in some particular files.
@@ -139,6 +137,8 @@ fi
 ```
 
 ### Per user
+
+**Note:** The dbus daemon and the user instance of systemd do not inherit any of the environment variables set in places like .bashrc etc. This means that, for example, dbus activated programs like Nautilus will not use them by default. See [Systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User").
 
 You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
 
@@ -183,7 +183,7 @@ $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
 *   [Default applications](/index.php/Default_applications "Default applications")
 *   [Xdg-open](/index.php/Xdg-open "Xdg-open")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=412685](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=412685)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=413568](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=413568)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

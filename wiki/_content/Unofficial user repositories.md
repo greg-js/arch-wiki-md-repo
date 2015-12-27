@@ -115,21 +115,22 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.8 eatabrick](#eatabrick)
         *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.10 gustawho](#gustawho)
-        *   [5.1.11 Linux-pf](#Linux-pf)
-        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.13 kc9ydn](#kc9ydn)
-        *   [5.1.14 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.15 linux-lts31x](#linux-lts31x)
-        *   [5.1.16 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.17 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.18 linux-tresor](#linux-tresor)
-        *   [5.1.19 qt-debug](#qt-debug)
-        *   [5.1.20 quarry](#quarry)
-        *   [5.1.21 rstudio](#rstudio)
-        *   [5.1.22 siosm-aur](#siosm-aur)
-        *   [5.1.23 siosm-selinux](#siosm-selinux)
-        *   [5.1.24 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.25 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.11 holo](#holo)
+        *   [5.1.12 Linux-pf](#Linux-pf)
+        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.14 kc9ydn](#kc9ydn)
+        *   [5.1.15 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.16 linux-lts31x](#linux-lts31x)
+        *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.18 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.19 linux-tresor](#linux-tresor)
+        *   [5.1.20 qt-debug](#qt-debug)
+        *   [5.1.21 quarry](#quarry)
+        *   [5.1.22 rstudio](#rstudio)
+        *   [5.1.23 siosm-aur](#siosm-aur)
+        *   [5.1.24 siosm-selinux](#siosm-selinux)
+        *   [5.1.25 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.26 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -1102,6 +1103,20 @@ Server = http://download.opensuse.org/repositories/home:/gustawho/Arch_Extra/$ar
 
 ```
 
+#### holo
+
+*   **Maintainer:** Stefan Majewsky <holo-pacman@posteo.de> (please prefer to report issues at [Github](https://github.com/majewsky/holo-pacman-repo/issues))
+*   **Description:** Packages for [Holo configuration management](https://holocm.org), including compatible plugins and tools.
+*   **Upstream page:** [https://github.com/majewsky/holo-pacman-repo](https://github.com/majewsky/holo-pacman-repo)
+*   **Package list:** [https://repo.holocm.org/archlinux/x86_64](https://repo.holocm.org/archlinux/x86_64)
+*   **Key-ID:** 0xF7A9C9DC4631BD1A
+
+```
+[holo]
+Server = https://repo.holocm.org/archlinux/x86_64
+
+```
+
 #### Linux-pf
 
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
@@ -1112,7 +1127,7 @@ Server = http://download.opensuse.org/repositories/home:/gustawho/Arch_Extra/$ar
 
 **Reason:** Signed repositories should not use `SigLevel = Optional` (by definition). (Discuss in [Talk:Unofficial user repositories#](https://wiki.archlinux.org/index.php/Talk:Unofficial_user_repositories))
 
-*   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (Seite nicht vorhanden)")
+*   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (page does not exist)")
 *   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf, just like [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") but additionally optimized for intel CPUs Sandy Bridge, Ivy Bridge, Haswell and generic of course, and some extra packages
 *   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox).
 
@@ -1524,7 +1539,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413462](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413462)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413575](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413575)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

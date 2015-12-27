@@ -62,14 +62,13 @@ Some programs will need a [D-Bus](/index.php/D-Bus "D-Bus") user message bus. Tr
 
 ### Environment variables
 
-The user instance of systemd does not inherit any of the [environment variables](/index.php/Environment_variables "Environment variables") set in places like `.bashrc` etc. There are three ways to set environment variables for the systemd user instance:
+The user instance of systemd does not inherit any of the [environment variables](/index.php/Environment_variables "Environment variables") set in places like `.bashrc` etc. There are several ways to set environment variables for the systemd user instance:
 
 1.  For users with a `$HOME` directory, use the `DefaultEnvironment` option in `~/.config/systemd/user.conf`. Affects only that user's user unit.
 2.  Use the `DefaultEnvironment` option in `/etc/systemd/user.conf` file. Affects all user units.
 3.  Add a drop-in config file in `/etc/systemd/system/user@.service.d/`. Affects all user units.
 4.  At any time, use `systemctl --user set-environment` or `systemctl --user import-environment`. Affects all user units started after setting the environment variables, but not the units that were already running.
-
-**Tip:** To set multiple variables at once, write a configuration file with a list of blank separated list of _key=value_ pairs, and add `xargs systemctl --user set-environment < /path/to/file.conf` in your shell start-up file.
+5.  Using the `dbus-update-activation-environment --systemd --all` command provided by [dbus](/index.php/Dbus "Dbus"). Has the same effect as `systemctl --user import-environment`, but also affects the D-Bus session. You can add this to the end of your shell initialization file.
 
 One variable you may want to set is `PATH`.
 
@@ -338,7 +337,7 @@ WantedBy=wm.target
 *   [Collection of useful systemd user units](https://github.com/grawity/systemd-user-units)
 *   [Arch forum thread about changes in systemd 206 user instances](https://bbs.archlinux.org/viewtopic.php?id=167115)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=409906](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=409906)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=413566](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=413566)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

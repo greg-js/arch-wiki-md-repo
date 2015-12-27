@@ -52,10 +52,8 @@ All paths defined must be absolute and valid.
 
 *   `XDG_RUNTIME_DIR`
     *   Used for non-essential, user-specific data files such as sockets, named pipes, etc.
-    *   Not required to have a default value; warnings should be issued if not set or equivalents provided.
-
-        **Note:** This variable is already set by [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html) (`/run/user/$UID` with [systemd](https://www.archlinux.org/packages/?name=systemd) 228).
-
+    *   This variable is set by [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html) (`/run/user/$UID` with [systemd](https://www.archlinux.org/packages/?name=systemd) 228).  
+        A default value is however not required; warnings should be issued if none is set, or equivalents provided.
     *   Must be owned by the user with an access mode of `0700`.
     *   Filesystem fully featured by standards of OS.
     *   Must be on the local filesystem.
@@ -1699,7 +1697,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413544](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413544)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413576](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413576)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
