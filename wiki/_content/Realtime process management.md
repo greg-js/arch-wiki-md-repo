@@ -23,17 +23,16 @@ The simple solution is to give the audio and video processes a **higher priority
 *   [1 Configuration](#Configuration)
     *   [1.1 pam](#pam)
     *   [1.2 Configuring PAM](#Configuring_PAM)
-*   [2 History](#History)
-*   [3 Hard and soft realtime](#Hard_and_soft_realtime)
-*   [4 Power is nothing without control](#Power_is_nothing_without_control)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 PAM-enabled login](#PAM-enabled_login)
-    *   [5.2 Console/autologin](#Console.2Fautologin)
-*   [6 Reference](#Reference)
-    *   [6.1 RLIMIT Definitions](#RLIMIT_Definitions)
-    *   [6.2 Scheduling policies](#Scheduling_policies)
-    *   [6.3 Scheduling classes](#Scheduling_classes)
-*   [7 See also](#See_also)
+*   [2 Hard and soft realtime](#Hard_and_soft_realtime)
+*   [3 Power is nothing without control](#Power_is_nothing_without_control)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 PAM-enabled login](#PAM-enabled_login)
+    *   [4.2 Console/autologin](#Console.2Fautologin)
+*   [5 Reference](#Reference)
+    *   [5.1 RLIMIT Definitions](#RLIMIT_Definitions)
+    *   [5.2 Scheduling policies](#Scheduling_policies)
+    *   [5.3 Scheduling classes](#Scheduling_classes)
+*   [6 See also](#See_also)
 
 ## Configuration
 
@@ -75,10 +74,6 @@ An example for why one might want to alter these settings is to get high-perform
 See [Pro Audio](/index.php/Pro_Audio#JACK "Pro Audio") for more on professional audio configuration of an Arch system.
 
 There are an infinite variety of possible PAM limits configurations. While an overview is provided here, it is highly advisable to read the `man 5 limits.conf` page in order to better understand these functions.
-
-## History
-
-There have always been efforts to make it easier for the user to achieve realtime capabilities from the kernel. A lot of patches were floating around the web. As of generation 2.6 there was an addon module available called realtime-lsm. It required CAPABILITY build as module and was only to handle by the more experienced user since the absence of CAPABILITY in the kernel in case that neither capability nor realtime-lsm was loaded can cause trouble. As of kernel-2.6.12, the so called rlimits patch has been accepted in the mainstream kernel and is now the desired way to provide normal users with realtime capabilities.
 
 ## Hard and soft realtime
 
@@ -236,7 +231,7 @@ This is the idle scheduling class, processes running at this level only get io t
 *   [SYSSTAT utilities home page](http://sebastien.godard.pagesperso-orange.fr/)
 *   [Multitasking from the Linux command line and process prioritization](http://gaarai.com/2009/03/06/multitasking-from-the-linux-command-line-plus-process-prioritization/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=410787](https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=410787)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=413602](https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=413602)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

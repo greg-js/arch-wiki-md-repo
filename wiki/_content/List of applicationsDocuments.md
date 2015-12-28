@@ -542,6 +542,8 @@ for more collection apps, see also [Multimedia#Collection managers](/index.php/M
 *   [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup> is able to save both AcroForms and XFA forms into PDF files.
 *   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular) support AcroForms, but not full XFA forms. [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[3]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
 
+**Note:** For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
+
 See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_PDF_software "wikipedia:List of PDF software") and [Wikipedia:DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu").
 
 ##### Console
@@ -864,7 +866,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 [http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413324](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413324)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413626](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413626)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -1537,7 +1537,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=411179](https://wiki.archlinux.org/index.php?title=QEMU&oldid=411179)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413613](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413613)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

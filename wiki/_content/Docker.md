@@ -222,10 +222,16 @@ This is caused by btrfs which created subvolumes for the docker images. So the c
 Docker enables IP forwarding by itself, but by default systemd overrides the respective sysctl setting. The following disables this override (for all interfaces):
 
 ```
-# cat >/etc/systemd/network/ipforward.network <<EOF
+# cat > /etc/systemd/network/ipforward.network <<EOF
 [Network]
-IPForward=yes
+IPForward=ipv4
 EOF
+
+# cat > /etc/systemd/network/99-docker.conf <<EOF
+net.ipv4.ip_forward = 1
+EOF
+
+# sysctl -w net.ipv4.ip_forward=1
 
 ```
 
@@ -236,7 +242,7 @@ Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `dock
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/installation/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=412953](https://wiki.archlinux.org/index.php?title=Docker&oldid=412953)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=413627](https://wiki.archlinux.org/index.php?title=Docker&oldid=413627)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

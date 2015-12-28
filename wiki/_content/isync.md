@@ -160,7 +160,7 @@ StandardError=syslog
 
 ```
 
-The following timer configures **mbsync** to be started every day :
+The following timer configures **mbsync** to be started every 2 hours :
 
  `/etc/systemd/system/mbsync@.timer` 
 
@@ -169,8 +169,8 @@ The following timer configures **mbsync** to be started every day :
 Description=Mailbox synchronization timer
 
 [Timer]
-OnBootSec=10min
-OnActiveSec=1d
+OnCalendar=*-*-* 00/2:00:00
+Persistent=true
 Unit=mbsync@%i.service
 
 [Install]
@@ -388,7 +388,7 @@ in the IMAPStore config part of the Exchange, this problem did not occur any mor
 *   [backing up gmail with mbsync](http://kevin.deldycke.com/2012/08/gmail-backup-mbsync/)
 *   [How To Verify SSL Certificate From A Shell Prompt](http://www.cyberciti.biz/faq/test-ssl-certificates-diagnosis-ssl-certificate/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Isync&oldid=407953](https://wiki.archlinux.org/index.php?title=Isync&oldid=407953)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Isync&oldid=413603](https://wiki.archlinux.org/index.php?title=Isync&oldid=413603)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -53,13 +53,31 @@ SkipForwardingDelay=yes
 
 **Tip:** If you are using static IP, see man pages of [netctl](/index.php/Netctl "Netctl"), and also edit `/etc/resolv.conf` if necessary.
 
+This example ensures that the bridge gets assigned the MAC address of the ethernet device (reference [https://github.com/joukewitteveen/netctl/issues/111](https://github.com/joukewitteveen/netctl/issues/111) )
+
+ `/etc/netctl/bridge` 
+
+```
+Description="Bridge eth0-tap0"
+Interface=br0
+Connection=bridge
+BindsToInterfaces=(eth0 tap0)
+IP=no
+ExecUpPost="ip link set dev br0 address $(cat /sys/class/net/eth0/address); IP=dhcp; ip_set"
+ExecDownPre="IP=dhcp"
+
+## Ignore (R)STP and immediately activate the bridge
+SkipForwardingDelay=yes
+
+```
+
 You can bridge any combination of network devices editing `BindsToInterfaces` option.
 
 If any of the bridged devices (e.g. `eth0`, `tap0`) had [dhcpcd](/index.php/Dhcpcd "Dhcpcd") enabled, [stop and disable](/index.php/Systemd#Using_units "Systemd") the `dhcpcd@eth0.service` daemon. Or set `IP=no` to the netctl profiles.
 
 Finally, [start and enable](/index.php/Netctl#Just_one_profile "Netctl") your `/etc/netctl/bridge`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bridge_with_netctl&oldid=374042](https://wiki.archlinux.org/index.php?title=Bridge_with_netctl&oldid=374042)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bridge_with_netctl&oldid=413612](https://wiki.archlinux.org/index.php?title=Bridge_with_netctl&oldid=413612)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

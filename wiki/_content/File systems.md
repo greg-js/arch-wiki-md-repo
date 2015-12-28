@@ -60,7 +60,7 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 *   **dosfstools** — VFAT support.
 
-[http://www.daniel-baumann.ch/software/dosfstools/](http://www.daniel-baumann.ch/software/dosfstools/) || [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
+[https://github.com/dosfstools/dosfstools](https://github.com/dosfstools/dosfstools) || [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
 
 *   **exfat-utils** — exFAT support.
 
@@ -209,7 +209,7 @@ Alternatively, you can use `mkfs` which is just a unified front-end for the diff
 
 *   [wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_systems&oldid=404298](https://wiki.archlinux.org/index.php?title=File_systems&oldid=404298)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_systems&oldid=413606](https://wiki.archlinux.org/index.php?title=File_systems&oldid=413606)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -19,8 +19,10 @@ MythTV is an application suite designed to provide an amazing multimedia experie
         *   [5.1.1 Setting up the database](#Setting_up_the_database)
         *   [5.1.2 Setting up the master backend](#Setting_up_the_master_backend)
         *   [5.1.3 Enable the mythbackend daemon](#Enable_the_mythbackend_daemon)
-    *   [5.2 Security](#Security)
-    *   [5.3 Troubleshooting](#Troubleshooting)
+    *   [5.2 Troubleshooting](#Troubleshooting)
+        *   [5.2.1 XvMCW](#XvMCW)
+        *   [5.2.2 PVR150](#PVR150)
+        *   [5.2.3 TurboSight TBS 6281](#TurboSight_TBS_6281)
 *   [6 Frontend setup](#Frontend_setup)
     *   [6.1 Nvidia XvMC Setup](#Nvidia_XvMC_Setup)
 *   [7 MythTV Plugins](#MythTV_Plugins)
@@ -241,24 +243,45 @@ This should populate your mysql database with TV listings for the next two weeks
 
 ```
 
-### Security
-
-You may want to have the backend run as the previously-created mythtv user:
-
-This is a good idea since all user jobs are run as the same user as the user running the backend. If the backend is run as root, all user jobs will be run with root privileges.
-
-*   Edit /etc/conf.d/mythbackend
-
-```
-MBE_USER='mythtv'
-
-```
-
 ### Troubleshooting
+
+#### XvMCW
 
 If you get a libXvMCW.so.1 shared library error, [install](/index.php/Install "Install") [libxvmc](https://www.archlinux.org/packages/?name=libxvmc).
 
+#### PVR150
+
 If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://www.archlinux.org/packages/?name=ivtv-utils) package.
+
+#### TurboSight TBS 6281
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+**This article or section is a candidate for moving to [[]].**
+
+**Notes:** Should be reported as a bug (Discuss in [Talk:MythTV#](https://wiki.archlinux.org/index.php/Talk:MythTV))
+
+The kernel takes time to register TurboSight TBS 62x1's adapters and they may not be available when systemd starts `mythbackend.service`. This leads to the following error recorded in the system logs:
+
+```
+# DVBChan[1](/dev/dvb/adapter0/frontend0): Opening DVB frontend device failed.
+# eno:No such file or directory (2)
+# DVBChan[1](/dev/dvb/adapter0/frontend0): Failed to open DVB frontend device due to fatal error or too many attempts.
+# ChannelBase: CreateChannel() Error: Failed to open device /dev/dvb/adapter0/frontend0
+# Problem with capture cardsCard 1failed init
+
+```
+
+The solution consists in starting the `mythbackend.service` once `udevd` settled. Override systemd's defaults by [creating](/index.php/Edit "Edit") the file `/etc/systemd/system/mythbackend.service.d/override.conf` with the following content:
+
+```
+# [Unit]
+# After=systemd-udev-settle.service
+# Wants=systemd-udev-settle.service
+
+```
 
 ## Frontend setup
 
@@ -355,7 +378,7 @@ Be sure to have a look at MythTV's extensive wiki documentation on how to keep y
 *   [http://wilsonet.com/mythtv/fcmyth.php](http://wilsonet.com/mythtv/fcmyth.php)
 *   [http://www.linhes.org](http://www.linhes.org) [A user friendly MythTV and Linux install that uses Arch Linux]
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MythTV&oldid=412004](https://wiki.archlinux.org/index.php?title=MythTV&oldid=412004)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MythTV&oldid=413614](https://wiki.archlinux.org/index.php?title=MythTV&oldid=413614)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

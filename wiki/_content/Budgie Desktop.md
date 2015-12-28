@@ -37,7 +37,7 @@ Choose _Budgie Desktop_ session from a [display manager](/index.php/Display_mana
  `~/.xinitrc` 
 
 ```
-exec budgie-session
+exec budgie-desktop
 
 ```
 
@@ -47,7 +47,7 @@ exec budgie-session
 *   [Official git repositories for Solus development](https://git.solus-project.com/)
 *   [Build status for Solus projects](https://build.solus-project.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Budgie_Desktop&oldid=407823](https://wiki.archlinux.org/index.php?title=Budgie_Desktop&oldid=407823)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Budgie_Desktop&oldid=413607](https://wiki.archlinux.org/index.php?title=Budgie_Desktop&oldid=413607)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

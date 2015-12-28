@@ -28,7 +28,6 @@ Related articles
 
 *   Reiser4 requires a patched kernel
 *   It consumes a little more CPU than other filesystems
-*   It is developed for the 2.6 kernel and not backported for 2.4
 *   Even [LILO](/index.php/LILO "LILO") as the only bootloader officially supporting Reiser4 seems to have issues with it when `/boot` is formatted as Reiser4
 *   It is still not considered stable
 
@@ -217,7 +216,7 @@ Run **lilo** to update your config:
 *   Permissions: chown -R username.group <userdir>
 *   If you have problem with **su** command after the change of fs, you should reinstall **coreutils** package.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Reiser4&oldid=410187](https://wiki.archlinux.org/index.php?title=Reiser4&oldid=410187)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Reiser4&oldid=413596](https://wiki.archlinux.org/index.php?title=Reiser4&oldid=413596)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

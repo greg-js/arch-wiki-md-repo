@@ -91,9 +91,9 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 [http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)<sup><small>AUR</small></sup>
 
-*   **LightScreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
+*   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
 
-[http://lightscreen.com.ar](http://lightscreen.com.ar) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)<sup><small>AUR</small></sup>
 
 ## Packages including a screenshot utility
 
@@ -352,7 +352,7 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413125](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413125)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413611](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413611)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

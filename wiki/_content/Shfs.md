@@ -11,12 +11,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ## Contents
 
 *   [1 Why SHFS?](#Why_SHFS.3F)
-*   [2 Howto SHFS](#Howto_SHFS)
-    *   [2.1 Installation](#Installation)
-    *   [2.2 Configuration](#Configuration)
-    *   [2.3 /etc/fstab](#.2Fetc.2Ffstab)
-*   [3 See Also](#See_Also)
-*   [4 External Links](#External_Links)
+*   [2 Installation](#Installation)
+*   [3 Configuration](#Configuration)
+    *   [3.1 /etc/fstab](#.2Fetc.2Ffstab)
+*   [4 See Also](#See_Also)
+*   [5 External Links](#External_Links)
 
 ## Why SHFS?
 
@@ -26,21 +25,18 @@ Shfs supports some nice features:
 *   perl and shell code for the remote (server) side
 *   could preserve uid/gid (root connection)
 *   number of remote host platforms (Linux, Solaris, Cygwin, ...)
-*   Linux kernel 2.4.10+ and 2.6
 *   arbitrary command used for connection (instead of ssh)
 *   persistent connection (reconnect after ssh dies)
 
 If these features cannot convince you, I probably cannot either. Yet, consider: the only thing you need on the server is a sshd running - and you can mount your filesystem from **anywhere** in a **secure** way.
 
-## Howto SHFS
+## Installation
 
 In order to use shfs it needs to be installed and configured on the client side, NOT on the server side! Server only needs to have working sshd running.
 
-### Installation
+[Install](/index.php/Install "Install") the [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils) package. If you run a custom kernel, use [ABS](/index.php/ABS "ABS") to compile it yourself.
 
-If you are using the stock Arch Linux kernel, use [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you run a custom kernel, use [ABS](/index.php/ABS "ABS") to compile it yourself.
-
-### Configuration
+## Configuration
 
 If you want to use shfsmount as mortal user, you will have to `chmod +s /usr/bin/shfsmount` and `chmod + /usr/bin/shfsumount`. However it is much more comfortable to put your mount options into `/etc/fstab` - this is what mine looks like:
 
@@ -77,7 +73,7 @@ userid@remoteMachine:/remoteDirectory /home/userid/remoteDirectory shfs rw,user,
 
 *   [http://www.openssh.com/](http://www.openssh.com/) for a really complete reference ;)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shfs&oldid=413159](https://wiki.archlinux.org/index.php?title=Shfs&oldid=413159)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shfs&oldid=413601](https://wiki.archlinux.org/index.php?title=Shfs&oldid=413601)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
