@@ -17,11 +17,9 @@ For general methods to improve the flexibility of the provided tips or pacman it
 ## Contents
 
 *   [1 Cosmetic and convenience](#Cosmetic_and_convenience)
-    *   [1.1 Color output](#Color_output)
-    *   [1.2 Comparing versions before updating](#Comparing_versions_before_updating)
-    *   [1.3 Operations and Bash syntax](#Operations_and_Bash_syntax)
-    *   [1.4 Graphical front-ends](#Graphical_front-ends)
-    *   [1.5 Utilities](#Utilities)
+    *   [1.1 Operations and Bash syntax](#Operations_and_Bash_syntax)
+    *   [1.2 Graphical front-ends](#Graphical_front-ends)
+    *   [1.3 Utilities](#Utilities)
 *   [2 Maintenance](#Maintenance)
     *   [2.1 Listing packages](#Listing_packages)
         *   [2.1.1 With size](#With_size)
@@ -68,59 +66,43 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 ## Cosmetic and convenience
 
-### Color output
-
-Pacman has a color option. Uncomment the "Color" line in `/etc/pacman.conf`.
-
-### Comparing versions before updating
-
-To see old and new versions of available packages, uncomment the "VerbosePkgLists" line in `/etc/pacman.conf`. The output of `pacman -Syu` will be like this:
-
-```
-Package (6)             Old Version  New Version  Net Change  Download Size
-
-extra/libmariadbclient  10.1.9-4     10.1.10-1      0.03 MiB       4.35 MiB
-extra/libpng            1.6.19-1     1.6.20-1       0.00 MiB       0.23 MiB
-extra/mariadb           10.1.9-4     10.1.10-1      0.26 MiB      13.80 MiB
-
-```
-
 ### Operations and Bash syntax
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman").**
+
+**Notes:** Although this is definitely a tip/trick, it fits to the main [pacman](/index.php/Pacman "Pacman") page much better than here. It shows generic examples of how to do things, not specific commands needed to achieve something non-trivial/unrelated. (Discuss in [Talk:Pacman/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Pacman/Tips_and_tricks))
 
 In addition to pacman's standard set of features, there are ways to extend its usability through rudimentary [Bash](/index.php/Bash "Bash") commands/syntax.
 
-*   To install a number of packages sharing similar patterns in their names -- not the entire group nor all matching packages; eg. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
+To install a number of packages sharing similar patterns in their names -- not the entire group nor all matching packages; eg. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
 
 ```
 # pacman -S plasma-{desktop,mediacenter,nm}
 
 ```
 
-*   Of course, that is not limited and can be expanded to however many levels needed:
+Of course, that is not limited and can be expanded to however many levels needed:
 
 ```
 # pacman -S plasma-{workspace{,-wallpapers},pa}
 
 ```
 
-*   Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
+Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
 
 ```
 # pacman -Ss '^vim-'
 
 ```
 
-*   pacman has the `-q` operand to hide the version column, so it is possible to query and reinstall packages with "compiz" as part of their name:
+pacman has the `-q` operand to hide the version column, so it is possible to query and reinstall packages with "compiz" as part of their name:
 
 ```
 # pacman -S $(pacman -Qq | grep compiz)
-
-```
-
-*   Or install all packages available in a repository (infinality-bundle for example):
-
-```
-# pacman -S $(pacman -Slq infinality-bundle)
 
 ```
 
@@ -986,7 +968,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413631](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413631)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413664](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413664)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

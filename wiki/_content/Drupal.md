@@ -13,12 +13,10 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 *   [1 Installation](#Installation)
     *   [1.1 Arch repositories](#Arch_repositories)
     *   [1.2 Manual install](#Manual_install)
-    *   [1.3 Installing GD](#Installing_GD)
-    *   [1.4 Installing Postfix](#Installing_Postfix)
+    *   [1.3 Installing Postfix](#Installing_Postfix)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Scheduling with Cron](#Scheduling_with_Cron)
-    *   [2.2 Xampp Compatibility](#Xampp_Compatibility)
-    *   [2.3 Upload progress not enabled](#Upload_progress_not_enabled)
+    *   [2.2 Upload progress not enabled](#Upload_progress_not_enabled)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Browser shows the actual PHP code when visiting localhost](#Browser_shows_the_actual_PHP_code_when_visiting_localhost)
     *   [3.2 Setup page is not the initial page when accessing localhost](#Setup_page_is_not_the_initial_page_when_accessing_localhost)
@@ -29,28 +27,25 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 
 ### Arch repositories
 
-[Install](/index.php/Install "Install") the [drupal](https://www.archlinux.org/packages/?name=drupal) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [drupal](https://www.archlinux.org/packages/?name=drupal) package.
 
 Edit `/etc/php/php.ini`:
 
-*   If PHP version is less than 5.2.0, Find the line with `;extension=json.so` and uncomment it by removing the ";" from the beginning of the line if necessary. If no such line is found, add it to the `[PHP]` section of the file.
-*   For Drupal 7, enable a PDO extension for your database. For MySQL, the line `extension=pdo_mysql.so` should be uncommented.
+*   Uncomment the `extension=gd.so` line. Also install [php-gd](https://www.archlinux.org/packages/?name=php-gd) ([FS#47548](https://bugs.archlinux.org/task/47548)).
+*   Enable a PDO extension for your database. For MySQL, the line `extension=pdo_mysql.so` should be uncommented.
 *   Find the line beginning with `open_basedir =`. Add the Drupal install directories, `/usr/share/webapps/drupal/` and `/var/lib/drupal/`. `/srv/http/` can be removed if you do not intend to use it.
 
 Edit `/etc/httpd/conf/httpd.conf`:
 
-*   If your webserver is dedicated to Drupal, find the line `DocumentRoot "/srv/http"` and change it to the Drupal install directory, _i.e._ `DocumentRoot "/usr/share/webapps/drupal"`, then find the section that starts with "`<Directory "/srv/http">`" and change `/srv/http` to the Drupal install directory, `/usr/share/webapps/drupal`. In the same section, make sure it includes a line "`AllowOverride All`" to enable the clean URL's.
+*   Uncomment the `LoadModule rewrite_module modules/mod_rewrite.so` line.
+*   If your webserver is dedicated to Drupal, find the line `DocumentRoot "/srv/http"` and change it to the Drupal install directory, i.e. `DocumentRoot "/usr/share/webapps/drupal"`, then find the section that starts with `<Directory "/srv/http">` and change `/srv/http` to the Drupal install directory, `/usr/share/webapps/drupal`. In the same section, make sure it includes a line `AllowOverride All` to enable the clean URL's.
 *   If you are using Apache Virtual Hosts, see [Apache#Virtual hosts](/index.php/Apache#Virtual_hosts "Apache").
 
-Finally comment out the `deny from all` line of the `/usr/share/webapps/drupal/.htaccess` file to enable httpd access and [restart](/index.php/Daemons#Restarting "Daemons") Apache (httpd). Note that the actual wording of the line might also be `Require all denied`.
+Finally comment out the `Require all denied` line in the `/usr/share/webapps/drupal/.htaccess` file to enable access from any machine. Then [restart](/index.php/Daemons#Restarting "Daemons") Apache (`httpd.service`).
 
 ### Manual install
 
-Download the latest package from [http://drupal.org](http://drupal.org) and extract it. Move the folders to Apache's htdocs folder. Open a web browser, and navigate to [localhost localhost]. Follow the on-screen instructions.
-
-### Installing GD
-
-You may need the GD library for your Drupal installation. First install the [php-gd](https://www.archlinux.org/packages/?name=php-gd) package. Edit `/etc/php/php.ini`. Find the line with `;extension=gd.so` and uncomment it by removing the ";". If no such line is found, add it to the `[PHP]` section of the file. [Restart](/index.php/Daemons#Restarting "Daemons") Apache (httpd).
+Download the latest package from [http://drupal.org](http://drupal.org) and extract it. Move the folders to Apache's htdocs folder. Open a web browser, and navigate to [http://localhost/](http://localhost/). Follow the on-screen instructions.
 
 ### Installing Postfix
 
@@ -67,17 +62,7 @@ In order to send e-mails with Drupal, you will need to install [Postfix](/index.
 
 ### Scheduling with Cron
 
-Drupal recommends running cron jobs hourly. Cron can be executed from the browser by visiting [localhost/cron localhost/cron]. It is also possible to run cron via script by copying the appropriate file from the "scripts" folder into `/etc/cron.hourly` and making it executable.
-
-### Xampp Compatibility
-
-The 5.x and 6.x series of Drupal do not support PHP 5.3, and as a result are incompatible with the latest release of [Xampp](/index.php/Xampp "Xampp"). Currently, the last Drupal-compatible version of Xampp is 1.7.1.
-
-Note: Xampp's PHP memory limit currently defaults to 8MB. Also, Xampp ignores php.ini files in the Drupal directory. To fix this:
-
-1.  Edit Xampp's configuration file `/opt/lampp/etc/php.ini` using your favorite editor.
-2.  Search for the "memory_limit" line, and replace it with an appropriate value. Most Drupal installations just need 32MB, but sites with a lot of modules may need 100MB or more.
-3.  Restart Xampp: `/opt/lampp/lampp restart`
+Drupal recommends running cron jobs hourly. Cron can be executed from the browser by visiting [http://localhost/cron](http://localhost/cron). It is also possible to run cron via script by copying the appropriate file from the "scripts" folder into `/etc/cron.hourly` and making it executable.
 
 ### Upload progress not enabled
 
@@ -163,7 +148,7 @@ See [this link](https://httpd.apache.org/docs/current/mod/core.html#allowoverrid
 *   [Simple guide to install Drupal on Xampp](http://drupal.org/node/307956)
 *   [LAMP (How to setup an Apache server)](/index.php/LAMP "LAMP")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=412066](https://wiki.archlinux.org/index.php?title=Drupal&oldid=412066)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=413682](https://wiki.archlinux.org/index.php?title=Drupal&oldid=413682)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

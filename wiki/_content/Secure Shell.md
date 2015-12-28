@@ -1042,7 +1042,7 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=413435](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=413435)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=413659](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=413659)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

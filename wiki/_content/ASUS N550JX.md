@@ -158,6 +158,8 @@ Built-in speakers and headphones work out of the box with **snd_hda_intel** driv
 0x1a 0x00106111
 ```
 
+You can install patch from [AUR](https://aur.archlinux.org/packages/asus-n550jx-subwoofer-fix/)
+
 At the time of writing this article kernel [bug](https://bugzilla.kernel.org/show_bug.cgi?id=110001) is filled for this patch to be included in ALSA future releases.
 
 ## Keyboard
@@ -172,7 +174,7 @@ Installation media sometimes produces a lot of error messages during boot. This 
 
  `/etc/modprobe.d/blacklist-nouveau.conf`  `blacklist nouveau` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JX&oldid=413587](https://wiki.archlinux.org/index.php?title=ASUS_N550JX&oldid=413587)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JX&oldid=413665](https://wiki.archlinux.org/index.php?title=ASUS_N550JX&oldid=413665)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

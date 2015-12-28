@@ -40,10 +40,12 @@ _pacman_ is written in the C programming language and uses the _.pkg.tar.xz_ pac
     *   [1.6 Additional commands](#Additional_commands)
 *   [2 Configuration](#Configuration)
     *   [2.1 General options](#General_options)
-        *   [2.1.1 Skip package from being upgraded](#Skip_package_from_being_upgraded)
-        *   [2.1.2 Skip package group from being upgraded](#Skip_package_group_from_being_upgraded)
-        *   [2.1.3 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
-        *   [2.1.4 Maintain several configuration files](#Maintain_several_configuration_files)
+        *   [2.1.1 Color output](#Color_output)
+        *   [2.1.2 Comparing versions before updating](#Comparing_versions_before_updating)
+        *   [2.1.3 Skip package from being upgraded](#Skip_package_from_being_upgraded)
+        *   [2.1.4 Skip package group from being upgraded](#Skip_package_group_from_being_upgraded)
+        *   [2.1.5 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
+        *   [2.1.6 Maintain several configuration files](#Maintain_several_configuration_files)
     *   [2.2 Repositories](#Repositories)
     *   [2.3 Package security](#Package_security)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -419,6 +421,23 @@ _pacman'_s settings are located in `/etc/pacman.conf`. This is the place where t
 
 General options are in the `[options]` section. Read the [man page](/index.php/Man_page "Man page") or look in the default `pacman.conf` for information on what can be done here.
 
+#### Color output
+
+Pacman has a color option. Uncomment the "Color" line in `/etc/pacman.conf`.
+
+#### Comparing versions before updating
+
+To see old and new versions of available packages, uncomment the "VerbosePkgLists" line in `/etc/pacman.conf`. The output of `pacman -Syu` will be like this:
+
+```
+Package (6)             Old Version  New Version  Net Change  Download Size
+
+extra/libmariadbclient  10.1.9-4     10.1.10-1      0.03 MiB       4.35 MiB
+extra/libpng            1.6.19-1     1.6.20-1       0.00 MiB       0.23 MiB
+extra/mariadb           10.1.9-4     10.1.10-1      0.26 MiB      13.80 MiB
+
+```
+
 #### Skip package from being upgraded
 
 To have a specific package skipped when [upgrading](#Upgrading_packages) the system, specify it as such:
@@ -684,7 +703,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=413189](https://wiki.archlinux.org/index.php?title=Pacman&oldid=413189)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=413660](https://wiki.archlinux.org/index.php?title=Pacman&oldid=413660)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
