@@ -19,14 +19,14 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
     *   [1.2 Graphical](#Graphical)
 *   [2 Loading the display manager](#Loading_the_display_manager)
     *   [2.1 Using systemd-logind](#Using_systemd-logind)
-*   [3 Tips and tricks](#Tips_and_tricks)
+*   [3 Session configuration](#Session_configuration)
     *   [3.1 Run ~/.xinitrc as a session](#Run_.7E.2F.xinitrc_as_a_session)
-    *   [3.2 Session list](#Session_list)
-    *   [3.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
-    *   [3.4 Autostarting](#Autostarting)
-    *   [3.5 Set the language](#Set_the_language)
-*   [4 Known issues](#Known_issues)
-    *   [4.1 Incompatibility with systemd](#Incompatibility_with_systemd)
+    *   [3.2 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Autostarting](#Autostarting)
+    *   [4.2 Set the language](#Set_the_language)
+*   [5 Known issues](#Known_issues)
+    *   [5.1 Incompatibility with systemd](#Incompatibility_with_systemd)
 
 ## List of display managers
 
@@ -54,7 +54,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 [https://wiki.gnome.org/Projects/GDM](https://wiki.gnome.org/Projects/GDM) || [gdm](https://www.archlinux.org/packages/?name=gdm)
 
-*   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE") display manager.
+*   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE")4 display manager.
 
 [http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup> (discontinued)
 
@@ -74,7 +74,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 [http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy)]</sup>
 
-*   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; useful with Plasma.
+*   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; useful with Plasma5.
 
 [https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
@@ -105,13 +105,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ```
 
-## Tips and tricks
-
-### Run ~/.xinitrc as a session
-
-Installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/)<sup><small>AUR</small></sup> will provide an option to run your .xinitrc as a session
-
-### Session list
+## Session configuration
 
 Many display managers read available sessions from `/usr/share/xsessions/` directory. It contains standard [desktop entry files](http://standards.freedesktop.org/desktop-entry-spec/latest/) for each DM/WM.
 
@@ -128,6 +122,10 @@ Icon=openbox.png
 Type=XSession
 
 ```
+
+### Run ~/.xinitrc as a session
+
+Installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/)<sup><small>AUR</small></sup> will provide an option to run your .xinitrc as a session.
 
 ### Starting applications without a window manager
 
@@ -149,6 +147,8 @@ In this case, once you login, the application set with `Exec` will be launched i
 It is important to remember that most graphical applications are not intended to be launched this way and you might have manual tweaking to do or limitations to live with (there is no window manager, so do not expect to be able to move or resize _any_ windows, including dialogs; nonetheless, you might be able to set the window geometry in the application's configuration files).
 
 See also [xinitrc#Starting applications without a window manager](/index.php/Xinitrc#Starting_applications_without_a_window_manager "Xinitrc").
+
+## Tips and tricks
 
 ### Autostarting
 
@@ -188,7 +188,7 @@ Some display managers are not fully compatible with systemd, because they reuse 
 *   PulseAudio volume cannot be adjusted,
 *   login failed into GNOME with another user.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=413421](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=413421)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=413644](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=413644)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

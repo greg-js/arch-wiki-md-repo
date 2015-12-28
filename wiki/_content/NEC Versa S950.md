@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** Information in this page is out of date, covered by general pages or not related to Arch linux. (Discuss in [Talk:NEC Versa S950#](https://wiki.archlinux.org/index.php/Talk:NEC_Versa_S950))
+
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -317,7 +325,7 @@ Do not press too hard on laptop lid, you can damage display (scratch it against 
 
 When working under full load while standing on a flat surface, laptop tends to heat above 70°C (ACPI termzone). To mend this, raise it above the surface — a couple centimeters will be enough — to let cool air to fan inlet. If temperature under load gets above 90°C, it means you need to clean the fan from the dust and lint. In the worst cases, you may need to replace the grease or the fan itself.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NEC_Versa_S950&oldid=376931](https://wiki.archlinux.org/index.php?title=NEC_Versa_S950&oldid=376931)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NEC_Versa_S950&oldid=413650](https://wiki.archlinux.org/index.php?title=NEC_Versa_S950&oldid=413650)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

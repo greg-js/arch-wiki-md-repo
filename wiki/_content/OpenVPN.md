@@ -348,6 +348,8 @@ tls-auth /etc/openvpn/ta.key **1**
 
 We also need to tell the server about the fragmentation. Note that "mssfix" is NOT needed in the server configuration.
 
+**Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the 'fragment' directive. To support such clients, skip this section and configure the clients with the 'mtu-test' directive described below.
+
  `/etc/openvpn/server.conf` 
 
 ```
@@ -800,7 +802,7 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413360](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413360)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413634](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413634)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -339,7 +339,7 @@ September, 26th-28th (2008, mini-LBW)</td>
 
 <th align="left">Site:</th>
 
-<td>[https://www.socallinuxexpo.org/scale10x/](https://www.socallinuxexpo.org/scale10x/)</td>
+<td>[https://www.socallinuxexpo.org/scale/14x/](https://www.socallinuxexpo.org/scale/14x/)</td>
 
 </tr>
 
@@ -347,7 +347,7 @@ September, 26th-28th (2008, mini-LBW)</td>
 
 <th align="left">Where:</th>
 
-<td>Hilton LAX, Los Angeles, USA</td>
+<td>Pasadena Convention Center, Pasadena, CA, USA</td>
 
 </tr>
 
@@ -355,7 +355,7 @@ September, 26th-28th (2008, mini-LBW)</td>
 
 <th align="left">When:</th>
 
-<td>January 20-22, 2012</td>
+<td>January 21-24, 2016</td>
 
 </tr>
 
@@ -363,7 +363,7 @@ September, 26th-28th (2008, mini-LBW)</td>
 
 <th align="left">Since:</th>
 
-<td>2002</td>
+<td>2016</td>
 
 </tr>
 
@@ -404,7 +404,7 @@ A few notes about conference preparation:
 *   Don't expect to get a lot of work done while you're in the booth. It's not exactly professional to sit there and force people to approach you because you're deep in some code somewhere.
 *   Have a donation box. You will get donations.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_conferences&oldid=376897](https://wiki.archlinux.org/index.php?title=Linux_conferences&oldid=376897)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_conferences&oldid=413635](https://wiki.archlinux.org/index.php?title=Linux_conferences&oldid=413635)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

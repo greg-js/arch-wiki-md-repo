@@ -35,7 +35,8 @@ Related articles
     *   [6.2 Eclipse PDT](#Eclipse_PDT)
     *   [6.3 Komodo](#Komodo)
     *   [6.4 Netbeans](#Netbeans)
-    *   [6.5 Zend Studio](#Zend_Studio)
+    *   [6.5 PhpStorm](#PhpStorm)
+    *   [6.6 Zend Studio](#Zend_Studio)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
     *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
@@ -221,6 +222,10 @@ You would need other plugins for JavaScript support and DB query.
 
 A complete IDE for many languages including PHP. Includes features like debugging, refactoring, code tempalting, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
 
+### PhpStorm
+
+[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm") is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform. It can be installed with the [phpstorm](https://aur.archlinux.org/packages/phpstorm/)<sup><small>AUR</small></sup> package, or with [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)<sup><small>AUR</small></sup> for the 30-day trial version. You can get a free license for education from Jetbrains.[[2]](https://www.jetbrains.com/student/)
+
 ### Zend Studio
 
 [Zend Studio](http://www.zend.com/products/studio/) is the official PHP IDE, based on eclipse. The IDE has autocomplete, advanced code formatting, WYSIWYG html editor, refactoring, and all the eclipse features such as db access and version control integration and whatever you can get from other eclipse plugins. You can install it with the [zendstudio](https://aur.archlinux.org/packages/zendstudio/)<sup><small>AUR</small></sup> package.
@@ -241,7 +246,7 @@ If your `php.ini` is not parsed, the ini file is named after the sapi it is usin
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=412778](https://wiki.archlinux.org/index.php?title=PHP&oldid=412778)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=413641](https://wiki.archlinux.org/index.php?title=PHP&oldid=413641)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

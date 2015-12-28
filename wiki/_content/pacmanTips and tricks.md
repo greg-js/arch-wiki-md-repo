@@ -18,9 +18,10 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 *   [1 Cosmetic and convenience](#Cosmetic_and_convenience)
     *   [1.1 Color output](#Color_output)
-    *   [1.2 Operations and Bash syntax](#Operations_and_Bash_syntax)
-    *   [1.3 Graphical front-ends](#Graphical_front-ends)
-    *   [1.4 Utilities](#Utilities)
+    *   [1.2 Comparing versions before updating](#Comparing_versions_before_updating)
+    *   [1.3 Operations and Bash syntax](#Operations_and_Bash_syntax)
+    *   [1.4 Graphical front-ends](#Graphical_front-ends)
+    *   [1.5 Utilities](#Utilities)
 *   [2 Maintenance](#Maintenance)
     *   [2.1 Listing packages](#Listing_packages)
         *   [2.1.1 With size](#With_size)
@@ -70,6 +71,19 @@ For general methods to improve the flexibility of the provided tips or pacman it
 ### Color output
 
 Pacman has a color option. Uncomment the "Color" line in `/etc/pacman.conf`.
+
+### Comparing versions before updating
+
+To see old and new versions of available packages, uncomment the "VerbosePkgLists" line in `/etc/pacman.conf`. The output of `pacman -Syu` will be like this:
+
+```
+Package (6)             Old Version  New Version  Net Change  Download Size
+
+extra/libmariadbclient  10.1.9-4     10.1.10-1      0.03 MiB       4.35 MiB
+extra/libpng            1.6.19-1     1.6.20-1       0.00 MiB       0.23 MiB
+extra/mariadb           10.1.9-4     10.1.10-1      0.26 MiB      13.80 MiB
+
+```
 
 ### Operations and Bash syntax
 
@@ -972,7 +986,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413418](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413418)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413631](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413631)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

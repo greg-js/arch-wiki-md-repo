@@ -54,7 +54,7 @@ Some information on usage and configuration can be found in the [ProjectM FAQ](h
 
 Otherwise a good place to ask question are the projectM [help forums on Sourceforge](http://sourceforge.net/projects/projectm/forums/forum/358774/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ProjectM&oldid=412295](https://wiki.archlinux.org/index.php?title=ProjectM&oldid=412295)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ProjectM&oldid=413655](https://wiki.archlinux.org/index.php?title=ProjectM&oldid=413655)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

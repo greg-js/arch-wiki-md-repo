@@ -208,7 +208,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 *   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
 *   [Share your 3G Internet connection over wifi](http://go2linux.garron.me/linux/2011/03/share-your-3g-internet-connection-over-wifi-linux-ipod-touch-925)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connection&oldid=397051](https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connection&oldid=397051)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connection&oldid=413653](https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connection&oldid=413653)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

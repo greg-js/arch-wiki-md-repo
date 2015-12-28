@@ -22,7 +22,7 @@ Below is a list of frequently asked questions about Arch Linux on 64-bit.
 
 ### Linux users
 
-If your processor is [x86_64](https://en.wikipedia.org/wiki/X86-64) compatible, you will have the `lm` flag in `/proc/cpuinfo`. For example,
+If your processor is [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") compatible, you will have the `lm` flag in `/proc/cpuinfo`. For example,
 
 ```
 $ grep -w lm /proc/cpuinfo
@@ -69,7 +69,7 @@ However, you can also start the system with the 64-bit installation ISO, mount t
 
 You may also want to read [Migrating Between Architectures Without Reinstalling](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=413509](https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=413509)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=413636](https://wiki.archlinux.org/index.php?title=64-bit_FAQ&oldid=413636)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
