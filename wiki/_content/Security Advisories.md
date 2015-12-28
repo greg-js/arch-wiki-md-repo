@@ -36,10 +36,14 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
+*   [28 December 2015] ASA-201512-19 [openvpn](https://www.archlinux.org/packages/?name=openvpn) out-of-bound read
+
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
+*   [28 December 2015] [ASA-201512-18](https://lists.archlinux.org/pipermail/arch-security/2015-December/000477.html) [libpng](https://www.archlinux.org/packages/?name=libpng) buffer overflow
+*   [28 December 2015] [ASA-201512-17](https://lists.archlinux.org/pipermail/arch-security/2015-December/000477.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin), [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
 *   [25 December 2015] [ASA-201512-16](https://lists.archlinux.org/pipermail/arch-security/2015-December/000476.html) [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) use-after-free
 *   [25 December 2015] [ASA-201512-15](https://lists.archlinux.org/pipermail/arch-security/2015-December/000475.html) [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) multiple issues
 *   [25 December 2015] [ASA-201512-14](https://lists.archlinux.org/pipermail/arch-security/2015-December/000474.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) multiple issues
@@ -513,7 +517,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413394](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413394)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413701](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413701)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

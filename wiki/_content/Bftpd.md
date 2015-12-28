@@ -23,7 +23,7 @@ See [#Using xinetd](#Using_xinetd) for procedures to use vsftpd with xinetd.
 
 ## Configuration
 
-Most of the settings in bftpd are done by editing the file `/etc/btfpd.conf`.
+Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`.
 
 ## Using xinetd
 
@@ -40,7 +40,7 @@ Most of the settings in bftpd are done by editing the file `/etc/btfpd.conf`.
 *   [bftpd official homepage](http://bftpd.sourceforge.net/)
 *   [bftpd tutorial](http://bftpd.sourceforge.net/doc/en/bftpd-tutorial.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bftpd&oldid=402567](https://wiki.archlinux.org/index.php?title=Bftpd&oldid=402567)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bftpd&oldid=413686](https://wiki.archlinux.org/index.php?title=Bftpd&oldid=413686)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -17,7 +17,7 @@ It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). 
 
 ## Installation
 
-[Install](/index.php/Install "Install") [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> - Adminer will be installed as `/usr/share/webapps/adminer/index.php`. Ensure the correct extensions in `/etc/php/php.ini` are uncommenting, e.g. `extension=pdo_mysql.so` should provide [MySQL](/index.php/MySQL "MySQL") database management.
+[Install](/index.php/Install "Install") [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> - Adminer will be installed as `/usr/share/webapps/adminer/index.php`. Ensure the correct extensions in `/etc/php/php.ini` are uncommented, e.g. `extension=pdo_mysql.so` should provide [MySQL](/index.php/MySQL "MySQL") database management.
 
 **Warning:** As of PHP 5.5, `mysql.so` is [deprecated](http://www.php.net/manual/de/migration55.deprecated.php) and will fill up your log files with error messages. It is no longer available in PHP 7.0.
 
@@ -84,7 +84,7 @@ server {
 *   [Official Adminer webpage](http://www.adminer.org/en/)
 *   [Author's weblog](http://php.vrana.cz/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=412309](https://wiki.archlinux.org/index.php?title=Adminer&oldid=412309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=413696](https://wiki.archlinux.org/index.php?title=Adminer&oldid=413696)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -38,6 +38,12 @@ Install the [plex-media-server](https://aur.archlinux.org/packages/plex-media-se
 
 To begin configuring PMS, browse to `[http://localhost:32400/web/](http://localhost:32400/web/)`.
 
+To configure PMS remotely, you must first create an SSH tunnel (setup can only be done from `localhost`)
+
+`ssh ip.address.of.server -L 8888:localhost:32400`
+
+and then browse to `[http://localhost:8888/web/](http://localhost:8888/web/)`.
+
 ### Plugins
 
 PMS can be expanded with additional plugins. For example, PMS can be used as an IPTV client with the [IPTV plugin](https://github.com/Cigaras/IPTV.bundle).
@@ -154,7 +160,7 @@ With the PleXBMC add-on, Kodi can be used as a replacement for PHT.
 
 Install [kodi](https://www.archlinux.org/packages/?name=kodi) from the [Official repositories](/index.php/Official_repositories "Official repositories"), then follow the instructions over [here](http://kodi.wiki/view/Add-on:PleXBMC).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Plex&oldid=407187](https://wiki.archlinux.org/index.php?title=Plex&oldid=407187)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Plex&oldid=413690](https://wiki.archlinux.org/index.php?title=Plex&oldid=413690)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
