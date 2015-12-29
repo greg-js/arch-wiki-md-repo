@@ -34,8 +34,7 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
     *   [6.2 Keyboard repeat](#Keyboard_repeat)
     *   [6.3 Keyboard mapping](#Keyboard_mapping)
     *   [6.4 No Cursor in Gnome3](#No_Cursor_in_Gnome3)
-    *   [6.5 messages.log being spammed with by synergyc](#messages.log_being_spammed_with_by_synergyc)
-    *   [6.6 Client is returning "failed to verify server certificate fingerprint"](#Client_is_returning_.22failed_to_verify_server_certificate_fingerprint.22)
+    *   [6.5 Client is returning "failed to verify server certificate fingerprint"](#Client_is_returning_.22failed_to_verify_server_certificate_fingerprint.22)
 *   [7 External Links](#External_Links)
 
 ## Installation
@@ -461,32 +460,6 @@ This can be added to an init script or systemd unit:
 
 ```
 
-### messages.log being spammed with by synergyc
-
-If you run _synergyc_ as described above then your `/var/log/messages.log` file will get spammed with messages like these:
-
-```
- May 26 22:30:46 localhost Synergy 1.4.6: 2012-05-26T22:30:46 INFO: entering screen
-         /build/src/synergy-1.4.6-Source/src/lib/synergy/CScreen.cpp,103
- May 26 22:30:47 localhost Synergy 1.4.6: 2012-05-26T22:30:47 INFO: leaving screen
-         /build/src/synergy-1.4.6-Source/src/lib/synergy/CScreen.cpp,121
-
-```
-
-To prevent this run _synergyc_ with the `-d WARNING` option. This _debug level_ option tells synergy to only log messages if they are level _WARNING_ or above.
-
-```
- synergyc -d WARNING server-host-name
-
-```
-
-You can also edit the line that calls _synergyc_ if you use a `/etc/rc.d/synergyc` file.
-
-```
-    [ -z "$PID" ] && /usr/bin/synergyc -d WARNING "$SERVERALIAS"
-
-```
-
 ### Client is returning "failed to verify server certificate fingerprint"
 
 You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt" into client's "~/.synergy/SSL/Fingerprints/TrustedServers.txt".
@@ -496,7 +469,7 @@ You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt"
 *   Synergy website: [http://synergy-project.org](http://synergy-project.org)
 *   Official documentation: [http://synergy-project.org/wiki/User_Guide](http://synergy-project.org/wiki/User_Guide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Synergy&oldid=412184](https://wiki.archlinux.org/index.php?title=Synergy&oldid=412184)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Synergy&oldid=413724](https://wiki.archlinux.org/index.php?title=Synergy&oldid=413724)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

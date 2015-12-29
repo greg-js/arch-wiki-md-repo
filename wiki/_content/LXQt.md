@@ -82,7 +82,7 @@ LXQt in general tries to provide GUI applications to change its settings. Config
 
 ### Replace Openbox
 
-While [Openbox](/index.php/Openbox "Openbox") is the default [window manager](/index.php/Window_manager "Window manager") for LXQt, you can specify a different window manager to use with LXQt via the _Session Settings_, or by editing `~/.config/lxqt/session.conf`. Change the following line:
+While [Openbox](/index.php/Openbox "Openbox") is the default [window manager](/index.php/Window_manager "Window manager") for LXQt, you can specify a different window manager to use with LXQt via _Session Settings_, `lxqt-config-session`; or by editing `~/.config/lxqt/session.conf`. Change the following line:
 
 ```
 window_manager=openbox
@@ -122,7 +122,7 @@ As LXQt is a lightweight desktop, a plain install will not provide many desktop 
 *   [LXQt on deviantART](http://lxqt-de.deviantart.com/)
 *   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=411752](https://wiki.archlinux.org/index.php?title=LXQt&oldid=411752)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=413729](https://wiki.archlinux.org/index.php?title=LXQt&oldid=413729)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

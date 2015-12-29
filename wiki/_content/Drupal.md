@@ -11,58 +11,69 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Arch repositories](#Arch_repositories)
-    *   [1.2 Manual install](#Manual_install)
-    *   [1.3 Installing Postfix](#Installing_Postfix)
-*   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Scheduling with Cron](#Scheduling_with_Cron)
-    *   [2.2 Upload progress not enabled](#Upload_progress_not_enabled)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Browser shows the actual PHP code when visiting localhost](#Browser_shows_the_actual_PHP_code_when_visiting_localhost)
-    *   [3.2 Setup page is not the initial page when accessing localhost](#Setup_page_is_not_the_initial_page_when_accessing_localhost)
-    *   [3.3 Setup page does not start and shows HTTP ERROR 500](#Setup_page_does_not_start_and_shows_HTTP_ERROR_500)
+    *   [1.1 Installing Postfix](#Installing_Postfix)
+*   [2 Configuration](#Configuration)
+    *   [2.1 PHP](#PHP)
+    *   [2.2 Apache](#Apache)
+    *   [2.3 Drupal](#Drupal)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Scheduling with Cron](#Scheduling_with_Cron)
+    *   [3.2 Upload progress not enabled](#Upload_progress_not_enabled)
 *   [4 See also](#See_also)
 
 ## Installation
 
-### Arch repositories
-
 [Install](/index.php/Install "Install") the [drupal](https://www.archlinux.org/packages/?name=drupal) package.
-
-Edit `/etc/php/php.ini`:
-
-*   Uncomment the `extension=gd.so` line. Also install [php-gd](https://www.archlinux.org/packages/?name=php-gd) ([FS#47548](https://bugs.archlinux.org/task/47548)).
-*   Enable a PDO extension for your database. For MySQL, the line `extension=pdo_mysql.so` should be uncommented.
-*   Find the line beginning with `open_basedir =`. Add the Drupal install directories, `/usr/share/webapps/drupal/` and `/var/lib/drupal/`. `/srv/http/` can be removed if you do not intend to use it.
-
-Edit `/etc/httpd/conf/httpd.conf`:
-
-*   Uncomment the `LoadModule rewrite_module modules/mod_rewrite.so` line.
-*   If your webserver is dedicated to Drupal, find the line `DocumentRoot "/srv/http"` and change it to the Drupal install directory, i.e. `DocumentRoot "/usr/share/webapps/drupal"`, then find the section that starts with `<Directory "/srv/http">` and change `/srv/http` to the Drupal install directory, `/usr/share/webapps/drupal`. In the same section, make sure it includes a line `AllowOverride All` to enable the clean URL's.
-*   If you are using Apache Virtual Hosts, see [Apache#Virtual hosts](/index.php/Apache#Virtual_hosts "Apache").
-
-Finally comment out the `Require all denied` line in the `/usr/share/webapps/drupal/.htaccess` file to enable access from any machine. Then [restart](/index.php/Daemons#Restarting "Daemons") Apache (`httpd.service`).
-
-### Manual install
-
-Download the latest package from [http://drupal.org](http://drupal.org) and extract it. Move the folders to Apache's htdocs folder. Open a web browser, and navigate to [http://localhost/](http://localhost/). Follow the on-screen instructions.
 
 ### Installing Postfix
 
 In order to send e-mails with Drupal, you will need to install [Postfix](/index.php/Postfix "Postfix"). Drupal uses e-mails for account verification, password recovery, etc. First install [postfix](https://www.archlinux.org/packages/?name=postfix).
 
 1.  Edit Postfix configuration file `/etc/postfix/main.cf` as needed. All that you should have to do is change the hostnames under "Internet Host and Domain Names" `myhostname = hostname1`
-2.  Start the Postfix service: `# systemctl start postfix`.
+2.  [Start](/index.php/Start "Start") `postfix.service`.
 3.  Send a test e-mail to yourself: `mail myusername@localhost`. Enter a subject, some words in the body, then press `Ctrl+d` to exit and send the letter. Wait 10 seconds, and then type `mail` to check your mail. If you've gotten it, excellent.
 4.  Make sure port 25 is fowarded if you have a router so that mails can be sent to the Internet at large
 5.  Edit the file `/etc/php/php.ini`. Find the line that starts with, `;sendmail_path=""` and change it to `sendmail_path="/usr/sbin/sendmail -t -i"`
 6.  Restart the Apache web server.
 
+## Configuration
+
+### PHP
+
+Edit `/etc/php/php.ini`:
+
+*   Uncomment the `extension=gd.so` line.
+*   Enable a PDO extension for your database. For MySQL, the line `extension=pdo_mysql.so` should be uncommented.
+
+### Apache
+
+Copy the example Apache configuration file:
+
+```
+# cp /etc/webapps/drupal/apache.example.conf /etc/httpd/conf/extra/drupal.conf
+
+```
+
+And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
+
+```
+Include conf/extra/drupal.conf
+
+```
+
+In `/etc/httpd/conf/httpd.conf`, also uncomment the `LoadModule rewrite_module modules/mod_rewrite.so` line.
+
+### Drupal
+
+Edit `/usr/share/webapps/drupal/.htaccess` and replace `Require all denied` by `Require all granted`.
+
+Finally, [restart](/index.php/Daemons#Restarting "Daemons") Apache (`httpd.service`). You can now access the Drupal installation at [http://localhost/drupal](http://localhost/drupal) .
+
 ## Tips and tricks
 
 ### Scheduling with Cron
 
-Drupal recommends running cron jobs hourly. Cron can be executed from the browser by visiting [http://localhost/cron](http://localhost/cron). It is also possible to run cron via script by copying the appropriate file from the "scripts" folder into `/etc/cron.hourly` and making it executable.
+Drupal recommends running cron jobs hourly. Cron can be executed from the browser by visiting [http://localhost/drupal/cron](http://localhost/drupal/cron). It is also possible to run cron via script by copying the appropriate file from the "scripts" folder into `/etc/cron.hourly` and making it executable.
 
 ### Upload progress not enabled
 
@@ -86,69 +97,13 @@ extension=uploadprogress.so
 
 Restart Apache.
 
-## Troubleshooting
-
-### Browser shows the actual PHP code when visiting localhost
-
-You do not have [php-apache](https://www.archlinux.org/packages/?name=php-apache) installed.
-
-Then, enable the PHP module in `/etc/httpd/conf/httpd.conf` by adding the following lines in the appropriate sections:
-
-```
-LoadModule php5_module modules/libphp5.so
-Include conf/extra/php5_module.conf
-
-```
-
-If, when starting httpd, you get the following error:
-
-```
-httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
-
-```
-
-You should edit `/etc/httpd/conf/httpd.conf`. In that file find the line that looks similar to
-
-```
-#ServerName www.example.com:80
-
-```
-
-Uncomment it (remove # from the front) and adjust the address as needed. Restart httpd:
-
-```
-# systemctl restart httpd
-
-```
-
-### Setup page is not the initial page when accessing localhost
-
-In this situation, you should navigate in your `/srv` directory and look for the `drupal` folder (most probably it will be in the `http` directory). Then edit `/etc/httpd/conf/httpd.conf`. and look for a line starting with `DocumentRoot` and change the path with that folder's path (for example `DocumentRoot "/srv/http/drupal"`) and also find another line starting with `<Directory` and set the same path there as well. Restart httpd.
-
-### Setup page does not start and shows HTTP ERROR 500
-
-This may be because Drupal needs the `json.so` extension to be activated in your `/etc/php/php.ini`. Just uncomment in `/etc/php/php.ini` the line:
-
-```
-;extension=json.so
-
-```
-
-Restart httpd service.
-
-See [this link](http://drupal.org/node/1018824) for info.
-
-This can be caused because Drupal doesn't have access to its .htacccess, to enable this make sure that the directive AllowOverride All is set in your `/etc/httpd/conf/httpd.conf` or for your respective user directory.
-
-See [this link](https://httpd.apache.org/docs/current/mod/core.html#allowoverride) for info.
-
 ## See also
 
 *   [Official Drupal documentation](http://drupal.org/handbook)
 *   [Simple guide to install Drupal on Xampp](http://drupal.org/node/307956)
 *   [LAMP (How to setup an Apache server)](/index.php/LAMP "LAMP")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=413682](https://wiki.archlinux.org/index.php?title=Drupal&oldid=413682)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=413731](https://wiki.archlinux.org/index.php?title=Drupal&oldid=413731)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

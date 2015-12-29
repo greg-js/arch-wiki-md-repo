@@ -4,14 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.d references. Needs update to [Systemd](/index.php/Systemd "Systemd"). (Discuss in [Talk:Courier Email Server#](https://wiki.archlinux.org/index.php/Talk:Courier_Email_Server))
-
 This is a small howto on how to install an imap-Server with Courier-Imap, SSL-Encryption and grabbing all the other mail-accounts with fetchmail. Procmail is responsible for delivering the Mails to the different Users.
 
 You can fetch your Mail from this IMAP-Server with every Mail-Client capable of communicating with IMAP.
@@ -22,18 +14,18 @@ For more complex setup see [Creating a Linux Mail Server (Postfix, Procmail, Fet
 
 ## Contents
 
-*   [1 Installing Packages](#Installing_Packages)
-*   [2 Using fetchmail](#Using_fetchmail)
-*   [3 Using procmail](#Using_procmail)
-*   [4 First Try with procmail and fetchmail working together](#First_Try_with_procmail_and_fetchmail_working_together)
-*   [5 Configuring Courier Imap](#Configuring_Courier_Imap)
-*   [6 Doing some cron-jobs](#Doing_some_cron-jobs)
+*   [1 Installation](#Installation)
+    *   [1.1 Using fetchmail](#Using_fetchmail)
+    *   [1.2 Using procmail](#Using_procmail)
+    *   [1.3 First Try with procmail and fetchmail working together](#First_Try_with_procmail_and_fetchmail_working_together)
+    *   [1.4 Configuring Courier Imap](#Configuring_Courier_Imap)
+    *   [1.5 Doing some cron-jobs](#Doing_some_cron-jobs)
 
-#### Installing Packages
+## Installation
 
 [Install](/index.php/Install "Install") [fetchmail](https://www.archlinux.org/packages/?name=fetchmail), [procmail](https://www.archlinux.org/packages/?name=procmail), and [courier-imap](https://aur.archlinux.org/packages/courier-imap/)<sup><small>AUR</small></sup>.
 
-#### Using fetchmail
+### Using fetchmail
 
 Just make .fetchmailrc in your home-directory and add the following lines:
 
@@ -48,7 +40,7 @@ mda "/usr/bin/procmail -d %s"
 *   passwd - Your password on the pop3-server
 *   morphus - Your local account where the mail belongs to
 
-#### Using procmail
+### Using procmail
 
 Create and edit .procmailrc in your home-directory
 
@@ -63,11 +55,11 @@ LOGFILE=$MAILDIR/procmail.log
 Now secure your .fetchmailrc since they contain passwords
 
 ```
- chmod 600 .fetchmailrc
+chmod 600 .fetchmailrc
 
 ```
 
-#### First Try with procmail and fetchmail working together
+### First Try with procmail and fetchmail working together
 
 Send some bulk-mails to your test-account. Then run
 
@@ -78,7 +70,7 @@ fetchmail -av
 
 Fetchmail echos the communication with the pop-Server and after the run finished you should find some files in your Mail-Folder with the Mails.
 
-#### Configuring Courier Imap
+### Configuring Courier Imap
 
 Run the command
 
@@ -89,17 +81,13 @@ maildirmake Maildir
 
 with each user you want to have an imap-account
 
-And now just start courier imap with
-
-```
-/etc/rc.d/courier-imap start
-
-```
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `courier-imapd.service`.
 
 You should be able to connect from your console with telnet like this:
 
+ `[morphus@spielemorph ~]$ telnet 192.168.6.1 143` 
+
 ```
-[morphus@spielemorph ~]$ telnet 192.168.6.1 143
 Trying 192.168.6.1...
 Connected to 192.168.6.1.
 Escape character is '^]'.
@@ -113,7 +101,7 @@ Copyright 1998-2004 Double Precision, Inc.  See COPYING for distribution informa
 
 This means everything is okay and you can connect. Your mail should be delivered to this Maildirectory and you should be able to connect with any imap-capable program.
 
-#### Doing some cron-jobs
+### Doing some cron-jobs
 
 Just add the fetchmail -av command to the [users cron-list](/index.php/Cron "Cron"), e.g. every 10 minutes he should grep the emails
 
@@ -122,9 +110,7 @@ Just add the fetchmail -av command to the [users cron-list](/index.php/Cron "Cro
 
 ```
 
-Add /etc/rc.d/courier-imap to your rc.conf in the DAEMONS section.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Courier_Email_Server&oldid=388074](https://wiki.archlinux.org/index.php?title=Courier_Email_Server&oldid=388074)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Courier_Email_Server&oldid=413718](https://wiki.archlinux.org/index.php?title=Courier_Email_Server&oldid=413718)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

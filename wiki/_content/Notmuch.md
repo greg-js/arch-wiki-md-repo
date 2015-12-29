@@ -80,7 +80,7 @@ More file handlers can be configured of course.
 
 ### bower
 
-[bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](http://www.mercury.csse.unimelb.edu.au/).
+[bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](https://mercurylang.org/).
 
 ### ner
 
@@ -94,7 +94,7 @@ If you use [mutt](/index.php/Mutt "Mutt") as your MUA, then notmuch is an excell
 
 Refer to the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) man page for configuration information. This [blogpost](http://jasonwryan.com/blog/2012/05/23/notmuch/) steps through how to setup notmuch with mutt, but the information is a little outdated.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Notmuch&oldid=393585](https://wiki.archlinux.org/index.php?title=Notmuch&oldid=393585)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Notmuch&oldid=413712](https://wiki.archlinux.org/index.php?title=Notmuch&oldid=413712)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

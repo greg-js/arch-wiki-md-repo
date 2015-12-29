@@ -15,10 +15,10 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 PHP](#PHP)
-    *   [2.2 Web servers](#Web_servers)
+    *   [2.2 Web server](#Web_server)
         *   [2.2.1 Apache](#Apache)
-        *   [2.2.2 Lighttpd Configuration](#Lighttpd_Configuration)
-        *   [2.2.3 NGINX Configuration](#NGINX_Configuration)
+        *   [2.2.2 Lighttpd](#Lighttpd)
+        *   [2.2.3 Nginx](#Nginx)
     *   [2.3 phpPgAdmin configuration](#phpPgAdmin_configuration)
 *   [3 Accessing your phpPgAdmin installation](#Accessing_your_phpPgAdmin_installation)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -48,7 +48,7 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc
 
 ```
 
-### Web servers
+### Web server
 
 #### Apache
 
@@ -77,7 +77,7 @@ Include conf/extra/phppgadmin.conf
 
 By default, everyone can see the phpPgAdmin page, to change this, edit `/etc/httpd/conf/extra/phppgadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`.
 
-#### Lighttpd Configuration
+#### Lighttpd
 
 The php setup for lighttpd is exactly the same as for apache. Make an alias for phppgadmin in your lighttpd config.
 
@@ -92,7 +92,7 @@ Make sure lighttpd is setup to serve php files, [Lighttpd#FastCGI](/index.php/Li
 
 Restart lighttpd and browse to [http://localhost/phppgadmin/index.php](http://localhost/phppgadmin/index.php)
 
-#### NGINX Configuration
+#### Nginx
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
@@ -208,7 +208,7 @@ to
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpPgAdmin&oldid=405608](https://wiki.archlinux.org/index.php?title=PhpPgAdmin&oldid=405608)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpPgAdmin&oldid=413725](https://wiki.archlinux.org/index.php?title=PhpPgAdmin&oldid=413725)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

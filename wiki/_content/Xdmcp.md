@@ -18,9 +18,8 @@ This page intends to allow remote sessions using "X Display Manager Control Prot
 *   [3 Thin client setup](#Thin_client_setup)
     *   [3.1 Example GUI-based Clients](#Example_GUI-based_Clients)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 XDMCP fatal error: Manager unwilling Host unwilling](#XDMCP_fatal_error:_Manager_unwilling_Host_unwilling)
-    *   [4.2 Session declined: Maximum Number of Sessions Reached](#Session_declined:_Maximum_Number_of_Sessions_Reached)
-    *   [4.3 Login screen and GNOME is somehow flickering](#Login_screen_and_GNOME_is_somehow_flickering)
+    *   [4.1 Session declined: Maximum Number of Sessions Reached](#Session_declined:_Maximum_Number_of_Sessions_Reached)
+    *   [4.2 Login screen and GNOME is somehow flickering](#Login_screen_and_GNOME_is_somehow_flickering)
 
 ## Setup Graphical Logins
 
@@ -174,22 +173,6 @@ First of all one should setup dhcp and tftp server. [Dnsmasq](/index.php/Dnsmasq
 
 ## Troubleshooting
 
-### XDMCP fatal error: Manager unwilling Host unwilling
-
-This is usually caused by an entry missing from the `/etc/kde3/kdm/Xaccess` file. This file controls which machines can connect to the server via KDM. The trick is to add a line that starts with an asterisk '`*`'. Look for a line that looks like:
-
-```
-# *                                     #any host can get a login window
-
-```
-
-and remove the hash '`#`' sign at the beginning of the line. Then, you need to restart KDM.
-
-```
-/etc/rc.d/kdm restart
-
-```
-
 ### Session declined: Maximum Number of Sessions Reached
 
 Edit `/etc/gdm/custom.conf` and add/increase the maximum sessions.
@@ -210,7 +193,7 @@ If the login screen is created again and again and unresponsive, you are trying 
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=387993](https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=387993)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413719](https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413719)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

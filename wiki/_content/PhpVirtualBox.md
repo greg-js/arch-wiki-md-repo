@@ -24,11 +24,11 @@ To remotely control virtual machine you need two components: VirtualBox web serv
 
 ### VirtualBox web service
 
-To use the web console, you must install [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+To use the web console, you must install the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/)<sup><small>AUR</small></sup> package.
 
 ### VirtualBox web interface (phpvirtualbox)
 
-[Install](/index.php/Install "Install") [phpvirtualbox](https://www.archlinux.org/packages/?name=phpvirtualbox) from [Official repositories](/index.php/Official_repositories "Official repositories") on a php-capable web server of your choice ([Apache](/index.php/Apache "Apache") is suitable choice).
+[Install](/index.php/Install "Install") the [phpvirtualbox](https://www.archlinux.org/packages/?name=phpvirtualbox) package. You will also need a PHP-capable web server of your choice ([Apache](/index.php/Apache "Apache") is suitable choice).
 
 ## Configuration
 
@@ -94,26 +94,13 @@ To start `vboxweb` from **non-root user** you must:
 
 or just reboot your system for automatically create.
 
-6\. Start `vboxweb_mod.service`
-
-```
-# systemctl start vboxweb_mod
-
-```
-
-and enable it if nessesary
-
-```
-# systemctl enable vboxweb_mod
-
-```
+6\. [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `vboxweb_mod.service`
 
 ### Web interface
 
-Edit `/etc/php/php.ini`, make sure the following lines are uncommented.
+Edit `/etc/php/php.ini`, make sure the following line is uncommented.
 
 ```
-extension=json.so  ; this module is built into php as of version 5.4 and so will not exist or need to be uncommented
 extension=soap.so
 
 ```
@@ -156,9 +143,7 @@ deny from all
 
 ```
 
-Do not forget to restart the webserver like this (example for Apache):
-
-`systemctl restart httpd`
+Do not forget to restart the webserver (e.g. for Apache, [restart](/index.php/Restart "Restart") `httpd.service`).
 
 ## Running
 
@@ -189,7 +174,7 @@ on virtualization server and set username and password to empty strings and set 
 *   [Manage your VirtualBox VMs via the web with phpVirtualBox](http://www.torrent-invites.com/software/101718-manage-your-virtualbox-vms-via-web-phpvirtualbox.html)
 *   [systemd vboxweb.service mod when needing to start as non-root user](https://bbs.archlinux.org/viewtopic.php?id=147175)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=412154](https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=412154)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=413711](https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=413711)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

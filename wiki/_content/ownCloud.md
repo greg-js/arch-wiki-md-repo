@@ -177,7 +177,7 @@ chmod 0644 ${ocpath}/data/.htaccess
 
 Now restart Apache (`httpd.service`).
 
-Open [http://localhost/](http://localhost/) in your browser. You should now be able to create a user account and follow the installation wizard.
+Open [http://localhost/owncloud](http://localhost/owncloud) in your browser. You should now be able to create a user account and follow the installation wizard.
 
 #### WebDAV
 
@@ -819,7 +819,7 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=412887](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=412887)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=413732](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=413732)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

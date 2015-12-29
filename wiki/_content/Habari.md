@@ -33,7 +33,6 @@ Make sure the following extensions are uncommented in `/etc/php/php.ini`:
 extension=gd.so
 extension=gettext.so
 extension=iconv.so
-extension=json.so
 extension=mhash.so
 extension=pdo_mysql.so
 extension=session.so
@@ -46,29 +45,18 @@ extension=zlib.so
 
 You need to create a habari database for the blog to write stuff to. One can choose **habaridata** for the db name, **habari** for the username, and **habaripass** for the password. Assuming you've already accessed your mysql install and set a root password:
 
+ `$ mysql -u root` 
+
 ```
-$ mysql -u root
 mysql> CREATE DATABASE habaridata;
-mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON habaridata.* TO 'habari'@'localhost' IDENTIFIED BY 'habaripass';
-mysql> FLUSH PRIVILEGES;
-
-```
-
-Quit MySQL:
-
-```
+mysql> GRANT ALL PRIVILEGES ON habaridata.* TO 'habari'@'localhost' IDENTIFIED BY 'habaripass';
 mysql> QUIT;
 
 ```
 
 ### Step 3: Check Apache Configuration
 
-```
-# vim /etc/httpd/conf/httpd.conf
-
-```
-
-Look for and uncomment, if commented:
+Edit `/etc/httpd/conf/httpd.conf` and uncomment the following line:
 
 ```
 LoadModule rewrite_module modules/mod_rewrite.so
@@ -99,12 +87,7 @@ Add (just to be safe):
 
 ```
 
-Restart Apache:
-
-```
-# /etc/rc.d/httpd restart
-
-```
+Restart Apache (`httpd.service`).
 
 ### Step 4: Prepare Habari Directory
 
@@ -137,7 +120,7 @@ Head over to http://yourdomain.com/habari or whatever folder you called it. The 
 *   For more info on mysql database preparation, see [https://help.ubuntu.com/community/PunBB](https://help.ubuntu.com/community/PunBB)
 *   Habari Themes: [http://wiki.habariproject.org/en/Available_Themes](http://wiki.habariproject.org/en/Available_Themes)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Habari&oldid=411112](https://wiki.archlinux.org/index.php?title=Habari&oldid=411112)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Habari&oldid=413714](https://wiki.archlinux.org/index.php?title=Habari&oldid=413714)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

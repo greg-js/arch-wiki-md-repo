@@ -189,7 +189,7 @@ freshclamd.service</td>
 
 <td>craftbukkit</td>
 
-<td>_not yet implemented_</td>
+<td>craftbukkit.service</td>
 
 <td>CraftBukkit Minecraft server.</td>
 
@@ -856,18 +856,6 @@ NetworkManager-wait-online.service</td>
 
 <tr>
 
-<td>[powernowd](/index.php/Powernowd "Powernowd")</td>
-
-<td>powernowd</td>
-
-<td>_not yet implemented_</td>
-
-<td>To adjust speed of CPU depending on system load.</td>
-
-</tr>
-
-<tr>
-
 <td>[PPTP server](/index.php/PPTP_server "PPTP server")</td>
 
 <td>pptpd</td>
@@ -1083,7 +1071,7 @@ winbindd.service</td>
 
 <td>soundmodem</td>
 
-<td>_not yet implemented_</td>
+<td>soundmodem.service</td>
 
 <td>Multiplatform Soundcard Packet Radio Modem</td>
 
@@ -1313,7 +1301,7 @@ vsftpd-ssl.socket (on-demand)
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Daemons&oldid=400578](https://wiki.archlinux.org/index.php?title=Daemons&oldid=400578)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Daemons&oldid=413721](https://wiki.archlinux.org/index.php?title=Daemons&oldid=413721)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
