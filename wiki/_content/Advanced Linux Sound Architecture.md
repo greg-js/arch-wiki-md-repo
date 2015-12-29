@@ -749,6 +749,8 @@ defaults.pcm.rate_converter "speexrate_medium"
 
 **Note:** It is also possible to use [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate) converters, which are only about half as fast as the _speexrate_ converters but do not achieve much greater performance. See [discussion](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
 
+**Note:** It is also possible to use lavcrate resamplers that use [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) With filter sizes of lavcrate_faster:4 lavcrate_fast:8 lavcrate:16 lavcrate_high:32 lavcrate_higher:64 With the last 2 options being equal to Kodi low and medium quality resamplers respectively
+
 **Note:** Some applications (like MPlayer and its forks) do their own resampling by default because some ALSA drivers have incorrect delay reporting when resampling is enabled (hence leading to AV desynchronization), so changing this setting will not have any effect unless you configure them to use ALSA resampling.
 
 ## Upmixing/downmixing
@@ -886,7 +888,7 @@ amixer set Master toggle
 *   [A close look at ALSA: ALSA concept introduction](http://www.volkerschatz.com/noise/alsa.html)
 *   [Linux ALSA sound notes](http://www.sabi.co.uk/Notes/linuxSoundALSA.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=413092](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=413092)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=413783](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=413783)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

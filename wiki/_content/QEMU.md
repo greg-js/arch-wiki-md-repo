@@ -1401,7 +1401,7 @@ It is important that the `chardev=` option of the `virtserialport` device matche
 
 ### Windows-specific notes
 
-QEMU can run any version of Windows from Windows 95 through Windows 8.
+QEMU can run any version of Windows from Windows 95 through Windows 10.
 
 It is possible to run [Windows PE](/index.php/Windows_PE "Windows PE") in QEMU.
 
@@ -1537,7 +1537,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413613](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413613)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413775](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413775)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

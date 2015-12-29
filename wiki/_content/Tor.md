@@ -272,6 +272,13 @@ $ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 2E1AC68ED40814E0
 
 ```
 
+or (alternative key server)
+
+```
+$ gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 2E1AC68ED40814E0
+
+```
+
 ### Firefox
 
 In _Preferences > Advanced > Network tab > Settings_ manually set Firefox to use the SOCKS proxy `localhost` with port `9050`. Then you must type `about:config` into the address bar and _void your warranty_. Change `network.proxy.socks_remote_dns` to `true` and restart the browser. This channels all DNS requests through TOR's socks proxy.
@@ -923,7 +930,7 @@ Now save changes and run the daemon:
 *   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
 *   [List of tor pluggable transports for obfuscating tor's traffic](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=408319](https://wiki.archlinux.org/index.php?title=Tor&oldid=408319)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=413774](https://wiki.archlinux.org/index.php?title=Tor&oldid=413774)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

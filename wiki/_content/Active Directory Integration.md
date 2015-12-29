@@ -205,14 +205,15 @@ If you get errors stating that /etc/security/pam_winbind.conf was not found, cre
  `/etc/security/pam_winbind.conf` 
 
 ```
-debug=no
-debug_state=no
-try_first_pass=yes
-krb5_auth=yes
-krb5_cache_type=FILE
-cached_login=yes
-silent=no
-mkhomedir=yes
+[global]
+  debug = no
+  debug_state = no
+  try_first_pass = yes
+  krb5_auth = yes
+  krb5_cache_type = FILE
+  cached_login = yes
+  silent = no
+  mkhomedir = yes
 
 ```
 
@@ -245,6 +246,8 @@ In this section, we will focus on getting Authentication to work first by editin
   winbind nested groups = Yes
   winbind separator = +
   winbind refresh tickets = yes
+  winbind offline logon = yes
+  winbind cache time = 300
 
   template shell = /bin/bash
   template homedir = /home/%D/%U
@@ -687,7 +690,7 @@ It should look sth. like this:
   security = ads
   encrypt passwords = yes
   password server = pdc.example.com
-  kerberos method = system keytab
+  kerberos method = secrets and keytab
   dedicated keytab file = /etc/krb5.keytab
 
   idmap config * : backend = tdb
@@ -852,7 +855,7 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 *   Centrify
 *   Likewise
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=412031](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=412031)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=413782](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=413782)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

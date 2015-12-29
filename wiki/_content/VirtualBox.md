@@ -57,6 +57,8 @@ In order to integrate functions of the host system to the guests, including shar
         *   [4.3.1 VDI](#VDI)
     *   [4.4 Compact virtual disks](#Compact_virtual_disks)
     *   [4.5 Increase virtual disks](#Increase_virtual_disks)
+        *   [4.5.1 General procedure](#General_procedure)
+        *   [4.5.2 Increase size for VDI disks](#Increase_size_for_VDI_disks)
     *   [4.6 Replace a virtual disk manually from the .vbox file](#Replace_a_virtual_disk_manually_from_the_.vbox_file)
         *   [4.6.1 Transfer between Linux host and other OS](#Transfer_between_Linux_host_and_other_OS)
     *   [4.7 Clone a virtual disk and assigning a new UUID to it](#Clone_a_virtual_disk_and_assigning_a_new_UUID_to_it)
@@ -644,6 +646,8 @@ $ VBoxManage modifyhd _your_disk.vdi_ --compact
 
 ### Increase virtual disks
 
+#### General procedure
+
 If you are running out of space due to the small hard drive size you selected when you created your virtual machine, the solution adviced by the VirtualBox manual is to use [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi). However this command only works for VDI and VHD disks and only for the dynamically allocated variants. If you want to resize a fixed size virtual disk disk too, read on this trick which works either for a Windows or UNIX-like virtual machine.
 
 First, create a new virtual disk next to the one you want to increase:
@@ -704,6 +708,17 @@ $ VBoxManage closemedium disk _old.vdi_
 $ rm _old.vdi_
 
 ```
+
+#### Increase size for VDI disks
+
+If your disk is a vdi one, simply run:
+
+```
+$ VBoxManage modifyhd _your_virtual_disk.vdi_ --resize _the_new_size_
+
+```
+
+Then jump back to the Gparted step, to increase the size of the partition on the virtual disk.
 
 ### Replace a virtual disk manually from the .vbox file
 
@@ -1435,7 +1450,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413256](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413256)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413779](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413779)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

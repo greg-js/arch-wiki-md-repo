@@ -11,35 +11,57 @@ Related articles
 *   [Samba](/index.php/Samba "Samba")
 *   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
 
-This article explains how to setup a new Active Directory Domain Controller. It is assumed that all configuration files are in their unmodified, post-installation state. This article was written and tested on a fresh installation, with no modifications other than setting up a staic IPv4 network connection, assigning a hostname, and adding openssh and vim (which should have no effect on the Samba configuration). Finally, most of the commands below will require elevated privileges. Despite conventional wisdom, it may be easier to run these short few commands from a root session as opposed to obtaining rights on an as needed basis.
+This article explains how to setup a new Active Directory Domain Controller. It is assumed that all configuration files are in their unmodified, post-installation state. This article was written and tested on a fresh installation, with no modifications other than setting up a static IPv4 network connection, and adding openssh and vim (which should have no effect on the Samba configuration). Finally, most of the commands below will require elevated privileges. Despite conventional wisdom, it may be easier to run these short few commands from a root session as opposed to obtaining rights on an as needed basis.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Provisioning](#Provisioning)
-    *   [2.1 Argument explanations](#Argument_explanations)
-    *   [2.2 Interactive provision explanations](#Interactive_provision_explanations)
-*   [3 Configuring daemons](#Configuring_daemons)
-    *   [3.1 NTPD](#NTPD)
-    *   [3.2 BIND](#BIND)
-    *   [3.3 Kerberos client utilities](#Kerberos_client_utilities)
-    *   [3.4 DNS](#DNS)
-    *   [3.5 Samba](#Samba)
-*   [4 Testing the installation](#Testing_the_installation)
-    *   [4.1 DNS](#DNS_2)
-    *   [4.2 NT authentication](#NT_authentication)
-    *   [4.3 Kerberos](#Kerberos)
-*   [5 Additional configuration](#Additional_configuration)
-    *   [5.1 DNS](#DNS_3)
-    *   [5.2 SSL](#SSL)
-    *   [5.3 DHCP](#DHCP)
-*   [6 What to do next](#What_to_do_next)
+*   [2 Hostname](#Hostname)
+*   [3 Provisioning](#Provisioning)
+    *   [3.1 Argument explanations](#Argument_explanations)
+    *   [3.2 Interactive provision explanations](#Interactive_provision_explanations)
+*   [4 Configuring daemons](#Configuring_daemons)
+    *   [4.1 NTPD](#NTPD)
+    *   [4.2 BIND](#BIND)
+    *   [4.3 Kerberos client utilities](#Kerberos_client_utilities)
+    *   [4.4 DNS](#DNS)
+    *   [4.5 Samba](#Samba)
+*   [5 Testing the installation](#Testing_the_installation)
+    *   [5.1 DNS](#DNS_2)
+    *   [5.2 NT authentication](#NT_authentication)
+    *   [5.3 Kerberos](#Kerberos)
+*   [6 Additional configuration](#Additional_configuration)
+    *   [6.1 DNS](#DNS_3)
+    *   [6.2 SSL](#SSL)
+    *   [6.3 DHCP](#DHCP)
+*   [7 What to do next](#What_to_do_next)
 
 ## Installation
 
 A fully functional samba 4 DC requires several programs beyond those included with the Samba distribution. [Install](/index.php/Install "Install") the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools), [krb5](https://www.archlinux.org/packages/?name=krb5), [ntp](https://www.archlinux.org/packages/?name=ntp), [openldap](https://www.archlinux.org/packages/?name=openldap), [openresolv](https://www.archlinux.org/packages/?name=openresolv) and [samba](https://www.archlinux.org/packages/?name=samba) packages.
 
 Additionally, Samba contains its own fully functional DNS server, but many administrators prefer to use the ISC BIND package. If you need to maintain DNS zones for external domains, you are strongly encouraged to use [bind](https://www.archlinux.org/packages/?name=bind). If you need to share printers, you will also need [cups](https://www.archlinux.org/packages/?name=cups). If needed, install the [bind](https://www.archlinux.org/packages/?name=bind) and/or [cups](https://www.archlinux.org/packages/?name=cups) packages.
+
+## Hostname
+
+Set the hostname as described in [Network_configuration#Set_the_hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"). The hostname is set to **server** in this example.
+
+Setup the hosts file with the hostname and domain. The domain name used here—**internal.domain.com**—will be the realm in the provisioning step. For this example:
+
+ `/etc/hosts` 
+
+```
+#
+# /etc/hosts: static lookup table for host names
+#
+
+#<ip-address>	<hostname.domain.org>		<hostname>
+127.0.0.1	server.internal.domain.com	localhost server
+::1		server.internal.domain.com	localhost server
+
+# End of file
+
+```
 
 ## Provisioning
 
@@ -562,7 +584,7 @@ If you have made it this far without any unexpected output from the tests above,
 
 [OpenChange server](/index.php/OpenChange_server "OpenChange server") - The OpenChange project provides a Microsoft Exchange compatible mail server using only open source software.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=411462](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=411462)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413784](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413784)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
