@@ -8,6 +8,7 @@ Related articles
 
 *   [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team")
 *   [CVE](/index.php/CVE "CVE")
+*   [Security Advisories/Examples](/index.php/Security_Advisories/Examples "Security Advisories/Examples")
 
 Security Advisories are published by the community driven [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") to the public [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list. All published advisories can be found below, however if you want to be up-to-date its recommended to subscribe to the [list](https://mailman.archlinux.org/mailman/listinfo/arch-security). All assigned CVE's are tracked at the relevant CVE page [CVE](/index.php/CVE "CVE"), by the [ACMT](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team").
 
@@ -516,7 +517,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413704](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413704)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413742](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=413742)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

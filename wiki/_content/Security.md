@@ -510,7 +510,7 @@ See [DNSSEC](/index.php/DNSSEC "DNSSEC") and [DNSCrypt](/index.php/DNSCrypt "DNS
 
 ## Follow NVD/CVE alerts
 
-Subscribe to the Common Vulnerabilities and Exposure Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](http://nvd.nist.gov/download.cfm). See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") and [CVE-2014](/index.php/CVE-2014 "CVE-2014").
+Subscribe to the Common Vulnerabilities and Exposure Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](http://nvd.nist.gov/download.cfm). See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") and [CVE](/index.php/CVE "CVE").
 
 **Warning:** Do not be tempted to perform [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), as they are not supported by Arch Linux and may cause instability: the whole system should be upgraded when upgrading a component. Also note that infrequent system updates can complicate the update process.
 
@@ -596,7 +596,7 @@ Note that this will not work if there is some command running in the shell (eg.:
 *   [Linux Foundation's Linux workstation security checklist](https://github.com/lfit/itpol/blob/master/linux-workstation-security.md)
 *   [privacytools.io](https://www.privacytools.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=411713](https://wiki.archlinux.org/index.php?title=Security&oldid=411713)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=413744](https://wiki.archlinux.org/index.php?title=Security&oldid=413744)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

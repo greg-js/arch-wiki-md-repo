@@ -55,7 +55,7 @@ An Arch package is no more than a tar archive, or 'tarball', compressed using xz
 
 ### Meta packages and groups
 
-A package group is a set of related packages, defined by the packager, which can be installed or uninstalled simultaneously by using the group name as a substitute for each individual package name. Whilst a group is not a package, it can be installed in a similar fashion to a package, see [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman").
+A package group is a set of related packages, defined by the packager, which can be installed or uninstalled simultaneously by using the group name as a substitute for each individual package name. Whilst a group is not a package, it can be installed in a similar fashion to a package, see [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") and [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
 
 A meta package, often (though not always) titled with the _-meta_ suffix, provides similar functionality to a package group in that it enables multiple related packages to be installed or uninstalled simultaneously. Meta packages can be installed just like any other package, see [Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). The only difference between a meta package and a regular package is that a meta package is empty and exists purely to link related packages together via dependencies.
 
@@ -251,7 +251,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 *   [Arch Linux Classroom IRC Logs of classes about creating PKGBUILDs](https://archwomen.org/media/project_classroom/classlogs/).
 *   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=413666](https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=413666)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=413747](https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=413747)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

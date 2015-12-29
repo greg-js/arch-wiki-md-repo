@@ -8,7 +8,7 @@ Related articles
 
 *   [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team")
 *   [Security Advisories](/index.php/Security_Advisories "Security Advisories")
-*   [Advisory Examples](/index.php/Advisory_Examples "Advisory Examples")
+*   [Security Advisories/Examples](/index.php/Security_Advisories/Examples "Security Advisories/Examples")
 
 This article documents [Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE's) that are found and fixed in Arch Linux.
 
@@ -7766,7 +7766,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413705](https://wiki.archlinux.org/index.php?title=CVE&oldid=413705)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413743](https://wiki.archlinux.org/index.php?title=CVE&oldid=413743)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

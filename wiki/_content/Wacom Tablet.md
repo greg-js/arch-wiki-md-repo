@@ -41,7 +41,9 @@ This guide was started for _USB_ based Wacom tablets, so much of the info in her
     *   [3.3 Krita](#Krita)
     *   [3.4 VirtualBox](#VirtualBox)
     *   [3.5 Web Browser Plugin](#Web_Browser_Plugin)
-*   [4 Newer tablets & Troubleshooting](#Newer_tablets_.26_Troubleshooting)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Unknown device_type](#Unknown_device_type)
+    *   [4.2 System freeze](#System_freeze)
 *   [5 References](#References)
 
 ## Installing
@@ -418,7 +420,7 @@ A simple workaround is to reset the mapping by mapping to "":
 
 ```
 
-**Note:** Running a script with `xsetwacom` commands from a udev rule will not work, as the wacom input devices will not be ready at the time.
+**Note:** If you try to run a script with `xsetwacom` commands from a udev rule, you might find that it will not work, as the wacom input devices will not be ready at the time. A workaround is to add `sleep 1` at the beginning of your script.
 
 ##### Execute custom commands
 
@@ -626,9 +628,25 @@ A plugin that imitates the official Wacom web plugin can be found on the AUR as 
 
 With this plugin it is possible to make use of online tools such as [deviantART's Muro](http://sta.sh/muro/). This plugin is in early stages so as always, your mileage may vary.
 
-## Newer tablets & Troubleshooting
+## Troubleshooting
 
-Newer tablets' drivers might not be in the kernel yet, and additional manipulations might be needed. For example, for the Wacom Bamboo Connect CTL-470/k and Pen & Touch CTH670, follow the instructions in [this thread](https://bbs.archlinux.org/viewtopic.php?id=131831). **There seems to be a problem with the CTH670 that is fixed in the attachment found in [this post](http://www.mail-archive.com/linuxwacom-devel@lists.sourceforge.net/msg03922.html)** To compile it use the same instructions as in [this thread](https://bbs.archlinux.org/viewtopic.php?id=131831)
+Newer tablets' drivers might not be in the kernel yet, and additional manipulations might be needed. A notable example is the newer Intuos line of tablets (Draw/Comic/Photo).
+
+### Unknown device_type
+
+If your tablet does not get recognized by `xsetwacom` and `dmesg` complains about an unknown device_type, then you need to install a patched version of input-wacom.
+
+Download and install the for-4.4 branch from [SourceForge](http://sourceforge.net/p/linuxwacom/input-wacom/ci/jiri/for-4.4/~/tarball). Your device should be recognized after you run
+
+```
+ # rmmod wacom
+ # insmod /lib/modules/YOUR_KERNEL/extra/wacom.ko.gz
+
+```
+
+### System freeze
+
+If your system freezes when your tablet gets activated by the stylus, then you will need to [patch](/index.php/Patch "Patch") your kernel with the patch from [LKML](https://lkml.org/lkml/2015/11/20/690).
 
 ## References
 
@@ -637,7 +655,7 @@ Newer tablets' drivers might not be in the kernel yet, and additional manipulati
 *   [Ubuntu Help: Wacom](https://help.ubuntu.com/community/Wacom)
 *   [Ubuntu Forums - Install a LinuxWacom Kernel Driver for Tablet PC's](http://ubuntuforums.org/showthread.php?t=1038949)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=413284](https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=413284)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=413737](https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=413737)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -148,7 +148,7 @@ The license under which the software is distributed. The [licenses](https://www.
 
 ### groups
 
-The [group](/index.php/Pacman#Installing_package_groups "Pacman") the package belongs in. For instance, when installing the [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/) package, it installs all packages belonging in that group.
+The [group](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages") the package belongs in. For instance, when installing the [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/) package, it installs all packages belonging in that group.
 
 ## Dependencies
 
@@ -337,7 +337,7 @@ An array of SHA-2 checksums with digest sizes 224, 384, and 512 bits, respective
 *   [PKGBUILD(5) Manual Page](https://www.archlinux.org/pacman/PKGBUILD.5.html)
 *   [Example PKGBUILD file](http://ix.io/kXu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=412917](https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=412917)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=413746](https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=413746)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
