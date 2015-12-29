@@ -23,21 +23,22 @@ _Steam is a digital distribution, digital rights management, multiplayer and com
     *   [2.2 Silent Mode](#Silent_Mode)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Steam runtime issues](#Steam_runtime_issues)
-    *   [3.2 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
-    *   [3.3 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
-    *   [3.4 Audio not working](#Audio_not_working)
-    *   [3.5 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-    *   [3.6 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
-    *   [3.7 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
-    *   [3.8 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
-    *   [3.9 No audio in certain games](#No_audio_in_certain_games)
-    *   [3.10 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1)
-    *   [3.11 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-    *   [3.12 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-    *   [3.13 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-    *   [3.14 Claims of missing 32-bit libc.so.6 even though lib32-glibc is installed](#Claims_of_missing_32-bit_libc.so.6_even_though_lib32-glibc_is_installed)
-    *   [3.15 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
-    *   [3.16 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+    *   [3.2 Multiple monitors setup](#Multiple_monitors_setup)
+    *   [3.3 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
+    *   [3.4 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
+    *   [3.5 Audio not working](#Audio_not_working)
+    *   [3.6 Text is corrupt or missing](#Text_is_corrupt_or_missing)
+    *   [3.7 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
+    *   [3.8 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
+    *   [3.9 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
+    *   [3.10 No audio in certain games](#No_audio_in_certain_games)
+    *   [3.11 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1)
+    *   [3.12 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
+    *   [3.13 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+    *   [3.14 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+    *   [3.15 Claims of missing 32-bit libc.so.6 even though lib32-glibc is installed](#Claims_of_missing_32-bit_libc.so.6_even_though_lib32-glibc_is_installed)
+    *   [3.16 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
+    *   [3.17 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
 *   [4 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands.2C_such_as_Bumblebee.2FPrimus)
 *   [5 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [6 Using native runtime](#Using_native_runtime)
@@ -173,6 +174,10 @@ Forum threads:
 *   [https://bbs.archlinux.org/viewtopic.php?id=183141](https://bbs.archlinux.org/viewtopic.php?id=183141)
 
 See also [#Using native runtime](#Using_native_runtime) below.
+
+### Multiple monitors setup
+
+Setup with multiple monitors can cause `ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.` error which will make game unable to start. If you stuck on this error and have multiple monitors, try to disable all additional displays, and then run a game. You can enable them after the game successfully started.
 
 ### Native runtime: steam.sh line 756 Segmentation fault
 
@@ -533,7 +538,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=413532](https://wiki.archlinux.org/index.php?title=Steam&oldid=413532)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=413763](https://wiki.archlinux.org/index.php?title=Steam&oldid=413763)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -83,7 +83,7 @@ session         optional        pam_kwallet.so
 
 After restarting your wallet should unlock automatically if your user password is the same as your KWallet password and you use a login manager like KDM.
 
-**Note:** Currently, pam_kwallet-git has at least two limitations: first, it's not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, so KDE Wallet must use the standard blowfish encryption. Also, the wallet name must be "kdewallet" (that's the default name). If, for some reason, you create a new wallet, you need to use this name (so you will probably need to rename the old wallet too).
+**Note:** Currently, pam_kwallet-git / kwallet-pam has at least two limitations: first, it's not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, so KDE Wallet must use the standard blowfish encryption. Also, the wallet name must be "kdewallet" (that's the default name). If, for some reason, you create a new wallet, you need to use this name (so you will probably need to rename the old wallet too).
 
 ## Using the KDE Wallet to store ssh keys
 
@@ -195,7 +195,7 @@ Chromium has built in wallet integration. To enable it, run Chromium with the `-
 
 *   [Unlocking KWallet with PAM](https://www.dennogumi.org/2014/04/unlocking-kwallet-with-pam/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=411994](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=411994)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=413752](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=413752)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

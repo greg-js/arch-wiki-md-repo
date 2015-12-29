@@ -199,7 +199,13 @@ $ vdpauinfo
 
 ### Configuration
 
-**Note:** There may no need to export the `VDPAU_DRIVER`, since most (modern) applications and environments will find the VDPAU library automatically.
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Autodetection works at least if there is just one driver available. Note that the drivers are installed in `/usr/lib/vdpau/`. (Discuss in [Talk:VDPAU#](https://wiki.archlinux.org/index.php/Talk:VDPAU))
 
 The environment variable `VDPAU_DRIVER` determines the driver file used. See [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") for configuration details.
 
@@ -261,7 +267,7 @@ For more information, see the [PRIME](/index.php/PRIME "PRIME") wiki page.
 
 || [vlc](https://www.archlinux.org/packages/?name=vlc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413451](https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413451)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413761](https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413761)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

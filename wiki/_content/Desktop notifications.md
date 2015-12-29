@@ -17,9 +17,8 @@ Desktop notifications are small, passive popup dialogs that notify the user of p
 *   [2 Notification servers](#Notification_servers)
     *   [2.1 Built-in](#Built-in)
     *   [2.2 Standalone](#Standalone)
-*   [3 Tips and Tricks](#Tips_and_Tricks)
-*   [4 Usage in programming](#Usage_in_programming)
-*   [5 See also](#See_also)
+*   [3 Usage in programming](#Usage_in_programming)
+*   [4 See also](#See_also)
 
 ## Libnotify
 
@@ -88,15 +87,6 @@ You can run it manually using `/usr/lib/notification-daemon-1.0/notification-dae
 
 **Tip:** To configure xfce4-notifyd, run the following command: `xfce4-notifyd-config`.
 
-## Tips and Tricks
-
-Send desktop notification from background script (replace foobar with user running X)
-
-```
-  sudo -u foobar DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u foobar)/bus" notify-send -t 3000 "Backup" "starting..."
-
-```
-
 ## Usage in programming
 
 You can write your own libnotify display messages easily in many programming languages through GObject-Introspection or bindings, or you can simply use bash.
@@ -114,7 +104,10 @@ The following examples display simple a "Hello world" notification.
 notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-information
 ```
 
-**Tip:** An overview on the available icons can be found [here](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
+**Tip:**
+
+*   An overview on the available icons can be found [here](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
+*   To send desktop notification from a background script running as root (replace `_X_user_` with the user running X): `# sudo -u _X_user_ DISPLAY=:0 notify-send 'Hello world!' 'This is an example notification.'` 
 
 **Boo**
 
@@ -456,7 +449,7 @@ End Class
 *   [C example](http://milky.manishsinha.net/2009/03/29/working-with-libnotify/)
 *   [Python example](http://hashbang.fr/tutoriel-notify.html) (french article)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413404](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413404)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413772](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413772)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

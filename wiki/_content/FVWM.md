@@ -21,7 +21,7 @@ You can also install [fvwm-patched](https://aur.archlinux.org/packages/fvwm-patc
 
 ## Starting FVWM
 
-FVWM will automatically be listed in kdm/gdm in the sessions menu. Otherwise, add
+Select _FVWM_ from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Otherwise, add
 
 ```
 exec fvwm
@@ -73,7 +73,7 @@ When you start FVWM for the first time, you will get something that looks very b
 13.  [Fvwm Patches](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) in the [Internet Archive](http://archive.org/).
 14.  [An example of a Fvwm module written in Perl](http://petermblair.com/2009/02/my-first-fvwm-module/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=FVWM&oldid=404392](https://wiki.archlinux.org/index.php?title=FVWM&oldid=404392)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=FVWM&oldid=413756](https://wiki.archlinux.org/index.php?title=FVWM&oldid=413756)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

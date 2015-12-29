@@ -239,7 +239,7 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 *   [https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies) - earsplit's "bspwm for dummies"
 *   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - smlb's wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413023](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413023)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413751](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413751)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

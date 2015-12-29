@@ -23,7 +23,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [3 Вспомогательные программы](#.D0.92.D1.81.D0.BF.D0.BE.D0.BC.D0.BE.D0.B3.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B)
 *   [4 Автоматическое монтирование](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [4.1 По запросу](#.D0.9F.D0.BE_.D0.B7.D0.B0.D0.BF.D1.80.D0.BE.D1.81.D1.83)
-    *   [4.2 On boot](#On_boot)
+    *   [4.2 При загрузке](#.D0.9F.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
     *   [4.3 Secure user access](#Secure_user_access)
 *   [5 Options](#Options)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -147,32 +147,32 @@ user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_ne
 *   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/)<sup><small>AUR</small></sup> - использует AutoFS. Пользователям нужно включить ее при помощи `autosshfs-user`.
 *   [afuse](https://aur.archlinux.org/packages/afuse/)<sup><small>AUR</small></sup> - универсальный пользовательский автомонтировщик для файловых систем FUSE. Он также прекрасно работает и с sshfs. Не требуется никаких активаций со стороны пользователя. Пример: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
 
-### On boot
+### При загрузке
 
-An example on how to use sshfs to mount a remote filesystem through `/etc/[fstab](/index.php/Fstab "Fstab")`
+Пример того, как использовать sshfs для монтировании удаленной файловой системы при помощи `/etc/[fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")`
 
 ```
 USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs  defaults,_netdev  0  0
 
 ```
 
-Take for example the _fstab_ line
+Для примера возьмите линию из _fstab_
 
 ```
 llib@192.168.1.200:/home/llib/FAH  /media/FAH2  fuse.sshfs  defaults,_netdev  0  0
 
 ```
 
-The above will work automatically if you are using an SSH key for the user. See [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+Выше приведенная строка будет работать только в том случае, если вы используете SSH ключ. Смотрите [SSH keys](/index.php/SSH_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH keys (Русский)")
 
-If you want to use sshfs with multiple users:
+Если вы не единственный пользователь, использующий sshfs:
 
 ```
 user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_netdev    0  0
 
 ```
 
-Again, it is important to set the __netdev_ mount option to make sure the network is available before trying to mount.
+Очень важно убедится в том, что параметр монтирования __netdev_ установлен, чтобы быть уверенным в доступности сети перед монтированием.
 
 ### Secure user access
 
@@ -336,7 +336,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=411916](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=411916)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=413764](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=413764)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -16,7 +16,7 @@ The configuration file is located in `/etc/conf.d/jenkins`.
 
 You can now log into your jenkins at `http://localhost:8090`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jenkins&oldid=391153](https://wiki.archlinux.org/index.php?title=Jenkins&oldid=391153)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jenkins&oldid=413750](https://wiki.archlinux.org/index.php?title=Jenkins&oldid=413750)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

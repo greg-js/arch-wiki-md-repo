@@ -169,7 +169,7 @@ endif
 *   [Frequently asked questions](http://git.suckless.org/st/plain/FAQ)
 *   [Official git repository](http://git.suckless.org/st/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=412178](https://wiki.archlinux.org/index.php?title=St&oldid=412178)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=413749](https://wiki.archlinux.org/index.php?title=St&oldid=413749)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

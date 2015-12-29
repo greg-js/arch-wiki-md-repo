@@ -115,7 +115,7 @@ $ ln -s /etc/xdg/qtchooser/4.conf ~/.config/qtchooser/default.conf
 
 See forum discussion [[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1374434#p1374434)]
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netbeans&oldid=412136](https://wiki.archlinux.org/index.php?title=Netbeans&oldid=412136)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netbeans&oldid=413748](https://wiki.archlinux.org/index.php?title=Netbeans&oldid=413748)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
