@@ -265,19 +265,7 @@ To use a program over tor, configure it to use 127.0.0.1 or localhost as a SOCKS
 
 The Tor Project currently only supports web browsing with tor through the [Tor Browser Bundle](https://aur.archlinux.org/packages/?K=tor-browser-), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers, but this is [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser) by the Tor Project.
 
-**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) must be downloaded from the keyservers and added to the user gpg keyring with:
-
-```
-$ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 2E1AC68ED40814E0
-
-```
-
-or (alternative key server)
-
-```
-$ gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 2E1AC68ED40814E0
-
-```
+**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Import key](/index.php/GnuPG#Import_key "GnuPG").
 
 ### Firefox
 
@@ -930,7 +918,7 @@ Now save changes and run the daemon:
 *   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
 *   [List of tor pluggable transports for obfuscating tor's traffic](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=413774](https://wiki.archlinux.org/index.php?title=Tor&oldid=413774)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=413816](https://wiki.archlinux.org/index.php?title=Tor&oldid=413816)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

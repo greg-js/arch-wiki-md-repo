@@ -72,7 +72,7 @@ $ bundle install
 
 ```
 
-[Template:Подсказка](/index.php?title=Template:%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0&action=edit&redlink=1 "Template:Подсказка (страница не существует)")
+**Note:** Использование Ruby версии старше, чем 2.1.5, приведёт к ошибке установки гема `metasploit-concern`.
 
 ## Setting up the databaseНастраиваем базу данных
 
@@ -661,9 +661,9 @@ that probably means that the `postgresql` service is not running.
 *   [Metasploit wiki on GitHub](https://github.com/rapid7/metasploit-framework/wiki)
 *   [The Metasploit Book](http://en.wikibooks.org/wiki/Metasploit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=413591](https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=413591)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=413813](https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=413813)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")
+*   [Networking (Русский)](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)")
+*   [Security (Русский)](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)")

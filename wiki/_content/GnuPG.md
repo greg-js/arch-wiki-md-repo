@@ -277,12 +277,14 @@ $ gpg --import private.key
 
 ```
 
-*   Import key from a key server (if '--keyserver' is omitted, the default is used):
+*   Import key from a key server (if `--keyserver` is omitted, the default is used):
 
 ```
 $ gpg --keyserver pgp.mit.edu --recv-keys <keyid>
 
 ```
+
+**Tip:** An alternative key server is `pool.sks-keyservers.net`, see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 
 ### List keys
 
@@ -666,7 +668,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=412291](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=412291)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=413815](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=413815)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

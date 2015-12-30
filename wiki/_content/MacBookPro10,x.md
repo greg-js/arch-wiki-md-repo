@@ -34,11 +34,12 @@ This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retin
     *   [3.1 Wi-Fi](#Wi-Fi)
     *   [3.2 Graphics](#Graphics)
         *   [3.2.1 General Notes](#General_Notes)
-        *   [3.2.2 NVIDIA backlight](#NVIDIA_backlight)
-        *   [3.2.3 Switching to/from GPUs with gpu-switch](#Switching_to.2Ffrom_GPUs_with_gpu-switch)
-            *   [3.2.3.1 Switch to Intel integrated GPU and turn off discrete Nvidia GPU](#Switch_to_Intel_integrated_GPU_and_turn_off_discrete_Nvidia_GPU)
-            *   [3.2.3.2 Keeping the discrete GPU off at boot](#Keeping_the_discrete_GPU_off_at_boot)
-        *   [3.2.4 Graphic artifacting under b43-firmware](#Graphic_artifacting_under_b43-firmware)
+        *   [3.2.2 Nouveau backlight](#Nouveau_backlight)
+        *   [3.2.3 NVIDIA backlight](#NVIDIA_backlight)
+        *   [3.2.4 Switching to/from GPUs with gpu-switch](#Switching_to.2Ffrom_GPUs_with_gpu-switch)
+            *   [3.2.4.1 Switch to Intel integrated GPU and turn off discrete Nvidia GPU](#Switch_to_Intel_integrated_GPU_and_turn_off_discrete_Nvidia_GPU)
+            *   [3.2.4.2 Keeping the discrete GPU off at boot](#Keeping_the_discrete_GPU_off_at_boot)
+        *   [3.2.5 Graphic artifacting under b43-firmware](#Graphic_artifacting_under_b43-firmware)
     *   [3.3 Sound](#Sound)
     *   [3.4 Touchpad](#Touchpad)
 *   [4 What does not work (early August 2013, 3.10.3-1)](#What_does_not_work_.28early_August_2013.2C_3.10.3-1.29)
@@ -156,6 +157,22 @@ Since this device comes with a Retina (HiDPI) display, things may be really smal
 3.  Lower the screen resolution to 1680x1050 (works fine at least with nouveau drivers), but things look a little bit blurry, of course
 4.  Use xrandr scale option with nvidia driver to scale the resolution down to what you want. Take a look at: [http://linuxmacbookproretina.blogspot.no/](http://linuxmacbookproretina.blogspot.no/)
 5.  See [HiDPI](/index.php/HiDPI "HiDPI") for more tweaks.
+
+#### Nouveau backlight
+
+If you are using the open-source Nouveau drivers and the active GPU is the Nvidia card, backlight levels can be adjusted by echoing a value to a file (as root):
+
+```
+echo 500 > /sys/class/backlight/gmux_backlight/brightness
+
+```
+
+To bring the backlight to its maximum level:
+
+```
+echo $(cat /sys/class/backlight/gmux_backlight/max_brightness) > /sys/class/backlight/gmux_backlight/brightness
+
+```
 
 #### NVIDIA backlight
 
@@ -406,7 +423,7 @@ Here are a couple of interesting threads:
 
 *   A [Puppet](/index.php/Puppet "Puppet") module for installing and configuring Arch (optionally with KDE) on the MBP Retina 10,2, along with initial install instructions, is available at [https://github.com/jantman/puppet-archlinux-macbookretina](https://github.com/jantman/puppet-archlinux-macbookretina). It is updated quite frequently, and run daily on its author's laptop.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=412950](https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=412950)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=413825](https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=413825)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

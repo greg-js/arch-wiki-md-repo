@@ -4,85 +4,83 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-Unreal Engine 4 es la ultima versión de el motor de videojuegos de PC y consolas creado por la compañía Epic Games
+Unreal Engine 4 is the latest version of the videogame Engine Created By Epic Games
 
-El contenido de este articulo fue originalmente escrito en [Esta Página](https://wiki.unrealengine.com/Building_On_Linux) y adaptado específicamente para ArchLinux
+The content of this article was originally written on [this page](https://wiki.unrealengine.com/Building_On_Linux) and adapted specifically for ArchLinux
 
 * * *
 
 ## Contents
 
-*   [1 Requisitos Mínimos](#Requisitos_M.C3.ADnimos)
-*   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Desde AUR](#Desde_AUR)
-    *   [2.2 Compilar desde el Código Fuente](#Compilar_desde_el_C.C3.B3digo_Fuente)
-        *   [2.2.1 Satisfacer Dependencias](#Satisfacer_Dependencias)
-        *   [2.2.2 Obtener el código fuente](#Obtener_el_c.C3.B3digo_fuente)
-        *   [2.2.3 Preparar para la compilacion](#Preparar_para_la_compilacion)
-        *   [2.2.4 Compilar el código fuente](#Compilar_el_c.C3.B3digo_fuente)
-    *   [2.3 Ejecutar Unreal Engine 4](#Ejecutar_Unreal_Engine_4)
-    *   [2.4 Problemas Comunes](#Problemas_Comunes)
-        *   [2.4.1 Problemas de Compilacion](#Problemas_de_Compilacion)
+*   [1 Minimum requirements](#Minimum_requirements)
+*   [2 Installation](#Installation)
+    *   [2.1 From AUR](#From_AUR)
+    *   [2.2 Compile from Source Code](#Compile_from_Source_Code)
+        *   [2.2.1 Satisfy Dependencies](#Satisfy_Dependencies)
+        *   [2.2.2 Get the source code](#Get_the_source_code)
+        *   [2.2.3 Prepare to compile](#Prepare_to_compile)
+        *   [2.2.4 Compile the source code](#Compile_the_source_code)
+    *   [2.3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
+    *   [2.4 Common Issues](#Common_Issues)
+        *   [2.4.1 Compilation Problems](#Compilation_Problems)
 
-## Requisitos Mínimos
+## Minimum requirements
 
-PC o Mac
+PC or Mac
 
-CPU: Intel o AMD 2.5 GHz 4 nucleos o superior **64 Bits**
+Intel or Amd CPU@2.5GHz Quad Core **64 Bits**
 
-GPU: NVIDIA GeForce GTX 470 o AMD Radeon 6870 HD series
+GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
 
 RAM: 8 GB
 
-* * *
+## Installation
 
-## Instalación
+### From AUR
 
-### Desde AUR
-
-Para instalar desde AUR solo introduzca este comando en una terminal.
+To install from AUR only put the following command in a terminal:
 
 ```
 $ yaourt -S UE4
 
 ```
 
-Este comando instalara únicamente los **Binarios**.
+This command will automatically install the **binaries**.
 
-### Compilar desde el Código Fuente
+### Compile from Source Code
 
 * * *
 
-#### Satisfacer Dependencias
+#### Satisfy Dependencies
 
 ```
 $ sudo pacman -S clang35 mono dos2unix cmake
 
 ```
 
-En algunas ocasiones sera necesario re compilar clang o obtener un paquete pre compilado de clang que no use id.gold Si usó el comando anterior puede hacer lo siguiente
+Some users will have to either recompile their Clang or get a compiled package that does not use ld.gold
 
 ```
 $ mkdir ~/bin/ && cd ~/bin/ && ln -s /bin/ld.bfd ./ld.gold
 
 ```
 
-Después modifique el archivo .bashrc (generalmente oculto en /home) y agregue la linea siguiente:
+Then modify the .bashrc file (generally hidden in / home) and add the following line:
 
 ```
 export PATH=$HOME/bin:$PATH
 
 ```
 
-A continuación cierre todas las terminales abiertas para aplicar los cambios
+Then Close all the terminals to apply the changes
 
 * * *
 
-#### Obtener el código fuente
+#### Get the source code
 
-Primero necesita registrarse en la pagina de [Epic Games](https://www.unrealengine.com)y asociar su cuenta de GitHub a su cuenta de Epic Games
+First you need to register in the [Epic Games](https://www.unrealengine.com) Webpage and link your GitHub Account to your Epic Games Account
 
-Después descargue el código fuente de Unreal Engine 4 usando el siguiente comando
+Then Download the source code with the following command
 
 ```
 $ git clone -b release [https://github.com/EpicGames/UnrealEngine.git](https://github.com/EpicGames/UnrealEngine.git)
@@ -91,7 +89,7 @@ $ git clone -b release [https://github.com/EpicGames/UnrealEngine.git](https://g
 
 * * *
 
-#### Preparar para la compilacion
+#### Prepare to compile
 
 ```
 $ cd UnrealEngine
@@ -100,13 +98,11 @@ $ ./GenerateProjectFiles.sh
 
 ```
 
-Estos scripts descargaran ciertas dependencias de un tamaño aproximado de 3.5 GB
-
 * * *
 
-#### Compilar el código fuente
+#### Compile the source code
 
-Para compilar el código fuente ejecute los siguientes comandos:
+To compile the source Code Execute the following commands:
 
 ```
 $ make UE4Editor UE4Game UnrealPak CrashReportClient ShaderCompileWorker UnrealLightmass
@@ -114,11 +110,11 @@ $ make -j1 ShaderCompileWorker
 
 ```
 
-Este proceso tomara bastante tiempo, dependerá de la capacidad de procesamiento de su Ordenador
+This process will take a long time.
 
 * * *
 
-### Ejecutar Unreal Engine 4
+### Run Unreal Engine 4
 
 ```
 $cd Engine/Binaries/Linux
@@ -126,17 +122,17 @@ $./UE4Editor
 
 ```
 
-### Problemas Comunes
+### Common Issues
 
 * * *
 
-#### Problemas de Compilacion
+#### Compilation Problems
 
-Si surgen problemas al momento de compilar el editor puede intentar compilarlo usando el Perfil "Debug"
+If the compilation fails you should try building the Editor using the Debug profile
 
 ```
 $ make UE4Editor-Linux-Debug
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413804](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413804)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413829](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413829)"

@@ -193,7 +193,7 @@ If the login screen is created again and again and unresponsive, you are trying 
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413719](https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413719)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413831](https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413831)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -340,14 +340,6 @@ $ sh vncget.sh all
 
 ### HiDPI Mode
 
-*   [Source: Spotify Product Forum](https://community.spotify.com/t5/Help-Desktop-Linux-Windows-Web/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272): Occasionally updated with potential solutions
-
-**Note:** This feature is currently only available in the [spotify-beta](https://aur.archlinux.org/packages/spotify-beta/)<sup><small>AUR</small></sup> package
-
-[spotify](https://aur.archlinux.org/packages/spotify/)<sup><small>AUR</small></sup> version tested: 0.9.17.8-1
-
-[spotify-beta](https://aur.archlinux.org/packages/spotify-beta/)<sup><small>AUR</small></sup> version tested: 1.0.14.124-2
-
 As the current Spotify build is not DPI aware, the amount to scale the interface by can be specified using the terminal command:
 
 ```
@@ -355,7 +347,7 @@ $ spotify --force-device-scale-factor=X
 
 ```
 
-where X is the amount to scale the interface by, e.g 200.
+where X is the amount to scale the interface by, e.g 2.
 
 This change can be added to the `spotify.desktop` file, located in the `/usr/share/applications` directory, in order to apply the scaling when launching from the desktop.
 
@@ -497,7 +489,7 @@ So your full launch path should look something like this:
 *   [http://www.spotify.com/int/help/faq/wine/](http://www.spotify.com/int/help/faq/wine/)
 *   [http://www.spotify.com/int/download/previews/](http://www.spotify.com/int/download/previews/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=410012](https://wiki.archlinux.org/index.php?title=Spotify&oldid=410012)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=413806](https://wiki.archlinux.org/index.php?title=Spotify&oldid=413806)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

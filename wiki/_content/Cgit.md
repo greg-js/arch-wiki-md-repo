@@ -129,6 +129,8 @@ This alternative lighttpd configuration will serve Cgit on a sub-domain like git
 
 The following configuration uses [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) and will serve Cgit on a subdomain like `git.example.com`.
 
+[Start and enable](/index.php/Start "Start") [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap).
+
 Configure Nginx:
 
  `/etc/nginx/nginx.conf` 
@@ -269,8 +271,9 @@ repo.url=MyRepo
 repo.path=/srv/git/MyRepo.git
 repo.desc=This is my git repository
 
+# For a non-bare repository
 repo.url=MyOtherRepo
-repo.path=/srv/git/MyOtherRepo.git
+repo.path=/srv/git/MyOtherRepo/.git
 repo.desc=That's my other git repository
 
 ```
@@ -289,7 +292,7 @@ enable-git-config=1
 
 ```
 
-For detailed documentation about the available settings in this configuration file, please see the manpage (`man cgitrc`).
+For detailed documentation about the available settings in this configuration file, please see the manpage ({{ic|man cgitrc}).
 
 ### Syntax highlighting
 
@@ -375,7 +378,7 @@ If you have enabled _scan-path_, again, the order in cgitrc matters. _source-fil
 *   [http://git.zx2c4.com/cgit/tree/README](http://git.zx2c4.com/cgit/tree/README)
 *   [http://git.zx2c4.com/cgit/tree/cgitrc.5.txt](http://git.zx2c4.com/cgit/tree/cgitrc.5.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=398886](https://wiki.archlinux.org/index.php?title=Cgit&oldid=398886)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=413826](https://wiki.archlinux.org/index.php?title=Cgit&oldid=413826)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
