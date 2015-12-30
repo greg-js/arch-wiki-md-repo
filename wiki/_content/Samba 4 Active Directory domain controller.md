@@ -56,12 +56,15 @@ Setup the hosts file with the hostname and domain. The domain name used here—*
 #
 
 #<ip-address>	<hostname.domain.org>		<hostname>
-127.0.0.1	server.internal.domain.com	localhost server
-::1		server.internal.domain.com	localhost server
+127.0.0.1	localhost.localdomain		localhost
+::1		localhost.localdomain		localhost
+xxx.xxx.xxx.xxx	server.internal.domain.com	server
 
 # End of file
 
 ```
+
+The **xxx.xxx.xxx.xxx** represents the preconfigured static IP address.
 
 ## Provisioning
 
@@ -584,7 +587,7 @@ If you have made it this far without any unexpected output from the tests above,
 
 [OpenChange server](/index.php/OpenChange_server "OpenChange server") - The OpenChange project provides a Microsoft Exchange compatible mail server using only open source software.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413784](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413784)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413792](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413792)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

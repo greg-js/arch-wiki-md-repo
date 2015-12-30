@@ -578,14 +578,22 @@ pactl set-sink-mute 0 toggle
 
 ### Play sound from a non-interactive shell (systemd service, cron...)
 
-replace foobar with the user running pulseaudio
+Replace `_user_` with the user running PulseAudio:
 
 ```
- machinectl shell .host --uid=foobar /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+# machinectl shell .host --uid=_user_ /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
 ```
 
 ### X11 Bell Events
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** References to current date ("currently") are meaningless on the wiki and should be replaced with an exact version of the affected package. References to known bug reports should be provided. (Discuss in [Talk:PulseAudio#](https://wiki.archlinux.org/index.php/Talk:PulseAudio))
 
 To get pulseaudio to handle X11 bell events, uncomment the following two lines in `/etc/pulse/default.pa`:
 
@@ -595,14 +603,16 @@ load-module module-x11-bell sample=x11-bell
 
 ```
 
-It is impossible to socket activation to handle X11 bell events, so to get them working right after login, start pulseaudio right away using whatever startup implementation your DE supports. There is currently a race condition bug within pulseaudio involving socket activation, so to get pulseaudio starting properly, disable socket activation (see [#Running](#Running).) To adjust the volume of the X11 bell, do the following:
+It is impossible to socket activation to handle X11 bell events, so to get them working right after login, start pulseaudio right away using whatever startup implementation your DE supports. There is currently a race condition bug within pulseaudio involving socket activation, so to get pulseaudio starting properly, disable socket activation (see [#Running](#Running).)
+
+To adjust the volume of the X11 bell, do the following:
 
 ```
 $ xset b 100
 
 ```
 
-100 is a percentage. This requires the `xorg-xset` package. This isn't permanent so consider running this command on startup using whatever startup implementation your DE supports.
+100 is a percentage. This requires the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package. See [Autostarting](/index.php/Autostarting "Autostarting") for a permanent solution.
 
 ## Troubleshooting
 
@@ -614,7 +624,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413173](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413173)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413790](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413790)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -10,7 +10,9 @@ Because of the nature of folder-based backup, SnapRAID is more flexible and simp
 
 SnapRAID works by storing parity of all folders to another disk. The destination disk which the parity file is stored on should be the largest. Other disks do not have this restriction and can be of any size. Summing up, SnapRAID is suitable for media centers where files are usually large and rarely changed. SnapRAID is highly flexible and can be configured to add/remove disk at any time. Also, more than one redundant disks are supported.
 
-**Tip:** If you want to combine folders into a larger one without setting up disk raid, the FUSE-based MHDDFS is your best choice. Other ways such as AUFS may be considered, but often involve kernel patching or unsupported or outdated software.
+**Tip:** If you want to combine folders into a larger one without setting up disk raid, the FUSE-based MHDDFS is one option. Other ways such as AUFS may be considered, but often involve kernel patching or unsupported or outdated software.
+
+**Tip:** [mergerfs](https://aur.archlinux.org/packages/mergerfs/) is similar to mhddfs, but more recently updated and has more choices for drive-selection policies. It also has excellent speeds.
 
 ## Contents
 
@@ -108,7 +110,7 @@ To begin recovery
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=338531](https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=338531)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=413789](https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=413789)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
