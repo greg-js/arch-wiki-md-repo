@@ -80,8 +80,6 @@ This article covers configuration specific to this laptop's hardware.
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 ACPI](#ACPI)
         *   [2.1.1 Laptop freezes on boot](#Laptop_freezes_on_boot)
-    *   [2.2 Video](#Video)
-        *   [2.2.1 Blank screen on boot](#Blank_screen_on_boot)
 
 ## Hardware
 
@@ -98,6 +96,8 @@ For X.org drivers, [install](/index.php/Install "Install") [xf86-video-intel](ht
 ### Touchpad
 
 Install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+
+**Note:** FocalTech touchpads are only properly supported in Linux 4.x.
 
 ### Wireless NIC
 
@@ -117,13 +117,7 @@ Set the BIOS setting `OS Selection` in the `Advanced` menu to `Windows 7`.
 
 It is possible to successfully boot by either disabling ACPI or overriding the DSDT, but some devices might no longer operate.
 
-### Video
-
-#### Blank screen on boot
-
-Proceed as usual: enter your encryption passphrase, simply wait, etc.—the issue should “resolve” itself momentarily.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_X553MA&oldid=406649](https://wiki.archlinux.org/index.php?title=ASUS_X553MA&oldid=406649)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_X553MA&oldid=413851](https://wiki.archlinux.org/index.php?title=ASUS_X553MA&oldid=413851)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

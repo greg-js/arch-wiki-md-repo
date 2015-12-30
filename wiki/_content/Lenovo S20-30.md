@@ -16,28 +16,31 @@ This is one of the products from the [Lenovo S-series](http://shop.lenovo.com/de
 
 *   [1 Hardware specifications](#Hardware_specifications)
     *   [1.1 PCI devices](#PCI_devices)
+    *   [1.2 USB devices](#USB_devices)
 *   [2 Configuration](#Configuration)
     *   [2.1 BIOS](#BIOS)
     *   [2.2 Wireless](#Wireless)
-    *   [2.3 Graphics](#Graphics)
-    *   [2.4 Backlight](#Backlight)
-    *   [2.5 Audio](#Audio)
-    *   [2.6 SD Card Reader](#SD_Card_Reader)
-    *   [2.7 Webcam](#Webcam)
-    *   [2.8 Changing fan mode](#Changing_fan_mode)
+    *   [2.3 Bluetooth](#Bluetooth)
+    *   [2.4 Graphics](#Graphics)
+    *   [2.5 Backlight](#Backlight)
+    *   [2.6 Audio](#Audio)
+    *   [2.7 SD Card Reader](#SD_Card_Reader)
+    *   [2.8 Webcam](#Webcam)
+    *   [2.9 Changing fan mode](#Changing_fan_mode)
 
 ## Hardware specifications
 
 *   CPU: [Intel Celeron N2830](http://en.wikipedia.org/wiki/Silvermont#Mobile_processors_.28Bay_Trail-M.29) (2x 2.16 GHz, turbo 2.41 GHz)
 *   Memory: 4048 MB internal - can not be changed
 *   WiFi: Broadcom BCM43142
+*   Bluetooth: Broadcom BCM43142A0
 *   Hard-Drive: 320GB (Seagate)
 *   Optical Drive: None
 *   Integrated Graphics: Intel HD Graphics i915 (4 EU, 313 MHz, turbo 750 MHz)
 *   Sound: Intel HD Audio
 *   Screen: 11,6" LCD (1366x768, anti-glare)
 *   SD Card Reader: Realtek RST5129
-*   Webcam: Lenovo EasyCam
+*   Webcam: Lenovo (Acer) EasyCamera
 
  `inxi -F -M` 
 
@@ -84,6 +87,20 @@ Info:      Processes: 105 Uptime: 2:08 Memory: 852.2/3843.1MB Client: Shell (zsh
 
 ```
 
+### USB devices
+
+ `lsusb` 
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 005: ID 0bda:0129 Realtek Semiconductor Corp. RTS5129 Card Reader Controller
+Bus 001 Device 004: ID 105b:e065 Foxconn International, Inc. BCM43142A0 Bluetooth module
+Bus 001 Device 003: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 001 Device 002: ID 5986:054a Acer, Inc 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
 ## Configuration
 
 ### BIOS
@@ -93,6 +110,10 @@ The BIOS and the boot menu can be accessed by using the _alternative_ power butt
 ### Wireless
 
 Works after installing the proprietary driver module [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup>, which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
+
+### Bluetooth
+
+The BCM43142A0 Bluetooth module should be recognized by the next kernel version right after 4.2.5\. More information can be found in the commit message at [kernel.org](https://git.kernel.org/cgit/linux/kernel/git/bluetooth/bluetooth.git/commit/drivers/bluetooth/btusb.c?id=2faf71ce90782d02e1710c12a19a2084fbbec5cc) and in the [Bluetooth](/index.php/Bluetooth#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device "Bluetooth") article.
 
 ### Graphics
 
@@ -147,7 +168,7 @@ The fan mode can be changed with `echo 'X'>/sys/bus/platform/drivers/ideapad_acp
 
 In fan cooling mode 2, the fan starts, if the CPU temperature reaches 35°C and stops after the temperature is lower than 31°C.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=376760](https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=376760)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=413854](https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=413854)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

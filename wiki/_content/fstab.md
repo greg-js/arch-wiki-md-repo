@@ -10,6 +10,7 @@ Related articles
 *   [File systems](/index.php/File_systems "File systems")
 *   [Mount](/index.php/Mount "Mount")
 *   [tmpfs](/index.php/Tmpfs "Tmpfs")
+*   [swap](/index.php/Swap "Swap")
 
 The [/etc/fstab](https://en.wikipedia.org/wiki/Fstab "wikipedia:Fstab") file can be used to define how disk partitions, various other block devices, or remote filesystems should be mounted into the filesystem.
 
@@ -293,7 +294,7 @@ Sometimes programs or users cannot access one specific directory due to insuffic
 *   [30x Faster Web-Site Speed](http://www.askapache.com/web-hosting/super-speed-secrets.html) (Detailed tmpfs)
 *   [Adding Samba shares to /etc/fstab](/index.php/Samba#Add_Share_to_.2Fetc.2Ffstab "Samba")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fstab&oldid=413359](https://wiki.archlinux.org/index.php?title=Fstab&oldid=413359)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fstab&oldid=413878](https://wiki.archlinux.org/index.php?title=Fstab&oldid=413878)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

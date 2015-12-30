@@ -39,7 +39,10 @@ This article details more advanced Compiz configuration. It is assumed that you 
 
 ### Configuration backends
 
-**Note:** Depending on what packages you have installed, not all of the Compiz backends may be available.
+**Note:**
+
+*   Depending on what packages you have installed, not all of the Compiz backends may be available.
+*   Support for the GConf backend was removed with [revision 3991](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3991).
 
 By default, Compiz stores its configuration settings in a plain text file `~/.config/compiz-1/compizconfig/Default.ini`. In CCSM this is known as _Flat-file Configuration Backend_.
 
@@ -378,7 +381,7 @@ $ gsettings set org.compiz.core:/org/compiz/profiles/Default/plugins/core/ activ
 *   [Compiz Wiki](http://wiki.compiz.org/Decorators/Emerald), (wiki is unmaintained)
 *   [Compiz-Themes.org](http://compiz-themes.org/), including Emerald themes, Metacity themes, Kwin themes and more
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz_configuration&oldid=399176](https://wiki.archlinux.org/index.php?title=Compiz_configuration&oldid=399176)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz_configuration&oldid=413860](https://wiki.archlinux.org/index.php?title=Compiz_configuration&oldid=413860)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

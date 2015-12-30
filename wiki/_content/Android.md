@@ -86,7 +86,7 @@ Before developing Android applications, you need to install the Android SDK, whi
 2.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)<sup><small>AUR</small></sup>
 3.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)<sup><small>AUR</small></sup>
 
-Android-sdk will be installed on `/opt/android-sdk`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to install/update/modify anything on /opt/android-sdk. However, if you intend to use it as a regular user, create an android sdk users group (or use any group name you want):
+Android-sdk will be installed on `/opt/android-sdk`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
 
 ```
 # groupadd sdkusers
@@ -647,7 +647,7 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=413573](https://wiki.archlinux.org/index.php?title=Android&oldid=413573)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=413856](https://wiki.archlinux.org/index.php?title=Android&oldid=413856)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -266,6 +266,7 @@ Create the override unit:
  `systemctl edit slapd.service` 
 
 ```
+[Service]
 ExecStart=
 ExecStart=/usr/bin/slapd -u ldap -g ldap -h "ldaps:///"
 ```
@@ -325,7 +326,7 @@ to allow slapd write access to its data directory as the user "ldap".
 *   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication")
 *   [apachedirectorystudio](https://aur.archlinux.org/packages/apachedirectorystudio/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is an Eclipse-based LDAP viewer. Works perfect with OpenLDAP installations.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=393540](https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=393540)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=413876](https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=413876)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -346,6 +346,8 @@ If you have issues with hourly/daily/weekly snapshots, the most common cause for
 
 If you get an 'IO Error' when trying to create a snapshot please make sure that the [.snapshots](https://bbs.archlinux.org/viewtopic.php?id=164404) directory associated to the subvolume you are trying to snapshot is a subvolume by itself.
 
+Another possible cause is that .snapshots directory doesn't have root as an owner (You will find `Btrfs.cc(openInfosDir):219 - .snapshots must have owner root` in the `/var/log/snapper.log`).
+
 ## Caveats
 
 ### Snapshots of root filesystem
@@ -361,7 +363,7 @@ By default, `updatedb` will also index the `.snapshots` directory created by sna
 
  `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Snapper&oldid=409091](https://wiki.archlinux.org/index.php?title=Snapper&oldid=409091)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Snapper&oldid=413855](https://wiki.archlinux.org/index.php?title=Snapper&oldid=413855)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

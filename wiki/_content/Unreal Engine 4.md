@@ -20,9 +20,9 @@ The content of this article was originally written on [this page](https://wiki.u
         *   [2.2.2 Get the source code](#Get_the_source_code)
         *   [2.2.3 Prepare to compile](#Prepare_to_compile)
         *   [2.2.4 Compile the source code](#Compile_the_source_code)
-    *   [2.3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
-    *   [2.4 Common Issues](#Common_Issues)
-        *   [2.4.1 Compilation Problems](#Compilation_Problems)
+*   [3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
+*   [4 Common Issues](#Common_Issues)
+    *   [4.1 Compilation Problems](#Compilation_Problems)
 
 ## Minimum requirements
 
@@ -114,7 +114,7 @@ This process will take a long time.
 
 * * *
 
-### Run Unreal Engine 4
+## Run Unreal Engine 4
 
 ```
 $cd Engine/Binaries/Linux
@@ -122,7 +122,7 @@ $./UE4Editor
 
 ```
 
-### Common Issues
+## Common Issues
 
 * * *
 
@@ -135,4 +135,4 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413829](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413829)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413877](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413877)"
