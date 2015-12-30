@@ -94,7 +94,27 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8472](https://access.redhat.com/security/cve/CVE-2015-8472) [[1]](http://seclists.org/oss-sec/2015/q4/439)</td>
+<td>[[1]](http://article.gmane.org/gmane.comp.security.oss.general/18466)</td>
+
+<td>[rtmpdump](https://www.archlinux.org/packages/?name=rtmpdump)</td>
+
+<td>2015-12-23</td>
+
+<td><= 20140918-2</td>
+
+<td> ?</td>
+
+<td> ?</td>
+
+<td>Vulnerable [FS#47564](https://bugs.archlinux.org/task/47564)</td>
+
+<td>[Template:ASA](/index.php?title=Template:ASA&action=edit&redlink=1 "Template:ASA (page does not exist)")</td>
+
+</tr>
+
+<tr>
+
+<td>[CVE-2015-8472](https://access.redhat.com/security/cve/CVE-2015-8472) [[2]](http://seclists.org/oss-sec/2015/q4/439)</td>
 
 <td>[libpng](https://www.archlinux.org/packages/?name=libpng)</td>
 
@@ -114,7 +134,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8459](https://access.redhat.com/security/cve/CVE-2015-8459) [CVE-2015-8460](https://access.redhat.com/security/cve/CVE-2015-8460) [CVE-2015-8634](https://access.redhat.com/security/cve/CVE-2015-8634) [CVE-2015-8635](https://access.redhat.com/security/cve/CVE-2015-8635) [CVE-2015-8636](https://access.redhat.com/security/cve/CVE-2015-8636) [CVE-2015-8638](https://access.redhat.com/security/cve/CVE-2015-8638) [CVE-2015-8639](https://access.redhat.com/security/cve/CVE-2015-8639) [CVE-2015-8640](https://access.redhat.com/security/cve/CVE-2015-8640) [CVE-2015-8641](https://access.redhat.com/security/cve/CVE-2015-8641) [CVE-2015-8642](https://access.redhat.com/security/cve/CVE-2015-8642) [CVE-2015-8643](https://access.redhat.com/security/cve/CVE-2015-8643) [CVE-2015-8644](https://access.redhat.com/security/cve/CVE-2015-8644) [CVE-2015-8645](https://access.redhat.com/security/cve/CVE-2015-8645) [CVE-2015-8646](https://access.redhat.com/security/cve/CVE-2015-8646) [CVE-2015-8647](https://access.redhat.com/security/cve/CVE-2015-8647) [CVE-2015-8648](https://access.redhat.com/security/cve/CVE-2015-8648) [CVE-2015-8649](https://access.redhat.com/security/cve/CVE-2015-8649) [CVE-2015-8650](https://access.redhat.com/security/cve/CVE-2015-8650) [CVE-2015-8651](https://access.redhat.com/security/cve/CVE-2015-8651) [[2]](https://helpx.adobe.com/security/products/flash-player/apsb16-01.html)</td>
+<td>[CVE-2015-8459](https://access.redhat.com/security/cve/CVE-2015-8459) [CVE-2015-8460](https://access.redhat.com/security/cve/CVE-2015-8460) [CVE-2015-8634](https://access.redhat.com/security/cve/CVE-2015-8634) [CVE-2015-8635](https://access.redhat.com/security/cve/CVE-2015-8635) [CVE-2015-8636](https://access.redhat.com/security/cve/CVE-2015-8636) [CVE-2015-8638](https://access.redhat.com/security/cve/CVE-2015-8638) [CVE-2015-8639](https://access.redhat.com/security/cve/CVE-2015-8639) [CVE-2015-8640](https://access.redhat.com/security/cve/CVE-2015-8640) [CVE-2015-8641](https://access.redhat.com/security/cve/CVE-2015-8641) [CVE-2015-8642](https://access.redhat.com/security/cve/CVE-2015-8642) [CVE-2015-8643](https://access.redhat.com/security/cve/CVE-2015-8643) [CVE-2015-8644](https://access.redhat.com/security/cve/CVE-2015-8644) [CVE-2015-8645](https://access.redhat.com/security/cve/CVE-2015-8645) [CVE-2015-8646](https://access.redhat.com/security/cve/CVE-2015-8646) [CVE-2015-8647](https://access.redhat.com/security/cve/CVE-2015-8647) [CVE-2015-8648](https://access.redhat.com/security/cve/CVE-2015-8648) [CVE-2015-8649](https://access.redhat.com/security/cve/CVE-2015-8649) [CVE-2015-8650](https://access.redhat.com/security/cve/CVE-2015-8650) [CVE-2015-8651](https://access.redhat.com/security/cve/CVE-2015-8651) [[3]](https://helpx.adobe.com/security/products/flash-player/apsb16-01.html)</td>
 
 <td>[flashplugin](https://www.archlinux.org/packages/?name=flashplugin) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)</td>
 
@@ -134,7 +154,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-7554](https://access.redhat.com/security/cve/CVE-2015-7554) [CVE-2015-8683](https://access.redhat.com/security/cve/CVE-2015-8683) [[3]](http://seclists.org/oss-sec/2015/q4/584) [[4]](http://seclists.org/oss-sec/2015/q4/590)</td>
+<td>[CVE-2015-7554](https://access.redhat.com/security/cve/CVE-2015-7554) [CVE-2015-8683](https://access.redhat.com/security/cve/CVE-2015-8683) [[4]](http://seclists.org/oss-sec/2015/q4/584) [[5]](http://seclists.org/oss-sec/2015/q4/590)</td>
 
 <td>[libtiff](https://www.archlinux.org/packages/?name=libtiff)</td>
 
@@ -148,7 +168,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-7201](https://access.redhat.com/security/cve/CVE-2015-7201) [CVE-2015-7205](https://access.redhat.com/security/cve/CVE-2015-7205) [CVE-2015-7212](https://access.redhat.com/security/cve/CVE-2015-7212) [CVE-2015-7213](https://access.redhat.com/security/cve/CVE-2015-7213) [CVE-2015-7214](https://access.redhat.com/security/cve/CVE-2015-7214) [[5]](https://www.mozilla.org/en-US/security/known-vulnerabilities/thunderbird/#thunderbird38.5)</td>
+<td>[CVE-2015-7201](https://access.redhat.com/security/cve/CVE-2015-7201) [CVE-2015-7205](https://access.redhat.com/security/cve/CVE-2015-7205) [CVE-2015-7212](https://access.redhat.com/security/cve/CVE-2015-7212) [CVE-2015-7213](https://access.redhat.com/security/cve/CVE-2015-7213) [CVE-2015-7214](https://access.redhat.com/security/cve/CVE-2015-7214) [[6]](https://www.mozilla.org/en-US/security/known-vulnerabilities/thunderbird/#thunderbird38.5)</td>
 
 <td>[thunderbird](https://www.archlinux.org/packages/?name=thunderbird)</td>
 
@@ -168,7 +188,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8612](https://access.redhat.com/security/cve/CVE-2015-8612) [[6]](http://seclists.org/oss-sec/2015/q4/541)</td>
+<td>[CVE-2015-8612](https://access.redhat.com/security/cve/CVE-2015-8612) [[7]](http://seclists.org/oss-sec/2015/q4/541)</td>
 
 <td>[blueman](https://www.archlinux.org/packages/?name=blueman)</td>
 
@@ -182,7 +202,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8659](https://access.redhat.com/security/cve/CVE-2015-8659) [[7]](http://seclists.org/oss-sec/2015/q4/576)</td>
+<td>[CVE-2015-8659](https://access.redhat.com/security/cve/CVE-2015-8659) [[8]](http://seclists.org/oss-sec/2015/q4/576)</td>
 
 <td>[nghttp2](https://www.archlinux.org/packages/?name=nghttp2)</td>
 
@@ -202,7 +222,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-7555](https://access.redhat.com/security/cve/CVE-2015-7555) [[8]](http://seclists.org/oss-sec/2015/q4/548)</td>
+<td>[CVE-2015-7555](https://access.redhat.com/security/cve/CVE-2015-7555) [[9]](http://seclists.org/oss-sec/2015/q4/548)</td>
 
 <td>[giflib](https://www.archlinux.org/packages/?name=giflib)</td>
 
@@ -216,7 +236,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-7557](https://access.redhat.com/security/cve/CVE-2015-7557) [CVE-2015-7558](https://access.redhat.com/security/cve/CVE-2015-7558) [[9]](http://seclists.org/oss-sec/2015/q4/549)</td>
+<td>[CVE-2015-7557](https://access.redhat.com/security/cve/CVE-2015-7557) [CVE-2015-7558](https://access.redhat.com/security/cve/CVE-2015-7558) [[10]](http://seclists.org/oss-sec/2015/q4/549)</td>
 
 <td>[librsvg](https://www.archlinux.org/packages/?name=librsvg)</td>
 
@@ -230,7 +250,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-2141](https://access.redhat.com/security/cve/CVE-2015-2141) [[10]](https://www.cryptopp.com/release563.html)</td>
+<td>[CVE-2015-2141](https://access.redhat.com/security/cve/CVE-2015-2141) [[11]](https://www.cryptopp.com/release563.html)</td>
 
 <td>[crypto++](https://www.archlinux.org/packages/?name=crypto%2B%2B)</td>
 
@@ -244,7 +264,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8622](https://access.redhat.com/security/cve/CVE-2015-8622) [CVE-2015-8623](https://access.redhat.com/security/cve/CVE-2015-8623) [CVE-2015-8624](https://access.redhat.com/security/cve/CVE-2015-8624) [CVE-2015-8625](https://access.redhat.com/security/cve/CVE-2015-8625) [CVE-2015-8626](https://access.redhat.com/security/cve/CVE-2015-8626) [CVE-2015-8627](https://access.redhat.com/security/cve/CVE-2015-8627) [CVE-2015-8628](https://access.redhat.com/security/cve/CVE-2015-8628) [[11]](http://seclists.org/oss-sec/2015/q4/552)</td>
+<td>[CVE-2015-8622](https://access.redhat.com/security/cve/CVE-2015-8622) [CVE-2015-8623](https://access.redhat.com/security/cve/CVE-2015-8623) [CVE-2015-8624](https://access.redhat.com/security/cve/CVE-2015-8624) [CVE-2015-8625](https://access.redhat.com/security/cve/CVE-2015-8625) [CVE-2015-8626](https://access.redhat.com/security/cve/CVE-2015-8626) [CVE-2015-8627](https://access.redhat.com/security/cve/CVE-2015-8627) [CVE-2015-8628](https://access.redhat.com/security/cve/CVE-2015-8628) [[12]](http://seclists.org/oss-sec/2015/q4/552)</td>
 
 <td>[mediawiki](https://www.archlinux.org/packages/?name=mediawiki)</td>
 
@@ -264,7 +284,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8614](https://access.redhat.com/security/cve/CVE-2015-8614) [[12]](http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=3557)</td>
+<td>[CVE-2015-8614](https://access.redhat.com/security/cve/CVE-2015-8614) [[13]](http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=3557)</td>
 
 <td>[claws-mail](https://www.archlinux.org/packages/?name=claws-mail)</td>
 
@@ -298,7 +318,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[[13]](https://blog.fuzzing-project.org/32-Out-of-bounds-read-in-OpenVPN.html)</td>
+<td>[[14]](https://blog.fuzzing-project.org/32-Out-of-bounds-read-in-OpenVPN.html)</td>
 
 <td>[openvpn](https://www.archlinux.org/packages/?name=openvpn)</td>
 
@@ -318,7 +338,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8549](https://access.redhat.com/security/cve/CVE-2015-8549) [[14]](http://www.ocert.org/advisories/ocert-2015-011.html)</td>
+<td>[CVE-2015-8549](https://access.redhat.com/security/cve/CVE-2015-8549) [[15]](http://www.ocert.org/advisories/ocert-2015-011.html)</td>
 
 <td>[python2-pyamf](https://www.archlinux.org/packages/?name=python2-pyamf)</td>
 
@@ -338,7 +358,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-7551](https://access.redhat.com/security/cve/CVE-2015-7551) [[15]](https://www.ruby-lang.org/en/news/2015/12/16/unsafe-tainted-string-usage-in-fiddle-and-dl-cve-2015-7551/)</td>
+<td>[CVE-2015-7551](https://access.redhat.com/security/cve/CVE-2015-7551) [[16]](https://www.ruby-lang.org/en/news/2015/12/16/unsafe-tainted-string-usage-in-fiddle-and-dl-cve-2015-7551/)</td>
 
 <td>[ruby](https://www.archlinux.org/packages/?name=ruby)</td>
 
@@ -358,7 +378,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-7201](https://access.redhat.com/security/cve/CVE-2015-7201) [CVE-2015-7202](https://access.redhat.com/security/cve/CVE-2015-7202) [CVE-2015-7203](https://access.redhat.com/security/cve/CVE-2015-7203) [CVE-2015-7204](https://access.redhat.com/security/cve/CVE-2015-7204) [CVE-2015-7205](https://access.redhat.com/security/cve/CVE-2015-7205) [CVE-2015-7207](https://access.redhat.com/security/cve/CVE-2015-7207) [CVE-2015-7208](https://access.redhat.com/security/cve/CVE-2015-7208) [CVE-2015-7210](https://access.redhat.com/security/cve/CVE-2015-7210) [CVE-2015-7211](https://access.redhat.com/security/cve/CVE-2015-7211) [CVE-2015-7212](https://access.redhat.com/security/cve/CVE-2015-7212) [CVE-2015-7213](https://access.redhat.com/security/cve/CVE-2015-7213) [CVE-2015-7214](https://access.redhat.com/security/cve/CVE-2015-7214) [CVE-2015-7215](https://access.redhat.com/security/cve/CVE-2015-7215) [CVE-2015-7216](https://access.redhat.com/security/cve/CVE-2015-7216) [CVE-2015-7217](https://access.redhat.com/security/cve/CVE-2015-7217) [CVE-2015-7218](https://access.redhat.com/security/cve/CVE-2015-7218) [CVE-2015-7219](https://access.redhat.com/security/cve/CVE-2015-7219) [CVE-2015-7220](https://access.redhat.com/security/cve/CVE-2015-7220) [CVE-2015-7221](https://access.redhat.com/security/cve/CVE-2015-7221) [CVE-2015-7222](https://access.redhat.com/security/cve/CVE-2015-7222) [CVE-2015-7223](https://access.redhat.com/security/cve/CVE-2015-7223) [[16]](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox43)</td>
+<td>[CVE-2015-7201](https://access.redhat.com/security/cve/CVE-2015-7201) [CVE-2015-7202](https://access.redhat.com/security/cve/CVE-2015-7202) [CVE-2015-7203](https://access.redhat.com/security/cve/CVE-2015-7203) [CVE-2015-7204](https://access.redhat.com/security/cve/CVE-2015-7204) [CVE-2015-7205](https://access.redhat.com/security/cve/CVE-2015-7205) [CVE-2015-7207](https://access.redhat.com/security/cve/CVE-2015-7207) [CVE-2015-7208](https://access.redhat.com/security/cve/CVE-2015-7208) [CVE-2015-7210](https://access.redhat.com/security/cve/CVE-2015-7210) [CVE-2015-7211](https://access.redhat.com/security/cve/CVE-2015-7211) [CVE-2015-7212](https://access.redhat.com/security/cve/CVE-2015-7212) [CVE-2015-7213](https://access.redhat.com/security/cve/CVE-2015-7213) [CVE-2015-7214](https://access.redhat.com/security/cve/CVE-2015-7214) [CVE-2015-7215](https://access.redhat.com/security/cve/CVE-2015-7215) [CVE-2015-7216](https://access.redhat.com/security/cve/CVE-2015-7216) [CVE-2015-7217](https://access.redhat.com/security/cve/CVE-2015-7217) [CVE-2015-7218](https://access.redhat.com/security/cve/CVE-2015-7218) [CVE-2015-7219](https://access.redhat.com/security/cve/CVE-2015-7219) [CVE-2015-7220](https://access.redhat.com/security/cve/CVE-2015-7220) [CVE-2015-7221](https://access.redhat.com/security/cve/CVE-2015-7221) [CVE-2015-7222](https://access.redhat.com/security/cve/CVE-2015-7222) [CVE-2015-7223](https://access.redhat.com/security/cve/CVE-2015-7223) [[17]](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox43)</td>
 
 <td>[firefox](https://www.archlinux.org/packages/?name=firefox)</td>
 
@@ -378,7 +398,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8000](https://access.redhat.com/security/cve/CVE-2015-8000) [[17]](https://kb.isc.org/article/AA-01317)</td>
+<td>[CVE-2015-8000](https://access.redhat.com/security/cve/CVE-2015-8000) [[18]](https://kb.isc.org/article/AA-01317)</td>
 
 <td>[bind](https://www.archlinux.org/packages/?name=bind)</td>
 
@@ -398,7 +418,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8370](https://access.redhat.com/security/cve/CVE-2015-8370) [[18]](http://hmarco.org/bugs/CVE-2015-8370-Grub2-authentication-bypass.html#fix)</td>
+<td>[CVE-2015-8370](https://access.redhat.com/security/cve/CVE-2015-8370) [[19]](http://hmarco.org/bugs/CVE-2015-8370-Grub2-authentication-bypass.html#fix)</td>
 
 <td>[grub](https://www.archlinux.org/packages/?name=grub)</td>
 
@@ -416,7 +436,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8378](https://access.redhat.com/security/cve/CVE-2015-8378) [[19]](https://www.keepassx.org/news/2015/12/551)</td>
+<td>[CVE-2015-8378](https://access.redhat.com/security/cve/CVE-2015-8378) [[20]](https://www.keepassx.org/news/2015/12/551)</td>
 
 <td>[keepassx](https://www.archlinux.org/packages/?name=keepassx)</td>
 
@@ -436,7 +456,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-8045](https://access.redhat.com/security/cve/CVE-2015-8045) [CVE-2015-8047](https://access.redhat.com/security/cve/CVE-2015-8047) [CVE-2015-8048](https://access.redhat.com/security/cve/CVE-2015-8048) [CVE-2015-8049](https://access.redhat.com/security/cve/CVE-2015-8049) [CVE-2015-8050](https://access.redhat.com/security/cve/CVE-2015-8050) [CVE-2015-8055](https://access.redhat.com/security/cve/CVE-2015-8055) [CVE-2015-8056](https://access.redhat.com/security/cve/CVE-2015-8056) [CVE-2015-8057](https://access.redhat.com/security/cve/CVE-2015-8057) [CVE-2015-8058](https://access.redhat.com/security/cve/CVE-2015-8058) [CVE-2015-8059](https://access.redhat.com/security/cve/CVE-2015-8059) [CVE-2015-8060](https://access.redhat.com/security/cve/CVE-2015-8060) [CVE-2015-8061](https://access.redhat.com/security/cve/CVE-2015-8061) [CVE-2015-8062](https://access.redhat.com/security/cve/CVE-2015-8062) [CVE-2015-8063](https://access.redhat.com/security/cve/CVE-2015-8063) [CVE-2015-8064](https://access.redhat.com/security/cve/CVE-2015-8064) [CVE-2015-8065](https://access.redhat.com/security/cve/CVE-2015-8065) [CVE-2015-8066](https://access.redhat.com/security/cve/CVE-2015-8066) [CVE-2015-8067](https://access.redhat.com/security/cve/CVE-2015-8067) [CVE-2015-8068](https://access.redhat.com/security/cve/CVE-2015-8068) [CVE-2015-8069](https://access.redhat.com/security/cve/CVE-2015-8069) [CVE-2015-8070](https://access.redhat.com/security/cve/CVE-2015-8070) [CVE-2015-8071](https://access.redhat.com/security/cve/CVE-2015-8071) [CVE-2015-8401](https://access.redhat.com/security/cve/CVE-2015-8401) [CVE-2015-8402](https://access.redhat.com/security/cve/CVE-2015-8402) [CVE-2015-8403](https://access.redhat.com/security/cve/CVE-2015-8403) [CVE-2015-8404](https://access.redhat.com/security/cve/CVE-2015-8404) [CVE-2015-8405](https://access.redhat.com/security/cve/CVE-2015-8405) [CVE-2015-8406](https://access.redhat.com/security/cve/CVE-2015-8406) [CVE-2015-8407](https://access.redhat.com/security/cve/CVE-2015-8407) [CVE-2015-8408](https://access.redhat.com/security/cve/CVE-2015-8408) [CVE-2015-8409](https://access.redhat.com/security/cve/CVE-2015-8409) [CVE-2015-8410](https://access.redhat.com/security/cve/CVE-2015-8410) [CVE-2015-8411](https://access.redhat.com/security/cve/CVE-2015-8411) [CVE-2015-8412](https://access.redhat.com/security/cve/CVE-2015-8412) [CVE-2015-8413](https://access.redhat.com/security/cve/CVE-2015-8413) [CVE-2015-8414](https://access.redhat.com/security/cve/CVE-2015-8414) [CVE-2015-8415](https://access.redhat.com/security/cve/CVE-2015-8415) [CVE-2015-8416](https://access.redhat.com/security/cve/CVE-2015-8416) [CVE-2015-8417](https://access.redhat.com/security/cve/CVE-2015-8417) [CVE-2015-8418](https://access.redhat.com/security/cve/CVE-2015-8418) [CVE-2015-8419](https://access.redhat.com/security/cve/CVE-2015-8419) [CVE-2015-8420](https://access.redhat.com/security/cve/CVE-2015-8420) [CVE-2015-8421](https://access.redhat.com/security/cve/CVE-2015-8421) [CVE-2015-8422](https://access.redhat.com/security/cve/CVE-2015-8422) [CVE-2015-8423](https://access.redhat.com/security/cve/CVE-2015-8423) [CVE-2015-8424](https://access.redhat.com/security/cve/CVE-2015-8424) [CVE-2015-8425](https://access.redhat.com/security/cve/CVE-2015-8425) [CVE-2015-8426](https://access.redhat.com/security/cve/CVE-2015-8426) [CVE-2015-8427](https://access.redhat.com/security/cve/CVE-2015-8427) [CVE-2015-8428](https://access.redhat.com/security/cve/CVE-2015-8428) [CVE-2015-8429](https://access.redhat.com/security/cve/CVE-2015-8429) [CVE-2015-8430](https://access.redhat.com/security/cve/CVE-2015-8430) [CVE-2015-8431](https://access.redhat.com/security/cve/CVE-2015-8431) [CVE-2015-8432](https://access.redhat.com/security/cve/CVE-2015-8432) [CVE-2015-8433](https://access.redhat.com/security/cve/CVE-2015-8433) [CVE-2015-8434](https://access.redhat.com/security/cve/CVE-2015-8434) [CVE-2015-8435](https://access.redhat.com/security/cve/CVE-2015-8435) [CVE-2015-8436](https://access.redhat.com/security/cve/CVE-2015-8436) [CVE-2015-8437](https://access.redhat.com/security/cve/CVE-2015-8437) [CVE-2015-8438](https://access.redhat.com/security/cve/CVE-2015-8438) [CVE-2015-8439](https://access.redhat.com/security/cve/CVE-2015-8439) [CVE-2015-8440](https://access.redhat.com/security/cve/CVE-2015-8440) [CVE-2015-8441](https://access.redhat.com/security/cve/CVE-2015-8441) [CVE-2015-8442](https://access.redhat.com/security/cve/CVE-2015-8442) [CVE-2015-8443](https://access.redhat.com/security/cve/CVE-2015-8443) [CVE-2015-8444](https://access.redhat.com/security/cve/CVE-2015-8444) [CVE-2015-8445](https://access.redhat.com/security/cve/CVE-2015-8445) [CVE-2015-8446](https://access.redhat.com/security/cve/CVE-2015-8446) [CVE-2015-8447](https://access.redhat.com/security/cve/CVE-2015-8447) [CVE-2015-8448](https://access.redhat.com/security/cve/CVE-2015-8448) [CVE-2015-8449](https://access.redhat.com/security/cve/CVE-2015-8449) [CVE-2015-8450](https://access.redhat.com/security/cve/CVE-2015-8450) [CVE-2015-8451](https://access.redhat.com/security/cve/CVE-2015-8451) [CVE-2015-8452](https://access.redhat.com/security/cve/CVE-2015-8452) [CVE-2015-8453](https://access.redhat.com/security/cve/CVE-2015-8453) [CVE-2015-8454](https://access.redhat.com/security/cve/CVE-2015-8454) [CVE-2015-8455](https://access.redhat.com/security/cve/CVE-2015-8455) [[20]](https://helpx.adobe.com/security/products/flash-player/apsb15-32.html)</td>
+<td>[CVE-2015-8045](https://access.redhat.com/security/cve/CVE-2015-8045) [CVE-2015-8047](https://access.redhat.com/security/cve/CVE-2015-8047) [CVE-2015-8048](https://access.redhat.com/security/cve/CVE-2015-8048) [CVE-2015-8049](https://access.redhat.com/security/cve/CVE-2015-8049) [CVE-2015-8050](https://access.redhat.com/security/cve/CVE-2015-8050) [CVE-2015-8055](https://access.redhat.com/security/cve/CVE-2015-8055) [CVE-2015-8056](https://access.redhat.com/security/cve/CVE-2015-8056) [CVE-2015-8057](https://access.redhat.com/security/cve/CVE-2015-8057) [CVE-2015-8058](https://access.redhat.com/security/cve/CVE-2015-8058) [CVE-2015-8059](https://access.redhat.com/security/cve/CVE-2015-8059) [CVE-2015-8060](https://access.redhat.com/security/cve/CVE-2015-8060) [CVE-2015-8061](https://access.redhat.com/security/cve/CVE-2015-8061) [CVE-2015-8062](https://access.redhat.com/security/cve/CVE-2015-8062) [CVE-2015-8063](https://access.redhat.com/security/cve/CVE-2015-8063) [CVE-2015-8064](https://access.redhat.com/security/cve/CVE-2015-8064) [CVE-2015-8065](https://access.redhat.com/security/cve/CVE-2015-8065) [CVE-2015-8066](https://access.redhat.com/security/cve/CVE-2015-8066) [CVE-2015-8067](https://access.redhat.com/security/cve/CVE-2015-8067) [CVE-2015-8068](https://access.redhat.com/security/cve/CVE-2015-8068) [CVE-2015-8069](https://access.redhat.com/security/cve/CVE-2015-8069) [CVE-2015-8070](https://access.redhat.com/security/cve/CVE-2015-8070) [CVE-2015-8071](https://access.redhat.com/security/cve/CVE-2015-8071) [CVE-2015-8401](https://access.redhat.com/security/cve/CVE-2015-8401) [CVE-2015-8402](https://access.redhat.com/security/cve/CVE-2015-8402) [CVE-2015-8403](https://access.redhat.com/security/cve/CVE-2015-8403) [CVE-2015-8404](https://access.redhat.com/security/cve/CVE-2015-8404) [CVE-2015-8405](https://access.redhat.com/security/cve/CVE-2015-8405) [CVE-2015-8406](https://access.redhat.com/security/cve/CVE-2015-8406) [CVE-2015-8407](https://access.redhat.com/security/cve/CVE-2015-8407) [CVE-2015-8408](https://access.redhat.com/security/cve/CVE-2015-8408) [CVE-2015-8409](https://access.redhat.com/security/cve/CVE-2015-8409) [CVE-2015-8410](https://access.redhat.com/security/cve/CVE-2015-8410) [CVE-2015-8411](https://access.redhat.com/security/cve/CVE-2015-8411) [CVE-2015-8412](https://access.redhat.com/security/cve/CVE-2015-8412) [CVE-2015-8413](https://access.redhat.com/security/cve/CVE-2015-8413) [CVE-2015-8414](https://access.redhat.com/security/cve/CVE-2015-8414) [CVE-2015-8415](https://access.redhat.com/security/cve/CVE-2015-8415) [CVE-2015-8416](https://access.redhat.com/security/cve/CVE-2015-8416) [CVE-2015-8417](https://access.redhat.com/security/cve/CVE-2015-8417) [CVE-2015-8418](https://access.redhat.com/security/cve/CVE-2015-8418) [CVE-2015-8419](https://access.redhat.com/security/cve/CVE-2015-8419) [CVE-2015-8420](https://access.redhat.com/security/cve/CVE-2015-8420) [CVE-2015-8421](https://access.redhat.com/security/cve/CVE-2015-8421) [CVE-2015-8422](https://access.redhat.com/security/cve/CVE-2015-8422) [CVE-2015-8423](https://access.redhat.com/security/cve/CVE-2015-8423) [CVE-2015-8424](https://access.redhat.com/security/cve/CVE-2015-8424) [CVE-2015-8425](https://access.redhat.com/security/cve/CVE-2015-8425) [CVE-2015-8426](https://access.redhat.com/security/cve/CVE-2015-8426) [CVE-2015-8427](https://access.redhat.com/security/cve/CVE-2015-8427) [CVE-2015-8428](https://access.redhat.com/security/cve/CVE-2015-8428) [CVE-2015-8429](https://access.redhat.com/security/cve/CVE-2015-8429) [CVE-2015-8430](https://access.redhat.com/security/cve/CVE-2015-8430) [CVE-2015-8431](https://access.redhat.com/security/cve/CVE-2015-8431) [CVE-2015-8432](https://access.redhat.com/security/cve/CVE-2015-8432) [CVE-2015-8433](https://access.redhat.com/security/cve/CVE-2015-8433) [CVE-2015-8434](https://access.redhat.com/security/cve/CVE-2015-8434) [CVE-2015-8435](https://access.redhat.com/security/cve/CVE-2015-8435) [CVE-2015-8436](https://access.redhat.com/security/cve/CVE-2015-8436) [CVE-2015-8437](https://access.redhat.com/security/cve/CVE-2015-8437) [CVE-2015-8438](https://access.redhat.com/security/cve/CVE-2015-8438) [CVE-2015-8439](https://access.redhat.com/security/cve/CVE-2015-8439) [CVE-2015-8440](https://access.redhat.com/security/cve/CVE-2015-8440) [CVE-2015-8441](https://access.redhat.com/security/cve/CVE-2015-8441) [CVE-2015-8442](https://access.redhat.com/security/cve/CVE-2015-8442) [CVE-2015-8443](https://access.redhat.com/security/cve/CVE-2015-8443) [CVE-2015-8444](https://access.redhat.com/security/cve/CVE-2015-8444) [CVE-2015-8445](https://access.redhat.com/security/cve/CVE-2015-8445) [CVE-2015-8446](https://access.redhat.com/security/cve/CVE-2015-8446) [CVE-2015-8447](https://access.redhat.com/security/cve/CVE-2015-8447) [CVE-2015-8448](https://access.redhat.com/security/cve/CVE-2015-8448) [CVE-2015-8449](https://access.redhat.com/security/cve/CVE-2015-8449) [CVE-2015-8450](https://access.redhat.com/security/cve/CVE-2015-8450) [CVE-2015-8451](https://access.redhat.com/security/cve/CVE-2015-8451) [CVE-2015-8452](https://access.redhat.com/security/cve/CVE-2015-8452) [CVE-2015-8453](https://access.redhat.com/security/cve/CVE-2015-8453) [CVE-2015-8454](https://access.redhat.com/security/cve/CVE-2015-8454) [CVE-2015-8455](https://access.redhat.com/security/cve/CVE-2015-8455) [[21]](https://helpx.adobe.com/security/products/flash-player/apsb15-32.html)</td>
 
 <td>[flashplugin](https://www.archlinux.org/packages/?name=flashplugin)</td>
 
@@ -456,7 +476,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-6788](https://access.redhat.com/security/cve/CVE-2015-6788) [CVE-2015-6789](https://access.redhat.com/security/cve/CVE-2015-6789) [CVE-2015-6790](https://access.redhat.com/security/cve/CVE-2015-6790) [CVE-2015-6791](https://access.redhat.com/security/cve/CVE-2015-6791) [[21]](http://googlechromereleases.blogspot.fr/2015/12/stable-channel-update_8.html)</td>
+<td>[CVE-2015-6788](https://access.redhat.com/security/cve/CVE-2015-6788) [CVE-2015-6789](https://access.redhat.com/security/cve/CVE-2015-6789) [CVE-2015-6790](https://access.redhat.com/security/cve/CVE-2015-6790) [CVE-2015-6791](https://access.redhat.com/security/cve/CVE-2015-6791) [[22]](http://googlechromereleases.blogspot.fr/2015/12/stable-channel-update_8.html)</td>
 
 <td>[chromium](https://www.archlinux.org/packages/?name=chromium)</td>
 
@@ -476,7 +496,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-3193](https://access.redhat.com/security/cve/CVE-2015-3193) [CVE-2015-3194](https://access.redhat.com/security/cve/CVE-2015-3194) [CVE-2015-3195](https://access.redhat.com/security/cve/CVE-2015-3195) [CVE-2015-3196](https://access.redhat.com/security/cve/CVE-2015-3196) [CVE-2015-1794](https://access.redhat.com/security/cve/CVE-2015-1794) [[22]](https://www.openssl.org/news/secadv/20151203.txt)</td>
+<td>[CVE-2015-3193](https://access.redhat.com/security/cve/CVE-2015-3193) [CVE-2015-3194](https://access.redhat.com/security/cve/CVE-2015-3194) [CVE-2015-3195](https://access.redhat.com/security/cve/CVE-2015-3195) [CVE-2015-3196](https://access.redhat.com/security/cve/CVE-2015-3196) [CVE-2015-1794](https://access.redhat.com/security/cve/CVE-2015-1794) [[23]](https://www.openssl.org/news/secadv/20151203.txt)</td>
 
 <td>[openssl](https://www.archlinux.org/packages/?name=openssl) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl)</td>
 
@@ -496,7 +516,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-6764](https://access.redhat.com/security/cve/CVE-2015-6764) [CVE-2015-6765](https://access.redhat.com/security/cve/CVE-2015-6765) [CVE-2015-6766](https://access.redhat.com/security/cve/CVE-2015-6766) [CVE-2015-6767](https://access.redhat.com/security/cve/CVE-2015-6767) [CVE-2015-6768](https://access.redhat.com/security/cve/CVE-2015-6768) [CVE-2015-6769](https://access.redhat.com/security/cve/CVE-2015-6769) [CVE-2015-6770](https://access.redhat.com/security/cve/CVE-2015-6770) [CVE-2015-6771](https://access.redhat.com/security/cve/CVE-2015-6771) [CVE-2015-6772](https://access.redhat.com/security/cve/CVE-2015-6772) [CVE-2015-6773](https://access.redhat.com/security/cve/CVE-2015-6773) [CVE-2015-6774](https://access.redhat.com/security/cve/CVE-2015-6774) [CVE-2015-6775](https://access.redhat.com/security/cve/CVE-2015-6775) [CVE-2015-6776](https://access.redhat.com/security/cve/CVE-2015-6776) [CVE-2015-6777](https://access.redhat.com/security/cve/CVE-2015-6777) [CVE-2015-6778](https://access.redhat.com/security/cve/CVE-2015-6778) [CVE-2015-6779](https://access.redhat.com/security/cve/CVE-2015-6779) [CVE-2015-6780](https://access.redhat.com/security/cve/CVE-2015-6780) [CVE-2015-6781](https://access.redhat.com/security/cve/CVE-2015-6781) [CVE-2015-6782](https://access.redhat.com/security/cve/CVE-2015-6782) [CVE-2015-6783](https://access.redhat.com/security/cve/CVE-2015-6783) [CVE-2015-6784](https://access.redhat.com/security/cve/CVE-2015-6784) [CVE-2015-6785](https://access.redhat.com/security/cve/CVE-2015-6785) [CVE-2015-6786](https://access.redhat.com/security/cve/CVE-2015-6786) [CVE-2015-6787](https://access.redhat.com/security/cve/CVE-2015-6787) [[23]](http://googlechromereleases.blogspot.fr/2015/12/stable-channel-update.html)</td>
+<td>[CVE-2015-6764](https://access.redhat.com/security/cve/CVE-2015-6764) [CVE-2015-6765](https://access.redhat.com/security/cve/CVE-2015-6765) [CVE-2015-6766](https://access.redhat.com/security/cve/CVE-2015-6766) [CVE-2015-6767](https://access.redhat.com/security/cve/CVE-2015-6767) [CVE-2015-6768](https://access.redhat.com/security/cve/CVE-2015-6768) [CVE-2015-6769](https://access.redhat.com/security/cve/CVE-2015-6769) [CVE-2015-6770](https://access.redhat.com/security/cve/CVE-2015-6770) [CVE-2015-6771](https://access.redhat.com/security/cve/CVE-2015-6771) [CVE-2015-6772](https://access.redhat.com/security/cve/CVE-2015-6772) [CVE-2015-6773](https://access.redhat.com/security/cve/CVE-2015-6773) [CVE-2015-6774](https://access.redhat.com/security/cve/CVE-2015-6774) [CVE-2015-6775](https://access.redhat.com/security/cve/CVE-2015-6775) [CVE-2015-6776](https://access.redhat.com/security/cve/CVE-2015-6776) [CVE-2015-6777](https://access.redhat.com/security/cve/CVE-2015-6777) [CVE-2015-6778](https://access.redhat.com/security/cve/CVE-2015-6778) [CVE-2015-6779](https://access.redhat.com/security/cve/CVE-2015-6779) [CVE-2015-6780](https://access.redhat.com/security/cve/CVE-2015-6780) [CVE-2015-6781](https://access.redhat.com/security/cve/CVE-2015-6781) [CVE-2015-6782](https://access.redhat.com/security/cve/CVE-2015-6782) [CVE-2015-6783](https://access.redhat.com/security/cve/CVE-2015-6783) [CVE-2015-6784](https://access.redhat.com/security/cve/CVE-2015-6784) [CVE-2015-6785](https://access.redhat.com/security/cve/CVE-2015-6785) [CVE-2015-6786](https://access.redhat.com/security/cve/CVE-2015-6786) [CVE-2015-6787](https://access.redhat.com/security/cve/CVE-2015-6787) [[24]](http://googlechromereleases.blogspot.fr/2015/12/stable-channel-update.html)</td>
 
 <td>[chromium](https://www.archlinux.org/packages/?name=chromium)</td>
 
@@ -516,7 +536,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <tr>
 
-<td>[CVE-2015-6764](https://access.redhat.com/security/cve/CVE-2015-6764) [CVE-2015-8027](https://access.redhat.com/security/cve/CVE-2015-8027) [[24]](https://nodejs.org/en/blog/vulnerability/cve-2015-8027_cve-2015-6764/)</td>
+<td>[CVE-2015-6764](https://access.redhat.com/security/cve/CVE-2015-6764) [CVE-2015-8027](https://access.redhat.com/security/cve/CVE-2015-8027) [[25]](https://nodejs.org/en/blog/vulnerability/cve-2015-8027_cve-2015-6764/)</td>
 
 <td>[nodejs](https://www.archlinux.org/packages/?name=nodejs)</td>
 
@@ -7648,7 +7668,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>3d</td>
 
-<td>Fixed [[25]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737051)</td>
+<td>Fixed [[26]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737051)</td>
 
 </tr>
 
@@ -7746,7 +7766,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413755](https://wiki.archlinux.org/index.php?title=CVE&oldid=413755)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413836](https://wiki.archlinux.org/index.php?title=CVE&oldid=413836)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

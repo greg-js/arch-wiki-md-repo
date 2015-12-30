@@ -6,7 +6,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 S-nail is a mail processing system with a command syntax reminiscent of ed with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
 
-This overview page was updated for version **v14.8.5** of S-nail. Excerpt of latest _NEWS_: _-d_ / _debug_ finally offers real dry-run tests, extended **@** message specification, new **source_if** command, many bug fixes. _NEWS_ of older **v14.8.x** releases: [RFC 2231](//tools.ietf.org/html/rfc2231) support, mailing-list support (_followup-to_, _followup-to-honour_, _reply-to-honour_, **Lreply**, **mlist**, **mlsubscribe**), simple builtin HTML viewer, freely configurable spam-checker hooks, command line and addressee hardening (new **-.** option, _expandargv_ and _expandaddr_ variables), improved -t support, _expandaddr_ fine-tuning, new _smime-sign-message-digest_ variable, and many small improvements.
+This overview page was updated for version **v14.8.6** of S-nail. Excerpt of latest _NEWS_: bug fixes. _NEWS_ of older **v14.8.x** releases: [RFC 2231](//tools.ietf.org/html/rfc2231) support, mailing-list support (_followup-to_, _followup-to-honour_, _reply-to-honour_, **Lreply**, **mlist**, **mlsubscribe**), simple builtin HTML viewer, freely configurable spam-checker hooks, command line and addressee hardening (new **-.** option, _expandargv_ and _expandaddr_ variables), improved -t support, _expandaddr_ fine-tuning, new _smime-sign-message-digest_ variable, _-d_ / _debug_ offers real dry-run send tests, extended **@** message specification, new **source_if** command, many bug fixes and small improvements.
 
 S-nail is a direct descendant of the BSD Mail program that was introduced in 1978 (itself superseding the simpler UNIX mail program) and used to introduce itself (in the Mail reference manual) as follows:
 
@@ -429,7 +429,7 @@ shortcut myimap "**imaps://USER:PASS@server:port"**
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=408068](https://wiki.archlinux.org/index.php?title=S-nail&oldid=408068)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=413840](https://wiki.archlinux.org/index.php?title=S-nail&oldid=413840)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

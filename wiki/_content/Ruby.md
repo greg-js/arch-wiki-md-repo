@@ -27,9 +27,9 @@ For the latest version of Ruby, [install](/index.php/Install "Install") the [rub
 
 ### Older versions
 
+*   For Ruby 2.2, install the [ruby2.2](https://aur.archlinux.org/packages/ruby2.2/)<sup><small>AUR</small></sup> package.
 *   For Ruby 2.1, install the [ruby2.1](https://aur.archlinux.org/packages/ruby2.1/)<sup><small>AUR</small></sup> package.
 *   For Ruby 2.0, install the [ruby2.0](https://aur.archlinux.org/packages/ruby2.0/)<sup><small>AUR</small></sup> package.
-*   For Ruby 1.9, install the [ruby1.9](https://aur.archlinux.org/packages/ruby1.9/)<sup><small>AUR</small></sup> package.
 
 ### Multiple versions
 
@@ -220,7 +220,7 @@ If you have bugreports or code improvements - file at github [https://github.com
 *   Ruby - [http://ruby-lang.org/](http://ruby-lang.org/)
 *   Bundler - [http://bundler.io/](http://bundler.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby&oldid=410733](https://wiki.archlinux.org/index.php?title=Ruby&oldid=410733)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby&oldid=413839](https://wiki.archlinux.org/index.php?title=Ruby&oldid=413839)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

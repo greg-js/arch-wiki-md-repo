@@ -103,7 +103,7 @@ This may happen when the user edited the NZBGet configuration by the Web-interfa
 *   [NZBGet Documentation](http://nzbget.net/Documentation)
 *   [Performance Tips](http://nzbget.net/Performance_tips)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413766](https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413766)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413832](https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413832)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
