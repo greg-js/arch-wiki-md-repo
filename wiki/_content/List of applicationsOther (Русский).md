@@ -459,7 +459,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **QTodoTxt** — Кроссплатформенный пользовательский интерфейс для файлов `todo.txt` (смотрите [страницу проекта](http://todotxt.com/))
 
-[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtodotxt-git)]</sup>
+[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup>
 
 *   **Rachota** — Портативная утилита записи времени (time tracker) для персональных проектов
 
@@ -600,7 +600,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Списко программно-определяемых радиосистем](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Русский)&oldid=413339](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Русский)&oldid=413339)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Русский)&oldid=413940](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Русский)&oldid=413940)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

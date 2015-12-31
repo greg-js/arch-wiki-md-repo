@@ -218,7 +218,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **SlimBoat** — Быстрый, свободный, безопасный и мощный веб-браузер, основанный на QtWebkit
 
-[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)<sup><small>AUR</small></sup>
+[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/slimboat)]</sup>
 
 *   **Surf** — Легковесный, основанный на WebKit, браузер, который следует [идеологии suckless](http://suckless.org/philosophy) (по сути, браузер представлен в одном файле на языке C)
 
@@ -938,7 +938,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **nn** — Альтернативная и дружелюбная к пользователю программа чтения новостей Usenet для UNIX (основана на curses)
 
-[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nn)]</sup>
+[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)<sup><small>AUR</small></sup>
 
 *   **[NZBGet](/index.php/NZBGet "NZBGet")** — Утилита сбора двоичных файлов Usenet с интерфейсом CLI и использованием .nzb
 
@@ -1138,7 +1138,7 @@ eDonkey по-прежнему является второй по величин�
 
 [https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=413333](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=413333)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=413933](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=413933)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

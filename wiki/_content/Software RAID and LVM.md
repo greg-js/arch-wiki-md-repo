@@ -569,7 +569,7 @@ For further information on how to maintain your software RAID or LVM review the 
 *   2011-04-20 - Arch Linux - [Software RAID and LVM questions](https://bbs.archlinux.org/viewtopic.php?pid=965357)
 *   2011-03-12 - Arch Linux - [Some newbie questions about installation, LVM, grub, RAID](https://bbs.archlinux.org/viewtopic.php?id=114965)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Software_RAID_and_LVM&oldid=401116](https://wiki.archlinux.org/index.php?title=Software_RAID_and_LVM&oldid=401116)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Software_RAID_and_LVM&oldid=413953](https://wiki.archlinux.org/index.php?title=Software_RAID_and_LVM&oldid=413953)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

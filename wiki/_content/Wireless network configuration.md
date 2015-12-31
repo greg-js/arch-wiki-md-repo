@@ -1138,6 +1138,8 @@ These modules are fully supported in the kernel, but they require additional fir
 
 [udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") for details.
 
+It may happens frequently or random disconnections using iwl4965 on a 11n wlan: it can be useful to create a iwl4965.conf file containing "options iwl4965 11n_disable=1" (without quotes), to disable 11n, then put it under /etc/modprobe.d
+
 #### iwlwifi
 
 [iwlwifi](http://wireless.kernel.org/en/users/Drivers/iwlwifi) is the wireless driver for Intel's current wireless chips, such as 5100AGN, 5300AGN, and 5350AGN. See the [full list of supported devices](http://wireless.kernel.org/en/users/Drivers/iwlwifi#Supported_Devices). The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
@@ -1317,7 +1319,7 @@ Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any oth
 *   [The Linux Wireless project](http://wireless.kernel.org/)
 *   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413649](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413649)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413955](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413955)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

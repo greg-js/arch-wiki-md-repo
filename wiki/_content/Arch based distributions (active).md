@@ -151,7 +151,7 @@ Papyros is an operating system which adheres to Google's Material Design guideli
 
 ### Ninja OS
 
-Ninja OS is a pre-configured Live OS Desktop based on Arch Linux and XFCE 4\. Optimal defaults are preconfigured for optimal results
+Ninja OS is a pre-configured Live OS Desktop based on Arch Linux and XFCE 4.
 
 *   Homepage: [http://ninjaos.org](http://ninjaos.org)
 *   Onion: [http://ninjaos4xt6nc2ft.onion/ninjaos](http://ninjaos4xt6nc2ft.onion/ninjaos)
@@ -355,7 +355,7 @@ Manjaro-based operating system developed by Blue Systems. Offers customised KDE 
 
 *   List at distrowatch.com - [http://distrowatch.com/search.php?basedon=Arch&status=Active](http://distrowatch.com/search.php?basedon=Arch&status=Active)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413895](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413895)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413915](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413915)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

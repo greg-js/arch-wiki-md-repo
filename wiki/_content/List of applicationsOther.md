@@ -563,7 +563,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **QTodoTxt** — A cross-platform UI client for `todo.txt` files (see [project's page](http://todotxt.com/))
 
-[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtodotxt-git)]</sup>
+[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup>
 
 *   **Rachota** — Portable time tracker for personal projects.
 
@@ -712,7 +712,7 @@ See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Sof
 
 See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=413336](https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=413336)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=413938](https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=413938)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

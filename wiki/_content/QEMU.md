@@ -57,10 +57,6 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [6.5 VDE2 Bridge](#VDE2_Bridge)
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
-    *   [6.6 Host-only Networking with ARM virtual machines (VM/Guests)](#Host-only_Networking_with_ARM_virtual_machines_.28VM.2FGuests.29)
-        *   [6.6.1 Components Needed](#Components_Needed)
-        *   [6.6.2 Procedure](#Procedure)
-        *   [6.6.3 More Details](#More_Details)
 *   [7 Graphics](#Graphics)
     *   [7.1 cirrus](#cirrus)
     *   [7.2 std](#std)
@@ -1012,75 +1008,6 @@ WantedBy=multi-user.target
 
 And finally, you can create the [bridge interface with netctl](/index.php/Bridge_with_netctl "Bridge with netctl").
 
-### Host-only Networking with ARM virtual machines (VM/Guests)
-
-This is a concise method for setting up host only networking for ARM guests. ie. the vm and host can ssh, ping each other. Interactions between multiple guests will not work since only one bridge/tap is specified. The method is slightly different for i386 guests and that method is not described here but in the attached notes.
-
-#### Components Needed
-
-These are the components used for this method:
-
-*   qemu
-*   qemu-arch-extra
-*   dnsmasq
-*   bridge-utils
-
-#### Procedure
-
-Start the bridge/tap and dhcp server for the host only network. Afterwards the interfaces will be down. When the vm is started these interfaces will be started. Possibly netctl's bridge example interface could do this but it was simpler to just write a script. This script will need to be run using sudo. Lastly, the ip address chosen 172.16.0.1 was chosen since it did not conflict with any network currently in use.
-
- `do_network.sh` 
-
-```
-#!/bin/bash
-
-# Do this to setup host only networking
-brctl addbr br0
-ip addr add 172.16.0.1/24 broadcast 172.16.0.255 dev br0
-ip link set br0 up
-ip tuntap add dev tap0 mode tap
-ip link set tap0 up promisc on
-brctl addif br0 tap0
-ip link set tap0 up
-dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.16.0.10,172.16.0.20
-
-```
-
-Once the tap/bridge is setup start the arm vm like so:
-
- `doit.sh` 
-
-```
-#!/bin/bash
-
-# Do this to setup host only networking
-brctl addbr br0
-ip addr add 172.16.0.1/24 broadcast 172.16.0.255 dev br0
-ip link set br0 up
-ip tuntap add dev tap0 mode tap
-ip link set tap0 up promisc on
-brctl addif br0 tap0
-ip link set tap0 up
-dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.16.0.10,172.16.0.20
-
-```
-
- `do_network.sh` 
-
-```
-#!/bin/bash
-
-sudo qemu-system-arm -M vexpress-a9 -kernel vmlinuz-3.2.0-4-vexpress \
--initrd initrd.img-3.2.0-4-vexpress -append "root=/dev/mmcblk0p2" \
--drive if=sd,cache=unsafe,file=hda.img \
--net nic,vlan=0 -net tap,vlan=0,ifname=tap0,script=no
-
-```
-
-#### More Details
-
-More details on how to setup a virtual machine, building qemu, using a similar method for i386, credits to the work this is based on and more are found here [http://github.com/netskink/carolinacon12](http://github.com/netskink/carolinacon12)
-
 ## Graphics
 
 QEMU can use the following different graphic outputs: `std`, `cirrus`, `vmware`, `qxl`, and `none`.
@@ -1610,7 +1537,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413888](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413888)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413917](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413917)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

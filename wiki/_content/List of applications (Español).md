@@ -3010,7 +3010,7 @@ Vea también [Wikipedia:es:Bootsplash](https://en.wikipedia.org/wiki/es:Bootspla
 
 #### Intérpretes de comandos
 
-Vea el artículo principal: [Línea de comandos](/index.php?title=Command-line_shell_(Espa%C3%B1ol)&action=edit&redlink=1 "Command-line shell (Español) (la página no existe)").
+Vea el artículo principal: [Línea de comandos](/index.php?title=Command-line_shell_(Espa%C3%B1ol)&action=edit&redlink=1 "Command-line shell (Español) (page does not exist)").
 
 Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
 
@@ -3092,7 +3092,7 @@ Vea también [Comparación de gestores de ventanas de X (en Inglés)](https://en
 
 Vea también [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
 
-*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (la página no existe)") y otros gestores de ventanas.
+*   **bbpager** — Paginador acoplable a paneles para [blackbox](/index.php?title=Blackbox&action=edit&redlink=1 "Blackbox (page does not exist)") y otros gestores de ventanas.
 
 [http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
 
@@ -3164,7 +3164,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 [http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
 
-*   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (la página no existe)").
+*   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (page does not exist)").
 
 [https://wiki.gnome.org/GnomePanel](https://wiki.gnome.org/GnomePanel) || [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 
@@ -3276,7 +3276,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 [http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 
-*   **slingshot** — Un lanzador de aplicaciones con estilo que forma parte del entorno de escritorio [pantheon](/index.php?title=Pantheon_(Espa%C3%B1ol)&action=edit&redlink=1 "Pantheon (Español) (la página no existe)").
+*   **slingshot** — Un lanzador de aplicaciones con estilo que forma parte del entorno de escritorio [pantheon](/index.php?title=Pantheon_(Espa%C3%B1ol)&action=edit&redlink=1 "Pantheon (Español) (page does not exist)").
 
 [https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher)
 
@@ -3464,7 +3464,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **QTodoTxt** — Interfaz gráfica multiplataforma para ficheros `todo.txt` (see [project's page](http://todotxt.com/))
 
-[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtodotxt-git)]</sup>
+[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup>
 
 *   **Rachota** — Aplicación de seguimiento portable para proyectos personales.
 
@@ -3631,7 +3631,7 @@ Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.or
 *   [Listado de juegos de Linux en Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games).
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413522](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413522)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413923](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413923)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

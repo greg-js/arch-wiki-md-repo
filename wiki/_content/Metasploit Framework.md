@@ -661,7 +661,7 @@ that probably means that the `postgresql` service is not running.
 *   [Metasploit wiki on GitHub](https://github.com/rapid7/metasploit-framework/wiki)
 *   [The Metasploit Book](http://en.wikibooks.org/wiki/Metasploit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework&oldid=409849](https://wiki.archlinux.org/index.php?title=Metasploit_Framework&oldid=409849)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework&oldid=413924](https://wiki.archlinux.org/index.php?title=Metasploit_Framework&oldid=413924)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

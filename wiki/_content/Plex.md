@@ -148,7 +148,7 @@ export LD_LIBRARY_PATH=/opt/plexmediaserver
 
 ### Installation
 
-Install [plex-home-theater](https://www.archlinux.org/packages/?name=plex-home-theater) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+Install [plex-home-theater](https://www.archlinux.org/packages/?name=plex-home-theater)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/plex-home-theater)]</sup> from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 Plex Home Theater can be launched by running `plexhometheater.sh` from your terminal.
 
@@ -160,7 +160,7 @@ With the PleXBMC add-on, Kodi can be used as a replacement for PHT.
 
 Install [kodi](https://www.archlinux.org/packages/?name=kodi) from the [Official repositories](/index.php/Official_repositories "Official repositories"), then follow the instructions over [here](http://kodi.wiki/view/Add-on:PleXBMC).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Plex&oldid=413690](https://wiki.archlinux.org/index.php?title=Plex&oldid=413690)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Plex&oldid=413946](https://wiki.archlinux.org/index.php?title=Plex&oldid=413946)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

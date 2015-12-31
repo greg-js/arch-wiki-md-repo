@@ -1,52 +1,60 @@
-# List of games
+# List of games (简体中文)
 
 From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+**翻译状态：** 本文是英文页面 [List_of_games](/index.php/List_of_games "List of games") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-09，点击[这里](https://wiki.archlinux.org/index.php?title=List_of_games&diff=0&oldid=405451)可以查看翻译后英文页面的改动。
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+**[常用程序](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")**
 
-**This article or section needs expansion.**
+* * *
 
-**Reason:** add newly ported games (such as Steam games and HIB). (Discuss in [Talk:List of games#](https://wiki.archlinux.org/index.php/Talk:List_of_games))
+[互联网](/index.php/List_of_Applications/Internet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Internet (简体中文)") – [多媒体](/index.php/List_of_Applications/Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Multimedia (简体中文)") – [工具](/index.php/List_of_Applications/Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Utilities (简体中文)") – [文档](/index.php/List_of_Applications/Documents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Documents (简体中文)") – [安全](/index.php/List_of_Applications/Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Security (简体中文)") – [科学](/index.php/List_of_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Science (简体中文)") – [其它](/index.php/List_of_Applications/Other_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Other (简体中文)")
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**本页面或部分需要翻译，部分内容可能已经与英文文章脱节。如果您希望贡献翻译，请访问[简体中文翻译组](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")。**
+
+**附注:** please use the first argument of the template to provide more detailed indications.
 
 Related articles
 
-*   [List of applications](/index.php/List_of_applications "List of applications")
 *   [List of applications#Emulators](/index.php/List_of_applications#Emulators "List of applications")
+*   [List_of_Applications_(简体中文)](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")
 
-**Note:** This page strives to list all games known to run under GNU/Linux. Some of them are freely accessible via [official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For possibly more up to date selection of games available in the AUR, try checking the [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
+**Note:** 本页面力求列出已知的GNU / Linux下运行所有游戏。访问通过[official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). 欲了解更多有关运行游戏，相关的系统配置提示， 参阅 [Gaming](/index.php/Gaming "Gaming"). 对于可能更多的最新选择的可用游戏 在 AUR, 请检查 [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
 ## Contents
 
-*   [1 Action and adventure](#Action_and_adventure)
-*   [2 Arcade](#Arcade)
-*   [3 Casual games](#Casual_games)
-*   [4 Chess simulators](#Chess_simulators)
-*   [5 Education](#Education)
+*   [1 动作和冒险](#.E5.8A.A8.E4.BD.9C.E5.92.8C.E5.86.92.E9.99.A9)
+*   [2 街机](#.E8.A1.97.E6.9C.BA)
+*   [3 休闲游戏](#.E4.BC.91.E9.97.B2.E6.B8.B8.E6.88.8F)
+*   [4 象棋模拟器](#.E8.B1.A1.E6.A3.8B.E6.A8.A1.E6.8B.9F.E5.99.A8)
+*   [5 教育](#.E6.95.99.E8.82.B2)
 *   [6 Interactive fiction](#Interactive_fiction)
-*   [7 Massively Multiplayer Online Games (MMO)](#Massively_Multiplayer_Online_Games_.28MMO.29)
-*   [8 Platformer](#Platformer)
-*   [9 Puzzle](#Puzzle)
-*   [10 Racing](#Racing)
+*   [7 大型多人在线游戏(MMO)](#.E5.A4.A7.E5.9E.8B.E5.A4.9A.E4.BA.BA.E5.9C.A8.E7.BA.BF.E6.B8.B8.E6.88.8F.28MMO.29)
+*   [8 游戏平台](#.E6.B8.B8.E6.88.8F.E5.B9.B3.E5.8F.B0)
+*   [9 益智](#.E7.9B.8A.E6.99.BA)
+*   [10 赛车](#.E8.B5.9B.E8.BD.A6)
 *   [11 Rogue-like](#Rogue-like)
-*   [12 Role-Playing Game (RPG)](#Role-Playing_Game_.28RPG.29)
-*   [13 Shooters (FPS, Third Person)](#Shooters_.28FPS.2C_Third_Person.29)
-*   [14 Simulation](#Simulation)
-*   [15 Strategy](#Strategy)
-*   [16 Tycoon/Management Games](#Tycoon.2FManagement_Games)
-*   [17 Visual novels](#Visual_novels)
-*   [18 See also](#See_also)
+*   [12 角色扮演游戏(RPG)](#.E8.A7.92.E8.89.B2.E6.89.AE.E6.BC.94.E6.B8.B8.E6.88.8F.28RPG.29)
+*   [13 射击 (FPS, 第三人称)](#.E5.B0.84.E5.87.BB_.28FPS.2C_.E7.AC.AC.E4.B8.89.E4.BA.BA.E7.A7.B0.29)
+*   [14 模拟](#.E6.A8.A1.E6.8B.9F)
+*   [15 策略](#.E7.AD.96.E7.95.A5)
+*   [16 Tycoon/管理游戏](#Tycoon.2F.E7.AE.A1.E7.90.86.E6.B8.B8.E6.88.8F)
+*   [17 视觉小说](#.E8.A7.86.E8.A7.89.E5.B0.8F.E8.AF.B4)
+*   [18 参阅](#.E5.8F.82.E9.98.85)
 
-## Action and adventure
+## 动作和冒险
 
-*   **[Aquaria](https://en.wikipedia.org/wiki/Aquaria_(video_game) "wikipedia:Aquaria (video game)")** — 2D sidescrolling action-adventure game, heavily focused on exploration and puzzle-solving, with non-linear gameplay. The game engine is open source.
+*   **[Aquaria](https://en.wikipedia.org/wiki/Aquaria_(video_game) "wikipedia:Aquaria (video game)")** — Aquaria是一款以海底为背景的2D卷轴式游戏，注重探索和解密，游戏方式是非线性的。游戏引擎是开源的。
 
-[http://www.bit-blot.com/aquaria](http://www.bit-blot.com/aquaria) || [aquaria-git](https://aur.archlinux.org/packages/aquaria-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/aquaria-git)]</sup>
+[http://www.bit-blot.com/aquaria](http://www.bit-blot.com/aquaria) || [aquaria-git](https://aur.archlinux.org/packages/aquaria-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/aquaria-git)]</sup> (AUR)
 
-*   **Astromenace** — Modern 3D scrolling space shooter with ship upgrade possibilities.
+*   **Astromenace** — AstroMenace ( 太空危机) 是一款效果出众 3D 立体纵版射击游戏，在游戏中你会进入外层空间和异星侵略者进行激烈的空间战争。在15个不同的场景中你要对抗无数敌人来保卫自己的家乡，同时恐怖的 BOSS和无所不在的太空陨石也将是你面对的重要挑战，能否生存将取决你的技术和直觉！
 
 [http://sourceforge.net/projects/openastromenace/](http://sourceforge.net/projects/openastromenace/) || [astromenace](https://www.archlinux.org/packages/?name=astromenace).
 
@@ -62,7 +70,7 @@ Related articles
 
 [http://sourceforge.net/projects/blobandconquer/](http://sourceforge.net/projects/blobandconquer/) || [blobandconquer](https://aur.archlinux.org/packages/blobandconquer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/blobandconquer)]</sup>
 
-*   **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "wikipedia:BZFlag")** — Multiperson, first-person tank shooter.
+*   **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "wikipedia:BZFlag")** — 多人，第一人称射击游戏坦克
 
 [http://bzflag.org/](http://bzflag.org/) || [bzflag](https://www.archlinux.org/packages/?name=bzflag)
 
@@ -70,7 +78,7 @@ Related articles
 
 [http://www.freedink.org/](http://www.freedink.org/) || [freedink](https://aur.archlinux.org/packages/freedink/)<sup><small>AUR</small></sup>
 
-*   **[Gish](https://en.wikipedia.org/wiki/Gish_(video_game) "wikipedia:Gish (video game)")** — 2D physics platformer about adventures of ball of tar.
+*   **[Gish](https://en.wikipedia.org/wiki/Gish_(video_game) "wikipedia:Gish (video game)")** — Gish是 一款支持Windows、Mac OS X和Linux的2D物理游戏，讲述了一个英雄救美的故事，英雄Gish有着非同寻常的能力，他的胶状属性能使其根据需要改变形态，变得具有粘性、滑性或 更沉重。.
 
 [http://www.gishgame.com/](http://www.gishgame.com/) || [freegish-git](https://aur.archlinux.org/packages/freegish-git/)<sup><small>AUR</small></sup>
 
@@ -94,11 +102,7 @@ Related articles
 
 [http://www.rune-world.com](http://www.rune-world.com) || [rune](https://aur.archlinux.org/packages/rune/)<sup><small>AUR</small></sup>
 
-*   **Paintball Party 2** — Paintball Party 2 is the sequel to Paintball Party, a multiplayer action platformer for all ages.
-
-[http://www.t3-i.com/pages/project.php?id=paintball_party_2](http://www.t3-i.com/pages/project.php?id=paintball_party_2) || [paintball-party-2](https://aur.archlinux.org/packages/paintball-party-2/)<sup><small>AUR</small></sup>
-
-## Arcade
+## 街机
 
 *   **Bullet Candy Perfect** — Fun shoot-em-up game, with sharp, super smooth 3D graphics and a cool techno soundtrack. Features cross-platform, achievements, and online scores. 'PAMAYW' scheme.
 
@@ -139,10 +143,6 @@ Related articles
 *   **[Frozen Bubble](https://en.wikipedia.org/wiki/Frozen_Bubble "wikipedia:Frozen Bubble")** — Arcade game with colorful animated penguin eyecandy
 
 [http://frozen-bubble.org](http://frozen-bubble.org) || [frozen-bubble](https://www.archlinux.org/packages/?name=frozen-bubble)
-
-*   **games2d** — Collection of fun and addictive games for GNU/Linux (pong, simon, sokoban, snake)
-
-[http://xojoc.itch.io/games2d](http://xojoc.itch.io/games2d) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Hedgewars](https://en.wikipedia.org/wiki/Hedgewars "wikipedia:Hedgewars")** — Yet another Worms clone, considered to be better than its predecessor by many. Take turns to blast your opponents into oblivion with comedic results! Best in Multiplayer.
 
@@ -216,7 +216,7 @@ Related articles
 
 [http://sourceforge.net/projects/warmux.mirror/](http://sourceforge.net/projects/warmux.mirror/) || [warmux](https://aur.archlinux.org/packages/warmux/)<sup><small>AUR</small></sup>
 
-## Casual games
+## 休闲游戏
 
 *   **bs** — Battleships based shooter for the console
 
@@ -234,7 +234,7 @@ Related articles
 
 [http://ninvaders.sourceforge.net/](http://ninvaders.sourceforge.net/) || [ninvaders](https://aur.archlinux.org/packages/ninvaders/)<sup><small>AUR</small></sup>
 
-## Chess simulators
+## 象棋模拟器
 
 *   **[GNU Chess](https://en.wikipedia.org/wiki/GNU_Chess "wikipedia:GNU Chess")** — One of the oldest computer chess programs for Unix-based computers, lets most modern computers play a full game of chess
 
@@ -252,7 +252,7 @@ Related articles
 
 [http://pychess.org/](http://pychess.org/) || [pychess](https://www.archlinux.org/packages/?name=pychess)
 
-## Education
+## 教育
 
 *   **GCompris** — Educational software suite comprising of numerous activities for children aged 2 to 10.
 
@@ -286,7 +286,7 @@ See also [Wikipedia:Interactive fiction#Development systems](https://en.wikipedi
 
 [http://tads.org](http://tads.org) || [frobtads](https://aur.archlinux.org/packages/frobtads/)<sup><small>AUR</small></sup>
 
-## Massively Multiplayer Online Games (MMO)
+## 大型多人在线游戏(MMO)
 
 See also [Wikipedia:List of massively multiplayer online games](https://en.wikipedia.org/wiki/List_of_massively_multiplayer_online_games "wikipedia:List of massively multiplayer online games").
 
@@ -318,9 +318,9 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 [http://www.regnumonline.com.ar](http://www.regnumonline.com.ar) || [regnum-online](https://aur.archlinux.org/packages/regnum-online/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/regnum-online)]</sup>
 
-*   **[RuneScape](/index.php/RuneScape "RuneScape")** — Massive online adventure game by Jagex
+*   **Runescape** — Official RuneScape client
 
-[http://www.runescape.com](http://www.runescape.com) || [unix-runescape-client](https://aur.archlinux.org/packages/unix-runescape-client/)<sup><small>AUR</small></sup>
+[http://www.runescape.com](http://www.runescape.com) || [runescape-client-bin](https://aur.archlinux.org/packages/runescape-client-bin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runescape-client-bin)]</sup>
 
 *   **Ryzom** — 3D Fantasy MMORPG
 
@@ -358,7 +358,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 [Play via Web Start](http://www.wurmonline.com/client/wurmclient.jnlp) [http://www.wurmonline.com](http://www.wurmonline.com) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=Wurm+Online)</small>
 
-## Platformer
+## 游戏平台
 
 *   **Knyttstories** — Platformer with adventure elements, heavy exploration and downloadable levels.
 
@@ -376,11 +376,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 [http://toppler.sourceforge.net/](http://toppler.sourceforge.net/) || [toppler](https://aur.archlinux.org/packages/toppler/)<sup><small>AUR</small></sup>
 
-*   **The Secret Chronicles of Dr. M.** — A fork of Secret Maryo Chronicles.
-
-[https://github.com/secretchronicles/TSC](https://github.com/secretchronicles/TSC) || [tsc](https://aur.archlinux.org/packages/tsc/)<sup><small>AUR</small></sup>
-
-## Puzzle
+## 益智
 
 *   **Blockout II** — 3D tetris, free adaptation of the original BlockOut DOS game edited by California Dreams in 1989
 
@@ -400,7 +396,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **glChess** — 3D Chess Frontend.
 
-[https://wiki.gnome.org/Apps/Chess](https://wiki.gnome.org/Apps/Chess) || [glchess](https://aur.archlinux.org/packages/glchess/)<sup><small>AUR</small></sup>
+[http://live.gnome.org/Chess](http://live.gnome.org/Chess) || [glchess](https://aur.archlinux.org/packages/glchess/)<sup><small>AUR</small></sup>
 
 *   **Gnono** — GNOME version of the classic card game UNO.
 
@@ -448,9 +444,9 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 [http://www.2dboy.com](http://www.2dboy.com) || [worldofgoo](https://aur.archlinux.org/packages/worldofgoo/)<sup><small>AUR</small></sup>
 
-## Racing
+## 赛车
 
-*   **Armagetron Advanced** — Tron Clone in 3D.
+*   **Armagetron Advanced** — Armagetron Advanced游戏在一些轻型摩托车间进行，每辆车都在自己的道路上建立一堵光墙，它们很脆弱，不能碰撞（包括光墙）都以固定速度前进，另外只能进行90度转弯。Tron Clone in 3D.
 
 [http://armagetronad.net/](http://armagetronad.net/) || [armagetronad](https://www.archlinux.org/packages/?name=armagetronad)
 
@@ -514,11 +510,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://cymonsgames.com/asciiportal](http://cymonsgames.com/asciiportal) || [asciiportal](https://aur.archlinux.org/packages/asciiportal/)<sup><small>AUR</small></sup>
 
-*   **[Cataclysm: Dark Days Ahead](https://en.wikipedia.org/wiki/Cataclysm:_Dark_Days_Ahead "wikipedia:Cataclysm: Dark Days Ahead")** — Post-apocalyptic roguelike.
+*   **Cataclysm: Dark Days Ahead** — Post-apocalyptic roguelike.
 
 [http://en.cataclysmdda.com/](http://en.cataclysmdda.com/) || [cataclysm-dda](https://www.archlinux.org/packages/?name=cataclysm-dda)
 
-*   **[Linley's Dungeon Crawl](https://en.wikipedia.org/wiki/Linley%27s_Dungeon_Crawl "wikipedia:Linley's Dungeon Crawl")** —
+*   **[Crawl](https://en.wikipedia.org/wiki/Linley%27s_Dungeon_Crawl "wikipedia:Linley's Dungeon Crawl") (aka Dungeon Crawl)** — Linley's Dungeon Crawl).
 
 [http://www.dungeoncrawl.org/](http://www.dungeoncrawl.org/) || [crawl](https://aur.archlinux.org/packages/crawl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/crawl)]</sup>
 
@@ -542,11 +538,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://crawl.develz.org/wordpress/](http://crawl.develz.org/wordpress/) || [stone-soup](https://www.archlinux.org/packages/?name=stone-soup)
 
-*   **[Tales of Maj'Eyal](https://en.wikipedia.org/wiki/Tales_of_Maj%27Eyal "wikipedia:Tales of Maj'Eyal") (previously _Troubles of Middle Earth_)** — A dungeon crawler similar to Angband, based on the works of Tolkien.
+*   **Troubles of Middle Earth (now Tales of Maj'Eyal)** — A dungeon crawler similar to Angband, based on the works of Tolkien.
 
-[http://te4.org/](http://te4.org/) || [tome2](https://aur.archlinux.org/packages/tome2/)<sup><small>AUR</small></sup> [tome3](https://aur.archlinux.org/packages/tome3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tome3)]</sup> [tome4](https://aur.archlinux.org/packages/tome4/)<sup><small>AUR</small></sup>
+[http://tome.te4.org/](http://tome.te4.org/) ([archived old site](http://web.archive.bibalex.org/web/20071212125015rn_1/t-o-m-e.net/main.php?tome_current=0))<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-05-20]</sup> || [tome2](https://aur.archlinux.org/packages/tome2/)<sup><small>AUR</small></sup> [tome3](https://aur.archlinux.org/packages/tome3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tome3)]</sup> [tome4](https://aur.archlinux.org/packages/tome4/)<sup><small>AUR</small></sup>
 
-## Role-Playing Game (RPG)
+## 角色扮演游戏(RPG)
 
 *   **Arx Libertatis** — This project is a fully working, open source port of Arx Fatalis, a 2002 first-person role-playing game developed by Arkane Studios. It features some improvements over the original engine like bug fixes and wide screen support.
 
@@ -598,7 +594,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.darkarts.co.za/vulture](http://www.darkarts.co.za/vulture) || [vulture](https://aur.archlinux.org/packages/vulture/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vulture)]</sup>
 
-## Shooters (FPS, Third Person)
+## 射击 (FPS, 第三人称)
 
 *   **Alien Arena** — Free, standalone FPS focused mainly on online multiplayer, but can also be played singleplayer against bots.
 
@@ -681,23 +677,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Doom 3** — Stock Doom 3 binaries
 
-[http://www.idsoftware.com](http://www.idsoftware.com) || [doom3-bin](https://aur.archlinux.org/packages/doom3-bin/)<sup><small>AUR</small></sup>
+[http://www.idsoftware.com/games](http://www.idsoftware.com/games) || [doom3-bin](https://aur.archlinux.org/packages/doom3-bin/)<sup><small>AUR</small></sup>
 
 *   **Doom 3 Engine** — Source-based Doom 3 engine
 
-[http://www.idsoftware.com](http://www.idsoftware.com) || [doom3](https://aur.archlinux.org/packages/doom3/)<sup><small>AUR</small></sup>
-
-*   **iodoom3** — Doom 3 engine revamping, à-la-ioquake
-
-[http://www.iodoom3.org](http://www.iodoom3.org) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=iodoom3)</small>
-
-*   **dhemw3** — Fork of iodoom3
-
-[https://github.com/dhewm/dhewm3](https://github.com/dhewm/dhewm3) || [dhewm3](https://aur.archlinux.org/packages/dhewm3/)<sup><small>AUR</small></sup>
-
-*   **RBDOOM-3-BFG** — Fork of Doom 3 BFG Edition
-
-[https://github.com/RobertBeckebans/RBDOOM-3-BFG](https://github.com/RobertBeckebans/RBDOOM-3-BFG) || [rbdoom-3-bfg](https://aur.archlinux.org/packages/rbdoom-3-bfg/)<sup><small>AUR</small></sup>
+[http://www.idsoftware.com/games](http://www.idsoftware.com/games) || [doom3](https://aur.archlinux.org/packages/doom3/)<sup><small>AUR</small></sup>
 
 *   **ezQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. The popular, modern and maintained Quake/QuakeWorld client. Manual post-installation setup required. Can play on-line for free
 
@@ -717,11 +701,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://zerowing.idsoftware.com/linux/etqw/](http://zerowing.idsoftware.com/linux/etqw/) || [etqw](https://aur.archlinux.org/packages/etqw/)<sup><small>AUR</small></sup>
 
-*   **[Half-Life](https://en.wikipedia.org/wiki/Half-Life_(video_game) "wikipedia:Half-Life (video game)")** — Science-fiction FPS. The two extensions, _Opposing Force_ and _Blue Shift_, are also available.
+*   **Half-Life** — Science-fiction FPS. The two extensions, _Opposing Force_ and _Blue Shift_, are also available.
 
 [http://store.steampowered.com/app/70/](http://store.steampowered.com/app/70/) || Steam
 
-*   **[Half-Life 2](https://en.wikipedia.org/wiki/Half-Life_2 "wikipedia:Half-Life 2")** — Science-fiction FPS. Lost Coast, Episode One and Episode Two are also available. In beta as of July 2013
+*   **Half-Life 2** — Science-fiction FPS. Lost Coast, Episode One and Episode Two are also available. In beta as of July 2013
 
 [http://store.steampowered.com/app/220/](http://store.steampowered.com/app/220/) || Steam
 
@@ -795,7 +779,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://redeclipse.net](http://redeclipse.net) || [redeclipse](https://aur.archlinux.org/packages/redeclipse/)<sup><small>AUR</small></sup>
 
-*   **[Ricochet](https://en.wikipedia.org/wiki/Ricochet_(2000_video_game) "wikipedia:Ricochet (2000 video game)")** — Futuristic arena battles.
+*   **Ricochet** — Futuristic arena battles.
 
 [http://store.steampowered.com/app/60/](http://store.steampowered.com/app/60/) || Steam
 
@@ -815,11 +799,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.serioussam.com](http://www.serioussam.com) || Steam
 
-*   **[Team Fortress Classic](https://en.wikipedia.org/wiki/Team_Fortress_Classic "wikipedia:Team Fortress Classic")** — Class-based online FPS.
+*   **Team Fortress Classic** — Class-based online FPS.
 
 [http://store.steampowered.com/app/20/](http://store.steampowered.com/app/20/) || Steam
 
-*   **[Team Fortress 2](https://en.wikipedia.org/wiki/Team_Fortress_2 "wikipedia:Team Fortress 2")** — Class-based online FPS with cartoonish style. Using Source Engine.
+*   **Team Fortress 2** — Class-based online FPS with cartoonish style. Using Source Engine.
 
 [http://store.steampowered.com/app/440/](http://store.steampowered.com/app/440/) || Steam
 
@@ -843,7 +827,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.unrealtournament2004.com](http://www.unrealtournament2004.com) || [ut2004](https://aur.archlinux.org/packages/ut2004/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ut2004)]</sup> for the retail version, [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ut2004-anthology)]</sup> for the anthology version
 
-*   **[Unvanquished](https://en.wikipedia.org/wiki/Unvanquished_(video_game) "wikipedia:Unvanquished (video game)")** — Team-based fps/rts hybrid game which pits aliens against humans. Monthly release that can be played on official servers.
+*   **Unvanquished** — Team-based fps/rts hybrid game which pits aliens against humans. Monthly release that can be played on official servers.
 
 [http://unvanquished.net/](http://unvanquished.net/) || [unvanquished](https://aur.archlinux.org/packages/unvanquished/)<sup><small>AUR</small></sup>
 
@@ -858,13 +842,13 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Wolfenstein: Enemy Territory](/index.php/Wolfenstein:_Enemy_Territory "Wolfenstein: Enemy Territory")
 
 *   Completely free, standalone, team-based, multiplayer FPS – [enemy-territory](https://aur.archlinux.org/packages/enemy-territory/)<sup><small>AUR</small></sup>
-*   Advanced open source project and fully compatible client and server – [etlegacy32](https://aur.archlinux.org/packages/etlegacy32/)<sup><small>AUR</small></sup>
+*   Advanced open source fork of ET engine and fully compatible client and server – [etlegacy](https://aur.archlinux.org/packages/etlegacy/)<sup><small>AUR</small></sup>, [etlegacy-git](https://aur.archlinux.org/packages/etlegacy-git/)<sup><small>AUR</small></sup>
 
-*   **[World of Padman](https://en.wikipedia.org/wiki/World_of_Padman "wikipedia:World of Padman")** — Stand slone somplex – cartoon-style multiplayer first-person shooter.
+*   **World Of Padman** — Stand slone somplex – cartoon-style multiplayer first-person shooter.
 
 [http://worldofpadman.net/website](http://worldofpadman.net/website) || [worldofpadman](https://aur.archlinux.org/packages/worldofpadman/)<sup><small>AUR</small></sup>
 
-*   **[Xonotic](https://en.wikipedia.org/wiki/Xonotic "wikipedia:Xonotic")** — Free, open-source first person shooter (a fork of Nexuiz but with modified gameplay).
+*   **Xonotic** — Free, open-source first person shooter (a fork of Nexuiz but with modified gameplay).
 
 [http://xonotic.org](http://xonotic.org) || [xonotic](https://www.archlinux.org/packages/?name=xonotic)
 
@@ -878,7 +862,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 **This article or section needs language, wiki syntax or style improvements.**
 
-**Reason:** Some random trash I can not even test. TODO: apply [Template:App](/index.php/Template:App "Template:App"). (Discuss in [Talk:List of games#](https://wiki.archlinux.org/index.php/Talk:List_of_games))
+**Reason:** Some random trash I can not even test. TODO: apply [Template:App](/index.php/Template:App "Template:App"). (Discuss in [Talk:List of games (简体中文)#](https://wiki.archlinux.org/index.php/Talk:List_of_games_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 *   Blood Frontier – Team oriented multiplayer FPS based on the Cube2 (Sauerbraten) engine
 *   [Futuristic Arenas](http://www.javagameplay.com/futuristicarenas/medium.html)
@@ -888,9 +872,9 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [TUER](http://tuer.sourceforge.net)
 *   [Ancient Arenas](http://www.javagameplay.com/ancientarenas/medium.html)
 
-## Simulation
+## 模拟
 
-*   **[Beyond the Red Line](https://en.wikipedia.org/wiki/Beyond_the_Red_Line "wikipedia:Beyond the Red Line")** — Completely free stand-alone conversion of Freespace 2 based on the TV show Battlestar Galactica. Presumed abandoned, see Diaspora: Shattered Armistice for an alternative.
+*   **Beyond The Red Line** — Completely free stand-alone conversion of Freespace 2 based on the TV show Battlestar Galactica. Presumed abandoned, see Diaspora: Shattered Armistice for an alternative.
 
 [http://www.beyondtheredline.net/](http://www.beyondtheredline.net/) || [btrl](https://aur.archlinux.org/packages/btrl/)<sup><small>AUR</small></sup>
 
@@ -918,10 +902,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://icculus.org/freespace2/](http://icculus.org/freespace2/) || [fs2_open](https://aur.archlinux.org/packages/fs2_open/)<sup><small>AUR</small></sup>
 
-*   **[Minetest](/index.php/Minetest "Minetest")** — Voxel-based sandbox game engine and game.
-
-[http://www.minetest.net/](http://www.minetest.net/) || [minetest](https://www.archlinux.org/packages/?name=minetest)
-
 *   **Powder Toy** — Physics and chemistry simulation sandbox game.
 
 [http://powdertoy.co.uk/](http://powdertoy.co.uk/) || [powder-toy](https://aur.archlinux.org/packages/powder-toy/)<sup><small>AUR</small></sup>
@@ -934,11 +914,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.stepmania.com/](http://www.stepmania.com/) || [stepmania](https://aur.archlinux.org/packages/stepmania/)<sup><small>AUR</small></sup>
 
-*   **[Vega Strike](https://en.wikipedia.org/wiki/Vega_Strike "wikipedia:Vega Strike")** — 3D action-space-sim allowing player to trade and bounty hunt in a vast universe.
+*   **VegaStrike** — 3D action-space-sim allowing player to trade and bounty hunt in a vast universe.
 
 [http://vegastrike.sourceforge.net/](http://vegastrike.sourceforge.net/) || [vegastrike](https://aur.archlinux.org/packages/vegastrike/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vegastrike)]</sup>
 
-## Strategy
+## 策略
 
 *   **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D._(video_game) "wikipedia:0 A.D. (video game)")** — 3D and historically-based real-time strategy game, alpha stage.
 
@@ -1002,7 +982,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[MegaGlest](https://en.wikipedia.org/wiki/MegaGlest "wikipedia:MegaGlest")** — Fork of Glest, a 3D real-time strategy game in a fantastic world.
 
-[http://github.com/megaglest](http://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
+[http://sourceforge.net/projects/megaglest/](http://sourceforge.net/projects/megaglest/) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
 
 *   **[Netpanzer](https://en.wikipedia.org/wiki/Netpanzer "wikipedia:Netpanzer")** — Realtime Strategy game like Command and Conquer but without building bases.
 
@@ -1040,7 +1020,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://wz2100.net/](http://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
 
-## Tycoon/Management Games
+## Tycoon/管理游戏
 
 *   **Lincity-ng** — City simulation game in which you are required to build and maintain a city. You can win the game either by building a sustainable economy or by evacuating all citizens with spaceships.
 
@@ -1058,7 +1038,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [Play via Web Start](http://www.tropiceuro.com/play) || [http://www.tropiceuro.com](http://www.tropiceuro.com)
 
-## Visual novels
+## 视觉小说
 
 *   **[Digital: A Love Story](https://en.wikipedia.org/wiki/Digital:_A_Love_Story "wikipedia:Digital: A Love Story")** — Computer mystery/romance set five minutes into the future of 1988.
 
@@ -1068,7 +1048,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://scoutshonour.com/donttakeitpersonallybabeitjustaintyourstory/](http://scoutshonour.com/donttakeitpersonallybabeitjustaintyourstory/) || [donttakeitpersonally](https://aur.archlinux.org/packages/donttakeitpersonally/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/donttakeitpersonally)]</sup>
 
-*   **[Juniper's Knot](https://en.wikipedia.org/wiki/Juniper%27s_Knot "wikipedia:Juniper's Knot")** — Short game about boy and fiend.
+*   **Juniper's Knot** — Short game about boy and fiend.
 
 [http://junipersknot.dischan.org/](http://junipersknot.dischan.org/) || [junipersknot](https://aur.archlinux.org/packages/junipersknot/)<sup><small>AUR</small></sup>
 
@@ -1084,24 +1064,24 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://sakevisual.com/realistair/](http://sakevisual.com/realistair/) || [realistair](https://aur.archlinux.org/packages/realistair/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/realistair)]</sup>
 
-## See also
+## 参阅
 
-*   [Linux Installers for Linux Gamers](http://liflg.org/)
-*   [The Linux Gamers' Game List](http://www.icculus.org/lgfaq/gamelist.php)
+*   [Linux安装游戏的用户](http://liflg.org/)
+*   [Linux的游戏玩家的游戏列表](http://www.icculus.org/lgfaq/gamelist.php)
 *   [The Humble Bundle](https://www.humblebundle.com/)
 *   [Wikipedia:Humble Bundle](https://en.wikipedia.org/wiki/Humble_Bundle "wikipedia:Humble Bundle")
-*   [Steam Linux store](http://store.steampowered.com/browse/linux/)
-*   [List of Linux Steam games](https://steamdb.info/linux/)
+*   [Linux的Steam游戏](http://store.steampowered.com/browse/linux/)
 *   [Wikipedia:List of games developed by Valve](https://en.wikipedia.org/wiki/List_of_games_developed_by_Valve "wikipedia:List of games developed by Valve")
 *   [Wikipedia:Game engine recreation](https://en.wikipedia.org/wiki/Game_engine_recreation "wikipedia:Game engine recreation")
 *   [Wikipedia:Source port](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port")
-*   [Linux game database](http://www.lgdb.org/)
+*   [Linux 游戏数据库](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
+*   [Linux的游戏名字维基百科](http://en.wikipedia.org/wiki/Category)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=413942](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=413942)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(简体中文)&oldid=413945](https://wiki.archlinux.org/index.php?title=List_of_games_(简体中文)&oldid=413945)"
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+*   [Gaming (简体中文)](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)")
+*   [Emulators (简体中文)](/index.php/Category:Emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulators (简体中文)")

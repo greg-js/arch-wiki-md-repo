@@ -520,7 +520,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **QTodoTxt** — Interfaz gráfica multiplataforma para ficheros `todo.txt` (see [project's page](http://todotxt.com/))
 
-[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtodotxt-git)]</sup>
+[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup>
 
 *   **Rachota** — Aplicación de seguimiento portable para proyectos personales.
 
@@ -669,7 +669,7 @@ Vea el artículo principal: [Amateur radio#Software list](/index.php/Amateur_rad
 
 Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413337](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413337)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413939](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413939)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

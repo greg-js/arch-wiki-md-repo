@@ -62,7 +62,7 @@ The recognized text may be saved to disc as a text or html file in UTF-8 encodin
 *   [http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) - YAGF home page
 *   [https://launchpad.net/cuneiform-linux](https://launchpad.net/cuneiform-linux) - Linux port of Cuneiform
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=YAGF&oldid=412224](https://wiki.archlinux.org/index.php?title=YAGF&oldid=412224)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=YAGF&oldid=413954](https://wiki.archlinux.org/index.php?title=YAGF&oldid=413954)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
