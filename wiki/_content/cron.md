@@ -442,10 +442,10 @@ See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=140497).
 
 ## Ensuring exclusivity
 
-If you run potentially long-running jobs (e.g., a backup might all of a sudden run for a long time, because of many changes or a particular slow network connection), then [lockrun](https://aur.archlinux.org/packages/lockrun/)<sup><small>AUR</small></sup> can ensure that the cron job won't start a second time.
+If you run potentially long-running jobs (e.g., a backup might all of a sudden run for a long time, because of many changes or a particular slow network connection), then `flock` ([util-linux](https://www.archlinux.org/packages/?name=util-linux)) can ensure that the cron job won't start a second time.
 
 ```
-  5,35 * * * * /usr/bin/lockrun -n /tmp/lock.backup /root/make-backup.sh
+  5,35 * * * * /usr/bin/flock -n /tmp/lock.backup /root/make-backup.sh
 
 ```
 
@@ -522,7 +522,7 @@ See the crontab [man page](/index.php/Man_page "Man page") for further informati
 
 *   [Gentoo Linux Cron Guide](http://www.gentoo.org/doc/en/cron-guide.xml)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cron&oldid=411983](https://wiki.archlinux.org/index.php?title=Cron&oldid=411983)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cron&oldid=413896](https://wiki.archlinux.org/index.php?title=Cron&oldid=413896)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

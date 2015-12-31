@@ -91,7 +91,7 @@ Enable antenna diversity with the option `bt_ant_diversity=1` to improve the sig
 
 To add the desired module options, just create a `ath9k.conf` file as shown here:.
 
- `/etc/modprobe.d/ath9k.conf`  `options ath9k btcoex_enable=1 bt_ant_diversity=1 ps_enable=0` 
+ `/etc/modprobe.d/ath9k.conf`  `options ath9k bt_ant_diversity=1 ps_enable=0` 
 
 ### Fix wakeup from suspend on lid close
 
@@ -138,7 +138,7 @@ See power saving section at [Improving WLAN and BT performance](#Improving_WLAN_
 *   [BBS topic](https://bbs.archlinux.org/viewtopic.php?id=173418)
 *   Unbricking with [flashrom](https://www.archlinux.org/packages/?name=flashrom) [using the Raspberry Pi](http://flashrom.org/RaspberryPi), requires [SOIC clip](http://www.hmcelectronics.com/product/Pomona/5250), See [GPIO matrix](http://elinux.org/Rpi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29) and [pictures](https://drive.google.com/folderview?id=0B9f62MH0umbmRTA2Xzd5WHhjWEU&usp=sharing). also there's a [BeagleBone method](http://www.tnhh.net/2014/08/25/unbricking-chromebook-with-beaglebone.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_C720_Chromebook&oldid=393432](https://wiki.archlinux.org/index.php?title=Acer_C720_Chromebook&oldid=393432)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_C720_Chromebook&oldid=413880](https://wiki.archlinux.org/index.php?title=Acer_C720_Chromebook&oldid=413880)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

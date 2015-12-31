@@ -4,7 +4,7 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-Unreal Engine 4 es la ultima versión de el motor de videojuegos de PC y consolas creado por la compañía Epic Games
+Unreal Engine 4 es la ultima versión de el motor de videojuegos de PC, consolas, dispositivos móviles y de realidad virtual creado por la compañía Epic Games
 
 El contenido de este articulo fue originalmente escrito en [Esta Página](https://wiki.unrealengine.com/Building_On_Linux) y adaptado específicamente para ArchLinux
 
@@ -14,15 +14,16 @@ El contenido de este articulo fue originalmente escrito en [Esta Página](https:
 
 *   [1 Requisitos Mínimos](#Requisitos_M.C3.ADnimos)
 *   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Desde AUR](#Desde_AUR)
-    *   [2.2 Compilar desde el Código Fuente](#Compilar_desde_el_C.C3.B3digo_Fuente)
-        *   [2.2.1 Satisfacer Dependencias](#Satisfacer_Dependencias)
-        *   [2.2.2 Obtener el código fuente](#Obtener_el_c.C3.B3digo_fuente)
-        *   [2.2.3 Preparar para la compilacion](#Preparar_para_la_compilacion)
-        *   [2.2.4 Compilar el código fuente](#Compilar_el_c.C3.B3digo_fuente)
-    *   [2.3 Ejecutar Unreal Engine 4](#Ejecutar_Unreal_Engine_4)
-    *   [2.4 Problemas Comunes](#Problemas_Comunes)
-        *   [2.4.1 Problemas de Compilacion](#Problemas_de_Compilacion)
+    *   [2.1 Compilar desde el Código Fuente](#Compilar_desde_el_C.C3.B3digo_Fuente)
+        *   [2.1.1 Satisfacer Dependencias](#Satisfacer_Dependencias)
+        *   [2.1.2 Obtener el código fuente](#Obtener_el_c.C3.B3digo_fuente)
+        *   [2.1.3 Preparar para la compilacion](#Preparar_para_la_compilacion)
+        *   [2.1.4 Compilar el código fuente](#Compilar_el_c.C3.B3digo_fuente)
+    *   [2.2 Ejecutar Unreal Engine 4](#Ejecutar_Unreal_Engine_4)
+    *   [2.3 Problemas Comunes](#Problemas_Comunes)
+        *   [2.3.1 Errores de compilación](#Errores_de_compilaci.C3.B3n)
+            *   [2.3.1.1 No se encuentra el archivo "ConvexHull2D.h"](#No_se_encuentra_el_archivo_.22ConvexHull2D.h.22)
+        *   [2.3.2 Problemas de Compilación](#Problemas_de_Compilaci.C3.B3n)
 
 ## Requisitos Mínimos
 
@@ -37,17 +38,6 @@ RAM: 8 GB
 * * *
 
 ## Instalación
-
-### Desde AUR
-
-Para instalar desde AUR solo introduzca este comando en una terminal.
-
-```
-$ yaourt -S UE4
-
-```
-
-Este comando instalara únicamente los **Binarios**.
 
 ### Compilar desde el Código Fuente
 
@@ -106,11 +96,10 @@ Estos scripts descargaran ciertas dependencias de un tamaño aproximado de 3.5 G
 
 #### Compilar el código fuente
 
-Para compilar el código fuente ejecute los siguientes comandos:
+Para compilar el código fuente ejecute el siguiente comando:
 
 ```
 $ make UE4Editor UE4Game UnrealPak CrashReportClient ShaderCompileWorker UnrealLightmass
-$ make -j1 ShaderCompileWorker
 
 ```
 
@@ -120,9 +109,24 @@ Este proceso tomara bastante tiempo, dependerá de la capacidad de procesamiento
 
 ### Ejecutar Unreal Engine 4
 
+Para ejecutar Unreal ENgine 4 solo inserte los siguientes comandos en una terminal:
+
 ```
 $cd Engine/Binaries/Linux
-$./UE4Editor
+
+```
+
+Si compiló con UE4Editor:
+
+```
+$./UE4Editor 
+
+```
+
+Si compilo con UE4Editor-Linux-Debug:
+
+```
+$./UE4Editor-Linux-Debug
 
 ```
 
@@ -130,7 +134,25 @@ $./UE4Editor
 
 * * *
 
-#### Problemas de Compilacion
+#### Errores de compilación
+
+##### No se encuentra el archivo "ConvexHull2D.h"
+
+Modifique el archivo SubUVAnimation.cpp ubicado en /Engine/Source/Runtime/Private/Particles sobrescriba la linea
+
+```
+#include "ConvexHull2D.h"
+
+```
+
+por esta:
+
+```
+#include "ConvexHull2d.h"
+
+```
+
+#### Problemas de Compilación
 
 Si surgen problemas al momento de compilar el editor puede intentar compilarlo usando el Perfil "Debug"
 
@@ -139,4 +161,4 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413812](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413812)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413893](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413893)"

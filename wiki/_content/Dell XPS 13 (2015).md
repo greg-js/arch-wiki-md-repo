@@ -120,6 +120,7 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [2.4 Audio](#Audio)
         *   [2.4.1 HDA mode](#HDA_mode)
         *   [2.4.2 I2S mode](#I2S_mode)
+        *   [2.4.3 ALSA configuration](#ALSA_configuration)
     *   [2.5 Touchpad](#Touchpad)
     *   [2.6 Powersaving](#Powersaving)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -187,6 +188,12 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 I2S support in Linux is still quite nascent, and some important features, notably jack detection, are not due to land until kernel 4.2 or later. [[1]](http://www.spinics.net/lists/linux-acpi/msg57126.html) As a result, I2S support is currently disabled in favor of HDA mode. An ACPI REV quirk mode was merged in for 4.2 that will force HDA mode on until I2S support is ready. [[2]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[3]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039)
 
 In I2S mode, the dual-boot workaround is not necessary.
+
+#### ALSA configuration
+
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+
+ `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
 ### Touchpad
 
@@ -280,7 +287,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413147](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413147)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413881](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413881)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

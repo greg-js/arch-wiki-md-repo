@@ -1014,21 +1014,14 @@ And finally, you can create the [bridge interface with netctl](/index.php/Bridge
 
 ### Host-only Networking with ARM virtual machines (VM/Guests)
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** The only part specific to ARM is running `qemu-system-arm` instead of `qemu-system-x86_64`. On Arch, this is provided by [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra), but this was not tested on Arch (refers to _dpkg_). In general, written like a blog post with no explanation of the steps, duplicates previous sections. (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
-
-This is a concise method for setting up host only networking for ARM guests. ie. the vm and host can ssh, ping each other. Interactions between multiple guests was not tested. The method is slightly different for i386 guests and that method is not described here but in the attached notes here.
+This is a concise method for setting up host only networking for ARM guests. ie. the vm and host can ssh, ping each other. Interactions between multiple guests will not work since only one bridge/tap is specified. The method is slightly different for i386 guests and that method is not described here but in the attached notes.
 
 #### Components Needed
 
 These are the components used for this method:
 
-*   qemu - I used the regular git version of qemu instead of the one provided by pacman since it did not have arm support prebuilt. The build method is detailed in the github link.
+*   qemu
+*   qemu-arch-extra
 *   dnsmasq
 *   bridge-utils
 
@@ -1617,7 +1610,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413845](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413845)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413888](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413888)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -263,7 +263,7 @@ $ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
 
 #### kdesu
 
-kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.kde4/share/config/kdesurc` (or `~/.config/kdesurc` for the kf5 version of kdesu):
+kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc` (or `~/.kde4/share/config/kdesurc` for the kde4 version of kdesu):
 
 ```
 [super-user-command]
@@ -271,14 +271,14 @@ super-user-command=sudo
 
 ```
 
-or use the following command (use _kwriteconfig5_ for the kf5 version of kdesu):
+or use the following command (use _kwriteconfig_ for the kde4 version of kdesu):
 
 ```
-$ kwriteconfig --file kdesurc --group super-user-command --key super-user-command sudo
+$ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-command sudo
 
 ```
 
-Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"), which has the added advantage of tab-completion for the command following.
+Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/)<sup><small>AUR</small></sup>, which has the added advantage of tab-completion for the command following.
 
 ### Harden with Sudo Example
 
@@ -451,7 +451,7 @@ The authors site has a [list of all the options](http://www.sudo.ws/sudo/sudoers
 
 See [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sudo&oldid=406519](https://wiki.archlinux.org/index.php?title=Sudo&oldid=406519)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sudo&oldid=413889](https://wiki.archlinux.org/index.php?title=Sudo&oldid=413889)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

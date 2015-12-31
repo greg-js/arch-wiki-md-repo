@@ -14,15 +14,16 @@ The content of this article was originally written on [this page](https://wiki.u
 
 *   [1 Minimum requirements](#Minimum_requirements)
 *   [2 Installation](#Installation)
-    *   [2.1 From AUR](#From_AUR)
-    *   [2.2 Compile from Source Code](#Compile_from_Source_Code)
-        *   [2.2.1 Satisfy Dependencies](#Satisfy_Dependencies)
-        *   [2.2.2 Get the source code](#Get_the_source_code)
-        *   [2.2.3 Prepare to compile](#Prepare_to_compile)
-        *   [2.2.4 Compile the source code](#Compile_the_source_code)
+    *   [2.1 Compile from Source Code](#Compile_from_Source_Code)
+        *   [2.1.1 Satisfy Dependencies](#Satisfy_Dependencies)
+        *   [2.1.2 Get the source code](#Get_the_source_code)
+        *   [2.1.3 Prepare to compile](#Prepare_to_compile)
+        *   [2.1.4 Compile the source code](#Compile_the_source_code)
 *   [3 Run Unreal Engine 4](#Run_Unreal_Engine_4)
 *   [4 Common Issues](#Common_Issues)
-    *   [4.1 Compilation Problems](#Compilation_Problems)
+    *   [4.1 Compilation Errors](#Compilation_Errors)
+        *   [4.1.1 "ConvexHull2D.h" not found](#.22ConvexHull2D.h.22_not_found)
+    *   [4.2 Compilation Problems](#Compilation_Problems)
 
 ## Minimum requirements
 
@@ -35,17 +36,6 @@ GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
 RAM: 8 GB
 
 ## Installation
-
-### From AUR
-
-To install from AUR only put the following command in a terminal:
-
-```
-$ yaourt -S UE4
-
-```
-
-This command will automatically install the **binaries**.
 
 ### Compile from Source Code
 
@@ -102,11 +92,10 @@ $ ./GenerateProjectFiles.sh
 
 #### Compile the source code
 
-To compile the source Code Execute the following commands:
+To compile the source code execute the following command:
 
 ```
 $ make UE4Editor UE4Game UnrealPak CrashReportClient ShaderCompileWorker UnrealLightmass
-$ make -j1 ShaderCompileWorker
 
 ```
 
@@ -124,7 +113,23 @@ $./UE4Editor
 
 ## Common Issues
 
-* * *
+#### Compilation Errors
+
+##### "ConvexHull2D.h" not found
+
+You need to modify the SubUVAnimation.cpp file located in /Engine/Source/Runtime/Engine/Orivate/Particles and override this line:
+
+```
+#include "ConvexHull2D.h"
+
+```
+
+whit this:
+
+```
+#include "ConvexHull2d.h"
+
+```
 
 #### Compilation Problems
 
@@ -135,4 +140,4 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413877](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413877)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413890](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413890)"
