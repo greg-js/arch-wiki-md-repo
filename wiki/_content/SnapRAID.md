@@ -10,9 +10,10 @@ Because of the nature of folder-based backup, SnapRAID is more flexible and simp
 
 SnapRAID works by storing parity of all folders to another disk. The destination disk which the parity file is stored on should be the largest. Other disks do not have this restriction and can be of any size. Summing up, SnapRAID is suitable for media centers where files are usually large and rarely changed. SnapRAID is highly flexible and can be configured to add/remove disk at any time. Also, more than one redundant disks are supported.
 
-**Tip:** If you want to combine folders into a larger one without setting up disk raid, the FUSE-based MHDDFS is one option. Other ways such as AUFS may be considered, but often involve kernel patching or unsupported or outdated software.
+**Tip:**
 
-**Tip:** [mergerfs](https://aur.archlinux.org/packages/mergerfs/) is similar to mhddfs, but more recently updated and has more choices for drive-selection policies. It also has excellent speeds.
+*   If you want to combine folders into a larger one without setting up disk raid, the FUSE-based MHDDFS is one option. Other ways such as AUFS may be considered, but often involve kernel patching or unsupported or outdated software.
+*   [mergerfs](https://aur.archlinux.org/packages/mergerfs/)<sup><small>AUR</small></sup> is similar to mhddfs, but more recently updated and has more choices for drive-selection policies. It also has excellent speeds.
 
 ## Contents
 
@@ -41,7 +42,7 @@ And an empty redundant disk mounted at:
 
 *   /mnt/sde
 
-Let's create a configuration file! Lines begining with "content" designate the path to a content file that stores SnapRAID metadata.
+Let us create a configuration file! Lines begining with "content" designate the path to a content file that stores SnapRAID metadata.
 
 **Warning:** SnapRAID will need a content file to build a recovery. Multiple copies of this file are essential for maximum data safety. It would be wise to have this file on all disks and make backups elsewhere.
 
@@ -110,7 +111,7 @@ To begin recovery
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=413789](https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=413789)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=413904](https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=413904)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -161,4 +161,9 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413893](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413893)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413908](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413908)"
+
+[Categories](/index.php/Special:Categories "Special:Categories"):
+
+*   [Development (Español)](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)")
+*   [Gaming (Español)](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)")

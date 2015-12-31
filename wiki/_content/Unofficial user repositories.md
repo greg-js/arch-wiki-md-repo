@@ -56,17 +56,16 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.11 infinality-bundle](#infinality-bundle)
         *   [3.1.12 ivasilev](#ivasilev_2)
         *   [3.1.13 llvm-svn](#llvm-svn)
-        *   [3.1.14 markzz](#markzz)
-        *   [3.1.15 metalgamer](#metalgamer)
-        *   [3.1.16 miffe](#miffe)
-        *   [3.1.17 nullptr_t](#nullptr_t)
-        *   [3.1.18 pipelight](#pipelight)
-        *   [3.1.19 repo-ck](#repo-ck)
-        *   [3.1.20 seblu](#seblu)
-        *   [3.1.21 sergej-repo](#sergej-repo)
-        *   [3.1.22 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.23 herecura](#herecura)
-        *   [3.1.24 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.14 metalgamer](#metalgamer)
+        *   [3.1.15 miffe](#miffe)
+        *   [3.1.16 nullptr_t](#nullptr_t)
+        *   [3.1.17 pipelight](#pipelight)
+        *   [3.1.18 repo-ck](#repo-ck)
+        *   [3.1.19 seblu](#seblu)
+        *   [3.1.20 sergej-repo](#sergej-repo)
+        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.22 herecura](#herecura)
+        *   [3.1.23 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -124,13 +123,14 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
         *   [5.1.18 linux-ck-pax](#linux-ck-pax)
         *   [5.1.19 linux-tresor](#linux-tresor)
-        *   [5.1.20 qt-debug](#qt-debug)
-        *   [5.1.21 quarry](#quarry)
-        *   [5.1.22 rstudio](#rstudio)
-        *   [5.1.23 siosm-aur](#siosm-aur)
-        *   [5.1.24 siosm-selinux](#siosm-selinux)
-        *   [5.1.25 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.26 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.20 markzz](#markzz)
+        *   [5.1.21 qt-debug](#qt-debug)
+        *   [5.1.22 quarry](#quarry)
+        *   [5.1.23 rstudio](#rstudio)
+        *   [5.1.24 siosm-aur](#siosm-aur)
+        *   [5.1.25 siosm-selinux](#siosm-selinux)
+        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -434,20 +434,6 @@ Server = http://ivasilev.net/pacman/$arch
 ```
 [llvm-svn]
 Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
-
-```
-
-#### markzz
-
-*   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
-*   **Description:** Packages that markzz maintains on the AUR, Linux with the vfio patch ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>), and packages to maintain a Debian package repository.
-*   **Key ID:** 3CADDFDD
-
-**Note:** If you want to add the key by installing the _markzz-keyring_ package, temporarily add `SigLevel = Never` into the repository section.
-
-```
-[markzz]
-Server = http://repo.markzz.com/arch/$repo/$arch
 
 ```
 
@@ -1228,6 +1214,20 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 
 ```
 
+#### markzz
+
+*   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
+*   **Description:** Packages that markzz maintains or uses on the AUR, Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>), and packages to maintain a Debian package repository.
+*   **Key ID:** 3CADDFDD
+
+**Note:** If you want to add the key by installing the _markzz-keyring_ package, temporarily add `SigLevel = Never` into the repository section.
+
+```
+[markzz]
+Server = http://repo.markzz.com/arch/$repo/$arch
+
+```
+
 #### qt-debug
 
 *   **Maintainer:** [The Compiler](http://blog.the-compiler.org/?page_id=36)
@@ -1539,7 +1539,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413575](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413575)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413903](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413903)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

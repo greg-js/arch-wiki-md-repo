@@ -48,6 +48,7 @@ Related articles
             *   [5.2.1.2 FreeBSD menu entry](#FreeBSD_menu_entry)
                 *   [5.2.1.2.1 Loading the kernel directly](#Loading_the_kernel_directly)
                 *   [5.2.1.2.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
+                *   [5.2.1.2.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
             *   [5.2.1.3 Windows XP menu entry](#Windows_XP_menu_entry)
             *   [5.2.1.4 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
             *   [5.2.1.5 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
@@ -512,7 +513,7 @@ menuentry "Other Linux" {
 
 ##### FreeBSD menu entry
 
-The following two method requires that FreeBSD is installed on a single partition with UFS(v2). Assuming the nested BSD partition table is on `sda4`:
+The following three methods require that FreeBSD is installed on a single partition with UFS(v2). Assuming the nested BSD partition table is on `sda4`:
 
 ###### Loading the kernel directly
 
@@ -535,6 +536,16 @@ menuentry 'FreeBSD' {
 	insmod ufs2
 	set root='hd0,gpt4,bsd1'
 	chainloader +1
+}
+```
+
+###### Running the traditional BSD 2nd stage loader
+
+```
+menuentry 'FreeBSD' {
+  insmod ufs2
+  set root='(hd0,4)'
+  kfreebsd /boot/loader
 }
 ```
 
@@ -1162,7 +1173,7 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=413285](https://wiki.archlinux.org/index.php?title=GRUB&oldid=413285)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=413906](https://wiki.archlinux.org/index.php?title=GRUB&oldid=413906)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

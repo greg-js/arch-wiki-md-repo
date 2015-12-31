@@ -108,9 +108,9 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 ### Graphical front-ends
 
-*   **Muon** — A collection of package management tools for KDE, using PackageKit.
+*   **Discover** — A collection of package management tools for KDE, using PackageKit.
 
-[https://projects.kde.org/projects/extragear/sysadmin/muon](https://projects.kde.org/projects/extragear/sysadmin/muon) || [muon](https://www.archlinux.org/packages/?name=muon)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [discover](https://www.archlinux.org/packages/?name=discover)]</sup>
+[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
 *   **GNOME Software** — Gnome Software App.
 
@@ -968,7 +968,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413664](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413664)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413900](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413900)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
