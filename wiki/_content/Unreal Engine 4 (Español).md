@@ -45,19 +45,18 @@ RAM: 8 GB
 
 #### Satisfacer Dependencias
 
-```
-$ sudo pacman -S clang35 mono dos2unix cmake
+Instale [clang35](https://www.archlinux.org/packages/?name=clang35), [mono](https://www.archlinux.org/packages/?name=mono), [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and [cmake](https://www.archlinux.org/packages/?name=cmake).
 
-```
+En algunas ocasiones sera necesario re compilar clang o obtener un paquete pre compilado de clang que no use `ld.gold`:
 
-En algunas ocasiones sera necesario re compilar clang o obtener un paquete pre compilado de clang que no use id.gold Si usó el comando anterior puede hacer lo siguiente
+Si instaló clang35 desde los repositorios haga lo siguiente:
 
 ```
 $ mkdir ~/bin/ && cd ~/bin/ && ln -s /bin/ld.bfd ./ld.gold
 
 ```
 
-Después modifique el archivo .bashrc (generalmente oculto en /home) y agregue la linea siguiente:
+Después modifique el archivo [.bashrc](/index.php/.bashrc ".bashrc") y agregue la linea siguiente:
 
 ```
 export PATH=$HOME/bin:$PATH
@@ -138,7 +137,7 @@ $./UE4Editor-Linux-Debug
 
 ##### No se encuentra el archivo "ConvexHull2D.h"
 
-Modifique el archivo SubUVAnimation.cpp ubicado en /Engine/Source/Runtime/Private/Particles sobrescriba la linea
+Modifique el archivo `SubUVAnimation.cpp` ubicado en `/Engine/Source/Runtime/Private/Particles` sobrescriba la linea:
 
 ```
 #include "ConvexHull2D.h"
@@ -161,7 +160,7 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413931](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413931)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413965](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4_(Español)&oldid=413965)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

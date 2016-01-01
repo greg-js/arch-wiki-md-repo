@@ -33,7 +33,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### Using cmus with alsa
 
-When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. What you might encounter when when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
+When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. What you might encounter when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
 
  `~/.config/cmus/rc` 
 
@@ -178,7 +178,7 @@ Now when you use the `XF86AudioPlay` key on your keyboard, cmus will open up. If
 *   [Git Repository](https://github.com/cmus/cmus)
 *   [Website](https://cmus.github.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=412456](https://wiki.archlinux.org/index.php?title=Cmus&oldid=412456)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=413958](https://wiki.archlinux.org/index.php?title=Cmus&oldid=413958)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

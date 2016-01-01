@@ -244,8 +244,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [71 Worms Reloaded](#Worms_Reloaded)
     *   [71.1 Dependencies](#Dependencies_37)
 *   [72 XCOM](#XCOM)
-    *   [72.1 Hangs on startup](#Hangs_on_startup)
-    *   [72.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+    *   [72.1 Dependencies](#Dependencies_38)
+    *   [72.2 Hangs on startup](#Hangs_on_startup)
+    *   [72.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Air Brawl
 
@@ -1560,6 +1561,10 @@ exec dosbox -conf dosbox_wiz6.conf -conf dosbox_wiz6_launch_linux.conf -noconsol
 
 ## XCOM
 
+### Dependencies
+
+*   [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image)
+
 ### Hangs on startup
 
 Steam ships its own versions of some libraries, and they sometimes are too old to work with archlinux system libraries. Removing the library supplied by Steam means Steam has to use the newer arch-specific version. [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1428375#p1428375).
@@ -1575,7 +1580,7 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412769](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=412769)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=413961](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=413961)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

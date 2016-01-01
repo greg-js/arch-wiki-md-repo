@@ -34,7 +34,6 @@ This article explains how to setup a new Active Directory Domain Controller. It 
     *   [6.1 DNS](#DNS_3)
     *   [6.2 SSL](#SSL)
     *   [6.3 DHCP](#DHCP)
-*   [7 What to do next](#What_to_do_next)
 
 ## Installation
 
@@ -44,27 +43,14 @@ Additionally, Samba contains its own fully functional DNS server, but many admin
 
 ## Hostname
 
-Set the hostname as described in [Network_configuration#Set_the_hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"). The hostname is set to **server** in this example.
-
-Setup the hosts file with the hostname and domain. The domain name used here—**internal.domain.com**—will be the realm in the provisioning step. For this example:
-
- `/etc/hosts` 
+Add the [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") and domain to `etc/hosts`. In this example, the hostname is set to **server**, and the domain name to **internal.domain.com**:
 
 ```
-#
-# /etc/hosts: static lookup table for host names
-#
-
-#<ip-address>	<hostname.domain.org>		<hostname>
-127.0.0.1	localhost.localdomain		localhost
-::1		localhost.localdomain		localhost
 xxx.xxx.xxx.xxx	server.internal.domain.com	server
 
-# End of file
-
 ```
 
-The **xxx.xxx.xxx.xxx** represents the preconfigured static IP address.
+`xxx.xxx.xxx.xxx` represents the preconfigured static IP address.
 
 ## Provisioning
 
@@ -579,15 +565,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 Finally, enable and start (or restart) the `dhcpd4` service.
 
-## What to do next
-
-If you have made it this far without any unexpected output from the tests above, you are good to go. Congrats! Here are some related topics to extend your new AD server:
-
-[Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration") - This article explains how to attach Linux clients to an Active Directory domain.
-
-[OpenChange server](/index.php/OpenChange_server "OpenChange server") - The OpenChange project provides a Microsoft Exchange compatible mail server using only open source software.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413792](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413792)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413977](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413977)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -454,7 +454,7 @@ ServerName localhost:631
 
 ```
 
-*   Try to remove Foomatic drivers or refer to [CUPS#HP Printer](/index.php/CUPS#HP_Printer "CUPS") for a workaround.
+*   Try to remove Foomatic drivers or refer to [CUPS/Printer-specific_problems#HPLIP_Driver](/index.php/CUPS/Printer-specific_problems#HPLIP_Driver "CUPS/Printer-specific problems") for a workaround.
 
 ### lp: Error - Scheduler Not Responding
 
@@ -526,7 +526,7 @@ If you can print a test page from the [CUPS](/index.php/CUPS "CUPS") web interfa
 
 This seems to be caused by the wrong page size being set in [CUPS](/index.php/CUPS "CUPS").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&oldid=400357](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&oldid=400357)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&oldid=413981](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&oldid=413981)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

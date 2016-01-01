@@ -152,7 +152,7 @@ Things that "just work":
 *   Bluetooth (after installing bluez)
 *   CPU Frequency Scaling (Use acpi_cpufreq since linux 3.7)
 *   TouchPad (support multi-touch after installing xf86-input-synaptics)
-*   Video Acceleration (Using [ATI/AMD's propretary driver(catalyst)](/index.php/ATI_Catalyst#Video_acceleration "ATI Catalyst"))
+*   Video Acceleration (either [open source driver](/index.php/ATI#Enabling_video_acceleration "ATI") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)) or [ATI/AMD's propretary driver(catalyst)](/index.php/ATI_Catalyst#Video_acceleration "ATI Catalyst") work)
 
 _/etc/modprobe.d/eeepc1015b.conf:_
 
@@ -503,7 +503,7 @@ Information about the usb 3.0 device can be obtained with `lsusb` and `udevadmn 
 SUBSYSTEM=="usb", ATTR{version}==" 3.00", ATTR{power/control}="on"
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC&oldid=407882](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC&oldid=407882)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC&oldid=413982](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC&oldid=413982)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

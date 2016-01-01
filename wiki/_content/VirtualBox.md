@@ -244,7 +244,17 @@ See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/
 
 After completing the installation of the guest system, install the VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) which include drivers and applications that optimize the guest operating system. These can be installed via [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils), which provides [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) as a required dependency.
 
-**Note:** The method described in the [VirtualBox manual](https://www.virtualbox.org/manual/ch04.html#idp54932560) does not work on Arch Linux guests, resulting in an `Unable to determine your Linux distribution` repeated several times as error message. If you tried this method first and you use the right solution described above afterwards, this will fail. You will get a [file conflict](/index.php/Pacman#.22Failed_to_commit_transaction_.28conflicting_files.29.22_error "Pacman"): `/usr/bin/VBox*` and `/usr/lib/VBox* exists in filesystem`. The solution is to remove the offending files first with `rm /usr/bin/VBox* /usr/lib/VBox*` as root. These files are actually symbolic links to the location where the additions tools were installed; by default, this is `/opt/VBoxGuestAdditions-_version number_`. Remove these files too with `rm -r /opt/VBoxGuestAdditions-_version number_` as they are not needed. Now you can restart the installation from the right method above.
+**Note:** You can also install the Guest Additions via the iso from the virtualbox-guest-iso, provied you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image. Then, in client, do the following as root:
+
+1.  mount /dev/sr0
+2.  bin /mnt/VBoxGuestAdditions.run
+
+After installation is complete run as root:
+
+1.  umount /mnt
+2.  eject /dev/sr0
+
+Don't forget to reboot.
 
 ### Install the VirtualBox guest kernel modules
 
@@ -1450,7 +1460,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413779](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413779)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413957](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413957)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

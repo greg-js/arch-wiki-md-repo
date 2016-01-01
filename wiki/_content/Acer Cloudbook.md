@@ -11,14 +11,14 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [2.1 BIOS configuration](#BIOS_configuration)
     *   [2.2 Kernel parameters](#Kernel_parameters)
     *   [2.3 Installation](#Installation_2)
-*   [3 Post-installation](#Post-installation)
-    *   [3.1 Issue with GDM](#Issue_with_GDM)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 GDM](#GDM)
 
 ## Hardware
 
 **Processor:** Intel Celeron N3050 @ 1.60GHz
 
-**Video:** Intel Corporation Device 22dc (rev 21)
+**Video:** Intel Corporation Device 22b1 (rev 21)
 
 **Audio:** Intel Corporation Device 2284 (rev 21)
 
@@ -81,28 +81,24 @@ linux /vmlinuz-linux ... edd=off noapic modprobe.blacklist=pinctrl_cherryview
 
 *   Everything should function without any issues thanks to the previous kernel parameters, proceed to install the image as normal.
     *   The module for the wireless NIC is included with the kernel, so Wi-Fi works out of the box.
-*   Do not forget to add **edd=off noapic modprobe.blacklist=pinctrl_cherryview** to the kernel parameters of the boot launcher's configuration file. With GRUB, these options can be added to the _GRUB_CMDLINE_LINUX=_ in the **/etc/default/grub** file. Do not forget that **/boot/grub/grub.cfg** needs to be regenerated.
+*   Do not forget to add **edd=off noapic modprobe.blacklist=pinctrl_cherryview** to the kernel parameters of the boot launcher's configuration file. See: [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-Example:
-
-```
-GRUB_CMDLINE_LINUX="quiet edd=off noapic modprobe.blacklist=pinctrl_cherryview"
+Example with Grub:
 
 ```
-
-## Post-installation
-
-### Issue with GDM
-
-If Gnome/GDM is installed and started, the login page will flicker up-to the point that it becomes nonfunctional. To resolve this issue, simply uncomment this line in the file **/etc/gdm/custom.conf** and restart GDM:
-
-```
-[daemon]
-WaylandEnable=false
+GRUB_CMDLINE_LINUX="quiet edd=off noapic modprobe.blacklist=pinctrl_cherryview" 
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413419](https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413419)"
+in the **/etc/default/grub** configuration file.
+
+## Troubleshooting
+
+### GDM
+
+If Gnome/GDM is installed and started, the login page will flicker up-to the point that it becomes nonfunctional. See [GDM#Use_Xorg_backend](/index.php/GDM#Use_Xorg_backend "GDM").
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413980](https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413980)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

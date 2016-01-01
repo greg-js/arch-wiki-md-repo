@@ -37,7 +37,6 @@ KDM (KDE Display Manager) is the login manager of [KDE](/index.php/KDE "KDE"). I
     *   [3.2 Slow KDM start](#Slow_KDM_start)
     *   [3.3 KDM and Gnome-keyring](#KDM_and_Gnome-keyring)
     *   [3.4 User picture not displayed](#User_picture_not_displayed)
-    *   [3.5 Input freeze while locking screen](#Input_freeze_while_locking_screen)
 
 ## Installation
 
@@ -213,22 +212,7 @@ $ chmod o+r ~/.face.icon
 
 ```
 
-### Input freeze while locking screen
-
-If the input freezes while starting the lock screen you can unlock it by switching to another virtual console (CTRL-ALT-F1 for example) and restarting KDM:
-
-```
-$ systemctl stop kdm && systemctl start kdm
-
-```
-
-Switch back to your original virtual console and you should be able to unlock the screen. This behaviour is due to [bug 314663](https://bugs.kde.org/show_bug.cgi?id=314663).
-
-As a workaround you disable background opacity for `kscreenlocker` and `kscreenlocker_greet`.
-
-For `qt-curve`, go to `System Settings > Application Appearance > Style > Configure > Applications` and add `kscreenlocker` and `kscreenlocker_greet` to "No background opacity".
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=412815](https://wiki.archlinux.org/index.php?title=KDM&oldid=412815)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=414010](https://wiki.archlinux.org/index.php?title=KDM&oldid=414010)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

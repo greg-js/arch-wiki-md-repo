@@ -103,14 +103,6 @@ Obviously where <userid> you put your custom userid.
 
 ## nullIdent
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** sbin is deprecated in [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") (Discuss in [Talk:Identd Setup#](https://wiki.archlinux.org/index.php/Talk:Identd_Setup))
-
 This Ident server is capable of only returning the same name for any query. With a quick change to a single line of code, it can be customized to return any name you can think. One use for such a simple service would be for IRC client connections to ensure a degree of privacy (remote IRC server and users do not know your username) as well as allowing a small degree of 'vanity plating' for use in IRC channels.
 
 The original code suffered link rot, but may now be found on github, at this address [https://github.com/dxtr/nullidentd](https://github.com/dxtr/nullidentd).
@@ -205,7 +197,7 @@ Jan 24 02:30:53 HOSTNAME systemd[1]: Listening on socket for ident.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Identd_Setup&oldid=392251](https://wiki.archlinux.org/index.php?title=Identd_Setup&oldid=392251)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Identd_Setup&oldid=414008](https://wiki.archlinux.org/index.php?title=Identd_Setup&oldid=414008)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

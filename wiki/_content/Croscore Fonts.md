@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [Fonts](/index.php/Fonts "Fonts").**
+
+**Notes:** Not enough content to warrant a separate page (Discuss in [Talk:Croscore Fonts#](https://wiki.archlinux.org/index.php/Talk:Croscore_Fonts))
+
 [Croscore Fonts](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") are free and open source high quality fonts from the Chromium OS Project. These fonts are metrically compatible with [MS Fonts](/index.php/MS_Fonts "MS Fonts") and have better rendering instructions for FreeType library.
 
 ## Installation
@@ -11,7 +19,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Packages are available in [AUR](/index.php/AUR "AUR"):
 
 *   [ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup> - Includes Arimo (sans-serif), Tinos (serif) and Cousine (monospace)
-*   [ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)<sup><small>AUR</small></sup> - Includes Carlito
+*   [ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)<sup><small>AUR</small></sup> - Includes Carlito (matches Microsoft Calibri)
+*   [ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)<sup><small>AUR</small></sup> - Includes Caladea (matches Microsoft Cambria)
 
 ## System-wide Usage
 
@@ -104,7 +113,7 @@ Append following lines to your font configuration file, eg. /etc/fonts/local.con
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=377129](https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=377129)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=413988](https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=413988)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

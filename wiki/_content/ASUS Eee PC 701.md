@@ -23,14 +23,13 @@ Most of this information is from the [Arch Forum](https://bbs.archlinux.org/view
     *   [2.2 Kernel-eee Installation Instruction](#Kernel-eee_Installation_Instruction)
 *   [3 Additional Tips & Tweaks](#Additional_Tips_.26_Tweaks)
     *   [3.1 Tweaking kernel-eee](#Tweaking_kernel-eee)
-    *   [3.2 Using Wine with toofishes' kernel](#Using_Wine_with_toofishes.27_kernel)
-    *   [3.3 Power down with the power button](#Power_down_with_the_power_button)
-    *   [3.4 Use cpufreq for power saving](#Use_cpufreq_for_power_saving)
-    *   [3.5 Update your BIOS without Xandros](#Update_your_BIOS_without_Xandros)
-    *   [3.6 More usable font sizes](#More_usable_font_sizes)
-        *   [3.6.1 The_glu's method](#The_glu.27s_method)
-        *   [3.6.2 Old method](#Old_method)
-        *   [3.6.3 Alternative Method](#Alternative_Method)
+    *   [3.2 Power down with the power button](#Power_down_with_the_power_button)
+    *   [3.3 Use cpufreq for power saving](#Use_cpufreq_for_power_saving)
+    *   [3.4 Update your BIOS without Xandros](#Update_your_BIOS_without_Xandros)
+    *   [3.5 More usable font sizes](#More_usable_font_sizes)
+        *   [3.5.1 The_glu's method](#The_glu.27s_method)
+        *   [3.5.2 Old method](#Old_method)
+        *   [3.5.3 Alternative Method](#Alternative_Method)
 *   [4 Known problems and their solutions](#Known_problems_and_their_solutions)
     *   [4.1 Sound](#Sound)
     *   [4.2 Webcam](#Webcam)
@@ -135,46 +134,6 @@ $ git clone http://code.toofishes.net/git/dan/eee.git
 ```
 
 There are two ways to tweak the kernel. The first is simply to edit the `kernelconfig` file with your favorite editor and the second is to insert a `make menuconfig` line into the PKGBUILD before the kernel's compilation.
-
-### Using Wine with toofishes' kernel
-
-**Note:** Since _kernel-eee 2.6.32eee_, wine is working fine without the need of customizing toofishes' kernel as explained below
-
-Normally, Wine won't work with toofishes' kernel because it is compiled with VMSPLIT_2G_OPT option. In order to use Wine with toofishes' kernel, you have to recompile his kernel with VMSPLIT_3G option.
-
-Download the kernel PKGBUILD and all the necessary files from toofishes' gitweb using the above instructions, then change the following lines in the `kernelconfig` file from this:
-
-```
- ...
- 230 CONFIG_NOHIGHMEM=y
- 231 # CONFIG_HIGHMEM4G is not set
- 232 # CONFIG_HIGHMEM64G is not set
- 233 # CONFIG_VMSPLIT_3G is not set
- 234 # CONFIG_VMSPLIT_3G_OPT is not set
- 235 # CONFIG_VMSPLIT_2G is not set
- 236 CONFIG_VMSPLIT_2G_OPT=y
- 237 # CONFIG_VMSPLIT_1G is not set
- ...
-
-```
-
-to this:
-
-```
- ...
- 230 CONFIG_NOHIGHMEM=y
- 231 # CONFIG_HIGHMEM4G is not set
- 232 # CONFIG_HIGHMEM64G is not set
- 233 CONFIG_VMSPLIT_3G=y
- 234 # CONFIG_VMSPLIT_3G_OPT is not set
- 235 # CONFIG_VMSPLIT_2G is not set
- 236 # CONFIG_VMSPLIT_2G_OPT is not set
- 237 # CONFIG_VMSPLIT_1G is not set
- ...
-
-```
-
-Compile and install the kernel and Wine should now work.
 
 ### Power down with the power button
 
@@ -633,7 +592,7 @@ Still tweaking, but disabling everything from BIOS got me about 6 hours and a ha
 
 -- ekuber
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_701&oldid=391879](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_701&oldid=391879)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_701&oldid=414011](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_701&oldid=414011)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

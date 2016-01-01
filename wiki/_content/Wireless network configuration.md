@@ -1138,7 +1138,9 @@ These modules are fully supported in the kernel, but they require additional fir
 
 [udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") for details.
 
-It may happens frequently or random disconnections using iwl4965 on a 11n wlan: it can be useful to create a iwl4965.conf file containing "options iwl4965 11n_disable=1" (without quotes), to disable 11n, then put it under /etc/modprobe.d
+If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n:
+
+ `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
 #### iwlwifi
 
@@ -1319,7 +1321,7 @@ Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any oth
 *   [The Linux Wireless project](http://wireless.kernel.org/)
 *   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413955](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413955)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413984](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413984)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
