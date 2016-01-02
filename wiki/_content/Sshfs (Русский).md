@@ -24,7 +24,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [4 Автоматическое монтирование](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [4.1 По запросу](#.D0.9F.D0.BE_.D0.B7.D0.B0.D0.BF.D1.80.D0.BE.D1.81.D1.83)
     *   [4.2 При загрузке](#.D0.9F.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
-    *   [4.3 Secure user access](#Secure_user_access)
+    *   [4.3 Безопасный доступ пользователей](#.D0.91.D0.B5.D0.B7.D0.BE.D0.BF.D0.B0.D1.81.D0.BD.D1.8B.D0.B9_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
 *   [5 Options](#Options)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Checklist](#Checklist)
@@ -174,22 +174,22 @@ user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_ne
 
 Очень важно убедится в том, что параметр монтирования __netdev_ установлен, чтобы быть уверенным в доступности сети перед монтированием.
 
-### Secure user access
+### Безопасный доступ пользователей
 
-When automounting via `/etc/[fstab](/index.php/Fstab "Fstab")`, the filesystem will generally be mounted by root. By default, this produces undesireable results if you wish access as an ordinary user and limit access to other users.
+Когда используется автомонтирование через `/etc/[fstab](/index.php/Fstab "Fstab")`, файловая система будет монтироваться от суперпользователя. По умолчанию, это приводит к нежелательным результатам, если вы хотите получать доступ как обычный пользователь и ограничить доступ другим пользователям.
 
-An example mountpoint configuration:
+Пример конфигурации:
 
 ```
 USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs noauto,x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/USERNAME/.ssh/id_rsa,allow_other,default_permissions,uid=USER_ID_N,gid=USER_GID_N 0 0
 
 ```
 
-Summary of the relevant options:
+Описание опций:
 
-*   _allow_other_ - Allow other users than the mounter (i.e. root) to access the share.
-*   _default_permissions_ - Allow kernel to check permissions, i.e. use the actual permissions on the remote filesystem. This allows prohibiting access to everybody otherwise granted by _allow_other_.
-*   _uid_, _gid_ - set reported ownership of files to given values; _uid_ is the numeric user ID of your user, _gid_ is the numeric group ID of your user.
+*   _allow_other_ - позволяет другим пользователям отличным от монтирующего (т.е. суперпользователь) получать доступ к монтируемуму.
+*   _default_permissions_ - позволяет ядру проверять права, т.е. использовать актуальные права на удаленной файловой системе. А также запрещает доступ всем, кроме объявленных в _allow_other_.
+*   _uid_, _gid_ - устанавливает владельца файлов в соответствии с переданными значениями; _uid_ - это числовой идентификатор пользователя, _gid_ - числовой идентификатор группы пользователя.
 
 ## Options
 
@@ -336,7 +336,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=413764](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=413764)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414052](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414052)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

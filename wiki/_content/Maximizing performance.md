@@ -427,7 +427,7 @@ Every time a connections is made, the system must first resolve a fully qualifie
 
 ### Firefox
 
-See [Firefox tweaks#Performance](/index.php/Firefox_tweaks#Performance "Firefox tweaks") and [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk").
+See [Firefox tweaks#Performance](/index.php/Firefox_tweaks#Performance "Firefox tweaks") and [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM").
 
 Firefox in the official repositories is built with the profile guided optimization flag enabled. You may want to use it in your custom build. To do this append:
 
@@ -438,7 +438,7 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=411974](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=411974)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414083](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414083)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -110,17 +110,9 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 [Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (FUSE) is a mechanism for Unix-like operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in _user space_, while the FUSE kernel module provides only a "bridge" to the actual kernel interfaces.
 
-Some notable FUSE-based file systems:
+Some FUSE-based file systems:
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Some descriptions are really poor, also some packages may not meet the "notable" requirement. (Discuss in [Talk:File systems#](https://wiki.archlinux.org/index.php/Talk:File_systems))
-
-*   **acd-fuse** — Mount Amazon cloud drives.
+*   **acd-fuse** — FUSE filesystem driver for Amazon's Cloud Drive.
 
 [https://github.com/handyman5/acd_fuse](https://github.com/handyman5/acd_fuse) || [acdfuse-git](https://aur.archlinux.org/packages/acdfuse-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acdfuse-git)]</sup>
 
@@ -152,7 +144,7 @@ Some notable FUSE-based file systems:
 
 [http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xbfuse-git)]</sup>
 
-*   **xmlfs** — Mount XML files as directory tree.
+*   **xmlfs** — Represent an XML file as a directory structure for easy access.
 
 [https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)<sup><small>AUR</small></sup>
 
@@ -209,7 +201,7 @@ Alternatively, you can use `mkfs` which is just a unified front-end for the diff
 
 *   [wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_systems&oldid=413606](https://wiki.archlinux.org/index.php?title=File_systems&oldid=413606)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_systems&oldid=414016](https://wiki.archlinux.org/index.php?title=File_systems&oldid=414016)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

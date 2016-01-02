@@ -231,7 +231,7 @@ $ xscreensaver-command --lock
 The best option is to install [xss-lock](https://aur.archlinux.org/packages/xss-lock/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"), and run this command from the X session autostart script:
 
 ```
-xss-lock -- xscreensaver-command -lock &
+xscreensaver & xss-lock -- xscreensaver-command -lock &
 
 ```
 
@@ -374,7 +374,7 @@ xscreensaver.verbose:true
 *   [xinitrc](/index.php/Xinitrc "Xinitrc")
 *   [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XScreenSaver&oldid=409544](https://wiki.archlinux.org/index.php?title=XScreenSaver&oldid=409544)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XScreenSaver&oldid=414066](https://wiki.archlinux.org/index.php?title=XScreenSaver&oldid=414066)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

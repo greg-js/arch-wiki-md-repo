@@ -24,7 +24,7 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before.2Fwhile_signing_in)
     *   [3.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
-    *   [3.3 Unity crashes if ~/.config/user-dirs.dir is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dir_is_missing)
+    *   [3.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
 
 ## Installation
 
@@ -89,11 +89,11 @@ This is a rare bug where Unity's configuration gets created wrongly. You can try
 
 Users have [reported](http://forum.unity3d.com/threads/unity-on-arch-manjaro-linux.350315/page-3#post-2271637) that unsetting `GTK_IM_MODULE` prevents the crash.
 
-### Unity crashes if ~/.config/user-dirs.dir is missing
+### Unity crashes if ~/.config/user-dirs.dirs is missing
 
 See how to generate the xdg files here: [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity3D&oldid=408765](https://wiki.archlinux.org/index.php?title=Unity3D&oldid=408765)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity3D&oldid=414012](https://wiki.archlinux.org/index.php?title=Unity3D&oldid=414012)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -435,7 +435,7 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables&oldid=409336](https://wiki.archlinux.org/index.php?title=Iptables&oldid=409336)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables&oldid=414038](https://wiki.archlinux.org/index.php?title=Iptables&oldid=414038)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

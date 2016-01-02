@@ -10,7 +10,7 @@ Related articles
 *   [Tor](/index.php/Tor "Tor")
 *   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
 *   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
-*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
+*   [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM")
 
 This article overviews some useful extensions which enhance security and privacy while using the [Firefox](/index.php/Firefox "Firefox") web browser.
 
@@ -124,7 +124,7 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 For more information on cross-site requests and RequestPolicy visit [here](https://www.requestpolicy.com/faq.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=406161](https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=406161)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414082](https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414082)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

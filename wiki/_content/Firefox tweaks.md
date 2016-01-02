@@ -8,7 +8,7 @@ Related articles
 
 *   [Firefox](/index.php/Firefox "Firefox")
 *   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
+*   [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM")
 *   [Firefox privacy](/index.php/Firefox_privacy "Firefox privacy")
 
 This page contains advanced Firefox configuration options and performance tweaks.
@@ -261,7 +261,7 @@ In Firefox 3.0, bookmarks, history, passwords are kept in an SQLite databases. S
 
 #### Cache the entire profile into RAM via tmpfs
 
-If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox_Ramdisk "Firefox Ramdisk"), which might result in increased Firefox responsiveness.
+If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox_on_RAM "Firefox on RAM"), which might result in increased Firefox responsiveness.
 
 #### Turn off sponsored content and tiles
 
@@ -839,7 +839,7 @@ Then consider checking [how your SSL is](https://www.howsmyssl.com/).
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=413415](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=413415)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414080](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414080)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

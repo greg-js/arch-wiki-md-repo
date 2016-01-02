@@ -520,7 +520,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Mature and feature-rich email client. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [kmail](https://www.archlinux.org/packages/?name=kmail)]</sup>
+[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
 *   **Manitou Mail** — Database-driven email system.
 
@@ -930,7 +930,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — News aggregator for KDE, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [kdepim-akregator](https://www.archlinux.org/packages/?name=kdepim-akregator)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [akregator](https://www.archlinux.org/packages/?name=akregator)]</sup>
+[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [akregator](https://www.archlinux.org/packages/?name=akregator)
 
 *   **Blam** — Simple newsreader for GNOME written in C Sharp.
 
@@ -1224,7 +1224,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 [https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=413932](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=413932)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414026](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414026)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

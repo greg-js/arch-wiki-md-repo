@@ -110,7 +110,7 @@ Two methods to setup and enter the chroot are presented below, from the easiest 
 Download the bootstrap image from a [mirror](https://www.archlinux.org/download):
 
 ```
-$ curl -O [http://mirrors.kernel.org/archlinux/iso/2015.10.01/archlinux-bootstrap-2015.10.01-x86_64.tar.gz](http://mirrors.kernel.org/archlinux/iso/2015.10.01/archlinux-bootstrap-2015.10.01-x86_64.tar.gz)
+$ curl -O [https://mirrors.kernel.org/archlinux/iso/2016.01.01/archlinux-bootstrap-2016.01.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/2016.01.01/archlinux-bootstrap-2016.01.01-x86_64.tar.gz)
 
 ```
 
@@ -118,7 +118,7 @@ Extract the tarball:
 
 ```
 # cd /tmp
-# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2015.10.01-x86_64.tar.gz
+# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2016.01.01-x86_64.tar.gz
 
 ```
 
@@ -393,7 +393,7 @@ If less than 700MB are available, examine the packages in the group base, and se
 
 Once the new Arch Linux system is installed, reboot into the newly created system, and [rsync the entire system](/index.php/Full_system_backup_with_rsync#With_a_single_command "Full system backup with rsync") to the primary partition. Fix the bootloader configuration before rebooting.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&oldid=411132](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&oldid=411132)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&oldid=414054](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&oldid=414054)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

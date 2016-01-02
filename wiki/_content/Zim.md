@@ -80,7 +80,7 @@ This error message indicates that Zim is not able to find the trash directory as
 *   [Zim official manual](http://zim-wiki.org/manual/Start.html)
 *   [A short screencast](http://www.youtube.com/watch?v=yBZpWgzO9Ps)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Zim&oldid=307451](https://wiki.archlinux.org/index.php?title=Zim&oldid=307451)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Zim&oldid=414035](https://wiki.archlinux.org/index.php?title=Zim&oldid=414035)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

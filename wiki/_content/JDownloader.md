@@ -19,7 +19,7 @@ JDownloader is a Download Manager written in Java. JDownloader can download norm
 
 ## Installation
 
-Install [jdownloader](https://aur.archlinux.org/packages/jdownloader/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jdownloader)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
 For running JDownloader you need Java installed. OpenJDK is recommended, it works flawlessly with jDownloader.
 
@@ -61,7 +61,7 @@ Choose User Interface and then switch the style to Light(GTK). (If you're using 
 
 see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=JDownloader&oldid=392284](https://wiki.archlinux.org/index.php?title=JDownloader&oldid=392284)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=JDownloader&oldid=414048](https://wiki.archlinux.org/index.php?title=JDownloader&oldid=414048)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

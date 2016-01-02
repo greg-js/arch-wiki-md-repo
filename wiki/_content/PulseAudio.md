@@ -79,7 +79,6 @@ There is a number of front-ends available for controlling the PulseAudio daemon:
 *   Console (curses) mixer: [pulsemixer-git](https://aur.archlinux.org/packages/pulsemixer-git/)<sup><small>AUR</small></sup>
 *   Web volume control: [PaWebControl](https://github.com/Siot/PaWebControl)
 *   System tray icon: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)<sup><small>AUR</small></sup>
-*   KDE4 plasma applet: [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) and [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-veromix)]</sup>
 *   KF5 plasma applet: [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
 *   If you want to use Bluetooth Headsets or other Bluetooth Audio Devices together with PulseAudio see the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") Article.
 
@@ -624,7 +623,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413790](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=413790)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414064](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414064)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

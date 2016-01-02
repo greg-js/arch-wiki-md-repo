@@ -95,6 +95,8 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 *   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)<sup><small>AUR</small></sup>
 
+**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350) [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=758772) [FS#47535](https://bugs.archlinux.org/task/47535)
+
 ### PPPoE / DSL support
 
 [Install](/index.php/Install "Install") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) for PPPoE / DSL connection support.
@@ -138,7 +140,7 @@ code 1.
 
 If `nm-applet` is not prompting for a password when connecting to new wifi networks, and is just disconnecting immediately, you may need to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
 
-Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/)<sup><small>AUR</small></sup> package. [[1]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
+Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/)<sup><small>AUR</small></sup> package. [[3]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
 
 ### Openbox
 
@@ -146,7 +148,7 @@ To work properly in [Openbox](/index.php/Openbox "Openbox"), the GNOME applet re
 
 If you want to store authentication details (Wireless/DSL) install and configure [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring").
 
-`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#autostart](/index.php/Openbox#autostart "Openbox") or [[2]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
+`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#autostart](/index.php/Openbox#autostart "Openbox") or [[4]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
 
 ### Other desktops and window managers
 
@@ -784,7 +786,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412845](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=412845)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414037](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414037)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

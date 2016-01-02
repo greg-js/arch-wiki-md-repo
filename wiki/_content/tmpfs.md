@@ -25,7 +25,7 @@ Arch uses a tmpfs `/run` directory, with `/var/run` and `/var/lock` simply exist
 
 [glibc](https://www.archlinux.org/packages/?name=glibc) 2.2 and above expects tmpfs to be mounted at `/dev/shm` for [POSIX shared memory](https://en.wikipedia.org/wiki/Shared_memory_(interprocess_communication)#Support_on_UNIX_platforms "wikipedia:Shared memory (interprocess communication)"). Mounting tmpfs at `/dev/shm` is handled automatically by [systemd](/index.php/Systemd "Systemd"), so manual configuration in [fstab](/index.php/Fstab "Fstab") is no longer necessary.
 
-Generally, I/O intensive tasks and programs that run frequent read/write operations can benefit from using a tmpfs folder. Some applications can even receive a substantial gain by offloading some (or all) of their data onto the shared memory. For example, [relocating the Firefox profile into RAM](/index.php/Firefox_Ramdisk "Firefox Ramdisk") shows a significant improvement in performance.
+Generally, I/O intensive tasks and programs that run frequent read/write operations can benefit from using a tmpfs folder. Some applications can even receive a substantial gain by offloading some (or all) of their data onto the shared memory. For example, [relocating the Firefox profile into RAM](/index.php/Firefox_on_RAM "Firefox on RAM") shows a significant improvement in performance.
 
 ## Examples
 
@@ -103,7 +103,7 @@ This behaviour can be controlled via `/proc/sys/fs/protected_symlinks` or simply
 
 *   [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmpfs&oldid=393790](https://wiki.archlinux.org/index.php?title=Tmpfs&oldid=393790)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmpfs&oldid=414084](https://wiki.archlinux.org/index.php?title=Tmpfs&oldid=414084)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,14 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Realtime process management#](https://wiki.archlinux.org/index.php/Talk:Realtime_process_management))
-
 This article provides information on prioritizing process threads in real time, as opposed to at startup only. It shows how you can control CPU, memory, and other resource utilization of individual processes, or all processes run by a particular group.
 
 While many recent processors are powerful enough to play a dozen video or audio streams simultaneously, it is still possible that another thread hijacks the processor for half a second to complete another task. This results in short interrupts in audio or video streams. It is also possible that video/audio streams get out of sync. While this is annoying for a casual music listener; for a content producer, composer or video editor this issue is much more serious as it interrupts their workflow.
@@ -231,7 +223,7 @@ This is the idle scheduling class, processes running at this level only get io t
 *   [SYSSTAT utilities home page](http://sebastien.godard.pagesperso-orange.fr/)
 *   [Multitasking from the Linux command line and process prioritization](http://gaarai.com/2009/03/06/multitasking-from-the-linux-command-line-plus-process-prioritization/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=413602](https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=413602)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=414017](https://wiki.archlinux.org/index.php?title=Realtime_process_management&oldid=414017)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

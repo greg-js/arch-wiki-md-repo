@@ -24,6 +24,7 @@ Dedicated article for common problems and solutions.
     *   [2.4 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
     *   [2.5 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
     *   [2.6 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
+    *   [2.7 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
 *   [3 Performance issues](#Performance_issues)
     *   [3.1 Diagnose the problem](#Diagnose_the_problem)
     *   [3.2 Server threads](#Server_threads)
@@ -132,6 +133,22 @@ or in `/etc/fstab`:
 ```
 _remote target_ _directory_ nfs ...,vers=3,... 0 0
 _remote target_ _directory_ nfs ...,nfsvers=3,... 0 0
+
+```
+
+### mount.nfs: Protocol not supported
+
+Check you are not mounting including the export root. Use:
+
+```
+# mount SERVER:/ /mnt
+
+```
+
+instead of, i.e.:
+
+```
+# mount SERVER:/srv/nfs4/ /mnt
 
 ```
 
@@ -568,7 +585,7 @@ Method = nsswitch
 
 If nfs-idmapd.service refuses to start because it cannot open the Pipefs-directory (defined in /etc/idmapd.conf and appended with '/nfs'), issue a mkdir-command and restart the daemon.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=413169](https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=413169)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=414053](https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&oldid=414053)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

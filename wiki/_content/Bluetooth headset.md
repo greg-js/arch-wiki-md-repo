@@ -1150,6 +1150,18 @@ If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM
 
 </tr>
 
+<tr>
+
+<td>**Kitsound Manhattan**</td>
+
+<td>bluez 5.37, pulseaudio 7.13</td>
+
+<td>All appears to work fine. If Pulseaudio is run as root ( --system) rather than as a user, it often resuls in either a refusal to connect once paired, or else a complete system freeze ( asking for the access PIN )! You have been warned.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
 </tbody>
 
 </table>
@@ -1160,7 +1172,7 @@ Using the same device on Windows and Linux without pairing the device over and o
 
 *   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=413091](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=413091)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=414069](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=414069)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

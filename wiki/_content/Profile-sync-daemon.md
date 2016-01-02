@@ -47,7 +47,7 @@ Related articles
 
 Since the profile(s), browser cache*, etc. are relocated into [tmpfs](/index.php/Tmpfs "Tmpfs") (RAM disk), the corresponding I/O associated with using the browser is also redirected from the physical drive to RAM, thus reducing wear to the physical drive and also greatly improving browser speed and responsiveness.
 
-**Note:** Some browsers such as Chrome/Chromium, Firefox (since v21), Midori, and Rekonq actually keeps their cache directories **separately** from their profile directory. It is not within the scope of profile-sync-daemon to modify this behavior; users are encouraged to refer to the [Chromium tweaks#Cache in tmpfs](/index.php/Chromium_tweaks#Cache_in_tmpfs "Chromium tweaks") section for Chromium and to the [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk") article for several workarounds. An easy fix is to move the various browsers' cache directory from their default location (e.g. `/home/$USER/.cache/<browser>/<profile>/`) to the corresponding profile directory, e.g. `/home/$USER/.mozilla/firefox/<profile>/cache`, and then symlink the new cache folder back to its original location. This way, profile-sync-daemon will automatically take into account the cache folder too.
+**Note:** Some browsers such as Chrome/Chromium, Firefox (since v21), Midori, and Rekonq actually keeps their cache directories **separately** from their profile directory. It is not within the scope of profile-sync-daemon to modify this behavior; users are encouraged to refer to the [Chromium tweaks#Cache in tmpfs](/index.php/Chromium_tweaks#Cache_in_tmpfs "Chromium tweaks") section for Chromium and to the [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM") article for several workarounds. An easy fix is to move the various browsers' cache directory from their default location (e.g. `/home/$USER/.cache/<browser>/<profile>/`) to the corresponding profile directory, e.g. `/home/$USER/.mozilla/firefox/<profile>/cache`, and then symlink the new cache folder back to its original location. This way, profile-sync-daemon will automatically take into account the cache folder too.
 
 ## Setup and installation
 
@@ -288,7 +288,7 @@ _psd_ is a bash script and should therefore run on any Linux distro. Around a do
 *   [http://www.webupd8.org/2013/02/keep-your-browser-profiles-in-tmpfs-ram.html](http://www.webupd8.org/2013/02/keep-your-browser-profiles-in-tmpfs-ram.html)
 *   [http://bernaerts.dyndns.org/linux/250-ubuntu-tweaks-ssd](http://bernaerts.dyndns.org/linux/250-ubuntu-tweaks-ssd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=412009](https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=412009)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=414081](https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=414081)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

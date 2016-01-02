@@ -276,11 +276,23 @@ In _Preferences > Advanced > Network tab > Settings_ manually set Firefox to use
 You can simply run:
 
 ```
-$ chromium --proxy-server="socks://localhost:9050"
+$ chromium --proxy-server="socks5://myproxy:8080" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE myproxy"
 
 ```
 
-Just as with Firefox, you can setup a fast switch for example through [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm).
+The --proxy-server="socks5://myproxy:8080" flag tells Chrome to send all http:// and https:// URL requests through the SOCKS proxy server "myproxy:8080", using version 5 of the SOCKS protocol. The hostname for these URLs will be resolved by the proxy server, and not locally by Chrome.
+
+NOTE: proxying of ftp:// URLs through a SOCKS proxy is not yet implemented.
+
+The --proxy-server flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher".Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since once needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE myproxy", is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address 0.0.0.0\. The "EXCLUDE" clause make an exception for "myproxy", because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with PROXY_CONNECTION_FAILED.
+
+Debug:
+
+The first thing to check when debugging is look at the Proxy tab on about:net-internals, and verify what the effective proxy settings are: chrome://net-internals/#proxy
+
+Next, take a look at the DNS tab of about:net-internals to make sure Chrome isn't issuing local DNS resolves: chrome://net-internals/#dns
+
+Note that in versions of Chrome after r186548, you can do this more concisely by mapping to ~NOTFOUND rather than 0.0.0.0. Just as with Firefox, you can setup a fast switch for example through [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm).
 
 Once installed enter in its configuration page. Under the tab _Proxy Profiles_ add a new profile _Tor_, if ticked untick the option _Use the same proxy server for all protocols_, then add _localhost_ as SOCKS Host, _9050_ to the respective port and select _SOCKS v5_.
 
@@ -918,7 +930,7 @@ Now save changes and run the daemon:
 *   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
 *   [List of tor pluggable transports for obfuscating tor's traffic](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=413816](https://wiki.archlinux.org/index.php?title=Tor&oldid=413816)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=414065](https://wiki.archlinux.org/index.php?title=Tor&oldid=414065)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

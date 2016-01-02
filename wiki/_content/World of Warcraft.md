@@ -270,6 +270,13 @@ SET gxApi "opengl"
 
 ```
 
+If you run Intel/AMD on the open source Mesa drivers and the game crashes on launch due to an access violation, you may need to force WoW to use OpenGL 3.3\. Add this to your startup script:
+
+```
+export MESA_GL_VERSION_OVERRIDE=3.3COMPAT
+
+```
+
 ### Resolution and Colour depth
 
 You can change the following two lines to set the default WoW resolution. I have a 19" Monitor so I can use the following.
@@ -401,7 +408,7 @@ This is a temporary fix (it does not set deadline permanently), but you may gain
 *   [Wowpedia](http://www.wowpedia.org/Main_Page)
 *   [Patch Mirrors](http://www.wowpedia.org/Patch_mirrors)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=World_of_Warcraft&oldid=350812](https://wiki.archlinux.org/index.php?title=World_of_Warcraft&oldid=350812)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=World_of_Warcraft&oldid=414015](https://wiki.archlinux.org/index.php?title=World_of_Warcraft&oldid=414015)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

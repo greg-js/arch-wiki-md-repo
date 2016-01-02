@@ -13,7 +13,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/console-tdm)]</sup> package.
+[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup> package ([console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)<sup><small>AUR</small></sup> package for the development version).
 
 Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
 
@@ -53,7 +53,7 @@ The use of the program `tdmctl` is much like systemctl, and it's a powerful tool
 
 You can customize Console TDM by editing `~/.tdm/tdminit`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=392032](https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=392032)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=414061](https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=414061)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

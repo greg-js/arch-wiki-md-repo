@@ -57,7 +57,7 @@ Once the appropriate `.icc/.icm` files have been copied, install the device prof
 
 ```
 
-**Note:** Ensure that the calibrated contrast, brightness and RGB settings of the monitor do not change between the time of calibration and the loading of the ICC profile. Use this method only if you are absolutely certain that neither Linux nor the other OS does anything behind your back (in video drivers or vendor utilities) that alters the signal actually sent to the display, or the way the display interprets the signal. Watch out for "Broadcast RGB" or similar settings. One concrete example where profiling in Windows and Linux yields [significantly different results](https://bugzilla.kernel.org/show_bug.cgi?id%3d70721) is the Lenovo Ideapad Yoga 2 Pro laptop, because these OSes program the flat panel controller in very different ways.
+**Note:** Ensure that the calibrated contrast, brightness and RGB settings of the monitor do not change between the time of calibration and the loading of the ICC profile. Use this method only if you are absolutely certain that neither Linux nor the other OS does anything behind your back (in video drivers or vendor utilities) that alters the signal actually sent to the display, or the way the display interprets the signal. Watch out for "Broadcast RGB" or similar settings. One concrete example where profiling in Windows and Linux yields [significantly different results](https://bugzilla.kernel.org/show_bug.cgi?id=70721) is the Lenovo Ideapad Yoga 2 Pro laptop, because these OSes program the flat panel controller in very different ways.
 
 ### Gnome Color Manager
 
@@ -209,7 +209,7 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 *   [dispcalGUI: Basic concept of display calibration and profiling](http://dispcalgui.hoech.net/#concept)
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=413317](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=413317)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=414055](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=414055)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

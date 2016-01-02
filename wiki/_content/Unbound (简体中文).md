@@ -34,7 +34,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## 配置
 
-_unbound_非常简单配置。文件的示例配置文件在 `/etc/unbound/unbound.conf.example`, which can be copied to `/etc/unbound/unbound.conf` and with the adjustments to the file for your own needs it is enough to run on both IPv4 and IPv6 without access restrictions.
+_unbound_配置非常简单。示例配置文件位于 `/etc/unbound/unbound.conf.example`，可以复制此文件到 `/etc/unbound/unbound.conf` 然后按需要进行修改。同时可以支持 IPv4 和 IPv6。
 
 ### 访问控制
 
@@ -59,10 +59,7 @@ access-control: _子网_ _行为_
 
 ```
 
-```
 例如:
-
-```
 
 ```
 access-control: 192.168.1.0/24 allow
@@ -344,7 +341,7 @@ Because of the limit on `outgoing-range` thus also limits `num-queries-per-threa
 
 *   [Block hosts that contain advertisements](https://github.com/jodrell/unbound-block-hosts/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unbound_(简体中文)&oldid=413309](https://wiki.archlinux.org/index.php?title=Unbound_(简体中文)&oldid=413309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unbound_(简体中文)&oldid=414027](https://wiki.archlinux.org/index.php?title=Unbound_(简体中文)&oldid=414027)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

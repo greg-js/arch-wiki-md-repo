@@ -159,6 +159,13 @@ env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxc
 
 ```
 
+If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality.
+
+```
+steam --reset
+
+```
+
 Examples of issues / error messages known to occur if these libraries are present:
 
 *   `Failed to load libGL: undefined symbol: xcb_send_fd`
@@ -538,7 +545,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=413763](https://wiki.archlinux.org/index.php?title=Steam&oldid=413763)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414059](https://wiki.archlinux.org/index.php?title=Steam&oldid=414059)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

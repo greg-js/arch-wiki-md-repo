@@ -213,7 +213,7 @@ The first step is granting execution permission to `webserver` so it can access 
 
 ```
 
-_Remeber_: Execution permissions to a directory are necessary for a process to list the directories content.
+_Remember_: Execution permissions to a directory are necessary for a process to list the directory's content.
 
 Since `webserver` is now able to access files in `/home/geoffrey`, `other`s do no longer need access:
 
@@ -246,7 +246,7 @@ As the above output shows, `other`s no longer have any permissions, but `webserv
 *   Man Page - `man setfacl`
 *   An old but still relevant (and thorough) [guide](http://www.vanemery.com/Linux/ACL/linux-acl.html) to ACL
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Access_Control_Lists&oldid=369541](https://wiki.archlinux.org/index.php?title=Access_Control_Lists&oldid=369541)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Access_Control_Lists&oldid=414056](https://wiki.archlinux.org/index.php?title=Access_Control_Lists&oldid=414056)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
