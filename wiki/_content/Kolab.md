@@ -7,6 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Citadel groupware](/index.php/Citadel_groupware "Citadel groupware")
+*   [Open-xchange](/index.php/Open-xchange "Open-xchange")
 
 [Kolab](http://kolab.org) is an unified communication and collaboration system, composed of a server-side daemon which offers storage and synchronization capabilities for contact, calendar, mail and file data. Clients can use several well defined formats like vCard, iCal, XML, IMAP and LDAP to communicate with the Kolab server.
 
@@ -229,7 +230,7 @@ Changing folders in roundcube should be much faster now, while forcing TLS for r
 *   [http://mirror.kolabsys.com/pub/releases/](http://mirror.kolabsys.com/pub/releases/)
 *   [https://obs.kolabsys.com/project/show?project=Kolab%3A3.1](https://obs.kolabsys.com/project/show?project=Kolab%3A3.1)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kolab&oldid=411465](https://wiki.archlinux.org/index.php?title=Kolab&oldid=411465)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kolab&oldid=414171](https://wiki.archlinux.org/index.php?title=Kolab&oldid=414171)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

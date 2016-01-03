@@ -112,7 +112,7 @@ For most packages, `java-runtime` is what is needed to simply run software writt
 *   [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) (free)
 *   [jdk](https://aur.archlinux.org/packages/jdk/)<sup><small>AUR</small></sup> (non-free)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=396007](https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=396007)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=414092](https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=414092)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

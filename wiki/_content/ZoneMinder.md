@@ -104,7 +104,6 @@ Include conf/extra/httpd-zoneminder.conf
  extension=gd.so
  extension=gettext.so
  extension=mcrypt.so
- extension=openssl.so
  extension=pdo_mysql.so
  extension=sockets.so
  extension=zip.so
@@ -268,7 +267,7 @@ options uvcvideo nodrop=1 quirks=128
 
 *   [http://www.zoneminder.com/wiki/index.php/Arch_Linux](http://www.zoneminder.com/wiki/index.php/Arch_Linux) — Upstream project page.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZoneMinder&oldid=410968](https://wiki.archlinux.org/index.php?title=ZoneMinder&oldid=410968)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZoneMinder&oldid=414216](https://wiki.archlinux.org/index.php?title=ZoneMinder&oldid=414216)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

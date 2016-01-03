@@ -24,16 +24,16 @@ Related articles
     *   [1.8 Touch Scrolling on touchscreen devices](#Touch_Scrolling_on_touchscreen_devices)
     *   [1.9 Disable system tray icon](#Disable_system_tray_icon)
     *   [1.10 Reduce memory usage](#Reduce_memory_usage)
+    *   [1.11 User Agent](#User_Agent)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
     *   [3.2 Disable insecure RC4 cipher](#Disable_insecure_RC4_cipher)
     *   [3.3 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [3.4 User Agent](#User_Agent)
-    *   [3.5 SSL certificates](#SSL_certificates)
-        *   [3.5.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
-        *   [3.5.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
-        *   [3.5.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
+    *   [3.4 SSL certificates](#SSL_certificates)
+        *   [3.4.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
+        *   [3.4.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
+        *   [3.4.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -136,19 +136,6 @@ Chrome and Chromium do not support touchscreen by default. There are a couple se
 *   Browse to **chrome://flags** and set everything to default
 *   Switch "_Enable Touch events_" to "_Enabled_" (**chrome://flags/#touch-events**)
 *   Restart Chrome and touch scrolling should work. If it does not, it is worth trying the other modes that are available.
-
-**Known bugs:**
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** "known" bugs have known bug reports (Discuss in [Talk:Chromium/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Chromium/Tips_and_tricks))
-
-*   Touch Scrolling sometimes stops working after resuming from suspend. Restarting the browser seems to fix it.
-*   Touching tabs to switch to them is unstable. There is no known fix for this yet.
 *   You may need to specify which touch device to use. Find your touchscreen device with `xinput list` then launch Chromium with the `--touch-devices=**x**` parameter, where "**x**" is the id of your device.
 
     **Note:** If the device is designated as a slave pointer, using this may not work, use the master pointer's ID instead.
@@ -182,6 +169,19 @@ $ chromium --single-process
 **Warning:** While the single-process model is the default in [Firefox](/index.php/Firefox "Firefox") [[2]](https://wiki.mozilla.org/Electrolysis) and other browsers, it may contain bugs not present in other models. [[3]](https://www.chromium.org/developers/design-documents/process-models#TOC-Single-process)
 
 In addition, you can suspend or store inactive Tabs with extensions such as [Tab Suspender](https://chrome.google.com/webstore/detail/tab-suspender/fiabciakcmgepblmdkmemdbbkilneeeh?hl=en) and [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en).
+
+### User Agent
+
+The User Agent can be arbitrarily modified at the start of Chromium's base instance via its `--user-agent="[string]"` parameter.
+
+For the same User Agent as the stable Chrome release for Linux i686 (at the time of writing, the most popular Linux edition of Chrome) one would use:
+
+```
+--user-agent="Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11"
+
+```
+
+An official, automatically updated listing of Chromium releases which also shows the included WebKit version is available as the [OmahaProxy Viewer](https://omahaproxy.appspot.com/).
 
 ## Profile maintenance
 
@@ -226,29 +226,6 @@ $ chromium --cipher-suite-blacklist=0x0033,0x0039,0x009E,0xcc15
 ```
 
 (best in combination with disabling RC4, s. a.), restart the browser and check [how your SSL is](https://www.howsmyssl.com/).
-
-### User Agent
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** See talk page. (Discuss in [Talk:Chromium/Tips and tricks#User Agent](https://wiki.archlinux.org/index.php/Talk:Chromium/Tips_and_tricks#User_Agent))
-
-By default, Chromium already sends an excessively detailed User Agent, as is viewable via the EFF's [Panopticlick](https://panopticlick.eff.org/) test. This alone makes each browser readily identifiable with high accuracy, and is further exacerbated by the use of non-stable versions (for example, versions not recently provided by Google's release channels, or versions customized by a distribution).
-
-However, this User Agent can be arbitrarily modified at the start of Chromium's base instance via its `--user-agent="[string]"` parameter.
-
-For the same User Agent as the stable Chrome release for Linux i686 (at the time of writing, the most popular Linux edition of Chrome) one would use:
-
-```
---user-agent="Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11"
-
-```
-
-An official, automatically updated listing of Chromium releases which also shows the included WebKit version is available as the [OmahaProxy Viewer](https://omahaproxy.appspot.com/).
 
 ### SSL certificates
 
@@ -357,7 +334,7 @@ Below is an example `chromium-flags.conf` file that defines the flags `--start-m
 *   [Tmpfs](/index.php/Tmpfs#tmpfs "Tmpfs") - Tmpfs Filesystem in `/etc/fstab`
 *   [Official tmpfs kernel Documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413402](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=413402)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=414192](https://wiki.archlinux.org/index.php?title=Chromium/Tips_and_tricks&oldid=414192)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

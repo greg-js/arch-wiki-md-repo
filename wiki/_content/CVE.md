@@ -102,13 +102,13 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td><= 20140918-2</td>
 
-<td> ?</td>
+<td>1:2.4.r96.fa8646d-1</td>
 
-<td> ?</td>
+<td>7d</td>
 
-<td>Vulnerable [FS#47564](https://bugs.archlinux.org/task/47564)</td>
+<td>Fixed [FS#47564](https://bugs.archlinux.org/task/47564)</td>
 
-<td>[Template:ASA](/index.php?title=Template:ASA&action=edit&redlink=1 "Template:ASA (page does not exist)")</td>
+<td>[ASA-201601-1](https://lists.archlinux.org/pipermail/arch-security/2016-January/000480.html)</td>
 
 </tr>
 
@@ -7766,7 +7766,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=413836](https://wiki.archlinux.org/index.php?title=CVE&oldid=413836)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=414182](https://wiki.archlinux.org/index.php?title=CVE&oldid=414182)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

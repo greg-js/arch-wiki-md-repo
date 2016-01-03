@@ -141,7 +141,7 @@ The [gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small><
 
 #### GitLab Shell
 
-**Note:** You can leave the `gitlab_url` with default value if indent to host GitLab on the same host.
+**Note:** You can leave the `gitlab_url` with default value if you intend to host GitLab on the same host.
 
 Edit `/etc/webapps/gitlab-shell/config.yml` and set `gitlab_url:` to the prefer url and port:
 
@@ -1082,7 +1082,7 @@ ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_s
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413042](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=413042)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=414159](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=414159)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

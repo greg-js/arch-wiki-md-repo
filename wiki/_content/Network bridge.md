@@ -36,7 +36,7 @@ This section describes the management of a network bridge using the _ip_ tool fr
 Create a new bridge and change its state to up:
 
 ```
-# ip link add _bridge_name_ type bridge
+# ip link add name _bridge_name_ type bridge
 # ip link set _bridge_name_ up
 
 ```
@@ -194,7 +194,7 @@ See also [Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkCon
 *   [Official documentation for bridge-utils](http://www.linuxfoundation.org/collaborate/workgroups/networking/bridge)
 *   [Official documentation for iproute2](http://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=410770](https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=410770)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=414091](https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=414091)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

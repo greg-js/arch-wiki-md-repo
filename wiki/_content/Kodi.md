@@ -73,11 +73,13 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 
 #### Xsession with LightDM
 
-**Note:** This assumes that the user has created an kodi user on the system and that the following file is present as described.
+**Note:** This assumes that the user has created an kodi user named kodiuser on the system and that the following file is present as described.
+
+**Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/)<sup><small>AUR</small></sup> creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
-To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM"). _Kodi_ includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
+To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling_interactive_passwordless_login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). _Kodi_ includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
 
  `/etc/lightdm/lightdm.conf` 
 
@@ -89,7 +91,7 @@ run-directory=/run/lightdm
 [SeatDefaults]
 session-wrapper=/etc/lightdm/Xsession
 pam-service=lightdm-autologin
-autologin-user=kodi
+autologin-user=kodiuser
 autologin-user-timeout=0
 user-session=kodi
 ```
@@ -555,7 +557,7 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 
 **Note:** xbmc-addons-chinese:Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=412655](https://wiki.archlinux.org/index.php?title=Kodi&oldid=412655)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=414105](https://wiki.archlinux.org/index.php?title=Kodi&oldid=414105)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

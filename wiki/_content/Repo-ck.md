@@ -420,7 +420,7 @@ Alternatively, change the [pacman](/index.php/Pacman "Pacman") downloader to [wg
 
 See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1422475#p1422475) for an explanation of these issues.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Repo-ck&oldid=403456](https://wiki.archlinux.org/index.php?title=Repo-ck&oldid=403456)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Repo-ck&oldid=414104](https://wiki.archlinux.org/index.php?title=Repo-ck&oldid=414104)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

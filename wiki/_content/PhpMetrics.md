@@ -18,8 +18,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [Install](/index.php/Install "Install") the [phpmetrics](https://aur.archlinux.org/packages/phpmetrics/)<sup><small>AUR</small></sup> package.
 
-**Note:** You have to enable `extension=phar.so` in your php.ini for PHP to be able to run the PHP Archive/PHAR file.
-
 ## Example
 
 To display the version number execute:
@@ -59,7 +57,7 @@ To analyze some code execute a command like this:
 *   [PhpMetrics project page](http://www.phpmetrics.org/)
 *   [PhpMetrics github page](https://github.com/Halleck45/PhpMetrics)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMetrics&oldid=391626](https://wiki.archlinux.org/index.php?title=PhpMetrics&oldid=391626)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMetrics&oldid=414210](https://wiki.archlinux.org/index.php?title=PhpMetrics&oldid=414210)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

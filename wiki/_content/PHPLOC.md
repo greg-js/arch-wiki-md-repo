@@ -18,8 +18,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [Install](/index.php/Install "Install") the [phploc](https://aur.archlinux.org/packages/phploc/)<sup><small>AUR</small></sup> package.
 
-**Note:** You have to enable `extension=phar.so` in your php.ini for PHP to be able to run the PHP Archive/PHAR file.
-
 ## Example
 
 To display the version number execute:
@@ -94,7 +92,7 @@ To analyze some code execute a command like this:
 
 *   [PHPLOC project page](https://github.com/sebastianbergmann/phploc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHPLOC&oldid=391627](https://wiki.archlinux.org/index.php?title=PHPLOC&oldid=391627)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHPLOC&oldid=414209](https://wiki.archlinux.org/index.php?title=PHPLOC&oldid=414209)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

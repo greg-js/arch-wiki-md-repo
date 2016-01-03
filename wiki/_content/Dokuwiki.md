@@ -204,9 +204,7 @@ Restart nginx
 
 Many community created plugins can be found [here](http://www.dokuwiki.org/plugins)
 
-They can be added through the web interface (as well as updated) through the Admin menu. Some plugins cannot be downloaded, if they go over ssl (e.g. git). Uncomment following line in `/etc/php/php.ini`:
-
- `extension=openssl.so` 
+They can be added through the web interface (as well as updated) through the Admin menu. Some plugins cannot be downloaded, if they go over ssl (e.g. git).
 
 ### Backing Up
 
@@ -224,7 +222,7 @@ A quick breakdown of the directories of interest in the current (2008-05-05) ver
 
 The [DokuWiki main site](http://www.dokuwiki.org/) has all of the information and help that you could possibly need.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dokuwiki&oldid=410865](https://wiki.archlinux.org/index.php?title=Dokuwiki&oldid=410865)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dokuwiki&oldid=414212](https://wiki.archlinux.org/index.php?title=Dokuwiki&oldid=414212)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

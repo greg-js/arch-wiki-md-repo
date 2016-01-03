@@ -89,7 +89,6 @@ extension=gettext.so
 extension=iconv.so
 extension=intl.so
 extension=mysqli.so
-extension=openssl.so
 extension=soap.so
 extension=xmlrpc.so
 extension=zip.so
@@ -131,7 +130,7 @@ Happy Moodling !
 *   [http://www.php.net/](http://www.php.net/)
 *   [http://www.mysql.com/](http://www.mysql.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=413153](https://wiki.archlinux.org/index.php?title=Moodle&oldid=413153)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=414213](https://wiki.archlinux.org/index.php?title=Moodle&oldid=414213)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

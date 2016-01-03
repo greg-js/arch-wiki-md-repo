@@ -17,8 +17,6 @@ wget [https://phar.phpunit.de/phpunit.phar](https://phar.phpunit.de/phpunit.phar
 
 You can then run PHPUnit using `php phpunit.phar`. You can also make the PHP Archive executable (`chmod +x phpunit.phar`) and move it to /usr/local/bin or ~/bin or somewhere else you have in your `$PATH`.
 
-**Note:** You have to enable `extension=phar.so` in your php.ini for PHP to be able to run PHP Archive/PHAR files.
-
 ## Example
 
 This section gives beginners a very brief introduction to how to use PHPUnit to run test cases. It won't explain how to write them but if you want to get more information about this have a look at the references.
@@ -56,7 +54,7 @@ You pass it the class with the test cases and the file where they're defined. Th
 *   [Official PHPUnit Manual](http://www.phpunit.de/manual/current/en/index.html)
 *   [Introduction to Unit Testing with PHPUnit](http://www.slideshare.net/DragonBe/introduction-to-unit-testing-with-phpunit-presentation-705447)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHPUnit&oldid=401666](https://wiki.archlinux.org/index.php?title=PHPUnit&oldid=401666)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHPUnit&oldid=414207](https://wiki.archlinux.org/index.php?title=PHPUnit&oldid=414207)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

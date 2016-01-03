@@ -194,7 +194,7 @@ Do not forget to process it again with
 
  `# makemap hash /etc/mail/virtusertable.db < /etc/mail/virtusertable` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sendmail&oldid=388090](https://wiki.archlinux.org/index.php?title=Sendmail&oldid=388090)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sendmail&oldid=414090](https://wiki.archlinux.org/index.php?title=Sendmail&oldid=414090)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

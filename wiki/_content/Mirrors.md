@@ -211,6 +211,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 **Cernet**
 
+*   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - _Geek Pie Association @ ShanghaiTech University_
 *   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - _Shanghai Jiaotong University_
 *   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) _(ipv4 only)_
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) _(ipv6 only)_
@@ -291,7 +292,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412939](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=412939)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=414100](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=414100)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

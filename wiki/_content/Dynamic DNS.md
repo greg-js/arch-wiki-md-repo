@@ -16,6 +16,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [1.5 System-NS](#System-NS)
     *   [1.6 DuckDNS](#DuckDNS)
     *   [1.7 FreeDns.io](#FreeDns.io)
+    *   [1.8 ChangeIP](#ChangeIP)
 *   [2 Tools Supporting Multiple Dynamic DNS Services](#Tools_Supporting_Multiple_Dynamic_DNS_Services)
     *   [2.1 Router](#Router)
     *   [2.2 ddclient](#ddclient)
@@ -150,6 +151,12 @@ They provide an API which can be called from a script written in any of the most
 
 This provider allows up to 60 requests per hour, so even a cron-job run every minute is ok, because if your IP doesn’t change in two consecutive requests, it’s not considered a “hit”.
 
+### ChangeIP
+
+[ChangeIP.com](https://changeip.com) provides free A, AAAA, CNAME, MX, URL DNS records, you can also apply for free codomain like {ic|git.example.changeip.com} and many more.
+
+They provide easy [api](http://www.changeip.com/accounts/knowledgebase.php?action=displayarticle&id=34) such as {ic|curl -u 'user:pass' [https://nic.ChangeIP.com/nic/update}](https://nic.ChangeIP.com/nic/update}).
+
 ## Tools Supporting Multiple Dynamic DNS Services
 
 ### Router
@@ -227,7 +234,7 @@ ndyndns
 
 In the [AUR](/index.php/AUR "AUR") as [ndyndns](https://aur.archlinux.org/packages/ndyndns/)<sup><small>AUR</small></sup>. Update client for the dynamic DNS services from DynDNS and Namecheap.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=409142](https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=409142)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=414110](https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=414110)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -1006,10 +1006,11 @@ You can use the following website to get your device's coordinates along with a 
 37, 80 "riggt" # Blacksburg, Virginia, USA
 49.23, -123.98 "pxit" # Nanaimo, BC Canada
 41.091064, -73.865318 "snakeroot" # Sleepy Hollow, NY USA
+46.518568, 6.566716 "dopsi" # Lausanne, VD, Switzerland
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=412469](https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=412469)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=414106](https://wiki.archlinux.org/index.php?title=ArchMap/List&oldid=414106)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

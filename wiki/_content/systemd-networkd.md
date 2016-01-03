@@ -33,7 +33,7 @@ _systemd-networkd_ is a system daemon that manages network configurations. It de
         *   [2.1.4 [Route] section](#.5BRoute.5D_section)
     *   [2.2 netdev files](#netdev_files)
         *   [2.2.1 [Match] section](#.5BMatch.5D_section_2)
-        *   [2.2.2 [Netdev] section](#.5BNetdev.5D_section)
+        *   [2.2.2 [NetDev] section](#.5BNetDev.5D_section)
     *   [2.3 link files](#link_files)
         *   [2.3.1 [Match] section](#.5BMatch.5D_section_3)
         *   [2.3.2 [Link] section](#.5BLink.5D_section)
@@ -292,7 +292,7 @@ Below is a basic structure of a _Mydevice_.netdev file:
 [Match]
 _a vertical list of keys_
 
-[Netdev]
+[NetDev]
 _a vertical list of keys_
 
 ```
@@ -301,7 +301,7 @@ _a vertical list of keys_
 
 Most common keys are `Host=` and `Virtualization=`
 
-#### [Netdev] section
+#### [NetDev] section
 
 Most common keys are:
 
@@ -646,7 +646,7 @@ Gateway=192.168.1.254
 *   [Tom Gundersen posts on Core OS blog](https://coreos.com/blog/intro-to-systemd-networkd/)
 *   [How to set up systemd-networkd with wpa_supplicant](https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759) (WonderWoofy's walkthrough on Arch forums)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=413306](https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=413306)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=414240](https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=414240)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

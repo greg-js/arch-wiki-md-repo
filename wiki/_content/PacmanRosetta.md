@@ -511,7 +511,7 @@ modify IgnorePkg array</td>
 
 <td>apt-cache rdepends / aptitude search ~Dpattern</td>
 
-<td>IN PROGRESS</td>
+<td>zypper search --requires</td>
 
 <td>equery depends</td>
 
@@ -551,7 +551,7 @@ modify IgnorePkg array</td>
 
 <td>dpkg -s / aptitude show</td>
 
-<td>IN PROGRESS</td>
+<td>zypper info --provides</td>
 
 <td>equery files</td>
 
@@ -580,6 +580,8 @@ pkgfile -l</td>
 
 <td>aptitude search \~D{depends,recommends,suggests}:pattern / aptitude why pkg</td>
 
+<td>zypper search --requires</td>
+
 <td>equery depends -a</td>
 
 </tr>
@@ -594,6 +596,8 @@ pkgfile -l</td>
 
 <td>apt-file search</td>
 
+<td>zypper search -f</td>
+
 <td>equery belongs</td>
 
 </tr>
@@ -605,8 +609,6 @@ pkgfile -l</td>
 <td>dnf list obsoletes</td>
 
 <td>apt-cache show</td>
-
-<td>IN PROGRESS</td>
 
 </tr>
 
@@ -620,7 +622,7 @@ pkgfile -l</td>
 
 <td>apt-get check</td>
 
-<td>n/a</td>
+<td>zypper verify</td>
 
 <td>emerge -uDN world</td>
 
@@ -636,7 +638,7 @@ pkgfile -l</td>
 
 <td>dpkg --list | grep ^i</td>
 
-<td>zypper</td>
+<td>zypper search --installed-only</td>
 
 <td>emerge -ep world</td>
 
@@ -778,7 +780,7 @@ remove offending line</td>
 
 <td>apt-cache policy /etc/apt/preferences</td>
 
-<td>n/a</td>
+<td>zypper lr -p</td>
 
 <td>cat /etc/portage/package.keywords</td>
 
@@ -801,6 +803,8 @@ remove offending line</td>
 <td>${EDITOR} /etc/yum.repos.d/${REPO}.repo</td>
 
 <td>${EDITOR} /etc/apt/sources.list</td>
+
+<td>${EDITOR} /etc/zypp/repos.d/${REPO}.repo</td>
 
 <td>layman</td>
 
@@ -946,6 +950,8 @@ remove offending line</td>
 
 <td>dpkg -l</td>
 
+<td>zypper search -s; rpm -qa</td>
+
 <td>emerge -e world</td>
 
 </tr>
@@ -959,6 +965,8 @@ remove offending line</td>
 <td>rpm -qi</td>
 
 <td>dpkg -s / aptitude show</td>
+
+<td>zypper info; rpm -qi</td>
 
 <td>emerge -pv and emerge -S</td>
 
@@ -974,6 +982,8 @@ remove offending line</td>
 
 <td>apt-cache show / aptitude show</td>
 
+<td>zypper info</td>
+
 <td>emerge -pv and emerge -S</td>
 
 </tr>
@@ -987,6 +997,8 @@ remove offending line</td>
 <td>rpm -ql</td>
 
 <td>dpkg -L</td>
+
+<td>rpm -Ql</td>
 
 <td>equery files</td>
 
@@ -1015,6 +1027,8 @@ remove offending line</td>
 <td>rpm -qf (installed only) or dnf provides (everything)</td>
 
 <td>dpkg -S / dlocate</td>
+
+<td>zypper search -f</td>
 
 <td>equery belongs</td>
 
@@ -1089,7 +1103,7 @@ mock (in chroot)</td>
 
 <td>debuild</td>
 
-<td>rpmbuild -ba</td>
+<td>rpmbuild -ba; build; osc build</td>
 
 <td>ebuild; quickpkg</td>
 
@@ -1104,6 +1118,8 @@ mock (in chroot)</td>
 <td>rpmlint</td>
 
 <td>lintian</td>
+
+<td>rpmlint</td>
 
 <td>repoman</td>
 
@@ -1175,7 +1191,7 @@ mock (in chroot)</td>
 
 *   [Changes in DNF CLI compared to Yum](http://dnf.readthedocs.org/en/latest/cli_vs_yum.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=413149](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=413149)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414094](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414094)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

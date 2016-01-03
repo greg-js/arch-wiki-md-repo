@@ -69,7 +69,6 @@ Uncomment the following [required](https://doc.owncloud.org/server/8.2/admin_man
 ```
 gd.so
 iconv.so
-posix.so
 xmlrpc.so
 zip.so
 
@@ -82,22 +81,21 @@ bz2.so
 curl.so
 intl.so
 mcrypt.so
-openssl.so
 
 ```
 
 #### Caching
 
-For enhanced performance, it is recommended to implement PHP caching: see [PHP#Caching](/index.php/PHP#Caching "PHP").
+For enhanced performance, it is recommended to implement PHP caching using APCu, as described in [PHP#APCu](/index.php/PHP#APCu "PHP"). It is also beneficial to enable OPCache, as described in [PHP#OPCache](/index.php/PHP#OPCache "PHP").
 
-Then, depending on your choice, add only **one** of the following directives to `/etc/webapps/owncloud/config/config.php`:
+Then, after enabling APCu, add the following directive to `/etc/webapps/owncloud/config/config.php`:
 
-*   `'memcache.local' => '\OC\Memcache\APCu',`
-*   `'memcache.local' => '\OC\Memcache\XCache',`
+```
+'memcache.local' => '\OC\Memcache\APCu',
 
-**Note:** If you elected to use [APCu](/index.php/PHP#OPCache_.2B_APCu "PHP"), make sure to add `apc.enable_cli=1` under the `[apc]` portion of your [PHP configuration](/index.php/PHP#Configuration "PHP") and uncommenting `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`. As of 2015-07-12, [several](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) [things](https://github.com/owncloud/documentation/issues/1233#issuecomment-120664134) won't work properly without it.
+```
 
-**Note:** According to the [owncloud blog](https://owncloud.org/blog/making-owncloud-faster-through-caching/), the use of XCache is not reccomended.
+**Note:** Make sure to add `apc.enable_cli=1` under the `[apc]` portion of your [PHP configuration](/index.php/PHP#Configuration "PHP") and uncomment `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`. As of 2015-07-12, [several](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) [things](https://github.com/owncloud/documentation/issues/1233#issuecomment-120664134) won't work properly without it.
 
 See [the official documentation](https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/config_sample_php_parameters.html#memory-caching-backend-configuration).
 
@@ -414,7 +412,6 @@ php-set = always_populate_raw_post_data=-1
 php-set = extension=bz2.so
 php-set = extension=curl.so
 php-set = extension=intl.so
-php-set = extension=openssl.so
 php-set = extension=pdo_sqlite.so
 php-set = extension=exif.so
 php-set = extension=gd.so
@@ -819,7 +816,7 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=413732](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=413732)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=414237](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=414237)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

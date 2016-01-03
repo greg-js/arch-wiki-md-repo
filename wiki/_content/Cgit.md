@@ -129,9 +129,7 @@ This alternative lighttpd configuration will serve Cgit on a sub-domain like git
 
 The following configuration uses [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) and will serve Cgit on a subdomain like `git.example.com`.
 
-[Start and enable](/index.php/Start "Start") [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap).
-
-Configure Nginx:
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `fcgiwrap.socket`. Then, configure Nginx:
 
  `/etc/nginx/nginx.conf` 
 
@@ -378,7 +376,7 @@ If you have enabled _scan-path_, again, the order in cgitrc matters. _source-fil
 *   [http://git.zx2c4.com/cgit/tree/README](http://git.zx2c4.com/cgit/tree/README)
 *   [http://git.zx2c4.com/cgit/tree/cgitrc.5.txt](http://git.zx2c4.com/cgit/tree/cgitrc.5.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=413826](https://wiki.archlinux.org/index.php?title=Cgit&oldid=413826)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=414109](https://wiki.archlinux.org/index.php?title=Cgit&oldid=414109)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

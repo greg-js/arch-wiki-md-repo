@@ -154,7 +154,7 @@ $ echo '_~/bin/firefox-sync_' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
 
 *   [Fstab#tmpfs](/index.php/Fstab#tmpfs "Fstab")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_on_RAM&oldid=414079](https://wiki.archlinux.org/index.php?title=Firefox_on_RAM&oldid=414079)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_on_RAM&oldid=414101](https://wiki.archlinux.org/index.php?title=Firefox_on_RAM&oldid=414101)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

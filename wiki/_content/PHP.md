@@ -29,7 +29,8 @@ Related articles
     *   [4.7 PostgreSQL](#PostgreSQL)
     *   [4.8 Sqlite](#Sqlite)
 *   [5 Caching](#Caching)
-    *   [5.1 OPCache + APCu](#OPCache_.2B_APCu)
+    *   [5.1 OPCache](#OPCache)
+    *   [5.2 APCu](#APCu)
 *   [6 Development tools](#Development_tools)
     *   [6.1 Aptana Studio](#Aptana_Studio)
     *   [6.2 Eclipse PDT](#Eclipse_PDT)
@@ -69,13 +70,6 @@ date.timezone = Europe/Berlin
 
 ```
 display_errors=On
-
-```
-
-*   Remember to add a file handler for _.phtml_, if you need it, in `/etc/httpd/conf/extra/php5_module.conf`:
-
-```
-DirectoryIndex index.php index.phtml index.html
 
 ```
 
@@ -171,13 +165,12 @@ extension=sqlite3.so
 
 There are two kinds of caching in PHP: _opcode_/_bytecode_ caching and _userland_/_user data_ caching. Both allow for substantial gains in applications speed, and therefore should be enabled wherever possible.
 
-While traditionally users turned to the [Alternative PHP Cache](https://en.wikipedia.org/wiki/Alternative_PHP_Cache "wikipedia:Alternative PHP Cache") (APC) for both needs, starting with PHP 5.5 [APC was deprecated](https://www.archlinux.org/news/php-55-available-in-the-extra-repository/) in favor of [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache"), a more efficient opcode accelerator integrated to the core PHP distribution thanks to Zend releasing it as Libre software.[[1]](https://wiki.php.net/rfc/optimizerplus)
+*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache") provides only _opcode_ caching.
+*   [APCu](https://github.com/krakjoe/apcu/) provides only _userland_ caching.
 
-However as OPCache provides only _opcode_ caching, [APCu](https://github.com/krakjoe/apcu/) was forked from the APC codebase to provide only _userland_ caching while taking advantage of the many years of testing that had gone into it. For a combination of those two solutions, see [OPCache + APCu](#OPCache_.2B_APCu).
+For optimal caching, you should enable **both**. To do this, follow _both_ [#OPCache](#OPCache) _and_ [#APCu](#APCu).
 
-Another notable contender is the actively maintained [XCache](https://en.wikipedia.org/wiki/XCache "wikipedia:XCache"), developed by one of [Lighttpd](/index.php/Lighttpd "Lighttpd") authors and which provides both opcode and userland caching. See [XCache](#XCache).
-
-### OPCache + APCu
+### OPCache
 
 OPCache comes bundled with the standard PHP distribution, therefore to enable it you simply have to add or uncomment the following line in your [PHP configuration file](#Configuration):
 
@@ -186,6 +179,8 @@ OPCache comes bundled with the standard PHP distribution, therefore to enable it
 A list of its options and suggested settings can be found in its [official entry](https://php.net/opcache) on the PHP website.
 
 **Warning:** If you choose to apply the [suggested settings](https://secure.php.net/manual/en/opcache.installation.php#opcache.installation.recommended) its manual offers, be sure to read carefully [the first comment](https://secure.php.net/manual/en/opcache.installation.php#114567) below those instructions as well. In some configurations those settings result in errors such as `zend_mm_heap corrupted` being produced.
+
+### APCu
 
 APCu can be installed with the [php-apcu](https://www.archlinux.org/packages/?name=php-apcu) package. You can then enable it by uncommenting the following line in `/etc/php/conf.d/apcu.ini`, or adding it to your [PHP configuration file](#Configuration):
 
@@ -224,7 +219,7 @@ A complete IDE for many languages including PHP. Includes features like debuggin
 
 ### PhpStorm
 
-[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm") is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform. It can be installed with the [phpstorm](https://aur.archlinux.org/packages/phpstorm/)<sup><small>AUR</small></sup> package, or with [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)<sup><small>AUR</small></sup> for the 30-day trial version. You can get a free license for education from Jetbrains.[[2]](https://www.jetbrains.com/student/)
+[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm") is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform. It can be installed with the [phpstorm](https://aur.archlinux.org/packages/phpstorm/)<sup><small>AUR</small></sup> package, or with [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)<sup><small>AUR</small></sup> for the 30-day trial version. You can get a free license for education from Jetbrains.[[1]](https://www.jetbrains.com/student/)
 
 ### Zend Studio
 
@@ -246,7 +241,7 @@ If your `php.ini` is not parsed, the ini file is named after the sapi it is usin
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=413641](https://wiki.archlinux.org/index.php?title=PHP&oldid=413641)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=414235](https://wiki.archlinux.org/index.php?title=PHP&oldid=414235)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -18,8 +18,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [Install](/index.php/Install "Install") the [phpdox](https://aur.archlinux.org/packages/phpdox/)<sup><small>AUR</small></sup> package.
 
-**Note:** You have to enable `extension=phar.so` in your php.ini for PHP to be able to run the PHP Archive/PHAR file.
-
 ## Example
 
 To display the version number execute:
@@ -85,7 +83,7 @@ To analyze some code execute a command like this:
 *   [phpDox project page](http://phpdox.de/)
 *   [phpDox github page](https://github.com/theseer/phpdox)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpDox&oldid=391628](https://wiki.archlinux.org/index.php?title=PhpDox&oldid=391628)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpDox&oldid=414211](https://wiki.archlinux.org/index.php?title=PhpDox&oldid=414211)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -18,8 +18,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [Install](/index.php/Install "Install") the [pdepend](https://aur.archlinux.org/packages/pdepend/)<sup><small>AUR</small></sup> package.
 
-**Note:** You have to enable `extension=phar.so` and `extension=bz2.so` in your php.ini for PHP to be able to run the PHP Archive/PHAR file.
-
 ## Example
 
 To display the version number execute:
@@ -85,7 +83,7 @@ To analyze some code execute a command like this:
 
 *   [Official PHPDepend Page](http://pdepend.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pdepend&oldid=391624](https://wiki.archlinux.org/index.php?title=Pdepend&oldid=391624)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pdepend&oldid=414208](https://wiki.archlinux.org/index.php?title=Pdepend&oldid=414208)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

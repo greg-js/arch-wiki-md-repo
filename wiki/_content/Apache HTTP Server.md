@@ -283,8 +283,6 @@ A very basic vhost file will look like this:
 
 ### PHP
 
-**Tip:** If you are using PHP 7 (to hit the repositories soon), replace all `php5` mentions below with `php7`.
-
 To install [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-apache](https://www.archlinux.org/packages/?name=php-apache) packages.
 
 In `/etc/httpd/conf/httpd.conf`, comment the line:
@@ -301,7 +299,7 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-**Note:** The above is required, because `libphp5.so` included with [php-apache](https://www.archlinux.org/packages/?name=php-apache) does not work with `mod_mpm_event`, but will only work `mod_mpm_prefork` instead. ([FS#39218](https://bugs.archlinux.org/task/39218))
+**Note:** The above is required, because `libphp7.so` included with [php-apache](https://www.archlinux.org/packages/?name=php-apache) does not work with `mod_mpm_event`, but will only work `mod_mpm_prefork` instead. ([FS#39218](https://bugs.archlinux.org/task/39218))
 
 Otherwise you will get the following error:
 
@@ -318,21 +316,14 @@ To enable PHP, add these lines to `/etc/httpd/conf/httpd.conf`:
 *   Place this in the `LoadModule` list anywhere after `LoadModule dir_module modules/mod_dir.so`:
 
 ```
-LoadModule php5_module modules/libphp5.so
+LoadModule php7_module modules/libphp7.so
 
 ```
 
 *   Place this at the end of the `Include` list:
 
 ```
-Include conf/extra/php5_module.conf
-
-```
-
-If your `DocumentRoot` is not `/srv/http`, add it to `open_basedir` in `/etc/php/php.ini` as such:
-
-```
-open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot
+Include conf/extra/php7_module.conf
 
 ```
 
@@ -351,18 +342,9 @@ For advanced configuration and extensions, please read [PHP](/index.php/PHP "PHP
 
 #### Using php-fpm and mod_proxy_fcgi
 
-**Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp5, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
+**Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp7, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
 
 [Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
-
-In `/etc/php/php-fpm.conf`, uncommented the following lines:
-
-```
-listen = /run/php-fpm/php-fpm.sock
-listen.owner = http
-listen.group = http
-
-```
 
 Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
@@ -380,8 +362,6 @@ Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
 ```
 
-**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string but it should match in `SetHandler` and `Proxy` directives. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). `SetHandler` and `Proxy` can be used per vhost configs but the name after `fcgi://` should differ for each vhost setup.
-
 And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
 
 ```
@@ -389,11 +369,17 @@ Include conf/extra/php-fpm.conf
 
 ```
 
-If you have it added, remove the following lines from `httpd.conf`, as they are no longer needed:
+**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string but it should match in `SetHandler` and `Proxy` directives. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). `SetHandler` and `Proxy` can be used per vhost configs but the name after `fcgi://` should differ for each vhost setup.
+
+You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
+
+**Note:**
+
+If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
 
 ```
-LoadModule php5_module modules/libphp5.so
-Include conf/extra/php5_module.conf
+LoadModule php7_module modules/libphp7.so
+Include conf/extra/php7_module.conf
 
 ```
 
@@ -403,17 +389,18 @@ Include conf/extra/php5_module.conf
 
 [Install](/index.php/Install "Install") the [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) packages.
 
+Create the needed directory and symlink it for the PHP wrapper:
+
+```
+# mkdir /srv/http/fcgid-bin
+# ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
+
+```
+
 Uncomment following in `/etc/conf.d/apache`:
 
 ```
 HTTPD=/usr/bin/httpd.worker
-
-```
-
-Uncomment following in `/etc/httpd/conf/httpd.conf`:
-
-```
-Include conf/extra/httpd-mpm.conf
 
 ```
 
@@ -447,27 +434,22 @@ Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
 
 ```
 
-Create the needed directory and symlink it for the PHP wrapper:
-
-```
-# mkdir /srv/http/fcgid-bin
-# ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
-
-```
-
-Edit `/etc/httpd/conf/httpd.conf`, and add the following line:
+Edit `/etc/httpd/conf/httpd.conf`, and add the following lines:
 
 ```
 LoadModule fcgid_module modules/mod_fcgid.so
+Include conf/extra/httpd-mpm.conf
 Include conf/extra/php-fcgid.conf
 
 ```
 
-If you've added the following lines, you can remove them:
+**Note:**
+
+If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
 
 ```
-LoadModule php5_module modules/libphp5.so
-Include conf/extra/php5_module.conf
+LoadModule php7_module modules/libphp7.so
+Include conf/extra/php7_module.conf
 
 ```
 
@@ -519,7 +501,7 @@ More information: [Upgrading to 2.4 from 2.2](http://httpd.apache.org/docs/2.4/u
 
 ### Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.
 
-If when loading `php5_module` the `httpd.service` fails, and you get an error like this in the journal:
+If when loading `php7_module` the `httpd.service` fails, and you get an error like this in the journal:
 
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
@@ -544,7 +526,7 @@ and restart `httpd.service`.
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=413076](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=413076)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414222](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414222)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

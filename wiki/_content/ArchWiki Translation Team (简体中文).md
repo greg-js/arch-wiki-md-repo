@@ -13,13 +13,12 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 *   [1 创建翻译](#.E5.88.9B.E5.BB.BA.E7.BF.BB.E8.AF.91)
 *   [2 完善翻译](#.E5.AE.8C.E5.96.84.E7.BF.BB.E8.AF.91)
 *   [3 更新过期页面](#.E6.9B.B4.E6.96.B0.E8.BF.87.E6.9C.9F.E9.A1.B5.E9.9D.A2)
-*   [4 贡献列表](#.E8.B4.A1.E7.8C.AE.E5.88.97.E8.A1.A8)
-*   [5 翻译任务](#.E7.BF.BB.E8.AF.91.E4.BB.BB.E5.8A.A1)
-    *   [5.1 模板 Article summary 变更为 Related](#.E6.A8.A1.E6.9D.BF_Article_summary_.E5.8F.98.E6.9B.B4.E4.B8.BA_Related)
-*   [6 维护翻译](#.E7.BB.B4.E6.8A.A4.E7.BF.BB.E8.AF.91)
-    *   [6.1 页面认领](#.E9.A1.B5.E9.9D.A2.E8.AE.A4.E9.A2.86)
-    *   [6.2 翻译状态模板](#.E7.BF.BB.E8.AF.91.E7.8A.B6.E6.80.81.E6.A8.A1.E6.9D.BF)
-    *   [6.3 页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)
+*   [4 翻译任务](#.E7.BF.BB.E8.AF.91.E4.BB.BB.E5.8A.A1)
+    *   [4.1 模板 Article summary 变更为 Related](#.E6.A8.A1.E6.9D.BF_Article_summary_.E5.8F.98.E6.9B.B4.E4.B8.BA_Related)
+*   [5 维护翻译](#.E7.BB.B4.E6.8A.A4.E7.BF.BB.E8.AF.91)
+    *   [5.1 页面认领](#.E9.A1.B5.E9.9D.A2.E8.AE.A4.E9.A2.86)
+    *   [5.2 翻译状态模板](#.E7.BF.BB.E8.AF.91.E7.8A.B6.E6.80.81.E6.A8.A1.E6.9D.BF)
+    *   [5.3 页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)
 
 ## 创建翻译
 
@@ -67,42 +66,6 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 *   没有时间翻译，请为页面添加`{{translateme (简体中文)}}`模板，这样其他的贡献者就能更容易发现需要翻译的页面。
 
 **注意:** 在修改页面上的模板时，请同时更新页面维护列表的翻译状态。
-
-## 贡献列表
-
-为翻译做出贡献的用户请加入列表，感谢所有人做出的贡献。如果因为时间原因无法再维护页面，请及时将自己从维护者列表中删除。
-
-除[ArchWiki Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")和[ArchWiki Maintainers](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers")外，其余贡献者按用户名字母顺序排列。
-
-*   [Fengchao](/index.php/User:Fengchao "User:Fengchao") – [贡献](/index.php/Special:Contributions/Fengchao "Special:Contributions/Fengchao") – [Send Email](/index.php/Special:EmailUser/Fengchao "Special:EmailUser/Fengchao") – [ArchWiki Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")
-*   [Skydiver](/index.php/User:Skydiver "User:Skydiver") – [贡献](/index.php/Special:Contributions/Skydiver "Special:Contributions/Skydiver") – [Send Email](/index.php/Special:EmailUser/Skydiver "Special:EmailUser/Skydiver") – [ArchWiki Maintainers](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers")
-*   [Aaron_chen](/index.php/User:Aaron_chen "User:Aaron chen") – [贡献](/index.php/Special:Contributions/Aaron_chen "Special:Contributions/Aaron chen") – [Send Email](/index.php/Special:EmailUser/Aaron_chen "Special:EmailUser/Aaron chen")
-*   [Alswl](/index.php/User:Alswl "User:Alswl") – [贡献](/index.php/Special:Contributions/Alswl "Special:Contributions/Alswl") – [Send Email](/index.php/Special:EmailUser/Alswl "Special:EmailUser/Alswl")
-*   [Acgtyrant](/index.php/User:Acgtyrant "User:Acgtyrant") – [贡献](/index.php/Special:Contributions/Acgtyrant "Special:Contributions/Acgtyrant") – [Send Email](/index.php/Special:EmailUser/Acgtyrant "Special:EmailUser/Acgtyrant")
-*   [Cael](/index.php/User:Cael "User:Cael") – [贡献](/index.php/Special:Contributions/Cael "Special:Contributions/Cael") – [Send Email](/index.php/Special:EmailUser/Cael "Special:EmailUser/Cael")
-*   [Cfunc](/index.php?title=User:Cfunc&action=edit&redlink=1 "User:Cfunc (page does not exist)") – [贡献](/index.php/Special:Contributions/Cfunc "Special:Contributions/Cfunc") – [Send Email](/index.php/Special:EmailUser/Cfunc "Special:EmailUser/Cfunc")
-*   [cuihao](/index.php/User:Cuihao "User:Cuihao") – [贡献](/index.php/Special:Contributions/Cuihao "Special:Contributions/Cuihao") – [Send Email](/index.php/Special:EmailUser/Cuihao "Special:EmailUser/Cuihao")
-*   [Carl X. Su](/index.php/User:Carl_tw "User:Carl tw") – [贡献](/index.php/Special:Contributions/Carl_tw "Special:Contributions/Carl tw") – [Send Email](/index.php/Special:EmailUser/Carl_tw "Special:EmailUser/Carl tw")
-*   [Flockyrocky](/index.php/User:Flockyrocky "User:Flockyrocky") – [贡献](/index.php/Special:Contributions/Flockyrocky "Special:Contributions/Flockyrocky") – [Send Email](/index.php/Special:EmailUser/Flockyrocky "Special:EmailUser/Flockyrocky")
-*   [Guangyu Zhang](/index.php/User:Zguangyu0000 "User:Zguangyu0000") – [贡献](/index.php/Special:Contributions/Zguangyu0000 "Special:Contributions/Zguangyu0000") – [Send Email](/index.php/Special:EmailUser/Zguangyu0000 "Special:EmailUser/Zguangyu0000")
-*   [Hang yan](/index.php?title=User:Hang_yan&action=edit&redlink=1 "User:Hang yan (page does not exist)") – [贡献](/index.php/Special:Contributions/Hang_yan "Special:Contributions/Hang yan") – [Send Email](/index.php/Special:EmailUser/Hang_yan "Special:EmailUser/Hang yan")
-*   [HelloCode](/index.php?title=User:HelloCode&action=edit&redlink=1 "User:HelloCode (page does not exist)") – [贡献](/index.php/Special:Contributions/HelloCode "Special:Contributions/HelloCode") – [Send Email](/index.php/Special:EmailUser/HelloCode "Special:EmailUser/HelloCode")
-*   [jazzi](/index.php?title=User:Jazzi&action=edit&redlink=1 "User:Jazzi (page does not exist)") – [贡献](/index.php/Special:Contributions/jazzi "Special:Contributions/jazzi") – [Send Email](/index.php/Special:EmailUser/jazzi "Special:EmailUser/jazzi")
-*   [Joshua](/index.php/User:Joshua83 "User:Joshua83") – [贡献](/index.php/Special:Contributions/Joshua83 "Special:Contributions/Joshua83") – [Send Email](/index.php/Special:EmailUser/Joshua83 "Special:EmailUser/Joshua83")
-*   [Mac.Bloom](/index.php?title=User:Mac_uestc&action=edit&redlink=1 "User:Mac uestc (page does not exist)") – [贡献](/index.php/Special:Contributions/Mac_uestc "Special:Contributions/Mac uestc") – [Send Email](/index.php/Special:EmailUser/Mac_uestc "Special:EmailUser/Mac uestc")
-*   [Mithrandir](/index.php/User:Mithrandir "User:Mithrandir") – [贡献](/index.php/Special:Contributions/Mithrandir "Special:Contributions/Mithrandir") – [Send Email](/index.php/Special:EmailUser/Mithrandir "Special:EmailUser/Mithrandir")
-*   [Peter](/index.php/User:Peter "User:Peter") – [贡献](/index.php/Special:Contributions/Peter "Special:Contributions/Peter") – [Send Email](/index.php/Special:EmailUser/Peter "Special:EmailUser/Peter")
-*   [Reverland](/index.php/User:Reverland "User:Reverland") – [贡献](/index.php/Special:Contributions/Reverland "Special:Contributions/Reverland") – [Send Email](/index.php/Special:EmailUser/Reverland "Special:EmailUser/Reverland")
-*   [Shibao Zhao](/index.php?title=User:Shibao_Zhao&action=edit&redlink=1 "User:Shibao Zhao (page does not exist)") – [贡献](/index.php/Special:Contributions/Shibao_Zhao "Special:Contributions/Shibao Zhao") – [Send Email](/index.php/Special:EmailUser/Shibao_Zhao "Special:EmailUser/Shibao Zhao")
-*   [Xuchunyang](/index.php?title=User:Xuchunyang&action=edit&redlink=1 "User:Xuchunyang (page does not exist)") – [贡献](/index.php/Special:Contributions/Acgtyrant "Special:Contributions/Acgtyrant") – [Send Email](/index.php/Special:EmailUser/Acgtyrant "Special:EmailUser/Acgtyrant")
-*   [Stlt1sean](/index.php?title=User:Stlt1sean&action=edit&redlink=1 "User:Stlt1sean (page does not exist)") – [贡献](/index.php/Special:Contributions/Stlt1sean "Special:Contributions/Stlt1sean") – [Send Email](/index.php/Special:EmailUser/Stlt1sean "Special:EmailUser/Stlt1sean")
-*   [_spaike97](/index.php/User:Spaike97 "User:Spaike97") – [贡献](/index.php/Special:Contributions/Spaike97 "Special:Contributions/Spaike97") – [Send Email](/index.php/Special:EmailUser/Spaike97 "Special:EmailUser/Spaike97")
-*   [SteamedFish](/index.php/User:SteamedFish "User:SteamedFish") – [贡献](/index.php/Special:Contributions/SteamedFish "Special:Contributions/SteamedFish") – [Send Email](/index.php/Special:EmailUser/SteamedFish "Special:EmailUser/SteamedFish")
-*   [Tuxzz](/index.php/User:Tuxzz "User:Tuxzz") – [贡献](/index.php/Special:Contributions/Tuxzz "Special:Contributions/Tuxzz") – [Send Email](/index.php/Special:EmailUser/Tuxzz "Special:EmailUser/Tuxzz")
-*   [Vimtoy](/index.php/User:Vimtoy "User:Vimtoy") – [贡献](/index.php/Special:Contributions/Vimtoy "Special:Contributions/Vimtoy") – [Send Email](/index.php/Special:EmailUser/Vimtoy "Special:EmailUser/Vimtoy")
-*   [Xinkai](/index.php?title=User:Xinkai&action=edit&redlink=1 "User:Xinkai (page does not exist)") – [贡献](/index.php/Special:Contributions/Xinkai "Special:Contributions/Xinkai") – [Send Email](/index.php/Special:EmailUser/Xinkai "Special:EmailUser/Xinkai")
-*   [Yk](/index.php/User:Radflum "User:Radflum") – [贡献](/index.php/Special:Contributions/Radflum "Special:Contributions/Radflum") – [Send Email](/index.php/Special:EmailUser/Radflum "Special:EmailUser/Radflum")
-*   [Zer4tul](/index.php/User:Zer4tul "User:Zer4tul") – [贡献](/index.php/Special:Contributions/Zer4tul "Special:Contributions/Zer4tul") – [Send Email](/index.php/Special:EmailUser/Zer4tul "Special:EmailUser/Zer4tul")
 
 ## 翻译任务
 
@@ -716,7 +679,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(简体中文)&oldid=411239](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(简体中文)&oldid=411239)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(简体中文)&oldid=414098](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(简体中文)&oldid=414098)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

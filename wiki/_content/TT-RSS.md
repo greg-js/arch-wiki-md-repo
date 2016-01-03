@@ -44,7 +44,6 @@ In the same file, enable the following modules:
 extension=curl.so
 extension=iconv.so
 extension=mysqli.so # extension=pdo_mysql.so might be an alternative
-extension=posix.so
 extension=soap.so
 
 ```
@@ -85,7 +84,7 @@ $ systemctl status tt-rss
 
 to check that it's running fine.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TT-RSS&oldid=398172](https://wiki.archlinux.org/index.php?title=TT-RSS&oldid=398172)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TT-RSS&oldid=414205](https://wiki.archlinux.org/index.php?title=TT-RSS&oldid=414205)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

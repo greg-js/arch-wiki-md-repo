@@ -504,7 +504,7 @@ dopath("look_xerxes")
 
 The themes are called **`look_<name>.lua`** and you can make your own by switching the name.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ion3&oldid=392280](https://wiki.archlinux.org/index.php?title=Ion3&oldid=392280)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ion3&oldid=414102](https://wiki.archlinux.org/index.php?title=Ion3&oldid=414102)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

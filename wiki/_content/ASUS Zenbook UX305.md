@@ -4,21 +4,13 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-**This article is a stub.**
+**This article or section needs expansion.**
 
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:ASUS Zenbook UX305#](https://wiki.archlinux.org/index.php/Talk:ASUS_Zenbook_UX305))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Early-stage draft, logging noise easily reproducable by owners of the particular hardware and distracts from actual workarounds (Discuss in [Talk:ASUS Zenbook UX305#](https://wiki.archlinux.org/index.php/Talk:ASUS_Zenbook_UX305))
+**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:ASUS Zenbook UX305#](https://wiki.archlinux.org/index.php/Talk:ASUS_Zenbook_UX305))
 
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX305](http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX305/Features/).
 
@@ -40,7 +32,7 @@ Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
 
 See [[1]](https://gist.github.com/anonymous/6363a5462af10ee18c0c) for specific hardware information.
 
-See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Skylake) hardware information
+See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Skylake) hardware information. Physically labelled with UX305C on laptop, but UX305CA shows in dmesg
 
 ## Compatibility
 
@@ -72,19 +64,6 @@ This is how the device appears in dmesg:
 ```
 
 There appears to be a bug filed: [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=108581)
-
-Anecdote: Fedora 23 on a UX305CA had several problems including the trackpad problem. All went away when rawhide kernel kernel-4.4.0.0.rc6.git1.2.fc24.x86_64 was installed. My best guess is that Skylake support in 4.4 plus the Fedora i2c driver fix is what made everything work. The Fedora 23 kernel-4.2.8-300.fc23.x86_64 had all these problems: improper screen resolution detection, at least some fn + arrow keys didn't generate PgUp etc, trackpad missing. I'm not sure how to translate this to Arch but I hope that it helps.
-
-**Workaround**: I compiled 4.4.0-rc7 with the first 16 patches applied from [http://pkgs.fedoraproject.org/cgit/kernel.git/tree/](http://pkgs.fedoraproject.org/cgit/kernel.git/tree/), using the .config from my stock -ARCH kernel. Trackpad worked immediately on reboot
-
-```
- $ xinput 
- Virtual core pointer                    	id=2	[master pointer  (3)]
-   Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
-   Logitech USB-PS/2 Optical Mouse         	id=9	[slave  pointer  (2)]
-   Elan Touchpad                           	id=11	[slave  pointer  (2)]
-
-```
 
 ### Wifi
 
@@ -167,7 +146,7 @@ For whatever reason, `xev` does not return any events for the standard brightnes
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX31a](https://wiki.debian.org/InstallingDebianOn/Asus/UX31a)
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA](https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414086](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414086)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414238](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414238)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -447,7 +447,7 @@ status() {
 *   mailing list is dev@suckless.org, see official website
 *   IRC channel is #wmii on the OFTC IRC network
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wmii&oldid=392832](https://wiki.archlinux.org/index.php?title=Wmii&oldid=392832)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wmii&oldid=414093](https://wiki.archlinux.org/index.php?title=Wmii&oldid=414093)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

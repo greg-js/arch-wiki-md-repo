@@ -148,6 +148,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.14 rightlink](#rightlink)
         *   [5.2.15 seiichiro](#seiichiro)
         *   [5.2.16 studioidefix](#studioidefix_2)
+        *   [5.2.17 zrootfs](#zrootfs)
 *   [6 armv6h only](#armv6h_only)
     *   [6.1 Unsigned](#Unsigned_5)
         *   [6.1.1 arch-fook-armv6h](#arch-fook-armv6h)
@@ -1218,6 +1219,7 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 
 *   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
 *   **Description:** Packages that markzz maintains or uses on the AUR, Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>), and packages to maintain a Debian package repository.
+*   **Sources:** [http://git.markzz.net/markzz/repositories/markzz.git/](http://git.markzz.net/markzz/repositories/markzz.git/)
 *   **Key ID:** 3CADDFDD
 
 **Note:** If you want to add the key by installing the _markzz-keyring_ package, temporarily add `SigLevel = Never` into the repository section.
@@ -1507,6 +1509,17 @@ Server = http://studioidefix.googlecode.com/hg/repo/x86_64
 
 ```
 
+#### zrootfs
+
+*   **Maintainer:** Isabell Cowan <isabellcowan@gmail.com>
+*   **Description:** For Haswell architecture processors with size in mind.
+
+```
+[zrootfs]
+Server = http://www.izzette.com/izzi/zrootfs
+
+```
+
 ## armv6h only
 
 ### Unsigned
@@ -1539,7 +1552,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413903](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=413903)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414241](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414241)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

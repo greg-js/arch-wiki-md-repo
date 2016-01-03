@@ -22,6 +22,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ## Contents
 
 *   [1 概述](#.E6.A6.82.E8.BF.B0)
+    *   [1.1 元软件包和软件包组](#.E5.85.83.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.92.8C.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.84)
 *   [2 准备工作](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C)
     *   [2.1 必需的软件包](#.E5.BF.85.E9.9C.80.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [2.2 下载并测试安装](#.E4.B8.8B.E8.BD.BD.E5.B9.B6.E6.B5.8B.E8.AF.95.E5.AE.89.E8.A3.85)
@@ -56,6 +57,14 @@ Arch Linux 中的软件包是通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%B
 *   `.INSTALL`: 可选的文件，可以用来在安装/升级/删除操作之后运行命令。(本文件只有在 `PKGBUILD` 中制定才会存在。)
 
 *   `.Changelog`: 一个可选的文件，保存了包管理员描述软件更新的日志。(不是所有包中都存在。)
+
+### 元软件包和软件包组
+
+软件包组是一组软件包，由打包者定义。按组安装/删除时， 通过组名可以替代组中的所有软件包。安装方法参考[Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman")和[PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
+
+元软件包，通常以 _-meta_ 结尾，可软件包组提供的功能类似，可以同时安装一系列软件，安装方法和其它软件包一样，参考[Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). 元软件包和正常软件包的唯一区别，是元软件包是空的，仅记录其它软件间的依赖关系。
+
+和软件包组相比，元软件包的优点是所有后续加入的软件包都会在更新时被自动安装。而如果有新软件包加入一个组，这个软件吧不会在更新时自动被安装。元软件包的缺点是不如软件包组灵活。使用软件包组时，可以只删除组中的某几个软件，其它软件保持不变。而使用元软件包时，只有删除元软件包之后，才能自由删除其中的单个包。
 
 ## 准备工作
 
@@ -252,7 +261,7 @@ Namcap将会做以下工作：
 
 *   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages_(简体中文)&oldid=411565](https://wiki.archlinux.org/index.php?title=Creating_packages_(简体中文)&oldid=411565)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages_(简体中文)&oldid=414095](https://wiki.archlinux.org/index.php?title=Creating_packages_(简体中文)&oldid=414095)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
