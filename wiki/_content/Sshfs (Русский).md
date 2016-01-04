@@ -25,7 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [4.1 По запросу](#.D0.9F.D0.BE_.D0.B7.D0.B0.D0.BF.D1.80.D0.BE.D1.81.D1.83)
     *   [4.2 При загрузке](#.D0.9F.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
     *   [4.3 Безопасный доступ пользователей](#.D0.91.D0.B5.D0.B7.D0.BE.D0.BF.D0.B0.D1.81.D0.BD.D1.8B.D0.B9_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
-*   [5 Options](#Options)
+*   [5 Параметры](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Checklist](#Checklist)
     *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
@@ -191,18 +191,18 @@ USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs noauto,
 *   _default_permissions_ - позволяет ядру проверять права, т.е. использовать актуальные права на удаленной файловой системе. А также запрещает доступ всем, кроме объявленных в _allow_other_.
 *   _uid_, _gid_ - устанавливает владельца файлов в соответствии с переданными значениями; _uid_ - это числовой идентификатор пользователя, _gid_ - числовой идентификатор группы пользователя.
 
-## Options
+## Параметры
 
-sshfs can automatically convert your local and remote user IDs.
+sshfs может автоматически конвертировать ваш и удаленный идентификатор пользователя.
 
-Add the _idmap_ option with _user_ value to translate UID of connecting user:
+Добавьте параметр _idmap_ с значением _user_, чтобы переводить идентификатор подключаемого пользователя:
 
 ```
 # sshfs -o idmap=user sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
 
 ```
 
-This will map UID of the remote user "sessy" to the local user, who runs this process ("root" in the above example) and GID remains unchanged. If you need more precise control over UID and GID translation, look at the options _idmap=file_ and _uidfile_ and _gidfile_.
+Это действие сопоставит идентификатор удаленного пользователя "sessy" с идентификатором локального пользователя, который запускает этот процесс ("суперпользователь" в примере выше) и идентификатор группы пользователя останется неизменным. Если вам требуется более точный контроль над переводом идентификатора пользователя и его группы, то посмотрите на параметры _idmap=file_, _uidfile_ и _gidfile_.
 
 ## Troubleshooting
 
@@ -336,7 +336,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414052](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414052)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414261](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414261)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -355,7 +355,7 @@ Manjaro-based operating system developed by Blue Systems. Offers customised KDE 
 
 *   List at distrowatch.com - [http://distrowatch.com/search.php?basedon=Arch&status=Active](http://distrowatch.com/search.php?basedon=Arch&status=Active)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413915](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=413915)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=414301](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=414301)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

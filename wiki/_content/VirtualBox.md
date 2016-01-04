@@ -403,14 +403,20 @@ $ ln -s /media/sf__shared_folder_name_ ~/_my_documents_
 You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `comment=systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd read fstab and mount the partitions.
 
 ```
-_desktop_   _/media/desktop_    vboxsf  uid=_user_,gid=_group_,rw,dmode=700,fmode=600,comment=systemd.automount 0 0
+_sharedFolderName_  _/path/to/mntPtOnGuestMachine_  vboxsf  uid=_user_,gid=_group_,rw,dmode=700,fmode=600,comment=systemd.automount  0  0
 
 ```
+
+**Tip:**
+
+*   _sharedFolderName_ - value from field VirtualMachine's Settings->SharedFolders->Edit->FolderName. This value can be different to name of real folder name on host machine. To see VirtualMachine's Settings go to host OS VirtualBox application, select corresponding virtual machine and click on Settings.
+*   _/path/to/mntPtOnGuestMachine_ - if not exists, this directory should be created manually (for example by using command [mkdir](/index.php/Core_utilities#mkdir "Core utilities"))
+*   dmode/fmode are directory/file permissions for directories/files inside _/path/to/mntPtOnGuestMachine_.
 
 As of 2012-08-02, mount.vboxsf does not support the _nofail_ option:
 
 ```
-_desktop_   _/media/desktop_    vboxsf  uid=_user_,gid=_group_,rw,dmode=700,fmode=600,nofail 0 0
+_desktop_  _/media/desktop_  vboxsf  uid=_user_,gid=_group_,rw,dmode=700,fmode=600,nofail  0  0
 
 ```
 
@@ -1460,7 +1466,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413957](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=413957)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414329](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414329)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

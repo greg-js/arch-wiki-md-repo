@@ -204,7 +204,7 @@ menuentry "Arch Linux" {
         volume   Boot
         loader   /boot/vmlinuz-linux
         initrd   /boot/initramfs-linux.img
-        options  "root=PARTUUID=XXXXXXXX rootfstype=XXXX rw add_efi_memmap"
+        options  "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
         submenuentry "Boot using fallback initramfs" {
                 initrd /boot/initramfs-linux-fallback.img
         }
@@ -212,7 +212,7 @@ menuentry "Arch Linux" {
 
 ```
 
-It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, a PARTUUID, or a volume number (e.g. `0:`) of the partition where the kernel image resides. See [Ext3#Assigning a label](/index.php/Ext3#Assigning_a_label "Ext3") as an example of assigning a volume label.
+It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Ext3#Assigning a label](/index.php/Ext3#Assigning_a_label "Ext3") as an example of assigning a volume label.
 
 #### btrfs subvolume root support
 
@@ -228,7 +228,7 @@ menuentry "Arch Linux" {
         volume   Boot
         loader   /boot/vmlinuz-linux
         initrd   /boot/initramfs-linux.img
-        options  "root=PARTUUID=XXXXXXXX rootfstype=XXXX rw rootflags=subvol=ROOT"
+        options  "root=PARTUUID=XXXXXXXX rw rootflags=subvol=ROOT"
 
 ...
         }
@@ -361,7 +361,7 @@ Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/)<sup><
 *   [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/) by Roderick W. Smith.
 *   `/usr/share/refind/docs/README.txt`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=REFInd&oldid=406787](https://wiki.archlinux.org/index.php?title=REFInd&oldid=406787)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=REFInd&oldid=414270](https://wiki.archlinux.org/index.php?title=REFInd&oldid=414270)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

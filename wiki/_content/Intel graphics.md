@@ -60,7 +60,7 @@ Follow [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU"
 
 There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
 
-**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require the `i915.preliminary_hw_support=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to boot properly.
+**Note:** The latest generation of integrated GPUs (Skylake/HD 530 for instance) may require the `i915.preliminary_hw_support=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to boot properly. As of kernel 4.3.x, this should no longer be necessary.
 
 However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
 
@@ -425,7 +425,7 @@ For the driver to work on the new Intel Skylake (6th gen.) GPUs, `i915.prelimina
 
 *   [https://01.org/linuxgraphics/documentation](https://01.org/linuxgraphics/documentation) (includes a list of supported hardware)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=412647](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=412647)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=414326](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=414326)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

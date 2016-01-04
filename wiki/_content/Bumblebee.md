@@ -1006,7 +1006,7 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 
 Join us at #bumblebee at freenode.net.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=413582](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=413582)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414330](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414330)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

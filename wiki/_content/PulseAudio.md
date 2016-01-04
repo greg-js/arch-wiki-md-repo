@@ -48,7 +48,7 @@ Related articles
     *   [6.9 guvcview](#guvcview)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Keyboard volume control](#Keyboard_volume_control)
-    *   [7.2 Play sound from a non-interactive shell (systemd service, cron...)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron....29)
+    *   [7.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
     *   [7.3 X11 Bell Events](#X11_Bell_Events)
 *   [8 Troubleshooting](#Troubleshooting)
 *   [9 See also](#See_also)
@@ -575,12 +575,19 @@ pactl set-sink-mute 0 toggle
 
 ```
 
-### Play sound from a non-interactive shell (systemd service, cron...)
+### Play sound from a non-interactive shell (systemd service, cron)
 
-Replace `_user_` with the user running PulseAudio:
+Set `XDG_RUNTIME_DIR` before the command (replace `_user_id_` with the ID of the user running PulseAudio):
 
 ```
-# machinectl shell .host --uid=_user_ /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+XDG_RUNTIME_DIR=/run/user/_user_id_ paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+
+```
+
+Or use `machinectl`:
+
+```
+# machinectl shell .host --uid=_user_id_ /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
 ```
 
@@ -623,7 +630,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414064](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414064)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414311](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414311)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

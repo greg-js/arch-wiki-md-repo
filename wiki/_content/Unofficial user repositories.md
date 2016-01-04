@@ -105,32 +105,33 @@ For your convenience you can, for example, open them all in a web browser to ins
 *   [5 x86_64 only](#x86_64_only)
     *   [5.1 Signed](#Signed_4)
         *   [5.1.1 apathism](#apathism)
-        *   [5.1.2 atom](#atom)
-        *   [5.1.3 bioinformatics](#bioinformatics)
-        *   [5.1.4 blackleg](#blackleg)
-        *   [5.1.5 boyska64](#boyska64)
-        *   [5.1.6 coderkun-aur](#coderkun-aur)
-        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.8 eatabrick](#eatabrick)
-        *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.10 gustawho](#gustawho)
-        *   [5.1.11 holo](#holo)
-        *   [5.1.12 Linux-pf](#Linux-pf)
-        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.14 kc9ydn](#kc9ydn)
-        *   [5.1.15 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.16 linux-lts31x](#linux-lts31x)
-        *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.18 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.19 linux-tresor](#linux-tresor)
-        *   [5.1.20 markzz](#markzz)
-        *   [5.1.21 qt-debug](#qt-debug)
-        *   [5.1.22 quarry](#quarry)
-        *   [5.1.23 rstudio](#rstudio)
-        *   [5.1.24 siosm-aur](#siosm-aur)
-        *   [5.1.25 siosm-selinux](#siosm-selinux)
-        *   [5.1.26 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.27 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.2 ashleyis](#ashleyis)
+        *   [5.1.3 atom](#atom)
+        *   [5.1.4 bioinformatics](#bioinformatics)
+        *   [5.1.5 blackleg](#blackleg)
+        *   [5.1.6 boyska64](#boyska64)
+        *   [5.1.7 coderkun-aur](#coderkun-aur)
+        *   [5.1.8 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.9 eatabrick](#eatabrick)
+        *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.11 gustawho](#gustawho)
+        *   [5.1.12 holo](#holo)
+        *   [5.1.13 Linux-pf](#Linux-pf)
+        *   [5.1.14 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.15 kc9ydn](#kc9ydn)
+        *   [5.1.16 linux-lts-ck](#linux-lts-ck)
+        *   [5.1.17 linux-lts31x](#linux-lts31x)
+        *   [5.1.18 linux-lts31x-ck](#linux-lts31x-ck)
+        *   [5.1.19 linux-ck-pax](#linux-ck-pax)
+        *   [5.1.20 linux-tresor](#linux-tresor)
+        *   [5.1.21 markzz](#markzz)
+        *   [5.1.22 qt-debug](#qt-debug)
+        *   [5.1.23 quarry](#quarry)
+        *   [5.1.24 rstudio](#rstudio)
+        *   [5.1.25 siosm-aur](#siosm-aur)
+        *   [5.1.26 siosm-selinux](#siosm-selinux)
+        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -965,6 +966,18 @@ Server = http://apathism.net/archlinux/
 
 ```
 
+#### ashleyis
+
+*   **Maintainer:** Ashley Towns ([ashleyis](https://aur.archlinux.org/account/ashleyis/))
+*   **Description:** Debug versions of SDL, chipmunk, libtmx and other misc game libraries. also swift-lang and some other AUR packages
+*   **Key-ID:** B1A4D311
+
+```
+[ashleyis]
+Server = http://arch.ashleytowns.id.au/repo/$arch
+
+```
+
 #### atom
 
 *   **Maintainer:** Nicola Squartini ([tensor5](https://github.com/tensor5))
@@ -1552,7 +1565,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414241](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414241)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414295](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414295)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -120,7 +120,7 @@ In OS X, **install every update** (in the App Store). **Reboot** your computer, 
 **Note:** It is advisable to keep OS X, because the firmware can only be updated using OS X.
 
 ```
-/Library/ColorSync/Profiles/Displays/<FILES HERE>
+/Library/ColorSync/Profiles/Displays/*
 
 ```
 
@@ -833,7 +833,9 @@ and the pressing the s key to take a snapshot. Files are of the format `shot\d\d
 
 #### Facetime HD
 
-The Facetime HD webcam (included on 2013 MBAs onwards) [is no longer UVC device](http://mactaris.blogspot.co.uk/2013/07/webcam-settings-20-will-support.html), and therefore, does not work out of the box. It is actually a PCIE device. While a [bcwc_pcie](https://github.com/patjak/bcwc_pcie) driver is being developed, it will probably take some time before it is ready. See also [Linux bug #71131](https://bugzilla.kernel.org/show_bug.cgi?id=71131) and [Ubuntu bug #1276711](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1276811).
+The Facetime HD webcam (included on 2013 MBAs onwards) [is no longer UVC device](http://mactaris.blogspot.co.uk/2013/07/webcam-settings-20-will-support.html), and therefore, does not work out of the box. It is actually a PCIE device. Though it will work on many scenarios, the [bcwc_pcie](https://github.com/patjak/bcwc_pcie) driver is being developed and still experimental. It is available in the [AUR](https://aur.archlinux.org/packages/bcwc-pcie-git) and you may try at your own risk. Please keep in mind that it does not yet support suspension.
+
+See also [Linux bug #71131](https://bugzilla.kernel.org/show_bug.cgi?id=71131) and [Ubuntu bug #1276711](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1276811).
 
 ### Temperature Sensors
 
@@ -1595,7 +1597,7 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=412251](https://wiki.archlinux.org/index.php?title=MacBook&oldid=412251)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=414343](https://wiki.archlinux.org/index.php?title=MacBook&oldid=414343)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

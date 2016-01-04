@@ -108,7 +108,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 [http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)<sup><small>AUR</small></sup>
 
-*   **Papyros** — Papyros is a modern desktop shell which adheres to Google's Material Design guidelines.
+*   **[Papyros shell](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines.
 
 [http://papyros.io/](http://papyros.io/) || [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/)<sup><small>AUR</small></sup>
 
@@ -1002,7 +1002,7 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=413403](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=413403)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=414302](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=414302)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

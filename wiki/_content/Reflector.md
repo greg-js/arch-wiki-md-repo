@@ -16,8 +16,9 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Examples](#Examples)
-        *   [2.1.1 Systemd Service](#Systemd_Service)
-        *   [2.1.2 Systemd Timer](#Systemd_Timer)
+    *   [2.2 Systemd Service](#Systemd_Service)
+    *   [2.3 Systemd Timer](#Systemd_Timer)
+        *   [2.3.1 AUR package](#AUR_package)
 
 ## Installation
 
@@ -70,7 +71,7 @@ Verbosely rate the 200 most recently synchronized HTTP servers located in the US
 
 ```
 
-#### Systemd Service
+### Systemd Service
 
  `/etc/systemd/system/reflector.service` 
 
@@ -107,7 +108,7 @@ RequiredBy=multi-user.target
 
 Make sure you [activate the appropriate services](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) so that `network.target` really reflects your network status.
 
-#### Systemd Timer
+### Systemd Timer
 
 If you want to run `reflector.service` on a weekly basis:
 
@@ -134,7 +135,40 @@ And then just start the timer:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=404669](https://wiki.archlinux.org/index.php?title=Reflector&oldid=404669)"
+#### AUR package
+
+Install the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/)<sup><small>AUR</small></sup> package.
+
+The default configuration is:
+
+ `/usr/share/reflector-timer/reflector.conf` 
+
+```
+AGE=6
+COUNTRY=Germany
+LATEST=30
+NUMBER=20
+SORT=rate
+
+```
+
+To override this configuration, edit `/etc/conf.d/reflector.conf`:
+
+ `/etc/conf.d/reflector.conf` 
+
+```
+COUNTRY=United States
+
+```
+
+Be sure to enable the timer:
+
+```
+# systemctl enable reflector.timer
+
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=414248](https://wiki.archlinux.org/index.php?title=Reflector&oldid=414248)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

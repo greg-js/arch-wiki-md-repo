@@ -130,6 +130,13 @@ Follow instructions in script to setup a socket for VLC.
 
 Either run the script from the command line or register the script with keyboard shortcuts through your desktop.
 
+Alternatively, you can use dbus-send [as discussed here](http://theelitist.github.io/control-vlc-media-player-through-d-bus) to interact with VLC:
+
+```
+$ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+```
+
 ### Preventing multiple instances
 
 The default settings for VLC is to open a new instance of the program for each file that is opened. This can be annoying if you are using VLC for something like playing your music collection. You can disable this in _Tools > Preferences > Interface > Instances > Allow only one instance_. Optionally. tick _Enqueue files when in one instance mode_ which keeps current file playing and adds any newly opened files to the current playlist.
@@ -247,7 +254,7 @@ in the vlc.desktop file. [[2]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bu
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
 *   [Control VLC via a browser](http://wiki.videolan.org/Control_VLC_via_a_browser)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=412203](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=412203)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=414353](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=414353)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

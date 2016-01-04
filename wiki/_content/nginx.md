@@ -319,7 +319,7 @@ extension=mysqli.so
 
 ```
 
-**Warning:** As of PHP 5.5, `mysql.so` is [deprecated](http://www.php.net/manual/de/migration55.deprecated.php) and will fill up your log files. It is no longer available in PHP 7.0.
+**Warning:** `mysql.so` was [removed](http://php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
 
 You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
 
@@ -916,7 +916,7 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=412848](https://wiki.archlinux.org/index.php?title=Nginx&oldid=412848)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=414275](https://wiki.archlinux.org/index.php?title=Nginx&oldid=414275)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

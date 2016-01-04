@@ -58,9 +58,8 @@ GNOME (pronounced _gah-nohm_ or _nohm_)是一个简单易用的[桌面环境](/i
         *   [5.2.5 字体](#.E5.AD.97.E4.BD.93)
         *   [5.2.6 启动应用程序](#.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
         *   [5.2.7 电源](#.E7.94.B5.E6.BA.90)
-            *   [5.2.7.1 Hibernate the computer when lid is closed](#Hibernate_the_computer_when_lid_is_closed)
-            *   [5.2.7.2 Prevent Suspend-To-RAM (S3) when closing the lid](#Prevent_Suspend-To-RAM_.28S3.29_when_closing_the_lid)
-            *   [5.2.7.3 Change critical battery level action](#Change_critical_battery_level_action)
+            *   [5.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
+            *   [5.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
         *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
 *   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [6.1 键盘](#.E9.94.AE.E7.9B.98)
@@ -86,32 +85,10 @@ GNOME (pronounced _gah-nohm_ or _nohm_)是一个简单易用的[桌面环境](/i
     *   [6.11 鼠标中键](#.E9.BC.A0.E6.A0.87.E4.B8.AD.E9.94.AE)
     *   [6.12 启用按钮和菜单图标](#.E5.90.AF.E7.94.A8.E6.8C.89.E9.92.AE.E5.92.8C.E8.8F.9C.E5.8D.95.E5.9B.BE.E6.A0.87)
     *   [6.13 使用自定义的色彩和渐变色的桌面背景](#.E4.BD.BF.E7.94.A8.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.89.B2.E5.BD.A9.E5.92.8C.E6.B8.90.E5.8F.98.E8.89.B2.E7.9A.84.E6.A1.8C.E9.9D.A2.E8.83.8C.E6.99.AF)
-    *   [6.14 gnome terminal透明](#gnome_terminal.E9.80.8F.E6.98.8E)
-    *   [6.15 渐变背景](#.E6.B8.90.E5.8F.98.E8.83.8C.E6.99.AF)
-    *   [6.16 GNOME Files](#GNOME_Files)
-        *   [6.16.1 移除侧边栏计算机中的文件夹](#.E7.A7.BB.E9.99.A4.E4.BE.A7.E8.BE.B9.E6.A0.8F.E8.AE.A1.E7.AE.97.E6.9C.BA.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6.E5.A4.B9)
-        *   [6.16.2 地址栏显示文本路径](#.E5.9C.B0.E5.9D.80.E6.A0.8F.E6.98.BE.E7.A4.BA.E6.96.87.E6.9C.AC.E8.B7.AF.E5.BE.84)
-    *   [6.17 GNOME 面板](#GNOME_.E9.9D.A2.E6.9D.BF)
-        *   [6.17.1 在时间栏显示日期](#.E5.9C.A8.E6.97.B6.E9.97.B4.E6.A0.8F.E6.98.BE.E7.A4.BA.E6.97.A5.E6.9C.9F)
-        *   [6.17.2 隐藏顶部面板的图标](#.E9.9A.90.E8.97.8F.E9.A1.B6.E9.83.A8.E9.9D.A2.E6.9D.BF.E7.9A.84.E5.9B.BE.E6.A0.87)
-        *   [6.17.3 去掉注销时的延迟](#.E5.8E.BB.E6.8E.89.E6.B3.A8.E9.94.80.E6.97.B6.E7.9A.84.E5.BB.B6.E8.BF.9F)
-    *   [6.18 活动视图](#.E6.B4.BB.E5.8A.A8.E8.A7.86.E5.9B.BE)
-        *   [6.18.1 从应用程序视图移除应用程序项目](#.E4.BB.8E.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E8.A7.86.E5.9B.BE.E7.A7.BB.E9.99.A4.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E9.A1.B9.E7.9B.AE)
-        *   [6.18.2 怎样改变应用程序图标大小](#.E6.80.8E.E6.A0.B7.E6.94.B9.E5.8F.98.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.9B.BE.E6.A0.87.E5.A4.A7.E5.B0.8F)
-        *   [6.18.3 禁止鼠标接触 hot corner（左上角）切换活动视图](#.E7.A6.81.E6.AD.A2.E9.BC.A0.E6.A0.87.E6.8E.A5.E8.A7.A6_hot_corner.EF.BC.88.E5.B7.A6.E4.B8.8A.E8.A7.92.EF.BC.89.E5.88.87.E6.8D.A2.E6.B4.BB.E5.8A.A8.E8.A7.86.E5.9B.BE)
-    *   [6.19 标题栏](#.E6.A0.87.E9.A2.98.E6.A0.8F)
-        *   [6.19.1 减少标题栏高度](#.E5.87.8F.E5.B0.91.E6.A0.87.E9.A2.98.E6.A0.8F.E9.AB.98.E5.BA.A6)
-    *   [6.20 登录屏幕](#.E7.99.BB.E5.BD.95.E5.B1.8F.E5.B9.95)
-        *   [6.20.1 登录管理器壁纸](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8.E5.A3.81.E7.BA.B8)
-        *   [6.20.2 登录界面大字体](#.E7.99.BB.E5.BD.95.E7.95.8C.E9.9D.A2.E5.A4.A7.E5.AD.97.E4.BD.93)
-        *   [6.20.3 关闭声音](#.E5.85.B3.E9.97.AD.E5.A3.B0.E9.9F.B3)
-        *   [6.20.4 按电源键启用交互界面](#.E6.8C.89.E7.94.B5.E6.BA.90.E9.94.AE.E5.90.AF.E7.94.A8.E4.BA.A4.E4.BA.92.E7.95.8C.E9.9D.A2)
-        *   [6.20.5 改变 GDM 的键盘布局](#.E6.94.B9.E5.8F.98_GDM_.E7.9A.84.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
-        *   [6.20.6 gnome terminal透明](#gnome_terminal.E9.80.8F.E6.98.8E_2)
-        *   [6.20.7 启用备用模式](#.E5.90.AF.E7.94.A8.E5.A4.87.E7.94.A8.E6.A8.A1.E5.BC.8F)
-    *   [6.21 其他技巧](#.E5.85.B6.E4.BB.96.E6.8A.80.E5.B7.A7)
+    *   [6.14 渐变背景](#.E6.B8.90.E5.8F.98.E8.83.8C.E6.99.AF)
+    *   [6.15 自定义 GNOME 会话](#.E8.87.AA.E5.AE.9A.E4.B9.89_GNOME_.E4.BC.9A.E8.AF.9D)
 *   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 Shell freezes](#Shell_freezes)
+    *   [7.1 终端冻结](#.E7.BB.88.E7.AB.AF.E5.86.BB.E7.BB.93)
     *   [7.2 Incorrect application defaults](#Incorrect_application_defaults)
     *   [7.3 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
     *   [7.4 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
@@ -127,29 +104,12 @@ GNOME (pronounced _gah-nohm_ or _nohm_)是一个简单易用的[桌面环境](/i
     *   [7.14 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
     *   [7.15 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
     *   [7.16 锁定按钮无法重新启用触摸板](#.E9.94.81.E5.AE.9A.E6.8C.89.E9.92.AE.E6.97.A0.E6.B3.95.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-    *   [7.17 密码不记得](#.E5.AF.86.E7.A0.81.E4.B8.8D.E8.AE.B0.E5.BE.97)
-    *   [7.18 GNOME Shell键盘源菜单不可见](#GNOME_Shell.E9.94.AE.E7.9B.98.E6.BA.90.E8.8F.9C.E5.8D.95.E4.B8.8D.E5.8F.AF.E8.A7.81)
-    *   [7.19 鼠标指针丢失](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E4.B8.A2.E5.A4.B1)
-    *   [7.20 在会话菜单中没有重启按钮时，屏幕被锁定](#.E5.9C.A8.E4.BC.9A.E8.AF.9D.E8.8F.9C.E5.8D.95.E4.B8.AD.E6.B2.A1.E6.9C.89.E9.87.8D.E5.90.AF.E6.8C.89.E9.92.AE.E6.97.B6.EF.BC.8C.E5.B1.8F.E5.B9.95.E8.A2.AB.E9.94.81.E5.AE.9A)
-    *   [7.21 pulseaudio系统原因延误GNOME和GDM](#pulseaudio.E7.B3.BB.E7.BB.9F.E5.8E.9F.E5.9B.A0.E5.BB.B6.E8.AF.AFGNOME.E5.92.8CGDM)
-    *   [7.22 GNOME 登录需要花很长的时间](#GNOME_.E7.99.BB.E5.BD.95.E9.9C.80.E8.A6.81.E8.8A.B1.E5.BE.88.E9.95.BF.E7.9A.84.E6.97.B6.E9.97.B4)
-    *   [7.23 安装扩展导致 GNOME 停止工作](#.E5.AE.89.E8.A3.85.E6.89.A9.E5.B1.95.E5.AF.BC.E8.87.B4_GNOME_.E5.81.9C.E6.AD.A2.E5.B7.A5.E4.BD.9C)
-    *   [7.24 GTK 2+ 应用程序显示段错误无法启动](#GTK_2.2B_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.98.BE.E7.A4.BA.E6.AE.B5.E9.94.99.E8.AF.AF.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-    *   [7.25 ATI Catalyst 驱动在使用 GNOME Shell 的时候遭遇到了毛刺和伪影](#ATI_Catalyst_.E9.A9.B1.E5.8A.A8.E5.9C.A8.E4.BD.BF.E7.94.A8_GNOME_Shell_.E7.9A.84.E6.97.B6.E5.80.99.E9.81.AD.E9.81.87.E5.88.B0.E4.BA.86.E6.AF.9B.E5.88.BA.E5.92.8C.E4.BC.AA.E5.BD.B1)
-    *   [7.26 多台显示器和 dock 扩展](#.E5.A4.9A.E5.8F.B0.E6.98.BE.E7.A4.BA.E5.99.A8.E5.92.8C_dock_.E6.89.A9.E5.B1.95)
-    *   [7.27 Empathy和其他程序没有环境音](#Empathy.E5.92.8C.E5.85.B6.E4.BB.96.E7.A8.8B.E5.BA.8F.E6.B2.A1.E6.9C.89.E7.8E.AF.E5.A2.83.E9.9F.B3)
-    *   [7.28 通过 can-change-accels 编辑快捷键失败](#.E9.80.9A.E8.BF.87_can-change-accels_.E7.BC.96.E8.BE.91.E5.BF.AB.E6.8D.B7.E9.94.AE.E5.A4.B1.E8.B4.A5)
-    *   [7.29 在备用模式右键点击面板停止响应](#.E5.9C.A8.E5.A4.87.E7.94.A8.E6.A8.A1.E5.BC.8F.E5.8F.B3.E9.94.AE.E7.82.B9.E5.87.BB.E9.9D.A2.E6.9D.BF.E5.81.9C.E6.AD.A2.E5.93.8D.E5.BA.94)
-    *   [7.30 "显示桌面"快捷键无效](#.22.E6.98.BE.E7.A4.BA.E6.A1.8C.E9.9D.A2.22.E5.BF.AB.E6.8D.B7.E9.94.AE.E6.97.A0.E6.95.88)
-    *   [7.31 GNOME Files 不启动](#GNOME_Files_.E4.B8.8D.E5.90.AF.E5.8A.A8)
-    *   [7.32 不能保存显示器配置文件](#.E4.B8.8D.E8.83.BD.E4.BF.9D.E5.AD.98.E6.98.BE.E7.A4.BA.E5.99.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [7.33 按触摸板锁定键不能重新启用触摸板](#.E6.8C.89.E8.A7.A6.E6.91.B8.E6.9D.BF.E9.94.81.E5.AE.9A.E9.94.AE.E4.B8.8D.E8.83.BD.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-    *   [7.34 在 GNOME Files 里面 CTRL+V 粘贴路径而不是文件](#.E5.9C.A8_GNOME_Files_.E9.87.8C.E9.9D.A2_CTRL.2BV_.E7.B2.98.E8.B4.B4.E8.B7.AF.E5.BE.84.E8.80.8C.E4.B8.8D.E6.98.AF.E6.96.87.E4.BB.B6)
-    *   [7.35 不能连接到加密 Wi-Fi](#.E4.B8.8D.E8.83.BD.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.8A.A0.E5.AF.86_Wi-Fi)
-    *   [7.36 “Mutter 命令 33 尚未定义。”](#.E2.80.9CMutter_.E5.91.BD.E4.BB.A4_33_.E5.B0.9A.E6.9C.AA.E5.AE.9A.E4.B9.89.E3.80.82.E2.80.9D)
-    *   [7.37 “Mutter-dialig：终端命令未定义”](#.E2.80.9CMutter-dialig.EF.BC.9A.E7.BB.88.E7.AB.AF.E5.91.BD.E4.BB.A4.E6.9C.AA.E5.AE.9A.E4.B9.89.E2.80.9D)
-    *   [7.38 Intel CPU 用户开机引导到 GDM 界面提示“oh no”](#Intel_CPU_.E7.94.A8.E6.88.B7.E5.BC.80.E6.9C.BA.E5.BC.95.E5.AF.BC.E5.88.B0_GDM_.E7.95.8C.E9.9D.A2.E6.8F.90.E7.A4.BA.E2.80.9Coh_no.E2.80.9D)
-*   [8 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
+    *   [7.17 GNOME Shell键盘源菜单不可见](#GNOME_Shell.E9.94.AE.E7.9B.98.E6.BA.90.E8.8F.9C.E5.8D.95.E4.B8.8D.E5.8F.AF.E8.A7.81)
+    *   [7.18 鼠标指针丢失](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E4.B8.A2.E5.A4.B1)
+    *   [7.19 在会话菜单中没有重启按钮时，屏幕被锁定](#.E5.9C.A8.E4.BC.9A.E8.AF.9D.E8.8F.9C.E5.8D.95.E4.B8.AD.E6.B2.A1.E6.9C.89.E9.87.8D.E5.90.AF.E6.8C.89.E9.92.AE.E6.97.B6.EF.BC.8C.E5.B1.8F.E5.B9.95.E8.A2.AB.E9.94.81.E5.AE.9A)
+    *   [7.20 pulseaudio系统原因延误GNOME和GDM](#pulseaudio.E7.B3.BB.E7.BB.9F.E5.8E.9F.E5.9B.A0.E5.BB.B6.E8.AF.AFGNOME.E5.92.8CGDM)
+    *   [7.21 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+*   [8 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -591,13 +551,11 @@ $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup 
 
 ```
 
-##### Hibernate the computer when lid is closed
+##### Configure behaviour on lid switch close
 
-This setting cannot be done directly in GNOME. First make sure that [hibernation](/index.php/Hibernation "Hibernation") is correctly set up. Then, configure _systemd_ with `HandleLidSwitch=hibernate` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+The GNOME Tweak Tool, as of version 3.17.1, can optionally _inhibit_ the _systemd_ setting for the lid close ACPI event.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To _inhibit_ the setting, start the Tweak Tool and, under the power tab, check the _Don't suspend on lid close_ option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
 
-##### Prevent Suspend-To-RAM (S3) when closing the lid
-
-This setting cannot be done directly in GNOME, so you have to configure _systemd_ with `HandleLidSwitch=ignore` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure _systemd_ with `HandleLidSwitch=_preferred_behaviour_` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ##### Change critical battery level action
 
@@ -779,7 +737,7 @@ _File_ > _New_ > _PGP Key_ > _Name_ > _Email_ > _Defaults_ > _Passphrase_.
 
 #### 更改默认的终端大小
 
-The default size of a new terminal can be adjusted in the menu _Edit > Profile preferences_ .
+新终端的默认大小可以在_编辑 > 配置文件首选项_ 中调整
 
 #### 新终端采用当前目录
 
@@ -880,27 +838,6 @@ $ gsettings set org.gnome.desktop.background picture-opacity <value>
 
 数值在100和1之间（最大不透明度为100）。
 
-### gnome terminal透明
-
-可以在~/.bashrc里添加一段代码实现
-
-```
-~/.bashrc
-if [ -n "$WINDOWID" ]; then
-    TRANSPARENCY_HEX=$(printf 0x%x $((0xffffffff * 80 / 100)))
-    xprop -id "$WINDOWID" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY "$TRANSPARENCY_HEX"
-fi
-
-```
-
-```
-
- **Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-
-```
-
-**Tip:** 80为透明度。
-
 ### 渐变背景
 
 GNOME 可以在特定的时间间隔之间的使用不同的壁纸。 这是通过创建一个XML文件，指定要使用的图片和时间间隔完成的。有关创建这些文件的详细信息，请参阅下面的 [article](http://www.linuxjournal.com/content/create-custom-transitioning-background-your-gnome-228-desktop).
@@ -921,289 +858,37 @@ GNOME 可以在特定的时间间隔之间的使用不同的壁纸。 这是通�
 
 对于设置XML文件作为默认的背景，参阅 [#Lock screen and background](#Lock_screen_and_background).
 
-### GNOME Files
+### 自定义 GNOME 会话
 
-GNOME Files，即 nautilus，为 GNOME 默认的文件管理器。
+It is possible to create custom GNOME sessions which use the GNOME session manager but start different sets of components ([Openbox](/index.php/Openbox "Openbox") with [tint2](/index.php/Tint2 "Tint2") instead of GNOME Shell for example).
 
-#### 移除侧边栏计算机中的文件夹
+Two files are required for a custom GNOME session: a session file in `/usr/share/gnome-session/sessions/` which defines the components to be started and a [desktop entry](/index.php/Desktop_entry "Desktop entry") in `/usr/share/xsessions` which is read by the [display manager](/index.php/Display_manager "Display manager"). An example session file is provided below:
 
-显示的文件夹在 `~/.config/user-dirs.dirs` 里配置，他可以被任何编辑器直接修改。运行 `xdg-user-dirs-update` 来应用修改。但是建议设置文件权限为只读。
-
-#### 地址栏显示文本路径
-
-标准的 Files 工具栏用按钮来显示路径。想要从**键盘**输入，你需要使它显示文本路径。按 `Ctrl` + `L` 就可以完成。
-
-假如你想让它始终显示为文本路径，用 gsettings 如下所示。
+ `/usr/share/gnome-session/sessions/gnome-openbox.session` 
 
 ```
-$ gsettings set org.gnome.nautilus.preferences always-use-location-entry true
+[GNOME Session]
+Name=GNOME Openbox
+RequiredComponents=openbox;tint2;gnome-settings-daemon;
 
 ```
 
-**注意:** 这样修改之后，你不能回到按钮路径。只有在设置为 **false** 的情况下，可以通过快捷键来使两种模式都可用。
+And an example desktop file:
 
-### GNOME 面板
-
-#### 在时间栏显示日期
-
-默认 GNOME 在顶栏只显示星期和时间。可以通过下面的命令修改，修改立即生效。
+ `/usr/share/xsessions/gnome-openbox.desktop` 
 
 ```
-# gsettings set org.gnome.shell.clock show-date true
+[Desktop Entry]
+Name=GNOME Openbox
+Exec=gnome-session --session=gnome-openbox
 
 ```
 
-#### 隐藏顶部面板的图标
-
-在登录 GNOME 时，顶部面板可能会出现一些不需要的图标。通过编辑 GNOME 面板脚本来移除这些图标。
-
-例如，要想移除 **universal access icon**。从 AREA_ORDER 行中移除 'a11y'，并注释掉 AREA_SHELL_IMPLEMENTATION 行中的 'a11y'。
-
-修改
-
- `/usr/share/gnome-shell/js/ui/panel.js` 
-
-```
-const STANDARD_STATUS_AREA_ORDER = ['ally', 'keyboard', 'volume', 'network', 'bluetooth', 'battery', 'userMenu'];
-const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
-    'a11y': imports.ui.status.accessibility.ATIndicator
-    'volume': imports.ui.status.volume.Indicator,
-    'battery': imports.ui.status.power.Indicator,
-    'keyboard': imports.ui.status.keyboard.XKBIndicator,
-    'userMenu': imports.ui.userMenu.UserMenuButton
-};
-
-```
-
-为
-
- `/usr/share/gnome-shell/js/ui/panel.js` 
-
-```
-const STANDARD_STATUS_AREA_ORDER = ['keyboard', 'volume', 'network', 'bluetooth' 'battery', 'userMenu'];
-const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
-    //'a11y': imports.ui.status.accessibility.ATIndicator
-    'volume': imports.ui.status.volume.Indicator,
-    'battery': imports.ui.status.power.Indicator,
-    'keyboard': imports.ui.status.keyboard.XKBIndicator,
-    'userMenu': imports.ui.userMenu.UserMenuButton
-};
-
-```
-
-保存并重启 gnome-shell 查看结果。
-
-1.  `Alt+F2`
-2.  `r`
-3.  `Enter`
-
-#### 去掉注销时的延迟
-
-按照下面的方法修改来去掉注销的确认和 60 秒的延迟。
-
-这个对话框一般出现在你用状态菜单注销的时候。这个修改对于 _**关机**_ 也生效。这个不是全局修改，只对使用该命令的用户生效。使用该命令立即生效。
-
-```
-$ gsettings set org.gnome.SessionManager logout-prompt 'false'
-
-```
-
-### 活动视图
-
-#### 从应用程序视图移除应用程序项目
-
-GNOME 用 .desktop 文件来填充应用程序视图。这些纯文本文件位于**`/usr/share/applications`**。 GNOME Files 不把他们识别为纯文本文件，你不能直接在文件夹视图中编辑他们。使用终端显示或编辑它们
-
-```
-# ls /usr/share/applications
-# nano /usr/share/applications/foo.desktop
-
-```
-
-要想系统全局修改，直接编辑**`/usr/share/applications`**中的文件。要想只对自己生效，把 _foo.desktop_ 复制到home文件夹：
-
-```
-$ cp /usr/share/applications/foo.desktop ~/.local/share/applications/
-
-```
-
-你可以按照你的想法编辑 .desktop 文件。
-
-**注意:** 删除一个 .desktop 文件并不卸载软件，只是删除他的桌面特性（如文件关联，快捷键等）。
-
-添加下列选项到 .desktop 文件来使 foo 不再显示在应用程序视图：
-
-```
-$ echo "NoDisplay=true" >> foo.desktop
-
-```
-
-#### 怎样改变应用程序图标大小
-
-对于很多人来说，一个很怪异的事情就是 GNOME 3 的图标大小。当遇到一个小屏幕加很多程序的时候很痛苦。 很高兴这里有一个方法能改变这中情况，修改 GNOME shell 主题。
-
-直接修改系统文件夹(别忘了备份)或者复制到你的用户文件夹。对于默认主题，修改**`/usr/share/gnome-shell/theme/gnome-shell.css`**
-
-对于用户主题，修改**`/usr/share/themes/<UserTheme>/gnome-shell/gnome-shell.css`**
-
-修改 _gnome-shell.css_ ，用下面的值替换。然后[#重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell)
-
- `gnome-shell.css` 
-
-```
- .icon-grid {
-     spacing: 18px;
-     -shell-grid-item-size: 82px;
- }
-
- .icon-grid .overview-icon {
-     icon-size: 48px;
- }
-
-```
-
-默认主题的小图标版在[AUR](https://aur.archlinux.org/packages.php?ID=51586)上提供。
-
-#### 禁止鼠标接触 hot corner（左上角）切换活动视图
-
-要禁用这一功能，编辑**`/usr/share/gnome-shell/js/ui/layout.js`**（Gnome 3.0.x中是_panel.js_）文件的这一段：
-
- `layout.js` 
-
-```
- this._corner = new Clutter.Rectangle({ name: 'hot-corner',
-                                       width: 1,
-                                       height: 1,
-                                       opacity: 0,
-                                       reactive: true });icon-size: 48px;
- }
-
-```
-
-把_reactive_的值_true_修改为_false_，[#重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell)即可。
-
-### 标题栏
-
-#### 减少标题栏高度
-
-```
-# sed -i '/title_vertical_pad/s|value="[0-9]\{1,2\}"|value="0"|g' /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml
-
-```
-
-[重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell)，这会修改垂直间距从14到0，给你更时尚的外观。
-
-想要恢复默认值，从[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")中[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
-
-### 登录屏幕
-
-#### 登录管理器壁纸
-
-在会话变量被如上设置之后，你就可以发出命令检索或者设置 GDM 项目。
-
-最简单的方法是使用配置编辑器图形界面：
-
-```
-$ dconf-editor
-
-```
-
-设置的位置和下面的命令行一样。
-
-下面是用命令行检索和设置 GDM 壁纸。
-
-```
-$  GSETTINGS_BACKEND=dconf gsettings get org.gnome.desktop.background picture-uri
- $  GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/SundownDunes.jpg'
-
- $  GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.background picture-options 'zoom'
- ## Possible values: centered, none, scaled, spanned, stretched, wallpaper, zoom
-```
-
-**注意:** 你必须指定一个 "gdm" 有读权限的文件，GDM不能读你的home文件夹。
-
-另外还有一种可以在图形界面改变主题 (gtk3, 图标和鼠标)、壁纸和其他细小的设置 GDM 登陆屏幕的方法，你可以从 AUR 安装 [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)<sup><small>AUR</small></sup>.
-
-#### 登录界面大字体
-
-这个修改用 scaling factor 放大你的登陆界面字体。就像在桌面上你使用辅助功能一样。
-
-在做这个修改之前，你必须 [export GDM会话变量](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)。
-
-```
-$ GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.interface text-scaling-factor '1.25'
-
-```
-
-#### 关闭声音
-
-这个调整让你在登录界面通过快捷键禁用声音反馈。你必须首先 [export GDM会话变量](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)。
-
-```
-$ GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.sound event-sounds 'false'
-
-```
-
-如果上面的调整不工作或者你无法 export GDM 会话变量，有一个比真正解决更容易的解决方法：在登陆时用键盘多媒体键静音或者降低音量。
-
-#### 按电源键启用交互界面
-
-默认安装设置电源键功能是休眠。_**关机**_或_**显示会话**_或许会更好一点。你必须首先 [export GDM会话变量](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)。
-
-```
- $ GSETTINGS_BACKEND=dconf gsettings set org.gnome.settings-daemon.plugins.power button-power 'interactive'
- $ GSETTINGS_BACKEND=dconf gsettings set org.gnome.settings-daemon.plugins.power button-hibernate 'interactive'
- $ gsettings list-recursively org.gnome.settings-daemon.plugins.power
-
-```
-
-#### 改变 GDM 的键盘布局
-
-由于 GDM 无视您的 GNOME 3 键盘设置，您得在 Xorg 配置文件中设置您的键盘布局。参阅此处： [Beginner's Guide.](/index.php/Beginners%27_guide#Non-US_keyboard "Beginners' guide")
-
-#### gnome terminal透明
-
-可以在~/.bashrc里添加一段代码实现
-
-```
-~/.bashrc
-if [ -n "$WINDOWID" ]; then
-    TRANSPARENCY_HEX=$(printf 0x%x $((0xffffffff * 80 / 100)))
-    xprop -id "$WINDOWID" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY "$TRANSPARENCY_HEX"
-fi
-
-```
-
-```
-
- **Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-
-```
-
-**Tip:** 80为透明度。
-
-#### 启用备用模式
-
-如果 gnome-shell 不存在或您的显卡不支持混成特效的话，您的会话将自动以备用模式启动。
-
-如果您想在安装了 gnome-shell 的情况下启用备用模式 (Fallback Mode) 的话，打开**系统设置**。打开**系统信息**>**图形**。把**强制使用备用模式**调为`开启`。
-
-你也可以选择用_gsettings_命令来选择会话类型。
-
-```
-$ gsettings set org.gnome.desktop.session session-name 'gnome-fallback'
-
-```
-
-重新登录应用设置。禁用备用模式，用'gnome' 代替 'gnome-fallback'。
-
-### 其他技巧
-
-参见：[GNOME Tips (简体中文)](/index.php/GNOME_Tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME Tips (简体中文)")。
+**Note:** GNOME Session calls upon the `.desktop` files of each of the components to be started. If a component you wish to start does not provide a `.desktop` file, you must create a suitable desktop entry in a directory such as `/usr/local/share/applications`.
 
 ## 故障排除
 
-### Shell freezes
+### 终端冻结
 
 In the event of a Shell freeze (which might be caused by certain appearance tweaks, malfunctioning extensions or perhaps a lack of available memory) restarting the Shell by pressing `Alt` + `F2` and then entering **r** may not be possible.
 
@@ -1349,7 +1034,7 @@ $ gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
 
 **The factual accuracy of this article or section is disputed.**
 
-**Reason:** As per [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1565891#p1565891), it's probably the fact that on [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) post install `gdk-pixbuf-query-loaders --update-cache` is run which fixes the issue, not the re-installation of the package per se. (Discuss in [Talk:GNOME (简体中文)#](https://wiki.archlinux.org/index.php/Talk:GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
+**Reason:** As per [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1565891#p1565891), it's probably the fact that on [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) post install `gdk-pixbuf-query-loaders --update-cache` is run which fixes the issue, not the re-installation of the package per se. (Discuss in [Talk:GNOME (简体中文)#](https://wiki.archlinux.org/index.php/Talk:GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 Problems with the loading of system icons, such the ones in the title bar of Files, might be solved by [installing](/index.php/Pacman#Installing_specific_packages "Pacman") (or re-installing) the [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) package.
 
@@ -1403,20 +1088,6 @@ $ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 
 ```
 
-### 密码不记得
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:GNOME (简体中文)#](https://wiki.archlinux.org/index.php/Talk:GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
-
-如果每次登录时都会有一个密码提示，你发现密码不保存，你可能需要创建/设置默认密钥环。
-
-Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select _View_ > _By Keyring_ If there is no keyring in the left column (it will be marked with a lock icon), go to _File_ > _New_ > _Password Keyring_ and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
-
 ### GNOME Shell键盘源菜单不可见
 
 A menu showing the keyboard input sources (for example 'en' for an English keyboard layout) should be visible next to the status area containing icons for network, volume and power sources. If the keyboard sources menu is not visible, this is probably because you have configured your [Xorg](/index.php/Xorg "Xorg") keyboard layout in a way which GNOME does not recognise.
@@ -1442,173 +1113,23 @@ If [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") is installed, ensure t
 
 If you are running [PulseAudio](/index.php/PulseAudio "PulseAudio") in system-wide mode, the PulseAudio 7.0 upgrade breaks [GDM](/index.php/GDM "GDM") and GNOME. See [this forum post](https://bbs.archlinux.org/viewtopic.php?id=203051) for more information.
 
-### GNOME 登录需要花很长的时间
+### GNOME crashes when trying to reorder applications in the GNOME Shell Dash
 
-用**paprefs**察看你是否启用_PulseAudio Network_ 。只要有任何音频设置启用了，在启动后gnome挂起大约一分钟。
+The dash is the "toolbar" that appears, by default, [on the left](https://en.wikipedia.org/wiki/GNOME_Shell#Design_components "wikipedia:GNOME Shell") when you click Activities. Applications can be reordered in the dash by dragging and dropping. If this fails, and/or causes GNOME to crash, try [changing your icon theme](https://bbs.archlinux.org/viewtopic.php?id=171689).
 
-一个方案是新建一个用户，用新建的用户登录。另一个方案是移动`~/.gconf`, `~/.gconfd` 和 `~/.config/dconf`文件夹到别的地方。重登录看问题是否还在。
-
-如果不再延迟，一个个尝试你的设置，看看是哪个导致的错误。
-
-### 安装扩展导致 GNOME 停止工作
-
-如果安装这些扩展导致 GNOME 停止工作，那您必须首先将 _user-theme_ 和 _auto-move-windows_扩展从它们的安装文件夹中移除。
-
-安装目录可能是`~/.local/share/gnome‑shell/extensions`,`/usr/share/gnome‑shell/extensions` 或 `/usr/local/share/gnome‑shell/extensions`中的一个。删除这两个扩展文件夹可能解决问题。如果不能，逐个扩展尝试。
-
-移除或添加扩展到这些文件夹会将它们从系统移除或安装。更多有关GNOME Shell扩展的信息可以在[这里](https://live.gnome.org/GnomeShell/Extensions) 找到。
-
-### GTK 2+ 应用程序显示段错误无法启动
-
-此错误往往在安装了**oxygen-gtk**的情况下发生。这个主题与 GNOME 3 或 GTK 3 的某一设置冲突，当它被设置成 GTK 2 主题时，GTK 2 程序会出现类似下面的段错误：
-
-```
-(firefox-bin:14345): GLib-GObject-WARNING **: invalid (NULL) pointer instance
-
-(firefox-bin:14345): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion `G_TYPE_CHECK_INSTANCE (instance)' failed
-
-(firefox-bin:14345): Gdk-CRITICAL **: IA__gdk_screen_get_default_colormap: assertion `GDK_IS_SCREEN (screen)' failed
-
-(firefox-bin:14345): Gdk-CRITICAL **: IA__gdk_colormap_get_visual: assertion `GDK_IS_COLORMAP (colormap)' failed
-
-(firefox-bin:14345): Gdk-CRITICAL **: IA__gdk_screen_get_default_colormap: assertion `GDK_IS_SCREEN (screen)' failed
-
-(firefox-bin:14345): Gdk-CRITICAL **: IA__gdk_screen_get_root_window: assertion `GDK_IS_SCREEN (screen)' failed
-
-(firefox-bin:14345): Gdk-CRITICAL **: IA__gdk_screen_get_root_window: assertion `GDK_IS_SCREEN (screen)' failed
-
-(firefox-bin:14345): Gdk-CRITICAL **: IA__gdk_window_new: assertion `GDK_IS_WINDOW (parent)' failed
-Segmentation fault
-
-```
-
-目前的"解决方法"是把**oxygen-gtk**从系统中完全**移除**并为您的应用程序设置另一个主题。
-
-### ATI Catalyst 驱动在使用 GNOME Shell 的时候遭遇到了毛刺和伪影
-
-目前不推荐使用 Catalyst 运行 GNOME Shell。开源的 ATI 驱动（xf86-video-ati）似乎是能正确地运行 GNOME 3 混成桌面。
-
-**注意:** 有望在 Catalyst 11.9 中修复。参见 [http://ati.cchtml.com/show_bug.cgi?id=99](http://ati.cchtml.com/show_bug.cgi?id=99)
-
-### 多台显示器和 dock 扩展
-
-如果你有多台显示器，并且用 Nvidia Twinview 配置，你的 dock 扩展可能会夹在显示器的中间。编辑扩展的源文件来重定位 dock。
-
-编辑 **/usr/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/extension.js** ，在代码中找到这行：
-
-```
-this.actor.set_position(primary.width-this._item_size-this._spacing-2, (primary.height-height)/2);
-
-```
-
-第一个参数是dock的X方向位置，从2改成15，dock在我的主显示器上到了正确的位置。你可以尝试几个X，Y的值来让他到合理位置。
-
-```
-this.actor.set_position(primary.width-this._item_size-this._spacing-15, (primary.height-height)/2);
-
-```
-
-### Empathy和其他程序没有环境音
-
-如果你正在使用 [OSS](/index.php/OSS "OSS"), 你需要安装[AUR上的](https://aur.archlinux.org/packages.php?ID=31163) **libcanberra-oss**。
-
-必须安装**sound-theme-freedesktop**包以获取默认环境声：
-
-```
- # pacman -S sound-theme-freedesktop
-
-```
-
-### 通过 can-change-accels 编辑快捷键失败
-
-也可以通过 accel map 手动设置快捷键。在哪里找到这些文件取决于应用软件，例如，Thuner 在`~/.config/Thunar/accels.scm`，GNOME Files 在 `~/.gnome2/accels/nautilus`。文件含有一系列快捷键，还未更改的快捷键用 ";" 注释，去掉注释以启用。
-
-### 在备用模式右键点击面板停止响应
-
-打开 gconf-editor 找到/apps/metacity/general/mouse_button_modifier，面板和 applets 也在使用快捷键 (<Alt>, <Super> 等)。
-
-### "显示桌面"快捷键无效
-
-GNOME 开发者认为他是一个 bug (察看 [https://bugzilla.gnome.org/show_bug.cgi?id=643609](https://bugzilla.gnome.org/show_bug.cgi?id=643609) )，因为最小化被抛弃了。定义 ALT+STRG+D 为下列设置：
-
-```
-系统设置 --> 键盘 --> 快捷键 --> 导航 --> 隐藏所有正常窗口
-
-```
-
-### GNOME Files 不启动
-
-打开 gnome-tweak-tool -> File Manager -> Have file manager handle the desktop -> Off
-
-### 不能保存显示器配置文件
-
-如果你遇到这样的问题，尝试禁用 xrandr gnome-settings-daemon 插件：
-
-```
-dconf write /org/gnome/settings-daemon/plugins/xrandr/active false 
-
-```
-
-### 按触摸板锁定键不能重新启用触摸板
-
-有一些笔记本有触摸板锁定键，这样你可以在打字的时候禁用他，不用担心碰到触摸板。但是GNOME可以正确地锁定他，却不能启用。如果触摸板已经被禁用，按下面操作解锁：
-
-1.  按 ALT+F2 , 输入 gnome-terminal，回车
-2.  输入以下命令
-
-```
-xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
-
-```
-
-### 在 GNOME Files 里面 CTRL+V 粘贴路径而不是文件
-
-如果你被这个问题困扰，编辑 _~/.gnome2/accels/nautilus_你可以发现两个 CTRL+V :
-
-```
-(gtk_accel_path "<Actions>/DirViewActions/Paste" "<Control>v")
-...
-(gtk_accel_path "<Actions>/ClipboardActions/Paste" "<Control>v")
-
-```
-
-问题在于第二项，删除他可以好过一阵子，我可能还要再去修改他。另一个方法是修改快捷键。
-
-### 不能连接到加密 Wi-Fi
-
-如果你可以看到 wifi 连接,但是点击加密网络却不能打开输入密码对话,你可能需要安装 network-manager-applet。察看[Gnome NetworkManager setup](/index.php/NetworkManager#GNOME "NetworkManager").
-
-### “Mutter 命令 33 尚未定义。”
-
-当你使用 print screen 截屏的时候，出现“Mutter 命令 33 尚未定义。”。mutter 还用着 metacity 的配置文件。
-
-```
-$ sudo pacman -S metacity
-
-```
-
-### “Mutter-dialig：终端命令未定义”
-
-```
-$ gconftool-2 --type=string --set "/desktop/gnome/applications/terminal/exec" "gnome-terminal"
-
-```
-
-### Intel CPU 用户开机引导到 GDM 界面提示“oh no”
-
-因为英特尔微码升级方式变更，导致部分新装用户在使用gnome桌面的时候可能会遇到这样的问题：在安装完 gnome 桌面后重启，结果 gdm 不能正常显示，白色背景上提示“oh no something……”和一个“logout”的按钮。 针对此问题，解决办法如下： 安装 Intel 的微码包 intel-ucode（AMD 的微码位于 linux-firmware，属于 base 软件组，所以 AMD 的 CPU 不会遇到此问题），然后执行 grub-mkconfig 重新生成 grub.cfg 文件。对于使用其它引导器的用户可以查看此页面：[Microcode](/index.php/Microcode "Microcode")。
-
-## 外部链接
+## 参见
 
 *   [官方网站](http://www.gnome.org/)
-*   主题, 图标, 背景:
+*   [GNOME-shell扩展](http://extensions.gnome.org/)
+*   主题、图标和壁纸：
     *   [GNOME Art](http://art.gnome.org/)
     *   [GNOME Look](http://www.gnome-look.org/)
-*   GTK/GNOME 程序:
+*   GTK/GNOME 程序：
     *   [GNOME Files](http://www.gnomefiles.org/)
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
+*   [自定义GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=412762](https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=412762)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=414260](https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=414260)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

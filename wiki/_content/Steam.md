@@ -186,6 +186,15 @@ See also [#Using native runtime](#Using_native_runtime) below.
 
 Setup with multiple monitors can cause `ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.` error which will make game unable to start. If you stuck on this error and have multiple monitors, try to disable all additional displays, and then run a game. You can enable them after the game successfully started.
 
+Also you can try this:
+
+```
+export LD_LIBRARY_PATH=/usr/lib32/nvidia:/usr/lib/nvidia:$LD_LIBRARY_PATH
+
+```
+
+and then run steam.
+
 ### Native runtime: steam.sh line 756 Segmentation fault
 
 Valve GitHub [issue 3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
@@ -225,6 +234,10 @@ ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
 There is a workaround which involves renaming or deleting some Steam Runtime folders and library files. The bugs have already been reported here: [#3376](https://github.com/ValveSoftware/steam-for-linux/issues/3376) and [#3504](https://github.com/ValveSoftware/steam-for-linux/issues/3504)
 
 The solution is to rename or delete the `alsa-lib` folder and the `libasound.so.*` files. They can be found within `~/.steam/steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/` 
+
+As an alternative, these `libasound.so.*` libraries can also be prepended to the **LD_PRELOAD** environment variable to fix this issue:
+
+ `LD_PRELOAD="/usr/lib/libasound.so.2:/usr/lib32/libasound.so.2:${LD_PRELOAD}" steam` 
 
 ### Text is corrupt or missing
 
@@ -545,7 +558,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414059](https://wiki.archlinux.org/index.php?title=Steam&oldid=414059)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414314](https://wiki.archlinux.org/index.php?title=Steam&oldid=414314)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

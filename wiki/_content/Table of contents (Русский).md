@@ -116,7 +116,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.13.1.</small> [Оптические](/index.php/Category:Optical_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Optical (Русский)") <small>(1)</small>
 
-<small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(31)</small>
+<small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(32)</small>
 
 <small>5.1.</small> [Протокол передачи файлов (FTP)](/index.php/Category:File_Transfer_Protocol_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File Transfer Protocol (Русский)") <small>(1)</small>
 
@@ -202,7 +202,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.11.</small> [Скрипты](/index.php/Category:Scripts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Scripts (Русский)") <small>(2)</small>
 
-<small>6.12.</small> [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)") <small>(15)</small>
+<small>6.12.</small> [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)") <small>(16)</small>
 
 <small>6.12.1.</small> [Шифрование](/index.php/Category:Encryption_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Encryption (Русский)") <small>(1)</small>
 
@@ -222,7 +222,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(31)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=413536](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=413536)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=414312](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=414312)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

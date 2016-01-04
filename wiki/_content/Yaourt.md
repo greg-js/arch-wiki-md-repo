@@ -10,7 +10,7 @@ Related articles
 *   [AUR](/index.php/AUR "AUR")
 *   [Pacman](/index.php/Pacman "Pacman")
 
-**Warning:** Yaourt is an unofficial, third-party script that is **not** supported by the Arch Linux developers. Report bugs at the [archlinux.fr bugtracker](http://bugs.archlinux.fr).
+**Warning:** Yaourt is an unofficial, third-party script that is **not** supported by the Arch Linux developers. Report bugs at the [GitHub issues page](https://github.com/archlinuxfr/yaourt/issues).
 
 [Yaourt](https://github.com/archlinuxfr/yaourt) (**Y**et **A**n**O**ther **U**ser **R**epository **T**ool) is a wrapper for pacman which adds automated access to the [AUR](/index.php/AUR "AUR") using the same syntax as [pacman](/index.php/Pacman "Pacman").
 
@@ -69,7 +69,7 @@ EXPORTDIR="/var/cache/pacman/pkg-local"
 
 Yaourt uses `/tmp` (mounted as [tmpfs](/index.php/Tmpfs "Tmpfs"), limited to 50% of RAM) to compile packages, which may be problematic for systems with low RAM or limited swap space. Change the location in `/etc/yaourtrc` by uncommenting and changing the `TMPDIR` variable.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=411471](https://wiki.archlinux.org/index.php?title=Yaourt&oldid=411471)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=414338](https://wiki.archlinux.org/index.php?title=Yaourt&oldid=414338)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

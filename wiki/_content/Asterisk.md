@@ -32,7 +32,7 @@ This article will show you how to configure a simple in house network enabling u
 
 Install the [asterisk](https://aur.archlinux.org/packages/asterisk/)<sup><small>AUR</small></sup> package, and then [start](/index.php/Start "Start") the server with `asterisk.service`.
 
-You may also want to install [asterisk-addons](https://aur.archlinux.org/packages/asterisk-addons/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/asterisk-addons)]</sup> and [zaptel-svn](https://aur.archlinux.org/packages/zaptel-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zaptel-svn)]</sup>. You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [linphone](http://www.linphone.org/) [linphone](https://www.archlinux.org/packages/?name=linphone) from the official repositories or [x-lite](http://www.xten.net/index.php?menu=X-Series) [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
+You may also want to install [asterisk-addons](https://aur.archlinux.org/packages/asterisk-addons/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/asterisk-addons)]</sup> and [zaptel-svn](https://aur.archlinux.org/packages/zaptel-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zaptel-svn)]</sup>. You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [linphone](http://www.linphone.org/) ([linphone](https://www.archlinux.org/packages/?name=linphone) package) or [x-lite](http://www.xten.net/index.php?menu=X-Series) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)<sup><small>AUR</small></sup> package).
 
 To enable ilbc codec support add the following to the very beginning of the build section of the PKGBUILD
 
@@ -326,7 +326,7 @@ Now you should be able to dial `101` from `me1` and talk to `me2`.
 
 If you receive a 404 Not Found error check your `extensions.conf` and the number you dialed.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Asterisk&oldid=391937](https://wiki.archlinux.org/index.php?title=Asterisk&oldid=391937)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Asterisk&oldid=414348](https://wiki.archlinux.org/index.php?title=Asterisk&oldid=414348)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

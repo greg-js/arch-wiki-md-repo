@@ -183,9 +183,7 @@ and append the key to the list of keys in `~/.kde4/Autostart/ssh-add.sh` as expl
 
 ## KDE Wallet for Firefox
 
-There is an addon to make Firefox store passwords with KDE Wallet.
-
-[http://kde-apps.org/content/show.php/Firefox+addon+for+kwallet?content=116886](http://kde-apps.org/content/show.php/Firefox+addon+for+kwallet?content=116886)
+There is an addon to make Firefox store passwords with [KDE Wallet 5](http://kde-apps.org/content/show.php?content=173994) or [KDE Wallet 4](http://kde-apps.org/content/show.php/Firefox+addon+for+kwallet?content=116886).
 
 ## KDE Wallet for Chromium
 
@@ -195,7 +193,7 @@ Chromium has built in wallet integration. To enable it, run Chromium with the `-
 
 *   [Unlocking KWallet with PAM](https://www.dennogumi.org/2014/04/unlocking-kwallet-with-pam/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=413752](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=413752)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=414325](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=414325)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -151,7 +151,7 @@ To bring the interface down and un-tether:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IPhone_Tethering&oldid=397034](https://wiki.archlinux.org/index.php?title=IPhone_Tethering&oldid=397034)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IPhone_Tethering&oldid=414307](https://wiki.archlinux.org/index.php?title=IPhone_Tethering&oldid=414307)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

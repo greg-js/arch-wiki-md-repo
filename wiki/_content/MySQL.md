@@ -500,15 +500,15 @@ By default, mysqld creates binary log files in `/var/lib/mysql`. This is useful 
 Or you could limit the size of the logfile like this:
 
 ```
-#expire_logs_days = 10
-#max_binlog_size  = 100M
+expire_logs_days = 10
+max_binlog_size  = 100M
 
 ```
 
 Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up disk space with this command:
 
 ```
-#mysql -u root -p"PASSWORD" -e "PURGE BINARY LOGS TO 'mysql-bin.0000xx';"
+# mysql -u root -p"PASSWORD" -e "PURGE BINARY LOGS TO 'mysql-bin.0000xx';"
 
 ```
 
@@ -522,7 +522,7 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 *   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
 *   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MySQL&oldid=414242](https://wiki.archlinux.org/index.php?title=MySQL&oldid=414242)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MySQL&oldid=414284](https://wiki.archlinux.org/index.php?title=MySQL&oldid=414284)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

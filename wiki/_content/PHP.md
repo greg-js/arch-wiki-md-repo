@@ -53,13 +53,13 @@ Note that to run PHP scripts as plain CGI, you need the [php-cgi](https://www.ar
 
 While PHP can be run standalone, it is typically used with http servers such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx") and [lighttpd](/index.php/Lighttpd "Lighttpd").
 
-To run PHP standalone issue the `php -S localhost:8000 -t public_html/` command. See [documentation](http://docs.php.net/manual/en/features.commandline.webserver.php).
+To run PHP standalone issue the `php -S localhost:8000 -t public_html/` command. See [documentation](https://secure.php.net/manual/en/features.commandline.webserver.php).
 
 ## Configuration
 
 The main PHP configuration file is well-documented and located at `/etc/php/php.ini`.
 
-*   It is recommended to set your timezone ([list of timezones](http://www.php.net/manual/en/timezones.php)) in `/etc/php/php.ini` like so:
+*   It is recommended to set your timezone ([list of timezones](https://secure.php.net/manual/en/timezones.php)) in `/etc/php/php.ini` like so:
 
 ```
 date.timezone = Europe/Berlin
@@ -127,7 +127,7 @@ PCNTL allows you to create process directly into the server side machine. While 
 
 Install and configure MySQL/MariaDB as described in [MariaDB](/index.php/MariaDB "MariaDB").
 
-Uncomment [at least one](http://www.php.net/manual/en/mysqlinfo.api.choosing.php) of the following lines in `/etc/php/php.ini`:
+Uncomment [the following lines](https://secure.php.net/manual/en/mysqlinfo.api.choosing.php) in `/etc/php/php.ini`:
 
 ```
 extension=pdo_mysql.so
@@ -135,7 +135,7 @@ extension=mysqli.so
 
 ```
 
-**Warning:** As of PHP 5.5, `mysql.so` is [deprecated](http://www.php.net/manual/de/migration55.deprecated.php) and will fill up your log files with error messages. It is no longer available in PHP 7.0.
+**Warning:** `mysql.so` was [removed](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
 
 You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
 
@@ -176,7 +176,7 @@ OPCache comes bundled with the standard PHP distribution, therefore to enable it
 
  `/etc/php/php.ini`  `zend_extension=opcache.so` 
 
-A list of its options and suggested settings can be found in its [official entry](https://php.net/opcache) on the PHP website.
+A list of its options and suggested settings can be found in its [official entry](https://secure.php.net/manual/en/book.opcache.php) on the PHP website.
 
 **Warning:** If you choose to apply the [suggested settings](https://secure.php.net/manual/en/opcache.installation.php#opcache.installation.recommended) its manual offers, be sure to read carefully [the first comment](https://secure.php.net/manual/en/opcache.installation.php#114567) below those instructions as well. In some configurations those settings result in errors such as `zend_mm_heap corrupted` being produced.
 
@@ -241,7 +241,7 @@ If your `php.ini` is not parsed, the ini file is named after the sapi it is usin
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=414235](https://wiki.archlinux.org/index.php?title=PHP&oldid=414235)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=414303](https://wiki.archlinux.org/index.php?title=PHP&oldid=414303)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

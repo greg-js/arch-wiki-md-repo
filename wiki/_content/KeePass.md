@@ -25,9 +25,9 @@ There are two major implementations of KeePass, both of which are included in of
 
 [http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application _Keepass Password Safe (v1.x)_. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases.
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application _Keepass Password Safe (v1.x)_. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases. While KeepassX does not support plugins on its master branch, the KeepassX-HTTP branch supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
 
-[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
+[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassx-http](https://aur.archlinux.org/packages/keepassx-http/)<sup><small>AUR</small></sup>
 
 Other lesser known implementations are found in the AUR:
 
@@ -81,7 +81,7 @@ Extension allowing Google Chrome and Chromium to form-fill passwords stored in K
 
 *   [Pass](/index.php/Pass "Pass")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=411646](https://wiki.archlinux.org/index.php?title=KeePass&oldid=411646)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=414304](https://wiki.archlinux.org/index.php?title=KeePass&oldid=414304)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

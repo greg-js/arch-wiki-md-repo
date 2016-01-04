@@ -514,7 +514,7 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 <td>_(Unclear)_</td>
 
-<td>[Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](http://papyros.io), built using QtQuick and QtCompositor as a compositor for Wayland.</td>
+<td>[Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](/index.php/Papyros "Papyros"), built using QtQuick and QtCompositor as a compositor for Wayland.</td>
 
 </tr>
 
@@ -587,7 +587,7 @@ modules=xwayland.so
 *   [Arch Linux forum discussion](https://bbs.archlinux.org/viewtopic.php?id=107499)
 *   [Wayland documentation online](http://wayland.freedesktop.org/docs/html/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wayland&oldid=410846](https://wiki.archlinux.org/index.php?title=Wayland&oldid=410846)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wayland&oldid=414293](https://wiki.archlinux.org/index.php?title=Wayland&oldid=414293)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

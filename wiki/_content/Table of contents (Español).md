@@ -40,7 +40,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.6.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(2)</small>
 
-<small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(3)</small>
+<small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(4)</small>
 
 <small>2.8.</small> [Gráficos y autoedición](/index.php/Category:Graphics_and_desktop_publishing_(Espa%C3%B1ol) "Category:Graphics and desktop publishing (Español)") <small>(4)</small>
 
@@ -68,7 +68,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.16.</small> [Wine](/index.php/Category:Wine_(Espa%C3%B1ol) "Category:Wine (Español)") <small>(1)</small>
 
-<small>3.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(6)</small>
+<small>3.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(7)</small>
 
 <small>3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(1) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small>
 
@@ -210,13 +210,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.13.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(10)</small>
 
-<small>6.14.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(3)</small>
+<small>6.14.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(4)</small>
 
 <small>6.14.1.</small> [Hipervisores](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)") <small>(1)</small>
 
 <small>6.15.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(17)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=413534](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=413534)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=414310](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=414310)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

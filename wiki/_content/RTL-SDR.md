@@ -21,7 +21,7 @@ Bleeding edge is on [rtl-sdr-git](https://aur.archlinux.org/packages/rtl-sdr-git
 
 **Note:** RTL-SDR conflicts with existing [DVB-T](/index.php/DVB-T "DVB-T") drivers in the kernel, and upon installation blacklists the relevant drivers as can be seen in `/etc/modprobe.d/rtlsdr.conf`. To use the dongle with the original DVB-T drivers, it is required to manually load them, see [DVB-T#Driver](/index.php/DVB-T#Driver "DVB-T").
 
-udev rules are installed at `/etc/udev/rules.d/rtl-sdr.rules` and set the proper permissions such that non-root users can access the device.
+udev rules are installed at `/usr/lib/udev/rules.d/10-rtl-sdr.rules` and set the proper permissions such that non-root users can access the device.
 
 ## Usage
 
@@ -54,7 +54,7 @@ Some popular applications that use RTL-SDR:
 *   [multimon-ng-git](https://aur.archlinux.org/packages/multimon-ng-git/)<sup><small>AUR</small></sup> - a decoder for various digital modes
 *   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=389745](https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=389745)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=414282](https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=414282)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

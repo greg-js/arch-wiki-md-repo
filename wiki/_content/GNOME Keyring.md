@@ -132,6 +132,8 @@ When using a display manager, the keyring works out of the box for most cases. T
 
 For KDM, see [KDM#KDM and Gnome-keyring](/index.php/KDM#KDM_and_Gnome-keyring "KDM").
 
+For SDDM, follow the KDM guidelines, but modify `/etc/pam.d/sddm` instead of `/etc/pam.d/kde`.
+
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 
  `~/.zshenv` 
@@ -237,7 +239,7 @@ If you get a password prompt every time you login, and you find that passwords a
 
 Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select _View_ > _By Keyring_ If there is no keyring in the left column (it will be marked with a lock icon), go to _File_ > _New_ > _Password Keyring_ and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Keyring&oldid=412364](https://wiki.archlinux.org/index.php?title=GNOME_Keyring&oldid=412364)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Keyring&oldid=414347](https://wiki.archlinux.org/index.php?title=GNOME_Keyring&oldid=414347)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
