@@ -313,7 +313,6 @@ Server = http://packages.bbqlinux.org/$repo/os/$arch
 [catalyst]
 Server = http://catalyst.wirephire.com/repo/catalyst/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/catalyst/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/catalyst/$arch
 
 ```
@@ -329,7 +328,6 @@ Server = http://catalyst.wirephire.com/repo/catalyst/$arch
 [catalyst-hd234k]
 Server = http://catalyst.wirephire.com/repo/catalyst-hd234k/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/catalyst-hd234k/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/catalyst-hd234k/$arch
 
 ```
@@ -1231,8 +1229,8 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 #### markzz
 
 *   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
-*   **Description:** Packages that markzz maintains or uses on the AUR, Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>), and packages to maintain a Debian package repository.
-*   **Sources:** [http://git.markzz.net/markzz/repositories/markzz.git/](http://git.markzz.net/markzz/repositories/markzz.git/)
+*   **Description:** Packages that markzz maintains or uses on the AUR; this includes Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>), and packages to maintain a Debian package repository.
+*   **Sources:** [http://git.markzz.net/markzz/repositories/markzz.git/tree](http://git.markzz.net/markzz/repositories/markzz.git/tree)
 *   **Key ID:** 3CADDFDD
 
 **Note:** If you want to add the key by installing the _markzz-keyring_ package, temporarily add `SigLevel = Never` into the repository section.
@@ -1565,7 +1563,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414295](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414295)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414397](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414397)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

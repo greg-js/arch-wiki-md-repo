@@ -10,7 +10,7 @@ Related articles
 *   [lm_sensors](/index.php/Lm_sensors "Lm sensors")
 *   [hddtemp](/index.php/Hddtemp "Hddtemp")
 
-[Monitorix](http://www.monitorix.org/) is an open source, lightweight system monitoring tool designed to monitor as many services and system resources as possible. It has been created to be used under production **UNIX/Linux servers**, but due to its simplicity and small size many use it on embedded devices as well.
+[Monitorix](http://www.monitorix.org/) is an open source, lightweight system monitoring tool designed to monitor as many services and system resources as possible. It has been created to be used under production UNIX/Linux servers, but due to its simplicity and small size many use it on embedded devices as well.
 
 ## Contents
 
@@ -35,7 +35,7 @@ Edit `/etc/monitorix/monitorix.conf` to match graphing options and system-specif
 
 Most of the user settings are self explanatory based on the commented text within the configuration file itself.
 
-Since release 3.0.0 (18-Feb-2013), Monitorix comes with a light, built-in webserver; via the dependency [perl-http-server-simple](https://www.archlinux.org/packages/?name=perl-http-server-simple). It is, however, disabled by default. To use it, change the configuration option as follows:
+Monitorix comes with a light, built-in webserver; via the dependency [perl-http-server-simple](https://www.archlinux.org/packages/?name=perl-http-server-simple). It is, however, disabled by default. To use it, change the configuration option as follows:
 
  `/etc/monitorix/monitorix.conf` 
 
@@ -102,7 +102,7 @@ Also add `url_prefix_proxy = http://your.domain.com` to `/etc/monitorix/monitori
 
 [Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> is a package which provides a pseudo-daemon that makes use of tmpfs to store RRD Databases for Monitorix. Doing so will greatly reduce hdd reads/writes.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Monitorix&oldid=381070](https://wiki.archlinux.org/index.php?title=Monitorix&oldid=381070)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Monitorix&oldid=414406](https://wiki.archlinux.org/index.php?title=Monitorix&oldid=414406)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

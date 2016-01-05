@@ -28,13 +28,13 @@ Either method will work even while the system is running. Since it's going to ta
 This command depends on brace expansion available in both the [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) and [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion) shells. When using a different [shell](/index.php/Shell "Shell"), `--exclude` patterns should be repeated manually.
 
 ```
-# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /* _/path/to/backup/folder_
+# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / _/path/to/backup/folder_
 
 ```
 
 Using the `-aAX` set of options, the files are transferred in archive mode, ensuring that symbolic links, devices, permissions and ownerships, modification times, [ACLs](/index.php/ACL "ACL") and extended attributes are preserved.
 
-The `--exclude` option will cause files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp` and `/run` were excluded because they are populated at boot (while the folders themselves are _not_ created), `/lost+found` is filesystem-specific. Quoting the exclude patterns will avoid expansion by [shell](/index.php/Shell "Shell"), which is necessary e.g. when backing up over [SSH](/index.php/SSH "SSH").
+The `--exclude` option will cause files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp` and `/run` were excluded because they are populated at boot (while the folders themselves are _not_ created), `/lost+found` is filesystem-specific. Quoting the exclude patterns will avoid expansion by [shell](/index.php/Shell "Shell"), which is necessary e.g. when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` will still ensure that the directories themselves are created if not already existing.
 
 **Note:**
 
@@ -46,7 +46,7 @@ The `--exclude` option will cause files that match the given patterns to be excl
 You may want to include additional [rsync](/index.php/Rsync "Rsync") options, such as the following (see `man rsync` for the full list):
 
 *   If you are a heavy user of hardlinks, you might consider adding the `-H` option, which is turned off by default as memory expensive, but nowadays it should be no problem on most modern machines. There are a lot of hard links below the `/usr/` folder, which save disk space.
-*   You may want to add rsync's `--delete` option if you are running this multiple times to the same backup folder.
+*   You may want to add rsync's `--delete` option if you are running this multiple times to the same backup folder. In this case make sure that the source path does not end with `/*`, or this option will only have effect on the files inside the subdirectories of the source directory, but no effect on the files residing directly inside the source directory.
 *   If you use any sparse files, such as virtual disks, [Docker](/index.php/Docker "Docker") images and similar, you should add the `-S` option.
 *   The `--numeric-ids` option will disable mapping of user and group names, numeric group and user IDs will be transfered instead. This is useful when backing up over [SSH](/index.php/SSH "SSH") or when using a live system to backup different system disk.
 *   Choosing `--info=progress2` option instead of `-v` will show overal progress info and transfer speed instead of huge list of files.
@@ -140,7 +140,7 @@ If you transferred the data from HDD to SSD (solid state drive), do not forget t
 
 *   [Howto – local and remote snapshot backup using rsync with hard links](http://blog.pointsoftware.ch/index.php/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) Includes file deduplication with hard-links, MD5 integrity signature, 'chattr' protection, filter rules, disk quota, retention policy with exponential distribution (backups rotation while saving more recent backups than older)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=401240](https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=401240)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=414355](https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=414355)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

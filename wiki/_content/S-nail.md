@@ -220,20 +220,6 @@ account XandeX {
 
 **Tip:** If you have enabled two-step authentication in Gmail, and you have added an application specific password for S-nail, you will want to use that password rather than your regular Gmail password, which may work without enabling the otherwise necessary "less secure apps".
 
-For a simple start, here is an example for gmail. This configuration file should work out of the box when placing it in ~/.mailrc for the user it is meant to be. Of course, **USER** and **PASSWORD** have to be replaced according to your account settings of your Email-Provider:
-
-```
- account gmail {
- set smtp-use-starttls
- set smtp=smtp://smtp.gmail.com:587
- set smtp-auth=login
- set smtp-auth-user=**USER**@gmail.com
- set smtp-auth-password=**PASSWORD**
- set from="Your alias of choice abc"
- }
-
-```
-
 Note that, when storing passwords in `$HOME/.mailrc`, you should set appropriate permissions with `chmod 0600`. You can also set the _netrc-lookup_ option and store user credentials in `$HOME/.netrc` (or _$NETRC_) instead; e.g., here is a real life example that sets up SMTP, POP3 as well as IMAP, storing all user credentials in there:
 
 ```
@@ -443,7 +429,7 @@ shortcut myimap "**imaps://USER:PASS@server:port"**
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=414306](https://wiki.archlinux.org/index.php?title=S-nail&oldid=414306)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=414372](https://wiki.archlinux.org/index.php?title=S-nail&oldid=414372)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

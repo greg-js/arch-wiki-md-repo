@@ -334,7 +334,7 @@ in your `.xmobarrc`.
 *   [xmobar project](http://projects.haskell.org/xmobar/)
 *   [dzen and xmobar hacking thread](https://bbs.archlinux.org/viewtopic.php?pid=304851)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=412222](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=412222)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=414365](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=414365)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -721,7 +721,7 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 *   Supports both PuTTY and OpenSSH private key formats.
 *   Works with native SSH agent on Linux/Mac and with PuTTY on Windows.
 
-See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://aur.archlinux.org/packages/keepass-plugin-keeagent/)<sup><small>AUR</small></sup> package.
+See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://aur.archlinux.org/packages/keepass-plugin-keeagent/)<sup><small>AUR</small></sup> package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/)<sup><small>AUR</small></sup>.
 
 ## Troubleshooting
 
@@ -773,7 +773,7 @@ Failing this, run the sshd in debug mode and monitor the output while connecting
 *   [OpenSSH 5.7 Release Notes](http://www.openssh.com/txt/release-5.7)
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=413059](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=413059)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=414379](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=414379)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

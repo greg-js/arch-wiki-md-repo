@@ -554,7 +554,14 @@ _bootctl_ is part of systemd, and as such part of the base installation.
 
 ```
 
-Create a boot entry in `/boot/loader/entries/arch.conf`, replacing `/dev/sda2` with the **root** partition:
+Get the PARTUUID of the root partition, replacing replacing `/dev/sda2` with the **root partition** and copy the **PARTUUID** output:
+
+```
+# blkid /dev/sda2
+
+```
+
+Create a boot entry in `/boot/loader/entries/arch.conf`, replacing `14420948-2cea-4de7-b042-40f67c618660` with the **PARTUUID of the root partition**:
 
  `/boot/loader/entries/arch.conf` 
 
@@ -562,7 +569,7 @@ Create a boot entry in `/boot/loader/entries/arch.conf`, replacing `/dev/sda2` w
 title          Arch Linux
 linux          /vmlinuz-linux
 initrd         /initramfs-linux.img
-options        root=**/dev/sda2** rw
+options        root=**PARTUUID=14420948-2cea-4de7-b042-40f67c618660** rw
 ```
 
 Modify `/boot/loader/loader.conf` to select the default entry (without `.conf`) suffix:
@@ -674,7 +681,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411805](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=411805)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414414](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414414)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

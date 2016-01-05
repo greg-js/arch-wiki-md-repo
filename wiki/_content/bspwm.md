@@ -95,7 +95,7 @@ If a particular window does not seem to be behaving according to your rules, che
 
 ### Panels
 
-An example panel for [bar](https://aur.archlinux.org/packages/bar-aint-recursive/) is provided in the examples folder on the GitHub page. You might also get some insights from the [Bar](https://wiki.archlinux.org/index.php/Bar-aint-recursive) wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
+An example panel for [lemonbar](https://aur.archlinux.org/packages/lemonbar) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](https://wiki.archlinux.org/index.php/Lemonbar) wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
 
 To display system information on your status bar you can use various system calls. This example will show you how to edit your `panel` to get the volume status on your BAR:
 
@@ -239,7 +239,7 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 *   [https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies) - earsplit's "bspwm for dummies"
 *   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - smlb's wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413751](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=413751)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=414411](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=414411)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

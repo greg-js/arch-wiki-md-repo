@@ -127,7 +127,7 @@ _fuser_ is provided by the [psmisc](https://www.archlinux.org/packages/?name=psm
 
 ## Session permissions
 
-**Note:** You must be using [systemd](/index.php/Systemd "Systemd") as your init system for local sessions to work - which is required for polkit permissions and ACLs for various devices (see `/usr/lib/udev/rules.d/70-uaccess.rules` and [[1]](http://enotty.pipebreaker.pl/2012/05/23/linux-automatic-user-acl-management/))
+**Note:** You must be using [systemd](/index.php/Systemd "Systemd") as your init system for local sessions to work.[[1]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) It is required for polkit permissions and ACLs for various devices (see `/usr/lib/udev/rules.d/70-uaccess.rules` and [[2]](http://enotty.pipebreaker.pl/2012/05/23/linux-automatic-user-acl-management/))
 
 First, make sure you have a valid local session within X:
 
@@ -244,7 +244,7 @@ en_GB:aspell
 *   [Fix the Most Common Problems](http://www.maximumpc.com/article/features/linux_troubleshooting_guide_fix_most_common_problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411991](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=411991)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=414390](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=414390)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

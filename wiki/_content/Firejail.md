@@ -4,7 +4,7 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[Firejail](https://l3net.wordpress.com/projects/firejail/) is an easy to use SUID sandbox program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces, seccomp-bpf and Linux capabilities. Used alone or combined with [Grsecurity](/index.php/Grsecurity "Grsecurity") or other kernel hardening systems can further increase the security provided. Firejail is ideal for use with browsers, desktop applications, and daemons/servers alike.
+[Firejail](https://firejail.wordpress.com/) is an easy to use SUID sandbox program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces, seccomp-bpf and Linux capabilities. Used alone or combined with [Grsecurity](/index.php/Grsecurity "Grsecurity") or other kernel hardening systems can further increase the security provided. Firejail is ideal for use with browsers, desktop applications, and daemons/servers alike.
 
 ## Contents
 
@@ -20,7 +20,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-The [firejail](https://aur.archlinux.org/packages/firejail/)<sup><small>AUR</small></sup> and [firejail-git](https://aur.archlinux.org/packages/firejail-git/)<sup><small>AUR</small></sup> packages provide all of the requirements out of the box.
+[Install](/index.php/Install "Install") the [firejail](https://aur.archlinux.org/packages/firejail/)<sup><small>AUR</small></sup> or [firejail-git](https://aur.archlinux.org/packages/firejail-git/)<sup><small>AUR</small></sup> package which provide all of the requirements out of the box.
 
 ## Configuration
 
@@ -46,17 +46,13 @@ $ firejail --seccomp --private firefox
 
 ### Using Firejail by Default
 
-For most applications launched from the console, or from .desktop files, you can place your own launcher proxies for each in /usr/local/bin. For example, to create one for firefox, create /usr/local/bin/firefox:
+For most applications launched from the console, or from `.desktop` files, you can place your own launcher proxies for each in `/usr/local/bin`. For example, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file for firefox make it executable:
 
-```
-# echo "firejail --seccomp /usr/bin/firefox $@" > /usr/local/bin/firefox
-# chmod +x /usr/local/bin/firefox
-
-```
+ `/usr/local/bin/firefox`  `firejail --seccomp /usr/bin/firefox $@` 
 
 #### Desktop Files
 
-Some applications use non standard paths. For these you will want to copy the .desktop launchers from /usr/share/applications/*.dekstop to ~/.local/share/applications/ and then proceed to include firejail (and possibly seccomp) on the EXEC line.
+Some applications use non standard paths. For these you will want to copy the `.desktop` launchers from `/usr/share/applications/*.dekstop` to `~/.local/share/applications/` and then proceed to include firejail (and possibly seccomp) on the EXEC line.
 
 #### Daemons
 
@@ -72,7 +68,7 @@ Other configurations exist; it is suggested you check out the man page for firej
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/)<sup><small>AUR</small></sup>.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=411972](https://wiki.archlinux.org/index.php?title=Firejail&oldid=411972)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=414404](https://wiki.archlinux.org/index.php?title=Firejail&oldid=414404)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

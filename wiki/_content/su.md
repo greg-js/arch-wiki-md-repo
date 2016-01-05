@@ -90,14 +90,14 @@ alias su="su -"
 
 ### su and wheel
 
-BSD su allows only members of the "wheel" [group](/index.php/Group "Group") to assume root's identity by default. This is not the default behavior of GNU su, but this behavior can be mimicked using PAM. Uncomment the appropriate line in `/etc/pam.d/su`:
+BSD su allows only members of the "wheel" [group](/index.php/Group "Group") to assume root's identity by default. This is not the default behavior of GNU su, but this behavior can be mimicked using PAM. Uncomment the appropriate line in `/etc/pam.d/su` and `/etc/pam.d/su-l`:
 
 ```
 auth required pam_wheel.so use_uid
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Su&oldid=382825](https://wiki.archlinux.org/index.php?title=Su&oldid=382825)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Su&oldid=414382](https://wiki.archlinux.org/index.php?title=Su&oldid=414382)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

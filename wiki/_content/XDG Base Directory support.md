@@ -1699,7 +1699,7 @@ See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413683](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=413683)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=414395](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=414395)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

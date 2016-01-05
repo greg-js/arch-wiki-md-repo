@@ -16,14 +16,14 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-Minetest can be installed from [minetest](https://www.archlinux.org/packages/?name=minetest).
+Minetest can be installed from [minetest](https://www.archlinux.org/packages/?name=minetest) or [minetest-git](https://aur.archlinux.org/packages/minetest-git/)<sup><small>AUR</small></sup>.
 
 ## See Also
 
 *   [Official Minetest website](http://www.minetest.net/)
 *   [Official Minetest wiki](http://wiki.minetest.net/Main_Page)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Minetest&oldid=411440](https://wiki.archlinux.org/index.php?title=Minetest&oldid=411440)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Minetest&oldid=414413](https://wiki.archlinux.org/index.php?title=Minetest&oldid=414413)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

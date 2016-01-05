@@ -48,7 +48,7 @@ $ chmod 744 ~/.xinitrc
 
 ### Theming
 
-For the exact meanings of the options discussed below, see the manual page of xdm.
+For the exact meanings of the options discussed below, see the manual page of xdm. The configuration file is located in `/etc/X11/xdm/Xresources`, notice that if you installed [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) the configuration file will instead be located in `/etc/X11/archlinux/xdm/Xresources`.
 
 #### Background wallpaper
 
@@ -122,11 +122,11 @@ This will launch the second session, in window you need [xorg-server-xephyr](htt
 In order to enable passwordless login for XDM, add the line below to `/etc/X11/xdm/Xresources`:
 
 ```
-login*allowNullPasswd: true
+xlogin*allowNullPasswd: true
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDM&oldid=411748](https://wiki.archlinux.org/index.php?title=XDM&oldid=411748)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDM&oldid=414368](https://wiki.archlinux.org/index.php?title=XDM&oldid=414368)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

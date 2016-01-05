@@ -118,7 +118,7 @@ Example: [https://www.archlinux.org/packages/search/json/?arch=x86_64&flagged=Fl
 *   Initial feature request: [FS#13026](https://bugs.archlinux.org/task/13026)
 *   [Kittypack: A silly little tool to poke archlinux.org/packages for info](https://github.com/MrElendig/kittypack)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Official_repositories_web_interface&oldid=356220](https://wiki.archlinux.org/index.php?title=Official_repositories_web_interface&oldid=356220)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Official_repositories_web_interface&oldid=414371](https://wiki.archlinux.org/index.php?title=Official_repositories_web_interface&oldid=414371)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

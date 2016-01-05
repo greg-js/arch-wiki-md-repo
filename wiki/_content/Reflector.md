@@ -128,12 +128,7 @@ WantedBy=timers.target
 
 ```
 
-And then just start the timer:
-
-```
-# systemctl enable reflector.timer
-
-```
+And then just [start](/index.php/Start "Start") the `reflector.timer`.
 
 #### AUR package
 
@@ -161,14 +156,9 @@ COUNTRY=United States
 
 ```
 
-Be sure to enable the timer:
+Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.
 
-```
-# systemctl enable reflector.timer
-
-```
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=414248](https://wiki.archlinux.org/index.php?title=Reflector&oldid=414248)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=414396](https://wiki.archlinux.org/index.php?title=Reflector&oldid=414396)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

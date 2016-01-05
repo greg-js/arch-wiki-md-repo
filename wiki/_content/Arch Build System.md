@@ -96,6 +96,8 @@ ABS is not necessary to use Arch Linux, but it is useful for automating certain 
 
 ## How to use ABS
 
+**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Instructions below don't provide that, resulting in (officially-invalid) bugs like [FS#47614](https://bugs.archlinux.org/task/47614).
+
 Building packages using abs consists of these steps:
 
 1.  Install the [abs](https://www.archlinux.org/packages/?name=abs) package with [pacman](/index.php/Pacman "Pacman").
@@ -297,7 +299,7 @@ If new versions are available in the official repositories during a system updat
 *   [pbget](http://xyne.archlinux.ca/projects/pbget/) - retrieve PKGBUILDs for individual packages directly from the web interface. Includes AUR support.
 *   [asp](https://github.com/falconindy/asp) - a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=409483](https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=409483)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=414369](https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=414369)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -539,7 +539,7 @@ Enable full screen mode as the default. In `~/.paradoxinteractive/Crusader Kings
 
  `$ ln -s /opt/adobe-air-sdk/runtimes/air/linux/Adobe\ AIR /opt/Adobe\ AIR` 
 
-*   Adobe AIR will want to check whether the EULA was accepeted and fail in doing so. To fix it, issue the following commands (from under your user, not under root):
+*   Adobe AIR will want to check whether the EULA was accepted and fail in doing so. To fix it, issue the following commands (from under your user, not under root):
 
 ```
 $ mkdir -p ~/.appdata/Adobe/AIR
@@ -1580,7 +1580,7 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=413961](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=413961)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=414361](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=414361)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

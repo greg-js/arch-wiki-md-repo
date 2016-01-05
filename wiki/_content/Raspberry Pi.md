@@ -400,6 +400,8 @@ Finally, read the sensor output:
 
 Sometimes it is easier to work directly on a disk image instead of the real Raspberry Pi. This can be achieved by mounting an SD card containing the RPi root partition and chrooting into it. From the chroot it should be possible to run _pacman_ and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by [QEMU](/index.php/QEMU "QEMU").
 
+**Note:** As of January 2016, [make](https://www.archlinux.org/packages/?name=make) won't run in QEMU for ARM so it is not possible to build packages this way. Follow the [guide on the Arch Linux ARM website](http://archlinuxarm.org/developers/distcc-cross-compiling) to build a cross-compiler on your system. This will enable you to build ARM packages on your computer.
+
 Install [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/)<sup><small>AUR</small></sup> and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
 
 Make sure that the ARM to x86 translation is active:
@@ -446,7 +448,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=413217](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=413217)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414409](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414409)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -227,6 +227,8 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://ftp.u-tx.net/archlinux/](http://ftp.u-tx.net/archlinux/)
 *   [ftp://ftp.u-tx.net/archlinux/](ftp://ftp.u-tx.net/archlinux/)
+*   [https://mirror.compojoom.com/archlinux](https://mirror.compojoom.com/archlinux)
+*   [http://mirror.compojoom.com/archlinux](http://mirror.compojoom.com/archlinux)
 
 ### Hong Kong
 
@@ -292,7 +294,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=414100](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=414100)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=414383](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=414383)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

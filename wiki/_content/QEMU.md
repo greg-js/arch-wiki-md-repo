@@ -84,7 +84,8 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [9.5.2 Multi-monitor support](#Multi-monitor_support)
     *   [9.6 Copy and paste](#Copy_and_paste)
     *   [9.7 Windows-specific notes](#Windows-specific_notes)
-        *   [9.7.1 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+        *   [9.7.1 Fast startup](#Fast_startup)
+        *   [9.7.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
     *   [10.2 No visible Cursor](#No_visible_Cursor)
@@ -1405,6 +1406,10 @@ QEMU can run any version of Windows from Windows 95 through Windows 10.
 
 It is possible to run [Windows PE](/index.php/Windows_PE "Windows PE") in QEMU.
 
+#### Fast startup
+
+For Windows 8 (or later) guests it is better to disable "Fast Startup" from the Power Options of the Control Panel, as it causes the guest to hang during every other boot.
+
 #### Remote Desktop Protocol
 
 If you use a MS Windows guest, you might want to use RDP to connect to your guest VM. If you are using a VLAN or are not in the same network as the guest, use:
@@ -1537,7 +1542,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=413917](https://wiki.archlinux.org/index.php?title=QEMU&oldid=413917)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=414408](https://wiki.archlinux.org/index.php?title=QEMU&oldid=414408)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

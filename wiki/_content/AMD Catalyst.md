@@ -114,9 +114,7 @@ To enable one of these, follow the instructions in [Unofficial user repositories
 
 **Note:** The _catalyst_ and _catalyst-stable_ repositories share the same URL. To enable _catalyst-stable_, follow the instructions for enabling _catalyst_ and replace `[catalyst]` with `[catalyst-stable]` in `pacman.conf`. If you need to stick with an old version, there are also some versioned repositories using the same URL (for example _catalyst-stable-13.4_).
 
-**Tip:** Because catalyst.wirephire.com will go down if a certain bandwidth limit is exceeded (this happened in the past) or may be too slow at your location, repository mirrors are provided by rtsinformatique at [[1]](http://mirror.rts-informatique.fr/archlinux-catalyst/) (France) and goll at [[2]](http://mirror.hactar.bz/Vi0L0/) (DE). These mirrors however come with no warranty and are not guaranteed to always be operational. Uncomment the line for the mirror closest to your location. It is also a good idea to keep alternatives in case of mirror downtime.
-
-Repository mirroring can be easily achieved using `rsync://mirror.rts-informatique.fr::archlinux-catalyst`.
+**Tip:** Because catalyst.wirephire.com will go down if a certain bandwidth limit is exceeded (this happened in the past) or may be too slow at your location, repository mirror is provided by goll at [[1]](http://mirror.hactar.bz/Vi0L0/) (DE). This mirror however come with no warranty and is not guaranteed to always be operational.
 
 Once you have added some Catalyst repository, update pacman's database and [install](/index.php/Install "Install") these packages (see [#Tools](#Tools) for more information):
 
@@ -387,7 +385,6 @@ Catalyst does not support xorg-server 1.18
 [xorg117]
 Server = http://catalyst.wirephire.com/repo/xorg117/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/xorg117/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/xorg117/$arch
 
 ```
@@ -400,7 +397,6 @@ Catalyst < 15.7 does not support xorg-server 1.17
 [xorg116]
 Server = http://catalyst.wirephire.com/repo/xorg116/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/xorg116/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/xorg116/$arch
 
 ```
@@ -413,7 +409,6 @@ Catalyst < 14.9 does not support xorg-server 1.16
 [xorg115]
 Server = http://catalyst.wirephire.com/repo/xorg115/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/xorg115/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/xorg115/$arch
 
 ```
@@ -426,7 +421,6 @@ Catalyst < 14.1 does not support xorg-server 1.15.
 [xorg114]
 Server = http://catalyst.wirephire.com/repo/xorg114/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/xorg114/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/xorg114/$arch
 
 ```
@@ -439,7 +433,6 @@ Catalyst < 13.6 does not support xorg-server 1.14.
 [xorg113]
 Server = http://catalyst.wirephire.com/repo/xorg113/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/xorg113/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/xorg113/$arch
 
 ```
@@ -452,7 +445,6 @@ Catalyst < 12.10 and Catalyst Legacy do not support xorg-server 1.13.
 [xorg112]
 Server = http://catalyst.wirephire.com/repo/xorg112/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.rts-informatique.fr/archlinux-catalyst/repo/xorg112/$arch
 #Server = http://mirror.hactar.bz/Vi0L0/xorg112/$arch
 
 ```
@@ -1268,14 +1260,14 @@ xinit: server error
 
 For example: fglrx 15.20.3 does not support Xorg 1.17.
 
-To solve this, you should downgrade Xorg. A helpful list of steps can be found on [[3]](https://gist.github.com/anonymous/9ea8d3774f7afce3a605)
+To solve this, you should downgrade Xorg. A helpful list of steps can be found on [[2]](https://gist.github.com/anonymous/9ea8d3774f7afce3a605)
 
 ## See also
 
 *   [Unofficial Wiki for the ATI Linux Driver](http://wiki.cchtml.com/index.php/Main_Page)
 *   [Unofficial ATI Linux Driver Bugzilla](http://ati.cchtml.com/query.cgi)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=412027](https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=412027)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=414392](https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=414392)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
