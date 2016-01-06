@@ -112,7 +112,7 @@ exec vimprobable2 -e $(</tmp/tabbed.xid) $( [[  "$1"  ]] && echo "$1") &
 *   [tabbed](http://tools.suckless.org/tabbed) a suckless program for managing tabs
 *   [A screencast](http://vimeo.com/53829053) introduction to Vimprobable
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vimprobable&oldid=410312](https://wiki.archlinux.org/index.php?title=Vimprobable&oldid=410312)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vimprobable&oldid=414470](https://wiki.archlinux.org/index.php?title=Vimprobable&oldid=414470)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -223,7 +223,7 @@ The easiest way to partition your hard drive, so that OS X and Arch Linux will c
 
 *   Run _cgdisk_
 
-*   Delete the partition you made in _Disk Utility.app_ and create the necessary partitions for Arch Linux. OS X likes to see a 128 MiB gap after partitions, so when you create the first partition after the last OS X-partition, type in **+128M** when cgdisk asks for the first sector for the partition. A simple example (no LVM, crypto):
+*   Delete the partition you made in _Disk Utility.app_ and create the necessary partitions for Arch Linux. OS X likes to see a 128 MiB gap after partitions, so when you create the first partition after the last OS X-partition, type in **+128M** when cgdisk asks for the first sector for the partition. More information about Apple's partitioning policy can be read [here](https://developer.apple.com/library/mac/technotes/tn2166/_index.html#//apple_ref/doc/uid/DTS10003927-CH1-SUBSECTION5). A simple example (no LVM, crypto):
 
 **Note:**
 
@@ -1597,7 +1597,7 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=414343](https://wiki.archlinux.org/index.php?title=MacBook&oldid=414343)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=414476](https://wiki.archlinux.org/index.php?title=MacBook&oldid=414476)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

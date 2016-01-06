@@ -178,7 +178,7 @@ for i in $(pacman -Sqg kde-meta); do pacman -Sg ${i#kde-meta-};done
 
 Możemy także skorzystać z interfejsu sieciowego pod adresem [archlinux.de](https://www.archlinux.de/?page=Packages;group=5) do przeglądania grup pakietów.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Packages_(Polski)&oldid=413920](https://wiki.archlinux.org/index.php?title=KDE_Packages_(Polski)&oldid=413920)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Packages_(Polski)&oldid=414487](https://wiki.archlinux.org/index.php?title=KDE_Packages_(Polski)&oldid=414487)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

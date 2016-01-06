@@ -88,7 +88,7 @@ That happens because you haven't specified a browser, and you haven't got Firefo
 
  `~/.config/surfraw/conf`  `SURFRAW_graphical_browser /usr/bin/chromium` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=412236](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=412236)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414499](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414499)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

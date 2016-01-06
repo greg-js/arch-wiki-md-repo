@@ -1113,13 +1113,13 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
  `/etc/fstab` 
 
 ```
-/mnt/zfspool		/srv/nfs4/music		none	bind,defaults,x-systemd.requires=zfs-mount.service	0 0
+/mnt/zfspool		/srv/nfs4/music		none	bind,defaults,nofail,x-systemd.requires=zfs-mount.service	0 0
 
 ```
 
 #### systemd mount unit
 
-If it is not possible too bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[2]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
+If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[2]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
 
  `srv-nfs4-music.mount` 
 
@@ -1173,7 +1173,7 @@ Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=410476](https://wiki.archlinux.org/index.php?title=ZFS&oldid=410476)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=414438](https://wiki.archlinux.org/index.php?title=ZFS&oldid=414438)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

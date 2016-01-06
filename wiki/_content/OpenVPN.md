@@ -802,7 +802,7 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413634](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=413634)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=414500](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=414500)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

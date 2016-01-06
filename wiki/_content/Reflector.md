@@ -28,11 +28,8 @@ Related articles
 
 **Warning:**
 
-*   Back up the `/etc/pacman.d/mirrorlist` file first:
-
- `# cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup` 
-
-*   Make sure `/etc/pacman.d/mirrorlist` does not contain entries that you consider untrustworthy before syncing or updating with [Pacman](/index.php/Pacman "Pacman").
+*   `/etc/pacman/mirrorlist` will be overwritten by default. Make a backup before running reflector.
+*   Make sure the resulting `/etc/pacman.d/mirrorlist` does not contain entries that you consider untrustworthy before syncing or updating with [Pacman](/index.php/Pacman "Pacman").
 
 To see all of the available commands, run the following command:
 
@@ -158,7 +155,7 @@ COUNTRY=United States
 
 Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=414396](https://wiki.archlinux.org/index.php?title=Reflector&oldid=414396)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=414454](https://wiki.archlinux.org/index.php?title=Reflector&oldid=414454)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

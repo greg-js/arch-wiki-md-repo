@@ -404,12 +404,11 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 [http://jianguoyun.com/](http://jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)<sup><small>AUR</small></sup>
 
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak")** — An online backup tool for Windows, Mac and Linux users to back up, share, sync, access and store their data.
-    *   Free and paid version available.
-    *   Free account holds 2GB.
+    *   Free account holds 2GB as a 60-day trial.
     *   Includes file sharing and a public directory.
     *   Incremental backup and sync are both supported.
 
-[https://spideroak.com/](https://spideroak.com/) || [spideroak](https://aur.archlinux.org/packages/spideroak/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/spideroak)]</sup>
+[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)<sup><small>AUR</small></sup>
 
 *   **[Storage Made Easy](https://en.wikipedia.org/wiki/Storage_Made_Easy "wikipedia:Storage Made Easy")** — Provides unified access to numerous cloud storage services, as well as its own storage.
     *   Free and paid version available.
@@ -612,7 +611,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=410920](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=410920)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414498](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414498)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

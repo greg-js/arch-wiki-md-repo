@@ -547,41 +547,14 @@ See [Boot loaders](/index.php/Boot_loaders "Boot loaders") for available choices
 
 Here, the installation drive is assumed to be GPT-partioned, and have the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") (gdisk type `EF00`, formatted with FAT32) mounted at `/boot`.
 
-_bootctl_ is part of systemd, and as such part of the base installation.
+Install [systemd-boot](/index.php/Systemd-boot "Systemd-boot") to the EFI system partition:
 
 ```
 # bootctl install
 
 ```
 
-Get the PARTUUID of the root partition, replacing replacing `/dev/sda2` with the **root partition** and copy the **PARTUUID** output:
-
-```
-# blkid /dev/sda2
-
-```
-
-Create a boot entry in `/boot/loader/entries/arch.conf`, replacing `14420948-2cea-4de7-b042-40f67c618660` with the **PARTUUID of the root partition**:
-
- `/boot/loader/entries/arch.conf` 
-
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=**PARTUUID=14420948-2cea-4de7-b042-40f67c618660** rw
-```
-
-Modify `/boot/loader/loader.conf` to select the default entry (without `.conf`) suffix:
-
- `/boot/loader/loader.conf` 
-
-```
-timeout 3
-default arch
-```
-
-See [systemd-boot](/index.php/Systemd-boot "Systemd-boot") for more information.
+When successful, create a boot entry as described in [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") (replacing `$esp` with `/boot`), or adapt the examples in `/usr/share/systemd/bootctl/`.
 
 #### BIOS/MBR
 
@@ -595,7 +568,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package. To se
 Install the bootloader to the _drive_ Arch was installed to:
 
 ```
-# grub-install --recheck _/dev/sda_
+# grub-install --target=i386-pc --recheck _/dev/sda_
 
 ```
 
@@ -681,7 +654,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414414](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414414)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414447](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414447)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

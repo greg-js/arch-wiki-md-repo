@@ -49,6 +49,8 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc
 
 ```
 
+You also need to edit the config file (`/usr/share/webapps/phpmyadmin/config.inc.php`) to add the blowfish secret. You can use [this page](https://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator) to get one generated for you.
+
 ### Apache
 
 **Note:** The following works (at least no obvious problems) with Apache 2.4 and php-apache/mod_mpm_prefork or php-fpm/mod_proxy_handler
@@ -319,7 +321,7 @@ Your phpMyAdmin installation is now complete. Before you start using it you need
 
 You can access your phpMyAdmin installation by going to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=408323](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=408323)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414437](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414437)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

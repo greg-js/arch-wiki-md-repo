@@ -658,11 +658,11 @@ Finally make set very restrictive permissions. As much as possible should be own
 # chown -R http:http $JAIL/var/{log,lib}/nginx
 # chown http:http $JAIL/run/nginx.pid
 
-# find $JAIL/ -gid 0 -uid 0 -type d -print | xargs sudo chmod -rw
-# find $JAIL/ -gid 0 -uid 0 -type d -print | xargs sudo chmod +x
-# find $JAIL/etc -gid 0 -uid 0 -type f -print | xargs sudo chmod -x
-# find $JAIL/usr/bin -type f -print | xargs sudo chmod ug+rx
-# find $JAIL/ -group http -user http -print | xargs sudo chmod o-rwx
+# find $JAIL/ -gid 0 -uid 0 -type d -print | xargs chmod -rw
+# find $JAIL/ -gid 0 -uid 0 -type d -print | xargs chmod +x
+# find $JAIL/etc -gid 0 -uid 0 -type f -print | xargs chmod -x
+# find $JAIL/usr/bin -type f -print | xargs chmod ug+rx
+# find $JAIL/ -group http -user http -print | xargs chmod o-rwx
 # chmod +rw $JAIL/tmp
 # chmod +rw $JAIL/run
 
@@ -916,7 +916,7 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=414275](https://wiki.archlinux.org/index.php?title=Nginx&oldid=414275)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=414416](https://wiki.archlinux.org/index.php?title=Nginx&oldid=414416)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

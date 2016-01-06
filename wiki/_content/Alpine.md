@@ -12,11 +12,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** Articles should not contain first-person remarks. General cleanup needed. See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Alpine#](https://wiki.archlinux.org/index.php/Talk:Alpine))
 
-**Alpine** is based on pine, a text-based E-mail and newsclient that was originally released by the university of Washington in 1991\. It is an easier to use alternative to [mutt](/index.php/Mutt "Mutt"), a more lightweight approach to the mail reader concept.
+**Alpine** is based on pine, a text-based E-mail and newsclient that was originally released by the University of Washington in 1991\. It is an easier to use alternative to [mutt](/index.php/Mutt "Mutt"), a more lightweight approach to the mail reader concept.
 
 Right now, this article is just a quick and dirty guide for configuring Alpine to use a remote mailserver with IMAP.
-
-As of August 26 2008 the development of Alpine seems to have ended. Another fork called [re-alpine](https://www.archlinux.org/packages/?q=re-alpine) has been made to continue the project.
 
 ## Contents
 
@@ -31,7 +29,7 @@ As of August 26 2008 the development of Alpine seems to have ended. Another fork
 
 ## Installation
 
-[Install](/index.php/Install "Install") [re-alpine](https://aur.archlinux.org/packages/re-alpine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/re-alpine)]</sup>.
+[Install](/index.php/Install "Install") [alpine](https://aur.archlinux.org/packages/alpine/)<sup><small>AUR</small></sup>.
 
 You might also want to grab something to check your spelling, like [aspell](https://www.archlinux.org/packages/?name=aspell).
 
@@ -179,7 +177,7 @@ Replace _YOURPRINTER_ with the name of your printer. Note that these settings ca
 
 *   [http://www.washington.edu/alpine/](http://www.washington.edu/alpine/) - Official Alpine Page. This page includes links to un-official Alpine pages that have some handy tutorials (argue better than the one provided here), hit `C` to open the config menu.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Alpine&oldid=412035](https://wiki.archlinux.org/index.php?title=Alpine&oldid=412035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Alpine&oldid=414477](https://wiki.archlinux.org/index.php?title=Alpine&oldid=414477)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

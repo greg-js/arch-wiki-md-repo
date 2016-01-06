@@ -454,7 +454,7 @@ $ xboxdrv --evdev /dev/input/event* --evdev-absmap ABS_RX=X2 --evdev-keymap BTN_
 
 ```
 
-The above example is incomplete. It only maps one axis and 3 buttons for demonstration purposes. Use `xboxdrv --help-button` to see the names of the Xbox controller buttons and axes and bind them accordingly by expanding the command above. Axes mappings should go after `--evdev--absmap` and button mappings follow `--evdev-keymap` (comma separated list; no spaces).
+The above example is incomplete. It only maps one axis and 3 buttons for demonstration purposes. Use `xboxdrv --help-button` to see the names of the Xbox controller buttons and axes and bind them accordingly by expanding the command above. Axes mappings should go after `--evdev-absmap` and button mappings follow `--evdev-keymap` (comma separated list; no spaces).
 
 By default, xboxdrv outputs all events to the terminal. You can use this to test that the mappings are correct. Append the `--silent` option to keep it quiet.
 
@@ -592,7 +592,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2833", MODE="0666"
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413414](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=413414)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414496](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414496)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

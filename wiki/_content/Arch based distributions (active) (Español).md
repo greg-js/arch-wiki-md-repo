@@ -302,7 +302,7 @@ _«PoliArch una distribución italiana y live CD con una serie de herramientas d
 
 *   Página principal: [http://www.poliarch.org](http://www.poliarch.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)_(Español)&oldid=414358](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)_(Español)&oldid=414358)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)_(Español)&oldid=414483](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)_(Español)&oldid=414483)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -157,7 +157,7 @@ Setting `borders[0]` to a negative number will make the outer border turn into a
 
 *   [2bwm](https://github.com/venam/2bwm) - the GitHub repository for 2bwm
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=2bwm&oldid=378497](https://wiki.archlinux.org/index.php?title=2bwm&oldid=378497)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=2bwm&oldid=414463](https://wiki.archlinux.org/index.php?title=2bwm&oldid=414463)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

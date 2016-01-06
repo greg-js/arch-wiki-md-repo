@@ -36,6 +36,7 @@ Related articles
     *   [6.3 Fix for no mouse cursor](#Fix_for_no_mouse_cursor)
     *   [6.4 Recommended security settings](#Recommended_security_settings)
     *   [6.5 Toggling Fullscreen](#Toggling_Fullscreen)
+    *   [6.6 Unable to type less than character (<)](#Unable_to_type_less_than_character_.28.3C.29)
 
 ## Installation
 
@@ -394,7 +395,16 @@ Issuing x509 certificates is beyond the scope of this guide. However, this is ex
 
 This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413410](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=413410)"
+### Unable to type less than character (<)
+
+If pressing `<` on a remote client emits the `>` character, try remapping the incoming key [[2]](https://insaner.com/blog/2013/05.html#20130422063137):
+
+```
+$ x0vncserver -RemapKeys="0x3c->0x2c"
+
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=414472](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=414472)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

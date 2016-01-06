@@ -504,6 +504,8 @@ where `/path/to/common/settings` file contains the same options for both configu
 
 This section defines which [repositories](/index.php/Official_repositories "Official repositories") to use, as referred to in `/etc/pacman.conf`. They can be stated here directly or included from another file (such as `/etc/pacman.d/mirrorlist`), thus making it necessary to maintain only one list. See [Mirrors](/index.php/Mirrors "Mirrors") article for mirror configuration.
 
+The order of repositories in the configuration files matters; repositories listed first will take precedence over those listed later in the file when packages in two repositories have identical names, regardless of version number.
+
 ### Package security
 
 _pacman_ 4 supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines as shown above. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
@@ -703,7 +705,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=413745](https://wiki.archlinux.org/index.php?title=Pacman&oldid=413745)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=414426](https://wiki.archlinux.org/index.php?title=Pacman&oldid=414426)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

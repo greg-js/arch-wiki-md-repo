@@ -155,7 +155,7 @@ See [man page](http://shorewall.net/manpages/shorewall.conf.html) for more info.
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shorewall.service`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shorewall&oldid=403257](https://wiki.archlinux.org/index.php?title=Shorewall&oldid=403257)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shorewall&oldid=414461](https://wiki.archlinux.org/index.php?title=Shorewall&oldid=414461)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

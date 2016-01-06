@@ -169,7 +169,7 @@ C-q       = exit
 *   [Old, closed forum thread](https://bbs.archlinux.org/viewtopic.php?id=100505)
 *   [The current forum thread](https://bbs.archlinux.org/viewtopic.php?id=115119)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jumanji&oldid=412112](https://wiki.archlinux.org/index.php?title=Jumanji&oldid=412112)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jumanji&oldid=414457](https://wiki.archlinux.org/index.php?title=Jumanji&oldid=414457)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

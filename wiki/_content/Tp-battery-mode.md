@@ -30,8 +30,8 @@ Install the [tp-battery-mode](https://aur.archlinux.org/packages/tp-battery-mode
 Your Thinkpad's default behavior is to start charging its battery as soon as it drops below 100% capacity and stop charging once it is at 100% capacity. Switching your battery charging mode changes these start & stop threshold. tp-battery-mode's default values can be found in `/etc/tp-battery-mode.conf`
 
 ```
-STARTTHRESHOLD=85
-STOPTHRESHOLD=90
+START_THRESHOLD=85
+STOP_THRESHOLD=90
 
 ```
 
@@ -73,7 +73,7 @@ systemctl disable tp-battery-mode
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp-battery-mode&oldid=410948](https://wiki.archlinux.org/index.php?title=Tp-battery-mode&oldid=410948)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp-battery-mode&oldid=414420](https://wiki.archlinux.org/index.php?title=Tp-battery-mode&oldid=414420)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -68,6 +68,8 @@ The Samba server is configured in `/etc/samba/smb.conf.default`. Copy the defaul
 
 ```
 
+Otherwise, smbd will fail to start.
+
 ### Creating a share
 
 Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. It also creates a share for printers by default. There are a number of commented sample configurations included. More information about available options for shared resources can be found in `man smb.conf`. [There](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) is also an on-line version available.
@@ -135,7 +137,7 @@ Add your user to the _sambashare_ group. Replace `_your_username_` with the name
 
 ```
 
-Restart `smbd` and `nmbd` services.
+Restart `smbd.service` and `nmbd.service` services.
 
 Log out and log back in. You should now be able to configure your samba share using GUI. For example, in [Thunar](/index.php/Thunar "Thunar") you can right click on any directory and share it on the network. If you want to share pathes inside your home directory you must make it listable for the group others.
 
@@ -204,7 +206,7 @@ See `man smb.conf` for details and explanation of configuration options. There i
 
 ```
 
-Restart the `smbd` and/or `nmb` service(s) to apply configuration changes.
+Restart the `smbd.service` and/or `nmbd.service` service(s) to apply configuration changes.
 
 ### Validate configuration
 
@@ -707,7 +709,7 @@ Make sure that the server has started. The shared directories should exist and b
 *   [Samba: An Introduction](http://www.samba.org/samba/docs/SambaIntro.html)
 *   [Official Samba site](http://www.samba.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=408202](https://wiki.archlinux.org/index.php?title=Samba&oldid=408202)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=414495](https://wiki.archlinux.org/index.php?title=Samba&oldid=414495)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

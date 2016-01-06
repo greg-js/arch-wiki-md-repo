@@ -49,6 +49,10 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 [https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://aur.archlinux.org/packages/clipmenu/)<sup><small>AUR</small></sup>
 
+*   **Clipster** — A lightweight, command-line-driven clipboard manager, written in Python.
+
+[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) ||
+
 *   **CopyQ** — Clever clipboard manager with searchable and editable history, custom actions on items and command line support.
 
 [https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)<sup><small>AUR</small></sup>
@@ -98,7 +102,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 *   [Cut-and-paste in X](http://standards.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 *   [X Selections, Cut Buffers, and Kill Rings.](http://www.jwz.org/doc/x-cut-and-paste.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Clipboard&oldid=412789](https://wiki.archlinux.org/index.php?title=Clipboard&oldid=412789)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Clipboard&oldid=414449](https://wiki.archlinux.org/index.php?title=Clipboard&oldid=414449)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

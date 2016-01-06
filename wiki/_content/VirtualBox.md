@@ -407,11 +407,9 @@ _sharedFolderName_  _/path/to/mntPtOnGuestMachine_  vboxsf  uid=_user_,gid=_grou
 
 ```
 
-**Tip:**
-
-*   _sharedFolderName_ - value from field VirtualMachine's Settings->SharedFolders->Edit->FolderName. This value can be different to name of real folder name on host machine. To see VirtualMachine's Settings go to host OS VirtualBox application, select corresponding virtual machine and click on Settings.
-*   _/path/to/mntPtOnGuestMachine_ - if not exists, this directory should be created manually (for example by using command [mkdir](/index.php/Core_utilities#mkdir "Core utilities"))
-*   dmode/fmode are directory/file permissions for directories/files inside _/path/to/mntPtOnGuestMachine_.
+*   `_sharedFolderName_`: the value from the VirtualMachine's _Settings > SharedFolders > Edit > FolderName_ menu. This value can be different from the name of the real folder name on the host machine. To see the VirtualMachine's _Settings_ go to the host OS VirtualBox application, select the corresponding virtual machine and click on _Settings_.
+*   `_/path/to/mntPtOnGuestMachine_`: if not existing, this directory should be created manually (for example by using [mkdir](/index.php/Core_utilities#mkdir "Core utilities"))
+*   `dmode`/`fmode` are directory/file permissions for directories/files inside `_/path/to/mntPtOnGuestMachine_`.}}
 
 As of 2012-08-02, mount.vboxsf does not support the _nofail_ option:
 
@@ -1466,7 +1464,7 @@ If the audio input from an analog microphone is working correctly on the host, b
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414329](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414329)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414423](https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414423)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -135,6 +135,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Installing Arch on the HiDPI screen may be difficult as the text will be hard to read. To make the font more readable, before you hit install, [disable mode settings](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting"). Hit Tab in the arch linux boot menu and append the option `nomodeset` along with `nomodeset` kernel parameter. For Intel graphics card you need to add `i915.modeset=0` and for Nvidia graphics card you need to add `nouveau.modeset=0`. For Nvidia Optimus dual-graphics system, you need to add all the three kernel parameters (i.e. `"nomodeset i915.modeset=0 nouveau.modeset=0"`).
 
+Be aware, adding nomodeset prevents the kernel from identifying the monitor. As a result brightness adjustment and xrandr won't work. This line should probably be removed after installation.
+
 ## The ideapad_laptop module
 
 Several problems come up if the ideapad_laptop module is in use. Namely, it blocks the network card and generates a massive stream of warning from the USB subsystem such as:
@@ -465,7 +467,7 @@ You can easily rotate screen with xrandr, however it does not rotate touchscreen
 *   a good Review of Arch Linux on a HiDPI Lenovo Yoga 2 Pro by KeithCU with useful comments [[2]](http://keithcu.com/wordpress/?p=3270);
 *   an installation guide written by Ubuntu users: [[3]](http://askubuntu.com/questions/367963/ubuntu-on-lenovo-yoga-2-pro).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Yoga_2_Pro&oldid=409530](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Yoga_2_Pro&oldid=409530)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Yoga_2_Pro&oldid=414415](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Yoga_2_Pro&oldid=414415)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

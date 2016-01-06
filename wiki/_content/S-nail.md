@@ -76,7 +76,28 @@ To avoid environmental noise scripts can (and should) "detach" from configuratio
 
 ```
 
-The S-nail manual page tries to provide some kind of _exponential learning-curve_ in its first sections, right after the option listing, and especially the sections "A starter", "Sending mail" and "Reading mail" should be worth a glance when looking for more "quick shots".
+It is hoped that the S-nail manual page is helpful, and especially the sections "A starter", "Sending mail" and "Reading mail" should be worth a glance when looking for more "quick shots".
+
+When in the following **USER** and **PASS** informations are specified as part of an URL (other possibilities exist) they must become URL percent encoded; S-nail offers the **urlencode** command which does this for you:
+
+```
+# printf 'urlencode USER PASS\nx\n' | mailx -#
+
+```
+
+Of course: printf as well as S-nail / mailx are subject to your locale settings:
+
+```
+# # In UTF-8:
+# printf 'urlencode SPAß\nx\n' | mailx -#
+  in: <SPAß> (5 bytes)
+  out: <SPA%C3%9F> (9 bytes)
+# # In ISO-8859-1:
+# printf 'urlencode SPAß\nx\n' | mailx -#
+  in: <SPAß> (4 bytes)
+  out: <SPA%DF> (6 bytes)
+
+```
 
 ## First configuration adjustments
 
@@ -107,7 +128,7 @@ set ssl-protocol="-ALL,+TLSv1.2"
 # final list will be sorted by algorithm strength.
 # This is an example: in reality it is possibly best to only use
 # ssl-cipher-list-HOST (or -USER@HOST), as necessary, again..
-set ssl-cipher-list="ALL:!aNULL:!MEDIUM:!LOW:!MD5:!RC4:!EXPORT:@STRENGTH"
+set ssl-cipher-list="ALL:!aNULL:!eNULL:!MEDIUM:!LOW:!MD5:!RC4:!EXPORT:@STRENGTH"
 
 # Request strict transport security checks
 set ssl-verify=strict
@@ -158,36 +179,19 @@ mlsubscribe ^xfans@xfans.xyz$
 
 The above combination of SSL/TLS configuration results in the most secure end-to-end TLS transport that is possible at the time of this writing.
 
-When in the following **USER** and **PASS** informations are specified as part of an URL (other possibilities exist) they must become URL percent encoded; S-nail offers the **urlencode** command which does this for you:
-
-```
-# printf 'urlencode USER PASS\nx\n' | mailx -#
-
-```
-
-Of course: printf as well as S-nail / mailx are subject to your locale settings:
-
-```
-# # In UTF-8:
-# printf 'urlencode SPAß\nx\n' | mailx -#
-  in: <SPAß> (5 bytes)
-  out: <SPA%C3%9F> (9 bytes)
-# # In ISO-8859-1:
-# printf 'urlencode SPAß\nx\n' | mailx -#
-  in: <SPAß> (4 bytes)
-  out: <SPA%DF> (6 bytes)
-
-```
-
 ## Sending mail with an external SMTP server
 
-To send messages via the builtin SMTP (Simple Mail Transfer Protocol) client to an external SMTP server, several options have to be set or adjusted. Add the following as appropriate to the configuration as above, changing bold strings.
+To send messages via the builtin SMTP (Simple Mail Transfer Protocol) client to an external SMTP server, several options have to be set or adjusted. Add the following as appropriate to the configuration as above, changing bold strings. Reading the manual section "On URL syntax and credential lookup" is worthwhile.
 
 ```
+# It can be as easy as
+# (Remember **USER** and **PASS** must be URL percent encoded)
+set smtp=smtp://**USER**:**PASS**@**HOST** \
+    smtp-use-starttls
+
 # It may be necessary to set _hostname_ and/or _smtp-hostname_
 # if the "SERVER" of _smtp_ and "domain" of _from_ don't match.
 # Reading the "ON URL SYNTAX.." and _smtp_ manual entries may be worthwhile
-# (Remember **USER** and **PASS** must be URL percent encoded)
 set smtp=**(smtp[s]/submission)://[USER[:PASS]@]SERVER[:PORT]** \
     smtp-auth=**login[/plain]...** \
     smtp-use-starttls
@@ -429,7 +433,7 @@ shortcut myimap "**imaps://USER:PASS@server:port"**
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=414372](https://wiki.archlinux.org/index.php?title=S-nail&oldid=414372)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=414439](https://wiki.archlinux.org/index.php?title=S-nail&oldid=414439)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

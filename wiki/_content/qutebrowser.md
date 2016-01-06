@@ -47,7 +47,7 @@ Keybindings reside in `$XDG_CONFIG_HOME/qutebrowser/keys.conf)`.
 
 You can edit the keybindings directly from the browser with the command `:bind _key_ _command_` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=413905](https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=413905)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=414458](https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=414458)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

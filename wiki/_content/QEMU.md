@@ -205,14 +205,14 @@ To install an operating system into your disk image, you need the installation m
 
 This is the first time you will need to start the emulator. To install the operating system on the disk image, you must attach both the disk image and the installation media to the virtual machine, and have it boot from the installation media.
 
-For example on i386 guests, to install from a bootable ISO file as CD-ROM:
+For example on i386 guests, to install from a bootable ISO file as CD-ROM and a raw disk image:
 
 ```
-$ qemu-system-i386 -cdrom _iso_image_ -boot order=d _qemu_image_
+$ qemu-system-i386 -cdrom _iso_image_ -boot order=d -drive file=_disk_image_,format=raw
 
 ```
 
-See `qemu(1)` for information about loading other media types, such as floppy or disk images, or physical drives.
+See `qemu(1)` for more information about loading other media types, such as floppy or disk images, or physical drives.
 
 After the operating system has finished installing, the QEMU image can be booted directly (see [#Running virtualized system](#Running_virtualized_system)).
 
@@ -1542,7 +1542,7 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=414408](https://wiki.archlinux.org/index.php?title=QEMU&oldid=414408)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=414471](https://wiki.archlinux.org/index.php?title=QEMU&oldid=414471)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

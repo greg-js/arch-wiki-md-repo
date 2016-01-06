@@ -126,7 +126,7 @@ As LXQt is a lightweight desktop, a plain install will not provide many desktop 
 *   [LXQt on deviantART](http://lxqt-de.deviantart.com/)
 *   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=413859](https://wiki.archlinux.org/index.php?title=LXQt&oldid=413859)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=414446](https://wiki.archlinux.org/index.php?title=LXQt&oldid=414446)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

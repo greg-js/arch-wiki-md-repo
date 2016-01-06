@@ -114,7 +114,7 @@ systemctl restart httpd
 *   [mod_wsgi project's site](http://code.google.com/p/modwsgi/)
 *   [Quick Configuration Guide](http://code.google.com/p/modwsgi/wiki/QuickConfigurationGuide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=388040](https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=388040)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=414456](https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=414456)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

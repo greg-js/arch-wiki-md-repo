@@ -43,7 +43,7 @@ See the [display manager](/index.php/Display_manager "Display manager") article 
 
 ### With xinitrc
 
-You can start Notion from the command line by adding `exec notion` to [~/.xinitrc](/index.php/%7E/.xinitrc "~/.xinitrc") or any other startup script you may want to use. An example .xinitrc file can be found below.
+You can start Notion from the command line by adding `exec notion` to [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") or any other startup script you may want to use. An example .xinitrc file can be found below.
 
 ```
 DEFAULT_SESSION=notion
@@ -100,7 +100,7 @@ to
 *   [http://notion.sourceforge.net/notionconf/](http://notion.sourceforge.net/notionconf/) - Configuring and Extending Notion using LUA
 *   [http://sourceforge.net/apps/mediawiki/notion](http://sourceforge.net/apps/mediawiki/notion) - Notion Wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Notion&oldid=378518](https://wiki.archlinux.org/index.php?title=Notion&oldid=378518)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Notion&oldid=414465](https://wiki.archlinux.org/index.php?title=Notion&oldid=414465)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

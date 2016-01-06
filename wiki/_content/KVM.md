@@ -84,7 +84,7 @@ All virtio devices have two parts: the host device and the guest driver.
 Use the following command to check if needed modules are available:
 
 ```
-$ zgrep CONFIG_VIRTIO /proc/config.gz
+$ zgrep VIRTIO /proc/config.gz
 
 ```
 
@@ -324,7 +324,7 @@ See also:
 *   [KVM Howto](http://www.linux-kvm.org/page/HOWTO)
 *   [KVM FAQ](http://www.linux-kvm.org/page/FAQ#General_KVM_information)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KVM&oldid=400980](https://wiki.archlinux.org/index.php?title=KVM&oldid=400980)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KVM&oldid=414452](https://wiki.archlinux.org/index.php?title=KVM&oldid=414452)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

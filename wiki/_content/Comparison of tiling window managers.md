@@ -428,7 +428,7 @@ The following table lists the most popular tiling window managers alongside nota
 
 <td>n workspaces per monitor</td>
 
-<td>Active</td>
+<td>Unknown</td>
 
 </tr>
 
@@ -873,7 +873,7 @@ Tiling window managers are usually designed to be used entirely with the keyboar
 
 *   [Comparison of extensible window managers](http://sawfish.wikia.com/wiki/Comparison_of_extensible_window_managers) compares WMs "extensible" by scripting, like Xmonad and Sawfish.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=411722](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=411722)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=414427](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&oldid=414427)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

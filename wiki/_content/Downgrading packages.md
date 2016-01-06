@@ -33,7 +33,7 @@ Before downgrading a single or multiple packages, consider why you wish to do so
     *   [1.2 Downgrading the kernel](#Downgrading_the_kernel)
     *   [1.3 Arch Linux Archive](#Arch_Linux_Archive)
     *   [1.4 Rebuild the package](#Rebuild_the_package)
-    *   [1.5 Using the downgrade script](#Using_the_downgrade_script)
+    *   [1.5 Automation](#Automation)
 *   [2 Return from [testing]](#Return_from_.5Btesting.5D)
 
 ## Return to an earlier package version
@@ -86,17 +86,17 @@ See also [Getting PKGBUILDS From SVN#Checkout an older revision of a package](/i
 
 Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/). See [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository") for details.
 
-### Using the downgrade script
+### Automation
+
+[downgrader](https://aur.archlinux.org/packages/downgrader/)<sup><small>AUR</small></sup>s tool which supports the pacman log, can downgrade packages from ARM and local cache, and handle package lists. May be particularly useful to identify problematic packages.
 
 The [downgrade](https://aur.archlinux.org/packages/downgrade/)<sup><small>AUR</small></sup> package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
-
-Another tool is [downgrader](https://aur.archlinux.org/packages/downgrader/)<sup><small>AUR</small></sup>, which supports the pacman log, can downgrade packages from ARM and local cache, and handle package lists. This tool may be particularly useful to identify problematic packages.
 
 ## Return from [testing]
 
 See [Official repositories#Disabling testing repositories](/index.php/Official_repositories#Disabling_testing_repositories "Official repositories").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=409718](https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=409718)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=414473](https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=414473)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

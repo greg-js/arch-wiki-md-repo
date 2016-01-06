@@ -154,7 +154,7 @@ for i in $(pacman -Sqg kde-meta); do pacman -Sg ${i#kde-meta-};done
 
 You could also use the web interface at [archlinux.de](https://www.archlinux.de/?page=Packages;group=5) to browse package groups.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=413921](https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=413921)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=414488](https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=414488)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

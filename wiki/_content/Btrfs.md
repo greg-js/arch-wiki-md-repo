@@ -265,6 +265,8 @@ See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/
 
 #### Multi-device filesystem
 
+**Note:** Mounting such a filesystem may result in all but one of the according _.device_-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
+
 When creating a Btrfs filesystem, one can pass many partitions or disk devices to _mkfs.btrfs_. The filesystem will be created across these devices. One can **"**pool**"** this way, multiple partitions or devices to get a single Btrfs filesystem.
 
 One can also add or remove device from an existing Btrfs filesystem (caution is mandatory).
@@ -570,7 +572,7 @@ See [Btrfsck](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more informat
     *   [Btrfs: stop providing a bmap operation to avoid swapfile corruptions](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=35054394c4b3cecd52577c2662c84da1f3e73525) 2009-01-21
     *   [Doing Fast Incremental Backups With Btrfs Send and Receive](http://marc.merlins.org/perso/btrfs/post_2014-03-22_Btrfs-Tips_-Doing-Fast-Incremental-Backups-With-Btrfs-Send-and-Receive.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Btrfs&oldid=411221](https://wiki.archlinux.org/index.php?title=Btrfs&oldid=411221)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Btrfs&oldid=414440](https://wiki.archlinux.org/index.php?title=Btrfs&oldid=414440)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

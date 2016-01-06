@@ -167,11 +167,55 @@ After reboot, the firmware should be available for your Bluetooth interface.
 
 **Note:** some hardware only needs `i915`
 
-Works with kernel parameter `i915.preliminary_hw_support=1` [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). For kernels 4.3+ ([linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup>) the parameter is unnecessary, but you may face blank screen problem after booting - adding `i915` and `intel_agp` to initramfs fixes the problem, see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")
+Works with kernel parameter `i915.preliminary_hw_support=1` [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). For kernels 4.3+ ([linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup>) the parameter is unnecessary, but you may face blank screen problem after booting - adding `i915` and `intel_agp` to the kernel modules fixes the problem, see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")
+
+```
+   # nano /etc/mkinitcpio.conf
+   ...
+   MODULES="... intel_agp i915"
+   ...
+
+```
+
+Then update the bootloader.
+
+```
+   # mkinitcpio -p linux
+
+```
+
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
 
 ## Touchpad
 
 Only key-presses work out of the box. Installing `xf86-input-synaptics` and restarting X fixes the problem (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). `xf86-input-libinput` may be a good alternative that also handles touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration.
+
+If `dmesg | grep -i psmouse` returns an error, but your touchpad still works, then it might be a good idea to disable `psmouse`. First create a config file:
+
+```
+   # nano /etc/modprobe.d/modprobe.conf
+
+   blacklist psmouse
+
+```
+
+Then add this file to `/etc/mkinitcpio.conf`:
+
+```
+   ...
+   FILES="/etc/modprobe.d/modprobe.conf"
+   ...
+
+```
+
+Then update the bootloader.
+
+```
+   # mkinitcpio -p linux
+
+```
+
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
 
 ## Microphone
 
@@ -181,15 +225,32 @@ For ALSA, increase "Digital" channel for microphone to work.
 
 ## Kernel specific notes
 
+4.3.x requires the broadcom wifi patch for wifi to work.
+
 4.4.x requires adding "nvme" in modules to detect pcie ssd. The broadcom wifi driver patch is no longer needed.
 
-4.3.x requires the broadcom wifi patch for wifi to work.
+```
+   # nano /etc/mkinitcpio.conf
+   ...
+   MODULES="... nvme"
+   ...
+
+```
+
+Then update the bootloader.
+
+```
+   # mkinitcpio -p linux
+
+```
+
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
 
 ## Links
 
 General Discussion Thread on Arch Forum [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414362](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414362)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414469](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414469)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

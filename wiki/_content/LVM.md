@@ -28,7 +28,8 @@ LVM is a [logical volume manager](https://en.wikipedia.org/wiki/logical_volume_m
     *   [4.5 Create logical volumes](#Create_logical_volumes)
     *   [4.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
     *   [4.7 Add lvm2 hook to mkinitcpio.conf for root on LVM](#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM)
-    *   [4.8 Kernel options](#Kernel_options)
+    *   [4.8 Special preparations for root on thinly-provisioned volume](#Special_preparations_for_root_on_thinly-provisioned_volume)
+    *   [4.9 Kernel options](#Kernel_options)
 *   [5 Volume operations](#Volume_operations)
     *   [5.1 Advanced options](#Advanced_options)
     *   [5.2 Resizing volumes](#Resizing_volumes)
@@ -315,6 +316,23 @@ In case your root filesystem is on LVM, you will need to make sure the `udev` an
 Afterwards, you can continue in normal installation instructions with the [create an initial ramdisk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") step.
 
 **Tip:** The `lvm2` hook is installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running _mkinitcpio_ in an _arch-chroot_ for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the _arch-chroot_ for _mkinitcpio_ to find the `lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the _arch-chroot_, _mkinitcpio_ will output `Error: Hook 'lvm2' cannot be found`.
+
+### Special preparations for root on thinly-provisioned volume
+
+If your root device is on a thinly-provisioned LVM volume (as may be needed by [snapper](/index.php/Snapper "Snapper") if you don't trust [btrfs](/index.php/Btrfs "Btrfs")), then some more preparations are needed.
+
+First, `mkinitcpio` by default does not include modules and binaries needed for thin provisioning. Adjust the configuration file to compensate:
+
+ `/etc/mkinitcpio.conf` 
+
+```
+MODULES="... **dm-thin-pool** ..."
+BINARIES="**/usr/bin/thin_check /usr/bin/pdata_tools** ..."
+```
+
+LVM only calls `thin_check` while booting, but if the check fails, you will need other commands provided by `pdata_tools` for recovery.
+
+Second, with a large number of snapshots, `thin_check` runs for a long enough time so that waiting for the root device times out. To compensate, add the `rootdelay=60` kernel boot parameter to your boot loader configuration.
 
 ### Kernel options
 
@@ -823,7 +841,7 @@ Make sure to remove snapshot volumes before generating grub.cfg.
 *   [LVM2 Mirrors vs. MD Raid 1](http://www.joshbryan.com/blog/2008/01/02/lvm2-mirrors-vs-md-raid-1/) post by Josh Bryan
 *   [Ubuntu LVM Guide Part 1](http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html)[Part 2 detals snapshots](http://www.tutonics.com/2012/12/lvm-guide-part-2-snapshots.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LVM&oldid=407143](https://wiki.archlinux.org/index.php?title=LVM&oldid=407143)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LVM&oldid=414425](https://wiki.archlinux.org/index.php?title=LVM&oldid=414425)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

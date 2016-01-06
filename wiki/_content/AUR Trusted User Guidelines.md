@@ -89,7 +89,7 @@ svn checkout -N svn+ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-comm
 
 ```
 
-This creates a directory named "svn" which contains nothing. It does, however, know that it is an svn checkout.
+This creates a directory named "svn" which contains nothing but a ".svn" folder.
 
 For **checking** out, **updating** all packages or **adding** a package see the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager").
 
@@ -100,27 +100,41 @@ ssh nymeria.archlinux.org /community/db-repo-remove community arch pkgname
 
 ```
 
-Here and in the following text, arch can be one of i686 or x86_64 which are the two architectures supported by Arch Linux. (What about "any"?)
+Here and in the following text, _arch_ can be one of _i686_ or _x86_64_ which are the two architectures supported by Arch Linux.
 
-When you are done with editing the PKGBUILD, etc, you should **commit** the changes (`svn commit`).
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-When you want to **release** a package, first copy the package to the _staging/community_ directory on nymeria.archlinux.org using scp and then **tag** the package by going to the _pkgname/trunk_ directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named _community-i686_ or _community-x86_64_ indicating that this package is in the community repository for that architecture.
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** What about the "any" architecture? (Discuss in [Talk:AUR Trusted User Guidelines#](https://wiki.archlinux.org/index.php/Talk:AUR_Trusted_User_Guidelines))
+
+When you are done with editing the PKGBUILD, etc., you should **commit** the changes (`svn commit`).
+
+Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`.
+
+Sign the package with `gpg --detach-sign *.pkg.tar.xz`.
+
+When you want to **release** a package, first copy the package along with its signatures to the _staging/community_ directory on _nymeria.archlinux.org_ using `scp` and then **tag** the package by going to the _pkgname/trunk_ directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named _community-i686_ or _community-x86_64_ indicating that this package is in the community repository for that architecture.
 
 _**Note:** In some cases, especially for community packages, an x86_64 TU might bump the pkgrel by .1 (and not +1). This indicates that the change to the PKGBUILD is x86_64 specific and i686 maintainers **should not** rebuild the package for i686\. When the TU decides to bump the pkgrel, it should be done with the usual increment of +1\. However, a previous pkgrel=2.1 must not become pkgrel=3.1 when bumped by the TU and must instead be pkgrel=3\. In a nutshell, leave dot (.) releases exclusive to the x86_64 TU's to avoid confusion._
 
-Thus the **process** of updating a package can be summarised as:
+**Package update summary:**
 
-*   **Update** the package directory (`svn update some-package`)
-*   **Change** to the package trunk directory (`cd some-package/trunk`)
-*   **Edit** the PKGBUILD, make necessary changes and `makechrootpkg`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
-*   **[Namcap](/index.php/Namcap "Namcap")** the PKGBUILD and the binary pkg.tar.gz.
-*   **Commit**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
-    *   **Commit** the changes to trunk (`svn commit`)
-    *   **Copy** the package to nymeria.archlinux.org (`scp pkgname-ver-rel-arch.pkg.tar.xz* nymeria.archlinux.org:staging/community/`)
-    *   **Tag** the package (`archrelease community-{i686,x86_64`})
-*   **Update** the repository (`ssh nymeria.archlinux.org /community/db-update`)
+*   **Update** the package directory: `svn update some-package`.
+*   **Change** to the package trunk directory: `cd some-package/trunk`.
+*   **Edit** the PKGBUILD, make necessary changes
+*   **Build** the package: either `makechrootpkg` or `extra-i686-build` and `extra-x86_64-build`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   **[Namcap](/index.php/Namcap "Namcap")** the PKGBUILD and the binary `pkg.tar.gz`.
+*   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
+    *   **Commit** the changes to trunk: `svn commit`.
+    *   **Sign** the packages: `gpg --detach-sign *.pkg.tar.xz`.
+    *   **Copy** the package to _nymeria.archlinux.org_: `scp *.pkg.tar.xz nymeria.archlinux.org:staging/community/`.
+    *   **Tag** the package: `archrelease community-{i686,x86_64`}.
+*   **Update** the repository: `ssh nymeria.archlinux.org /community/db-update`.
 
-Also see the _Miscellaneous_ section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). For the section _Avoid having to enter your password all the time_ use nymeria.archlinux.org instead of gerolde.archlinux.org.
+Also see the _Miscellaneous_ section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). For the section _Avoid having to enter your password all the time_ use _nymeria.archlinux.org_ instead of _gerolde.archlinux.org_.
 
 ### Disowning packages
 
@@ -151,7 +165,7 @@ There is no point in removing dummy packages, because they will be re-created in
 
 *   [DeveloperWiki#Packaging Guidelines](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=410986](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=410986)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=414418](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=414418)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
