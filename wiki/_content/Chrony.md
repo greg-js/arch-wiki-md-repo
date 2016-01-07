@@ -18,8 +18,7 @@ This article describes how to set up and run Chrony, an alternative NTP client a
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 NTP Servers](#NTP_Servers)
-    *   [2.2 Command Keys](#Command_Keys)
-    *   [2.3 Telling chronyd an internet connection has been made](#Telling_chronyd_an_internet_connection_has_been_made)
+    *   [2.2 Telling chronyd an internet connection has been made](#Telling_chronyd_an_internet_connection_has_been_made)
 *   [3 Usage](#Usage)
     *   [3.1 Starting chronyd](#Starting_chronyd)
     *   [3.2 Synchronising chrony hardware clock from the system clock](#Synchronising_chrony_hardware_clock_from_the_system_clock)
@@ -43,7 +42,6 @@ server 1.2.3.4 offline
 server 5.6.7.8 offline
 server 9.10.11.12 offline
 driftfile /etc/chrony.drift
-keyfile /etc/chrony.keys
 rtconutc
 rtcsync
 
@@ -77,44 +75,22 @@ server 3.pool.ntp.org offline
 
 It may also be a good idea to either use IP addresses instead of host names, or to map the hostnames to IP addresses in your `/etc/hosts` file, as DNS resolving will not be available until you have made a connection.
 
-### Command Keys
-
-To tell chronyd that a connection has been established, you need to be able to log in with chronyc. To do so, you will have to create `/etc/chrony.keys` first, which must contain a SHA1 or MD5 hash and might look like this:
-
- `/etc/chrony.keys`  `1 MD5 HEX:BD359B2633CD6105AB8820E47A8D8EAB` 
-
-You can generate a secure SHA1 based keyfile using the following command:
-
-```
- echo "1 SHA1 HEX:$(tr -d -c '[:xdigit:]' < /dev/urandom | head -c 40)" > /etc/chrony.keys
-
-```
-
-Please make sure to check the permissions to be safe (not world readable!) for `/etc/chrony.keys`!
-
-The password is the entire string `HEX:BD359B2633CD6105AB8820E47A8D8EAB` including the `HEX:` prefix; you can also manually set up a password in plain text like so:
-
- `/etc/chrony.keys`  `1 xyzzy` 
-
-By default chronyd only allows connections from the same machine it is running on, no further ACLs need to be configured for basic operation.
-
 ### Telling chronyd an internet connection has been made
 
 If you are connected to the internet, run:
 
 ```
-# chronyc -a
+# chronyc
 chronyc> online
 200 OK
 chronyc> exit
 
 ```
 
-The `-a` option automatically specifies the correct password. You may also be interested in the `activity` option to display status:
+You may also be interested in the `activity` option to display status:
 
 ```
-# chronyc -a activity
-200 OK
+# chronyc activity
 200 OK
 3 sources online
 0 sources offline
@@ -127,12 +103,10 @@ The `-a` option automatically specifies the correct password. You may also be in
 Chrony should now connect to the configured time servers and update your clock if needed. To tell chrony that you are not connected to the Internet anymore, execute the following:
 
 ```
-# chronyc -a offline
-200 OK
+# chronyc offline
 200 OK
 
-# chronyc -a activity
-200 OK
+# chronyc activity
 200 OK
 0 sources online
 3 sources offline
@@ -159,9 +133,7 @@ During boot the initial time is read from the hardware clock (RTC) and the syste
 You can use chronyc to force the current system time to be synced to hardware:
 
 ```
-# chronyc> password xyzzy
-Password:
-200 OK
+# chronyc
 chronyc> trimrtc
 200 OK
 chronyc> quit
@@ -200,7 +172,7 @@ Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dis
 *   [http://www.eecis.udel.edu/~mills/ntp/html/index.html](http://www.eecis.udel.edu/~mills/ntp/html/index.html)
 *   [http://www.akadia.com/services/ntp_synchronize.html](http://www.akadia.com/services/ntp_synchronize.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrony&oldid=407200](https://wiki.archlinux.org/index.php?title=Chrony&oldid=407200)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrony&oldid=414555](https://wiki.archlinux.org/index.php?title=Chrony&oldid=414555)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

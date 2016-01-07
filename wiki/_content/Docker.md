@@ -34,6 +34,7 @@ Related articles
     *   [7.1 Docker info errors out](#Docker_info_errors_out)
     *   [7.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
     *   [7.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
+    *   [7.4 docker complains about no loopback devices](#docker_complains_about_no_loopback_devices)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -237,12 +238,16 @@ EOF
 
 Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `docker` services.
 
+### docker complains about no loopback devices
+
+If starting the docker service fails and `journalctl` says that no loopback device can be found, try following the steps outlined in [TrueCrypt's troubleshooting section](/index.php/TrueCrypt#Failed_to_set_up_a_loop_device "TrueCrypt"). In particular, if you've upgraded the kernel since last rebooting, you just need to reboot.
+
 ## See also
 
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/installation/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=413627](https://wiki.archlinux.org/index.php?title=Docker&oldid=413627)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=414561](https://wiki.archlinux.org/index.php?title=Docker&oldid=414561)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

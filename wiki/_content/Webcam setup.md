@@ -428,7 +428,7 @@ options uvcvideo quirks=0x80
 
 **Note:** If delays are visible in the logs, or the camera works periodically, this workaround should apply generally. Bigger values such as `quirks=0x100` are possible.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Webcam_setup&oldid=402023](https://wiki.archlinux.org/index.php?title=Webcam_setup&oldid=402023)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Webcam_setup&oldid=414535](https://wiki.archlinux.org/index.php?title=Webcam_setup&oldid=414535)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

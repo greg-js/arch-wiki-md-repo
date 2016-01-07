@@ -56,11 +56,12 @@ This article was created to provide information on how to get Arch installed on 
         *   [4.5.1 Haswell based models](#Haswell_based_models)
         *   [4.5.2 Chromebook Pixel 2015](#Chromebook_Pixel_2015)
     *   [4.6 Hotkeys](#Hotkeys)
-        *   [4.6.1 Sxhkd configuration](#Sxhkd_configuration)
-        *   [4.6.2 Xbindkeys configuration](#Xbindkeys_configuration)
-            *   [4.6.2.1 Alternate xbindkeys configuration](#Alternate_xbindkeys_configuration)
-        *   [4.6.3 Patch xkeyboard-config](#Patch_xkeyboard-config)
-        *   [4.6.4 Mapping in Gnome with gsettings set](#Mapping_in_Gnome_with_gsettings_set)
+        *   [4.6.1 xkeyboard configuration](#xkeyboard_configuration)
+        *   [4.6.2 Sxhkd configuration](#Sxhkd_configuration)
+        *   [4.6.3 Xbindkeys configuration](#Xbindkeys_configuration)
+            *   [4.6.3.1 Alternate xbindkeys configuration](#Alternate_xbindkeys_configuration)
+        *   [4.6.4 Patch xkeyboard-config](#Patch_xkeyboard-config)
+        *   [4.6.5 Mapping in Gnome with gsettings set](#Mapping_in_Gnome_with_gsettings_set)
     *   [4.7 Power key and lid switch handling](#Power_key_and_lid_switch_handling)
         *   [4.7.1 Ignore using logind](#Ignore_using_logind)
         *   [4.7.2 Ignore by Gnome](#Ignore_by_Gnome)
@@ -538,6 +539,10 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 [The Chromebook function keys](https://support.google.com/chromebook/answer/1047364?hl=en) recognized as standard F1-F10 by the kernel, it is preferable to map them accordingly to their appearance. It would also be nice to get the keys `Delete, Home, End, PgUp, PgDown` which in Chrome OS mapped to `Alt + : BackSpace, Right, Left, Up, Down`.
 
+#### xkeyboard configuration
+
+[xkeyboard-config 2.16-1](https://www.archlinux.org/packages/extra/any/xkeyboard-config/) added a <tt>chromebook</tt> model that enables the Chrome OS style functions for the function keys. You can, for example, set this using <tt>localectl set-x11-keymap us chromebook</tt>. See the <tt>chromebook</tt> definition in <tt>/usr/share/X11/xkb/symbols/inet</tt> for the full mappings.
+
 #### Sxhkd configuration
 
 One way to set the hotkeys would be by using the [Sxhkd](/index.php/Sxhkd "Sxhkd") daemon. Besides [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), this also requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
@@ -610,7 +615,7 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=412052](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=412052)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=414525](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=414525)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

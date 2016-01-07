@@ -84,6 +84,8 @@ $ pacman -Ss php-
 
 ```
 
+**Tip:** Instead of editing `/etc/php/php.ini`, a extension may be enabled/configured in the `/etc/php/conf.d` directory instead (e.g. `/etc/php/conf.d/gd.ini`)
+
 ### gd
 
 For [php-gd](https://www.archlinux.org/packages/?name=php-gd) uncomment the line in `/etc/php/php.ini`:
@@ -241,7 +243,7 @@ If your `php.ini` is not parsed, the ini file is named after the sapi it is usin
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=414303](https://wiki.archlinux.org/index.php?title=PHP&oldid=414303)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=414552](https://wiki.archlinux.org/index.php?title=PHP&oldid=414552)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

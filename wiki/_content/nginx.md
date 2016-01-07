@@ -203,6 +203,8 @@ Reload or restart `nginx` service to enable the new configuration.
 
 **Tip:** You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL
 
+**Tip:** [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A nginx plugin is available by installing [letsencrypt-nginx](https://www.archlinux.org/packages/?name=letsencrypt-nginx) to request valid ssl certificates straight from the command line and automatic configuration.
+
 Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"):
 
 ```
@@ -916,7 +918,7 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=414416](https://wiki.archlinux.org/index.php?title=Nginx&oldid=414416)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=414556](https://wiki.archlinux.org/index.php?title=Nginx&oldid=414556)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

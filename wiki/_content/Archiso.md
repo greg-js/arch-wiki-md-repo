@@ -61,7 +61,7 @@ Archiso comes with two "profiles": _releng_ and _baseline_.
 Now, copy the profile of your choice to a directory where you can make adjustments and build it (we will use `~/archlive`). Execute the following, replacing `**profile**` with either `releng` or `baseline`.
 
 ```
-# cp -r /usr/share/archiso/configs/**profile**/ ~/archlive
+# cp -r /usr/share/archiso/configs/**profile**/* ~/archlive
 
 ```
 
@@ -221,7 +221,7 @@ So if you have a set of iptables scripts on your current system you want to be u
 
 ```
 
-Placing files in the users home directory is a little different. Do not place them within `airootfs/home`, but instead create a skel directory within `airootfs/` and place them there. We will then add the relevant commands to the `customize_root_image.sh` which we are going to use to copy them over on boot and sort out the permissions.
+Placing files in the users home directory is a little different. Do not place them within `airootfs/home`, but instead create a skel directory within `airootfs/` and place them there. We will then add the relevant commands to the `customize_airootfs.sh` which we are going to use to copy them over on boot and sort out the permissions.
 
 First, create the skel directory:
 
@@ -238,6 +238,8 @@ Now copy the 'home' files to the skel directory, e.g for `.bashrc`:
 ```
 
 When `~/archlive/airootfs/root/customize_airootfs.sh` is executed and a new user is created, the files from the skel directory will automatically be copied over to the new home folder, permissions set right.
+
+Similarly, some care is required for special configuration file that reside somewhere down the hierarchy. As an example the `/etc/X11/xinit/xinitrc` configuration file resides on a path that might be overwritten by installing a package. To place the configuration file one should put into the custom `xinitrc` in `~/archlive/airootfs/etc/skel/` and then modify `customize_airootfs.sh` to move it appropriately.
 
 ### Boot Loader
 
@@ -296,7 +298,16 @@ Or remove it altogether to disable auto login.
 
 ## Build the ISO
 
-Now you are ready to turn your files into the .iso which you can then burn to CD or USB: Inside `~/archlive`, execute:
+Now you are ready to turn your files into the .iso which you can then burn to CD or USB:
+
+First create the `out/` directory,
+
+```
+# mkdir ~/archlive/out/
+
+```
+
+then inside `~/archlive`, execute:
 
 ```
 # ./build.sh -v
@@ -455,7 +466,7 @@ After all of these, now you can follow the [Beginners' guide#Locale](/index.php/
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=412041](https://wiki.archlinux.org/index.php?title=Archiso&oldid=412041)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533](https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

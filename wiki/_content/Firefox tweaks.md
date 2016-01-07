@@ -70,7 +70,7 @@ This page contains advanced Firefox configuration options and performance tweaks
 
 Improving Firefox's performance is divided into parameters that can be inputted while running Firefox or otherwise modifying its configuration as intended by the developers, and advanced procedures that involve foreign programs or scripts.
 
-**Note:** Always use the latest version of Firefox.
+**Note:** Listed options may only be available for the latest version of Firefox.
 
 ### Advanced Firefox options
 
@@ -839,7 +839,7 @@ Then consider checking [how your SSL is](https://www.howsmyssl.com/).
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414080](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414080)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414554](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414554)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

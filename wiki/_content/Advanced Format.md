@@ -790,7 +790,7 @@ $ ./idle3ctl -h
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=397086](https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=397086)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=414509](https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=414509)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -33,6 +33,8 @@ This page pulls heavily from [openSUSE's Software Management Command Line Compar
 
 <td align="center" style="background:#f0f0f0;">**Gentoo**</td>
 
+<td align="center" style="background:#f0f0f0;">**Void**</td>
+
 </tr>
 
 <tr>
@@ -49,6 +51,8 @@ This page pulls heavily from [openSUSE's Software Management Command Line Compar
 zypper in</td>
 
 <td>emerge [-a]</td>
+
+<td>xbps-install</td>
 
 </tr>
 
@@ -67,6 +71,8 @@ zypper rm</td>
 
 <td>emerge -C</td>
 
+<td>xbps-remove</td>
+
 </tr>
 
 <tr>
@@ -84,6 +90,8 @@ zypper se [-s]</td>
 
 <td>emerge -S</td>
 
+<td>xbps-query -Rs</td>
+
 </tr>
 
 <tr style="background:#e4e4e4">
@@ -99,6 +107,8 @@ zypper se [-s]</td>
 <td>zypper update zypper up</td>
 
 <td>emerge -u world</td>
+
+<td>xbps-install -Su</td>
 
 </tr>
 
@@ -116,6 +126,8 @@ zypper se [-s]</td>
 
 <td>emerge -uDN world</td>
 
+<td>xbps-install -Su</td>
+
 </tr>
 
 <tr style="background:#e4e4e4">
@@ -131,6 +143,8 @@ zypper se [-s]</td>
 <td>zypper install --force</td>
 
 <td>emerge [-a]</td>
+
+<td>xbps-install -f</td>
 
 </tr>
 
@@ -419,6 +433,8 @@ modify IgnorePkg array</td>
 
 <td>emerge -S; emerge -pv; eix</td>
 
+<td>xbps-query -RS</td>
+
 </tr>
 
 <tr style="background:#e4e4e4">
@@ -434,6 +450,8 @@ modify IgnorePkg array</td>
 <td>zypper search zypper se [-s]</td>
 
 <td>emerge -S</td>
+
+<td>xbps-query -Rs</td>
 
 </tr>
 
@@ -1191,7 +1209,7 @@ mock (in chroot)</td>
 
 *   [Changes in DNF CLI compared to Yum](http://dnf.readthedocs.org/en/latest/cli_vs_yum.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414094](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414094)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414502](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414502)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

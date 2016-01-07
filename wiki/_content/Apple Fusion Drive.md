@@ -92,7 +92,7 @@ Make sure you specify a partition on the ssd as '--device'! Otherwise OSX will b
 *   [http://blog.fosketts.net/2011/08/05/undocumented-corestorage-commands/](http://blog.fosketts.net/2011/08/05/undocumented-corestorage-commands/)
 *   [http://arstechnica.com/apple/2012/11/achieving-fusion-with-a-service-training-doc-ars-tears-open-apples-fusion-drive/2/](http://arstechnica.com/apple/2012/11/achieving-fusion-with-a-service-training-doc-ars-tears-open-apples-fusion-drive/2/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apple_Fusion_Drive&oldid=376542](https://wiki.archlinux.org/index.php?title=Apple_Fusion_Drive&oldid=376542)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apple_Fusion_Drive&oldid=414562](https://wiki.archlinux.org/index.php?title=Apple_Fusion_Drive&oldid=414562)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

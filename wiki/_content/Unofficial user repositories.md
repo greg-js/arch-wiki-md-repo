@@ -270,7 +270,7 @@ Repositories with both i686 and x86_64 versions. The `$arch` variable will be se
 
 ```
 [arcanisrepo]
-Server = ftp://repo.arcanis.name/repo/$arch
+Server = ftp://repo.arcanis.me/repo/$arch
 
 ```
 
@@ -1563,7 +1563,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414397](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414397)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414560](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414560)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

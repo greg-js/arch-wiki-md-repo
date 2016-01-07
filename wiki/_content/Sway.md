@@ -42,7 +42,6 @@ If you want to achieve colored output of i3status, you can adjust following part
 
 ```
 general {
-	output_format = i3bar
         colors = true
         interval = 5
 }
@@ -79,7 +78,7 @@ However, if you want to start _sway_ in an X session for testing purposes it is 
 
 *   [Github project](https://github.com/SirCmpwn/sway)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=413150](https://wiki.archlinux.org/index.php?title=Sway&oldid=413150)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=414518](https://wiki.archlinux.org/index.php?title=Sway&oldid=414518)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

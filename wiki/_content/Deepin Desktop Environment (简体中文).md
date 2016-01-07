@@ -19,18 +19,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## 安装
 
-最简单的安装方式就是添加非官方软件源来安装dde。首先编辑 `/etc/pacman.conf`:
-
-```
-[home_metakcahura_arch-deepin_Arch_Extra]
-SigLevel = Never
-Server = http://download.opensuse.org/repositories/home:/metakcahura:/arch-deepin/Arch_Extra/$arch
-#Server = http://anorien.csc.warwick.ac.uk/mirrors/download.opensuse.org/repositories/home:/metakcahura:/arch-deepin/Arch_Extra/$arch
-
-```
-
-**Note:** 所有与dde相关的包都可以在 [FaSheng's GitHub repository](https://github.com/fasheng/arch-deepin)找到。 PKGBUILDs和源码可以在 [OBS project page](https://build.opensuse.org/project/show/home:metakcahura:arch-deepin)找到。
-
 如果你想安装一个最小化的dde，安装deepin组即可，但我们推荐你安装完整的dde，这会给你带来更多的特性，包括:
 
 *   **deepin-game-center**: Deepin游戏中心，可能会无法启动
@@ -81,7 +69,7 @@ Execute `startx` or `xinit` to start DDE.
 
 Any upstream or arch packaging related bugs should be reported [here](https://github.com/fasheng/arch-deepin/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=390757](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=390757)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=414538](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=414538)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

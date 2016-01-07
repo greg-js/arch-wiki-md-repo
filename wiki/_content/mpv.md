@@ -27,6 +27,7 @@ Related articles
     *   [3.8 Use as a browser plugin](#Use_as_a_browser_plugin)
     *   [3.9 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
     *   [3.10 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
+    *   [3.11 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 
@@ -138,6 +139,24 @@ Alternatively, [livestreamer](https://www.archlinux.org/packages/?name=livestrea
 
 Another alternative based on Livestreamer is this Lua script: [https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc](https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc)
 
+### youtube-dl and choosing formats
+
+The default `--ytdl-format` is `bestvideo+bestaudio/besŧ`. For youtube videos that have 4K resolutions available, this may mean that your device will struggle to decode 4K VP9 encoded video in software even if the attached monitor is much lower resolution.
+
+Setting the right youtube-dl format selectors can fix this easily though. In the following configuration example, only videos with a vertical resolution of 1080 pixels or less will be considered.
+
+```
+ytdl-format=bestvideo[height<=?1080]+bestaudio/best
+
+```
+
+If you wish to avoid a certain codec altogether because you cannot hardware-decode it, you can add this to the format selector. For example, we can additionally choose to ignore VP9 as follows:
+
+```
+ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
+
+```
+
 ## Vapoursynth
 
 Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for _mpv_.
@@ -168,7 +187,7 @@ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=413571](https://wiki.archlinux.org/index.php?title=Mpv&oldid=413571)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mpv&oldid=414559](https://wiki.archlinux.org/index.php?title=Mpv&oldid=414559)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

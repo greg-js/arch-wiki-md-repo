@@ -60,9 +60,9 @@ Another option is to [enable](/index.php/Enable "Enable") `debug-shell.service`,
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [QA/Sysrq](https://fedoraproject.org/wiki/QA/Sysrq) - Using sysrq
 *   systemd documentation: [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console)
-*   [How to Isolate Linux ACPI Issues](https://lesswatts.org/projects/acpi/debug.php)
+*   [How to Isolate Linux ACPI Issues](https://web.archive.org/web/20120217124742/http://www.lesswatts.org/projects/acpi/debug.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411909](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=411909)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=414511](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=414511)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

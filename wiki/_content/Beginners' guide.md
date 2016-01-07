@@ -33,7 +33,7 @@ The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the pri
     *   [3.5 Partition schemes](#Partition_schemes)
         *   [3.5.1 UEFI/GPT examples](#UEFI.2FGPT_examples)
         *   [3.5.2 BIOS/MBR examples](#BIOS.2FMBR_examples)
-    *   [3.6 File systems and swap](#File_systems_and_swap)
+    *   [3.6 Format file systems and enable swap](#Format_file_systems_and_enable_swap)
 *   [4 Installation](#Installation)
     *   [4.1 Select the mirrors](#Select_the_mirrors)
     *   [4.2 Install the base packages](#Install_the_base_packages)
@@ -386,9 +386,9 @@ In the final example below, separate `/boot` (100MiB), `/` (20GiB), swap (4GiB),
 
 ```
 
-### File systems and swap
+### Format file systems and enable swap
 
-Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"), _except_ for swap partitions. All available partitions on the intended installation device can be listed with the following command:
+Once the partitions have been created, each **must** be formatted with an appropriate [file system](/index.php/File_system "File system"), _except_ for swap partitions. All available partitions on the intended installation device can be listed with the following command:
 
 ```
 # lsblk /dev/sd_x_
@@ -654,7 +654,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414447](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414447)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414551](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414551)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

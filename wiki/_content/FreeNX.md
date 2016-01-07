@@ -46,7 +46,6 @@ NX is an exciting new technology for remote display. It provides _near local spe
     *   [6.6 Wrong password / No connection possible / Key-based authentication](#Wrong_password_.2F_No_connection_possible_.2F_Key-based_authentication)
     *   [6.7 NX crashes on session startup](#NX_crashes_on_session_startup)
         *   [6.7.1 Missing fonts](#Missing_fonts)
-        *   [6.7.2 Awesome WM](#Awesome_WM)
     *   [6.8 NX logo then blank screen](#NX_logo_then_blank_screen)
     *   [6.9 GDM/XDM Session Menu Error with non-KDE or GNOME Desktop Managers (more common with non-Arch Linux users)](#GDM.2FXDM_Session_Menu_Error_with_non-KDE_or_GNOME_Desktop_Managers_.28more_common_with_non-Arch_Linux_users.29)
     *   [6.10 Cannot connect because command sessreg not found](#Cannot_connect_because_command_sessreg_not_found)
@@ -438,10 +437,6 @@ Solution until FreeNX Dependencies is fixed is to [install](/index.php/Install "
 
 **Note:** This does not apply to freenx 0.6.1-3 and above, fix has been incorporated in it and following versions.
 
-#### Awesome WM
-
-Using the window manager [Awesome](/index.php/Awesome "Awesome") does not work with FreeNX. The bug report can be found at [FS#844 - Awesome does not work with FreeNX](https://awesome.naquadah.org/bugs/index.php?do=details&task_id=844). Troubleshoot with another desktop environment/window manager.
-
 ### NX logo then blank screen
 
 If you see the NX logo (!M) then a blank screen.
@@ -508,7 +503,7 @@ Start eclipse using (see [https://bugs.eclipse.org/bugs/show_bug.cgi?id=386955](
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=FreeNX&oldid=412805](https://wiki.archlinux.org/index.php?title=FreeNX&oldid=412805)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=FreeNX&oldid=414544](https://wiki.archlinux.org/index.php?title=FreeNX&oldid=414544)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

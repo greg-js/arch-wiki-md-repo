@@ -57,9 +57,9 @@ By default, the SickRage webui running on port 8081 is not protected by a passwo
 
 ### First time usage
 
-Sick Rage is a web-application that can be accessed on [http://localhost:8081](http://localhost:8081), when Sick Rage reports that he doesn't know his "version", just hit the update button. He will check for updates, restart himself and set his current version. The settings are pretty straight-forward. If you already have a storage of series, just point Sick Rage to it and he will analyze it and try to add your already downloaded series to his own list.
+Sick Rage is a web-application that can be accessed on [http://localhost:8081](http://localhost:8081), when Sick Rage reports that it doesn't know it's version, just hit the update button. It will check for updates, restart itself and set it's current version. The settings are pretty straightforward. If you already have a storage of series, just point Sick Rage to it and it will analyze it and try to add your already downloaded series to it's own list.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SickRage&oldid=410180](https://wiki.archlinux.org/index.php?title=SickRage&oldid=410180)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SickRage&oldid=414563](https://wiki.archlinux.org/index.php?title=SickRage&oldid=414563)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -27,6 +27,9 @@ This article overviews some useful extensions which enhance security and privacy
 *   [9 Cookie Monster](#Cookie_Monster)
 *   [10 RefControl](#RefControl)
 *   [11 RequestPolicy](#RequestPolicy)
+*   [12 Configuration Tweaks](#Configuration_Tweaks)
+    *   [12.1 Change browser time zone](#Change_browser_time_zone)
+    *   [12.2 Change user agent and platform](#Change_user_agent_and_platform)
 
 ## HTTPS Everywhere
 
@@ -38,13 +41,13 @@ HTTPS Everywhere will be automatically configured and enabled upon restarting Fi
 
 ## uBlock
 
-uBlock (previously μBlock) is a lightweight, efficient blocker which is easy on memory and the CPU. It comes with several filter lists ready to use out-of-the-box (including EasyList, Peter Lowe's, several malware filter lists).
+uBlock (previously μBlock) is a lightweight, efficient blocker which is easy on [memory and CPU](https://github.com/gorhill/uBlock#performance). It comes with several filter lists ready to use out-of-the-box (including EasyList, Peter Lowe's, several malware filter lists).
 
 The lead developer forked the project and created uBlock Origin. As of July 2015, most of the development is being done on uBlock Origin and the codebases are deviating substantially.
 
-uBlock: [Github](https://github.com/chrisaljoudi/uBlock); [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock/).
-
 uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/).
+
+uBlock: [Github](https://github.com/chrisaljoudi/uBlock); [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock/).
 
 ## Adblock Plus
 
@@ -124,7 +127,48 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 For more information on cross-site requests and RequestPolicy visit [here](https://www.requestpolicy.com/faq.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414082](https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414082)"
+## Configuration Tweaks
+
+The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/).
+
+### Change browser time zone
+
+The time zone of your system can be used in browser fingerprinting. To set firefox's time zone to UTC launch it as:
+
+```
+$ TZ=UTC firefox
+
+```
+
+Or, set a script to launch the above (for example, at `/usr/local/bin/firefox`).
+
+### Change user agent and platform
+
+To change the user agent in firefox, add the following `string` key in `about:config`:
+
+```
+ general.useragent.override
+
+```
+
+The value for the key is your browser's user agent. Select a known common one.
+
+**Tip:** The value `Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0` is used as the user agent for the Tor browser, thus being very common.
+
+**Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
+
+To change the platform for firefox, add the following `string` key in `about:config`:
+
+```
+ general.platform.override
+
+```
+
+Select a known common platform that corresponds with your user agent.
+
+**Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414549](https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414549)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

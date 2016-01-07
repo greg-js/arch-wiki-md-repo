@@ -364,9 +364,14 @@ Configure the bootloader to enable the i2c hardware by appending `/boot/config.t
 
 ```
 
-Configure the `i2c-dev` module to be loaded at boot:
+Configure the `i2c-dev` and `i2c-bcm2708` (if you did not blacklist it for the camera) modules to be loaded at boot:
 
- `/etc/modules-load.d/raspberrypi.conf`  `i2c-dev` 
+ `/etc/modules-load.d/raspberrypi.conf` 
+
+```
+i2c-dev
+i2c-bcm2708
+```
 
 Reboot the Raspberry Pi and issue the following command to get the hardware address:
 
@@ -448,7 +453,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414460](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414460)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414507](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414507)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -187,7 +187,7 @@ The kernel officially supports the following schedulers for storage disk in-/out
 *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler")
 *   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler").
 
-Unofficial support is available through the [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") (Budget Fair Scheduler) which is compiled the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel as well as many kernel in the [AUR](/index.php/AUR "AUR").
+Unofficial support is available through the [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") (Budget Fair Scheduler) which is compiled the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel as well as many kernels in the [AUR](/index.php/AUR "AUR").
 
 A more contemporary option (since kernel version 3.16) is [Multi-Queue Block IO Queuing Mechanism](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) or blk-mq for short. Blk-mq leverages a CPU with multiple cores to map I/O queries to multiple queues. The tasks are distributed across multiple threads and therefore to multiple CPU cores (per-core software queues) and can speed up read/write operations vs. traditional I/O schedulers.
 
@@ -200,10 +200,10 @@ scsi_mod.use_blk_mq=1
 
 A HDD has spinning disks and head that move physically to the required location. Such structure leads to following characteristics:
 
-*   random latency it quite high, for modern HDD it is ~10ms (ignoring a disk controller write buffer).
-*   sequential access provides much higher throughput. In this case head needs to move less distance.
+*   random latency is quite high, for modern HDDs it is ~10ms (ignoring a disk controller write buffer).
+*   sequential access provides much higher throughput. In this case the head needs to move less distance.
 
-In case if we have a lot of running processes that make IO requests to different parts of storage (i.e. random access) then we can expect that a disk handles ~100 IO requests per second. Because modern systems can easily generate load much higher than 100 requests per second we have a queue of requests that have to wait for access to the storage. One way to improve throughput is to linearize access, i.e. order waiting requests by its logical address and always choose the closest request. Historically this was the first Linux IO scheduler called elevator scheduler.
+If we have a lot of running processes that make IO requests to different parts of storage (i.e. random access) then we can expect that a disk handles ~100 IO requests per second. Because modern systems can easily generate load much higher than 100 requests per second we have a queue of requests that have to wait for access to the storage. One way to improve throughput is to linearize access, i.e. order waiting requests by its logical address and always choose the closest request. Historically this was the first Linux IO scheduler called elevator scheduler.
 
 One of the problems with the elevator algorithm is that it makes suffer processes with sequential access. Such processes read a block of data then process it for several microseconds then read next block and so on. The elevator scheduler does not know that the process is going to read another block nearby and, thus, moves to another request at some other location. To overcome the problem anticipatory IO scheduler was added. For synchronous requests this algorithm waits for a short amount of time before moving to another request.
 
@@ -438,7 +438,7 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414083](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414083)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414565](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414565)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

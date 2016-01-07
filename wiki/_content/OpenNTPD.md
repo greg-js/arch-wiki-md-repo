@@ -206,7 +206,7 @@ This will wait 5 minutes before starting openntpd, which should give the system 
 
 *   [http://www.openntpd.org](http://www.openntpd.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenNTPD&oldid=400985](https://wiki.archlinux.org/index.php?title=OpenNTPD&oldid=400985)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenNTPD&oldid=414567](https://wiki.archlinux.org/index.php?title=OpenNTPD&oldid=414567)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

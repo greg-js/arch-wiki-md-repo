@@ -358,7 +358,7 @@ You can replace either `"name"` or `"class"` with `NULL` to ignore those values 
 *   The [Alopex thread](https://bbs.archlinux.org/viewtopic.php?id=146889) on the forums
 *   The [Interrobang thread](https://bbs.archlinux.org/viewtopic.php?id=160182) on the forums
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Alopex&oldid=413313](https://wiki.archlinux.org/index.php?title=Alopex&oldid=413313)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Alopex&oldid=414515](https://wiki.archlinux.org/index.php?title=Alopex&oldid=414515)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

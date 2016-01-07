@@ -184,7 +184,13 @@ This will enable the MUC component on host `conference.example.com`.
 
 To use an extra module download its raw file(s) from the source browser (when viewing a file, search for the link "View raw file"). Alternatively and likely easier, use Mercurial to clone the entire repository:
 
-`$ hg clone https://prosody-modules.googlecode.com/hg/ prosody-modules`
+Prosody 0.9+
+
+`$ hg clone https://hg.prosody.im/prosody-modules/ prosody-modules`
+
+Prosody 0.8
+
+`$ hg clone http://0-8.prosody-modules.googlecode.com/hg/ prosody-modules`
 
 Now you can copy the module (and any additional files it needs) to Prosody's module directory at `/usr/lib/prosody/modules`. To enable the module add it to your `modules_enabled` list in your `prosody.cfg.lua` for the host or component you wish to use it for. For example, to use the `pastebin` module on a MUC component:
 
@@ -253,7 +259,7 @@ Two development packages are maintained for Prosody in the AUR, [prosody-devel](
 *   [Issue Tracker](https://prosody.im/issues/)
 *   [Prosody Modules](https://hg.prosody.im/prosody-modules/) (Extra Modules)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Prosody&oldid=408719](https://wiki.archlinux.org/index.php?title=Prosody&oldid=408719)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Prosody&oldid=414545](https://wiki.archlinux.org/index.php?title=Prosody&oldid=414545)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

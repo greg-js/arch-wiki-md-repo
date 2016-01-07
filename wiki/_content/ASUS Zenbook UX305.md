@@ -32,7 +32,7 @@ Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
 
 See [[1]](https://gist.github.com/anonymous/6363a5462af10ee18c0c) for specific hardware information.
 
-See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Skylake) hardware information. Physically labelled with UX305C on laptop, but UX305CA shows in dmesg
+See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Skylake) hardware information. Physically labelled with UX305C on laptop, but UX305CA shows in dmesg. See and contribute to discussion tab of this page for fixes.
 
 ## Compatibility
 
@@ -146,7 +146,7 @@ For whatever reason, `xev` does not return any events for the standard brightnes
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX31a](https://wiki.debian.org/InstallingDebianOn/Asus/UX31a)
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA](https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414238](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414238)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414542](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414542)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

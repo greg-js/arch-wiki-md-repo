@@ -344,7 +344,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 [http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
 
-*   **Pantheon Terminal** — The Pantheon Terminal Emulator.
+*   **Pantheon Terminal** — A super lightweight, beautiful, and simple terminal emulator. It's designed to be setup with sane defaults and little to no configuration.
 
 [https://launchpad.net/pantheon-terminal](https://launchpad.net/pantheon-terminal) || [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal)
 
@@ -1050,7 +1050,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 [https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=414480](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=414480)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=414568](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=414568)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

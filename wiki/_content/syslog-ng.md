@@ -575,7 +575,7 @@ YEAR_DAY=148
 *   [syslog-ng Project Page on Freshmeat](http://freshmeat.net/projects/syslog-ng/)
 *   [Gentoo syslog-ng wiki](http://en.gentoo-wiki.com/wiki/Syslog-ng)
 *   [Gentoo Security Handbook on Logging](http://www.gentoo.org/doc/en/security/security-handbook.xml?part=1&chap=3)
-*   [Syslog Logging with PostgreSQL HOWTO](http://www.kdough.net/docs/syslog_postgresql/)
+*   [What is Syslog? Logging with PostgreSQL HOWTO](http://www.pcwdld.com/what-is-syslog-including-servers-and-ports)
 *   [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") Wikipedia page for ISO 8601
 *   [RFC 3164](http://tools.ietf.org/html/rfc3164) - The BSD syslog Protocol
 *   [RFC 5424](http://tools.ietf.org/html/rfc3164) - The Syslog Protocol
@@ -585,7 +585,7 @@ YEAR_DAY=148
     *   [RFC 5428](http://tools.ietf.org/html/rfc5425) - MIB for PacketCable and IPCablecom-Compliant Devices
 *   [RFC 3339](http://tools.ietf.org/html/rfc3339) - Date and Time on the Internet: Timestamps
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslog-ng&oldid=376247](https://wiki.archlinux.org/index.php?title=Syslog-ng&oldid=376247)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslog-ng&oldid=414505](https://wiki.archlinux.org/index.php?title=Syslog-ng&oldid=414505)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

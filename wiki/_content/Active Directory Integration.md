@@ -855,7 +855,7 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 *   Centrify
 *   Likewise
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=413782](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=413782)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=414514](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=414514)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
