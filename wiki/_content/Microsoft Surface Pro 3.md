@@ -24,7 +24,7 @@ This page aims to document all relevant information on getting Arch Linux workin
 *   [2 Installation](#Installation)
 *   [3 Extra steps](#Extra_steps)
     *   [3.1 Compile Kernel with Patches](#Compile_Kernel_with_Patches)
-        *   [3.1.1 Surace Pro 3 Linux Kernel Hardware Patches](#Surace_Pro_3_Linux_Kernel_Hardware_Patches)
+        *   [3.1.1 Surface Pro 3 Linux Kernel Hardware Patches](#Surface_Pro_3_Linux_Kernel_Hardware_Patches)
     *   [3.2 Enabling Touchpad](#Enabling_Touchpad)
     *   [3.3 Booting with Secure Boot Enabled](#Booting_with_Secure_Boot_Enabled)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -104,7 +104,7 @@ Ref: [Kernels/Compilation/Traditional#Build configuration](/index.php/Kernels/Co
 *   Latest stable kernel release: [f23 branch](https://github.com/shvr/fedora-surface-pro-3-kernel/commits/f23)
 *   Latest RC: [master branch](https://github.com/shvr/fedora-surface-pro-3-kernel/commits/master)
 
-#### Surace Pro 3 Linux Kernel Hardware Patches
+#### Surface Pro 3 Linux Kernel Hardware Patches
 
 *   [Camera patch](https://github.com/shvr/fedora-surface-pro-3-kernel/blob/f23/surface-pro-3-Add-support-driver-for-Surface-Pro-3-b.patch)
 *   [Hardware Buttons patch](https://github.com/shvr/fedora-surface-pro-3-kernel/blob/f23/Add-Microsoft-Surface-Pro-3-camera-support.patch)
@@ -190,7 +190,7 @@ If after doing these steps doesn't still work. Flash the archiso image once more
 
 This can happen sometimes when you restart. The solution was to shutdown and reboot. (not restart)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413260](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=413260)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=414619](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=414619)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

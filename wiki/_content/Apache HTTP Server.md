@@ -37,6 +37,7 @@ Apache is often used together with a scripting language such as PHP and database
     *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
     *   [4.3 Upgrading Apache to 2.4 from 2.2](#Upgrading_Apache_to_2.4_from_2.2)
     *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
+    *   [4.5 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -520,13 +521,26 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 and restart `httpd.service`.
 
+### AH00534: httpd: Configuration error: No MPM loaded.
+
+You might encounter this error after a recent upgrade. This is only the result of a recent change in `httpd.conf` that you might not have reproduced in your local configuration. To fix it, uncomment the following line.
+
+ `/etc/httpd/conf/httpd.conf` 
+
+```
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+```
+
+Also check [the above](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.) if more errors occur afterwards.
+
 ## See also
 
 *   [Apache Official Website](http://www.apache.org/)
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414222](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414222)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414644](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414644)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -888,7 +888,7 @@ amixer set Master toggle
 *   [A close look at ALSA: ALSA concept introduction](http://www.volkerschatz.com/noise/alsa.html)
 *   [Linux ALSA sound notes](http://www.sabi.co.uk/Notes/linuxSoundALSA.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=413783](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=413783)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=414631](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=414631)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

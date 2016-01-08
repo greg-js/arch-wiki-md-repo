@@ -22,7 +22,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
             *   [1.2.2.2 Blink-based](#Blink-based)
             *   [1.2.2.3 Webkit-based](#Webkit-based)
             *   [1.2.2.4 Other](#Other)
-    *   [1.3 Downloaders](#Downloaders)
+    *   [1.3 File sharing](#File_sharing)
         *   [1.3.1 FTP](#FTP)
             *   [1.3.1.1 FTP clients](#FTP_clients)
             *   [1.3.1.2 FTP servers](#FTP_servers)
@@ -34,9 +34,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
                 *   [1.3.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
                 *   [1.3.2.2.2 libktorrent backend](#libktorrent_backend)
                 *   [1.3.2.2.3 others](#others)
-        *   [1.3.3 eDonkey clients](#eDonkey_clients)
-        *   [1.3.4 Gnutella](#Gnutella)
-        *   [1.3.5 Video downloaders](#Video_downloaders)
+        *   [1.3.3 Other P2P networks](#Other_P2P_networks)
+        *   [1.3.4 Video downloaders](#Video_downloaders)
     *   [1.4 Communication](#Communication)
         *   [1.4.1 Email clients](#Email_clients)
             *   [1.4.1.1 Console](#Console_3)
@@ -266,7 +265,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 [http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
 
-### Downloaders
+### File sharing
 
 #### FTP
 
@@ -414,9 +413,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 [http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/](http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/) || [vuze-extreme-mod](https://aur.archlinux.org/packages/vuze-extreme-mod/)<sup><small>AUR</small></sup>
 
-#### eDonkey clients
-
-eDonkey is still the second-largest p2p network (see [Internet Study 2008/2009](http://ipoque.com/en/resources/internet-studies)).
+#### Other P2P networks
 
 See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wiki/Comparison_of_eDonkey_software "wikipedia:Comparison of eDonkey software").
 
@@ -432,11 +429,13 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 [http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
-#### Gnutella
-
 *   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
 
 [http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sharelin)]</sup>
+
+*   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
+
+[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)<sup><small>AUR</small></sup>
 
 #### Video downloaders
 
@@ -1224,7 +1223,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 [https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414482](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414482)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414628](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414628)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

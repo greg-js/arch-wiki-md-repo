@@ -232,7 +232,7 @@ where VVVV is the hexadecimal vendor ID from lsusb, MMMM is the hexadecimal prod
 
 The final wvdial command should start pppd and the obained IP address should be visible in the terminal output. At that point the internet connection should be live, which can be easily checked with a web browser or by pinging an external IP address.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wvdial&oldid=391834](https://wiki.archlinux.org/index.php?title=Wvdial&oldid=391834)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wvdial&oldid=414627](https://wiki.archlinux.org/index.php?title=Wvdial&oldid=414627)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

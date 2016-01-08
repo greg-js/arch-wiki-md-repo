@@ -191,6 +191,14 @@ Most other backup applications tend to create (big) archive files and (of course
 
 [http://code.google.com/p/archlinux-stuff/](http://code.google.com/p/archlinux-stuff/) || [arch-backup](https://www.archlinux.org/packages/?name=arch-backup)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
+*   **BorgBackup** — A deduplicating backup program (based on Attic).
+    *   Space efficient storage: Deduplication based on content-defined chunking is used to reduce the number of bytes stored
+    *   Speed: Local caching of files; quick detection of unmodified files.
+    *   Supports pushing over SSH.
+    *   Backups mountable: Backup archives are mountable as userspace filesystems.
+
+[http://borgbackup.readthedocs.org/en/stable/](http://borgbackup.readthedocs.org/en/stable/) || [borg](https://www.archlinux.org/packages/?name=borg)
+
 *   **[hdup](/index.php/Backup_with_hdup "Backup with hdup")** — A very simple command line backup tool.
     *   Creates tar.gz or tar.bz2 archives.
     *   Supports gpg encryption.
@@ -611,7 +619,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414498](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414498)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414614](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414614)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

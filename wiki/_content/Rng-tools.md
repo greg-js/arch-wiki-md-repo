@@ -101,7 +101,7 @@ It is normal for any random number generator to fail in a small number of tests 
 
 After that, you can [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") the `rngd.service`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rng-tools&oldid=408979](https://wiki.archlinux.org/index.php?title=Rng-tools&oldid=408979)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rng-tools&oldid=414591](https://wiki.archlinux.org/index.php?title=Rng-tools&oldid=414591)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

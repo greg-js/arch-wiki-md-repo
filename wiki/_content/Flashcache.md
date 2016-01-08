@@ -296,7 +296,7 @@ dev.flashcache.fallow_delay = 0
 *   Original announcement - [http://www.facebook.com/note.php?note_id=388112370932](http://www.facebook.com/note.php?note_id=388112370932)
 *   Github source - [https://github.com/facebook/flashcache](https://github.com/facebook/flashcache)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashcache&oldid=376772](https://wiki.archlinux.org/index.php?title=Flashcache&oldid=376772)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashcache&oldid=414571](https://wiki.archlinux.org/index.php?title=Flashcache&oldid=414571)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -157,6 +157,8 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ```
 
+**警告:** 这一部非常重要请不要忽略，即便你原来默认没有.xprofile文件也要新建一个然后写入这几行，不然中文输入法是启动不了的。还有.xprofile文件名一定要全部小写，不要看到.Xauthority这种文件名以为首字母要大写就大写成.Xprofile了，不然也是没法用中文输入法的。
+
 **警告:** 请不要在 `.bashrc` 设置这些环境变量。`bashrc`只应用于交互性 bash 会话的初始化，并不应用于非交互性脚本或 X 会话的初始化。否则，从命令行启动的某程序会误以为该环境变量在 X 会话中已正确设置，哪怕 X 会话并没有启动。
 
 重新登录后让环境变量生效。
@@ -182,6 +184,10 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 **警告:** Fcitx 不支持手动编辑配置文件，否则后果自负。
 
 Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool), 或者来自 [AUR](/index.php/Arch_User_Repository "Arch User Repository"), 基于 GTK+2, 但不被官方支持的 [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fcitx-configtool-gtk2)]</sup>.
+
+安装完配置工具[fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)之后打开配置工具的方法是用终端运行fcitx-config-gtk3，打开这个配置工具之后还要添加中文输入法。
+
+添加中文输入法的方法是在第一个标签，点下面的加号，然后它默认本身是勾选了之显示当前语言的输入法的（Only Show Current Language），因为一般按照默认的方法安装Archlinux的是英文语言，在这种状态下是找不到中文输入法的，一定要先取消勾选这个选项，然后才能在上面的列表中找到中文输入法（可能叫Pinyin, Libpinyin之类的）。然后添加这个才会有中文输入法。
 
 ### 替换自带的经典界面
 
@@ -407,7 +413,7 @@ gsettings set \
 *   [rime 朙(ming)月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict/view/general)
 *   [Fcitx not work in terminal, nautilus, gedit](https://bugzilla.gnome.org/show_bug.cgi?id=747825#c6)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=412804](https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=412804)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=414580](https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=414580)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

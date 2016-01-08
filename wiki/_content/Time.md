@@ -132,7 +132,7 @@ Windows Registry Editor Version 5.00
 
 ```
 
-If the above appears to have no affect, and a 64-bit variant of Windows is being used, using a `QWORD` value instead of a `DWORD` value may resolve the issue.
+If the above appears to have no effect, and a 64-bit variant of Windows is being used, using a `QWORD` value instead of a `DWORD` value may resolve the issue.
 
 Should Windows ask to update the clock due to DST changes, let it. It will leave the clock in UTC as expected, only correcting the displayed time.
 
@@ -275,7 +275,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 *   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=412853](https://wiki.archlinux.org/index.php?title=Time&oldid=412853)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=414633](https://wiki.archlinux.org/index.php?title=Time&oldid=414633)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -35,7 +35,7 @@ _R is a free software environment for statistical computing and graphics_ ([http
 *   [5 Optimized packages](#Optimized_packages)
     *   [5.1 OpenBLAS](#OpenBLAS)
     *   [5.2 Intel MKL](#Intel_MKL)
-    *   [5.3 intel-parallel-studio-xe](#intel-parallel-studio-xe)
+    *   [5.3 intel-advisor-xe](#intel-advisor-xe)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -279,35 +279,17 @@ Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur
 
 *   here are elapsed time in sec from computing 15 tests with default GCC build and icc/MKL build: _274.93 sec_ for GCC build, _21.01 sec_ for icc/MKL build. See [this post](https://stat.ethz.ch/pipermail/r-help/2014-September/421574.html) for more information.
 
-### intel-parallel-studio-xe
+### intel-advisor-xe
 
-[intel-parallel-studio](http://software.intel.com/en-us/intel-parallel-studio-xe) delivers top application performance with C, C++ and Fortran compilers, libraries and analysis tools.
+[intel-advisor](http://software.intel.com/en-us/intel-advisor-xe) delivers top application performance with C, C++ and Fortran compilers, libraries and analysis tools.
 
-First, install the [intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/intel-parallel-studio-xe)]</sup> package. You may need to login again for /etc/profile.d/intel_compilers.sh to be loaded (so the compiler bin is in the PATH). Then, modify the [r-mkl](https://aur.archlinux.org/packages/r-mkl/)<sup><small>AUR</small></sup> `PKGBUILD` file with appending these lines in the `build()` section:
-
-```
-# please refer to the intel-parallel-studio-xe package version for path
-_omplibpath=/opt/intel/${_parallel_studio_xe_dir}/compiler/lib/${_intel_arch} 
-export LD_LIBRARY_PATH=${_mkllibpath}:${_omplibpath} 
-.....................................................
-# Build the package using the icc compiler
-export CC="icc"
-export CXX="icpc"
-export AR="xiar"
-export LD="xild"
-export CFLAGS="-O3 -ipo -openmp -xHost"
-export CXXFLAGS="-O3 -ipo -openmp -xHost"
-make
-
-```
-
-**Note:** this package will install the above described **intel-mkl**
+Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-xe/)<sup><small>AUR</small></sup> package.
 
 ## See also
 
 *   [RSeek](http://www.rseek.org/) A search engine for R related material.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=413450](https://wiki.archlinux.org/index.php?title=R&oldid=413450)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=414617](https://wiki.archlinux.org/index.php?title=R&oldid=414617)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

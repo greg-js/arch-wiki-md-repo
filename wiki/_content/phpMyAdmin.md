@@ -21,8 +21,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [3.2 Enabling Configuration Storage (optional)](#Enabling_Configuration_Storage_.28optional.29)
         *   [3.2.1 creating phpMyAdmin database](#creating_phpMyAdmin_database)
         *   [3.2.2 creating phpMyAdmin database user](#creating_phpMyAdmin_database_user)
-    *   [3.3 Fixing open_basedir warning](#Fixing_open_basedir_warning)
 *   [4 Accessing your phpMyAdmin installation](#Accessing_your_phpMyAdmin_installation)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Fixing open_basedir warning](#Fixing_open_basedir_warning)
+    *   [5.2 #2006 - MySQL server has gone away](#.232006_-_MySQL_server_has_gone_away)
 
 ## Installation
 
@@ -80,7 +82,7 @@ Include conf/extra/phpmyadmin.conf
 
 ```
 
-By default, everyone can see the phpMyAdmin page, to change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`.
+**Note:** By default, everyone who can reach the Apache Web Server can see the phpMyAdmin login page under this URL. To change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`. Beware that this will disallow connecting to PhpMyAdmin on a remote server.
 
 ### Lighttpd
 
@@ -295,6 +297,14 @@ In order to take advantage of the bookmark and relation features, you will also 
 
 Log out, and back in to ensure the new features are activated. The message at the bottom of the main screen should now be gone.
 
+## Accessing your phpMyAdmin installation
+
+Your phpMyAdmin installation is now complete. Before you start using it you need to restart Apache.
+
+You can access your phpMyAdmin installation by going to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+
+## Troubleshooting
+
 ### Fixing open_basedir warning
 
 If you see the following Warning when entering the homepage of PhpMyAdmin:
@@ -315,13 +325,24 @@ Once you have done that, [restart](/index.php/Restart "Restart") `httpd.service`
 
 Now refresh the page, and you should no longer have the warning.
 
-## Accessing your phpMyAdmin installation
+### #2006 - MySQL server has gone away
 
-Your phpMyAdmin installation is now complete. Before you start using it you need to restart Apache.
+If, when trying to log into PhpMyAdmin, you encounter
 
-You can access your phpMyAdmin installation by going to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+```
+#2006 - MySQL server has gone away
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414437](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414437)"
+Connection for controluser as defined in your configuration failed.
+
+```
+
+a fix seems to be to make sure you do not have SSL connection between PhpMyAdmin and MariaDB activated. Hence comment out or set to `false` the following line:
+
+ `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['Servers'][$i]['ssl'] = true;` 
+
+**Note:** There surely must be a better fix since 'ssl = true' worked before. Also do not disable SSL if your PhpMyAdmin install is somehow not on the same server as MySQL!
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414669](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414669)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

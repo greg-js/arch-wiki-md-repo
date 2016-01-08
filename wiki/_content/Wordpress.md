@@ -95,6 +95,8 @@ Alias /wordpress "/usr/share/webapps/wordpress"
 </Directory>
 ```
 
+**Note:** As of PHP 7.0, `open_basedir` [is not set anymore by default](https://www.archlinux.org/news/php-70-packages-released) and the line (`php_admin_value open_basedir ...`) can be safely skipped in default PHP configurations.
+
 Change `/wordpress` in the first line to whatever you want. For example, `/myblog` would require that you navigate to `[http://hostname/myblog](http://hostname/myblog)` to see your Wordpress website.
 
 Also change the paths to your Wordpress install folder in case you did a manual install. Do not forget to append the parent directory to the `php_admin_value` variable as well as shown below.
@@ -236,7 +238,7 @@ Another option is changing a value in the database table of your Wordpress, spec
 *   [Wordpress](https://en.wikipedia.org/wiki/WordPress "wikipedia:WordPress")
 *   [Content management system](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=412216](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=412216)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=414659](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=414659)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

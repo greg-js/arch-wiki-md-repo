@@ -64,7 +64,7 @@ $ lsusb -v | grep -e idProduct -e idVendor
 
 ```
 
-Is you are unable to identify your device, try running `xinput list`. Some devices the use Logitech Unifying Recceiver share the same USB connection therefore, the mouse don't appear using `lsusb`
+If you are unable to identify your device, try running `xinput list`. Some devices the use Logitech Unifying Recceiver share the same USB connection therefore, the mouse don't appear using `lsusb`
 
 ### Using xset
 
@@ -217,7 +217,11 @@ EndSection
 
 and restart X.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=409526](https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=409526)"
+**Note:** The speed setting "libinput Accel Speed" is the same as before, takes [-1, 1]. Speed settings < 0 are a percentage of the default speed (i.e. -0.3 is 70% of the normal speed), speeds > 0 are times 2, so 0.5 is 200% and 1.0 is 300% of the normal speed.
+
+ `Adjust mouse speed down 50%:`  `xinput --set-prop 8 'libinput Accel Speed' -0.5` 
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414606](https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414606)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

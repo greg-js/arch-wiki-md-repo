@@ -575,6 +575,13 @@ pactl set-sink-mute 0 toggle
 
 ```
 
+To mute/unmute the microphone:
+
+```
+pactl set-source-mute 1 toggle
+
+```
+
 ### Play sound from a non-interactive shell (systemd service, cron)
 
 Set `XDG_RUNTIME_DIR` before the command (replace `_user_id_` with the ID of the user running PulseAudio):
@@ -630,7 +637,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414311](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414311)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414648](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414648)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

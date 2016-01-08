@@ -104,6 +104,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
 
+<td>btusb</td>
+
 </tr>
 
 </tbody>
@@ -549,7 +551,7 @@ If you prefer using a [Window manager](/index.php/Window_manager "Window manager
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=413172](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=413172)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414647](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414647)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

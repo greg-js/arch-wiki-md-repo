@@ -85,7 +85,7 @@ cp config.php.example config.php
 
 Modify `config.php` to suit your needs
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rtgui&oldid=412169](https://wiki.archlinux.org/index.php?title=Rtgui&oldid=412169)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rtgui&oldid=414622](https://wiki.archlinux.org/index.php?title=Rtgui&oldid=414622)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

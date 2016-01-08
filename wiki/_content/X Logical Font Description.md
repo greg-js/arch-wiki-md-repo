@@ -318,7 +318,7 @@ $ xset fp rehash
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=X_Logical_Font_Description&oldid=357010](https://wiki.archlinux.org/index.php?title=X_Logical_Font_Description&oldid=357010)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=X_Logical_Font_Description&oldid=414624](https://wiki.archlinux.org/index.php?title=X_Logical_Font_Description&oldid=414624)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

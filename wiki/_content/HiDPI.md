@@ -16,6 +16,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
+        *   [1.1.1 How to use non-whole numbers](#How_to_use_non-whole_numbers)
     *   [1.2 KDE](#KDE)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
@@ -53,6 +54,35 @@ To enable HiDPI, use gsettings:
 gsettings set org.gnome.desktop.interface scaling-factor 2
 
 ```
+
+**Note:** `scaling-factor` only allows whole numbers to be set. 1 = 100%, 2 = 200%, etc...
+
+#### How to use non-whole numbers
+
+A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
+
+Alternatively, you can achieve scales of 1.25, 1.5, 1.75 and more by using a combination of `scaling-factor` and `xrandr`. This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone.
+
+For example, to set a scale of 1.5 (which is 150%):
+
+```
+# First get the native display size for the screen.
+xrandr
+Screen 0: minimum 1 x 1, current 1920 x 1080, maximum 16384 x 16384
+eDP1 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 256mm x 144mm
+  1920x1080     60.00*+  50.00
+
+# This 11.5" display on output eDP1 has a native resolution of 1920x1080.
+# Multiple these numbers by your desired scale.  For 150%, multiple by 1.5
+# and use this numbers to set a --scale-from and --panning
+xrandr --output eDP1 --scale-from 2880x1620 --panning 2880x1620
+
+# Now use `org.gnome.desktop.interface scaling-factor` to get 1.5 scale.
+gsettings set org.gnome.desktop.interface scaling-factor 2
+
+```
+
+This will be approximately a 1.5x scale factor using the native resolution of the display.
 
 ### KDE
 
@@ -298,7 +328,7 @@ The default console font will be very small on hidpi displays, the largest font 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=412747](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=412747)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=414652](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=414652)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -13,6 +13,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [4.1 Finding HDMI output](#Finding_HDMI_output)
     *   [4.2 Testing for the correct card](#Testing_for_the_correct_card)
     *   [4.3 Manually configuring PulseAudio to detect the Nvidia HDMI](#Manually_configuring_PulseAudio_to_detect_the_Nvidia_HDMI)
+    *   [4.4 Automatically switch audio to HDMI](#Automatically_switch_audio_to_HDMI)
 *   [5 Surround sound systems](#Surround_sound_systems)
     *   [5.1 Splitting front/rear](#Splitting_front.2Frear)
     *   [5.2 Splitting 7.1 into 5.1+2.0](#Splitting_7.1_into_5.1.2B2.0)
@@ -272,6 +273,67 @@ restart pulse audio
 open the sound settings manager, make sure that under the hardware tab the graphics cards HDMI audio is set to "Digital Stereo (HDMI) Output" (My graphics card audio is called "GF100 High Definition Audio Controller").
 
 Then, open the output tab. There should now be two HDMI outputs for the graphics card. Test which one works by selecting one of them, and then using a program to play audio. For example, use VLC to play a movie, and if it does not work, then select the other.
+
+### Automatically switch audio to HDMI
+
+Create a script to switch to the desired audio profile if an HDMI cable is plugged in:
+
+ `/usr/local/bin/hdmi_sound_toggle.sh` 
+
+```
+#!/bin/sh
+USER_NAME=`who | grep "(:0)" | cut -f 1 -d ' '`
+USER_ID=`id -u $USER_NAME`
+HDMI_STATUS=`cat /sys/class/drm/card0/*HDMI*/status`
+
+export PULSE_SERVER="unix:/run/user/"$USER_ID"/pulse/native"
+
+if [ $HDMI_STATUS = "connected" ]
+then
+   sudo -u $USER_NAME pactl --server $PULSE_SERVER set-card-profile 0 output:hdmi-stereo+input:analog-stereo
+else
+   sudo -u $USER_NAME pactl --server $PULSE_SERVER set-card-profile 0 output:analog-stereo+input:analog-stereo
+fi
+```
+
+Make the script executable:
+
+```
+chmod +x /usr/local/bin/hdmi_sound_toggle.sh
+
+```
+
+Create a udev rule to run this script when the status of the HDMI change:
+
+**Note:** udev rule can't directly run a script, a workaround is to use a .service to run this script
+
+ `/etc/udev/rules.d/99-hdmi_sound.rules`  `KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/systemctl start hdmi_sound_toggle.service"` 
+
+Finally, create the .service file required by the udev rule above:
+
+ `/etc/systemd/system/hdmi_sound_toggle.service` 
+
+```
+[Unit]
+Description=hdmi sound hotplug
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=/usr/local/bin/hdmi_sound_toggle.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+To make the change effective don't forget to reload the udev rules:
+
+```
+udevadm control --reload-rules
+
+```
+
+A reboot can be required.
 
 ## Surround sound systems
 
@@ -810,7 +872,7 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=413206](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=413206)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414625](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414625)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

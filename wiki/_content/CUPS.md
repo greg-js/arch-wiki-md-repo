@@ -225,9 +225,11 @@ tail /var/log/cups/error_log
 
 Remote print servers can be accessed by adding an IPP "printer" to the local CUPS server, with a URI of `ipp://192.168.0.101:631/printers/<name-of-printer>`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
 
+**Note:** Avoid configuring both the server and the client with a printer filter (one should be 'raw', for instance see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908))
+
 #### Without a local CUPS server
 
-**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers [[1]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers [[2]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
 
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
 
@@ -487,7 +489,7 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 *   [OpenPrinting homepage](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS&oldid=409715](https://wiki.archlinux.org/index.php?title=CUPS&oldid=409715)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS&oldid=414599](https://wiki.archlinux.org/index.php?title=CUPS&oldid=414599)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

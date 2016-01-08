@@ -28,6 +28,9 @@ _wpa_supplicant_ is the IEEE 802.1X/WPA component that is used in the client sta
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
     *   [6.2 Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29)
+    *   [6.3 Password-related problems](#Password-related_problems)
+    *   [6.4 Lots of possibly unrelated error messages appear when running wpa_supplicant](#Lots_of_possibly_unrelated_error_messages_appear_when_running_wpa_supplicant)
+    *   [6.5 Failed to open config file](#Failed_to_open_config_file)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -345,6 +348,34 @@ See more about this bug here: [https://github.com/systemd/systemd/issues/1435](h
 
 This bug is not fixed in version 2.3 of [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant). In version 2.5 they added `Before=network.target` and `Wants=network.target` but still miss `After=dbus.service`. So after an update to 2.5 you can remove the `Before=network.target` and `Wants=network.target` from your `/etc/systemd/system/wpa_supplicant.service.d/override.conf`. After this bug has been fixed you can just remove `/etc/systemd/system/wpa_supplicant.service.d/override.conf`.
 
+### Password-related problems
+
+[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) may not work properly if directly passed via stdin particularly long or complex passphrases which include special characters. This may lead to errors such as `failed 4-way WPA handshake, PSK may be wrong` when launching [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
+
+In order to solve this try using here strings `wpa_passphrase <MYSSID> <<< "<passphrase>"` or passing a file to the `-c` flag instead:
+
+```
+$ wpa_supplicant -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+```
+
+In some instances it was found that storing the passphrase cleartext in the `psk` key of the `wpa_supplicant.conf` `network` block gave positive results (see [[[1]](http://www.linuxquestions.org/questions/linux-wireless-networking-41/wpa-4-way-handshake-failed-843394/)]). However, this approach is rather insecure. Using `wpa_cli` to create this file instead of manually writing it gives the best results most of the time and therefore is the recommended way to proceed.
+
+### Lots of possibly unrelated error messages appear when running wpa_supplicant
+
+If you're using a configuration file (`/etc/wpa_supplicant/wpa_supplicant.conf`) to launch [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and you're getting lots of different errors at once, you may be using the default template file, which contains many different sample `network` blocks. If none of these are commented out or removed, [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) will attempt to read them all and consequentially fail. Make sure you only specify `network` blocks for wireless access points you will actually associate with. Creating an empty `wpa_supplicant.conf` file and filling it up with the output obtained from `wpa_passphrase` or using `wpa_cli` instead to handle this task should be enough.
+
+### Failed to open config file
+
+If you get the following error when launching [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) you may need to create a valid `/etc/wpa_supplicant/wpa_supplicant.conf`. Running `wpa_cli` or pasting the output of `wpa_passphrase` into it should solve this issue.
+
+```
+Successfully initialized wpa_supplicant
+Failed to open config file '/dev/fd/63', error: No such file or directory
+Failed to read or parse configuration '/dev/fd/63'.
+
+```
+
 ## See also
 
 *   [WPA Supplicant home](http://hostap.epitest.fi/wpa_supplicant/)
@@ -354,7 +385,7 @@ This bug is not fixed in version 2.3 of [wpa_supplicant](https://www.archlinux.o
 *   [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli)
 *   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=412691](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=412691)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=414605](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=414605)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

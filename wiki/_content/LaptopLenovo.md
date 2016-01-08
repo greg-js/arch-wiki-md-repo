@@ -1860,8 +1860,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 ### Lenovo S21e-20
 
 *   Tested with [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> 802.11 wireless driver
-*   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)) you will also need to xf86_64-input-synaptics package([[2]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
-*   Although currently unstable and still in testing the 4.3 Kernel includes the previously mentioned patches
+*   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)). The current 4.3 kernel includes these patches. You will also need to install the xf86_64-input-synaptics package([[2]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
 
 #### tpacpi-bat
 
@@ -1873,7 +1872,7 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 
 *   [Think wiki](http://www.thinkwiki.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=412767](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=412767)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414671](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414671)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

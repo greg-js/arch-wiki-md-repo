@@ -43,10 +43,11 @@ _MATLAB is a high-level language and interactive environment for numerical compu
     *   [5.2 MATLAB crashes when displaying graphics](#MATLAB_crashes_when_displaying_graphics)
     *   [5.3 Blank/grey UI when using DWM/Awesome](#Blank.2Fgrey_UI_when_using_DWM.2FAwesome)
     *   [5.4 Garbled or invisible text](#Garbled_or_invisible_text)
-    *   [5.5 Installation](#Installation_2)
-    *   [5.6 Install-Time Library Errors](#Install-Time_Library_Errors)
-    *   [5.7 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
-    *   [5.8 Segmentation Fault on startup](#Segmentation_Fault_on_startup)
+    *   [5.5 Corrupted text and fonts in menus and fields](#Corrupted_text_and_fonts_in_menus_and_fields)
+    *   [5.6 Installation](#Installation_2)
+    *   [5.7 Install-Time Library Errors](#Install-Time_Library_Errors)
+    *   [5.8 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
+    *   [5.9 Segmentation Fault on startup](#Segmentation_Fault_on_startup)
 
 ## Overview
 
@@ -283,6 +284,10 @@ Then start Matlab.
 
 Set the environment variable `J2D_D3D` to `false`[[2]](https://stackoverflow.com/questions/22737535/swing-rendering-appears-broken-in-jdk-1-8-correct-in-jdk-1-7).
 
+### Corrupted text and fonts in menus and fields
+
+If you notice that the menus or the input fields are corrupted or not appearing correctly then you can try to activate the _"**Use antialiasing to smooth desktop fonts**"_ option in Matlab preferences, it seems to solve the problem. Go to _**Preferences -> Matlab -> Fonts**_ and activate it. You will need to restart Matlab in order to take affect.
+
 ### Installation
 
 As one installs Matlab, it might complain that it cannot find a package, for the most part just look at the package name and then install it with [Pacman](/index.php/Pacman "Pacman"), or in the case of x86_64 there are some libraries only in [AUR](/index.php/AUR "AUR").
@@ -315,7 +320,7 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=409486](https://wiki.archlinux.org/index.php?title=Matlab&oldid=409486)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=414640](https://wiki.archlinux.org/index.php?title=Matlab&oldid=414640)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

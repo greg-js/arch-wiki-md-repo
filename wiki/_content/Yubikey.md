@@ -13,7 +13,7 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
 *   [1 Introduction](#Introduction)
     *   [1.1 How does it work](#How_does_it_work)
     *   [1.2 Security risks](#Security_risks)
-        *   [1.2.1 AES key compromission](#AES_key_compromission)
+        *   [1.2.1 AES key compromise](#AES_key_compromise)
         *   [1.2.2 Validation requests/responses tampering](#Validation_requests.2Fresponses_tampering)
     *   [1.3 YubiCloud and validation servers](#YubiCloud_and_validation_servers)
 *   [2 Two-factor authentication with SSH](#Two-factor_authentication_with_SSH)
@@ -44,7 +44,7 @@ The validation server sends that authentication status back to the target system
 
 ### Security risks
 
-#### AES key compromission
+#### AES key compromise
 
 As you can imagine, the AES key should be kept very secret. It can not be retrieved from the Yubikey itself (or it should not, at least not with software). It is present in the validation server though, so the security of this server is very important.
 
@@ -216,7 +216,7 @@ In order for the U2F functionality to work with Chromium you need to install the
 
 To enable U2F support in Firefox, you need to install [this addon](https://github.com/prefiks/u2f4moz). Native support is currently [work in progress](https://bugzilla.mozilla.org/show_bug.cgi?id=1065729).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Yubikey&oldid=411090](https://wiki.archlinux.org/index.php?title=Yubikey&oldid=411090)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Yubikey&oldid=414634](https://wiki.archlinux.org/index.php?title=Yubikey&oldid=414634)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
