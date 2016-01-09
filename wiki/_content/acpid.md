@@ -88,14 +88,14 @@ $ netcat -U /var/run/acpid.socket
 Then press the power button and you will see something like this:
 
 ```
-power/button PBTN 00000000 00000b31
+button/power PBTN 00000000 00000b31
 
 ```
 
 The output of `acpi_listen` is sent to `/etc/acpi/handler.sh` as $1, $2 , $3 & $4 parameters. Example:
 
 ```
-$1 power/button
+$1 button/power
 $2 PBTN
 $3 00000000
 $4 00000b31
@@ -292,7 +292,7 @@ Where _handler.sh_ can be a script similar to `/etc/acpi/handler.sh`.
 *   [acpid homepage](http://acpid.sourceforge.net/)
 *   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acpid&oldid=401264](https://wiki.archlinux.org/index.php?title=Acpid&oldid=401264)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acpid&oldid=414694](https://wiki.archlinux.org/index.php?title=Acpid&oldid=414694)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

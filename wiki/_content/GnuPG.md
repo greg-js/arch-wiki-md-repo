@@ -4,6 +4,10 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+Related articles
+
+*   [Disk Encryption](/index.php/Disk_Encryption "Disk Encryption")
+
 [GnuPG](http://www.gnupg.org) allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories.
 
 ## Contents
@@ -12,15 +16,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [2 Environment variables](#Environment_variables)
     *   [2.1 GNUPGHOME](#GNUPGHOME)
 *   [3 Configuration file](#Configuration_file)
-*   [4 Basic keys management](#Basic_keys_management)
-    *   [4.1 Create key](#Create_key)
-    *   [4.2 Manage your key](#Manage_your_key)
-    *   [4.3 Exporting subkey](#Exporting_subkey)
-    *   [4.4 Rotating subkeys](#Rotating_subkeys)
-    *   [4.5 Import key](#Import_key)
-    *   [4.6 List keys](#List_keys)
-*   [5 Encrypt and decrypt](#Encrypt_and_decrypt)
-    *   [5.1 Encrypt a password](#Encrypt_a_password)
+*   [4 Usage](#Usage)
+    *   [4.1 Create key pair](#Create_key_pair)
+    *   [4.2 Backup your private key](#Backup_your_private_key)
+    *   [4.3 Share your public key](#Share_your_public_key)
+    *   [4.4 Import key](#Import_key)
+    *   [4.5 Encrypt and decrypt](#Encrypt_and_decrypt)
+*   [5 Key maintenance](#Key_maintenance)
+    *   [5.1 Edit your key](#Edit_your_key)
+    *   [5.2 Exporting subkey](#Exporting_subkey)
+    *   [5.3 Rotating subkeys](#Rotating_subkeys)
+    *   [5.4 List keys](#List_keys)
 *   [6 gpg-agent](#gpg-agent)
     *   [6.1 Configuration](#Configuration)
     *   [6.2 Reload the agent](#Reload_the_agent)
@@ -32,17 +38,25 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [8 Smartcards](#Smartcards)
     *   [8.1 GnuPG only setups](#GnuPG_only_setups)
     *   [8.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
-    *   [9.2 su](#su)
-    *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
-    *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [9.6 mutt and gpg](#mutt_and_gpg)
-    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
-*   [10 See also](#See_also)
+*   [9 Tips and tricks](#Tips_and_tricks)
+    *   [9.1 Different algorithm](#Different_algorithm)
+    *   [9.2 Encrypt a password](#Encrypt_a_password)
+    *   [9.3 Default options for new users](#Default_options_for_new_users)
+    *   [9.4 Revoking a key](#Revoking_a_key)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 Not enough random bytes available](#Not_enough_random_bytes_available)
+    *   [10.2 su](#su)
+    *   [10.3 Agent complains end of file](#Agent_complains_end_of_file)
+    *   [10.4 KGpg configuration permissions](#KGpg_configuration_permissions)
+    *   [10.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
+    *   [10.6 mutt and gpg](#mutt_and_gpg)
+    *   [10.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [10.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [10.9 Smartcard not detected](#Smartcard_not_detected)
+*   [11 See also](#See_also)
+    *   [11.1 Related applications](#Related_applications)
+        *   [11.1.1 GPG graphical frontends](#GPG_graphical_frontends)
+        *   [11.1.2 Email clients (or plugins) with GPG support](#Email_clients_.28or_plugins.29_with_GPG_support)
 
 ## Installation
 
@@ -50,100 +64,126 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. _pinentry_ is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
 
+If you want to use a graphical frontend or program that integrates with GnuPG, see [#Related_applications](#Related_applications).
+
 ## Environment variables
 
 ### GNUPGHOME
 
-`$GNUPGHOME` is used by GnuPG to point to the directory where all configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead, thus you will find a `~/.gnupg` directory right after the install. You may change this default setting by putting this line in one of your regular [startup files](/index.php/Startup_files "Startup files"):
-
-```
-export GNUPGHOME="_/path/to/directory_"
-
-```
+`$GNUPGHOME` is used by GnuPG to point to the directory where all configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead, thus you will find a `~/.gnupg` directory right after the install. You may change this default by setting `GNUPGHOME` it in one of your regular [startup files](/index.php/Startup_files "Startup files").
 
 **Note:** By default, the gnupg directory has its [Permissions](/index.php/Permissions "Permissions") set to _700_ and the files it contains have their permissions set to _600_. Only the owner of the directory has permission to read, write and access the files (_r_,_w_,_x_). This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
 
 ## Configuration file
 
-Default is `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. If you want to change the default location, either run gpg this way `$ gpg --homedir _path/to/file_` or use `$GNUPGHOME` variable.
+Default is `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. If you want to change the default location, either run gpg this way `$ gpg --homedir _path/to/file_` or use `$GNUPGHOME` variable. Append in this file any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find a skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run for any operation if it doesn't exist. Other examples are found in [#See_also](#See_also).
 
-Append in this file any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find a skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run for any operation if it doesn't exist. Following is a basic configuration file:
+## Usage
 
- `~/.gnupg/gpg.conf` 
+**Note:**
 
-```
-default-key _name_            # useful in case you manage several keys and want to set a default one
-keyring _file_                # will add _file_ to the current list of keyrings
-trustdb-name _file_           # use _file_ instead of the default trustdb
-homedir _dir_                 # set the name of the gnupg home dir to _dir_ instead of ~/.gnupg
-display-charset utf-8       # bypass all translation and assume that the OS uses native UTF-8 encoding
-keyserver _name_              # use _name_ as your keyserver
-no-greeting                 # suppress the initial copyright message
-armor                       # create ASCII armored output. Default is binary OpenPGP format
+*   Whenever a _`<user-id>`_ is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
+*   Some of these steps may be provided by an external program depending on your usage, such as an email client. See [#Related_applications](#Related_applications).
 
-```
+### Create key pair
 
-If you want to setup some default options for new users, put configuration files in `/etc/skel/.gnupg/`. When the new user is added in system, files from here will be copied to its GnuPG home directory. There is also a simple script called _addgnupghome_ which you can use to create new GnuPG home directories for existing users:
-
-```
-# addgnupghome user1 user2
-
-```
-
-This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and copy the files from the skeleton directory to it. Users with existing GnuPG home directory are simply skipped.
-
-## Basic keys management
-
-**Note:** Whenever a _`<user-id>`_ is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
-
-### Create key
-
-Firstly, you may want to use stronger algorithms:
-
- `~/.gnupg/gpg.conf` 
-
-```
-...
-
-personal-digest-preferences SHA512
-cert-digest-algo SHA512
-default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
-personal-cipher-preferences TWOFISH CAMELLIA256 AES 3DES
-
-```
-
-In the latest version of GnuPG, the default algorithms used are SHA256 and AES, both of which are secure enough for most people. However, if you are using a version of GnuPG older than 2.1, or if you want an even higher level of security, then you should follow the above step.
-
-Now generate a private key by typing in a terminal:
+Generate a key pair by typing in a terminal:
 
 ```
 $ gpg --full-gen-key
 
 ```
 
-**Note:**
-
-*   The `--full-gen-key` option is available since [gnupg](https://www.archlinux.org/packages/?name=gnupg)-2.1.0.
-*   You can use `--expert` for getting alternative ciphers available (like [ECC Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography")).
+**Tip:** You can use `--expert` for getting alternative ciphers available (like [ECC Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography")).
 
 You will be asked several questions. In general, most users will want both a RSA (sign only) and a RSA (encrypt only) key. A keysize of 2048 is sufficient. Using 4096 ["gives us almost nothing, while costing us quite a lot."](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096)
 
 While having an expiration date for subkeys is not technically necessary, it is considered good practice. A period of a year is generally good enough for the average user. This way even if you lose access to your keyring, it will allow others to know that it is no longer valid. Note that you can extend the expiry date after key creation without having to re-issue a new key.
 
-### Manage your key
+Be sure to [choose a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
 
-*   Running the `gpg --edit-key _<user-id>_` command will present a menu which enables you to do most of your key management related tasks. Following is an example to set your expiration date:
+### Backup your private key
+
+To backup your private key do the following:
 
 ```
-$ gpg --edit-key _<user-id>_
-> key _number_
-> expire _yyyy-mm-dd_
-> save
-> quit
+$ gpg --export-secret-keys --armor _<user-id>_ > privkey.asc
 
 ```
 
-Some useful commands:
+Place the private key in a safe place, such as a locked container or encrypted drive.
+
+**Warning:** Anyone who gains access to the above exported file will be able to encrypt and sign documents as if they were you _without_ needing to know your passphrase.
+
+### Share your public key
+
+In order for others to send encrypted messages to you, they need your public key.
+
+To generate an ASCII version of your public key (e.g. to distribute it by e-mail):
+
+```
+$ gpg --armor --output public.key --export _<user-id>_
+
+```
+
+You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
+
+```
+$ gpg  --keyserver pgp.mit.edu --send-keys _<key-id>_
+
+```
+
+### Import key
+
+In order to encrypt messages to others, you need their public key. To import a public key to your public key ring:
+
+```
+$ gpg --import public.key
+
+```
+
+Import key from a key server (if `--keyserver` is omitted, the default is used):
+
+```
+$ gpg --keyserver pgp.mit.edu --recv-keys <keyid>
+
+```
+
+**Tip:** An alternative key server is `pool.sks-keyservers.net`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
+
+### Encrypt and decrypt
+
+When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key. This can be done by using the option `-u _<user-id>_` or by using the option `--local-user _<user-id>_`. This causes the default key to use to be replaced by wanted key.
+
+To encrypt a file using ASCII armor (suitable for copying and pasting a message in text format), use:
+
+```
+$ gpg --encrypt --armor secret.txt
+
+```
+
+If you want to just encrypt a file, exclude `--armor`.
+
+**Tip:** If you want to change recipient this can be done by the option `-r _<user-id>_` (or `--recipient _<user-id>_`).
+
+**Note:** You can use gnupg to encrypt your sensitive documents, but only individual files at a time. If you want to encrypt directories or a whole file-system you should consider using [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS"), though you can always tarball various files and then encrypt them.
+
+To decrypt a file, use:
+
+```
+$ gpg --decrypt secret.txt.asc
+
+```
+
+You will be prompted to enter your passphrase. You will need to have already imported the sender's public key to decrypt a file or message from them.
+
+## Key maintenance
+
+### Edit your key
+
+Running the `gpg --edit-key _<user-id>_` command will present a menu which enables you to do most of your key management related tasks.
+
+Some useful commands in the edit key sub menu:
 
 ```
 > passwd       # change the passphrase
@@ -154,35 +194,9 @@ Some useful commands:
 
 ```
 
+Type `help` in the edit key sub menu for more commands.
+
 **Tip:** If you have multiple email accounts you can add each one of them as an identity, using `adduid` command. You can then set your favourite one as `primary`.
-
-*   Generate an ASCII version of your public key (e.g. to distribute it by e-mail):
-
-```
-$ gpg --armor --output public.key --export _<user-id>_
-
-```
-
-*   Register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
-
-```
-$ gpg  --keyserver pgp.mit.edu --send-keys _<key-id>_
-
-```
-
-*   Sign and encrypt for user Bob
-
-```
-$ gpg -se -r Bob _file_
-
-```
-
-*   make a clear text signature
-
-```
-$ gpg --clearsign _file_
-
-```
 
 ### Exporting subkey
 
@@ -235,7 +249,7 @@ If you have set your subkeys to expire after a set time, you can create new ones
 
 **Note:** You do not need to create a new key simply because it is expired. You can extend the expiration date.
 
-*   Create new subkey (repeat for both signing and encrypting key)
+Create new subkey (repeat for both signing and encrypting key)
 
 ```
 $ gpg --edit-key _<user-id>_
@@ -245,102 +259,37 @@ $ gpg --edit-key _<user-id>_
 
 And answer the following questions it asks (see previous section for suggested settings).
 
-*   Save changes
+Save changes
 
 ```
 > save
 
 ```
 
-*   Update it to a keyserver.
+Update it to a keyserver.
 
 ```
-$ gpg  --keyserver pgp.mit.edu --send-keys _<user-id>_
+$ gpg --keyserver pgp.mit.edu --send-keys _<user-id>_
 
 ```
 
 **Note:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
 
-### Import key
-
-*   Import a public key to your public key ring:
-
-```
-$ gpg --import public.key
-
-```
-
-*   Import a private key to your secret key ring:
-
-```
-$ gpg --import private.key
-
-```
-
-*   Import key from a key server (if `--keyserver` is omitted, the default is used):
-
-```
-$ gpg --keyserver pgp.mit.edu --recv-keys <keyid>
-
-```
-
-**Tip:** An alternative key server is `pool.sks-keyservers.net`, see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
-
 ### List keys
 
-*   Keys in your public key ring:
+To list keys in your public key ring:
 
 ```
 $ gpg --list-keys
 
 ```
 
-*   Keys in your secret key ring:
+To list keys in your secret key ring:
 
 ```
 $ gpg --list-secret-keys
 
 ```
-
-## Encrypt and decrypt
-
-When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key. This can be done by using the option `-u _<user-id>_` or by using the option `--local-user _<user-id>_`. This causes the default key to use to be replaced by wanted key.
-
-To encrypt a file, use:
-
-```
-$ gpg --encrypt -o secret.tar.gpg secret.tar
-
-```
-
-*   If you want to change recipient this can be done by the option `-r _<user-id>_` (or `--recipient _<user-id>_`).
-*   You can use gnupg to encrypt your sensitive documents, but only individual files at a time. If you want to encrypt directories or a whole file-system you should consider using [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS"), though you can always tarball various files and then encrypt them.
-
-To decrypt a file, use:
-
-```
-$ gpg --decrypt secret.tar.gpg
-
-```
-
-You will be prompted to enter your passphrase.
-
-### Encrypt a password
-
-It can be useful to encrypt some password, so it will not be written in clear on a configuration file. A good example is your email password.
-
-First create a file with your password. You **need** to leave **one** empty line after the password, otherwise gpg will return an error message when evaluating the file.
-
-Then run:
-
-```
-$ gpg -e -a -r _<user-id>_ _your_password_file_
-
-```
-
-`-e` is for encrypt, `-a` for armor (ASCII output), `-r` for recipient user ID.
-
-You will be left with a new `_your_password_file_.asc` file.
 
 ## gpg-agent
 
@@ -540,6 +489,81 @@ disable-ccid
 
 Please check `man scdaemon` if you do not use OpenSC.
 
+## Tips and tricks
+
+### Different algorithm
+
+You may want to use stronger algorithms:
+
+ `~/.gnupg/gpg.conf` 
+
+```
+...
+
+personal-digest-preferences SHA512
+cert-digest-algo SHA512
+default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
+personal-cipher-preferences TWOFISH CAMELLIA256 AES 3DES
+
+```
+
+In the latest version of GnuPG, the default algorithms used are SHA256 and AES, both of which are secure enough for most people. However, if you are using a version of GnuPG older than 2.1, or if you want an even higher level of security, then you should follow the above step.
+
+### Encrypt a password
+
+It can be useful to encrypt some password, so it will not be written in clear on a configuration file. A good example is your email password.
+
+First create a file with your password. You **need** to leave **one** empty line after the password, otherwise gpg will return an error message when evaluating the file.
+
+Then run:
+
+```
+$ gpg -e -a -r _<user-id>_ _your_password_file_
+
+```
+
+`-e` is for encrypt, `-a` for armor (ASCII output), `-r` for recipient user ID.
+
+You will be left with a new `_your_password_file_.asc` file.
+
+### Default options for new users
+
+If you want to setup some default options for new users, put configuration files in `/etc/skel/.gnupg/`. When the new user is added in system, files from here will be copied to its GnuPG home directory. There is also a simple script called _addgnupghome_ which you can use to create new GnuPG home directories for existing users:
+
+```
+# addgnupghome user1 user2
+
+```
+
+This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and copy the files from the skeleton directory to it. Users with existing GnuPG home directory are simply skipped.
+
+### Revoking a key
+
+Revoking a key withdraws it from public use.
+
+First generate a revocation certificate. This can be done in advance with the certificate stored in a safe place, such as a locked container or encrypted disk:
+
+```
+$ gpg --output revoke.asc --gen-revoke _KEYNAME_
+
+```
+
+Later, to revoke your key, do the following:
+
+```
+$ gpg --import revoke.asc
+
+```
+
+**Warning:** Key revocation should only be performed if your key is compromised or lost, or you forget your passphrase.
+
+Now update the keyserver:
+
+```
+$ gpg --keyserver subkeys.pgp.net --send _KEYNAME_
+
+```
+
 ## Troubleshooting
 
 ### Not enough random bytes available
@@ -661,14 +685,53 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 
 ## See also
 
-*   [The GNU Privacy Handbook](http://gnupg.org/gph/en/manual.html)
+*   [GNU Privacy Guard Homepage](https://gnupg.org/)
+*   [Creating GPG Keys (Fedora)](https://fedoraproject.org/wiki/Creating_GPG_Keys)
+*   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
 *   [A more comprehensive gpg Tutorial](http://blog.sanctum.geek.nz/series/linux-crypto/)
-*   [GnuPG FAQ](https://www.gnupg.org/faq/gnupg-faq.html)
 *   [gpg.conf recommendations and best practices](https://help.riseup.net/en/security/message-security/openpgp/gpg-best-practices)
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
-*   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
+*   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=413815](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=413815)"
+### Related applications
+
+#### GPG graphical frontends
+
+*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — _a simple interface for GnuPG_ for KDE.
+
+[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
+
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — _GNOME application for managing encryption keys and passwords in the GnomeKeyring._
+
+[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
+
+#### Email clients (or plugins) with GPG support
+
+*   **[Claws Mail](https://en.wikipedia.org/wiki/Claws_mail "wikipedia:Claws mail")** — _an email client (and news reader), based on GTK+._
+
+[http://www.claws-mail.org/](http://www.claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
+
+*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — _a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard._
+
+[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup>
+
+*   **[Evolution](/index.php/Evolution "Evolution")** — GNOME mail client.
+
+[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution](https://www.archlinux.org/packages/?name=evolution)
+
+*   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — KDE mail client.
+
+[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
+
+*   **[mutt](/index.php/Mutt "Mutt")** — _All mail clients suck. This one just sucks less._
+
+[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
+
+*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — _Lightweight and user-friendly e-mail client._
+
+[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414746](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414746)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

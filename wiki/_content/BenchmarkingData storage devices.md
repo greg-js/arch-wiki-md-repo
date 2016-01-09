@@ -82,6 +82,8 @@ w bytes (x GB) copied, y s, z MB/s
 
 ```
 
+**Tip:** See [dd-benchmark](https://romanrm.net/dd-benchmark) for an explanation on the requirement to `sync` and further related `dd` options.
+
 Next, clear the buffer-cache to accurately measure read speeds directly from the device:
 
 ```
@@ -133,7 +135,7 @@ sys      0m51.160s
 
 Calculate MB/s by dividing the output of the dcfldd command by the time in seconds. For this example: 75776Mb / (16.4 min * 60) = 77.0 MB/s.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=412621](https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=412621)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=414754](https://wiki.archlinux.org/index.php?title=Benchmarking/Data_storage_devices&oldid=414754)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

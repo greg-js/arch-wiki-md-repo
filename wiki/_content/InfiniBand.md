@@ -272,7 +272,7 @@ Recent kernels have InfiniBand modules compiled in, and they just need to be loa
 
 <td>(Always)</td>
 
-<td>Core connected mode</td>
+<td>Core connection manager</td>
 
 <td>iw_cm, ib_cm, and rdma_cm</td>
 
@@ -465,7 +465,7 @@ You only need `ipoibmodemtu` if you want to change the default connection mode a
 
 Different setups will see different results. Some people see a gigantic (double+) speed increase by usign `connected` mode and MTU `65520`, and a few see about the same or even worse speeds. Use [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) and/or [iperf](#iperf_-_Measure_performance_over_TCP.2FIP) to fine-tune your system.
 
-In the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples given in this article, here are results with various fine-tuning:
+Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples given in this article, here are author's results on a SDR speed InfiniBand network (8 theoretical Gb/s) with various fine-tuning:
 
 <table class="wikitable">
 
@@ -568,7 +568,7 @@ There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI
     *   Login to discovered targets. Run `iscsiadm -m node -L all`.
     *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3`. The block device ID will be the last line in the tree for each target. `-P` is the print command, and its option is the verbosity level. Only verbosity level 3 lists the block device IDs.
 
-Now, on the initiator ("guest") system, you should be able to use your new iSCSI-backed block device just like any other. i.e. `fdisk /dev/_block_device_id_`, {{ic|mkfs.btrfs /dev/_block_device_id_with_partition_number_}.
+Now, on the initiator ("guest") system, you should be able to use your new iSCSI-backed block device just like any other. i.e. `fdisk /dev/_block_device_id_`, `mkfs.btrfs /dev/_block_device_id_with_partition_number_`.
 
 ## InfiniBand programs for diagnosing and benchmarking
 
@@ -891,7 +891,7 @@ librdmacm (and formerly libsdp) use `LD_PRELOAD` to intercept non-Infiniband pro
 
 libsdp was deprecated. The ib_sdp kernel module is no longer maintained or distributed.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=InfiniBand&oldid=401100](https://wiki.archlinux.org/index.php?title=InfiniBand&oldid=401100)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=InfiniBand&oldid=414700](https://wiki.archlinux.org/index.php?title=InfiniBand&oldid=414700)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

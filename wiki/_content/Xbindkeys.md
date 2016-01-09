@@ -9,7 +9,7 @@ Related articles
 *   [Xmodmap](/index.php/Xmodmap "Xmodmap")
 *   [Sxhkd](/index.php/Sxhkd "Sxhkd")
 
-Xbindkeys is a program that enables us to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is window manager / DE independent, so if you switch much, xbindkeys is very handy.
+Xbindkeys is a program that allows to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is window manager / DE independent, so if you switch much, xbindkeys is very handy.
 
 ## Contents
 
@@ -17,9 +17,10 @@ Xbindkeys is a program that enables us to bind commands to certain keys or key c
 *   [2 Configuration](#Configuration)
     *   [2.1 Xbindkeysrc](#Xbindkeysrc)
     *   [2.2 GUI method](#GUI_method)
-*   [3 Usage](#Usage)
-*   [4 Simulating multimedia keys](#Simulating_multimedia_keys)
-*   [5 Troubleshooting](#Troubleshooting)
+*   [3 Identifying keycodes](#Identifying_keycodes)
+*   [4 Making changes permanent](#Making_changes_permanent)
+*   [5 Simulating multimedia keys](#Simulating_multimedia_keys)
+*   [6 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -46,22 +47,6 @@ $ xbindkeys -d > ~/.xbindkeysrc
 Now you can either edit `~/.xbindkeysrc` to set keybindings, or you can do that with the GUI.
 
 ### Xbindkeysrc
-
-To see the format of a configuration file entry, enter the following command:
-
-```
-$ xbindkeys -k
-
-```
-
-A blank window will pop up. Press the key(s) to which you wish to assign a command and _xbindkeys_ will output a handy snippet that can be entered into `~/.xbindkeysrc`. For example, while the blank window is open, press `Alt+o` to get the following output (results may vary):
-
-```
-"(Scheme function)"
-    m:0x8 + c:32
-    Alt + o
-
-```
 
 The first line represents a command. The second contains the state (0x8) and keycode (32) as reported by `xev`. The third line contains the keysyms associated with the given keycodes. To use this output, copy either one of the last two lines to `~/.xbindkeysrc` and replace "(Scheme function)" with the command you wish to perform. Here is an example configuration file that binds Fn key combos on a laptop to [pamixer](https://www.archlinux.org/packages/?name=pamixer) commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
 
@@ -105,7 +90,7 @@ pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 ```
 
-Another possibilty is to use amixer (part of the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
+Another possibility is to use amixer (part of the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
 
 ```
 amixer -c 1 set Master 5+
@@ -114,7 +99,7 @@ amixer -c 1 set Master toggle
 
 ```
 
-**Tip:** Use `xbindkeys -mk` to keep the key prompt open for multiple keypresses. Press `q` to quit.
+**Tip:** After you made a change, execute `xbindkeys -p` to reload the configuration file and apply the changes.
 
 ### GUI method
 
@@ -125,7 +110,27 @@ $ xbindkeys_config
 
 ```
 
-## Usage
+## Identifying keycodes
+
+To find the keycodes for a particular key, enter the following command:
+
+```
+$ xbindkeys -k
+
+```
+
+A blank window will pop up. Press the key(s) to which you wish to assign a command and _xbindkeys_ will output a handy snippet that can be entered into `~/.xbindkeysrc`. For example, while the blank window is open, press `Alt+o` to get the following output (results may vary):
+
+```
+"(Scheme function)"
+    m:0x8 + c:32
+    Alt + o
+
+```
+
+**Tip:** Use `xbindkeys -mk` to keep the key prompt open for multiple keypresses. Press `q` to quit.
+
+## Making changes permanent
 
 Once you're done configuring your keys, edit your [xprofile](/index.php/Xprofile "Xprofile") or [xinitrc](/index.php/Xinitrc "Xinitrc") file (depending on your window manager) and place
 
@@ -177,7 +182,7 @@ $ xbindkeys -n
 
 By pressing the non-working key, you will be able to see any error _xbindkeys_ encounter (e.g: mistyped command/keycode,...).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=412217](https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=412217)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=414703](https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=414703)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

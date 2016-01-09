@@ -187,7 +187,7 @@ The kernel officially supports the following schedulers for storage disk in-/out
 *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler")
 *   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler").
 
-Unofficial support is available through the [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") (Budget Fair Scheduler) which is compiled the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel as well as many kernels in the [AUR](/index.php/AUR "AUR").
+Unofficial support is available through the [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") (Budget Fair Queueing) which is compiled the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel as well as many kernels in the [AUR](/index.php/AUR "AUR").
 
 A more contemporary option (since kernel version 3.16) is [Multi-Queue Block IO Queuing Mechanism](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) or blk-mq for short. Blk-mq leverages a CPU with multiple cores to map I/O queries to multiple queues. The tasks are distributed across multiple threads and therefore to multiple CPU cores (per-core software queues) and can speed up read/write operations vs. traditional I/O schedulers.
 
@@ -438,7 +438,7 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414565](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414565)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414718](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414718)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

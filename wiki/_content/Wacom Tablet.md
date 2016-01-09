@@ -36,11 +36,12 @@ This guide was started for _USB_ based Wacom tablets, so much of the info in her
     *   [2.3 Force Proportions](#Force_Proportions)
     *   [2.4 Using kcm-wacomtablet](#Using_kcm-wacomtablet)
 *   [3 Application-specific configuration](#Application-specific_configuration)
-    *   [3.1 GIMP](#GIMP)
-    *   [3.2 Inkscape](#Inkscape)
-    *   [3.3 Krita](#Krita)
-    *   [3.4 VirtualBox](#VirtualBox)
-    *   [3.5 Web Browser Plugin](#Web_Browser_Plugin)
+    *   [3.1 Blender](#Blender)
+    *   [3.2 GIMP](#GIMP)
+    *   [3.3 Inkscape](#Inkscape)
+    *   [3.4 Krita](#Krita)
+    *   [3.5 VirtualBox](#VirtualBox)
+    *   [3.6 Web Browser Plugin](#Web_Browser_Plugin)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Unknown device_type](#Unknown_device_type)
     *   [4.2 System freeze](#System_freeze)
@@ -346,6 +347,8 @@ xsetwacom --set "$pad"    Rotate $1
 
 It is possible to remap the buttons with hotkeys.
 
+*   Check [Simple web-based GUI for xsetwacom](http://planetedessonges.org:8010/wakey/), supports _bamboo small_ but more models may come.
+
 ##### Finding out the button IDs
 
 Sometimes it needs some trial&error to find the correct button IDs. For me they even differ for `xsetwacom` and the `xorg.conf` configuration. Very helpful tools are `xev` or `xbindkeys -mk`. An easy way to proceed is the following
@@ -596,6 +599,18 @@ The KDE configuration module [kcm-wacomtablet](https://aur.archlinux.org/package
 
 ## Application-specific configuration
 
+### Blender
+
+To enable pad buttons and extra pen buttons in blender, you can create a xsetwacom wrapper to temporarily remap buttons for your blender session.
+
+Provided example (for Bamboo fun) adapted to **Sculpt** mode: [blender_sculpt.sh](http://pastebin.archlinux.fr/1887946)
+
+It remaps
+
+*   Left tablet buttons to **Shift** and **Control** _(pan/tilt/zoom/smooth/invert)_
+*   Right tablet buttons to **F** _(brush size/strenght)_ and **Control-z** _(undo)_
+*   Top pen button ton **m** _(mask control)_
+
 ### GIMP
 
 To enabled proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to _Edit → Input Devices_. Now for each of your _eraser_, _stylus_, and _cursor_ **devices**, set the **mode** to _Screen_, and remember to save.
@@ -655,7 +670,7 @@ If your system freezes when your tablet gets activated by the stylus, then you w
 *   [Ubuntu Help: Wacom](https://help.ubuntu.com/community/Wacom)
 *   [Ubuntu Forums - Install a LinuxWacom Kernel Driver for Tablet PC's](http://ubuntuforums.org/showthread.php?t=1038949)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=413737](https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=413737)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=414765](https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=414765)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -546,6 +546,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://te4.org/](http://te4.org/) || [tome2](https://aur.archlinux.org/packages/tome2/)<sup><small>AUR</small></sup> [tome3](https://aur.archlinux.org/packages/tome3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tome3)]</sup> [tome4](https://aur.archlinux.org/packages/tome4/)<sup><small>AUR</small></sup>
 
+*   **wanderer** — Wanderer is a game similar to Boulderdash, Repton, XOR and others.
+
+[http://e271.net/~marina/wanderer.html](http://e271.net/~marina/wanderer.html) || [wanderer](https://aur.archlinux.org/packages/wanderer/)<sup><small>AUR</small></sup> [wanderer-git](https://aur.archlinux.org/packages/wanderer-git/)<sup><small>AUR</small></sup>
+
 ## Role-Playing Game (RPG)
 
 *   **Arx Libertatis** — This project is a fully working, open source port of Arx Fatalis, a 2002 first-person role-playing game developed by Arkane Studios. It features some improvements over the original engine like bug fixes and wide screen support.
@@ -1100,7 +1104,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=413942](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=413942)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=414764](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=414764)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

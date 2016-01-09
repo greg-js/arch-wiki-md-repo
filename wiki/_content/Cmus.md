@@ -178,7 +178,7 @@ Now when you use the `XF86AudioPlay` key on your keyboard, cmus will open up. If
 *   [Git Repository](https://github.com/cmus/cmus)
 *   [Website](https://cmus.github.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=413958](https://wiki.archlinux.org/index.php?title=Cmus&oldid=413958)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=414735](https://wiki.archlinux.org/index.php?title=Cmus&oldid=414735)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

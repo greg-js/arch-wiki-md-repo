@@ -12,6 +12,7 @@ Related articles
 *   [EncFS](/index.php/EncFS "EncFS")
 *   [Tomb](/index.php/Tomb "Tomb")
 *   [tcplay](/index.php/Tcplay "Tcplay")
+*   [GnuPG](/index.php/GnuPG "GnuPG")
 
 This article discusses common techniques available in Arch Linux for cryptographically protecting a logical part of a storage disk (folder, partition, whole disk, ...), so that all data that is written to it is automatically encrypted, and decrypted on-the-fly when read again.
 
@@ -1387,7 +1388,7 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 13.  [^](#encfs_acceleration) [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
 14.  [^](#compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=401266](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=401266)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=414686](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=414686)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

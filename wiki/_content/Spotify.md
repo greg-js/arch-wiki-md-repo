@@ -443,6 +443,8 @@ Change @https to @http:
 
 See original form post [here](http://community.spotify.com/t5/Help-Desktop-Linux-Mac-and/Mac-Windows-0-9-0-128-Apps-can-t-connect-anywhere-behind-proxy/m-p/448704#M52332).
 
+**Note:** As of 1.0.17 it looks like replacing https with http as suggested above can result in no connectivity at all. If this happens an alternative solution is to set 'no proxy' in the GUI use [proxychains-ng](https://www.archlinux.org/packages/?name=proxychains-ng) to force all TCP connection coming from the app through a proxy. Even with HTTP proxies that reject connections on port 80 (and only work for port 443) this works reliably.
+
 ### Spotify does not detect other devices on local network
 
 If a firewall is in place, open ports 57621 for UDP and TCP. If you use a variant of the [iptables](/index.php/Iptables "Iptables") [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"), the following should do it:
@@ -489,7 +491,7 @@ So your full launch path should look something like this:
 *   [http://www.spotify.com/int/help/faq/wine/](http://www.spotify.com/int/help/faq/wine/)
 *   [http://www.spotify.com/int/download/previews/](http://www.spotify.com/int/download/previews/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=413806](https://wiki.archlinux.org/index.php?title=Spotify&oldid=413806)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=414744](https://wiki.archlinux.org/index.php?title=Spotify&oldid=414744)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -15,7 +15,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 
-**翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-12-05，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=410894)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-1-08，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=414551)可以查看翻译后英文页面的改动。
 
 欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的 [ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man _command_`以查询相关`man`手册页。
 
@@ -35,7 +35,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [3.5 用 parted 进行分区](#.E7.94.A8_parted_.E8.BF.9B.E8.A1.8C.E5.88.86.E5.8C.BA)
         *   [3.5.1 UEFI/GPT 示例](#UEFI.2FGPT_.E7.A4.BA.E4.BE.8B)
         *   [3.5.2 BIOS/MBR 示例](#BIOS.2FMBR_.E7.A4.BA.E4.BE.8B)
-    *   [3.6 创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+    *   [3.6 格式化文件系统并使用swap](#.E6.A0.BC.E5.BC.8F.E5.8C.96.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.B9.B6.E4.BD.BF.E7.94.A8swap)
 *   [4 安装](#.E5.AE.89.E8.A3.85)
     *   [4.1 选择安装镜像](#.E9.80.89.E6.8B.A9.E5.AE.89.E8.A3.85.E9.95.9C.E5.83.8F)
     *   [4.2 安装基本软件包](#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85)
@@ -48,8 +48,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [5.6 创建初始 ramdisk 环境](#.E5.88.9B.E5.BB.BA.E5.88.9D.E5.A7.8B_ramdisk_.E7.8E.AF.E5.A2.83)
     *   [5.7 设置 Root 密码](#.E8.AE.BE.E7.BD.AE_Root_.E5.AF.86.E7.A0.81)
     *   [5.8 安装 bootloader](#.E5.AE.89.E8.A3.85_bootloader)
-        *   [5.8.1 BIOS/MBR](#BIOS.2FMBR)
-        *   [5.8.2 UEFI/GPT](#UEFI.2FGPT)
+        *   [5.8.1 UEFI/GPT](#UEFI.2FGPT)
+        *   [5.8.2 BIOS/MBR](#BIOS.2FMBR)
     *   [5.9 配置网络](#.E9.85.8D.E7.BD.AE.E7.BD.91.E7.BB.9C)
         *   [5.9.1 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
         *   [5.9.2 有线网络](#.E6.9C.89.E7.BA.BF.E7.BD.91.E7.BB.9C)
@@ -342,7 +342,7 @@ Ignore/Cancel?
 
 ```
 
-### 创建文件系统
+### 格式化文件系统并使用swap
 
 仅仅分区是不够的，还需要 `mkfs` 将分区格式化为指定的[文件系统](/index.php/File_Systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File Systems (简体中文)")。
 
@@ -551,6 +551,17 @@ FONT=lat9w-16
 
 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)") 包含了可用选项和相应的配置. Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 并根据 [Microcode](/index.php/Microcode "Microcode") 配置 boot loader.
 
+#### UEFI/GPT
+
+安装程序假定系统使用 GPT 分区表，具有 [Unified Extensible Firmware Interface#EFI 系统分区](/index.php/Unified_Extensible_Firmware_Interface#EFI_.E7.B3.BB.E7.BB.9F.E5.88.86.E5.8C.BA "Unified Extensible Firmware Interface")，FAT32 格式，512 MiB 或更大，gdisk type 为 `EF00`). EFI 系统分区挂载到 `/boot`。
+
+安装 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 到 EFI 系统分区：
+
+```
+# bootctl install
+
+```
+
 #### BIOS/MBR
 
 下面介绍在 MBR 系统上使用 Grub。安装 [grub](https://www.archlinux.org/packages/?name=grub) 和 [os-prober](https://www.archlinux.org/packages/?name=os-prober) 包，并执行 `grub-install`. 须根据实际分区自行调整 `/dev/sda`, **切勿**在块设备后附加数字，比如 `/dev/sda**1**` 就不对.
@@ -570,38 +581,7 @@ FONT=lat9w-16
 
 详情参考[GRUB](/index.php/GRUB "GRUB") 。
 
-#### UEFI/GPT
-
-安装程序假定系统使用 GPT 分区表，具有 [Unified Extensible Firmware Interface#EFI 系统分区](/index.php/Unified_Extensible_Firmware_Interface#EFI_.E7.B3.BB.E7.BB.9F.E5.88.86.E5.8C.BA "Unified Extensible Firmware Interface")，FAT32 格式，512 MiB 或更大，gdisk type 为 `EF00`). EFI 系统分区挂载到 `/boot`。
-
-bootctl 是 systemd 的一部分，已经作为基础系统的一部分安装完成。
-
-```
-# bootctl install
-
-```
-
-bootctl 会创建 `/boot/loader/entries/arch.conf` 并添加以下内容，别忘了把 `/dev/sdaX` 改为您的实际根分区，例如`/dev/sda1`:
-
- `# nano /boot/loader/entries/arch.conf` 
-
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=**/dev/sdaX** rw
-```
-
-然后创建 `/boot/loader/loader.conf`，并写入下面配置:
-
- `# nano /boot/loader/loader.conf` 
-
-```
-default  arch
-timeout  5
-```
-
-详见[systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)").
+当成功执行以上命令之后，依照 [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") 中的描述为系统创建一个引导入口（将 `$esp` 替换为 `/boot`）。或者使用 `/usr/share/systemd/bootctl/` 的示例配置文件。
 
 ### 配置网络
 
@@ -686,7 +666,7 @@ _systemd_ 在关机时会自动卸载分区，为了确保安全，可以用 `um
 
 [Arch Linux 中文化](/index.php/Arch_Linux_%E4%B8%AD%E6%96%87%E5%8C%96 "Arch Linux 中文化") 页面还包含了关于系统、软件中文支持的内容。
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=411839](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=411839)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=414683](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=414683)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

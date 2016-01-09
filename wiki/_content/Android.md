@@ -376,7 +376,7 @@ To build any version of Android, you need to install these packages:
 
 *   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
 
-*   AUR Packages: [libtinfo](https://aur.archlinux.org/packages/libtinfo/)<sup><small>AUR</small></sup>
+*   AUR Packages: [libtinfo](https://aur.archlinux.org/packages/libtinfo/)<sup><small>AUR</small></sup> [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup>
 
 To build Android 6+, you need to install these additional packages:
 
@@ -647,7 +647,7 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=413856](https://wiki.archlinux.org/index.php?title=Android&oldid=413856)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=414756](https://wiki.archlinux.org/index.php?title=Android&oldid=414756)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

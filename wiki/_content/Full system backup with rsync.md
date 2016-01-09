@@ -140,7 +140,7 @@ If you transferred the data from HDD to SSD (solid state drive), do not forget t
 
 *   [Howto – local and remote snapshot backup using rsync with hard links](http://blog.pointsoftware.ch/index.php/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) Includes file deduplication with hard-links, MD5 integrity signature, 'chattr' protection, filter rules, disk quota, retention policy with exponential distribution (backups rotation while saving more recent backups than older)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=414355](https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=414355)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=414731](https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=414731)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

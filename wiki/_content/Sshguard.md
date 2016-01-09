@@ -131,7 +131,7 @@ If you have [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) inst
 
 ### Change danger level
 
-By default in the archlinux package, offenders become permanently banned once they have reached a "danger" level of 40 (or 4 failed logins; see [terminology](http://www.sshguard.net/docs/terminology/) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
+By default in the Arch-provided systemd unit, offenders become permanently banned once they have reached a "danger" level of 120 (or 12 failed logins; see [terminology](http://www.sshguard.net/docs/terminology/) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
 
 [Edit the provided systemd unit](/index.php/Systemd#Editing_provided_units "Systemd") and change the `ExecStart=` line:
 
@@ -177,7 +177,7 @@ Then use the following command to unban, with the line-number as identified in t
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshguard&oldid=414543](https://wiki.archlinux.org/index.php?title=Sshguard&oldid=414543)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshguard&oldid=414745](https://wiki.archlinux.org/index.php?title=Sshguard&oldid=414745)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

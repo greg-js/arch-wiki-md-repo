@@ -42,13 +42,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Список наших переводчиков:
 
 *   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok")) ([ArchWiki Maintainer](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers"))
-*   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
-*   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
+*   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
+*   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
+*   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
-*   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (страница не существует)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 
 Раз в неделю список участников автоматически сортируется по убыванию, исходя из количества правок, сделанных за последние 30 дней.
 
@@ -1193,7 +1193,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=412720](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=412720)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=414759](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=414759)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -87,7 +87,7 @@ Install:
 For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applications support on 64-bit machines, install:
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - A render/display bridge for 32 bit applications.
-*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils)
+*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) or [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) - match the version of the 64 bit package.
 *   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) and make sure that [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) is **not** installed
 
 In order to use Bumblebee, it is necessary to add your regular _user_ to the `bumblebee` group:
@@ -1006,7 +1006,7 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 
 Join us at #bumblebee at freenode.net.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414330](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414330)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414751](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414751)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

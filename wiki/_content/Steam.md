@@ -175,6 +175,8 @@ Examples of issues / error messages known to occur if these libraries are presen
 *   "Could not find required OpenGL entry point 'glGetError'! Either your video card is unsupported or your OpenGL driver needs to be updated."
 *   The Steam client itself crashing
 
+A misconfigured firewall may also show up as a runtime issue, because Steam silently fails whenever it can't connect to its servers, and most games just crash whenever the Steam API fails to load.
+
 Forum threads:
 
 *   [https://bbs.archlinux.org/viewtopic.php?id=181171](https://bbs.archlinux.org/viewtopic.php?id=181171)
@@ -558,7 +560,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414314](https://wiki.archlinux.org/index.php?title=Steam&oldid=414314)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414674](https://wiki.archlinux.org/index.php?title=Steam&oldid=414674)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

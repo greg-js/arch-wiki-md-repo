@@ -120,7 +120,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Video](#Video)
-        *   [1.1.1 Install](#Install)
+        *   [1.1.1 Drivers](#Drivers)
         *   [1.1.2 Brightness](#Brightness)
     *   [1.2 Audio](#Audio)
     *   [1.3 Keyboard](#Keyboard)
@@ -133,7 +133,6 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [2.1.3 Sound pops twice during shutdown and sleep](#Sound_pops_twice_during_shutdown_and_sleep)
     *   [2.2 Power](#Power)
         *   [2.2.1 Messages during console login](#Messages_during_console_login)
-        *   [2.2.2 RF Kill Switch](#RF_Kill_Switch)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad switch](#Touchpad_switch)
     *   [3.2 Special keys for window managers](#Special_keys_for_window_managers)
@@ -142,7 +141,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ### Video
 
-#### Install
+#### Drivers
 
 Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"). Add the kernel parameter `rcutree.rcu_idle_gp_delay=1` to your bootloader configuration, so that _optirun_ will not fail to start.
 
@@ -334,20 +333,7 @@ Nouveau E[    DRM] Pointer to flat panel table invalid
 
 ```
 
-The quick fix is to press Enter several times so you will see `Login:` again. Use graphical login manager instead of command line.
-
-**Note:** After installing correct drivers, this message should not appear anymore.
-
-#### RF Kill Switch
-
-You might get this message during boot, but the number after rfkill (e.g. rfkill**2**) could be different:
-
-```
-Failed to start Load/Save RF Kill Switch Status of rfkill2
-
-```
-
-The first thing you should try is to install [rfkill](https://www.archlinux.org/packages/?name=rfkill). If the messages remains - just ignore it.
+After installing Intel with Nvidia graphics drivers, messages should dissappear.
 
 ## Tips and tricks
 
@@ -551,7 +537,7 @@ If you prefer using a [Window manager](/index.php/Window_manager "Window manager
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414647](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414647)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414717](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414717)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

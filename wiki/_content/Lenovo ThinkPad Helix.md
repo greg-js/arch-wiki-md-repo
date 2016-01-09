@@ -93,7 +93,7 @@ Due to the fact that there is no optical drive, you need to [install Arch from U
 
 The Arch install media will happily boot under UEFI, so it is recommended to disable legacy boot in the system setup utility. If legacy boot is needed for some reason, it does work fine as well.
 
-Booting using [Gummiboot](/index.php/Gummiboot "Gummiboot") works perfectly. Again, if legacy boot is needed, [GRUB](/index.php/GRUB "GRUB") is perfectly functional as well.
+Booting using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") works perfectly. Again, if legacy boot is needed, [GRUB](/index.php/GRUB "GRUB") is perfectly functional as well.
 
 ## Hardware Configuration
 
@@ -145,7 +145,7 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=327317](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=327317)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=414748](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=414748)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -48,7 +48,7 @@ First you should add yourself to the audio group.
 
 ### SoundFonts
 
-Configure your preffered SoundFont.
+Configure your preferred SoundFont.
 
 #### Freepats
 
@@ -309,7 +309,7 @@ Restart DOSBox within a terminal so you can see its debug messages, by no accide
 
 *   [USB MIDI keyboards](/index.php/USB_MIDI_keyboards "USB MIDI keyboards")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Timidity&oldid=412190](https://wiki.archlinux.org/index.php?title=Timidity&oldid=412190)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Timidity&oldid=414705](https://wiki.archlinux.org/index.php?title=Timidity&oldid=414705)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

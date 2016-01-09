@@ -18,8 +18,6 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
 *   [2 Usage](#Usage)
     *   [2.1 Disk info](#Disk_info)
     *   [2.2 Benchmarking](#Benchmarking)
-        *   [2.2.1 Reading speed](#Reading_speed)
-        *   [2.2.2 Writing speed](#Writing_speed)
     *   [2.3 Power management configuration](#Power_management_configuration)
         *   [2.3.1 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -44,29 +42,7 @@ To get information about your hard disk, run the following:
 
 ### Benchmarking
 
-#### Reading speed
-
-To measure how many MB/s your hard disk (SATA/IDE) can read, run the following:
-
-```
-# hdparm -t --direct /dev/sda
-
-```
-
-#### Writing speed
-
-To measure how many MB/s your hard disk (SATA/IDE) can write, run the following:
-
-```
-$ sync;time bash -c "(dd if=/dev/zero of=bf bs=8k count=500000; sync)"
-
-```
-
-Do not forget to `Ctrl+c` and `rm bf` after that.
-
-**Note:** `bf` is just the name of the output file that `dd` writes to.
-
-**Tip:** See [dd-benchmark](https://romanrm.net/dd-benchmark) for an explanation on the requirement to `sync` and further related `dd` options.
+See [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices").
 
 ### Power management configuration
 
@@ -194,7 +170,7 @@ chmod +x /usr/lib/systemd/system-sleep/hdparm_set
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hdparm&oldid=365636](https://wiki.archlinux.org/index.php?title=Hdparm&oldid=365636)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hdparm&oldid=414755](https://wiki.archlinux.org/index.php?title=Hdparm&oldid=414755)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

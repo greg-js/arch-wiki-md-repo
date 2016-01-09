@@ -465,11 +465,11 @@ Server = http://arch.miffe.org/$arch/
 
 *   **Maintainers:** Sebastian Lau (nullptr_t),
 *   **Description:** AUR packages that have a longer build time on some machines (e.g. [veracrypt](https://aur.archlinux.org/packages/veracrypt/)<sup><small>AUR</small></sup> or [plymouth](/index.php/Plymouth "Plymouth"))
-*   **Key-ID:** 1607AC45
+*   **Key-ID:** B4767A17CEC5B4E9
 
 ```
 [nullptr_t]
-Server = https://www.slau.me/archlinux/mirrors/$repo/$arch
+Server = https://archlinux.0ptr.de/mirrors/$repo/$arch
 
 ```
 
@@ -1563,7 +1563,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414560](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414560)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414760](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414760)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

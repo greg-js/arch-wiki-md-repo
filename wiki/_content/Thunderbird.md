@@ -79,9 +79,9 @@ JavaScript is disabled for message content but not RSS news feeds. To disable Ja
 
 ### EnigMail - Encryption
 
-[EnigMail](https://www.enigmail.net) is an [extension](https://addons.mozilla.org/thunderbird/addon/enigmail/) that allows writing and receiving email signed and/or encrypted with the OpenPGP standard. It relies on the [GNU Privacy Guard (GnuPG)](https://en.wikipedia.org/wiki/GNU_Privacy_Guard "wikipedia:GNU Privacy Guard").
+[EnigMail](https://www.enigmail.net) is an [extension](https://addons.mozilla.org/thunderbird/addon/enigmail/) that allows writing and receiving email signed and/or encrypted with the OpenPGP standard. It relies on the [GnuPG](/index.php/GnuPG "GnuPG").
 
-Common [AUR](/index.php/AUR "AUR") packages include: [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup> and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/)<sup><small>AUR</small></sup>.
+Common packages include: [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup> and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/)<sup><small>AUR</small></sup>.
 
 #### Sharing the public key
 
@@ -289,7 +289,7 @@ $ pacman -S thunderbird
 
 8\. Import all your data.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=412266](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=412266)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=414726](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=414726)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
