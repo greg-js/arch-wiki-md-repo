@@ -171,7 +171,7 @@ cat /proc/asound/card*/id
 
 [UT-Forums: Urban Terror GTKRadiant Tutorial](http://forums.urbanterror.info/topic/13539-complete-linux-gtkradiant-urt-mapping-how-to/page__hl__urtpack__fromsearch__1__s__0bed93b96b8f19a3707143f46acfb964) _Please note_ that the example from this guide has no light and Urban Terror will just display black walls.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Urban_Terror&oldid=392769](https://wiki.archlinux.org/index.php?title=Urban_Terror&oldid=392769)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Urban_Terror&oldid=414785](https://wiki.archlinux.org/index.php?title=Urban_Terror&oldid=414785)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

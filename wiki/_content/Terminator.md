@@ -72,7 +72,7 @@ Terminator also supports plugins. Please read [Writing Terminator plugins](http:
 *   [Writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) - Terminator Plugin HOWTO
 *   [Terminator BZR](http://code.launchpad.net/terminator/) - Source code
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Terminator&oldid=361580](https://wiki.archlinux.org/index.php?title=Terminator&oldid=361580)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Terminator&oldid=414784](https://wiki.archlinux.org/index.php?title=Terminator&oldid=414784)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

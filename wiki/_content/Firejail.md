@@ -52,7 +52,7 @@ For most applications launched from the console, or from `.desktop` files, you c
 
 #### Desktop Files
 
-Some applications use non standard paths. For these you will want to copy the `.desktop` launchers from `/usr/share/applications/*.dekstop` to `~/.local/share/applications/` and then proceed to include firejail (and possibly seccomp) on the EXEC line.
+Some applications use non standard paths. For these you will want to copy the `.desktop` launchers from `/usr/share/applications/*.desktop` to `~/.local/share/applications/` and then proceed to include firejail (and possibly seccomp) on the EXEC line.
 
 #### Daemons
 
@@ -68,7 +68,7 @@ Other configurations exist; it is suggested you check out the man page for firej
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/)<sup><small>AUR</small></sup>.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=414455](https://wiki.archlinux.org/index.php?title=Firejail&oldid=414455)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=414815](https://wiki.archlinux.org/index.php?title=Firejail&oldid=414815)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

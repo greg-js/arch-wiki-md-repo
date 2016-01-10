@@ -9,7 +9,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   A serious vulnerability was discovered affecting some of the OpenSSL 1.0.1 releases in April 2014\. The vulnerability leaves private keys compromised and it is advisable to regenerate these and the corresponding certificates if an affected version of OpenSSL was deployed. Cf. [http://heartbleed.com/](http://heartbleed.com/) and [FS#39775](https://bugs.archlinux.org/task/39775).
 *   Collaborated research into OpenSSL protocol usage, published in May 2015, showed further significant risks for SSL connections; named "Logjam" attack. See [https://weakdh.org/](https://weakdh.org/) for results and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) for suggested server-side configuration changes.
 
-[OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and TLS protocols, dual-licensed under the OpenSSL and the SSLeay licenses. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows. It is designed to be as flexible as possible, and is free to use for both personal and commercial uses. It is based on the earlier SSLeay library. Version 1.0.0 of OpenSSL was released on March 29, 2010.
+[OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and TLS protocols, dual-licensed under the OpenSSL (Apache License 1.0) and the SSLeay (4-clause BSD) licenses. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows. It is designed to be as flexible as possible, and is free to use for both personal and commercial uses. It is based on the earlier SSLeay library. Version 1.0.0 of OpenSSL was released on March 29, 2010.
 
 ## Contents
 
@@ -321,6 +321,8 @@ openssl req -key private/key.pem -x509 -new -days 3650 -out cacert.pem
 
 ### Certificate authority
 
+[OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/) is a detailed guide on using OpenSSL to act as a CA.
+
 The method shown in this section is mostly meant to show how signing works; it is not suited for large deployments that need to automate signing a large number of certificates. Consider installing an SSL server for that purpose.
 
 Before using the Makefile, make a configuration file according to [#Configuring](#Configuring). Be sure to follow instructions relevant to CA administration; not request generation.
@@ -396,8 +398,9 @@ make revoke item=**cert.pem**
 *   [OpenSSL](http://www.openssl.org) project page.
 *   [FreeBSD Handbook](http://www.freebsd.org/doc/en/books/handbook/openssl.html)
 *   [Step-by-step guide to create a signed SSL certificate](http://www.akadia.com/services/ssh_test_certificate.html)
+*   [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=411413](https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=411413)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=414787](https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=414787)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -63,24 +63,18 @@ Finally, wipe it with pseudorandom (because encrypted) data. A use of `if=/dev/u
 
  `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+**Tip:**
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** It is believed that dd will write out partial blocks so using a small bs is not needed and slows down the process. (Discuss in [Talk:Dm-crypt/Drive preparation#block size in notes](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Drive_preparation#block_size_in_notes))
-
-**Note:**
-
-*   Regularly _dd_ is used with a block size larger than default, for example `bs=4M`, to gain higher throughput. Using it with dm-crypt is detrimental, because it has the same default block size of 512 bytes and the command may exit before wiping the final blocks when a larger one is used.
-*   For daily operation the performance loss of disk I/O operations with dm-crypt is not adversely affected by this. If the filesystem performs 4K operations, dm-crypt will process eight blocks at a time. It is important though that the underlying partition is aligned to disk geometry correctly when it is created.
+*   Using _dd_ with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
+*   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 _/dev/mapper/container_` can be used to get the exact container size as root. Now _od_ can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j _containersize - blocksize_` to view the wipe completed to the end.
 
 Now the next step is [#Partitioning](#Partitioning).
 
 #### dm-crypt wipe free space after installation
 
-The same effect can be achieved once the system is installed, booted and the filesystems mounted. Temporarily fill the remaining free space of the partition by writing to a file inside the encrypted container.
+The same effect can be achieved once the system is installed, booted and the filesystems mounted. However, consider if the filesystem may have set up reserved space, e.g. for the root user, by default.
+
+To wipe, temporarily fill the remaining free space of the partition by writing to a file inside the encrypted container:
 
  `# dd if=/dev/zero of=/file/in/container status=progress`  `dd: writing to ‘/file/in/container’: No space left on device` 
 
@@ -157,7 +151,7 @@ If more flexibility is needed, though, dm-crypt can coexist with other stacked b
 
 **Reason:** The GRUB bootloader's feature "early cryptodisks", allows for (a) an unlocking of a LUKS encrypted root partition to access the `/boot` mount point in it, or (b) an unlocking of a separate LUKS encrypted partition for `/boot`. Instructions to setup both should be added. Further, (c) the conversion of an existing unencrypted `/boot` partition to LUKS. (Discuss in [User_talk:Grazzolini](https://wiki.archlinux.org/index.php/User_talk:Grazzolini))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=411683](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=411683)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=414833](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=414833)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

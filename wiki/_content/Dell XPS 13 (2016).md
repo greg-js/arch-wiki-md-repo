@@ -133,9 +133,10 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [3 Bluetooth](#Bluetooth)
 *   [4 Video](#Video)
 *   [5 Touchpad](#Touchpad)
-*   [6 Microphone](#Microphone)
-*   [7 Kernel specific notes](#Kernel_specific_notes)
-*   [8 Links](#Links)
+*   [6 Sound](#Sound)
+*   [7 Microphone](#Microphone)
+*   [8 Kernel specific notes](#Kernel_specific_notes)
+*   [9 Links](#Links)
 
 ## SATA controller
 
@@ -217,6 +218,20 @@ Then update the bootloader.
 
 where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
 
+## Sound
+
+Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run alsamixer from `alsa-tools`. Select your soundcard with F6 and set the headset-gain to 22.
+
+Also people noticed loud popping-noises when sound was not playing. You can turn off the sound_power_save in `tlp`
+
+```
+   # nano /etc/default/tlp
+   ...
+   SOUND_POWER_SAVE_ON_BAT = 0 
+   ...
+
+```
+
 ## Microphone
 
 **Note:** Not all hardware has the "Digital" channel
@@ -250,7 +265,7 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 General Discussion Thread on Arch Forum [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414469](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414469)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414780](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414780)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

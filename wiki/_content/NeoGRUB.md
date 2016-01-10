@@ -30,7 +30,7 @@ More information of the nature and workings of EasyBCD and NeoGRUB is at the dev
 
 note that that last link has an example to boot Ubuntu. Ubuntu adds version numbers to its vmlinuz and initrd files, which would require that you update the NeoGRUB every kernel update. Arch does not have this problem. Also note that Arch uses initramfs, not initrd, but you still use the syntax in the code box above.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NeoGRUB&oldid=292266](https://wiki.archlinux.org/index.php?title=NeoGRUB&oldid=292266)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NeoGRUB&oldid=414788](https://wiki.archlinux.org/index.php?title=NeoGRUB&oldid=414788)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -45,7 +45,12 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
-*   [02 January 2016] [ASA-201601-1](https://lists.archlinux.org/pipermail/arch-security/2015-December/000477.html) [rtmpdump](https://www.archlinux.org/packages/?name=rtmpdump) multiple issues
+*   [09 January 2016] [ASA-201601-6](https://lists.archlinux.org/pipermail/arch-security/2016-January/000485.html) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) denial of service
+*   [09 January 2016] [ASA-201601-5](https://lists.archlinux.org/pipermail/arch-security/2016-January/000484.html) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) denial of service
+*   [09 January 2016] [ASA-201601-4](https://lists.archlinux.org/pipermail/arch-security/2016-January/000483.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) denial of service
+*   [09 January 2016] [ASA-201601-3](https://lists.archlinux.org/pipermail/arch-security/2016-January/000482.html) [gajim](https://www.archlinux.org/packages/?name=gajim) man-in-the-middle
+*   [09 January 2016] [ASA-201601-2](https://lists.archlinux.org/pipermail/arch-security/2016-January/000481.html) [wordpress](https://www.archlinux.org/packages/?name=wordpress) cross-side scripting
+*   [02 January 2016] [ASA-201601-1](https://lists.archlinux.org/pipermail/arch-security/2016-January/000480.html) [rtmpdump](https://www.archlinux.org/packages/?name=rtmpdump) multiple issues
 
 ### December 2015
 
@@ -525,7 +530,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414181](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414181)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414840](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414840)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

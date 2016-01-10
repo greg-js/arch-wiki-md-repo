@@ -58,7 +58,7 @@ You can easily keep up to date all your modules with version control tools.
 *   [API](http://foicica.com/textadept/api.html)
 *   [Wiki](http://foicica.com/wiki/textadept)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Textadept&oldid=399128](https://wiki.archlinux.org/index.php?title=Textadept&oldid=399128)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Textadept&oldid=414778](https://wiki.archlinux.org/index.php?title=Textadept&oldid=414778)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

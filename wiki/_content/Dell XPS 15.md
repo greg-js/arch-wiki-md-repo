@@ -266,6 +266,46 @@ For 2013 Model (9350)
 
 ```
 
+lspci for model 9550 (variant with touchscreen & PCIe m.2 ssd):
+
+```
+00:00.0 Host bridge: Intel Corporation Sky Lake Host Bridge/DRAM Registers (rev 07)
+00:01.0 PCI bridge: Intel Corporation Sky Lake PCIe Controller (x16) (rev 07)
+00:02.0 VGA compatible controller: Intel Corporation Device 191b (rev 06)
+00:04.0 Signal processing controller: Intel Corporation Device 1903 (rev 07)
+00:14.0 USB controller: Intel Corporation Sunrise Point-H USB 3.0 xHCI Controller (rev 31)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-H Thermal subsystem (rev 31)
+00:15.0 Signal processing controller: Intel Corporation Sunrise Point-H LPSS I2C Controller #0 (rev 31)
+00:15.1 Signal processing controller: Intel Corporation Sunrise Point-H LPSS I2C Controller #1 (rev 31)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-H CSME HECI #1 (rev 31)
+00:17.0 SATA controller: Intel Corporation Sunrise Point-H SATA Controller [AHCI mode] (rev 31)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #1 (rev f1)
+00:1c.1 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #2 (rev f1)
+00:1d.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #9 (rev f1)
+00:1d.4 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #13 (rev f1)
+00:1d.6 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #15 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-H LPC Controller (rev 31)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-H PMC (rev 31)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-H HD Audio (rev 31)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-H SMBus (rev 31)
+01:00.0 3D controller: NVIDIA Corporation GM107M [GeForce GTX 960M] (rev a2)
+02:00.0 Network controller: Broadcom Corporation BCM43602 802.11ac Wireless LAN SoC (rev 01)
+03:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. Device 525a (rev 01)
+04:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a802 (rev 01)
+
+```
+
+lsusb for model 9550 (variant with touchscreen & PCIe m.2 ssd):
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 04f3:21d5 Elan Microelectronics Corp. 
+Bus 001 Device 003: ID 0a5c:6410 Broadcom Corp. 
+Bus 001 Device 005: ID 1bcf:2b95 Sunplus Innovation Technology Inc. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
 ## System Setup
 
 ### Power Management
@@ -659,7 +699,7 @@ For L502X model: there are additional Fn+<Key> (sequences) that are not marked a
 
 *   [A fairly comprehensive writeup of running Arch Linux on an XPS 15.](http://drwho.virtadpt.net/archive/2015/01/05/linux-on-the-dell-xps-15-9530)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_15&oldid=376603](https://wiki.archlinux.org/index.php?title=Dell_XPS_15&oldid=376603)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_15&oldid=414842](https://wiki.archlinux.org/index.php?title=Dell_XPS_15&oldid=414842)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

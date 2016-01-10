@@ -254,7 +254,7 @@ DNS=('10.1.10.1')
 
 ```
 
-For the `Address` take care to include the correct netmask (the `/24` in the sample profile equates to a netmask of `255.255.255.0`) or the profile will fail to start. See also [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
+Take care to include the subnet notation of `/24`. It equates to a netmask of `255.255.255.0`) and without out it the profile will fail to start. See also [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"). To alias more than one IP address per a NIC set `Address=('10.1.10.2/24' '192.168.1.2/24')`.
 
 #### Wireless (WPA-PSK)
 
@@ -734,7 +734,7 @@ If you want _netctl-auto_ to automatically unblock your wireless card to connect
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=413445](https://wiki.archlinux.org/index.php?title=Netctl&oldid=413445)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=414837](https://wiki.archlinux.org/index.php?title=Netctl&oldid=414837)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

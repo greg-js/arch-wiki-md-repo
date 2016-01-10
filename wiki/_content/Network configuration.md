@@ -411,55 +411,25 @@ See [netctl#Bonding](/index.php/Netctl#Bonding "Netctl").
 
 ### IP address aliasing
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Manual method using [ip](/index.php/Core_utilities#ip "Core utilities") should be added; then move current example using _netctl_ into [netctl](/index.php/Netctl "Netctl"). (Discuss in [Talk:Network_configuration#IP_address_aliasing_with_netctl](https://wiki.archlinux.org/index.php/Talk:Network_configuration#IP_address_aliasing_with_netctl))
-
 IP aliasing is the process of adding more than one IP address to a network interface. With this, one node on a network can have multiple connections to a network, each serving a different purpose. Typical uses are virtual hosting of Web and FTP servers, or reorganizing servers without having to update any other machines (this is especially useful for nameservers).
 
 #### Example
 
-You will need [netctl](https://www.archlinux.org/packages/?name=netctl) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Prepare the configuration:
-
- `/etc/netctl/_mynetwork_` 
+To manually set an alias, for some NIC, use [iproute2](https://www.archlinux.org/packages/?name=iproute2) to execute
 
 ```
-Connection='ethernet'
-Description='Six different addresses on the same NIC.'
-Interface='eth0'
-IP='static'
-Address=('192.168.1.10/24' '192.168.178.11/24' '192.168.1.12/24' '192.168.1.13/24' '192.168.1.14/24' '192.168.1.15/24')
-Gateway='192.168.1.1'
-DNS=('192.168.1.1')
+# ip addr add 192.168.2.101/24 dev eth0 label eth0:1
 
 ```
 
-Then simply execute:
+To remove a given alias execute
 
 ```
-$ netctl start _mynetwork_
-
-```
-
-To manually set alias for NIC using [iproute2](https://www.archlinux.org/packages/?name=iproute2) tools execute
-
-```
-$ ip addr add 192.168.1.10/24 dev eth0 label eth0:1
+# ip addr del 192.168.2.101/24 dev eth0:1
 
 ```
 
-To remove given alias execute
-
-```
-$ ip addr del 192.168.1.10/24 dev eth0:1
-
-```
+Packets destined for a subnet will use the primary alias by default. If the destination IP is within a subnet of a secondary alias, then the source IP is set respectively. Consider the case where there is more than one NIC, the default routes can be listed with `ip route`.
 
 ### Change MAC/hardware address
 
@@ -710,7 +680,7 @@ With motherboards such as the Gigabyte GA-990FXA-UD3, booting with IOMMU off (wh
 
 When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=409518](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=409518)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=414832](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=414832)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

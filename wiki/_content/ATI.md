@@ -244,7 +244,7 @@ See [Phoronix article](http://www.phoronix.com/scan.php?page=article&item=amd_pc
 
 ### Gallium Heads-Up Display
 
-The radeon driver supports activating a heads up display which can draw transparent graphs and text on top of applications that are rendering such as games. These can show such values as the current frame rate or the CPU load for each CPU core or an average of all of them. The HUD is controlled by the GALLIUM_HUD environment variable, and can be passed the following list of parameters among others:
+The radeonsi driver supports activating a heads up display which can draw transparent graphs and text on top of applications that are rendering such as games. These can show such values as the current frame rate or the CPU load for each CPU core or an average of all of them. The HUD is controlled by the GALLIUM_HUD environment variable, and can be passed the following list of parameters among others:
 
 *   "fps" - displays current frames per second
 *   "cpu" - displays the average CPU load
@@ -746,7 +746,7 @@ Try booting with the [kernel parameter](/index.php/Kernel_parameter "Kernel para
 
 Since kernel 4.1.4, [dpm](#Dynamic_power_management) is broken on certain R9 270X cards (chip device number 6810, subsystem 174b:e271, shown as Curacao XT, PC Partner Limited / Sapphire Technology Device e271 in lspci). The regression is caused by a [fix](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=ea039f927524e36c15b5905b4c9469d788591932) for cards with the same PCI ids. Disabling dpm (add `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")) solves the problem.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ATI&oldid=413647](https://wiki.archlinux.org/index.php?title=ATI&oldid=413647)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ATI&oldid=414835](https://wiki.archlinux.org/index.php?title=ATI&oldid=414835)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

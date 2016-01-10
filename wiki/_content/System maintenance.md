@@ -24,9 +24,10 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [3.1 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
     *   [3.2 Partial upgrades are unsupported](#Partial_upgrades_are_unsupported)
     *   [3.3 Read before upgrading the system](#Read_before_upgrading_the_system)
-    *   [3.4 Act on alerts during an upgrade](#Act_on_alerts_during_an_upgrade)
-    *   [3.5 Deal promptly with new configuration files](#Deal_promptly_with_new_configuration_files)
-    *   [3.6 Revert broken updates](#Revert_broken_updates)
+    *   [3.4 Check changelogs easily](#Check_changelogs_easily)
+    *   [3.5 Act on alerts during an upgrade](#Act_on_alerts_during_an_upgrade)
+    *   [3.6 Deal promptly with new configuration files](#Deal_promptly_with_new_configuration_files)
+    *   [3.7 Revert broken updates](#Revert_broken_updates)
 *   [4 Use the package manager to install software](#Use_the_package_manager_to_install_software)
     *   [4.1 Choose open-source drivers](#Choose_open-source_drivers)
     *   [4.2 Be careful with unofficial packages](#Be_careful_with_unofficial_packages)
@@ -125,6 +126,10 @@ The bash script _checkupdates_, included with the pacman package, provides a saf
 ### Read before upgrading the system
 
 Before upgrading Arch, always read the latest [Arch News](https://www.archlinux.org/news/) to find out if there are any major software or configuration changes with the latest packages. Before upgrading fundamental software (such as the [kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd"), or [glibc](https://www.archlinux.org/packages/?name=glibc)) to a new version, look over the appropriate [forum](https://bbs.archlinux.org/) to see if there have been any reported problems.
+
+### Check changelogs easily
+
+When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [paclog](https://aur.archlinux.org/packages/paclog/)<sup><small>AUR</small></sup>. This utility lists recent commit messages for packages from the official repositories or the AUR, by using `paclog package`.
 
 ### Act on alerts during an upgrade
 
@@ -236,7 +241,7 @@ The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is a
 
 To make it available as a boot option, you will need to update your [bootloader](/index.php/Bootloader "Bootloader")'s configuration file to use the LTS kernel and ram disk: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=412013](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=412013)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=414790](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=414790)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

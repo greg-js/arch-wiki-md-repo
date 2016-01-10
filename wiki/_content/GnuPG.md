@@ -6,7 +6,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Related articles
 
-*   [Disk Encryption](/index.php/Disk_Encryption "Disk Encryption")
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 
 [GnuPG](http://www.gnupg.org) allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories.
 
@@ -539,19 +539,12 @@ This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and c
 
 ### Revoking a key
 
-Revoking a key withdraws it from public use.
+Revocation certificates are automatically generated for newly generated keys, although one can be generated manually by the user later. These are located at `~/.gnupg/openpgp-revocs.d/`. The filename of the certificate is the fingerprint of the key it will revoke.
 
-First generate a revocation certificate. This can be done in advance with the certificate stored in a safe place, such as a locked container or encrypted disk:
-
-```
-$ gpg --output revoke.asc --gen-revoke _KEYNAME_
+To revoke your key, simply import the revocation certificate:
 
 ```
-
-Later, to revoke your key, do the following:
-
-```
-$ gpg --import revoke.asc
+$ gpg --import _<fingerprint>_.rev
 
 ```
 
@@ -560,7 +553,7 @@ $ gpg --import revoke.asc
 Now update the keyserver:
 
 ```
-$ gpg --keyserver subkeys.pgp.net --send _KEYNAME_
+$ gpg --keyserver subkeys.pgp.net --send _<userid>_
 
 ```
 
@@ -731,7 +724,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 
 [http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414746](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414746)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414849](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414849)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

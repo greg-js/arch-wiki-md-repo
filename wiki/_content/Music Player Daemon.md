@@ -35,6 +35,7 @@ Related articles
         *   [2.2.2 Autostart in X](#Autostart_in_X)
         *   [2.2.3 Autostart with systemd](#Autostart_with_systemd)
         *   [2.2.4 Scripted configuration](#Scripted_configuration)
+        *   [2.2.5 Scripted configuration for bit perfect playback](#Scripted_configuration_for_bit_perfect_playback)
     *   [2.3 Multi-mpd setup](#Multi-mpd_setup)
         *   [2.3.1 Running an icecast server](#Running_an_icecast_server)
         *   [2.3.2 Satellite setup](#Satellite_setup)
@@ -271,6 +272,10 @@ All you have to do is enable and start the `mpd` [user service](/index.php/Syste
 
 Rasi has written a script that will create the proper directory structure, configuration files and prompt for the location of the user's Music directory; it can be downloaded [here](http://dl.53280.de/mpdsetup.sh).
 
+#### Scripted configuration for bit perfect playback
+
+Ronald has written a bash script that will also create a valid mpd configuration file which focusses on bit perfect audio playback. That is playback without any resampling or format conversion. It does this by setting audio output parameters to use a direct alsa hwardware address (like `hw:0,0`). The script detects and lists which playback interfaces alsa supports. When one interface is found it uses that one, if multiple are found it prompts the user which one to use. When not specified on the command line, it auto configures things like the music_directory and mpd's home directory by using freedesktop.org XDG configuration. The script can be downloaded [here](http://lacocina.nl/audiophile-mpd).
+
 ### Multi-mpd setup
 
 #### Running an icecast server
@@ -352,7 +357,7 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 *   [MPD User Manual](http://www.musicpd.org/doc/user/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=412003](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=412003)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=414812](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=414812)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -234,6 +234,10 @@ Related articles
 
 [http://ninvaders.sourceforge.net/](http://ninvaders.sourceforge.net/) || [ninvaders](https://aur.archlinux.org/packages/ninvaders/)<sup><small>AUR</small></sup>
 
+*   **xroach** — cockroaches hide under your windows
+
+|| [xroach](https://aur.archlinux.org/packages/xroach/)<sup><small>AUR</small></sup>
+
 ## Chess simulators
 
 *   **[GNU Chess](https://en.wikipedia.org/wiki/GNU_Chess "wikipedia:GNU Chess")** — One of the oldest computer chess programs for Unix-based computers, lets most modern computers play a full game of chess
@@ -1104,7 +1108,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=414764](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=414764)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=414814](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=414814)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

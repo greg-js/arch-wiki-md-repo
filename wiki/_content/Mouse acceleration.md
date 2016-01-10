@@ -217,11 +217,9 @@ EndSection
 
 and restart X.
 
-**Note:** The speed setting "libinput Accel Speed" is the same as before, takes [-1, 1]. Speed settings < 0 are a percentage of the default speed (i.e. -0.3 is 70% of the normal speed), speeds > 0 are times 2, so 0.5 is 200% and 1.0 is 300% of the normal speed.
+**Note:** The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. Speed settings < 0 are a percentage of the default speed (e.g. -0.3 is 70% of the normal speed), speeds > 0 are times 2, so 0.5 is 200% and 1.0 is 300% of the normal speed. For example, to adjust the mouse speed down to 50%, use `xinput --set-prop 8 'libinput Accel Speed' -0.5`.
 
- `Adjust mouse speed down 50%:`  `xinput --set-prop 8 'libinput Accel Speed' -0.5` 
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414606](https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414606)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414770](https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414770)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -53,7 +53,7 @@ Read [Daemons](/index.php/Daemons "Daemons") for more information.
 
 *   [Jabberd2 homepage](http://jabberd2.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=412110](https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=412110)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=414789](https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=414789)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

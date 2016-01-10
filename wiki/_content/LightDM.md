@@ -89,7 +89,7 @@ lightdm-kde-greeter.desktop
 
 ## Enabling LightDM
 
-Make sure to [enable](/index.php/Enable "Enable") `lightdm.service` so LightDM will be started at boot. It will create link `/etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/lightdm.service`. In case if you already have removed previous DE package and can't disable DE with `sudo systemctl disable previous_de_name`, just run `sudo systemctl enable lightdm.service -f` to force overwriting obsolete symlink.
+Make sure to [enable](/index.php/Enable "Enable") `lightdm.service` so LightDM will be started at boot, see also [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager").
 
 ## Command line tool
 
@@ -415,7 +415,7 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=414623](https://wiki.archlinux.org/index.php?title=LightDM&oldid=414623)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=414768](https://wiki.archlinux.org/index.php?title=LightDM&oldid=414768)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

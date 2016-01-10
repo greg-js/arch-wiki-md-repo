@@ -343,7 +343,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 [http://aria2.sourceforge.net/](http://aria2.sourceforge.net/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
-*   **[Ctorrent](/index.php?title=Ctorrent&action=edit&redlink=1 "Ctorrent (page does not exist)")** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
+*   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
 
 [http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)<sup><small>AUR</small></sup>
 
@@ -429,13 +429,13 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 [http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
-*   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
-
-[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sharelin)]</sup>
-
 *   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
 
 [https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)<sup><small>AUR</small></sup>
+
+*   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
+
+[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sharelin)]</sup>
 
 #### Video downloaders
 
@@ -1223,7 +1223,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 [https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414628](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414628)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414767](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414767)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
