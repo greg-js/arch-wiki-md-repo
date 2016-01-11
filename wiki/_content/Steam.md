@@ -32,6 +32,7 @@ _Steam is a digital distribution, digital rights management, multiplayer and com
     *   [3.8 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
     *   [3.9 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
     *   [3.10 No audio in certain games](#No_audio_in_certain_games)
+        *   [3.10.1 Some games use FMOD to obfuscate having to deal with Linux audio stack](#Some_games_use_FMOD_to_obfuscate_having_to_deal_with_Linux_audio_stack)
     *   [3.11 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1)
     *   [3.12 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
     *   [3.13 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
@@ -273,6 +274,20 @@ $ glxinfo32 | grep OpenGL.
 ### No audio in certain games
 
 If there is no audio in certain games, and the suggestions provided in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") do not fix the problem, [#Using native runtime](#Using_native_runtime) may provide a successful workaround. (See the note about "Steam Runtime issues" at the top of this section.)
+
+#### Some games use FMOD to obfuscate having to deal with Linux audio stack
+
+While troubleshooting a sound issue, it became evident that the following games (as examples) use the 'FMOD' audio middleware package:
+
+*   Hotline Miami
+*   Hotline Miami 2
+*   Transistor
+
+This package is a bit buggy, and as a result while sound can appear to be working fine for the rest of your system, some games may still have problems.
+
+It usually occurs when you have a default sound device set with ALSA, but you don't actually use that device, and have manually changed the device through other software, with me I had my default set as HDMI, but audio set through Steam/Gnome as S/PDIF.
+
+To check what your default device is set as, use something like 'aplay' to output to your 'default' device, and see if you get sound, if you don't, your default is likely set to something that isn't even plugged in!
 
 ### You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1
 
@@ -560,7 +575,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414674](https://wiki.archlinux.org/index.php?title=Steam&oldid=414674)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414877](https://wiki.archlinux.org/index.php?title=Steam&oldid=414877)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

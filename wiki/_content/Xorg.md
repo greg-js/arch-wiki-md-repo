@@ -54,6 +54,7 @@ _The X.Org project provides an open source implementation of the X Window System
     *   [7.2 Nested X session](#Nested_X_session)
     *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
     *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
+    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 General](#General)
     *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
@@ -597,6 +598,20 @@ $ xinput --enable 10
 
 ```
 
+### Killing application with hotkey
+
+Run script on hotkey:
+
+```
+#!/bin/bash
+windowFocus=$(xdotool getwindowfocus);
+pid=$(xprop -id $windowFocus | grep PID);
+kill -9 $pid
+
+```
+
+Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+
 ## Troubleshooting
 
 ### General
@@ -808,7 +823,7 @@ Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See
 
 Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=412384](https://wiki.archlinux.org/index.php?title=Xorg&oldid=412384)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=414870](https://wiki.archlinux.org/index.php?title=Xorg&oldid=414870)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

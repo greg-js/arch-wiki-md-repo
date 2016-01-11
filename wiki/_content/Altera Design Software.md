@@ -358,7 +358,7 @@ vish: error while loading shared libraries: libncurses.so.5: cannot open shared 
 
 ```
 
-There are two solutions to this problem. One is to use [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> and tweak the PKGBUILD to compile a 32-bit version of the library. This will provide the latest version of ncurses with an ncurses5-compatible ABI.
+There are two solutions to this problem. One is to use [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> and tweak the PKGBUILD to compile a 32-bit version of the library. (Or use [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)<sup><small>AUR</small></sup>) This will provide the latest version of ncurses with an ncurses5-compatible ABI.
 
 The other solution is to download the ncurses 5.9 source, compile it, and copy the generated libraries and symlinks to the same directory as the freetype2 libraries.
 
@@ -410,7 +410,7 @@ ModelSim> vlib work
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Altera_Design_Software&oldid=409237](https://wiki.archlinux.org/index.php?title=Altera_Design_Software&oldid=409237)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Altera_Design_Software&oldid=414896](https://wiki.archlinux.org/index.php?title=Altera_Design_Software&oldid=414896)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

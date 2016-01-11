@@ -30,7 +30,8 @@ In kernels 3.17 and 3.17-1, snapper in combination with [Btrfs](/index.php/Btrfs
     *   [6.3 Suggested Filesystem Layout](#Suggested_Filesystem_Layout)
         *   [6.3.1 Configuring Snapper](#Configuring_Snapper)
         *   [6.3.2 Restoring the entire system](#Restoring_the_entire_system)
-    *   [6.4 Deleting files from snapshots](#Deleting_files_from_snapshots)
+    *   [6.4 Changing the default snapshot interval](#Changing_the_default_snapshot_interval)
+    *   [6.5 Deleting files from snapshots](#Deleting_files_from_snapshots)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Snapper logs](#Snapper_logs)
     *   [7.2 IO Error](#IO_Error)
@@ -198,6 +199,15 @@ $ sysupgrade
 
 [Pacupg](https://aur.archlinux.org/packages/Pacupg/)<sup><small>AUR</small></sup> is a script specifically designed to wrap a system upgrade in snapshots. In contrast with the above solution, it downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`. If [pacaur](https://aur.archlinux.org/packages/pacaur/)<sup><small>AUR</small></sup> is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/)<sup><small>AUR</small></sup>. If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
 
+As of version 0.0.9 snapper can run commands wrapped in pre-post-snapshots:
+
+```
+ snapper create --command "pacman -Su" --description "pacman system update"
+
+```
+
+See also the "How do I add pre and post hooks (like YaST)?" section in the official FAQ: [http://snapper.io/faq.html](http://snapper.io/faq.html)
+
 #### Easing the rollback process
 
 The [pacupg](https://aur.archlinux.org/packages/pacupg/)<sup><small>AUR</small></sup> script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
@@ -330,6 +340,34 @@ Unmount the btrfs device and reboot:
 
 For a more detailed description of the problem this layout solves, see: [https://bbs.archlinux.org/viewtopic.php?id=194491](https://bbs.archlinux.org/viewtopic.php?id=194491)
 
+### Changing the default snapshot interval
+
+The default snapshot interval of one hour can be changed by overriding the systemd timer units, `snapper-cleanup.timer` and `snapper-timeline.timer`. The easiest way to do so is to use `systemctl edit snapper-{cleanup,timeline}.timer`. This will open the default editor with an empty file for overriding values in the respective unit file.
+
+For the `snapper-cleanup.timer` unit, the item might look like this:
+
+```
+ [Timer]
+ OnUnitActiveSec=1h
+
+```
+
+This means that instead of daily, the `snapper-cleanup.service` will run every hour from now on.
+
+The `snapper-timeline.timer` unit can be overriden like this:
+
+```
+ [Timer]
+ OnCalendar=*:0/5
+
+```
+
+This means that the `snapper-timeline.service` will now run every five minutes, hence creating 12 snapshots per hour.
+
+For the timeline cleanup algorithm the value of `TIMELINE_LIMIT_HOURLY` now means how many 5-minute snapshots should be kept.
+
+You can find more information in the `systemd.timers` and `systemd.time` manpages, and also on the [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") page. Information about overriding unit files is in [Systemd#Drop-in_snippets](/index.php/Systemd#Drop-in_snippets "Systemd").
+
 ### Deleting files from snapshots
 
 If you want to delete a specific file or folder from past snapshots without deleting the snapshots themselves, [snapperS](https://pypi.python.org/pypi/snapperS) is a script that adds this functionality to Snapper. This script can also be used to manipulate past snapshots in a number of other ways that Snapper does not currently support.
@@ -363,7 +401,7 @@ By default, `updatedb` will also index the `.snapshots` directory created by sna
 
  `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Snapper&oldid=413855](https://wiki.archlinux.org/index.php?title=Snapper&oldid=413855)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Snapper&oldid=414878](https://wiki.archlinux.org/index.php?title=Snapper&oldid=414878)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

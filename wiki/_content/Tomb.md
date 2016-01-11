@@ -85,7 +85,7 @@ It includes almost all features tomb offers, but is still in active development 
 *   [quickstart](https://github.com/dyne/Tomb/wiki/Quickstart)
 *   [advanced features](https://github.com/dyne/Tomb/wiki/Advancedfeatures)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomb&oldid=410742](https://wiki.archlinux.org/index.php?title=Tomb&oldid=410742)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomb&oldid=414881](https://wiki.archlinux.org/index.php?title=Tomb&oldid=414881)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

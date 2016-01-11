@@ -1197,7 +1197,7 @@ timeout  5
 
 ```
 
-**Совет:** Не забудьте вынуть установочный носитель, иначе вы снова попадете в live-окружение установочного образа. Вы можете войти в установленную систему в качестве суперпользователя ("root"), используя тот пароль, который вы указали при вызове _passwd_. По умолчанию установлен пароль "root".
+**Совет:** Не забудьте вынуть установочный носитель, иначе вы снова попадете в live-окружение установочного образа. Вы можете войти в установленную систему в качестве суперпользователя (root), используя тот пароль, который вы указали при вызове _passwd_. Если пароль не был указан, то вход происходит без его запроса.
 
 ## После установки
 
@@ -1205,7 +1205,7 @@ timeout  5
 
 Для просмотра списка приложений, которые вам могут быть интересны, смотрите статью [Список приложений](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9 "Список приложений").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Русский)&oldid=411535](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Русский)&oldid=411535)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Русский)&oldid=414882](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Русский)&oldid=414882)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

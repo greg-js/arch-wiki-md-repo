@@ -3668,7 +3668,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>10d</td>
 
-<td>fixed ([FS#44236](https://bugs.archlinux.org/task/44236))</td>
+<td>Fixed ([FS#44236](https://bugs.archlinux.org/task/44236))</td>
 
 <td>[ASA-201503-25](https://lists.archlinux.org/pipermail/arch-security/2015-March/000266.html)</td>
 
@@ -4202,7 +4202,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>2015-01-27</td>
 
-<td>< 2.18-1 ?</td>
+<td>< 2.18-1</td>
 
 <td>2.18-1</td>
 
@@ -6002,7 +6002,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>3.17.4-1 3.14.25-1</td>
 
-<td>23d 22d</td>
+<td>~23d</td>
 
 <td>Fixed</td>
 
@@ -6626,7 +6626,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>1:2.2.4-1</td>
 
-<td>-2d</td>
+<td><2d</td>
 
 <td>Fixed</td>
 
@@ -6874,7 +6874,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>2.2.1</td>
 
-<td><0</td>
+<td><1d</td>
 
 <td>Fixed</td>
 
@@ -6928,7 +6928,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>2.4.9</td>
 
-<td>-1d</td>
+<td><1d</td>
 
 <td>Fixed</td>
 
@@ -7036,7 +7036,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>5.5.110</td>
 
-<td>-1d</td>
+<td><1d</td>
 
 <td>Fixed</td>
 
@@ -7176,11 +7176,11 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td>2014-03-19</td>
 
-<td>3.4beta (?)</td>
+<td>3.4beta</td>
 
 <td>3.4</td>
 
-<td>2013-12-27:?</td>
+<td> ?</td>
 
 <td>Fixed ([FS#39540](https://bugs.archlinux.org/task/39540))</td>
 
@@ -7910,7 +7910,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=414841](https://wiki.archlinux.org/index.php?title=CVE&oldid=414841)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=414887](https://wiki.archlinux.org/index.php?title=CVE&oldid=414887)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

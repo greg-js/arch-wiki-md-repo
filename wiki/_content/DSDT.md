@@ -211,7 +211,7 @@ and reboot. Done!
 
 To check if you are really using your own DSDT read your table again `# cat /sys/firmware/acpi/tables/DSDT > dsdt.dat` and decompile it with `iasl -d dsdt.dat`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DSDT&oldid=390247](https://wiki.archlinux.org/index.php?title=DSDT&oldid=390247)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DSDT&oldid=414867](https://wiki.archlinux.org/index.php?title=DSDT&oldid=414867)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

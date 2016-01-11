@@ -170,7 +170,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.16.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small>
 
-<small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(69)</small>
+<small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small>
 
 <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(6)</small>
 
@@ -278,7 +278,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(60)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=414309](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=414309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=414851](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=414851)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

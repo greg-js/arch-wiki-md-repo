@@ -162,11 +162,11 @@ SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
 Now grant remote access for your user (here root)::
 
 ```
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.1.%' IDENTIFIED BY 'my_optional_remote_password' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.1.%' IDENTIFIED BY "$MY_OPTIONAL_PASSWORD" WITH GRANT OPTION;
 
 ```
 
-You can change the '%' wildcard to a specific host if you like. The password can be different from user's main password.
+where $MY_OPTIONAL_PASSWORD is a password for remote access. It can be different from the user's main password. You also can change the '%' wildcard to a specific host if you like.
 
 ### Disable remote access
 
@@ -522,7 +522,7 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 *   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
 *   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MySQL&oldid=414284](https://wiki.archlinux.org/index.php?title=MySQL&oldid=414284)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MySQL&oldid=414865](https://wiki.archlinux.org/index.php?title=MySQL&oldid=414865)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

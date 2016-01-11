@@ -252,26 +252,16 @@ GLib.MainLoop().run()
 
 ### Mute commercials
 
-With [blockify](https://github.com/mikar/blockify) you can mute commercials (works on both the Wine version and the native Linux client). It is available in the [AUR](/index.php/AUR "AUR") as [blockify](https://aur.archlinux.org/packages/blockify/)<sup><small>AUR</small></sup>.
+With [blockify](https://github.com/mikar/blockify) you can mute commercials. It is available in the [AUR](/index.php/AUR "AUR") as [blockify](https://aur.archlinux.org/packages/blockify/)<sup><small>AUR</small></sup>.
 
-To have this start and run in the background every time Spotify starts you will need to automate this yourself:
+Blockify will automatically start Spotify if it isn't running already. To always run blockify with spotify you can symlink like this:
 
 ```
-#!/bin/sh
-
-spotify=/usr/bin/spotify
-
-if [[ -x $spotify && -x /usr/bin/blockify ]];
-then
-  blockify &
-  block_pid=$!
-  $spotify
-  trap "kill -9 $block_pid" SIGINT SIGTERM EXIT
-fi
+ $ ln -s /usr/bin/blockify /usr/local/bin/spotify
 
 ```
 
-By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/bin/spotify` everytime you start Spotify, so there's nothing else to change and updates won't break it.
+The symlink will take precedence over /usr/bin/spotify without impairing the Spotify installation.
 
 ### Remote Control
 
@@ -491,7 +481,7 @@ So your full launch path should look something like this:
 *   [http://www.spotify.com/int/help/faq/wine/](http://www.spotify.com/int/help/faq/wine/)
 *   [http://www.spotify.com/int/download/previews/](http://www.spotify.com/int/download/previews/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=414744](https://wiki.archlinux.org/index.php?title=Spotify&oldid=414744)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=414859](https://wiki.archlinux.org/index.php?title=Spotify&oldid=414859)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

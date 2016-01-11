@@ -35,7 +35,7 @@ To head off a common problem, for anonymous access to work with /bin/false as th
 
 *   [BLFS: ProFTPD](http://www.linuxfromscratch.org/blfs/view/7.6/server/proftpd.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Proftpd&oldid=375179](https://wiki.archlinux.org/index.php?title=Proftpd&oldid=375179)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Proftpd&oldid=414869](https://wiki.archlinux.org/index.php?title=Proftpd&oldid=414869)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

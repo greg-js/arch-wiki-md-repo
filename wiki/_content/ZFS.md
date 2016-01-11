@@ -613,7 +613,7 @@ Then run ZPool creation at the same time.
 
 ### ZFS is using too much RAM
 
-By default, ZFS caches file operations ([ARC](https://en.wikipedia.org/wiki/Adaptive_replacement_cache "wikipedia:Adaptive replacement cache")) using up to two-thirds of available system memory on the host. Remember, ZFS is designed for enterprise class storage systems! To adjust the ARC size, add the following to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") list:
+By default, ZFS caches file operations ([ARC](https://en.wikipedia.org/wiki/Adaptive_replacement_cache "wikipedia:Adaptive replacement cache")) using up to two-thirds of available system memory on the host. To adjust the ARC size, add the following to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") list:
 
 ```
 zfs.zfs_arc_max=536870912 # (for 512MB)
@@ -1173,7 +1173,7 @@ Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=414438](https://wiki.archlinux.org/index.php?title=ZFS&oldid=414438)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=414891](https://wiki.archlinux.org/index.php?title=ZFS&oldid=414891)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

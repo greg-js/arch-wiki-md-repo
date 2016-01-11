@@ -31,7 +31,7 @@ The _backup.sh_ script makes a tar backup of your system. You will be asked for:
 
 *   **Destination directory**: Where you want to save the backup. Default is `/`.
 *   **Archive name**: A desired name for the backup. Default is `Backup-$(hostname)-$(date +%Y-%m-%d-%T)`.
-*   **/home directory options**: You have three options: fully include it, keep only it's hidden files and folders (which are necessary to login and keep basic settings) or completely exclude it (in case it's located in separate partition and you want to use that in restore).
+*   **/home directory options**: You have three options: fully include it, keep only its hidden files and folders (which are necessary to login and keep basic settings) or completely exclude it (in case it's located in separate partition and you want to use that in restore).
 *   **Compression**: You can choose between gzip, bzip2, xz and none (for no compression). Gzip should be fine.
 *   **Archiver options**: You can pass your own extra options in the archiver. See `tar --help` for more info.
 *   **Passphrase and encryption method**: Enter a passphrase if you want to encrypt the archive and select encryption method (openssl or gpg). Leave empty for no encryption.
@@ -84,7 +84,7 @@ All options can also be passed using arguments. See `restore.sh --help`, `man sy
 
 When the process completes, you may want to check `/tmp/restore.log`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=System-tar-and-restore&oldid=402313](https://wiki.archlinux.org/index.php?title=System-tar-and-restore&oldid=402313)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=System-tar-and-restore&oldid=414895](https://wiki.archlinux.org/index.php?title=System-tar-and-restore&oldid=414895)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

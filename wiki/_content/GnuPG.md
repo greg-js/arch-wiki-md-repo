@@ -539,6 +539,11 @@ This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and c
 
 ### Revoking a key
 
+**Warning:**
+
+*   Anybody having access to your revocation certificate can revoke your key, rendering it useless.
+*   Key revocation should only be performed if your key is compromised or lost, or you forget your passphrase.
+
 Revocation certificates are automatically generated for newly generated keys, although one can be generated manually by the user later. These are located at `~/.gnupg/openpgp-revocs.d/`. The filename of the certificate is the fingerprint of the key it will revoke.
 
 To revoke your key, simply import the revocation certificate:
@@ -547,8 +552,6 @@ To revoke your key, simply import the revocation certificate:
 $ gpg --import _<fingerprint>_.rev
 
 ```
-
-**Warning:** Key revocation should only be performed if your key is compromised or lost, or you forget your passphrase.
 
 Now update the keyserver:
 
@@ -724,7 +727,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 
 [http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414849](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414849)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414852](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414852)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
