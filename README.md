@@ -1,4 +1,4 @@
-This repository holds all articles from the [ArchWiki](https://wiki.archlinux.org/) in markdown format. It should always be (relatively) current as it gets updated and pushed automatically four times per day.
+This repository holds all articles from the [ArchWiki](https://wiki.archlinux.org/) in markdown format. It should always be (relatively) current as it gets updated and pushed automatically every 48 hours.
 
 Could come in handy for browsing articles offline or if you want to use this info in your projects.
 
