@@ -57,24 +57,25 @@ Related articles
         *   [4.13.1 Address aliases](#Address_aliases)
         *   [4.13.2 Abook](#Abook)
         *   [4.13.3 Goobook](#Goobook)
-    *   [4.14 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
-    *   [4.15 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
-    *   [4.16 Speed up folders switch](#Speed_up_folders_switch)
-    *   [4.17 Use Mutt to send mail from command line](#Use_Mutt_to_send_mail_from_command_line)
-    *   [4.18 Composing HTML e-mails](#Composing_HTML_e-mails)
-    *   [4.19 How to display another email while composing](#How_to_display_another_email_while_composing)
-    *   [4.20 Archive treated e-mails](#Archive_treated_e-mails)
-    *   [4.21 Mutt-Sidebar](#Mutt-Sidebar)
-    *   [4.22 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
-    *   [4.23 Filtering the message view](#Filtering_the_message_view)
-    *   [4.24 Display the index above the pager view](#Display_the_index_above_the_pager_view)
-    *   [4.25 Default folder for saving attachments](#Default_folder_for_saving_attachments)
-    *   [4.26 PGP signed/encrypted mail](#PGP_signed.2Fencrypted_mail)
-    *   [4.27 Pager behavior](#Pager_behavior)
-    *   [4.28 Fast reply](#Fast_reply)
-    *   [4.29 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
-    *   [4.30 Conversation grouping](#Conversation_grouping)
-    *   [4.31 IMAP message cache](#IMAP_message_cache)
+    *   [4.14 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
+    *   [4.15 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
+    *   [4.16 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
+    *   [4.17 Speed up folders switch](#Speed_up_folders_switch)
+    *   [4.18 Use Mutt to send mail from command line](#Use_Mutt_to_send_mail_from_command_line)
+    *   [4.19 Composing HTML e-mails](#Composing_HTML_e-mails)
+    *   [4.20 How to display another email while composing](#How_to_display_another_email_while_composing)
+    *   [4.21 Archive treated e-mails](#Archive_treated_e-mails)
+    *   [4.22 Mutt-Sidebar](#Mutt-Sidebar)
+    *   [4.23 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
+    *   [4.24 Filtering the message view](#Filtering_the_message_view)
+    *   [4.25 Display the index above the pager view](#Display_the_index_above_the_pager_view)
+    *   [4.26 Default folder for saving attachments](#Default_folder_for_saving_attachments)
+    *   [4.27 PGP signed/encrypted mail](#PGP_signed.2Fencrypted_mail)
+    *   [4.28 Pager behavior](#Pager_behavior)
+    *   [4.29 Fast reply](#Fast_reply)
+    *   [4.30 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
+    *   [4.31 Conversation grouping](#Conversation_grouping)
+    *   [4.32 IMAP message cache](#IMAP_message_cache)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
     *   [5.2 The _change-folder_ function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
@@ -1112,6 +1113,10 @@ bind editor <Tab> complete-query
 
 When composing an email message within mutt, `Tab` will now search your Google contacts. While viewing messages `a` will add the sender to Google contacts.
 
+### Manage multiple sender accounts
+
+If you use multiple sender accounts, you can automatically associate a specific sender account with a recipient. [mutt-vid](https://aur.archlinux.org/packages/mutt-vid/)<sup><small>AUR</small></sup> scans sent emails for the most recent "From" details associated with specific recipients, saving these in a file for mutt to source. The next time you email this recipient, mutt will automatically invoke a send-hook with the same email address and real name that you used previously. See mutt-vid's [homepage](https://github.com/protist/mutt-vid) for more details.
+
 ### Request IMAP mail retrieval manually
 
 If you do not want to wait for the next automatic IMAP fetching (or if you did not enable it), you might want to fetch mails manually. There is a mutt command `imap-fetch-mail` for that. Alternatively, you could bind it to a key:
@@ -1539,7 +1544,7 @@ Newcomers may find it quite hard to find help for Mutt. Actually most of the top
 *   [Steve Losh on Mutt, offlineimap, msmtp, notmuch (focused on Gmail)](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 *   [muttrc builder](http://www.muttrcbuilder.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=413170](https://wiki.archlinux.org/index.php?title=Mutt&oldid=413170)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=414970](https://wiki.archlinux.org/index.php?title=Mutt&oldid=414970)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

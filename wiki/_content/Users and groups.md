@@ -179,12 +179,7 @@ See [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.
 
 ## User management
 
-To list users currently logged on the system, the _who_ command can be used. To list all existing users (including one not created directly by the administrator) use:
-
-```
-$ awk -F: '{ print $1 }' /etc/passwd
-
-```
+To list users currently logged on the system, the _who_ command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See `passwd(1)` for the description of the output format.
 
 To add a new user, use the _useradd_ command:
 
@@ -1045,7 +1040,7 @@ These groups used to be needed before arch migrated to [systemd](/index.php/Syst
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=414792](https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=414792)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=415021](https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=415021)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

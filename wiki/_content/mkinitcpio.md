@@ -650,7 +650,7 @@ If you keep `/usr` as a separate partition, you must adhere to the following req
 
 *   Enable `mkinitcpio-generate-shutdown-ramfs.service` **or** add the `shutdown` hook.
 *   Add the `fsck` hook, mark `/usr` with a `passno` of `0` in `/etc/fstab`. While recommended for everyone, it is mandatory if you want your `/usr` partition to be fsck'ed at boot-up. Without this hook, `/usr` will never be fsck'd.
-*   Add the `usr` hook. This will mount the `/usr` partition after root is mounted. Prior to 0.9.0, mounting of `/usr` would be automatic if it was found in the real root's `/etc/fstab`.
+*   Add the `usr` hook. This will mount the `/usr` partition after root is mounted. Prior to 0.9.0, mounting of `/usr` would be automatic if it was found in the real root's `/etc/fstab`. See [Fstab](/index.php/Fstab "Fstab")
 
 ## Troubleshooting
 
@@ -723,7 +723,7 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=403664](https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=403664)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=414962](https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=414962)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

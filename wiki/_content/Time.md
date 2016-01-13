@@ -113,7 +113,7 @@ Later, the system clock is set again from the hardware clock by systemd, depende
 
 **Warning:** This method uses functionality that is buggy in old Windows versions (pre-7) and Microsoft recommends not to use it. See [[1]](https://support.microsoft.com/en-us/kb/2687252) for details. Another bug exists on Windows before Vista SP2 that resets the clock to _localtime_ after resuming from the suspend/hibernation state. For _even older_ versions of Windows, you might want to read [http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html) - the functionality was not even documented nor officially supported then. For these operating systems, it is recommended to use _localtime_. If you are using newer versions of Windows, you may safely disregard this warning.
 
-One reason users often set the RTC in localtime is to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") ([which uses localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). However, Windows is able to deal with the RTC being in UTC with a simple registry fix. It is recommended to configure Windows to use UTC, rather than Linux to use localtime. If you make Windows use UTC, also remember to disable the "Internet Time Update" Windows feature, so that Windows does not mess with the hardware clock, trying to sync it with internet time. You should instead use an agent for the NTP to modify the RTC and sync to internet time, see [#Time synchronization](#Time_synchronization).
+One reason users often set the RTC in localtime is to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") ([which uses localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). However, Windows is able to deal with the RTC being in UTC with a simple registry fix. It is recommended to configure Windows to use UTC, rather than Linux to use localtime.
 
 Using `regedit`, add a `DWORD` value with hexadecimal value `1` to the registry:
 
@@ -145,7 +145,15 @@ If you are having issues with the offset of the time, try reinstalling [tzdata](
 
 ```
 
-It makes sense to [disable](http://www.addictivetips.com/windows-tips/disable-time-synchronization-in-windows-7/) time synchronization in Windows - otherwise it will mess up the hardware clock.
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** The following statement needs a valid external reference, or be deleted. (Discuss in [Talk:Time#Windows time synch](https://wiki.archlinux.org/index.php/Talk:Time#Windows_time_synch))
+
+Old versions of Windows may still be resetting the RTC to localtime unless the time synchronization feature is [disabled](http://www.addictivetips.com/windows-tips/disable-time-synchronization-in-windows-7/).
 
 ### UTC in Ubuntu
 
@@ -275,7 +283,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 *   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=414633](https://wiki.archlinux.org/index.php?title=Time&oldid=414633)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=414907](https://wiki.archlinux.org/index.php?title=Time&oldid=414907)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

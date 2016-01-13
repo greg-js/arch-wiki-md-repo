@@ -170,7 +170,13 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 <td><= 6.9.4-1</td>
 
-<td>**Vulnerable**</td>
+<td>6.10.0-1</td>
+
+<td>3d</td>
+
+<td>Fixed</td>
+
+<td>[ASA-201601-7](https://lists.archlinux.org/pipermail/arch-security/2016-January/000486.html)</td>
 
 </tr>
 
@@ -7910,7 +7916,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=414887](https://wiki.archlinux.org/index.php?title=CVE&oldid=414887)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=414940](https://wiki.archlinux.org/index.php?title=CVE&oldid=414940)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

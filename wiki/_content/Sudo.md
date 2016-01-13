@@ -222,6 +222,7 @@ Users may wish to disable the root login. Without root, attackers must first gue
 **Warning:**
 
 *   Be careful, you may lock yourself out by disabling root login. Sudo is not automatically installed and its default configuration allows neither passwordless root access nor root access with your own password. Ensure a user is properly configured as a sudoer _before_ disabling the root account!
+*   If you have changed your sudoers -file to use rootpw as default, then do not disable root login with any of the following commands!
 *   If you are already locked out, see [Password recovery](/index.php/Password_recovery "Password recovery") for help.
 
 The account can be locked via `passwd`:
@@ -451,7 +452,7 @@ The authors site has a [list of all the options](http://www.sudo.ws/sudo/sudoers
 
 See [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sudo&oldid=413889](https://wiki.archlinux.org/index.php?title=Sudo&oldid=413889)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sudo&oldid=414993](https://wiki.archlinux.org/index.php?title=Sudo&oldid=414993)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

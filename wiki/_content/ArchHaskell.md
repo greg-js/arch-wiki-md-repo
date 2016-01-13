@@ -55,14 +55,6 @@ Server = http://xsounds.org/~haskell/core/$arch
 
 ```
 
-or a mirror (updated daily):
-
-```
-[haskell-core]
-Server = http://orbitalfox.com/haskell/core/$arch
-
-```
-
 The set of packages in the [haskell-core] repository is derived from the **habs** tree officially located [here](https://github.com/archhaskell/habs). A tool called [cblrepo](https://github.com/magthe/cblrepo) is used to keep the **habs** tree synchronized with the official Haskell packages from [Hackage](http://hackage.haskell.org/packages/hackage.html).
 
 The repositories provide both file listings (by using `repo-add --files`), package deltas (`repo-add --delta`), and both packages and the database are signed. The fingerprint of the key used for signing is:
@@ -156,7 +148,7 @@ For example, for haskell-foo, ensure:
 
 There can be some problems switching to [ArchHaskell repository](#ArchHaskell_repository) when some Haskell packages are already installed from [official repositories](/index.php/Official_repositories "Official repositories"). The surest way is to remove all Haskell related packages, synchronize the [pacman](/index.php/Pacman "Pacman") packages database, and reinstall all the needed packages. Also for Xmonad users, be sure to install `haskell-xmonad` package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=411477](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=411477)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=414960](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=414960)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

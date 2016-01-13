@@ -35,7 +35,7 @@ You also need an icon theme to be installed. The default one is _Oxygen_, which 
 
 For additional functionality, you may wish to install the following:
 
-*   **Connman** — Network manager like [NetworkManager](/index.php/NetworkManager "NetworkManager").
+*   **[Connman](/index.php/Connman "Connman")** — Network manager like [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 [http://git.kernel.org/cgit/network/connman](http://git.kernel.org/cgit/network/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -126,7 +126,7 @@ As LXQt is a lightweight desktop, a plain install will not provide many desktop 
 *   [LXQt on deviantART](http://lxqt-de.deviantart.com/)
 *   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=414446](https://wiki.archlinux.org/index.php?title=LXQt&oldid=414446)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=415023](https://wiki.archlinux.org/index.php?title=LXQt&oldid=415023)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

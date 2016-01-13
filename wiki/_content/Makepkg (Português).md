@@ -34,13 +34,13 @@ O Makepkg é fornecido pelos pacotes do [pacman](https://www.archlinux.org/packa
 
 ## Configuração
 
-`/etc/makepkg.conf` é o principal arquivo de conficaração para o makepkg. A maioria dos usuários desejam ajustar as opções de configuração para construção dos pacotes.
+`/etc/makepkg.conf` é o principal arquivo de configuração para o makepkg. A maioria dos usuários desejam ajustar as opções de configuração para construção dos pacotes.
 
 ### Arquitetura, compilação flags
 
 As opções `MAKEFLAGS`, `CFLAGS`, e `CXXFLAGS` são usadas pelo [make](https://www.archlinux.org/packages/?name=make), [gcc](https://www.archlinux.org/packages/?name=gcc), e `g++` enquanto a compilação de programa é com makepkg. Por padrão, essas opções de gerar pacotes genéricos podem ser instalados em uma ampla variedade de máquinas. Um ganho de desempenho pode ser alcançado por compilação de ajuste para o computador. A desvantagem é que os pacotes compilados especificamente para o processador do computador podem não funcionar em outras máquinas.
 
-**Nota:** Tenha em mente que nem todos os sistemas de compilação de pacote usarão suas variáveis ​​exportadas. Algumas as substuem no makefile original ou [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+**Nota:** Tenha em mente que nem todos os sistemas de compilação de pacote usarão suas variáveis ​​exportadas. Algumas as substituem no makefile original ou [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
  `/etc/makepkg.conf` 
 
@@ -88,9 +88,9 @@ $ gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
 
 ```
 
-Otimizar ainda mais para o tipo de CPU pode, teoricamente, aumentar o desempenho, pois o `-march=native` permite que todas as instruções disponíveis definem e melhorem o agendamento para uma determinada CPU. Isto é especialmente perceptível na reconstrução de aplicativos (por exemplo: áudio/ferramentas de decodifição de video, aplicações científicas, programas matemáticos pesados, etc.) que podem tiram uma boa vantagem de configurações de instruções mais recentes não habilitadas ao usar opções padrão (ou pacotes) fornecido pelo Arch Linux.
+Otimizar ainda mais para o tipo de CPU pode, teoricamente, aumentar o desempenho, pois o `-march=native` permite que todas as instruções disponíveis definem e melhorem o agendamento para uma determinada CPU. Isto é especialmente perceptível na reconstrução de aplicativos (por exemplo: áudio/ferramentas de decodificação de video, aplicações científicas, programas matemáticos pesados, etc.) que podem tiram uma boa vantagem de configurações de instruções mais recentes não habilitadas ao usar opções padrão (ou pacotes) fornecido pelo Arch Linux.
 
-É muito fácil reduzir o desempenho usando o CFLAGS "não-padrão", porque compiladores tendem fortamente passar o tamanho do código com loop, mal vetorização, louco inlining, etc. dependendo do compilador. A menos que possa verificar/benchmark que é mais rápido, há uma chance muito boa nisso!
+É muito fácil reduzir o desempenho usando o CFLAGS "não-padrão", porque compiladores tendem fortemente passar o tamanho do código com loop, mal vetorização, louco inlining, etc. dependendo do compilador. A menos que possa verificar/benchmark que é mais rápido, há uma chance muito boa nisso!
 
 Veja a página de manual do GCC para uma lista completa de opções disponíveis. O artigo wiki Gentoo [Compilation Optimization Guide](http://www.gentoo.org/doc/en/gcc-optimization.xml) e [Safe CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) fornecem informações mais profundas.
 
@@ -148,7 +148,7 @@ Packager       : Unknown Packager
 
 ```
 
-Afterwards:
+Depois:
 
  `pacman -Qi package` 
 
@@ -285,7 +285,7 @@ $ grep -R "$(pwd)/src" pkg/
 
 *   [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt): Um script para mostrar as opções gcc específicas da CPU adaptados para a CPU atual.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=411881](https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=411881)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=415003](https://wiki.archlinux.org/index.php?title=Makepkg_(Português)&oldid=415003)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

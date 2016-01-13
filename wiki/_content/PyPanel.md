@@ -141,7 +141,7 @@ $ touch ~/.Xauthority
 
 *   [PyPanel SourceForge page](http://pypanel.sourceforge.net)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPanel&oldid=412162](https://wiki.archlinux.org/index.php?title=PyPanel&oldid=412162)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPanel&oldid=414985](https://wiki.archlinux.org/index.php?title=PyPanel&oldid=414985)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

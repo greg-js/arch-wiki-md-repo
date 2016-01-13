@@ -6,7 +6,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
-This page pulls heavily from [openSUSE's Software Management Command Line Comparison](http://old-en.opensuse.org/Software_Management_Command_Line_Comparison). It has been simplified and has added Arch to the comparison, as well as modified the order in which each distribution exists for the benefit of Arch users.
+This page uses a table to display the correspondence of [package management](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") commands among some of the most popular Linux distributions. The original inspiration was given by [openSUSE's Software Management Command Line Comparison](http://old-en.opensuse.org/Software_Management_Command_Line_Comparison).
 
 **Tip:** Arch users having to temporarily deal with another Linux distribution can use [pacapt](https://github.com/icy/pacapt), a simple wrapper around other package managers.
 
@@ -1209,7 +1209,7 @@ mock (in chroot)</td>
 
 *   [Changes in DNF CLI compared to Yum](http://dnf.readthedocs.org/en/latest/cli_vs_yum.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414502](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=414502)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=415008](https://wiki.archlinux.org/index.php?title=Pacman/Rosetta&oldid=415008)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

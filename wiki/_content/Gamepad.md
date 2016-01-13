@@ -580,19 +580,34 @@ Then replug the device making you trouble. The joystick and event devices should
 
 ### Steam Controller Not Pairing
 
-If the steam controller will not pair wirelessly but works when wired make you may need to create the following udev rule.
+If the steam controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
 
 `/lib/udev/rules.d/99-steam-controller-perms.rules`
 
 ```
-# USB devices
+# This rule is needed for basic functionality of the controller in Steam and keyboard/mouse emulation
 SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
-# Oculus HID Sensor naming and permissioning
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2833", MODE="0666"
+
+# This rule is necessary for gamepad emulation; make sure you replace 'pgriffais' with a group that the user that runs Steam belongs to
+KERNEL=="uinput", MODE="0660", GROUP="pgriffais", OPTIONS+="static_node=uinput"
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414496](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414496)"
+Additionally, create a group of steam controller users.
+
+```
+# groupadd pgriffais
+
+```
+
+And add your user to that group.
+
+```
+# gpasswd -a $USER pgriffais
+
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414959](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414959)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

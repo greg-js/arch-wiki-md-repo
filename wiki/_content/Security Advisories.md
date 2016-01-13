@@ -45,6 +45,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
+*   [11 January 2016] [ASA-201601-7](https://lists.archlinux.org/pipermail/arch-security/2016-January/000486.html) [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) denial of service
 *   [09 January 2016] [ASA-201601-6](https://lists.archlinux.org/pipermail/arch-security/2016-January/000485.html) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) denial of service
 *   [09 January 2016] [ASA-201601-5](https://lists.archlinux.org/pipermail/arch-security/2016-January/000484.html) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) denial of service
 *   [09 January 2016] [ASA-201601-4](https://lists.archlinux.org/pipermail/arch-security/2016-January/000483.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) denial of service
@@ -530,7 +531,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414840](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414840)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414939](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414939)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -103,6 +103,8 @@ Add the following to `/etc/httpd/conf/extra/httpd-ssl.conf` (or to `/etc/httpd/c
 To make sure the SSL settings get loaded, uncomment the SSL configuration line in `/etc/httpd/conf/httpd.conf` so it looks like this:
 
 ```
+LoadModule ssl_module modules/mod_ssl.so
+LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
 Include /etc/httpd/conf/extra/httpd-ssl.conf
 
 ```
@@ -267,7 +269,7 @@ Now start the _svnserve.service_ [daemon](/index.php/Daemon "Daemon").
 
 ### svn+ssh
 
-To use svn+[ssh://](ssh://), we have to have a wrapper written for svnserve.
+To use svn+ssh://, we have to have a wrapper written for svnserve.
 
 check where the svnserve binary is located:
 
@@ -361,7 +363,7 @@ For a list of subversion clients, see the [Wikipedia article](https://en.wikiped
 *   [http://svnbook.red-bean.com/en/1.1/svn-book.html#svn-ch-9-sect-2.2-re-load](http://svnbook.red-bean.com/en/1.1/svn-book.html#svn-ch-9-sect-2.2-re-load)
 *   [http://subversion.tigris.org/](http://subversion.tigris.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Subversion_Setup&oldid=388058](https://wiki.archlinux.org/index.php?title=Subversion_Setup&oldid=388058)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Subversion_Setup&oldid=414980](https://wiki.archlinux.org/index.php?title=Subversion_Setup&oldid=414980)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

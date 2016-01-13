@@ -119,7 +119,7 @@ Be aware that after enabling the tick-box option `Make available to other users`
 
 ### Xfce
 
-While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), but in order to see notifications, including error messages, `nm-applet` needs an implementation of the Freedesktop desktop notifications specification (see the [Galapago Project](http://www.galago-project.org/specs/notification/0.9/index.html)) to display them. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
+While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), in order to see notifications, including error messages, `nm-applet` needs an implementation of the Freedesktop desktop notifications specification (see the [Galapago Project](http://www.galago-project.org/specs/notification/0.9/index.html)) to display them. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
 
 Without such a notification daemon, `nm-applet` outputs the following errors to stdout/stderr:
 
@@ -786,7 +786,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414037](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414037)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414909](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414909)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

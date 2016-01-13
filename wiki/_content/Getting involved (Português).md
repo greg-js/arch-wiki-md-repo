@@ -180,10 +180,10 @@ Leia [Trusted Users#How to become TU?](/index.php/Trusted_Users#How_to_become_TU
 
 ### O que eu posso fazer sendo um artista?
 
-Sinta-se libre para compartilhar papéis de parede, splash screens, cores, widgets, temas, etc. com a comunidade no [subforum de arte](https://bbs.archlinux.org/viewforum.php?id=47).  
+Sinta-se livre para compartilhar papéis de parede, splash screens, cores, widgets, temas, etc., com a comunidade no [subforum de arte](https://bbs.archlinux.org/viewforum.php?id=47).  
 Veja também [Arch Linux Art](https://www.archlinux.org/art/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Getting_involved_(Português)&oldid=411895](https://wiki.archlinux.org/index.php?title=Getting_involved_(Português)&oldid=411895)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Getting_involved_(Português)&oldid=414997](https://wiki.archlinux.org/index.php?title=Getting_involved_(Português)&oldid=414997)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

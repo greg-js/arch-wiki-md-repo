@@ -18,7 +18,7 @@ The following packages provide Atom:
 
     **Note:** Bugs regarding binary packages from the _atom_ repository can be reported on [Github](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Atom&oldid=414350](https://wiki.archlinux.org/index.php?title=Atom&oldid=414350)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Atom&oldid=414924](https://wiki.archlinux.org/index.php?title=Atom&oldid=414924)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

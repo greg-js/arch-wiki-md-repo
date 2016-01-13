@@ -272,7 +272,12 @@ BIOS A07 should fix this.
 
 ### Random kernel hangs at boot
 
-See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems to only affect those with touchscreens.
+See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems to only affect those with touchscreens. The fix consists in removing "keyboard" from the HOOKS in /etc/mkinitcpio.conf and instead using MODULES="atkbd.ko usbhid hid-generic" (if you need the keyboard hook). Obviously you will have to run:
+
+```
+# mkinitcpio -p linux
+
+```
 
 ## See also
 
@@ -287,7 +292,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413881](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=413881)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415024](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415024)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

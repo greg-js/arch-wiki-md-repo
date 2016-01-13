@@ -139,7 +139,7 @@ screen=1
 
 ### Screen 1 could not be found
 
-/home/username/.config, change Screen 1 to Screen 0, in redshift.conf
+Locate configuration-file "redshift.conf" in your distribution and change "screen 1" to "screen 0"
 
 ### redshift-gtk will not start
 
@@ -170,12 +170,14 @@ system=false
 users=
 ```
 
+If using Gnome, you can also toggle Location Services to "On" in "Settings -> Privacy"
+
 ## See also
 
 *   [Redshift website](http://jonls.dk/redshift)
 *   [Redshift on github](http://github.com/jonls/redshift)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Redshift&oldid=411838](https://wiki.archlinux.org/index.php?title=Redshift&oldid=411838)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Redshift&oldid=414968](https://wiki.archlinux.org/index.php?title=Redshift&oldid=414968)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

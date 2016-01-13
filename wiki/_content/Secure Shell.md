@@ -32,15 +32,15 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
             *   [1.3.3.1 Force public key authentication](#Force_public_key_authentication)
             *   [1.3.3.2 Two-factor authentication and public keys](#Two-factor_authentication_and_public_keys)
             *   [1.3.3.3 Protecting against brute force attacks](#Protecting_against_brute_force_attacks)
-                *   [1.3.3.3.1 Using Iptabels](#Using_Iptabels)
-                *   [1.3.3.3.2 Anti-Brute-Force Tools](#Anti-Brute-Force_Tools)
+                *   [1.3.3.3.1 Using iptables](#Using_iptables)
+                *   [1.3.3.3.2 Anti-brute-force tools](#Anti-brute-force_tools)
             *   [1.3.3.4 Limit root login](#Limit_root_login)
                 *   [1.3.3.4.1 Deny](#Deny)
                 *   [1.3.3.4.2 Restrict](#Restrict)
             *   [1.3.3.5 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
 *   [2 Other SSH clients and servers](#Other_SSH_clients_and_servers)
     *   [2.1 Dropbear](#Dropbear)
-    *   [2.2 Mosh: Mobile Shell](#Mosh:_Mobile_Shell)
+    *   [2.2 Mosh: mobile shell](#Mosh:_mobile_shell)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Encrypted SOCKS tunnel](#Encrypted_SOCKS_tunnel)
         *   [3.1.1 Step 1: start the connection](#Step_1:_start_the_connection)
@@ -53,14 +53,14 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [3.5 Speeding up SSH](#Speeding_up_SSH)
     *   [3.6 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
     *   [3.7 Keep alive](#Keep_alive)
-    *   [3.8 Saving connection data in ssh config](#Saving_connection_data_in_ssh_config)
+    *   [3.8 Saving connection data in SSH config](#Saving_connection_data_in_SSH_config)
     *   [3.9 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
     *   [3.10 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
-        *   [3.10.1 Run Autossh automatically at boot via systemd](#Run_Autossh_automatically_at_boot_via_systemd)
+        *   [3.10.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
         *   [4.1.1 Verify SSH settings](#Verify_SSH_settings)
-        *   [4.1.2 Restart SSH + Relogin Users](#Restart_SSH_.2B_Relogin_Users)
+        *   [4.1.2 Restart SSH + relogin users](#Restart_SSH_.2B_relogin_users)
         *   [4.1.3 Cleanup outdated keys (optional)](#Cleanup_outdated_keys_.28optional.29)
         *   [4.1.4 Recommendations](#Recommendations)
     *   [4.2 SSH connection left hanging after poweroff/reboot](#SSH_connection_left_hanging_after_poweroff.2Freboot)
@@ -79,7 +79,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
         *   [4.5.2 Solution using terminfo file](#Solution_using_terminfo_file)
     *   [4.6 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_.5Bpreauth.5D)
     *   [4.7 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
-    *   [4.8 no matching key exchange method found by OpenSSH 7.0](#no_matching_key_exchange_method_found_by_OpenSSH_7.0)
+    *   [4.8 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
 *   [5 See also](#See_also)
 
 ## OpenSSH
@@ -236,7 +236,7 @@ AuthenticationMethods publickey,keyboard-interactive:pam
 
 Brute forcing is a simple concept: One continuously tries to log in to a webpage or server log-in prompt like SSH with a high number of random username and password combinations.
 
-###### Using Iptabels
+###### Using iptables
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
@@ -292,7 +292,7 @@ iptables -A LOG_AND_DROP -j DROP
 
 ```
 
-###### Anti-Brute-Force Tools
+###### Anti-brute-force tools
 
 You can protect yourself from brute force attacks by using an automated script that blocks anybody trying to brute force their way in, for example [fail2ban](/index.php/Fail2ban "Fail2ban") or [sshguard](/index.php/Sshguard "Sshguard").
 
@@ -374,7 +374,7 @@ Apart from OpenSSH, there are many SSH [clients](https://en.wikipedia.org/wiki/C
 
 The command-line ssh client is named dbclient.
 
-### Mosh: Mobile Shell
+### Mosh: mobile shell
 
 From the Mosh [website](http://mosh.mit.edu/):
 
@@ -662,7 +662,7 @@ ClientAliveInterval 120
 
 (or some other number greater than 0) in `/etc/ssh/sshd_config` on the server.
 
-### Saving connection data in ssh config
+### Saving connection data in SSH config
 
 Whenever you want to connect to a ssh server, you usually have to type at least its address and the username. To save that typing work for servers you regularly connect to, you can use the personal `~/.ssh/config` or the global `/etc/ssh/ssh_config` files as shown in the following example:
 
@@ -715,7 +715,7 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
 
 ### Autossh - automatically restarts SSH sessions and tunnels
 
-When a session or tunnel cannot be kept alive, for example due to bad network conditions causing client disconnections, you can use [Autossh](http://www.harding.motd.ca/autossh/) to automatically restart them. Autossh can be installed from the [official repositories](/index.php/Official_repositories "Official repositories").
+When a session or tunnel cannot be kept alive, for example due to bad network conditions causing client disconnections, you can use [autossh](https://www.archlinux.org/packages/?name=autossh) to automatically restart them.
 
 Usage examples:
 
@@ -724,14 +724,14 @@ $ autossh -M 0 -o "ServerAliveInterval 45" -o "ServerAliveCountMax 2" username@e
 
 ```
 
-Combined with [sshfs](/index.php/Sshfs "Sshfs") :
+Combined with [sshfs](/index.php/Sshfs "Sshfs"):
 
 ```
 $ sshfs -o reconnect,compression=yes,transform_symlinks,ServerAliveInterval=45,ServerAliveCountMax=2,ssh_command='autossh -M 0' username@example.com: /mnt/example 
 
 ```
 
-Connecting through a SOCKS-proxy set by [Proxy_settings](/index.php/Proxy_settings "Proxy settings") :
+Connecting through a SOCKS-proxy set by [Proxy settings](/index.php/Proxy_settings "Proxy settings"):
 
 ```
 $ autossh -M 0 -o "ServerAliveInterval 45" -o "ServerAliveCountMax 2" -NCD 8080 username@example.com 
@@ -742,9 +742,11 @@ With the `-f` option autossh can be made to run as a background process. Running
 
 The session will end once you type `exit` in the session, or the autossh process receives a SIGTERM, SIGINT of SIGKILL signal.
 
-#### Run Autossh automatically at boot via systemd
+#### Run autossh automatically at boot via systemd
 
-If you want to automatically start autossh, it is now easy to get systemd to manage this for you. For example, you could create a systemd unit file like this:
+If you want to automatically start autossh, you can create a systemd unit file:
+
+ `/etc/systemd/system/autossh.service` 
 
 ```
 [Unit]
@@ -757,14 +759,13 @@ ExecStart=/usr/bin/autossh -M 0 -NL 2222:localhost:2222 -o TCPKeepAlive=yes foo@
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 Here `AUTOSSH_GATETIME=0` is an environment variable specifying how long ssh must be up before autossh considers it a successful connection, setting it to 0 autossh also ignores the first run failure of ssh. This may be useful when running autossh at boot. Other environment variables are available on the manpage. Of course, you can make this unit more complex if necessary (see the systemd documentation for details), and obviously you can use your own options for autossh, but note that the `-f` implying `AUTOSSH_GATETIME=0` does not work with systemd.
 
-Then place this in, for example, /etc/systemd/system/autossh.service. Afterwards, you can then start and/or [enable](/index.php/Enable "Enable") your autossh tunnels by enabling the `autossh` service (or whatever you called the service file).
+Remember to [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") the service afterwards.
 
-It is also easy to maintain several autossh processes, to keep several tunnels alive. Just create multiple .service files with different names.
+**Tip:** It is also easy to maintain several autossh processes, to keep several tunnels alive. Just create multiple service files with different names.
 
 ## Troubleshooting
 
@@ -795,7 +796,7 @@ This is a first-steps troubleshooting checklist. It is recommended to check thes
 
 5\. Check if the user has set a password. Sometimes new users are added and do not have a password set nor were logged in once.
 
-#### Restart SSH + Relogin Users
+#### Restart SSH + relogin users
 
 6\. [Restart](/index.php/Restart "Restart") `sshd` (server).
 
@@ -1008,7 +1009,7 @@ PubkeyAcceptedKeyTypes +ssh-dss
 
 While this can be added a per host basis or with -o, to make sure "ProxyCommand ssh" still works, add it to ssh_config.
 
-### no matching key exchange method found by OpenSSH 7.0
+### No matching key exchange method found by OpenSSH 7.0
 
 OpenSSH 7.0 also deprecated the key algorithm diffie-hellman-group1-sha1, as we could see in [http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html).
 
@@ -1046,7 +1047,7 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=414783](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=414783)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=415057](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=415057)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

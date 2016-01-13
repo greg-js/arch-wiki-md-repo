@@ -174,7 +174,16 @@ _dhcpcd_ executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexi
 
 ### 10-wpa_supplicant
 
-The `10-wpa_supplicant` hook automatically launches [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if:
+Enable this hook by creating a symbolic link (to ensure that always the current version is used, even after package updates):
+
+```
+# ln -s /usr/share/dhcpcd/hooks/10-wpa_supplicant /usr/lib/dhcpcd/dhcpcd-hooks/
+
+```
+
+**Note:** Behaviour changed in [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)-6.10.0-1: The hook is not enabled by default anymore [[2]](http://roy.marples.name/projects/dhcpcd/info/5d7b3cbea2808602), [[3]](http://roy.marples.name/projects/dhcpcd/info/28fd82a29a6d54ad), [[4]](http://roy.marples.name/projects/dhcpcd/info/9b0662ecd9a8b839).
+
+The `10-wpa_supplicant` hook, if enabled, automatically launches [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if:
 
 *   no _wpa_supplicant_ process is already listening on that interface.
 *   a _wpa_supplicant_ configuration file exists. _dhcpcd_ checks
@@ -318,7 +327,7 @@ After making changes, [reload the configuration](/index.php/Systemd#Editing_prov
 *   [dhcpcd(8)](http://roy.marples.name/man/html8/dhcpcd.html)
 *   [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=411985](https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=411985)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=415062](https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=415062)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

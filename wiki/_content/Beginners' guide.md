@@ -654,7 +654,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414713](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=414713)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=415063](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=415063)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

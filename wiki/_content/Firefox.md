@@ -25,8 +25,6 @@ Related articles
     *   [4.4 Adding search engines](#Adding_search_engines)
         *   [4.4.1 arch-firefox-search](#arch-firefox-search)
     *   [4.5 Multimedia playback](#Multimedia_playback)
-    *   [4.6 Tabs merged with title bar](#Tabs_merged_with_title_bar)
-    *   [4.7 Show search matches in scroll bar](#Show_search_matches_in_scroll_bar)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
     *   [5.2 Font troubleshooting](#Font_troubleshooting)
@@ -183,14 +181,6 @@ Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-
 Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package need to be installed.
 
 Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5) or [this page](http://www.quirksmode.org/html5/tests/video.html) to verify that it is correctly installed and is in use.
-
-### Tabs merged with title bar
-
-Firefox is able to display tabs in the title bar on Windows, but not on Linux. To fix this, install [this extension.](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/), then open it's settings, at the tab "Look & Feel", submenu named "Custom Minimize, Max & Close Buttons", select Skin "Auto. Current theme's skin (fixed position)". Additionally, in "Custom Close button", at "Mouse Primary button" option select "Close Fx Window (Fx default)". You might review other settings and customize even more.
-
-### Show search matches in scroll bar
-
-This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/en-US/firefox/addon/findbar-tweak/?src=hp-dl-featured) extension.
 
 ## Troubleshooting
 
@@ -400,7 +390,7 @@ You probably have enabled the HTML5 mode for YouTube, which isn't fully supporte
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=414894](https://wiki.archlinux.org/index.php?title=Firefox&oldid=414894)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=414928](https://wiki.archlinux.org/index.php?title=Firefox&oldid=414928)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

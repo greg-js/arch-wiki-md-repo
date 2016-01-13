@@ -20,7 +20,7 @@ If scrolling up all the way does not show you enough information, you need to ex
 
 If this does not work, your framebuffer console may not be properly enabled. Check the [Framebuffer Console documentation](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) for other parameters e.g. for changing the framebuffer driver.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Scrollback_buffer&oldid=410329](https://wiki.archlinux.org/index.php?title=Scrollback_buffer&oldid=410329)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Scrollback_buffer&oldid=414984](https://wiki.archlinux.org/index.php?title=Scrollback_buffer&oldid=414984)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

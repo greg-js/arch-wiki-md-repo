@@ -123,7 +123,7 @@ Some released features include their sources, too. For a normal release version 
 
 Next is the `features` section. It creates the necessary directories, one for every jar file, and extracts the jar in the corresponding directory. Similarly, the `plugins` section installs the jar files in their directory. A while cycle is used to prevent funny-named files.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=405205](https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=405205)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=414988](https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=414988)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

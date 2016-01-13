@@ -106,7 +106,7 @@ You can read "Virtual Honeypots: From Botnet Tracking to Intrusion Detection" by
 
 [http://ulissesaraujo.wordpress.com/2008/12/08/deploying-honeypots-with-honeyd/](http://ulissesaraujo.wordpress.com/2008/12/08/deploying-honeypots-with-honeyd/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Honeyd&oldid=407979](https://wiki.archlinux.org/index.php?title=Honeyd&oldid=407979)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Honeyd&oldid=414954](https://wiki.archlinux.org/index.php?title=Honeyd&oldid=414954)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

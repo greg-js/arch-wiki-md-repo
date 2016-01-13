@@ -25,8 +25,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [1 DNSSEC Packages](#DNSSEC_Packages)
 *   [2 Howto enable DNSSEC in specific software](#Howto_enable_DNSSEC_in_specific_software)
     *   [2.1 OpenSSH (fixes only weak point in SSH design)](#OpenSSH_.28fixes_only_weak_point_in_SSH_design.29)
-    *   [2.2 Firefox (secure browsing - enchancment of HTTPS)](#Firefox_.28secure_browsing_-_enchancment_of_HTTPS.29)
-    *   [2.3 Chromium/Google Chrome (secure browsing - enchancment of HTTPS)](#Chromium.2FGoogle_Chrome_.28secure_browsing_-_enchancment_of_HTTPS.29)
+    *   [2.2 Firefox (secure browsing - enhancement of HTTPS)](#Firefox_.28secure_browsing_-_enhancement_of_HTTPS.29)
+    *   [2.3 Chromium/Google Chrome (secure browsing - enhancement of HTTPS)](#Chromium.2FGoogle_Chrome_.28secure_browsing_-_enhancement_of_HTTPS.29)
     *   [2.4 BIND (serving signed DNS zones)](#BIND_.28serving_signed_DNS_zones.29)
     *   [2.5 Postfix (fight spam and frauds)](#Postfix_.28fight_spam_and_frauds.29)
     *   [2.6 jabberd (fight spam and frauds)](#jabberd_.28fight_spam_and_frauds.29)
@@ -106,14 +106,14 @@ If you want full support of DNSSEC, you need each single application to use DNSS
 *   dnssec-tools + patch: [https://www.dnssec-tools.org/wiki/index.php/Ssh](https://www.dnssec-tools.org/wiki/index.php/Ssh)
     *   [http://www.dnssec-tools.org/readme/README.ssh](http://www.dnssec-tools.org/readme/README.ssh)
 
-### [Firefox](/index.php/Firefox "Firefox") (secure browsing - enchancment of HTTPS)
+### [Firefox](/index.php/Firefox "Firefox") (secure browsing - enhancement of HTTPS)
 
 *   DNSSEC Validator plugin [https://addons.mozilla.org/en-US/firefox/addon/64247/](https://addons.mozilla.org/en-US/firefox/addon/64247/)
 *   DNSSEC Drill plugin [http://nlnetlabs.nl/projects/drill/drill_extension.html](http://nlnetlabs.nl/projects/drill/drill_extension.html)
     *   you need ldns and dnssec-root-zone-trust-anchors packages for this plugin
 *   dnssec-tools + firefox patch: [https://www.dnssec-tools.org/wiki/index.php/Firefox](https://www.dnssec-tools.org/wiki/index.php/Firefox)
 
-### [Chromium](/index.php/Chromium "Chromium")/<s>Google Chrome</s> (secure browsing - enchancment of HTTPS)
+### [Chromium](/index.php/Chromium "Chromium")/<s>Google Chrome</s> (secure browsing - enhancement of HTTPS)
 
 *   Vote for [#50874](http://code.google.com/p/chromium/issues/detail?id=50874)
     *   Patches not yet...
@@ -188,7 +188,7 @@ You can check if your router, modem, AP, etc. supports DNSSEC (many different fe
 *   [http://linux.die.net/man/1/sshfp](http://linux.die.net/man/1/sshfp)
 *   [https://bugs.archlinux.org/task/20325](https://bugs.archlinux.org/task/20325) - [DNSSEC] Add DNS validation support to ArchLinux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSSEC&oldid=373576](https://wiki.archlinux.org/index.php?title=DNSSEC&oldid=373576)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSSEC&oldid=415029](https://wiki.archlinux.org/index.php?title=DNSSEC&oldid=415029)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

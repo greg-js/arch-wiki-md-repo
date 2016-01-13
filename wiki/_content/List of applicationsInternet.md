@@ -525,6 +525,10 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 [http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manitou-mdx)]</sup> [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manitou-ui)]</sup>
 
+*   **N1** — A new mail client, built on the modern web and designed to be extended.
+
+[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1](https://aur.archlinux.org/packages/n1/)<sup><small>AUR</small></sup>
+
 *   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
 
 [http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
@@ -1223,7 +1227,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 [https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414767](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=414767)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=415079](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=415079)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

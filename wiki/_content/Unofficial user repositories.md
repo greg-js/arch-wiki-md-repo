@@ -125,13 +125,14 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.19 linux-ck-pax](#linux-ck-pax)
         *   [5.1.20 linux-tresor](#linux-tresor)
         *   [5.1.21 markzz](#markzz)
-        *   [5.1.22 qt-debug](#qt-debug)
-        *   [5.1.23 quarry](#quarry)
-        *   [5.1.24 rstudio](#rstudio)
-        *   [5.1.25 siosm-aur](#siosm-aur)
-        *   [5.1.26 siosm-selinux](#siosm-selinux)
-        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.22 openrc](#openrc)
+        *   [5.1.23 qt-debug](#qt-debug)
+        *   [5.1.24 quarry](#quarry)
+        *   [5.1.25 rstudio](#rstudio)
+        *   [5.1.26 siosm-aur](#siosm-aur)
+        *   [5.1.27 siosm-selinux](#siosm-selinux)
+        *   [5.1.28 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.29 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -1241,6 +1242,20 @@ Server = http://repo.markzz.com/arch/$repo/$arch
 
 ```
 
+#### openrc
+
+*   **Maintainer:** [jaco](http://www.autistici.org/arch-openrc/)
+*   **Description:** All packages to run OpenRC on a x86_64 machine, using Manjaro PKGBUILDS.
+*   **Sources:** [https://github.com/manjaro/packages-openrc](https://github.com/manjaro/packages-openrc)
+*   **Key ID:** 8C51F416
+*   **Keyfile:** [http://www.autistici.org/arch-openrc/jacopo.asc](http://www.autistici.org/arch-openrc/jacopo.asc)
+
+```
+[openrc]
+Server = http://www.autistici.org/arch-openrc/repo/
+
+```
+
 #### qt-debug
 
 *   **Maintainer:** [The Compiler](http://blog.the-compiler.org/?page_id=36)
@@ -1563,7 +1578,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414760](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414760)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414918](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414918)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

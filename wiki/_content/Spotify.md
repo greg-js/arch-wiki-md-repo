@@ -38,9 +38,8 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [4.5 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
     *   [4.6 Deadlock GUI Thread](#Deadlock_GUI_Thread)
     *   [4.7 Pulseaudio](#Pulseaudio)
-    *   [4.8 Album art and images are missing, show up as squares; with proxy](#Album_art_and_images_are_missing.2C_show_up_as_squares.3B_with_proxy)
-    *   [4.9 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [4.10 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [4.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [4.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
 *   [5 See also](#See_also)
 
 ## Client installation
@@ -419,9 +418,7 @@ Restart Spotify. Note that several causes appear to exist for this problem, and 
 
 See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
 
-### Album art and images are missing, show up as squares; with proxy
-
-Quit spotify, then open spotify preferences `~/.config/spotify/prefs`
+=== Album art and images are missing, show up as squares; with Quit spotify, then open spotify preferences `~/.config/spotify/prefs`
 
 Change @https to @http:
 
@@ -481,7 +478,7 @@ So your full launch path should look something like this:
 *   [http://www.spotify.com/int/help/faq/wine/](http://www.spotify.com/int/help/faq/wine/)
 *   [http://www.spotify.com/int/download/previews/](http://www.spotify.com/int/download/previews/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=414859](https://wiki.archlinux.org/index.php?title=Spotify&oldid=414859)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=414946](https://wiki.archlinux.org/index.php?title=Spotify&oldid=414946)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

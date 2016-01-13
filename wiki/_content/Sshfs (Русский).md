@@ -26,8 +26,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [4.2 При загрузке](#.D0.9F.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
     *   [4.3 Безопасный доступ пользователей](#.D0.91.D0.B5.D0.B7.D0.BE.D0.BF.D0.B0.D1.81.D0.BD.D1.8B.D0.B9_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
 *   [5 Параметры](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Checklist](#Checklist)
+*   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [6.1 Контрольный список](#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.81.D0.BF.D0.B8.D1.81.D0.BE.D0.BA)
     *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [6.3 Remote host has disconnected](#Remote_host_has_disconnected)
     *   [6.4 Freezing apps (e.g. Nautilus, Gedit)](#Freezing_apps_.28e.g._Nautilus.2C_Gedit.29)
@@ -204,29 +204,29 @@ sshfs может автоматически конвертировать ваш 
 
 Это действие сопоставит идентификатор удаленного пользователя "sessy" с идентификатором локального пользователя, который запускает этот процесс ("суперпользователь" в примере выше) и идентификатор группы пользователя останется неизменным. Если вам требуется более точный контроль над переводом идентификатора пользователя и его группы, то посмотрите на параметры _idmap=file_, _uidfile_ и _gidfile_.
 
-## Troubleshooting
+## Решение проблем
 
-### Checklist
+### Контрольный список
 
-Read the [SSH Checklist](https://wiki.archlinux.org/index.php/Secure_Shell#Checklist) Wiki entry first. Further issues to check are:
+Для начала, прочитайте следующую страницу вики [SSH Checklist](https://wiki.archlinux.org/index.php/Secure_Shell#Checklist). Вопросы, которые следует проверить:
 
-1\. Is your SSH login sending additional information from server's `/etc/issue` file e.g.? This might confuse SSHFS. You should temporarily deactivate server's `/etc/issue` file:
+1\. Получает ли ваш логин SSH дополнительную информацию от сервера, например, такую как файл `/etc/issue`? Это может быть причиной некоректной работы SSHFS. Вас следует временно деактивировать данный файл:
 
 ```
 $ mv /etc/issue /etc/issue.orig
 
 ```
 
-2\. Keep in mind that most SSH related troubleshooting articles you will find on the web are **not** Systemd related. Often `/etc/fstab` definitions wrongly begin with `_sshfs#_user@host:/mnt/server/folder ... fuse ...` instead of using the syntax `user@host:/mnt/server/folder ... fuse._sshfs_ ... _x-systemd_, ...`.
+2\. Имейте в виду, что большинство статей по устранению неполадок связанных с SSH, найденых в интернете, **не** связаны с Systemd. Часто определения в `/etc/fstab` ошибочно начинаются с `_sshfs#_user@host:/mnt/server/folder ... fuse ...` вместо того, чтобы использовать следующий синтаксис `user@host:/mnt/server/folder ... fuse._sshfs_ ... _x-systemd_, ...`.
 
-3\. Check that the owner of server's source folder and content is owned by the server's user.
+3\. Убедитесь, что владелец исходной папки и ее содержимого на сервере владеет соответственный пользователь:
 
 ```
 $ chown -R USER_S: /mnt/servers/folder
 
 ```
 
-4\. The server's user ID can be different from the client's one. Obviously both user names have to be the same. You just have to care for the client's user IDs. SSHFS will translate the UID for you with the following mount options:
+4\. Серверный пользовательский идентификатор может отличаться от соответствующего клиентского. Очевидно, что имена пользователей будут одинаковыми. Вам просто нужно позаботиться о клиентских идентификаторах. SSHFS будет переводить UID в правильный для вас при помощи следующей опции:
 
 ```
 uid=_USER_C_ID_,gid=_GROUP_C_ID_
@@ -336,7 +336,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414261](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414261)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414963](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414963)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

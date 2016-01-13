@@ -276,6 +276,14 @@ Then, open the output tab. There should now be two HDMI outputs for the graphics
 
 ### Automatically switch audio to HDMI
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** Dodgy code, e.g. hardcodes DISPLAY (Discuss in [Talk:PulseAudio/Examples#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Examples))
+
 Create a script to switch to the desired audio profile if an HDMI cable is plugged in:
 
  `/usr/local/bin/hdmi_sound_toggle.sh` 
@@ -872,7 +880,7 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414625](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414625)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414945](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414945)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

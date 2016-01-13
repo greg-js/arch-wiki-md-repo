@@ -169,7 +169,7 @@ Parcellite can cause problems at the time of selecting text under uzbl - just di
 *   [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=70700)
 *   [Configuration file](https://github.com/Dieterbe/uzbl/raw/master/examples/config/config)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=412195](https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=412195)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=414917](https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=414917)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

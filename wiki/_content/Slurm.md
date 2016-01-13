@@ -59,7 +59,7 @@ To complete an entrerprise like solution you may want to start/enable `slurmdbd.
 *   [SLURM to manage jobs](https://rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/) - Convenient SLURM Commands.
 *   [Running Jobs](https://rc.fas.harvard.edu/resources/running-jobs/) - How slurm is used at harvard university.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Slurm&oldid=413002](https://wiki.archlinux.org/index.php?title=Slurm&oldid=413002)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Slurm&oldid=415006](https://wiki.archlinux.org/index.php?title=Slurm&oldid=415006)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

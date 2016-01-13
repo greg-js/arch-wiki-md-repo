@@ -1484,13 +1484,13 @@ Install CD Version
 
 <td>Yes*</td>
 
-<td>Not tested</td>
-
 <td>Yes</td>
 
 <td>Yes</td>
 
-<td>Not tested</td>
+<td>Yes</td>
+
+<td>Yes</td>
 
 <td>Not tested</td>
 
@@ -1872,7 +1872,7 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 
 *   [Think wiki](http://www.thinkwiki.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414671](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414671)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414958](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414958)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

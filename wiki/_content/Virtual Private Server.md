@@ -132,20 +132,6 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 <tr>
 
-<td>[Afterburst](http://afterburst.com/)</td>
-
-<td>2012.12.01</td>
-
-<td>OpenVZ</td>
-
-<td>Miami, US-FL; Nuremberg, DE</td>
-
-<td>Formerly FanaticalVPS, kernel version depends on what node your VPS is on, the ones in Miami are fine (2.6.32-042stab072.10) but some of the ones in Germany require a [custom glibc](#OpenVZ:_kernel_too_old_for_glibc).</td>
-
-</tr>
-
-<tr>
-
 <td>[Atlantic.Net](http://www.atlantic.net/)</td>
 
 <td>2015.05.01</td>
@@ -284,15 +270,15 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 <tr>
 
-<td>[Kloud51](https://www.Kloud51.com)</td>
+<td>[Kloud51](https://www.kloud51.com)</td>
 
-<td>2015.12.xx</td>
+<td>2014.7.7</td>
 
 <td>OpenVZ</td>
 
-<td>US-CA, Canada, UAE</td>
+<td>US-CA, Canada</td>
 
-<td>Also includes ArchLinux desktop with pre-installed desktop and RDP enabled. Providing direct support for each ArchLinux OS.</td>
+<td>Choose from 2 images. A bare-bones system or a pre-configured Desktop with OpenBox, XRDP, Firefox, SSH Brute Force, Geany, and Yaourt.</td>
 
 </tr>
 
@@ -677,7 +663,7 @@ At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (do not
 
 See [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_.28PVHVM_mode.29 "Xen") and/or [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_.28PV_mode.29 "Xen").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=413473](https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=413473)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=415074](https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=415074)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

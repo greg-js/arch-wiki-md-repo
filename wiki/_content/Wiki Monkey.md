@@ -30,8 +30,6 @@ Start by installing a user script engine for your browser:
 
 Now just click on the following link and your browser should ask you to install the ArchWiki version of Wiki Monkey: [install](https://raw.github.com/kynikos/wiki-monkey/master/scripts/WikiMonkey-ArchWiki.user.js).
 
-**Note:** With the 2.0.0 release, **all** users are required to re-install Wiki Monkey by using the new installation link above.
-
 Follow [Getting started](https://github.com/kynikos/wiki-monkey/wiki/Getting-started) for more information.
 
 ## Tour of the features
@@ -103,7 +101,7 @@ _Rollback_ links are hidden by default in [Special:Contributions](/index.php/Spe
 *   [Troubleshooting](https://github.com/kynikos/wiki-monkey/wiki/Troubleshooting)
 *   [Bug reports, feature requests, questions](https://github.com/kynikos/wiki-monkey/issues)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wiki_Monkey&oldid=399163](https://wiki.archlinux.org/index.php?title=Wiki_Monkey&oldid=399163)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wiki_Monkey&oldid=414953](https://wiki.archlinux.org/index.php?title=Wiki_Monkey&oldid=414953)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

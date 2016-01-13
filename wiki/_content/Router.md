@@ -27,8 +27,6 @@ This article does not attempt to show how to set up a shared connection between 
     *   [4.1 PPPoE configuration](#PPPoE_configuration)
 *   [5 DNS and DHCP](#DNS_and_DHCP)
 *   [6 Connection sharing](#Connection_sharing)
-    *   [6.1 iptables](#iptables)
-    *   [6.2 Shorewall](#Shorewall)
 *   [7 IPv6 tips](#IPv6_tips)
     *   [7.1 Unique Local Addresses](#Unique_Local_Addresses)
     *   [7.2 Global Unicast Addresses](#Global_Unicast_Addresses)
@@ -144,25 +142,7 @@ Now [start](/index.php/Start "Start") `dnsmasq.service`.
 
 Time to tie the two network interfaces to each other.
 
-### iptables
-
-[Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") documents the setup of an [iptables](/index.php/Iptables "Iptables") firewall and NAT.
-
-Make sure you added the firewall exceptions for DHCP and Domain, if you want to use Dnsmasq:
-
-*   Insert Rules:
-
-```
-  # iptables -t filter -I INPUT -i intern0 -p udp -m udp --dport 67 -j ACCEPT
-  # iptables -t filter -I INPUT -i intern0 -p tcp -m tcp --dport 67 -j ACCEPT
-  # iptables -t filter -I INPUT -i intern0 -p udp -m udp --dport 53 -j ACCEPT
-  # iptables -t filter -I INPUT -i intern0 -p tcp -m tcp --dport 53 -j ACCEPT
-
-```
-
-### Shorewall
-
-Shorewall, an iptables frontend, can be used as an easier alternative. See [Shorewall](/index.php/Shorewall "Shorewall") for detailed configuration.
+This can be done with Shorewall. See [Shorewall](/index.php/Shorewall "Shorewall") for detailed configuration.
 
 ## IPv6 tips
 
@@ -297,7 +277,7 @@ See [Snort](/index.php/Snort "Snort").
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Router&oldid=403258](https://wiki.archlinux.org/index.php?title=Router&oldid=403258)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Router&oldid=415051](https://wiki.archlinux.org/index.php?title=Router&oldid=415051)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

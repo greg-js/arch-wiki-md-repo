@@ -17,18 +17,40 @@ X server didn't start properly with Nvidia drivers installed by pacman. I use on
 
 ## Display backlight regulation
 
-I found this solution - [http://code.google.com/p/vaio-f11-linux/wiki/NVIDIASetup](http://code.google.com/p/vaio-f11-linux/wiki/NVIDIASetup). It's for Vaio F11, but it works for my F13 too.
-
-I've added this line in section "Device" in /etc/X11/xorg.conf :
+The previously provided solution is slightly out of date, and causes GPU acceleration related issues for those using Nvidia Drivers, possibly specific to the 340.xx drivers. The GPU issues (related to PowerMizer flags) can lead to diminished 3D application returns.
 
 ```
-Option    "RegistryDwords"    "EnableBrightnessControl=1;PowerMizerEnable=0x1;PerfLevelSrc=0x3333;PowerMizerLevel=0x3;PowerMizerDefault=0x3;PowerMizerDefaultAC=0x3"
+**This addition was used with 340.96 drivers with a 310M.**
+**The original solution was sourced from: [http://code.google.com/p/vaio-f11-linux/wiki/NVIDIASetup](http://code.google.com/p/vaio-f11-linux/wiki/NVIDIASetup). Relevant to F11 series, but is valid with F13 series as well.**
 
 ```
 
-Plus I use module **sony_laptop** .. MODULES=(sony_laptop) in /etc/rc.conf
+For those using Nvidia drivers (possibly specifically 340.xx), add this line to the **"Device" section** of **/etc/X11/xorg.conf.d/20-nvidia.conf**:
 
-The patched kernel is available in the AUR: [linux-sony](https://aur.archlinux.org/packages/linux-sony/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-sony)]</sup>
+```
+**Option "RegistryDwords" "EnableBrightnessControl=1"**
+
+```
+
+If the above mentioned addition doesn't work, the original line added in the **"Device" section** of **/etc/X11/xorg.conf** is:
+
+```
+**Option "RegistryDwords" "EnableBrightnessControl=1;PowerMizerEnable=0x1;PerfLevelSrc=0x3333;PowerMizerLevel=0x3;PowerMizerDefault=0x3;PowerMizerDefaultAC=0x3"**
+
+```
+
+It's recommended to attempt adding one flag, testing to see if control is gained, then if not, adding another, to avoid possible unnecessary graphical collisions.
+
+* * *
+
+Previously mentioned additions/packages that may be useful, but are not up-to-date/irrelevant anymore:
+
+```
+**sony_laptop** module addition: **MODULES=(sony_laptop)** in **/etc/rc.conf**
+
+```
+
+The patched linux-sony kernel is available in the AUR: [linux-sony](https://aur.archlinux.org/packages/linux-sony/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-sony)]</sup>
 
 The sony-acpid daemon is also available in the AUR: [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sony-acpid-git)]</sup>
 
@@ -51,7 +73,7 @@ Then edit the file in /etc/pm/config.d/defaults with SUSPEND_MODULES="xhci_hcd"
 
 [http://code.google.com/p/vaio-f11-linux/wiki/AutoDimmingBacklightDaemon](http://code.google.com/p/vaio-f11-linux/wiki/AutoDimmingBacklightDaemon)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCF13&oldid=392673](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCF13&oldid=392673)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCF13&oldid=414915](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCF13&oldid=414915)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -73,7 +73,7 @@ During the installation, you are asked if you want symlinks to be created. If yo
 To create a menu item, we need to get a icon first:
 
 ```
-# curl [http://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png](http://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png) -o /usr/share/icons/matlab.png
+# curl [https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png](https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png) -o /usr/share/icons/matlab.png
 
 ```
 
@@ -320,7 +320,7 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=414640](https://wiki.archlinux.org/index.php?title=Matlab&oldid=414640)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=415035](https://wiki.archlinux.org/index.php?title=Matlab&oldid=415035)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

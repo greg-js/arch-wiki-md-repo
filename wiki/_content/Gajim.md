@@ -20,6 +20,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [2 Auto logout on suspend](#Auto_logout_on_suspend)
 *   [3 Off-the-Record Messaging](#Off-the-Record_Messaging)
     *   [3.1 Configuration](#Configuration)
+*   [4 OMEMO Support](#OMEMO_Support)
+    *   [4.1 Configuration](#Configuration_2)
 
 ## Installation
 
@@ -70,7 +72,23 @@ At first time, you also need to activate OTR plugin:
 5.  Take a look on other settings;
 6.  Close dialogs to save the changes.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gajim&oldid=374969](https://wiki.archlinux.org/index.php?title=Gajim&oldid=374969)"
+## OMEMO Support
+
+[OMEMO Multi-End Message and Object Encryption](http://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone and recently got an experimental [plugin](https://github.com/kalkin/gajim-omemo) for Gajim.
+
+In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/)<sup><small>AUR</small></sup> package which will also install all the required dependencies.
+
+### Configuration
+
+At first time, you also need to activate OMEMO plugin:
+
+1.  Go to menu Edit => Modules;
+2.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
+3.  Close dialogs to save the changes.
+4.  Use the checkbox on the bottom of each chat tab to enable or disable OMEMO encryption.
+5.  Click on "Get Device Keys".
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gajim&oldid=414921](https://wiki.archlinux.org/index.php?title=Gajim&oldid=414921)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

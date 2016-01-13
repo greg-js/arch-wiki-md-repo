@@ -35,14 +35,14 @@ If you want to write a temporary script (for instance a script that makes sense 
 
 For more persistent user scripts, you can store them in Demlo's configuration folder.
 
-You can find some inspiration as for the configuration:
+You can derive your scripts from the official ones as for the configuration:
 
 ```
  $ install -Dm644 /usr/share/demlo/scripts/tag.lua -t ~/.config/demlo/scripts/
 
 ```
 
-If two scripts have the same name and are not specified by their full path in the scripts option, then the user script takes precedence.
+If two scripts have the same name and are not specified by their full path, then the user script takes precedence.
 
 ## Usage
 
@@ -56,48 +56,55 @@ Run Demlo over a set of file to preview then changes:
 Set the script chain to change the result:
 
 ```
- $ demlo -s 'tag ./my-script.lua format' <input-files>
+ $ demlo -s tag'-s ./my-script.lua -s encoding <input-files>
 
 ```
 
 If you need fine-grained tuning, you can run Lua commands before and after the script chain from command line:
 
 ```
- $ demlo -e 'o.artist="John Doe";o.disc=output.filename:match("Disc (%d+)")' -E 'output.format=ogg' <input-files>
+ $ demlo -pre 'o.artist="John Doe";o.disc=output.filename:match("Disc (\d+)")' -post 'output.format="ogg"' <input-files>
 
 ```
 
 To process the files, use the `-p` parameter. Demlo will use all available cores by default. You can restrict it:
 
 ```
- $ demlo --cores 2 -p <input-files>
+ $ demlo -cores 2 -p <input-files>
 
 ```
 
-If you want to edit tags or properties manually (in case scripts would not be able to correct them automatically), you can export the changes to an index file:
+If you just want to fetch covers online:
 
 ```
- $ demlo -G <some-tuning> <input-files> >> ./index.json
+ $ demlo -c -s cover -rmsrc -p <input-files>
 
 ```
 
-You can stack different output to the same index file, Demlo does not mind. You can edit this file with your favorite editor. To apply the changes, call demlo over the desired set of files with the `-i,--index` option. The script chain can still be run, or totally disabled if you do not want to perform any additional change.
+If you want to edit tags or properties manually (in case scripts would not be able to fix them automatically), you can export the changes to an index file:
 
 ```
- $ demlo -i ./index.lua -s ' ' -E 'o.artist,o.album_artist=o.album_artist,artist' <input-files>
+ $ demlo <some-tuning> <input-files> >> ./index.json
+
+```
+
+You can stack different output to the same index file, Demlo does not mind. You can edit this file with your favorite editor. To apply the changes, call Demlo over the desired set of files with the `-i` option. Scripts can still be called or they can be left out if you do not want to perform any additional change.
+
+```
+ $ demlo -i ./index.json -s _ -post 'o.artist,o.album_artist=o.album_artist,artist' <input-files>_
 
 ```
 
 Index files can be used to interface Demlo with other programs, both as input and output.
 
-See `demlo -h` and the demlo(1) man page.
+See `demlo -h` and the [demlo manual](https://godoc.org/bitbucket.org/ambrevar/demlo).
 
 ## See also
 
 *   [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?id=186890)
 *   [Development page](https://bitbucket.org/ambrevar/demlo)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Demlo&oldid=412062](https://wiki.archlinux.org/index.php?title=Demlo&oldid=412062)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Demlo&oldid=414979](https://wiki.archlinux.org/index.php?title=Demlo&oldid=414979)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

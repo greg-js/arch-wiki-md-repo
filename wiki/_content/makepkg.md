@@ -83,7 +83,7 @@ Configure the following `makepkg.conf` variables if needed:
 
 **Reason:** Expand a bit on `validpgpkeys()`, e.g: "_I then check the person who signed is expected from the software mailing list, check if they sign emails, look if the PGP fingerprint is published on their homepage, … That verifies the signature enough to add the validpgpkeys array for me._" (Discuss in [Talk:Makepkg#](https://wiki.archlinux.org/index.php/Talk:Makepkg))
 
-If a signature file in the form of `.sig` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, _makepkg_ validates the authenticity of source files. For example, the signature `_pkgname_-_pkgver_.tar.gz.sig` is used to check the integrity of the file `_pkgname_-_pkgver_.tar.gz` with the _gpg_ program.
+If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, _makepkg_ validates the authenticity of source files. For example, the signature `_pkgname_-_pkgver_.tar.gz.sig` is used to check the integrity of the file `_pkgname_-_pkgver_.tar.gz` with the _gpg_ program.
 
 If desired, signatures by other developers can be manually added to the GPG keyring. See [GnuPG](/index.php/GnuPG "GnuPG") article for details. To temporarily disable signature checking, call the _makepkg_ command with the `--skippgpcheck` option.
 
@@ -367,7 +367,7 @@ $ grep -R "$(pwd)/src" pkg/
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=413496](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=413496)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=414971](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=414971)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,6 +4,14 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** Many [Help:Style](/index.php/Help:Style "Help:Style") issues (Discuss in [Talk:Wacom Tablet#](https://wiki.archlinux.org/index.php/Talk:Wacom_Tablet))
+
 This guide was started for _USB_ based Wacom tablets, so much of the info in here focuses on that. Usually it is recommended to rely on [Xorg](/index.php/Xorg "Xorg")'s auto-detection or to use a **dynamic** setup. However for an _internal_ tablet device one might consider a **static** Xorg setup in case autodetection does not work. A static [Xorg](/index.php/Xorg "Xorg") setup is usually not able to recognize your Wacom tablet when it is connected to a different _USB_ port or even after unplugging and replugging it into the same port, and as such it should be considered as deprecated.
 
 ## Contents
@@ -670,7 +678,7 @@ If your system freezes when your tablet gets activated by the stylus, then you w
 *   [Ubuntu Help: Wacom](https://help.ubuntu.com/community/Wacom)
 *   [Ubuntu Forums - Install a LinuxWacom Kernel Driver for Tablet PC's](http://ubuntuforums.org/showthread.php?t=1038949)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=414765](https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=414765)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=414934](https://wiki.archlinux.org/index.php?title=Wacom_Tablet&oldid=414934)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

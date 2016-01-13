@@ -337,9 +337,18 @@ RNGD_OPTS="-o /dev/random -r /dev/hwrng"
 
 ```
 
-and [restarting](/index.php/Restart "Restart") the _rngd_ daemon.
+and enabling and [starting](/index.php/Start "Start") the _rngd_ service.
 
-Once completed, this change ensures that data from the hardware random number generator is fed into the kernel's entropy pool at `/dev/random`.
+If [haveged](/index.php/Haveged "Haveged") is running, it should be stopped and disabled, as it might compete with _rngd_ and is only preferred when there is no hardware random number generator available.
+
+Once completed, this change ensures that data from the hardware random number generator is fed into the kernel's entropy pool at `/dev/random`. To check the available entropy, run:
+
+```
+# cat /proc/sys/kernel/random/entropy_avail
+
+```
+
+The number it reports should be around 3000, whereas before setting up _rngd_ it would have been closer to 1000.
 
 ## GPIO
 
@@ -453,7 +462,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414507](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414507)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414969](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414969)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

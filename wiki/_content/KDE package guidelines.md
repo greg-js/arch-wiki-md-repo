@@ -127,19 +127,19 @@ Plasma themes packages should be named `kdeplasma-themes-_themename_` so that th
 
 ### Plasma widgets
 
-Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-_widgetname_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
+Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-_widgetname_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (存在しないページ)")-related packages; this also distinguishes them from the official packages.
 
 ### Runners
 
-Plasma runners packages should be named `plasma5-runners-_runnername_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
+Plasma runners packages should be named `plasma5-runners-_runnername_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (存在しないページ)")-related packages; this also distinguishes them from the official packages.
 
 ### Service menus
 
-Service menus packages should be named `kf5-servicemenus-_servicename_` so that they are recognizable as [KF5](/index.php?title=KF5&action=edit&redlink=1 "KF5 (page does not exist)")-related packages
+Service menus packages should be named `kf5-servicemenus-_servicename_` so that they are recognizable as [KF5](/index.php?title=KF5&action=edit&redlink=1 "KF5 (存在しないページ)")-related packages
 
 ### Themes
 
-Plasma themes packages should be named `plasma5-themes-_themename_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages.
+Plasma themes packages should be named `plasma5-themes-_themename_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (存在しないページ)")-related packages.
 
 ## .install files
 
@@ -157,7 +157,7 @@ update-desktop-database -q
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&oldid=357447](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&oldid=357447)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&oldid=414989](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&oldid=414989)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

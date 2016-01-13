@@ -709,7 +709,9 @@ SUBSYSTEM=="pci", KERNEL=="0000:00:14.0", ATTR{power/wakeup}="disabled"
 
 ```
 
-If this does not work, try disabling LID0. This way suspending via lid-closing should be made impossible, so you might want to follow the instructions in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1556046#p1556046) to make suspending via both lid-closing and systemd possible, by using systemd services.
+If this does not work, check that ARPT is disabled, and add the corresponding rule to udev.
+
+If this still does not work, try disabling LID0. This way suspending via lid-closing should be made impossible, so you might want to follow the instructions in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1556046#p1556046) to make suspending via both lid-closing and systemd possible, by using systemd services.
 
 ### Light sensor
 
@@ -1263,35 +1265,7 @@ The `brcmfmac` driver is working as of 2015-11-20, with newer firmware necessary
 
 ##### Bluetooth
 
-Bluetooth is not working at all. However, a Bluetooth mouse and a keyboard can be paired in OS X and continue working in Linux after reboot.
-
-Another way: there does seem to be a [hack](http://www.spinics.net/lists/linux-bluetooth/msg64098.html) that makes it possible for the device to partially function. The patch:
-
-```
---- btusb.c.old 2015-09-28 11:43:22.327411579 +0200
-+++ btusb.c     2015-09-28 11:44:22.308455728 +0200
-@@ -2657,7 +2657,7 @@
-        BT_DBG("intf %p id %p", intf, id);
-
-        /* interface numbers are hardcoded in the spec */
--       if (intf->cur_altsetting->desc.bInterfaceNumber != 0)
-+       if (intf->cur_altsetting->desc.bInterfaceNumber != 2)
-                return -ENODEV;
-
-        if (!id->driver_info) {
-@@ -2827,7 +2827,7 @@
-                data->isoc = NULL;
-        } else {
-                /* Interface numbers are hardcoded in the specification */
--               data->isoc = usb_ifnum_to_if(data->udev, 1);
-+               data->isoc = usb_ifnum_to_if(data->udev, 3);
-        }
-
-        if (!reset)
-
-```
-
-There is a bug fix on the bluetooth-next kernel driver [[4]](https://git.kernel.org/cgit/linux/kernel/git/bluetooth/bluetooth-next.git/commit/?id=2af82d55442672e1429e36439a89e17896c2fb66)[[5]](https://patchwork.ozlabs.org/patch/534364/), so it should be available in kernel 4.4.
+Bluetooth is fully supported starting from kernel-4.4.0.
 
 ##### Keyboard & Trackpad
 
@@ -1483,7 +1457,7 @@ There are more steps on how to resolve this issue in [this thread on the Arch fo
 
 ##### Suspend/Resume
 
-Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/)<sup><small>AUR</small></sup>. Patjak's github is at [[6]](https://github.com/patjak/mba6x_bl).
+Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/)<sup><small>AUR</small></sup>. Patjak's github is at [[4]](https://github.com/patjak/mba6x_bl).
 
 ##### WiFi
 
@@ -1597,7 +1571,7 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=414476](https://wiki.archlinux.org/index.php?title=MacBook&oldid=414476)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=414987](https://wiki.archlinux.org/index.php?title=MacBook&oldid=414987)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -36,6 +36,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
     *   [2.7 Listing changed backup files](#Listing_changed_backup_files)
     *   [2.8 Back-up the pacman database](#Back-up_the_pacman_database)
         *   [2.8.1 Using systemd](#Using_systemd)
+    *   [2.9 Check changelogs easily](#Check_changelogs_easily)
 *   [3 Installation and recovery](#Installation_and_recovery)
     *   [3.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
     *   [3.2 Custom local repository](#Custom_local_repository)
@@ -409,6 +410,10 @@ Unit=pakbak.service
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Check changelogs easily
+
+When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [paclog](https://aur.archlinux.org/packages/paclog/)<sup><small>AUR</small></sup>. This utility lists recent commit messages for packages from the official repositories or the AUR, by using `paclog package`.
 
 ## Installation and recovery
 
@@ -968,7 +973,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413900](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=413900)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=414950](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=414950)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

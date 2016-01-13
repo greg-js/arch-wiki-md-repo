@@ -6,21 +6,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [surfraw](http://surfraw.alioth.debian.org/) provides a fast UNIX command line interface to a variety of popular WWW search engines. Surfraw was originally created by Julian Assange.
 
-## Contents
-
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Usage](#Usage)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 /usr/bin/surfraw: line 487: <url>: No such file or directory](#.2Fusr.2Fbin.2Fsurfraw:_line_487:_.3Curl.3E:_No_such_file_or_directory)
-
 ## Installation
 
 [Install](/index.php/Install "Install") the [surfraw](https://www.archlinux.org/packages/?name=surfraw) package.
 
 ## Configuration
 
-Surfraw uses the default browser to open the result. The behaviour can be customized via `~/.surfraw.conf`
+Surfraw uses the default browser to open the successful query. If none of the standard browsers are installed, Surfraw will call $BROWSER. If that variable is empty, you will get an error message as Surfraw has no way to open the query. You can configure your browser, and any other options, via `~/.surfraw.conf`:
 
 ```
 SURFRAW_graphical_browser=/usr/bin/chromium
@@ -28,6 +20,8 @@ SURFRAW_graphical_browser=/usr/bin/chromium
 SURFRAW_graphical=yes
 
 ```
+
+There is a default config file installed at `/etc/xdg/surfraw/conf` that contains all of the configurable options.
 
 ## Usage
 
@@ -72,23 +66,7 @@ sr archwiki _article_name_
 
 For a full list of web site search scripts see: [List of Elvi](http://surfraw.alioth.debian.org/#elvilist)
 
-## Troubleshooting
-
-### /usr/bin/surfraw: line 487: <url>: No such file or directory
-
-If you get a error message like this:
-
-```
-$ sr google foo
-/usr/bin/surfraw: line 487: http://www.google.com/search?q=foo&num=30: No such file or directory
-
-```
-
-That happens because you haven't specified a browser, and you haven't got Firefox (the default) installed. You can configure your browser in the conf file:
-
- `~/.config/surfraw/conf`  `SURFRAW_graphical_browser /usr/bin/chromium` 
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414499](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414499)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414983](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414983)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

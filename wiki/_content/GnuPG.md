@@ -8,7 +8,9 @@ Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 
-[GnuPG](http://www.gnupg.org) allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories.
+According to the [official website](http://www.gnupg.org):
+
+GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as [PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
 
 ## Contents
 
@@ -19,9 +21,10 @@ Related articles
 *   [4 Usage](#Usage)
     *   [4.1 Create key pair](#Create_key_pair)
     *   [4.2 Backup your private key](#Backup_your_private_key)
-    *   [4.3 Share your public key](#Share_your_public_key)
-    *   [4.4 Import key](#Import_key)
-    *   [4.5 Encrypt and decrypt](#Encrypt_and_decrypt)
+    *   [4.3 Export your public key](#Export_your_public_key)
+    *   [4.4 Import a key](#Import_a_key)
+    *   [4.5 Use a keyserver](#Use_a_keyserver)
+    *   [4.6 Encrypt and decrypt](#Encrypt_and_decrypt)
 *   [5 Key maintenance](#Key_maintenance)
     *   [5.1 Edit your key](#Edit_your_key)
     *   [5.2 Exporting subkey](#Exporting_subkey)
@@ -115,7 +118,7 @@ Place the private key in a safe place, such as a locked container or encrypted d
 
 **Warning:** Anyone who gains access to the above exported file will be able to encrypt and sign documents as if they were you _without_ needing to know your passphrase.
 
-### Share your public key
+### Export your public key
 
 In order for others to send encrypted messages to you, they need your public key.
 
@@ -126,14 +129,9 @@ $ gpg --armor --output public.key --export _<user-id>_
 
 ```
 
-You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
+Alternatively, or in addition, you can share your key [on a keyserver](#Use_a_keyserver).
 
-```
-$ gpg  --keyserver pgp.mit.edu --send-keys _<key-id>_
-
-```
-
-### Import key
+### Import a key
 
 In order to encrypt messages to others, you need their public key. To import a public key to your public key ring:
 
@@ -142,14 +140,30 @@ $ gpg --import public.key
 
 ```
 
-Import key from a key server (if `--keyserver` is omitted, the default is used):
+Alternatively, find a public key [on a keyserver](#Use_a_keyserver).
+
+### Use a keyserver
+
+You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
 
 ```
-$ gpg --keyserver pgp.mit.edu --recv-keys <keyid>
+$ gpg --send-keys _<key-id>_
 
 ```
 
-**Tip:** An alternative key server is `pool.sks-keyservers.net`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
+To import a key from a key server:
+
+```
+$ gpg --recv-keys _<key-id>_
+
+```
+
+**Warning:** Anyone can send keys to a keyserver, so you should not trust that the key you download actually belongs to the individual listed. You should verify the fingerprint of keys you retrieve with the individual owner over the phone or in person.
+
+**Tip:**
+
+*   An alternative key server is `pool.sks-keyservers.net` and can be specified with `--keyserver`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
+*   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. `hkp://jirk5u4osbsr34t5.onion` is the onion address for the sks-keyservers pool. [See this GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 
 ### Encrypt and decrypt
 
@@ -727,7 +741,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 
 [http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414852](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=414852)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415054](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415054)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

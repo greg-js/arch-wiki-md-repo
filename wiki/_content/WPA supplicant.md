@@ -29,8 +29,6 @@ _wpa_supplicant_ is the IEEE 802.1X/WPA component that is used in the client sta
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
     *   [6.2 Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29)
     *   [6.3 Password-related problems](#Password-related_problems)
-    *   [6.4 Lots of possibly unrelated error messages appear when running wpa_supplicant](#Lots_of_possibly_unrelated_error_messages_appear_when_running_wpa_supplicant)
-    *   [6.5 Failed to open config file](#Failed_to_open_config_file)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -146,7 +144,16 @@ This means that _wpa_supplicant_ can be associated with _wpa_passphrase_ and sim
 
 ```
 
-**Note:** Because of the process substitution, you **cannot** run this command with [sudo](/index.php/Sudo "Sudo"): you will need a root shell, see also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_user_or_root "Help:Reading").
+**Note:** Because of the process substitution, you **cannot** run this command with [sudo](/index.php/Sudo "Sudo") - you will need a root shell. Just pre-pending _sudo_ will lead to the following error:
+
+```
+Successfully initialized wpa_supplicant
+Failed to open config file '/dev/fd/63', error: No such file or directory
+Failed to read or parse configuration '/dev/fd/63'
+
+```
+
+See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_user_or_root "Help:Reading").
 
 **Tip:**
 
@@ -302,6 +309,8 @@ $ wpa_cli -a _/path/to/script_
 
 ## Troubleshooting
 
+**Warning:** Make sure that you are **not** using the default configuration file at `/etc/wpa_supplicant/wpa_supplicant.conf`, which is filled with uncommented examples that will lead to lots of random errors in practice. This is a known packaging bug of the [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) package: [FS#40661](https://bugs.archlinux.org/task/40661).
+
 ### nl80211 driver not supported on some hardware
 
 On some (especially old) hardware, _wpa_supplicant_ may fail with the following error:
@@ -361,21 +370,6 @@ $ wpa_supplicant -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
 
 In some instances it was found that storing the passphrase cleartext in the `psk` key of the `wpa_supplicant.conf` `network` block gave positive results (see [[[1]](http://www.linuxquestions.org/questions/linux-wireless-networking-41/wpa-4-way-handshake-failed-843394/)]). However, this approach is rather insecure. Using `wpa_cli` to create this file instead of manually writing it gives the best results most of the time and therefore is the recommended way to proceed.
 
-### Lots of possibly unrelated error messages appear when running wpa_supplicant
-
-If you're using a configuration file (`/etc/wpa_supplicant/wpa_supplicant.conf`) to launch [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and you're getting lots of different errors at once, you may be using the default template file, which contains many different sample `network` blocks. If none of these are commented out or removed, [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) will attempt to read them all and consequentially fail. Make sure you only specify `network` blocks for wireless access points you will actually associate with. Creating an empty `wpa_supplicant.conf` file and filling it up with the output obtained from `wpa_passphrase` or using `wpa_cli` instead to handle this task should be enough.
-
-### Failed to open config file
-
-If you get the following error when launching [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) you may need to create a valid `/etc/wpa_supplicant/wpa_supplicant.conf`. Running `wpa_cli` or pasting the output of `wpa_passphrase` into it should solve this issue.
-
-```
-Successfully initialized wpa_supplicant
-Failed to open config file '/dev/fd/63', error: No such file or directory
-Failed to read or parse configuration '/dev/fd/63'.
-
-```
-
 ## See also
 
 *   [WPA Supplicant home](http://hostap.epitest.fi/wpa_supplicant/)
@@ -385,7 +379,7 @@ Failed to read or parse configuration '/dev/fd/63'.
 *   [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli)
 *   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=414605](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=414605)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=415066](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=415066)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

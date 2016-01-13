@@ -13,21 +13,20 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [1.3 GUI](#GUI)
 *   [2 Basic Configuration](#Basic_Configuration)
     *   [2.1 Overview](#Overview)
-    *   [2.2 A Shell-Based Example Setup](#A_Shell-Based_Example_Setup)
-        *   [2.2.1 Details of the Shell-Based Example Setup](#Details_of_the_Shell-Based_Example_Setup)
-    *   [2.3 A GUI-Based Example Setup](#A_GUI-Based_Example_Setup)
+    *   [2.2 A shell-based example setup](#A_shell-based_example_setup)
+        *   [2.2.1 Details of the shell-based example setup](#Details_of_the_shell-based_example_setup)
+    *   [2.3 A GUI-based example setup](#A_GUI-based_example_setup)
     *   [2.4 More](#More)
-*   [3 Jack for a multi-user system](#Jack_for_a_multi-user_system)
-    *   [3.1 Playing nice with ALSA](#Playing_nice_with_ALSA)
-    *   [3.2 gstreamer](#gstreamer)
-    *   [3.3 PulseAudio](#PulseAudio)
-*   [4 MIDI](#MIDI)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#.22Cannot_lock_down_memory_area_.28Cannot_allocate_memory.29.22_message_on_startup)
-    *   [5.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
-    *   [5.3 Problems with specific applications](#Problems_with_specific_applications)
-        *   [5.3.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
-*   [6 Related Articles](#Related_Articles)
+    *   [2.5 Playing nice with ALSA](#Playing_nice_with_ALSA)
+    *   [2.6 gstreamer](#gstreamer)
+    *   [2.7 PulseAudio](#PulseAudio)
+*   [3 MIDI](#MIDI)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#.22Cannot_lock_down_memory_area_.28Cannot_allocate_memory.29.22_message_on_startup)
+    *   [4.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
+    *   [4.3 Problems with specific applications](#Problems_with_specific_applications)
+        *   [4.3.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
+*   [5 Related Articles](#Related_Articles)
 
 ## Installation
 
@@ -39,11 +38,11 @@ There are two JACK implementations, see [this comparison](https://github.com/jac
 
 ### JACK2
 
-**JACK2** is rewritten explicitly towards multiprocessor hardware. Install it with [jack2](https://www.archlinux.org/packages/?name=jack2), available from the [official repositories](/index.php/Official_repositories "Official repositories"). If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) from the [multilib](/index.php/Multilib "Multilib") repository.
+**JACK2** is rewritten explicitly towards multiprocessor hardware. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository.
 
 #### JACK2 D-Bus
 
-JACK2 with [D-Bus](/index.php/D-Bus "D-Bus") can be installed via [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus). It is the same as the jack2 package but does not provide the legacy "jackd" server.
+JACK2 with [D-Bus](/index.php/D-Bus "D-Bus") can be installed via [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus). It is the same as the [jack2](https://www.archlinux.org/packages/?name=jack2) package but does not provide the legacy "jackd" server.
 
 It is controlled by the `jack_control` utility. The important commands are listed below:
 
@@ -58,11 +57,11 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 ### JACK
 
-Alternatively, there is the older **JACK**, installable with [jack](https://www.archlinux.org/packages/?name=jack), available from the [official repositories](/index.php/Official_repositories "Official repositories"). If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) from the [multilib](/index.php/Multilib "Multilib") repository.
+Alternatively, there is the older **JACK**. [Install](/index.php/Install "Install") it with the [jack](https://www.archlinux.org/packages/?name=jack) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) package from the [multilib](/index.php/Multilib "Multilib") repository.
 
 ### GUI
 
-If you want a GUI control application, the most widely used one is [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+If you want a GUI control application, the most widely used one is [qjackctl](https://www.archlinux.org/packages/?name=qjackctl).
 
 ## Basic Configuration
 
@@ -74,7 +73,7 @@ Most tutorials are advising a realtime kernel, which is quite helpful for live s
 
 The right configuration for your hardware and application needs, depends on several factors.
 
-### A Shell-Based Example Setup
+### A shell-based example setup
 
 The D-Bus edition of JACK2 can make startup much easier. Formerly, we had to have QjackCtl start it for us, or use a daemonizer, or some other method. But using [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus), we can easily start and configure it via a shell script.
 
@@ -98,7 +97,7 @@ sleep 10
 sleep 10
 qjackctl &
 sleep 10
-qmidiroute /home/username/All2MIDI1.qmr &
+qmidiroute ~/All2MIDI1.qmr &
 sleep 10
 yoshimi -S &
 sleep 10
@@ -107,7 +106,7 @@ sleep 10
 
 The above will start a complete realtime JACK live-synthesis setup, integrating several tools. Details of each line follow. When discovering your own best configuration, it is helpful to do trial and error using QjackCtl's GUI with a non-D-Bus JACK2 version.
 
-#### Details of the Shell-Based Example Setup
+#### Details of the shell-based example setup
 
 ```
 jack_control start
@@ -201,7 +200,7 @@ sleep 10
 Wait for the above to settle.
 
 ```
-qmidiroute /home/username/All2MIDI1.qmr &
+qmidiroute ~/All2MIDI1.qmr &
 
 ```
 
@@ -232,7 +231,7 @@ With all of the above in a script run at logon, and with the QjackCtl patchbay s
 
 The essence of QJackCtl is described fairly well in [this article.](http://www.linuxjournal.com/article/8354)
 
-### A GUI-Based Example Setup
+### A GUI-based example setup
 
 The shell-based example above, lays out in detail lots of things you may well need to know, and it does work well. If you want something much more GUI, however, do this:
 
@@ -274,99 +273,6 @@ ctl.!default {
 ### More
 
 Yet more info is in the [Pro Audio](/index.php/Pro_Audio "Pro Audio") page.
-
-## Jack for a multi-user system
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** this needs to be updated for [systemd](/index.php/Systemd "Systemd") (Discuss in [Talk:JACK Audio Connection Kit#](https://wiki.archlinux.org/index.php/Talk:JACK_Audio_Connection_Kit))
-
-So, you have a decent multiuser system as it was designed more than 20 years ago, and now some developers decided that sound is only for a mono-user system... No I can not believe it !
-
-**Warning:** Before following the below instructions, please note that there is a security risk to any service running as root, and, more importantly, the developers for jack do not test it for running as root. In other words, it could eat your babies, data, or both
-
-Fortunately some time ago someone convinced the developers to allow jack to run as a system wide daemon. Here is the procedure to follow:
-
-**Create a `/etc/profile.d/jack.sh` file** containing:
-
-```
-export JACK_PROMISCUOUS_SERVER=""
-
-```
-
-**Replace `/etc/rc.d/jack-audio-connection-kit`** with the following content
-
-```
-#!/bin/bash 
-
-. /etc/rc.conf
-. /etc/rc.d/functions
-
-# source application-specific settings
-[ -f /etc/conf.d/jack-audio-connection-kit ] && . /etc/conf.d/jack-audio-connection-kit
-
-PID=`pidof -o %PPID /usr/bin/jackd`
-
-[ -n "$JACKUSER" ] && HOME="/home/$JACKUSER"
-[ -z "$JACK_PARAMS" ] && JACK_PARAMS=$(sed 's:/usr/bin/jackd ::' $HOME/.jackdrc)
-
-case "$1" in
-  start)
-    stat_busy "Starting JACK"
-    if [ -z "$PID" ]; then
-      if [ -n "$JACKUSER" ]; then
-        su - $JACKUSER -c 'export JACK_PROMISCUOUS_SERVER="" && . /etc/conf.d/jack-audio-connection-kit && umask 0000 && /usr/bin/jackd $JACK_PARAMS &> /dev/null &'
-      else
-	export JACK_PROMISCUOUS_SERVER=""
-	umask 0000
-        /usr/bin/jackd $JACK_PARAMS &> /dev/null &
-      fi
-    fi
-
-    if [ ! -z "$PID" -o $? -gt 0 ]; then
-      stat_fail
-    else
-      add_daemon jack
-      stat_done
-    fi
-    ;;
-  stop)
-    stat_busy "Stopping JACK"
-    [ ! -z "$PID" ]  && kill $PID &> /dev/null
-    if [ $? -gt 0 ]; then
-      stat_fail
-    else
-      rm_daemon jack
-      stat_done
-    fi
-    ;;
-  restart)
-    $0 stop
-    sleep 1
-    $0 start
-    ;;
-  *)
-    echo "usage: $0 {sta|stop|restart}"
-esac
-exit 0
-
-```
-
-Where my **`/etc/conf.d/jack-audio-connection-kit`** is
-
-```
-# Configuration for starting JACK at boot
-
-# Uncomment this to run as user (recommended)
-#JACKUSER="root"
-
-# Uncomment this to not source ~/.jackdrc
-JACK_PARAMS="-R -P89 -dalsa -dhw:1 -r48000 -p512 -n3"
-```
 
 ### Playing nice with ALSA
 
@@ -508,7 +414,7 @@ Run VLC and change the following menu options:
 
 *   [Pro Audio](/index.php/Pro_Audio "Pro Audio")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=392283](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=392283)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415071](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415071)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

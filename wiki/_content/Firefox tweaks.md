@@ -64,6 +64,8 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.12 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [3.14 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
+    *   [3.15 Tabs merged with title bar](#Tabs_merged_with_title_bar)
+    *   [3.16 Show search matches in scroll bar](#Show_search_matches_in_scroll_bar)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -833,13 +835,21 @@ Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger
 
 Then consider checking [how your SSL is](https://www.howsmyssl.com/).
 
+### Tabs merged with title bar
+
+Firefox is able to display tabs in the title bar on Windows, but not on Linux. To fix this, install [this extension](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/), then open it's settings, at the tab "Look & Feel", submenu named "Custom Minimize, Max & Close Buttons", select Skin "Auto. Current theme's skin (fixed position)". Additionally, in "Custom Close button", at "Mouse Primary button" option select "Close Fx Window (Fx default)". You might review other settings and customize even more.
+
+### Show search matches in scroll bar
+
+This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/en-US/firefox/addon/findbar-tweak/?src=hp-dl-featured) extension.
+
 ## See also
 
 *   [MozillaZine Wiki](http://kb.mozillazine.org/Knowledge_Base)
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414554](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=414554)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415039](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415039)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

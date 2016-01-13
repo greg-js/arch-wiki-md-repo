@@ -106,7 +106,7 @@ package() {
 
 Keep in mind that many OCaml Packages will often need extra parameters passed to make and make install. Also remember to remove the _'!strip'_ option and change the architecture if the package does not produce bytecode.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines&oldid=396103](https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines&oldid=396103)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines&oldid=414986](https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines&oldid=414986)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
