@@ -31,6 +31,7 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
 *   [4 Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
     *   [4.1 Chromium/Chrome](#Chromium.2FChrome)
     *   [4.2 Firefox](#Firefox)
+*   [5 Enabling OpenPGP smartcard mode](#Enabling_OpenPGP_smartcard_mode)
 
 ## Introduction
 
@@ -175,7 +176,7 @@ These steps will allow you to install the OATH applet onto your Yubikey NEO. Thi
 ### Install the Applet
 
 1.  Install [gpshell](https://aur.archlinux.org/packages/gpshell/)<sup><small>AUR</small></sup>, [gppcscconnectionplugin](https://aur.archlinux.org/packages/gppcscconnectionplugin/)<sup><small>AUR</small></sup>, [globalplatform](https://aur.archlinux.org/packages/globalplatform/)<sup><small>AUR</small></sup>, and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite).
-2.  Start `pcscd` with `sudo systemctl start pcscd`.
+2.  Start `pcscd` with `sudo systemctl start pcscd.service`.
 3.  Download the most recent CAP file from the [ykneo-oath](http://opensource.yubico.com/ykneo-oath/releases.html) site.
 4.  Download `gpinstall.txt` from [GitHub](https://github.com/Yubico/ykneo-oath/blob/master/gpinstall.txt).
 5.  Edit the line in gpinstall.txt beginning with `install -file` to reflect the path where the CAP file is located.
@@ -216,7 +217,16 @@ In order for the U2F functionality to work with Chromium you need to install the
 
 To enable U2F support in Firefox, you need to install [this addon](https://github.com/prefiks/u2f4moz). Native support is currently [work in progress](https://bugzilla.mozilla.org/show_bug.cgi?id=1065729).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Yubikey&oldid=414634](https://wiki.archlinux.org/index.php?title=Yubikey&oldid=414634)"
+## Enabling OpenPGP smartcard mode
+
+These steps will allow you to use the OpenPGP functionality of your YubiKey.
+
+1.  Configure your YubiKey as a CCID device as mentioned above.
+2.  Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools),[ccid](https://www.archlinux.org/packages/?name=ccid) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)
+3.  Enable and start `pcscd` with `sudo systemctl enable pcscd.service`and `sudo systemctl start pcscd.service`
+4.  To verify that your YubiKey is ready to be used run `pcsc_scan` which will provide some informations about the connected device. Further you can use `gpg --card-status` to verify that GPG can interact with the card.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Yubikey&oldid=415250](https://wiki.archlinux.org/index.php?title=Yubikey&oldid=415250)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

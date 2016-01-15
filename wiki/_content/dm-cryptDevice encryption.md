@@ -209,7 +209,7 @@ Defaults are compared with a cryptographically higher specification example in t
 
 <td>`--use-random`</td>
 
-<td>[/dev/urandom](/index.php/Random_number_generation "Random number generation") is used by default as randomness source for the (long-term) volume master key. However, `/dev/random` should be used for key generation if entropy-starvation may occur (e.g. automatic installation on an embedded device without network and other entropy sources).</td>
+<td>Selects which randum number generator to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel."</td>
 
 </tr>
 
@@ -1017,9 +1017,13 @@ On the next reboot you should only have to enter your container decryption passp
 
 ([source](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/#bonus-login-once))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=412596](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=412596)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415395](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415395)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

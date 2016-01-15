@@ -462,8 +462,8 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables_(Ελληνικά)&oldid=384479](https://wiki.archlinux.org/index.php?title=Iptables_(Ελληνικά)&oldid=384479)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables_(Ελληνικά)&oldid=415116](https://wiki.archlinux.org/index.php?title=Iptables_(Ελληνικά)&oldid=415116)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
+*   [Firewalls (Ελληνικά)](/index.php?title=Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)&action=edit&redlink=1 "Category:Firewalls (Ελληνικά) (page does not exist)")

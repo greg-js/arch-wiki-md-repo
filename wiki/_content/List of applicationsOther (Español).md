@@ -669,8 +669,8 @@ Vea el artículo principal: [Amateur radio#Software list](/index.php/Amateur_rad
 
 Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413939](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=413939)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=415109](https://wiki.archlinux.org/index.php?title=List_of_applications/Other_(Español)&oldid=415109)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Applications](/index.php/Category:Applications "Category:Applications")
+*   [Applications (Español)](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)")

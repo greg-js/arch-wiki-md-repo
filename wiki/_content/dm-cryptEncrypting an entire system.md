@@ -914,10 +914,14 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 *   It may be worth considering to add the GRUB bootloader to the ignore list of `/etc/pacman.conf` in order to take particular control of when the bootloader (which includes its own encryption modules) is updated.
 *   If you want to encrypt the `/boot` partition to protect against offline tampering threats, the [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") hook has been contributed to help.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=411168](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=411168)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=415419](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=415419)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

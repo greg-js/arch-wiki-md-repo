@@ -86,7 +86,7 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   The [Humble Store](https://www.humblebundle.com/store)
 
-*   [itch.io](https://itch.io/)
+*   [itch.io](https://itch.io/)|[itch](https://aur.archlinux.org/packages/itch/)<sup><small>AUR</small></sup>
 
 *   [GOG.com](http://www.gog.com/games/linux)
 
@@ -366,8 +366,12 @@ BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archli
 *   [Games on Linux](http://www.gamesonlinux.com) - Commercial games on Linux
 *   [Gaming on Linux](http://www.gamingonlinux.com/) - Active Linux gaming news and editorial source and community
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gaming&oldid=411401](https://wiki.archlinux.org/index.php?title=Gaming&oldid=411401)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gaming&oldid=415249](https://wiki.archlinux.org/index.php?title=Gaming&oldid=415249)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

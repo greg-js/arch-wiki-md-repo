@@ -27,7 +27,7 @@ Related articles
     *   [4.1 ObexFS](#ObexFS)
     *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
-    *   [4.4 Using your computer's speakers as a bluetooth headset (eg. play what's on your phone on your computer speakers)](#Using_your_computer.27s_speakers_as_a_bluetooth_headset_.28eg._play_what.27s_on_your_phone_on_your_computer_speakers.29)
+    *   [4.4 Using your computer's speakers as a bluetooth headset (e.g. play what is on your phone on your computer speakers)](#Using_your_computer.27s_speakers_as_a_bluetooth_headset_.28e.g._play_what_is_on_your_phone_on_your_computer_speakers.29)
 *   [5 Examples](#Examples)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 bluetoothctl](#bluetoothctl_2)
@@ -221,9 +221,9 @@ Read the output, look for Obex Object Push, remember the channel for this servic
 
 ```
 
-### Using your computer's speakers as a bluetooth headset (eg. play what's on your phone on your computer speakers)
+### Using your computer's speakers as a bluetooth headset (e.g. play what is on your phone on your computer speakers)
 
-Add the following to the file /etc/bluetooth/audio.conf (create it if not present):
+Add the following to the file `/etc/bluetooth/audio.conf` (create it if not present):
 
 ```
 [General]
@@ -231,7 +231,7 @@ Enable=Source
 
 ```
 
-More info there: (unfortunately, bluez is one of the most undocumented pieces of software)
+More info in:
 
 *   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
 *   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
@@ -519,7 +519,7 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=414992](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=414992)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415098](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415098)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

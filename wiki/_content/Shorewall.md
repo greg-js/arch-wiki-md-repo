@@ -25,7 +25,7 @@ Shorewall can be used on a dedicated firewall system, a multi-function gateway/r
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [shorewall](https://www.archlinux.org/packages/?name=shorewall) package.
+[Install](/index.php/Install "Install") the [shorewall](https://www.archlinux.org/packages/?name=shorewall) or [shorewall6](https://www.archlinux.org/packages/?name=shorewall6) package.
 
 ## Configuration
 
@@ -155,7 +155,7 @@ See [man page](http://shorewall.net/manpages/shorewall.conf.html) for more info.
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shorewall.service`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shorewall&oldid=414461](https://wiki.archlinux.org/index.php?title=Shorewall&oldid=414461)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shorewall&oldid=415175](https://wiki.archlinux.org/index.php?title=Shorewall&oldid=415175)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

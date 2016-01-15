@@ -25,21 +25,23 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
 *   [6 Using Joystick to send keystrokes](#Using_Joystick_to_send_keystrokes)
     *   [6.1 via X.org](#via_X.org)
 *   [7 Specific devices](#Specific_devices)
-    *   [7.1 Logitech Thunderpad Digital](#Logitech_Thunderpad_Digital)
-    *   [7.2 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
-    *   [7.3 PlayStation 3/4 controller](#PlayStation_3.2F4_controller)
-        *   [7.3.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
-    *   [7.4 Steam Controller](#Steam_Controller)
-    *   [7.5 Xbox 360 controller](#Xbox_360_controller)
-        *   [7.5.1 SteamOS xpad](#SteamOS_xpad)
-        *   [7.5.2 xboxdrv](#xboxdrv)
-            *   [7.5.2.1 Multiple controllers](#Multiple_controllers)
-            *   [7.5.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
-                *   [7.5.2.2.1 Logitech Dual Action](#Logitech_Dual_Action)
-                *   [7.5.2.2.2 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
-                *   [7.5.2.2.3 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
-                *   [7.5.2.2.4 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
-                *   [7.5.2.2.5 PlayStation 4 controller](#PlayStation_4_controller)
+    *   [7.1 Dance pads](#Dance_pads)
+    *   [7.2 Logitech Thunderpad Digital](#Logitech_Thunderpad_Digital)
+    *   [7.3 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
+    *   [7.4 PlayStation 3/4 controller](#PlayStation_3.2F4_controller)
+        *   [7.4.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
+    *   [7.5 Steam Controller](#Steam_Controller)
+        *   [7.5.1 Wine](#Wine)
+    *   [7.6 Xbox 360 controller](#Xbox_360_controller)
+        *   [7.6.1 SteamOS xpad](#SteamOS_xpad)
+        *   [7.6.2 xboxdrv](#xboxdrv)
+            *   [7.6.2.1 Multiple controllers](#Multiple_controllers)
+            *   [7.6.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
+                *   [7.6.2.2.1 Logitech Dual Action](#Logitech_Dual_Action)
+                *   [7.6.2.2.2 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
+                *   [7.6.2.2.3 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
+                *   [7.6.2.2.4 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
+                *   [7.6.2.2.5 PlayStation 4 controller](#PlayStation_4_controller)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
@@ -277,6 +279,16 @@ First, make sure you have [xf86-input-joystick](https://www.archlinux.org/packag
 
 While most joysticks, especially USB based ones should just work, some may require (or give better results) if you use alternative drivers. If it doesn't work the first time, do not give up, and read those docs thoroughly!
 
+### Dance pads
+
+Most dance pads should work. However some pads, especially those used from a video game console via an adapter, have a tendency to map the directional buttons as axis buttons. This prevents hitting left-right or up-down simultaneously. This behavior can be fixed for devices recognized by xpad via a module option:
+
+```
+ # modprobe -r xpad
+ # modprobe xpad dpad_to_buttons=1
+
+```
+
 ### Logitech Thunderpad Digital
 
 Logitech Thunderpad Digital won't show all the buttons if you use the `analog` module. Use the device specific `adi` module for this controller.
@@ -314,11 +326,13 @@ Just remind to disconnect the device once you are done, once it will stay connec
 
 ### Steam Controller
 
-The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay also needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam.
+The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam. If all else fails, try restarting the computer while the dongle is plugged in.
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> to have controller and mouse emulation without Steam.
 
-The latter one can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
+#### Wine
+
+[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
 
  `xbox360cemu.ini` 
 
@@ -337,7 +351,7 @@ Left Trigger=a3
 Right Trigger=a6
 ```
 
-Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0.rar` to the same directory and run it with Wine in order to test if it works. However neither the mouse nor the keyboard emulation is working with this method.
+Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0.rar` to the same directory and run it with Wine in order to test if it works. However neither mouse nor keyboard emulation work with this method.
 
 ### Xbox 360 controller
 
@@ -589,25 +603,25 @@ If the steam controller will not pair wirelessly but works when wired make you m
 SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
 
 # This rule is necessary for gamepad emulation; make sure you replace 'pgriffais' with a group that the user that runs Steam belongs to
-KERNEL=="uinput", MODE="0660", GROUP="pgriffais", OPTIONS+="static_node=uinput"
+KERNEL=="uinput", MODE="0660", GROUP="steamcontroller", OPTIONS+="static_node=uinput"
 
 ```
 
 Additionally, create a group of steam controller users.
 
 ```
-# groupadd pgriffais
+# groupadd steamcontroller
 
 ```
 
 And add your user to that group.
 
 ```
-# gpasswd -a $USER pgriffais
+# gpasswd -a $USER steamcontroller
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414959](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=414959)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415381](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415381)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

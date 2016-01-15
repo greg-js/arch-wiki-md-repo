@@ -69,8 +69,8 @@ Execute `startx` or `xinit` to start DDE.
 
 Any upstream or arch packaging related bugs should be reported [here](https://github.com/fasheng/arch-deepin/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=414538](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=414538)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=415112](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment_(简体中文)&oldid=415112)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+*   [Desktop environments (简体中文)](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)")

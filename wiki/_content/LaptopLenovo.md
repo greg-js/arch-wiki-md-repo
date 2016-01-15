@@ -34,6 +34,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [1.1.4 R series](#R_series)
         *   [1.1.5 T series](#T_series)
         *   [1.1.6 X series](#X_series)
+        *   [1.1.7 P series](#P_series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -1256,6 +1257,76 @@ Install CD Version
 
 </table>
 
+#### P series
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th rowspan="2" style="padding: 0.5em;">Model Version</th>
+
+<th rowspan="2" style="padding: 0.5em;">Arch Linux  
+Install CD Version  
+</th>
+
+<th colspan="8" style="padding: 0.5em;">Hardware Support</th>
+
+<th rowspan="2" style="padding: 0.5em;">Remark</th>
+
+</tr>
+
+<tr>
+
+<th style="padding: 0.5em;">Video</th>
+
+<th style="padding: 0.5em;">Sound</th>
+
+<th style="padding: 0.5em;">Ethernet</th>
+
+<th style="padding: 0.5em;">Wireless</th>
+
+<th style="padding: 0.5em;">Bluetooth</th>
+
+<th style="padding: 0.5em;">Power Management</th>
+
+<th style="padding: 0.5em;">Modem</th>
+
+<th style="padding: 0.5em;">Other</th>
+
+</tr>
+
+<tr>
+
+<td>[Lenovo ThinkPad P70](/index.php?title=Lenovo_ThinkPad_P70&action=edit&redlink=1 "Lenovo ThinkPad P70 (page does not exist)")</td>
+
+<td>Untested</td>
+
+<td>Yes</td>
+
+<td>Yes</td>
+
+<td>Yes</td>
+
+<td>Yes</td>
+
+<td>Yes</td>
+
+<td>Suspend/Hibernate not working</td>
+
+<td>NA</td>
+
+<td>SD card (Yes), Webcam (Yes), Fingeprint Reader (No),</td>
+
+<td>Wifi requires Kernel 4.3.3+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
 ## Lenovo
 
 ### IdeaPad
@@ -1872,8 +1943,12 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 
 *   [Think wiki](http://www.thinkwiki.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414958](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=414958)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=415081](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=415081)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

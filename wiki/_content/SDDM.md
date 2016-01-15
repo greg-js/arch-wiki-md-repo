@@ -106,6 +106,8 @@ You can simply put a png image named `username.face.icon` into the default direc
 FacesDir=/var/lib/AccountsService/icons/
 ```
 
+You can also put a png image named `.face.icon` at the root of your home directory. However, you need to make sure that `sddm` user can read that file.
+
 **Note:** SDDM cannot read avatars which are symlinks.
 
 ### Numlock
@@ -161,7 +163,7 @@ MinimumUid=500 #My UID is 501
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=413409](https://wiki.archlinux.org/index.php?title=SDDM&oldid=413409)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=415215](https://wiki.archlinux.org/index.php?title=SDDM&oldid=415215)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

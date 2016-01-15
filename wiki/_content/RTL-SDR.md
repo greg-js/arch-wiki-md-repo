@@ -52,9 +52,9 @@ Some popular applications that use RTL-SDR:
 
 *   [dump1090-git](https://aur.archlinux.org/packages/dump1090-git/)<sup><small>AUR</small></sup> - a lightweight ModeS (1090Mhz) decoder
 *   [multimon-ng-git](https://aur.archlinux.org/packages/multimon-ng-git/)<sup><small>AUR</small></sup> - a decoder for various digital modes
-*   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux
+*   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux, see [gqrx](/index.php/Gqrx "Gqrx")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=414282](https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=414282)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=415245](https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=415245)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -4,13 +4,21 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**Эта страница нуждается в сопроводителе**
+
+Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. [Команда переводчиков ArchWiki](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki "Команда переводчиков ArchWiki")
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-**This article or section needs expansion.**
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
-**Reason:** Meterpreter; More/better SQL search examples; More commands; Module development; (Discuss in [Talk:Metasploit Framework (Русский)#](https://wiki.archlinux.org/index.php/Talk:Metasploit_Framework_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)))
+**Эта статья или раздел нуждается в расширении**
+
+**Причина:** Meterpreter; More/better SQL search examples; More commands; Module development; (обсуждение: [Talk:Metasploit Framework (Русский)#](https://wiki.archlinux.org/index.php/Talk:Metasploit_Framework_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)))
 
 Из [the official site](http://www.offensive-security.com/metasploit-unleashed/Introduction):
 
@@ -43,7 +51,7 @@ _Consider the MSF to be one of the single most useful auditing tools freely avai
 
 ## Установка
 
-Установите [metasploit](https://aur.archlinux.org/packages/metasploit/)<sup><small>AUR</small></sup> из [AUR](/index.php/AUR "AUR").
+Установите пакет [metasploit](https://aur.archlinux.org/packages/metasploit/)<sup><small>AUR</small></sup>.
 
 Чтобы установить последнюю разрабатываемую версию (возможны баги, недочёты, отсутствие совместимости), установите пакет [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/)<sup><small>AUR</small></sup> вместо обычного.
 
@@ -661,9 +669,10 @@ that probably means that the `postgresql` service is not running.
 *   [Metasploit wiki on GitHub](https://github.com/rapid7/metasploit-framework/wiki)
 *   [The Metasploit Book](http://en.wikibooks.org/wiki/Metasploit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=413813](https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=413813)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=415386](https://wiki.archlinux.org/index.php?title=Metasploit_Framework_(Русский)&oldid=415386)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Networking (Русский)](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)")
 *   [Security (Русский)](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)")
+*   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")

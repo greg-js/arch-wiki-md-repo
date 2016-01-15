@@ -29,7 +29,7 @@ Related articles
     *   [4.1 Creating custom applets](#Creating_custom_applets)
     *   [4.2 Default desktop background wallpaper path](#Default_desktop_background_wallpaper_path)
     *   [4.3 Show home, filesystem desktop icons](#Show_home.2C_filesystem_desktop_icons)
-    *   [4.4 Adding custom command launchers to the Menu applet](#Adding_custom_command_launchers_to_the_Menu_applet)
+    *   [4.4 Menu editor](#Menu_editor)
     *   [4.5 Workspaces](#Workspaces)
     *   [4.6 Hide desktop icons](#Hide_desktop_icons)
     *   [4.7 Themes and icons](#Themes_and_icons)
@@ -135,7 +135,7 @@ When you add a wallpaper from a custom path in Cinnamon Settings, Cinnamon copie
 
 By default Cinnamon starts with desktop icons enabled but with no desktop icons on screen. To show desktop icons for the home folder, the filesystem, the trash, mounted volumes and network servers open Cinnamon settings and click on desktop. Enable the checkboxes of the icons you want to see on screen.
 
-### Adding custom command launchers to the Menu applet
+### Menu editor
 
 The Menu applet supports launching custom commands. Right click on the applet, click on _Configure..._ and then _Open the menu editor_. Select a sub-menu (or create a new one) and select _New Item_. Set _Name_, _Command_ and _Comment_. Check the launch in terminal checkbox if needed. Leave unchecked for graphical applications. Click _OK_ and close the menu editor afterwards. The launcher is added to the menu.
 
@@ -226,7 +226,7 @@ $ ln -s /bin/true /usr/local/bin/nm-applet
 
 The ability to blacklist particular icons from the system tray (such as the _nm-applet_ icon) has been [requested upstream](https://github.com/linuxmint/Cinnamon/issues/3318).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=413124](https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=413124)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=415407](https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=415407)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -713,6 +713,7 @@ Server = http://direct.$repo.systems.:2/repository/arch/$arch
 ```
 [openrc-eudev]
 Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
+Server = ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
 
 ```
 
@@ -1578,8 +1579,13 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414918](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=414918)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415409](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415409)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

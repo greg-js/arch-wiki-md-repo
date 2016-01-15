@@ -28,16 +28,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### Organization
 
-*   [DeveloperWiki:Divisions](/index.php?title=DeveloperWiki:Divisions&action=edit&redlink=1 "DeveloperWiki:Divisions (page does not exist)")
-*   [DeveloperWiki:Division Proposals](/index.php?title=DeveloperWiki:Division_Proposals&action=edit&redlink=1 "DeveloperWiki:Division Proposals (page does not exist)")
 *   [DeveloperWiki:Internal Projects](/index.php/DeveloperWiki:Internal_Projects "DeveloperWiki:Internal Projects")
 *   [DeveloperWiki:Roll Call](/index.php/DeveloperWiki:Roll_Call "DeveloperWiki:Roll Call")
 *   [DeveloperWiki:ArchlinuxOrg Services](/index.php/DeveloperWiki:ArchlinuxOrg_Services "DeveloperWiki:ArchlinuxOrg Services")
 *   [DeveloperWiki:Linux Conferences](/index.php/DeveloperWiki:Linux_Conferences "DeveloperWiki:Linux Conferences")
-*   World Domination Plans
-    *   Moon Domination Plans
-    *   Other celestial bodies?
-*   World Domination Status
 
 ### Packaging Guidelines
 
@@ -51,17 +45,14 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [DeveloperWiki:Package Testing](/index.php/DeveloperWiki:Package_Testing "DeveloperWiki:Package Testing")
 *   [DeveloperWiki:PKGBUILD.com](/index.php/DeveloperWiki:PKGBUILD.com "DeveloperWiki:PKGBUILD.com")
 *   [DeveloperWiki:Migration Procedure: Proposal](/index.php/DeveloperWiki:Migration_Procedure:_Proposal "DeveloperWiki:Migration Procedure: Proposal")
-*   [DeveloperWiki:Non-Free Packages](/index.php?title=DeveloperWiki:Non-Free_Packages&action=edit&redlink=1 "DeveloperWiki:Non-Free Packages (page does not exist)")
 
 ### Packaging Reference
 
-*   [DeveloperWiki:Core-Repository](/index.php?title=DeveloperWiki:Core-Repository&action=edit&redlink=1 "DeveloperWiki:Core-Repository (page does not exist)")
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
 *   [DeveloperWiki:Provides Database](/index.php/DeveloperWiki:Provides_Database "DeveloperWiki:Provides Database")
 *   [DeveloperWiki:Repo Cleanup](/index.php/DeveloperWiki:Repo_Cleanup "DeveloperWiki:Repo Cleanup")
 *   [DeveloperWiki:KDE](/index.php/DeveloperWiki:KDE "DeveloperWiki:KDE")
 *   [DeveloperWiki:Python Todo List](/index.php/DeveloperWiki:Python_Todo_List "DeveloperWiki:Python Todo List")
-*   [DeveloperWiki:Curl Todo List](/index.php?title=DeveloperWiki:Curl_Todo_List&action=edit&redlink=1 "DeveloperWiki:Curl Todo List (page does not exist)")
 *   [DeveloperWiki:Ncurses Todo List](/index.php/DeveloperWiki:Ncurses_Todo_List "DeveloperWiki:Ncurses Todo List")
 *   [DeveloperWiki:Unimportant Rebuild List](/index.php/DeveloperWiki:Unimportant_Rebuild_List "DeveloperWiki:Unimportant Rebuild List")
 
@@ -78,7 +69,6 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ### Future
 
 *   [DeveloperWiki:Goals](/index.php/DeveloperWiki:Goals "DeveloperWiki:Goals")
-*   [DeveloperWiki:Objectives](/index.php?title=DeveloperWiki:Objectives&action=edit&redlink=1 "DeveloperWiki:Objectives (page does not exist)")
 
 ### Artwork and Branding
 
@@ -95,13 +85,12 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [DeveloperWiki:iso building](/index.php/DeveloperWiki:iso_building "DeveloperWiki:iso building")
 *   [DeveloperWiki:releng testimages feedback](/index.php/DeveloperWiki:releng_testimages_feedback "DeveloperWiki:releng testimages feedback")
 *   [DeveloperWiki:releng roadmap](/index.php/DeveloperWiki:releng_roadmap "DeveloperWiki:releng roadmap")
-*   [DeveloperWiki:Release process](/index.php?title=DeveloperWiki:Release_process&action=edit&redlink=1 "DeveloperWiki:Release process (page does not exist)")
 
 ### Devops Team
 
 *   [DeveloperWiki:Arch Services](/index.php/DeveloperWiki:Arch_Services "DeveloperWiki:Arch Services")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=414845](https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=414845)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=415158](https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=415158)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

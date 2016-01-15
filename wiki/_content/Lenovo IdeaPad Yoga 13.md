@@ -176,7 +176,7 @@ Sub-models options :
 
 <td>Card reader</td>
 
-<td>not tested</td>
+<td>OK</td>
 
 </tr>
 
@@ -205,9 +205,27 @@ One touch works out of the box. But it works like a mouse.
 
 ## Keyboard
 
-In addition to keyboard, there are some extra lenovo keys: vol+, vol-, recovery button, button for locking screen rotation, windows button under screen.
+In addition to the keyboard, there are some extra Lenovo keys:
 
-Not all media buttons work out of the box: mute on f1 works vol- on f2 works vol+ on f3 works close on f4 works renew on f5 works disable touchpad on f6 do not works disable network on f7 do not work choose application on f8 does not work disable display on f9 works change output video sink on f10 do not work brightness- on f11 works brightness+ on f12 works
+*   Volume + and - work as intended
+*   Recovery button has no effect while computer is running
+*   Screen rotation lock button simulates pressing Super + o
+*   Windows button under the screen simulates pressing Super. Also gives haptic feedback, currently not controllable by software.
+
+Most media buttons work out of the box:
+
+*   Mute on F1 works
+*   Vol- on F2 works
+*   Vol+ on F3 works
+*   Close on F4 works
+*   Refresh on F5 works
+*   Disable touchpad on F6 works, but also types the ± symbol
+*   Airplane mode on F7 does not work
+*   Choose application on F8 simulates pressing ctrl+alt+tab. The keys are pressed and instantly released, which (depending on your DE) may not have the intended effect.
+*   Disable display on F9 works
+*   Change video output on F10 simulates pressing ctrl+p
+*   Brightness- on F11 works
+*   Brightness+ on F12 works
 
 ## Configaration
 
@@ -246,8 +264,13 @@ Internal Wi-Fi driver (r8723au) is working with a huge troubles with current ker
 *   [https://wiki.debian.org/InstallingDebianOn/Lenovo/IdeaPad_Yoga_13_(Wheezy)](https://wiki.debian.org/InstallingDebianOn/Lenovo/IdeaPad_Yoga_13_(Wheezy))
 *   [Lenovo IdeaPad Yoga 13](https://en.wikipedia.org/wiki/Lenovo_IdeaPad_Yoga_13 "wikipedia:Lenovo IdeaPad Yoga 13")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=412547](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=412547)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=415083](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=415083)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

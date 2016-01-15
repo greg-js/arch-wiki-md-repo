@@ -319,7 +319,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 [http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
 
-*   **Neovim** — 二十一世纪的现代 Vi 类编辑器。
+*   **[Neovim](/index.php/Neovim "Neovim")** — 二十一世纪的现代 Vi 类编辑器。
 
 [http://neovim.org/](http://neovim.org/) || [neovim-git](https://aur.archlinux.org/packages/neovim-git/)<sup><small>AUR</small></sup>
 
@@ -802,9 +802,13 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 [http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents_(简体中文)&oldid=413329](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents_(简体中文)&oldid=413329)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents_(简体中文)&oldid=415174](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents_(简体中文)&oldid=415174)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
 *   [Applications (简体中文)](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -90,7 +90,7 @@ For more information on how to use the macro, consult the [project's website](ht
 *   [OOoLatex for Ubuntu](http://ubuntuforums.org/showthread.php?t=334218)
 *   [project's website](http://ooolatex.sourceforge.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=412744](https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=412744)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=415270](https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=415270)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

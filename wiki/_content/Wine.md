@@ -59,7 +59,7 @@ Related articles
 
 **Warning:** If you can access a file or resource with your user account, programs running in Wine can too. Wine prefixes are **not** [sandboxes](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)"). Consider using [virtualization](https://en.wikipedia.org/wiki/Virtualization "wikipedia:Virtualization") if security is important.
 
-Wine can be [installed](/index.php/Pacman "Pacman") with the package [wine](https://www.archlinux.org/packages/?name=wine), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first.
+Wine can be [installed](/index.php/Pacman "Pacman") with the package [wine](https://www.archlinux.org/packages/?name=wine), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first. See also [Wine#Sound](/index.php/Wine#Sound "Wine").
 
 You may also want to install [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that need support for Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
@@ -640,8 +640,12 @@ It is recommended using winetricks by default to open _.exe_ files, so you can c
 *   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=412783](https://wiki.archlinux.org/index.php?title=Wine&oldid=412783)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=415237](https://wiki.archlinux.org/index.php?title=Wine&oldid=415237)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Wine](/index.php/Category:Wine "Category:Wine")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

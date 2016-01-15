@@ -669,3 +669,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_Private_Serv
 
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
 *   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

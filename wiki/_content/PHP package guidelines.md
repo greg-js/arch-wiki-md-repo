@@ -18,13 +18,13 @@ For modules the package name should begin with `php-` and the rest of the name s
 
 ### Package file placement
 
-PHP packages should install files into `/usr/share/pear/`. This path is in the Arch Linux default php.ini open_basedir directive.
+PHP packages should install files into `/usr/share/php/`. This path should be in the php.ini include_path or open_basedir directive in order to be able to include libraries files in PHP web apps.
 
 ### Architecture
 
 In most cases, the `arch` array should contain `'any'` because most PHP packages are architecture independent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=413554](https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=413554)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=415302](https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=415302)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

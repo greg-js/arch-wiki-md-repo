@@ -34,7 +34,7 @@ _xrandr_ - это официальная программа настройки [
 
 ## Установка
 
-[install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Также для неё существуют графические оболочки [arandr](https://www.archlinux.org/packages/?name=arandr) или [lxrandr](https://www.archlinux.org/packages/?name=lxrandr).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Также существуют графические оболочки [arandr](https://www.archlinux.org/packages/?name=arandr) и [lxrandr](https://www.archlinux.org/packages/?name=lxrandr).
 
 ## Тест режимов вывода изображения
 
@@ -387,7 +387,7 @@ About the numbers: DELL on the left and Samsung on the right. So the virtual wid
 *   [Xorg RandR 1.2 on ThinkWiki](http://www.thinkwiki.org/wiki/Xorg_RandR_1.2)
 *   [FAQVideoModes - more information about modelines](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=411483](https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=411483)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=415388](https://wiki.archlinux.org/index.php?title=Xrandr_(Русский)&oldid=415388)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

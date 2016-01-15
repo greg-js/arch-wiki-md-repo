@@ -40,7 +40,7 @@ There are multiple low level interfaces (backends) providing basic functionality
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
     *   [4.2 VAIO Users](#VAIO_Users)
-    *   [4.3 Suspend/hibernate doesn't work](#Suspend.2Fhibernate_doesn.27t_work)
+    *   [4.3 Suspend/hibernate doesn't work, or not consistently](#Suspend.2Fhibernate_doesn.27t_work.2C_or_not_consistently)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
 
@@ -158,7 +158,7 @@ You might want to tweak your **DSDT table** to make it work. See [DSDT](/index.p
 
 Add acpi_sleep=nonvs kernel flag to your loader, and you are done!
 
-### Suspend/hibernate doesn't work
+### Suspend/hibernate doesn't work, or not consistently
 
 There have been many reports about the screen going black without easily viewable errors or the ability to do anything when going into and coming back from suspend and/or hibernate. These problems have been seen on both laptops and desktops. This is not an official solution, but switching to an older kernel, especially the LTS-kernel, will probably fix this.
 
@@ -201,8 +201,12 @@ The relevant devices are `EHC1`, `EHC1` and `XHC` (for USB 3.0). To toggle their
 
 This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management/Suspend_and_hibernate&oldid=408269](https://wiki.archlinux.org/index.php?title=Power_management/Suspend_and_hibernate&oldid=408269)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management/Suspend_and_hibernate&oldid=415169](https://wiki.archlinux.org/index.php?title=Power_management/Suspend_and_hibernate&oldid=415169)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

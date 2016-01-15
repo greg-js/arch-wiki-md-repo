@@ -51,8 +51,6 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc
 
 ```
 
-You also need to edit the config file (`/usr/share/webapps/phpmyadmin/config.inc.php`) to add the blowfish secret. You can use [this page](https://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator) to get one generated for you.
-
 ### Apache
 
 **Note:** The following works (at least no obvious problems) with Apache 2.4 and php-apache/mod_mpm_prefork or php-fpm/mod_proxy_handler
@@ -204,19 +202,9 @@ ERROR: The configuration file now needs a secret passphrase (blowfish_secret)
 
 ```
 
-You need to add a blowfish password to the phpMyAdmin's config file. Edit `/etc/webapps/phpmyadmin/config.inc.php` and insert a random blowfish "password" in the line
+You need to add a unique password for the blowfish algorithm (which is used by phpMyAdmin to secure the authentication procedure) between the following `''`. You can use any password generator for that matter, a key lenght of 32 is recommended.
 
-```
-$cfg['blowfish_secret'] = _; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */_
-
-```
-
-Go [here](http://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator) to get a nicely generated blowfish_secret and paste it between the _marks. It should now look something like this:_
-
-```
-$cfg['blowfish_secret'] = 'qtdRoGmbc9{8IZr323xYcSN]0s)r$9b_JUnb{~Xz'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
-
-```
+ `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */` 
 
 The error should go away if you refresh the phpmyadmin page.
 
@@ -342,7 +330,7 @@ a fix seems to be to make sure you do not have SSL connection between PhpMyAdmin
 
 **Note:** There surely must be a better fix since 'ssl = true' worked before. Also do not disable SSL if your PhpMyAdmin install is somehow not on the same server as MySQL!
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414669](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=414669)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=415362](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=415362)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

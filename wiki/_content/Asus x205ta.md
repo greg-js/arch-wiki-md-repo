@@ -208,7 +208,7 @@ Proceed as usual.
 
 ### Sound
 
-There is currently no sound driver for the the x205ta's Realtek RT5648\. Keep your eye on [this](https://bugzilla.kernel.org/show_bug.cgi?id=95681) for updates.
+There is currently no sound driver for the the x205ta's Realtek RT5648\. Keep your eye on [this](https://bugzilla.kernel.org/show_bug.cgi?id=95681) for updates. Note that while the sound does not work at the moment, it does work using an external USB audio adapter.
 
 ### Power level information (ACPI)
 
@@ -271,15 +271,15 @@ Out of the box, the only keysyms correctly sent are the audio volume keys (F10-F
 
 ### Freezing
 
-Some users experience regular freezes, where their x205ta can only be restarted by holding down the power button for several seconds. Some users have reported that so far kernel version 4.1.6 seems to experience fewest freezes. Freezes seem to occure less regular with the current(2015-11-02) 4.3-mainline vanilla kernel.
+Some users experience regular freezes, where their x205ta can only be restarted by holding down the power button for several seconds. Some users have reported that so far kernel version 4.1.6 seems to experience fewest freezes. Freezes seem to occur less regular with the current(2015-11-02) 4.3-mainline vanilla kernel.
 
-Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance.
+Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance. The [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
 
 ### Bluetooth
 
 Does not work yet.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Asus_x205ta&oldid=410775](https://wiki.archlinux.org/index.php?title=Asus_x205ta&oldid=410775)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Asus_x205ta&oldid=415290](https://wiki.archlinux.org/index.php?title=Asus_x205ta&oldid=415290)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

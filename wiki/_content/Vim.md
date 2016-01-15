@@ -445,6 +445,8 @@ augroup END
 
 Create an [alias](/index.php/Alias "Alias") for `vi` to `vim`.
 
+Alternatively, if you want to be able to type `sudo vi` and get `vim`, install [vi-vim-symlink](https://aur.archlinux.org/packages/vi-vim-symlink/)<sup><small>AUR</small></sup> which will remove `vi` and replace it with a symlink to `vim`.
+
 ### DOS/Windows carriage returns
 
 If there is a `^M` at the end of each line then this means you are editing a text file which was created in MS-DOS or Windows. This is because in Linux only a single line feed character (LF) used for line break, but in Windows/MS DOS systems they are using a sequence of a carriage return (CR) and a line feed (LF) for the same. And this carriage returns are displayed as `^M`.
@@ -616,7 +618,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/) — a reference chart for Vim, primarily aimed at beginners.
 *   [Vim colorscheme tailoring](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — override installed colorscheme to try-out or permanently alter.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=411348](https://wiki.archlinux.org/index.php?title=Vim&oldid=411348)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=415417](https://wiki.archlinux.org/index.php?title=Vim&oldid=415417)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

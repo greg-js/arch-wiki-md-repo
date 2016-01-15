@@ -359,9 +359,9 @@ For an explanation of the desktop file standard refer to [Desktop Entry Specific
 *   [freedesktop.org basedir specification](http://freedesktop.org/wiki/Specifications/basedir-spec)
 *   [information for developers](http://freedesktop.org/wiki/Howto_desktop_files)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_entries_(简体中文)&oldid=410029](https://wiki.archlinux.org/index.php?title=Desktop_entries_(简体中文)&oldid=410029)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_entries_(简体中文)&oldid=415113](https://wiki.archlinux.org/index.php?title=Desktop_entries_(简体中文)&oldid=415113)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
+*   [Package development (简体中文)](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)")

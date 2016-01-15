@@ -128,7 +128,7 @@ Alternately,
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SystemTap&oldid=396161](https://wiki.archlinux.org/index.php?title=SystemTap&oldid=396161)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SystemTap&oldid=415399](https://wiki.archlinux.org/index.php?title=SystemTap&oldid=415399)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

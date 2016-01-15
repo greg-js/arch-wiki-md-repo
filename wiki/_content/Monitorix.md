@@ -53,7 +53,7 @@ See the configuration file for the other related options, for example [accesss r
 
 [Start](/index.php/Start "Start") `monitorix.service` and [enable](/index.php/Enable "Enable") it to run at boot like any other systemd service.
 
-To view system stats, using the perl-http-server, simply point a browser to http://localhost:8080/monitorix to see the data.
+To view system stats, using the perl-http-server, simply point a browser to [http://localhost:8080/monitorix](http://localhost:8080/monitorix) to see the data.
 
 **Tip:** If it is the first time running Monitorix, it will take several minutes before data are available to be displayed graphically; so be patient.
 
@@ -102,7 +102,7 @@ Also add `url_prefix_proxy = http://your.domain.com` to `/etc/monitorix/monitori
 
 [Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> is a package which provides a pseudo-daemon that makes use of tmpfs to store RRD Databases for Monitorix. Doing so will greatly reduce hdd reads/writes.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Monitorix&oldid=414406](https://wiki.archlinux.org/index.php?title=Monitorix&oldid=414406)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Monitorix&oldid=415392](https://wiki.archlinux.org/index.php?title=Monitorix&oldid=415392)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -208,16 +208,16 @@ sshfs может автоматически конвертировать ваш 
 
 ### Контрольный список
 
-Для начала, прочитайте следующую страницу вики [SSH Checklist](https://wiki.archlinux.org/index.php/Secure_Shell#Checklist). Вопросы, которые следует проверить:
+Для начала, прочитайте следующую страницу вики [SSH Checklist](https://wiki.archlinux.org/index.php/Secure_Shell#Checklist). Проблемы, которые следует проверить:
 
-1\. Получает ли ваш логин SSH дополнительную информацию от сервера, например, такую как файл `/etc/issue`? Это может быть причиной некоректной работы SSHFS. Вас следует временно деактивировать данный файл:
+1\. Получает ли ваш логин SSH дополнительную информацию от сервера, например, такую как файл `/etc/issue`? Это может быть причиной некорректной работы SSHFS. Вас следует временно деактивировать данный файл:
 
 ```
 $ mv /etc/issue /etc/issue.orig
 
 ```
 
-2\. Имейте в виду, что большинство статей по устранению неполадок связанных с SSH, найденых в интернете, **не** связаны с Systemd. Часто определения в `/etc/fstab` ошибочно начинаются с `_sshfs#_user@host:/mnt/server/folder ... fuse ...` вместо того, чтобы использовать следующий синтаксис `user@host:/mnt/server/folder ... fuse._sshfs_ ... _x-systemd_, ...`.
+2\. Имейте в виду, что большинство статей по устранению неполадок связанных с SSH, найденных в интернете, **не** связаны с Systemd. Часто определения в `/etc/fstab` ошибочно начинаются с `_sshfs#_user@host:/mnt/server/folder ... fuse ...` вместо того, чтобы использовать следующий синтаксис `user@host:/mnt/server/folder ... fuse._sshfs_ ... _x-systemd_, ...`.
 
 3\. Убедитесь, что владелец исходной папки и ее содержимого на сервере владеет соответственный пользователь:
 
@@ -226,48 +226,53 @@ $ chown -R USER_S: /mnt/servers/folder
 
 ```
 
-4\. Серверный пользовательский идентификатор может отличаться от соответствующего клиентского. Очевидно, что имена пользователей будут одинаковыми. Вам просто нужно позаботиться о клиентских идентификаторах. SSHFS будет переводить UID в правильный для вас при помощи следующей опции:
+4\. Серверный пользовательский идентификатор может отличаться от соответствующего клиентского. Очевидно, что имена пользователей будут одинаковыми. Вам просто нужно позаботиться о клиентском идентификаторе. SSHFS будет преобразовывать идентификатор пользователя посредством следующего параметра:
 
 ```
 uid=_USER_C_ID_,gid=_GROUP_C_ID_
 
 ```
 
-5\. Check that the client's target mount point (folder) is owned by the client user. This folder should have the same user ID as defined in SSHFS's mount options.
+5\. Проверьте, чтобы клиент имел права на целевую точку монтирования (каталог). Данная директория должна иметь такой же идентификатор, как в настройках монтирования SSHFS.
 
 ```
 $ chown -R USER_C: /mnt/client/folder
 
 ```
 
-6\. Check that the client's mount point (folder) is empty. By default you cannot mount SSHFS folders to non-empty folders.
+6\. Проверьте, что точка монтирования (папка) пуста. По умолчанию вы не можете монтировать каталоги SSHFS в непустые директории.
 
-7\. If you want to automount SSH shares by using an SSH public key authentication (no password) via `/etc/fstab`, you can use this line as an example:
+7\. Если вы хотите автоматически монтировать объекты SSH используя публичный ключ аутентификации (без пароля) через `/etc/fstab`, то используйте следующую линию как пример;
 
 ```
 _USER_S_@_SERVER_:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/_USER_C_/.ssh/id_rsa,allow_other,default_permissions,uid=_USER_C_ID_,gid=_GROUP_C_ID_,umask=0   0 0
 
 ```
 
-Considering the following example settings ...
+и учитывая следующий пример настроек...
 
-SERVER = Server host name (serv) USER_S = Server user name (pete) USER_C = Client user name (pete) USER_S_ID = Server user ID (1004) USER_C_ID = Client user ID (1000) GROUP_C_ID = Client user's group ID (100)
+*   SERVER = Имя сервера (serv)
+*   USER_S = Имя пользователя сервера (pete)
+*   USER_C = Имя пользователя клиента (pete)
+*   USER_S_ID = Идентификатор пользователя сервера (1004)
+*   USER_C_ID = Идентификатор пользователя клиента (1000)
+*   GROUP_C_ID = Идентификатор группы пользователя клиента (100)
 
-you get the client user's ID and group ID with
+Вы можете получить идентификатор пользователя и группы посредством следующей команды:
 
 ```
-$ id USERNAME
+$ id ИМЯПОЛЬЗОВАТЕЛЯ
 
 ```
 
-this is the final SSHFS mount row in `/etc/fstab`;
+Вот конечная строка для монтирования SSHFS в `/etc/fstab`:
 
 ```
 pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/pete/.ssh/id_rsa,allow_other,default_permissions,uid=1004,gid=1000,umask=0   0 0
 
 ```
 
-8\. If you know another issue for this checklist please add it the list above.
+8\. Если вам известны еще проблемы для этого контрольного списка, то, пожалуйста, добавьте их выше.
 
 ### Connection reset by peer
 
@@ -336,7 +341,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414963](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=414963)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415151](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415151)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

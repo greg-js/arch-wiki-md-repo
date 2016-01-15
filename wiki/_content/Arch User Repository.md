@@ -194,7 +194,16 @@ When submitting a package, observe the following rules:
 
 #### Creating a new package
 
-For write access to the AUR users need to have an [SSH key](/index.php/SSH_keys "SSH keys"). The contents of a public key `.ssh/foo.pub` need to be copied to the user profile in _My Account_. It is recommended that you create a new key, rather than use an existing SSH key so that you could selectively revoke the SSH key should something happen.
+For write access to the AUR, users need to have an [SSH key pair](/index.php/SSH_keys "SSH keys"). The content of the public key needs to be copied to the user profile in _My Account_, and the corresponding private key configured for the `aur.archlinux.org` host. For example:
+
+ `~/.ssh/config` 
+
+```
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+```
+
+It is recommended that you [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you could selectively revoke the keys should something happen.
 
 In order to upload a package, simply clone the Git repository with the corresponding name:
 
@@ -420,10 +429,14 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 *   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)
 *   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=409060](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=409060)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415269](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415269)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository")
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

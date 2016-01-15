@@ -221,7 +221,7 @@ Users may additionally wish to install and configure a [sound server](/index.php
 
 ### Browser plugins
 
-To enjoy media-rich web content and for a _complete_ browsing experience, [browser plugins](/index.php/Browser_plugins "Browser plugins") such as Adobe Acrobat Reader, Adobe Flash Player, and Java can be installed.
+For access to certain web content, [browser plugins](/index.php/Browser_plugins "Browser plugins") such as Adobe Acrobat Reader, Adobe Flash Player, and Java can be installed.
 
 ### Codecs
 
@@ -367,7 +367,7 @@ To be able to save and view text which has scrolled off the screen, refer to [Sc
 
 Using terminal multiplexers like [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programs may be run under sessions composed of tabs and panes that can be detached at will, so when the user either kills the terminal emulator, terminates [X](/index.php/X "X"), or logs off, the programs associated with the session will continue to run in the background as long as the terminal multiplexer server is active. Interacting with the programs requires reattaching to the session.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413465](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=413465)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=415313](https://wiki.archlinux.org/index.php?title=General_recommendations&oldid=415313)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

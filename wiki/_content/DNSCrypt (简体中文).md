@@ -272,9 +272,13 @@ If successful, your two selected dns providers should be the only ones found whe
 
 I really wanted to accomplish this with only a single .service and .socket files. Though the systemd documentation seems to indicate that it should be possible, I could not make it work. Here in lies a challenge to the more educated systemd folks out there. I'd love to see this further simplified.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt_(简体中文)&oldid=399224](https://wiki.archlinux.org/index.php?title=DNSCrypt_(简体中文)&oldid=399224)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt_(简体中文)&oldid=415111](https://wiki.archlinux.org/index.php?title=DNSCrypt_(简体中文)&oldid=415111)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Domain Name System (简体中文)](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)")
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
+*   [Encryption (简体中文)](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

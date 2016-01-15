@@ -7,6 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [List_of_applications/Security#Encryption.2C_signing.2C_steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
 
 According to the [official website](http://www.gnupg.org):
 
@@ -36,30 +37,27 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
     *   [6.3 pinentry](#pinentry)
     *   [6.4 Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user)
     *   [6.5 Unattended passphrase](#Unattended_passphrase)
-*   [7 Keysigning parties](#Keysigning_parties)
-    *   [7.1 caff](#caff)
-*   [8 Smartcards](#Smartcards)
-    *   [8.1 GnuPG only setups](#GnuPG_only_setups)
-    *   [8.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
-*   [9 Tips and tricks](#Tips_and_tricks)
-    *   [9.1 Different algorithm](#Different_algorithm)
-    *   [9.2 Encrypt a password](#Encrypt_a_password)
-    *   [9.3 Default options for new users](#Default_options_for_new_users)
-    *   [9.4 Revoking a key](#Revoking_a_key)
-*   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Not enough random bytes available](#Not_enough_random_bytes_available)
-    *   [10.2 su](#su)
-    *   [10.3 Agent complains end of file](#Agent_complains_end_of_file)
-    *   [10.4 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [10.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [10.6 mutt and gpg](#mutt_and_gpg)
-    *   [10.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [10.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [10.9 Smartcard not detected](#Smartcard_not_detected)
-*   [11 See also](#See_also)
-    *   [11.1 Related applications](#Related_applications)
-        *   [11.1.1 GPG graphical frontends](#GPG_graphical_frontends)
-        *   [11.1.2 Email clients (or plugins) with GPG support](#Email_clients_.28or_plugins.29_with_GPG_support)
+*   [7 Smartcards](#Smartcards)
+    *   [7.1 GnuPG only setups](#GnuPG_only_setups)
+    *   [7.2 GnuPG together with OpenSC](#GnuPG_together_with_OpenSC)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Different algorithm](#Different_algorithm)
+    *   [8.2 Encrypt a password](#Encrypt_a_password)
+    *   [8.3 Default options for new users](#Default_options_for_new_users)
+    *   [8.4 Revoking a key](#Revoking_a_key)
+    *   [8.5 Change trust model](#Change_trust_model)
+    *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
+    *   [9.2 su](#su)
+    *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
+    *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
+    *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
+    *   [9.6 mutt and gpg](#mutt_and_gpg)
+    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -158,7 +156,7 @@ $ gpg --recv-keys _<key-id>_
 
 ```
 
-**Warning:** Anyone can send keys to a keyserver, so you should not trust that the key you download actually belongs to the individual listed. You should verify the fingerprint of keys you retrieve with the individual owner over the phone or in person.
+**Warning:** Anyone can send keys to a keyserver, so you should not trust that the key you download actually belongs to the individual listed. You should verify the authenticity of the retrieved public key by comparing its fingerprint with one that the owner published on an independent source, such as their own blog or website, or contacting them by email, over the phone or in person. Using multiple authentication sources will increase the level of trust you can give to the downloaded key. See [Wikipedia:Public key fingerprint](https://en.wikipedia.org/wiki/Public_key_fingerprint "wikipedia:Public key fingerprint") for more information.
 
 **Tip:**
 
@@ -307,6 +305,14 @@ $ gpg --list-secret-keys
 
 ## gpg-agent
 
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** Much of this is outdated and unnecessary info. (Discuss in [Talk:GnuPG#](https://wiki.archlinux.org/index.php/Talk:GnuPG))
+
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -453,24 +459,6 @@ $ gpg --pinentry-mode loopback ...
 
 **Note:** The upstream author indicates setting **pinentry-mode loopback** in _gpg.conf_ may break other usage, using the commandline option should be preferred if at all possible. [[1]](https://bugs.g10code.com/gnupg/issue1772)
 
-## Keysigning parties
-
-To allow users to validate keys on the keyservers and in their keyrings (i.e. make sure they are from whom they claim to be), PGP/GPG uses a so-called "Web of Trust". There are many hacker events targeted to maintain this Web of Trust are held, including keysigning parties.
-
-The [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol "wikipedia:Zimmermann–Sassaman key-signing protocol") key-signing protocol is a way of making these very effective. [Here](http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html) you will find a how-to article.
-
-### caff
-
-For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool _caff_. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/)<sup><small>AUR</small></sup> or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/signing-party-svn)]</sup>. Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
-
-```
-cpanm Any::Moose
-cpanm GnuPG::Interface
-
-```
-
-To send the signatures to their owners you need a working [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent"). If you do not have already one, install [msmtp](/index.php/Msmtp "Msmtp").
-
 ## Smartcards
 
 **Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running.
@@ -573,6 +561,24 @@ Now update the keyserver:
 $ gpg --keyserver subkeys.pgp.net --send _<userid>_
 
 ```
+
+### Change trust model
+
+By default GnuPG uses the [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Trust "wikipedia:Web of Trust") as the trust model. You can change this to [Trust on First](https://en.wikipedia.org/wiki/Trust_on_First "wikipedia:Trust on First") Use by adding `--trust-model=tofu` when adding a key or adding this option to your GnuPG configuration file. More details are in [this email to the GnuPG list](https://lists.gnupg.org/pipermail/gnupg-devel/2015-October/030341.html).
+
+### Using caff for keysigning parties
+
+To allow users to validate keys on the keyservers and in their keyrings (i.e. make sure they are from whom they claim to be), PGP/GPG uses he [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Trust "wikipedia:Web of Trust"). Keysigning parties allow users to get together in physical location to validate keys. The [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol "wikipedia:Zimmermann–Sassaman key-signing protocol") key-signing protocol is a way of making these very effective. [Here](http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html) you will find a how-to article.
+
+For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool _caff_. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/)<sup><small>AUR</small></sup> or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/signing-party-svn)]</sup>. Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
+
+```
+cpanm Any::Moose
+cpanm GnuPG::Interface
+
+```
+
+To send the signatures to their owners you need a working [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent"). If you do not have already one, install [msmtp](/index.php/Msmtp "Msmtp").
 
 ## Troubleshooting
 
@@ -703,46 +709,14 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 
-### Related applications
-
-#### GPG graphical frontends
-
-*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — _a simple interface for GnuPG_ for KDE.
-
-[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
-
-*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — _GNOME application for managing encryption keys and passwords in the GnomeKeyring._
-
-[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
-
-#### Email clients (or plugins) with GPG support
-
-*   **[Claws Mail](https://en.wikipedia.org/wiki/Claws_mail "wikipedia:Claws mail")** — _an email client (and news reader), based on GTK+._
-
-[http://www.claws-mail.org/](http://www.claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
-
-*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — _a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard._
-
-[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup>
-
-*   **[Evolution](/index.php/Evolution "Evolution")** — GNOME mail client.
-
-[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution](https://www.archlinux.org/packages/?name=evolution)
-
-*   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — KDE mail client.
-
-[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
-
-*   **[mutt](/index.php/Mutt "Mutt")** — _All mail clients suck. This one just sucks less._
-
-[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
-
-*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — _Lightweight and user-friendly e-mail client._
-
-[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415054](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415054)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415280](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415280)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

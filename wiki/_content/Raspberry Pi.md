@@ -462,7 +462,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414969](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=414969)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=415133](https://wiki.archlinux.org/index.php?title=Raspberry_Pi&oldid=415133)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -13,7 +13,7 @@ Related articles
 
 CPU frequency scaling enables the operating system to scale the CPU frequency up or down in order to save power. CPU frequencies can be scaled automatically depending on the system load, in response to ACPI events, or manually by userspace programs.
 
-CPU frequency scaling is implemented in Linux kernel, the infrastructure is called _cpufreq_. Since kernel 3.4 the necessary modules are loaded automatically and the recommended [ondemand governor](#Scaling_governors) is enabled by default. However, userspace tools like [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), or GUI tools provided for your desktop environment, may still be used for advanced configuration.
+CPU frequency scaling is implemented in the Linux kernel, the infrastructure is called _cpufreq_. Since kernel 3.4 the necessary modules are loaded automatically and the recommended [ondemand governor](#Scaling_governors) is enabled by default. However, userspace tools like [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), or GUI tools provided for your desktop environment, may still be used for advanced configuration.
 
 ## Contents
 
@@ -428,9 +428,14 @@ options processor ignore_ppc=1
 *   [Linux CPUFreq - kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt)
 *   [Comprehensive explanation of pstate](http://www.reddit.com/r/linux/comments/1hdogn/acpi_cpufreq_or_intel_pstates/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&oldid=408114](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&oldid=408114)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&oldid=415266](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&oldid=415266)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
 *   [CPU](/index.php/Category:CPU "Category:CPU")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

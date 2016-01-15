@@ -41,7 +41,9 @@ If you want the text in `lemonbar` to update through a script, you need to add t
 
 #### Colors
 
-`lemonbar` uses the following commands to color the text, background or the under/overline. Colors are to be specified via their symbolic names or in #AARRGGBB notation.
+`lemonbar` uses the following commands to color the text, background or the under/overline. Colors can be specified via the formats `#RRGGBB`, `#AARRGGBB` (with an alpha channel; this requires a compositor to be running), or even `#RGB`.
+
+The special color `-` indicates the default color (which is set by command-line flags, or is otherwise the default white text on a black background).
 
 <table border="1">
 
@@ -57,25 +59,25 @@ If you want the text in `lemonbar` to update through a script, you need to add t
 
 <tr>
 
-<td>`%{F#}`</td>
+<td>`%{F_color_}`</td>
 
-<td>Uses the # color as the font's color</td>
-
-</tr>
-
-<tr>
-
-<td>`%{B#}`</td>
-
-<td>Uses the # color as the background</td>
+<td>Use _color_ as the foreground/font color</td>
 
 </tr>
 
 <tr>
 
-<td>`%{U#}`</td>
+<td>`%{B_color_}`</td>
 
-<td>Uses the # color for under/overlining the text</td>
+<td>Use _color_ as the background</td>
+
+</tr>
+
+<tr>
+
+<td>`%{U_color_}`</td>
+
+<td>Use _color_ for under/overlining the text</td>
 
 </tr>
 
@@ -129,7 +131,7 @@ If you want the text in `lemonbar` to update through a script, you need to add t
 
 #### Examples
 
-The following example prints the date and time in the middle of the bar, the font's color being `yellow` and the background `blue` and changes the font's color back to the default color afterwards. Run it with `/path/to/script/example.sh | lemonbar -p`
+The following example prints the date and time in the middle of the bar, the font's color being `yellow` and the background `blue` and changes the font/background color back to the default color afterwards. Run it with `/path/to/script/example.sh | lemonbar -p`
 
  `example.sh` 
 
@@ -138,16 +140,16 @@ The following example prints the date and time in the middle of the bar, the fon
 
 # Define the clock
 Clock() {
-        DATE=$(date "+%a %b %d, %T")
+        DATETIME=$(date "+%a %b %d, %T")
 
-        echo -n "$DATE"
+        echo -n "$DATETIME"
 }
 
 # Print the clock
 
 while true; do
-        echo "%{c}%{Fyellow}%{Bblue} $(Clock)%{F-}"
-        sleep 1;
+        echo "%{c}%{F#FFFF00}%{B#0000FF} $(Clock) %{F-}%{B-}"
+        sleep 1
 done
 
 ```
@@ -173,7 +175,7 @@ done
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lemonbar&oldid=410613](https://wiki.archlinux.org/index.php?title=Lemonbar&oldid=410613)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lemonbar&oldid=415421](https://wiki.archlinux.org/index.php?title=Lemonbar&oldid=415421)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

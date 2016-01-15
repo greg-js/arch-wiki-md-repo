@@ -760,24 +760,24 @@ mlord@pobox.com
 
 **Note:** This method is persistent, you only need to do this once for every drive.
 
-This method will use a utility called idle3ctl to alter the firmware value for the idle3 timer on WD hard drives (similar to wdidle3.exe from WD). The advantage compared to the official utility is you do not need to create a DOS bootdisk first to change the idle3 timer value. Additionally idle3ctl might also work over USB-to-S-ATA bridges (in some cases). Download [idle3ctl](http://idle3-tools.sourceforge.net/), extract and compile it. Within the folder that contains the newly compiled binary, execute
+This method will use a utility called idle3ctl to alter the firmware value for the idle3 timer on WD hard drives (similar to wdidle3.exe from WD). The advantage compared to the official utility is you do not need to create a DOS bootdisk first to change the idle3 timer value. Additionally idle3ctl might also work over USB-to-S-ATA bridges (in some cases). The utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package.
 
 ```
-# ./idle3ctl -g /dev/your_wd_hdd
+# idle3ctl -g /dev/your_wd_hdd
 
 ```
 
 to get the raw idle3 timer value. You can disable the IntelliPark feature completely, with:
 
 ```
-# ./idle3ctl -d /dev/your_wd_hdd
+# idle3ctl -d /dev/your_wd_hdd
 
 ```
 
 or set it to a different value (_0_-_255_) with (e.g. 10 seconds):
 
 ```
-# ./idle3ctl -s 100 /dev/your_wd_hd
+# idle3ctl -s 100 /dev/your_wd_hd
 
 ```
 
@@ -786,12 +786,16 @@ The range _0_-_128_ is in 0.1s and _129-255_ in 30s. For the changes to take eff
 If your WD hard drive is not recognized, you can use the _--force_ option. For more options see:
 
 ```
-$ ./idle3ctl -h
+$ idle3ctl -h
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=414509](https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=414509)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=415387](https://wiki.archlinux.org/index.php?title=Advanced_Format&oldid=415387)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

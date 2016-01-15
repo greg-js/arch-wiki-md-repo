@@ -53,6 +53,7 @@ The ownCloud installation and configuration mainly depends on what web server an
     *   [8.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
     *   [8.10 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
     *   [8.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [8.12 Password not saved](#Password_not_saved)
 *   [9 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
 *   [10 See also](#See_also)
 
@@ -809,6 +810,10 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
 ...
 ```
 
+### Password not saved
+
+If the password are not saved and asked on every startup try to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), helped under xfce4.
+
 ## Upload and Share from File Manager
 
 You can use the following script to quickly upload and share files to your ownCloud installation from Thunar (and possibly other filemanagers): [https://github.com/schiesbn/shareLinkCreator](https://github.com/schiesbn/shareLinkCreator) You need to edit the file with the proper configuration settings. **Note: password is stored as plain text.**
@@ -818,8 +823,12 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=414387](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=414387)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=415403](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=415403)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

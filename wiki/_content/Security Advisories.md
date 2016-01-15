@@ -45,6 +45,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
+*   [14 January 2016] [ASA-201601-10](https://lists.archlinux.org/pipermail/arch-security/2016-January/000515.html) [php](https://www.archlinux.org/packages/?name=php) multiple issues
+*   [14 January 2016] [ASA-201601-9](https://lists.archlinux.org/pipermail/arch-security/2016-January/000512.html) [openssh](https://www.archlinux.org/packages/?name=openssh) multiple issues
+*   [13 January 2016] [ASA-201601-8](https://lists.archlinux.org/pipermail/arch-security/2016-January/000487.html) [libxslt](https://www.archlinux.org/packages/?name=libxslt) denial of service
 *   [11 January 2016] [ASA-201601-7](https://lists.archlinux.org/pipermail/arch-security/2016-January/000486.html) [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) denial of service
 *   [09 January 2016] [ASA-201601-6](https://lists.archlinux.org/pipermail/arch-security/2016-January/000485.html) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) denial of service
 *   [09 January 2016] [ASA-201601-5](https://lists.archlinux.org/pipermail/arch-security/2016-January/000484.html) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) denial of service
@@ -531,7 +534,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414939](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=414939)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415405](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415405)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

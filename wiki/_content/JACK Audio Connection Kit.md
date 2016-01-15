@@ -229,7 +229,7 @@ Wait for the above to settle.
 
 With all of the above in a script run at logon, and with the QjackCtl patchbay set correctly, all we have to do is plug the PC/laptop into a MIDI keyboard using a USB-to-MIDI adapter, or simply the USB-in MIDI capability of many modern keyboards, and you are ready to play!
 
-The essence of QJackCtl is described fairly well in [this article.](http://www.linuxjournal.com/article/8354)
+The essence of QJackCtl is described fairly well in [this article.](http://www.linuxjournal.com/article/8354?page=full)
 
 ### A GUI-based example setup
 
@@ -414,7 +414,7 @@ Run VLC and change the following menu options:
 
 *   [Pro Audio](/index.php/Pro_Audio "Pro Audio")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415071](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415071)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415263](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415263)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

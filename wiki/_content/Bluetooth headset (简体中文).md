@@ -713,9 +713,9 @@ Using the same device on Windows and Linux without pairing the device over and o
 
 *   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset_(简体中文)&oldid=399161](https://wiki.archlinux.org/index.php?title=Bluetooth_headset_(简体中文)&oldid=399161)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset_(简体中文)&oldid=415110](https://wiki.archlinux.org/index.php?title=Bluetooth_headset_(简体中文)&oldid=415110)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
+*   [Sound (简体中文)](/index.php/Category:Sound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sound (简体中文)")
+*   [Bluetooth (简体中文)](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)")

@@ -41,13 +41,14 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Список наших переводчиков:
 
+*   [Clearsprite](/index.php/User:Clearsprite "User:Clearsprite") ([обсуждение](/index.php/User_talk:Clearsprite "User talk:Clearsprite")|[вклад](/index.php/Special:Contributions/Clearsprite "Special:Contributions/Clearsprite"))
 *   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok")) ([ArchWiki Maintainer](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers"))
+*   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
-*   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 *   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
-*   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
+*   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (страница не существует)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
 
 Раз в неделю список участников автоматически сортируется по убыванию, исходя из количества правок, сделанных за последние 30 дней.
@@ -411,7 +412,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td>[PulseAudio/Troubleshooting (Русский)](/index.php/PulseAudio/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio/Troubleshooting (Русский)")</td>
 
-<td style="background-color: Yellow;">2/7 (Звук, Микрофон)</td>
+<td style="background-color: Yellow;">4/7 (Звук, Микрофон, Качество звука, Bluetooth)</td>
 
 <td>-</td>
 
@@ -435,7 +436,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td>[Sshfs](/index.php/Sshfs "Sshfs")</td>
 
-<td style="background-color: Yellow;">3/7 (1 - 3)</td>
+<td style="background-color: Yellow;">5/7 (1 - 5)</td>
 
 <td>-</td>
 
@@ -459,7 +460,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <td>[xrandr](/index.php/Xrandr "Xrandr")</td>
 
-<td style="background-color: Yellow;">3/5 (2, 3, 5)</td>
+<td style="background-color: Yellow;">4/5 (1, 2, 3, 5)</td>
 
 <td>-</td>
 
@@ -1193,7 +1194,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=414759](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=414759)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=415389](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=415389)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

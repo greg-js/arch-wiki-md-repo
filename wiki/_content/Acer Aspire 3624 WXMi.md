@@ -4,42 +4,15 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
+[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
+
+[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
+
+**This article is being considered for redirection to [Laptop](/index.php/Laptop "Laptop").**
+
+**Notes:** Info in this page is out of data and should redirect to [Laptop](/index.php/Laptop "Laptop"). (Discuss in [Talk:Acer Aspire 3624 WXMi#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_3624_WXMi))
+
 Article based on [Acer Aspire 1652 ZWLMi](/index.php?title=Acer_Aspire_1652_ZWLMi&action=edit&redlink=1 "Acer Aspire 1652 ZWLMi (page does not exist)"), which in turn was based on [Acer Aspire 1691 WLMi](/index.php/Acer_Aspire_1691_WLMi "Acer Aspire 1691 WLMi").
-
-This notebook was a very economic solution, at about $500 two years ago that still works like a charm. The combination of a economic processor such as the Celeron M 380 and a lightweight Linux distribution such as Arch Linux with a minimalist usability focus like using the fluxbox window manager, all of that makes a great deal of this laptop, currently used for programming in many environments and paradigms, music listening, video watching and the all-time classic web surfing and mail checking.
-
-Currently using a custom mainline kernel with no modules other than the additional madwifi Atheros drivers, expecting to use the ath5k drivers in the 2.6.25 kernel. Also, the hard disk uses three partitions, a root partition, an encrypted home partition and the swap.
-
-Battery life currently tops 2 hours when just coding or writing with WiFi enabled and about 1:20 while watching h.264 video files.
-
-The modem and PCMCIA slot have never been used.
-
-## Contents
-
-*   [1 Specifications](#Specifications)
-    *   [1.1 Components](#Components)
-    *   [1.2 lspci](#lspci)
-*   [2 Installing Arch Linux](#Installing_Arch_Linux)
-*   [3 Kernel](#Kernel)
-*   [4 Power Management](#Power_Management)
-*   [5 Xorg](#Xorg)
-    *   [5.1 DPMS screen shutdown](#DPMS_screen_shutdown)
-
-# Specifications
-
-## Components
-
-*   **Processor:** Intel Celeron M 380 1.6Ghz, 1MB L2 Cache (Differences with a Pentium M: No SpeedStep frequency scaling and half the L2 cache).
-*   **Memory:** Hynix 2x256MB 400Mhz DDR2 SO-DIMM in Dual Data Rate configuration
-    *   Upgraded to 2x1GB Corsair Value Select 1GB 533Mhz DDR2 SO-DIMM (VS1GSDS533D2).
-*   **Hard Disk Drive:** Hitachi 80GB (HTS421280H9AT00) UDMA/100, PATA
-    *   It seems that the biggest PATA 2.5" hard disk drive widely available is the 250GB Western Digital WD2500BEVE.
-*   **Optical Drive:** Pioneer DVD-RW (DVR-K16RA) UDMA/33, PATA
-*   **Wireless NIC:** Atheros AR2413 (It is installed as a Mini PCI card, supposedly can be upgraded to 802.11n in the future).
-*   **Ethernet NIC:** Realtek 8139
-*   **Screen:** 14.1" glossy surface 1280x800 native resolution.
-*   **Touchpad:** Synaptics
-*   **Bluetooth:** No. But it has a nice front unused button for it.
 
 ## lspci
 
@@ -66,16 +39,6 @@ The modem and PCMCIA slot have never been used.
 
 # Installing Arch Linux
 
-Installed two times with the standard CD, about two years ago (2006) and a fresh reinstall in November 2007, the upgraded the system with pacman -Syu and added all my favorite packages.
-
-# Kernel
-
-Currently using a customized configuration 2.6.23.1 kernel with support only for the included hardware and some extra USB stuff.
-
-# Power Management
-
-Turning it off when not used and DPMS screen shutdown in the xorg.conf file. Have not used suspend to disk, boot time is very fast, about 20 seconds from button press to login.
-
 # Xorg
 
 The intel driver doesn't like to set the DPI according to forced physical dimensions, so there is a trick to get the desired DPI (81x81). In the user's ~/.bashrc the following line was added:
@@ -87,27 +50,12 @@ alias xinit='xinit -- -dpi 81'
 
 So that when issuing the xinit command, it will always use that DPI resolution.
 
-## DPMS screen shutdown
-
-The following /etc/X11/xorg.conf snippet adds a DPMS screen shutdown after 5 minutes of no activity.
-
-```
-Section "Monitor"
-    ...
-    Option "DPMS" "true"
-    ...
-EndSection
-
-Section "ServerLayout"
-    ...
-    Option "OffTime" "5" 
-    ...
-EndSection
-
-```
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_3624_WXMi&oldid=196467](https://wiki.archlinux.org/index.php?title=Acer_Aspire_3624_WXMi&oldid=196467)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_3624_WXMi&oldid=415198](https://wiki.archlinux.org/index.php?title=Acer_Aspire_3624_WXMi&oldid=415198)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Acer](/index.php/Category:Acer "Category:Acer")
+
+Hidden category:
+
+*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")

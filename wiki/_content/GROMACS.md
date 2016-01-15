@@ -145,45 +145,36 @@ Then select the index group corresponding with the solvent, which will be replac
 
 #### Parameter files
 
-A parameters file should be created for each different step of a set of simulations (_e.g._, minimization, equilibration, production). A list of all possible options is [here](http://manual.gromacs.org/online/mdp_opt.html).
+A parameters file should be created for each different step of a set of simulations (_e.g._, minimization, equilibration, production). A list of all possible options is [here](http://manual.gromacs.org/documentation/5.1.1/user-guide/mdp-options.html#mdp-nstcalcenergy).
 
-Here is a sample commented parameter file for ten second production run at standard conditions:
+Here is a sample parameter file for a ten second production run at standard conditions:
 
 ```
-integrator               = md          ; leap-frog algorithm. Set to "steep" for energy minimization (there are several options)
-dt                       = 0.002       ; in picoseconds. 0.002 ps = 2 fs
-nsteps                   = 5000000     ; 10.0 ns
+dt                       = 0.002
+nsteps                   = 5000000
 
-nstenergy                = 1000        ; How often to write to energy file (.edr)
-nstlog                   = 1000        ; How often to write to log file (.log)
-nstxout-compressed       = 1000        ; How often to write coordinates to compressed file (.xtc)
+nstxout-compressed       = 2500
 
-continuation             = yes         ; Set to "no" on first equilibration (or omit); otherwise set to "yes".
-constraint-algorithm     = lincs       ; Use "shake" if you want to constrain angles, but "lincs" is faster"
-constraints              = h-bonds     ; Only bonds with hydrogen atoms constrained. Could also be "all-bonds", "h-angles", "all-angles", or "none" (the default).
+coulombtype              = PME
+rcoulomb                 = 1.0
 
-gen-vel                  = no          ; Set to "yes" for first equilibration; otherwise set to "no" (or omit).
-gen-temp                 = 298.15      ; Should be the same as "ref-t" below. Only used if "gen-vel" is "yes"
+vdwtype                  = Cut-off
+rvdw                     = 1.0
+DispCorr                 = EnerPres
 
-cutoff-scheme            = Verlet      ; This is the default, but it's a good idea to make it explicit.
-pbc                      = xyz         ; Periodic boundary condition in all directions. This is the default (so you could omit).
+tcoupl                   = Nose-Hoover
+nh-chain-length          = 1
+tc-grps                  = System
+tau-t                    = 2.0
+ref-t                    = 298.15
 
-coulombtype              = PME         ; Particle-mesh Ewald for long range electrostatics
-rcoulomb                 = 1.0         ; Begin k-space treatment for PME at 1.0 nm. Consult journal articles for getting a good value for this.
+pcoupl                   = Parrinello-Rahman 
+tau_p                    = 2.0
+compressibility          = 4.46e-5
+ref_p                    = 1.0 
 
-vdwtype                  = Cut-off     ; Simple cutoff for VDW interactions. The default.
-rvdw                     = 1.0         ; Truncate VDW at 1.0 nm. Consult journal articles for getting a good value for this.
-DispCorr                 = EnerPres    ; Long-range correction for VDW for energy and pressure. Usually want this.
-
-tcoupl                   = Nose-Hoover ; NH produces correct ensemble. Berendsen does not.
-tc-grps                  = System      ; whole system is coupled
-tau-t                    = 2.0         ; time constant
-ref-t                    = 298.15      ; temperature in Kelvin
-
-pcoupl                   = Parrinello-Rahman ; PR produces correct ensemble. Berensden does not (but may be useful in other equil. steps)
-tau_p                    = 2.0         ; time constant
-compressibility          = 4.46e-5     ; in bar^-1
-ref_p                    = 1.0         ; pressure in bar
+constraints              = h-bonds
+continuation             = yes
 ```
 
 **Tip:** A commented parameters file with all options (even those not explicitly listed in your file) is output when running _gmx grompp_ and saved by default as `mdout.mdp`.
@@ -482,7 +473,7 @@ Now when you run _gmx pdb2gmx_ this solvent model should be available for the ap
 *   [Justin Lemkul's Tutorials](http://www.bevanlab.biochem.vt.edu/Pages/Personal/justin/gmx-tutorials/index.html) — includes a variety of different simulation methods (umbrella sampling, free energy calculations, etc).
 *   [James Barnett's Tutorials](http://statthermo.blogspot.com/p/tutorials.html) — a few basic tutorials on simulations with an organic solute. Includes how to use _gmx pdb2gmx_ with a user-created molecule.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GROMACS&oldid=403898](https://wiki.archlinux.org/index.php?title=GROMACS&oldid=403898)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GROMACS&oldid=415192](https://wiki.archlinux.org/index.php?title=GROMACS&oldid=415192)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

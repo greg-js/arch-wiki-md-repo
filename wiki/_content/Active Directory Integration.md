@@ -123,7 +123,7 @@ Read [NTPd](/index.php/NTPd "NTPd") or [OpenNTPD](/index.php/OpenNTPD "OpenNTPD"
 
 On the configuration, use the IP addresses for the AD servers. Alternatively, you can use other known NTP servers provided the Active directory servers sync to the same stratum. However, AD servers typically run NTP as a service.
 
-Ensure the daemon is configured to **sync automatically on startup**.
+Ensure the daemon is configured to **sync automatically on startup**. Ensure your local time ist synced very early on startup. ([https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon#Synchronize_time_once_per_boot](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon#Synchronize_time_once_per_boot))
 
 ### Kerberos
 
@@ -855,7 +855,7 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 *   Centrify
 *   Likewise
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=414514](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=414514)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=415294](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=415294)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

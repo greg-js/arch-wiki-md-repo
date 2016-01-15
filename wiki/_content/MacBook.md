@@ -489,11 +489,14 @@ $ lspci | grep VGA
 
 **Tip:** MBP 6.2 - With the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers, support for [PureVideo HD](/index.php/NVIDIA#Enabling_Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") is available for hardware video decoding.
 
+**Tip:** If you have installed OS in EFI mode and NVIDIA binary drivers are working only in BIOS mode (e.g. you get black screen on EFI boot), try this approach: [http://askubuntu.com/a/613573/492886](http://askubuntu.com/a/613573/492886)
+
 For MacBooks with NVIDIA graphics, for the backlight to work properly you may need the [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/)<sup><small>AUR</small></sup> package.
 
 **Tip:**
 
 *   If backlight control does not work after installing nvidia-bl, you should [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") apple_bl kernel module.
+*   If backlight control does not work even this way, try setting module parameters, e.g. `options nvidiabl screen_type=3 min=0 max=44000` in `/etc/modprobe.conf` in case of MacBook Air 3.2
 *   Alternatively, you can choose to use the [pommed-light](https://aur.archlinux.org/packages/pommed-light/)<sup><small>AUR</small></sup> package. If you do so, you may wish to change the step settings in `/etc/pommed.conf.mactel` to something around 5000-10000 depending on how many levels of brightness you desire. The max brightness is around 80000, so take that into account.
 
 ##### MacBookPro5,5, NVIDIA and secondary display
@@ -1571,8 +1574,13 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=414987](https://wiki.archlinux.org/index.php?title=MacBook&oldid=414987)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=415257](https://wiki.archlinux.org/index.php?title=MacBook&oldid=415257)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Apple](/index.php/Category:Apple "Category:Apple")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

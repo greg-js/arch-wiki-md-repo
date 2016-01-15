@@ -68,7 +68,7 @@ See [Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties
 *   [cryptsetup repository](https://git.kernel.org/cgit/utils/cryptsetup/cryptsetup.git/) and [release](https://www.kernel.org/pub/linux/utils/cryptsetup/) archive.
 *   [DOXBOX](https://github.com/t-d-k/doxbox) - Supports unlocking LUKS encrypted volumes in Microsoft Windows.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt&oldid=383184](https://wiki.archlinux.org/index.php?title=Dm-crypt&oldid=383184)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt&oldid=415416](https://wiki.archlinux.org/index.php?title=Dm-crypt&oldid=415416)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -331,6 +331,8 @@ For [PulseAudio](/index.php/PulseAudio "PulseAudio") to function correctly with 
 
 If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)<sup><small>AUR</small></sup> maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. When using [PulseAudio](/index.php/PulseAudio "PulseAudio"), use [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)<sup><small>AUR</small></sup> instead. See also [#Xfce4 mixer and PulseAudio](#Xfce4_mixer_and_PulseAudio).
 
+On some installations, the Xfce4-volumed will not work because the active sound card is not selected. To fix this, open **Xfce4-settings-editor**, navigate to Xfce4-mixer, make sure 'active-card' is set to the correct one, probably the same as 'sound-card'. The volume notification should now work. Notifications for this and all notifications controlled by xfce4-notifyd can be configured with **Xfce4-notifyd-config**.
+
 For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
 
 ##### Shortcuts
@@ -653,7 +655,7 @@ Note that each time the laptop lid settings are changed in the power manager, th
 *   [Xfce Wikia](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) - How to edit the auto generated menu with the menu editor
 *   [Xfce Wiki](http://wiki.xfce.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=413216](https://wiki.archlinux.org/index.php?title=Xfce&oldid=413216)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=415369](https://wiki.archlinux.org/index.php?title=Xfce&oldid=415369)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

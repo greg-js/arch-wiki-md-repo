@@ -220,7 +220,7 @@ If you bump into problems, try these tools to help debug:
 *   [dvbsnoop](https://aur.archlinux.org/packages/dvbsnoop/)<sup><small>AUR</small></sup> is an advanced tool that can show all the necessary data regarding the bandwidth, signal, frontend, etc.
 *   `femon -H` shows signal statistics
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=405592](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=405592)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=415347](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=415347)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

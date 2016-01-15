@@ -1388,9 +1388,13 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 13.  [^](#encfs_acceleration) [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
 14.  [^](#compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=414686](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=414686)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=415420](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=415420)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

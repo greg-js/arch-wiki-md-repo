@@ -81,9 +81,9 @@ $ emacs -nw --color=no
 
 Esto hará que los textos aparezcan únicamente en color blanco.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs_(Español)&oldid=398771](https://wiki.archlinux.org/index.php?title=Emacs_(Español)&oldid=398771)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs_(Español)&oldid=415115](https://wiki.archlinux.org/index.php?title=Emacs_(Español)&oldid=415115)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
+*   [Development (Español)](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)")
+*   [Text editors (Español)](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)")

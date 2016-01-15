@@ -22,9 +22,11 @@ Evolution is a [GNOME](/index.php/GNOME "GNOME") mail client it supports IMAP, M
 *   [7 Tudelft webmail (Exchange)](#Tudelft_webmail_.28Exchange.29)
 *   [8 Using Evolution Outside Of Gnome](#Using_Evolution_Outside_Of_Gnome)
 *   [9 Spell Check](#Spell_Check)
-*   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Failing to Synchronize with Server](#Failing_to_Synchronize_with_Server)
-*   [11 References](#References)
+*   [10 Tips and tricks](#Tips_and_tricks)
+    *   [10.1 Changing cipher settings](#Changing_cipher_settings)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Failing to Synchronize with Server](#Failing_to_Synchronize_with_Server)
+*   [12 References](#References)
 
 ## Installation
 
@@ -244,6 +246,42 @@ Run the above script before starting Evolution. Reboot or remove the appropriate
 
 Make sure you have a local dictionary installed. You can run `pacman -Ss aspell` for a list of dictionaries.
 
+## Tips and tricks
+
+### Changing cipher settings
+
+It is possible to change the advertised ciphers used to secure the connetion to the server. Evolution does not provide a switch to change the settings for the used ciphers, however since evolution uses GnuTLS it is possible to change the settings using environment variables.
+
+One way to change the settings is to set the variable in /usr/share/applications/evolution.desktop
+
+change the line:
+
+```
+Exec=evolution %U
+
+```
+
+to something like this (in case you do not like to use ECC ciphers with NIST/NSA curves):
+
+```
+Exec=env G_TLS_GNUTLS_PRIORITY=${G_TLS_GNUTLS_PRIORITY:-NORMAL:-ECDHE-ECDSA:-ECDHE-RSA} evolution %U
+
+```
+
+The available cipher settings are documented here: [http://gnutls.org/manual/html_node/Priority-Strings.html](http://gnutls.org/manual/html_node/Priority-Strings.html)
+
+A different way to archive this would be some kind of start script:
+
+```
+#!/bin/sh
+
+export G_TLS_GNUTLS_PRIORITY=${G_TLS_GNUTLS_PRIORITY:-NORMAL:%COMPAT:\!VERS-SSL3.0}
+
+exec /usr/bin/evolution
+```
+
+See also: [https://bugzilla.gnome.org/show_bug.cgi?id=738633#c4](https://bugzilla.gnome.org/show_bug.cgi?id=738633#c4)
+
 ## Troubleshooting
 
 If after some system upgrade one gets no accounts in Evolution then all is not lost. First, we can see if we got our account files in ~/.evolution/, if so, then the only solution is to just make a new account in Evolution with the same parameters. (I only lost the signatures
@@ -260,9 +298,13 @@ A possible solution is to switch to "Work Offline" select "Don't Synchronize” 
 
 [Tudelft Evolution 2.24 Setup](http://www.tudelft.nl/live/pagina.jsp?id=babae0a3-1479-4501-9ec4-e308153735dc&lang=nl)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Evolution&oldid=410596](https://wiki.archlinux.org/index.php?title=Evolution&oldid=410596)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Evolution&oldid=415372](https://wiki.archlinux.org/index.php?title=Evolution&oldid=415372)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
 *   [GNOME](/index.php/Category:GNOME "Category:GNOME")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -11,11 +11,8 @@ Artículos relacionados
 *   [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 *   [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)")
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
-*   [pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman")
-*   [pacman-key#Troubleshooting](/index.php/Pacman-key#Troubleshooting "Pacman-key")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). Fecha de la última traducción/revisión: **2015-10-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&diff=0&oldid=404349).
+**Estado de la traducción:** este artículo es una versión traducida de [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). Fecha de la última traducción/revisión: **2016-01-14**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&diff=0&oldid=415063).
 
 Este documento le guiará a través del proceso de instalación de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") usando los [Scripts de Instalación de Arch](https://github.com/falconindy/arch-install-scripts). Antes de proceder a la instalación, es recomendable la lectura del artículo sobre las preguntas más frecuentes ([FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")).
 
@@ -34,23 +31,23 @@ La [wiki de Arch](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page (Español)"), m
     *   [3.2 Tipos de tablas de particiones](#Tipos_de_tablas_de_particiones)
     *   [3.3 Herramientas de particionado](#Herramientas_de_particionado)
         *   [3.3.1 Utilizar parted en modo interactivo](#Utilizar_parted_en_modo_interactivo)
-    *   [3.4 Crear nueva tabla de particiones](#Crear_nueva_tabla_de_particiones)
+    *   [3.4 Crear una tabla de particiones nueva](#Crear_una_tabla_de_particiones_nueva)
     *   [3.5 Esquemas de particionado](#Esquemas_de_particionado)
         *   [3.5.1 Ejemplos UEFI/GPT](#Ejemplos_UEFI.2FGPT)
         *   [3.5.2 Ejemplos BIOS/MBR](#Ejemplos_BIOS.2FMBR)
-    *   [3.6 Sistemas de archivos y swap](#Sistemas_de_archivos_y_swap)
+    *   [3.6 Formatear con un sistemas de archivos y activar swap](#Formatear_con_un_sistemas_de_archivos_y_activar_swap)
 *   [4 Instalar el sistema base](#Instalar_el_sistema_base)
-    *   [4.1 Servidores de réplicas](#Servidores_de_r.C3.A9plicas)
-    *   [4.2 Pacstrap](#Pacstrap)
+    *   [4.1 Seleccionar los servidores de réplicas](#Seleccionar_los_servidores_de_r.C3.A9plicas)
+    *   [4.2 Instalar los paquetes del grupo base](#Instalar_los_paquetes_del_grupo_base)
 *   [5 Configurar el sistema base](#Configurar_el_sistema_base)
     *   [5.1 Fstab](#Fstab)
     *   [5.2 Chroot](#Chroot)
     *   [5.3 Idioma](#Idioma)
     *   [5.4 Fecha y hora](#Fecha_y_hora)
     *   [5.5 Initramfs](#Initramfs)
-    *   [5.6 Gestor de arranque](#Gestor_de_arranque)
-        *   [5.6.1 BIOS/MBR](#BIOS.2FMBR)
-        *   [5.6.2 UEFI/GPT](#UEFI.2FGPT)
+    *   [5.6 Instalar un gestor de arranque](#Instalar_un_gestor_de_arranque)
+        *   [5.6.1 UEFI/GPT](#UEFI.2FGPT)
+        *   [5.6.2 BIOS/MBR](#BIOS.2FMBR)
     *   [5.7 Configurar la conexión de red](#Configurar_la_conexi.C3.B3n_de_red)
         *   [5.7.1 Nombre del equipo](#Nombre_del_equipo)
         *   [5.7.2 Red cableada](#Red_cableada)
@@ -105,31 +102,33 @@ Si algunos caracteres se muestran como cuadrados blancos u otros símbolos, pued
 
 ### Establecer una conexión a Internet
 
+Conexión de red cableada
+
 El demonio de red [dhcpcd](/index.php/Dhcpcd "Dhcpcd") se inicia automáticamente en el arranque e intenta establecer una conexión cableada, si está disponible. Para acceder a los formularios de inicio de sesión de un [portal cautivo](https://en.wikipedia.org/wiki/es:Portal_cautivo "wikipedia:es:Portal cautivo"), utilice el navegador web [Elinks](/index.php/Elinks "Elinks").
 
-Compruebe que se ha establecido una conexión, por ejemplo con la utilidad _ping_. Si no arroja resultado positivo, detenga el servicio _dhcpcd_ y [configure la conexión de red](/index.php/Network_configuration "Network configuration") manualmente. En el siguiente ejemplo se utiliza [netctl](/index.php/Netctl "Netctl") para este propósito.
+Compruebe que se ha establecido una conexión, por ejemplo con la utilidad _ping_. Si no arroja resultado positivo, detenga el servicio _dhcpcd_ y [configure la conexión de red](/index.php/Network_configuration "Network configuration") manualmente. En el siguiente ejemplo se utiliza [netctl](/index.php/Netctl "Netctl") para este propósito. Para evitar conflictos, detenga el servicio _dhcp_ (sustituya `enp0s25` con el nombre correcto de la interfaz de red cableada):
 
 ```
-# systemctl stop dhcpcd@_nombre_interfaz_.service
+# systemctl stop dhcpcd@_enp0s25_.service
 
 ```
 
-Las [interfaces](/index.php/Network_configuration#Device_names "Network configuration") de red pueden ser enumeradas con `ip link`, o `iw dev` a fin de encontrar las relativas a los dispositivos de red inalámbrica. Estas vienen precedidas por el prefijo `en` (ethernet), `wl` (WLAN), o `ww` (WWAN), dando como resultado nombres de interfaces como `enp0s25`.
+Las [interfaces](/index.php/Network_configuration#Device_names "Network configuration") de red pueden ser enumeradas con `ip link`, o `iw dev` para los dispositivos de red inalámbrico. Estas vienen precedidas por el prefijo `en` (ethernet), `wl` (WLAN), o `ww` (WWAN).
 
-Para conservar las configuraciones, copie los archivos de configuración modificados al nuevo sistema, antes de [[#Configurar el sistema base]|configurar el sistema base]].
+Para conservar las configuraciones, copie los archivos de configuración modificados al nuevo sistema, antes de [configurar el sistema base](#Configurar_el_sistema_base).
 
 Conexión a redes inalámbricas
 
-Enumere las redes [wireless](/index.php/Wireless "Wireless") disponibles y conéctese una de ellas:
+Enumere las redes [inalámbricas](/index.php/Wireless_network_configuration_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n_.C3.BAtil "Wireless network configuration (Español)") disponibles y conéctese una de ellas:
 
 ```
-# wifi-menu -o _interfaz_de_red_
+# wifi-menu -o _wlp2s0_
 
 ```
 
 El archivo de configuración resultante de esta operación es guardado en `/etc/netctl`. Cuando la conexión de red requiera tanto un nombre de usuario como una contraseña, consulte [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise").
 
-Perfiles de conexiones de red
+Otras conexiones de red
 
 Hay disponibles distintos perfiles de ejemplo, tales como para configurar [direcciones IP estáticas](/index.php/Network_configuration#Static_IP_address "Network configuration"). Copie uno de los que necesite a `/etc/netctl`, por ejemplo `ethernet-static`:
 
@@ -248,7 +247,7 @@ Cuando haya terminado, o si desea implementar una tabla o esquema de particionad
 
 Después de salir, el símbolo de la línea de órdenes cambiará de nuevo a `#`.
 
-### Crear nueva tabla de particiones
+### Crear una tabla de particiones nueva
 
 Es necesario (re)crear la tabla de particiones de un dispositivo cuando nunca ha sido particionado antes, o cuando se desea cambiar su tipo de tabla de particiones. Recrear la tabla de particiones de un dispositivo también es útil cuando el esquema de partición necesita ser reestructurado a partir de cero.
 
@@ -297,7 +296,7 @@ La siguiente orden se utiliza para crear las particiones:
 ```
 
 *   `_part-type_` define la partición como `primary`, `extended` o `logical`, y es significativo solo para las tablas de particiones MBR.
-*   `_fs-type_` define uno de los sistemas de archivos soportados de los enumerados en el [manual](http://www.gnu.org/software/parted/manual/parted.html#mkpart). Veremos cómo se formatea correctamente la partición en la sección [#Sistemas de archivos y swap](#Sistemas_de_archivos_y_swap). La orden _mkpart_ no crea realmente el sistema de archivos: el parámetro `_fs-type_` simplemente será utilizado por _parted_ para establecer un código de 1-byte que será usado por los gestores de arranque como «vista previa» para saber qué tipo de datos se encontrará en la partición y actuar en consecuencia si fuera necesario. Vea también [tipos de particiones](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
+*   `_fs-type_` es un identificador elegido entre todos los enumerados cuando se invoca `help mkpart` como el valor más próximo al sistema de archivos que vamos a utilizar de los descritos en la sección [#Formatear con un sistemas de archivos y activar swap](#Formatear_con_un_sistemas_de_archivos_y_activar_swap). La orden _mkpart_ no crea realmente el sistema de archivos: el parámetro `_fs-type_` simplemente será utilizado por _parted_ para establecer un código de 1-byte que será usado por los gestores de arranque como «vista previa» para saber qué tipo de datos se encontrará en la partición y actuar en consecuencia si fuera necesario. Vea también [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
 
 **Sugerencia:** La mayoría de los [sistemas de archivos nativos de Línux](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") mapean con el mismo código de partición ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), por lo que es perfectamente seguro, por ejemplo, utilizar `ext2` para una partición formateada con _ext4_.
 
@@ -391,7 +390,7 @@ En el último ejemplo, se creará una partición separada `/boot` (100MiB), segu
 
 ```
 
-### Sistemas de archivos y swap
+### Formatear con un sistemas de archivos y activar swap
 
 Una vez creadas las particiones, cada una de ellas debe ser formateada con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") adecuado, excepto para las particiones de intercambio (swap). Todas las particiones disponibles en el dispositivo destinado a la instalación pueden ser listadas con la siguiente orden:
 
@@ -441,30 +440,17 @@ Se recomienda también utilizar `/boot` para montar la partición EFI del sistem
 
 ## Instalar el sistema base
 
-### Servidores de réplicas
+### Seleccionar los servidores de réplicas
 
-Es posible que desee modificar el archivo `mirrorlist` y colocar el servidor de réplica preferido por encima de los demás. Una copia de este archivo se instalará en su nuevo sistema por _pacstrap_, de modo que conviene hacerlo bien.
+Los paquetes que se van a instalar deben descargarse desde los servidores de réplicas, los cuales se definen en el archivo `/etc/pacman.d/mirrorlist`. En el entorno live del sistema de instalación, todos los mirrors están activados y ordenados por su estado de sincronización y velocidad en el momento de creación de la imagen de instalación.
 
- `/etc/pacman.d/mirrorlist` 
+Cuanto más arriba se coloca un servidor de réplica en la lista del archivo, más prioridad que se le da a la hora de descargar un paquete. Es posible que desee modificar el archivo mirrorlist en consecuencia y colocar el servidor de réplica preferido por encima de los demás, aunque debe tener en cuenta que existen otros criterios (además del de la proximidad geográfica). Vea [Mirrors](/index.php/Mirrors "Mirrors") para más detalles.
 
-```
-##
-## Arch Linux repository mirrorlist
-## Sorted by mirror score from mirror status page
-## Generated on YYYY-MM-DD
-##
-
-Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
-...
-```
-
-Si lo desea, puede hacer que el servidor seleccionado sea el _único_ disposible, borrando el resto de líneas, pero, por lo general, es una buena práctica tener varios, para el caso de que el primero se desconecte. Vea [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") para obtener más información.
-
-### Pacstrap
+### Instalar los paquetes del grupo base
 
 El script _pacstrap_ instalará el sistema base. Para compilar paquetes de [AUR](/index.php/AUR "AUR") o con [ABS](/index.php/ABS "ABS"), requerirá también el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
 
-No todas las herramientas presentes en el entorno live de instalación(ver [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both)) son parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Los paquetes deseados pueden ser [instalados](/index.php/Install "Install") más tarde con _pacman_, o añadiendo sus nombres después de la orden _pacstrap_.
+No todas las herramientas presentes en el entorno live de instalación (ver [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both)) son parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Los paquetes deseados pueden ser [instalados](/index.php/Install "Install") más tarde con _pacman_, o añadiendo sus nombres después de la orden _pacstrap_.
 
 ```
 # pacstrap -i /mnt base base-devel
@@ -488,7 +474,7 @@ El archivo `fstab` siempre se debe revisar después de su generación, y modific
 
 ### Chroot
 
-Los pasos siguientes se realizan enjaulando el nuevo sistema mediante [change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)"), esto es, cambiando la raíz:
+Copie cualquier archivo de configuración al nuevo sistema montado en `/mnt` (como por ejemplo los perfiles de netctl presentes en `/etc/netctl`), y, a continuación, realice [chroot](/index.php/Chroot "Chroot") como se indica:
 
 ```
 # arch-chroot /mnt /bin/bash
@@ -555,9 +541,22 @@ Para configuraciones especiales, ajuste correctamente los [hooks](/index.php/Mki
 
 ```
 
-### Gestor de arranque
+### Instalar un gestor de arranque
 
-Vea [Boot loaders](/index.php/Boot_loaders "Boot loaders") para conocer las opciones y configuraciones disponibles. Las actualizaciones de [Microcode](/index.php/Microcode "Microcode") para las CPU de Intel también _deben_ ser configuradas después de instalar el gestor de arranque.
+Vea [Boot loaders](/index.php/Boot_loaders "Boot loaders") para conocer las opciones y configuraciones disponibles. Si dispone de una CPU de Intel, instale el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode), y [active las actualizaciones de microcode](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+
+#### UEFI/GPT
+
+En este punto, se presume que la unidad de instalación está particionada con GPT, que se tiene una partición [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") (tipo `EF00` con gdisk, formateada con FAT32) montada en `/boot`.
+
+Instale [systemd-boot](/index.php/Systemd-boot "Systemd-boot") para la partición EFI del sistema:
+
+```
+# bootctl install
+
+```
+
+Si todo ha salido bien, cree una entrada de arranque como se describe en [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") (sustituyendo `$esp` con `/boot`), o adapte uno de los ejemplos presentes en `/usr/share/systemd/bootctl/`.
 
 #### BIOS/MBR
 
@@ -583,39 +582,6 @@ Genere automáticamente el archivo `grub.cfg`:
 ```
 
 Para más información consulte [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)").
-
-#### UEFI/GPT
-
-En este punto, se presume que la unidad de instalación está particionada con GPT, que se tiene una partición [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") (tipo `EF00` con gdisk, formateada con FAT32) montada en `/boot`.
-
-_bootctl_ es parte de systemd, y como tal, parte de la instalación del sistema base.
-
-```
-# bootctl install
-
-```
-
-Cree una entrada de arranque en `/boot/loader/entries/arch.conf`, sustituyendo `/dev/sda2` con la partición **root**:
-
- `/boot/loader/entries/arch.conf` 
-
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=**/dev/sda2** rw
-```
-
-Modifique `/boot/loader/loader.conf` para seleccionar la entrada por defecto (sin el sufijo `.conf`):
-
- `/boot/loader/loader.conf` 
-
-```
-timeout 3
-default arch
-```
-
-Vea [systemd-boot](/index.php/Systemd-boot "Systemd-boot") para más información.
 
 ### Configurar la conexión de red
 
@@ -651,9 +617,9 @@ Instale [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](http
 
 ```
 
-Adicionalmente, también pueden ser necesarios los [paquetes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
+Puede que también sean necesarios [paquetes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") adicionales.
 
-Si ha utilizado _wifi-menu_ conforme a lo dispuesto en [Conexión a redes inalámbricas](#Establecer_una_conexi.C3.B3n_a_Internet) del entorno live, repita **posteriormente** dichos pasos para finalizar la instalación y reinicie, para evitar conflictos con otros procesos en curso.
+Si ha utilizado _wifi-menu_ previamente (dentro del entorno live), repita **posteriormente** dichos pasos (en el nuevo entorno) para finalizar la instalación y reinicie, para evitar conflictos con otros procesos en curso.
 
 Vea [Netctl](/index.php/Netctl "Netctl") y [Wireless#Wireless management](/index.php/Wireless#Wireless_management "Wireless") para obtener más información.
 
@@ -688,7 +654,7 @@ Su nuevo sistema base Arch Linux es ahora un entorno GNU/Linux funcional listo p
 
 Para obtener una lista de aplicaciones que pueden serle de interés, consulte [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=413082](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=413082)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=415329](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(Español)&oldid=415329)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

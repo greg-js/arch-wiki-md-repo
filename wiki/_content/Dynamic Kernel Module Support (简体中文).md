@@ -284,8 +284,8 @@ pre_remove() {
 
 *   [Linux Journal: Exploring Dynamic Kernel Module Support](http://www.linuxjournal.com/article/6896)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(简体中文)&oldid=409428](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(简体中文)&oldid=409428)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(简体中文)&oldid=415114](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(简体中文)&oldid=415114)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+*   [Kernel (简体中文)](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)")

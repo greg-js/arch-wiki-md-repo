@@ -9,15 +9,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [1 Introduction](#Introduction)
 *   [2 Discovering Errors](#Discovering_Errors)
 *   [3 CPU Stressing Programs](#CPU_Stressing_Programs)
-*   [4 Memory Stressing Programs](#Memory_Stressing_Programs)
-    *   [4.1 Memtest86+](#Memtest86.2B)
-*   [5 Stressing CPU and Memory](#Stressing_CPU_and_Memory)
-    *   [5.1 Mprime (Prime95 for Windows and MacOS)](#Mprime_.28Prime95_for_Windows_and_MacOS.29)
-    *   [5.2 Linpack](#Linpack)
-    *   [5.3 Systester (AKA SuperPi for Windows)](#Systester_.28AKA_SuperPi_for_Windows.29)
-    *   [5.4 Intel Processor Diagnostic Tool](#Intel_Processor_Diagnostic_Tool)
-*   [6 Stressing Memory](#Stressing_Memory)
-    *   [6.1 Running Memtest86+](#Running_Memtest86.2B)
+*   [4 Stressing CPU and Memory](#Stressing_CPU_and_Memory)
+    *   [4.1 Mprime (Prime95 for Windows and MacOS)](#Mprime_.28Prime95_for_Windows_and_MacOS.29)
+    *   [4.2 Linpack](#Linpack)
+    *   [4.3 Systester (AKA SuperPi for Windows)](#Systester_.28AKA_SuperPi_for_Windows.29)
+    *   [4.4 Intel Processor Diagnostic Tool](#Intel_Processor_Diagnostic_Tool)
+*   [5 Stressing Memory](#Stressing_Memory)
+    *   [5.1 Running Memtest86+](#Running_Memtest86.2B)
 
 ## Introduction
 
@@ -127,12 +125,6 @@ This machine running with a vcore of +0.005 (in offset mode) remains stable in b
 </tbody>
 
 </table>
-
-## Memory Stressing Programs
-
-### Memtest86+
-
-Memtest86+ is a standard memory testing util and is packaged in [extra].
 
 ## Stressing CPU and Memory
 
@@ -249,7 +241,7 @@ Either download and burn the ISO to a CD and boot from it, or install [memtest86
 
 **Tip:** Allowing Memtest86+ to run for >10 cycles without errors is usually sufficient.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=406024](https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=406024)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=415398](https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=415398)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -562,6 +562,8 @@ FONT=lat9w-16
 
 ```
 
+当成功执行以上命令之后，依照 [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") 中的描述为系统创建一个引导入口（将 `$esp` 替换为 `/boot`）。或者使用 `/usr/share/systemd/bootctl/` 的示例配置文件。
+
 #### BIOS/MBR
 
 下面介绍在 MBR 系统上使用 Grub。安装 [grub](https://www.archlinux.org/packages/?name=grub) 和 [os-prober](https://www.archlinux.org/packages/?name=os-prober) 包，并执行 `grub-install`. 须根据实际分区自行调整 `/dev/sda`, **切勿**在块设备后附加数字，比如 `/dev/sda**1**` 就不对.
@@ -580,8 +582,6 @@ FONT=lat9w-16
 ```
 
 详情参考[GRUB](/index.php/GRUB "GRUB") 。
-
-当成功执行以上命令之后，依照 [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") 中的描述为系统创建一个引导入口（将 `$esp` 替换为 `/boot`）。或者使用 `/usr/share/systemd/bootctl/` 的示例配置文件。
 
 ### 配置网络
 
@@ -666,7 +666,7 @@ _systemd_ 在关机时会自动卸载分区，为了确保安全，可以用 `um
 
 [Arch Linux 中文化](/index.php/Arch_Linux_%E4%B8%AD%E6%96%87%E5%8C%96 "Arch Linux 中文化") 页面还包含了关于系统、软件中文支持的内容。
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=414683](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=414683)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=415088](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=415088)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

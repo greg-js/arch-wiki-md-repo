@@ -34,7 +34,7 @@ Power management is very important for anyone who wishes to make good use of the
 
 ### Battery state
 
-Reading battery state can be done in multiple ways. Classical method is some daemon periodically polling battery level using ACPI interface. On some systems, battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, this event can be connected to some action using udev rule.
+Reading battery state can be done in multiple ways. Classical method is some daemon periodically polling battery level using ACPI interface. On some systems, the battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, this event can be connected to some action using a udev rule.
 
 #### ACPI
 
@@ -153,7 +153,7 @@ External resources
 *   [http://www.linux-on-laptops.com/](http://www.linux-on-laptops.com/)
 *   [http://www.linlap.com/](http://www.linlap.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop&oldid=410366](https://wiki.archlinux.org/index.php?title=Laptop&oldid=410366)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop&oldid=415264](https://wiki.archlinux.org/index.php?title=Laptop&oldid=415264)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

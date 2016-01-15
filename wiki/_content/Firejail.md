@@ -24,7 +24,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Configuration
 
-Firejail uses profiles for the applications executed inside of it - you can find the default profiles in /etc/firejail/profiles. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in ~/.config/firejail.
+Firejail uses profiles for the applications executed inside of it - you can find the default profiles in /etc/firejail/_application_.profile. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in ~/.config/firejail.
 
 ## Usage
 
@@ -68,7 +68,7 @@ Other configurations exist; it is suggested you check out the man page for firej
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/)<sup><small>AUR</small></sup>.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=414815](https://wiki.archlinux.org/index.php?title=Firejail&oldid=414815)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=415391](https://wiki.archlinux.org/index.php?title=Firejail&oldid=415391)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

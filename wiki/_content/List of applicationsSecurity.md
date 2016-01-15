@@ -284,6 +284,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
 
+*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — _a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard._
+
+[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup>
+
 *   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
 
 [http://gnupg.org/](http://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
@@ -291,6 +295,14 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **gzsteg** — A utiltiy that can hide data in gzip compressed files
 
 [http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gzsteg)</small>
+
+*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — _a simple interface for GnuPG_ for KDE.
+
+[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
+
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — _GNOME application for managing encryption keys and passwords in the GnomeKeyring._
+
+[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
 *   **silenteye** — A steganography application written in C++, use Qt4 library.
 
@@ -390,7 +402,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [http://upm.sourceforge.net/](http://upm.sourceforge.net/) || [upm](https://aur.archlinux.org/packages/upm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/upm)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=411959](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=411959)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415276](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415276)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
