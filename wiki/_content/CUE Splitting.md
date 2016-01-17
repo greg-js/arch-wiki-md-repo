@@ -90,7 +90,7 @@ _cuetag.sh_ supports id3 tags for _.mp3_ files and vorbis tags for _.ogg_ and _.
 
 *   This is a script that splits and converts files to tagged FLAC: [https://bbs.archlinux.org/viewtopic.php?id=75774](https://bbs.archlinux.org/viewtopic.php?id=75774).
 *   You can also try the [split2flac](https://aur.archlinux.org/packages/split2flac/)<sup><small>AUR</small></sup> or [split2flac-git](https://aur.archlinux.org/packages/split2flac-git/)<sup><small>AUR</small></sup> script from the [AUR](/index.php/AUR "AUR").
-*   You may also use [flacon](https://aur.archlinux.org/packages/flacon/)<sup><small>AUR</small></sup> or [flacon-git](https://aur.archlinux.org/packages/flacon-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flacon-git)]</sup>, a graphical Qt program that splits, converts and tags album audio files into song audio files. It also features automatic character set detection for CUE files.
+*   You may also use [flacon](https://aur.archlinux.org/packages/flacon/)<sup><small>AUR</small></sup> or [flacon-git](https://aur.archlinux.org/packages/flacon-git/)<sup><small>AUR</small></sup>, a graphical Qt program that splits, converts and tags album audio files into song audio files. It also features automatic character set detection for CUE files.
 *   To avoid quality loss from transcoding mp3 files, [mp3splt-gtk](https://www.archlinux.org/packages/?name=mp3splt-gtk) or [mp3splt](https://www.archlinux.org/packages/?name=mp3splt) may be used to directly split mp3 files either manually or automatically with a provided cuesheet. Batch mode processing is also available.
 
 ## References
@@ -99,7 +99,7 @@ _cuetag.sh_ supports id3 tags for _.mp3_ files and vorbis tags for _.ogg_ and _.
 *   [What is CUE?](https://en.wikipedia.org/wiki/Cue_file "wikipedia:Cue file")
 *   [Rip Audio CDs](/index.php/Rip_Audio_CDs "Rip Audio CDs")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUE_Splitting&oldid=403893](https://wiki.archlinux.org/index.php?title=CUE_Splitting&oldid=403893)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUE_Splitting&oldid=415647](https://wiki.archlinux.org/index.php?title=CUE_Splitting&oldid=415647)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

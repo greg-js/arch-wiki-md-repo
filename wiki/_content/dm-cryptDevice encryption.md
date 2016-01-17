@@ -209,7 +209,7 @@ Defaults are compared with a cryptographically higher specification example in t
 
 <td>`--use-random`</td>
 
-<td>Selects which randum number generator to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel."</td>
+<td>Selects which [random number generator](/index.php/Random_number_generator "Random number generator") to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel."</td>
 
 </tr>
 
@@ -1017,7 +1017,7 @@ On the next reboot you should only have to enter your container decryption passp
 
 ([source](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/#bonus-login-once))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415395](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415395)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415589](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415589)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

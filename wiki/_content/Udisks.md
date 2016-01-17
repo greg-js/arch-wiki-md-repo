@@ -20,13 +20,15 @@ Related articles
 *   [3 Mount helpers](#Mount_helpers)
     *   [3.1 Devmon](#Devmon)
     *   [3.2 inotify](#inotify)
+    *   [3.3 udiskie](#udiskie)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Disable hiding of devices (udisks2)](#Disable_hiding_of_devices_.28udisks2.29)
-    *   [4.2 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
-    *   [4.3 Mount an ISO image](#Mount_an_ISO_image)
-    *   [4.4 Hide selected partitions](#Hide_selected_partitions)
+    *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
+    *   [4.2 Mount an ISO image](#Mount_an_ISO_image)
+    *   [4.3 Hide selected partitions](#Hide_selected_partitions)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 udisks: Devices do not remain unmounted](#udisks:_Devices_do_not_remain_unmounted)
+    *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
+    *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
+    *   [5.3 Devices no longer mounted after physical removal](#Devices_no_longer_mounted_after_physical_removal)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -69,11 +71,11 @@ polkit.addRule(function(action, subject) {
 });
 ```
 
-See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. Note the `org.freedesktop.udisks2.filesystem-*` settings, which are required to start udiskie from a [systemd](/index.php/Systemd "Systemd") service.
+See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. Note the `org.freedesktop.udisks2.filesystem-*` settings, which are required to use udisks from a [systemd](/index.php/Systemd "Systemd") service.
 
 ## Mount helpers
 
-Automatic mounting of devices is easily achieved with [udisks wrappers](/index.php/List_of_applications#Udisks "List of applications"). See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+Automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
 
 ### Devmon
 
@@ -119,20 +121,11 @@ done
 
 ```
 
+### udiskie
+
+[udiskie](https://github.com/coldfix/udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the [udiskie wiki](https://github.com/coldfix/udiskie/wiki) for [usage](https://github.com/coldfix/udiskie/wiki/Usage) details.
+
 ## Tips and tricks
-
-### Disable hiding of devices (udisks2)
-
-Udisks2 hides certain devices from the user by default. If this is undesired or otherwise problematic, copy `/usr/lib/udev/rules.d/80-udisks2.rules` to `/etc/udev/rules.d/80-udisks2.rules` and remove the following section in the copy:
-
-```
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# Devices which should not be display in the user interface
-[...]
-
-```
 
 ### Mount to /media (udisks2)
 
@@ -180,7 +173,20 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 ## Troubleshooting
 
-### udisks: Devices do not remain unmounted
+### Hidden devices (udisks2)
+
+Udisks2 hides certain devices from the user by default. If this is undesired or otherwise problematic, copy `/usr/lib/udev/rules.d/80-udisks2.rules` to `/etc/udev/rules.d/80-udisks2.rules` and remove the following section in the copy:
+
+```
+# ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+# Devices which should not be display in the user interface
+[...]
+
+```
+
+### Devices do not remain unmounted (udisks)
 
 _udisks_ remounts devices after a given period, or _polls_ those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
 
@@ -200,12 +206,29 @@ or for all devices:
 
 See `man udisks` for more information.
 
+### Devices no longer mounted after physical removal
+
+This may happen when both udisks and [systemd](/index.php/Systemd "Systemd") try to unmount a device that is no longer present. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1588027#p1588027) [[5]](https://github.com/systemd/systemd/issues/1741) If you see messages such as:
+
+```
+Jan 16 18:46:04 thinkpad systemd[1]: media-ASMT_2105.mount: Unit is bound to inactive unit dev-sdc2.device. Stopping, too.
+Jan 16 18:46:04 thinkpad systemd[1]: Unmounting /media/ASMT_2105...
+
+```
+
+Run as a workaround:
+
+```
+# systemctl reset-failed
+
+```
+
 ## See also
 
 *   [gentoo wiki: udisks](http://wiki.gentoo.org/wiki/Udisks)
 *   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=404027](https://wiki.archlinux.org/index.php?title=Udisks&oldid=404027)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=415819](https://wiki.archlinux.org/index.php?title=Udisks&oldid=415819)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

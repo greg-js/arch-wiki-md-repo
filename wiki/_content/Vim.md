@@ -58,14 +58,14 @@ Vim's focus is keyboard-centric and is not a simple text editor like nano or pic
 
 [Install](/index.php/Install "Install") one of the following CLI packages:
 
-*   [vim-minimal](https://www.archlinux.org/packages/?name=vim-minimal) — a lightweight version.
+*   [vim-minimal](https://www.archlinux.org/packages/?name=vim-minimal)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [vim](https://www.archlinux.org/packages/?name=vim)]</sup> — a lightweight version.
 *   [vim](https://www.archlinux.org/packages/?name=vim) — Python 2, Lua and Ruby interpreters support but without GTK/X support.
-*   [vim-python3](https://www.archlinux.org/packages/?name=vim-python3) — the same as the `vim` package above but with Python 3 interpreter support.
+*   [vim-python3](https://www.archlinux.org/packages/?name=vim-python3)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [vim](https://www.archlinux.org/packages/?name=vim)]</sup> — the same as the `vim` package above but with Python 3 interpreter support.
 
 ... or one of the following GUI packages:
 
 *   [gvim](https://www.archlinux.org/packages/?name=gvim) — which also provides the same as the above `vim` package.
-*   [gvim-python3](https://www.archlinux.org/packages/?name=gvim-python3) — for the same as the `gvim` package above but with Python 3 interpreter support.
+*   [gvim-python3](https://www.archlinux.org/packages/?name=gvim-python3)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [gvim](https://www.archlinux.org/packages/?name=gvim)]</sup> — for the same as the `gvim` package above but with Python 3 interpreter support.
 
 **Note:**
 
@@ -618,7 +618,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/) — a reference chart for Vim, primarily aimed at beginners.
 *   [Vim colorscheme tailoring](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — override installed colorscheme to try-out or permanently alter.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=415417](https://wiki.archlinux.org/index.php?title=Vim&oldid=415417)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=415689](https://wiki.archlinux.org/index.php?title=Vim&oldid=415689)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

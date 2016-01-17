@@ -38,13 +38,13 @@ When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-inpu
  `~/.xinitrc` 
 
 ```
-xprop() { xinput set-prop "_TPPS/2 IBM TrackPoint_" "$@"; }
+tpset() { xinput set-prop "_TPPS/2 IBM TrackPoint_" "$@"; }
 
-xprop "Evdev Wheel Emulation" 1
-xprop "Evdev Wheel Emulation Button" 2
-xprop "Evdev Wheel Emulation Timeout" 200
-xprop "Evdev Wheel Emulation Axes" 6 7 4 5
-xprop "Device Accel Constant Deceleration" 0.95
+tpset "Evdev Wheel Emulation" 1
+tpset "Evdev Wheel Emulation Button" 2
+tpset "Evdev Wheel Emulation Timeout" 200
+tpset "Evdev Wheel Emulation Axes" 6 7 4 5
+tpset "Device Accel Constant Deceleration" 0.95
 
 ```
 
@@ -102,9 +102,14 @@ EndSection
 *   [Trackpoint speed](https://gist.githubusercontent.com/noromanba/11261595/raw/478cf4c4d9b63f1e59364a6f427ffccd63db5e1e/thinkpad-trackpoint-speed.mkd)
 *   [What is the best way to configure a Thinkpad's TrackPoint?](https://askubuntu.com/questions/37824/what-is-the-best-way-to-configure-a-thinkpads-trackpoint/553926)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412565](https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=412565)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=415468](https://wiki.archlinux.org/index.php?title=TrackPoint&oldid=415468)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

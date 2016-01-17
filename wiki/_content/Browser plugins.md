@@ -121,6 +121,8 @@ Then, patch `libflashplayer.so`:
 
 If you use Firefox and want to remove the message _Press ESC to exit full screen mode_ in HTML5 videos too, go to `about:config` and set `full-screen-api.approval-required` to `false`.
 
+**Note:** Alternativelly, you can install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/en-gb/firefox/addon/disable-html5-fullscreen-alert/), which will supress full screen warnings for HTML5 content.
+
 #### Multiple monitor full-screen fix
 
 When using a multiple monitor setup, or swapping between virtual desktops, it is possible to lose focus on a fullscreen flash window. In such a case, the adobe flash-plugin will automatically exit full-screen mode. This may not be to your liking.
@@ -544,8 +546,12 @@ QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=408520](https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=408520)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=415563](https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=415563)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

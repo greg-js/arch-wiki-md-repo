@@ -18,8 +18,6 @@ Related articles
     *   [2.1 Audio](#Audio)
         *   [2.1.1 Xbindkeys](#Xbindkeys)
     *   [2.2 Network](#Network)
-        *   [2.2.1 Wired](#Wired)
-        *   [2.2.2 Wireless](#Wireless)
     *   [2.3 Touchscreen](#Touchscreen)
     *   [2.4 Video](#Video)
         *   [2.4.1 Brightness control](#Brightness_control)
@@ -142,19 +140,9 @@ For alternative window managers (Fluxbox, etc..), try installing [xbindkeys](/in
 
 ### Network
 
-#### Wired
+Wired networking works out of the box with the Ethernet to USB adapter. Wireless works out of the box using the `iwlwifi` module.
 
-Comes with USB->Ethernet plug. Works out of the box.
-
-#### Wireless
-
-Works out of the box. Uses the following module
-
-*   iwlwifi
-
-* * *
-
-`lspci` _output: Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 96)_
+ `$ lspci`  `output: Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 96)` 
 
 ### Touchscreen
 
@@ -166,32 +154,9 @@ The video card installed is Intel HD Graphics 4000\. See [intel](/index.php/Inte
 
 #### Brightness control
 
-Default brightness adjustment keys work but need to be pressed multiple times to increase/decrease the screen brightness. Writing your own acpi handlers for those buttons seems to have no effect. In order to use it properly you need to append a new kernel parameter and make new grub config. Make sure to escape double quotes. For Grub:
+Default brightness adjustment keys work but need to be pressed multiple times to increase/decrease the screen brightness. Writing your own ACPI handlers for those buttons seems to have no effect. In order to use them properly you need to add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi="!Windows 2012"`. See also [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight").
 
- `/etc/default/grub` 
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=\"!Windows 2012\""
-
-```
-
-```
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-For Syslinux:
-
- `/boot/syslinux/syslinux.cfg` 
-
-```
-APPEND root=/dev/sda2 rw acpi_osi="!Windows 2012"
-
-```
-
-Read more about why it's necessary at [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight")
-
-Some depending on their desktop environment may lack granularity while changing brightness. This is due to the DE (e.g. gnome-settings-daemon) along with the internal graphics module changing the brightness when brightness adjustment keys are pressed causing multiple steps per press. To work around this one can add the following to their boot parameters:
+Some desktop environments may lack granularity while changing brightness. This is due to the DE (e.g. gnome-settings-daemon) along with the internal graphics module changing the brightness when brightness adjustment keys are pressed causing multiple steps per press. To work around this one can add the following to their boot parameters:
 
 ```
 video.brightness_switch_enabled=0
@@ -332,15 +297,15 @@ Works out of the box. Use FN+Space
 
 ### Bluetooth
 
-Works out of the box. Test with:
+First try to set up [Bluetooth](/index.php/Bluetooth "Bluetooth") normally. If you get kernel error messages:
 
 ```
-$ systemctl start bluetooth
-$ bluetoothctl
-
-[bluetooth]# power on
+kernel: bluetooth hci0: Direct firmware load for brcm/BCM20702A1-0a5c-21e6.hcd failed with error -2
+kernel: Bluetooth: hci0: BCM: Patch brcm/BCM20702A1-0a5c-21e6.hcd not found 
 
 ```
+
+You need to manually install the proprietary firmware. The slackware wiki describes one way to do this: [http://www.slackwiki.com/Btfirmware-nonfree](http://www.slackwiki.com/Btfirmware-nonfree).
 
 ### Mouse/Touchpad
 
@@ -362,8 +327,12 @@ This works:
 *   Ethernet
 *   Video (follow [DisplayLink](/index.php/DisplayLink "DisplayLink") guide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon&oldid=369886](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon&oldid=369886)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon&oldid=415507](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon&oldid=415507)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

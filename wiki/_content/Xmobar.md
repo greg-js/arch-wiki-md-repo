@@ -22,9 +22,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [Install](/index.php/Install "Install") [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"). Available variants are:
 
-*   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> - Development version.
-*   [xmobar-gmail](https://aur.archlinux.org/packages/xmobar-gmail/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail)]</sup> - GMail monitoring.
-*   [xmobar-gmail-darcs](https://aur.archlinux.org/packages/xmobar-gmail-darcs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail-darcs)]</sup> - GMail monitoring version.
+*   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> — development version.
+*   [xmobar-gmail](https://aur.archlinux.org/packages/xmobar-gmail/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail)]</sup> — GMail monitoring.
+*   [xmobar-gmail-darcs](https://aur.archlinux.org/packages/xmobar-gmail-darcs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail-darcs)]</sup> — GMail monitoring version.
+*   _xmobar_ from the unofficial [haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") repository — supports wireless and volume plugin with no additional configuration required; the repository also contains all the required dependencies.
 
 ## Running
 
@@ -334,7 +335,7 @@ in your `.xmobarrc`.
 *   [xmobar project](http://projects.haskell.org/xmobar/)
 *   [dzen and xmobar hacking thread](https://bbs.archlinux.org/viewtopic.php?pid=304851)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=414365](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=414365)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=415584](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=415584)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

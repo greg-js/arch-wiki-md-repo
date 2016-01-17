@@ -52,7 +52,7 @@ In order to use Open-Xchange, you need an empty, configured [MySQL](/index.php/M
 
 Open-Xchange is available in the [AUR](/index.php/AUR "AUR"). Right now, no meta-package exists. Alternatively, it can be installed from the custom repository of the current maintainer. Taking the AUR approach is highly recommended. Package names are the same as upstream, and the same between the custom repo and the AUR.
 
-[Install](/index.php/Install "Install") the following packages: [open-xchange](https://aur.archlinux.org/packages/open-xchange/)<sup><small>AUR</small></sup> [open-xchange-authentication-database](https://aur.archlinux.org/packages/open-xchange-authentication-database/)<sup><small>AUR</small></sup> [open-xchange-grizzly](https://aur.archlinux.org/packages/open-xchange-grizzly/)<sup><small>AUR</small></sup> [open-xchange-admin](https://aur.archlinux.org/packages/open-xchange-admin/)<sup><small>AUR</small></sup> [open-xchange-appsuite](https://aur.archlinux.org/packages/open-xchange-appsuite/)<sup><small>AUR</small></sup> [open-xchange-appsuite-backend](https://aur.archlinux.org/packages/open-xchange-appsuite-backend/)<sup><small>AUR</small></sup> [open-xchange-appsuite-manifest](https://aur.archlinux.org/packages/open-xchange-appsuite-manifest/)<sup><small>AUR</small></sup>
+[Install](/index.php/Install "Install") the following packages: [open-xchange](https://aur.archlinux.org/packages/open-xchange/)<sup><small>AUR</small></sup> [open-xchange-authentication-database](https://aur.archlinux.org/packages/open-xchange-authentication-database/)<sup><small>AUR</small></sup> [open-xchange-grizzly](https://aur.archlinux.org/packages/open-xchange-grizzly/)<sup><small>AUR</small></sup> [open-xchange-admin](https://aur.archlinux.org/packages/open-xchange-admin/)<sup><small>AUR</small></sup> [open-xchange-appsuite](https://aur.archlinux.org/packages/open-xchange-appsuite/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> [open-xchange-appsuite-backend](https://aur.archlinux.org/packages/open-xchange-appsuite-backend/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> [open-xchange-appsuite-manifest](https://aur.archlinux.org/packages/open-xchange-appsuite-manifest/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
 ### From the custom repository
 
@@ -369,7 +369,7 @@ Navigate your Browser to http://your.domain.tld Log in with the credentials of t
 
 If you have [Sieve](/index.php/Dovecot#Sieve "Dovecot") configured, you can add the [b]mailfilter[/b] module to edit your sieve rules from within Open-Xchange.
 
-Install [open-xchange-mailfilter](https://aur.archlinux.org/packages/open-xchange-mailfilter/)<sup><small>AUR</small></sup> and edit /opt/open-xchange/eetc/mailfilter.properties from
+Install [open-xchange-mailfilter](https://aur.archlinux.org/packages/open-xchange-mailfilter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> and edit /opt/open-xchange/eetc/mailfilter.properties from
 
  `/opt/open-xchange/etc/mailfilter.properties`  `SIEVE_CREDSRC=session` 
 
@@ -499,8 +499,12 @@ Since the AUR packages have been built from the Debian 8 packages, every link to
 *   [Installation Guide for Debian 8](http://oxpedia.org/wiki/index.php?title=AppSuite:Open-Xchange_Installation_Guide_for_Debian_8.0)
 *   [Archlinux Forums Thread](https://bbs.archlinux.org/viewforum.php?id=38)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Open-xchange&oldid=414229](https://wiki.archlinux.org/index.php?title=Open-xchange&oldid=414229)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Open-xchange&oldid=415671](https://wiki.archlinux.org/index.php?title=Open-xchange&oldid=415671)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -568,7 +568,7 @@ Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig 
 ```
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
@@ -696,8 +696,13 @@ You may also experience similar problem when you open a PDF which requires Helve
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=412418](https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=412418)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=415504](https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=415504)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Fonts](/index.php/Category:Fonts "Category:Fonts")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -57,14 +57,6 @@ or aditionally enable the group quota mount option;
 
 ```
 
-2\. Create the quota files in the file system:
-
-```
- # touch /home/aquota.user
- # touch /home/aquota.group     # For group quota
-
-```
-
 2\. The next step is to remount:
 
 ```
@@ -72,7 +64,7 @@ or aditionally enable the group quota mount option;
 
 ```
 
-4\. Create the quota index:
+3\. Create the quota index:
 
 ```
  # quotacheck -vgum /home
@@ -93,7 +85,7 @@ quotacheck: Cannot find filesystem to check or filesystem not mounted with quota
 
 **Tip:** In Addition you can try to use "-F vfsold" and "-F vfsv0" afterwards **NOTE:** As of 3.1.6-1, Arch does not support "vfsv1"
 
-5\. Finally, enable quotas:
+4\. Finally, enable quotas:
 
 ```
  # quotaon -av
@@ -260,7 +252,7 @@ Number of in use dquot entries (user/group): -1946
 *   [http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html)
 *   [http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html](http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=409511](https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=409511)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=415533](https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=415533)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

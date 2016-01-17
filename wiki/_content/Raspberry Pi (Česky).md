@@ -256,7 +256,7 @@ startx
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Česky)&oldid=415142](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Česky)&oldid=415142)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Česky)&oldid=415639](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Česky)&oldid=415639)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

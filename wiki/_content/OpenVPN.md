@@ -705,7 +705,7 @@ Now, when your launch your OpenVPN connection, you should find that your resolv.
 
 **The factual accuracy of this article or section is disputed.**
 
-**Reason:** The above does not work on shutdown when following [Drop root privileges after connecting](/index.php?title=Drop_root_privileges_after_connecting&action=edit&redlink=1 "Drop root privileges after connecting (page does not exist)"). (Discuss in [Talk:OpenVPN#Dropping root privileges: sub-section in DNS is out-of-sync](https://wiki.archlinux.org/index.php/Talk:OpenVPN#Dropping_root_privileges:_sub-section_in_DNS_is_out-of-sync))
+**Reason:** The above does not work on shutdown when following [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting). (Discuss in [Talk:OpenVPN#Dropping root privileges: sub-section in DNS is out-of-sync](https://wiki.archlinux.org/index.php/Talk:OpenVPN#Dropping_root_privileges:_sub-section_in_DNS_is_out-of-sync))
 
 ## L2 Ethernet bridging
 
@@ -802,8 +802,13 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
 *   [Airvpn](/index.php/Airvpn "Airvpn")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=414500](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=414500)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=415736](https://wiki.archlinux.org/index.php?title=OpenVPN&oldid=415736)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

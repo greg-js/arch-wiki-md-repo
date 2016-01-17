@@ -110,7 +110,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 [http://www.icewm.org/](http://www.icewm.org/) || [icewm](https://www.archlinux.org/packages/?name=icewm)
 
-*   **[jbwm](/index.php?title=Jbwm&action=edit&redlink=1 "Jbwm (page does not exist)")** — jbwm is a window manager based on evilwm, focused on small binary size and usability, incorporating title-bars, XFT, and XPM support as compile-time options.
+*   **[jbwm](/index.php?title=Jbwm&action=edit&redlink=1 "Jbwm (page does not exist)")** — jbwm is a window manager based on evilwm, with a minimal configuration size of approximately 16kb, focused on small binary size and usability, incorporating optional title-bars and XFT title-bar font rendering as compile-time options. jbwm also features easier to use keybindings than evilwm.
 
 [https://github.com/jefbed/jbwm](https://github.com/jefbed/jbwm) || [jbwm](https://aur.archlinux.org/packages/jbwm/)<sup><small>AUR</small></sup>
 
@@ -288,7 +288,7 @@ Notion is a fork of Ion3.
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
 *   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413548](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=413548)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_manager&oldid=415433](https://wiki.archlinux.org/index.php?title=Window_manager&oldid=415433)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

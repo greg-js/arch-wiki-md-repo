@@ -64,18 +64,39 @@ local_enable=YES
 
 ### Anonymous login
 
-The line in `/etc/vsftpd.conf` controls whether anonymous users can login:
+These lines controls whether anonymous users can login. By default, anonymous logins are enabled for download only from `/srv/ftp`:
+
+ `/etc/vsftpd.conf` 
 
 ```
-# Allow anonymous login
+...
+# Allow anonymous FTP? (Beware - allowed by default if you comment this out).
 anonymous_enable=YES
+...
+# Uncomment this to allow the anonymous FTP user to upload files. This only
+# has an effect if the above global write enable is activated. Also, you will
+# obviously need to create a directory writable by the FTP user.
+#anon_upload_enable=YES
+#
+# Uncomment this if you want the anonymous FTP user to be able to create
+# new directories.
+#anon_mkdir_write_enable=YES
+...
+```
+
+You may also add e.g. the following options (see `[man](/index.php/Man "Man") vsftp.conf` for more):
+
+ `/etc/vsftpd.conf` 
+
+```
 # No password is required for an anonymous login          
 no_anon_password=YES
-# Maximum transfer rate for an anonymous client in Bytes/second          
-anon_max_rate=30000 
-# Directory to be used for an anonymous login           
-anon_root=/example/directory/
 
+# Maximum transfer rate for an anonymous client in Bytes/second          
+anon_max_rate=30000
+
+# Directory to be used for an anonymous login  
+anon_root=/example/directory/
 ```
 
 ### Chroot jail
@@ -474,7 +495,7 @@ listen=NO
 *   [vsftpd official homepage](http://vsftpd.beasts.org/)
 *   [vsftpd.conf man page](http://vsftpd.beasts.org/vsftpd_conf.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon&oldid=408619](https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon&oldid=408619)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon&oldid=415622](https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon&oldid=415622)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

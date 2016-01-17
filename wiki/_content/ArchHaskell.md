@@ -11,16 +11,16 @@ The ArchHaskell group works on providing [Haskell](/index.php/Haskell "Haskell")
 *   [1 Resources](#Resources)
 *   [2 Membership](#Membership)
 *   [3 Available repositories](#Available_repositories)
-    *   [3.1 [haskell-core]](#.5Bhaskell-core.5D)
-    *   [3.2 [haskell-happstack]](#.5Bhaskell-happstack.5D)
-    *   [3.3 [haskell-web]](#.5Bhaskell-web.5D)
+    *   [3.1 haskell-core](#haskell-core)
+    *   [3.2 haskell-happstack](#haskell-happstack)
+    *   [3.3 haskell-web](#haskell-web)
 *   [4 Improving ArchHaskell](#Improving_ArchHaskell)
     *   [4.1 Community](#Community)
     *   [4.2 Overview](#Overview)
-    *   [4.3 [haskell-core] maintenance](#.5Bhaskell-core.5D_maintenance)
-    *   [4.4 Other repo maintenance](#Other_repo_maintenance)
-    *   [4.5 Creating another repo](#Creating_another_repo)
-    *   [4.6 List of satellite repos](#List_of_satellite_repos)
+    *   [4.3 haskell-core maintenance](#haskell-core_maintenance)
+    *   [4.4 Other repository maintenance](#Other_repository_maintenance)
+    *   [4.5 Creating another repository](#Creating_another_repository)
+    *   [4.6 List of satellite repositories](#List_of_satellite_repositories)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Switching to ArchHaskell repository](#Switching_to_ArchHaskell_repository)
 
@@ -43,11 +43,11 @@ There are currently two people with commit rights to the ArchHaskell repository 
 
 ## Available repositories
 
-### [haskell-core]
+### haskell-core
 
-The [haskell-core] repository is the base repository of packages maintained by the ArchHaskell team. [haskell-core] can be accessed by adding the following entry to `/etc/pacman.conf` (above [community], to ensure the correct **ghc** package is picked):
+The _haskell-core_ repository is the base repository of packages maintained by the ArchHaskell team. _haskell-core_ can be accessed by adding the following entry to `/etc/pacman.conf` (above [community], to ensure the correct **ghc** package is picked):
 
-**Warning:** Placing [haskell-core] above [community] will cause packages from [haskell-core] to take precedence, and avoid dependency conflicts in case of duplicate packages. Overriding [official repositories](/index.php/Official_repositories "Official repositories") is however **not** supported.
+**Warning:** Placing _haskell-core_ above _community_ will cause packages from _haskell-core_ to take precedence, and avoid dependency conflicts in case of duplicate packages. Overriding [official repositories](/index.php/Official_repositories "Official repositories") is however **not** supported.
 
 ```
 [haskell-core]
@@ -55,7 +55,7 @@ Server = http://xsounds.org/~haskell/core/$arch
 
 ```
 
-The set of packages in the [haskell-core] repository is derived from the **habs** tree officially located [here](https://github.com/archhaskell/habs). A tool called [cblrepo](https://github.com/magthe/cblrepo) is used to keep the **habs** tree synchronized with the official Haskell packages from [Hackage](http://hackage.haskell.org/packages/hackage.html).
+The set of packages in the _haskell-core_ repository is derived from the **habs** tree officially located [here](https://github.com/archhaskell/habs). A tool called [cblrepo](https://github.com/magthe/cblrepo) is used to keep the **habs** tree synchronized with the official Haskell packages from [Hackage](http://hackage.haskell.org/packages/hackage.html).
 
 The repositories provide both file listings (by using `repo-add --files`), package deltas (`repo-add --delta`), and both packages and the database are signed. The fingerprint of the key used for signing is:
 
@@ -67,7 +67,7 @@ sub   2048D/A418C0FE 2012-12-26
 
 ```
 
-If you use `SigLevel = Required TrustedOnly` in `/etc/pacman.conf` for [haskell-core], then you need to do the following to add Magnus Therning's key:
+If you use `SigLevel = Required TrustedOnly` in `/etc/pacman.conf` for _haskell-core_, then you need to do the following to add Magnus Therning's key:
 
 ```
 # pacman-key -r 4209170B
@@ -82,9 +82,9 @@ Force a refresh of all package lists:
 
 ```
 
-### [haskell-happstack]
+### haskell-happstack
 
-The [haskell-happstack] repository contains packages for web development based on the [Happstack](http://happstack.com/) framework. It requires [[haskell-core]](#.5Bhaskell-core.5D), and includes most of the Happstack packages in [HackageDB](http://hackage.haskell.org/), plus [Gitit](http://gitit.net/) (package name `haskell-gitit`) and [clckwrks](http://clckwrks.com/), all their dependencies not in [haskell-core] and some other not web related packages. To enable the repository, add the following entry to `/etc/pacman.conf`:
+The _haskell-happstack_ repository contains packages for web development based on the [Happstack](http://happstack.com/) framework. It requires [#haskell-core](#haskell-core), and includes most of the Happstack packages in [HackageDB](http://hackage.haskell.org/), plus [Gitit](http://gitit.net/) (package name `haskell-gitit`) and [clckwrks](http://clckwrks.com/), all their dependencies not in _haskell-core_ and some other not web related packages. To enable the repository, add the following entry to `/etc/pacman.conf`:
 
 ```
 [haskell-happstack]
@@ -102,11 +102,11 @@ Add and sign the maintainer's key:
 
 Bug reports and feature requests in [GitHub](https://github.com/tensor5/haskell-happstack/issues).
 
-### [haskell-web]
+### haskell-web
 
-**Note:** The [haskell-web] repository is not maintained anymore. If you wish to help, please send a mail to the list or use the IRC channel.
+**Note:** The _haskell-web_ repository is not maintained anymore. If you wish to help, please send a mail to the list or use the IRC channel.
 
-The repository was built on [haskell-core], providing several more packages, especially those useful for web applications.
+The repository was built on _haskell-core_, providing several more packages, especially those useful for web applications.
 
 ```
 [haskell-web]
@@ -122,25 +122,41 @@ See the **ArchHaskell** community page and get in touch via the mailing list or 
 
 ### Overview
 
-The plan is to have one user-facing repository, [haskell], which merges the packages available in various satellite repositories (like [haskell-web]), thereby distributing the maintenance load. One satellite repo is special, the [haskell-core] repository, which provides packages that are dependencies of all the other satellites.
+The plan is to have one user-facing repository, _haskell_, which merges the packages available in various satellite repositories (like _haskell-web_), thereby distributing the maintenance load. One satellite repository is special, the _haskell-core_ repository, which provides packages that are dependencies of all the other satellites.
 
-### [haskell-core] maintenance
+### haskell-core maintenance
 
 Ensure:
 
-*   [haskell-core] is an Arch repo hosted at kiwilight and xsounds.
-*   [haskell-core] is in sync with the [habs](https://github.com/archhaskell/habs) cblrepo database.
+*   _haskell-core_ is an Arch repository hosted at kiwilight and xsounds.
+*   _haskell-core_ is in sync with the [habs](https://github.com/archhaskell/habs) cblrepo database.
 
-### Other repo maintenance
+### Other repository maintenance
 
 For example, for haskell-foo, ensure:
 
-*   haskell-foo is a cblrepo database, possibly using packages from [haskell-core] as DistroPkgs.
-*   Whenever [haskell-core] is updated, haskell-foo's database is updated to match within a reasonable time.
+*   haskell-foo is a cblrepo database, possibly using packages from _haskell-core_ as DistroPkgs.
+*   Whenever _haskell-core_ is updated, haskell-foo's database is updated to match within a reasonable time.
 
-### Creating another repo
+### Creating another repository
 
-### List of satellite repos
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** TODO (Discuss in [Talk:ArchHaskell#](https://wiki.archlinux.org/index.php/Talk:ArchHaskell))
+
+### List of satellite repositories
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** TODO (Discuss in [Talk:ArchHaskell#](https://wiki.archlinux.org/index.php/Talk:ArchHaskell))
 
 ## Troubleshooting
 
@@ -148,8 +164,12 @@ For example, for haskell-foo, ensure:
 
 There can be some problems switching to [ArchHaskell repository](#ArchHaskell_repository) when some Haskell packages are already installed from [official repositories](/index.php/Official_repositories "Official repositories"). The surest way is to remove all Haskell related packages, synchronize the [pacman](/index.php/Pacman "Pacman") packages database, and reinstall all the needed packages. Also for Xmonad users, be sure to install `haskell-xmonad` package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=414960](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=414960)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=415587](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=415587)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

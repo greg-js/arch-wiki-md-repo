@@ -618,6 +618,8 @@ These have their own sites, and are _not supported_ in the official Wine forums/
 
 [PlayOnLinux](http://www.playonlinux.com/) is a graphical Windows and DOS program manager. It contains scripts to assist the configuration and running of programs, it can manage multiple Wine versions and even use a specific version for each executable (e.g. because of regressions). If you need to know which Wine version works best for a certain game, try the [Wine Application Database](http://appdb.winehq.org/). You can find the [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) package in [community](/index.php/Community "Community").
 
+**Tip:** PlayOnLinux supports Bumblebee. Open POL console, type this command `POL_Config_Write PRE_WINE **optirun**` and hit enter. **optirun** command will used and each application will be run using **optirun**. You can even use **primusrun** instead!
+
 ### PyWinery
 
 [PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, _winecfg_, application uninstaller and wineDOS. You can install You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/)<sup><small>AUR</small></sup> package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
@@ -640,7 +642,7 @@ It is recommended using winetricks by default to open _.exe_ files, so you can c
 *   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=415237](https://wiki.archlinux.org/index.php?title=Wine&oldid=415237)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=415571](https://wiki.archlinux.org/index.php?title=Wine&oldid=415571)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

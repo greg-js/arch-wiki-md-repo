@@ -562,7 +562,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **fheores2** — Attempt to reimplement the [Heroes of Might and Magic II](https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_II "wikipedia:Heroes of Might and Magic II") engine using SDL.
 
-[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fheroes2-svn)]</sup>
+[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)<sup><small>AUR</small></sup>
 
 *   **Flare** — Action game similar to Diablo.
 
@@ -1079,9 +1079,13 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Linux的游戏名字维基百科](http://en.wikipedia.org/wiki/Category)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(简体中文)&oldid=413945](https://wiki.archlinux.org/index.php?title=List_of_games_(简体中文)&oldid=413945)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(简体中文)&oldid=415669](https://wiki.archlinux.org/index.php?title=List_of_games_(简体中文)&oldid=415669)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming (简体中文)](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)")
 *   [Emulators (简体中文)](/index.php/Category:Emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulators (简体中文)")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -546,7 +546,7 @@ See the [Wikipedia](https://en.wikipedia.org/wiki/Main_Page "wikipedia:Main Page
 
 *   **fheores2** — Tentativo di reimplementare il motore [Heroes of Might and Magic II](https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_II "wikipedia:Heroes of Might and Magic II") utilizzando le SDL.
 
-[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fheroes2-svn)]</sup>
+[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)<sup><small>AUR</small></sup>
 
 *   **Flare** — Gioco di ruolo d'azione in stile Diablo.
 
@@ -1045,8 +1045,13 @@ See the [Wikipedia](https://en.wikipedia.org/wiki/Main_Page "wikipedia:Main Page
 
 See the [Wikipedia](https://en.wikipedia.org/wiki/Main_Page "wikipedia:Main Page") article on this subject for more information: **[Source port](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port")**
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(Italiano)&oldid=413944](https://wiki.archlinux.org/index.php?title=List_of_games_(Italiano)&oldid=413944)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(Italiano)&oldid=415668](https://wiki.archlinux.org/index.php?title=List_of_games_(Italiano)&oldid=415668)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications (Italiano)](/index.php/Category:Applications_(Italiano) "Category:Applications (Italiano)")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

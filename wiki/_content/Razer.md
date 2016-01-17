@@ -55,7 +55,7 @@ And the following as stable but missing minor features:
 
 ### Installation
 
-Download and install [razercfg](https://aur.archlinux.org/packages/razercfg/)<sup><small>AUR</small></sup> or [razercfg-git](https://aur.archlinux.org/packages/razercfg-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/razercfg-git)]</sup> for bleeding edge git releases from the [AUR](/index.php/AUR "AUR").
+Download and install [razercfg](https://aur.archlinux.org/packages/razercfg/)<sup><small>AUR</small></sup> or [razercfg-git](https://aur.archlinux.org/packages/razercfg-git/)<sup><small>AUR</small></sup> for bleeding edge git releases from the [AUR](/index.php/AUR "AUR").
 
 You also need to edit your `/etc/X11/xorg.conf` file to disable the current mouse settings by commenting them out as in the following example, where also some defaults are set as suggested by the author:
 
@@ -170,8 +170,14 @@ Feature still not working: pinch to zoom, 3rd mouse button
 
 **Reason:** The SBUI works as a trackpad, but no linux drivers currently exist. Does it even work for basic trackpad functionality? (Discuss in [Talk:Razer#](https://wiki.archlinux.org/index.php/Talk:Razer))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Razer&oldid=392620](https://wiki.archlinux.org/index.php?title=Razer&oldid=392620)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Razer&oldid=415680](https://wiki.archlinux.org/index.php?title=Razer&oldid=415680)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mice](/index.php/Category:Mice "Category:Mice")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

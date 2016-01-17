@@ -183,7 +183,7 @@ close HOOKS or die "unfinished love story: $! $?"; # happens on hlwm crash
 *   [User git repository #1](https://github.com/ypnos/hlwm) with autostart written in Perl and a few custom scripts
 *   [User git repository #2](https://github.com/ylixir/hlwm-config) with autostart and panel written in Python
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Herbstluftwm&oldid=380949](https://wiki.archlinux.org/index.php?title=Herbstluftwm&oldid=380949)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Herbstluftwm&oldid=415595](https://wiki.archlinux.org/index.php?title=Herbstluftwm&oldid=415595)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

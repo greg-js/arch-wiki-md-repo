@@ -174,6 +174,7 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 (extract microcode image and search it for your cpuid)
 
 *   If an update is available, it should show up below _selected microcodes_
+*   The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
 
 ## Enabling Intel early microcode loading in custom kernels
 
@@ -194,7 +195,7 @@ CONFIG_MICROCODE_EARLY=y
 *   [Kernel early microcode](https://www.kernel.org/doc/Documentation/x86/early-microcode.txt)
 *   [Erratum found in Haswell/Broadwell](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Microcode&oldid=408309](https://wiki.archlinux.org/index.php?title=Microcode&oldid=408309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Microcode&oldid=415538](https://wiki.archlinux.org/index.php?title=Microcode&oldid=415538)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

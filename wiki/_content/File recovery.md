@@ -101,7 +101,7 @@ Once which partition data is to be recovered from has been determined, simply ru
 Any subdirectories must be specified, and the command runs from the highest level of the partition, so, to recover a file in `/home/_SomeUserName_/`, assuming `/home` is on its own partition, run:
 
 ```
-# extundelete /dev/sda4 restore-file _SomeUserName_/_SomeFile_
+# extundelete /dev/sda4 --restore-file _SomeUserName_/_SomeFile_
 
 ```
 
@@ -247,9 +247,13 @@ Hopefully, the content of the deleted file is now in _OutputFile_, which can be 
 
 *   [Data Recovery](https://help.ubuntu.com/community/DataRecovery) on the Ubuntu wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_recovery&oldid=400972](https://wiki.archlinux.org/index.php?title=File_recovery&oldid=400972)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_recovery&oldid=415431](https://wiki.archlinux.org/index.php?title=File_recovery&oldid=415431)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

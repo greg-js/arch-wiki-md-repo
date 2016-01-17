@@ -53,7 +53,7 @@ Plugin {
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412301](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=412301)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=415766](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=415766)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

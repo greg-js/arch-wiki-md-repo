@@ -38,6 +38,7 @@ Apache is often used together with a scripting language such as PHP and database
     *   [4.3 Upgrading Apache to 2.4 from 2.2](#Upgrading_Apache_to_2.4_from_2.2)
     *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
     *   [4.5 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
+    *   [4.6 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -534,14 +535,31 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 Also check [the above](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.) if more errors occur afterwards.
 
+### Changing the max_execution_time in php.ini has no effect
+
+If you changed the `max_execution_time` in `php.ini` to a value greater than 30 (seconds), you may still get a `503 Service Unavailable` response from Apache after 30 seconds. To solve this, add a `ProxyTimeout` directive to your http configuration right before the `<FilesMatch \.php$>` block:
+
+ `/etc/httpd/conf/httpd.conf` 
+
+```
+ProxyTimeout 300
+
+```
+
+and restart `httpd.service`.
+
 ## See also
 
 *   [Apache Official Website](http://www.apache.org/)
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414644](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=414644)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=415445](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=415445)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

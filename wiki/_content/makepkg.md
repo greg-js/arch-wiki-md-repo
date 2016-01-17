@@ -146,8 +146,6 @@ keyserver-options auto-key-retrieve
 
 ## Usage
 
-**Warning:** Only build or install packages from trusted sources.
-
 Before continuing, [install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group. Packages belonging to this group are **not** required to be listed as build-time dependencies (_makedepends_) in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files. In addition, the [base](https://www.archlinux.org/groups/x86_64/base/) group is assumed to be installed on **all** Arch systems.
 
 **Note:**
@@ -367,9 +365,14 @@ $ grep -R "$(pwd)/src" pkg/
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=414971](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=414971)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=415567](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=415567)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
 *   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

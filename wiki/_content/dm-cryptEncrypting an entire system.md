@@ -296,14 +296,14 @@ The straight-forward method is to set up [LVM](/index.php/LVM "LVM") on top of t
 The disk layout in this example is:
 
 ```
-+------------------------------------------------------------------------------------+ +----------------+
-|Logical volume1        | Logical volume2        | Logical volume3                   | |                |
-|/dev/MyStorage/swapvol | /dev/MyStorage/rootvol | /dev/MyStorage/homevol            | | Boot partition |
-|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
-|                                                                                    | | other device)  |
-|                        LUKS encrypted partition                                    | |                |
-|                          /dev/sdaX                                                 | | /dev/sdbY      |
-+------------------------------------------------------------------------------------+ +----------------+
++-----------------------------------------------------------------------+ +----------------+
+| Logical volume1       | Logical volume2       | Logical volume3       | |                |
+|/dev/MyStorage/swapvol |/dev/MyStorage/rootvol |/dev/MyStorage/homevol | | Boot partition |
+|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
+|                                                                       | | other device)  |
+|                        LUKS encrypted partition                       | |                |
+|                          /dev/sdaX                                    | | /dev/sdbY      |
++-----------------------------------------------------------------------+ +----------------+
 
 ```
 
@@ -914,7 +914,7 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 *   It may be worth considering to add the GRUB bootloader to the ignore list of `/etc/pacman.conf` in order to take particular control of when the bootloader (which includes its own encryption modules) is updated.
 *   If you want to encrypt the `/boot` partition to protect against offline tampering threats, the [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") hook has been contributed to help.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=415419](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=415419)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=415497](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&oldid=415497)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

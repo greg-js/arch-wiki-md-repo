@@ -734,8 +734,13 @@ If you want _netctl-auto_ to automatically unblock your wireless card to connect
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=414837](https://wiki.archlinux.org/index.php?title=Netctl&oldid=414837)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=415516](https://wiki.archlinux.org/index.php?title=Netctl&oldid=415516)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

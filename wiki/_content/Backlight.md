@@ -18,13 +18,11 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [4 systemd-backlight service](#systemd-backlight_service)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 power-backlight](#power-backlight)
-    *   [5.3 light](#light)
-    *   [5.4 relight](#relight)
-    *   [5.5 setpci (use with great care)](#setpci_.28use_with_great_care.29)
-    *   [5.6 Calise](#Calise)
-    *   [5.7 brightd](#brightd)
-    *   [5.8 KDE](#KDE)
+    *   [5.2 light](#light)
+    *   [5.3 relight](#relight)
+    *   [5.4 setpci (use with great care)](#setpci_.28use_with_great_care.29)
+    *   [5.5 Calise](#Calise)
+    *   [5.6 brightd](#brightd)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -104,7 +102,7 @@ acpi_backlight=none
 
 ### Udev rule
 
-If the ACPI interface is available, the backlight level can be set at boot using a udev rule.
+If the ACPI interface is available, the backlight level can be set at boot using a udev rule:
 
  `/etc/udev/rules.d/81-backlight.rules` 
 
@@ -113,7 +111,9 @@ If the ACPI interface is available, the backlight level can be set at boot using
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
 ```
 
-The systemd-backlight service restores the previous backlight brightness level at boot, whereas this rule sets it to a fixed value. If you want to use this rule, it is necessary to mask the system-backlight service, as explained in [#systemd-backlight service](#systemd-backlight_service).
+**Note:** The systemd-backlight service restores the previous backlight brightness level at boot. To prevent conflicts for the above rules, see [#systemd-backlight service](#systemd-backlight_service).
+
+**Tip:** To set the backlight depending on power state, see [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") and use your favourite [backlight utility](#Backlight_utilities) in the script.
 
 ## Switching off the backlight
 
@@ -212,17 +212,13 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[1]](https://bugs.deb
 
 **Note:** This only works with intel. Radeon does not support the RandR backlight property
 
-### power-backlight
-
-Set screen backlight brightness dependent on power source type; with udev rule backlight is adjusted on change of power source. Requires graphic driver support for ACPI in `/sys/class/backlight`. Install with the AUR package [power-backlight-git](https://aur.archlinux.org/packages/power-backlight-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/power-backlight-git)]</sup>.
-
 ### light
 
-Light is a program used to easily control a screens backlight-controllers. It is the successor of _LightScript_, and is also its official C-port.
+Light is the successor and C-port of _LightScript_.
 
-Light has 2 different packages on the AUR, [light](https://aur.archlinux.org/packages/light/)<sup><small>AUR</small></sup> for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/)<sup><small>AUR</small></sup> for the absolutely latest version with the most features. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/)<sup><small>AUR</small></sup> package to make sure you have the latest features/bug-fixes.
+[Install](/index.php/Install "Install") [light](https://aur.archlinux.org/packages/light/)<sup><small>AUR</small></sup> for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/)<sup><small>AUR</small></sup> for the latest development version. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/)<sup><small>AUR</small></sup> package.
 
-More information can be found on the [GitHub page](http://haikarainen.github.io/light/).
+See the [GitHub page](http://haikarainen.github.io/light/) for more information.
 
 ### relight
 
@@ -253,15 +249,6 @@ The main features of this program are that it is very precise, very light on res
 ### brightd
 
 Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/)<sup><small>AUR</small></sup> automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
-
-### KDE
-
-[KDE](/index.php/KDE "KDE") users can adjust the backlight via _System Settings > Power Management > Energy Saving_. If you want to set backlight before kdm just put in /usr/share/config/kdm/Xsetup :
-
-```
-xbacklight -inc 10
-
-```
 
 ## Color correction
 
@@ -379,9 +366,13 @@ done
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backlight&oldid=411307](https://wiki.archlinux.org/index.php?title=Backlight&oldid=411307)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backlight&oldid=415558](https://wiki.archlinux.org/index.php?title=Backlight&oldid=415558)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Laptops](/index.php/Category:Laptops "Category:Laptops")
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

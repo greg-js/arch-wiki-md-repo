@@ -459,7 +459,7 @@ Once you have logged in with a user the credentials will be cached and you will 
 *   [Discussion on suse's mailing lists about nss-pam-ldapd](http://readlist.com/lists/suse.com/suse-linux-e/36/182642.html)
 *   [Fedora's SSSD User Guide](https://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/chap-SSSD_User_Guide-Introduction.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=414169](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=414169)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=415600](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=415600)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

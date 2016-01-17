@@ -16,9 +16,12 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
+Packages in the official repositories:
+
+*   [ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore) - Includes Arimo (sans-serif), Tinos (serif) and Cousine (monospace)
+
 Packages are available in [AUR](/index.php/AUR "AUR"):
 
-*   [ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup> - Includes Arimo (sans-serif), Tinos (serif) and Cousine (monospace)
 *   [ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)<sup><small>AUR</small></sup> - Includes Carlito (matches Microsoft Calibri)
 *   [ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)<sup><small>AUR</small></sup> - Includes Caladea (matches Microsoft Cambria)
 
@@ -113,8 +116,12 @@ Append following lines to your font configuration file, eg. /etc/fonts/local.con
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=413988](https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=413988)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=415570](https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=415570)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Fonts](/index.php/Category:Fonts "Category:Fonts")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

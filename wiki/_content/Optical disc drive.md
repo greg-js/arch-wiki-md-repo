@@ -33,7 +33,7 @@ In computing, an optical disc drive (ODD) is a disk drive that uses laser light 
     *   [1.10 Verifying the burnt ISO image](#Verifying_the_burnt_ISO_image)
     *   [1.11 ISO 9660 and burning on-the-fly](#ISO_9660_and_burning_on-the-fly)
     *   [1.12 Multi-session](#Multi-session)
-        *   [1.12.1 Multi-session by wodim](#Multi-session_by_wodim)
+        *   [1.12.1 Multi-session by cdrecord](#Multi-session_by_cdrecord)
         *   [1.12.2 Multi-session by growisofs](#Multi-session_by_growisofs)
         *   [1.12.3 Multi-session by xorriso](#Multi-session_by_xorriso)
     *   [1.13 BD Defect Management](#BD_Defect_Management)
@@ -42,8 +42,6 @@ In computing, an optical disc drive (ODD) is a disk drive that uses laser light 
         *   [1.15.1 TOC/CUE/BIN for mixed-mode disks](#TOC.2FCUE.2FBIN_for_mixed-mode_disks)
     *   [1.16 Burn backend problems](#Burn_backend_problems)
     *   [1.17 Burning CD/DVD/BD with a GUI](#Burning_CD.2FDVD.2FBD_with_a_GUI)
-        *   [1.17.1 Free GUI programs](#Free_GUI_programs)
-        *   [1.17.2 Nero Linux](#Nero_Linux)
 *   [2 Playback](#Playback)
     *   [2.1 CD](#CD)
     *   [2.2 DVD](#DVD)
@@ -80,11 +78,11 @@ You need at least one program for creation of file system images and one program
 
 Available programs for ISO 9660 image creation are:
 
-*   _genisoimage_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit)
 *   _mkisofs_ from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
 *   _xorriso_ and _xorrisofs_ from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   _genisoimage_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (unmaintained)
 
-The traditional choice is _genisoimage_.
+The traditional choice is _mkisofs_.
 
 Available programs for burning to media are:
 
@@ -92,30 +90,27 @@ Available programs for burning to media are:
 *   _cdrecord_ from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
 *   _cdrskin_ from [libburn](https://www.archlinux.org/packages/?name=libburn)
 *   _growisofs_ from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (DVD and BD only)
-*   _wodim_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (CD only, DVD deprecated)
 *   _xorriso_ and _xorrecord_ from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   _wodim_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (CD only, DVD deprecated, unmaintained)
 
-The traditional choices are _wodim_ for CD and _growisofs_ for DVD and Blu-ray Disk. For _growisofs_ and BD-R see the bug workaround below. For writing TOC/CUE/BIN files to CD, install [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
+The traditional choices are _cdrecord_ for CD and _growisofs_ for DVD and Blu-ray Disk. For writing TOC/CUE/BIN files to CD, install [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
 
 The free GUI programs for CD, DVD, and BD burning depend on at least one of the above packages.
 
-Both _mkisofs_ and _xorrisofs_ support the _genisoimage_ options which are shown in this document.
+Both _genisoimage_ and _xorrisofs_ support the _mkisofs_ options which are shown in this document.
 
-Both _cdrecord_ and _cdrskin_ support the shown _wodim_ options; _xorrecord_ also supports those which do not deal with audio CD.
+Both _wodim_ and _cdrskin_ support the shown _cdrecord_ options; _xorrecord_ also supports those which do not deal with audio CD.
 
-**Note:**
-
-*   The installed files of packages [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) are in conflict. Install only one of them.
-*   If you want to install [cdrtools](https://en.wikipedia.org/wiki/Cdrtools "wikipedia:Cdrtools"), make sure that you build a package using [makepkg](/index.php/Makepkg "Makepkg") and install with [pacman](/index.php/Pacman "Pacman"). Pacman wrappers may resolve to cdrkit instead.
+**Note:** [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) are in conflict. Install only one of them. [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) is recommended: see [FS#46114](https://bugs.archlinux.org/task/46114).
 
 ### Making an ISO image from existing files on hard disk
 
 The simplest way to create an ISO image is to first copy the needed files to one directory, for example: `./for_iso`.
 
-Then generate the image file with _genisoimage_:
+Then generate the image file with _mkisofs_:
 
 ```
-$ genisoimage -V "_ARCHIVE_2013_07_27_" -J -r -o _isoimage.iso_ _./for_iso_
+$ mkisofs -V "_ARCHIVE_2013_07_27_" -J -r -o _isoimage.iso_ _./for_iso_
 
 ```
 
@@ -145,10 +140,10 @@ Sets the file path for the resulting ISO image.
 
 #### graft-points
 
-It is also possible to let _genisoimage_ to collect files and directories from various paths
+It is also possible to let _mkisofs_ to collect files and directories from various paths
 
 ```
-$ genisoimage -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
+$ mkisofs -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
   -graft-points \
   _/photos=/home/user/photos \_
   /mail=/home/user/mail \
@@ -204,7 +199,7 @@ For the remainder of this section the name of your recording device is assumed t
 Check this by
 
 ```
-$ wodim dev=_/dev/sr0_ -checkdrive
+$ cdrecord dev=_/dev/sr0_ -checkdrive
 
 ```
 
@@ -262,7 +257,7 @@ If the original medium was bootable, then the copy will be a bootable image. You
 Used CD-RW media need to be erased before you can write over the previously recorded data. This is done by
 
 ```
-$ wodim -v dev=_/dev/sr0_ blank=fast
+$ cdrecord -v dev=_/dev/sr0_ blank=fast
 
 ```
 
@@ -271,7 +266,7 @@ There are two options for blanking: `blank=fast` and `blank=full`. Full blanking
 Alternative commands are:
 
 ```
-$ cdrecord -v dev=_/dev/sr0_ blank=all
+$ wodim -v dev=_/dev/sr0_ blank=all
 $ cdrskin -v dev=_/dev/sr0_ blank=all
 $ xorriso -outdev _/dev/sr0_ -blank as_needed
 
@@ -306,7 +301,7 @@ All other media are either write-once (CD-R, DVD-R, DVD+R, BD-R) or are overwrit
 To burn a readily prepared ISO image file `isoimage.iso` onto an optical medium, run for CD:
 
 ```
-$ wodim -v -sao dev=_/dev/sr0_ _isoimage.iso_
+$ cdrecord -v -sao dev=_/dev/sr0_ _isoimage.iso_
 
 ```
 
@@ -317,11 +312,7 @@ $ growisofs -dvd-compat -Z _/dev/sr0_=_isoimage.iso_
 
 ```
 
-The programs _cdrecord_, _cdrskin_, and _xorrecord_ may be used on all kinds of media with the options shown with _wodim_.
-
-**Note:**
-
-*   Make sure that the medium is not mounted when you begin to write to it. Mounting may happen automatically if the medium contains a readable file system. In the best case, it will prevent the burn programs from using the burner device. In the worst case, there will be misburns because read operations disturbed the drive.
+**Note:** * Make sure that the medium is not mounted when you begin to write to it. Mounting may happen automatically if the medium contains a readable file system. In the best case, it will prevent the burn programs from using the burner device. In the worst case, there will be misburns because read operations disturbed the drive.
 
 So if in doubt, do:
 
@@ -330,7 +321,7 @@ So if in doubt, do:
 
 ```
 
-*   _growisofs_ has a small bug with blank BD-R media. It issues an error message after the burning is complete. Programs like _k3b_ then believe the whole burn run failed.
+*   _growisofs_ has a [small bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016) with blank BD-R media. It issues an error message after the burning is complete. Programs like _k3b_ then believe the whole burn run failed.
 
 To prevent this, either
 
@@ -373,20 +364,19 @@ Both runs should yield the same MD5 checksum (here: `e5643e18e05f5646046bb2e4236
 
 It is not necessary to store an emerging ISO file system on hard disk before writing it to optical media. Only very old CD drives at very old computers could suffer failed burns due to empty drive buffer.
 
-If you omit option `-o` from _genisoimage_ then it writes the ISO image to standard output. This can be piped into the standard input of burn programs.
+If you omit option `-o` from _mkisofs_ then it writes the ISO image to standard output. This can be piped into the standard input of burn programs.
 
 ```
-$ genisoimage -V "ARCHIVE_2013_07_27" -J -r ./for_iso | \
-  wodim -v dev=/dev/sr0 -waiti -
+$ mkisofs -V "ARCHIVE_2013_07_27" -J -r ./for_iso | \
+  cdrecord -v dev=/dev/sr0 -waiti -
 
 ```
 
-Option `-waiti` is not really needed here. It prevents _wodim_ from writing to the medium before _genisoimage_ starts its output. This would allow _genisoimage_ to read the medium without disturbing an already started burn run. See next section about multi-session.
+Option `-waiti` is not really needed here. It prevents _cdrecord_ from writing to the medium before _mkisofs_ starts its output. This would allow _mkisofs_ to read the medium without disturbing an already started burn run. See next section about multi-session.
 
-On DVD and BD, you may let _growisofs_ operate _genisoimage_ for you and burn its output on-the-fly
+On DVD and BD, you may let _growisofs_ operate _mkisofs_ for you and burn its output on-the-fly
 
 ```
-$ export MKISOFS="genisoimage"
 $ growisofs -Z _/dev/sr0_ -V "_ARCHIVE_2013_07_27_" -r -J _./for_iso_
 
 ```
@@ -397,26 +387,26 @@ ISO 9660 multi-session means that a medium with readable file system is still wr
 
 Linux and many other operating systems will mount the directory tree in the last session on the medium. This youngest tree will normally show the files of the older sessions, too.
 
-#### Multi-session by wodim
+#### Multi-session by cdrecord
 
-CD-R and CD-RW stay writable (aka "appendable") if wodim option `-multi` was used
+CD-R and CD-RW stay writable (aka "appendable") if cdrecord option `-multi` was used
 
 ```
-$ wodim -v -multi dev=_/dev/sr0_ _isoimage.iso_
+$ cdrecord -v -multi dev=_/dev/sr0_ _isoimage.iso_
 
 ```
 
 Then the medium can be inquired for the parameters of the next session
 
 ```
-$ m=$(wodim dev=_/dev/sr0_ -msinfo)
+$ m=$(cdrecord dev=_/dev/sr0_ -msinfo)
 
 ```
 
 By help of these parameters and of the readable medium in the drive you can produce the add-on ISO session
 
 ```
-$ genisoimage -M _/dev/sr0_ -C "$m" \
+$ mkisofs -M _/dev/sr0_ -C "$m" \
    -V "_ARCHIVE_2013_07_28_" -J -r -o _session2.iso_ _./more_for_iso_
 
 ```
@@ -424,7 +414,7 @@ $ genisoimage -M _/dev/sr0_ -C "$m" \
 Finally append the session to the medium and keep it appendable again
 
 ```
-$ wodim -v -multi dev=_/dev/sr0_ _session2.iso_
+$ cdrecord -v -multi dev=_/dev/sr0_ _session2.iso_
 
 ```
 
@@ -436,7 +426,7 @@ _growisofs_ and _xorriso_ can do this and hide most of the complexity.
 
 #### Multi-session by growisofs
 
-By default, _growisofs_ uses _mkisofs_ as a backend for creating ISO images forwards most of its program arguments to . See above examples of _genisoimage_. It bans option `-o` and deprecates option `-C`. By default it uses the _mkisofs_. You may specify to use one of the others compatible backend program by setting environment variable `MKISOFS`:
+By default, _growisofs_ uses _mkisofs_ as a backend for creating ISO images forwards most of its program arguments to . See above examples of _mkisofs_. It bans option `-o` and deprecates option `-C`. By default it uses the _mkisofs_. You may specify to use one of the others compatible backend program by setting environment variable `MKISOFS`:
 
 ```
 $ export MKISOFS="genisoimage"
@@ -511,7 +501,7 @@ $ for i in *.mp3; do mpg123 --rate 44100 --stereo --buffer 3072 --resync -w $(ba
 Name the audio files in a manner that will cause them to be listed in the desired track order when listed alphabetically, such as `01.wav`, `02.wav`, `03.wav`, etc. Use the following command to simulate burning the WAV files as an audio CD:
 
 ```
-$ wodim **-dummy** -v -pad speed=1 dev=_/dev/sr0_ -dao -swab *.wav
+$ cdrecord **-dummy** -v -pad speed=1 dev=_/dev/sr0_ -dao -swab *.wav
 
 ```
 
@@ -524,7 +514,7 @@ Track 01: audio    0 MB (00:00.00) no preemp pad
 
 try another decoder (e.g. mpg123) or try using _cdrecord_ from the [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) package.
 
-Note that [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) also contains a _cdrecord_ command, but it is just a symlink to _wodim_. If anything worked, you can remove the `dummy` flag to actually burn the CD.
+If anything worked, you can remove the `dummy` flag to actually burn the CD.
 
 To test the new audio CD, use [MPlayer](/index.php/MPlayer "MPlayer"):
 
@@ -570,8 +560,6 @@ There are several applications available to burn CDs in a graphical environment.
 
 See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.org/wiki/Comparison_of_disc_authoring_software "wikipedia:Comparison of disc authoring software").
 
-#### Free GUI programs
-
 *   **[AcetoneISO](https://en.wikipedia.org/wiki/AcetoneISO "wikipedia:AcetoneISO")** — All-in-one ISO tool (supports BIN, MDF, NRG, IMG, DAA, DMG, CDI, B5I, BWI, PDI and ISO).
 
 [http://sourceforge.net/projects/acetoneiso](http://sourceforge.net/projects/acetoneiso) || [acetoneiso2](https://www.archlinux.org/packages/?name=acetoneiso2)
@@ -616,33 +604,13 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 [https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif](https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif) || [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
-#### Nero Linux
-
-Nero Linux is a commercial burning suite from makers of Nero for Windows - Nero AG. The biggest advantage of Nero Linux is its interface which is similar to Windows version. Hence, users migrating from Windows might find it easy to operate. The Linux version now includes Nero Express, a wizard which takes users through the process of burning CDs and DVDs step-by-step, which users will be familiar with from the Windows version. Also new in version 4 is Blu-ray Disc defect management, integration of Isolinux for creating bootable media and support for Musepack and AIFF audio formats...
-
-Nero Linux 4 retails at $19.99 with a free trial version also available.
-
-*   [Nero Linux 4](http://www.nero.com/enu/promo-linux.html)
-*   [nerolinux](https://aur.archlinux.org/packages/nerolinux/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package.
-
-Nero Linux offers some features, like:
-
-*   Easy, wizard-style user interface for guided burning with Nero Linux Express 4.
-*   Full Blu-ray burning support.
-*   Supports burning of audio CD (CD-DA), ISO 9660 (Joliet support), CD-text, ISOLINUX bootable, Multi-session discs, DVD-Video and miniDVD, DVD double layer support.
-*   Advanced burning with Nero Burning ROM and command line client.
-
-**Note:** The necessary `sg` module should be loaded automatically, otherwise see [Kernel modules](/index.php/Kernel_modules "Kernel modules") for information about manual configuration.
-
 ## Playback
 
 ### CD
 
-Playback of audio CDs requires [libcdio](https://www.archlinux.org/packages/?name=libcdio) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Playback of audio CDs requires the [libcdio](https://www.archlinux.org/packages/?name=libcdio) package.
 
 ### DVD
-
-[DVD](https://en.wikipedia.org/wiki/DVD "wikipedia:DVD"), also known as Digital Versatile Disc or Digital Video Disc, is an optical disc storage media format used for video and data storage.
 
 If you wish to play encrypted DVDs, you must install the libdvd* packages:
 
@@ -755,9 +723,9 @@ The following packages should be installed:
 
 *   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): Software codec for DV video
-*   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX)
-*   [divx4linux](https://aur.archlinux.org/packages/divx4linux/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/divx4linux)]</sup>: If you want to encode your ripped files as DivX (available in the [AUR](/index.php/AUR "AUR"))
-*   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/subtitleripper)]</sup>: If you want to read and process subtitles (available in the [AUR](/index.php/AUR "AUR")).
+*   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX).
+*   [divx4linux](https://aur.archlinux.org/packages/divx4linux/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/divx4linux)]</sup>: If you want to encode your ripped files as DivX.
+*   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/subtitleripper)]</sup>: If you want to read and process subtitles.
 
 The dvd::rip preferences are mostly well-documented/self-explanatory. If you need help with something, see [http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp](http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp).
 
@@ -859,11 +827,11 @@ Any speed that is supported by the drive can be used, or 0 for the maximum speed
 
 ### Playback does not work with new computer (new DVD-Drive)
 
-If playback does not work and you have a new computer (new DVD-Drive) the reason might be that the [region code](https://en.wikipedia.org/wiki/DVD_region_code "wikipedia:DVD region code") is not set. You can read and set the region code with [regionset](https://aur.archlinux.org/packages/regionset/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+If playback does not work and you have a new computer (new DVD-Drive) the reason might be that the [region code](https://en.wikipedia.org/wiki/DVD_region_code "wikipedia:DVD region code") is not set. You can read and set the region code with the [regionset](https://aur.archlinux.org/packages/regionset/)<sup><small>AUR</small></sup> package.
 
 ### None of the above programs are able to rip/encode a DVD to my hard disk!
 
-Make sure the region of your DVD reader is set correctly; otherwise, you will get loads of inexplicable [CSS](https://en.wikipedia.org/wiki/Content_Scramble_System "wikipedia:Content Scramble System")-related errors. Use [regionset](https://aur.archlinux.org/packages/regionset/)<sup><small>AUR</small></sup> to do so.
+Make sure the region of your DVD reader is set correctly; otherwise, you will get loads of inexplicable [CSS](https://en.wikipedia.org/wiki/Content_Scramble_System "wikipedia:Content Scramble System")-related errors. Use the [regionset](https://aur.archlinux.org/packages/regionset/)<sup><small>AUR</small></sup> package to do so.
 
 ### GUI program log indicates problems with backend program
 
@@ -916,13 +884,17 @@ Rebuild the kernel image so that it includes the newly added module:
 
 ## See also
 
-*   RIAA and actual laws allow backup of physically obtained media under these conditions [RIAA - the law](https://www.riaa.com/physicalpiracy.php?content_selector=piracy_online_the_law).
+*   In the United States, backup of physically obtained media is allowed under these conditions: [About Piracy - RIAA](https://www.riaa.com/resources-learning/about-piracy/).
 *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 *   [Main page of the project Libburnia](http://libburnia-project.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=412629](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=412629)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=415780](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=415780)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
 *   [Optical](/index.php/Category:Optical "Category:Optical")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

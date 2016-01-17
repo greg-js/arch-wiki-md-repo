@@ -50,7 +50,7 @@ Traditionally, the kernel was responsible for all hardware detection and initial
 
 Nowadays, the root file system may be on a wide range of hardware, from SCSI to SATA to USB drives, controlled by a variety of drive controllers from different manufacturers. Additionally, the root file system may be encrypted or compressed; within a software RAID array or a logical volume group. The simple way to handle that complexity is to pass management into userspace: an initial ramdisk.
 
-See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/).
+See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2016-01-16]</sup>
 
 mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods; these advantages include:
 
@@ -147,6 +147,8 @@ The MODULES array is used to specify modules to load before anything else is don
 Modules suffixed with a `?` will not throw errors if they are not found. This might be useful for custom kernels that compile in modules which are listed explicitly in a hook or config file.
 
 **Note:** If using **reiser4**, it _must_ be added to the modules list. Additionally, if you will be needing any file system during the boot process that is not live when you run mkinitcpio — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run mkinitcpio — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
+
+**Note:** Beginning with Linux 4.4, you may need to add **nvme** to the modules list if your root is on an NVME device.
 
 ### BINARIES and FILES
 
@@ -723,9 +725,14 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=414962](https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=414962)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=415782](https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=415782)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden categories:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

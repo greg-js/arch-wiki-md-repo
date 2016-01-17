@@ -168,7 +168,7 @@ The only special consideration is the MacBook firmware boot sound. To ensure tha
 
 *   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap#Swap_file "Swap"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") your machine in future.
 *   For more information on partitioning, see [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
-*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
+*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gummiboot)]</sup>) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
 
 Simple example (no LVM, crypto):
 
@@ -501,13 +501,13 @@ For MacBooks with NVIDIA graphics, for the backlight to work properly you may ne
 
 ##### MacBookPro5,5, NVIDIA and secondary display
 
-As of January 1 2011, the latest NVIDIA drivers (290.10) might not work properly when a secondary display is used (tested with TwinView), NVIDIA's current [long-live supported](http://www.nvnews.net/vbulletin/showthread.php?t=122606) 275xx drivers seem to work fine. Install [nvidia-275xx](https://aur.archlinux.org/packages/nvidia-275xx/)<sup><small>AUR</small></sup> and [nvidia-utils-275xx](https://aur.archlinux.org/packages/nvidia-utils-275xx/)<sup><small>AUR</small></sup>, and possibly [lib32-nvidia-utils-275xx](https://aur.archlinux.org/packages/lib32-nvidia-utils-275xx/)<sup><small>AUR</small></sup> if you are on x86_64 system and want 32-bits support.
+As of January 1 2011, the latest NVIDIA drivers (290.10) might not work properly when a secondary display is used (tested with TwinView), NVIDIA's current [long-live supported](http://www.nvnews.net/vbulletin/showthread.php?t=122606) 275xx drivers seem to work fine. Install [nvidia-275xx](https://aur.archlinux.org/packages/nvidia-275xx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nvidia-275xx)]</sup> and [nvidia-utils-275xx](https://aur.archlinux.org/packages/nvidia-utils-275xx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nvidia-utils-275xx)]</sup>, and possibly [lib32-nvidia-utils-275xx](https://aur.archlinux.org/packages/lib32-nvidia-utils-275xx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-nvidia-utils-275xx)]</sup> if you are on x86_64 system and want 32-bits support.
 
 MacBookPro5,5 has an NVIDIA 9400m graphics card. This problem might apply to other devices as well.
 
 #### Touchpad
 
-The touchpad should have basic functionality by default. A true multitouch driver which behaves very similarly to native OS X is included in the [xf86-input-multitouch-git](https://aur.archlinux.org/packages/xf86-input-multitouch-git/)<sup><small>AUR</small></sup> package. It supports 1, 2 and 3 finger gestures, including differentiation between horizontal and vertical 3 finger swipe. Additional details are available at [the driver's project page](http://bitmath.org/code/multitouch/).
+The touchpad should have basic functionality by default. A true multitouch driver which behaves very similarly to native OS X is included in the [xf86-input-multitouch-git](https://aur.archlinux.org/packages/xf86-input-multitouch-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-multitouch-git)]</sup> package. It supports 1, 2 and 3 finger gestures, including differentiation between horizontal and vertical 3 finger swipe. Additional details are available at [the driver's project page](http://bitmath.org/code/multitouch/).
 
 xf86-input-multitouch-git does not support any sort of configuration without editing the driver's source. Some users are also experiencing issues with false clicks from palm touches. There is now a much more configurable fork available as [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/)<sup><small>AUR</small></sup>. Configuration options are documented in the [readme](https://github.com/BlueDragonX/xf86-input-mtrack).
 
@@ -581,7 +581,7 @@ If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86
 
 MacBook keyboards work by default. For swaping fn keys with Fx keys see [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard").
 
-To enable it you can map with right application like **xbindkeys** or through DE preferences; but another very good way, that we recommend, is to install the [pommed](https://aur.archlinux.org/packages/pommed/)<sup><small>AUR</small></sup> package.
+To enable it you can map with right application like **xbindkeys** or through DE preferences; but another very good way, that we recommend, is to install the [pommed](https://aur.archlinux.org/packages/pommed/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pommed)]</sup> package.
 
 ```
 Edit the `/etc/pommed.conf` according to your hardware on MacBook, building
@@ -1574,7 +1574,7 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=415257](https://wiki.archlinux.org/index.php?title=MacBook&oldid=415257)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=415670](https://wiki.archlinux.org/index.php?title=MacBook&oldid=415670)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

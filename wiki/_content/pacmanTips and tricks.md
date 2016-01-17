@@ -508,11 +508,11 @@ Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the serve
 
 [nginx](/index.php/Nginx "Nginx") can be used to proxy requests to official upstream mirrors and cache the results to local disk. All subsequent requests for that file will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of servers with minimal effort.
 
-**Warning:** This method has two limitations. The first one is that you must use mirrors that use the same relative path and you must configure your cache to use the same. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting is configured similarly. The second limitation is that you can only use non virtual hosted mirrors. This is because the `Host` header sent by nginx upstream block is `"mirrors"`, so a virtually hosted mirror will not resolve with this virtual hostname. The example given above only works because mirror.rit.edu is uniquely mapped to it's ip address is resolves to: it is not a virtual host. Make sure you replace the other two servers when you use this example.
+**Warning:** This method has a limitation. You must use mirrors that use the same relative path to package files and you must configure your cache to use that same path. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting in `mirrorlist` is configured similarly.
 
 In this example, we will run the cache server on `http://cache.domain.local:8080/` and storing the packages in `/srv/http/pacman-cache/`.
 
-Create the directory for the cache and adjust the permissions to nginx can write files to it:
+Create the directory for the cache and adjust the permissions so nginx can write files to it:
 
 ```
  # mkdir /srv/http/pacman-cache
@@ -520,7 +520,7 @@ Create the directory for the cache and adjust the permissions to nginx can write
 
 ```
 
-Next, configure nginx as our dynamic cache:
+Next, configure nginx as our dynamic cache (read the comments for an explanation of the commands):
 
  `/etc/nginx/nginx.conf` 
 
@@ -528,6 +528,9 @@ Next, configure nginx as our dynamic cache:
 http
 {
     ...
+
+    # nginx may need to resolve domain names at run time
+    resolver 8.8.8.8 8.8.4.4;
 
     # Pacman Cache
     server
@@ -537,36 +540,72 @@ http
         root        /srv/http/pacman-cache;
         autoindex   on;
 
-        # Requests for package db and signature files should redirect upstream
-        #   without caching
+        # Requests for package db and signature files should redirect upstream without caching
         location ~ \.(db|sig)$ {
-            resolver   8.8.8.8 8.8.4.4;
-            proxy_pass $scheme://mirrors$request_uri;
+            proxy_pass http://mirrors$request_uri;
         }
 
-        # Requests for actual packages should be served directly if available;
-        #   If not available, retrieve and save the package from an upstream
-        #   mirror.
+        # Requests for actual packages should be served directly from cache if available.
+        #   If not available, retrieve and save the package from an upstream mirror.
         location ~ \.tar\.xz$ {
             try_files $uri @pkg_mirror;
         }
 
-        # Retrieve package from upstream mirrors, cache for future requests
+        # Retrieve package from upstream mirrors and cache for future requests
         location @pkg_mirror {
-            resolver 8.8.8.8 8.8.4.4;
-            proxy_store on;
-            proxy_store_access user:rw group:rw all:r;
-            proxy_next_upstream error timeout http_404;
-            proxy_pass http://mirrors$request_uri;
+            proxy_store    on;
             proxy_redirect off;
+            proxy_store_access  user:rw group:rw all:r;
+            proxy_next_upstream error timeout http_404;
+            proxy_pass          http://mirrors$request_uri;
         }
     }
 
-    # Upstream Arch Linux Mirrors - Change these to your preferred servers
+    # Upstream Arch Linux Mirrors
+    # - Configure as many backend mirrors as you want in the blocks below
+    # - Servers are used in a round-robin fashion by nginx
+    # - Add "backup" if you want to only use the mirror upon failure of the other mirrors
+    # - Separate "server" configurations are required for each upstream mirror so we can set the "Host" header appropriately
     upstream mirrors {
-        server mirror.rit.edu;
-        server mirrors.acm.wpi.edu backup;
-        server lug.mtu.edu backup;
+        server localhost:8001;
+        server localhost:8002 backup;
+        server localhost:8003 backup;
+    }
+
+    # Arch Mirror 1 Proxy Configuration
+    server
+    {
+        listen      8001;
+        server_name localhost;
+
+        location / {
+            proxy_pass       http://mirror.rit.edu$request_uri;
+            proxy_set_header Host mirror.rit.edu;
+        }
+    }
+
+    # Arch Mirror 2 Proxy Configuration
+    server
+    {
+        listen      8002;
+        server_name localhost;
+
+        location / {
+            proxy_pass       http://mirrors.acm.wpi.edu$request_uri;
+            proxy_set_header Host mirrors.acm.wpi.edu;
+        }
+    }
+
+    # Arch Mirror 3 Proxy Configuration
+    server
+    {
+        listen      8003;
+        server_name localhost;
+
+        location / {
+            proxy_pass       http://lug.mtu.edu$request_uri;
+            proxy_set_header Host lug.mtu.edu;
+        }
     }
 }
 
@@ -582,7 +621,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 ```
 
-**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time.
+**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is included with `pacman`) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
 
 #### Synchronize pacman package cache using BitTorrent Sync
 
@@ -973,8 +1012,13 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=414950](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=414950)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=415757](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=415757)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1082,7 +1082,7 @@ Game mostly works out of the box.
 
 ### No Sound
 
-If there is no sound in-game. Try installing [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl), [lib32-sdl2](https://aur.archlinux.org/packages/lib32-sdl2/)<sup><small>AUR</small></sup>, and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
+If there is no sound in-game. Try installing [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl), [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2), and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 
 If this fails, try setting the game's launch options in Steam to:
 
@@ -1502,7 +1502,7 @@ If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRI
 *   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/)<sup><small>AUR</small></sup>
 *   [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls)
 
-*   [lib32-sdl2](https://aur.archlinux.org/packages/lib32-sdl2/)<sup><small>AUR</small></sup>
+*   [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2)
 *   [lib32-sdl2_image](https://aur.archlinux.org/packages/lib32-sdl2_image/)<sup><small>AUR</small></sup>
 *   [lib32-libcurl-gnutls](https://aur.archlinux.org/packages/lib32-libcurl-gnutls/)<sup><small>AUR</small></sup>
 
@@ -1580,8 +1580,12 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=414361](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=414361)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=415687](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=415687)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

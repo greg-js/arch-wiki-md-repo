@@ -570,11 +570,11 @@ Note that there is a BIOS option to change the function keys so that F1 - F12 ar
 
 ### LEDs
 
-There are six LEDs, all of which work out of the box. See the Lenovo manual for location and functionality of LEDs.
+There are six LEDs. All work out of the box except for the mic mute LED. See the Lenovo manual for location and functionality of LEDs.
 
 ### Intel Rapid Start Technology (IRST)
 
-The T450s has firmware support for IRST. This will only be available if the T450s has an SSD rather than a traditional spinning-disc drive.
+The T450s has firmware support for IRST. This will only be available if the T450s has an SSD rather than a traditional spinning-disc drive. The 16GB M.2 cache SSD can also be used for the IRST partition.
 
 [Per Matthew Garrett](https://mjg59.dreamwidth.org/26022.html),
 
@@ -588,7 +588,9 @@ If you are not wiping and repartitioning your disk entirely as you prepare your 
 
 If you are wiping and repartitioning your disk, then create an empty partition with a size equal to your T450s's RAM. Then set the flag for the partition to "irst" using [parted](/index.php/Parted "Parted") or [GParted](/index.php/GParted "GParted").
 
-Now if you leave your T450s suspended to RAM for an extended period of time (3 hours is the default in BIOS) it will copy the contents of RAM to the IRST partition. When you restart the laptop, it will copy the contents of the partition to RAM and resume from where you left off.
+Now if you leave your T450s suspended to RAM for a certain period of time (3 hours is the default in BIOS) it will automatically wake back up after the configured period, copy the contents of RAM to the IRST partition, and turn itself off. When you power the laptop back up, instead of the regular boot process, it will copy the contents of the partition to RAM and resume from where you left off.
+
+**Note:** Depending on the size of you RAM and the speed of your SSD, the IRST hibernation process can take 20-60 seconds. The process is completed when the power LED stops blinking.
 
 ## See also
 
@@ -596,7 +598,7 @@ Now if you leave your T450s suspended to RAM for an extended period of time (3 h
 *   [Installing Debian Jessie on Thinkpad 450s](https://wiki.debian.org/InstallingDebianOn/Thinkpad/T450s/jessie)
 *   [Phoronix article Fedora on Thinkpad 450s](http://www.phoronix.com/scan.php?page=article&item=lenovo-t450s-linux&num=1)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T450s&oldid=410692](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T450s&oldid=410692)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T450s&oldid=415617](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T450s&oldid=415617)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

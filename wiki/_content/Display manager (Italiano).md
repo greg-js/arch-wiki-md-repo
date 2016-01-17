@@ -37,7 +37,7 @@ Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_ty
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Estensione per xinit scritta completamente in bash
 
-[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/console-tdm)]</sup>
+[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup>
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Display manager minimale per login automatici.
 
@@ -183,7 +183,7 @@ Alcuni display manager non sono pienamente compatibili con systemd, dal momento 
 *   Impossibilità di modificare il volume di PulseAudio
 *   Impossibilità ad effettuare il login in GNOME con un altro utente
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Italiano)&oldid=412796](https://wiki.archlinux.org/index.php?title=Display_manager_(Italiano)&oldid=412796)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Italiano)&oldid=415653](https://wiki.archlinux.org/index.php?title=Display_manager_(Italiano)&oldid=415653)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

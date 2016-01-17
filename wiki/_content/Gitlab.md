@@ -67,6 +67,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
     *   [6.2 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
+    *   [6.3 Errors after updating](#Errors_after_updating)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -335,7 +336,7 @@ Start the Redis server before we create the database:
 Now you have to install bundler and the required gems with:
 
 ```
-# export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.2.0/bin
+# export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin
 # sudo -u gitlab -H gem install bundler --no-document
 # cd /usr/share/webapps/gitlab
 # sudo -u gitlab -H bundle install
@@ -1076,14 +1077,50 @@ ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_s
 
 ```
 
+### Errors after updating
+
+After updating the package from the AUR, the database migrations and asset updates will sometimes fail. These steps may resolve the issue, if a simple reboot does not.
+
+First, move to the gitlab installation directory.
+
+```
+# cd /usr/share/webapps/gitlab
+
+```
+
+If every gitlab page gives a 500 error, then the database migrations and the assets are probably stale. If not, skip this step.
+
+```
+# sudo -u gitlab -H bundle exec rake db:migrate RAILS_ENV=production
+
+```
+
+If gitlab is constantly waiting for the deployment to finish, then the assets have probably not been recompiled.
+
+```
+# sudo -u gitlab -H bundle exec rake assets:clean assets:precompile cache:clear RAILS_ENV=production
+
+```
+
+Finally, restart the gitlab services and test your site.
+
+```
+# systemctl restart gitlab-unicorn gitlab-sidekiq gitlab-workhorse
+
+```
+
 ## See also
 
 *   [Official Documentation](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md)
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=414159](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=414159)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=415425](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=415425)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

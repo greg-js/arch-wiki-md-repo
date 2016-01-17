@@ -36,7 +36,7 @@ _A Unix shell is a command-line interpreter or shell that provides a traditional
 
 *   **[rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc")** — Command interpreter for Plan 9 that provides similar facilities to UNIX’s Bourne shell, with some small additions and less idiosyncratic syntax.
 
-[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base-git](https://aur.archlinux.org/packages/9base-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/9base-git)]</sup>
+[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base-git](https://aur.archlinux.org/packages/9base-git/)<sup><small>AUR</small></sup>
 
 *   **[Zsh](/index.php/Zsh "Zsh")** — Shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of Bash, ksh, and tcsh were incorporated into Zsh; many original features were added. The [introductory document](http://zsh.sourceforge.net/Intro/intro_toc.html) details some of the unique features of Zsh.
 
@@ -69,7 +69,7 @@ If you now log out and log in again, you will be greeted by the other shell.
 *   [>_ .bashrc PS1 generator](http://bashrcgenerator.com/) generate your .bashrc/PS1 bash prompt easily with a drag and drop interface.
 *   [terminal.sexy](https://terminal.sexy/) — Terminal Color Scheme Designer
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=413633](https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=413633)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=415650](https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=415650)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

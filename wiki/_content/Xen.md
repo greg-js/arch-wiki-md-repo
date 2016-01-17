@@ -69,7 +69,7 @@ The Xen hypervisor relies on a full install of the base operating system. Before
 
 ### Installation of the Xen hypervisor
 
-To install the Xen hypervisor install either the current stable [xen](https://aur.archlinux.org/packages/xen/)<sup><small>AUR</small></sup> or the bleeding edge unstable [xen-git](https://aur.archlinux.org/packages/xen-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xen-git)]</sup> packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Both packages provide the Xen hypervisor, current xl interface and all configuration and support files, including systemd services. The [multilib](/index.php/Multilib "Multilib") repository needs to be enabled to install Xen. Install the [xen-docs](https://aur.archlinux.org/packages/xen-docs/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the man pages and documentation.
+To install the Xen hypervisor install either the current stable [xen](https://aur.archlinux.org/packages/xen/)<sup><small>AUR</small></sup> or the bleeding edge unstable [xen-git](https://aur.archlinux.org/packages/xen-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xen-git)]</sup> packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Both packages provide the Xen hypervisor, current xl interface and all configuration and support files, including systemd services. The [multilib](/index.php/Multilib "Multilib") repository needs to be enabled and the `multilib-devel` package group installed to compile Xen. Install the [xen-docs](https://aur.archlinux.org/packages/xen-docs/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the man pages and documentation.
 
 #### With UEFI support
 
@@ -475,9 +475,15 @@ This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not use
 *   [The homepage at xen.org](http://www.xen.org/)
 *   [The wiki at xen.org](http://wiki.xen.org/wiki/Main_Page)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen&oldid=408334](https://wiki.archlinux.org/index.php?title=Xen&oldid=408334)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen&oldid=415503](https://wiki.archlinux.org/index.php?title=Xen&oldid=415503)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

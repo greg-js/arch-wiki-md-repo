@@ -121,8 +121,9 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
         *   [2.4.1 HDA mode](#HDA_mode)
         *   [2.4.2 I2S mode](#I2S_mode)
         *   [2.4.3 ALSA configuration](#ALSA_configuration)
-    *   [2.5 Touchpad](#Touchpad)
-    *   [2.6 Powersaving](#Powersaving)
+    *   [2.5 High quality ICC monitor profiles](#High_quality_ICC_monitor_profiles)
+    *   [2.6 Touchpad](#Touchpad)
+    *   [2.7 Powersaving](#Powersaving)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
     *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
@@ -194,6 +195,14 @@ In I2S mode, the dual-boot workaround is not necessary.
 By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
+
+### High quality ICC monitor profiles
+
+An ICC profile is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. Since every monitor is different it is possible to achieve better results calibrating your own monitor, but if you don't have a colorimeter or a spectrophotometer you will get far better results with the following XYZ LUT + MATRIX profiles made with a ~3500 patches testchart instead of the canned ones. If you previously didn't install a canned profile you will notice a night and day difference in color accuracy. Do not use a profile made for the QHD+ version with the FHD one and vice versa.
+
+*   QHD+, D65, Gamma 2.2: [https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo](https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo)
+
+*   FHD, D65, Gamma 2.2: coming soon (I will get my hands on the FHD monitor in February)
 
 ### Touchpad
 
@@ -292,7 +301,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415351](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415351)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415746](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415746)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

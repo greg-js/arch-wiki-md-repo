@@ -60,14 +60,14 @@ Vim фокусируется на использовании клавиатур�
 
 Пакеты с интерфейсом командной строки:
 
-*   [vim-minimal](https://www.archlinux.org/packages/?name=vim-minimal) — облегченная версия.
+*   [vim-minimal](https://www.archlinux.org/packages/?name=vim-minimal)<sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [vim](https://www.archlinux.org/packages/?name=vim)]</sup> — облегченная версия.
 *   [vim](https://www.archlinux.org/packages/?name=vim) — версия с поддержкой интерпретаторов Python 2, Lua и Ruby, но без графической оболочки.
-*   [vim-python3](https://www.archlinux.org/packages/?name=vim-python3) — тоже самое что и `vim`, но уже с поддержкой интерпретатора Python 3.
+*   [vim-python3](https://www.archlinux.org/packages/?name=vim-python3)<sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [vim](https://www.archlinux.org/packages/?name=vim)]</sup> — тоже самое что и `vim`, но уже с поддержкой интерпретатора Python 3.
 
 Пакеты с графическим интерфейсом:
 
 *   [gvim](https://www.archlinux.org/packages/?name=gvim) — идентичен `vim`, но имеет интерфейс GTK+.
-*   [gvim-python3](https://www.archlinux.org/packages/?name=gvim-python3) — идентичен `gvim`, но имеет поддержку интерпретатора Python 3.
+*   [gvim-python3](https://www.archlinux.org/packages/?name=gvim-python3)<sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [gvim](https://www.archlinux.org/packages/?name=gvim)]</sup> — идентичен `gvim`, но имеет поддержку интерпретатора Python 3.
 
 **Обратите внимание:** Пакет `vim` не имеет поддержки X, из - за этого вы не сможете ничего скопировать в системный буфер с помощью команды `"+y`, вы должны установить пакет `gvim`; Далее, запустите Vim с помощью команды `vim`, поддержка X будет включенна.
 
@@ -447,6 +447,8 @@ augroup END
 
 Создайте [псевдоним](/index.php/Bash#Aliases "Bash") для `vi` на `vim`.
 
+Если вы хотите, чтобы при вводе `sudo vi` запускался `vim`, то [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [vi-vim-symlink](https://aur.archlinux.org/packages/vi-vim-symlink/)<sup><small>AUR</small></sup>, который удалит `vi` и заменить его символической ссылкой на `vim`.
+
 ### Возврат каретки DOS/Windows
 
 Если вы видите последовательность `^M` в конце каждой линии, это означает, что вы редактируете текстовый файл, который был создан в MS-DOS или Windows. Дело в том, что в Linux для переноса принято использовать один символ новой строки (LR), тогда как в системах Windows/MS DOS для той же цели используется последовательность из двух символов: возврата каретки (CR) и новой строки (LR). Как раз эти символы возврата каретки и отображаются в виде `^M`.
@@ -617,7 +619,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/) - Справочная таблица Vim, в первую очередь ориентированная на начинающих.
 *   [Vim colorscheme tailoring](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — переопределение установленной цветовой схемы на время или сделать ее постоянной.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim_(Русский)&oldid=414996](https://wiki.archlinux.org/index.php?title=Vim_(Русский)&oldid=414996)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim_(Русский)&oldid=415690](https://wiki.archlinux.org/index.php?title=Vim_(Русский)&oldid=415690)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

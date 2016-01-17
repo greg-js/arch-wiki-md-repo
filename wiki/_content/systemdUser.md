@@ -52,7 +52,7 @@ When systemd user instance starts, it brings up the target `default.target`. Oth
 
 ## Basic setup
 
-All the user services will be placed in `~/.config/systemd/user`. If you want to run services on first login, execute `systemctl --user enable _service_` for any service you want to be autostarted.
+All the user services will be placed in `~/.config/systemd/user/`. If you want to run services on first login, execute `systemctl --user enable _service_` for any service you want to be autostarted.
 
 ### D-Bus
 
@@ -337,9 +337,14 @@ WantedBy=wm.target
 *   [Collection of useful systemd user units](https://github.com/grawity/systemd-user-units)
 *   [Arch forum thread about changes in systemd 206 user instances](https://bbs.archlinux.org/viewtopic.php?id=167115)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=413566](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=413566)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=415426](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=415426)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

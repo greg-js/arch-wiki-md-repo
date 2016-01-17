@@ -53,19 +53,21 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.8 demz-repo-core](#demz-repo-core)
         *   [3.1.9 gnome-encfs-manager](#gnome-encfs-manager)
         *   [3.1.10 haskell-core](#haskell-core)
-        *   [3.1.11 infinality-bundle](#infinality-bundle)
-        *   [3.1.12 ivasilev](#ivasilev_2)
-        *   [3.1.13 llvm-svn](#llvm-svn)
-        *   [3.1.14 metalgamer](#metalgamer)
-        *   [3.1.15 miffe](#miffe)
-        *   [3.1.16 nullptr_t](#nullptr_t)
-        *   [3.1.17 pipelight](#pipelight)
-        *   [3.1.18 repo-ck](#repo-ck)
-        *   [3.1.19 seblu](#seblu)
-        *   [3.1.20 sergej-repo](#sergej-repo)
-        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.22 herecura](#herecura)
-        *   [3.1.23 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.11 haskell-happstack](#haskell-happstack)
+        *   [3.1.12 haskell-web](#haskell-web)
+        *   [3.1.13 infinality-bundle](#infinality-bundle)
+        *   [3.1.14 ivasilev](#ivasilev_2)
+        *   [3.1.15 llvm-svn](#llvm-svn)
+        *   [3.1.16 metalgamer](#metalgamer)
+        *   [3.1.17 miffe](#miffe)
+        *   [3.1.18 nullptr_t](#nullptr_t)
+        *   [3.1.19 pipelight](#pipelight)
+        *   [3.1.20 repo-ck](#repo-ck)
+        *   [3.1.21 seblu](#seblu)
+        *   [3.1.22 sergej-repo](#sergej-repo)
+        *   [3.1.23 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.24 herecura](#herecura)
+        *   [3.1.25 blackeagle-pre-community](#blackeagle-pre-community)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 arch-deepin](#arch-deepin)
         *   [3.2.2 archaudio](#archaudio)
@@ -387,16 +389,15 @@ Server = http://download.opensuse.org/repositories/home:/moritzmolch:/gencfsm/Ar
 
 #### haskell-core
 
-*   **Maintainer:** Magnus Therning
-*   **Description:** Arch-Haskell repository
-*   **Upstream page:** [https://github.com/archhaskell/habs](https://github.com/archhaskell/habs)
-*   **Key-ID:** 4209170B
+See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell").
 
-```
-[haskell-core]
-Server = http://xsounds.org/~haskell/core/$arch
+#### haskell-happstack
 
-```
+See [ArchHaskell#haskell-happstack](/index.php/ArchHaskell#haskell-happstack "ArchHaskell").
+
+#### haskell-web
+
+See [ArchHaskell#haskell-web](/index.php/ArchHaskell#haskell-web "ArchHaskell").
 
 #### infinality-bundle
 
@@ -1579,7 +1580,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415409](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415409)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415586](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415586)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

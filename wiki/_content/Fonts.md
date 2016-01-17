@@ -418,6 +418,7 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 *   [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-unfonts-core)]</sup> - Un fonts (default Baekmuk fonts may be unsatisfactory)
 *   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/)<sup><small>AUR</small></sup> - Nanum series TrueType fonts
 *   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/)<sup><small>AUR</small></sup> - Nanum series fixed width TrueType fonts
+*   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/)<sup><small>AUR</small></sup> - D2Coding fixed width TrueType font made by Naver
 
 #### Cyrillic
 
@@ -671,8 +672,12 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 
 *   [State of Text Rendering](http://behdad.org/text/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=413203](https://wiki.archlinux.org/index.php?title=Fonts&oldid=413203)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=415602](https://wiki.archlinux.org/index.php?title=Fonts&oldid=415602)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Fonts](/index.php/Category:Fonts "Category:Fonts")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

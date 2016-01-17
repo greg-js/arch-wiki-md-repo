@@ -71,7 +71,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [5.4 Устройство сопряжено, но не проигрывает звук](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D1.81.D0.BE.D0.BF.D1.80.D1.8F.D0.B6.D0.B5.D0.BD.D0.BE.2C_.D0.BD.D0.BE_.D0.BD.D0.B5_.D0.BF.D1.80.D0.BE.D0.B8.D0.B3.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA)
 *   [6 Applications](#Applications)
     *   [6.1 Flash content](#Flash_content)
-    *   [6.2 Permission errors bug](#Permission_errors_bug)
+    *   [6.2 Ошибка с правами доступа](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D1.81_.D0.BF.D1.80.D0.B0.D0.B2.D0.B0.D0.BC.D0.B8_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0)
     *   [6.3 Audacity](#Audacity)
 *   [7 Other Issues](#Other_Issues)
     *   [7.1 Bad configuration files](#Bad_configuration_files)
@@ -922,7 +922,7 @@ Since Adobe Flash does not directly support PulseAudio, the recommended way is t
 
 If Flash audio is lagging, you may try to have Flash access ALSA directly. See [PulseAudio#ALSA/dmix without grabbing hardware device](/index.php/PulseAudio#ALSA.2Fdmix_without_grabbing_hardware_device "PulseAudio") for details.
 
-### Permission errors bug
+### Ошибка с правами доступа
 
  `pulseaudio --start` 
 
@@ -932,15 +932,12 @@ W: [autospawn] lock-autospawn.c: Cannot access autospawn lock.
 E: [pulseaudio] main.c: Failed to acquire autospawn lock
 ```
 
-Known programs that changes permissions for `/run/user/_user id_/pulse` when using [Polkit](/index.php/Polkit "Polkit") for root elevation:
+Известные програмы меняют права доступа для `/run/user_user id_/pulse` когда используется [Polkit](/index.php/Polkit "Polkit"):
 
 *   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)<sup><small>AUR</small></sup>
 
-As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) or [kdesu](https://www.archlinux.org/packages/?name=kdesu) in a [desktop entry](/index.php/Desktop_entry "Desktop entry"), or add `_username_ ALL=NOPASSWD: /usr/bin/_program_name_` to [sudoers](/index.php/Sudoers "Sudoers") to run it with [sudo](https://www.archlinux.org/packages/?name=sudo) or `gksudo` without a password.
-
-The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
-
-See also [[1]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+В качестве обходного пути можно использовать [gksu](https://www.archlinux.org/packages/?name=gksu) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entry "Desktop entry") или добавить `_username_ ALL=NOPASSWD: /usr/bin/_program_name_` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установки `daemonize = yes` в `/etc/pulse/daemon.conf`.  
+Также стоит посмотреть [эту ветку форума (англ)](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1152,9 +1149,13 @@ load-module module-stream-restore restore_device=false
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting_(Русский)&oldid=413899](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting_(Русский)&oldid=413899)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting_(Русский)&oldid=415781](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting_(Русский)&oldid=415781)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")
 *   [Sound (Русский)](/index.php/Category:Sound_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Sound (Русский)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

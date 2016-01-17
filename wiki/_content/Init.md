@@ -173,7 +173,7 @@ Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/
 
 ### Dbus
 
-As of systemd 226 and [dbus](/index.php/Dbus "Dbus") 1.10.0-3, user instances of _dbus-daemon_ are launched by [systemd/User](/index.php/Systemd/User "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
+As of systemd 226 and [dbus](/index.php/Dbus "Dbus") 1.10.0-3, user instances of _dbus-daemon_ are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
 
@@ -213,7 +213,7 @@ To setup a chroot with a new PID namespace you can use jchroot.[[6]](http://vinc
 *   [Demystifying the init system](https://felipec.wordpress.com/2013/11/04/init/)
 *   [A history of modern init systems (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=413318](https://wiki.archlinux.org/index.php?title=Init&oldid=413318)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=415699](https://wiki.archlinux.org/index.php?title=Init&oldid=415699)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

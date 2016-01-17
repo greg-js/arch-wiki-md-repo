@@ -261,11 +261,21 @@ Your answer becomes the default handler for that type of file. Mimeopen is insta
 
 </tr>
 
+<tr>
+
+<td>[ranger](https://www.archlinux.org/packages/?name=ranger) (rifle command)</td>
+
+<td>MIME-type, name, regular expressions</td>
+
+<td>custom</td>
+
+</tr>
+
 </tbody>
 
 </table>
 
-**Note:** Some of the above packages replace `xdg-utils`. Those that do not can be symbolically linked to _xdg-open_ in the user's `$PATH` above `/usr/bin`, but some applications hard-code the absolute path `/usr/bin/xdg-open`. In this case, install [xdg-utils-no-open](https://aur.archlinux.org/packages/xdg-utils-no-open/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xdg-utils-no-open)]</sup> from the [AUR](/index.php/AUR "AUR") and copy the replacement to `/usr/bin/xdg-open`.
+**Note:** Some of the above packages replace `xdg-utils`. Those that do not can be symbolically linked to _xdg-open_ in the user's `$PATH` above `/usr/bin`, but some applications hard-code the absolute path `/usr/bin/xdg-open`. In this case, install [xdg-utils-no-open](https://aur.archlinux.org/packages/xdg-utils-no-open/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and copy the replacement to `/usr/bin/xdg-open`.
 
 ### mailcap
 
@@ -312,8 +322,15 @@ When _xdg-open_ fails to detect one of the [desktop environments](/index.php/Des
 
 Some environment variables, such as `BROWSER`, `DE`, and `DESKTOP_SESSION`, will change the behaviour of the default _xdg-open_. See [Environment variables](/index.php/Environment_variables "Environment variables") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=412318](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=412318)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=415692](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=415692)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

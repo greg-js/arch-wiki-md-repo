@@ -37,8 +37,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [13.1 SPI](#SPI)
     *   [13.2 Python](#Python)
 *   [14 I2C](#I2C)
-*   [15 QEMU chroot](#QEMU_chroot)
-*   [16 Дивіться також](#.D0.94.D0.B8.D0.B2.D1.96.D1.82.D1.8C.D1.81.D1.8F_.D1.82.D0.B0.D0.BA.D0.BE.D0.B6)
+*   [15 Дивіться також](#.D0.94.D0.B8.D0.B2.D1.96.D1.82.D1.8C.D1.81.D1.8F_.D1.82.D0.B0.D0.BA.D0.BE.D0.B6)
 
 ## Передмова
 
@@ -107,7 +106,7 @@ hdmi_drive=2
 
 ### HDMI / аналоговий вихід TV-Out
 
-В типовій конфігурації Raspberry Pi використовує HDMI відео, якщо під'єднано[HDMI](https://en.wikipedia.org/wiki/HDMI "wikipedia:HDMI") монітор. В протилежному випадку для виводу відео використовується аналоговий вихід TV-Out (також відомий як композитний вихід або RCA)
+В типовій конфігурації Raspberry Pi використовує HDMI відео, якщо під'єднано [HDMI](https://en.wikipedia.org/wiki/HDMI "wikipedia:HDMI") монітор. В протилежному випадку для виводу відео використовується аналоговий вихід TV-Out (також відомий як композитний вихід або RCA)
 
 Щоб перемикатися між HDMI та аналоговим TV-Out використовуйте програму
 
@@ -360,20 +359,20 @@ RNGD_OPTS="-o /dev/random -r /dev/hwrng"
 
 ### Python
 
-To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install either [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/)<sup><small>AUR</small></sup> or [python2-raspberry-gpio](https://aur.archlinux.org/packages/python2-raspberry-gpio/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python2-raspberry-gpio)]</sup> from the [AUR](/index.php/AUR "AUR").
+Для використання пінів GPIO з Python, використайте бібліотеку [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO). Встановіть або [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/)<sup><small>AUR</small></sup> або [python2-raspberry-gpio](https://aur.archlinux.org/packages/python2-raspberry-gpio/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python2-raspberry-gpio)]</sup> з [AUR](/index.php/AUR "AUR").
 
 ## I2C
 
-Install _i2c-tools_ and _lm_sensors_ packages.
+Встановіть пакунки _i2c-tools_ та _lm_sensors_.
 
-Configure the bootloader to enable the i2c hardware by appending `/boot/config.txt`:
+Ввімкніть підтримку i2c, додаючи стрічку до `/boot/config.txt`:
 
 ```
  dtparam=i2c_arm=on
 
 ```
 
-Configure the `i2c-dev` and `i2c-bcm2708` (if you did not blacklist it for the camera) modules to be loaded at boot:
+Налаштуйте модулі `i2c-dev` і `i2c-bcm2708` (якщо вони не є в чорному списку для камери), щоб завантажувалися на старті:
 
  `/etc/modules-load.d/raspberrypi.conf` 
 
@@ -382,76 +381,31 @@ i2c-dev
 i2c-bcm2708
 ```
 
-Reboot the Raspberry Pi and issue the following command to get the hardware address:
+Перевантажте Raspberry Pi і запустіть наступну команду для отримання адреси пристрою:
 
 ```
  i2cdetect -y 0
 
 ```
 
-Now we need to tell Linux to instantiate the device. Change the hardware address to the address found in the previous step with '0x' as prefix (e.g. 0x48) and choose a device name:
+Тепер потрібно повідомити Linux про можливість використання пристрою. Замініть адрес пристрою адресою, знайденою в попередньому кроці, додаючи префікс '0x' (наприклад 0x48) і виберіть назву пристрою:
 
 ```
- echo <devicename> <hardware address> >/sys/class/i2c-adapter/i2c-0/new_device
+ echo <назва пристрою> <адреса пристрою> >/sys/class/i2c-adapter/i2c-0/new_device
 
 ```
 
-Check the dmesg command for a new entry:
+Перевірте командою dmesg, чи появився новий пристрій:
 
 ```
  i2c-0: new_device: Instantiated device ds1621 at 0x48
 
 ```
 
-Finally, read the sensor output:
+І, остаточно, отримайте вивід з сенсора:
 
 ```
  sensors
-
-```
-
-## QEMU chroot
-
-Sometimes it is easier to work directly on a disk image instead of the real Raspberry Pi. This can be achieved by mounting an SD card containing the RPi root partition and chrooting into it. From the chroot it should be possible to run _pacman_ and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by [QEMU](/index.php/QEMU "QEMU").
-
-**Note:** As of January 2016, [make](https://www.archlinux.org/packages/?name=make) won't run in QEMU for ARM so it is not possible to build packages this way. Follow the [guide on the Arch Linux ARM website](http://archlinuxarm.org/developers/distcc-cross-compiling) to build a cross-compiler if building ARM packages is needed.
-
-Install [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/)<sup><small>AUR</small></sup> and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
-
-Make sure that the ARM to x86 translation is active:
-
-```
-# update-binfmts --importdir /var/lib/binfmts/ --import
-# update-binfmts --display qemu-arm
-
-```
-
-If ARM to x86 translation is not active, enable it using update-binfmts:
-
-```
-# update-binfmts --enable qemu-arm
-
-```
-
-Mount the SD card to `mnt/` (the device name may be different).
-
-```
-# mkdir mnt
-# mount /dev/mmcblk0p2 mnt
-
-```
-
-Copy the QEMU executable, which will handle the translation from ARM, to the SD card root:
-
-```
-# cp /usr/bin/qemu-arm-static mnt/usr/bin
-
-```
-
-Finally chroot into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"), keeping in mind that `qemu-arm-static` needs to be called in the `chroot` command i.e.:
-
-```
-# chroot /mnt/arch /usr/bin/qemu-arm-static /bin/bash
 
 ```
 
@@ -462,7 +416,7 @@ Finally chroot into the SD card root as described in [Change root#Using chroot](
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415367](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415367)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415641](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415641)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

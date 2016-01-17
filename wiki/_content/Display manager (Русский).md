@@ -44,7 +44,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — расширение для _xinit_, также написанное на Bash.
 
-[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/console-tdm)]</sup>
+[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup>
 
 ### Графические
 
@@ -178,7 +178,7 @@ _Это относится к Entrance и MDM._
 *   уровень громкости в PulseAudio не может быть отрегулирован,
 *   невозможно зайди в GNOME под другим пользователем.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=412798](https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=412798)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=415654](https://wiki.archlinux.org/index.php?title=Display_manager_(Русский)&oldid=415654)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

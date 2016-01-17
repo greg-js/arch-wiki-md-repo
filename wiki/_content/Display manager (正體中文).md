@@ -37,7 +37,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — _xinit_ 的擴充，以純 Bash 撰寫。
 
-[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/console-tdm)]</sup>
+[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup>
 
 ### 圖形介面
 
@@ -156,7 +156,7 @@ Type=XSession
 *   SDDM: [[2]](https://github.com/sddm/sddm/pull/95) (已於 git master 修復)
 *   SLiM: [[3]](https://bugs.archlinux.org/task/34329) [[4]](http://developer.berlios.de/bugs/?func=detailbug&bug_id=19102&group_id=2663)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=412800](https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=412800)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=415655](https://wiki.archlinux.org/index.php?title=Display_manager_(正體中文)&oldid=415655)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -199,7 +199,7 @@ event=button/volumeup
 action=amixer set Master 5+
 ```
 
-**Tip:** Disable the volume buttons in Xorg to prevent conflicts with other applications. See [Xmodmap](/index.php/Xmodmap "Xmodmap") for details.
+**Tip:** Disable or bind the volume buttons in Xorg to prevent conflicts with other applications. See [Xmodmap](/index.php/Xmodmap "Xmodmap") for details.
 
 See also [Fixing volume change in Linux](http://blog.lastlog.de/posts/fixing_volume_change_in_linux/).
 
@@ -292,7 +292,7 @@ Where _handler.sh_ can be a script similar to `/etc/acpi/handler.sh`.
 *   [acpid homepage](http://acpid.sourceforge.net/)
 *   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acpid&oldid=414694](https://wiki.archlinux.org/index.php?title=Acpid&oldid=414694)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acpid&oldid=415466](https://wiki.archlinux.org/index.php?title=Acpid&oldid=415466)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

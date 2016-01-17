@@ -85,9 +85,9 @@ Fcitx 同样支持流行的第三方拼音输入法以提供更好的整句输�
 
 ### 输入法模块
 
-Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5). 多软件包 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 打包了全部，但不包括上游本身独立的 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5).
+Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5). 多软件包 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 打包了全部.(现在已经包括 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5)).
 
-**警告:** 即使未安装输入法模块，一般还是可以在大部分程序中使用输入法，不过很可能出现从无法光标跟随、无法显示预编辑字符串、无法输入甚至程序卡死等情况。如无特殊情况请直接安装 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5).
+**警告:** 即使未安装输入法模块，一般还是可以在大部分程序中使用输入法，不过很可能出现从无法光标跟随、无法显示预编辑字符串、无法输入甚至程序卡死等情况。如无特殊情况请直接安装 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/).
 
 某些程序不使用 Gtk+/Qt 的输入法模块，这些程序包括:
 
@@ -413,7 +413,7 @@ gsettings set \
 *   [rime 朙(ming)月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict/view/general)
 *   [Fcitx not work in terminal, nautilus, gedit](https://bugzilla.gnome.org/show_bug.cgi?id=747825#c6)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=414580](https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=414580)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=415463](https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=415463)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

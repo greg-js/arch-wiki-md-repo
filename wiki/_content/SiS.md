@@ -18,7 +18,7 @@ This page describes how to get [Silicon Integrated Systems (SiS)](http://dri.fre
 
 ## Packages
 
-You will need main [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-sisimedia)]</sup>. You can also check [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-sis671)]</sup> from [AUR](/index.php/AUR "AUR").
+You will need main [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/)<sup><small>AUR</small></sup>. You can also check [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-sis671)]</sup> from [AUR](/index.php/AUR "AUR").
 
 ## lspci
 
@@ -217,8 +217,12 @@ EndSection
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SiS&oldid=397924](https://wiki.archlinux.org/index.php?title=SiS&oldid=397924)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SiS&oldid=415684](https://wiki.archlinux.org/index.php?title=SiS&oldid=415684)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

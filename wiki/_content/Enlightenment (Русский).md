@@ -55,16 +55,16 @@ pacman -S terminology
 
 ### Дополнительные пакеты aur
 
-*   [econcentration-git](https://aur.archlinux.org/packages/econcentration-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/econcentration-git)]</sup> – Карточная игра
+*   [econcentration-git](https://aur.archlinux.org/packages/econcentration-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/econcentration-git)]</sup> – Карточная игра
 *   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/)<sup><small>AUR</small></sup> – Текстовый редактор
 *   [elbow-git](https://aur.archlinux.org/packages/elbow-git/)<sup><small>AUR</small></sup> – Веб браузер
 *   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/)<sup><small>AUR</small></sup> – Браузер фотографий
-*   [emprint-git](https://aur.archlinux.org/packages/emprint-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/emprint-git)]</sup> – Скриншот инструмент
+*   [emprint-git](https://aur.archlinux.org/packages/emprint-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/emprint-git)]</sup> – Скриншот инструмент
 *   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/)<sup><small>AUR</small></sup> – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) Музыкальный проигрыватель
 *   [epad](https://aur.archlinux.org/packages/epad/)<sup><small>AUR</small></sup> – Текстовый редактор
 *   [eperiodique](https://aur.archlinux.org/packages/eperiodique/)<sup><small>AUR</small></sup> – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
 *   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/)<sup><small>AUR</small></sup> – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) Просмотрщик картинок
-*   [epour](https://aur.archlinux.org/packages/epour/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epour)]</sup> and [epour-git](https://aur.archlinux.org/packages/epour-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epour-git)]</sup> – Epour Bittorrent клиент
+*   [epour](https://aur.archlinux.org/packages/epour/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epour)]</sup> and [epour-git](https://aur.archlinux.org/packages/epour-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epour-git)]</sup> – Epour Bittorrent клиент
 *   [epymc-git](https://aur.archlinux.org/packages/epymc-git/)<sup><small>AUR</small></sup> – E Python Media Center
 *   [equate-git](https://aur.archlinux.org/packages/equate-git/)<sup><small>AUR</small></sup> – Equate каркулятор
 *   [eruler-git](https://aur.archlinux.org/packages/eruler-git/)<sup><small>AUR</small></sup> – Eruler on-screen ruler and measurement tools
@@ -72,8 +72,8 @@ pacman -S terminology
 *   [elemines-git](https://aur.archlinux.org/packages/elemines-git/)<sup><small>AUR</small></sup> – [Elemines](http://elemines.sourceforge.net/) minesweeper style game
 *   [espionage-git](https://aur.archlinux.org/packages/espionage-git/)<sup><small>AUR</small></sup> – Espionage D-Bus inspector
 *   [ev-git](https://aur.archlinux.org/packages/ev-git/)<sup><small>AUR</small></sup> – ev simple picture viewer
-*   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e_cho-git)]</sup> – E_Cho simon style game
-*   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e_jeweled-git)]</sup> – E_Jeweled bejeweled style game
+*   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e_cho-git)]</sup> – E_Cho simon style game
+*   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e_jeweled-git)]</sup> – E_Jeweled bejeweled style game
 *   [rage](https://aur.archlinux.org/packages/rage/)<sup><small>AUR</small></sup> and [rage-git](https://aur.archlinux.org/packages/rage-git/)<sup><small>AUR</small></sup> – Rage video player
 
 *   Теперь вы готовы к запуску e17\. Запустить e17 можно разными способами:
@@ -154,7 +154,7 @@ pacman -S ttf-dejavu ttf-bitstream-vera
 *   [Рекомендуемые приложения](http://archux.com/page/application-recommendations)
 *   [Установка и настройка E17](http://archux.com/page/installing-and-setting-e17)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Enlightenment_(Русский)&oldid=414464](https://wiki.archlinux.org/index.php?title=Enlightenment_(Русский)&oldid=414464)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Enlightenment_(Русский)&oldid=415657](https://wiki.archlinux.org/index.php?title=Enlightenment_(Русский)&oldid=415657)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

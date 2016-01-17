@@ -594,7 +594,15 @@ Then replug the device making you trouble. The joystick and event devices should
 
 ### Steam Controller Not Pairing
 
-If the steam controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Under what circumstances do the recommendations under [#Steam Controller](#Steam_Controller) not work? When are these alternatives required? (Discuss in [Talk:Gamepad#](https://wiki.archlinux.org/index.php/Talk:Gamepad))
+
+If the Steam Controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
 
 `/lib/udev/rules.d/99-steam-controller-perms.rules`
 
@@ -621,9 +629,13 @@ And add your user to that group.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415381](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415381)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415429](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415429)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

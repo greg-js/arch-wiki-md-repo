@@ -37,7 +37,7 @@ Related articles
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
-            *   [3.5.1.1 PulseAudio](#PulseAudio)
+            *   [3.5.1.1 Change default sound card in Xfce4 Mixer](#Change_default_sound_card_in_Xfce4_Mixer)
         *   [3.5.2 Keyboard volume buttons](#Keyboard_volume_buttons)
             *   [3.5.2.1 Shortcuts](#Shortcuts)
     *   [3.6 Keyboard Shortcuts](#Keyboard_Shortcuts)
@@ -321,17 +321,17 @@ You might need to change the default sound card for Xfce4 mixer to function corr
 
 If you did need to change the default soundcard, logout to ensure that the changes take effect.
 
-##### PulseAudio
+##### Change default sound card in Xfce4 Mixer
 
-For [PulseAudio](/index.php/PulseAudio "PulseAudio") to function correctly with Xfce4 mixer, you will probably need to change the default sound card in Xfce4 mixer. To do so, open _xfce4-settings-editor_ and navigate to **xfce4-mixer**. Check the entries under **sound-cards** and look for an entry similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Once you have found such an entry, replace the values of **sound-card** and **active-card** with the entry. Then logout for the changes to take effect.
+In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)<sup><small>AUR</small></sup> for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
 
-**Tip:** Package [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/)<sup><small>AUR</small></sup> provides a mixer applet for the panel and has support for the keyboard volume keys. This is especially useful if you can't get XFCE4 mixer to work with pulseaudio properly.
+To change the default sound card, open _xfce4-settings-editor_ and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
 
 #### Keyboard volume buttons
 
-If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)<sup><small>AUR</small></sup> maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. When using [PulseAudio](/index.php/PulseAudio "PulseAudio"), use [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)<sup><small>AUR</small></sup> instead. See also [#Xfce4 mixer and PulseAudio](#Xfce4_mixer_and_PulseAudio).
+If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)<sup><small>AUR</small></sup> maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. When using [PulseAudio](/index.php/PulseAudio "PulseAudio"), use [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)<sup><small>AUR</small></sup> instead.
 
-On some installations, the Xfce4-volumed will not work because the active sound card is not selected. To fix this, open **Xfce4-settings-editor**, navigate to Xfce4-mixer, make sure 'active-card' is set to the correct one, probably the same as 'sound-card'. The volume notification should now work. Notifications for this and all notifications controlled by xfce4-notifyd can be configured with **Xfce4-notifyd-config**.
+If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/)<sup><small>AUR</small></sup>. This provides a panel applet which has support for keyboard volume control and volume notifications.
 
 For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
 
@@ -355,7 +355,7 @@ A third party polkit authentication agent for Xfce is also available, see [xfce-
 
 ### Display blanking
 
-**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[1]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[2]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
+**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[3]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
 
 Some programs that are commonly used with Xfce will control monitor blanking and [DPMS](/index.php/DPMS "DPMS") (monitor powersaving) settings. They are discussed below.
 
@@ -455,7 +455,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ### Colour management
 
-Xfce has no native support for colour management. [[3]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[4]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### Multiple monitors
 
@@ -574,7 +574,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) _0.5.4.1-1_ which causes it to lose keyboard, layout switching and compose key settings. [[4]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable _Use system defaults_ in `xfce4-keyboard-settings`, then reconfigure _xfce4-xkb-plugin_.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) _0.5.4.1-1_ which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable _Use system defaults_ in `xfce4-keyboard-settings`, then reconfigure _xfce4-xkb-plugin_.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -655,7 +655,7 @@ Note that each time the laptop lid settings are changed in the power manager, th
 *   [Xfce Wikia](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) - How to edit the auto generated menu with the menu editor
 *   [Xfce Wiki](http://wiki.xfce.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=415369](https://wiki.archlinux.org/index.php?title=Xfce&oldid=415369)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=415455](https://wiki.archlinux.org/index.php?title=Xfce&oldid=415455)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

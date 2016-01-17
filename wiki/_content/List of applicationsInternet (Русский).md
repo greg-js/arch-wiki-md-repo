@@ -190,7 +190,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **Maxthon** — Браузер, сочетающий в себе минималистичный дизайн с современными технологиями, чтобы сделать интернет для вас быстрее, безопаснее и легче
 
-[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)<sup><small>AUR</small></sup><sup>[[ссылка недействительна](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): сохранено в [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/maxthon-browser)]</sup>
+[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)<sup><small>AUR</small></sup>
 
 *   **[Midori](https://en.wikipedia.org/wiki/ru:Midori_(%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80) "wikipedia:ru:Midori (браузер)")** — Легковесный веб-браузер, основанный на GTK+ и WebKit
 
@@ -206,7 +206,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — Управляемый с клавиатуры браузер в стиле [vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)"), написанный на PyQt5 и QtWebKit
 
-[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://aur.archlinux.org/packages/qutebrowser/)<sup><small>AUR</small></sup>
+[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/ru:Rekonq "wikipedia:ru:Rekonq")** — Основанный на WebKit браузер для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
@@ -1138,7 +1138,7 @@ eDonkey по-прежнему является второй по величин�
 
 [https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=413933](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=413933)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=415662](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=415662)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

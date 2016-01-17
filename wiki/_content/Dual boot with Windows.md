@@ -173,63 +173,20 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 ### UEFI systems
 
-If you already have Windows installed, it will already have created some partitions
+If you already have Windows installed, it will already have created some partitions (on a [GPT](/index.php/GPT "GPT")-formatted disk):
 
-<table class="wikitable">
+*   a partition of type `ef00 EFI System` and filesystem {{ic|FAT32},
+*   a partition of type `0c01 Microsoft reserved`, generally of size `128 MiB`,
+*   a partition of type `0700 Microsoft basic data` and of filesystem {{ic|NTFS}, which corresponds to `C:\`,
+*   potentially system recovery and backup partitions and/or secondary data partitions (corresponding often to `D:\` and above).
 
-<tbody>
+Using the Disk Management utility in Windows, check how the partitions are labelled and which type gets reported. This will help you understand which partitions are essential to Windows, and which others you might repurpose: the first 3 bullets in the above list are essential, do not delete them.
 
-<tr>
+You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI System Partition, since it already exists (see above): when required, [mount](/index.php/Mount "Mount") this to `/boot`, install your [bootloader](/index.php/Bootloader "Bootloader") to it and save the entry in `/etc/[fstab](/index.php/Fstab "Fstab")`.
 
-<th style="text-align: center; font-weight: bold;">Size</th>
+Concerning bootloaders, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [rEFInd](/index.php/REFInd "REFInd") autodetect _Windows Boot Manager_ (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (as of version 6.02 and 6.03-pre9) and ELILO do not support chainloading other EFI applications, so they cannot be used to boot `\EFI\Microsoft\Boot\bootmgfw.efi`.
 
-<th style="text-align: center; font-weight: bold;">FS</th>
-
-</tr>
-
-<tr>
-
-<td>315MB</td>
-
-<td style="text-align: center;">ntfs</td>
-
-</tr>
-
-<tr>
-
-<td>105MB</td>
-
-<td style="text-align: center;">fat32</td>
-
-</tr>
-
-<tr>
-
-<td>134MB</td>
-
-</tr>
-
-<tr>
-
-<td>C:\</td>
-
-<td style="text-align: center;">ntfs</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-You only create one obligatory partition for your Arch installation, and optionally /home and /swap. You do not create /boot. The /boot EFI partition is already created by Windows. It's the fat32 partition in the table above. So before chroot-ing into your Arch installation, you also have to mount that fat32 partition to /boot.
-
-Then both [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [rEFInd](/index.php/REFInd "REFInd") autodetect **Windows Boot Manager** `\EFI\Microsoft\Boot\bootmgfw.efi` and show it in their boot menu, so there is no manual config required.
-
-For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB").
-
-Syslinux (as of version 6.02 and 6.03-pre9) and ELILO do not support chainloading other EFI applications, so they cannot be used to chainload `\EFI\Microsoft\Boot\bootmgfw.efi` .
-
-Computers that come with newer versions of Windows often have [secure boot](/index.php/UEFI#Secure_Boot "UEFI") enabled. You will need to take extra steps to either disable secure boot or to make your installation media compatible with secure boot.
+Computers that come with newer versions of Windows often have [secure boot](/index.php/UEFI#Secure_Boot "UEFI") enabled. You will need to take extra steps to either disable secure boot or to make your installation media compatible with secure boot (see above and in the linked page).
 
 ### Troubleshooting
 
@@ -247,9 +204,13 @@ The usb-stick for installing Windows 8.1 seems to need a MBR partition table (no
 
 *   [Booting Windows from a desktop shortcut](https://bbs.archlinux.org/viewtopic.php?id=140049)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&oldid=411288](https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&oldid=411288)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&oldid=415619](https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&oldid=415619)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

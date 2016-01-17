@@ -129,8 +129,8 @@ _**Note:** In some cases, especially for community packages, an x86_64 TU might 
 *   **[Namcap](/index.php/Namcap "Namcap")** the PKGBUILD and the binary `pkg.tar.gz`.
 *   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
     *   **Commit** the changes to trunk: `svn commit`.
-    *   **Sign** the packages: `gpg --detach-sign *.pkg.tar.xz`.
-    *   **Copy** the package to _nymeria.archlinux.org_: `scp *.pkg.tar.xz nymeria.archlinux.org:staging/community/`.
+    *   **Sign** the package: `gpg --detach-sign *.pkg.tar.xz`.
+    *   **Copy** the package and its signature to _nymeria.archlinux.org_: `scp *.pkg.tar.xz *.pkg.tar.xz.sig nymeria.archlinux.org:staging/community/`.
     *   **Tag** the package: `archrelease community-{i686,x86_64`}.
 *   **Update** the repository: `ssh nymeria.archlinux.org /community/db-update`.
 
@@ -165,8 +165,12 @@ There is no point in removing dummy packages, because they will be re-created in
 
 *   [DeveloperWiki#Packaging Guidelines](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=414418](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=414418)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=415573](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&oldid=415573)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

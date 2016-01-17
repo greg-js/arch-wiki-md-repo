@@ -75,7 +75,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## التجهيز
 
-**ملاحظة:** إذا كنت ترغب في التثبيت عبر توزيعة جنو/لينكس ، من فضلك انظر[هذا المقال](/index.php/Install_from_Existing_Linux "Install from Existing Linux") . وذلك قد يكون مفيدا إن كنت تخطط لتثبيت توزيعة Arch Linux عن طريق [VNC](/index.php/VNC "VNC") أو [SSH](/index.php/SSH "SSH") عن بعد.
+يفترض أن يعمل Arch linux على أي معالج بمعمارية [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") مع 256MB ذاكرة RAM كحد أدنى. التثبيت الأساسي مع كل الحزم من المجموعة [base](https://www.archlinux.org/groups/x86_64/base/) سيأخذ أقل من 800MB من مساحة القرص.
+
+ألقي نظرة على [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") لمعلومات عن تنزيل وسيط التثبيت, وطرق إقلاعها على الجهاز المطلوب. هذا الدليل يفترض أنك تستخدم آخر إصدار.
 
 ### حرق أحدث صورة لإسطوانة التثبيت
 
@@ -1457,9 +1459,13 @@ Instead of starting X manually with `startx` from [xorg-xinit](https://www.archl
 
 انظر [General recommendations](/index.php/General_recommendations "General recommendations") للدروس التعليمية عما بعد التثبيت مثل إعداد لوحة اللمس touchpad أو تصيير الخطوط.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(العربية)&oldid=411539](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(العربية)&oldid=411539)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(العربية)&oldid=415752](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(العربية)&oldid=415752)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية")
 *   [Getting and installing Arch (العربية)](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

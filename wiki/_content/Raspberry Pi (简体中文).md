@@ -338,7 +338,7 @@ To be able to use the GPIO pins from Python, you can use the [RPi.GPIO](https://
 *   [RPi vcgencmd usage](http://elinux.org/RPI_vcgencmd_usage) - Overview of firmware command vcgencmd.
 *   [Archlinux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Archlinux on the rpi
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(简体中文)&oldid=415144](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(简体中文)&oldid=415144)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(简体中文)&oldid=415642](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(简体中文)&oldid=415642)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

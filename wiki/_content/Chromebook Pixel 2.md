@@ -91,7 +91,7 @@ For audio, see [[3]](https://github.com/tsowell/linux-samus).
 
 ## Backlight control
 
-The screen backlight can be controlled via <tt>/sys/class/backlight/intel_backlight/</tt>; see the [brightness](https://raw.githubusercontent.com/raphael/linux-samus/master/build/brightness) script from [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup>.
+The screen backlight can be controlled via <tt>/sys/class/backlight/intel_backlight/</tt>; see the [brightness](https://raw.githubusercontent.com/raphael/linux-samus/master/build/brightness) script from [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>.
 
 The keyboard backlight can be controlled via <tt>/sys/class/leds/chromeos::kbd_backlight/</tt>; see the [keyboard-brightness.sh](https://gist.githubusercontent.com/strayArch/5c862648f261122d9e4e/raw/d0b800f13b8d792445f32e0317efd57e7f4439a1/keyboard-brightness.sh) script.
 
@@ -120,8 +120,12 @@ Once the device is open, find the red-pink screw with a golden washer, located b
 
 [Chromium OS device page](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel-2015)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=412341](https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=412341)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=415749](https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=415749)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Laptops](/index.php/Category:Laptops "Category:Laptops")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

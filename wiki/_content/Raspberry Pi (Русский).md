@@ -36,7 +36,7 @@ $ pacman -S wayland
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Русский)&oldid=415143](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Русский)&oldid=415143)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Русский)&oldid=415640](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Русский)&oldid=415640)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -48,7 +48,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
     *   [4.2 No cards](#No_cards)
     *   [4.3 Starting an application interrupts other app's sound](#Starting_an_application_interrupts_other_app.27s_sound)
-    *   [4.4 The only device shown is "dummy output" or newly connected cards aren't detected](#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_aren.27t_detected)
+    *   [4.4 The only device shown is "dummy output" or newly connected cards are not detected](#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected)
     *   [4.5 No HDMI 5/7.1 Selection for Device](#No_HDMI_5.2F7.1_Selection_for_Device)
     *   [4.6 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended)
     *   [4.7 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_.2F_devices)
@@ -65,7 +65,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [6.3 Audacity](#Audacity)
 *   [7 Other Issues](#Other_Issues)
     *   [7.1 Bad configuration files](#Bad_configuration_files)
-    *   [7.2 Can't update configuration of sound device in pavucontrol](#Can.27t_update_configuration_of_sound_device_in_pavucontrol)
+    *   [7.2 Cannot update configuration of sound device in pavucontrol](#Cannot_update_configuration_of_sound_device_in_pavucontrol)
     *   [7.3 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended_2)
     *   [7.4 Pulse overwrites ALSA settings](#Pulse_overwrites_ALSA_settings)
     *   [7.5 Prevent Pulse from restarting after being killed](#Prevent_Pulse_from_restarting_after_being_killed)
@@ -227,7 +227,7 @@ $ /usr/bin/pasuspender /bin/true
 
 ```
 
-This is better than completely killing and restarting it (`pulseaudio -k` followed by `pulseaudio --start`), because it doesn't break already running applications.
+This is better than completely killing and restarting it (`pulseaudio -k` followed by `pulseaudio --start`), because it does not break already running applications.
 
 If the above fixes your problem, you may wish to automate it, by creating a systemd service file.
 
@@ -458,7 +458,7 @@ load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo
 
 ```
 
-**Note:** Pulseaudio may fail to start if you don't exit a program that was using the microphone (e.g. if you tested on Steam before modifying the file), in which case you should exit the application and manually start Pulseaudio
+**Note:** Pulseaudio may fail to start if you do not exit a program that was using the microphone (e.g. if you tested on Steam before modifying the file), in which case you should exit the application and manually start Pulseaudio
 
 ```
 # pulseaudio --start
@@ -469,7 +469,7 @@ load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo
 
 ### Enable Echo/Noise-Cancelation
 
-Arch doesn't load the Pulseaudio Echo-Cancelation module by default, therefore, we have to add it in `/etc/pulse/default.pa`. First you can test if the module is present with `pacmd` and entering `list-modules`. If you can't find a line showing `name: <module-echo-cancel>` you have to add
+Arch does not load the Pulseaudio Echo-Cancelation module by default, therefore, we have to add it in `/etc/pulse/default.pa`. First you can test if the module is present with `pacmd` and entering `list-modules`. If you cannot find a line showing `name: <module-echo-cancel>` you have to add
 
  `/etc/pulse/default.pa` 
 
@@ -529,6 +529,14 @@ Please report any such cards to [PulseAudio Broken Sound Driver page](http://www
 
 #### Finding out your audio device parameters (1/4)
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Is there really no other way to get the hardware parameters? Some file in `/dev` or `/sys` or using ALSA? (Discuss in [Talk:PulseAudio/Troubleshooting#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Troubleshooting))
+
 To find out what your sound card buffering settings are:
 
 ```
@@ -538,6 +546,8 @@ $ LANG=C timeout --foreground -k 10 -s kill 10 pulseaudio -vvvv 2>&1 | grep devi
 $ sed -i '$d' ~/.config/pulse/client.conf
 
 ```
+
+**Note:** Pulseaudio may continue to automatically autospawn even with the setting above in place, because pulseaudio version 7 now uses socket activation through systemd. You can prevent that with $ systemctl --user mask pulseaudio.socket. For more information, see [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 
 For each sound card detected by PulseAudio, you will see an output similar to:
 
@@ -563,9 +573,9 @@ Take note the buffer_size and fragment_size values for the relevant sound card.
 
 PulseAudio's default sampling rate and bit depth are set to `44100Hz` @ `16 bits`.
 
-With this configuration, the bit rate we need is `44100`*`16` = `705600` bits per second. That's `1411200 bps` for stereo.
+With this configuration, the bit rate we need is `44100`*`16` = `705600` bits per second. That is `1411200 bps` for stereo.
 
-Let's take a look at the parameters we have found in the previous step:
+Let us take a look at the parameters we have found in the previous step:
 
 ```
 device.buffering.buffer_size = "768000" => 768000/1411200 = 0.544217687075s = 544 msecs
@@ -657,7 +667,7 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 ```
 
-This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that doesn't work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
+This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
 ### No cards
 
@@ -691,7 +701,7 @@ pulseaudio --start
 
 ```
 
-### The only device shown is "dummy output" or newly connected cards aren't detected
+### The only device shown is "dummy output" or newly connected cards are not detected
 
 This may be caused by settings in `~/.asoundrc` overriding the system wide settings in `/etc/asound.conf`. This can be prevented by commenting out the last line of `~/.asoundrc` like so:
 
@@ -720,7 +730,7 @@ Maybe some program is monopolizing the audio device:
 
 That means timidity blocks PulseAudio from accessing the audio devices. Just killing timidity will make the sound work again.
 
-If it doesn't help or you see nothing in the output, deleting the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package and restarting your system will help to get rid of the "dummy output".
+If it does not help or you see nothing in the output, deleting the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package and restarting your system will help to get rid of the "dummy output".
 
 Another reason is [FluidSynth](/index.php/FluidSynth "FluidSynth") conflicting with PulseAudio as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=154002). One solution is to remove the package [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 
@@ -754,7 +764,7 @@ Simultaneous output to two different devices can be very useful. For example, be
 
 Using [paprefs](https://www.archlinux.org/packages/?name=paprefs), simply select "Add virtual output device for simultaneous output on all local sound cards" from under the "Simultaneous Output" tab. Then, under GNOME's "sound settings", select the simultaneous output you have just created.
 
-If this doesn't work, try adding the following to `~/.asoundrc`:
+If this does not work, try adding the following to `~/.asoundrc`:
 
 ```
 pcm.dsp {
@@ -770,7 +780,7 @@ pcm.dsp {
 
 This can be useful for users who have multiple sound sources and want to play them on different sinks/outputs. An example use-case for this would be if you play music and also voice chat and want to output music to speakers (in this case Digital S/PDIF) and voice to headphones. (Analog)
 
-This is sometimes auto detected by PulseAudio but not always. If you know that your sound card can output to both Analog and S/PDIF at the same time and PulseAudio does not have this option in it's profiles in pavucontrol, or veromix then you probably need to create a configuration file for your sound card.
+This is sometimes auto detected by PulseAudio but not always. If you know that your sound card can output to both Analog and S/PDIF at the same time and PulseAudio does not have this option in its profiles in pavucontrol, or veromix then you probably need to create a configuration file for your sound card.
 
 More in detail you need to create a profile-set for your specific sound card. This is done in two steps mostly.
 
@@ -964,7 +974,7 @@ See also [#Setting the default fragment number and buffer size in PulseAudio](#S
 
 After starting PulseAudio, if the system outputs no sound, it may be necessary to delete the contents of `~/.config/pulse` and/or `~/.pulse`. PulseAudio will automatically create new configuration files on its next start.
 
-### Can't update configuration of sound device in pavucontrol
+### Cannot update configuration of sound device in pavucontrol
 
 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) is a handy GUI utility for configuring PulseAudio. Under its 'Configuration' tab, you can select different profiles for each of your sound devices e.g. analogue stereo, digital output (IEC958), HDMI 5.1 Surround etc.
 
@@ -1102,7 +1112,7 @@ enable-lfe-remixing = yes
 
 ### Unable to select surround configuration other than "Surround 4.0"
 
-If you're unable to set 5.1 surround output in pavucontrol because it only shows "Analog Surround 4.0 Output", open the ALSA mixer and change the output configuration there to 6 channels. Then restart pulseaudio, and pavucontrol will list many more options.
+If you are unable to set 5.1 surround output in pavucontrol because it only shows "Analog Surround 4.0 Output", open the ALSA mixer and change the output configuration there to 6 channels. Then restart pulseaudio, and pavucontrol will list many more options.
 
 ### Realtime scheduling
 
@@ -1144,8 +1154,13 @@ load-module module-stream-restore restore_device=false
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=411367](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=411367)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=415576](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=415576)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

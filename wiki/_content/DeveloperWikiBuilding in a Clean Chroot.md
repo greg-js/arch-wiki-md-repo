@@ -27,9 +27,11 @@ Building in a clean chroot prevents missing dependencies in packages, whether du
 
 ## Convenience Way
 
-To quickly build a package in a chroot without any further tinkering, one can use the helper scripts from the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
+To quickly build a package in a clean chroot without any further tinkering, one can use the helper scripts from the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
 
-These helper scripts should be called in the same directory where the PKGBUILD is, just like with makepkg. For instance, `extra-i686-build` automatically sets up a chroot in `/var/lib/archbuild`, updates it, and builds a package for the extra repository. For multilib builds there is just `multilib-build` without an architecture. Consult the table below for information on which script to use when building for a specific repository and architecture.
+These helper scripts should be called in the same directory where the PKGBUILD is, just like with makepkg. For instance, `extra-i686-build` automatically sets up a chroot from a clean chroot matrix in `/var/lib/archbuild`, updates it, and builds a package for the extra repository. For multilib builds there is just `multilib-build` without an architecture. Consult the table below for information on which script to use when building for a specific repository and architecture.
+
+The `-c` parameter resets the chroot matrix, which can be useful in case of breakage. It is not needed for building in a clean chroot.
 
 **Note:** [core] is omitted because those packages are required to go through [testing] first before landing in [core].
 
@@ -279,7 +281,7 @@ And build all following packages using:
 
 Running namcap (the -n argument) implies installing the package in the chroot. *-build also does this by default.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Building_in_a_Clean_Chroot&oldid=414613](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Building_in_a_Clean_Chroot&oldid=414613)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Building_in_a_Clean_Chroot&oldid=415572](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Building_in_a_Clean_Chroot&oldid=415572)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

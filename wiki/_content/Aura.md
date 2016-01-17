@@ -30,7 +30,7 @@ The easiest way to install aura without having to worry about Haskell dependenci
 
 ### Source Package
 
-The [aura](https://aur.archlinux.org/packages/aura/)<sup><small>AUR</small></sup> source package requires Haskell packages which may be not available in the [official repositories](/index.php/Official_repositories "Official repositories") or [AUR](/index.php/AUR "AUR"). All of Aura's dependencies are however available in the _haskell-core_ repository. See [ArchHaskell#.5Bhaskell-core.5D](/index.php/ArchHaskell#.5Bhaskell-core.5D "ArchHaskell") on how to add _haskell-core_ as a repository.
+The [aura](https://aur.archlinux.org/packages/aura/)<sup><small>AUR</small></sup> source package requires Haskell packages which may be not available in the [official repositories](/index.php/Official_repositories "Official repositories") or [AUR](/index.php/AUR "AUR"). All of Aura's dependencies are however available in the _haskell-core_ repository. See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") on how to add _haskell-core_ as a repository.
 
 ## Troubleshooting
 
@@ -85,7 +85,7 @@ Either add this function to your corresponding rc/profile or as a stand-alone sc
 *   [Aura's github page](https://github.com/fosskers/aura)
 *   [Aura's ArchLinux forum post](https://bbs.archlinux.org/viewtopic.php?id=155778)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Aura&oldid=409376](https://wiki.archlinux.org/index.php?title=Aura&oldid=409376)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Aura&oldid=415585](https://wiki.archlinux.org/index.php?title=Aura&oldid=415585)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

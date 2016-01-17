@@ -749,7 +749,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
 
-[http://github.com/andreafrancia/trash-cli](http://github.com/andreafrancia/trash-cli) || [trash-cli](https://aur.archlinux.org/packages/trash-cli/)<sup><small>AUR</small></sup>
+[http://github.com/andreafrancia/trash-cli](http://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
 
 ### File synchronization
 
@@ -787,9 +787,14 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 [https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities_(简体中文)&oldid=412823](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities_(简体中文)&oldid=412823)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities_(简体中文)&oldid=415665](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities_(简体中文)&oldid=415665)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
 *   [Applications (简体中文)](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

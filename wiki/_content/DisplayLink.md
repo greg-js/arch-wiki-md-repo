@@ -178,7 +178,7 @@ If once you set up your DisplayLink your entire desktop becomes slow, try settin
 *   [Ubuntu Driver Download](http://www.displaylink.com/downloads/ubuntu.php): DisplayLink Ubuntu Driver Download and Information
 *   [Release Notes](http://downloads.displaylink.com/releasenotes/DisplayLink_Ubuntu_1.0.68_release-note.txt): Latest release notes for DisplayLink Ubuntu Software
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DisplayLink&oldid=391719](https://wiki.archlinux.org/index.php?title=DisplayLink&oldid=391719)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DisplayLink&oldid=415471](https://wiki.archlinux.org/index.php?title=DisplayLink&oldid=415471)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

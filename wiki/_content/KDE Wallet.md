@@ -163,10 +163,10 @@ $ ~/.config/autostart-scripts/ssh-add.sh
 
 ```
 
-You may also have to source the script that sets the `SSH_ASKPASS` environment variable:
+You also have to set the `SSH_ASKPASS` environment variable in your /etc/profile or ~/.bash_profile:
 
 ```
-$ eval $(. /etc/profile.d/ksshaskpass.sh)
+export SSH_ASKPASS="/usr/bin/ksshaskpass"
 
 ```
 
@@ -193,8 +193,13 @@ Chromium has built in wallet integration. To enable it, run Chromium with the `-
 
 *   [Unlocking KWallet with PAM](https://www.dennogumi.org/2014/04/unlocking-kwallet-with-pam/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=414325](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=414325)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=415459](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=415459)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [KDE](/index.php/Category:KDE "Category:KDE")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

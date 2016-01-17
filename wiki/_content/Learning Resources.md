@@ -104,7 +104,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### [LaTeX](http://www.latex-project.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Learning_Resources&oldid=279560](https://wiki.archlinux.org/index.php?title=Learning_Resources&oldid=279560)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Learning_Resources&oldid=415469](https://wiki.archlinux.org/index.php?title=Learning_Resources&oldid=415469)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -43,6 +43,8 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
+*   [16 January 2016] [ASA-201601-11](https://lists.archlinux.org/pipermail/arch-security/2016-January/000516.html) [go](https://www.archlinux.org/packages/?name=go) information leakage
+
 ### January 2016
 
 *   [14 January 2016] [ASA-201601-10](https://lists.archlinux.org/pipermail/arch-security/2016-January/000515.html) [php](https://www.archlinux.org/packages/?name=php) multiple issues
@@ -534,7 +536,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415405](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415405)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415732](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415732)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

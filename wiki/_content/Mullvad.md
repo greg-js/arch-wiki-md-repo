@@ -4,43 +4,18 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-## Using Mullvad as plain OpenVPN
+Mullvad is a VPN service based in Sweden which operates [OpenVPN](/index.php/OpenVPN "OpenVPN") and PPTP servers. This article explains how to set up an OpenVPN connection to Mullvad.
 
-To use the VPN service Mullvad on Arch Linux a few small adjustments need to be done. First, install [OpenVPN](/index.php/OpenVPN "OpenVPN") and resolvconf. Download the plain [OpenVPN](/index.php/OpenVPN "OpenVPN") version of Mullvad ["here"](http://mullvad.net/en/openvpn_conf.php). Next, copy the content of the zip file to /etc/openvpn. Move mullvad_linux.conf into mullvad.conf `sudo mv /etc/openvpn/mullvad_linux.conf /etc/openvpn/mullvad.conf` then open it and change the end of the file from
+## Configuring OpenVPN
 
- `mullvad.conf` 
+Mullvad supply their own client but it can also be used with a manual configuration of Openvpn. Install [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [openresolv](https://www.archlinux.org/packages/?name=openresolv). Download the Mullvad OpenVPN configuration files from [Mullvad](http://mullvad.net/en/openvpn_conf.php) and unzip into /etc/openvpn. Rename mullvad_linux.conf:
 
 ```
-ping 10
-
-ca ca.crt
-cert mullvad.crt
-key mullvad.key
-
-crl-verify crl.pem
+$ sudo mv /etc/openvpn/mullvad_linux.conf /etc/openvpn/mullvad.conf
 
 ```
 
-to
-
- `mullvad.conf` 
-
-```
-ping 10
-
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/mullvad.crt
-key /etc/openvpn/mullvad.key
-
-crl-verify /etc/openvpn/crl.pem
-
-```
-
-and make it executable by running `sudo chmod +x /etc/openvpn/mullvad.conf`.
-
-If `lsmod | grep tun` returns a blank line, the tun module isn't getting loaded by default and you'll need to load it manually and tell the system to load it during startup by running `sudo modprobe tun` and `sudo echo "tun" > /etc/modules-load.d/tun.conf`
-
-then create
+In order to use the nameservers supplied by the VPN, a script needs to be called when starting and stopping OpenVPN to update resolvconf with the correct servers.
 
  `/etc/openvpn/update-resolv-conf` 
 
@@ -55,101 +30,76 @@ then create
 # Used snippets of resolvconf script by Thomas Hood <jdthood@yahoo.co.uk>
 # and Chris Hanson
 # Licensed under the GNU GPL.  See /usr/share/common-licenses/GPL.
-#
+# 07/2013 colin@daedrum.net Fixed intet name
 # 05/2006 chlauber@bnc.ch
 #
 # Example envs set from openvpn:
 # foreign_option_1='dhcp-option DNS 193.43.27.132'
 # foreign_option_2='dhcp-option DNS 193.43.27.133'
 # foreign_option_3='dhcp-option DOMAIN be.bnc.ch'
+# foreign_option_4='dhcp-option DOMAIN-SEARCH bnc.local'
 
-[ -x /usr/sbin/resolvconf ] || exit 0
+RESOLVCONF=/usr/bin/resolvconf
 
 case $script_type in
 
 up)
-   for optionname in ${!foreign_option_*} ; do
-      option="${!optionname}"
-      echo $option
-      part1=$(echo "$option" | cut -d " " -f 1)
-      if [ "$part1" == "dhcp-option" ] ; then
-         part2=$(echo "$option" | cut -d " " -f 2)
-         part3=$(echo "$option" | cut -d " " -f 3)
-         if [ "$part2" == "DNS" ] ; then
-            IF_DNS_NAMESERVERS="$IF_DNS_NAMESERVERS $part3"
-         fi
-         if [ "$part2" == "DOMAIN" ] ; then
-            IF_DNS_SEARCH="$part3"
-         fi
+  for optionname in ${!foreign_option_*} ; do
+    option="${!optionname}"
+    echo $option
+    part1=$(echo "$option" | cut -d " " -f 1)
+    if [ "$part1" == "dhcp-option" ] ; then
+      part2=$(echo "$option" | cut -d " " -f 2)
+      part3=$(echo "$option" | cut -d " " -f 3)
+      if [ "$part2" == "DNS" ] ; then
+        IF_DNS_NAMESERVERS="$IF_DNS_NAMESERVERS $part3"
       fi
-   done
-   R=""
-   if [ "$IF_DNS_SEARCH" ] ; then
-           R="${R}search $IF_DNS_SEARCH
+      if [[ "$part2" == "DOMAIN" || "$part2" == "DOMAIN-SEARCH" ]] ; then
+        IF_DNS_SEARCH="$IF_DNS_SEARCH $part3"
+      fi
+    fi
+  done
+  R=""
+  if [ "$IF_DNS_SEARCH" ]; then
+    R="search "
+    for DS in $IF_DNS_SEARCH ; do
+      R="${R} $DS"
+    done
+  R="${R}
 "
-   fi
-   for NS in $IF_DNS_NAMESERVERS ; do
-           R="${R}nameserver $NS
+  fi
+
+  for NS in $IF_DNS_NAMESERVERS ; do
+    R="${R}nameserver $NS
 "
-   done
-   echo -n "$R" | /usr/sbin/resolvconf -a "${dev}.inet"
-   ;;
+  done
+  #echo -n "$R" | $RESOLVCONF -x -p -a "${dev}"
+  echo -n "$R" | $RESOLVCONF -x -a "${dev}.inet"
+  ;;
 down)
-   /usr/sbin/resolvconf -d "${dev}.inet"
-   ;;
+  $RESOLVCONF -d "${dev}.inet"
+  ;;
 esac
 
 ```
 
-and don't forget to make it executable by running `sudo chmod +x /etc/openvpn/update-resolv-conf`
-
-Now create the launch script:
-
- `/usr/local/bin/mullvad` 
+Make it executable:
 
 ```
-#!/usr/bin/env bash
-
-if [ ! "$UID" = 0 ]; then
-    if [ `type -P gksu` ]; then
-        SUDOAPP="gksu"
-    elif [ `type -P kdesu` ]; then
-        SUDOAPP="kdesu"
-    else
-        SUDOAPP="sudo"
-    fi
-fi
-
-if [ -n "$1" ]; then
-    if [ "$1" = "start" ]; then
-        $SUDOAPP systemctl start openvpn@mullvad
-    elif [ "$1" = "stop" ]; then
-        $SUDOAPP systemctl stop openvpn@mullvad
-    elif [ "$1" = "restart" ]; then
-        $SUDOAPP systemctl restart openvpn@mullvad
-    else
-        echo "Invalid command"
-        exit 1
-    fi
-else
-    echo "Run 'start', 'stop' or 'restart' as an argument to start, stop or restart the Mullvad VPN"
-    exit 1
-fi
+$ sudo chmod +x /etc/openvpn/update-resolv-conf
 
 ```
 
-Then make the launch script executable by running `sudo chmod a+x /usr/local/bin/mullvad`
+The vpn can then be controlled through openvpn@mullvad.service:
 
-You can then start Mullvad in the terminal by running `mullvad start`. Stop it with `mullvad stop`, and restart with `mullvad restart`.
+```
+$ sudo systemctl start openvpn@mullvad.service
+$ sudo systemctl enable openvpn@mullvad.service
 
-To create a menu item we need the logo run: `wget https://mullvad.net/static/images/mullvad-circle.svg -O ~/.local/share/icons/mullvad.svg`
+```
 
-Then create the .desktop file by running `echo -e "[Desktop Entry]\nType=Application\nName=Mullvad\nComment=Start Mullvad VPN service\nIcon=mullvad\nExec=mullvad start\nCategories=Network" > ~/.local/share/applications/mullvad.desktop`
+## Mullvad Client
 
-If `mullvad start` is successful from the command line, the desktop file should appear in your menu and start the service the same way by selecting it.
+Mullvad also supply their own graphical client [mullvad](https://aur.archlinux.org/packages/mullvad/)<sup><small>AUR</small></sup>, [link](https://mullvad.net/en/download/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mullvad&oldid=358935](https://wiki.archlinux.org/index.php?title=Mullvad&oldid=358935)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415776](https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415776)"

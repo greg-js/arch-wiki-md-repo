@@ -41,6 +41,7 @@ Related articles
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
     *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
+    *   [7.3 PHP Warning: PHP Startup: _<module>_: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -97,7 +98,7 @@ extension=gd.so
 
 ### imagemagick
 
-For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) run `# pecl install imagick`. The _pecl_ binary is included in the [php-pear](https://www.archlinux.org/packages/?name=php-pear) package. Then add
+For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) run `# pecl install imagick`. The _pecl_ binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/)<sup><small>AUR</small></sup> package. Then add
 
 ```
 extension=imagick.so
@@ -239,11 +240,21 @@ Ensure the zip extension is enabled.
 
 If your `php.ini` is not parsed, the ini file is named after the sapi it is using. For instance, if you are using uwsgi, the file would be called `/etc/php/php-uwsgi.ini`. If you are using cli, it is `/etc/php/php-cli.ini`.
 
+### PHP Warning: PHP Startup: _<module>_: Unable to initialize module
+
+When running `php`, this error indicates that the aforementioned module is out of date. This will rarely happen in Arch Linux, since maintainers make sure core PHP and all modules be only available in compatible versions.
+
+This might happen in conjunction with a module compiled from the [AUR](/index.php/AUR "AUR"). You usually could confirm this by looking at the dates of the files `/usr/lib/php/modules/`.
+
+To fix, find a compatible update for your module, probably by looking up the [AUR](/index.php/AUR "AUR") using its common name.
+
+If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdated_.
+
 ## See also
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=414552](https://wiki.archlinux.org/index.php?title=PHP&oldid=414552)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=415676](https://wiki.archlinux.org/index.php?title=PHP&oldid=415676)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Time](/index.php/Time "Time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=Time&diff=0&oldid=392732)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Time](/index.php/Time "Time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-15，点击[这里](https://wiki.archlinux.org/index.php?title=Time&diff=0&oldid=392732)可以查看翻译后英文页面的改动。
 
 一个操作系统通过如下内容确定时间：时间数值、时间标准、时区和夏令时调节(中国已经废止)。本文分别介绍各个部分的定义及如何设置他们。要维护准确的系统时间，请参考 [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)") 一文。
 
@@ -211,13 +211,13 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 
 ## 时间同步
 
-The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. The following are implementations of such protocol:
+[网络时间协议](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) 是一个通过包交换和可变延迟网络来同步计算机系统时间的协议。下列为这个协议的实现：
 
-*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") is the [reference implementation](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation") of the protocol, especially recommended to be used on time servers. It can also adjust the interrupt frequency and the number of ticks per second to decrease system clock drift, and will cause the hardware clock to be re-synchronised every 11 minutes.
-*   **sntp** is an [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") client that comes with the [ntp](https://www.archlinux.org/packages/?name=ntp) package. It supersedes _ntpdate_ and is recommended in non-server environments.
-*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") is a simple [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") daemon that only implements a client side, focusing only on querying time from one remote server. It should be more than appropriate for most installations.
-*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") is part of the OpenBSD project and implements both a client and a server.
-*   [Chrony](/index.php/Chrony "Chrony") is a client and server that is roaming friendly and designed specifically for systems that are not online all the time.
+*   [NTP 守护进程](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")是这个协议的[参考实现](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation")，推荐用于时间服务器。它也可以调节中断频率和每秒滴答次数以减少系统时钟误差，使得硬件时钟每隔11秒重新同步一次。
+*   **sntp** 是 [ntp](https://www.archlinux.org/packages/?name=ntp) 包里附带的一个 [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") 客户端。它取代了 _ntpdate_ ，并被推荐用于非服务器环境。
+*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 是一个简单的 [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") 守护进程。它只实现了客户端，专用于从远程服务器查询时间，更适用于绝大部分安装的情形。
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") 是 OpenBSD 项目的一部分，同时实现了客户端和服务器。
+*   [Chrony](/index.php/Chrony "Chrony") 是一个客户端和服务器，更适合漫游，是为不能始终保持在线的系统而特别设计。
 
 ## Per-user/会话或临时设置
 
@@ -266,7 +266,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 *   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Time_(简体中文)&oldid=413449](https://wiki.archlinux.org/index.php?title=Time_(简体中文)&oldid=413449)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Time_(简体中文)&oldid=415489](https://wiki.archlinux.org/index.php?title=Time_(简体中文)&oldid=415489)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

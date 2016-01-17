@@ -314,7 +314,7 @@ Precompiled modular-otherways-vanilla Reference policy with headers and document
 
 Reference policy sources
 
-[selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/selinux-refpolicy-arch)]</sup>
+[selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup>
 
 Precompiled modular Reference policy with headers and documentation but without sources. Development Arch Linux Refpolicy patch included, but for now [February 2011] it only fixes some issues with `/etc/rc.d/*` labeling.
 
@@ -634,7 +634,7 @@ Please report issues on GitHub: [https://github.com/archlinuxhardened/selinux/is
 *   [SETools Homepage](http://oss.tresys.com/projects/setools)
 *   [ArchLinux, SELinux and You (archived)](https://web.archive.org/web/20140816115906/http://jamesthebard.net/archlinux-selinux-and-you-a-trip-down-the-rabbit-hole/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SELinux&oldid=399786](https://wiki.archlinux.org/index.php?title=SELinux&oldid=399786)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682](https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

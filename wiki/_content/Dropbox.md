@@ -227,6 +227,8 @@ systemctl stop dropbox@<user>
 
 ```
 
+Do not forget to make the above scripts executable.
+
 **Note:** If you use PCManFM as your file manager, Dropbox will use 'xdg-open' calls pcmanfm to open the Dropbox folder.However, without a dbus session, you can not use Trash in PCManFM. You should refer to [Dbus](/index.php/Dbus "Dbus") and [General troubleshooting#Session permissionsto](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") edit your ~/.xinitrc based on /etc/skel/.xinitrc to start a D-Bus session before your launch any other program in ~/.xinitrc. Do use 'dbus-launch dropbox' instead of just 'dropbox' in wicd postconnect script. otherwise pcmanfm launched by clicking dropbox icon can not use the Trash.
 
 ## Troubleshooting
@@ -362,8 +364,12 @@ install -dm0 ~/.dropbox-dist
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=412851](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=412851)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=415754](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=415754)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

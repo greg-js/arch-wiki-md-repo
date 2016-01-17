@@ -611,8 +611,13 @@ Updated 2015-04-08
 *   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
 *   [MacBook](/index.php/MacBook "MacBook")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=412128](https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=412128)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=415743](https://wiki.archlinux.org/index.php?title=MacBookPro11,x&oldid=415743)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Apple](/index.php/Category:Apple "Category:Apple")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

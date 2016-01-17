@@ -15,7 +15,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-Install either the [qutebrowser](https://aur.archlinux.org/packages/qutebrowser/)<sup><small>AUR</small></sup> or the [qutebrowser-git](https://aur.archlinux.org/packages/qutebrowser-git/)<sup><small>AUR</small></sup> package.
+Install either the [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser) or the [qutebrowser-git](https://aur.archlinux.org/packages/qutebrowser-git/)<sup><small>AUR</small></sup> package.
 
 ## Basic usage
 
@@ -47,7 +47,7 @@ Keybindings reside in `$XDG_CONFIG_HOME/qutebrowser/keys.conf)`.
 
 You can edit the keybindings directly from the browser with the command `:bind _key_ _command_` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=414458](https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=414458)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=415679](https://wiki.archlinux.org/index.php?title=Qutebrowser&oldid=415679)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

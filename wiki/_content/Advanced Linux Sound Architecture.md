@@ -89,7 +89,7 @@ If you want [OSS](/index.php/OSS "OSS") applications to work with [dmix](#Dmix),
 
 ### ALSA and Systemd
 
-The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-store.service` by default.
+The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-state.service` by default.
 
 These are automatically installed and activated during installation. Therefore, there is no further action needed. Though, you can check their status using `systemctl`.
 
@@ -888,8 +888,12 @@ amixer set Master toggle
 *   [A close look at ALSA: ALSA concept introduction](http://www.volkerschatz.com/noise/alsa.html)
 *   [Linux ALSA sound notes](http://www.sabi.co.uk/Notes/linuxSoundALSA.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=414631](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=414631)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=415454](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=415454)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

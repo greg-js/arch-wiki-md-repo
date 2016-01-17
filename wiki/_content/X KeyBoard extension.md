@@ -1045,14 +1045,13 @@ Using [rules](#Using_rules) instead of static keymap configuration will give you
 
 ## See Also
 
-[http://www.x.org/wiki/XKB](http://www.x.org/wiki/XKB) and links therein, especially
+[http://www.x.org/wiki/XKB](http://www.x.org/wiki/XKB) and links therein, especially:
 
 *   [An Unreliable Guide To XKB Configuration](http://www.charvolant.org/~doug/xkb/html/index.html). Similar in scope to this page, with a bit different point of view. Recommended for a general picture.
 *   [Ivan Pascal XKB docs](http://pascal.tsu.ru/en/xkb/). One of the oldest and most well-known guides. Focuses a lot on details, and explains some of exotic XKB features.
 *   [XKB protocol specification](http://www.x.org/releases/current/doc/kbproto/xkbproto.pdf). Comprehensive description of all XKB features. Extremely useful for understating how XKB works, includes a good description of virtual modifiers among other things. Some practice with xkbcomp is strongly recommended though, because the features are described on protocol level.
-*   [X.org Wiki - XKB](http://www.x.org/wiki/XKB). Additional links to XKB resources.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=X_KeyBoard_extension&oldid=387988](https://wiki.archlinux.org/index.php?title=X_KeyBoard_extension&oldid=387988)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=X_KeyBoard_extension&oldid=415762](https://wiki.archlinux.org/index.php?title=X_KeyBoard_extension&oldid=415762)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

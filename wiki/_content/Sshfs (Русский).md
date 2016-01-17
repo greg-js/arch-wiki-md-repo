@@ -276,9 +276,9 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 ### Connection reset by peer
 
-*   If you are trying to access the remote system with a hostname, try using its IP address, as it can be a domain name solving issue. Make sure you edit `/etc/hosts` with the server details.
-*   If you are using non-default key names and are passing it as `-i .ssh/my_key`, this will not work. You have to use `-o IdentityFile=/home/user/.ssh/my_key`, with the full path to the key.
-*   If your /root/.ssh/config is a symlink, you will be getting this error as well. See [this serverfault topic](http://serverfault.com/questions/507748/bad-owner-or-permissions-on-root-ssh-config)
+*   Если вы пытаетесь получить доступ к удаленной машине, используя имя хоста, то попробуйте использовать ее адрес или доменной имя, смотря, что исправит проблему. Убедитесь в том, что вы изменили `/etc/hosts` в соответствии со свойствами сервера.
+*   Если вы используете нестандартные имена ключей и передаете их как `-i .ssh/my_key`, то это не будет работать. Вам следует использовать `-o IdentityFile=/home/user/.ssh/my_key` с указанием полного пути к ключу.
+*   Если ваш файл `/root/.ssh/config` является символической ссылкой, то вы получите сообщение об ошибке. Смотрите [эту тему](http://serverfault.com/questions/507748/bad-owner-or-permissions-on-root-ssh-config)
 *   Adding the option '`sshfs_debug`' (as in '`sshfs -o sshfs_debug user@server ...`') can help in resolving the issue.
 *   If that doesn't reveal anything useful, you might also try adding the option '`debug`'
 *   If you are trying to sshfs into a router running DD-WRT or the like, there is a solution [here](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (note that the -osftp_server=/opt/libexec/sftp-server option can be used to the sshfs command in stead of patching dropbear)
@@ -341,7 +341,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415151](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415151)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415739](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415739)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -128,15 +128,20 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 ## Contents
 
-*   [1 SATA controller](#SATA_controller)
-*   [2 Wireless](#Wireless)
-*   [3 Bluetooth](#Bluetooth)
-*   [4 Video](#Video)
-*   [5 Touchpad](#Touchpad)
-*   [6 Sound](#Sound)
-*   [7 Microphone](#Microphone)
-*   [8 Kernel specific notes](#Kernel_specific_notes)
-*   [9 Links](#Links)
+*   [1 BIOS updates](#BIOS_updates)
+*   [2 SATA controller](#SATA_controller)
+*   [3 Wireless](#Wireless)
+*   [4 Bluetooth](#Bluetooth)
+*   [5 Video](#Video)
+*   [6 Touchpad](#Touchpad)
+*   [7 Sound](#Sound)
+*   [8 Microphone](#Microphone)
+*   [9 Kernel specific notes](#Kernel_specific_notes)
+*   [10 Links](#Links)
+
+## BIOS updates
+
+[BIOS update 1.1.9](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=376N9) was released on 2016-01-13\. Store the update binary on your EFI partition (`/boot/efi`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ## SATA controller
 
@@ -146,7 +151,7 @@ When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least th
 
 The built-in Broadcom BCM4350 is not supported in the current kernel(4.2.5) (and not by [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>) yet but marked for inclusion in 4.4 [[2]](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211)
 
-As a workaround, use [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> which includes the patch applied from 4.4 or get the 4.4 (or latest) kernel from [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>. It also need a firmware from the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
+As a workaround, use [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> which includes the patch applied from 4.4 or get the 4.4 (or latest) kernel from [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>. It also needs a firmware from the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
 ## Bluetooth
 
@@ -265,8 +270,12 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 General Discussion Thread on Arch Forum [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414780](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=414780)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=415750](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=415750)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dell](/index.php/Category:Dell "Category:Dell")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

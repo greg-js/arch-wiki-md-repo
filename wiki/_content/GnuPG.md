@@ -7,7 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [List_of_applications/Security#Encryption.2C_signing.2C_steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
+*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
 
 According to the [official website](http://www.gnupg.org):
 
@@ -65,7 +65,7 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
 
 This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. _pinentry_ is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
 
-If you want to use a graphical frontend or program that integrates with GnuPG, see [#Related_applications](#Related_applications).
+If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
 ## Environment variables
 
@@ -84,7 +84,7 @@ Default is `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. If you want to chang
 **Note:**
 
 *   Whenever a _`<user-id>`_ is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
-*   Some of these steps may be provided by an external program depending on your usage, such as an email client. See [#Related_applications](#Related_applications).
+*   Some of these steps may be provided by an external program depending on your usage, such as an [email client](/index.php/List_of_applications/Internet#Email_clients "List of applications/Internet"). See also [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
 ### Create key pair
 
@@ -311,7 +311,7 @@ $ gpg --list-secret-keys
 
 **This article or section is being considered for deletion.**
 
-**Reason:** Much of this is outdated and unnecessary info. (Discuss in [Talk:GnuPG#](https://wiki.archlinux.org/index.php/Talk:GnuPG))
+**Reason:** Much of this is outdated and unnecessary info. (Discuss in [Talk:GnuPG#gpg-agent deletion](https://wiki.archlinux.org/index.php/Talk:GnuPG#gpg-agent_deletion))
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
@@ -709,7 +709,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415280](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415280)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415592](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415592)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

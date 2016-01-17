@@ -571,7 +571,7 @@ _«Un juego de rol (traducción típica en español del inglés role-playing gam
 
 *   **fheores2** — Un intento de reimplementar el juego [Heroes of Might and Magic II](https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_II "wikipedia:Heroes of Might and Magic II") usando el motor SDL.
 
-[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fheroes2-svn)]</sup>
+[http://sourceforge.net/apps/mediawiki/fheroes2/index.php](http://sourceforge.net/apps/mediawiki/fheroes2/index.php) || [fheroes2-svn](https://aur.archlinux.org/packages/fheroes2-svn/)<sup><small>AUR</small></sup>
 
 *   **Flare** — Juego de acción similar a Diablo.
 
@@ -1092,8 +1092,13 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [List of games developed by Valve](https://en.wikipedia.org/wiki/List_of_games_developed_by_Valve "wikipedia:List of games developed by Valve"), [Game engine recreation](https://en.wikipedia.org/wiki/Game_engine_recreation "wikipedia:Game engine recreation") y [Source port](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(Español)&oldid=413943](https://wiki.archlinux.org/index.php?title=List_of_games_(Español)&oldid=413943)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games_(Español)&oldid=415667](https://wiki.archlinux.org/index.php?title=List_of_games_(Español)&oldid=415667)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming (Español)](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

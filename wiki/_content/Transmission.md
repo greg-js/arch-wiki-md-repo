@@ -10,6 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   [1 Installation](#Installation)
 *   [2 Configuring the GUI version](#Configuring_the_GUI_version)
+    *   [2.1 GTK+ temporary cosmetic fix](#GTK.2B_temporary_cosmetic_fix)
 *   [3 Transmission-daemon and CLI](#Transmission-daemon_and_CLI)
     *   [3.1 Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
         *   [3.1.1 Autostart at boot](#Autostart_at_boot)
@@ -47,6 +48,18 @@ GUI versions are configured to work out-of-the-box, but the user may wish to cha
 
 A guide to configuration options can be found on the Transmission web site: [https://trac.transmissionbt.com/wiki/EditConfigFiles#Options](https://trac.transmissionbt.com/wiki/EditConfigFiles#Options).
 
+### GTK+ temporary cosmetic fix
+
+With GTK+ 3.18, transmission-gtk shows black borders in random places; these can be hidden via `gtk.css`:
+
+ `~/.config/gtk-3.0/gtk.css` 
+
+```
+.tr-workarea .overshoot,
+.tr-workarea .undershoot { border: none; }
+
+```
+
 ## Transmission-daemon and CLI
 
 The commands for _transmission-cli_ are:
@@ -69,7 +82,7 @@ _transmission-edit_: add, delete, or replace a tracker's announce URL.
 
 As explained in [#Choosing a user](#Choosing_a_user), the `transmission` daemon can be run:
 
-*   As the user _transmission_, by running as root: `# transmission-daemon` The daemon can then be stopped with: `# killall transmission-daemon` 
+*   As the user _transmission_, by running as root: `# systemctl start transmission` The daemon can then be stopped with: `# systemctl stop transmission` 
 
 *   As your own user, by running under your user name: `$ transmission-daemon` The daemon can then be stopped with: `$ killall transmission-daemon` 
 
@@ -106,40 +119,23 @@ It may only be desirable to run transmission on certain networks. The following 
  `/etc/netctl/hooks/90-transmission.sh` 
 
 ```
-#!/bin/sh
-
-# A simple function to check whether an array contains a value
-function contains() {
-    local array="$1[@]"
-    local seeking=$2
-    local in=1
-
-    for element in "${!array}"; do
-        if [[ $element == $seeking ]]; then
-            in=0
-            break
-        fi
-    done
-    return $in
-}
+#!/bin/bash
 
 # The SSIDs for which we enable this.
-ssids=(
-    "network_1"
-    "network_2"
+declare -A ssids=(
+    ["network_1"]=y
+    ["network_2"]=y
 )
 
-# In the following, `${array_name[(I)search]}` returns 0 if `array_name` does
-# not contain `search`, or the index of the match (starting at 1).
-if contains ssids "$SSID"; then
-    case "$ACTION" in
-        "CONNECT"|"REESTABLISHED")
+if [[ ${ssids[$SSID]} ]]; then
+    case $ACTION in
+        CONNECT|REESTABLISHED)
             # Need to wait, otherwise doesn't seem to bind to 9091.
             sleep 30
-            runuser -u transmission transmission-daemon
+            systemctl start transmission
             ;;
         *)
-            killall transmission-daemon
+            systemctl stop transmission
             ;;
     esac
 fi
@@ -155,7 +151,7 @@ Create a [start script](#Starting_and_stopping_the_daemon) in folder `/etc/wicd/
 ```
 #!/bin/bash
 
-/usr/bin/transmission-daemon
+systemctl start transmission
 ```
 
  `/etc/wicd/scripts/predisconnect/transmission` 
@@ -163,7 +159,7 @@ Create a [start script](#Starting_and_stopping_the_daemon) in folder `/etc/wicd/
 ```
 #!/bin/bash
 
-killall transmission-daemon
+systemctl stop transmission
 ```
 
 ##### NetworkManager
@@ -258,8 +254,12 @@ To load the new configuration run `# sysctl --system` and then reload Transmissi
 *   [Transmission wiki](https://trac.transmissionbt.com/wiki)
 *   [HeadlessUsage](https://trac.transmissionbt.com/wiki/HeadlessUsage/General)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Transmission&oldid=412020](https://wiki.archlinux.org/index.php?title=Transmission&oldid=412020)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Transmission&oldid=415452](https://wiki.archlinux.org/index.php?title=Transmission&oldid=415452)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

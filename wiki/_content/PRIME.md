@@ -221,8 +221,13 @@ CLUTTER_VBLANK=True
 
 *   [Nouveau Optimus](https://wiki.freedesktop.org/nouveau/Optimus/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PRIME&oldid=410528](https://wiki.archlinux.org/index.php?title=PRIME&oldid=410528)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PRIME&oldid=415470](https://wiki.archlinux.org/index.php?title=PRIME&oldid=415470)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

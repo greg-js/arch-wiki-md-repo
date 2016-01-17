@@ -44,14 +44,14 @@ listen-address=127.0.0.1
 
 ```
 
-To use this computer to listen on it's LAN IP address for other computers on the network:
+To use this computer to listen on its LAN IP address for other computers on the network:
 
 ```
 listen-address=192.168.1.1    # Example IP
 
 ```
 
-It is recommended that you use a static LAN ip in this case.
+It is recommended that you use a static LAN IP in this case.
 
 Multiple ip address settings:
 
@@ -68,9 +68,9 @@ listen-address=127.0.0.1,192.168.1.1
 
 **This article or section is a candidate for merging with [resolv.conf](/index.php/Resolv.conf "Resolv.conf").**
 
-**Notes:** Same topic. Also note that most of this can be done also natively in `/etc/resolvconf.conf` using the `name_servers` and `name_servers_append` options. (Discuss in [Talk:Dnsmasq#](https://wiki.archlinux.org/index.php/Talk:Dnsmasq))
+**Notes:** Same topic. Also note that most of this can also be done natively in `/etc/resolvconf.conf` using the `name_servers` and `name_servers_append` options. (Discuss in [Talk:Dnsmasq#](https://wiki.archlinux.org/index.php/Talk:Dnsmasq))
 
-After configuring dnsmasq the DHCP client will need to prepend the localhost address to the known DNS addresses in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq before trying to resolve them with an external DNS. After the DHCP client is configured the network will need to be restarted for changes to take effect.
+After configuring dnsmasq, the DHCP client will need to prepend the localhost address to the known DNS addresses in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq before trying to resolve them with an external DNS. After the DHCP client is configured, the network will need to be restarted for changes to take effect.
 
 #### resolv.conf
 
@@ -303,8 +303,12 @@ address=/#/1.2.3.4
 
 *   [Caching Nameserver using dnsmasq, and a few other tips and tricks.](http://www.g-loaded.eu/2010/09/18/caching-nameserver-using-dnsmasq/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=412847](https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=412847)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=415694](https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=415694)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

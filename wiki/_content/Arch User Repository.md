@@ -82,13 +82,12 @@ Queries search package names and descriptions via a MySQL LIKE comparison. This 
 
 ## Installing packages
 
-**Warning:** There is not and will never be an _official_ mechanism for installing build material from the AUR. **All AUR users should be familiar with the build process.**
-
 Installing packages from the AUR is a relatively simple process. Essentially:
 
 1.  Acquire the tarball which contains the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and possibly other required files, like [systemd](/index.php/Systemd "Systemd") units and patches (but often not the actual code).
-2.  Extract the tarball (preferably in a folder set aside just for builds from the AUR) with `tar -xvf _pkgname_.tar.gz`.
-3.  Run `makepkg -sri` in the directory where the files are saved. This will download the code, resolve the dependencies with [pacman](/index.php/Pacman "Pacman"), compile it, package it, install the package, and finally remove the build-time dependencies, which are no longer needed.
+2.  Extract the tarball (preferably in a directory set aside just for builds from the AUR) with `tar -xvf _pkgname_.tar.gz`.
+3.  Verify that the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and accompanying files are not malicious or untrustworthy.
+4.  Run `makepkg -sri` in the directory where the files are saved. This will download the code, resolve the dependencies with [pacman](/index.php/Pacman "Pacman"), compile it, package it, install the package, and finally remove the build-time dependencies, which are no longer needed.
 
 ### Prerequisites
 
@@ -101,7 +100,7 @@ First ensure that the necessary tools are installed:
 
 The package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient; it includes [make](https://www.archlinux.org/packages/?name=make) and other tools needed for compiling from source.
 
-**Warning:** Packages in the AUR assume the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is installed, and AUR packages will not list members of this group as dependencies even if the package cannot be built without them. Please ensure this group is installed before complaining about failed builds.
+**Note:** Packages in the AUR assume that the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is installed, i.e. they do not list the group's members as dependencies explicitly.
 
 Next choose an appropriate build directory. A build directory is simply a directory where the package will be made or "built" and can be any directory. The examples in the following sections will use `~/builds` as the build directory.
 
@@ -429,7 +428,7 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 *   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)
 *   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415269](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415269)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415575](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415575)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

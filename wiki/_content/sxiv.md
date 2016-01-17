@@ -63,7 +63,7 @@ $ mkdir ~/.trash
 
 ```
 
-**Tip:** You may want to use a [standards-compliant trashcan](http://freedesktop.org/wiki/Specifications/trash-spec/) (like [trash-cli](https://aur.archlinux.org/packages/trash-cli/)<sup><small>AUR</small></sup> or [bashtrash](https://aur.archlinux.org/packages/bashtrash/)<sup><small>AUR</small></sup>) rather than `mv "$2" ~/.trash`.
+**Tip:** You may want to use a [standards-compliant trashcan](http://freedesktop.org/wiki/Specifications/trash-spec/) (like [trash-cli](https://www.archlinux.org/packages/?name=trash-cli) or [bashtrash](https://aur.archlinux.org/packages/bashtrash/)<sup><small>AUR</small></sup>) rather than `mv "$2" ~/.trash`.
 
 ## Tips and tricks
 
@@ -113,7 +113,7 @@ echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
 *   Arch Linux [forum thread](https://bbs.archlinux.org/viewtopic.php?id=112643).
 *   Sxiv for keyboard layout [bépo](https://en.wikipedia.org/wiki/Keyboard_layout#B.C3.89PO "wikipedia:Keyboard layout") (keyboard layout in the spirit of [Dvorak](https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard "wikipedia:Dvorak Simplified Keyboard") for french speakers) : [Sxiv bépo](http://bepo.fr/wiki/Vim#Visionneuse_d.27image_Sxiv).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sxiv&oldid=412183](https://wiki.archlinux.org/index.php?title=Sxiv&oldid=412183)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sxiv&oldid=415688](https://wiki.archlinux.org/index.php?title=Sxiv&oldid=415688)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

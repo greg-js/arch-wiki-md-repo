@@ -197,7 +197,7 @@ $ hadoop fs -put /etc/hadoop input
 Run some of the examples provided:
 
 ```
-$ hadoop jar /usr/lib/hadoop/hadoop-examples-*.jar grep input output 'dfs[a-z.]+'
+$ hadoop jar /usr/lib/hadoop-2.7.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.1.jar grep input output 'dfs[a-z.]+'
 
 ```
 
@@ -231,7 +231,7 @@ When you're done, stop the daemons with:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hadoop&oldid=408893](https://wiki.archlinux.org/index.php?title=Hadoop&oldid=408893)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hadoop&oldid=415430](https://wiki.archlinux.org/index.php?title=Hadoop&oldid=415430)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

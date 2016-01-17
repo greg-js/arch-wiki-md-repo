@@ -196,7 +196,7 @@ i915.semaphores=1
 
 ### Media Keys
 
-Media keys that work out of the box:
+Media keys that (should) work out of the box:
 
 *   Wireless On/Off
 *   Backlight Brightness settings
@@ -209,6 +209,8 @@ Media Keys that Do Not work out of the box:
 *   [Volume keys](#Volume_up.2Fdown_not_changing_volume) (Works out-of-the-box in [GNOME](/index.php/GNOME "GNOME"))
 
 You must find a workaround and bind the keys yourself for the rest of them.
+
+[xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/)<sup><small>AUR</small></sup> can be a solution for media keys that are not working. This solution also allows you to rebind the ThinkVantage button and certain FN layer shortcuts (the blue logos on the keyboard).
 
 ### Rebind Forward and Back keys
 
@@ -276,7 +278,7 @@ This is a problem on many laptops and can be fixed by [blacklisting](/index.php/
 *   [Lenovo ThinkPad T420s](/index.php/Lenovo_ThinkPad_T420s "Lenovo ThinkPad T420s")
 *   [Arch Linux on ThinkPad T420i](http://sysphere.org/~anrxc/j/articles/thinkpad-t420/index.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=412120](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=412120)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=415756](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=415756)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -179,9 +179,9 @@ There are tens of thousands of themes available for Wordpress. Searching on goog
 
 #### Install using the admin panel
 
-Before installing a theme using the admin panel, you will need to setup an [FTP](https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon) server on your Wordpress host.
+Before installing a theme using the admin panel, you will need to setup an [FTP](https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon) server on your WordPress host. To maintain a high level of protection, you might set up a [user](/index.php/User "User") on your system specifically for WordPress, give it the home directory of `<path to your WordPress install>/wp-content`, disallow anonymous login, and allow no more users to log in than for WordPress (and obviously others as required by your setup).
 
-Once the FTP server is setup, login to your Wordpress installation and click "Appearance->Install Themes->Upload". From there select your zip file that contains your theme and click "Install Now". You will be presented with a box asking for FTP information, enter it and click "Proceed". If you have been following along closely, you should now have an installed theme. Activate it if you wish.
+Once the FTP server is setup, login to your WordPress installation and click "Appearance->Install Themes->Upload". From there select your zip file that contains your theme and click "Install Now". You will be presented with a box asking for FTP information, enter it and click "Proceed". You might need to update [file ownership](/index.php/Chown "Chown") and [rights](/index.php/Chmod "Chmod") if WordPress reports that it is unable to write to the directory. If you have been following along closely, you should now have an installed theme. Activate it if you wish.
 
 #### Install manually
 
@@ -238,7 +238,7 @@ Another option is changing a value in the database table of your Wordpress, spec
 *   [Wordpress](https://en.wikipedia.org/wiki/WordPress "wikipedia:WordPress")
 *   [Content management system](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=414659](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=414659)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=415623](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=415623)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -344,7 +344,7 @@ and done.
 To restore (or view) the backup, we need access to the encryption options in plaintext, which has to be passed to _encfs_ with the environment variable `ENCFS6_CONFIG` (we use a different directory in order not to mess up the existing `~/mythesis`):
 
 ```
-$ ENCFS6_CONFIG=~/mythesis/.encfs6.xml ~/mnt/usbstick/thesisbackup ~/restoremythesis 
+$ ENCFS6_CONFIG=~/mythesis/.encfs6.xml encfs ~/mnt/usbstick/thesisbackup ~/restoremythesis 
 
 ```
 
@@ -364,7 +364,7 @@ $ ls -la ~/restoremythesis
 *   [EncFS](https://vgough.github.io/encfs/) - project homepage
 *   [Security audit](https://defuse.ca/audits/encfs.htm) of EncFS by Taylor Hornby (January 14, 2014).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=EncFS&oldid=412072](https://wiki.archlinux.org/index.php?title=EncFS&oldid=412072)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=EncFS&oldid=415795](https://wiki.archlinux.org/index.php?title=EncFS&oldid=415795)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
