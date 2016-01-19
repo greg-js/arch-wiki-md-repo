@@ -258,6 +258,13 @@ Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as 
 
 If your game crashes immediately, try disabling: _"Enable the Steam Overlay while in-game"_ in game _Properties_.
 
+If this doesn't work, you should launch Steam from a terminal to catch any error the game may output. You may encounter the following:
+
+*   munmap_chunk(): invalid pointer
+*   free(): invalid pointer
+
+In these particular cases, try replacing the libsteam_api.so file from the problematic game with one from a game that works fine. This error usually happens for games that were not updated recently when Steam runtime is disabled. This error has been encountered with at least AYIM, Bastion and Monaco.
+
 ### OpenGL not using direct rendering / Steam crashes Xorg
 
 Sometimes presented with the error message "OpenGL GLX context is not using direct rendering, which may cause performance problems." [[1]](https://support.steampowered.com/kb_article.php?ref=9938-EYZB-7457)
@@ -575,8 +582,12 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=414877](https://wiki.archlinux.org/index.php?title=Steam&oldid=414877)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=416023](https://wiki.archlinux.org/index.php?title=Steam&oldid=416023)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -98,7 +98,7 @@ The Lenovo ThinkPad X250 is the successor to the [Lenovo ThinkPad X240](/index.p
 
 <tr>
 
-<td>Additional Plugable Battery</td>
+<td>Additional Pluggable Battery</td>
 
 <td>6 Cell 19+</td>
 
@@ -208,7 +208,7 @@ action=amixer -c 1 sset Mic toggle -q
 
 Bluetooth was not tested.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=378133](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=378133)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=416006](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=416006)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

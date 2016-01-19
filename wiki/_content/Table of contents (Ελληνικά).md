@@ -42,7 +42,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>10.</small> [Networking](/index.php/Category:Networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Networking (Ελληνικά)") <small>(1)</small>
 
-<small>10.1.</small> [Wireless networking](/index.php/Category:Wireless_networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Wireless networking (Ελληνικά)") <small>(1)</small>
+<small>10.1.</small> [Firewalls](/index.php/Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Firewalls (Ελληνικά)") <small>(1) (επίσης σε [Security](/index.php/Category:Security_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Security (Ελληνικά)"))</small>
+
+<small>10.2.</small> [Wireless networking](/index.php/Category:Wireless_networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Wireless networking (Ελληνικά)") <small>(1)</small>
 
 <small>11.</small> [Package development](/index.php/Category:Package_development_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Package development (Ελληνικά)") <small>(3)</small>
 
@@ -66,13 +68,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>14.4.</small> [Power management](/index.php/Category:Power_management_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Power management (Ελληνικά)") <small>(1)</small>
 
-<small>14.5.</small> [Virtualization](/index.php/Category:Virtualization_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Virtualization (Ελληνικά)") <small>(1)</small>
+<small>14.5.</small> [Security](/index.php/Category:Security_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Security (Ελληνικά)") <small>(0)</small>
+
+<small>14.5.1.</small> [Firewalls](/index.php/Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Firewalls (Ελληνικά)") <small>(1) (επίσης σε [Networking](/index.php/Category:Networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Networking (Ελληνικά)"))</small>
+
+<small>14.6.</small> [Virtualization](/index.php/Category:Virtualization_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Virtualization (Ελληνικά)") <small>(1)</small>
 
 <small>15.</small> [System recovery](/index.php/Category:System_recovery_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:System recovery (Ελληνικά)") <small>(2)</small>
 
 <small>16.</small> [Web server](/index.php/Category:Web_server_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Web server (Ελληνικά)") <small>(1)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Ελληνικά)&oldid=411618](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Ελληνικά)&oldid=411618)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Ελληνικά)&oldid=415910](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Ελληνικά)&oldid=415910)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

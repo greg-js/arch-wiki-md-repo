@@ -376,7 +376,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Password Gorilla** — A cross-platform password manager.
 
-[https://github.com/zdia/gorilla/wiki/](https://github.com/zdia/gorilla/wiki/) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)<sup><small>AUR</small></sup> [gorilla](https://aur.archlinux.org/packages/gorilla/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gorilla)]</sup>
+[https://github.com/zdia/gorilla/wiki/](https://github.com/zdia/gorilla/wiki/) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)<sup><small>AUR</small></sup>
 
 *   **Password Safe** — Simple and secure password manager.
 
@@ -402,8 +402,13 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [http://upm.sourceforge.net/](http://upm.sourceforge.net/) || [upm](https://aur.archlinux.org/packages/upm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/upm)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415276](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415276)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415904](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415904)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden categories:
+
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

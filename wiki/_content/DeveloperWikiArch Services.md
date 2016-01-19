@@ -174,7 +174,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Notes:**
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Arch_Services&oldid=414848](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Arch_Services&oldid=414848)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Arch_Services&oldid=416145](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Arch_Services&oldid=416145)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

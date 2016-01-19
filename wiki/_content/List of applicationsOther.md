@@ -63,10 +63,6 @@ See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipe
 
 [https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)<sup><small>AUR</small></sup>
 
-*   **xplash** — New splash program used by Ubuntu starting from 9.10
-
-[https://launchpad.net/xsplash](https://launchpad.net/xsplash) || [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xsplash-bzr)]</sup>
-
 #### Command shells
 
 See the main article: [Command-line shell](/index.php/Command-line_shell "Command-line shell").
@@ -162,10 +158,6 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   **fbpager** — Virtual desktop pager for fluxbox.
 
 [http://www.fluxbox.org/fbpager](http://www.fluxbox.org/fbpager) || [fbpager-git](https://aur.archlinux.org/packages/fbpager-git/)<sup><small>AUR</small></sup>
-
-*   **fluxter** — Workspace pager for [fluxbox](/index.php/Fluxbox "Fluxbox").
-
-[http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html](http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html) || [fluxter](https://www.archlinux.org/packages/?name=fluxter)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
 *   **IPager** — A configurable pager with transparency, originally developed for Fluxbox.
 
@@ -297,7 +289,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Bashrun2** — Provides a different, barebones approach to a run dialog, using a specialized Bash session within a small xterm window.
 
-[https://code.google.com/p/bashrun2/](https://code.google.com/p/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bashrun2)]</sup>
+[http://henning-bekel.de/bashrun2/](http://henning-bekel.de/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bashrun2)]</sup>
 
 *   **[dmenu](/index.php/Dmenu "Dmenu")** — Fast and lightweight dynamic menu for X which is also useful as an application launcher.
 
@@ -543,7 +535,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [korganizer](https://www.archlinux.org/packages/?name=korganizer)]</sup>
+[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [korganizer](https://www.archlinux.org/packages/?name=korganizer)
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extension to Mozilla Thunderbird that provides calendar and task support.
 
@@ -642,7 +634,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
 
-[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [higan](https://www.archlinux.org/packages/?name=higan)]</sup> [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [higan](https://www.archlinux.org/packages/?name=higan)]</sup>
+[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Command line driven multi system emulator.
 
@@ -712,8 +704,13 @@ See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Sof
 
 See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=413938](https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=413938)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=416033](https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=416033)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

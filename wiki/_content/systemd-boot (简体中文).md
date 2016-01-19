@@ -8,42 +8,42 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [Unified Extensible Firmware Interface (简体中文)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-12-06，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=409492)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-18，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=412593)可以查看翻译后英文页面的改动。
 
 **systemd-boot** (以前被称为**gummiboot**) 是可以执行 EFI 镜像文件的简单 UEFI 启动管理器。启动的内容可以通过一个配置(glob)或者屏幕菜单选择。[systemd](https://www.archlinux.org/packages/?name=systemd) 从版本 220-2 开始包含此组件。
 
 配置很简单，但是只能启动 EFI 可执行程序，例如 Linux 内核 [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, Windows Boot Manager等。
 
-**Warning:** systemd-boot simply provides a boot menu for EFISTUB kernels. In case you have issues booting EFISTUB kernels like in [FS#33745](https://bugs.archlinux.org/task/33745), you should use a boot loader which does not use EFISTUB, like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [ELILO](/index.php/Boot_loaders#ELILO "Boot loaders").
+**Warning:** systemd-boot 提供了引导EFISTUB内核的简单接口，如果你在启动EFISTUB内核时遇到了困难(例如[FS#33745](https://bugs.archlinux.org/task/33745)), 你应该使用像[GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") 或 [ELILO](/index.php/Boot_loaders#ELILO "Boot loaders")这样的不使用EFISTUB的启动管理器.
 
 **Note:** 本文用 `$esp` 表示[EFI 系统分区](/index.php/UEFI#EFI_System_Partition "UEFI")，也就是 ESP 的挂载位置。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 EFI 引导](#EFI_.E5.BC.95.E5.AF.BC)
-    *   [1.2 传统引导](#.E4.BC.A0.E7.BB.9F.E5.BC.95.E5.AF.BC)
-    *   [1.3 Updating](#Updating)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Basic configuration](#Basic_configuration)
-    *   [2.2 Adding boot entries](#Adding_boot_entries)
-        *   [2.2.1 Standard root installations](#Standard_root_installations)
-        *   [2.2.2 LVM root installations](#LVM_root_installations)
-        *   [2.2.3 Encrypted Root Installations](#Encrypted_Root_Installations)
-        *   [2.2.4 btrfs subvolume root installations](#btrfs_subvolume_root_installations)
-        *   [2.2.5 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
-    *   [2.3 Support hibernation](#Support_hibernation)
-*   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
-    *   [4.2 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
-*   [5 请参见](#.E8.AF.B7.E5.8F.82.E8.A7.81)
+    *   [1.1 在UEFI 引导下安装](#.E5.9C.A8UEFI_.E5.BC.95.E5.AF.BC.E4.B8.8B.E5.AE.89.E8.A3.85)
+    *   [1.2 在传统启动下安装](#.E5.9C.A8.E4.BC.A0.E7.BB.9F.E5.90.AF.E5.8A.A8.E4.B8.8B.E5.AE.89.E8.A3.85)
+    *   [1.3 更新](#.E6.9B.B4.E6.96.B0)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 基本配置](#.E5.9F.BA.E6.9C.AC.E9.85.8D.E7.BD.AE)
+    *   [2.2 增加启动选项](#.E5.A2.9E.E5.8A.A0.E5.90.AF.E5.8A.A8.E9.80.89.E9.A1.B9)
+        *   [2.2.1 一般的安装选项](#.E4.B8.80.E8.88.AC.E7.9A.84.E5.AE.89.E8.A3.85.E9.80.89.E9.A1.B9)
+        *   [2.2.2 根分区在LVM 逻辑卷上时](#.E6.A0.B9.E5.88.86.E5.8C.BA.E5.9C.A8LVM_.E9.80.BB.E8.BE.91.E5.8D.B7.E4.B8.8A.E6.97.B6)
+        *   [2.2.3 加密的根分区](#.E5.8A.A0.E5.AF.86.E7.9A.84.E6.A0.B9.E5.88.86.E5.8C.BA)
+        *   [2.2.4 根分区是btrfs子卷](#.E6.A0.B9.E5.88.86.E5.8C.BA.E6.98.AFbtrfs.E5.AD.90.E5.8D.B7)
+        *   [2.2.5 EFI Shells 或其他 EFI 应用程序](#EFI_Shells_.E6.88.96.E5.85.B6.E4.BB.96_EFI_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+    *   [2.3 对休眠的支持](#.E5.AF.B9.E4.BC.91.E7.9C.A0.E7.9A.84.E6.94.AF.E6.8C.81)
+*   [3 启动选单中的按键操作](#.E5.90.AF.E5.8A.A8.E9.80.89.E5.8D.95.E4.B8.AD.E7.9A.84.E6.8C.89.E9.94.AE.E6.93.8D.E4.BD.9C)
+*   [4 排除问题](#.E6.8E.92.E9.99.A4.E9.97.AE.E9.A2.98)
+    *   [4.1 通过efibootmgr手动添加启动选项](#.E9.80.9A.E8.BF.87efibootmgr.E6.89.8B.E5.8A.A8.E6.B7.BB.E5.8A.A0.E5.90.AF.E5.8A.A8.E9.80.89.E9.A1.B9)
+    *   [4.2 在Windows升级后不能看到启动菜单](#.E5.9C.A8Windows.E5.8D.87.E7.BA.A7.E5.90.8E.E4.B8.8D.E8.83.BD.E7.9C.8B.E5.88.B0.E5.90.AF.E5.8A.A8.E8.8F.9C.E5.8D.95)
+*   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-### EFI 引导
+### 在UEFI 引导下安装
 
 1.  确认启动方式是 UEFI 模式
 2.  验证[可以正确访问 EFI 变量](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface")
@@ -55,48 +55,48 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ```
 
-### 传统引导
+### 在传统启动下安装
 
-**Warning:** This is not the recommended process
+**Warning:** 这不是建议的方法!
 
-You can also successfully install systemd-boot if booted with a legacy OS. However, this requires that you later on tell your firmware to launch systemd-boot's EFI file on boot:
+如果你以传统方式(MBR)启动电脑,或许能成功安装,不过需要在安装之后像你的固件提供如何启动systemd-boot的相关信息,为此你需要:
 
-*   you either have a working EFI shell somewhere;
-*   or your firmware interface provides you with a way of properly setting the EFI file that will be loaded at boot time.
+*   一个EFI Shell;
+*   或是你的UEFI 固件设置中提供了更改启动选项的界面.
 
-**Note:** E.g. on Dell's Latitude series, the firmware interface provides everything you need to setup EFI boot, and the EFI Shell won't be able to write to the computer's ROM.
+**Note:** 例如某些 Dell Latitude 计算机上,UEFI固件设置界面提供了设置EFI启动所需的工具,而EFI Shell 无法修改那些设置.
 
-If you can do so, the installation is easier: go into your EFI shell or your firmware configuration interface, and change your machine's default EFI file to `/$esp/EFI/boot/systemd-bootx64.efi` (`systemd-bootia32.efi` on i686 systems).
+如果能这样做的话,进入你的 EFI Shell 或是 UEFI 固件设置,修改你的默认EFI启动加载器为 `$esp/EFI/systemd/systemd-bootx64.efi` (在i686架构上是 `systemd-bootia32.efi`).
 
-### Updating
+### 更新
 
-systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate _gummiboot_ package, which updated automatically on a new package release with a `post_install` script, updates of new systemd-boot versions are now handled manually by the user:
+systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统分区 挂载在 `/boot`. 和 _gummiboot_ 不同,Systemd-boot的升级需要用户手动进行:
 
 ```
 # bootctl update  
 
 ```
 
-If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For example:
+如果 EFI 系统分区不在 `/boot`, 需要加入 `--path=` 参数来指定. 例如:
 
 ```
 # bootctl --path=/boot/$esp update
 
 ```
 
-## Configuration
+## 配置
 
-### Basic configuration
+### 基本配置
 
-The basic configuration is kept in `$esp/loader/loader.conf`, with three possible configuration options:
+基本设置保存在`$esp/loader/loader.conf`,有三个选项: The basic configuration is kept in `$esp/loader/loader.conf`, with three possible configuration options:
 
-*   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`
+*   `default` –默认加载的配置文件 (不含 `.conf` 后缀); 可以使用通配符 `arch-*`
 
-*   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown when you hold the space key while booting.
+*   `timeout` –启动选单的超时时间,如果不设置的话,启动选单只有在你按住Space键时才显示.
 
-*   `editor` - whether to enable the kernel parameters editor or not. `1` (default) is to enable, `0` is to disable. Since the user can add `init=/bin/bash` to bypass root password and gain root access, it's strongly recommended to set this option to `0`.
+*   `editor` -是否允许用户编辑内核参数. `1` (默认值) 是允许, `0` 是阻止. 因为用户可以通过 `init=/bin/bash` 来绕过root密码并获得root权限,建议设置成`0`.
 
-Example:
+下面是一个样例:
 
  `$esp/loader/loader.conf` 
 
@@ -107,31 +107,31 @@ editor   0
 
 ```
 
-Note that the first 2 options can be changed in the boot menu itself, which will store them as EFI variables.
+你也可以在启动选单中改变默认值和超时时间,所做的改动会保存到efivars中.
 
-### Adding boot entries
+### 增加启动选项
 
-**Note:** bootctl will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Where detected, entries will also automatically be generated for them as well. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created. If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Windows_and_Arch_dual_boot#Fast_Start-Up "Windows and Arch dual boot") option.
+**Note:** 如果存在的话,bootctl 会自动为 "**Windows Boot Manager (Windows 启动管理器)**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) 和 "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`)增加启动选项. 但并不会为其他EFI应用程序创建启动选项,所以需要进行进一步设置. 如果你是和Windows 组成双重启动,建议禁用 [Windows 中的"快速启动"](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") 选项.
 
-**Tip:** You can find the PARTUUID for your Root partition with the command `blkid -s PARTUUID -o value /dev/sdxY`, where 'x' is the device letter and 'Y' is the partition number. This is required only for your Root partition, not $esp.
+**Tip:** 你能用 `blkid -s PARTUUID -o value /dev/sdxY` 找到某个分区的PARTUUID, 'x' 和 'Y' 分别是磁盘和分区编号.稍后可能需要这些信息.
 
-bootctl searches for boot menu items in `$esp/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
+bootctl 会在 `$esp/loader/entries/*.conf` 搜索启动选项– 一个文件中只能包含一个启动选项,下面是参数列表:
 
-*   `title` – operating system name. **Required.**
+*   `title` – **必须选项.** 系统的名称.
 
-*   `version` – kernel version, shown only when multiple entries with same title exist. Optional.
+*   `version` – 内核版本,只在有多个`title` 时需要.
 
-*   `machine-id` – machine identifier from `/etc/machine-id`, shown only when multiple entries with same title and version exist. Optional.
+*   `machine-id` – 通过 `/etc/machine-id`用于区分不同设备的名称, 只在有多个`title` 和 `version` 时需要.
 
-*   `efi` – EFI program to start, relative to your ESP (`$esp`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
+*   `efi` – 要启动的EFI应用程序的位置,以 (`$esp`) 为相对路径,; 例如 `/vmlinuz-linux`. **需要此选项或是 `linux` (参阅下文) 的一项.**
 
-*   `options` – command line options to pass to the EFI program. Optional, but you will need at least `initrd=_efipath_` and `root=_dev_` if booting Linux.
+*   `options` – 传递给EFI应用程序的参数,可选.但如果你要启动linux,至少需要 `initrd=_efipath_` 和 `root=_dev_`选项.
 
-For Linux, you can specify `linux _path-to-vmlinuz_` and `initrd _path-to-initramfs_`; this will be automatically translated to `efi _path_` and `options initrd=_path_` – this syntax is only supported for convenience and has no differences in function.
+要启动linux,你还可以指定 `linux _path-to-vmlinuz_` 和 `initrd _path-to-initramfs_`;这会自动转换成 `efi _path_` 和 `options initrd=_path_` – 这个语法只是为了方便,在功能上并没有区别.
 
-#### Standard root installations
+#### 一般的安装选项
 
-Here is an example entry for a root partition without LVM or LUKS:
+这是一个根分区既不在LVM逻辑卷又没有加密时的配置选项:
 
  `$esp/loader/entries/arch.conf` 
 
@@ -142,13 +142,13 @@ initrd         /initramfs-linux.img
 options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 ```
 
-Please note in the example above that PARTUUID/PARTLABEL identifies a GPT partition, and differs from UUID/LABEL, which identifies a filesystem. Using the PARTUUID/PARTLABEL is advantageous because it is invariant (i.e. unchanging) if you reformat the partition with another filesystem, or if the /dev/sd* mapping changed for some reason. It is also useful if you do not have a filesystem on the partition (or use LUKS, which does not support LABELs).
+注意这个例子中用PARTUUID(或是PARTLABEL)来标识一个GPT分区(和UUID/LABEL不同,它标识一个文件系统).使用因为PARTUUID/PARTLABEL是因为它不像UUID/LABEL会在格式化时改变,也不像 /dev/sd* 会在某些时候交换.在某些无文件系统分区(或是不支持卷标的LUKS 加密卷)上也能工作.
 
-#### LVM root installations
+#### 根分区在LVM 逻辑卷上时
 
-**Warning:** Systemd-boot cannot be used without a separate `/boot` filesystem outside of LVM.
+**Warning:** 如果没有一个在LVM卷组外的`/boot`分区,不要用 Systemd-boot .
 
-Here is an example for a root partition using [Logical Volume Management](/index.php/LVM "LVM"):
+这是一个根分区在[LVM](/index.php/LVM "LVM")逻辑卷上时的样例:
 
  `$esp/loader/entries/arch-lvm.conf` 
 
@@ -159,7 +159,7 @@ initrd         /initramfs-linux.img
 options        root=/dev/mapper/<VolumeGroup-LogicalVolume> rw
 ```
 
-Replace `<VolumeGroup-LogicalVolume>` with the actual VG and LV names (e.g. `root=/dev/mapper/volgroup00-lvolroot`). Alternatively, it is also possible to use a UUID instead:
+用实际的逻辑卷组和逻辑卷名替换 `<VolumeGroup-LogicalVolume>` (例如 `root=/dev/mapper/volgroup00-lvolroot`). 也可以使用UUID:
 
 ```
 ....
@@ -167,11 +167,9 @@ options  root=UUID=<UUID identifier> rw
 
 ```
 
-Note that `root=**UUID**=` is used instead of `root=**PARTUUID**=`, which is used for Root partitions without LVM or LUKS.
+#### 加密的根分区
 
-#### Encrypted Root Installations
-
-Here is an example configuration file for an encrypted root partition ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")):
+这是一个加密的根分区 ([例如通过DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt"))的样例:
 
  `$esp/loader/entries/arch-encrypted.conf` 
 
@@ -182,13 +180,13 @@ initrd /initramfs-linux.img
 options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> quiet rw
 ```
 
-UUID is used in this example; PARTUUID should be able to replace the UUID, if so desired. You may also replace the /dev path with a regular UUID. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+这个例子中用了UUID; PARTUUID 应该也可以使用, 如果你愿意,也可以用UUID替换/dev/段. 参阅 [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
-You can also add other EFI programs such as `\EFI\arch\grub.efi`.
+你也可以加入类似于 `\EFI\arch\grub.efi`的EFI应用程序.
 
-#### btrfs subvolume root installations
+#### 根分区是btrfs子卷
 
-If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
+如果用[btrfs](/index.php/Btrfs "Btrfs")子卷作为根分区,记得加入 `rootflags=subvol=<root 子卷名称>`到`options`选项中,在这个例子中,根分区挂载在名称为'ROOT'的btrfs子卷中 (例如 `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
  `$esp/loader/entries/arch-btrfs-subvol.conf` 
 
@@ -199,11 +197,11 @@ initrd         /initramfs-linux.img
 options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=subvol=ROOT
 ```
 
-A failure to do so will otherwise result in the following error message: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
+如果做不到这一点的话,会出现这样的错误消息: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
 
-#### EFI Shells or other EFI apps
+#### EFI Shells 或其他 EFI 应用程序
 
-In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets:
+你可以像这样加载EFI Shell或其他EFI应用程序:
 
  `$esp/loader/entries/uefi-shell-v1-x86_64.conf` 
 
@@ -225,82 +223,83 @@ efi    /EFI/shellx64_v2.efi
 
 **This article or section needs expansion.**
 
-**Reason:** Add example on how to boot into EFI firmware setup. (Discuss in [Talk:Systemd-boot (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
+**Reason:** 加入如何进入UEFI固件设置的配置. (Discuss in [Talk:Systemd-boot (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
-### Support hibernation
+### 对休眠的支持
 
-See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
+参阅 [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
 
-## Keys inside the boot menu
+## 启动选单中的按键操作
 
-The following keys are used inside the menu:
+启动选单中支持的按键操作有:
 
-*   `Up/Down` - select entry
-*   `Enter` - boot the selected entry
-*   `d` - select the default entry to boot (stored in a non-volatile EFI variable)
-*   `-/T` - decrease the timeout (stored in a non-volatile EFI variable)
-*   `+/t` - increase the timeout (stored in a non-volatile EFI variable)
-*   `e` - edit the kernel command line. has no effect if the `editor` config option is set to `0`.
-*   `v` - show the gummiboot and UEFI version
-*   `Q` - quit
-*   `P` - print the current configuration
-*   `h/?` - help
+*   `Up/Down` - 选择选项
+*   `Enter` - 加载所选的选项
+*   `d` - 设置默认的启动选项 (会保存在 EFI 变量中)
+*   `-/T` - 增加超时时间 (会保存在 EFI 变量中)
+*   `+/t` - 减少超时时间 (会保存在 EFI 变量中)
+*   `e` - 编辑内核参数,如果 `editor` 选项设置为`0`,则没有任何作用.
+*   `v` - 显示版本信息
+*   `Q` - 退出
+*   `P` - 显示目前的配置
+*   `h/?` - 帮助
 
-These hotkeys will, when pressed inside the menu or during bootup, directly boot a specific entry:
+这些热键可以在启动管理器时直接指定启动哪一个选项
 
 *   `l` - Linux
 *   `w` - Windows
 *   `a` - OS X
 *   `s` - EFI Shell
-*   `1-9` - number of entry
+*   `1-9` -选项的编号
 
-## Troubleshooting
+## 排除问题
 
-### Manual entry using efibootmgr
+### 通过efibootmgr手动添加启动选项
 
-If `bootctl install` command failed, you can create a EFI boot entry manually using [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr):
+如果运行`bootctl install` 命令失败,你可以通过 [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)手动增加选项:
 
 ```
 # efibootmgr -c -d /dev/sdX -p Y -l /EFI/systemd/systemd-bootx64.efi -L "Linux Boot Manager"
 
 ```
 
-where `/dev/sdXY` is the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI").
+用[EFI 系统分区](/index.php/UEFI#EFI_System_Partition "UEFI")的设备名称替换`/dev/sdXY`.
 
-### Menu does not appear after Windows upgrade
+### 在Windows升级后不能看到启动菜单
 
-For example, if you upgraded from Windows 8 to Windows 8.1, and you no longer see a boot menu after the upgrade (i.e., Windows boots immediately):
+例如你升级Windows 后直接启动了Windows而不是选择启动菜单:
 
-*   Make sure Secure Boot (UEFI setting) and [Fast Startup](/index.php/Windows_and_Arch_dual_boot#Fast_Start-Up "Windows and Arch dual boot") (Windows power option setting) are both disabled.
-*   Make sure your UEFI prefers Linux Boot Manager over Windows Boot Manager (UEFI setting like Hard Drive Disk Priority).
+*   确定UEFI固件设置中的"安全启动"(Secure Boot) 和 [Windows 中的"快速启动"](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") 选项没有启用.
+*   确定UEFI固件设置的启动顺序中Linux Boot Manager 先于 Windows Boot Manager.
 
-**Note:** Windows 8.x+, including Windows 10, will overwrite any UEFI choices you make and install itself as the priority boot choice after every boot. Changing the boot order in the UEFI firmware will only last until the next Windows 10 boot. Know what the _Change Boot Option_ key is for your motherboard.
+**Note:** Windows 8.x+,和 Windows 10,可能会覆盖你在UEFI固件设置中设置的启动顺序并把自己设置成第一启动选项. 所以你应该知道如何修改"一次性启动选项".
 
-To make Windows 8.X and above respect your boot order, you must enter a Windows group policy and have it execute a batch (_.bat_) file on startup. In Windows:
+你可以通过组策略和一个批处理文件(".bat")来阻止Windows更改启动设置,在Windows上这样做:
 
-1.  Open a command prompt with admin privlages. Type in `bcdedit /enum firmware`
-2.  Find the Firmware Application that has "Linux" in the description, e.g. "Linux Boot Manager"
-3.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-4.  Open _gpedit_ and under _Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)_, choose _Startup_. That should open a window named _Startup Properties_.
-5.  Under the _Scripts_ tab, choose the _Add_ button
-6.  Give your script a name, e.g. `bootorder.bat`.
-7.  Under _Script Parameters_, type `bcdedit /set {fwbootmgr} DEFAULT {_identifier_copied_in_step_3_}` (e.g. `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+1.  以管理员身份打开命令提示符,运行 `bcdedit /enum firmware`
+2.  寻找描述中带有"linux"的启动选项,例如 "Linux Boot Manager"
+3.  复制带大括号的描述符, 例如 `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
+4.  创建一个批处理文件 (例如 `bootorder.bat`) ,包含下列的内容: `bcdedit /set {fwbootmgr} DEFAULT {_这里是你在第三步中获得的描述符_}` (例如 `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+5.  运行 _gpedit (组策略对象编辑器)_ 在 _本地计算机策略 > 计算机设置 > Windows 设置 > 脚本(启动/关机)_中,选择"启动,会打开一个名为"启动选项:的对话框.
+6.  添加第四步中创建的批处理文件到"脚本"列表中.
 
-If this does not work, create a batch file somewhere on your Windows system with the `bcdedit /set {fwbootmgr} DEFAULT {_identifier_copied_in_step_3_}` line in it and go back to step 6 and _Browse_ for that file.
-
-Alternatively, you can make the default Windows boot loader load systemd-boot instead. In an administrator command prompt in Windows, one can change this entry as follows:
+或者让Windows 启动管理器加载systemd-boot的EFI应用程序,要这样做的话在Windows上以管理员身份运行:
 
 ```
 bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 ```
 
-## 请参见
+## 参阅
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot_(简体中文)&oldid=411002](https://wiki.archlinux.org/index.php?title=Systemd-boot_(简体中文)&oldid=411002)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot_(简体中文)&oldid=416022](https://wiki.archlinux.org/index.php?title=Systemd-boot_(简体中文)&oldid=416022)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot loaders (简体中文)](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

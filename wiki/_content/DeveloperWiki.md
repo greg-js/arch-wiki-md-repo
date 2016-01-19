@@ -90,7 +90,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   [DeveloperWiki:Arch Services](/index.php/DeveloperWiki:Arch_Services "DeveloperWiki:Arch Services")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=415158](https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=415158)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=416146](https://wiki.archlinux.org/index.php?title=DeveloperWiki&oldid=416146)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

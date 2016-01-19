@@ -48,10 +48,9 @@ Note that certain font licenses may impose some legal limitations.
         *   [4.2.8 Indic](#Indic)
         *   [4.2.9 Khmer](#Khmer)
         *   [4.2.10 Lao](#Lao)
-        *   [4.2.11 Meroitic (Egyptian Hieroglyphs)](#Meroitic_.28Egyptian_Hieroglyphs.29)
-        *   [4.2.12 Sinhala](#Sinhala)
-        *   [4.2.13 Thai](#Thai)
-        *   [4.2.14 Tibetan](#Tibetan)
+        *   [4.2.11 Sinhala](#Sinhala)
+        *   [4.2.12 Thai](#Thai)
+        *   [4.2.13 Tibetan](#Tibetan)
     *   [4.3 Math](#Math)
     *   [4.4 Microsoft fonts](#Microsoft_fonts)
     *   [4.5 Apple OS X fonts](#Apple_OS_X_fonts)
@@ -377,7 +376,6 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 #### Burmese
 
 *   [ttf-my-paduk](https://aur.archlinux.org/packages/ttf-my-paduk/)<sup><small>AUR</small></sup> - Padauk font for Myanmar/Birmania
-*   [ttf-myanmar3](https://aur.archlinux.org/packages/ttf-myanmar3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-myanmar3)]</sup> - Font for Myanmar/Burmese script
 *   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/)<sup><small>AUR</small></sup> - 121 Fonts from myordbok.com
 
 #### Chinese, Japanese, Korean, Vietnamese
@@ -408,26 +406,22 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 *   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - A free Japanese kanji font, style Mincho (serif).
 *   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/)<sup><small>AUR</small></sup> - Japanese Gothic fonts. Default of Debian/Fedora/Vine Linux
 *   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/)<sup><small>AUR</small></sup> - Modern Gothic style Japanese outline fonts. It includes all of Japanese Hiragana/Katakana, Basic Latin, Latin-1 Supplement, Latin Extended-A, IPA Extensions and most of Japanese Kanji, Greek, Cyrillic, Vietnamese with 7 weights (proportional) or 5 weights (monospace).
-*   [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-ipa-mona)]</sup>, [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/)<sup><small>AUR</small></sup> - Japanese fonts to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly.
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/)<sup><small>AUR</small></sup> - Japanese fonts to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly.
 
 ##### Korean
 
 *   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - Korean OpenType/CFF fonts
 *   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - Collection of Korean TrueType fonts
-*   [ttf-alee](https://aur.archlinux.org/packages/ttf-alee/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-alee)]</sup> - Set of free Hangul TrueType fonts
-*   [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-unfonts-core)]</sup> - Un fonts (default Baekmuk fonts may be unsatisfactory)
 *   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/)<sup><small>AUR</small></sup> - Nanum series TrueType fonts
 *   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/)<sup><small>AUR</small></sup> - Nanum series fixed width TrueType fonts
 *   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/)<sup><small>AUR</small></sup> - D2Coding fixed width TrueType font made by Naver
 
 #### Cyrillic
 
-_Also see [#Monospaced](#Monospaced), [#Sans-serif](#Sans-serif) and [#Serif](#Serif)_
+See also [#Monospaced](#Monospaced), [#Sans-serif](#Sans-serif) and [#Serif](#Serif).
 
-*   [font-arhangai](https://aur.archlinux.org/packages/font-arhangai/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/font-arhangai)]</sup> - Mongolian Cyrillic
 *   [otf-russkopis](https://aur.archlinux.org/packages/otf-russkopis/)<sup><small>AUR</small></sup> - A free OpenType cursive font for Cyrillic script
 *   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/)<sup><small>AUR</small></sup> - Font family by ParaType: sans, serif, mono, extended cyrillic and latin, OFL license
-*   [ttf-pingwi-typography](https://aur.archlinux.org/packages/ttf-pingwi-typography/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-pingwi-typography)]</sup> - PingWi Typography (PWT) fonts
 
 #### Greek
 
@@ -464,10 +458,6 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 *   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/)<sup><small>AUR</small></sup> - Lao TTF font (Phetsarath_OT)
 *   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/)<sup><small>AUR</small></sup> - Lao TTF fonts, both Unicode and non-Unicode for Windows
-
-#### Meroitic (Egyptian Hieroglyphs)
-
-*   [ttf-aegyptus](https://aur.archlinux.org/packages/ttf-aegyptus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-aegyptus)]</sup> - Font for Egyptian Hieroglyphs (part of Unicode Fonts for Ancient Scripts)
 
 #### Sinhala
 
@@ -509,7 +499,6 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 #### TrueType
 
 *   [Andalé Mono](https://en.wikipedia.org/wiki/Andal%C3%A9_Mono "wikipedia:Andalé Mono") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
-*   Anka/Coder ([ttf-anka-coder](https://aur.archlinux.org/packages/ttf-anka-coder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-anka-coder)]</sup>)
 *   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>)
 *   [Bitstream Vera Mono](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera))
 *   [Consolas](https://en.wikipedia.org/wiki/Consolas "wikipedia:Consolas") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)<sup><small>AUR</small></sup>) - Windows programming font
@@ -536,7 +525,6 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
 *   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
 *   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)<sup><small>AUR</small></sup>)
-*   Proggy opti cyrillic ([proggyopticyr-font](https://aur.archlinux.org/packages/proggyopticyr-font/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/proggyopticyr-font)]</sup>)
 *   Tamsyn ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
 *   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
 *   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/)<sup><small>AUR</small></sup>)
@@ -544,7 +532,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 
 ### Sans-serif
 
-*   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/)<sup><small>AUR</small></sup>, included in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-sil-fonts)]</sup>)
+*   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/)<sup><small>AUR</small></sup>)
 *   [Arial](https://en.wikipedia.org/wiki/Arial "wikipedia:Arial") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
 *   [Arial Black](https://en.wikipedia.org/wiki/Arial_Black "wikipedia:Arial Black") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
 *   Arimo ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup> or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>) - Chrome/Chromium OS replacement for Arial (metric-compatible)
@@ -563,7 +551,6 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
 *   [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)") ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/)<sup><small>AUR</small></sup>)
 *   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
-*   [Ubuntu-Title](https://en.wikipedia.org/wiki/Ubuntu-Title "wikipedia:Ubuntu-Title") ([ttf-ubuntu-title](https://aur.archlinux.org/packages/ttf-ubuntu-title/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-ubuntu-title)]</sup>)
 *   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
 *   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
 
@@ -574,13 +561,11 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 ### Serif
 
 *   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) "wikipedia:Cambria (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)<sup><small>AUR</small></sup>)
-*   [Charis](https://en.wikipedia.org/wiki/Charis_SIL "wikipedia:Charis SIL") ([ttf-charis](https://aur.archlinux.org/packages/ttf-charis/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-charis)]</sup>, included in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-sil-fonts)]</sup>) - Unicode: Latin, Cyrillic
 *   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) "wikipedia:Constantia (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)<sup><small>AUR</small></sup>)
 *   [DejaVu Serif](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Doulos](https://en.wikipedia.org/wiki/Doulos_SIL "wikipedia:Doulos SIL") ([ttf-sil-doulos](https://aur.archlinux.org/packages/ttf-sil-doulos/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-sil-doulos)]</sup>, included in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-sil-fonts)]</sup>) - Unicode: Latin, Cyrillic
 *   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) "wikipedia:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup>)
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
-*   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium), included in [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-sil-fonts)]</sup>) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
+*   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface) "wikipedia:Georgia (typeface)") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>)
 *   [Liberation Serif](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Replacement for Times New Roman, based on Tinos (metric-compatible)
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
@@ -589,15 +574,20 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 
 ### Unsorted
 
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+
+**This article or section needs language, wiki syntax or style improvements.**
+
+**Reason:** This section should be absorbed into the Monospace/Serif/Sans-Serif structure (Discuss in [Talk:Fonts#](https://wiki.archlinux.org/index.php/Talk:Fonts))
+
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup> — a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) — Covers full plane 1 and several scripts
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) — Provides emoji and many many other symbols
-*   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-sil-fonts)]</sup> — Gentium, Charis, Doulos, Andika and Abyssinica from SIL
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) — X.Org Luxi fonts
 *   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) — Font collection from _dustismo.com_
-*   [ttf-isabella](https://aur.archlinux.org/packages/ttf-isabella/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-isabella)]</sup> — Calligraphic font based on the _Isabella Breviary_ of 1497
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) — Junius font containing almost complete medieval latin script glyphs
-*   arkpandorafonts [ttf-arkpandora](https://aur.archlinux.org/packages/ttf-arkpandora/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-arkpandora)]</sup> — Alternative to Arial and Times New Roman fonts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) — IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 
 ## Fallback font order with X11
@@ -631,8 +621,9 @@ There are several font aliases which represent other fonts in order that applica
 
 To reverse an alias and find which font it is representing, run:
 
+ `$ fc-match monospace` 
+
 ```
-$ fc-match monospace
 DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"
 
 ```
@@ -672,12 +663,13 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 
 *   [State of Text Rendering](http://behdad.org/text/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=415602](https://wiki.archlinux.org/index.php?title=Fonts&oldid=415602)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=416029](https://wiki.archlinux.org/index.php?title=Fonts&oldid=416029)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Fonts](/index.php/Category:Fonts "Category:Fonts")
 
-Hidden category:
+Hidden categories:
 
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
 *   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

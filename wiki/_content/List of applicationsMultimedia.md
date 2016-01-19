@@ -201,10 +201,6 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 [http://azpainter.sourceforge.jp/](http://azpainter.sourceforge.jp/) || [azpainter](https://aur.archlinux.org/packages/azpainter/)<sup><small>AUR</small></sup>
 
-*   **[Bibble Pro](https://en.wikipedia.org/wiki/Bibble_(software) "wikipedia:Bibble (software)")** — Digital imaging program designed to assist photographers in post-production work and efficient optimization of images created in the Raw image format.
-
-[http://www.corel.com/corel/pages/index.jsp?pgid=12800164](http://www.corel.com/corel/pages/index.jsp?pgid=12800164) || [bibblepro](https://aur.archlinux.org/packages/bibblepro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bibblepro)]</sup>
-
 *   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
 
 [http://www.darktable.org//](http://www.darktable.org//) || [darktable](https://www.archlinux.org/packages/?name=darktable)
@@ -252,10 +248,6 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 *   **[MyPaint](https://en.wikipedia.org/wiki/MyPaint "wikipedia:MyPaint")** — Free software graphics application for digital painters.
 
 [http://mypaint.intilinux.com](http://mypaint.intilinux.com) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
-
-*   **Nathive** — "Usable image editor", based on GNOME libraries with a focus on usability and a smooth learning curve.
-
-[http://www.nathive.org/](http://www.nathive.org/) || [nathive](https://aur.archlinux.org/packages/nathive/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nathive)]</sup>
 
 *   **[Pinta](https://en.wikipedia.org/wiki/Pinta_(software) "wikipedia:Pinta (software)")** — Drawing and editing program modeled after [Paint.NET](https://en.wikipedia.org/wiki/Paint.net "wikipedia:Paint.net"). Its goal is to provide a simplified alternative to GIMP for casual users.
 
@@ -439,10 +431,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 [http://6xq.net/projects/pianobar/](http://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
 
-*   **PyTone** — Advanced music jukebox with a console interface.
-
-[http://www.luga.de/pytone/](http://www.luga.de/pytone/) || [pytone](https://aur.archlinux.org/packages/pytone/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytone)]</sup>
-
 *   **shell-fm** — Console-based player for the streams provided by [last.fm](http://www.last.fm/).
 
 [https://github.com/jkramer/shell-fm/](https://github.com/jkramer/shell-fm/) || [shell-fm](https://aur.archlinux.org/packages/shell-fm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/shell-fm)]</sup>
@@ -527,7 +515,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Noise** — Simple, fast, and good looking music player.
 
-[https://launchpad.net/noise](https://launchpad.net/noise) || [noise](https://www.archlinux.org/packages/?name=noise)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [noise-player](https://www.archlinux.org/packages/?name=noise-player)]</sup>
+[https://launchpad.net/noise](https://launchpad.net/noise) || [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
@@ -757,7 +745,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Simple video player for KDE. Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
 
-[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [dragon](https://www.archlinux.org/packages/?name=dragon)]</sup>
+[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
 
 *   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes Xine as its backend and has excellent support of digital TV (DVB).
 
@@ -861,10 +849,6 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 [http://lives-video.com/](http://lives-video.com/) || [lives](https://aur.archlinux.org/packages/lives/)<sup><small>AUR</small></sup>
 
-*   **Open Movie Editor** — Video editing program designed for basic movie making capabilities, powerful, yet easy to use.
-
-[http://www.openmovieeditor.org/](http://www.openmovieeditor.org/) || [openmovieeditor](https://aur.archlinux.org/packages/openmovieeditor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openmovieeditor)]</sup>
-
 *   **[Open Shot](https://en.wikipedia.org/wiki/OpenShot_Video_Editor "wikipedia:OpenShot Video Editor")** — Non-linear video editor based on MLT framework.
 
 [http://www.openshotvideo.com/](http://www.openshotvideo.com/) || [openshot](https://www.archlinux.org/packages/?name=openshot)
@@ -963,9 +947,14 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 [http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413689](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=413689)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=416034](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=416034)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications](/index.php/Category:Applications "Category:Applications")
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

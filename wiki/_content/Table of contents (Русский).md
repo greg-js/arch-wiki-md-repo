@@ -4,7 +4,7 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(394)</small>
+[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(397)</small>
 
 <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small>
 
@@ -28,41 +28,43 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.1.</small> [Специальные возможности](/index.php/Category:Accessibility_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Accessibility (Русский)") <small>(1)</small>
 
-<small>2.2.</small> [Командная оболочка](/index.php/Category:Command_shells_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Command shells (Русский)") <small>(6)</small>
+<small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Application launchers (Русский)") <small>(2)</small>
 
-<small>2.3.</small> [Сжатие данных и архивирование](/index.php/Category:Data_compression_and_archiving_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Data compression and archiving (Русский)") <small>(3)</small>
+<small>2.3.</small> [Командная оболочка](/index.php/Category:Command_shells_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Command shells (Русский)") <small>(6)</small>
 
-<small>2.4.</small> [Системы управления базами данных](/index.php/Category:Database_management_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Database management systems (Русский)") <small>(2)</small>
+<small>2.4.</small> [Сжатие данных и архивирование](/index.php/Category:Data_compression_and_archiving_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Data compression and archiving (Русский)") <small>(3)</small>
 
-<small>2.5.</small> [Эмуляторы](/index.php/Category:Emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Emulators (Русский)") <small>(4)</small>
+<small>2.5.</small> [Системы управления базами данных](/index.php/Category:Database_management_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Database management systems (Русский)") <small>(2)</small>
 
-<small>2.6.</small> [Файловые менеджеры](/index.php/Category:File_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File managers (Русский)") <small>(5)</small>
+<small>2.6.</small> [Эмуляторы](/index.php/Category:Emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Emulators (Русский)") <small>(4)</small>
 
-<small>2.7.</small> [Игры](/index.php/Category:Gaming_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Gaming (Русский)") <small>(2)</small>
+<small>2.7.</small> [Файловые менеджеры](/index.php/Category:File_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File managers (Русский)") <small>(5)</small>
 
-<small>2.8.</small> [Графика и демонстрация рабочего стола](/index.php/Category:Graphics_and_desktop_publishing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics and desktop publishing (Русский)") <small>(4)</small>
+<small>2.8.</small> [Игры](/index.php/Category:Gaming_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Gaming (Русский)") <small>(2)</small>
 
-<small>2.9.</small> [Интернет приложения](/index.php/Category:Internet_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet applications (Русский)") <small>(10) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
+<small>2.9.</small> [Графика и демонстрация рабочего стола](/index.php/Category:Graphics_and_desktop_publishing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics and desktop publishing (Русский)") <small>(4)</small>
 
-<small>2.9.1.</small> [Почтовые клиенты](/index.php/Category:Email_clients_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Email clients (Русский)") <small>(0)</small>
+<small>2.10.</small> [Интернет приложения](/index.php/Category:Internet_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet applications (Русский)") <small>(10) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-<small>2.9.2.</small> [Интернет чат (IRC)](/index.php/Category:Internet_Relay_Chat_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet Relay Chat (Русский)") <small>(2)</small>
+<small>2.10.1.</small> [Почтовые клиенты](/index.php/Category:Email_clients_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Email clients (Русский)") <small>(0)</small>
 
-<small>2.9.3.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(4)</small>
+<small>2.10.2.</small> [Интернет чат (IRC)](/index.php/Category:Internet_Relay_Chat_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet Relay Chat (Русский)") <small>(2)</small>
 
-<small>2.10.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small>
+<small>2.10.3.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(4)</small>
 
-<small>2.11.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small>
+<small>2.11.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small>
 
-<small>2.12.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small>
+<small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small>
 
-<small>2.13.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(2)</small>
+<small>2.13.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small>
 
-<small>2.14.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(6)</small>
+<small>2.14.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(3)</small>
 
-<small>2.15.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small>
+<small>2.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(6)</small>
 
-<small>2.16.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small>
+<small>2.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small>
+
+<small>2.17.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small>
 
 <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(5)</small>
 
@@ -172,7 +174,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.3.3.</small> [KDE](/index.php/Category:KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:KDE (Русский)") <small>(3)</small>
 
-<small>6.3.4.</small> [Оконные менеджеры](/index.php/Category:Window_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Window managers (Русский)") <small>(1)</small>
+<small>6.3.4.</small> [Оконные менеджеры](/index.php/Category:Window_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Window managers (Русский)") <small>(2)</small>
 
 <small>6.3.4.1.</small> [Динамические оконные менеджеры](/index.php/Category:Dynamic_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dynamic WMs (Русский)") <small>(3)</small>
 
@@ -182,7 +184,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dotfiles (Русский)") <small>(1)</small>
 
-<small>6.5.</small> [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)") <small>(8)</small>
+<small>6.5.</small> [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)") <small>(10)</small>
 
 <small>6.5.1.</small> [Экран загрузки](/index.php/Category:Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bootsplash (Русский)") <small>(3) (Также в [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)"))</small>
 
@@ -222,7 +224,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(31)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=414312](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=414312)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=416042](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Русский)&oldid=416042)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

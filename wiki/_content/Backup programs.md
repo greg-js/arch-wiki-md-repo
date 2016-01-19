@@ -151,10 +151,6 @@ Certain rsync-type packages also do snapshot backups by storing files which desc
 
 [http://backintime.le-web.org/](http://backintime.le-web.org/) || [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup> or as a prebuild package from [coderkun's repo](http://arch.coderkun.de/)
 
-*   **[FlyBack](https://en.wikipedia.org/wiki/FlyBack "wikipedia:FlyBack")** — A clone of Apple's [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(Mac_OS) "wikipedia:Time Machine (Mac OS)"), a backup utility for Mac OS X.
-
-[http://www.flyback-project.org/](http://www.flyback-project.org/) || [flyback](https://aur.archlinux.org/packages/flyback/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flyback)]</sup>
-
 *   **Free File Sync** — Free File Sync helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.
 
 [http://freefilesync.sourceforge.net/](http://freefilesync.sourceforge.net/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)<sup><small>AUR</small></sup>
@@ -401,7 +397,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 *   **[MEGA](https://en.wikipedia.org/wiki/Mega_(website) "wikipedia:Mega (website)")** — Successor to the MegaUpload file-sharing service.
     *   Free accounts are 50GB with paid plans available for more space.
     *   Offers encryption and de-duplication.
-    *   Usualy accessed through its web interface but other tools exist.
+    *   Usually accessed through its web interface but other tools exist.
 
 [https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/)<sup><small>AUR</small></sup>, [megasync](https://aur.archlinux.org/packages/megasync/)<sup><small>AUR</small></sup>, [megafuse](https://aur.archlinux.org/packages/megafuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/megafuse)]</sup>
 
@@ -619,9 +615,14 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414614](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=414614)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416028](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416028)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden categories:
+
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

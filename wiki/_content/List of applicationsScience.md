@@ -453,11 +453,11 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")** — A set of design tools for Altera's FPGA chips that includes Quartus II and ModelSim-Altera.
 
-[http://www.altera.com/products/software/sfw-index.jsp](http://www.altera.com/products/software/sfw-index.jsp) || only ModelSim-Altera is packaged [modelsim-altra](https://aur.archlinux.org/packages/modelsim-altra/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+[http://www.altera.com/products/software/sfw-index.jsp](http://www.altera.com/products/software/sfw-index.jsp) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
 
 *   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
 
-[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || not packaged, installation instruction in the wiki page.
+[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
 
 ##### MCU IDE
 
@@ -523,9 +523,14 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 [http://www.gnu.org/s/units/](http://www.gnu.org/s/units/) || [units](https://www.archlinux.org/packages/?name=units)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Science&oldid=410869](https://wiki.archlinux.org/index.php?title=List_of_applications/Science&oldid=410869)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Science&oldid=415946](https://wiki.archlinux.org/index.php?title=List_of_applications/Science&oldid=415946)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

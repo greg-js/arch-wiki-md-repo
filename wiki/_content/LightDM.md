@@ -61,8 +61,9 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session and so on. It's also possible to use LightDM without a greeter, but only if an automatic login is configured. The reference greeter is [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter). LightDM attempts to use this greeter when started unless configured to do otherwise.
 
-The official repositories contain an alternative greeter, [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter). It is Qt-based and integrates well with KDE. Other greeters can be installed from the [AUR](/index.php/AUR "AUR"):
+The official repositories contains other alternative greeters. Other greeters can be installed from the [AUR](/index.php/AUR "AUR").
 
+*   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): A greeter used with KDE4.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") project.
 *   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/)<sup><small>AUR</small></sup>: A greeter that uses Webkit for theming.
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/)<sup><small>AUR</small></sup>: The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
@@ -415,7 +416,7 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=414768](https://wiki.archlinux.org/index.php?title=LightDM&oldid=414768)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=415925](https://wiki.archlinux.org/index.php?title=LightDM&oldid=415925)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

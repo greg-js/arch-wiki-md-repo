@@ -3631,8 +3631,15 @@ Vea también [Wikipedia:List of software-defined radios](https://en.wikipedia.or
 *   [Listado de juegos de Linux en Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games).
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413923](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=413923)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=415853](https://wiki.archlinux.org/index.php?title=List_of_applications_(Español)&oldid=415853)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [Applicaciones (Español)](/index.php?title=Category:Applicaciones_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Applicaciones (Español) (page does not exist)")
+*   [Applications (Español)](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)")
+
+Hidden categories:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

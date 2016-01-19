@@ -14,6 +14,8 @@ _sway_ (SirCmpwn's Wayland window manager) is an attempt to create a [Wayland](/
 *   [2 Configuration examples](#Configuration_examples)
     *   [2.1 Statusbar](#Statusbar)
     *   [2.2 Wallpaper](#Wallpaper)
+    *   [2.3 Input devices](#Input_devices)
+    *   [2.4 Custom keybindings](#Custom_keybindings)
 *   [3 Usage](#Usage)
 *   [4 See also](#See_also)
 
@@ -63,6 +65,39 @@ This line, which can be appended at the end of your sway configuration, sets a b
 
 Of course you have to replace the file name and path according to your wallpaper.
 
+### Input devices
+
+Its possible to tweak specific input device configurations. For example enable tap-to-click for the laptops touchpad, append following line:
+
+ `~/.config/sway/config` 
+
+```
+ input "2:14:ETPS/2_Elantech_Touchpad" tap enabled
+
+```
+
+Where as the device identifier can be queried with:
+
+```
+swaymsg -t get_inputs
+
+```
+
+### Custom keybindings
+
+Special keys on your keyboard can be used to execute commands, for example to control your volume or your monitor brightness:
+
+ `~/.config/sway/config` 
+
+```
+ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +15%
+ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -15%
+ bindsym XF86AudioToggle exec pactl set-sink-mute 0 toggle
+ bindsym XF86MonBrightnessDown exec dsplight down 5
+ bindsym XF86MonBrightnessUp exec dsplight up 5
+
+```
+
 ## Usage
 
 To actually use _sway_, you can type in a tty:
@@ -78,7 +113,7 @@ However, if you want to start _sway_ in an X session for testing purposes it is 
 
 *   [Github project](https://github.com/SirCmpwn/sway)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=414518](https://wiki.archlinux.org/index.php?title=Sway&oldid=414518)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=416066](https://wiki.archlinux.org/index.php?title=Sway&oldid=416066)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

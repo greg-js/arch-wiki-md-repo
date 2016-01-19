@@ -624,3 +624,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=415689](ht
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

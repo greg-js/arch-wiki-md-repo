@@ -1144,3 +1144,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications
 
 *   [Internet applications (Русский)](/index.php/Category:Internet_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet applications (Русский)")
 *   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

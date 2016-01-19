@@ -319,8 +319,13 @@ Many [display managers](/index.php/Display_manager "Display manager") (e.g., [Li
 *   [Collection of scripts for the Ratpoison window manager](https://github.com/jbaber/ratpoison_scripts)
 *   [Stumpwm - a successor to Ratpoison written in Common lisp](http://www.nongnu.org/stumpwm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=406030](https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=406030)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=415887](https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=415887)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

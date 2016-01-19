@@ -398,3 +398,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_Guide/E
 
 *   [Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)")
 *   [About Arch (Português)](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

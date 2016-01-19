@@ -10,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(26) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
 
-<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(55)</small>
+<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
 
 <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -28,7 +28,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(2)</small>
 
-<small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small>
+<small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(21)</small>
 
 <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small>
 
@@ -76,15 +76,15 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small>
 
-<small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small>
+<small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(12)</small>
 
 <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small>
 
-<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(58)</small>
+<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(57)</small>
 
 <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(26) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
-<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(55)</small>
+<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
 
 <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -100,7 +100,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small>
 
-<small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(9)</small>
+<small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(8)</small>
 
 <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small>
 
@@ -120,11 +120,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(19)</small>
 
-<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(36)</small>
+<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small>
 
 <small>4.8.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small>
 
-<small>4.8.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small>
+<small>4.8.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(13)</small>
 
 <small>4.8.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(62)</small>
 
@@ -152,7 +152,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small>
 
-<small>4.9.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small>
+<small>4.9.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small>
 
 <small>4.10.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(16)</small>
 
@@ -162,7 +162,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.13.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small>
 
-<small>4.14.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small>
+<small>4.14.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(19)</small>
 
 <small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small>
 
@@ -178,7 +178,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(10)</small>
 
-<small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
+<small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
 <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(66) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small>
 
@@ -222,7 +222,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(15)</small>
 
-<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(24)</small>
+<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(23)</small>
 
 <small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small>
 
@@ -250,7 +250,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small>
 
-<small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(41)</small>
+<small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(40)</small>
 
 <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(29)</small>
 
@@ -262,7 +262,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(27)</small>
 
-<small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
+<small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
 <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
@@ -278,7 +278,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(60)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=414851](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=414851)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=416053](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=416053)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

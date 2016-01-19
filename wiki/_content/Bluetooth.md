@@ -519,8 +519,12 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415098](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415098)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415971](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415971)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

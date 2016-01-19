@@ -188,3 +188,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(Ita
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Display managers (Italiano)](/index.php/Category:Display_managers_(Italiano) "Category:Display managers (Italiano)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

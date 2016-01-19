@@ -236,7 +236,7 @@ mv pybase.mb pyphrase.mb ~/.config/fcitx/pinyin/
 
 ### Vim
 
-如果您经常在 Vim 下使用 Fcitx, 可以安装 [fcitx.vim](https://aur.archlinux.org/packages/vim-fcitx) 插件，或者在 `~/.vimrc` 添加如下代码。以退出插入模式时，自动关闭 Fcitx, 反之则反：
+如果您经常在 Vim 下使用 Fcitx, 可以安装 [vim-fcitx](https://aur.archlinux.org/packages/vim-fcitx/)<sup><small>AUR</small></sup> 插件，或者在 `~/.vimrc` 添加如下代码。以退出插入模式时，自动关闭 Fcitx, 反之则反：
 
 ```
 "##### auto fcitx  ###########
@@ -413,9 +413,13 @@ gsettings set \
 *   [rime 朙(ming)月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict/view/general)
 *   [Fcitx not work in terminal, nautilus, gedit](https://bugzilla.gnome.org/show_bug.cgi?id=747825#c6)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=415463](https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=415463)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=415975](https://wiki.archlinux.org/index.php?title=Fcitx_(简体中文)&oldid=415975)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
 *   [Internationalization (简体中文)](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

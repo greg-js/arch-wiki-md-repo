@@ -207,6 +207,13 @@ The first step is to install the tools that you need. This provides the configur
 
 ```
 
+You can apply this permanently by editing /etc/nisdomainname and adding:
+
+```
+# NISDOMAINNAME="EXAMPLE.COM"
+
+```
+
 Now edit the /etc/yp.conf file and add your ypserver or nis server.
 
 ```
@@ -274,7 +281,7 @@ See [section 7 of The Linux NIS HOWTO](http://www.tldp.org/HOWTO/NIS-HOWTO/setti
 *   [YoLinux NIS tutorial](http://www.yolinux.com/TUTORIALS/NIS.html)
 *   [Quick HOWTO, Configuring NIS](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch30_:_Configuring_NIS)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NIS&oldid=410792](https://wiki.archlinux.org/index.php?title=NIS&oldid=410792)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NIS&oldid=416064](https://wiki.archlinux.org/index.php?title=NIS&oldid=416064)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

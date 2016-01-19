@@ -24,9 +24,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.</small> [Обладнання](/index.php/Category:Hardware_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Hardware (Українська)") <small>(0)</small>
 
-<small>6.1.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Laptops (Українська)") <small>(1)</small>
+<small>6.1.</small> [ARM architecture](/index.php/Category:ARM_architecture_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:ARM architecture (Українська)") <small>(1)</small>
 
-<small>6.2.</small> [Звук](/index.php/Category:Sound_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Sound (Українська)") <small>(1)</small>
+<small>6.2.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Laptops (Українська)") <small>(1)</small>
+
+<small>6.3.</small> [Звук](/index.php/Category:Sound_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Sound (Українська)") <small>(1)</small>
 
 <small>7.</small> [Networking](/index.php/Category:Networking_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Networking (Українська)") <small>(0)</small>
 
@@ -66,7 +68,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>11.5.1.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Tiling WMs (Українська)") <small>(1)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Українська)&oldid=411622](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Українська)&oldid=411622)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Українська)&oldid=415916](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Українська)&oldid=415916)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -453,7 +453,7 @@ This will cause dwm to ignore resize requests from all client windows, not just 
 *   [Show off your dwm configuration forum thread](https://bbs.archlinux.org/viewtopic.php?id=74599)
 *   [dwm: Tags are not workspaces](http://wongdev.com/blog/dwm-tags-are-not-workspaces/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwm&oldid=410120](https://wiki.archlinux.org/index.php?title=Dwm&oldid=410120)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwm&oldid=416147](https://wiki.archlinux.org/index.php?title=Dwm&oldid=416147)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

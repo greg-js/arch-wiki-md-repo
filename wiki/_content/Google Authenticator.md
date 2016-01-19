@@ -18,6 +18,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Install [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"). Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/)<sup><small>AUR</small></sup>.
 
+Run the following command to complete the installation:
+
+```
+# libtool --finish /usr/lib/security
+
+```
+
 ## Setting up the PAM
 
 **Warning:** If you do all configuration via SSH do not close the session before you tested that everything is working, else you may lock yourself out. Furthermore consider generating the key file before activating the PAM.
@@ -58,6 +65,8 @@ Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 **Warning:** OpenSSH will ignore all of this if you are authenticating with a SSH-key pair and have [disabled password logins](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). However, as of OpenSSH 6.2, you can add `AuthenticationMethods` to allow both: two-factor and key-based authentication. See [Secure Shell#Two-factor authentication and public keys](/index.php/Secure_Shell#Two-factor_authentication_and_public_keys "Secure Shell").
 
 ## Generating a secret key file
+
+**Tip:** Install [qrencode](https://www.archlinux.org/packages/?name=qrencode) to generate a scannable QR. Scan the QR with the authenticator app to automatically configure the key.
 
 Every user who wants to use two-pass authentication needs to generate a secret key file in his home folder. This can very easily be done using _google-authenticator_:
 
@@ -114,7 +123,7 @@ SSH to your host from another machine and/or from another terminal window:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=411714](https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=411714)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=415949](https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=415949)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

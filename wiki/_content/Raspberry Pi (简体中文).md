@@ -343,3 +343,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(简体
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ARM architecture (简体中文)](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

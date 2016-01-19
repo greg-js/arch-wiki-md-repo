@@ -200,3 +200,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=SiS_(Italiano)&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server (Italiano)](/index.php/Category:X_server_(Italiano) "Category:X server (Italiano)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

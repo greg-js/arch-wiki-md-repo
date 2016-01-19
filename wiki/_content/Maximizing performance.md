@@ -35,6 +35,8 @@ This article provides information on basic system diagnostics relating to perfor
     *   [2.6 Tuning kernel parameters](#Tuning_kernel_parameters)
     *   [2.7 Tuning IO schedulers](#Tuning_IO_schedulers)
         *   [2.7.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
+        *   [2.7.2 systemd-tmpfiles](#systemd-tmpfiles)
+        *   [2.7.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
     *   [2.8 RAM disks](#RAM_disks)
     *   [2.9 USB storage devices](#USB_storage_devices)
 *   [3 CPU](#CPU)
@@ -243,6 +245,37 @@ This method is non-persistent and will be lost upon rebooting.
 
 If the sole storage device in the system is an SSD, consider setting the I/O scheduler for the entire system via the `elevator=noop` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
+#### systemd-tmpfiles
+
+If you have more than one storage device, or wish to avoid clutter on the kernel cmdline, you can set the I/O scheduler via `systemd-tmpfiles`:
+
+ `/etc/tmpfiles.d/10_ioscheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - noop` 
+
+For more detail on `systemd-tmpfiles` see [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd").
+
+#### Using udev for one device or HDD/SSD mixed environment
+
+Though the above will undoubtedly work, it is probably considered a reliable workaround. Ergo, it would be preferred to use the system that is responsible for the devices in the first place to implement the scheduler. In this case it is udev, and to do this, all one needs is a simple [udev](/index.php/Udev "Udev") rule.
+
+To do this, create the following:
+
+ `/etc/udev/rules.d/60-schedulers.rules` 
+
+```
+# set deadline scheduler for non-rotating disks
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
+
+```
+
+Of course, set Deadline/CFQ to the desired schedulers. Changes should occur upon next boot. To check success of the new rule:
+
+```
+$ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in question
+
+```
+
+**Note:** In the example sixty is chosen because that is the number udev uses for its own persistent naming rules. Thus, it would seem that block devices are at this point able to be modified and this is a safe position for this particular rule. But the rule can be named anything so long as it ends in `.rules`.)
+
 ### RAM disks
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -318,21 +351,11 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 
 ### Relocate files to tmpfs
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+Relocate files, such as your browser profile, to a [tmpfs](https://en.wikipedia.org/wiki/tmpfs "wikipedia:tmpfs") file system, for improvements in application response as all the files are now stored in RAM:
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** /tmp configured using tmpfs is now considered the standard method and is included in the beginner's installation guide. (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
-
-Relocate files, such as your browser profile, to a [tmpfs](https://en.wikipedia.org/wiki/tmpfs "wikipedia:tmpfs") file system, including `/tmp`, or `/dev/shm` for improvements in application response as all the files are now stored in RAM.
-
-Use an active management script for maximal reliability and ease of use.
-
-Refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for more information on syncing browser profiles.
-
-Refer to the [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") wiki article for more information on syncing any specified folder.
+*   Refer to [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") for syncing browser profiles.
+*   Refer to [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") for syncing any specified folder.
+*   Refer to [Makepkg#tmpfs](/index.php/Makepkg#tmpfs "Makepkg") for improving compile times when building packages.
 
 ### Root on RAM overlay
 
@@ -438,9 +461,16 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414718](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=414718)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=415972](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=415972)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hardware](/index.php/Category:Hardware "Category:Hardware")
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

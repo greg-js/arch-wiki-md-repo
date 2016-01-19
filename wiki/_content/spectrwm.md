@@ -327,7 +327,7 @@ Currently the PID of window is used to determine the desktop for new windows. To
 
 *   [The scrotwm thread](https://bbs.archlinux.org/viewtopic.php?id=64645)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Spectrwm&oldid=390717](https://wiki.archlinux.org/index.php?title=Spectrwm&oldid=390717)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Spectrwm&oldid=415872](https://wiki.archlinux.org/index.php?title=Spectrwm&oldid=415872)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

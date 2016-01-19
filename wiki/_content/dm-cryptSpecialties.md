@@ -211,7 +211,9 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
 
 4.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` can be used to replace the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 
-    **Note:** the `net` hook provided with [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed
+    **Note:** The `net` hook provided with [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed
+
+    **Note:** It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_Driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 
 5.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments (see [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")). For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be used: `ip=192.168.1.1:::::eth0:none` 
 
@@ -573,9 +575,13 @@ To finish, following [Dm-crypt/Encrypting an entire system#Post-installation](/i
 
 **Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `name`. But you can still have a consistent mapping using the disk id under `/dev/disk/by-id/`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=414410](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=414410)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=416108](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=416108)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

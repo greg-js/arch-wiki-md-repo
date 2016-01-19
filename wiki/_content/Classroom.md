@@ -149,7 +149,7 @@ If you are interested in taking a class on a particular topic, list it below.
 
 If you want to teach a class, the first thing you need is a topic. There is no limit other than it should be interesting to Arch Linux users and that it can be presented over IRC. See the list of requested classes on this page for ideas. You can also teach the same topic as one of the previous classes.
 
-If you are interested in teaching, contact one of the [coordinators](https://archwomen.org/wiki/projects:classroom:start#coordinators) who will guide you in creating a class. The following sections outline the process. Also see the administration page on the Arch Women wiki.
+If you are interested in teaching, contact one of the [coordinators](https://archwomen.org/wiki/projects:classroom:start#coordinators) who will guide you in creating a class. The following sections outline the process. Also see the [administration page](https://archwomen.org/wiki/projects:classroom:start) on the Arch Women wiki.
 
 ### Create content
 
@@ -187,7 +187,7 @@ The following information is required:
 *   [Administration page on Arch Women wiki](https://archwomen.org/wiki/projects:classroom:start)
 *   [Teaching materials git repository](https://github.com/archwomen/classroom-media)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Classroom&oldid=406937](https://wiki.archlinux.org/index.php?title=Classroom&oldid=406937)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Classroom&oldid=416009](https://wiki.archlinux.org/index.php?title=Classroom&oldid=416009)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

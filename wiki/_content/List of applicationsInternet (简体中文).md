@@ -1232,3 +1232,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications (简体中文)](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

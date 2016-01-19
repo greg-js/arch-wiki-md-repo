@@ -54,9 +54,9 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 [https://wiki.gnome.org/Projects/GDM](https://wiki.gnome.org/Projects/GDM) || [gdm](https://www.archlinux.org/packages/?name=gdm)
 
-*   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE")4 display manager.
+*   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE")4 display manager (discontinued).
 
-[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup> (discontinued)
+[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Cross-desktop display manager, can use various front-ends written in any toolkit.
 
@@ -70,15 +70,15 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 [https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)<sup><small>AUR</small></sup>
 
-*   **[Qingy](/index.php/Qingy "Qingy")** — Ultralight and very configurable graphical login independent on X Windows (uses DirectFB).
+*   **[Qingy](/index.php/Qingy "Qingy")** — Ultralight and very configurable graphical login independent on X Windows (uses DirectFB). (discontinued)
 
 [http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy)]</sup>
 
-*   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; useful with Plasma5.
+*   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
 
 [https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   **[SLiM](/index.php/SLiM "SLiM")** — Lightweight and elegant graphical login solution.
+*   **[SLiM](/index.php/SLiM "SLiM")** — Lightweight and elegant graphical login solution. (discontinued)
 
 [http://sourceforge.net/projects/slim.berlios/](http://sourceforge.net/projects/slim.berlios/) || [slim](https://www.archlinux.org/packages/?name=slim)
 
@@ -188,8 +188,13 @@ Some display managers are not fully compatible with systemd, because they reuse 
 *   PulseAudio volume cannot be adjusted,
 *   login failed into GNOME with another user.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=413644](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=413644)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager&oldid=416016](https://wiki.archlinux.org/index.php?title=Display_manager&oldid=416016)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Display managers](/index.php/Category:Display_managers "Category:Display managers")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -39,8 +39,9 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.2 Hide button icons](#Hide_button_icons)
         *   [2.2.3 Hiding various tab buttons](#Hiding_various_tab_buttons)
         *   [2.2.4 Horizontal tabs](#Horizontal_tabs)
-        *   [2.2.5 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
-        *   [2.2.6 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
+        *   [2.2.5 Hide window border and title bar in Plasma](#Hide_window_border_and_title_bar_in_Plasma)
+        *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
+        *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
     *   [2.3 Web content CSS settings](#Web_content_CSS_settings)
         *   [2.3.1 Import other CSS files](#Import_other_CSS_files)
         *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
@@ -64,8 +65,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.12 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [3.14 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [3.15 Tabs merged with title bar](#Tabs_merged_with_title_bar)
-    *   [3.16 Show search matches in scroll bar](#Show_search_matches_in_scroll_bar)
+    *   [3.15 Show search matches in scroll bar](#Show_search_matches_in_scroll_bar)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -397,6 +397,127 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 }
 
 ```
+
+#### Hide window border and title bar in Plasma
+
+*   Open Settings -> Application Style -> Window Decorations
+*   Select Breeze and click on the Settings-button
+*   Open the tab Window-Specific Overrides and click on the Add button
+*   Select the following options:
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Option</th>
+
+<th>Value</th>
+
+</tr>
+
+<tr>
+
+<td>Matching window property</td>
+
+<td>Window Class Name</td>
+
+</tr>
+
+<tr>
+
+<td>Regular expression to match</td>
+
+<td>Firefox</td>
+
+</tr>
+
+<tr>
+
+<td>Border size</td>
+
+<td>No Border</td>
+
+</tr>
+
+<tr>
+
+<td>Hide window title bar</td>
+
+<td>Enable</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+Next install [this extension](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/) and set the following settings (leaving other settings to default):
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Option</th>
+
+<th>Value</th>
+
+</tr>
+
+<tr>
+
+<td>Show Custom Caption/TitleBar</td>
+
+<td>Never</td>
+
+</tr>
+
+<tr>
+
+<td>Activate custom borders and corner resizers</td>
+
+<td>Deactivate</td>
+
+</tr>
+
+<tr>
+
+<td>Enable Customizable Buttons (min,max,close)</td>
+
+<td>No (Fx. default)</td>
+
+</tr>
+
+<tr>
+
+<td>Custom Minimize, Max, Close Buttons</td>
+
+<td>Auto. Current theme's skin (fixed position)</td>
+
+</tr>
+
+<tr>
+
+<td>Drag Fx window using Tab-bar background</td>
+
+<td>Enable</td>
+
+</tr>
+
+<tr>
+
+<td>Alternative hide-titlebar feature</td>
+
+<td>Don't use</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 #### Auto-hide Bookmarks Toolbar
 
@@ -835,10 +956,6 @@ Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger
 
 Then consider checking [how your SSL is](https://www.howsmyssl.com/).
 
-### Tabs merged with title bar
-
-Firefox is able to display tabs in the title bar on Windows, but not on Linux. To fix this, install [this extension](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/), then open it's settings, at the tab "Look & Feel", submenu named "Custom Minimize, Max & Close Buttons", select Skin "Auto. Current theme's skin (fixed position)". Additionally, in "Custom Close button", at "Mouse Primary button" option select "Close Fx Window (Fx default)". You might review other settings and customize even more.
-
 ### Show search matches in scroll bar
 
 This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/en-US/firefox/addon/findbar-tweak/?src=hp-dl-featured) extension.
@@ -849,8 +966,13 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415039](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415039)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415995](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415995)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

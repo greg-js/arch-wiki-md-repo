@@ -25,10 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Installation
 
-[Install](/index.php/Install "Install") one of _jumanji_ variants from the [AUR](/index.php/AUR "AUR"):
-
-*   [jumanji](https://aur.archlinux.org/packages/jumanji/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jumanji)]</sup> - Stable release.
-*   [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)<sup><small>AUR</small></sup> - Development release.
+[Install](/index.php/Install "Install") the [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)<sup><small>AUR</small></sup> package to get a development release.
 
 ## Configuration
 
@@ -169,7 +166,7 @@ C-q       = exit
 *   [Old, closed forum thread](https://bbs.archlinux.org/viewtopic.php?id=100505)
 *   [The current forum thread](https://bbs.archlinux.org/viewtopic.php?id=115119)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jumanji&oldid=414457](https://wiki.archlinux.org/index.php?title=Jumanji&oldid=414457)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jumanji&oldid=415874](https://wiki.archlinux.org/index.php?title=Jumanji&oldid=415874)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

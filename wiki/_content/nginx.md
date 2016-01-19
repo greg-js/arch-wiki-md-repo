@@ -38,12 +38,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Configuration validation](#Configuration_validation)
     *   [5.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
-    *   [5.3 Permissions](#Permissions)
-    *   [5.4 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
-    *   [5.5 Error: No input file specified](#Error:_No_input_file_specified)
-    *   [5.6 Error: "File not found" in browser or "Primary script unknown" in log file](#Error:_.22File_not_found.22_in_browser_or_.22Primary_script_unknown.22_in_log_file)
-    *   [5.7 Error: chroot: '/usr/sbin/nginx' No such file or directory](#Error:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
-    *   [5.8 Alternative script for systemd](#Alternative_script_for_systemd)
+    *   [5.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
+    *   [5.4 Error: No input file specified](#Error:_No_input_file_specified)
+    *   [5.5 Error: "File not found" in browser or "Primary script unknown" in log file](#Error:_.22File_not_found.22_in_browser_or_.22Primary_script_unknown.22_in_log_file)
+    *   [5.6 Error: chroot: '/usr/sbin/nginx' No such file or directory](#Error:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
+    *   [5.7 Alternative script for systemd](#Alternative_script_for_systemd)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -753,30 +752,6 @@ server_name_in_redirect off;
 
 Default behavior is that nginx redirects any requests to the value given as `server_name` in the config.
 
-### Permissions
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** It's better to remedy the cause rather than the symptom. The ownership of the newly created files will be inherited if the [setgid](https://en.wikipedia.org/wiki/Setuid#setuid_and_setgid_on_directories "wikipedia:Setuid") bit is set on the directory, permissions for new files can be set by configuring [umask](/index.php/Umask "Umask") accordingly. (Discuss in [Talk:Nginx#](https://wiki.archlinux.org/index.php/Talk:Nginx))
-
-It may be necessary to give the correct permissions to `/usr/share/nginx*` (e.g. allow users to `read`, `write` & `modified` files and/or directories).
-
-The following script may be useful to restore and/or set permissions:
-
-```
-#!/bin/sh
-chown -R http:http /usr/share/nginx # set owner/group files/directories to 'http'
-find /usr/share/nginx -type d -exec chmod 775 {} \; # allow users part of 'http' group to modify directories
-find /usr/share/nginx -type f -exec chmod 664 {} \; # allow users part of 'http' group to modify files
-
-```
-
-You may want to run the script as a [cronjob](/index.php/Cron "Cron"), preventing permissions issues.
-
 ### Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)
 
 This is because the FastCGI server has not been started, or the socket used has wrong permissions.
@@ -809,7 +784,7 @@ If it work, [disable](/index.php/Disable "Disable") `fcgiwrap.socket` and [enabl
 
 2\. Another occasion is that, wrong `root` argument in the `location ~ \.php$` section in `nginx.conf`. Make sure the `root` points to the same directory as it in `location /` in the same server. Or you may just set root as global, do not define it in any location section.
 
-3\. Check permissions: e.g. `http` for user/group, `755` for directories and `644` for files. Remember the entire path to the `html` directory should have the correct permissions.
+3\. Check permissions: e.g. `http` for user/group, `755` for directories and `644` for files. Remember the entire path to the `html` directory should have the correct permissions. See [File permissions and attributes#Bulk_chmod](/index.php/File_permissions_and_attributes#Bulk_chmod "File permissions and attributes") to bulk modify a directory tree.
 
 4\. You do not have the `SCRIPT_FILENAME` containing the full path to your scripts. If the configuration of nginx (`fastcgi_param SCRIPT_FILENAME`) is correct, this kind of error means php failed to load the requested script. Usually it is simply a permissions issue, you can just run php-cgi as root:
 
@@ -919,7 +894,7 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=415393](https://wiki.archlinux.org/index.php?title=Nginx&oldid=415393)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=416135](https://wiki.archlinux.org/index.php?title=Nginx&oldid=416135)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -927,4 +902,4 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=415393](
 
 Hidden category:
 
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

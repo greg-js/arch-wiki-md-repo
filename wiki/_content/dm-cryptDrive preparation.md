@@ -72,9 +72,9 @@ Now the next step is [#Partitioning](#Partitioning).
 
 #### dm-crypt wipe free space after installation
 
-If you did not have time for the wipe procedure before [installation](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), the same effect can be achieved once the encrypted system is booted and the filesystems mounted. However, consider if the filesystem may have set up reserved space, e.g. for the root user, or another [disk quota](/index.php/Disk_quota "Disk quota") mechanism that may limit the wipe even when performed by the root user.
+If you did not have time for the wipe procedure before [installation](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), the same effect can be achieved once the encrypted system is booted and the filesystems mounted. However, consider if the concerned filesystem may have set up reserved space, e.g. for the root user, or another [disk quota](/index.php/Disk_quota "Disk quota") mechanism, that that may limit the wipe even when performed by the root user: some parts of the underlying block device might not get written to at all.
 
-To wipe, temporarily fill the remaining free space of the partition by writing to a file inside the encrypted container:
+To execute the wipe, temporarily fill the remaining free space of the partition by writing to a file inside the encrypted container:
 
  `# dd if=/dev/zero of=/file/in/container status=progress`  `dd: writing to ‘/file/in/container’: No space left on device` 
 
@@ -151,7 +151,7 @@ If more flexibility is needed, though, dm-crypt can coexist with other stacked b
 
 **Reason:** The GRUB bootloader's feature "early cryptodisks", allows for (a) an unlocking of a LUKS encrypted root partition to access the `/boot` mount point in it, or (b) an unlocking of a separate LUKS encrypted partition for `/boot`. Instructions to setup both should be added. Further, (c) the conversion of an existing unencrypted `/boot` partition to LUKS. (Discuss in [User_talk:Grazzolini](https://wiki.archlinux.org/index.php/User_talk:Grazzolini))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=415624](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=415624)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=415900](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=415900)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

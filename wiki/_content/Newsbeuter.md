@@ -195,10 +195,10 @@ If that is not the problem, then you probably have another instance of newsbeute
 ## See Also
 
 *   [Official web site](http://newsbeuter.org/)
-*   [Full documentation](http://www.newsbeuter.org/doc/newsbeuter.html/)
+*   [Full documentation](http://www.newsbeuter.org/doc/newsbeuter.html)
 *   [Arabesque: Rss with Newsbeuter](http://blog.sanctum.geek.nz/rss-with-newsbeuter/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Newsbeuter&oldid=409448](https://wiki.archlinux.org/index.php?title=Newsbeuter&oldid=409448)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Newsbeuter&oldid=415933](https://wiki.archlinux.org/index.php?title=Newsbeuter&oldid=415933)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

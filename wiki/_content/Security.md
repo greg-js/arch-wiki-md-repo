@@ -273,7 +273,7 @@ Data partitions should always be mounted with `nodev`, `nosuid`, `noexec`. Poten
 
 ### File access permissions
 
-The default permissions allow read access to almost everything and changing the permissions can hide valuable information from an attacker who gains access to a non-root account such as the http or nobody users.
+The default [file permissions](/index.php/File_permissions "File permissions") allow read access to almost everything and changing the permissions can hide valuable information from an attacker who gains access to a non-root account such as the `http` or `nobody` users.
 
 For example:
 
@@ -596,10 +596,15 @@ Note that this will not work if there is some command running in the shell (eg.:
 *   [Linux Foundation's Linux workstation security checklist](https://github.com/lfit/itpol/blob/master/linux-workstation-security.md)
 *   [privacytools.io](https://www.privacytools.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=413744](https://wiki.archlinux.org/index.php?title=Security&oldid=413744)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=416130](https://wiki.archlinux.org/index.php?title=Security&oldid=416130)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [Networking](/index.php/Category:Networking "Category:Networking")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

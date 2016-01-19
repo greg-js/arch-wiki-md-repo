@@ -236,7 +236,7 @@ The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is a
 
 To make it available as a boot option, you will need to update your [bootloader](/index.php/Bootloader "Bootloader")'s configuration file to use the LTS kernel and ram disk: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=415760](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=415760)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=416131](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=416131)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

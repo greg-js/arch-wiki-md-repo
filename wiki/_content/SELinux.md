@@ -640,3 +640,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -48,7 +48,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>7.2.1.</small> [Gerenciadores de tela](/index.php/Category:Display_managers_(Portugu%C3%AAs) "Category:Display managers (Português)") <small>(3)</small>
 
-<small>7.2.2.</small> [Stacking WMs (Portuguese)](/index.php/Category:Stacking_WMs_(Portuguese) "Category:Stacking WMs (Portuguese)") <small>(1)</small>
+<small>7.2.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(1)</small>
 
 <small>7.3.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(5)</small>
 
@@ -74,7 +74,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>9.</small> [Website Resources](/index.php/Category:Website_Resources_(Portugu%C3%AAs) "Category:Website Resources (Português)") <small>(1)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=411846](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=411846)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=415836](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Português)&oldid=415836)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -11,7 +11,7 @@ Mullvad is a VPN service based in Sweden which operates [OpenVPN](/index.php/Ope
 Mullvad supply their own client but it can also be used with a manual configuration of Openvpn. Install [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [openresolv](https://www.archlinux.org/packages/?name=openresolv). Download the Mullvad OpenVPN configuration files from [Mullvad](http://mullvad.net/en/openvpn_conf.php) and unzip into /etc/openvpn. Rename mullvad_linux.conf:
 
 ```
-$ sudo mv /etc/openvpn/mullvad_linux.conf /etc/openvpn/mullvad.conf
+# mv /etc/openvpn/mullvad_linux.conf /etc/openvpn/mullvad.conf
 
 ```
 
@@ -86,20 +86,18 @@ esac
 Make it executable:
 
 ```
-$ sudo chmod +x /etc/openvpn/update-resolv-conf
+# chmod +x /etc/openvpn/update-resolv-conf
 
 ```
 
-The vpn can then be controlled through openvpn@mullvad.service:
-
-```
-$ sudo systemctl start openvpn@mullvad.service
-$ sudo systemctl enable openvpn@mullvad.service
-
-```
+The VPN can then be [controlled](/index.php/Enabled "Enabled") through `openvpn@mullvad.service`.
 
 ## Mullvad Client
 
-Mullvad also supply their own graphical client [mullvad](https://aur.archlinux.org/packages/mullvad/)<sup><small>AUR</small></sup>, [link](https://mullvad.net/en/download/).
+Mullvad also supply their own [graphical client](https://mullvad.net/en/download/), packaged as [mullvad](https://aur.archlinux.org/packages/mullvad/)<sup><small>AUR</small></sup>.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415776](https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415776)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415851](https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415851)"
+
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

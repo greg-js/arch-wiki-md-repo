@@ -505,6 +505,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Open-xchange&oldid=4
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
 
-Hidden category:
+Hidden categories:
 
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
 *   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

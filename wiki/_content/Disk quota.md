@@ -16,10 +16,12 @@ This article covers the installation and setup of disk quota.
 *   [2 Enabling](#Enabling)
     *   [2.1 Journaled quota](#Journaled_quota)
 *   [3 Configuring](#Configuring)
+    *   [3.1 Example configuration](#Example_configuration)
 *   [4 Managing](#Managing)
     *   [4.1 Basics](#Basics)
     *   [4.2 Copying quota settings](#Copying_quota_settings)
-        *   [4.2.1 Multiple users](#Multiple_users)
+        *   [4.2.1 To one or several users](#To_one_or_several_users)
+        *   [4.2.2 To all users](#To_all_users)
     *   [4.3 Other commands](#Other_commands)
 *   [5 More resources](#More_resources)
 
@@ -92,6 +94,14 @@ quotacheck: Cannot find filesystem to check or filesystem not mounted with quota
 
 ```
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Update required for systemd and the related units `quotaon.service` and `systemd-quotacheck.service` (see also [FS#31391](https://bugs.archlinux.org/task/31391)). (Discuss in [Talk:Disk quota#Should journald not be the default method ?](https://wiki.archlinux.org/index.php/Talk:Disk_quota#Should_journald_not_be_the_default_method_.3F))
+
 Consider adding this command to your start-up, see [Autostarting](/index.php/Autostarting "Autostarting").
 
 ### Journaled quota
@@ -114,11 +124,11 @@ or additionally, enable the group quota mount option;
 
 ## Configuring
 
-**Note:** To find out how many **1k** blocks are there for a partition use **# df**
+**Tip:** To find out how many 1K blocks are there for a partition use `df`
 
-Replace `$USER` as appropriate and edit the quota as root:
+Replace `$USER` as appropriate:
 
- `$ edquota _$USER_` 
+ `# edquota _$USER_` 
 
 ```
 Disk quotas for user **$USER** (uid 1000):
@@ -131,13 +141,13 @@ Disk quotas for user **$USER** (uid 1000):
 
 blocks
 
-Number of 1k blocks currently used by `$USER`
+Number of 1k blocks currently used by `$USER`.
 
 **Note:** Block size is statically set to 1k regardless of filesystem block size. [Explanation](http://stackoverflow.com/questions/2506288/detect-block-size-for-quota-in-linux/2506311#2506311)
 
 inodes
 
-Number of entries by `$USER` in directory file
+Number of entries by `$USER` in directory file.
 
 soft
 
@@ -147,25 +157,29 @@ hard
 
 Max number of blocks/inodes `$USER` may have on partition. If set to "0" (zero) then no limit is enforced.
 
-Example configuration:
-
-```
-Disk quotas for user testuser (uid 1000):
-Filesystem      blocks       soft       hard     inodes     soft   hard       
-/dev/sda1       695879       10000      15000     6741        0      0
-
-```
-
-The `soft` limit means that once _testuser_ uses over 10MB of space a warning email gets ensued, and after a period of time the soft limit gets enforced.
-
-The `hard` limit is stricter, so to speak; a user cannot go over this limit.
-
-Next configure the `soft` limit grace period:
+Configure the `soft` limit grace period:
 
 ```
 # edquota -t
 
 ```
+
+### Example configuration
+
+Consider the following configuration for _user1_:
+
+ `# edquota _user1_` 
+
+```
+Disk quotas for user _user1_ (uid _1000_):
+Filesystem      blocks      soft      hard      inodes      soft      hard
+_/dev/sda1_       695879      10000     15000     6741        0         0
+
+```
+
+The `soft` limit means that once _user1_ uses over 10MB of space a warning gets issues, and after the time set by `edquota -t` the soft limit gets enforced.
+
+The `hard` limit is stricter, so to speak; a user can never write more data once this limit is reached.
 
 ## Managing
 
@@ -196,25 +210,27 @@ for groups;
 
 ### Copying quota settings
 
-To copy quota from one user or group to the other, use this command:
+#### To one or several users
+
+To copy quota settings from `_user1_` to `_user2_`, use this:
 
 ```
-# edquota -p user1 user2
-
-```
-
-User1 is the user you copy from, user2 is the user you copy quota to. Of course you can replace user with group, when necessary.
-
-#### Multiple users
-
-The idea is to make a temporary user acount, modify the quota settings for that user, and then copy the generated quota files for all users to use. After setting quota settings for _quotauser_, copy the settings:
-
-```
-# edquota -p **quotauser** `awk -F: '$3 > 999 {print $1}' /etc/passwd`
+# edquota -p _user1_ _user2_
 
 ```
 
-This applies the settings to users with a UID equal to or greater than 1000.
+To copy quota settings to several other users, append `_user3_`, `_user4_`, and so on, to the command.
+
+Use `edquota -g -p _group1_ _group2_ ...` to copy settings for groups.
+
+#### To all users
+
+The idea is to modify the quota settings for one user and copy the setting to all other users. Set the quota for `_user1_` and apply the quota to users with a UID greater than 999.
+
+```
+# edquota -p _user1_ `awk -F: '$3 > 999 {print $1}' /etc/passwd`
+
+```
 
 ### Other commands
 
@@ -252,9 +268,13 @@ Number of in use dquot entries (user/group): -1946
 *   [http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html)
 *   [http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html](http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=415533](https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=415533)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=416124](https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=416124)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

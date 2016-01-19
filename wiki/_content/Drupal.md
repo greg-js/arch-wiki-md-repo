@@ -8,11 +8,13 @@ Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
 *   [LAPP](/index.php/LAPP "LAPP")
-*   [SQLite](/index.php/SQLite "SQLite")
+*   [LASP](/index.php?title=LASP&action=edit&redlink=1 "LASP (page does not exist)")
 *   [MySQL](/index.php/MySQL "MySQL")
 *   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+*   [SQLite](/index.php/SQLite "SQLite")
 *   [Sendmail](/index.php/Sendmail "Sendmail")
 *   [PostFix](/index.php/PostFix "PostFix")
+*   [Exim](/index.php/Exim "Exim")
 
 _"Drupal is a free and open source content management system (CMS) and Content Management framework (CMF) written in PHP and distributed under the GNU General Public License."_ - [Wikipedia](http://en.wikipedia.org/wiki/Drupal)
 
@@ -33,7 +35,7 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [drupal](https://www.archlinux.org/packages/?name=drupal) from the AUR.
+[Install](/index.php/Install "Install") the [drupal](https://www.archlinux.org/packages/?name=drupal) package.
 
 ## Configuration
 
@@ -72,7 +74,7 @@ Finally, [restart](/index.php/Daemons#Restarting "Daemons") Apache (`httpd.servi
 
 ### Sending Mail
 
-Drupal needs a Sendmail-compatible MTA like [Sendmail](https://www.archlinux.org/packages/?name=Sendmail), [Postfix](https://www.archlinux.org/packages/?name=Postfix) or [Exim](https://www.archlinux.org/packages/?name=Exim) if you plan to send mail from your local setup. Alternatively there are multiple solutions to send mail via external mail servers through SMTP or other means like [SMTP](https://drupal.org/project/smtp) or [PHPMailer](https://drupal.org/project/phpmailer). Use the [search page](https://www.drupal.org/search/site/mail) to find more possibilities.
+Drupal needs a Sendmail-compatible MTA like [Sendmail](/index.php/Sendmail "Sendmail"), [Postfix](/index.php/Postfix "Postfix") or [Exim](/index.php/Exim "Exim") if you plan to send mail from your local setup. Alternatively there are multiple solutions to send mail via external mail servers through SMTP or other means like [SMTP](https://drupal.org/project/smtp) or [PHPMailer](https://drupal.org/project/phpmailer). Use the [search page](https://www.drupal.org/search/site/mail) to find more possibilities.
 
 ### Scheduling with Cron
 
@@ -105,7 +107,7 @@ Restart Apache.
 *   [Official Drupal documentation](http://drupal.org/handbook)
 *   [Simple guide to install Drupal on Xampp](http://drupal.org/node/307956)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=415735](https://wiki.archlinux.org/index.php?title=Drupal&oldid=415735)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=415889](https://wiki.archlinux.org/index.php?title=Drupal&oldid=415889)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

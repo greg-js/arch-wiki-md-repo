@@ -939,3 +939,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive_(
 
 *   [Optical (Italiano)](/index.php/Category:Optical_(Italiano) "Category:Optical (Italiano)")
 *   [Audio/Video (Italiano)](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

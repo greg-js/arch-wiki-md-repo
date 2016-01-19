@@ -162,3 +162,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_manager_(正
 
 *   [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文")
 *   [Display managers (正體中文)](/index.php/Category:Display_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Display managers (正體中文)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

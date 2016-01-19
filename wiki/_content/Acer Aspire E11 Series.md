@@ -108,6 +108,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 GPU](#GPU)
     *   [3.2 Start up and shutdown freeze](#Start_up_and_shutdown_freeze)
+    *   [3.3 Bluetooth can't find any devices](#Bluetooth_can.27t_find_any_devices)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -218,13 +219,49 @@ blacklist dw_dmac_core
 
 See also [[4]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1341925) [[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1213216)
 
+### Bluetooth can't find any devices
+
+Some laptops have an Atheros AR9565 Wifi/Bluetooth controller built in:
+
+```
+# lsusb
+...
+Bus 001 Device 005: ID 04ca:3014 Lite-On Technology Corp. Qualcoom Atheros Bluetooth
+...
+
+```
+
+Wifi works fine, the bluetooth controller is recognized but no bluetooth devices are found. The problem is that as of Linux 4.3.3 this devices is not listed in `ath9k.ko` which loads the firmware files and patches into the Atheros bluetooth controllers.
+
+Quick and dirty fix, patching this USB ID into the modules (from: [https://bbs.archlinux.org/viewtopic.php?pid=1433352](https://bbs.archlinux.org/viewtopic.php?pid=1433352)):
+
+```
+cp -i ath3k.ko.gz ath3k.ko.gz.ori
+cp -i btusb.ko.gz btusb.ko.gz.ori
+gunzip ath3k.ko.gz btusb.ko.gz
+sed -e 's/\xca\x04\x10\x30/\xca\x04\x14\x30/g' ath3k.ko > a
+sed -e 's/\xca\x04\x10\x30/\xca\x04\x14\x30/g' btusb.ko > b
+mv a ath3k.ko
+mv b btusb.ko
+gzip ath3k.ko btusb.ko
+
+```
+
+You will still need to copy two firmware files (`AthrBT_0x31010100.dfu` and `ramps_0x31010100_40.dfu`) under `/lib/firmware/ar3k`.
+
+Fortunately, Ubuntu Forums user Ephialta links to a Windows driver update archive (.cab) containing the missing firmware files: [http://ubuntuforums.org/showthread.php?t=2260501&p=13207809#post13207809](http://ubuntuforums.org/showthread.php?t=2260501&p=13207809#post13207809)
+
 ## See also
 
 *   [Disassembly Acer E11 (RAM, HDD upgrade)](https://www.youtube.com/watch?v=5OT_RnjMess)
 *   [Installing Linux on Acer E11-111 (ES1-111-C3NT)](http://blog.mdda.net/oss/2014/11/16/acer-e11-es1-111-c3nt-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=401092](https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=401092)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=416005](https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=416005)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Acer](/index.php/Category:Acer "Category:Acer")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

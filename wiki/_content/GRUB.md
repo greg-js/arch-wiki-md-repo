@@ -329,7 +329,7 @@ If you want to keep these files inside the EFI System Partition itself, add `--b
 
 ```
 
-This puts all GRUB files in `$esp/grub`, instead of in `/boot/grub`. When using this method, make sure you have _grub-mkconfig_ put the configuration file in same place:
+This puts all GRUB files in `$esp/grub`, instead of in `/boot/grub`. When using this method, make sure you have _grub-mkconfig_ put the configuration file in the same place:
 
 ```
 # grub-mkconfig -o $esp/grub/grub.cfg
@@ -1173,8 +1173,13 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=415040](https://wiki.archlinux.org/index.php?title=GRUB&oldid=415040)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=416008](https://wiki.archlinux.org/index.php?title=GRUB&oldid=416008)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

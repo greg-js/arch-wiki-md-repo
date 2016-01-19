@@ -121,8 +121,12 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   [http://wiki.debian.org/Firewalls](http://wiki.debian.org/Firewalls) - Debian Wiki's list of firewalls
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firewalls&oldid=404469](https://wiki.archlinux.org/index.php?title=Firewalls&oldid=404469)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firewalls&oldid=416044](https://wiki.archlinux.org/index.php?title=Firewalls&oldid=416044)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

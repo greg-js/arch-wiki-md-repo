@@ -960,9 +960,17 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://boson.sourceforge.net/](http://boson.sourceforge.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=boson)</small>
 
+*   **Civilization V** — Famous turn-based strategy game.
+
+[http://store.steampowered.com/app/8930/](http://store.steampowered.com/app/8930/) || Steam
+
 *   **Crimson Fields** — Tactical war game in the tradition of Battle Isle.
 
 [http://crimson.seul.org/](http://crimson.seul.org/) || [crimson](https://aur.archlinux.org/packages/crimson/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/crimson)]</sup>
+
+*   **Crusader Kings II** — A grand strategy game set in the Middle Ages.
+
+[http://store.steampowered.com/app/203770/](http://store.steampowered.com/app/203770/) || Steam
 
 *   **Dark Oberon** — Open source real-time strategy game similar to Warcraft II.
 
@@ -975,6 +983,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "wikipedia:Endgame: Singularity")** — Turn based single player strategy/simulation about a AI hiding, growing and evolving.
 
 [http://www.emhsoft.com/singularity/](http://www.emhsoft.com/singularity/) || [singularity](https://www.archlinux.org/packages/?name=singularity)
+
+*   **Europa Universalis IV** — A grand strategy video game where player controls a nation during the Late Middle Ages until the Early Modern Period (1444 to 1821).
+
+[http://store.steampowered.com/app/236850/](http://store.steampowered.com/app/236850/) || Steam
 
 *   **Factorio** — A game about mining resources, planning and building factories, automating production and fighting alien enemies.
 
@@ -1108,7 +1120,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=415666](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=415666)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416020](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416020)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -1117,4 +1129,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=
 Hidden categories:
 
 *   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
 *   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

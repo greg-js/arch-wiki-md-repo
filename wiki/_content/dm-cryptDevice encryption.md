@@ -916,7 +916,7 @@ The advantage is that it resides in RAM and not on a physical disk, therefore it
 
 Add a keyslot for the keyfile to the LUKS header:
 
- `# cryptsetup luksAddKey /dev/sda2 mykeyfile` 
+ `# cryptsetup luksAddKey /dev/sda2 /etc/mykeyfile` 
 
 ```
 Enter any LUKS passphrase:
@@ -1017,7 +1017,7 @@ On the next reboot you should only have to enter your container decryption passp
 
 ([source](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/#bonus-login-once))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415589](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=415589)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=416058](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&oldid=416058)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -51,6 +51,8 @@ LVM is a [logical volume manager](https://en.wikipedia.org/wiki/logical_volume_m
         *   [5.7.2 Configuration](#Configuration)
     *   [5.8 LVM Cache (lvmcache)](#LVM_Cache_.28lvmcache.29)
         *   [5.8.1 Create](#Create)
+        *   [5.8.2 Remove](#Remove)
+        *   [5.8.3 Root device on a cached LV](#Root_device_on_a_cached_LV)
 *   [6 Graphical Configuration](#Graphical_Configuration)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Changes that could be required due to changes in the Arch-Linux defaults](#Changes_that_could_be_required_due_to_changes_in_the_Arch-Linux_defaults)
@@ -716,6 +718,25 @@ Create a cache pool with automatic meta data on sdb, and convert the existing lo
 
 ```
 
+#### Remove
+
+If you ever need to undo the one step creation operation above:
+
+```
+# lvconvert --uncache dataVG/dataLV
+
+```
+
+This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html).
+
+#### Root device on a cached LV
+
+If your root device is on a cached LV, you must prepare `mkinitcpio` to include required modules:
+
+ `/etc/mkinitcpio.conf`  `MODULES="... **dm-cache dm_cache_mq dm_cache_smq** ..."` 
+
+If you fail to do so, you'll end up in a rescue shell early in the boot process. A way to boot again is to remove the cache as described above (`lvconvert` may not be available from the rescue shell, but is accessible from the `lvm` tool). Before leaving the rescue shell, activate the LV.
+
 ## Graphical Configuration
 
 There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/)<sup><small>AUR</small></sup> covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
@@ -841,8 +862,12 @@ Make sure to remove snapshot volumes before generating grub.cfg.
 *   [LVM2 Mirrors vs. MD Raid 1](http://www.joshbryan.com/blog/2008/01/02/lvm2-mirrors-vs-md-raid-1/) post by Josh Bryan
 *   [Ubuntu LVM Guide Part 1](http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html)[Part 2 detals snapshots](http://www.tutonics.com/2012/12/lvm-guide-part-2-snapshots.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LVM&oldid=414425](https://wiki.archlinux.org/index.php?title=LVM&oldid=414425)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LVM&oldid=415909](https://wiki.archlinux.org/index.php?title=LVM&oldid=415909)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

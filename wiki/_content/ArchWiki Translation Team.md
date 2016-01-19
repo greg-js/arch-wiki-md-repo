@@ -224,6 +224,14 @@ List here articles that only exist in non-English languages, or that exist in En
 
 <tr>
 
+<td>[MSI GT72 2QD Dominator (Español)](/index.php/MSI_GT72_2QD_Dominator_(Espa%C3%B1ol) "MSI GT72 2QD Dominator (Español)")</td>
+
+<td>Spanish</td>
+
+</tr>
+
+<tr>
+
 <td>[MYTHTV UNDERTHESTAIRS (Dansk)](/index.php/MYTHTV_UNDERTHESTAIRS_(Dansk) "MYTHTV UNDERTHESTAIRS (Dansk)")</td>
 
 <td>Dansk</td>
@@ -304,8 +312,12 @@ List here articles that only exist in non-English languages, or that exist in En
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team&oldid=409432](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team&oldid=409432)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team&oldid=416011](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team&oldid=416011)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

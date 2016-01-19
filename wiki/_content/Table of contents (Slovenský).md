@@ -34,7 +34,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.1.1.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Slovensk%C3%BD) "Category:Virtual Private Network (Slovenský)") <small>(1) (tiež v [Networking](/index.php/Category:Networking_(Slovensk%C3%BD) "Category:Networking (Slovenský)"))</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Slovenský)&oldid=411616](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Slovenský)&oldid=411616)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Slovenský)&oldid=416043](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Slovenský)&oldid=416043)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

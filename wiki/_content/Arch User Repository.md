@@ -200,6 +200,7 @@ For write access to the AUR, users need to have an [SSH key pair](/index.php/SSH
 ```
 Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
+  User aur
 ```
 
 It is recommended that you [create a new key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") rather than use an existing one, so that you could selectively revoke the keys should something happen.
@@ -428,7 +429,7 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 *   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)
 *   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415575](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415575)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415934](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415934)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

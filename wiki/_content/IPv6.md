@@ -162,6 +162,8 @@ method=auto
 
 ### systemd-networkd
 
+**Note:** Broken on v228 [https://github.com/systemd/systemd/issues/2242](https://github.com/systemd/systemd/issues/2242)
+
 Systemd-networkd also does not honour the settings placed in `/etc/sysctl.d/40-ipv6.conf` and needs the option `IPv6PrivacyExtensions` to be set.
 
 See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5) man page](http://www.freedesktop.org/software/systemd/man/systemd.network.html) for details.
@@ -421,8 +423,13 @@ which first clears the previous `ExecStart`, and then replaces it with one that 
 *   [IPv6 prefixes](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/x513.html) - a summary of prefix types
 *   [net.ipv6 options](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/proc-sys-net-ipv6..html) - documentation of kernel parameters
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IPv6&oldid=407905](https://wiki.archlinux.org/index.php?title=IPv6&oldid=407905)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IPv6&oldid=416045](https://wiki.archlinux.org/index.php?title=IPv6&oldid=416045)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Networking](/index.php/Category:Networking "Category:Networking")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -940,6 +940,18 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <tr>
 
+<td>[Openbox (Русский)](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)")</td>
+
+<td>Не требуется</td>
+
+<td>[ClearSprite](/index.php/User:Clearsprite "User:Clearsprite")</td>
+
+<td>-</td>
+
+</tr>
+
+<tr>
+
 <td>[OpenRC (Русский)](/index.php/OpenRC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "OpenRC (Русский)")</td>
 
 <td>Не требуется</td>
@@ -1194,7 +1206,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=415389](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=415389)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=416081](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team_(Русский)&oldid=416081)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

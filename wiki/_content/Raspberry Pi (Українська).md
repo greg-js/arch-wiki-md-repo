@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 "_Raspberry Pi - це одноплатний комп'ютер, розроблений британським фондом Raspberry Pi Foundation. Його головне призначення — стимулювати навчання базовим комп'ютерним наукам у школах._"
 
-Оригінальні моделі, випущені в 2012, базувалися на процесорі Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). Мрдель Raspberry Pi 2, випущена в 2015, продавалася з процесором BCM2836 SoC (4-ядерному [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")).
+Оригінальні моделі, випущені в 2012, базувалися на процесорі Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). Модель Raspberry Pi 2, випущена в 2015, продавалася з процесором BCM2836 SoC (4-ядерному [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")).
 
 ## Contents
 
@@ -78,7 +78,7 @@ Raspberry Pi базується на ARM, а тому потребує вико�
 
 Пакунок [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) має поставити потрібні програми для використання звуку. Типову гучність можна підлаштувати, використовуючи `alsamixer`.
 
-**Tip:** Переконайтесь, що єдине джерело звуку "PCM" не заглушене (позначено як `MM` коли заглушене, натисніть `M` щоб включити).
+[Template:Порада](/index.php?title=Template:%D0%9F%D0%BE%D1%80%D0%B0%D0%B4%D0%B0&action=edit&redlink=1 "Template:Порада (page does not exist)")
 
 Виберіть джерело аудіо для виводу:
 
@@ -204,15 +204,7 @@ $ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
 
 Прочитайте [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") для більшої інформації щодо регуляторів.
 
-**Tip:** Наступний скрипт покаже всі частоти, що встановлені на RPi:
-
-```
-#/bin/bash
-for src in arm core h264 isp v3d uart pwm emmc pixel vec hdmi dpi ; do
-    echo -e "$src:\t$(/opt/vc/bin/vcgencmd  measure_clock $src)"
-done
-
-```
+[Template:Порада](/index.php?title=Template:%D0%9F%D0%BE%D1%80%D0%B0%D0%B4%D0%B0&action=edit&redlink=1 "Template:Порада (page does not exist)")
 
 ## Серійна консоль
 
@@ -416,8 +408,12 @@ i2c-bcm2708
 *   [Arch Linux ARM on Raspberry PI](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
 *   [[2]](https://github.com/phortx/Raspberry-Pi-Setup-Guide) - A really opionionated guide how to setup a RPi with Arch Linux
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415641](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415641)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415974](https://wiki.archlinux.org/index.php?title=Raspberry_Pi_(Українська)&oldid=415974)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [ARM architecture (Українська)](/index.php?title=Category:ARM_architecture_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "Category:ARM architecture (Українська) (page does not exist)")
+*   [ARM architecture (Українська)](/index.php/Category:ARM_architecture_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:ARM architecture (Українська)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -372,7 +372,7 @@ Due to the fact that the JDBC-drivers often use the port in the URL to establish
 
 ### Impersonate another window manager
 
-You may use the [wmname](https://www.archlinux.org/packages/?name=wmname) from [suckless.org](http://tools.suckless.org/wmname) to make the JVM believe you are running a different window manager. This may solve a rendering issue of Java GUIs occurring in window managers like [Awesome](/index.php/Awesome "Awesome") or [Dwm](/index.php/Dwm "Dwm").
+You may use the [wmname](https://www.archlinux.org/packages/?name=wmname) from [suckless.org](http://tools.suckless.org/wmname) to make the JVM believe you are running a different window manager. This may solve a rendering issue of Java GUIs occurring in window managers like [Awesome](/index.php/Awesome "Awesome") or [Dwm](/index.php/Dwm "Dwm") or [Ratpoison](/index.php/Ratpoison "Ratpoison").
 
 ```
 $ wmname LG3D
@@ -465,8 +465,13 @@ Non-reparenting window managers user should set the following environment variab
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=413181](https://wiki.archlinux.org/index.php?title=Java&oldid=413181)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=415921](https://wiki.archlinux.org/index.php?title=Java&oldid=415921)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

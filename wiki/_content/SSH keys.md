@@ -773,8 +773,14 @@ Failing this, run the sshd in debug mode and monitor the output while connecting
 *   [OpenSSH 5.7 Release Notes](http://www.openssh.com/txt/release-5.7)
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=414379](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=414379)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=416065](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=416065)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

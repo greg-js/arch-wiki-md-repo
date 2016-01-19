@@ -27,6 +27,8 @@ _GNU Octave is a high-level interpreted language, primarily intended for numeric
     *   [5.1 Converting to an open format](#Converting_to_an_open_format)
     *   [5.2 Reading xls files directly from Octave](#Reading_xls_files_directly_from_Octave)
         *   [5.2.1 Steps necessary to make Java Interface available](#Steps_necessary_to_make_Java_Interface_available)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Zsh Undecodable Token](#Zsh_Undecodable_Token)
 
 ## Installation
 
@@ -247,8 +249,26 @@ The output should be > 0:
 
 To make this permanent add the `javaaddpath` commands to your `~/.octaverc` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=412141](https://wiki.archlinux.org/index.php?title=Octave&oldid=412141)"
+## Troubleshooting
+
+### Zsh Undecodable Token
+
+If you get error
+
+```
+undecodable token: b(hex)[23m
+
+```
+
+when printing, install [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) and relogin.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=416116](https://wiki.archlinux.org/index.php?title=Octave&oldid=416116)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

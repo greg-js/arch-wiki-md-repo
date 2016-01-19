@@ -272,3 +272,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Time_(简体中文)&
 
 *   [Mainboards and BIOS (简体中文)](/index.php/Category:Mainboards_and_BIOS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mainboards and BIOS (简体中文)")
 *   [System administration (简体中文)](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

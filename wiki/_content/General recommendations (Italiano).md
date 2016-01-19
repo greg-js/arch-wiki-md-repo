@@ -320,3 +320,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=General_recommendati
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Getting and installing Arch (Italiano)](/index.php/Category:Getting_and_installing_Arch_(Italiano) "Category:Getting and installing Arch (Italiano)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

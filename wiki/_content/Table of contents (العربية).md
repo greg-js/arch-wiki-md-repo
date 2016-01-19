@@ -80,7 +80,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>17.</small> [Web browser](/index.php/Category:Web_browser_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Web browser (العربية)")‎ <small>(1) (also in [Internet applications](/index.php/Category:Internet_applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Internet applications (العربية)"), [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)"))</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(العربية)&oldid=411624](https://wiki.archlinux.org/index.php?title=Table_of_contents_(العربية)&oldid=411624)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(العربية)&oldid=415951](https://wiki.archlinux.org/index.php?title=Table_of_contents_(العربية)&oldid=415951)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

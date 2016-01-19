@@ -39,7 +39,7 @@ _udisksd_ ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and _udi
 
 ## Configuration
 
-Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If your [session](/index.php/Session "Session") is not activated or present, configure policykit manually. The following file sets common udisks permissions for the `storage` group. [[2]](https://github.com/coldfix/udiskie#permissions)
+Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If your [session](/index.php/Session "Session") is not activated or present (for example, when controlling udisks from [systemd/User](/index.php/Systemd/User "Systemd/User")), configure policykit manually. The following file sets common udisks permissions for the `storage` group. [[2]](https://github.com/coldfix/udiskie/wiki/Permissions)
 
  `/etc/polkit-1/rules.d/50-udisks.rules` 
 
@@ -71,7 +71,7 @@ polkit.addRule(function(action, subject) {
 });
 ```
 
-See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. Note the `org.freedesktop.udisks2.filesystem-*` settings, which are required to use udisks from a [systemd](/index.php/Systemd "Systemd") service.
+See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example.
 
 ## Mount helpers
 
@@ -228,7 +228,7 @@ Run as a workaround:
 *   [gentoo wiki: udisks](http://wiki.gentoo.org/wiki/Udisks)
 *   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=415819](https://wiki.archlinux.org/index.php?title=Udisks&oldid=415819)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=415918](https://wiki.archlinux.org/index.php?title=Udisks&oldid=415918)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

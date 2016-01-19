@@ -35,8 +35,6 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
         *   [3.2.4 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
         *   [3.2.5 Enable TRIM for dm-crypt](#Enable_TRIM_for_dm-crypt)
     *   [3.3 I/O scheduler](#I.2FO_scheduler)
-        *   [3.3.1 systemd-tmpfiles](#systemd-tmpfiles)
-        *   [3.3.2 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
     *   [3.4 Swap space on SSDs](#Swap_space_on_SSDs)
 *   [4 Tips for SSD security](#Tips_for_SSD_security)
     *   [4.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
@@ -250,37 +248,6 @@ For the root filesystem, follow the instructions from [Dm-crypt/TRIM support for
 ### I/O scheduler
 
 See [Maximizing performance#Tuning IO schedulers](/index.php/Maximizing_performance#Tuning_IO_schedulers "Maximizing performance").
-
-#### systemd-tmpfiles
-
-If you have more than one storage device, or wish to avoid clutter on the kernel cmdline, you can set the I/O scheduler via `systemd-tmpfiles`:
-
- `/etc/tmpfiles.d/10_ioscheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - noop` 
-
-For more detail on `systemd-tmpfiles` see [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd").
-
-#### Using udev for one device or HDD/SSD mixed environment
-
-Though the above will undoubtedly work, it is probably considered a reliable workaround. Ergo, it would be preferred to use the system that is responsible for the devices in the first place to implement the scheduler. In this case it is udev, and to do this, all one needs is a simple [udev](/index.php/Udev "Udev") rule.
-
-To do this, create the following:
-
- `/etc/udev/rules.d/60-schedulers.rules` 
-
-```
-# set deadline scheduler for non-rotating disks
-ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
-
-```
-
-Of course, set Deadline/CFQ to the desired schedulers. Changes should occur upon next boot. To check success of the new rule:
-
-```
-$ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in question
-
-```
-
-**Note:** In the example sixty is chosen because that is the number udev uses for its own persistent naming rules. Thus, it would seem that block devices are at this point able to be modified and this is a safe position for this particular rule. But the rule can be named anything so long as it ends in `.rules`.)
 
 ### Swap space on SSDs
 
@@ -554,8 +521,14 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=412487](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=412487)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=415969](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=415969)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

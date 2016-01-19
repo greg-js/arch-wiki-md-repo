@@ -261,7 +261,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Statistical machine translation tool (language data not included).
 
-[http://statmt.org/moses](http://statmt.org/moses) || [moses-git](https://aur.archlinux.org/packages/moses-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/moses-git)]</sup>
+[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/)<sup><small>AUR</small></sup> [mosesdecoder-git](https://aur.archlinux.org/packages/mosesdecoder-git/)<sup><small>AUR</small></sup>
 
 *   **[OmegaT](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT")** — General translator's tool which contains a lot of translation memory features and can give suggestions from Google Translate. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, XLIFF/Okapi, MediaWiki, plain text, TMX and others.
 
@@ -663,10 +663,6 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 #### Comic book (comix/manga)
 
-*   **[Comix](https://en.wikipedia.org/wiki/Comix_(software) "wikipedia:Comix (software)")** — GTK2 image viewer specifically designed to handle comic book archives. Also includes library manager. It's development was stopped in 2009 and moved to MComix.
-
-[http://comix.sourceforge.net/](http://comix.sourceforge.net/) || [comix](https://aur.archlinux.org/packages/comix/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [mcomix](https://www.archlinux.org/packages/?name=mcomix)]</sup>
-
 *   **[MComix](https://en.wikipedia.org/wiki/MComix "wikipedia:MComix")** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
 [http://sourceforge.net/projects/mcomix/](http://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
@@ -759,9 +755,9 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 [http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
 
-*   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Small program which is handy for keeping and organizing miscellaneous notes, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
+*   **KNotes** — A program that lets you write the computer equivalent of sticky notes.
 
-[http://www.kde.org/applications/utilities/kjots/](http://www.kde.org/applications/utilities/kjots/) || [kdepim-kjots](https://www.archlinux.org/packages/?name=kdepim-kjots)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+[https://www.kde.org/applications/utilities/knotes/](https://www.kde.org/applications/utilities/knotes/) || [knotes](https://www.archlinux.org/packages/?name=knotes)
 
 *   **NoteCase** — Portable hierarchical note manager, coded in C++ using bindings to the GTK+ toolkit.
 
@@ -865,8 +861,13 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 [http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413654](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=413654)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=415943](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=415943)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

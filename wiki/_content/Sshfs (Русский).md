@@ -279,14 +279,14 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 *   Если вы пытаетесь получить доступ к удаленной машине, используя имя хоста, то попробуйте использовать ее адрес или доменной имя, смотря, что исправит проблему. Убедитесь в том, что вы изменили `/etc/hosts` в соответствии со свойствами сервера.
 *   Если вы используете нестандартные имена ключей и передаете их как `-i .ssh/my_key`, то это не будет работать. Вам следует использовать `-o IdentityFile=/home/user/.ssh/my_key` с указанием полного пути к ключу.
 *   Если ваш файл `/root/.ssh/config` является символической ссылкой, то вы получите сообщение об ошибке. Смотрите [эту тему](http://serverfault.com/questions/507748/bad-owner-or-permissions-on-root-ssh-config)
-*   Adding the option '`sshfs_debug`' (as in '`sshfs -o sshfs_debug user@server ...`') can help in resolving the issue.
-*   If that doesn't reveal anything useful, you might also try adding the option '`debug`'
-*   If you are trying to sshfs into a router running DD-WRT or the like, there is a solution [here](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (note that the -osftp_server=/opt/libexec/sftp-server option can be used to the sshfs command in stead of patching dropbear)
-*   Old Forum thread: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613)
-*   Make sure your user can log into the server (especially when using AllowUsers)
-*   Make sure `Subsystem sftp /usr/lib/ssh/sftp-server` is enabled in `/etc/ssh/sshd_config`.
+*   Добавление опции '`sshfs_debug`' (как в '`sshfs -o sshfs_debug user@server ...`'), может помочь в решении проблемы.
+*   Если это не помогло выявить ничего полезного, то вы можете также попробовать добавить опцию '`debug`'
+*   Если вы пытаетесь использовать sshfs в роутере, работающем на DD-WRT или чем-то подобном, то решение проблемы [здесь](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (обратите внимание, что опция osftp_server=/opt/libexec/sftp-server может быть использована в командах SSH вместо патча dropbear)
+*   Старая форумская тема: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613).
+*   Убедитесь, что ваш пользователь можешь зайти на сервер (особенно при использовании AllowUsers).
+*   Убедитесь в том, что `Subsystem sftp /usr/lib/ssh/sftp-server` включен в `/etc/ssh/sshd_config`.
 
-**Note:** When providing more than one option for sshfs, they must be comma separated. Like so: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
+**Обратите внимание:** Когда посылаете больше одного аргумента в sshfs, они должны разделяться запятыми. Например: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
 
 ### Remote host has disconnected
 
@@ -341,7 +341,7 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415739](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415739)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415871](https://wiki.archlinux.org/index.php?title=Sshfs_(Русский)&oldid=415871)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

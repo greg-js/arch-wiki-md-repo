@@ -68,9 +68,14 @@ If you now log out and log in again, you will be greeted by the other shell.
 *   [Goosh](http://www.goosh.org/) is the unofficial Google shell, which implements a shell interface over the commonly used Google search interface.
 *   [>_ .bashrc PS1 generator](http://bashrcgenerator.com/) generate your .bashrc/PS1 bash prompt easily with a drag and drop interface.
 *   [terminal.sexy](https://terminal.sexy/) — Terminal Color Scheme Designer
+*   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Hyperpolyglot entry about shell
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=415650](https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=415650)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=416001](https://wiki.archlinux.org/index.php?title=Command-line_shell&oldid=416001)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

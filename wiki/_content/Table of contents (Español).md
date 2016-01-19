@@ -26,7 +26,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.6.</small> [Sistemas live de Arch](/index.php/Category:Live_Arch_systems_(Espa%C3%B1ol) "Category:Live Arch systems (Español)") <small>(2)</small>
 
-<small>2.</small> [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)") <small>(5)</small>
+<small>2.</small> [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)") <small>(7)</small>
 
 <small>2.1.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(1)</small>
 
@@ -64,11 +64,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.14.</small> [Emuladores de terminal](/index.php/Category:Terminal_emulators_(Espa%C3%B1ol) "Category:Terminal emulators (Español)") <small>(3)</small>
 
-<small>2.15.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(2)</small>
+<small>2.15.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3)</small>
 
 <small>2.16.</small> [Wine](/index.php/Category:Wine_(Espa%C3%B1ol) "Category:Wine (Español)") <small>(1)</small>
 
-<small>3.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(7)</small>
+<small>3.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(8)</small>
 
 <small>3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(1) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small>
 
@@ -104,7 +104,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.7.2.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(1)</small>
 
-<small>4.7.3.</small> [Samsung](/index.php/Category:Samsung_(Espa%C3%B1ol) "Category:Samsung (Español)") <small>(1)</small>
+<small>4.7.3.</small> [MSI](/index.php/Category:MSI_(Espa%C3%B1ol) "Category:MSI (Español)") <small>(1)</small>
+
+<small>4.7.4.</small> [Samsung](/index.php/Category:Samsung_(Espa%C3%B1ol) "Category:Samsung (Español)") <small>(1)</small>
 
 <small>4.8.</small> [Placas base y BIOS](/index.php/Category:Mainboards_and_BIOS_(Espa%C3%B1ol) "Category:Mainboards and BIOS (Español)") <small>(2)</small>
 
@@ -136,15 +138,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.5.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small>
 
-<small>5.6.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small>
+<small>5.6.</small> [Network configuration](/index.php/Category:Network_configuration_(Espa%C3%B1ol) "Category:Network configuration (Español)") <small>(1)</small>
 
-<small>5.7.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small>
+<small>5.7.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small>
 
-<small>5.8.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small>
+<small>5.8.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small>
 
-<small>5.9.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(7)</small>
+<small>5.9.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small>
 
-<small>5.10.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small>
+<small>5.10.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(7)</small>
+
+<small>5.11.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small>
 
 <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(5)</small>
 
@@ -216,7 +220,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.15.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(17)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=414310](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=414310)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=416039](https://wiki.archlinux.org/index.php?title=Table_of_contents_(Español)&oldid=416039)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -204,6 +204,8 @@ An ICC profile is a binary file which contains precise data regarding the color 
 
 *   FHD, D65, Gamma 2.2: coming soon (I will get my hands on the FHD monitor in February)
 
+**Note:** It may not be possible to accurately calibrate the FHD display due to the dynamic contrast behaviour of the panel which cannot be disabled
+
 ### Touchpad
 
 With the latest BIOS patch, most of the touchpad functions should work, although [palm detection](/index.php/Touchpad_Synaptics#Using_the_driver.27s_automatic_palm_detection "Touchpad Synaptics") does not work in i2c mode yet. For advanced settings with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), the _psmouse_ kernel module must be [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules") first.
@@ -301,7 +303,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415746](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=415746)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416150](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416150)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

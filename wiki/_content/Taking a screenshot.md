@@ -95,6 +95,10 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 [http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)<sup><small>AUR</small></sup>
 
+*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
+
+[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)<sup><small>AUR</small></sup>
+
 ## Packages including a screenshot utility
 
 *   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
@@ -352,8 +356,12 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413611](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=413611)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=415956](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=415956)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

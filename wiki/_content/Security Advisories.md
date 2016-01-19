@@ -43,10 +43,17 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
-*   [16 January 2016] [ASA-201601-11](https://lists.archlinux.org/pipermail/arch-security/2016-January/000516.html) [go](https://www.archlinux.org/packages/?name=go) information leakage
-
 ### January 2016
 
+*   [17 January 2016] [ASA-201601-19](https://lists.archlinux.org/pipermail/arch-security/2016-January/000524.html) [ntp](https://www.archlinux.org/packages/?name=ntp) time alteration
+*   [17 January 2016] [ASA-201601-18](https://lists.archlinux.org/pipermail/arch-security/2016-January/000523.html) [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) remote code execution
+*   [17 January 2016] [ASA-201601-17](https://lists.archlinux.org/pipermail/arch-security/2016-January/000522.html) [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) information leakage
+*   [17 January 2016] [ASA-201601-16](https://lists.archlinux.org/pipermail/arch-security/2016-January/000521.html) [syncthing](https://www.archlinux.org/packages/?name=syncthing) information leakage
+*   [17 January 2016] [ASA-201601-15](https://lists.archlinux.org/pipermail/arch-security/2016-January/000520.html) [keybase](https://www.archlinux.org/packages/?name=keybase) information leakage
+*   [17 January 2016] [ASA-201601-14](https://lists.archlinux.org/pipermail/arch-security/2016-January/000519.html) [hub](https://www.archlinux.org/packages/?name=hub) information leakage
+*   [17 January 2016] [ASA-201601-13](https://lists.archlinux.org/pipermail/arch-security/2016-January/000518.html) [go-ipfs](https://www.archlinux.org/packages/?name=go-ipfs) information leakage
+*   [17 January 2016] [ASA-201601-12](https://lists.archlinux.org/pipermail/arch-security/2016-January/000517.html) [docker](https://www.archlinux.org/packages/?name=docker) information leakage
+*   [16 January 2016] [ASA-201601-11](https://lists.archlinux.org/pipermail/arch-security/2016-January/000516.html) [go](https://www.archlinux.org/packages/?name=go) information leakage
 *   [14 January 2016] [ASA-201601-10](https://lists.archlinux.org/pipermail/arch-security/2016-January/000515.html) [php](https://www.archlinux.org/packages/?name=php) multiple issues
 *   [14 January 2016] [ASA-201601-9](https://lists.archlinux.org/pipermail/arch-security/2016-January/000512.html) [openssh](https://www.archlinux.org/packages/?name=openssh) multiple issues
 *   [13 January 2016] [ASA-201601-8](https://lists.archlinux.org/pipermail/arch-security/2016-January/000487.html) [libxslt](https://www.archlinux.org/packages/?name=libxslt) denial of service
@@ -536,7 +543,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415732](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415732)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415952](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=415952)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

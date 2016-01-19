@@ -705,8 +705,14 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=414630](https://wiki.archlinux.org/index.php?title=Pacman&oldid=414630)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=415964](https://wiki.archlinux.org/index.php?title=Pacman&oldid=415964)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

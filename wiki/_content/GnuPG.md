@@ -46,7 +46,8 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
     *   [8.3 Default options for new users](#Default_options_for_new_users)
     *   [8.4 Revoking a key](#Revoking_a_key)
     *   [8.5 Change trust model](#Change_trust_model)
-    *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
+    *   [8.6 Hide all recipient id's](#Hide_all_recipient_id.27s)
+    *   [8.7 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
     *   [9.2 su](#su)
@@ -129,6 +130,8 @@ $ gpg --armor --output public.key --export _<user-id>_
 
 Alternatively, or in addition, you can share your key [on a keyserver](#Use_a_keyserver).
 
+**Tip:** Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
+
 ### Import a key
 
 In order to encrypt messages to others, you need their public key. To import a public key to your public key ring:
@@ -176,7 +179,11 @@ $ gpg --encrypt --armor secret.txt
 
 If you want to just encrypt a file, exclude `--armor`.
 
-**Tip:** If you want to change recipient this can be done by the option `-r _<user-id>_` (or `--recipient _<user-id>_`).
+**Tip:**
+
+*   If you want to change recipient this can be done by the option `-r _<user-id>_` (or `--recipient _<user-id>_`).
+*   Add `-R _<user-id>_` or `--hidden-recipient _<user-id>_` instead of `--recipient` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
+*   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
 
 **Note:** You can use gnupg to encrypt your sensitive documents, but only individual files at a time. If you want to encrypt directories or a whole file-system you should consider using [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS"), though you can always tarball various files and then encrypt them.
 
@@ -566,6 +573,10 @@ $ gpg --keyserver subkeys.pgp.net --send _<userid>_
 
 By default GnuPG uses the [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Trust "wikipedia:Web of Trust") as the trust model. You can change this to [Trust on First](https://en.wikipedia.org/wiki/Trust_on_First "wikipedia:Trust on First") Use by adding `--trust-model=tofu` when adding a key or adding this option to your GnuPG configuration file. More details are in [this email to the GnuPG list](https://lists.gnupg.org/pipermail/gnupg-devel/2015-October/030341.html).
 
+### Hide all recipient id's
+
+By default the recipient's key ID is in the encrypted message. This can be removed at encryption time for a recipient by using `hidden-recipient _<user-id>_`. To remove it for all recipients add `throw-keyids` to your configuration file. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis. (Using a little social engineering anyone who is able to decrypt the message can check whether one of the other recipients is the one he suspects.) On the receiving side, it may slow down the decryption process because all available secret keys must be tried (_e.g._ with `--try-secret-key _<user-id>_`).
+
 ### Using caff for keysigning parties
 
 To allow users to validate keys on the keyservers and in their keyrings (i.e. make sure they are from whom they claim to be), PGP/GPG uses he [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Trust "wikipedia:Web of Trust"). Keysigning parties allow users to get together in physical location to validate keys. The [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol "wikipedia:Zimmermann–Sassaman key-signing protocol") key-signing protocol is a way of making these very effective. [Here](http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html) you will find a how-to article.
@@ -709,7 +720,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415592](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415592)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415842](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415842)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -719,4 +730,5 @@ Hidden categories:
 
 *   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
 *   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
 *   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

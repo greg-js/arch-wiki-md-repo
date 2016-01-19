@@ -35,7 +35,7 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
 
 Following package may be installed:
 
-*   **grub-customizer** — Customize the bootloader (GRUB or BURG)
+*   **grub-customizer** — GTK+ customizer for GRUB or BURG
 
 [https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)<sup><small>AUR</small></sup>
 
@@ -380,8 +380,12 @@ The command `grub-reboot` is very helpful to boot another entry than the default
 
 **Note:** This requires `GRUB_DEFAULT=saved` in `/etc/default/grub` (and then regenerating `grub.cfg`) or, in case of hand-made `grub.cfg`, the line `set default="${saved_entry}"`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=411324](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=411324)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=415923](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=415923)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

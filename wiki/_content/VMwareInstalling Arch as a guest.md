@@ -28,10 +28,11 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 *   [5 Xorg configuration](#Xorg_configuration)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Shared Folders with vmhgfs-fuse utility](#Shared_Folders_with_vmhgfs-fuse_utility)
-        *   [6.1.1 Systemd](#Systemd)
+        *   [6.1.1 fstab](#fstab)
+        *   [6.1.2 Systemd](#Systemd)
     *   [6.2 Legacy Shared Folders with vmhgfs module](#Legacy_Shared_Folders_with_vmhgfs_module)
         *   [6.2.1 Enable at boot](#Enable_at_boot)
-            *   [6.2.1.1 fstab](#fstab)
+            *   [6.2.1.1 fstab](#fstab_2)
             *   [6.2.1.2 Systemd](#Systemd_2)
         *   [6.2.2 Prune mlocate DB](#Prune_mlocate_DB)
     *   [6.3 3D Acceleration](#3D_Acceleration)
@@ -266,6 +267,25 @@ Other `vmhgfs-fuse` mount options can be viewed by using the `-h` input flag:
 
 ```
 # vmhgfs-fuse -h
+
+```
+
+##### fstab
+
+Add a rule for each share:
+
+ `/etc/fstab` 
+
+```
+.host:/_<shared_folder>_ _/home/user1/shares_ fuse.vmhgfs-fuse defaults 0 0
+
+```
+
+Create and mount the Shared Folders:
+
+```
+# mkdir /home/user1/shares
+# mount /home/user1/shares
 
 ```
 
@@ -656,9 +676,15 @@ This is probably only happens to [open-vm-tools](https://www.archlinux.org/packa
 
 If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411678](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=411678)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=415976](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=415976)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
 *   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

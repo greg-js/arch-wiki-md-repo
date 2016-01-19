@@ -74,7 +74,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>15.</small> [Web browser](/index.php/Category:Web_browser_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Web browser (한국어)") <small>(1)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(한국어)&oldid=411628](https://wiki.archlinux.org/index.php?title=Table_of_contents_(한국어)&oldid=411628)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(한국어)&oldid=416057](https://wiki.archlinux.org/index.php?title=Table_of_contents_(한국어)&oldid=416057)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
