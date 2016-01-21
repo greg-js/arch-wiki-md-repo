@@ -26,10 +26,10 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.3 Eclipse 4 not respecting dark/custom gtk themes resulting in white background](#Eclipse_4_not_respecting_dark.2Fcustom_gtk_themes_resulting_in_white_background)
         *   [4.3.1 4.2.0 and 4.3.0](#4.2.0_and_4.3.0)
         *   [4.3.2 4.4.0 (Luna)](#4.4.0_.28Luna.29)
-    *   [4.4 Tooltips have dark background color with Gnome 3.6 Adwaita theme](#Tooltips_have_dark_background_color_with_Gnome_3.6_Adwaita_theme)
+    *   [4.4 Tooltips have dark background color with Adwaita theme](#Tooltips_have_dark_background_color_with_Adwaita_theme)
     *   [4.5 Toggle buttons states are the same for selected/not selected](#Toggle_buttons_states_are_the_same_for_selected.2Fnot_selected)
     *   [4.6 Change Default Window Title Font Size](#Change_Default_Window_Title_Font_Size)
-    *   [4.7 UI is buggy and sometimes unusable](#UI_is_buggy_and_sometimes_unusable)
+    *   [4.7 Disable gtk3](#Disable_gtk3)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -41,6 +41,8 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
 *   [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
 
 For some reason, you cannot install multiple of these at the same time since they conflict, and you will have to decide the one you want to use (see [FS#45577](https://bugs.archlinux.org/task/45577)).
+
+NOTE- You can add support for any additional languages though the eclipse Package manager within the Eclipse IDE. Choose the package above which most immediately fulfils your needs.
 
 ## Plugins
 
@@ -213,19 +215,9 @@ Luna Supplies a Dark theme which can be enabled in Preferences > Appearance and 
 
 The dark theme uses its own colours rather than the GTK theme colours, if you prefer it to fully respect GTK colour settings, then remove or move to backup sub folder all of the .css files from: /usr/share/eclipse/plugins/org.eclipse.ui.themes_1.0.0.xxxx/css/
 
-### Tooltips have dark background color with Gnome 3.6 Adwaita theme
+### Tooltips have dark background color with Adwaita theme
 
-Comment out the second-to-last line in `/usr/share/themes/Adwaita/gtk-2.0/gtkrc` like this
-
-```
-#widget "gtk-tooltip*"  style "tooltips"
-
-```
-
-Related bugs:
-
-*   [https://bugzilla.gnome.org/show_bug.cgi?id=688285](https://bugzilla.gnome.org/show_bug.cgi?id=688285)
-*   [https://bugs.eclipse.org/bugs/show_bug.cgi?id=381010](https://bugs.eclipse.org/bugs/show_bug.cgi?id=381010) (WONTFIX)
+You can first follow the [#Disable gtk3](#Disable_gtk3) section disable the SWT_GTK3 and then install the [webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) package from the official repository to use the old theme.
 
 ### Toggle buttons states are the same for selected/not selected
 
@@ -262,9 +254,9 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ```
 
-### UI is buggy and sometimes unusable
+### Disable gtk3
 
-You can try to disable the use of gtk3 with the SWT_GTK3=0 environment variable when you start eclipse:
+When the SWT GTK3 UI is buggy and sometimes unusable, You can try to disable the use of gtk3 with the SWT_GTK3=0 environment variable when you start eclipse:
 
 ```
 SWT_GTK3=0 eclipse
@@ -275,8 +267,12 @@ SWT_GTK3=0 eclipse
 
 *   [How to use Subversion with Eclipse](https://www.ibm.com/developerworks/library/os-ecl-subversion/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=411416](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=411416)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416282](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416282)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Development](/index.php/Category:Development "Category:Development")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -67,6 +67,13 @@ $ scanimage --device pixma:04A91749_247936 --format=tiff > test.tiff
 
 ```
 
+Sane provides many special backend options for numerous scanner types. To see what these are for your device:
+
+```
+$ scanimage -A
+
+```
+
 ## Installing a scanner driver
 
 Most scanners should work out of the box. If yours does not, see [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems") for installation instructions.
@@ -270,8 +277,13 @@ usb 0x03f0 0x2504
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SANE&oldid=407282](https://wiki.archlinux.org/index.php?title=SANE&oldid=407282)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SANE&oldid=416472](https://wiki.archlinux.org/index.php?title=SANE&oldid=416472)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Imaging](/index.php/Category:Imaging "Category:Imaging")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

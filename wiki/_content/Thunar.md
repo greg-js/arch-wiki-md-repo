@@ -52,7 +52,7 @@ Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File mana
 
 ### Plugins and addons
 
-*   **Thunar Archive Plugin** — Plugin which allows you to create and extract archive files using contextual menu items. It does not create or extract archives directly, but instead acts as a frontend for other programs such as File Roller ([file-roller](https://www.archlinux.org/packages/?name=file-roller)), Ark ([kdeutils-ark](https://www.archlinux.org/packages/?name=kdeutils-ark)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [ark](https://www.archlinux.org/packages/?name=ark)]</sup>) or Xarchiver ([xarchiver](https://www.archlinux.org/packages/?name=xarchiver)). Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
+*   **Thunar Archive Plugin** — Plugin which allows you to create and extract archive files using contextual menu items. It does not create or extract archives directly, but instead acts as a frontend for other programs such as File Roller ([file-roller](https://www.archlinux.org/packages/?name=file-roller)), Ark ([ark](https://www.archlinux.org/packages/?name=ark)) or Xarchiver ([xarchiver](https://www.archlinux.org/packages/?name=xarchiver)). Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
 [http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
 
@@ -119,7 +119,7 @@ udiskie -2 &
 
 ### Using Thunar to browse remote locations
 
-Since Xfce 4.8 (Thunar 1.2) it is possible to browse remote locations (such as FTP servers or Samba shares) directly in Thunar. To enable this functionality ensure that [gvfs](https://www.archlinux.org/packages/?name=gvfs), [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) and [sshfs](https://www.archlinux.org/packages/?name=sshfs) packages are installed. A 'Network' entry is visible in Thunar's side bar and remote locations can be opened by using the following URI schemes in the location dialog (opened with `Ctrl+l`): smb://, ftp://, [ssh://](ssh://), sftp:// & followed by the server hostname or IP address.
+Since Xfce 4.8 (Thunar 1.2) it is possible to browse remote locations (such as FTP servers or Samba shares) directly in Thunar. To enable this functionality ensure that [gvfs](https://www.archlinux.org/packages/?name=gvfs), [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) and [sshfs](https://www.archlinux.org/packages/?name=sshfs) packages are installed. A 'Network' entry is visible in Thunar's side bar and remote locations can be opened by using the following URI schemes in the location dialog (opened with `Ctrl+l`): smb://, ftp://, ssh://, sftp://, davs:// & followed by the server hostname or IP address.
 
 There is no URI scheme for [NFS](/index.php/NFS "NFS") shares, but Thunar can issue a `mount` command if you setup your [fstab](/index.php/Fstab "Fstab") properly.
 
@@ -356,7 +356,7 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 *   [Thunar Volume Manager](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
 *   This [list](http://goodies.xfce.org/projects/thunar-plugins/start) of plugins
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=412189](https://wiki.archlinux.org/index.php?title=Thunar&oldid=412189)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=416479](https://wiki.archlinux.org/index.php?title=Thunar&oldid=416479)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

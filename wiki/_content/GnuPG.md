@@ -49,15 +49,16 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
     *   [8.6 Hide all recipient id's](#Hide_all_recipient_id.27s)
     *   [8.7 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
 *   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
-    *   [9.2 su](#su)
-    *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
-    *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [9.6 mutt and gpg](#mutt_and_gpg)
-    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
+    *   [9.1 Make it work behind an http proxy](#Make_it_work_behind_an_http_proxy)
+    *   [9.2 Not enough random bytes available](#Not_enough_random_bytes_available)
+    *   [9.3 su](#su)
+    *   [9.4 Agent complains end of file](#Agent_complains_end_of_file)
+    *   [9.5 KGpg configuration permissions](#KGpg_configuration_permissions)
+    *   [9.6 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
+    *   [9.7 mutt and gpg](#mutt_and_gpg)
+    *   [9.8 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [9.9 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.10 Smartcard not detected](#Smartcard_not_detected)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -593,6 +594,17 @@ To send the signatures to their owners you need a working [MTA](https://en.wikip
 
 ## Troubleshooting
 
+### Make it work behind an http proxy
+
+Since 2.1.9 the http proxy option can be set like this:
+
+```
+ gpg --keyserver-option http-proxy=HOST:PORT
+
+```
+
+See [https://bugs.gnupg.org/gnupg/issue1786](https://bugs.gnupg.org/gnupg/issue1786) for more explanation.
+
 ### Not enough random bytes available
 
 When generating a key, gpg can run into this error:
@@ -720,7 +732,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415842](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=415842)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=416305](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=416305)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -18,13 +18,13 @@ Back In Time provides a Qt4 GUI which will run on Gnome, KDE and all other DE's.
 
 ## Installation
 
-Stable releases of Back In Time can be installed as [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). You need to add the developers gpg key for this with `gpg --keyserver pgp.mit.edu --recv-key 944B4826`.
+Stable releases of Back In Time can be installed as [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). An unstable branch exists with [backintime-git](https://aur.archlinux.org/packages/backintime-git/)<sup><small>AUR</small></sup>.
 
-Alternatively, pre-compiled binary packages can be installed from [coderkun’s repo](http://arch.coderkun.de/). An unstable branch exists with [backintime-bzr](https://aur.archlinux.org/packages/backintime-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/backintime-bzr)]</sup>.
+Alternatively, pre-compiled binary packages can be installed from [coderkun’s repo](http://arch.coderkun.de/).
 
 As Back In Time uses [rsync](/index.php/Rsync "Rsync") internally make sure the [rsync](https://www.archlinux.org/packages/?name=rsync) package is installed.
 
-Back In Time will automatically install a startup entry in `/etc/xdg/autostart`. If you want to launch the GUI, then run `backintime-qt4`. If you want to backup files other than your home user files, then consider starting Back In Time with `gksudo backintime-qt4` or `kdesu backintime-qt4` instead.
+Back In Time will automatically install a startup entry in `/etc/xdg/autostart`. If you want to launch the GUI, then run `backintime-qt4`. If you want to backup files other than your home user files, then consider starting Back In Time with `pkexec backintime-qt4` instead.
 
 ## Configuration
 
@@ -42,12 +42,10 @@ If you see the error message in the status bar that BIT cannot find the snapshot
 
 ## See also
 
-*   [Back In Time website](http://backintime.le-web.org/)
-*   [Back In Time documentation](http://backintime.le-web.org/documentation/)
-*   [Upstream code hosting](https://launchpad.net/backintime)
-*   [Upstream Bug Tracker](https://bugs.launchpad.net/backintime)
+*   [Back In Time website](https://github.com/bit-team/backintime)
+*   [Upstream Bug Tracker](https://github.com/bit-team/backintime/issues)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Back_In_Time&oldid=411382](https://wiki.archlinux.org/index.php?title=Back_In_Time&oldid=411382)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Back_In_Time&oldid=416185](https://wiki.archlinux.org/index.php?title=Back_In_Time&oldid=416185)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

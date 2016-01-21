@@ -7,6 +7,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
+*   [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe")
 *   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
 *   [profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
 
@@ -521,7 +522,7 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=415969](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=415969)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=416181](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=416181)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

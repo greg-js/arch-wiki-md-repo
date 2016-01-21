@@ -120,7 +120,7 @@ GRUB_FONT="/path/to/font.pf2"
 
 ```
 
-**Note:** If you have installed GRUB on a separate partition, `/boot/grub/myimage` becomes `/grub/myimage`.
+**Note:** If you have installed GRUB on a separate partition, `/boot/grub/myimage` automatically becomes `/grub/myimage` in `grub.cfg`.
 
 [Re-generate](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") `grub.cfg` to apply the changes. If adding the splash image was successful, the user will see `"Found background image..."` in the terminal as the command is executed. If this phrase is not seen, the image information was probably not incorporated into the `grub.cfg` file.
 
@@ -131,6 +131,7 @@ If the image is not displayed, check:
 *   The image was saved in the RGB mode, and is not indexed
 *   The console mode is not enabled in `/etc/default/grub`
 *   The command `grub-mkconfig` must be executed to place the background image information into the `/boot/grub/grub.cfg` file
+*   The `grub-mkconfig` scripts won't quote the file name in `grub.cfg` so make sure it does not contain spaces
 
 ### Theme
 
@@ -380,7 +381,7 @@ The command `grub-reboot` is very helpful to boot another entry than the default
 
 **Note:** This requires `GRUB_DEFAULT=saved` in `/etc/default/grub` (and then regenerating `grub.cfg`) or, in case of hand-made `grub.cfg`, the line `set default="${saved_entry}"`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=415923](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=415923)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=416253](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=416253)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

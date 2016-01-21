@@ -835,13 +835,6 @@ EndSection
 
 ```
 
-If you are using [iptables](/index.php/Iptables "Iptables") and receiving this error, it's possible you need to allow communication with localhost so that bumblebee can communicate properly.
-
-```
-iptables -A INPUT -i lo -j ACCEPT
-
-```
-
 ### ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored
 
 You probably want to start a 32-bit application with bumblebee on a 64-bit system. See the "For 32-bit..." section in [#Installation](#Installation). If the problem persists or if it is a 64-bit application, try using the [primus bridge](#Primusrun).
@@ -1006,9 +999,15 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 
 Join us at #bumblebee at freenode.net.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414751](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=414751)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416210](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416210)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

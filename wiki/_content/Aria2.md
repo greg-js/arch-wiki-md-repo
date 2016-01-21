@@ -459,8 +459,13 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 *   [aria2 usage examples](http://sourceforge.net/apps/trac/aria2/wiki/UsageExample) - Official site
 *   [aria2c downloader through VPN tunnel](http://gotux.net/arch-linux/aria2c-downloader-through-vpn-tunnel/) - Unofficial site
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Aria2&oldid=410013](https://wiki.archlinux.org/index.php?title=Aria2&oldid=410013)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Aria2&oldid=416225](https://wiki.archlinux.org/index.php?title=Aria2&oldid=416225)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -671,7 +671,7 @@ As the error message says, your locale is not correctly configured. See [Locale]
 
 ### pacman does not honor proxy settings
 
-Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. Should this not work, you may need to configure pacman to [use wget to fetch packages.](/index.php/Wget#pacman_integration "Wget") If you use _pacman_ with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to pacman](/index.php/Sudo#Environment_variables "Sudo").
+Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. If you use _pacman_ with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to pacman](/index.php/Sudo#Environment_variables "Sudo").
 
 ### How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?
 
@@ -705,7 +705,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=415964](https://wiki.archlinux.org/index.php?title=Pacman&oldid=415964)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=416208](https://wiki.archlinux.org/index.php?title=Pacman&oldid=416208)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

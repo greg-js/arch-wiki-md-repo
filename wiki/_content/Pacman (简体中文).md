@@ -81,9 +81,9 @@ _pacman_ 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
 
 ### 安装软件包
 
-**Note:** Packages often have a series of [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") which are packages that provide additional functionality to the application, albeit not strictly required for running it. When installing a package, _pacman_ will list its optional dependencies among the output messages, but they will not be found in `pacman.log`: refer to [#Querying package databases](#Querying_package_databases) when you want to view the optional dependencies of an already installed package, together with short descriptions of their functionality.
+**注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, _pacman_ 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以[#查询软件数据库](#.E6.9F.A5.E8.AF.A2.E8.BD.AF.E4.BB.B6.E6.95.B0.E6.8D.AE.E5.BA.93) ，同时得到关于可选依赖的简短描述。
 
-**Warning:** 未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**在安装软件包时更新软件包数据库（`pacman -Sy _package_name_`），否则会有依赖问题。参见[#不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)和 [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**警告:** 未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**在安装软件包时更新软件包数据库（`pacman -Sy _package_name_`），否则会有依赖问题。参见[#不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)和 [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### 安装指定的包
 
@@ -311,7 +311,7 @@ $ pactree -r _package_name_
 
 ### 数据库结构
 
-The pacman databases are normally located at `/var/lib/pacman/sync`. For each repository specified in `/etc/pacman.conf` there will be a corresponding database file located there. Database files are tar-gzipped archives containing one directory for each package, for example for the [which](https://www.archlinux.org/packages/?name=which) package:
+pacman数据库通常位于 `/var/lib/pacman/sync`. 对于每一个在`/etc/pacman.conf`中指定的软件仓库， 这里都有一个一致的数据库。数据库文件夹里每个tar.gz文件都包含着一个仓库的软件包信息。例如[which](https://www.archlinux.org/packages/?name=which) 包:
 
 ```
 % tree which-2.20-6 	
@@ -321,7 +321,7 @@ which-2.20-6
 
 ```
 
-The `depends` file lists the packages this package depends on, while `desc` has a description of the package such as the file size and the MD5 hash.
+这个 `depends` 项列出了该软件的依赖包， 而`desc`有该包的介绍，例如文件大小和MD5值 。
 
 ### 清理软件包缓存
 
@@ -696,8 +696,12 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=414126](https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=414126)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=416309](https://wiki.archlinux.org/index.php?title=Pacman_(简体中文)&oldid=416309)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management (简体中文)](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -34,7 +34,7 @@ Configuration differs for virtual versus serial consoles. In most cases, you wan
 ```
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin _username_ --noclear %I 38400 linux
+ExecStart=-/usr/bin/agetty --autologin _username_ --noclear %I $TERM
 ```
 
 **Tip:** The option `Type=idle` found in the default `getty@.service` will delay the service startup until all jobs (state change requests to units) are completed in order to avoid polluting the login prompt with boot-up messages. When [starting X automatically](/index.php/Start_X_at_login "Start X at login"), it may be useful to start `getty@tty1.service` immediately by adding `Type=simple` into the drop-in snippet. Both the init system and _startx_ can be [silenced](/index.php/Silent_boot "Silent boot") to avoid the interleaving of their messages during boot-up.
@@ -57,7 +57,7 @@ ExecStart=-/usr/bin/agetty --autologin _username_ -s %I 115200,38400,9600 vt102
 
 *   [Change default runlevel/target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=411976](https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=411976)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=416228](https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=416228)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -130,14 +130,15 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 *   [1 BIOS updates](#BIOS_updates)
 *   [2 SATA controller](#SATA_controller)
-*   [3 Wireless](#Wireless)
-*   [4 Bluetooth](#Bluetooth)
-*   [5 Video](#Video)
-*   [6 Touchpad](#Touchpad)
-*   [7 Sound](#Sound)
-*   [8 Microphone](#Microphone)
-*   [9 Kernel specific notes](#Kernel_specific_notes)
-*   [10 Links](#Links)
+*   [3 NVM Express SSD](#NVM_Express_SSD)
+*   [4 Wireless](#Wireless)
+*   [5 Bluetooth](#Bluetooth)
+*   [6 Video](#Video)
+*   [7 Touchpad](#Touchpad)
+*   [8 Sound](#Sound)
+*   [9 Microphone](#Microphone)
+*   [10 Kernel specific notes](#Kernel_specific_notes)
+*   [11 Links](#Links)
 
 ## BIOS updates
 
@@ -147,17 +148,52 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 When the SATA-controller is set to "RAID On" in Bios, the hard disk (at least the SSD) is not recognized. Set to "Off" or "AHCI" before attempting to install Arch. If dual boot to Windows is intended, follow [[1]](https://support.microsoft.com/en-us/kb/2795397) to work around the "INACCESSIBLE_BOOT_DEVICE" error.
 
+## NVM Express SSD
+
+The ["NVM Express"](https://en.wikipedia.org/wiki/NVM_Express) SSD requires adding "nvme" in modules to detect the PCIe SSD.
+
+Edit your `/etc/mkinitcpio.conf` file:
+
+```
+   ...
+   MODULES="... nvme"
+   ...
+
+```
+
+Then update the bootloader.
+
+```
+   # mkinitcpio -p linux
+
+```
+
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
+
 ## Wireless
 
-The built-in Broadcom BCM4350 is not supported in the current kernel(4.2.5) (and not by [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>) yet but marked for inclusion in 4.4 [[2]](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211)
+The built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel in the testing repository (version 4.4.0-3). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
-As a workaround, use [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> which includes the patch applied from 4.4 or get the 4.4 (or latest) kernel from [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>. It also needs a firmware from the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
+If you have not already done so, enable the testing repository to retrieve the package in `/etc/pacman.conf`:
+
+```
+ # The testing repositories are disabled by default. To enable, uncomment the
+ # repo name header and Include lines. You can add preferred servers immediately
+ # after the header, and they will be used before the default mirrors.
+
+ [testing]
+ Include = /etc/pacman.d/mirrorlist
+
+ [core]
+ Include = /etc/pacman.d/mirrorlist
+
+```
 
 ## Bluetooth
 
 **Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[3]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
+The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[2]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
 
 ```
 $ 7z x 9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE
@@ -225,7 +261,16 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 ## Sound
 
-Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run alsamixer from `alsa-tools`. Select your soundcard with F6 and set the headset-gain to 22.
+Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run `alsamixer` from [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools). Select your soundcard with F6 and set the headset-gain to 22 (3rd lever from the left) or use the `amixer` command:
+
+```
+ $ amixer -c 0 cset 'numid=10' 1
+ numid=10,iface=MIXER,name='Headphone Mic Boost Volume'
+   ; type=INTEGER,access=rw---R--,values=2,min=0,max=3,step=0
+   : values=1,1
+   | dBscale-min=0.00dB,step=10.00dB,mute=0
+
+```
 
 Also people noticed loud popping-noises when sound was not playing. You can turn off the sound_power_save in `tlp`
 
@@ -245,32 +290,15 @@ For ALSA, increase "Digital" channel for microphone to work.
 
 ## Kernel specific notes
 
-4.3.x requires the broadcom wifi patch for wifi to work.
+The [linux](https://www.archlinux.org/packages/?name=linux) kernel in the core repository (4.3) does not support wifi. It is recommended to install the patch kernel from [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> or use the kernel from the testing repository.
 
-4.4.x requires adding "nvme" in modules to detect pcie ssd. The broadcom wifi driver patch is no longer needed.
-
-```
-   # nano /etc/mkinitcpio.conf
-   ...
-   MODULES="... nvme"
-   ...
-
-```
-
-Then update the bootloader.
-
-```
-   # mkinitcpio -p linux
-
-```
-
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
+The linux kernel in testing repository (4.4) supports wifi out-of-the-box, see [#Wireless](#Wireless).
 
 ## Links
 
-General Discussion Thread on Arch Forum [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
+General Discussion Thread on Arch Forum [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=415750](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=415750)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=416295](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=416295)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

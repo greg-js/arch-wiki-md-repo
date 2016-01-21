@@ -147,6 +147,8 @@ Enable the `vmware-vmblock-fuse.service` Systemd service.
 
 If you have installed [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> then you should enable the `dkms.service` Systemd service which automatically recompiles the kernel modules after a kernel update.
 
+Try to install [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) manually if it does not work properly.
+
 ### Resolution update on window resize
 
 [Start](https://bbs.archlinux.org/viewtopic.php?pid=1081629#p1081629) `/usr/bin/vmware-user-suid-wrapper` from within X.
@@ -676,7 +678,7 @@ This is probably only happens to [open-vm-tools](https://www.archlinux.org/packa
 
 If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=415976](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=415976)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=416189](https://wiki.archlinux.org/index.php?title=VMware/Installing_Arch_as_a_guest&oldid=416189)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -28,15 +28,15 @@ If you already know _what_ you want to protect and _how_ you want to encrypt, yo
     *   [3.1 Stacked filesystem encryption](#Stacked_filesystem_encryption)
     *   [3.2 Block device encryption](#Block_device_encryption)
     *   [3.3 Comparison table](#Comparison_table)
-        *   [3.3.1 _summary_](#summary)
-        *   [3.3.2 _basic classification_](#basic_classification)
-        *   [3.3.3 _practical implications_](#practical_implications)
-        *   [3.3.4 _usability features_](#usability_features)
-        *   [3.3.5 _security features_](#security_features)
-        *   [3.3.6 _performance features_](#performance_features)
-        *   [3.3.7 _block device encryption specific_](#block_device_encryption_specific)
-        *   [3.3.8 _stacked filesystem encryption specific_](#stacked_filesystem_encryption_specific)
-        *   [3.3.9 _compatibility & prevalence_](#compatibility_.26_prevalence)
+        *   [3.3.1 Summary](#Summary)
+        *   [3.3.2 Basic classification](#Basic_classification)
+        *   [3.3.3 Practical implications](#Practical_implications)
+        *   [3.3.4 Usability features](#Usability_features)
+        *   [3.3.5 Security features](#Security_features)
+        *   [3.3.6 Performance features](#Performance_features)
+        *   [3.3.7 Block device encryption specific](#Block_device_encryption_specific)
+        *   [3.3.8 Stacked filesystem encryption specific](#Stacked_filesystem_encryption_specific)
+        *   [3.3.9 Compatibility & prevalence](#Compatibility_.26_prevalence)
 *   [4 Preparation](#Preparation)
     *   [4.1 Choosing a setup](#Choosing_a_setup)
     *   [4.2 Examples](#Examples)
@@ -153,14 +153,6 @@ For practical implications of the chosen layer of operation, see the [comparison
 
 ### Comparison table
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** These tables may look pretty, but are an absolute nightmare to edit. KISS! (Discuss in [Talk:Disk encryption#](https://wiki.archlinux.org/index.php/Talk:Disk_encryption))
-
 The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") and plain ("-") encryption modes. If a specific feature requires using LUKS, this is indicated by "(with LUKS)". Likewise "(without LUKS)" indicates usage of LUKS is counter-productive to achieve the feature and plain mode should be used.
 
 <table class="wikitable" style="text-align:center; cell-padding:100px;">
@@ -169,45 +161,43 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _summary_
-
-</td>
-
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
-
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
-
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
-
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
-
-<th scope="col" style="background:#E2E2E2">EncFs</th>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-type
+##### Summary
 
 </th>
 
-<td colspan="3">block device encryption</td>
+<th style="background:#ddd">Loop-AES</th>
 
-<td colspan="2">stacked filesystem encryption</td>
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
+
+<th style="background:#ddd">Truecrypt</th>
+
+<th style="background:#ddd">eCryptfs</th>
+
+<th style="background:#ddd">EncFs</th>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
+<th style="text-align:left; font-weight:normal; background:#eee">Type</th>
 
-main selling points
+<td>block device encryption</td>
 
-</th>
+<td>block device encryption</td>
+
+<td>block device encryption</td>
+
+<td>stacked filesystem encryption</td>
+
+<td>stacked filesystem encryption</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Main selling points</th>
 
 <td>longest-existing one; possibly the fastest; works on legacy systems</td>
 
@@ -221,13 +211,9 @@ main selling points
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-availability in Arch Linux
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Availability in Arch Linux</th>
 
 <td>must manually compile custom kernel</td>
 
@@ -241,19 +227,16 @@ availability in Arch Linux
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-license
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">License</th>
 
 <td>GPL</td>
 
 <td>GPL</td>
 
-<td>custom<sup>[[1]](#See_also)</sup></td>
+<td>custom  
+[[1]](#See_also)</td>
 
 <td>GPL</td>
 
@@ -263,103 +246,97 @@ license
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _basic classification_
-
-</td>
-
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
-
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
-
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
-
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
-
-<th scope="col" style="background:#E2E2E2">EncFs</th>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-encrypts...
+##### Basic classification
 
 </th>
 
-<td colspan="3">whole block devices</td>
+<th style="background:#ddd">Loop-AES</th>
 
-<td colspan="2">files</td>
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
 
-</tr>
+<th style="background:#ddd">Truecrypt</th>
 
-<tr valign="top">
+<th style="background:#ddd">eCryptfs</th>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-container for encrypted data may be...
-
-</th>
-
-<td colspan="3">
-
-*   a disk or disk partition
-*   a file acting as a virtual partition
-
-</td>
-
-<td colspan="2">
-
-*   a directory in an existing file system
-
-</td>
+<th style="background:#ddd">EncFs</th>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
+<th style="text-align:left; font-weight:normal; background:#eee">Encrypts</th>
 
-relation to filesystem
+<td>whole block devices</td>
 
-</th>
+<td>whole block devices</td>
 
-<td colspan="3">operates below the filesystem layer - does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
+<td>whole block devices</td>
 
-<td colspan="2">adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read</td>
+<td>files</td>
 
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-encryption implemented in...
-
-</th>
-
-<td colspan="4">kernelspace</td>
-
-<td>userspace  
-_(using FUSE)_</td>
+<td>files</td>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
+<th style="text-align:left; font-weight:normal; background:#eee">Container for encrypted data may be...</th>
 
-cryptographic metadata stored in...
+<td>a disk or disk partition / a file acting as a virtual partition</td>
 
-</th>
+<td>a disk or disk partition / a file acting as a virtual partition</td>
+
+<td>a disk or disk partition / a file acting as a virtual partition</td>
+
+<td>a directory in an existing file system</td>
+
+<td>a directory in an existing file system</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Relation to filesystem</th>
+
+<td>operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
+
+<td>operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
+
+<td>operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
+
+<td>adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read</td>
+
+<td>adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Encryption implemented in...</th>
+
+<td>kernelspace</td>
+
+<td>kernelspace</td>
+
+<td>kernelspace</td>
+
+<td>kernelspace</td>
+
+<td>userspace (using FUSE)</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Cryptographic metadata stored in...</th>
 
 <td> ?</td>
 
 <td>with LUKS: LUKS Header</td>
 
-<td rowspan="2">begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification))</td>
+<td>begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification))</td>
 
 <td>header of each encrypted file</td>
 
@@ -367,17 +344,15 @@ cryptographic metadata stored in...
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-wrapped encryption key stored in...
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Wrapped encryption key stored in...</th>
 
 <td> ?</td>
 
 <td>with LUKS: LUKS header</td>
+
+<td>begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification))</td>
 
 <td>key file that can be stored anywhere</td>
 
@@ -387,136 +362,146 @@ wrapped encryption key stored in...
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _practical implications_
-
-</td>
-
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
-
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
-
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
-
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
-
-<th scope="col" style="background:#E2E2E2">EncFs</th>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-file metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted
+##### Practical implications
 
 </th>
 
-<td colspan="3">✔</td>
+<th style="background:#ddd">Loop-AES</th>
 
-<td colspan="2">✖  
-_(file and dir names can be encrypted though)_</td>
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
 
-</tr>
+<th style="background:#ddd">Truecrypt</th>
 
-<tr valign="top">
+<th style="background:#ddd">eCryptfs</th>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-can be used to encrypt whole hard drives (including partition tables)
-
-</th>
-
-<td colspan="3">✔</td>
-
-<td colspan="2">✖</td>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-can be used to encrypt swap space
-
-</th>
-
-<td colspan="3">✔</td>
-
-<td colspan="2">✖</td>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-can be used without pre-allocating a fixed amount of space for the encrypted data container
-
-</th>
-
-<td colspan="3">✖</td>
-
-<td colspan="2">✔</td>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc.
-
-</th>
-
-<td colspan="3">    ✖<sup>[[2]](#See_also)</sup></td>
-
-<td colspan="2">✔</td>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-allows offline file-based backups of encrypted files
-
-</th>
-
-<td colspan="3">✖</td>
-
-<td colspan="2">✔</td>
+<th style="background:#ddd">EncFs</th>
 
 </tr>
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; font-weight:normal; background:#eee">File metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted</th>
 
-##### _usability features_
+<td>✔</td>
 
-</td>
+<td>✔</td>
 
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
+<td>✔</td>
 
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
+<td>✖  
+(file and dir names can be encrypted though)</td>
 
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
-
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
-
-<th scope="col" style="background:#E2E2E2">EncFs</th>
+<td>✖  
+(file and dir names can be encrypted though)</td>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
+<th style="text-align:left; font-weight:normal; background:#eee">Can be used to encrypt whole hard drives (including partition tables)</th>
 
-support for automounting on login
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✖</td>
+
+<td>✖</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Can be used to encrypt swap space</th>
+
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✖</td>
+
+<td>✖</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Can be used without pre-allocating a fixed amount of space for the encrypted data container</th>
+
+<td>✖</td>
+
+<td>✖</td>
+
+<td>✖</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc.</th>
+
+<td>✖  
+[[2]](#See_also)</td>
+
+<td>✖</td>
+
+<td>✖</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Allows offline file-based backups of encrypted files</th>
+
+<td>✖</td>
+
+<td>✖</td>
+
+<td>✖</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; background:#ddd">
+
+##### Usability features
 
 </th>
+
+<th style="background:#ddd">Loop-AES</th>
+
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
+
+<th style="background:#ddd">Truecrypt</th>
+
+<th style="background:#ddd">eCryptfs</th>
+
+<th style="background:#ddd">EncFs</th>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Support for automounting on login</th>
 
 <td> ?</td>
 
@@ -530,13 +515,9 @@ support for automounting on login
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-support for automatic unmounting in case of inactivity
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Support for automatic unmounting in case of inactivity</th>
 
 <td> ?</td>
 
@@ -550,13 +531,9 @@ support for automatic unmounting in case of inactivity
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-non-root users can create/destroy containers for encrypted data
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Non-root users can create/destroy containers for encrypted data</th>
 
 <td>✖</td>
 
@@ -570,13 +547,9 @@ non-root users can create/destroy containers for encrypted data
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-provides a GUI
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Provides a GUI</th>
 
 <td>✖</td>
 
@@ -592,35 +565,31 @@ provides a GUI
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _security features_
-
-</td>
-
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
-
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
-
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
-
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
-
-<th scope="col" style="background:#E2E2E2">EncFs</th>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-supported ciphers
+##### Security features
 
 </th>
 
+<th style="background:#ddd">Loop-AES</th>
+
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
+
+<th style="background:#ddd">Truecrypt</th>
+
+<th style="background:#ddd">eCryptfs</th>
+
+<th style="background:#ddd">EncFs</th>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Supported ciphers</th>
+
 <td>AES</td>
 
-<td>AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish, … (every cipher the kernel Crypto API offers)</td>
+<td>AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers)</td>
 
 <td>AES, Twofish, Serpent</td>
 
@@ -630,13 +599,9 @@ supported ciphers
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-support for salting
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Support for salting</th>
 
 <td> ?</td>
 
@@ -651,13 +616,9 @@ support for salting
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-support for cascading multiple ciphers
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Support for cascading multiple ciphers</th>
 
 <td> ?</td>
 
@@ -671,13 +632,9 @@ support for cascading multiple ciphers
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-support for key-slot diffusion
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Support for key-slot diffusion</th>
 
 <td> ?</td>
 
@@ -692,13 +649,9 @@ support for key-slot diffusion
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-protection against key scrubbing
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Protection against key scrubbing</th>
 
 <td>✔</td>
 
@@ -713,13 +666,9 @@ protection against key scrubbing
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-support for multiple (independently revokable) keys for the same encrypted data
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Support for multiple (independently revokable) keys for the same encrypted data</th>
 
 <td> ?</td>
 
@@ -736,87 +685,77 @@ support for multiple (independently revokable) keys for the same encrypted data
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _performance features_
-
-</td>
-
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
-
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
-
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
-
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
-
-<th scope="col" style="background:#E2E2E2">EncFs</th>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-multithreading support
+##### Performance features
 
 </th>
 
-<td> ?</td>
+<th style="background:#ddd">Loop-AES</th>
 
-<td>✔<sup>[[8]](#See_also)</sup></td>
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
 
-<td>✔</td>
+<th style="background:#ddd">Truecrypt</th>
 
-<td> ?</td>
+<th style="background:#ddd">eCryptfs</th>
 
-<td> ?</td>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-hardware-accelerated encryption support
-
-</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔<sup>[[13]](#See_also)</sup></td>
+<th style="background:#ddd">EncFs</th>
 
 </tr>
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; font-weight:normal; background:#eee">Multithreading support</th>
 
-##### _block device encryption specific_
+<td> ?</td>
 
-</td>
+<td>✔  
+[[8]](#See_also)</td>
 
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
+<td>✔</td>
 
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
+<td> ?</td>
 
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
+<td> ?</td>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
+<th style="text-align:left; font-weight:normal; background:#eee">Hardware-accelerated encryption support</th>
 
-support for (manually) resizing the encrypted block device in-place
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✔</td>
+
+<td>✔  
+[[13]](#See_also)</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; background:#ddd">
+
+##### Block device encryption specific
 
 </th>
+
+<th style="background:#ddd">Loop-AES</th>
+
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
+
+<th style="background:#ddd">Truecrypt</th>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Support for (manually) resizing the encrypted block device in-place</th>
 
 <td> ?</td>
 
@@ -828,25 +767,21 @@ support for (manually) resizing the encrypted block device in-place
 
 <tr>
 
-<td colspan="6" style="border-left-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _stacked filesystem encryption specific_
+##### Stacked filesystem encryption specific
 
-</td>
+</th>
 
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
+<th style="background:#ddd">eCryptfs</th>
 
-<th scope="col" style="background:#E2E2E2">EncFs</th>
+<th style="background:#ddd">EncFs</th>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="5" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-supported file systems
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Supported file systems</th>
 
 <td>ext3, ext4, xfs (with caveats), jfs, nfs...</td>
 
@@ -854,13 +789,9 @@ supported file systems
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="5" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-ability to encrypt filenames
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Ability to encrypt filenames</th>
 
 <td>✔</td>
 
@@ -868,13 +799,9 @@ ability to encrypt filenames
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="5" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-ability to _not_ encrypt filenames
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Ability to _not_ encrypt filenames</th>
 
 <td>✔</td>
 
@@ -882,13 +809,9 @@ ability to _not_ encrypt filenames
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="5" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-optimized handling of sparse files
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Optimized handling of sparse files</th>
 
 <td>✖</td>
 
@@ -898,31 +821,27 @@ optimized handling of sparse files
 
 <tr>
 
-<td colspan="3" style="border-left-color:transparent; border-top-color:transparent; text-align:left;">
+<th style="text-align:left; background:#ddd">
 
-##### _compatibility & prevalence_
+##### Compatibility & prevalence
 
-</td>
+</th>
 
-<th scope="col" style="background:#E2E2E2">Loop-AES</th>
+<th style="background:#ddd">Loop-AES</th>
 
-<th scope="col" style="background:#E2E2E2">dm-crypt +/- LUKS</th>
+<th style="background:#ddd">dm-crypt +/- LUKS</th>
 
-<th scope="col" style="background:#E2E2E2">Truecrypt</th>
+<th style="background:#ddd">Truecrypt</th>
 
-<th scope="col" style="background:#E2E2E2">eCryptfs</th>
+<th style="background:#ddd">eCryptfs</th>
 
-<th scope="col" style="background:#E2E2E2">EncFs</th>
+<th style="background:#ddd">EncFs</th>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-supported Linux kernel versions
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Supported Linux kernel versions</th>
 
 <td>2.0 or newer</td>
 
@@ -936,43 +855,45 @@ supported Linux kernel versions
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" rowspan="3" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">encrypted data can also be accessed from...</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Encrypted data can also be accessed from Windows</th>
 
-<th scope="row" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">Windows</th>
+<td>✔  
+(with [[3]](#See_also), [[14]](#See_also))</td>
 
-<td>✔ (with <sup>[[3]](#See_also), [[14]](#See_also)</sup>)</td>
-
-<td>✔ (with <sup>[[4]](#See_also), [[14]](#See_also)</sup>)</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-<td>    ?<sup>[[9]](#See_also)</sup></td>
-
-</tr>
-
-<tr valign="top">
-
-<th scope="row" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">Mac OS X</th>
-
-<td> ?</td>
-
-<td> ?</td>
+<td>✔  
+(with [[4]](#See_also), [[14]](#See_also))</td>
 
 <td>✔</td>
 
 <td> ?</td>
 
-<td>    ✔<sup>[[5]](#See_also)</sup></td>
+<td> ?  
+[[9]](#See_also)</td>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">FreeBSD</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Encrypted data can also be accessed from Mac OS X</th>
+
+<td> ?</td>
+
+<td> ?</td>
+
+<td>✔</td>
+
+<td> ?</td>
+
+<td>✔  
+[[5]](#See_also)</td>
+
+</tr>
+
+<tr>
+
+<th style="text-align:left; font-weight:normal; background:#eee">Encrypted data can also be accessed from FreeBSD</th>
 
 <td> ?</td>
 
@@ -982,35 +903,24 @@ supported Linux kernel versions
 
 <td> ?</td>
 
-<td>    ✔<sup>[[6]](#See_also)</sup></td>
+<td>✔  
+[[6]](#See_also)</td>
 
 </tr>
 
-<tr valign="top">
+<tr>
 
-<th scope="row" colspan="2" style="text-align:left; font-weight:normal; color:#393939; background:#E2E2E2; padding:0 6px">
-
-used by
-
-</th>
+<th style="text-align:left; font-weight:normal; background:#eee">Used by</th>
 
 <td> ?</td>
 
-<td>
-
-*   Debian/Ubuntu installer (system encryption)
-*   Fedora installer
-
-</td>
+<td>Debian/Ubuntu installer (system encryption)  
+Fedora installer</td>
 
 <td> ?</td>
 
-<td>
-
-*   Ubuntu installer (home dir encryption)
-*   Chromium OS (encryption of cached user data<sup>[[7]](#See_also)</sup>)
-
-</td>
+<td>Ubuntu installer (home dir encryption)  
+Chromium OS (encryption of cached user data [[7]](#See_also))</td>
 
 <td> ?</td>
 
@@ -1388,7 +1298,7 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 13.  [^](#encfs_acceleration) [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
 14.  [^](#compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=415420](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=415420)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=416192](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=416192)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
@@ -1397,4 +1307,4 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldi
 
 Hidden category:
 
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

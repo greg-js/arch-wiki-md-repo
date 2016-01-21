@@ -192,6 +192,10 @@ Related articles
 
 [https://github.com/Alexander--/open-syobon](https://github.com/Alexander--/open-syobon) || [open-syobon](https://aur.archlinux.org/packages/open-syobon/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/open-syobon)]</sup>
 
+*   **opsu!** — An open source Java client for the rhythm game osu!.
+
+[https://itdelatrisu.github.io/opsu/](https://itdelatrisu.github.io/opsu/) || [opsu](https://aur.archlinux.org/packages/opsu/)<sup><small>AUR</small></sup>
+
 *   **[Teeworlds](https://en.wikipedia.org/wiki/Teeworlds "wikipedia:Teeworlds")** — Fast-paced 2D multiplayer shooter
 
 [http://teeworlds.com/](http://teeworlds.com/) || [teeworlds](https://www.archlinux.org/packages/?name=teeworlds)
@@ -1120,7 +1124,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416020](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416020)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416256](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416256)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

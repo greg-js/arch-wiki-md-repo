@@ -406,14 +406,7 @@ Compression is enabled using the `compress=zlib` or `compress=lzo` mount options
 
 **Tip:** Compression can also be enabled per-file without using the `compress` mount option; simply apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
 
-When installing Arch to an empty Btrfs partition, set the `compress` option after [preparing the storage drive](/index.php/Beginners%27_guide#Prepare_the_storage_devices "Beginners' guide"). Simply switch to another terminal (`Ctrl+Alt+_number_`), and run the following command:
-
-```
-# mount -o remount,compress=lzo /mnt/target
-
-```
-
-After the installation is finished, add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
+When installing Arch to an empty Btrfs partition, use the `compress` option when [mounting the filesystem](/index.php/Beginners%27_guide#Format_file_systems_and_enable_swap "Beginners' guide"): `mount -o compress=lzo /dev/sd_xY_ /mnt/`. During [configuration](/index.php/Beginners%27_guide#Configuration "Beginners' guide"), add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
 
 ### Checkpoint interval
 
@@ -572,8 +565,12 @@ See [Btrfsck](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more informat
     *   [Btrfs: stop providing a bmap operation to avoid swapfile corruptions](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=35054394c4b3cecd52577c2662c84da1f3e73525) 2009-01-21
     *   [Doing Fast Incremental Backups With Btrfs Send and Receive](http://marc.merlins.org/perso/btrfs/post_2014-03-22_Btrfs-Tips_-Doing-Fast-Incremental-Backups-With-Btrfs-Send-and-Receive.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Btrfs&oldid=414440](https://wiki.archlinux.org/index.php?title=Btrfs&oldid=414440)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Btrfs&oldid=416342](https://wiki.archlinux.org/index.php?title=Btrfs&oldid=416342)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

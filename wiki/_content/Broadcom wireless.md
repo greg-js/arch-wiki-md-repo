@@ -186,7 +186,7 @@ This device will not display with either `lspci` nor `lsusb`; there is no known 
 
 If no other approaches help, install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), or use a [previous driver version](/index.php/Downgrading_packages "Downgrading packages").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=407237](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=407237)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=416337](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=416337)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

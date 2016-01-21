@@ -224,7 +224,7 @@ Connection to 192.168.1.1 closed.
 *   [Port knocking homepage](http://www.portknocking.org/)
 *   [Wikipedia on Port knocking](http://en.wikipedia.org/wiki/Port_knocking)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Port_Knocking&oldid=400305](https://wiki.archlinux.org/index.php?title=Port_Knocking&oldid=400305)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Port_Knocking&oldid=416162](https://wiki.archlinux.org/index.php?title=Port_Knocking&oldid=416162)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

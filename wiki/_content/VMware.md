@@ -21,7 +21,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 VMware module patches and installation](#VMware_module_patches_and_installation)
+    *   [2.1 Kernel modules](#Kernel_modules)
     *   [2.2 systemd services](#systemd_services)
 *   [3 Launching the application](#Launching_the_application)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -50,6 +50,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.9 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+    *   [5.12 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -93,7 +94,7 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 **Tip:** There is also a package called [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)<sup><small>AUR</small></sup> with the intention of trying to automate this section (it also supports older VMware versions).
 
-### VMware module patches and installation
+### Kernel modules
 
 **Note:** Due to Workstation 12 taking advantage of the [mainlined](http://www.phoronix.com/scan.php?page=news_item&px=MTI3MTE) kernel modules, patching the VMCI/VSOCK sources is no longer required.
 
@@ -238,7 +239,12 @@ then adding the name to the `_Virtual_machine_name_.vmx` file:
 
 **This article or section is out of date.**
 
-**Reason:** Using [DKMS](/index.php/DKMS "DKMS") like described below might not work, or this is not the only valid/working solution. There are several packages in the AUR, like [vmware-modules-dkms](https://aur.archlinux.org/packages/vmware-modules-dkms/)<sup><small>AUR</small></sup>. (Discuss in [Talk:VMware#](https://wiki.archlinux.org/index.php/Talk:VMware))
+**Reason:**
+
+*   Is this needed for VMWare 12? Above it is mentioned that the kernel modules are now mainlined.
+*   Using [DKMS](/index.php/DKMS "DKMS") like described below might not work, or this is not the only valid/working solution. There are several packages in the AUR, like [vmware-modules-dkms](https://aur.archlinux.org/packages/vmware-modules-dkms/)<sup><small>AUR</small></sup>.
+
+(Discuss in [Talk:VMware#](https://wiki.archlinux.org/index.php/Talk:VMware))
 
 The [Dynamic Kernel Module Support (DKMS)](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") can be used to manage VMware modules and to void from re-running `vmware-modconfig` each time the kernel changes. The following example uses a custom `Makefile` to compile and install the modules through `vmware-modconfig`. Afterwards they are removed from the current kernel tree.
 
@@ -512,6 +518,21 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 This is likely due to the `vmnet` module not being loaded [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
+### GUI doesn't show after upgrade
+
+The following affects VMware Workstation and Player versions before 12.1.0\. After upgrading to kernel 4.2 an existing installation of VMware does not start any of its GUI applications. This is because the LD library path no longer points to a compatible library. To fix this set your LD_LIBRARY_PATH in a terminal from which you run VMware.
+
+```
+$ export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1/:$LD_LIBRARY_PATH
+
+```
+
+To make this change permanent only when running VMware Workstation add the following line at the beginning of the executable file:
+
+ `/usr/bin/vmware`  `export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1` 
+
+For VMware Player make the same change in `/usr/bin/vmplayer`.
+
 ## Uninstallation
 
 To uninstall VMware you need the product name (either `vmware-workstation` or `vmware-player`). To list all the installed products:
@@ -540,8 +561,12 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 
 You may also want to have a look at the module directories in `/usr/lib/modules/_kernel_name_/misc/` for any leftovers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=412204](https://wiki.archlinux.org/index.php?title=VMware&oldid=412204)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=416441](https://wiki.archlinux.org/index.php?title=VMware&oldid=416441)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

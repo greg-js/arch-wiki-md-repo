@@ -24,6 +24,7 @@ This article describes how to set up the Moodle server on an Arch Linux system. 
     *   [3.2 Create the MoodleData Directory](#Create_the_MoodleData_Directory)
     *   [3.3 Configure PHP extension](#Configure_PHP_extension)
     *   [3.4 Restart Apache](#Restart_Apache)
+    *   [3.5 Mariadb](#Mariadb)
 *   [4 Installation](#Installation)
 *   [5 See also](#See_also)
 
@@ -99,6 +100,16 @@ extension=zip.so
 
 You now need to [restart](/index.php/Restart "Restart") Apache's `httpd.service` to make these changes current. Note that if you get any errors while installing Moodle, and make subsequent changes, you will need to restart Apache after each set of changes.
 
+### Mariadb
+
+If you are using mariadb and the moodle installer complains about the wrong version of mysql edit config.php in /srv/http/moodle
+
+```
+$CFG->dbtype    = 'mariadb'; 
+$CFG->dblibrary = 'native';
+
+```
+
 ## Installation
 
 Go to `[http://localhost/moodle/install.php](http://localhost/moodle/install.php)` - this starts the Moodle installer. There then follows a sequence of configuration screens, most of which should be left at the defaults.
@@ -130,7 +141,7 @@ Happy Moodling !
 *   [http://www.php.net/](http://www.php.net/)
 *   [http://www.mysql.com/](http://www.mysql.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=414213](https://wiki.archlinux.org/index.php?title=Moodle&oldid=414213)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=416226](https://wiki.archlinux.org/index.php?title=Moodle&oldid=416226)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -17,10 +17,11 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Proxies](#Proxies)
-        *   [2.1.1 Daemon Proxy Configuration](#Daemon_Proxy_Configuration)
-        *   [2.1.2 Container Configuration](#Container_Configuration)
-    *   [2.2 Daemon Socket Configuration](#Daemon_Socket_Configuration)
+    *   [2.1 Opening Remote API](#Opening_Remote_API)
+    *   [2.2 Proxies](#Proxies)
+        *   [2.2.1 Daemon Proxy Configuration](#Daemon_Proxy_Configuration)
+        *   [2.2.2 Container Configuration](#Container_Configuration)
+    *   [2.3 Daemon Socket Configuration](#Daemon_Socket_Configuration)
 *   [3 Docker 0.9.0 -- 1.2.x and LXC](#Docker_0.9.0_--_1.2.x_and_LXC)
 *   [4 Images](#Images)
     *   [4.1 Arch Linux](#Arch_Linux)
@@ -63,6 +64,19 @@ $ newgrp docker
 ```
 
 ## Configuration
+
+### Opening Remote API
+
+To opening the Remote API to port `4243` manually.
+
+```
+ # docker daemon -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+
+```
+
+`-H tcp://0.0.0.0:4243` part is for opening the Remote API.
+
+`-H unix:///var/run/docker.sock` part for host machine access via terminal.
 
 ### Proxies
 
@@ -247,7 +261,7 @@ If starting the docker service fails and `journalctl` says that no loopback devi
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/installation/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=414561](https://wiki.archlinux.org/index.php?title=Docker&oldid=414561)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=416166](https://wiki.archlinux.org/index.php?title=Docker&oldid=416166)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

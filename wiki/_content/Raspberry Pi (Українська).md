@@ -78,7 +78,7 @@ Raspberry Pi базується на ARM, а тому потребує вико�
 
 Пакунок [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) має поставити потрібні програми для використання звуку. Типову гучність можна підлаштувати, використовуючи `alsamixer`.
 
-[Template:Порада](/index.php?title=Template:%D0%9F%D0%BE%D1%80%D0%B0%D0%B4%D0%B0&action=edit&redlink=1 "Template:Порада (page does not exist)")
+**Приклад:** Переконайтесь, що єдине джерело звуку "PCM" не заглушене (позначено як `MM` коли заглушене, натисніть `M` щоб включити).
 
 Виберіть джерело аудіо для виводу:
 
@@ -204,7 +204,15 @@ $ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
 
 Прочитайте [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") для більшої інформації щодо регуляторів.
 
-[Template:Порада](/index.php?title=Template:%D0%9F%D0%BE%D1%80%D0%B0%D0%B4%D0%B0&action=edit&redlink=1 "Template:Порада (page does not exist)")
+**Приклад:** Наступний скрипт покаже всі частоти, що встановлені на RPi:
+
+```
+#/bin/bash
+for src in arm core h264 isp v3d uart pwm emmc pixel vec hdmi dpi ; do
+    echo -e "$src:\t$(/opt/vc/bin/vcgencmd  measure_clock $src)"
+done
+
+```
 
 ## Серійна консоль
 

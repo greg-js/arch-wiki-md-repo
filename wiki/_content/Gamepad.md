@@ -328,9 +328,19 @@ Just remind to disconnect the device once you are done, once it will stay connec
 
 The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam. If all else fails, try restarting the computer while the dongle is plugged in.
 
+If you can't get the Steam Controller to work, see [#Steam Controller Not Pairing](#Steam_Controller_Not_Pairing).
+
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> to have controller and mouse emulation without Steam.
 
 #### Wine
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Binaries from questionable hoster. There is also [x360ce](https://github.com/x360ce/x360ce), but it is most likely different project. (Discuss in [Talk:Gamepad#](https://wiki.archlinux.org/index.php/Talk:Gamepad))
 
 [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
 
@@ -629,13 +639,15 @@ And add your user to that group.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415429](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=415429)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=416212](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=416212)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
 
-Hidden category:
+Hidden categories:
 
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
 *   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

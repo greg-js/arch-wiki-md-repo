@@ -18,8 +18,6 @@ Related articles
 
 This article provides an overview of the Arch Build System (ABS) along with a walkthrough for beginners. It is not intended to be a complete reference guide.
 
-**Note:** ABS tree syncs once a day so it may lag behind what is already available in the repositories.
-
 ## Contents
 
 *   [1 What is the Arch Build System?](#What_is_the_Arch_Build_System.3F)
@@ -60,9 +58,9 @@ ABS is made up of a directory tree (the ABS tree) residing under `/var/abs`. Thi
 
 ABS tree
 
-The ABS directory structure; directories syncs with SVN and are under `/var/abs/` on your (local) machine. It contains many subdirectories, named for all available official Arch Linux software from repositories specified in `/etc/abs.conf`, but not the packages themselves. The tree is created after installing the [abs](https://www.archlinux.org/packages/?name=abs) package with [pacman](/index.php/Pacman "Pacman") and subsequently running the `abs` script.
+The ABS directory structure containing files needed to build all official packages (but not the packages themselves nor the source files of the software). It is available in [svn](https://www.archlinux.org/svn/) and [git](https://projects.archlinux.org/svntogit/packages.git/) repositories and the `abs` script (from the [abs](https://www.archlinux.org/packages/?name=abs) package) downloads them using [rsync](/index.php/Rsync "Rsync") into `/var/abs/` on your (local) machine. On the local system, the tree contains subdirectories for each repository specified in `/etc/abs.conf`, which in turn contain a subdirectory for each package.
 
-**Note:** The actual packages are available in [svn](https://www.archlinux.org/svn/) and [git](https://projects.archlinux.org/svntogit/packages.git/) repositories, and the `abs` script downloads them using [rsync](/index.php/Rsync "Rsync").
+**Note:** ABS tree syncs once a day so it may lag behind what is already available in the repositories.
 
 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 
@@ -80,6 +78,8 @@ pacman is completely separate, but is necessarily invoked either by makepkg or m
 
 The Arch User Repository is separate from ABS but AUR (unsupported) PKGBUILDs are built using makepkg to compile and package up software. In contrast to the ABS tree on your local machine, the AUR exists as a website interface. It contains many thousands of user-contributed PKGBUILDs for software which is unavailable as an official Arch package. If you need to build a package outside the official Arch tree, chances are it is in the AUR.
 
+**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Building software on a _dirty_ build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
+
 ## Why would I want to use ABS?
 
 The Arch Build System is used to:
@@ -95,8 +95,6 @@ The Arch Build System is used to:
 ABS is not necessary to use Arch Linux, but it is useful for automating certain tasks of source compilation.
 
 ## How to use ABS
-
-**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Instructions below don't provide that, resulting in (officially-invalid) bugs like [FS#47614](https://bugs.archlinux.org/task/47614).
 
 Building packages using abs consists of these steps:
 
@@ -299,10 +297,14 @@ If new versions are available in the official repositories during a system updat
 *   [pbget](http://xyne.archlinux.ca/projects/pbget/) - retrieve PKGBUILDs for individual packages directly from the web interface. Includes AUR support.
 *   [asp](https://github.com/falconindy/asp) - a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=414369](https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=414369)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=416278](https://wiki.archlinux.org/index.php?title=Arch_Build_System&oldid=416278)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -198,11 +198,15 @@ By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This
 
 ### High quality ICC monitor profiles
 
-An ICC profile is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. Since every monitor is different it is possible to achieve better results calibrating your own monitor, but if you don't have a colorimeter or a spectrophotometer you will get far better results with the following XYZ LUT + MATRIX profiles made with a ~3500 patches testchart instead of the canned ones. If you previously didn't install a canned profile you will notice a night and day difference in color accuracy. Do not use a profile made for the QHD+ version with the FHD one and vice versa.
+An ICC profile is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. Since every monitor is different it is possible to achieve better results calibrating your own monitor, but if you don't have a colorimeter or a spectrophotometer you will get far better results with the following XYZ LUT + MATRIX profiles made with a ~3500 patches testchart instead of the canned ones. If you previously didn't install a canned profile you will notice a night and day difference in color accuracy. Do not use a profile made for the QHD+ version with the FHD one and vice versa. The profiles has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. The monitor has been turned on for at least 30 minutes before commencing the calibration.
 
-*   QHD+, D65, Gamma 2.2: [https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo](https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo)
+*   QHD+, D65, Gamma 2.2, max luminance: [https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo](https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo)
 
-*   FHD, D65, Gamma 2.2: coming soon (I will get my hands on the FHD monitor in February)
+**Note:** You should disbale Dynamic Brightness Control to accurately calibrate the QHD+ display: [https://github.com/advancingu/XPS13Linux/issues/2](https://github.com/advancingu/XPS13Linux/issues/2)
+
+**Note:** This profile has been made with DBC on, so I will upload another profile with DBC off
+
+*   FHD, D65, Gamma 2.2, max luminance: coming soon (I will get my hands on the FHD monitor in February)
 
 **Note:** It may not be possible to accurately calibrate the FHD display due to the dynamic contrast behaviour of the panel which cannot be disabled
 
@@ -303,7 +307,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416150](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416150)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416187](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416187)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

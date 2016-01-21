@@ -38,8 +38,9 @@ _The "Lightweight X11 Desktop Environment" is an extremely fast-performing and e
     *   [3.7 Keyboard layout](#Keyboard_layout)
     *   [3.8 Screen locking](#Screen_locking)
     *   [3.9 lxpanel icons](#lxpanel_icons)
-    *   [3.10 Replace Openbox](#Replace_Openbox)
-    *   [3.11 Shutdown, reboot, suspend and hibernate options (LXSession-logout)](#Shutdown.2C_reboot.2C_suspend_and_hibernate_options_.28LXSession-logout.29)
+    *   [3.10 lxpanel menus](#lxpanel_menus)
+    *   [3.11 Replace Openbox](#Replace_Openbox)
+    *   [3.12 Shutdown, reboot, suspend and hibernate options (LXSession-logout)](#Shutdown.2C_reboot.2C_suspend_and_hibernate_options_.28LXSession-logout.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
     *   [4.2 lxpanel crashes with some themes or browsing particular web pages](#lxpanel_crashes_with_some_themes_or_browsing_particular_web_pages)
@@ -161,7 +162,7 @@ See [Font configuration](/index.php/Font_configuration "Font configuration"). [l
 
 See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions. A keyboard layout applet is included with _lxpanel_.
 
-See [#Autostart programs](#Autostart_programs) for a way to automatically start _setxkbmap_ in LXDE.
+See [#Autostart](#Autostart) for a way to automatically start _setxkbmap_ in LXDE.
 
 ### Screen locking
 
@@ -198,6 +199,10 @@ to:
 Icon=/name/of/new/icon/added/to/pixmaps/.png
 
 ```
+
+### lxpanel menus
+
+The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [mate](/index.php/Mate "Mate")) to add some of the function-ability that lxde lacks.
 
 ### Replace Openbox
 
@@ -281,8 +286,14 @@ If lxpanel crashes when browsing particular unicode web pages, try install [ttf-
 *   [LXDE (Sourceforge)](http://lxde.sourceforge.net)
 *   [LXDE forum](http://forum.lxde.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LXDE&oldid=408472](https://wiki.archlinux.org/index.php?title=LXDE&oldid=408472)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LXDE&oldid=416236](https://wiki.archlinux.org/index.php?title=LXDE&oldid=416236)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

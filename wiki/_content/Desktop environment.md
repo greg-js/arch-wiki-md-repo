@@ -104,6 +104,10 @@ Prior to installing a desktop environment, a functional X server installation is
 
 [http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)<sup><small>AUR</small></sup>
 
+*   **[Moksha](/index.php/Moksha "Moksha")** — Fork of Enlightenment currently used as default desktop environment in Ubuntu-based Bodhi Linux.
+
+[http://mokshadesktop.org/](http://mokshadesktop.org/) || [moksha](https://aur.archlinux.org/packages/moksha/)<sup><small>AUR</small></sup>
+
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — Pantheon is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with GNOME Shell and Mac OS X.
 
 [http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)<sup><small>AUR</small></sup>
@@ -1002,8 +1006,12 @@ Other applications that are usually provided by desktop environments are:
 *   Screen locker: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 *   Sound volume manager: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=414302](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=414302)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=416237](https://wiki.archlinux.org/index.php?title=Desktop_environment&oldid=416237)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

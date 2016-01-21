@@ -40,6 +40,7 @@ As per default configuration in `/etc/pam.d/system-login`, the `pam_systemd` mod
 Similarly to system units, user units are located in the following directories (ordered by ascending precedence):
 
 *   `/usr/lib/systemd/user/` where units provided by installed packages belong.
+*   `~/.local/share/systemd/user/` where units of packages that have been installed in the home directory belong.
 *   `/etc/systemd/user/` where system-wide user units are placed by the system administrator.
 *   `~/.config/systemd/user/` where the user puts its own units.
 
@@ -337,7 +338,7 @@ WantedBy=wm.target
 *   [Collection of useful systemd user units](https://github.com/grawity/systemd-user-units)
 *   [Arch forum thread about changes in systemd 206 user instances](https://bbs.archlinux.org/viewtopic.php?id=167115)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=415426](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=415426)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=416204](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=416204)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

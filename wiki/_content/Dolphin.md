@@ -35,7 +35,7 @@ This article is about **Dolphin**, the default [file manager](/index.php/Categor
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dolphinpart4](https://www.archlinux.org/packages/?name=dolphinpart4) package. For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [kdesdk-dolphin-plugins](https://www.archlinux.org/packages/?name=kdesdk-dolphin-plugins)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins)]</sup>. The _Compare files_ dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
+[Install](/index.php/Install "Install") the [dolphinpart4](https://www.archlinux.org/packages/?name=dolphinpart4) package. For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). The _Compare files_ dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
 
 ### File previews
 
@@ -55,8 +55,6 @@ This article is about **Dolphin**, the default [file manager](/index.php/Categor
 Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packages/?name=konsole) by default. To change the default terminal emulator, run `kcmshell4 componentchooser` and select _Terminal Emulator > Use a different terminal program_.
 
 ### KIO Slaves
-
-**Note:** This does not require [kdesdk-kioslaves](https://www.archlinux.org/packages/?name=kdesdk-kioslaves)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>.
 
 Dolphin uses _KIO slaves_ for network access, trash and other functionality, unlike [GTK+](/index.php/GTK%2B "GTK+") file managers which use [GVFS](/index.php/GVFS "GVFS"). Available protocols are shown in the location bar (editable mode) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). To quickly bookmark them, right-click in the workspace, and select "Add to Places".
 
@@ -80,8 +78,12 @@ This was a general issue in Qt4 and [kdelibs](https://www.archlinux.org/packages
 *   [KDE userbase: Dolphin](https://userbase.kde.org/Dolphin)
 *   [Dolphin Handbook](https://docs.kde.org/stable/en/applications/dolphin/index.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=413736](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=413736)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=416173](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=416173)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File managers](/index.php/Category:File_managers "Category:File managers")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

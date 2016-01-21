@@ -39,21 +39,25 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 ## Dedicated software
 
-*   **Deepin Screenshot** — Provide a quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/GTK2 based.
+*   **Deepin Screenshot** — Provide a quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
 [http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
-
-*   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
-
-[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
-
-*   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
-
-[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
 
 *   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 
 [https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)<sup><small>AUR</small></sup>
+
+*   **gnome-screenshot** — Take pictures of your screen. Even if its used Gnome in their name, its dependencies only dconf, gtk3, and libcanberra.
+
+[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
+
+*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
+
+[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)<sup><small>AUR</small></sup>
+
+*   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
+
+[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)<sup><small>AUR</small></sup>
 
 *   **maim** — A simple command line utility that takes screenshots using imlib2\. It's meant to replace scrot and performs better than scrot in many ways.
 
@@ -67,13 +71,25 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 [https://code.google.com/p/qscreenshot/](https://code.google.com/p/qscreenshot/) || [qscreenshot-git](https://aur.archlinux.org/packages/qscreenshot-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qscreenshot-git)]</sup>
 
+*   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
+
+[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)<sup><small>AUR</small></sup>
+
 *   **screengrab** — Cross-platform application designed to quickly get screenshots (Qt).
 
 [http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)<sup><small>AUR</small></sup>
 
+*   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
+
+[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
+
 *   **Shutter** — Rich screenshot and editing program.
 
 [http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://www.archlinux.org/packages/?name=shutter)
+
+*   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
+
+[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
 
 *   **Xfce4 Screenshooter** — This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, open it using another application, or host it on ZimageZ, a free online image hosting service. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
@@ -86,18 +102,6 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 *   **zscreen** — Lightweight GUI which allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot automatically to [imgur](http://imgur.com). For taking the screenshot it uses scrot and zenity for the GUI.
 
 [https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI) || [zscreen](https://aur.archlinux.org/packages/zscreen/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zscreen)]</sup>
-
-*   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
-
-[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)<sup><small>AUR</small></sup>
-
-*   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
-
-[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)<sup><small>AUR</small></sup>
-
-*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
-
-[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)<sup><small>AUR</small></sup>
 
 ## Packages including a screenshot utility
 
@@ -356,7 +360,7 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=415956](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=415956)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=416275](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=416275)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

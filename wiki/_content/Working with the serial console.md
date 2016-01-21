@@ -249,7 +249,7 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 
 ## Installing Arch Linux using the serial console
 
-**Note:** The Arch Linux monthly release(i.e. the installation CD)'s boot loader has been configurated[[5]](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux/archiso_head.cfg#n1) to listen on 0 port(`ttyS0`/COM1) at 38400 bps, with 8 data bits, no parity bit and 1 stop bit-times.
+**Note:** The Arch Linux monthly release(i.e. the installation CD)'s boot loader has been configured[[5]](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux/archiso_head.cfg#n1) to listen on 0 port(`ttyS0`/COM1) at 38400 bps, with 8 data bits, no parity bit and 1 stop bit-times.
 
 1.  Connect to the target machine using the method described above.
 2.  Boot the target machine using the Arch Linux installation CD.
@@ -308,8 +308,12 @@ rsz() {
 }
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=404708](https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=404708)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416365](https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416365)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

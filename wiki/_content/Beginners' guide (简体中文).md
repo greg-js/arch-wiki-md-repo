@@ -159,7 +159,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **警告:** 分区可能会毁掉原数据。**强烈建议**先备份重要的数据。
 
-此部分为新系统准备存储空间，更相信介绍请阅读[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")。
+此部分为新系统准备存储空间，更详细的介绍请阅读[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")。
 
 *   如果您打算安装在 USB 上，请阅读 [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").
 *   如果您打算为 [LVM](/index.php/LVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LVM (简体中文)")、[磁盘加密](/index.php/Disk_encryption "Disk encryption") 或 [RAID](/index.php/RAID "RAID") 创建堆栈式块设备，请在此部分加入需要的步骤。
@@ -666,7 +666,7 @@ _systemd_ 在关机时会自动卸载分区，为了确保安全，可以用 `um
 
 [Arch Linux 中文化](/index.php/Arch_Linux_%E4%B8%AD%E6%96%87%E5%8C%96 "Arch Linux 中文化") 页面还包含了关于系统、软件中文支持的内容。
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=415825](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=415825)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=416321](https://wiki.archlinux.org/index.php?title=Beginners%27_guide_(简体中文)&oldid=416321)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

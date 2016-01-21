@@ -20,7 +20,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <th>Display</th>
 
-<td>11.6" 1920x1080 LCD with Capacitive and Pen Digitisers</td>
+<td>11.6" 1920x1080 LCD with Capacitive and Pen Digitizers</td>
 
 </tr>
 
@@ -81,7 +81,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [1 Installation](#Installation)
 *   [2 Hardware Configuration](#Hardware_Configuration)
     *   [2.1 Bluetooth](#Bluetooth)
-    *   [2.2 Digitisers](#Digitisers)
+    *   [2.2 Digitizers](#Digitizers)
+        *   [2.2.1 Udev Configuration](#Udev_Configuration)
+        *   [2.2.2 Xorg Configuration](#Xorg_Configuration)
+        *   [2.2.3 Touchscreen / Wacom Tips & Tricks](#Touchscreen_.2F_Wacom_Tips_.26_Tricks)
+            *   [2.2.3.1 thinkpad-helix-utils](#thinkpad-helix-utils)
     *   [2.3 Screen Rotation](#Screen_Rotation)
 *   [3 BIOS/Firmware Updates](#BIOS.2FFirmware_Updates)
 
@@ -100,38 +104,87 @@ Booting using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") works perfe
 To fully support all hardware in X, one needs to ensure that the following driver packages are installed:
 
 *   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (for the clickpad)
-*   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitisers)
+*   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitizers)
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (for the GPU)
 
-Nearly everything works fine with no special configuration. The sensors (accelerometer, gyroscope, magnetometer, ambient light sensor) don't seem to be recognised yet.
+Nearly everything works fine with no special configuration. The sensors (accelerometer, gyroscope, magnetometer, ambient light sensor) don't seem to be recognized yet.
 
 ### Bluetooth
 
 If the Broadcom USB device isn't showing up, you likely need to turn it on with `echo 1 > /sys/devices/platform/thinkpad_acpi/rfkill/rfkill0/state`
 
-### Digitisers
+### Digitizers
 
-The pen digitiser should be recognised by the wacom driver out of the box. The capacitive (touch) digitiser works with the same driver, but is not recognised as compatible by default. To fix this, add Atmel to the first MatchProduct entry in the wacom driver configuration file:
-
- `/etc/X11/xorg.conf.d/50-wacom.conf` 
+The Lenovo Helix comes with the following input devices (the ids may not be the same on your system):
 
 ```
-Section "InputClass"
-    Identifier "Wacom class"
-    MatchProduct "Wacom|WACOM|Hanwang|PTK-540WL|Atmel"
-    MatchDevicePath "/dev/input/event*"
-    Driver "wacom"
-EndSection
+$ xinput list
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ Wacom ISDv4 EC Pen stylus               	id=15	[slave  pointer  (2)]
+⎜   ↳ Atmel Atmel maXTouch Digitizer          	id=16	[slave  pointer  (2)]
+⎜   ↳ SynPS/2 Synaptics TouchPad              	id=18	[slave  pointer  (2)]
+⎜   ↳ TPPS/2 IBM TrackPoint                   	id=19	[slave  pointer  (2)]
+⎜   ↳ Wacom ISDv4 EC Pen eraser               	id=21	[slave  pointer  (2)]
 
 ```
 
-Everything should work after a reboot.
+The **Wacom ISDv4 EC Pen stylus** xinput device is recognized by the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver out of the box. However, additional [Udev](/index.php/Udev "Udev") and [Xorg](/index.php/Xorg "Xorg") configuration is required to recognize the **Atmel Atmel maXTouch Digitizer** touchscreen device as well as **Wacom ISDv4 EC Pen eraser** input if using a pen with an eraser function.
 
-If you find yourself frustrated by the capacitive digitiser while trying to use the pen, you may have interest in the [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup> package. It contains a script, `helix-toggle-touch`, which will toggle the capacitive digitiser on and off with a simple command.
+#### Udev Configuration
+
+With an up-to-date Arch install, install the following packages:
+
+*   [libwacom](https://www.archlinux.org/packages/?name=libwacom)
+*   [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup>
+
+The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup> package installs the additional [Udev](/index.php/Udev "Udev") rules. The [libwacom](https://www.archlinux.org/packages/?name=libwacom) is needed by some graphics applications to see the additional inputs.
+
+[Udev](/index.php/Udev "Udev") should automatically detect the changes if already running. But, you may want to reboot your system to verify the changes stick.
+
+Additionally, you may want to read the [Wacom_Tablet#Dynamic_with_udev](/index.php/Wacom_Tablet#Dynamic_with_udev "Wacom Tablet") section to ensure the two wacom input devices are found. On this Helix system, it looks like this:
+
+```
+$ ls -l /dev/input/wacom* 
+lrwxrwxrwx 1 root root 6 Jan 20 15:32 /dev/input/wacom -> event5
+lrwxrwxrwx 1 root root 6 Jan 20 15:32 /dev/input/wacom- -> event5
+
+```
+
+These two inputs are the pen and eraser, respectfully.
+
+You can also see if the touchscreen was detected properly:
+
+```
+$ ls -l /dev/input/tablet-*
+lrwxrwxrwx 1 root root       6 Jan 20 15:32 tablet-tpc-ec- -> event5
+
+```
+
+With these three inputs, you can continue to the next section to configure Xorg.
+
+#### Xorg Configuration
+
+Now, you'll need to tell [Xorg](/index.php/Xorg "Xorg") to use the new inputs. The [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver package has an up-to-date list of devices that the Helix has. But, the package does not install the updated list by default. You'll need to copy it for Xorg to see them:
+
+```
+# cp /usr/share/X11/xorg.conf.d/50-wacom.conf /etc/X11/xorg.conf.d/
+
+```
+
+Once done with all the above, reboot and you verify `xinput list` looks the same as the above.
+
+#### Touchscreen / Wacom Tips & Tricks
+
+If you find yourself frustrated by the capacitive digitizer while trying to use the pen, there are a few [AUR](/index.php/AUR "AUR") packages that may be of interest.
+
+##### thinkpad-helix-utils
+
+The [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup> package contains a script, `helix-toggle-touch`, which will toggle the capacitive digitizer on and off with a simple command. It also installs a `desktop` file for Gnome that can be used to toggle xinput on and off with the pen.
 
 ### Screen Rotation
 
-If you have both digitisers configured through the xf86-input-wacom driver, they will automatically rotate with the display and you can use a simple command like `xrandr --output eDP1 --rotate left` to rotate the screen with ease.
+If you have both digitizers configured through the xf86-input-wacom driver, they will automatically rotate with the display and you can use a simple command like `xrandr --output eDP1 --rotate left` to rotate the screen with ease.
 
 If you want to use the bezel buttons (or some other hotkey) to cycle through orientations (or toggle between two specific ones), `helix-rotate`, also from from [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup>, provides an easy-to-bind command that may serve your needs well.
 
@@ -145,7 +198,7 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=414748](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=414748)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416478](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416478)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

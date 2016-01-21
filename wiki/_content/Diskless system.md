@@ -152,6 +152,14 @@ Create a [sparse file](https://en.wikipedia.org/wiki/Sparse_file "wikipedia:Spar
 
 ### Bootstrapping installation
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** `mkarchroot` is mentioned only in the following sentence. (Discuss in [Talk:Diskless system#](https://wiki.archlinux.org/index.php/Talk:Diskless_system))
+
 Install [devtools](https://www.archlinux.org/packages/?name=devtools) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), and run `mkarchroot`.
 
 ```
@@ -334,8 +342,13 @@ You will then need to umount `$root` before you start the client.
 *   [kernel.org: Mounting the root filesystem via NFS (nfsroot)](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt)
 *   [syslinux.org: pxelinux FAQ](http://www.syslinux.org/wiki/index.php/PXELINUX)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Diskless_system&oldid=405829](https://wiki.archlinux.org/index.php?title=Diskless_system&oldid=405829)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Diskless_system&oldid=416272](https://wiki.archlinux.org/index.php?title=Diskless_system&oldid=416272)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

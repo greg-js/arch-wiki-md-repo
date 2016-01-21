@@ -29,7 +29,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### Basic Setup
 
-The Hiawatha configuration file is: `/etc/hiawatha/hiawatha.conf` By default it should produce a 404 page.
+The Hiawatha configuration file is: `/etc/hiawatha/hiawatha.conf`. By default it should produce a 404 page.
 
 The default configuration file suggests `/srv/http/my-domain/public` as the document directory served. To test the installation, create a dummy file:
 
@@ -73,7 +73,7 @@ Hiawatha only supports the first kind!
 
 #### PHP
 
-Install [php](https://www.archlinux.org/packages/?name=php), [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) (see also [PHP](/index.php/PHP "PHP") and [LAMP](/index.php/LAMP "LAMP")). Don't forget to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `php-fpm.service`.
+Install [php](https://www.archlinux.org/packages/?name=php), [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) (see also [PHP](/index.php/PHP "PHP") and [LAMP](/index.php/LAMP "LAMP")). Do not forget to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `php-fpm.service`.
 
 Check that php-cgi is working `php-cgi --version`
 
@@ -86,7 +86,7 @@ Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies
 
 If you get a similar output then php is installed correctly.
 
-Add one this FastCGIserver sections to your con fig file.
+Add one of this `FastCGIserver` sections to your config file.
 
  `/etc/hiawatha/hiawatha.conf` 
 
@@ -116,7 +116,7 @@ FastCGIserver {
 
 ```
 
-To use the FastCGIserver ad the following to your con fig file
+To use the FastCGIserver ad the following to your config file
 
  `/etc/hiawatha/hiawatha.conf` 
 
@@ -127,33 +127,87 @@ VirtualHost {
 }
 ```
 
-The [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
+Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
 
 #### Ruby on Rails
 
-**Note:** If you use it please fill this section!
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** If you use it please fill this section! (Discuss in [Talk:Hiawatha#](https://wiki.archlinux.org/index.php/Talk:Hiawatha))
 
 For some details see the FastCGI section of the [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 
 #### Python FastCGI
 
-**Note:** If you use it please fill this section!
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** If you use it please fill this section! (Discuss in [Talk:Hiawatha#](https://wiki.archlinux.org/index.php/Talk:Hiawatha))
 
 For some details see the FastCGI section of the [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 
 ### SSL
 
-**Note:** Coming soon ...
+For SSL/TLS support add the following `Binding` to your con fig file. Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
+
+ `/etc/hiawatha/hiawatha.conf` 
+
+```
+Binding {
+    Port = 443
+    TLScertFile = /etc/hiawatha/serverkey.pem
+}
+
+```
+
+The order of the items in `serverkey.pem` is important. The order has to be as follows:
+
+ `serverkey.pem` 
+
+```
+-----BEGIN RSA PRIVATE KEY-----
+[webserver private key]
+-----END RSA PRIVATE KEY----- 
+
+-----BEGIN CERTIFICATE-----
+[webserver certificate]
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+[optional intermediate CA certificate]
+-----END CERTIFICATE-----
+
+```
+
+If you want to use Let's Encrypt see this [forum post](https://www.hiawatha-webserver.org/forum/topic/2085).
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto/bindings).
 
-##### Server Name Indication
+#### Server Name Indication
 
-**Note:** Coming soon ...
+Hiawatha has support for SNI, which allows you to serve multiple TLS websites via one IP address. Just configure a TLS binding as explained above. For each virtual host that has its own SSL/TLS certificate, simply use the `TLScertFile` option inside the virtual host block. The certificate specified via Binding{} is used when a website is requested for which no virtual host has been defined.
+
+ `/etc/hiawatha/hiawatha.conf` 
+
+```
+VirtualHost {
+    Hostname = www.website.org
+    ...
+    TLScertFile = website.pem
+}
+
+```
 
 ### Output Compression
 
-Output Compression is not supported!
+Hiawatha has no support for on-the-fly GZip content encoding! But Hiawatha goes its own way with preziped contend.
 
 For further details see the official [FAQ](https://www.hiawatha-webserver.org/faq).
 
@@ -161,8 +215,12 @@ For further details see the official [FAQ](https://www.hiawatha-webserver.org/fa
 
 *   [Hiawatha Support page](https://www.hiawatha-webserver.org/support)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hiawatha&oldid=416076](https://wiki.archlinux.org/index.php?title=Hiawatha&oldid=416076)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hiawatha&oldid=416252](https://wiki.archlinux.org/index.php?title=Hiawatha&oldid=416252)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

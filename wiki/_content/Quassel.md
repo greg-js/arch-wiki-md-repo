@@ -30,7 +30,7 @@ Just install the [quassel-monolithic](https://www.archlinux.org/packages/?name=q
 
 Install [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) and [quassel-client](https://www.archlinux.org/packages/?name=quassel-client).
 
-Generate a certificate (this will be valid for 4 years, after which it needs to be reissued, just change the -days to another value if you so desire):
+Generate a certificate (this will be valid for 1 years, after which it needs to be reissued, just change the -days to another value if you so desire):
 
  `# openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /var/lib/quassel/quasselCert.pem -out /var/lib/quassel/quasselCert.pem` 
 
@@ -76,7 +76,7 @@ If you were previously using quassel-monolithic, your settings might be messed u
 
 Then start quasselcore again and connect from your client, you should now get the wizard to show, however, all settings will have to be re-entered.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Quassel&oldid=407565](https://wiki.archlinux.org/index.php?title=Quassel&oldid=407565)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Quassel&oldid=416151](https://wiki.archlinux.org/index.php?title=Quassel&oldid=416151)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

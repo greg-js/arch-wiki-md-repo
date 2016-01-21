@@ -1139,7 +1139,7 @@ Afterwards, you need to add your user to the `pulse-rt` group:
 
 PulseAudio does not have a true default device. Instead it uses a ["fallback"](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/DefaultDevice/), which only applies to new sound streams. This means previously run applications are not affected by the newly set fallback device.
 
-[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media-pulseaudio](https://www.archlinux.org/packages/?name=mate-media-pulseaudio)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [mate-media](https://www.archlinux.org/packages/?name=mate-media)]</sup> and [paswitch](https://aur.archlinux.org/packages/paswitch/)<sup><small>AUR</small></sup> handle this gracefully. Alternatively:
+[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) and [paswitch](https://aur.archlinux.org/packages/paswitch/)<sup><small>AUR</small></sup> handle this gracefully. Alternatively:
 
 1\. Move the old streams in [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) manually to the new sound card.
 
@@ -1154,7 +1154,7 @@ load-module module-stream-restore restore_device=false
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=415576](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=415576)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=416177](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=416177)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -1164,4 +1164,3 @@ Hidden categories:
 
 *   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
 *   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

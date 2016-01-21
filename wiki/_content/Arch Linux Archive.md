@@ -8,12 +8,12 @@ Related articles
 
 *   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
 
-The **A**rch **L**inux **Archive** (_a.k.a ala_), formerly known as _Arch Linux Rollback Machine_ (_a.k.a ARM_), stores _official repositories snapshots_, _iso images_ and _bootstrap tarballs_ across time.
+The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollback Machine** (a.k.a **ARM**), stores _official repositories snapshots_, _iso images_ and _bootstrap tarballs_ across time.
 
 **You can use it to**
 
 *   Downgrade to a previous version of one package (last version is broken, I want the previous one)
-*   Restore all your packages at a precise moment (All theses packages are broken, I want to go back 2 months ago)
+*   Restore all your packages at a precise moment (my system is broken, I want to go back 2 months ago)
 *   Find a previous version of an ISO image
 
 ## Contents
@@ -203,7 +203,7 @@ The [iso](http://ala.seblu.net/iso) directory contains official ISO images and b
 
 **Reason:** As of October 2015, the fate of the package is discussed in [arch-dev-public](https://lists.archlinux.org/pipermail/arch-dev-public/2015-October/027480.html). (Discuss in [Talk:Arch Linux Archive#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_Archive))
 
-[agetpkg](https://www.archlinux.org/packages/?name=agetpkg)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> is a command line tool used to quickly list/get/install packages stored in the Archive.
+[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/)<sup><small>AUR</small></sup> is a command line tool used to quickly list/get/install packages stored in the Archive.
 
 ##### Download a previous version of ferm package
 
@@ -304,12 +304,18 @@ Then update the database and force downgrade:
 
 ## History
 
-*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
-*   The original ARM (_Archlinux Rollback Machine_) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
+*   The original ARM (_Archlinux Rollback Machine_) was closed on 2013-08-18.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
+*   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
+*   Moved to [archive.archlinux.org](https://archive.archlinux.org) on 2015-12-19.[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412886](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=412886)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=416307](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&oldid=416307)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

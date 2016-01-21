@@ -511,6 +511,18 @@ menuentry "Other Linux" {
 }
 ```
 
+For some os like Nix OS and GuixSD, because the kernel files are named different and are in a special place called store, the entry will be a bit different, below it's an example for GuixSD:
+
+```
+menuentry "GNU with Linux-Libre 4.2.5 (alpha)" {
+  search --set=root --fs-uuid YOUR_ROOT_PARTITION_UUID
+  search --file --set /gnu/store/zbm09fk0wxkw2wyygnn4gcfxj8s31ajd-linux-libre-4.2.5/bzImage
+
+  linux /gnu/store/zbm09fk0wxkw2wyygnn4gcfxj8s31ajd-linux-libre-4.2.5/bzImage --root=YOUR_ROOT_PARTITION_LABEL --system=/gnu/store/a1brgzara5mw72jnmhqjx0j69ah8p5mp-system --load=/gnu/store/a1brgzara5mw72jnmhqjx0j69ah8p5mp-system/boot
+  initrd /gnu/store/a1brgzara5mw72jnmhqjx0j69ah8p5mp-system/initrd
+}
+```
+
 ##### FreeBSD menu entry
 
 The following three methods require that FreeBSD is installed on a single partition with UFS(v2). Assuming the nested BSD partition table is on `sda4`:
@@ -1173,7 +1185,7 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=416008](https://wiki.archlinux.org/index.php?title=GRUB&oldid=416008)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=416386](https://wiki.archlinux.org/index.php?title=GRUB&oldid=416386)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

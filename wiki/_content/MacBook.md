@@ -983,7 +983,50 @@ ls /media/mac
 
 ### HFS+ Partitions
 
-HFS+ partitions, now the default in OS X, are not fully supported by Linux and are mounted as read-only by default. In order to write to an HFS+ partition, it is necessary to disable journaling. This can be accomplished using the OS X Disk Utility. Refer to this [Apple support page](http://support.apple.com/kb/ht2355) for more information.
+HFS+ partitions, now the default in OS X, are not fully supported by Linux and are mounted as read-only by default. In order to write to an HFS+ partition, it is necessary to disable journaling. This can be accomplished using the OS X Disk Utility. Refer to this [Apple support page](http://support.apple.com/kb/ht2355) for more information or try to do it from the command line:
+
+Find your partition:
+
+```
+$ diskutil list
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *750.2 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS OSX                     149.5 GB   disk0s2
+   3:                  Apple_HFS Macintosh HD            599.2 GB   disk0s3
+   4:                 Apple_Boot Recovery HD             650.0 MB   disk0s4
+
+```
+
+In this example we will use _disk0s3_ partition named as _Macintosh HD_. To know if journaling is activate or not you could execute:
+
+```
+$ diskutil info /dev/disk0s3 | grep -i journal
+   File System Personality:  Journaled HFS+
+   Name (User Visible):      Mac OS Extended (Journaled)
+   Journal:                  Journal size 49152 KB at offset 0x1176000
+
+```
+
+As you can read the journaling is active. To turn off the journaling you could execute:
+
+```
+$ sudo diskutil disableJournal disk0s3
+Password:
+Journaling has been disabled for volume Macintosh HD on disk0s3
+
+```
+
+To verify it is done execute the info command again:
+
+```
+$diskutil info /dev/disk0s3 | grep -i journal
+$
+
+```
+
+If you get noting as output, then jounrnaling is disabled.
 
 ### Home Sharing
 
@@ -1574,7 +1617,7 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/](http://allanmcrae.com/2012/04/installing-arch-on-a-macbook-pro-8-1/)
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=415670](https://wiki.archlinux.org/index.php?title=MacBook&oldid=415670)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=416227](https://wiki.archlinux.org/index.php?title=MacBook&oldid=416227)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

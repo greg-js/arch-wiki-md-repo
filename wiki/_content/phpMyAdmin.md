@@ -44,6 +44,14 @@ extension=mcrypt.so
 
 Optionally you can enable `bz2.so` and `zip.so` for compression support.
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** `open_basedir` is no longer set by default, in fact it may cause a server error if set. (Discuss in [Talk:PhpMyAdmin#](https://wiki.archlinux.org/index.php/Talk:PhpMyAdmin))
+
 You need to make sure that PHP can access `/etc/webapps`. Add it to `open_basedir` in `/etc/php/php.ini` if necessary:
 
 ```
@@ -330,8 +338,12 @@ a fix seems to be to make sure you do not have SSL connection between PhpMyAdmin
 
 **Note:** There surely must be a better fix since 'ssl = true' worked before. Also do not disable SSL if your PhpMyAdmin install is somehow not on the same server as MySQL!
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=415362](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=415362)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=416235](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=416235)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

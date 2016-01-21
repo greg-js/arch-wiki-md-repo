@@ -149,7 +149,7 @@ Certain rsync-type packages also do snapshot backups by storing files which desc
     *   Really is just a front-end to `rsync`, `diff`, `cp`.
     *   A new snapshot is created only if something changed since the last snapshot.
 
-[http://backintime.le-web.org/](http://backintime.le-web.org/) || [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup> or as a prebuild package from [coderkun's repo](http://arch.coderkun.de/)
+[https://github.com/bit-team/backintime](https://github.com/bit-team/backintime) || [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup> or as a prebuild package from [coderkun's repo](http://arch.coderkun.de/)
 
 *   **Free File Sync** — Free File Sync helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.
 
@@ -615,7 +615,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416028](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416028)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416159](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416159)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -48,7 +48,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Неактивны (менее 5 правок за последние 30 дней):
 
 *   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
-*   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (страница не существует)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
+*   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
 
 Раз в неделю список участников автоматически сортируется по убыванию, исходя из количества правок, сделанных за последние 30 дней.

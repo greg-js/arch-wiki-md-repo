@@ -81,7 +81,7 @@ To avoid saving the password in plain text in the configuration file, use _passw
 
 ```
 
-**Warning:** Most shells save command history(e.g. .bash_history .zhistory). To avoid this use gpg with shell stdin: `gpg --encrypt -o .msmtp-gmail.gpg -r <email> -`. The ending dash is not a typo, rather it causes gpg to use stdin. After running that snippet of code, type in your password, press enter, and press Control-d so gpg can encrypt your password.
+**Warning:** Most shells save command history(e.g. .bash_history .zhistory). To avoid this, use gpg with shell stdin: `gpg --encrypt -o .msmtp-gmail.gpg -r <email> -`. The ending dash is not a typo, rather it causes gpg to use stdin. After running that snippet of code, type in your password, press enter, and press Control-d so gpg can encrypt your password.
 
  `~/.msmtprc` 
 
@@ -304,9 +304,14 @@ auth plain
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Msmtp&oldid=412701](https://wiki.archlinux.org/index.php?title=Msmtp&oldid=412701)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Msmtp&oldid=416206](https://wiki.archlinux.org/index.php?title=Msmtp&oldid=416206)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
 *   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

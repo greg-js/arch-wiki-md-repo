@@ -26,7 +26,7 @@ _Steam is a digital distribution, digital rights management, multiplayer and com
     *   [3.2 Multiple monitors setup](#Multiple_monitors_setup)
     *   [3.3 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
     *   [3.4 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
-    *   [3.5 Audio not working](#Audio_not_working)
+    *   [3.5 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
     *   [3.6 Text is corrupt or missing](#Text_is_corrupt_or_missing)
     *   [3.7 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
     *   [3.8 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
@@ -35,11 +35,12 @@ _Steam is a digital distribution, digital rights management, multiplayer and com
         *   [3.10.1 Some games use FMOD to obfuscate having to deal with Linux audio stack](#Some_games_use_FMOD_to_obfuscate_having_to_deal_with_Linux_audio_stack)
     *   [3.11 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1)
     *   [3.12 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-    *   [3.13 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-    *   [3.14 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-    *   [3.15 Claims of missing 32-bit libc.so.6 even though lib32-glibc is installed](#Claims_of_missing_32-bit_libc.so.6_even_though_lib32-glibc_is_installed)
-    *   [3.16 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
-    *   [3.17 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+    *   [3.13 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
+    *   [3.14 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+    *   [3.15 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+    *   [3.16 Claims of missing 32-bit libc.so.6 even though lib32-glibc is installed](#Claims_of_missing_32-bit_libc.so.6_even_though_lib32-glibc_is_installed)
+    *   [3.17 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
+    *   [3.18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
 *   [4 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands.2C_such_as_Bumblebee.2FPrimus)
 *   [5 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [6 Using native runtime](#Using_native_runtime)
@@ -221,7 +222,7 @@ To close the Steam window (and remove it from the taskbar) when you press **x**,
 
 Steam provides a script located at `/usr/bin/steam` that will be run when launching Steam; adding `export STEAM_FRAME_FORCE_CLOSE=1` to this file will export the environment variable for Steam on application launch.
 
-### Audio not working
+### Audio not working or 756 Segmentation fault
 
 First try to install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) and if you run a x86_64 system [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
 
@@ -312,6 +313,10 @@ This can be fixed, however, by forcing the game to use a later version of OpenGL
 MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
 
 ```
+
+### 2k games do not run on xfs partitions
+
+If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[2]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
 ### Unable to add library folder because of missing execute permissions
 
@@ -582,7 +587,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=416023](https://wiki.archlinux.org/index.php?title=Steam&oldid=416023)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=416469](https://wiki.archlinux.org/index.php?title=Steam&oldid=416469)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

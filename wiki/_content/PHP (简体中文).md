@@ -1,4 +1,4 @@
-# PHP
+# PHP (简体中文)
 
 From ArchWiki
 
@@ -12,12 +12,20 @@ Related articles
 *   [PHPLOC](/index.php/PHPLOC "PHPLOC")
 *   [PhpDox](/index.php/PhpDox "PhpDox")
 
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**本页面或部分需要翻译，部分内容可能已经与英文文章脱节。如果您希望贡献翻译，请访问[简体中文翻译组](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")。**
+
+**附注:** please use the first argument of the template to provide more detailed indications.
+
 [PHP](http://www.php.net/) is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Running](#Running)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 运行](#.E8.BF.90.E8.A1.8C)
 *   [3 Configuration](#Configuration)
 *   [4 Extensions](#Extensions)
     *   [4.1 gd](#gd)
@@ -44,15 +52,15 @@ Related articles
     *   [7.3 PHP Warning: PHP Startup: _<module>_: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
 *   [8 See also](#See_also)
 
-## Installation
+## 安装
 
-[Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")安装[php](https://www.archlinux.org/packages/?name=php) 。
 
-Note that to run PHP scripts as plain CGI, you need the [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) package.
+注意：要想像纯CGI那样运行PHP，你需要安装 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) 。
 
-## Running
+## 运行
 
-While PHP can be run standalone, it is typically used with http servers such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") and [Hiawatha](/index.php/Hiawatha "Hiawatha").
+While PHP can be run standalone, it is typically used with http servers such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), [nginx](/index.php/Nginx "Nginx") and [lighttpd](/index.php/Lighttpd "Lighttpd").
 
 To run PHP standalone issue the `php -S localhost:8000 -t public_html/` command. See [documentation](https://secure.php.net/manual/en/features.commandline.webserver.php).
 
@@ -254,8 +262,9 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdate
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=416353](https://wiki.archlinux.org/index.php?title=PHP&oldid=416353)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416319](https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416319)"
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
+*   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
+*   [Programming languages（简体中文）](/index.php?title=Category:Programming_languages%EF%BC%88%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%89&action=edit&redlink=1 "Category:Programming languages（简体中文） (page does not exist)")

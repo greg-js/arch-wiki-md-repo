@@ -53,7 +53,7 @@ In this section, `$ARCH` is the target architecture (either `x86_64` or `i686`).
 1.  [Install](/index.php/Install "Install") [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) and [wine](https://www.archlinux.org/packages/?name=wine)
 2.  Add a binfmt definition for windows executables either manually or by installing [binfmt-wine](https://aur.archlinux.org/packages/binfmt-wine/)<sup><small>AUR</small></sup>.
 3.  Install a copy of rust's standard library for windows in your rustlib directory (`/usr/local/lib/rustlib` if you're using [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/)<sup><small>AUR</small></sup> and `/usr/lib/rustlib` if you're using the official [rust](https://www.archlinux.org/packages/?name=rust) package). The easiest way to do this is to download the rust installer for windows for your target architecture, install it under wine (`wine start my-rust-installer.msi`) and copy `$INSTALL_DIR/bin/rustlib/$ARCH-pc-windows-gnu` into your rustlib directory.
-4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your cargo config:
+4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your `~/.cargo/config`:
 
  `~/.cargo/config` 
 
@@ -104,7 +104,7 @@ authors = ["Your Name <you@example.com>"]
 *   [Page listing of Rust tutorials](https://github.com/ctjhoa/rust-learning)
 *   [Libraries(crates) avalaible through Cargo](https://crates.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rust&oldid=407129](https://wiki.archlinux.org/index.php?title=Rust&oldid=407129)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rust&oldid=416190](https://wiki.archlinux.org/index.php?title=Rust&oldid=416190)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
