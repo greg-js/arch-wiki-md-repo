@@ -8,24 +8,29 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## Contents
 
-*   [1 2015](#2015)
-*   [2 2014](#2014)
-*   [3 2013](#2013)
-*   [4 2012](#2012)
-*   [5 2011](#2011)
-*   [6 2010](#2010)
-*   [7 2009](#2009)
-*   [8 2008](#2008)
-*   [9 2007](#2007)
-*   [10 2006](#2006)
-*   [11 2005](#2005)
-*   [12 2004](#2004)
-*   [13 2003](#2003)
-*   [14 2002](#2002)
+*   [1 2016](#2016)
+*   [2 2015](#2015)
+*   [3 2014](#2014)
+*   [4 2013](#2013)
+*   [5 2012](#2012)
+*   [6 2011](#2011)
+*   [7 2010](#2010)
+*   [8 2009](#2009)
+*   [9 2008](#2008)
+*   [10 2007](#2007)
+*   [11 2006](#2006)
+*   [12 2005](#2005)
+*   [13 2004](#2004)
+*   [14 2003](#2003)
+*   [15 2002](#2002)
+
+## 2016
+
+*   [mintCast 239 – A Friendly Look at Arch](http://mintcast.org/2016/01/21/mintcast-239-a-friendly-look-at-arch/) Rob, Scott, Joe and Isaac - mintcast.org 2016-01-21
 
 ## 2015
 
-*   [DistroWatch Weekly Feature Story about Arch Linux](http://distrowatch.com/weekly.php?issue=20151221#arch) Jesse Smith - distrowatch.com 1015-12-21
+*   [DistroWatch Weekly Feature Story about Arch Linux](http://distrowatch.com/weekly.php?issue=20151221#arch) Jesse Smith - distrowatch.com 2015-12-21
 *   [Why you should try Arch Linux](http://www.dbailey.uk.to/2015/10/why-you-should-try-arch-linux/) David Bailey - www.dbailey.uk.to 2015-10-04
 *   [1+ Year Running Arch Linux on a Lenovo Yoga 2](http://keithcu.com/wordpress/?p=3641) Keith Curtis - keithcu.com 2015-04-07
 *   [The grumpy editor's Arch Linux experience](https://lwn.net/Articles/638069/) Jonathan Corbet - LWN.net 2015-04-01
@@ -279,7 +284,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 *   [Distribution Release: Arch Linux 0.2](http://distrowatch.com/?newsid=00201) DistroWatch.com 2002-04-18
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=413003](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=413003)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416600](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416600)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -85,8 +85,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [2.2.1 Udev Configuration](#Udev_Configuration)
         *   [2.2.2 Xorg Configuration](#Xorg_Configuration)
         *   [2.2.3 Touchscreen / Wacom Tips & Tricks](#Touchscreen_.2F_Wacom_Tips_.26_Tricks)
-            *   [2.2.3.1 thinkpad-helix-utils](#thinkpad-helix-utils)
+            *   [2.2.3.1 thinkpad-helix-utils: Toggle Touch](#thinkpad-helix-utils:_Toggle_Touch)
+            *   [2.2.3.2 xnohands](#xnohands)
     *   [2.3 Screen Rotation](#Screen_Rotation)
+    *   [2.4 Enable SSD TRIM](#Enable_SSD_TRIM)
 *   [3 BIOS/Firmware Updates](#BIOS.2FFirmware_Updates)
 
 ## Installation
@@ -176,11 +178,28 @@ Once done with all the above, reboot and you verify `xinput list` looks the same
 
 #### Touchscreen / Wacom Tips & Tricks
 
-If you find yourself frustrated by the capacitive digitizer while trying to use the pen, there are a few [AUR](/index.php/AUR "AUR") packages that may be of interest.
+If you find yourself frustrated by the capacitive digitizer while trying to use the pen, there are a few options as outlined below that can help.
 
-##### thinkpad-helix-utils
+##### thinkpad-helix-utils: Toggle Touch
 
-The [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup> package contains a script, `helix-toggle-touch`, which will toggle the capacitive digitizer on and off with a simple command. It also installs a `desktop` file for Gnome that can be used to toggle xinput on and off with the pen.
+The [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup> package contains a script located at `/usr/bin/helix-toggle-touch` that will toggle the capacitive digitizer on and off with a simple command using Xorg's **xinput** function. It also installs a `desktop` file called **Toggle Touch** that can be used to toggle xinput on and off with the pen.
+
+Once activated, it disables the touchscreen xinput device until it is ran again to re-activate it.
+
+##### xnohands
+
+Another option that also uses Xorg's **xinput** is [xnohands](http://sourceforge.net/projects/xournal/files/xnohands/). This utility disables the touch device in a system when a stylus is detected (either pen or eraser) and re-enables the touchscreen once then stylus is pulled away from the screen. It does this by listening to the digitizer's "presence" event, which the Helix's Wacom ISDv4 EC input devices support. You'll need to download and extract it. Follow the README for instructions as it outlines how to set it up.
+
+NOTE: You must have followed the udev and xorg configuration instructions earlier to have both the Pen and Eraser detected, as well as the touchscreen (all three must be detected); or else, this tool will not work.
+
+If you want it always running, install the desktop file in your autostart to have it run on startup:
+
+```
+$ cp xnohands.desktop ~/.config/autostart/
+
+```
+
+Please note that you can have both the thinkpad-helix-utils **Toggle Touch** and **xnohands** installed; but, do not use both at the same time. **xnohands** will "re-activate" the touchscreen as soon as you pull the pen away from the screen, defeating the purpose of **Toggle Touch** to keep touch disabled at all times.
 
 ### Screen Rotation
 
@@ -190,6 +209,18 @@ If you want to use the bezel buttons (or some other hotkey) to cycle through ori
 
 There is also [Magick Rotation](https://launchpad.net/magick-rotation/), which is supposed to automatically rotate the screen based on input events, but it only seems to respond to docking/undocking the tablet.
 
+### Enable SSD TRIM
+
+The built in 128 GB and 256 GB mSATA SSDs included with the Helix all support SSD TRIM functions.
+
+Follow the [Solid_State_Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives") instructions to enable trim. For example, one could use **fstrim** and set it up weekly like so:
+
+```
+# systemctl enable fstrim.timer
+# systemctl start fstrim.timer
+
+```
+
 ## BIOS/Firmware Updates
 
 Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS034628) for the purpose of installing BIOS updates. While it is not stated on their site, these bootable images also include updated firmware for the keyboard dock MPU. It is uncertain as to whether the USB hub firmware is also updated via this utility.
@@ -198,7 +229,7 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416478](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416478)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416522](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416522)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

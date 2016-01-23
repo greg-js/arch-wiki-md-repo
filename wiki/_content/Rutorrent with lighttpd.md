@@ -186,7 +186,7 @@ At this point, you should be able to test if rtorrent and lighttpd's scgi are wo
 
 ```
 
-This should output a log list of methods that can be accessed through rtorrent's scgi interface. If it doesn't then something may be wrong.
+This should output a log list of methods that can be accessed through rtorrent's scgi interface. If it doesn't then something may be wrong. If you get error 500 (internal server error), make sure rTorrent is running.
 
 ### php.ini
 
@@ -395,8 +395,12 @@ For problems with rutorrent or lighttpd, the best place to check first is probab
 *   [RuTorrent (with Apache)](/index.php/RuTorrent "RuTorrent")
 *   [Using XMLRPC with rtorrent](http://libtorrent.rakshasa.no/wiki/RTorrentXMLRPCGuide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rutorrent_with_lighttpd&oldid=389972](https://wiki.archlinux.org/index.php?title=Rutorrent_with_lighttpd&oldid=389972)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rutorrent_with_lighttpd&oldid=416563](https://wiki.archlinux.org/index.php?title=Rutorrent_with_lighttpd&oldid=416563)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

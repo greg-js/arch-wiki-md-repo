@@ -554,7 +554,7 @@ and restart `httpd.service`.
 *   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=415944](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=415944)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=416561](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=416561)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

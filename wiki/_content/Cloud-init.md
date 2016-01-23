@@ -51,7 +51,7 @@ system_info:
    distro: arch
    default_user:
      name: arch 
-     lock_passwd: True
+     lock_passwd: true
      gecos: Arch
      groups: [adm, audio, cdrom, dialout, dip, floppy, netdev, plugdev, sudo, video]
      sudo: ["ALL=(ALL) NOPASSWD:ALL"]
@@ -125,7 +125,7 @@ Package cloud-init provides 4 systemd services, and a systemd target, whose depe
 
 The [Uplink Labs EC2 images](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services") have all of them enabled, although that appears to be overkill due to the dependencies.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=413948](https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=413948)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=416551](https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=416551)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

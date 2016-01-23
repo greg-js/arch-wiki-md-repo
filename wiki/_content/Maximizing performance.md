@@ -14,6 +14,7 @@ Related articles
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Swap#Swappiness](/index.php/Swap#Swappiness "Swap")
 *   [Preload](/index.php/Preload "Preload")
+*   [Cpulimit](/index.php/Cpulimit "Cpulimit")
 *   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
 
 This article provides information on basic system diagnostics relating to performance as well as steps that may be taken to reduce resource consumption or to otherwise optimize the system with the end-goal being either perceived or documented improvements to a system's performance.
@@ -43,7 +44,6 @@ This article provides information on basic system diagnostics relating to perfor
     *   [3.1 Verynice](#Verynice)
     *   [3.2 cgroups](#cgroups)
     *   [3.3 irqbalance](#irqbalance)
-    *   [3.4 Cpulimit](#Cpulimit)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
     *   [4.2 Driconf](#Driconf)
@@ -336,10 +336,6 @@ See [cgroups](/index.php/Cgroups "Cgroups").
 
 The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance) is distribute hardware interrupts across processors on a multiprocessor system in order to increase performance. It can be [controlled](/index.php/Systemd#Using_units "Systemd") by the provided `irqbalance.service`.
 
-### Cpulimit
-
-[Cpulimit](/index.php/Cpulimit "Cpulimit") is a program, availible in the [cpulimit](https://www.archlinux.org/packages/?name=cpulimit) package in the official repositories, which can be used to set limits for the max cpu usage for specific processes. It can be used to limit the activity of processes that would normally take up a large amount of cpu processeing by default.
-
 ## Graphics
 
 As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [rovclock](https://aur.archlinux.org/packages/rovclock/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rovclock)]</sup>, [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/)<sup><small>AUR</small></sup> (ATI), and [nvclock](https://aur.archlinux.org/packages/nvclock/)<sup><small>AUR</small></sup> (NVIDIA).
@@ -466,7 +462,7 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=416426](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=416426)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=416516](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=416516)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

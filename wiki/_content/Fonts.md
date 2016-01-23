@@ -415,6 +415,7 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 *   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/)<sup><small>AUR</small></sup> - Nanum series TrueType fonts
 *   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/)<sup><small>AUR</small></sup> - Nanum series fixed width TrueType fonts
 *   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/)<sup><small>AUR</small></sup> - D2Coding fixed width TrueType font made by Naver
+*   [spoqa-han-sans](https://aur.archlinux.org/packages/spoqa-han-sans/)<sup><small>AUR</small></sup> - Source Han Sans customized by Spoqa
 
 #### Cyrillic
 
@@ -663,7 +664,7 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 
 *   [State of Text Rendering](http://behdad.org/text/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=416029](https://wiki.archlinux.org/index.php?title=Fonts&oldid=416029)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=416564](https://wiki.archlinux.org/index.php?title=Fonts&oldid=416564)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

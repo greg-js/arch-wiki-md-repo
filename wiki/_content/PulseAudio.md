@@ -50,6 +50,7 @@ Related articles
     *   [7.1 Keyboard volume control](#Keyboard_volume_control)
     *   [7.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
     *   [7.3 X11 Bell Events](#X11_Bell_Events)
+    *   [7.4 Switch on connect](#Switch_on_connect)
 *   [8 Troubleshooting](#Troubleshooting)
 *   [9 See also](#See_also)
 
@@ -617,6 +618,26 @@ xset b 100
 
 100 is a percentage. This requires the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package. See [Autostarting](/index.php/Autostarting "Autostarting") for a way to run these commands automatically when the X11 session is started.
 
+### Switch on connect
+
+This is a module used to switch the output sound to the newly connected device. For example, if you plug in a USB headset, the output will be switched to that. If you unplug it, the output will be set back to the last device. This used to be quite buggy but got a lot of attention in PulseAudio 8.0 and should work quite well now.
+
+If you just want to test the module then you can load it at runtime by calling:
+
+```
+# pactl load-module module-switch-on-connect
+
+```
+
+If you want to make the change persistent you will have to add it to your local pulseaudio settings or to /etc/pulse/default.pa (system wide effect). In either case, add this line:
+
+```
+load-module module-switch-on-connect
+
+```
+
+On KDE/Plasma5 you should furthermore disable module-device-manager. As soon as Plasma5 is started it loads (via start-pulseaudio-x11) the module module-device-manager for pulseaudio to manage the devices. But that module apparently conflicts with module-switch-on-connect. Therefore you should disable that module by editing /bin/start-pulseaudio-x11 and commenting the lines for KDE. Simply logout and login again and in order to renew your pulseaudio session. On connect switching should now work properly.
+
 ## Troubleshooting
 
 See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting").
@@ -627,8 +648,14 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414952](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=414952)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416799](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416799)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -176,7 +176,9 @@ Or you can load it directly through iptables:
 
 #### Showing the current rules
 
-You can check the current ruleset and the number of hits per rule by using the command:
+The basic command to list current rules is `--list-rules` (`-S`), which is similar in output format to the _iptables-save_ utility. The main difference of the two is that the latter outputs the rules of all tables per default, while all _iptables_ commands default to the `filter` table only.
+
+When working with iptables on the command line, the `--list` (`-L`) command accepts more modifiers and shows more information. For example, you can check the current ruleset and the number of hits per rule by using the command:
 
  `# iptables -nvL` 
 
@@ -191,9 +193,9 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
 ```
 
-If the output looks like the above, then there are no rules (i.e. nothing is blocked) in the default `filter` table. Other table can be specified with the `-t` option.
+If the output looks like the above, then there are no rules (i.e. nothing is blocked) in the default `filter` table. An other table can be specified with the `-t` option.
 
-To show the line numbers when listing rules, append `--line-numbers` to that input. This is useful when deleting and adding individual rules.
+To show the line numbers when listing rules, append `--line-numbers` to that input. The line numbers are a useful shorthand when [#editing rules](#editing_rules) on the command line.
 
 #### Resetting rules
 
@@ -222,7 +224,7 @@ Individual chains may be flushed or deleted by following `-F` and `-X` with a `[
 
 #### Editing rules
 
-Rules can be added either by appending a rule to a chain or inserting them at a specific position on the chain. We will explore both methods here.
+Rules can be edited by appending `-A` a rule to a chain, inserting `-I` it at a specific position on the chain, replacing `-R` an existing rule, or deleting `-D` it. The first three commands are exemplified in the following.
 
 First of all, our computer is not a router (unless, of course, it [is a router](/index.php/Router "Router")). We want to change the default policy on the `FORWARD` chain from `ACCEPT` to `DROP`.
 
@@ -435,7 +437,7 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables&oldid=414038](https://wiki.archlinux.org/index.php?title=Iptables&oldid=414038)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables&oldid=416553](https://wiki.archlinux.org/index.php?title=Iptables&oldid=416553)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

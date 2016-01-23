@@ -48,6 +48,9 @@ It is simple to configure, but can only start EFI executables, such as the Linux
     **Note:** systemd-boot cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
 4.  Copy your kernel and initramfs onto that ESP.
+
+    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted.
+
 5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=_$esp_ install` It will copy the systemd-boot binary to your EFI System Partition (`$esp/EFI/systemd/systemd-bootx64.efi` and `$esp/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 ### Legacy boot
@@ -292,8 +295,12 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=412593](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=412593)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=416510](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=416510)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -207,6 +207,8 @@ The route creation can also be automated by placing a script in /etc/ppp/ip-up.d
 
 ## Troubleshooting
 
+**Note:** The first step may be to use the **ipsec verify** command to check the configuration of the installed IPSEC.
+
 **Issue:** I get a message from pppd saying "Failed to authenticate ourselves to peer" and I've verified my password is correct. What could be wrong?
 
 **Solution:** If you see the following in your /var/log/daemon.log:
@@ -360,8 +362,12 @@ exit 0
 *   [http://www.xelerance.com/software/xl2tpd/](http://www.xelerance.com/software/xl2tpd/)
 *   [http://strongvpn.com/forum/viewtopic.php?pid=1844/](http://strongvpn.com/forum/viewtopic.php?pid=1844/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-29]</sup> — The main source used to write the initial revisions of this article.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=409608](https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=409608)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=416587](https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=416587)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

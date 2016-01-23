@@ -164,6 +164,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [41.1.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
 *   [42 Project Zomboid](#Project_Zomboid)
     *   [42.1 Dependencies](#Dependencies_18)
+    *   [42.2 No sound](#No_sound_5)
 *   [43 Redshirt](#Redshirt)
     *   [43.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29_3)
 *   [44 Revenge of the Titans](#Revenge_of_the_Titans)
@@ -1142,6 +1143,17 @@ per [PulseAudio#ALSA](/index.php/PulseAudio#ALSA "PulseAudio")
 
 *   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk)
 
+### No sound
+
+Right click on `Project Zomboid` on your game list, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
+
+```
+LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
+
+```
+
+In the game, go to the options and set all audio to the proper volume.
+
 ## Redshirt
 
 ### Dependencies (x86_64)
@@ -1580,7 +1592,7 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=415687](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=415687)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=416549](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=416549)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

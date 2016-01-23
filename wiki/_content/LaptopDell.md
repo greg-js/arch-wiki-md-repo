@@ -607,6 +607,14 @@ Install CD Version
 
 <tr>
 
+<td>[Inspiron 15 3000 Series (Model 3541)](/index.php/Dell_Inspiron_15_3541 "Dell Inspiron 15 3541")</td>
+
+<td>2016.01.01</td>
+
+</tr>
+
+<tr>
+
 <td>Precision M4800</td>
 
 <td>2014.04.01</td>
@@ -713,8 +721,12 @@ Install CD Version
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=403655](https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=403655)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=416809](https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=416809)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dell](/index.php/Category:Dell "Category:Dell")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

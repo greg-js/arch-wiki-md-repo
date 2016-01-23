@@ -27,7 +27,8 @@ GNOME (pronounced _gah-nohm_ or _nohm_)是一个简单易用的[桌面环境](/i
 *   [2 GNOME会话](#GNOME.E4.BC.9A.E8.AF.9D)
 *   [3 运行 GNOME](#.E8.BF.90.E8.A1.8C_GNOME)
     *   [3.1 图形界面登录](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E7.99.BB.E5.BD.95)
-    *   [3.2 Wayland 中的 GNOME 应用程序](#Wayland_.E4.B8.AD.E7.9A.84_GNOME_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+    *   [3.2 手动启动](#.E6.89.8B.E5.8A.A8.E5.90.AF.E5.8A.A8)
+    *   [3.3 Wayland 中的 GNOME 应用程序](#Wayland_.E4.B8.AD.E7.9A.84_GNOME_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
 *   [4 导览](#.E5.AF.BC.E8.A7.88)
     *   [4.1 重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell)
     *   [4.2 GNOME Shell 崩溃](#GNOME_Shell_.E5.B4.A9.E6.BA.83)
@@ -162,6 +163,15 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 ### 图形界面登录
 
 可以在登录管理器中选择 _GNOME',_ GNOME Classic _或_ GNOME on Wayland _作为登录选项。_
+
+### 手动启动
+
+*   对于标准的GNOME会话， 在`~/.xinitrc` 中添加：`exec gnome-session`.
+*   对于经典的gnome会话，在 `~/.xinitrc` 中添加：{bc|export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME export GNOME_SHELL_SESSION_MODE=classic exec gnome-session --session=gnome-classic}}
+
+改完`~/.xinitrc` ，即可用`startx` 启动Gnome (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
+
+**Note:** Wayland 上的Gnome需要r [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 包， 不能使用 _startx_ 和`~/.xinitrc`，而是要运行 `gnome-session --session=gnome-wayland`. 更多参见 [Wayland](/index.php/Wayland "Wayland").
 
 ### Wayland 中的 GNOME 应用程序
 
@@ -1129,8 +1139,13 @@ The dash is the "toolbar" that appears, by default, [on the left](https://en.wik
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
 *   [自定义GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=414260](https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=414260)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=416808](https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=416808)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments (简体中文)](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

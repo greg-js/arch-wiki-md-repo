@@ -82,27 +82,19 @@ Change into the directory of the x86_64 system:
 
 ```
 
-Unsquash `airootfs.sfs`:
+Unsquash `airootfs.sfs` (to `squashfs-root`):
 
 ```
  $ unsquashfs airootfs.sfs
 
 ```
 
-Mount the root filesystem:
-
-```
- $ mkdir mnt
- # mount -o loop squashfs-root/airootfs.img mnt
-
-```
-
 **Note:** You need [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) in order to do that.
 
-Now you can modify the content of the system in `mnt`. You can also chroot into this system to install packages etc.:
+Now you can modify the content of the system in `squashfs-root`. You can also chroot into this system to install packages etc.:
 
 ```
- # arch-chroot mnt /bin/bash
+ # arch-chroot squashfs-root /bin/bash
 
 ```
 
@@ -154,22 +146,21 @@ When you are done, create a list of all installed packages, clean the pacman cac
 If you updated the kernel or the initramfs, copy them over to the system:
 
 ```
- $ cp mnt/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
- $ cp mnt/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+ $ cp squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
+ $ cp squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
 
 ```
 
 Move the list of packages:
 
 ```
- $ mv mnt/pkglist.txt ~/customiso/arch/pkglist.x86_64.txt
+ $ mv squashfs-root/pkglist.txt ~/customiso/arch/pkglist.x86_64.txt
 
 ```
 
-Now unmount the root filesystem and recreate `airootfs.sfs`:
+Now recreate `airootfs.sfs`:
 
 ```
- # umount mnt
  $ rm airootfs.sfs
  $ mksquashfs squashfs-root airootfs.sfs
 
@@ -178,7 +169,6 @@ Now unmount the root filesystem and recreate `airootfs.sfs`:
 Cleanup:
 
 ```
- $ rmdir mnt
  # rm -r squashfs-root
 
 ```
@@ -198,7 +188,7 @@ Follow the same steps as for the x86_64 system but with the following difference
 2.  When doing the chroot, use this command instead:
 
 ```
- # setarch i686 arch-chroot mnt /bin/bash
+ # setarch i686 arch-chroot squashfs-root /bin/bash
 
 ```
 
@@ -313,8 +303,12 @@ It supports aufs among other things, making it an option for live CDs.
 *   [http://busybox.net/](http://busybox.net/)
 *   [Linux Live Kit](http://www.linux-live.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&oldid=401112](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&oldid=401112)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&oldid=416525](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&oldid=416525)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

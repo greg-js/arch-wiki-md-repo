@@ -12,7 +12,6 @@ Related articles
 *   [GNU Project](/index.php/GNU_Project "GNU Project")
 *   [sudo](/index.php/Sudo "Sudo")
 *   [cron](/index.php/Cron "Cron")
-*   [File system search](/index.php/File_system_search "File system search")
 *   [man page](/index.php/Man_page "Man page")
 *   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
@@ -856,9 +855,14 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)")
 *   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
 *   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=412278](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=412278)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=416598](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=416598)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
 *   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

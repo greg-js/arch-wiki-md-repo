@@ -236,7 +236,7 @@ The standard _sector size_ is 512B, but modern high-capacity hard drives use gre
 
 ### Solid state drives
 
-Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the _erase block size_ (EBS) are significantly greater than regular _block size_, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS.
+Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the _erase block size_ (EBS) are significantly greater than regular _block size_, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB.
 
 ### Partitioning tools
 
@@ -277,8 +277,13 @@ Or alternatively:
 *   [Manually Partitioning Your Hard Drive with fdisk](http://www.novell.com/coolsolutions/feature/19350.html)
 *   [Partition Alignment](http://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Partitioning&oldid=413044](https://wiki.archlinux.org/index.php?title=Partitioning&oldid=413044)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Partitioning&oldid=416580](https://wiki.archlinux.org/index.php?title=Partitioning&oldid=416580)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

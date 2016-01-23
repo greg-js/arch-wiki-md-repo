@@ -49,11 +49,10 @@ Related articles
                 *   [5.2.1.2.1 Loading the kernel directly](#Loading_the_kernel_directly)
                 *   [5.2.1.2.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
                 *   [5.2.1.2.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
-            *   [5.2.1.3 Windows XP menu entry](#Windows_XP_menu_entry)
-            *   [5.2.1.4 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
-            *   [5.2.1.5 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
-            *   [5.2.1.6 "Restart" menu entry](#.22Restart.22_menu_entry)
-            *   [5.2.1.7 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
+            *   [5.2.1.3 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
+            *   [5.2.1.4 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
+            *   [5.2.1.5 "Restart" menu entry](#.22Restart.22_menu_entry)
+            *   [5.2.1.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
         *   [5.2.2 With Windows via EasyBCD and NeoGRUB](#With_Windows_via_EasyBCD_and_NeoGRUB)
         *   [5.2.3 parttool for hide/unhide](#parttool_for_hide.2Funhide)
     *   [5.3 LVM](#LVM)
@@ -511,18 +510,6 @@ menuentry "Other Linux" {
 }
 ```
 
-For some os like Nix OS and GuixSD, because the kernel files are named different and are in a special place called store, the entry will be a bit different, below it's an example for GuixSD:
-
-```
-menuentry "GNU with Linux-Libre 4.2.5 (alpha)" {
-  search --set=root --fs-uuid YOUR_ROOT_PARTITION_UUID
-  search --file --set /gnu/store/zbm09fk0wxkw2wyygnn4gcfxj8s31ajd-linux-libre-4.2.5/bzImage
-
-  linux /gnu/store/zbm09fk0wxkw2wyygnn4gcfxj8s31ajd-linux-libre-4.2.5/bzImage --root=YOUR_ROOT_PARTITION_LABEL --system=/gnu/store/a1brgzara5mw72jnmhqjx0j69ah8p5mp-system --load=/gnu/store/a1brgzara5mw72jnmhqjx0j69ah8p5mp-system/boot
-  initrd /gnu/store/a1brgzara5mw72jnmhqjx0j69ah8p5mp-system/initrd
-}
-```
-
 ##### FreeBSD menu entry
 
 The following three methods require that FreeBSD is installed on a single partition with UFS(v2). Assuming the nested BSD partition table is on `sda4`:
@@ -560,22 +547,6 @@ menuentry 'FreeBSD' {
   kfreebsd /boot/loader
 }
 ```
-
-##### Windows XP menu entry
-
-This assumes that your Windows partition is `sda3`. Remember you need to point set root and chainloader to the system reserve partition that windows made when it installed, not the actual partition windows is on. This example works if your system reserve partition is `sda3`.
-
-```
-# (2) Windows XP
-menuentry "Windows XP" {
-	set root="(hd0,3)"
-	chainloader +1
-}
-```
-
-If the Windows bootloader is on an entirely different hard drive than GRUB, it may be necessary to trick Windows into believing that it is the first hard drive. This was possible with `drivemap`. Assuming GRUB is on `hd0` and Windows is on `hd2`, you need to add the following after `set root`:
-
- `drivemap -s hd0 hd2` 
 
 ##### Windows installed in UEFI-GPT Mode menu entry
 
@@ -1185,7 +1156,7 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=416386](https://wiki.archlinux.org/index.php?title=GRUB&oldid=416386)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=416518](https://wiki.archlinux.org/index.php?title=GRUB&oldid=416518)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

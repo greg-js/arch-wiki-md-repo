@@ -654,7 +654,7 @@ To recreate a package from the file system, use _bacman_ (included with pacman).
 
 **Tip:** _bacman_ honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for _xz_.
 
-An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/)<sup><small>AUR</small></sup>. It supports parallelization through [parallel](https://www.archlinux.org/packages/?name=parallel) and can handle multiple input packages in one command, which _bacman_ both does not support.
+An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/)<sup><small>AUR</small></sup>. It supports parallelization and can handle multiple input packages in one command, which _bacman_ both does not support.
 
 ### Backing up and retrieving a list of installed packages
 
@@ -1012,7 +1012,7 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=415757](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=415757)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=416582](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=416582)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

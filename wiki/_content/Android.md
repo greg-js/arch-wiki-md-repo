@@ -236,7 +236,7 @@ and select the path where the SDK is installed (/opt/android-sdk by default). Th
 
 To connect to a real device or phone via ADB under Arch, you must:
 
-1.  Install [android-tools](https://www.archlinux.org/packages/?name=android-tools). In addittion, you might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
+1.  Install [android-tools](https://www.archlinux.org/packages/?name=android-tools). In addition, you might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
 2.  Enable USB Debugging on your phone or device:
     *   Jelly Bean (4.2) and newer: Go to `Settings --> About Phone` tap “Build Number” until you get a popup that you have become a developer (7 times). Then go to `Settings --> Developer --> USB debugging` and enable it.
     *   Older versions: This is usually done from `Settings --> Applications --> Development --> USB debugging`. Reboot the phone after checking this option to make sure USB debugging is enabled.
@@ -647,9 +647,14 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=414893](https://wiki.archlinux.org/index.php?title=Android&oldid=414893)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=416722](https://wiki.archlinux.org/index.php?title=Android&oldid=416722)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -27,7 +27,7 @@ Businesses are storing their data on the network for ages now, but the past few 
 
 ### UPnP / DLNA
 
-There are many uPNP or DLNA-compliant server and you can use Mpd too. Some of the them do not get along together. If you are experiencing problems, make sure you are not running two of them at the same time.
+There are many UPnP or DLNA-compliant server and you can use Mpd too. Some of the them do not get along together. If you are experiencing problems, make sure you are not running two of them at the same time.
 
 *   [MediaTomb](/index.php/MediaTomb "MediaTomb")
 *   [ReadyMedia](/index.php/ReadyMedia "ReadyMedia")
@@ -38,6 +38,10 @@ There are many uPNP or DLNA-compliant server and you can use Mpd too. Some of th
 *   [Serviio](http://serviio.org/) ([serviio](https://aur.archlinux.org/packages/serviio/)<sup><small>AUR</small></sup>)
 *   [Coherence](http://coherence.beebits.net) ([coherence](https://aur.archlinux.org/packages/coherence/)<sup><small>AUR</small></sup>)
 *   [Universal Media Server](http://www.universalmediaserver.com/) ([ums](https://aur.archlinux.org/packages/ums/)<sup><small>AUR</small></sup>)
+
+And here is a list of DLNA controller applications. These can be used to control a DLNA renderer and server:
+
+*   [Upplay](http://www.lesbonscomptes.com/upplay/) ([upplay](https://aur.archlinux.org/packages/upplay/)<sup><small>AUR</small></sup>)
 
 #### Deprecated / No Longer in Development
 
@@ -56,8 +60,12 @@ There are many uPNP or DLNA-compliant server and you can use Mpd too. Some of th
 *   [Plex](/index.php/Plex "Plex")
 *   [GNOME Videos](https://wiki.gnome.org/Apps/Videos) ([totem](https://www.archlinux.org/packages/?name=totem)), via the "Channels" tab, after having installed [grilo-plugins](https://www.archlinux.org/packages/?name=grilo-plugins), [gupnp-av](https://www.archlinux.org/packages/?name=gupnp-av) and [dleyna-server](https://www.archlinux.org/packages/?name=dleyna-server)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=412344](https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=412344)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=416537](https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=416537)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Streaming](/index.php/Category:Streaming "Category:Streaming")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

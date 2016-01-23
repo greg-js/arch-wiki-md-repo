@@ -4,11 +4,11 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-**Cpulimit** is a program which limits the cpu usage percentage of specificed processes. It can be used to limit the cpu usage of processes that use a large percentage of the cpu, in order to reduce the processing load on the cpu.
+Cpulimit is a program which limits the cpu usage percentage of specificed processes. It can be used to limit the cpu usage of processes that use a large percentage of the cpu, in order to reduce the processing load on the cpu.
 
 ## Installation
 
-Install the [cpulimit](https://www.archlinux.org/packages/?name=cpulimit) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [cpulimit](https://www.archlinux.org/packages/?name=cpulimit) package.
 
 ## Usage
 
@@ -25,7 +25,7 @@ $ cpulimit -l 50 -p 5081
 
 *   [Cpulimit GitHub repository](https://github.com/opsengine/cpulimit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cpulimit&oldid=416391](https://wiki.archlinux.org/index.php?title=Cpulimit&oldid=416391)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cpulimit&oldid=416565](https://wiki.archlinux.org/index.php?title=Cpulimit&oldid=416565)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

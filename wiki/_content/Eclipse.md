@@ -40,9 +40,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
 *   [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java)
 *   [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
 
-For some reason, you cannot install multiple of these at the same time since they conflict, and you will have to decide the one you want to use (see [FS#45577](https://bugs.archlinux.org/task/45577)).
-
-NOTE- You can add support for any additional languages though the eclipse Package manager within the Eclipse IDE. Choose the package above which most immediately fulfils your needs.
+You cannot install multiple of these at the same time since they conflict, see [FS#45577](https://bugs.archlinux.org/task/45577): choose the package above which most immediately fulfils your needs, and then add support for any additionally required languages through [#Plugins](#Plugins).
 
 ## Plugins
 
@@ -267,7 +265,7 @@ SWT_GTK3=0 eclipse
 
 *   [How to use Subversion with Eclipse](https://www.ibm.com/developerworks/library/os-ecl-subversion/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416282](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416282)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416480](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416480)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

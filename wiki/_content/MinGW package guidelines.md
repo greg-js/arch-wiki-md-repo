@@ -42,16 +42,15 @@ Packaging for cross platform packages can be fairly tricky as there are many dif
 *   always build both shared and static binaries, unless they conflict
 *   always remove Win32 executables (*.exe) if the intended package is a library (`rm "$pkgdir"/usr/${_arch}/bin/*.exe`)
 *   consider removing unneeded documentation (`rm -r $pkgdir/usr/i686-w64-mingw32/share/{doc,info,man}`, `rm -r $pkgdir/usr/x86_64-w64-mingw32/share/{doc,info,man}`)
-*   consider using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/)<sup><small>AUR</small></sup> for building with configure scripts
-*   consider using [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/)<sup><small>AUR</small></sup> for building with CMake
+*   consider using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/)<sup><small>AUR</small></sup> for building with configure scripts (depends on [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc))
+*   consider using [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/)<sup><small>AUR</small></sup> for building with CMake (depends on [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc))
 *   consider using compilation flags `-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4` (usually named CFLAGS, CXXFLAGS) when no proper build system is provided
 *   consider explicitly stripping symbols with `${_arch}-strip` in `package()`'s for-loop as demonstrated in the below PKGBUILD examples.
-    *   consider using the `find` command to iterate over `$pkgdir` since not all DLLs, static libraries, or executables may reside in their appropriate locations.
-        *   if the binary is a DLL, use `${_arch}-strip --strip-unneeded *.dll`
-        *   if the binary is a static lib, use `${_arch}-strip -g *.a`
+    *   if the binary is a DLL, use `${_arch}-strip --strip-unneeded "$pkgdir"/usr/${_arch}/bin/*.dll`
+    *   if the binary is a static lib, use `${_arch}-strip -g "$pkgdir"/usr/${_arch}/lib/*.a`
 *   if a package is modular (requires certain build dependencies, but said dependencies are optional to the end user) add these to `makedepends` and `optdepends`. Be sure to subtract them from `depends` if updating an existing package. Example of this in use: [mingw-w64-ruby](https://aur.archlinux.org/packages/mingw-w64-ruby/)<sup><small>AUR</small></sup>, [mingw-w64-allegro](https://aur.archlinux.org/packages/mingw-w64-allegro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mingw-w64-allegro)]</sup>
 *   if a package installs a `$pkgdir/usr/${_arch}/bin/*-config` script, symlink it to `$pkgdir/usr/bin/${_arch}-*-config`
-*   if a package uses autoconf, explicitly set `--build="$CHOST"` for `configure` to workaround [autoconf bug #108405](//savannah.gnu.org/support/?108405)
+*   if a package uses autoconf, explicitly set `--build="$CHOST"` for `configure` to workaround [autoconf bug #108405](//savannah.gnu.org/support/?108405) or use [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/)<sup><small>AUR</small></sup>
 
 As mentioned above, the files should all be installed into `/usr/i686-w64-mingw32` and `/usr/x86_64-w64-mingw32`. Specifically, all DLLs should be put into `/usr/*-w64-mingw32/bin` as they are dynamic libraries needed at runtime. Their corresponding `.dll.a` files should go into `/usr/*-w64-mingw32/lib`. Please delete any unnecessary documentation and perhaps other files from `/usr/share`. Cross-compilations packages are not meant for the user but only for the compiler and binary distribution, and as such you should try to make them as small as possible.
 
@@ -64,7 +63,6 @@ The following examples will try to cover some of the most common conventions and
 ### Autotools
 
 ```
-# Maintainer: yourname <yourmail>
 pkgname=mingw-w64-foo
 pkgver=1.0
 pkgrel=1
@@ -72,7 +70,7 @@ pkgdesc="Foo bar (mingw-w64)"
 arch=('any')
 url="http://www.foo.bar"
 license=('GPL')
-makedepends=('mingw-w64-gcc' 'mingw-w64-configure')
+makedepends=('mingw-w64-configure')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
@@ -104,7 +102,6 @@ package() {
 ### CMake
 
 ```
-# Maintainer: yourname <yourmail>
 pkgname=mingw-w64-foo
 pkgver=1.0
 pkgrel=1
@@ -112,7 +109,7 @@ pkgdesc="Foo bar (mingw-w64)"
 arch=('any')
 url="http://www.foo.bar"
 license=('GPL')
-makedepends=('mingw-w64-gcc' 'mingw-w64-cmake')
+makedepends=('mingw-w64-cmake')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
@@ -144,8 +141,12 @@ package() {
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=413045](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=413045)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=416576](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=416576)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

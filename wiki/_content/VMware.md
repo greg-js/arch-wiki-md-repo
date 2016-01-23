@@ -520,6 +520,14 @@ This is likely due to the `vmnet` module not being loaded [[1]](http://www.linux
 
 ### GUI doesn't show after upgrade
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Questionable reasoning, definitely needs a reference (Discuss in [Talk:VMware#](https://wiki.archlinux.org/index.php/Talk:VMware))
+
 The following affects VMware Workstation and Player versions before 12.1.0\. After upgrading to kernel 4.2 an existing installation of VMware does not start any of its GUI applications. This is because the LD library path no longer points to a compatible library. To fix this set your LD_LIBRARY_PATH in a terminal from which you run VMware.
 
 ```
@@ -561,12 +569,13 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 
 You may also want to have a look at the module directories in `/usr/lib/modules/_kernel_name_/misc/` for any leftovers.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=416441](https://wiki.archlinux.org/index.php?title=VMware&oldid=416441)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=416519](https://wiki.archlinux.org/index.php?title=VMware&oldid=416519)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 
-Hidden category:
+Hidden categories:
 
 *   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

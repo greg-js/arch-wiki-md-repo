@@ -202,7 +202,7 @@ You can configure the behaviour of Bumblebee to fit your needs. Fine tuning like
 
 Bumblebee renders frames for your Optimus NVIDIA card in an invisible X Server with VirtualGL and transports them back to your visible X Server. Frames will be compressed before they are transported - this saves bandwidth and can be used for speed-up optimization of bumblebee:
 
-To use an other compression method for a single application:
+To use another compression method for a single application:
 
 ```
 $ optirun -c _compress-method_ application
@@ -999,7 +999,7 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 
 Join us at #bumblebee at freenode.net.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416210](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416210)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416589](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416589)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

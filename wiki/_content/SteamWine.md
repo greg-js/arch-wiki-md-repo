@@ -155,7 +155,7 @@ exec wine "c:\\program files\\steam\\steam.exe" "$@"
 
 *   Install [mimeo](https://aur.archlinux.org/packages/mimeo/)<sup><small>AUR</small></sup> and [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/)<sup><small>AUR</small></sup> from AUR. You will need to replace the existing [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) if installed. In XFCE, you will also need [xorg-utils](https://www.archlinux.org/packages/?name=xorg-utils).
 
-*   Create `~/.config/mimeo.conf` with your favorite editor and paste:
+*   Create `~/.config/mimeo/associations.txt` with your favorite editor and paste:
 
 ```
 /usr/bin/steam %u
@@ -219,7 +219,7 @@ However, it seems that it does not support sockv5.
 
 *   [Wine Application Database](http://appdb.winehq.org/objectManager.php?sClass=version&iId=19444)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Wine&oldid=394410](https://wiki.archlinux.org/index.php?title=Steam/Wine&oldid=394410)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Wine&oldid=416481](https://wiki.archlinux.org/index.php?title=Steam/Wine&oldid=416481)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

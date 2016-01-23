@@ -13,10 +13,13 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
 *   [1 Installation](#Installation)
     *   [1.1 NVMe](#NVMe)
     *   [1.2 Wireless](#Wireless)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 NUC brick-by-suspend issue](#NUC_brick-by-suspend_issue)
-    *   [2.2 Poweroff](#Poweroff)
-*   [3 Resources](#Resources)
+*   [2 Performance](#Performance)
+    *   [2.1 Boot](#Boot)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 NUC brick-by-suspend issue](#NUC_brick-by-suspend_issue)
+    *   [3.2 TPM](#TPM)
+    *   [3.3 Poweroff](#Poweroff)
+*   [4 Resources](#Resources)
 
 ## Installation
 
@@ -32,6 +35,12 @@ Intel NUCs support NVMe connected to the PCIe M.2 connector. See [Solid State Dr
 
 Most NUC wireless adapters should work out of the box. Make sure relevant firmware is loaded. See [Wireless_network_configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
 
+## Performance
+
+### Boot
+
+Fastest boot times are achieved with [UEFI](/index.php/UEFI "UEFI") boot and disabling legacy boot in the BIOS settings.
+
 ## Troubleshooting
 
 ### NUC brick-by-suspend issue
@@ -42,6 +51,10 @@ The current recommended workaround is to never wake up the NUC from hibernation 
 
 If your NUC has become bricked, it might be possible to restore it by momentarily disconnecting the CMOS battery on the bottom side of the motherboard.
 
+### TPM
+
+NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a bug [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181) in `tpm_crb`. A fix should be available in the 4.4.x kernel.
+
 ### Poweroff
 
 After issuing a shutdown, the NUC might remain in some state which isn't completely shut down, as indicated by a remaining blue power LED. In this case it's neccesary to power off the unit by holding the power button for a few seconds.
@@ -50,7 +63,7 @@ After issuing a shutdown, the NUC might remain in some state which isn't complet
 
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416298](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416298)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416577](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416577)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

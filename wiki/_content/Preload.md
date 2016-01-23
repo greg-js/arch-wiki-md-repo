@@ -16,7 +16,7 @@ Preloading is the action of putting and keeping target files into the RAM. The b
 
 ## Go-preload
 
-[gopreload-git](https://aur.archlinux.org/packages/gopreload-git/)<sup><small>AUR</small></sup> is a small daemon created in the [Gentoo forum](http://forums.gentoo.org/viewtopic-t-789818-view-next.html?sid=5457cff93039fc7d4a3e445ef90f9821). To use it, first run this command in a terminal for each program you want to preload at boot:
+[gopreload-git](https://aur.archlinux.org/packages/gopreload-git/)<sup><small>AUR</small></sup> is a small daemon created in the [Gentoo forum](https://forums.gentoo.org/viewtopic-t-622085-highlight-preload.html). To use it, first run this command in a terminal for each program you want to preload at boot:
 
 ```
 # gopreload-prepare _program_
@@ -59,7 +59,7 @@ The configuration file is located in `/etc/preload.conf`, it contains default se
 *   [http://techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/](http://techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/)
 *   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Preload&oldid=403555](https://wiki.archlinux.org/index.php?title=Preload&oldid=403555)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Preload&oldid=416505](https://wiki.archlinux.org/index.php?title=Preload&oldid=416505)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

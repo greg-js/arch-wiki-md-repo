@@ -224,6 +224,14 @@ texhash: Done.
 
 ### Starting Sage Notebook Server throws an ImportError
 
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** [#Installation](#Installation) now mentions optional dependencies (Discuss in [Talk:SageMath#](https://wiki.archlinux.org/index.php/Talk:SageMath))
+
 The Sage Notebook Server is in an extra package [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook). So, if you get an ImportError when launching
 
 ```
@@ -289,7 +297,7 @@ then you probably miss the jmol package. See [Install Sage package](/index.php/S
 *   [SageMath Wiki](http://wiki.sagemath.org/)
 *   [Software Used by SageMath](http://www.sagemath.org/links-components.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SageMath&oldid=416341](https://wiki.archlinux.org/index.php?title=SageMath&oldid=416341)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SageMath&oldid=416526](https://wiki.archlinux.org/index.php?title=SageMath&oldid=416526)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

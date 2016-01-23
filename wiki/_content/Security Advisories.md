@@ -45,6 +45,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
+*   [21 January 2016] [ASA-201601-22](https://lists.archlinux.org/pipermail/arch-security/2016-January/000527.html) [libdwarf](https://www.archlinux.org/packages/?name=libdwarf) denial of service
+*   [21 January 2016] [ASA-201601-21](https://lists.archlinux.org/pipermail/arch-security/2016-January/000526.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
 *   [20 January 2016] [ASA-201601-20](https://lists.archlinux.org/pipermail/arch-security/2016-January/000525.html) [linux](https://www.archlinux.org/packages/?name=linux) privilege escalation
 *   [17 January 2016] [ASA-201601-19](https://lists.archlinux.org/pipermail/arch-security/2016-January/000524.html) [ntp](https://www.archlinux.org/packages/?name=ntp) time alteration
 *   [17 January 2016] [ASA-201601-18](https://lists.archlinux.org/pipermail/arch-security/2016-January/000523.html) [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) remote code execution
@@ -544,7 +546,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=416300](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=416300)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=416555](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=416555)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -123,6 +123,8 @@ ln -s /usr/share/webapps/rutorrent/ /usr/share/nginx/html/rutorrent
 
 ```
 
+*   You can now access ruTorrent at [http://127.0.0.1/rutorrent](http://127.0.0.1/rutorrent)
+
 ## ruTorrent Configuration
 
 See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config).
@@ -137,8 +139,12 @@ See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config).
 *   [https://github.com/Novik/ruTorrent/wiki](https://github.com/Novik/ruTorrent/wiki)
 *   [http://httpd.apache.org/docs/2.2/configuring.html](http://httpd.apache.org/docs/2.2/configuring.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RuTorrent&oldid=411045](https://wiki.archlinux.org/index.php?title=RuTorrent&oldid=411045)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RuTorrent&oldid=416557](https://wiki.archlinux.org/index.php?title=RuTorrent&oldid=416557)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

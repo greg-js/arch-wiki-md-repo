@@ -104,7 +104,7 @@ Wired
 
 The [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon is enabled on boot for wired devices, and will attempt to start a connection. To access captive portal login forms, use the [ELinks](/index.php/ELinks "ELinks") browser.
 
-Verify a connection was established, for example with _ping_. If none is available, proceed to [configure the network](/index.php/Network_configuration "Network configuration"); the examples below use [netctl](/index.php/Netctl "Netctl") to this purpose. To prevent conflicts, stop the _dhcpcd_ service (replacing `enp0s25` with the correct wired interface):
+Verify a connection was established, for example with _ping_. If none is available, proceed to [configure the network](/index.php/Network_configuration "Network configuration"); the examples below use [netctl](/index.php/Netctl "Netctl") to this purpose. To prevent conflicts, [stop](/index.php/Stop "Stop") the _dhcpcd_ service (replacing `enp0s25` with the correct wired interface):
 
 ```
 # systemctl stop dhcpcd@_enp0s25_.service
@@ -595,7 +595,7 @@ It is recommended to append the same hostname to `localhost` entries in `/etc/ho
 
 #### Wired
 
-When only requiring a single wired connection, enable the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") service:
+When only requiring a single wired connection, [enable](/index.php/Enable "Enable") the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") service:
 
 ```
 # systemctl enable dhcpcd@_interface_.service
@@ -654,7 +654,7 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=415601](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=415601)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=416622](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=416622)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

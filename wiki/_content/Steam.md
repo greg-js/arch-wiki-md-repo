@@ -316,7 +316,15 @@ MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
 
 ### 2k games do not run on xfs partitions
 
-If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[2]](https://bbs.archlinux.org/viewtopic.php?id=185222)
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** Seems to be a general issue, e.g. [[2]](https://github.com/ValveSoftware/Source-1-Games/issues/1685) (Discuss in [Talk:Steam#](https://wiki.archlinux.org/index.php/Talk:Steam))
+
+If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[3]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
 ### Unable to add library folder because of missing execute permissions
 
@@ -587,12 +595,13 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=416469](https://wiki.archlinux.org/index.php?title=Steam&oldid=416469)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=416520](https://wiki.archlinux.org/index.php?title=Steam&oldid=416520)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
 
-Hidden category:
+Hidden categories:
 
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
 *   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
