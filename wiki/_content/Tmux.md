@@ -309,8 +309,18 @@ set -g history-limit 30000
 For mouse wheel scrolling as from tmux 2.1 try adding one or both of these to ~/.tmux.conf
 
 ```
-   bind-key -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
-   bind-key -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+   bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+   bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+
+```
+
+Though the above will only scroll one line at a time, add this solution to scroll an entire page instead
+
+```
+   bind -t vi-copy    WheelUpPane   page-up
+   bind -t vi-copy    WheelDownPane page-down
+   bind -t emacs-copy WheelUpPane   page-up
+   bind -t emacs-copy WheelDownPane page-down
 
 ```
 
@@ -851,8 +861,12 @@ See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configur
 *   [man page (OpenBSD)](http://www.openbsd.org/cgi-bin/man.cgi?query=tmux)
 *   [Tmux tutorial Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) and [Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=413104](https://wiki.archlinux.org/index.php?title=Tmux&oldid=413104)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=416876](https://wiki.archlinux.org/index.php?title=Tmux&oldid=416876)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

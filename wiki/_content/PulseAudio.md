@@ -636,6 +636,14 @@ load-module module-switch-on-connect
 
 ```
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Editing `/usr/bin/start-pulseaudio-x11` will not survive package upgrade. The offending module can be unloaded in the config before loading `module-switch-on-connect`, see [Talk:Bluetooth_headset#GDMs_pulseaudio_instance_captures_bluetooth_headset](/index.php/Talk:Bluetooth_headset#GDMs_pulseaudio_instance_captures_bluetooth_headset "Talk:Bluetooth headset"). (Discuss in [Talk:PulseAudio#](https://wiki.archlinux.org/index.php/Talk:PulseAudio))
+
 On KDE/Plasma5 you should furthermore disable module-device-manager. As soon as Plasma5 is started it loads (via start-pulseaudio-x11) the module module-device-manager for pulseaudio to manage the devices. But that module apparently conflicts with module-switch-on-connect. Therefore you should disable that module by editing /bin/start-pulseaudio-x11 and commenting the lines for KDE. Simply logout and login again and in order to renew your pulseaudio session. On connect switching should now work properly.
 
 ## Troubleshooting
@@ -648,7 +656,7 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416799](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416799)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416818](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416818)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -659,3 +667,4 @@ Hidden categories:
 *   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
 *   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
 *   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

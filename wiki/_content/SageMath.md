@@ -32,17 +32,13 @@ SageMath provides support for the following:
     *   [2.5 Documentation](#Documentation)
 *   [3 Optional additions](#Optional_additions)
     *   [3.1 SageTeX](#SageTeX)
-*   [4 Install Sage package](#Install_Sage_package)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 TeX Live does not recognize SageTex](#TeX_Live_does_not_recognize_SageTex)
-    *   [5.2 Starting Sage Notebook Server throws an ImportError](#Starting_Sage_Notebook_Server_throws_an_ImportError)
-    *   [5.3 sage -i doesn't work](#sage_-i_doesn.27t_work)
-    *   [5.4 3D plot fails in notebook](#3D_plot_fails_in_notebook)
-*   [6 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 TeX Live does not recognize SageTex](#TeX_Live_does_not_recognize_SageTex)
+*   [5 See also](#See_also)
 
 ## Installation
 
-SageMath can be [installed](/index.php/Pacman "Pacman") from the [official repositories](/index.php/Official_repositories "Official repositories"):
+**Warning:** Most if not all of the [standard sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as Arch packages and exposed as (optional) dependencies of [sagemath](https://www.archlinux.org/packages/?name=sagemath), so there is no need to install them with `sage -i`.
 
 *   [sagemath](https://www.archlinux.org/packages/?name=sagemath) contains the command-line version;
 *   [sagemath-doc](https://www.archlinux.org/packages/?name=sagemath-doc) for HTML documentation and inline help from the command line.
@@ -179,27 +175,6 @@ $ pdflatex <doc.tex>
 
 The full documentation of SageTeX is available on [CTAN](http://www.ctan.org/pkg/sagetex).
 
-## Install Sage package
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** [#Installation](#Installation) now mentions optional dependencies (Discuss in [Talk:SageMath#](https://wiki.archlinux.org/index.php/Talk:SageMath))
-
-If you installed sagemath from the official repositories, it is not possible to install sage packages using the sage option `sage -i packagename`.
-
-Instead, you should install the required packages system-wide. For example, if you need `jmol` (for 3D plots):
-
-```
-$ sudo pacman -S jmol
-
-```
-
-An alternative would be to have a local installation of sagemath and to manage optional packages manually.
-
 ## Troubleshooting
 
 ### TeX Live does not recognize SageTex
@@ -222,73 +197,6 @@ texhash: Done.
 
 ```
 
-### Starting Sage Notebook Server throws an ImportError
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** [#Installation](#Installation) now mentions optional dependencies (Discuss in [Talk:SageMath#](https://wiki.archlinux.org/index.php/Talk:SageMath))
-
-The Sage Notebook Server is in an extra package [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook). So, if you get an ImportError when launching
-
-```
- % sage --notebook
- ┌────────────────────────────────────────────────────────────────────┐
- │ Sage Version 6.4.1, Release Date: 2014-11-23                       │
- │ Type "notebook()" for the browser-based notebook interface.        │
- │ Type "help()" for help.                                            │
- └────────────────────────────────────────────────────────────────────┘
- Please wait while the Sage Notebook server starts...
- Traceback (most recent call last):
-   File "/usr/bin/sage-notebook", line 180, in <module>
-     launcher(unknown)
-   File "/usr/bin/sage-notebook", line 58, in __init__
-     from sagenb.notebook.notebook_object import notebook
- ImportError: No module named sagenb.notebook.notebook_object
-
-```
-
-you most likely do not have the package [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook) installed.
-
-### sage -i doesn't work
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** [#Installation](#Installation) now mentions optional dependencies (Discuss in [Talk:SageMath#](https://wiki.archlinux.org/index.php/Talk:SageMath))
-
-If you have installed Sage from the official repositories, then you have to install your additional packages system-wide. See [Install Sage package](/index.php/SageMath#Install_Sage_package "SageMath")
-
-### 3D plot fails in notebook
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** [#Installation](#Installation) now mentions optional dependencies (Discuss in [Talk:SageMath#](https://wiki.archlinux.org/index.php/Talk:SageMath))
-
-If you get the following error while trying to plot a 3D object:
-
-```
-  /usr/lib/python2.7/site-packages/sage/repl/rich_output/display_manager.py:570: RichReprWarning: Exception in _rich_repr_ while displaying
-  object: Jmol failed to create file
-  '/home/nicolas/.sage/temp/archimede/3188/dir_cCpcph/preview.png', see
-  '/home/nicolas/.sage/temp/archimede/3188/tmp_JVpSqF.txt' for details
-    RichReprWarning,
-  Graphics3d Object
-
-```
-
-then you probably miss the jmol package. See [Install Sage package](/index.php/SageMath#Install_Sage_package "SageMath") to install it.
-
 ## See also
 
 *   [Official Website](http://www.sagemath.org/)
@@ -297,12 +205,8 @@ then you probably miss the jmol package. See [Install Sage package](/index.php/S
 *   [SageMath Wiki](http://wiki.sagemath.org/)
 *   [Software Used by SageMath](http://www.sagemath.org/links-components.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SageMath&oldid=416526](https://wiki.archlinux.org/index.php?title=SageMath&oldid=416526)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SageMath&oldid=417042](https://wiki.archlinux.org/index.php?title=SageMath&oldid=417042)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

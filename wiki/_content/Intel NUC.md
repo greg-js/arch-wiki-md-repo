@@ -12,7 +12,8 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
 
 *   [1 Installation](#Installation)
     *   [1.1 NVMe](#NVMe)
-    *   [1.2 Wireless](#Wireless)
+    *   [1.2 Graphics](#Graphics)
+    *   [1.3 Wireless](#Wireless)
 *   [2 Performance](#Performance)
     *   [2.1 Boot](#Boot)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -30,6 +31,12 @@ It is highly recommended to update the board BIOS prior to installation. See [of
 ### NVMe
 
 Intel NUCs support NVMe connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
+
+### Graphics
+
+Most NUCs use integrated [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics").
+
+**Note:** The `i915` driver might throw kernel log errors. They should be resolved in 4.4.x kernel
 
 ### Wireless
 
@@ -59,11 +66,13 @@ NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently bloc
 
 After issuing a shutdown, the NUC might remain in some state which isn't completely shut down, as indicated by a remaining blue power LED. In this case it's neccesary to power off the unit by holding the power button for a few seconds.
 
+The workaround for this issue is to disable all wake-on-CIR (infrared sensor) options in the BIOS. In some cases it might be required to disable the CIR sensor completely to fix the issue.
+
 ## Resources
 
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416577](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416577)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416845](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416845)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

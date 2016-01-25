@@ -99,7 +99,7 @@ $ glxinfo | grep direct
 
 The simplest and most efficient way of improving overall performance is to run lightweight environments and applications.
 
-*   Use a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Choices include [Awesome](/index.php/Awesome "Awesome"), [dwm](/index.php/Dwm "Dwm"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [i3](/index.php/I3 "I3"), [JWM](/index.php/JWM "JWM"), [Openbox](/index.php/Openbox "Openbox"), [wmii](/index.php/Wmii "Wmii") and [xmonad](/index.php/Xmonad "Xmonad"). If choosing a desktop environment, consider [LXDE](/index.php/LXDE "LXDE") or [Xfce](/index.php/Xfce "Xfce").
+*   Use a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Choices include [Awesome](/index.php/Awesome "Awesome"), [dwm](/index.php/Dwm "Dwm"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [i3](/index.php/I3 "I3"), [IceWM](/index.php/IceWM "IceWM"), [JWM](/index.php/JWM "JWM"), [Openbox](/index.php/Openbox "Openbox"), [wmii](/index.php/Wmii "Wmii") and [xmonad](/index.php/Xmonad "Xmonad"). If choosing a desktop environment, consider [LXDE](/index.php/LXDE "LXDE") or [Xfce](/index.php/Xfce "Xfce").
 *   Use `pstree` or [htop](https://www.archlinux.org/packages/?name=htop) to list running daemons and their resource use.
 
 ### Benchmarking
@@ -462,7 +462,7 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=416516](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=416516)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=417067](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=417067)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

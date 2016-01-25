@@ -4,13 +4,13 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
-**This article or section is being considered for deletion.**
+**This article is being considered for redirection to [Gtk](/index.php/Gtk "Gtk").**
 
-**Reason:** Most text are general gtk configure. Redirect to [Gtk](/index.php/Gtk "Gtk")? (Discuss in [Talk:Gnome Color Chooser#](https://wiki.archlinux.org/index.php/Talk:Gnome_Color_Chooser))
+**Notes:** Most text are general gtk configure. Redirect to [Gtk](/index.php/Gtk "Gtk")? (Discuss in [Talk:Gnome Color Chooser#](https://wiki.archlinux.org/index.php/Talk:Gnome_Color_Chooser))
 
 GNOME's color schemes are editable easily via the ~/.gtkrc-2.0 file, but the GNOME color chooser makes this process easier and graphical.
 
@@ -158,8 +158,13 @@ Allow you to change icon sizes, as of the time of this writing.
 
 Advanced: (presumably) Allows you to select "engines" for each subset.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnome_Color_Chooser&oldid=392207](https://wiki.archlinux.org/index.php?title=Gnome_Color_Chooser&oldid=392207)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnome_Color_Chooser&oldid=417045](https://wiki.archlinux.org/index.php?title=Gnome_Color_Chooser&oldid=417045)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

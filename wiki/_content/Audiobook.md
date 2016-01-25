@@ -251,15 +251,37 @@ done
 
 ## Audible format
 
-It is a laborious process to convert and Audible book format — [article](http://linuxtidbits.wordpress.com/2011/09/21/audible-com-and-linux-arghh/).
+It can be a laborious process to convert and Audible book format — [article](http://linuxtidbits.wordpress.com/2011/09/21/audible-com-and-linux-arghh/).
+
+A much easier way is to use this script to fetch your activation bytes from the Audible website — [link](https://github.com/inAudible-NG/audible-activator/).
+
+You can then use [mpv](https://www.archlinux.org/packages/?name=mpv) to listen to the file:
+
+```
+$ mpv --demuxer-lavf-o=activation_bytes=<your activation bytes> <filename>.aax
+
+```
+
+Or you can write the file to unencrypted .mp4 with [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) [(documentation)](http://ffmpeg.org/ffmpeg-all.html#Audible-AAX/):
+
+```
+$ ffmpeg -activation_bytes <your activation bytes> -i <filename>.aax -vn -c:a copy <output>.mp4
+
+```
+
+The resulting file will have chapter headers intact.
 
 ## See also
 
 *   [Wikipedia:.m4b](https://en.wikipedia.org/wiki/.m4b "wikipedia:.m4b")
 *   [RipIT](https://aur.archlinux.org/packages/RipIT/)<sup><small>AUR</small></sup> — thorough DAE with the ability to create chapter indexes with the `--book` option.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Audiobook&oldid=391938](https://wiki.archlinux.org/index.php?title=Audiobook&oldid=391938)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Audiobook&oldid=417071](https://wiki.archlinux.org/index.php?title=Audiobook&oldid=417071)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

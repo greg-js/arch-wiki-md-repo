@@ -169,6 +169,19 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 *   对于标准的GNOME会话， 在`~/.xinitrc` 中添加：`exec gnome-session`.
 *   对于经典的gnome会话，在 `~/.xinitrc` 中添加：{bc|export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME export GNOME_SHELL_SESSION_MODE=classic exec gnome-session --session=gnome-classic}}
 
+**注意:** 最好把gnome--session之前的应用注释掉，我之前因为没有注释掉`twm`（另一个窗口管理器）导致启动gnome失败
+
+我现在的`/etc/X11/xinit/xinitrc`如下：
+
+```
+#twm &
+#xclock -geometry 50x50-1+1 &
+#xterm -geometry 80x50+494+51 &
+#xterm -geometry 80x20+494-0 &
+#exec xterm -geometry 80x66+0+0 -name login
+exec gnome-session
+```
+
 改完`~/.xinitrc` ，即可用`startx` 启动Gnome (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 **Note:** Wayland 上的Gnome需要r [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 包， 不能使用 _startx_ 和`~/.xinitrc`，而是要运行 `gnome-session --session=gnome-wayland`. 更多参见 [Wayland](/index.php/Wayland "Wayland").
@@ -1139,7 +1152,7 @@ The dash is the "toolbar" that appears, by default, [on the left](https://en.wik
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
 *   [自定义GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=416808](https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=416808)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=416811](https://wiki.archlinux.org/index.php?title=GNOME_(简体中文)&oldid=416811)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

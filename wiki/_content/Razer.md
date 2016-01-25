@@ -12,7 +12,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** Various style issues, structure lacking (Discuss in [Talk:Razer#](https://wiki.archlinux.org/index.php/Talk:Razer))
 
-There is currently no official driver for the Razer gaming mice in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux.
+There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards.
 
 ## Contents
 
@@ -28,6 +28,7 @@ There is currently no official driver for the Razer gaming mice in Linux. Howeve
         *   [2.2.1 What works](#What_works)
         *   [2.2.2 Problems](#Problems_2)
         *   [2.2.3 Possible trackpad solution](#Possible_trackpad_solution_2)
+*   [3 Razer Keyboards](#Razer_Keyboards)
 
 ## Razer Peripherals
 
@@ -170,11 +171,26 @@ Feature still not working: pinch to zoom, 3rd mouse button
 
 **Reason:** The SBUI works as a trackpad, but no linux drivers currently exist. Does it even work for basic trackpad functionality? (Discuss in [Talk:Razer#](https://wiki.archlinux.org/index.php/Talk:Razer))
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Razer&oldid=415680](https://wiki.archlinux.org/index.php?title=Razer&oldid=415680)"
+## Razer Keyboards
 
-[Category](/index.php/Special:Categories "Special:Categories"):
+There are currently two Python scripts available to enable macro keys under Linux:
+
+*   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)<sup><small>AUR</small></sup>
+    *   Should work with regular BlackWidow and might work with BlackWidow Ultimate / 2013
+    *   uses Python 3
+    *   does not bundle any scripts to create macros (use hot key configuration tool from your desktop environment)
+    *   allows to controls the status of the LED
+*   [razer-blackwidow-macro-scripts](https://aur.archlinux.org/packages/razer-blackwidow-macro-scripts/)<sup><small>AUR</small></sup>
+    *   Should work with BlackWidow Ultimate 2013
+    *   uses Python 2
+    *   also bundles scripts to create and execute macros
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Razer&oldid=417046](https://wiki.archlinux.org/index.php?title=Razer&oldid=417046)"
+
+[Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mice](/index.php/Category:Mice "Category:Mice")
+*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
 
 Hidden categories:
 

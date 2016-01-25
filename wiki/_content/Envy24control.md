@@ -56,7 +56,7 @@ envy24control's user interface is loosely based on the Delta Control Panel softw
 
 envy24control is included with the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package.
 
-**Note:** [mudita24-svn](https://aur.archlinux.org/packages/mudita24-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mudita24-svn)]</sup> is an alternative to envy24control available in the [AUR](/index.php/AUR "AUR"). It is identical to envy24control, except that it has some clearer UI labels, peak meter indicators, and a few other bells and whistles.
+**Note:** [mudita24-svn](https://aur.archlinux.org/packages/mudita24-svn/)<sup><small>AUR</small></sup> is an alternative to envy24control available in the [AUR](/index.php/AUR "AUR"). It is identical to envy24control, except that it has some clearer UI labels, peak meter indicators, and a few other bells and whistles.
 
 ## Supported cards
 
@@ -359,9 +359,13 @@ envy24control is loosely based on the UI and functionality provided by the Windo
 *   [Delta 66](http://www.m-audio.com/images/global/manuals/070212_Delta66_UG_EN01.pdf)
 *   [Delta Audiophile 2496](http://www.m-audio.com/images/global/manuals/Audiophile2496_Manual.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Envy24control&oldid=400970](https://wiki.archlinux.org/index.php?title=Envy24control&oldid=400970)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Envy24control&oldid=417066](https://wiki.archlinux.org/index.php?title=Envy24control&oldid=417066)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

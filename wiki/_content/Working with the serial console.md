@@ -254,7 +254,7 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 1.  Connect to the target machine using the method described above.
 2.  Boot the target machine using the Arch Linux installation CD.
 3.  When the bootloader appears, select _Boot Arch Linux (<arch>)_ and press `Tab` to edit
-4.  Append `console=ttyS0` and press `Enter`.
+4.  Append `console=ttyS0,38400` and press `Enter`.
 5.  Now systemd should detect ttyS0 and spawn a serial getty on it. Login as `root` and start the installation as usual.
 
 **Note:** After setup is complete, the console settings will not be saved on the target machine; in order to avoid having to connect a keyboard and monitor, configure console access on the target machine before rebooting.
@@ -308,7 +308,7 @@ rsz() {
 }
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416365](https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416365)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416847](https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416847)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

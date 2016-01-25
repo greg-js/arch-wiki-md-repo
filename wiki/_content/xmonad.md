@@ -86,13 +86,13 @@ The best approach is to only place your changes and customizations in `~/.xmonad
 This is achieved by writing an `xmonad.hs` like this:
 
 ```
- import XMonad
+import XMonad
 
- main = xmonad defaultConfig
-     { terminal    = "urxvt"
-     , modMask     = mod4Mask
-     , borderWidth = 3
-     }
+main = xmonad defaultConfig
+    { terminal    = "urxvt"
+    , modMask     = mod4Mask
+    , borderWidth = 3
+    }
 
 ```
 
@@ -103,18 +103,18 @@ As things get more complicated, it can be handy to call configuration options by
 The simple `xmonad.hs` from above could have been written like this:
 
 ```
- import XMonad
+import XMonad
 
- main = do
-   xmonad $ defaultConfig
-     { terminal    = myTerminal
-     , modMask     = myModMask
-     , borderWidth = myBorderWidth
-     }
+main = do
+  xmonad $ defaultConfig
+    { terminal    = myTerminal
+    , modMask     = myModMask
+    , borderWidth = myBorderWidth
+    }
 
- myTerminal    = "urxvt"
- myModMask     = mod4Mask -- Win key or Super_L
- myBorderWidth = 3
+myTerminal    = "urxvt"
+myModMask     = mod4Mask -- Win key or Super_L
+myBorderWidth = 3
 
 ```
 
@@ -123,28 +123,28 @@ Also, order at top level (main, myTerminal, myModMask etc.), or within the {} do
 The following is taken from the 0.9 configuration file template. It is an example of the most common functions one might want to define in their main do block.
 
 ```
- {
-   terminal           = myTerminal,
-   focusFollowsMouse  = myFocusFollowsMouse,
-   borderWidth        = myBorderWidth,
-   modMask            = myModMask,
-   -- numlockMask deprecated in 0.9.1
-   -- numlockMask        = myNumlockMask,
-   workspaces         = myWorkspaces,
-   normalBorderColor  = myNormalBorderColor,
-   focusedBorderColor = myFocusedBorderColor,
+{
+  terminal           = myTerminal,
+  focusFollowsMouse  = myFocusFollowsMouse,
+  borderWidth        = myBorderWidth,
+  modMask            = myModMask,
+  -- numlockMask deprecated in 0.9.1
+  -- numlockMask        = myNumlockMask,
+  workspaces         = myWorkspaces,
+  normalBorderColor  = myNormalBorderColor,
+  focusedBorderColor = myFocusedBorderColor,
 
-   -- key bindings
-   keys               = myKeys,
-   mouseBindings      = myMouseBindings,
+  -- key bindings
+  keys               = myKeys,
+  mouseBindings      = myMouseBindings,
 
-   -- hooks, layouts
-   layoutHook         = myLayout,
-   manageHook         = myManageHook,
-   handleEventHook    = myEventHook,
-   logHook            = myLogHook,
-   startupHook        = myStartupHook
- }
+  -- hooks, layouts
+  layoutHook         = myLayout,
+  manageHook         = myManageHook,
+  handleEventHook    = myEventHook,
+  logHook            = myLogHook,
+  startupHook        = myStartupHook
+}
 
 ```
 
@@ -157,15 +157,15 @@ In [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) is 
 It can be added like so:
 
 ```
- import XMonad
- import XMonad.Config.Desktop
+import XMonad
+import XMonad.Config.Desktop
 
- baseConfig = desktopConfig
+baseConfig = desktopConfig
 
- main = xmonad baseConfig
-     { terminal    = "urxvt"
-     , modMask     = mod4Mask
-     }
+main = xmonad baseConfig
+    { terminal    = "urxvt"
+    , modMask     = mod4Mask
+    }
 
 ```
 
@@ -227,16 +227,16 @@ By default, xmonad uses 9 workspaces. You can increase this to 14 by extending t
 Wrap your layouts with avoidStruts from XMonad.Hooks.ManageDocks for automatic dock/panel/trayer spacing:
 
 ```
- import XMonad
- import XMonad.Hooks.ManageDocks
+import XMonad
+import XMonad.Hooks.ManageDocks
 
- main=do
-   xmonad $ defaultConfig
-     { ...
-     , layoutHook=avoidStruts $ layoutHook defaultConfig
-     , manageHook=manageHook defaultConfig <+> manageDocks
-     , ...
-     }
+main=do
+  xmonad $ defaultConfig
+    { ...
+    , layoutHook=avoidStruts $ layoutHook defaultConfig
+    , manageHook=manageHook defaultConfig <+> manageDocks
+    , ...
+    }
 
 ```
 
@@ -519,9 +519,6 @@ Use `xfceConfig` instead of `defaultConfig` after importing `XMonad.Config.Xfce`
 import XMonad
 import XMonad.Config.Xfce
 
-```
-
-```
 main = xmonad xfceConfig
     { terminal    = "urxvt"
     , modMask     = mod4Mask
@@ -647,8 +644,14 @@ to use the general (QT) UI.
 *   [Share your xmonad desktop!](https://bbs.archlinux.org/viewtopic.php?id=94969)
 *   [xmonad hacking thread](https://bbs.archlinux.org/viewtopic.php?id=40636)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmonad&oldid=410169](https://wiki.archlinux.org/index.php?title=Xmonad&oldid=410169)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417065](https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417065)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

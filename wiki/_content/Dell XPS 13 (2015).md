@@ -242,13 +242,13 @@ pcie_aspm=force i915.enable_fbc=1 i915.enable_rc6=7
 
 ```
 
-At least since kernel 4.3.3 the flickering and/or freezes caused by `i915.enable_fbc=1` seem to have been fixed.
+At least since kernel 4.3.3 the flickering caused by `i915.enable_fbc=1` seems to have been fixed, and freezes happen significantly less often.
 
 Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to tweak the performance and monitor power consumption.
 
 **Note:**
 
-*   Enabling PSR support, via `i915.enable_psr=1`, will further reduce idle power usage to ~2.6 W. As from kernel version 4.3.3 it no longer causes flickering.
+*   Enabling PSR support, via `i915.enable_psr=1`, will further reduce idle power usage to ~2.6 W. As of kernel version 4.3.3 it still causes occasional flickering but no longer so mch as to be unusable.
 *   `i915.lvds_downclock=1` for lvds_downclock is no longer needed. From the MacBook page: "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use - recommendation from irc #intel-gfx").
 
 ## Troubleshooting
@@ -307,7 +307,7 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416187](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416187)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416834](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=416834)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

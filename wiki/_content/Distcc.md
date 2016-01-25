@@ -340,6 +340,13 @@ Users experiencing this error should make sure that groups permissions as descri
 
 Make sure to change back `/etc/passwd` to its original state after these modifications.
 
+Alternatively you may use sudo without changing the shell in /etc/passwd.
+
+```
+ # sudo -u nobody gcc --version
+
+```
+
 ### Adjust log level
 
 By default, distcc will log to `/var/log/messages.log` as it goes along. One trick (actually recommended in the distccd manpage) is to log to an alternative file directly. Again, one can locate this in RAM via /tmp. Another trick is to lower to log level of minimum severity of error that will be included in the log file. Useful if only wanting to see error messages rather than an entry for each connection. LEVEL can be any of the standard syslog levels, and in particular critical, error, warning, notice, info, or debug.
@@ -378,9 +385,13 @@ d /tmp/.distcc 0755 <username> users -
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Distcc&oldid=413498](https://wiki.archlinux.org/index.php?title=Distcc&oldid=413498)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Distcc&oldid=416849](https://wiki.archlinux.org/index.php?title=Distcc&oldid=416849)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
 *   [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

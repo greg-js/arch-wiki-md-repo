@@ -28,9 +28,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(2)</small>
 
-<small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(21)</small>
+<small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small>
 
-<small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small>
+<small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small>
 
 <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(9)</small>
 
@@ -132,7 +132,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small>
 
-<small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(46)</small>
+<small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(48)</small>
 
 <small>4.8.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(7)</small>
 
@@ -162,9 +162,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.13.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small>
 
-<small>4.14.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(19)</small>
+<small>4.14.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small>
 
-<small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small>
+<small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small>
 
 <small>4.15.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small>
 
@@ -208,11 +208,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
-<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(63)</small>
+<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(64)</small>
 
 <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(9)</small>
 
-<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(28)</small>
+<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small>
 
 <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(41)</small>
 
@@ -222,7 +222,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(15)</small>
 
-<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(23)</small>
+<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(24)</small>
 
 <small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small>
 
@@ -276,9 +276,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(8)</small>
 
-<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(60)</small>
+<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(61)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=416053](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=416053)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=416926](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=416926)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

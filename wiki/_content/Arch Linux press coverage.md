@@ -26,7 +26,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## 2016
 
-*   [mintCast 239 – A Friendly Look at Arch](http://mintcast.org/2016/01/21/mintcast-239-a-friendly-look-at-arch/) Rob, Scott, Joe and Isaac - mintcast.org 2016-01-21
+*   [mintCast 239 – A Friendly Look at Arch](http://mintcast.org/2016/01/21/mintcast-239-a-friendly-look-at-arch/) (from 00:32:16) Rob, Scott, Joe and Isaac - mintcast.org 2016-01-21
 
 ## 2015
 
@@ -284,7 +284,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 *   [Distribution Release: Arch Linux 0.2](http://distrowatch.com/?newsid=00201) DistroWatch.com 2002-04-18
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416600](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416600)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416931](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416931)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

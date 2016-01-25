@@ -237,13 +237,17 @@ Simply add `modprobe.blacklist=modname1,modname2,modname3` to your bootloader's 
 
 ### Modules do not load
 
-In case a specific module do not loads and the boot log (accessible with `journalctl -b`) says that the module is blacklisted, but the directory `/etc/modprobe.d/` does not show a corresponding entry, check another modprobe source folder at `/usr/lib/modprobe.d/` for blacklisting entries.
+In case a specific module does not load and the boot log (accessible with `journalctl -b`) says that the module is blacklisted, but the directory `/etc/modprobe.d/` does not show a corresponding entry, check another modprobe source folder at `/usr/lib/modprobe.d/` for blacklisting entries.
+
+A module will not be loaded if the "vermagic" string contained within the kernel module does not match the value of the currently running kernel. If it is known that the module is compatible with the current running kernel the "vermagic" check can be ignored with `modprobe --force-vermagic`.
+
+**Warning:** Ignoring the version checks for a kernel module can cause a kernel to crash or a system to exhibit undefined behavior due to incompatibility. Use `--force-vermagic` only with the utmost caution.
 
 ## See also
 
 *   [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_modules&oldid=401527](https://wiki.archlinux.org/index.php?title=Kernel_modules&oldid=401527)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_modules&oldid=417080](https://wiki.archlinux.org/index.php?title=Kernel_modules&oldid=417080)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

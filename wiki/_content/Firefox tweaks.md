@@ -791,11 +791,9 @@ Before continuing, remember there is a reason some of these variables are not en
 
 #### WebM and Youtube
 
-**Note:** if you have the optional dependencies [gst-libav](https://www.archlinux.org/packages/?name=gst-libav), [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) installed. Firefox will have H.264 support and Youtube will stream H.264 video by default
+If WebM MSE is enabled when Youtube is set to use the HTML5 player by default, Youtube will use [VP9](https://en.wikipedia.org/wiki/VP9 "wikipedia:VP9") video by default to save bandwidth. However, hardware acceleration is not available for VP9, if you want to use hardware acceleration with youtube video especially if you have less capable hardware consider setting `media.mediasource.webm.enabled` to false to make youtube stream H.264 video for which hardware acceleration is widely available.
 
-If WebM MSE is enabled when Youtube is set to use the HTML5 player by default, Youtube will use [VP9](https://en.wikipedia.org/wiki/VP9 "wikipedia:VP9") video by default to save bandwidth. However, hardware acceleration is not available for VP9, if you want to use hardware acceleration with youtube video especially if you have less capable hardware consider setting `media.mediasource.webm.enabled` to false to make youtube stream H.264 video which video acceleration is widely available for.
-
-To verify if WebM (VP9) is enabled go to [youtube.com/html5](https://youtube.com/html5) if 'MSE & WebM VP9' is not supported youtube will use H264.
+To verify if WebM (VP9) is enabled go to [youtube.com/html5](https://youtube.com/html5). If "MSE & WebM VP9" is not supported, youtube will use H264.
 
 ### Mouse wheel scroll speed
 
@@ -966,7 +964,7 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415995](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=415995)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=416952](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=416952)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

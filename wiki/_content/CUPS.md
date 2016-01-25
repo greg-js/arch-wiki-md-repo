@@ -225,7 +225,7 @@ tail /var/log/cups/error_log
 
 Remote print servers can be accessed by adding an IPP "printer" to the local CUPS server, with a URI of `ipp://192.168.0.101:631/printers/<name-of-printer>`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
 
-**Note:** Avoid configuring both the server and the client with a printer filter (one should be 'raw', for instance see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908))
+**Note:** Avoid configuring both the server and the client with a printer filter - either the print queue on the client or the server should be 'raw'. This avoids sending a print job through the filters for a printer twice, which can cause problems (for instance, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908)). See [CUPS#Usage](/index.php/CUPS#Usage "CUPS") for an example of setting a print queue to 'raw'.
 
 #### Without a local CUPS server
 
@@ -401,6 +401,13 @@ The _printer_ is up to you. The device can be retrieved from the 'lpinfo -v' com
 
 In the following, the _printer_ references the name you have used here to set up the printer.
 
+Make the printer use the raw driver
+
+```
+# lpadmin -p _printer_ -m raw
+
+```
+
 Set the default printer
 
 ```
@@ -489,8 +496,14 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 *   [OpenPrinting homepage](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS&oldid=414599](https://wiki.archlinux.org/index.php?title=CUPS&oldid=414599)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS&oldid=417074](https://wiki.archlinux.org/index.php?title=CUPS&oldid=417074)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Printers](/index.php/Category:Printers "Category:Printers")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

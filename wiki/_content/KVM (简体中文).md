@@ -20,22 +20,25 @@ KVM, Xen, VMware, 和 QEMU 的不同，请看这里[KVM FAQ](http://www.linux-kv
 
 ## Contents
 
-*   [1 检查是否支持KVM虚拟化](#.E6.A3.80.E6.9F.A5.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81KVM.E8.99.9A.E6.8B.9F.E5.8C.96)
-    *   [1.1 硬件虚拟化支持](#.E7.A1.AC.E4.BB.B6.E8.99.9A.E6.8B.9F.E5.8C.96.E6.94.AF.E6.8C.81)
-    *   [1.2 内核虚拟化支持](#.E5.86.85.E6.A0.B8.E8.99.9A.E6.8B.9F.E5.8C.96.E6.94.AF.E6.8C.81)
-    *   [1.3 使用户能存取（access）/dev/kvm](#.E4.BD.BF.E7.94.A8.E6.88.B7.E8.83.BD.E5.AD.98.E5.8F.96.EF.BC.88access.EF.BC.89.2Fdev.2Fkvm)
-    *   [1.4 加载内核模块](#.E5.8A.A0.E8.BD.BD.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-*   [2 如何使用KVM](#.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8KVM)
-*   [3 小贴士与小技巧](#.E5.B0.8F.E8.B4.B4.E5.A3.AB.E4.B8.8E.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [3.1 嵌套虚拟化](#.E5.B5.8C.E5.A5.97.E8.99.9A.E6.8B.9F.E5.8C.96)
-    *   [3.2 Live snapshots](#Live_snapshots)
-    *   [3.3 Poor Man's Networking](#Poor_Man.27s_Networking)
-    *   [3.4 Enabling huge pages](#Enabling_huge_pages)
-*   [4 See also](#See_also)
+*   [1 检查是否支持KVM](#.E6.A3.80.E6.9F.A5.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81KVM)
+    *   [1.1 硬件支持](#.E7.A1.AC.E4.BB.B6.E6.94.AF.E6.8C.81)
+    *   [1.2 内核支持](#.E5.86.85.E6.A0.B8.E6.94.AF.E6.8C.81)
+    *   [1.3 KVM模块](#KVM.E6.A8.A1.E5.9D.97)
+*   [2 Para-virtualized devices](#Para-virtualized_devices)
+    *   [2.1 VIRTIO modules](#VIRTIO_modules)
+    *   [2.2 Loading kernel modules](#Loading_kernel_modules)
+    *   [2.3 List of para-virtualized devices](#List_of_para-virtualized_devices)
+*   [3 如何使用KVM](#.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8KVM)
+*   [4 小贴士与小技巧](#.E5.B0.8F.E8.B4.B4.E5.A3.AB.E4.B8.8E.E5.B0.8F.E6.8A.80.E5.B7.A7)
+    *   [4.1 嵌套虚拟化](#.E5.B5.8C.E5.A5.97.E8.99.9A.E6.8B.9F.E5.8C.96)
+    *   [4.2 Live snapshots](#Live_snapshots)
+    *   [4.3 Poor Man's Networking](#Poor_Man.27s_Networking)
+    *   [4.4 Enabling huge pages](#Enabling_huge_pages)
+*   [5 See also](#See_also)
 
-## 检查是否支持KVM虚拟化
+## 检查是否支持KVM
 
-### 硬件虚拟化支持
+### 硬件支持
 
 KVM需要虚拟机宿主（host）的处理器带有虚拟化支持（对于Intel处理器来说是VT-x，对于AMD处理器来说是AMD-V）。你可以通过以下命令来检查你的处理器是否支持虚拟化：
 
@@ -55,7 +58,13 @@ $ grep -E "(vmx|svm)" --color=always /proc/cpuinfo
 
 如果运行后没有显示，那么你的处理器**不**支持硬件虚拟化，你**不能**使用KVM。
 
-### 内核虚拟化支持
+**注意:** 您可能需要在BIOS中启用虚拟化支持
+
+### 内核支持
+
+Arch Linux的内核提供了相应的[内核模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")来支持KVM和VIRTIO
+
+### KVM模块
 
 如果你的内核是用 CONFIG_IKCONFIG_PROC 这个选项编译的话，你可以通过以下命令来检查你的内核是否已经包含了支持虚拟化所必须的模块（`kvm`及`kvm_amd`与`kvm_intel`这两者中的任意一个）：
 
@@ -64,30 +73,46 @@ $ zgrep KVM /proc/config.gz
 
 ```
 
-**注意:** Arch Linux内核提供了合适的[内核模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")来支持KVM虚拟化。
+如果模块设置不等于 `y`或`m`,则该模块**不**可用
 
-### 使用户能存取（access）`/dev/kvm`
+## Para-virtualized devices
 
-为了使你可以通过你的用户帐号来使用`/dev/kvm`设备，你需要把该帐号加到`kvm`组中来：
+Para-virtualization provides a fast and efficient means of communication for guests to use devices on the host machine. KVM provides para-virtualized devices to virtual machines using the Virtio API as a layer between the hypervisor and guest.
+
+All virtio devices have two parts: the host device and the guest driver.
+
+### VIRTIO modules
+
+Use the following command to check if needed modules are available:
 
 ```
-# gpasswd -a <login_name> kvm
+$ zgrep VIRTIO /proc/config.gz
 
 ```
 
-**注意:** 如果你使用systemd、并且是本地用户，这是不必要的，因为存取（access）是由systemd/udev来管理的。
+### Loading kernel modules
 
-### 加载内核模块
+First, check if the kernel modules are automatically loaded. This should be the case with recent versions of [udev](/index.php/Udev "Udev").
 
-你需要加载`kvm`模块，并根据你宿主机器CPU的厂商来加载`kvm_amd`与`kvm_intel`其中一个模块。加载模块的操作请参考[Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules")和[Kernel modules#Manual module handling](/index.php/Kernel_modules#Manual_module_handling "Kernel modules")。
+```
+$ lsmod | grep kvm
+$ lsmod | grep virtio
 
-如果对`kvm_intel`或`kvm_amd`模块执行modprobe操作时失败了、但moprobe `kvm`模块却可以被正常执行，（而且`lscpu`命令也显示硬件支持虚拟化），那么请检查你的BIOS设置。一些电脑制造产商（特别是笔记本电脑制造产商）会默认关闭处理器的虚拟化拓展。在modprobe失败后，执行`dmesg`命令所显示出来的结果会帮助你判断是硬件不支持虚拟化还是虚拟化拓展在BIOS里被关闭了。
+```
 
-**注意:** [udev](/index.php/Udev "Udev")的最新版本会自动加载以上模块，所以没有必要再手动加载。
+In case the above commands return nothing, you need to [load](/index.php/Kernel_modules#Loading "Kernel modules") kernel modules.
+
+**Tip:** If modprobing `kvm_intel` or `kvm_amd` fails but modprobing `kvm` succeeds, (and `lscpu` claims that hardware acceleration is supported), check your BIOS settings. Some vendors (especially laptop vendors) disable these processor extensions by default. To determine whether there's no hardware support or there is but the extensions are disabled in BIOS, the output from `dmesg` after having failed to modprobe will tell.
+
+### List of para-virtualized devices
+
+*   network device (virtio-net)
+*   block device (virtio-blk)
+*   controller device (virtio-scsi)
+*   serial device (virtio-serial)
+*   balloon device (virtio-balloon)
 
 ## 如何使用KVM
-
-**注意:** 从1.3.0版本开始，用户空间工具`qemu-kvm`已完全与上游的[qemu](https://www.archlinux.org/packages/?name=qemu)合并，因此不再有`qemu-kvm`软件包。
 
 请参考[QEMU](/index.php/QEMU "QEMU")条目。
 
@@ -395,9 +420,17 @@ See also:
 *   [KVM Howto](http://www.linux-kvm.org/page/HOWTO)
 *   [KVM FAQ](http://www.linux-kvm.org/page/FAQ#General_KVM_information)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KVM_(简体中文)&oldid=411716](https://wiki.archlinux.org/index.php?title=KVM_(简体中文)&oldid=411716)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KVM_(简体中文)&oldid=416966](https://wiki.archlinux.org/index.php?title=KVM_(简体中文)&oldid=416966)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Virtualization (简体中文)](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)")
 *   [Kernel (简体中文)](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

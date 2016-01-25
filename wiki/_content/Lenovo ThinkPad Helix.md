@@ -131,6 +131,12 @@ $ xinput list
 
 ```
 
+A Wacom USB device recognized by the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver will create multiple X input devices from a single kernel device. In the Lenovo Helix's case, three such X input devices are created when properly configured:
+
+*   Wacom ISDv4 EC Pen stylus
+*   Wacom ISDv4 EC Pen eraser
+*   Atmel Atmel maXTouch Digitizer
+
 The **Wacom ISDv4 EC Pen stylus** xinput device is recognized by the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver out of the box. However, additional [Udev](/index.php/Udev "Udev") and [Xorg](/index.php/Xorg "Xorg") configuration is required to recognize the **Atmel Atmel maXTouch Digitizer** touchscreen device as well as **Wacom ISDv4 EC Pen eraser** input if using a pen with an eraser function.
 
 #### Udev Configuration
@@ -140,7 +146,7 @@ With an up-to-date Arch install, install the following packages:
 *   [libwacom](https://www.archlinux.org/packages/?name=libwacom)
 *   [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup>
 
-The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup> package installs the additional [Udev](/index.php/Udev "Udev") rules. The [libwacom](https://www.archlinux.org/packages/?name=libwacom) is needed by some graphics applications to see the additional inputs.
+The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup> package installs the additional [Udev](/index.php/Udev "Udev") rules. The [libwacom](https://www.archlinux.org/packages/?name=libwacom) package is suggested by some graphics applications to see the additional inputs.
 
 [Udev](/index.php/Udev "Udev") should automatically detect the changes if already running. But, you may want to reboot your system to verify the changes stick.
 
@@ -167,10 +173,10 @@ With these three inputs, you can continue to the next section to configure Xorg.
 
 #### Xorg Configuration
 
-Now, you'll need to tell [Xorg](/index.php/Xorg "Xorg") to use the new inputs. The [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver package has an up-to-date list of devices that the Helix has. But, the package does not install the updated list by default. You'll need to copy it for Xorg to see them:
+Next, you'll need to tell [Xorg](/index.php/Xorg "Xorg") to use the new inputs. The [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver package has an up-to-date list of devices that the Helix has. But, the package does not install the updated list by default. You'll need to link it for Xorg to see them:
 
 ```
-# cp /usr/share/X11/xorg.conf.d/50-wacom.conf /etc/X11/xorg.conf.d/
+# ln -s /usr/share/X11/xorg.conf.d/50-wacom.conf /etc/X11/xorg.conf.d/50-wacom.conf
 
 ```
 
@@ -229,7 +235,7 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416522](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416522)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416940](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416940)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

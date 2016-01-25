@@ -12,6 +12,14 @@ Related articles
 
 To install Arch Linux on this model of Chromebook, you have to run these commands to install a Seabios boot stub:
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Dubious installation command, untrusted source. (Discuss in [Talk:Toshiba Chromebook 2#](https://wiki.archlinux.org/index.php/Talk:Toshiba_Chromebook_2))
+
 ```
 $ cd; rm -f flash_chromebook_rom.sh; curl -k -L -O [https://johnlewis.ie/flash_chromebook_rom.sh](https://johnlewis.ie/flash_chromebook_rom.sh); sudo -E bash flash_chromebook_rom.sh
 
@@ -21,8 +29,9 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 
 ## Known Issues
 
--Sound doesn't work without the appropriate asound.state file (James Fu's backup can be found here: [https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0](https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0) )  
--Support for the keyboard layout may be found in the xkeyboard-config-chromebook package in the AUR
+*   Sound doesn't work without the appropriate asound.state file (James Fu's backup can be found here: [https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0](https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0) )  
+
+*   Support for the keyboard layout may be found in the xkeyboard-config-chromebook package in the AUR
 
 ## See also
 
@@ -30,8 +39,12 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 *   [https://plus.google.com/communities/112479827373921524726](https://plus.google.com/communities/112479827373921524726)
 *   [https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH](https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Chromebook_2&oldid=416782](https://wiki.archlinux.org/index.php?title=Toshiba_Chromebook_2&oldid=416782)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Chromebook_2&oldid=416819](https://wiki.archlinux.org/index.php?title=Toshiba_Chromebook_2&oldid=416819)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

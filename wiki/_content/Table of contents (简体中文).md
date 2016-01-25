@@ -76,7 +76,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small>
 
-<small>3.2.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(2)</small>
+<small>3.2.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(3)</small>
 
 <small>3.3.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(3)</small>
 
@@ -228,7 +228,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>8.8.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(6)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=415840](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=415840)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=416930](https://wiki.archlinux.org/index.php?title=Table_of_contents_(简体中文)&oldid=416930)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

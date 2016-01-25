@@ -76,7 +76,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[Connman](/index.php/Connman "Connman")** — Демон для управления интернет-подключениями со встраиваемых устройств в операционной системе Linux. Имеет консольную версию, а также версии Enlightenment, GTK и Dmenu
 
-[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
+[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
 *   **[netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)")** — Простой и надежный инструмент управления сетевыми подключениями при помощи профилей. Предназначен для использования с [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
 
@@ -84,15 +84,15 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 *   **[NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)")** — Менеджер, предоставляющий обнаружение проводного, беспроводного, мобильного широкополосного соединения и OpenVPN с их настройкой и автоматическим подключением
 
-[http://projects.gnome.org/NetworkManager/](http://projects.gnome.org/NetworkManager/) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
+[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")** — Нативный демон [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), который управляет конфигурацией сети. Включает поддержку базовой настройки через udev и networkd. Доступен в systemd, начиная с версии 210
+*   **[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")** — Нативный демон [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), который управляет конфигурацией сети. Включает поддержку базовой настройки через [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"). Доступен в _systemd_, начиная с версии 210
 
 [http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Wicd](/index.php/Wicd "Wicd")** — Менеджер беспроводных и проводных подключений с небольшим количеством зависимостей. Доступны интерфейсы ncurses и GTK
+*   **[Wicd](/index.php/Wicd "Wicd")** — Менеджер беспроводных и проводных подключений с небольшим количеством зависимостей. Доступны интерфейсы ncurses и GTK ([wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk))
 
-[http://wicd.sourceforge.net/](http://wicd.sourceforge.net/) || [wicd](https://www.archlinux.org/packages/?name=wicd) [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
+[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 
 ### Веб-браузеры
 
@@ -124,9 +124,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ##### Основанные на Gecko
 
-*   **[Conkeror](https://en.wikipedia.org/wiki/ru:Conkeror "wikipedia:ru:Conkeror")** — Сильно программируемый веб-браузер с горячими клавишами в стиле [Emacs](/index.php/Emacs "Emacs"), основанный на XULRunner от Mozilla
+Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Gecko](https://en.wikipedia.org/wiki/ru:Gecko "wikipedia:ru:Gecko").
 
-[http://conkeror.org/](http://conkeror.org/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)<sup><small>AUR</small></sup>
+*   **[Conkeror](https://en.wikipedia.org/wiki/ru:Conkeror "wikipedia:ru:Conkeror")** — Сильно программируемый при помощи JavaScript веб-браузер с горячими клавишами в стиле [Emacs](/index.php/Emacs "Emacs"), основанный на XULRunner от Mozilla
+
+[http://repo.or.cz/w/conkeror.git/](http://repo.or.cz/w/conkeror.git/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)<sup><small>AUR</small></sup>
 
 *   **[Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)")** — Расширяемый браузер от Mozilla на движке Gecko с быстрым рендерингом
 
@@ -302,7 +304,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
 
-*   **[glFTPd](/index.php?title=Glftpd&action=edit&redlink=1 "Glftpd (page does not exist)")** — Демон GreyLine FTP (сильнонастраиваемый, не требующий системных аккаунтов)
+*   **[glFTPd](/index.php?title=Glftpd&action=edit&redlink=1 "Glftpd (страница не существует)")** — Демон GreyLine FTP (сильнонастраиваемый, не требующий системных аккаунтов)
 
 [http://glftpd.eu/](http://glftpd.eu/) || <small>Пакет не существует? [искать в AUR](https://aur.archlinux.org/packages/?K=glftp)</small>
 
@@ -1138,7 +1140,7 @@ eDonkey по-прежнему является второй по величин�
 
 [https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=415662](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=415662)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=417060](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet_(Русский)&oldid=417060)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

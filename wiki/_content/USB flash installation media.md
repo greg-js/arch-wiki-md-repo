@@ -59,12 +59,14 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 **Tip:** Find out the name of your USB drive with `lsblk`. Make sure that it is **not** mounted.
 
-Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/sdb`. (do **not** append a partition number, so do **not** use something like `/dev/sdb**1**`)
+Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/sdb`. (do **not** append a partition number, so do **not** use something like `/dev/sdb**1**`):
 
 ```
-# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** && sync
+# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress && sync
 
 ```
+
+The option `status=progress` above reports transfer progress every so often. Do **not** miss _sync_ to complete before pulling the USB drive.
 
 #### In Windows
 
@@ -488,8 +490,14 @@ syslinux.exe -m -a -d /Boot/Settings X:
 *   [Fedora wiki - How to create and use Live USB](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB)
 *   [openSUSE wiki - SDB:Live USB stick](http://en.opensuse.org/SDB:Live_USB_stick)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=410696](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=410696)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=416855](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=416855)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

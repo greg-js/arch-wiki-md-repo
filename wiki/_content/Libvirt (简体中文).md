@@ -65,7 +65,7 @@ Libvirt 的一些主要功能如下：
 
 **注意:** [Libvirt 的 LXC 驱动](http://libvirt.org/drvlxc.html) 并不依赖 [lxc](https://www.archlinux.org/packages/?name=lxc) 提供的用户空间工具，因此，如果计划使用这个驱动并不需要安装该工具。
 
-**警告:** Libvirt 可以但并非默认支持 [Xen](/index.php/Xen "Xen")。需要用 [ABS](/index.php/ABS "ABS") 编辑 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") ，去掉 `--without-xen` 选项后重新构建（built）libvirt。
+**警告:** Libvirt 默认未支持 [Xen](/index.php/Xen "Xen")。需要用 [ABS](/index.php/ABS "ABS") 编辑 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") ，去掉 `--without-xen` 选项后重新构建（built）libvirt。
 
 其它虚拟机管理程序列表见[这里](http://libvirt.org/drivers.html)。
 
@@ -595,7 +595,7 @@ if (__name__ == "__main__"):
 *   [IBM KVM](http://www-01.ibm.com/support/knowledgecenter/linuxonibm/liaat/liaatkvm.htm)
 *   [libvirt 网络手册](https://jamielinux.com/docs/libvirt-networking-handbook/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt_(简体中文)&oldid=416613](https://wiki.archlinux.org/index.php?title=Libvirt_(简体中文)&oldid=416613)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt_(简体中文)&oldid=416840](https://wiki.archlinux.org/index.php?title=Libvirt_(简体中文)&oldid=416840)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

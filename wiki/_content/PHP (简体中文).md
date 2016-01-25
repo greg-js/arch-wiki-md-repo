@@ -262,9 +262,8 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdate
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416492](https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416492)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416924](https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416924)"
 
-[Categories](/index.php/Special:Categories "Special:Categories"):
+[Category](/index.php/Special:Categories "Special:Categories"):
 
-*   [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文")
-*   [Programming languages（简体中文）](/index.php?title=Category:Programming_languages%EF%BC%88%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%89&action=edit&redlink=1 "Category:Programming languages（简体中文） (page does not exist)")
+*   [Programming languages (简体中文)](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)")

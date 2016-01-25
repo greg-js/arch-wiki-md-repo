@@ -1,4 +1,4 @@
-# Xen
+# Xen (简体中文)
 
 From ArchWiki
 
@@ -17,8 +17,8 @@ _Xen is an open-source type-1 or baremetal hypervisor, which makes it possible t
 
 ## Contents
 
-*   [1 Introduction](#Introduction)
-*   [2 System requirements](#System_requirements)
+*   [1 简介](#.E7.AE.80.E4.BB.8B)
+*   [2 系统要求](#.E7.B3.BB.E7.BB.9F.E8.A6.81.E6.B1.82)
 *   [3 Configuring dom0](#Configuring_dom0)
     *   [3.1 Installation of the Xen hypervisor](#Installation_of_the_Xen_hypervisor)
         *   [3.1.1 With UEFI support](#With_UEFI_support)
@@ -36,18 +36,18 @@ _Xen is an open-source type-1 or baremetal hypervisor, which makes it possible t
     *   [6.3 Managing a domU](#Managing_a_domU)
 *   [7 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
 *   [8 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
-*   [9 Common Errors](#Common_Errors)
+*   [9 常见错误](#.E5.B8.B8.E8.A7.81.E9.94.99.E8.AF.AF)
     *   [9.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
     *   [9.2 "xl create" fails](#.22xl_create.22_fails)
     *   [9.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
     *   [9.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
 *   [10 Resources](#Resources)
 
-## Introduction
+## 简介
 
 The Xen hypervisor is a thin layer of software which emulates a computer architecture allowing multiple operating systems to run simultaneously. The hypervisor is started by the boot loader of the computer it is installed on. Once the hypervisor is loaded, it starts the [dom0](http://wiki.xen.org/wiki/Dom0) (short for "domain 0", sometimes called the host or privileged domain) which in our case runs Arch Linux. Once the _dom0_ has started, one or more [domU](http://wiki.xen.org/wiki/DomU) (short for user domains, sometimes called VMs or guests) can be started and controlled from the _dom0_. Xen supports both paravirtualized (PV) and hardware virtualized (HVM) _domU_. See [Xen.org](http://wiki.xen.org/wiki/Xen_Overview) for a full overview.
 
-## System requirements
+## 系统要求
 
 The Xen hypervisor requires kernel level support which is included in recent Linux kernels and is built into the [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) Arch kernel packages. To run HVM _domU_, the physical hardware must have either Intel VT-x or AMD-V (SVM) virtualization support. In order to verify this, run the following command when the Xen hypervisor is not running:
 
@@ -88,7 +88,7 @@ It's possible to boot the Xen hypervisor though the bare UEFI system on a modern
 
 **The factual accuracy of this article or section is disputed.**
 
-**Reason:** This Note is not very meaningful without a link to a bug report. (Discuss in [Talk:Xen#](https://wiki.archlinux.org/index.php/Talk:Xen))
+**Reason:** This Note is not very meaningful without a link to a bug report. (Discuss in [Talk:Xen (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 This will not work on the newest version of binutils you will need to downgrade to an older version from the svn:
 
@@ -118,7 +118,7 @@ Now when you compile Xen with your x86_64-pep aware binutils a UEFI kernel will 
 
 **This article or section needs expansion.**
 
-**Reason:** Lots of other boot loaders could/should be covered, at least the most common like Gummiboot. (Discuss in [Talk:Xen#](https://wiki.archlinux.org/index.php/Talk:Xen))
+**Reason:** Lots of other boot loaders could/should be covered, at least the most common like Gummiboot. (Discuss in [Talk:Xen (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 **Warning:** Never assume your system will boot after changes to the boot system. This might be the most common error new as well as old users do. Make sure you have a alternative way to boot your system like a USB stick or other livemedia **BEFORE** you make changes to your boot system.
 
@@ -213,7 +213,7 @@ See [Network bridge#Creating a bridge](/index.php/Network_bridge#Creating_a_brid
 
 **This article or section is a candidate for merging with [Network_bridge#With_NetworkManager](/index.php/Network_bridge#With_NetworkManager "Network bridge").**
 
-**Notes:** Duplicates the main page. (Discuss in [Talk:Xen#](https://wiki.archlinux.org/index.php/Talk:Xen))
+**Notes:** Duplicates the main page. (Discuss in [Talk:Xen (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 Gnome's Network Manager can sometime be troublesome. If following the bridge creation section outlined in the [bridges](https://wiki.archlinux.org/index.php/Network_bridge) section of the wiki are unclear or do not work, then the following steps may work.
 
@@ -452,7 +452,7 @@ The Arch _domU_ is now set up. It may be started with the same line as before:
 
 ```
 
-## Common Errors
+## 常见错误
 
 ### "xl list" complains about libxl
 
@@ -475,7 +475,7 @@ This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not use
 *   [The homepage at xen.org](http://www.xen.org/)
 *   [The wiki at xen.org](http://wiki.xen.org/wiki/Main_Page)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen&oldid=417003](https://wiki.archlinux.org/index.php?title=Xen&oldid=417003)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen_(简体中文)&oldid=417007](https://wiki.archlinux.org/index.php?title=Xen_(简体中文)&oldid=417007)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

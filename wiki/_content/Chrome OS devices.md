@@ -303,6 +303,14 @@ It is possible to have both Arch Linux and Chrome OS installed on the internal d
 
 ##### Re-partition the drive
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Dubious script from untrusted and obfuscated source. (Discuss in [Talk:Chrome OS devices#](https://wiki.archlinux.org/index.php/Talk:Chrome_OS_devices))
+
 In order to partition the drive, we will run the first stage of the ChruBuntu script in Chrome OS. After logging in, open a shell with `Ctrl + Alt + T`, run `shell`, then `cd ~/` to enter the home directory. Once there, run the following:
 
 ```
@@ -326,7 +334,7 @@ So after booting the installation media:
 *   Use `mkfs.ext4 /dev/sdxY` (where xY is drive letter and partition number, eg. /dev/sda7) This will create the filesystem for arch.
 *   Following the [instructions for installing GRUB on GPT](https://wiki.archlinux.org/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions), use gdisk to create a 1007kb partition and set the type to EF02.
 
-**Note:** Contrary to what some people say, the grub partition does NOT need to be the first partition on the disk. The existing ChromeOS partitions make this difficult to do anyways.
+**Note:** Contrary to what some people say, the grub partition does **not** need to be the first partition on the disk. The existing ChromeOS partitions make this difficult to do anyways.
 
 ##### Choosing between Arch Linux and Chrome OS
 
@@ -615,7 +623,7 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=415648](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=415648)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=416821](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=416821)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -624,4 +632,5 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&ol
 Hidden categories:
 
 *   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
 *   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

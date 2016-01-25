@@ -63,10 +63,9 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS on linux](#Encryption_in_ZFS_on_linux)
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
-    *   [8.4 Automated build script](#Automated_build_script)
-    *   [8.5 Bindmount](#Bindmount)
-        *   [8.5.1 fstab](#fstab)
-        *   [8.5.2 systemd mount unit](#systemd_mount_unit)
+    *   [8.4 Bindmount](#Bindmount)
+        *   [8.4.1 fstab](#fstab)
+        *   [8.4.2 systemd mount unit](#systemd_mount_unit)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -893,215 +892,6 @@ Regenerate the ramdisk:
 
 There should be no errors.
 
-### Automated build script
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** The wiki isn't the place to maintain massive script dumps (Discuss in [Talk:ZFS#](https://wiki.archlinux.org/index.php/Talk:ZFS))
-
-The following script may be used to build ZFS and its dependencies automatically.
-
-The build order of the above is important due to nested dependencies. One can automate the entire process, including downloading the packages with the following shell script. The only requirements for it to work are:
-
-*   [sudo](https://www.archlinux.org/packages/?name=sudo) - Note that your user needed sudo rights to `/usr/bin/clean-chroot-manager` for the script below to work.
-*   [rsync](https://www.archlinux.org/packages/?name=rsync) - Needed for moving over the build files.
-*   [cower](https://aur.archlinux.org/packages/cower/)<sup><small>AUR</small></sup> - Needed to grab sources from the AUR.
-*   [clean-chroot-manager](https://aur.archlinux.org/packages/clean-chroot-manager/)<sup><small>AUR</small></sup> - Needed to build in a clean chroot and add packages to a local repo.
-
-Be sure to add the local repo to `/etc/pacman.conf` like so:
-
- `$ tail /etc/pacman.conf` 
-
-```
-[chroot_local]
-SigLevel = Optional TrustAll
-Server = file:///path/to/localrepo/defined/below
-
-```
-
- `~/bin/build_zfs` 
-
-```
-#!/bin/bash
-#
-# ZFS Builder by graysky
-#
-
-# define the temp space for building here
-WORK='/scratch'
-
-# create this dir and chown it to your user
-# this is the local repo which will store your zfs packages
-REPO='/var/repo'
-
-# Add the following entry to /etc/pacman.conf for the local repo
-#[chroot_local]
-#SigLevel = Optional TrustAll
-#Server = file:///path/to/localrepo/defined/above
-
-for i in rsync cower clean-chroot-manager; do
-  command -v $i >/dev/null 2>&1 || {
-  echo "I require $i but it's not installed. Aborting." >&2
-  exit 1; }
-done
-
-[[ -f ~/.config/clean-chroot-manager.conf ]] &&
-  . ~/.config/clean-chroot-manager.conf || exit 1
-
-[[ ! -d "$REPO" ]] &&
-  echo "Make the dir for your local repo and chown it: $REPO" && exit 1
-
-[[ ! -d "$WORK" ]] &&
-  echo "Make a work directory: $WORK" && exit 1
-
-cd "$WORK"
-for i in spl-utils-git spl-git zfs-utils-git zfs-git; do
-  [[ -d $i ]] && rm -rf $i
-  cower -d $i
-done
-
-for i in spl-utils-git spl-git zfs-utils-git zfs-git; do
-  cd "$WORK/$i"
-  sudo ccm s
-done
-
-rsync -auvxP "$CHROOTPATH/root/repo/" "$REPO"
-
-```
-
-When ZFS is used as a data drive and boot support is not needed, these two shell scripts will build and remove all zfs packages. The only requirements are [sudo](https://www.archlinux.org/packages/?name=sudo), [git](https://www.archlinux.org/packages/?name=git), and answering a couple of prompts. On each kernel upgrade you remove ZFS with `zfsun.sh`, update, and install ZFS with `zfsbuild.sh`.
-
- `~/build/zfspkg/zfsbuild.sh` 
-
-```
-#!/usr/bin/bash
-#
-# 2015-07-17 zfsbuild.sh by severach for AUR 4
-# 2015-08-08 AUR4 -> AUR, added git pull, safer AUR 3.5 update folder
-# Adapted from ZFS Builder by graysky
-# place this in a user home folder.
-# I recommend ~/build/zfspkg/. Do not name the folder 'zfs'.
-
-# 1 to add conflicts=(linux>,linux<) which offers automatic removal on upgrade.
-# Manual removal with zfsun.sh is preferred.
-_opt_AutoRemove=0
-_opt_ZFSPool='zfsdata'
-#_opt_ZFSbyid='/dev/disk/by-partlabel'
-_opt_ZFSbyid='/dev/disk/by-id'
-# '' for manual answer to prompts. --noconfirm to go ahead and do it all.
-_opt_AutoInstall='' #--noconfirm'
-
-# Multiprocessor compile enabled!
-# Huuuuuuge performance improvement. Watch in htop.
-# An E3-1245 can peg all 8 processors.
-#1  [|||||||||||||||||||||||||96.2%]
-#2  [|||||||||||||||||||||||||97.6%]
-#3  [|||||||||||||||||||||||||95.7%]
-#4  [|||||||||||||||||||||||||96.7%]
-#5  [|||||||||||||||||||||||||95.7%]
-#6  [|||||||||||||||||||||||||97.1%]
-#7  [|||||||||||||||||||||||||98.6%]
-#8  [|||||||||||||||||||||||||96.2%]
-#Mem[|||                596/31974MB]
-#Swp[                         0/0MB]
-
-set -u
-set -e
-
-if [ "${EUID}" -eq 0 ]; then
-  echo "This script must NOT be run as root"
-  sleep 1
-  exit 1
-fi
-
-for i in 'sudo' 'git'; do
-  command -v "${i}" >/dev/null 2>&1 || {
-  echo "I require ${i} but it's not installed. Aborting." 1>&2
-  exit 1; }
-done
-
-cd "$(dirname "$0")"
-OPWD="$(pwd)"
-for cwpackage in 'spl-utils-git' 'spl-git' 'zfs-utils-git' 'zfs-git'; do
-  #cower -dc -f "${cwpackage}"
-  if [ -d "${cwpackage}" -a ! -d "${cwpackage}/.git" ]; then
-    echo "${cwpackage}: Convert AUR3.5 to AUR4"
-    cd "${cwpackage}"
-    git clone "https://aur.archlinux.org/${cwpackage}.git/" "${cwpackage}.temp"
-    cd "${cwpackage}.temp"
-    mv '.git' ..
-    cd ..
-    rm -rf "${cwpackage}.temp"
-    cd ..
-  fi
-  if [ -d "${cwpackage}" ]; then
-    echo "${cwpackage}: Update local copy"
-    cd "${cwpackage}"
-    git fetch
-    git reset --hard 'origin/master'
-    git pull # this line was missed in previous versions
-   else
-    echo "${cwpackage}: Clone to new folder"
-    git clone "https://aur.archlinux.org/${cwpackage}.git/" 
-    cd "${cwpackage}"
-  fi
-  sed -i -e 's:^\s\+make$:'"& -s -j $(nproc):g" 'PKGBUILD'
-  if [ "${_opt_AutoRemove}" -ne 0 ]; then
-    sed -i -e 's:^conflicts=(.*$: &\n_kernelversionsmall="`uname -r | cut -d - -f 1`"\nconflicts+=("linux>${_kernelversionsmall}" "linux<${_kernelversionsmall}")\n:g' 'PKGBUILD'
-  fi
-  if ! makepkg -sCcfi ${_opt_AutoInstall}; then
-    cd "${OPWD}"
-    break
-  fi
-  #rm -rf 'zfs' 'spl'
-  cd "${OPWD}"
-done
-which fsck.zfs
-if [ "$?" -eq 0 ]; then
-  sudo mkinitcpio -p 'linux' # Stores fsck.zfs into the initrd image. I don't know why it would be needed.
-fi
-#sudo zpool import "${_opt_ZFSPool}" # Don't do this or zpool will mount via /dev/sd?, which you won't like!
-sudo zpool import -d "${_opt_ZFSbyid}" "${_opt_ZFSPool}"
-sudo zpool status
-sudo -k
-
-```
-
- `~/build/zfspkg/zfsun.sh` 
-
-```
-#!/usr/bin/bash
-
-# 2015-07-17 zfs uninstaller by severach for AUR4
-# Removing ZFS forgets to unmount the pools, which might be desirable if you're
-# running ZFS on the root file system.
-
-_opt_ZFSFolder='/home/zfsdata/foo'
-_opt_ZFSPool='zfsdata'
-
-if [ "${EUID}" -ne 0 ]; then
-  echo 'Must be root, try sudo !!'
-  sleep 1
-  exit 1
-fi
-
-systemctl stop 'smbd.service' # Active shares can lock the mount. You might want to stop nfs too.
-zpool export "${_opt_ZFSPool}" # zpool import no longer works with drives that were zfs umount
-if [ ! -d "${_opt_ZFSFolder}" ]; then
-  echo "${_opt_ZFSPool} exported"
-  pacman -Rc 'spl-utils-git' # This works even if some are already removed.
-  #pacman -R 'zfs-utils-git' 'spl-git' 'spl-utils-git' 'zfs-git'
-else
-  echo "ZFS didn't unmount"
-fi
-systemctl start 'smbd.service'
-
-```
-
 ### Bindmount
 
 Here a bind mount from /mnt/zfspool to /srv/nfs4/music is created. The configuration ensures that the zfs pool is ready before the bind mount is created.
@@ -1173,8 +963,13 @@ Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=414891](https://wiki.archlinux.org/index.php?title=ZFS&oldid=414891)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417034](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417034)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

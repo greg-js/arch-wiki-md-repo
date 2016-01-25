@@ -91,7 +91,6 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.20 Unity-for-Arch](#Unity-for-Arch)
         *   [3.2.21 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
         *   [3.2.22 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.23 MEGAsync_Arch_Extra](#MEGAsync_Arch_Extra)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 eee-ck](#eee-ck)
@@ -715,6 +714,7 @@ Server = http://direct.$repo.systems.:2/repository/arch/$arch
 [openrc-eudev]
 Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
 Server = ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
+Server = https://pub.projectarch.tk/mirror/archopenrc/openrc-eudev/$repo/$arch
 
 ```
 
@@ -816,23 +816,11 @@ Server = http://dl.dropbox.com/u/486665/Repos/$repo/$arch
 #### home_tarakbumba_archlinux_Arch_Extra_standard
 
 *   **Maintainer:**
-*   **Description:** Contains a few pre-built AUR packages (zemberek, firefox-kde-opensuse, etc.)
+*   **Description:** Contains a few pre-built AUR packages (zemberek, etc.)
 
 ```
 [home_tarakbumba_archlinux_Arch_Extra_standard]
 Server = http://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/Arch_Extra_standard/$arch
-
-```
-
-#### MEGAsync_Arch_Extra
-
-*   **Maintainer:** [https://mega.nz/#sync](https://mega.nz/#sync)
-*   **Description:** MEGAsync extra packages for Arch
-
-```
-[MEGAsync_Arch_Extra]
-SigLevel = Never
-Server = https://mega.co.nz/linux/MEGAsync/Arch_Extra/$arch
 
 ```
 
@@ -1084,7 +1072,7 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 #### gustawho
 
 *   **Maintainer:** [Gustavo Castro](https://twitter.com/gustawho) <gustawho@gmail.com>
-*   **Description:** Scientific tools (mostly physics/math) and AUR packages that would take long to build, such as [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)<sup><small>AUR</small></sup>.
+*   **Description:** Scientific tools (mostly physics/math) and AUR packages that would take long to build.
 *   **Package list:** [http://gustawho.x10.mx/repo/x86_64](http://gustawho.x10.mx/repo/x86_64)
 *   **Upstream page:** [http://gustawho.x10.mx](http://gustawho.x10.mx)
 *   **Key-ID:** 2C575D76
@@ -1580,7 +1568,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415586](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=415586)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=416936](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=416936)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

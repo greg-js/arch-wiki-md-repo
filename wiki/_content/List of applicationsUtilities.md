@@ -18,37 +18,38 @@ Jump to: [navigation](#column-one), [search](#searchInput)
         *   [1.2.1 Udisks](#Udisks)
     *   [1.3 Basic shell commands](#Basic_shell_commands)
     *   [1.4 Integrated development environments](#Integrated_development_environments)
-    *   [1.5 Terminal emulators](#Terminal_emulators)
-        *   [1.5.1 VTE-based](#VTE-based)
-        *   [1.5.2 KMS-based](#KMS-based)
-        *   [1.5.3 framebuffer-based](#framebuffer-based)
-    *   [1.6 Files](#Files)
-        *   [1.6.1 File managers](#File_managers)
-            *   [1.6.1.1 Console](#Console)
-            *   [1.6.1.2 Graphical](#Graphical)
-        *   [1.6.2 Desktop search engines](#Desktop_search_engines)
-        *   [1.6.3 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [1.6.3.1 Console](#Console_2)
-            *   [1.6.3.2 Graphical](#Graphical_2)
-        *   [1.6.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [1.6.5 Batch renamers](#Batch_renamers)
-    *   [1.7 Disk cleaning](#Disk_cleaning)
-    *   [1.8 Disk usage display](#Disk_usage_display)
-    *   [1.9 Clock synchronization](#Clock_synchronization)
-    *   [1.10 System monitoring](#System_monitoring)
-    *   [1.11 System information viewers](#System_information_viewers)
-        *   [1.11.1 Console](#Console_3)
-        *   [1.11.2 Graphical](#Graphical_3)
-        *   [1.11.3 Others](#Others)
-    *   [1.12 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [1.13 Power management](#Power_management)
-    *   [1.14 Clipboard managers](#Clipboard_managers)
-    *   [1.15 Wallpaper setters](#Wallpaper_setters)
-    *   [1.16 Package management](#Package_management)
-    *   [1.17 Input method editor](#Input_method_editor)
-    *   [1.18 Trash management](#Trash_management)
-    *   [1.19 File synchronization](#File_synchronization)
-    *   [1.20 Finders](#Finders)
+    *   [1.5 Build automation](#Build_automation)
+    *   [1.6 Terminal emulators](#Terminal_emulators)
+        *   [1.6.1 VTE-based](#VTE-based)
+        *   [1.6.2 KMS-based](#KMS-based)
+        *   [1.6.3 framebuffer-based](#framebuffer-based)
+    *   [1.7 Files](#Files)
+        *   [1.7.1 File managers](#File_managers)
+            *   [1.7.1.1 Console](#Console)
+            *   [1.7.1.2 Graphical](#Graphical)
+        *   [1.7.2 Desktop search engines](#Desktop_search_engines)
+        *   [1.7.3 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [1.7.3.1 Console](#Console_2)
+            *   [1.7.3.2 Graphical](#Graphical_2)
+        *   [1.7.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [1.7.5 Batch renamers](#Batch_renamers)
+    *   [1.8 Disk cleaning](#Disk_cleaning)
+    *   [1.9 Disk usage display](#Disk_usage_display)
+    *   [1.10 Clock synchronization](#Clock_synchronization)
+    *   [1.11 System monitoring](#System_monitoring)
+    *   [1.12 System information viewers](#System_information_viewers)
+        *   [1.12.1 Console](#Console_3)
+        *   [1.12.2 Graphical](#Graphical_3)
+        *   [1.12.3 Others](#Others)
+    *   [1.13 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [1.14 Power management](#Power_management)
+    *   [1.15 Clipboard managers](#Clipboard_managers)
+    *   [1.16 Wallpaper setters](#Wallpaper_setters)
+    *   [1.17 Package management](#Package_management)
+    *   [1.18 Input method editor](#Input_method_editor)
+    *   [1.19 Trash management](#Trash_management)
+    *   [1.20 File synchronization](#File_synchronization)
+    *   [1.21 Finders](#Finders)
 
 ## Utilities
 
@@ -234,6 +235,22 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 [http://code.google.com/p/spyderlib/](http://code.google.com/p/spyderlib/) || [spyder](https://www.archlinux.org/packages/?name=spyder)
 
+### Build automation
+
+See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
+
+*   **Apache Ant** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
+
+[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
+
+*   **Apache Maven** — Software project management and comprehension tool.
+
+[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
+
+*   **Gradle** — Powerful build system for the JVM.
+
+[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
+
 ### Terminal emulators
 
 See also [Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators").
@@ -363,6 +380,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 *   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
 
 [http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
+
+*   **Terminix** — A tiling terminal emulator for Linux using GTK+ 3
+
+[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix](https://aur.archlinux.org/packages/terminix/)<sup><small>AUR</small></sup>, [terminix-git](https://aur.archlinux.org/packages/terminix-git/)<sup><small>AUR</small></sup>
 
 *   **Termit** — Simple terminal emulator based on the vte library that includes tabs, bookmarks, and the ability to switch encodings.
 
@@ -1046,7 +1067,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 [https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=416035](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=416035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=416941](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=416941)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

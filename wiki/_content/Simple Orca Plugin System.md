@@ -77,6 +77,8 @@ They basically just create links in ~./.config/SOPSP/plugins-enabled and make th
 
 ## Plug-ins
 
+**Tip:** You can find some fully predefined example plugins in `/usr/share/SOPS/examples`.
+
 ### Structure of the filename
 
 The behavior and and preferences of an plug-in are controlled by its filename. The description part have to be separated to the preferences part with `__-__`. The commands, modifier and the key has to be separated by `__+__`. `<description>__-__[<command>__+__command...][__+__<modifier>__+__<modifier>__+__]<key>[.ext]`
@@ -173,7 +175,7 @@ You can also host plug-ins. So they are available for installation via the plug-
 
 Default online resource: [https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=416581](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=416581)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=416932](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=416932)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

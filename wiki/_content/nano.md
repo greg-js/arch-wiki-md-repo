@@ -12,10 +12,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [2 Configuration](#Configuration)
     *   [2.1 Creating ~/.nanorc](#Creating_.7E.2F.nanorc)
     *   [2.2 Syntax highlighting](#Syntax_highlighting)
-        *   [2.2.1 Enable highlighting](#Enable_highlighting)
-        *   [2.2.2 PKGBUILD](#PKGBUILD)
-        *   [2.2.3 Forth](#Forth)
-        *   [2.2.4 Other definitions](#Other_definitions)
+        *   [2.2.1 PKGBUILD](#PKGBUILD)
+        *   [2.2.2 Forth](#Forth)
+        *   [2.2.3 Other definitions](#Other_definitions)
     *   [2.3 Suggested configuration](#Suggested_configuration)
         *   [2.3.1 Suspension](#Suspension)
         *   [2.3.2 Text wrapping](#Text_wrapping)
@@ -53,15 +52,6 @@ Proceed to establish the nano console environment by setting and/or unsetting co
 **Note:** Command-line arguments override and take precedence over the configuration commands established in `~/.nanorc`
 
 ### Syntax highlighting
-
-#### Enable highlighting
-
-Install [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/)<sup><small>AUR</small></sup> package and run:
-
-```
-cat /usr/share/nano-syntax-highlighting/nanorc.sample | xargs -0 echo >> ~/.nanorc
-
-```
 
 #### PKGBUILD
 
@@ -450,7 +440,7 @@ Some window managers have keybindings that conflict with nano, for example `Alt+
 *   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nano&oldid=404015](https://wiki.archlinux.org/index.php?title=Nano&oldid=404015)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nano&oldid=416958](https://wiki.archlinux.org/index.php?title=Nano&oldid=416958)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

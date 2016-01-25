@@ -179,22 +179,6 @@ After the kernel loads, the Arch bootstrap image will copy the root filesystem v
 
 ### NBD
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** verify (Discuss in [Talk:PXE#](https://wiki.archlinux.org/index.php/Talk:PXE))
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:PXE#](https://wiki.archlinux.org/index.php/Talk:PXE))
-
 Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it:
 
  `# vim /etc/nbd-server/config` 
@@ -205,6 +189,8 @@ Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it:
     readonly = true
     exportname = /srv/archlinux-2013.02.01-dual.iso
 ```
+
+Start the `nbd` [systemd service](/index.php/Systemctl#Using_units "Systemctl").
 
 ### DHCP interface rename bug
 
@@ -218,7 +204,7 @@ It highly recommended to leave this option alone, and should only be disabled if
 
 **Note:** As this requires loop-mounting squashfs from a mounted remote filesystem, `copytoram=n` and `[archiso_pxe_http](#HTTP)` are mutually exclusive.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PXE&oldid=412151](https://wiki.archlinux.org/index.php?title=PXE&oldid=412151)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PXE&oldid=416848](https://wiki.archlinux.org/index.php?title=PXE&oldid=416848)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

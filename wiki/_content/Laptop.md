@@ -23,8 +23,7 @@ This page should contain links to pages needed for configuring a laptop for the 
     *   [2.5 Hard disk shock protection](#Hard_disk_shock_protection)
     *   [2.6 Hybrid graphics](#Hybrid_graphics)
 *   [3 Network time syncing](#Network_time_syncing)
-*   [4 Laptop sleep error](#Laptop_sleep_error)
-*   [5 See also](#See_also)
+*   [4 See also](#See_also)
 
 ## Power management
 
@@ -116,22 +115,6 @@ The laptop manufacturers developed new technologies involving two graphic cards 
 
 For a laptop, it may be a good idea to use [Chrony](/index.php/Chrony "Chrony") as an alternative to [NTPd](/index.php/NTPd "NTPd") or [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") to sync your clock over the network. Chrony is designed to work well even on systems with no permanent network connection (such as laptops), and is capable of much faster time synchronisation than standard ntp. Chrony has several advantages when used in systems running on virtual machines, such as a larger range for frequency correction to help correct quickly drifting clocks, and better response to rapid changes in the clock frequency. It also has a smaller memory footprint and no unnecessary process wakeups, improving power efficiency.
 
-## Laptop sleep error
-
-Error description
-
-The laptop screen will go to sleep about 10 seconds after displaying the TTY/Login Screen. [Edit](/index.php/Edit "Edit")
-
- `/etc/systemd/logind.conf` 
-
-```
-HandleSuspendKey=ignore
-HandleLidSwitch=ignore
-
-```
-
-N.B. Make sure jou remove the # at the beginning of those two lines. There may/will also be other enteries, just change those two.
-
 ## See also
 
 General
@@ -153,7 +136,7 @@ External resources
 *   [http://www.linux-on-laptops.com/](http://www.linux-on-laptops.com/)
 *   [http://www.linlap.com/](http://www.linlap.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop&oldid=415264](https://wiki.archlinux.org/index.php?title=Laptop&oldid=415264)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop&oldid=417028](https://wiki.archlinux.org/index.php?title=Laptop&oldid=417028)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

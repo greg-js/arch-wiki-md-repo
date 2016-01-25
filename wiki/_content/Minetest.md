@@ -12,7 +12,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Notes:** Does not have sufficient information on the topic. (Discuss in [Talk:Minetest#](https://wiki.archlinux.org/index.php/Talk:Minetest))
 
-**Minetest** is a free and open source voxel-based game engine, which uses the [Irrlicht](https://en.wikipedia.org/wiki/Irrlicht_(Engine) "wikipedia:Irrlicht (Engine)") rendering engine. The game engine comes with a default game, named "minetest-game", but also allows for the use of other games referred to as sub-games. Minetest was designed around some of the concepts used in [Minecraft](/index.php/Minecraft "Minecraft") and InfiniMiner. It borrows many concepts from Minecraft, such as "crafting recipies" and the overall mechanics of the game. However, it differs from both games in that it is an engine rather than a standalone game.
+**Minetest** is a free and open source voxel-based game engine, which uses the [Irrlicht](https://en.wikipedia.org/wiki/Irrlicht_Engine "wikipedia:Irrlicht Engine") rendering engine. The game engine comes with a default game, named "minetest-game", but also allows for the use of other games referred to as sub-games. Minetest was designed around some of the concepts used in [Minecraft](/index.php/Minecraft "Minecraft") and InfiniMiner. It borrows many concepts from Minecraft, such as "crafting recipies" and the overall mechanics of the game. However, it differs from both games in that it is an engine rather than a standalone game.
 
 ## Installation
 
@@ -25,8 +25,12 @@ A dedicated server package for the game engine is provided in [minetest-server](
 *   [Official Minetest website](http://www.minetest.net/)
 *   [Official Minetest wiki](http://wiki.minetest.net/Main_Page)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Minetest&oldid=414481](https://wiki.archlinux.org/index.php?title=Minetest&oldid=414481)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Minetest&oldid=417070](https://wiki.archlinux.org/index.php?title=Minetest&oldid=417070)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

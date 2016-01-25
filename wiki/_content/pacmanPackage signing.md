@@ -168,7 +168,7 @@ Errors occured, no packages were upgraded.
 
 There are multiple possible sources of this problem:
 
-*   Outdated [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package.
+*   An outdated [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package.
 *   Incorrect date.
 *   Your ISP blocked the port used to import PGP keys.
 *   Your _pacman_ cache contains copy of unsigned packages from previous attempts.
@@ -258,8 +258,13 @@ to `/etc/pacman.d/gnupg/gpg.conf`.
 *   [Pacman Package Signing – 3: Pacman](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)
 *   [Pacman Package Signing – 4: Arch Linux](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=413163](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=413163)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=416869](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&oldid=416869)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

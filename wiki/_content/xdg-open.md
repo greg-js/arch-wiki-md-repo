@@ -322,7 +322,7 @@ When _xdg-open_ fails to detect one of the [desktop environments](/index.php/Des
 
 Some environment variables, such as `BROWSER`, `DE`, and `DESKTOP_SESSION`, will change the behaviour of the default _xdg-open_. See [Environment variables](/index.php/Environment_variables "Environment variables") for more information.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=415692](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=415692)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=416957](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=416957)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

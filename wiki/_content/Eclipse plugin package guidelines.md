@@ -24,7 +24,7 @@ There are many ways to install working [Eclipse](/index.php/Eclipse "Eclipse") p
             *   [2.3.2.1 Extraction](#Extraction)
             *   [2.3.2.2 Locations](#Locations)
         *   [2.3.3 The build() function](#The_build.28.29_function)
-*   [3 Trouble Shooting Hints](#Trouble_Shooting_Hints)
+*   [3 Troubleshooting](#Troubleshooting)
 
 ## Eclipse plugin structure and installation
 
@@ -124,23 +124,12 @@ Some released features include their sources, too. For a normal release version 
 
 Next is the `features` section. It creates the necessary directories, one for every jar file, and extracts the jar in the corresponding directory. Similarly, the `plugins` section installs the jar files in their directory. A while cycle is used to prevent funny-named files.
 
-## Trouble Shooting Hints
+## Troubleshooting
 
-*   Sometimes cleaning of Eclipse helps to repair some problems:
+*   Sometimes cleaning of Eclipse helps to repair some problems: `$ eclipse -clean` 
+*   If new installed plugins do not appear in Eclipse, try with a clean `~/.eclipse` directory, for example by renaming the existing one. Be aware that this will of course make all the user-installed plugins via Marketplace unavailable.
 
-```
-$ eclipse -clean
-
-```
-
-*   If new installed plugins do not appear in Eclipse, try to remove the configuration folder of Eclipse in your home directory. But be aware, that all user installed plugins via Marketplace will be removed with this step:
-
-```
-$ rm -Rf ~/.eclipse
-
-```
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=416774](https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=416774)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=416944](https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=416944)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -393,7 +393,9 @@ See also [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773)
 
 #### Select the default PCM via environment variable
 
-Probably it's enough to set ALSA_CARD to the name of the device. First, get the names with `aplay -l`, then set ALSA_CARD to the name which comes after the colon and before the bracket; e.g. if you have
+**Tip:** An explanation of the terminology of a "card", "device", "subdevice" (a "card" is not a "device") and "PCM" can be found on [wikipedia:Advanced Linux Sound Architecture#Concepts](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture#Concepts "wikipedia:Advanced Linux Sound Architecture").
+
+Probably it is enough to set ALSA_CARD to the name of the device. First, get the names with `aplay -l`, then set ALSA_CARD to the name which comes after the colon and before the bracket; e.g. if you have
 
 `card 1: HDMI [HDA ATI HDMI], device 3: HDMI 0 [HDMI 0]`
 
@@ -544,7 +546,7 @@ snd_page_alloc         7017    2  snd_hda_intel,snd_pcm
 
 If the output looks similar, your sound drivers have been successfully autodetected.
 
-**Note:** Since `udev>=171`, the OSS emulation modules (`snd_seq_oss, snd_pcm_oss, snd_mixer_oss`) are not loaded by default: [Load them manually](/index.php/Kernel_modules#Loading "Kernel modules"), if they are needed.
+**Note:** Since `udev>=171`, the OSS emulation modules (`snd_seq_oss, snd_pcm_oss, snd_mixer_oss`) are not loaded by default: [Load them manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"), if they are needed.
 
 You might also want to check the directory `/dev/snd/` for the right device files:
 
@@ -570,9 +572,9 @@ If you have at least the devices **controlC0** and **pcmC0D0p** or similar, then
 If this is not the case, your sound modules have not been detected properly. To solve this, you can try loading the modules manually:
 
 *   Locate the module for your sound card: [ALSA Soundcard Matrix](http://www.alsa-project.org/main/index.php/Matrix:Main) The module will be prefixed with 'snd-' (for example: `snd-via82xx`).
-*   [Load the module](/index.php/Kernel_modules#Loading "Kernel modules").
+*   [Load the module](/index.php/Kernel_modules#Manual_module_handling "Kernel modules").
 *   Check for the device files in `/dev/snd` (see above) and/or try if `alsamixer` or `amixer` have reasonable output.
-*   Configure `snd-NAME-OF-MODULE` and `snd-pcm-oss` to [load at boot](/index.php/Kernel_modules#Loading "Kernel modules").
+*   Configure `snd-NAME-OF-MODULE` and `snd-pcm-oss` to [load at boot](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 ### Getting S/PDIF output
 
@@ -888,7 +890,7 @@ amixer set Master toggle
 *   [A close look at ALSA: ALSA concept introduction](http://www.volkerschatz.com/noise/alsa.html)
 *   [Linux ALSA sound notes](http://www.sabi.co.uk/Notes/linuxSoundALSA.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=416144](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=416144)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=416937](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=416937)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

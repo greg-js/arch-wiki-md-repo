@@ -144,7 +144,7 @@ Xft.rgba: rgb
 
 Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc`` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
 
-This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size!
+This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting Xft.dpi at the same time as toolkit scale (eg. GDK_SCALE) may cause interface elements to be much larger than intended in some programs like firefox.
 
 ## GUI toolkits
 
@@ -328,7 +328,7 @@ The default console font will be very small on hidpi displays, the largest font 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=414652](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=414652)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417076](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417076)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

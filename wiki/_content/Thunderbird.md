@@ -25,6 +25,7 @@ Mozilla [Thunderbird](https://www.mozilla.org/thunderbird/) is an open source em
     *   [3.3 FireTray - Tray icon](#FireTray_-_Tray_icon)
     *   [3.4 Lightning - Calendar](#Lightning_-_Calendar)
     *   [3.5 SOGo Connector (CardDAV)](#SOGo_Connector_.28CardDAV.29)
+    *   [3.6 Cardbook (CardDAV)](#Cardbook_.28CardDAV.29)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Setting the default browser](#Setting_the_default_browser)
     *   [4.2 Plain Text mode and font uniformity](#Plain_Text_mode_and_font_uniformity)
@@ -137,6 +138,10 @@ In case you are migrating a user profile (with Lightning installed there) from a
 [SOGo Connector](http://www.sogo.nu/english/downloads/frontends.html) allows to sync addressbooks via CardDAV.
 
 It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archlinux.org/packages/thunderbird-sogo-connector-bin/)<sup><small>AUR</small></sup>.
+
+### Cardbook (CardDAV)
+
+[Cardbook](https://addons.mozilla.org/en-US/thunderbird/addon/cardbook/) (VCard Addressbook): a new addressbook for Thunderbird based on the CARDDav and VCARD standards.
 
 ## Tips and tricks
 
@@ -289,8 +294,12 @@ $ pacman -S thunderbird
 
 8\. Import all your data.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=414726](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=414726)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=416872](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=416872)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

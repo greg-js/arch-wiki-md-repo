@@ -241,15 +241,6 @@ exit 0
 
 To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/)<sup><small>AUR</small></sup> or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/)<sup><small>AUR</small></sup> from the AUR.
 
-Insert the acpi_call kernel module by running
-
-```
-modprobe acpi_call
-
-```
-
-or by adding it to the MODULES array in /etc/rc.config.
-
 Manually set the thresholds by calling
 
 ```
@@ -266,7 +257,7 @@ The example values 40 and 80 given here are in percent of the full battery capac
 
 [tp_smapi on ThinkWiki](http://www.thinkwiki.org/wiki/Tp_smapi)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=412192](https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=412192)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=416983](https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=416983)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -10,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **This article or section needs language, wiki syntax or style improvements.**
 
-**Reason:** This article gives the impression mpd is only suited for post-doc graduates in rocket science, configuration is however quite simple. See the [User's manual](http://www.musicpd.org/doc/user/index.html). (Discuss in [Talk:Music Player Daemon#Style comment](https://wiki.archlinux.org/index.php/Talk:Music_Player_Daemon#Style_comment))
+**Reason:** Needs improvements in structure and clarify; compare to the [User's manual](http://www.musicpd.org/doc/user/index.html). (Discuss in [Talk:Music Player Daemon#Style comment](https://wiki.archlinux.org/index.php/Talk:Music_Player_Daemon#Style_comment))
 
 Related articles
 
@@ -357,8 +357,13 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 *   [MPD User Manual](http://www.musicpd.org/doc/user/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=414903](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=414903)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=417054](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=417054)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

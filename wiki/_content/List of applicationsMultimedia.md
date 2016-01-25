@@ -579,7 +579,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 [https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)<sup><small>AUR</small></sup>
 
-*   **Volnoti** — Volnoti is a lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
+*   **[Volnoti](/index.php/Volnoti "Volnoti")** — A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
 
 [https://github.com/davidbrazdil/volnoti](https://github.com/davidbrazdil/volnoti) || [volnoti](https://aur.archlinux.org/packages/volnoti/)<sup><small>AUR</small></sup>
 
@@ -947,7 +947,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 [http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=416034](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=416034)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=416947](https://wiki.archlinux.org/index.php?title=List_of_applications/Multimedia&oldid=416947)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

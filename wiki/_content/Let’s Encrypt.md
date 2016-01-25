@@ -49,7 +49,7 @@ You can use the webroot method to get/renew certificates with a running webserve
 
 ```
 [Unit]
-Description=Letsencrypt manual renewal
+Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
@@ -58,7 +58,7 @@ ExecStart=/usr/bin/letsencrypt certonly --agree-tos --renew-by-default --email _
 
 Make sure the server configuration for the certificates points to `/etc/letsencrypt/live/_your.domain_/`.
 
-Before adding a timer, check that the service is working correctly and not trying to prompt anything.
+Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and not trying to prompt anything.
 
 Then, you can add a timer to renew the certificates monthly.
 
@@ -66,7 +66,7 @@ Then, you can add a timer to renew the certificates monthly.
 
 ```
 [Unit]
-Description=Monthly renewal on letsencrypt's certificates
+Description=Monthly renewal of Let's Encrypt's certificates
 
 [Timer]
 OnCalendar=monthly
@@ -76,7 +76,11 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Let’s_Encrypt&oldid=411238](https://wiki.archlinux.org/index.php?title=Let’s_Encrypt&oldid=411238)"
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `letsencrypt.timer`. Also [start](/index.php/Start "Start") `letsencrypt.service` if you want to renew the certificates right now.
+
+If the new certificate is not visible to your web server, you might have to also restart it (e.g. `nginx.service` or `httpd.service`).
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Let’s_Encrypt&oldid=417027](https://wiki.archlinux.org/index.php?title=Let’s_Encrypt&oldid=417027)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

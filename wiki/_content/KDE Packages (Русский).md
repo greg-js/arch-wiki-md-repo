@@ -12,6 +12,14 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. [Команда переводчиков ArchWiki](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki "Команда переводчиков ArchWiki")
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** информация в этой статье устарела (Discuss in [Talk:KDE Packages (Русский)#](https://wiki.archlinux.org/index.php/Talk:KDE_Packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)))
+
 С выхода KDE SC 4.3, для каждого приложения существуют отдельные пакеты. В этой статье описываются понятия групп и мета-пакетов.
 
 ## Contents
@@ -154,10 +162,14 @@ for i in $(pacman -Sqg kde-meta); do pacman -Sg ${i#kde-meta-};done
 
 You could also use the web interface at [archlinux.de](https://www.archlinux.de/?page=Packages;group=5) to browse package groups.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=414488](https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=414488)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=416843](https://wiki.archlinux.org/index.php?title=KDE_Packages_(Русский)&oldid=416843)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Arch development (Русский)](/index.php/Category:Arch_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch development (Русский)")
 *   [Desktop environments (Русский)](/index.php/Category:Desktop_environments_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Desktop environments (Русский)")
 *   [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

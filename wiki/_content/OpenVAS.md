@@ -106,6 +106,8 @@ Point your web browser to [http://127.0.0.1](http://127.0.0.1) and login with yo
 
 ## Systemd
 
+Redhat based systemd units are in an AUR package named [openvas-systemd](https://aur.archlinux.org/packages/openvas-systemd/)<sup><small>AUR</small></sup>. The contain a few tweaks such as better TLS settings.
+
 At the time of writing, there are no service files provided with the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) that will maintain `openvasmd` or `gsad`. Until they are added, consider using and customizing the following service files to ease the deployment of a streamlined OpenVAS system:
 
 ```
@@ -156,7 +158,7 @@ The database needs to be migrated when moving to a new major version:
 
 *   [OpenVAS](http://www.openvas.org/) Official OpenVAS website.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=388691](https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=388691)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=416857](https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=416857)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -26,35 +26,38 @@ Related articles
     *   [1.7 Sample configuration](#Sample_configuration)
     *   [1.8 Validate configuration](#Validate_configuration)
 *   [2 Client configuration](#Client_configuration)
-    *   [2.1 Manual mounting](#Manual_mounting)
-        *   [2.1.1 Add Share to /etc/fstab](#Add_Share_to_.2Fetc.2Ffstab)
-        *   [2.1.2 User mounting](#User_mounting)
-    *   [2.2 WINS host names](#WINS_host_names)
-    *   [2.3 Automatic mounting](#Automatic_mounting)
-        *   [2.3.1 smbnetfs](#smbnetfs)
-            *   [2.3.1.1 Daemon](#Daemon)
-        *   [2.3.2 autofs](#autofs)
-    *   [2.4 File manager configuration](#File_manager_configuration)
-        *   [2.4.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
-        *   [2.4.2 KDE](#KDE)
-        *   [2.4.3 Other graphical environments](#Other_graphical_environments)
+    *   [2.1 List Public Shares](#List_Public_Shares)
+    *   [2.2 Manual mounting](#Manual_mounting)
+        *   [2.2.1 Add Share to /etc/fstab](#Add_Share_to_.2Fetc.2Ffstab)
+            *   [2.2.1.1 Storing Share Passwords](#Storing_Share_Passwords)
+            *   [2.2.1.2 systemd.automount](#systemd.automount)
+    *   [2.3 WINS host names](#WINS_host_names)
+    *   [2.4 Automatic mounting](#Automatic_mounting)
+        *   [2.4.1 smbnetfs](#smbnetfs)
+            *   [2.4.1.1 Daemon](#Daemon)
+        *   [2.4.2 autofs](#autofs)
+    *   [2.5 File manager configuration](#File_manager_configuration)
+        *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
+        *   [2.5.2 KDE](#KDE)
+        *   [2.5.3 Other graphical environments](#Other_graphical_environments)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
     *   [3.2 Discovering network shares](#Discovering_network_shares)
     *   [3.3 Remote control of Windows computer](#Remote_control_of_Windows_computer)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
-    *   [4.2 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
-    *   [4.3 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
-    *   [4.4 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
-    *   [4.5 Getting a dialog box up takes a long time](#Getting_a_dialog_box_up_takes_a_long_time)
-    *   [4.6 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
-    *   [4.7 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.8 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
-    *   [4.9 You are not the owner of the folder](#You_are_not_the_owner_of_the_folder)
-    *   [4.10 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.2 Unable to overwrite files on a share](#Unable_to_overwrite_files_on_a_share)
+    *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
+    *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
+    *   [4.5 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
+    *   [4.6 Getting a dialog box up takes a long time](#Getting_a_dialog_box_up_takes_a_long_time)
+    *   [4.7 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
+    *   [4.8 Sharing a folder fails](#Sharing_a_folder_fails)
+    *   [4.9 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.10 You are not the owner of the folder](#You_are_not_the_owner_of_the_folder)
+    *   [4.11 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -143,19 +146,16 @@ Log out and log back in. You should now be able to configure your samba share us
 
 ### Adding a user
 
-If it does not exist yet, create a [Linux user account](/index.php/Users_and_groups#User_management "Users and groups") for the Samba user. Substitute `_samba_user_` with your preferred name:
+You may use an existing user account or create a [Linux user account](/index.php/Users_and_groups#User_management "Users and groups") as Samba user.
 
-```
-# useradd _samba_user_
-
-```
-
-Samba users use a password separate from that of the Linux user accounts. Create the _Samba_ user account with the same name as in the previous command:
+Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
 
 ```
 # pdbedit -a -u _samba_user_
 
 ```
+
+**Note:** Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE), existing [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") may need to be altered for the Samba user account.
 
 ### Changing Samba user's password
 
@@ -178,35 +178,48 @@ See `man smb.conf` for details and explanation of configuration options. There i
 
 ```
 [global]
-	deadtime = 15
-	disable netbios = yes
-	dns proxy = no
-	hosts allow = 192.168.1\. 127\. 10.
-	invalid users = nobody root
-	load printers = no
-	map to guest = Bad User
-	max connections = 10
-	printing = bsd
-	printcap name = /dev/null
-	security = user
-	server string = My Samba Server
-	workgroup = WORKGROUP
+  deadtime = 60 ; This is useful to stop a server's resources being exhausted by a large number of inactive connections
+  disable netbios = yes ; Disable netbios announcing
+  dns proxy = no ; nmbd spawns a second copy of itself to do the DNS name lookup requests on 'yes'
+  hosts allow = 192.168.1\. 127\. 10\. ; This parameter is a comma, space, or tab delimited set of hosts which are permitted to access a service
+  invalid users = root ; This is a list of users that should not be allowed to login to this service
+  security = user ; Use as standalone file server
+  map to guest = Bad User ; Means user logins with an invalid password are rejected, or allow guest login and mapped into the guest account
+  max connections = 100 ; Number of simultaneous connections to a service to be limited
+  workgroup = WORKGROUP ; Workgroup the server will appear to be in when queried by clients
 
-        create mask = 0664
-        directory mask = 0775
-        force create mode = 0664
-        force directory mode = 0775
-        ;force group = +myusergroup
+  ; Uncomment the following lines to disable printer support
+  ;load printers = no
+  ;printing = bsd
+  ;printcap name = /dev/null
+  ;disable spoolss = yes
 
-[private]
-	comment = Private Share
-	path = /mnt/data
-        read only = no
-	valid users = myuser
+  ; Default permissions for all shares  
+  inherit owner = yes ; Take the ownership of the parent directory when creating files/folders
+  create mask = 0664 ; Create file mask
+  directory mask = 0775 ; Create director mask
+  force create mode = 0664 ; Force create file mask
+  force directory mode = 0775 ; Force create directory mask
+
+; Private Share
+[private] ; translate into: \\server\private
+  comment = My Private Share ; Seen next to a share when a client queries the server
+  path = /path/to/data ; Directory to which the user of the service is to be given access
+  read only = no ; An inverted synonym to writeable.
+  valid users = user1 user2 @group1 @group2; restrict a service to a particular set of users and/or groups
+
+; Public Share
+;[public]
+; comment = My Public Share
+; path = /path/to/public
+; read only = yes
+; guest ok = yes; No password required to connect to the service
 
 ```
 
-Restart the `smbd.service` and/or `nmbd.service` service(s) to apply configuration changes.
+Restart the `smbd` service to apply configuration changes.
+
+**Note:** Connected clients may need to reconnect before configuration changes take effect.
 
 ### Validate configuration
 
@@ -219,28 +232,24 @@ The command `testparm` validates the configuration of `smb.conf`:
 
 ## Client configuration
 
-Only [smbclient](https://www.archlinux.org/packages/?name=smbclient) is required to access files from a Samba/SMB/CIFS server. See `man smbclient` for commonly used commands.
+For a lightweight method (without support for listing public shares, etc.), only install [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to provide `/usr/bin/mount.cifs`.
 
-Shared resources from other computers on the LAN may be accessed and mounted locally by GUI or CLI methods. Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may not be available. See also [#File manager configuration](#File_manager_configuration) for use with a file manager.
+Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See `man smbclient` for commonly used commands.
 
-There are two parts in sharing access. The first is the underlying file system mechanism, which some environments have built in. The second is the interface which allows the user to mount shared resources.
+Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may be available. See [#File manager configuration](#File_manager_configuration) for use with a file manager.
 
-**Note:**
+**Note:** After installing [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) or [smbclient](https://www.archlinux.org/packages/?name=smbclient), load the `cifs` [kernel module](/index.php/Kernel_module "Kernel module") or reboot to prevent mount fails.
 
-*   After installing cifs-utils or smbclient, you must restart or modprobe cifs
-*   Otherwise mount fails with "cifs filesystem not supported by the system"
-*   If you have problems (a 3 min. timeout) while mounted a network share with cifs and doing a shutdown you could solve the problem with this description: [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant")
+### List Public Shares
 
-### Manual mounting
-
-For a lighter approach without support for listing public shares, only install [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to provide `/usr/bin/mount.cifs`.
-
-To list public shares on a server:
+To following command lists public shares on a server:
 
 ```
 $ smbclient -L _hostname_ -U%
 
 ```
+
+### Manual mounting
 
 Create a mount point for the share:
 
@@ -249,15 +258,19 @@ Create a mount point for the share:
 
 ```
 
-Mount the share using the `mount.cifs` type. Not all the options listed below are needed or desirable (ie. `password`).
+Mount the share using `mount.cifs` as `type`. Not all the options listed below are needed or desirable:
 
- `# mount -t cifs //_SERVER_/_sharename_ /mnt/_mountpoint_ -o user=_username_,password=_password_,workgroup=_workgroup_,ip=_serverip_` 
+ `# mount -t cifs //_SERVER_/_sharename_ /mnt/_mountpoint_ -o user=_username_,password=_password_,workgroup=_workgroup_,ip=_serverip_,iocharset=_utf8_` 
 
-**Note:** If you get the output "mount error(13): Permission denied", this might be due to a bug in mount.cifs. See the following bug report. [https://bugs.archlinux.org/task/43015#comment130771](https://bugs.archlinux.org/task/43015#comment130771) Try specifying the option "sec=ntlmv2" to work around it.
+To allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home, append the `users` mount option.
+
+**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually _user_; sans the "**s**".
+
+**Warning:** Using `uid` and/or `gid` as mount options may cause server I/O errors, it's recommended to set/check the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
 
 _SERVER_
 
-The Windows system name.
+The server name.
 
 _sharename_
 
@@ -273,43 +286,47 @@ See `man mount.cifs` for more information.
 
 **Note:**
 
+*   The output "mount error(13): Permission denied", might be due to a bug in mount.cifs. See the following bug report. [https://bugs.archlinux.org/task/43015#comment130771](https://bugs.archlinux.org/task/43015#comment130771)
+
+Try specifying the option "sec=ntlmv2" as workaround.
+
 *   Abstain from using a trailing `/`. `//_SERVER_/_sharename_**/**` will not work.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
+*   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant").
 
 #### Add Share to /etc/fstab
 
-The simplest way to add an fstab entry is something like this:
+This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
 
- `/etc/fstab`  `//_SERVER_/_sharename_ /mnt/_mountpoint_ cifs username=_username_,password=_password_ 0 0` 
-
-However, storing passwords in a world readable file is not recommended! A safer method would be to use a credentials file. As an example, create a file and `chmod 600 _filename_` so only the owning user can read and write to it. It should contain the following information:
-
- `/path/to/credentials/sambacreds` 
-
-```
-username=_username_
-password=_password_
-```
-
-and the line in your fstab should look something like this:
-
- `/etc/fstab`  `//SERVER/SHARENAME /mnt/_mountpoint_ cifs credentials=_/path/to/credentials/sambacreds_ 0 0` 
-
-If using _systemd_ (modern installations), one can utilize the `x-systemd.automount` option, which speeds up service boot by a few seconds. Also, one can map current user and group to make life a bit easier, utilizing `uid` and `gid` options.
-
-**Warning:** Using the `uid` and `gid` options may cause input ouput errors in programs that try to fetch data from network drives.
-
- `/etc/fstab`  `//_SERVER_/_SHARENAME_ /mnt/_mountpoint_ cifs credentials=_/path/to/smbcredentials_,x-systemd.automount,uid=_username_,gid=_usergroup_ 0 0` 
+ `/etc/fstab`  `//_SERVER_/_sharename_ /mnt/_mountpoint_ cifs username=_myuser_,password=_mypass_ 0 0` 
 
 **Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//_SERVER_/share name` on the command line should be `//_SERVER_/share\040name` in `/etc/fstab`.
 
-#### User mounting
+##### Storing Share Passwords
 
- `/etc/fstab`  `//_SERVER_/_SHARENAME_ /mnt/_mountpoint_ cifs users,credentials=_/path/to/smbcredentials_,workgroup=_workgroup_,ip=_serverip_ 0 0` 
+Storing passwords in a world readable file is not recommended. A safer method is to create a credentials file:
 
-**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually _user_; sans the "**s**".
+ `/path/to/credentials/share` 
 
-This will allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home. For users to be allowed to mount and unmount the Samba shares with mount points that they do not own, use [smbnetfs](#smbnetfs), or grant privileges using [sudo](/index.php/Sudo "Sudo").
+```
+username=_myuser_
+password=_mypass_
+```
+
+Replace `username=myuser,password=mypass` with `credentials=/path/to/credentials/share`.
+
+The credential file should explicitly readable/writeable to root:
+
+```
+# chmod 600 /path/to/credentials/share
+
+```
+
+##### systemd.automount
+
+To speed up the service on boot, add the `x-systemd.automount` option to the entry:
+
+ `/etc/fstab`  `//_SERVER_/_SHARENAME_ /mnt/_mountpoint_ cifs credentials=_/path/to/smbcredentials/share_,x-systemd.automount 0 0` 
 
 ### WINS host names
 
@@ -582,6 +599,10 @@ Check if the permissions are set correctly for `/var/cache/samba/` and restart t
 
 ```
 
+### Unable to overwrite files on a share
+
+Append the mount option `nodfs` to the `/etc/fstab` [entry](#Add_Share_to_.2Fetc.2Ffstab).
+
 ### Windows clients keep asking for password even if Samba shares are created with guest permissions
 
 Set `map to guest` inside the `global` section of `/etc/samba/smb.conf`:
@@ -709,7 +730,7 @@ Make sure that the server has started. The shared directories should exist and b
 *   [Samba: An Introduction](http://www.samba.org/samba/docs/SambaIntro.html)
 *   [Official Samba site](http://www.samba.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=414495](https://wiki.archlinux.org/index.php?title=Samba&oldid=414495)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=417069](https://wiki.archlinux.org/index.php?title=Samba&oldid=417069)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

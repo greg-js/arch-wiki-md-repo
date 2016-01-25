@@ -20,11 +20,7 @@ Much of this information has been based off of the wiki page for the [Dell Latit
     *   [5.1 Ethernet](#Ethernet)
     *   [5.2 Winmodem](#Winmodem)
 *   [6 Touchpad](#Touchpad)
-*   [7 Battery and Power Saving](#Battery_and_Power_Saving)
-    *   [7.1 APM](#APM)
-    *   [7.2 ACPI](#ACPI)
-*   [8 Volume Keys and Fans](#Volume_Keys_and_Fans)
-*   [9 External Links](#External_Links)
+*   [7 External Links](#External_Links)
 
 # Known Hardware
 
@@ -136,61 +132,11 @@ This adds all sorts neat features like a "scroll wheel" on the right, tap-to-cli
 
 The little joystick in the center of the keyboard also works perfectly.
 
-# Battery and Power Saving
-
-## APM
-
-I would suggest using APM instead of ACPI as it's easier, provides a longer battery time and most importantly works out of the box and even gives you a working suspend.
-
-Enabling APM with a stock kernel is very easy, you can turn it off by adding
-
-```
-acpi=off
-
-```
-
-to the kernel boot options and next boot you should have working APM.
-
-If your APM happens to be buggy or causes crashes you may need to update your BIOS which can be done using [this](http://gentoo-wiki.com/HARDWARE_Dell_Latitude_C600#APM) section of the Gentoo guide.
-
-You will also probably need apmd which you can install with
-
-```
-pacman -S apmd
-
-```
-
-and then adding "apmd" to your daemons list in rc.conf
-
-## ACPI
-
-I know this laptop is perfectly capable of using ACPI but I prefer to use APM so I do not have any information to give. If you want to test it out yourself install acpid and try looking around for some guides for it. Please add any working scripts you might find to this guide.
-
-# Volume Keys and Fans
-
-If you've wondered how you can get those volume keys working or even how to control the fans you're in luck, the i8k module and utils are perfectly compatible with the laptop. Make sure i8k is loaded with
-
-```
-modprobe i8k
-
-```
-
-and if you use your own kernel make sure you compile in "Dell Laptop Support".
-
-Next install i8kutils with
-
-```
-pacman -S i8kutils
-
-```
-
-and you're set to go. You can refer to the documentation for i8kutils on how to script the volume keys and control the fans.
-
 # External Links
 
 *   This document is listed at the [TuxMobil Linux laptop and notebook installation guides survey (DELL)](http://tuxmobil.org/dell.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_C600&oldid=196572](https://wiki.archlinux.org/index.php?title=Dell_Latitude_C600&oldid=196572)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_C600&oldid=416982](https://wiki.archlinux.org/index.php?title=Dell_Latitude_C600&oldid=416982)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -43,7 +43,6 @@ Related articles
     *   [5.14 Javascript context menu doesn't appear on some sites](#Javascript_context_menu_doesn.27t_appear_on_some_sites)
     *   [5.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
     *   [5.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [5.17 YouTube only plays videos with 240p, 320p and 720p](#YouTube_only_plays_videos_with_240p.2C_320p_and_720p)
 *   [6 See also](#See_also)
 
 ## Installing
@@ -178,9 +177,11 @@ Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-
 
 ### Multimedia playback
 
-Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package need to be installed.
+Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed. Additional optional dependencies ([gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) or [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly)) are needed to support the MP3 format inside the `<audio>` elements.
 
-Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5) or [this page](http://www.quirksmode.org/html5/tests/video.html) to verify that it is correctly installed and is in use.
+Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
+
+See also [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration.
 
 ## Troubleshooting
 
@@ -370,18 +371,6 @@ You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: 
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details.
 
-### YouTube only plays videos with 240p, 320p and 720p
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks").**
-
-**Notes:** Beats around the bush, any technical details should be merged (Discuss in [Talk:Firefox#](https://wiki.archlinux.org/index.php/Talk:Firefox))
-
-You probably have enabled the HTML5 mode for YouTube, which isn't fully supported for Firefox under Linux yet. One solution would be to just turn off the HTML5 mode on [YouTube.com/HTML5](https://www.youtube.com/html5) and use Flash. However if you want to watch videos in 60 fps, don't want to install flash or want better performance, you might want to try activating experimental features (especially MSE) instead with which YouTube works quite well. In order to do this, follow the steps on [Firefox_tweaks#Enable_additional_media_codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks"). If you encounter any problems (e.g. crashes, green screen or no sound) it is advised to use Flash instead.
-
 ## See also
 
 *   [Official website](http://www.mozilla.org/firefox/)
@@ -390,8 +379,15 @@ You probably have enabled the HTML5 mode for YouTube, which isn't fully supporte
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=414928](https://wiki.archlinux.org/index.php?title=Firefox&oldid=414928)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=416956](https://wiki.archlinux.org/index.php?title=Firefox&oldid=416956)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
