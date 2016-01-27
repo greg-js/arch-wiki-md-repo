@@ -52,6 +52,10 @@ $ git commit -a
 
 [https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)<sup><small>AUR</small></sup>
 
+*   **yadm** — Manages files across systems using a single Git repository. Provides a way to use alternate files on a specific OS or host. Supplies a method of encrypting confidential data so it can safely be stored in your repository.
+
+[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)<sup><small>AUR</small></sup>
+
 *   **etckeeper** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade; for pacman, these hooks currently have to be triggered manually.
 
 [http://joeyh.name/code/etckeeper/](http://joeyh.name/code/etckeeper/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
@@ -203,6 +207,26 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 <td>htop</td>
 
 <td>mutt-kz</td>
+
+<td>weechat</td>
+
+</tr>
+
+<tr>
+
+<th>[drkhsh](https://github.com/drkh5h/dotfiles)</th>
+
+<td>zsh</td>
+
+<td>dwm</td>
+
+<td>vim</td>
+
+<td>rxvt-unicode</td>
+
+<td>conky</td>
+
+<td>mutt</td>
 
 <td>weechat</td>
 
@@ -674,8 +698,13 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 *   [dotfiles.org](http://dotfiles.org)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-16]</sup> - [Copy of contents](http://techie.cat/all-contents-from-dotfiles-org/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-16]</sup>
 *   [dotfiles.github.io](https://dotfiles.github.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dotfiles&oldid=406222](https://wiki.archlinux.org/index.php?title=Dotfiles&oldid=406222)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dotfiles&oldid=417127](https://wiki.archlinux.org/index.php?title=Dotfiles&oldid=417127)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

@@ -39,6 +39,10 @@ Other lesser known implementations are found in the AUR:
 
 [http://sourceforge.net/projects/kpcli/](http://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)<sup><small>AUR</small></sup>
 
+*   **keeweb** — A desktop webapp compatible to KeePass 2.x.
+
+[https://github.com/antelle/keeweb](https://github.com/antelle/keeweb) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/)<sup><small>AUR</small></sup>
+
 ## Integration
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -81,8 +85,12 @@ Extension allowing Google Chrome and Chromium to form-fill passwords stored in K
 
 *   [Pass](/index.php/Pass "Pass")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=414304](https://wiki.archlinux.org/index.php?title=KeePass&oldid=414304)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=417241](https://wiki.archlinux.org/index.php?title=KeePass&oldid=417241)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -615,6 +615,32 @@ Install CD Version
 
 <tr>
 
+<td>[Inspiron 15 5000 Series (Model 5547)](/index.php/Dell_Inspiron_5547 "Dell Inspiron 5547")</td>
+
+<td>2016.01.25</td>
+
+<td>Hybrid graphics/AMD Radeon R7 M260/M265 works with [video-hybrid-intel-ati-bumblebee](https://www.archlinux.org/packages/?name=video-hybrid-intel-ati-bumblebee). Need to be testing with [PRIME](/index.php/PRIME "PRIME"), [catalyst](/index.php/Catalyst "Catalyst") untested</td>
+
+<td>Works with Intel HD Audio and [PulseAudio](/index.php/PulseAudio "PulseAudio"), but need to configure [microphone](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting")</td>
+
+<td>Yes</td>
+
+<td>Yes, works out of the box</td>
+
+<td>Yes, works out of the box</td>
+
+<td>Suspend-to-RAM untested. Hibernate untested. Disk spindown untested.</td>
+
+<td>No modem</td>
+
+<td>HDMI work, need configuration to swith between monitor. The touchpad work properly, but just test the basics</td>
+
+<td>Webcam works, SD card reader untested</td>
+
+</tr>
+
+<tr>
+
 <td>Precision M4800</td>
 
 <td>2014.04.01</td>
@@ -721,7 +747,7 @@ Install CD Version
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=416809](https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=416809)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=417197](https://wiki.archlinux.org/index.php?title=Laptop/Dell&oldid=417197)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

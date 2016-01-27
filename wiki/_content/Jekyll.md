@@ -72,7 +72,7 @@ There are numerous different markup languages that are used to define text-to-HT
 
 ### Markdown
 
-[Markdown](http://daringfireball.net/projects/markdown/) is a markup language and text-to-HTML conversion tool developed in Perl by [John Gruber](http://daringfireball.net/). A Perl and a Python implementation of Markdown can be found in the official repositories, while numerous other implementations are available in the [AUR](https://aur.archlinux.org/packages.php?O=0&K=markdown&do_Search=Go). The default implementation of Markdown in Jekyll is [Maruku](http://maruku.rubyforge.org/index.html).
+[Markdown](http://daringfireball.net/projects/markdown/) is a markup language and text-to-HTML conversion tool developed in Perl by [John Gruber](http://daringfireball.net/). A Perl and a Python implementation of Markdown can be found in the official repositories, while numerous other implementations are available in the [AUR](https://aur.archlinux.org/packages.php?O=0&K=markdown&do_Search=Go). The [default implementation](https://github.com/jekyll/jekyll/pull/1988) of Markdown in Jekyll is [kramdown](http://kramdown.gettalong.org/).
 
 Additionally, it has been implemented in C as [Discount](http://www.pell.portland.or.us/~orc/Code/discount/) by [David Parsons](http://www.pell.portland.or.us/~orc/) and a Ruby extension was written by [Ryan Tomayko](http://tomayko.com/) as [RDiscount](https://github.com/rtomayko/rdiscount). You can install RDiscount with Rubygems as root **or** through [ruby-rdiscount](https://www.archlinux.org/packages/?name=ruby-rdiscount) package.
 
@@ -232,7 +232,7 @@ It is recommended to define server options in your `_config.yml`. The default wi
     *   [http://pygments.org/](http://pygments.org/) - Pygments
     *   [http://rubygems.org/gems/directory_watcher](http://rubygems.org/gems/directory_watcher) - Directory Watcher
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412499](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=412499)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=417195](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=417195)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

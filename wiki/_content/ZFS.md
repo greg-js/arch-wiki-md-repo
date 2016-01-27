@@ -82,6 +82,8 @@ For users that desire ZFS builds from stable releases, [zfs-lts](https://aur.arc
 
 Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
 
+**Tip:** You can downgrade your linux version to the one from [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repo if your current kenel is newer. More info on [Downgrading_packages](/index.php/Downgrading_packages "Downgrading packages").
+
 ### Root on ZFS
 
 When performing an Arch install on ZFS, [zfs-git](https://aur.archlinux.org/packages/zfs-git/)<sup><small>AUR</small></sup> and its dependencies can be installed in the archiso environment as outlined in the previous section.
@@ -95,6 +97,10 @@ Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Ke
 Read the [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") wiki entry for a general understanding of the initial ramdisk environment, and adding the dkms hook [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
 
 Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/)<sup><small>AUR</small></sup> or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/)<sup><small>AUR</small></sup> and apply the post-install instructions given by these packages.
+
+**Warning:** It is advised to use the above methods first before trying the DKMS route. This method currently does not seem to work correctly (at least for me), with pacman not triggering DKMS after a kernel upgrade or reinstalling.
+
+**Tip:** add an I_gnorePkg = package_ entry to _/etc/pacman.conf_ to prevent these packages from upgrading when doing a regular update.
 
 ## Experimenting with ZFS
 
@@ -963,7 +969,7 @@ Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417034](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417034)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417165](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417165)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

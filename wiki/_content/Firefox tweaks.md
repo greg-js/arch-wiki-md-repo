@@ -400,6 +400,14 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 #### Hide window border and title bar in Plasma
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** Many windows managers will respect application's request (not) to show it's titlebar, so Plasma is able to do so as well. The extension mentioned below can hide Firefox titlebar automatically and there is no need to do some configuration in plasma settings. (Discuss in [Talk:Firefox tweaks#](https://wiki.archlinux.org/index.php/Talk:Firefox_tweaks))
+
 *   Open Settings -> Application Style -> Window Decorations
 *   Select Breeze and click on the Settings-button
 *   Open the tab Window-Specific Overrides and click on the Add button
@@ -964,7 +972,7 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=416952](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=416952)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=417146](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=417146)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -972,5 +980,6 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid
 
 Hidden categories:
 
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
 *   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
 *   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

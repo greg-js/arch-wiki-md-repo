@@ -765,6 +765,13 @@ Here `AUTOSSH_GATETIME=0` is an environment variable specifying how long ssh mus
 
 Remember to [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") the service afterwards.
 
+You may also need to disable ControlMaster e.g.
+
+```
+$ ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o TCPKeepAlive=yes foo@bar.com
+
+```
+
 **Tip:** It is also easy to maintain several autossh processes, to keep several tunnels alive. Just create multiple service files with different names.
 
 ## Troubleshooting
@@ -1047,8 +1054,13 @@ or in the ~/.ssh/config file:
 *   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=415057](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=415057)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=417185](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=417185)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

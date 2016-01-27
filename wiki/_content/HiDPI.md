@@ -127,7 +127,7 @@ If the DPI displayed by xdpyinfo is not correct, see [Xorg#Display size and DPI]
 
 ## X Resources
 
-If you are not using a desktop environment such as GNOME, KDE, Xfce, or other that manipulates the X settings for you, you can set the desired Xft DPI setting manually in `~/.Xresources`:
+If you are not using a desktop environment such as GNOME, KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in `~/.Xresources`:
 
  `~/.Xresources` 
 
@@ -144,7 +144,7 @@ Xft.rgba: rgb
 
 Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc`` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
 
-This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting Xft.dpi at the same time as toolkit scale (eg. GDK_SCALE) may cause interface elements to be much larger than intended in some programs like firefox.
+This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting `Xft.dpi` at the same time as toolkit scale (e.g. `GDK_SCALE`) may cause interface elements to be much larger than intended in some programs like firefox.
 
 ## GUI toolkits
 
@@ -328,7 +328,7 @@ The default console font will be very small on hidpi displays, the largest font 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417076](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417076)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417178](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417178)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

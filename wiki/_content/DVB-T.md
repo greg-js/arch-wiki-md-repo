@@ -41,7 +41,7 @@ You might also need to load `rtl2832` or `rtl2830`:
 
 ```
 
-**Warning:** If you have [RTL-SDR](/index.php/RTL-SDR "RTL-SDR") installed, note that it conflicts with this driver, and therefore blacklists it. Make sure to remove any necessary blacklists before loading the driver. The default location for the blacklist file is in `/etc/modprobe.d/rtlsdr.conf`.
+**Note:** If you have [RTL-SDR](/index.php/RTL-SDR "RTL-SDR") installed, note that it conflicts with this driver, and therefore blacklists it. Make sure to remove any necessary blacklists before loading the driver. The default location for the blacklist file is in `/etc/modprobe.d/rtlsdr.conf`.
 
 After plugging the device in, `dmesg` should show something like this:
 
@@ -220,7 +220,7 @@ If you bump into problems, try these tools to help debug:
 *   [dvbsnoop](https://aur.archlinux.org/packages/dvbsnoop/)<sup><small>AUR</small></sup> is an advanced tool that can show all the necessary data regarding the bandwidth, signal, frontend, etc.
 *   `femon -H` shows signal statistics
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=415347](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=415347)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=417134](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=417134)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -131,11 +131,13 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [1 BIOS updates](#BIOS_updates)
 *   [2 SATA controller](#SATA_controller)
 *   [3 NVM Express SSD](#NVM_Express_SSD)
+    *   [3.1 Note on Mount Options](#Note_on_Mount_Options)
 *   [4 Wireless](#Wireless)
 *   [5 Bluetooth](#Bluetooth)
 *   [6 Video](#Video)
 *   [7 Touchpad](#Touchpad)
 *   [8 Sound](#Sound)
+    *   [8.1 PulseAudio Workaround](#PulseAudio_Workaround)
 *   [9 Microphone](#Microphone)
 *   [10 Kernel specific notes](#Kernel_specific_notes)
 *   [11 Links](#Links)
@@ -169,6 +171,17 @@ Then update the bootloader.
 ```
 
 where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
+
+### Note on Mount Options
+
+As reported by a few users on [the forum](https://bbs.archlinux.org/viewtopic.php?id=205147&p=9) using the `discard` the mount options for your filesystem is not recommended by Intel in [the reference guide of the driver](https://downloadmirror.intel.com/23929/eng/Intel_Linux_NVMe_Driver_Reference_Guide_330602-002.pdf).
+
+An answer from [Intel Communities](https://communities.intel.com/thread/75161?start=0&tstart=0) suggests that the best option is to use the `fstrim` timer which is provided by [util-linux](https://www.archlinux.org/packages/?name=util-linux) and can be enabled simply through:
+
+```
+# systemctl enable fstrim.timer
+
+```
 
 ## Wireless
 
@@ -282,6 +295,37 @@ Also people noticed loud popping-noises when sound was not playing. You can turn
 
 ```
 
+### PulseAudio Workaround
+
+PulseAudio will override the above setting every time you log in/out of your environment (or every time the PulseAudio service is restarted), even if the `alsa-restore.service` is enabled at [start](/index.php/Start "Start") up.
+
+To work around this issue, edit `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf` and comment out the section `[Element Headphone Mic Boost]`:
+
+```
+ ---
+ #[Element Headphone Mic Boost]
+ #required-any = any
+ #switch = select
+ #volume = merge
+ #override-map.1 = all
+ #override-map.2 = all-left,all-right
+ ---
+
+```
+
+Similarly in `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf`, comment out the same section:
+
+```
+ ---
+ #[Element Headphone Mic Boost]
+ #switch = off
+ #volume = off
+ ---
+
+```
+
+This will prevent PulseAudio to fiddle with the gain setting at all. However, you must make the same modifications every time the PulseAudio package is updated.
+
 ## Microphone
 
 **Note:** Not all hardware has the "Digital" channel
@@ -298,7 +342,7 @@ The linux kernel in testing repository (4.4) supports wifi out-of-the-box, see [
 
 General Discussion Thread on Arch Forum [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=416295](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=416295)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417240](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417240)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -207,7 +207,7 @@ tcp_client_max_idle = 0
 
 Now you can view the logs of **all** configured hosts in the logfiles of the recieving auditd.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Audit_framework&oldid=416922](https://wiki.archlinux.org/index.php?title=Audit_framework&oldid=416922)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Audit_framework&oldid=417227](https://wiki.archlinux.org/index.php?title=Audit_framework&oldid=417227)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

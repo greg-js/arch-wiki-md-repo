@@ -37,6 +37,10 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 [http://www.nongnu.org/autocutsel/](http://www.nongnu.org/autocutsel/) || [autocutsel](https://www.archlinux.org/packages/?name=autocutsel)
 
+*   **Clipboard Indicator** — Clipboard manager extension for GNOME Shell. Adds a clipboard indicator to the top panel, and caches clipboard history.
+
+[https://extensions.gnome.org/extension/779/clipboard-indicator/](https://extensions.gnome.org/extension/779/clipboard-indicator/) || [https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator](https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator)
+
 *   **ClipIt** — Fork of Parcellite.
 
 [http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://www.archlinux.org/packages/?name=clipit)
@@ -102,8 +106,12 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 *   [Cut-and-paste in X](http://standards.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 *   [X Selections, Cut Buffers, and Kill Rings.](http://www.jwz.org/doc/x-cut-and-paste.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Clipboard&oldid=414449](https://wiki.archlinux.org/index.php?title=Clipboard&oldid=414449)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Clipboard&oldid=417207](https://wiki.archlinux.org/index.php?title=Clipboard&oldid=417207)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

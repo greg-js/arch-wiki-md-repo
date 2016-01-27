@@ -22,6 +22,8 @@ To [install](/index.php/Install "Install") the latest stable version of Rust, [i
 
 If you would like to build the stable or Beta from source, visit [Rust Downloads](http://www.rust-lang.org/install.html). You may also obtain [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/)<sup><small>AUR</small></sup> via the [AUR](/index.php/AUR "AUR") for the latest development snapshot (provides Cargo).
 
+An alternative is to use [multirust](https://aur.archlinux.org/packages/multirust/)<sup><small>AUR</small></sup>, a tool that allows to install and manage multiple rust installations (stable, beta, nightly), and easily switch between them.
+
 ### Test your installation
 
 Check that Rust is installed correctly by building a simple program, as follows:
@@ -76,9 +78,9 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ## Cargo
 
-[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/)<sup><small>AUR</small></sup>.
+[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/)<sup><small>AUR</small></sup>. If you use [multirust](https://aur.archlinux.org/packages/multirust/)<sup><small>AUR</small></sup>, it already includes cargo.
 
-Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build.
+Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build. You're encouraged to read the [official guide](http://doc.crates.io/guide.html).
 
 ### Usage
 
@@ -86,7 +88,9 @@ To create a new project using Cargo:
 
  `$ cargo new hello_world --bin` 
 
-**Note:** Cargo uses a file named `Cargo.toml`, a manifest containing all of the metadata that Cargo needs to compile your project. `Cargo.toml` 
+This creates a directory with a default `Cargo.toml` file, set to build an executable (because we included `--bin`, otherwise it would build a library).
+
+**Note:** Cargo uses this `Cargo.toml` as a manifest containing all of the metadata required to compile your project. `Cargo.toml` 
 
 ```
 [package]
@@ -104,7 +108,7 @@ authors = ["Your Name <you@example.com>"]
 *   [Page listing of Rust tutorials](https://github.com/ctjhoa/rust-learning)
 *   [Libraries(crates) avalaible through Cargo](https://crates.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Rust&oldid=416190](https://wiki.archlinux.org/index.php?title=Rust&oldid=416190)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Rust&oldid=417280](https://wiki.archlinux.org/index.php?title=Rust&oldid=417280)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

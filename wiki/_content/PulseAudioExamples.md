@@ -34,9 +34,10 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [10 PulseAudio through OSS](#PulseAudio_through_OSS)
 *   [11 PulseAudio from within a chroot (e.g. 32-bit chroot in 64-bit install)](#PulseAudio_from_within_a_chroot_.28e.g._32-bit_chroot_in_64-bit_install.29)
 *   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
-*   [13 Remap stereo to mono](#Remap_stereo_to_mono)
-*   [14 Swap left/right channels](#Swap_left.2Fright_channels)
-*   [15 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
+*   [13 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
+*   [14 Remap stereo to mono](#Remap_stereo_to_mono)
+*   [15 Swap left/right channels](#Swap_left.2Fright_channels)
+*   [16 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
 
 ## Set default input sources
 
@@ -767,13 +768,12 @@ For specific direction on accomplishing the appropriate mounts, please refer to 
 
 ## Disabling automatic spawning of PulseAudio server
 
-Some users may prefer to manually start the PulseAudio server before running certain programs and then stop the PulseAudio server when they are finished. A simple way to accomplish this is to edit `/etc/pulse/client.conf` and change `autospawn = yes` to `autospawn = no`, and set `daemon-binary = /bin/true`. Make sure the two lines are uncommented as well.
+Some users may prefer to manually start the PulseAudio server before running certain programs and then stop the PulseAudio server when they are finished. A simple way to accomplish this is to edit `~/.config/pulse/client.conf` or `/etc/pulse/client.conf` and change `autospawn = yes` to `autospawn=no`. Make sure the line is uncommented as well.
 
- `/etc/pulse/client.conf` 
+ `~/.config/pulse/client.conf #or /etc/pulse/client.conf` 
 
 ```
-autospawn = no
-daemon-binary = /bin/true 
+autospawn=no
 
 ```
 
@@ -791,7 +791,18 @@ $ pulseaudio --kill
 
 ```
 
-You may also have to move or delete a .desktop file in `/etc/xdg/autostart` if it exists.
+This setting is also respected by the default pulseaudio dektop session startup script `start-pulseaudio-x11` which is executed from `/etc/xdg/autostart/pulseaudio.desktop`.
+
+## Disabling pulseaudio daemon altogether
+
+To disable the pulseaudio daemon completely, and thereby preventing it from starting, one can add `daemon-binary=/bin/true` to the configuration file.
+
+ `~/.config/pulse/client.conf #or /etc/pulse/client.conf` 
+
+```
+daemon-binary=/bin/true
+
+```
 
 ## Remap stereo to mono
 
@@ -880,8 +891,12 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414945](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=414945)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=417103](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=417103)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

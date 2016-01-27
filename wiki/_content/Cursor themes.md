@@ -127,7 +127,7 @@ Xcursor.theme: cursor-theme
 To have the cursor theme properly loaded it will need to be done so by the window manager; if it does not, it can be forced to load prior the window manager by putting the following command in `~/.xinitrc` or [.xprofile](/index.php/.xprofile ".xprofile") (depending on ones personal setup):
 
 ```
-$ xrdb ~/.Xresources &
+$ xrdb ~/.Xresources
 
 ```
 
@@ -267,7 +267,7 @@ For more information see [Awesome wiki](http://awesome.naquadah.org/wiki/FAQ#How
 
 *   [man Xcursor](http://www.x.org/releases/current/doc/man/man3/Xcursor.3.xhtml) — For more information about cursors in X (supported directories, formats, compatibility, etc.).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cursor_themes&oldid=405316](https://wiki.archlinux.org/index.php?title=Cursor_themes&oldid=405316)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cursor_themes&oldid=417220](https://wiki.archlinux.org/index.php?title=Cursor_themes&oldid=417220)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -884,6 +884,18 @@ If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM
 
 <tr>
 
+<td>**Sennheiser URBANITE XL Wireless**</td>
+
+<td>bluez 5.37-2, pulseaudio 7.1-3</td>
+
+<td>A2DP High Fidelity Playback. Play/Pause/Next/Previous works out-of-the-box.</td>
+
+<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
+
+</tr>
+
+<tr>
+
 <td>**Audionic BlueBeats (B-777)**</td>
 
 <td>bluez5, pulseaudio 4.0-6</td>
@@ -1172,9 +1184,15 @@ Using the same device on Windows and Linux without pairing the device over and o
 
 *   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=414069](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=414069)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=417113](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=417113)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
 *   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

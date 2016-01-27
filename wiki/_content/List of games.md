@@ -1064,6 +1064,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://wz2100.net/](http://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
 
+*   **[Zero-K](https://en.wikipedia.org/wiki/Zero-K "wikipedia:Zero-K")** — Zero-K is a free multi-platform open source real-time strategy computer game. Initially based on content from Total Annihilation on the open source Spring Engine, it was forked and all proprietary content replaced, and evolved into a completely new game with unique features. It can be easily installed by installing mono and downloading and running the Zero-K lobby from the official website at [http://zero-k.info/](http://zero-k.info/)
+
+[https://en.wikipedia.org/wiki/Zero-K](https://en.wikipedia.org/wiki/Zero-K) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 ## Tycoon/Management Games
 
 *   **Lincity-ng** — City simulation game in which you are required to build and maintain a city. You can win the game either by building a sustainable economy or by evacuating all citizens with spaceships.
@@ -1124,7 +1128,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416256](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=416256)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=417270](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=417270)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

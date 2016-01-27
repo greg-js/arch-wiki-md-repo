@@ -475,7 +475,7 @@ This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not use
 *   [The homepage at xen.org](http://www.xen.org/)
 *   [The wiki at xen.org](http://wiki.xen.org/wiki/Main_Page)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen&oldid=417003](https://wiki.archlinux.org/index.php?title=Xen&oldid=417003)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen&oldid=417082](https://wiki.archlinux.org/index.php?title=Xen&oldid=417082)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

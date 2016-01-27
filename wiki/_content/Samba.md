@@ -46,7 +46,7 @@ Related articles
     *   [3.3 Remote control of Windows computer](#Remote_control_of_Windows_computer)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
-    *   [4.2 Unable to overwrite files on a share](#Unable_to_overwrite_files_on_a_share)
+    *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
     *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
     *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
     *   [4.5 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
@@ -260,13 +260,13 @@ Create a mount point for the share:
 
 Mount the share using `mount.cifs` as `type`. Not all the options listed below are needed or desirable:
 
- `# mount -t cifs //_SERVER_/_sharename_ /mnt/_mountpoint_ -o user=_username_,password=_password_,workgroup=_workgroup_,ip=_serverip_,iocharset=_utf8_` 
+ `# mount -t cifs //_SERVER_/_sharename_ /mnt/_mountpoint_ -o user=_username_,password=_password_,uid=_username_,gid=_group_,workgroup=_workgroup_,ip=_serverip_,iocharset=_utf8_` 
 
 To allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home, append the `users` mount option.
 
 **Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually _user_; sans the "**s**".
 
-**Warning:** Using `uid` and/or `gid` as mount options may cause server I/O errors, it's recommended to set/check the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
+**Warning:** Using `uid` and/or `gid` as mount options may cause I/O errors, it's recommended to set/check the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
 
 _SERVER_
 
@@ -599,9 +599,12 @@ Check if the permissions are set correctly for `/var/cache/samba/` and restart t
 
 ```
 
-### Unable to overwrite files on a share
+### Unable to overwrite files, permissions errors
 
-Append the mount option `nodfs` to the `/etc/fstab` [entry](#Add_Share_to_.2Fetc.2Ffstab).
+Possible solutions:
+
+*   Append the mount option `nodfs` to the `/etc/fstab` [entry](#Add_Share_to_.2Fetc.2Ffstab).
+*   Add `msdfs root = no` to the `[global]` section of the server's `/etc/samba/smb.conf`.
 
 ### Windows clients keep asking for password even if Samba shares are created with guest permissions
 
@@ -730,7 +733,7 @@ Make sure that the server has started. The shared directories should exist and b
 *   [Samba: An Introduction](http://www.samba.org/samba/docs/SambaIntro.html)
 *   [Official Samba site](http://www.samba.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=417069](https://wiki.archlinux.org/index.php?title=Samba&oldid=417069)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=417250](https://wiki.archlinux.org/index.php?title=Samba&oldid=417250)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

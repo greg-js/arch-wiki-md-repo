@@ -588,6 +588,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Learn Vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
 *   [know vim](http://www.knowvim.com/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-10-29]</sup>
 *   [Learning Vim in 2014](http://benmccormick.org/learning-vim-in-2014/)
+*   [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
 
 #### Videos
 
@@ -618,7 +619,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/) — a reference chart for Vim, primarily aimed at beginners.
 *   [Vim colorscheme tailoring](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — override installed colorscheme to try-out or permanently alter.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=415689](https://wiki.archlinux.org/index.php?title=Vim&oldid=415689)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=417244](https://wiki.archlinux.org/index.php?title=Vim&oldid=417244)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -174,22 +174,22 @@ extension=sqlite3.so
 
 ## 缓存
 
-There are two kinds of caching in PHP: _opcode_/_bytecode_ caching and _userland_/_user data_ caching. Both allow for substantial gains in applications speed, and therefore should be enabled wherever possible.
+PHP有两种缓存： _opcode_/_bytecode_ 缓存和_userland_/_user data_ 缓存，这两种缓存都大幅度提升性能，因此最好开启。
 
-*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache") provides only _opcode_ caching.
-*   [APCu](https://github.com/krakjoe/apcu/) provides only _userland_ caching.
+*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache")仅提供_opcode_缓存。
+*   [APCu](https://github.com/krakjoe/apcu/)仅提供_userland_缓存
 
-For optimal caching, you should enable **both**. To do this, follow _both_ [#OPCache](#OPCache) _and_ [#APCu](#APCu).
+要获得最佳性能，应当开启两种缓存。按照下面[#OPCache](#OPCache)和[#APCu](#APCu)的步骤操作即可。
 
 ### OPCache
 
-OPCache comes bundled with the standard PHP distribution, therefore to enable it you simply have to add or uncomment the following line in your [PHP configuration file](#Configuration):
+OPCache随PHP发布，因此在[PHP configuration file](#Configuration)中开启或添加下面两行即可：
 
  `/etc/php/php.ini`  `zend_extension=opcache.so` 
 
-A list of its options and suggested settings can be found in its [official entry](https://secure.php.net/manual/en/book.opcache.php) on the PHP website.
+你可在[官网](https://secure.php.net/manual/en/book.opcache.php) 找到其他设置以及建议设置。
 
-**Warning:** If you choose to apply the [suggested settings](https://secure.php.net/manual/en/opcache.installation.php#opcache.installation.recommended) its manual offers, be sure to read carefully [the first comment](https://secure.php.net/manual/en/opcache.installation.php#114567) below those instructions as well. In some configurations those settings result in errors such as `zend_mm_heap corrupted` being produced.
+**警告:** 如果你使用[推荐设置](https://secure.php.net/manual/en/opcache.installation.php#opcache.installation.recommended)，要确保你一仔细看过[说明](https://secure.php.net/manual/en/opcache.installation.php#114567)，某些情况下可能导致如下错误：`zend_mm_heap corrupted`。
 
 ### APCu
 
@@ -262,7 +262,7 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdate
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416924](https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=416924)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=417090](https://wiki.archlinux.org/index.php?title=PHP_(简体中文)&oldid=417090)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

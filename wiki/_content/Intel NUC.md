@@ -28,15 +28,17 @@ Follow usual [installation guide](/index.php/Installation_guide "Installation gu
 
 It is highly recommended to update the board BIOS prior to installation. See [official Intel BIOS update instructions](https://www-ssl.intel.com/content/www/us/en/support/boards-and-kits/000005636.html) for details.
 
+**Note:** Prior to BIOS update, review the community response to the latest BIOS version compatability with the specific NUC model, as some versions are known to cause new regressions.
+
 ### NVMe
 
-Intel NUCs support NVMe connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
+Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
 
 ### Graphics
 
-Most NUCs use integrated [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics").
+Most NUCs use integrated [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics"). Make sure to install [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") to enjoy the hardware graphics acceleration on supported NUC models.
 
-**Note:** The `i915` driver might throw kernel log errors. They should be resolved in 4.4.x kernel
+**Note:** The `i915` driver might throw kernel log errors. They should be resolved in 4.4.x kernel.
 
 ### Wireless
 
@@ -72,7 +74,7 @@ The workaround for this issue is to disable all wake-on-CIR (infrared sensor) op
 
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416845](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=416845)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417199](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417199)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

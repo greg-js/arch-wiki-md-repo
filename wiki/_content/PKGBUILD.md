@@ -337,7 +337,7 @@ An array of SHA-2 checksums with digest sizes 224, 384, and 512 bits, respective
 *   [PKGBUILD(5) Manual Page](https://www.archlinux.org/pacman/PKGBUILD.5.html)
 *   [Example PKGBUILD file](http://ix.io/kXu)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=413746](https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=413746)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=417095](https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=417095)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -55,7 +55,7 @@ There are several [programs and editors](http://www.minecraftwiki.net/wiki/Progr
 
 ### Installation
 
-**Note:** Regardless of how you install the Minecraft server, it will need [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk](https://aur.archlinux.org/packages/jdk/)<sup><small>AUR</small></sup> or [jdk7](https://aur.archlinux.org/packages/jdk7/)<sup><small>AUR</small></sup>) instead. Your mileage may vary.
+**Note:** Regardless of how you install the Minecraft server, it will need [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)<sup><small>AUR</small></sup>) instead. Your mileage may vary.
 
 The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/)<sup><small>AUR</small></sup> package. It provides additional systemd unit files and includes a small control script.
 
@@ -99,8 +99,12 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 *   [Block and item data values](http://www.minecraftwiki.net/wiki/Data_values)
 *   [Reddit Minecraft community](http://www.reddit.com/r/minecraft)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Minecraft&oldid=409809](https://wiki.archlinux.org/index.php?title=Minecraft&oldid=409809)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Minecraft&oldid=417208](https://wiki.archlinux.org/index.php?title=Minecraft&oldid=417208)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

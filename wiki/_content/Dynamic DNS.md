@@ -13,14 +13,16 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [1.2 DNSdynamic](#DNSdynamic)
     *   [1.3 duiadns](#duiadns)
     *   [1.4 No-IP](#No-IP)
-    *   [1.5 System-NS](#System-NS)
-    *   [1.6 DuckDNS](#DuckDNS)
-    *   [1.7 FreeDns.io](#FreeDns.io)
-    *   [1.8 ChangeIP](#ChangeIP)
+    *   [1.5 nsupdate.info](#nsupdate.info)
+    *   [1.6 System-NS](#System-NS)
+    *   [1.7 DuckDNS](#DuckDNS)
+    *   [1.8 FreeDns.io](#FreeDns.io)
+    *   [1.9 ChangeIP](#ChangeIP)
 *   [2 Tools Supporting Multiple Dynamic DNS Services](#Tools_Supporting_Multiple_Dynamic_DNS_Services)
     *   [2.1 Router](#Router)
     *   [2.2 ddclient](#ddclient)
         *   [2.2.1 Starting ddclient after networking is up](#Starting_ddclient_after_networking_is_up)
+        *   [2.2.2 Compatible Services](#Compatible_Services)
     *   [2.3 Other](#Other)
 
 ## Dynamic DNS Providers
@@ -88,6 +90,33 @@ Configure the client by running
 ```
 
 See `noip2 -h` for more options. [Start](/index.php/Start "Start") `noip2.service` to run the host updater and [enable](/index.php/Enable "Enable") it to run automatically at boot.
+
+### nsupdate.info
+
+[nsupdate.info](https://www.nsupdate.info/) is a free and open source dynamic DNS service. One can use [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/)<sup><small>AUR</small></sup> to update the ip. An example configuration:
+
+ `/etc/inadyn.conf` 
+
+```
+background
+verbose        5
+period         300
+cache-dir      /mnt/ddns
+startup-delay  60
+syslog
+
+#logfile /var/log/ddns.log
+#pidfile /var/run/ddns.pid
+
+system ipv4@nsupdate.info
+	ssl
+	username your_host_name.nsupdate.info
+	password PassWoRd_given_on_site
+	alias your_host_name.nsupdate.info
+
+```
+
+You should then [start](/index.php/Start "Start") `inadyn.service` and [enable](/index.php/Enable "Enable") it to automatically start on boot.
 
 ### System-NS
 
@@ -222,6 +251,108 @@ ExecStart=/usr/bin/ddclient
 *   A full replacement must be created, because a drop-in override cannot modify the `[Install]` section of a unit file. Make sure to disable and reenable the `ddclient.service` so that the symlink is put into the right place.
 *   It may be necessary to configure the network manager to activate `network-online.target` (for [netctl](/index.php/Netctl "Netctl") see [netctl#Activate network-online.target](/index.php/Netctl#Activate_network-online.target "Netctl")).
 
+#### Compatible Services
+
+<table class="wikitable">
+
+<tbody>
+
+<tr>
+
+<th>Service</th>
+
+<th>Cost</th>
+
+<th>Records</th>
+
+<th>Hostname Limit</th>
+
+<th>Config Notes</th>
+
+<th>Alternative tools</th>
+
+</tr>
+
+<tr>
+
+<th>[FreeDNS](http://freedns.afraid.org/)</th>
+
+<td>Free or paid</td>
+
+<td>CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV</td>
+
+<td>5 free</td>
+
+<td>[example](http://freedns.afraid.org/scripts/freedns.clients.php)</td>
+
+<td>[afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/)<sup><small>AUR</small></sup>, [petrified](https://aur.archlinux.org/packages/petrified/)<sup><small>AUR</small></sup></td>
+
+</tr>
+
+<tr>
+
+<th>[DNSdynamic](http://www.dnsdynamic.org/)</th>
+
+<td>Free</td>
+
+<td>[example](https://www.dnsdynamic.org/api.php)</td>
+
+</tr>
+
+<tr>
+
+<th>[No-IP](http://www.noip.com/)</th>
+
+<td>Free or paid</td>
+
+<td>3 free, 25+ paid</td>
+
+<td>Use protocol `dyndns2`, server `dynupdate.noip.com`</td>
+
+<td>[noip](https://aur.archlinux.org/packages/noip/)<sup><small>AUR</small></sup></td>
+
+</tr>
+
+<tr>
+
+<th>[nsupdate.info](https://www.nsupdate.info/)</th>
+
+<td>Free and open source</td>
+
+<td>A, AAAA</td>
+
+<td>Use protocol `dyndns2`</td>
+
+<td>[inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/)<sup><small>AUR</small></sup></td>
+
+</tr>
+
+<tr>
+
+<th>[Duck DNS](https://www.duckdns.org/)</th>
+
+<td>Free</td>
+
+<td>[duckdns](https://aur.archlinux.org/packages/duckdns/)<sup><small>AUR</small></sup></td>
+
+</tr>
+
+<tr>
+
+<th>[ChangeIP](http://www.changeip.com/)</th>
+
+<td>Free or paid</td>
+
+<td>A, AAAA, CNAME, MX, codomains</td>
+
+<td>7 free</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
 ### Other
 
 There are other DDNS updaters that work with several providers including:
@@ -234,8 +365,12 @@ ndyndns
 
 In the [AUR](/index.php/AUR "AUR") as [ndyndns](https://aur.archlinux.org/packages/ndyndns/)<sup><small>AUR</small></sup>. Update client for the dynamic DNS services from DynDNS and Namecheap.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=414110](https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=414110)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=417283](https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=417283)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

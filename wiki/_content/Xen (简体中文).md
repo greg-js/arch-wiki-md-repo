@@ -9,6 +9,14 @@ Related articles
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
+
+**本页面或部分需要翻译，部分内容可能已经与英文文章脱节。如果您希望贡献翻译，请访问[简体中文翻译组](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")。**
+
+**附注:** please use the first argument of the template to provide more detailed indications.
+
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
 _Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances._
@@ -475,7 +483,7 @@ This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not use
 *   [The homepage at xen.org](http://www.xen.org/)
 *   [The wiki at xen.org](http://wiki.xen.org/wiki/Main_Page)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen_(简体中文)&oldid=417007](https://wiki.archlinux.org/index.php?title=Xen_(简体中文)&oldid=417007)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen_(简体中文)&oldid=417083](https://wiki.archlinux.org/index.php?title=Xen_(简体中文)&oldid=417083)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

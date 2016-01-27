@@ -54,16 +54,7 @@ You can do this on the fly or add these parameters in the config file:
 
 **UX305C:**
 
-Touchpad does not work at all. "i8042.nomux=1 i8042.noloop=1" do not work when appended to the kernel parameter line. Nothing shows in xinput
-
-This is how the device appears in dmesg:
-
-```
- pnp 00:04: Plug and Play ACPI device, IDs ATK3001 PNP030b (active)
-
-```
-
-There appears to be a bug filed: [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=108581)
+Touchpad will only work by default with Linux 4.5.0-rc1 or later. Can currently be used by installing [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>.
 
 ### Wifi
 
@@ -146,8 +137,12 @@ For whatever reason, `xev` does not return any events for the standard brightnes
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX31a](https://wiki.debian.org/InstallingDebianOn/Asus/UX31a)
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA](https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414542](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=414542)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=417216](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX305&oldid=417216)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ASUS](/index.php/Category:ASUS "Category:ASUS")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

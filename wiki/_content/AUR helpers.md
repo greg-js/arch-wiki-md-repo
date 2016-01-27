@@ -195,7 +195,7 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 **Note:**
 
-*   _Secure_ means that the application, by default, does not source the PKGBUILD at all, or, before doing it, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, allowing malicious code to be executed. Optional means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
+*   _Secure_ means that the application, by default, does not source the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, allowing malicious code to be executed. _Optional_ means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   _Clean build_ means that no new variables are exported to the build process.
 *   _Git clone_ means that the helper uses git clones instead of tarballs in line with AUR 4.
 
@@ -585,8 +585,12 @@ Repository: [GitHub](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-gi
 
 *   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=413185](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=413185)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=417243](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=417243)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

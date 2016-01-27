@@ -31,11 +31,14 @@ This article is about **Dolphin**, the default [file manager](/index.php/Categor
     *   [3.1 No search results](#No_search_results)
     *   [3.2 Transparent fonts](#Transparent_fonts)
     *   [3.3 Unicode characters are not shown](#Unicode_characters_are_not_shown)
+    *   [3.4 Crashes on mounted SMB share](#Crashes_on_mounted_SMB_share)
 *   [4 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dolphinpart4](https://www.archlinux.org/packages/?name=dolphinpart4) package. For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). The _Compare files_ dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
+[Install](/index.php/Install "Install") the [dolphin](https://www.archlinux.org/packages/?name=dolphin) package, or [dolphinpart4](https://www.archlinux.org/packages/?name=dolphinpart4) for the legacy KDE4 version.
+
+For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). The _Compare files_ dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
 
 ### File previews
 
@@ -72,13 +75,17 @@ Fonts in selection frames may become transparent when using the [GTK+ Qt style](
 
 This was a general issue in Qt4 and [kdelibs](https://www.archlinux.org/packages/?name=kdelibs), solved in v4.11 and later versions. [[2]](https://bugs.kde.org/show_bug.cgi?id=165044#c145)
 
+### Crashes on mounted SMB share
+
+See [Samba#Unable to overwrite files](/index.php/Samba#Unable_to_overwrite_files.2C_permissions_errors "Samba").
+
 ## See also
 
 *   [Wikipedia:Dolphin (file manager)](https://en.wikipedia.org/wiki/Dolphin_(file_manager) "wikipedia:Dolphin (file manager)")
 *   [KDE userbase: Dolphin](https://userbase.kde.org/Dolphin)
 *   [Dolphin Handbook](https://docs.kde.org/stable/en/applications/dolphin/index.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=416173](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=416173)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=417167](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=417167)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

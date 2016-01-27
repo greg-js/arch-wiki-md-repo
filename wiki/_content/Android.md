@@ -39,7 +39,7 @@ Related articles
     *   [3.8 Creating a Flashable Image](#Creating_a_Flashable_Image)
 *   [4 Restoring Android](#Restoring_Android)
     *   [4.1 Fastboot](#Fastboot)
-    *   [4.2 Samsung](#Samsung)
+    *   [4.2 Samsung devices](#Samsung_devices)
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
 *   [5 Alternative connection methods](#Alternative_connection_methods)
@@ -78,7 +78,7 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 ### Android SDK core components
 
-**Note:** First, if you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled in [pacman.conf](/index.php/Pacman#Repositories "Pacman"). Otherwise errors of the type: "error: target not found: lib32-zlib" will plague your installation attempt.
+**Note:** If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid "error: target not found: lib32-zlib" error messages.
 
 Before developing Android applications, you need to install the Android SDK, which is made of 3 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
@@ -542,9 +542,9 @@ Fastboot (as well as [ADB](#Connecting_to_a_real_device_-_Android_Debug_Bridge_.
 
 **Note:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
 
-### Samsung
+### Samsung devices
 
-Samsung does not support fastboot in any way. Using Odin is safer, easier and more popular than Heimdall, but it is up to you.
+Samsung devices can't be flashed using **Fastboot** tool. Alternatives are only **Heimdall** and **Odin** (by using Windows and VirtualBox).
 
 #### Heimdall
 
@@ -558,16 +558,16 @@ It is also possible to restore stock Android on the Samsung devices using [Odin]
 
 Arch Linux related steps:
 
-1.  Install [VirtualBox](/index.php/VirtualBox "VirtualBox") together with its [extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox"). Optionally, install [guest additions](/index.php/VirtualBox#Guest_additions_disc "VirtualBox").
-2.  Install your preferred, but compatible with Odin, Windows operating system into a virtual hard drive using VirtualBox. Optionally, install guest additions to the Windows operating system.
+1.  Install [VirtualBox](/index.php/VirtualBox "VirtualBox") together with its [extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox") and [guest additions](/index.php/VirtualBox#Guest_additions_disc "VirtualBox").
+2.  Install your preferred, but compatible with Odin, Windows operating system (with VirtualBox guest additions) into a virtual hard drive using VirtualBox
 3.  Open VirtualBox settings of your Windows operating system, navigate to **USB**, then tick (or make sure it is ticked) **Enable USB 2.0 (EHCI) Controller**.
 4.  At VirtualBox running Windows operating system, click in the menu bar **Devices**, then **USB Devices**, then click on your Samsung mobile device connected to your computer via USB.
 
 Windows related links:
 
-1.  Samsung drivers can be downloaded from [here](http://androidxda.com/download-samsung-usb-drivers).
-2.  Odin can be downloaded from [here](https://www.androidfilehost.com/?fid=23501681358557126).
-3.  Samsung Android firmwares can be downloaded from [here](http://www.sammobile.com/firmwares/).
+*   Samsung drivers can be downloaded from [here](http://androidxda.com/download-samsung-usb-drivers).
+*   Odin can be downloaded from [here](https://www.androidfilehost.com/?fid=23501681358557126).
+*   Samsung Android firmwares can be downloaded from [here](http://www.sammobile.com/firmwares/).
 
 If you want to make sure that everything is working and ready, connect your Samsung device turned on into a Download mode, and open Odin. The white box (a big one at the bottom-left) named **Message**, should print a line similar to this:
 
@@ -647,7 +647,7 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=416722](https://wiki.archlinux.org/index.php?title=Android&oldid=416722)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=417219](https://wiki.archlinux.org/index.php?title=Android&oldid=417219)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -330,7 +330,7 @@ Install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) and co
 # ln -s /usr/lib/munin/plugins/sensors_ /etc/munin/plugins/sensors_volt
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Munin&oldid=409594](https://wiki.archlinux.org/index.php?title=Munin&oldid=409594)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Munin&oldid=417235](https://wiki.archlinux.org/index.php?title=Munin&oldid=417235)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -202,7 +202,7 @@ Note that:
 If you want to be able to reboot a fully LUKS-encrypted system remotely, or start it with a [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") service, you will need a way to enter a passphrase for the root partition/volume at startup. This can be achieved by running a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that configures a network interface, such as [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/)<sup><small>AUR</small></sup> and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/)<sup><small>AUR</small></sup> (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server in initrd. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/)<sup><small>AUR</small></sup> or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/)<sup><small>AUR</small></sup>. Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/)<sup><small>AUR</small></sup> package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.
 
 1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine).
-2.  If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/)<sup><small>AUR</small></sup>, you have the option of using [Ed2559 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
+2.  If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/)<sup><small>AUR</small></sup>, you have the option of using [Ed25519 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
 3.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with _.pub_) into the remote machine's `/etc/dropbear/root_key or /etc/tinyssh/root_key` file using the method of your choice, e.g.:
     *   [copy the public key to the remote system](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
     *   then enter the following command (on the remote system): `# cat /home/<user>/.ssh/authorized_keys > /etc/<dropbear or tinyssh>/root_key` 
@@ -405,7 +405,7 @@ and now includes the span to the new disk. Note that the `cryptsetup resize` act
 
 #### Multiple root partitions
 
-It is possible to modify the encrypt hook to allow multiple hard drive decrypt root (`/`) at boot. The [cryptsetup-multi](https://aur.archlinux.org/packages/cryptsetup-multi/)<sup><small>AUR</small></sup> package may be used for it. An alternative way according to an Arch user (benke):
+It is possible to modify the encrypt hook to allow multiple hard drive decrypt root (`/`) at boot. One way according to an Arch user (benke):
 
 ```
 # cp /usr/lib/initcpio/hooks/encrypt  /usr/lib/initcpio/hooks/encrypt2
@@ -575,7 +575,7 @@ To finish, following [Dm-crypt/Encrypting an entire system#Post-installation](/i
 
 **Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `name`. But you can still have a consistent mapping using the disk id under `/dev/disk/by-id/`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=416108](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=416108)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=417273](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=417273)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

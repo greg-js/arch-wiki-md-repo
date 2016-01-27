@@ -67,6 +67,8 @@ ModemManager is required for gnome network manager to detect any mobile broadban
 
 This needs to be enabled with systemctl start ModemManager and systemctl enable ModemManager. As soon as they are started the Mobile Broadband option will be available from the Network Manager Applet.
 
+To use this quite old modem, you need to blacklist qmi_wwan and cdc_wdm modules from loading into [modern] Linux kernel. Else, if these modules are loaded, ModemManager recognizes this modem as something new with QMI interface, and then complains about too small versions of some QMI services. [Source](https://bugs.freedesktop.org/show_bug.cgi?id=93392)
+
 ## Connection
 
 ### wvdial
@@ -134,7 +136,7 @@ The final wvdial command should start pppd and the obained IP address should be 
 *   [3G and GPRS modems with pppd alone](/index.php/3G_and_GPRS_modems_with_pppd_alone "3G and GPRS modems with pppd alone")
 *   [Huawei E1550 3G modem](/index.php/Huawei_E1550_3G_modem "Huawei E1550 3G modem")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gobi_Broadband_Modems&oldid=376791](https://wiki.archlinux.org/index.php?title=Gobi_Broadband_Modems&oldid=376791)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gobi_Broadband_Modems&oldid=417129](https://wiki.archlinux.org/index.php?title=Gobi_Broadband_Modems&oldid=417129)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

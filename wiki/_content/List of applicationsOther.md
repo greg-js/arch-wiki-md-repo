@@ -30,7 +30,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
             *   [1.1.8.4 Application launchers](#Application_launchers)
             *   [1.1.8.5 Logout dialogue](#Logout_dialogue)
         *   [1.1.9 Accessibility](#Accessibility)
-            *   [1.1.9.1 Speech recognition](#Speech_recognition)
+            *   [1.1.9.1 Screen reading](#Screen_reading)
+            *   [1.1.9.2 Speech recognition](#Speech_recognition)
     *   [1.2 Finance](#Finance)
     *   [1.3 Flashcards](#Flashcards)
     *   [1.4 Time management](#Time_management)
@@ -389,6 +390,16 @@ A few simple shutdown managers are available:
 
 #### Accessibility
 
+##### Screen reading
+
+*   **Orca** — Screen reader for individuals who are blind or visually impaired
+
+[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)
+
+*   **[Simple Orca Plugin System](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")** — Plug-in extension for the Orca screen reader
+
+[https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php) || [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/)<sup><small>AUR</small></sup>
+
 ##### Speech recognition
 
 See the main article [Speech recognition](/index.php/Speech_recognition "Speech recognition") for applications.
@@ -704,7 +715,7 @@ See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Sof
 
 See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=416033](https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=416033)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=417274](https://wiki.archlinux.org/index.php?title=List_of_applications/Other&oldid=417274)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

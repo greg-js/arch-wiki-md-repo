@@ -74,6 +74,13 @@ The main command used to introspect and control _systemd_ is _systemctl_. Some o
 
 ### Analyzing the system state
 
+Show **system status** using:
+
+```
+$ systemctl status
+
+```
+
 **List running** units:
 
 ```
@@ -823,9 +830,15 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 *   [Gentoo Wiki systemd page](http://wiki.gentoo.org/wiki/Systemd)
 *   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=412377](https://wiki.archlinux.org/index.php?title=Systemd&oldid=412377)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=417128](https://wiki.archlinux.org/index.php?title=Systemd&oldid=417128)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

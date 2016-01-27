@@ -45,6 +45,14 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
+*   [25 January 2016] [ASA-201601-30](https://lists.archlinux.org/pipermail/arch-security/2016-January/000535.html) [blueman](https://www.archlinux.org/packages/?name=blueman) privilege escalation
+*   [25 January 2016] [ASA-201601-29](https://lists.archlinux.org/pipermail/arch-security/2016-January/000534.html) [mbedtls](https://www.archlinux.org/packages/?name=mbedtls) man-in-the-middle
+*   [25 January 2016] [ASA-201601-28](https://lists.archlinux.org/pipermail/arch-security/2016-January/000533.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [25 January 2016] [ASA-201601-27](https://lists.archlinux.org/pipermail/arch-security/2016-January/000532.html) [privoxy](https://www.archlinux.org/packages/?name=privoxy) denial of service
+*   [25 January 2016] [ASA-201601-26](https://lists.archlinux.org/pipermail/arch-security/2016-January/000531.html) [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) privilege escalation
+*   [25 January 2016] [ASA-201601-25](https://lists.archlinux.org/pipermail/arch-security/2016-January/000530.html) [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) privilege escalation
+*   [25 January 2016] [ASA-201601-24](https://lists.archlinux.org/pipermail/arch-security/2016-January/000529.html) [python2-rsa](https://www.archlinux.org/packages/?name=python2-rsa) signature forgery
+*   [25 January 2016] [ASA-201601-23](https://lists.archlinux.org/pipermail/arch-security/2016-January/000528.html) [python-rsa](https://www.archlinux.org/packages/?name=python-rsa) signature forgery
 *   [21 January 2016] [ASA-201601-22](https://lists.archlinux.org/pipermail/arch-security/2016-January/000527.html) [libdwarf](https://www.archlinux.org/packages/?name=libdwarf) denial of service
 *   [21 January 2016] [ASA-201601-21](https://lists.archlinux.org/pipermail/arch-security/2016-January/000526.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
 *   [20 January 2016] [ASA-201601-20](https://lists.archlinux.org/pipermail/arch-security/2016-January/000525.html) [linux](https://www.archlinux.org/packages/?name=linux) privilege escalation
@@ -546,7 +554,7 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=416555](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=416555)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417184](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417184)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

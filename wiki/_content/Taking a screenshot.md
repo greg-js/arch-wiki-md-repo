@@ -201,7 +201,7 @@ $ xwd -root -out screenshot.xwd
 
 ### scrot
 
-**Note:** According to [this thread](http://comments.gmane.org/gmane.comp.misc.suckless/6901), [scrot](https://www.archlinux.org/packages/?name=scrot) does not work with [dwm](https://www.archlinux.org/packages/?name=dwm).
+**Note:** According to [this thread](http://comments.gmane.org/gmane.comp.misc.suckless/6901), `[scrot](https://www.archlinux.org/packages/?name=scrot) -s` does not work with [dwm](https://www.archlinux.org/packages/?name=dwm).
 
 [scrot](https://www.archlinux.org/packages/?name=scrot), enables taking screenshots from the CLI and offers features such as a user-definable time delay. Unless instructed otherwise, it saves the file in the current working directory.
 
@@ -360,7 +360,7 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=416275](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=416275)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=417224](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=417224)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

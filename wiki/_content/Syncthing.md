@@ -79,9 +79,12 @@ A traffic statistics page is available at port 22070, e.g. [http://5.9.90.188:22
 
 See [Debugging syncthing](http://docs.syncthing.net/dev/debugging.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Syncthing&oldid=410600](https://wiki.archlinux.org/index.php?title=Syncthing&oldid=410600)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Syncthing&oldid=417260](https://wiki.archlinux.org/index.php?title=Syncthing&oldid=417260)"
 
-[Categories](/index.php/Special:Categories "Special:Categories"):
+[Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

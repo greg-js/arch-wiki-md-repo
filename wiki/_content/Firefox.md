@@ -177,7 +177,7 @@ Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-
 
 ### Multimedia playback
 
-Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed. Additional optional dependencies ([gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) or [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly)) are needed to support the MP3 format inside the `<audio>` elements.
+Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed.
 
 Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
@@ -379,7 +379,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=416956](https://wiki.archlinux.org/index.php?title=Firefox&oldid=416956)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=417282](https://wiki.archlinux.org/index.php?title=Firefox&oldid=417282)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

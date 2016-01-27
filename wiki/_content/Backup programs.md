@@ -20,17 +20,19 @@ This wiki page contains information about various backup programs. It's a good i
     *   [2.1 Rsync-type backups](#Rsync-type_backups)
         *   [2.1.1 Console](#Console)
         *   [2.1.2 Graphical](#Graphical)
+        *   [2.1.3 Console and graphical](#Console_and_graphical)
     *   [2.2 Other backups](#Other_backups)
         *   [2.2.1 Console](#Console_2)
         *   [2.2.2 Graphical](#Graphical_2)
-        *   [2.2.3 Console and graphical](#Console_and_graphical)
+        *   [2.2.3 Console and graphical](#Console_and_graphical_2)
 *   [3 Cloud backups](#Cloud_backups)
 *   [4 Cooperative storage cloud backups](#Cooperative_storage_cloud_backups)
-*   [5 Non-incremental backups](#Non-incremental_backups)
-*   [6 Versioning systems](#Versioning_systems)
-    *   [6.1 Version control systems](#Version_control_systems)
-    *   [6.2 VCS-based backups](#VCS-based_backups)
-*   [7 See also](#See_also)
+*   [5 Cloud storage](#Cloud_storage)
+*   [6 Non-incremental backups](#Non-incremental_backups)
+*   [7 Versioning systems](#Versioning_systems)
+    *   [7.1 Version control systems](#Version_control_systems)
+    *   [7.2 VCS-based backups](#VCS-based_backups)
+*   [8 See also](#See_also)
 
 ## Introduction
 
@@ -175,6 +177,12 @@ Certain rsync-type packages also do snapshot backups by storing files which desc
 
 [https://launchpad.net/timeshift](https://launchpad.net/timeshift) || [timeshift](https://aur.archlinux.org/packages/timeshift/)<sup><small>AUR</small></sup>
 
+#### Console and graphical
+
+*   **[Syncthing](/index.php/Syncthing "Syncthing")** — Open-source file synchronization client/server application, written in Go, implementing its own, equally free Block Exchange Protocol.
+
+[https://syncthing.net/](https://syncthing.net/) || [syncthing](https://www.archlinux.org/packages/?name=syncthing) [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
+
 ### Other backups
 
 Most other backup applications tend to create (big) archive files and (of course) keep track of what's been archived. Creating `.tar.bz2` or `.tar.gz` archives has the advantage that you can extract the backups with just tar/bzip2/gzip, so you do not need to have the backup program around.
@@ -217,6 +225,15 @@ Most other backup applications tend to create (big) archive files and (of course
     *   Supports pushing over FTP, SSH, rsync, WebDAV, WebDAVs, HSi and Amazon S3 or local filesystem.
 
 [http://www.nongnu.org/duplicity/](http://www.nongnu.org/duplicity/) || [duplicity](https://www.archlinux.org/packages/?name=duplicity)
+
+*   **[Duply](/index.php/Duply "Duply")** — Front-end for duplicity which simplifies running it by:
+    *   keeping recurring settings in profiles per backup job;
+    *   automated import/export of keys between profile and keyring;
+    *   enabling batch operations eg. backup_verify_purge;
+    *   executing pre/post scripts;
+    *   precondition checking for flawless duplicity operation.
+
+[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)<sup><small>AUR</small></sup>
 
 *   **[DAR](https://en.wikipedia.org/wiki/DAR_(Disk_Archiver) "wikipedia:DAR (Disk Archiver)")** — A full-featured command-line backup tool, short for Disk ARchive.
     *   It uses its own format for archives (so you need to have it around when you want to restore).
@@ -349,9 +366,24 @@ Most other backup applications tend to create (big) archive files and (of course
 
 [http://www.bacula.org](http://www.bacula.org) || [bacula-common](https://aur.archlinux.org/packages/bacula-common/)<sup><small>AUR</small></sup>
 
+*   **Duplicati** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It works with Amazon S3, Windows Live SkyDrive, Google Drive (Google Docs), Rackspace Cloud Files or WebDAV, SSH, FTP (and many more). Duplicati is open source and free.
+
+[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)<sup><small>AUR</small></sup>
+
 ## Cloud backups
 
 See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services").
+
+*   **CloudBacko** — Enterprise-grade cloud backup tool for Linux, Mac and Windows.
+    *   Closed source. Free, Lite and Pro versions available.
+    *   Written in Java.
+    *   Encrypted backup to multiple cloud destinations.
+    *   Supports multiple cloud destinations combined as one storage pool.
+    *   No installation required in Free version.
+    *   GUI frontend for Linux in Pro version.
+    *   Virtual machine backup available in Pro version.
+
+[http://www.cloudbacko.com/](http://www.cloudbacko.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Copy](https://en.wikipedia.org/wiki/Barracuda_Networks#Products "wikipedia:Barracuda Networks")** — A fair solution to shared folders.
     *   15GB free.
@@ -387,6 +419,16 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Multiple clients are available.
 
 [https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/)<sup><small>AUR</small></sup> (free), [drive](https://aur.archlinux.org/packages/drive/)<sup><small>AUR</small></sup> (free), [insync](https://aur.archlinux.org/packages/insync/)<sup><small>AUR</small></sup> (non-free)
+
+*   **[iDrive](https://en.wikipedia.org/wiki/IDrive_Inc. "wikipedia:IDrive Inc.")** — Universal Online Backup.
+    *   Multiple Device Backup.
+    *   Online File Sync.
+    *   Real-Time Backup.
+    *   Backup and Access from Mobile Devices.
+    *   Remote Manage.
+    *   No GUI Front end for Linux, command line based. A wrapper script is available to make it easier to use.
+
+[https://www.idrive.com/](https://www.idrive.com/) || [idevsutil](https://aur.archlinux.org/packages/idevsutil/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idevsutil)]</sup>, [idrive-wrapper](https://aur.archlinux.org/packages/idrive-wrapper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idrive-wrapper)]</sup>
 
 *   **[Jungle Disk](https://en.wikipedia.org/wiki/Jungle_Disk "wikipedia:Jungle Disk")** — An online backup tool that stores its data in Amazon S3 or Rackspace Cloud Files.
     *   A GNOME Files extension.
@@ -436,26 +478,9 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 [http://www.tarsnap.com](http://www.tarsnap.com) || [tarsnap](https://www.archlinux.org/packages/?name=tarsnap)
 
-*   **[iDrive](https://en.wikipedia.org/wiki/IDrive_Inc. "wikipedia:IDrive Inc.")** — Universal Online Backup.
-    *   Multiple Device Backup.
-    *   Online File Sync.
-    *   Real-Time Backup.
-    *   Backup and Access from Mobile Devices.
-    *   Remote Manage.
-    *   No GUI Front end for Linux, command line based. A wrapper script is available to make it easier to use.
+*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Free cloud storage service created by Yandex.ru that gives you access to your photos, videos and documents from any internet-enabled device.
 
-[https://www.idrive.com/](https://www.idrive.com/) || [idevsutil](https://aur.archlinux.org/packages/idevsutil/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idevsutil)]</sup>, [idrive-wrapper](https://aur.archlinux.org/packages/idrive-wrapper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idrive-wrapper)]</sup>
-
-*   **CloudBacko** — Enterprise-grade cloud backup tool for Linux, Mac and Windows.
-    *   Closed source. Free, Lite and Pro versions available.
-    *   Written in Java.
-    *   Encrypted backup to multiple cloud destinations.
-    *   Supports multiple cloud destinations combined as one storage pool.
-    *   No installation required in Free version.
-    *   GUI frontend for Linux in Pro version.
-    *   Virtual machine backup available in Pro version.
-
-[http://www.cloudbacko.com/](http://www.cloudbacko.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)<sup><small>AUR</small></sup>
 
 ## Cooperative storage cloud backups
 
@@ -474,6 +499,48 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
     *   Closed source, using mono. Windows clients available.
 
 [http://www.symform.com/](http://www.symform.com/) || [symform](https://aur.archlinux.org/packages/symform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/symform)]</sup>
+
+## Cloud storage
+
+*   **[Ceph](/index.php/Ceph "Ceph")** — Distributed object store and file system designed to provide excellent performance, reliability and scalability.
+
+[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
+
+*   **Cozy** — A personal cloud you can hack, host and delete.
+
+[https://cozy.io](https://cozy.io) || [cozy-standalone](https://aur.archlinux.org/packages/cozy-standalone/)<sup><small>AUR</small></sup> [cozy-nginx](https://aur.archlinux.org/packages/cozy-nginx/)<sup><small>AUR</small></sup> [cozy-apache](https://aur.archlinux.org/packages/cozy-apache/)<sup><small>AUR</small></sup>
+
+*   **GlusterFS** — Cluster file system capable of scaling to several peta-bytes.
+
+[http://www.gluster.org/](http://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **[OpenStack](/index.php/OpenStack "OpenStack")** — Controls large pools of compute, storage, and networking resources throughout a datacenter, managed through a dashboard or via the OpenStack API. OpenStack works with popular enterprise and open source technologies making it ideal for heterogeneous infrastructure.
+
+[http://www.openstack.org/](http://www.openstack.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[ownCloud](/index.php/OwnCloud "OwnCloud")** — Software suite that provides a location-independent storage area for data.
+
+[http://owncloud.org/](http://owncloud.org/) || [owncloud](https://www.archlinux.org/packages/?name=owncloud)
+
+*   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
+
+[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)<sup><small>AUR</small></sup>
+
+*   **[Seafile](/index.php/Seafile "Seafile")** — Open source cloud storage system, with advanced support for file syncing, privacy protection and teamwork.
+
+[http://seafile.com/](http://seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)<sup><small>AUR</small></sup> [seafile-client](https://aur.archlinux.org/packages/seafile-client/)<sup><small>AUR</small></sup> [seafile-client-cli](https://aur.archlinux.org/packages/seafile-client-cli/)<sup><small>AUR</small></sup> [seafile-client-qt5](https://aur.archlinux.org/packages/seafile-client-qt5/)<sup><small>AUR</small></sup>
+
+*   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
+
+[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **StackSync** — Open-source scalable Personal Cloud that can adapt to the necessities of organizations. It puts a special emphasis on security by encrypting data on the client side before it is sent to the server.
+
+[http://stacksync.org/](http://stacksync.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
+
+[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)<sup><small>AUR</small></sup>
 
 ## Non-incremental backups
 
@@ -591,13 +658,6 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 ### VCS-based backups
 
-*   **Gibak** — A backup system based on [Git](/index.php/Git "Git").
-    *   Supports binary diffs.
-    *   Uses all of Git's features (such as `.gitignore` for filtering files).
-    *   Uses Git's hook system to save information that Git does not (permissions, mtime, empty directories, etc).
-
-[https://github.com/pangloss/gibak](https://github.com/pangloss/gibak) || [gibak](https://aur.archlinux.org/packages/gibak/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gibak)]</sup>
-
 *   **bup** — A fledgling Git-based backup solution written in Python and C.
     *   Uses a rolling checksum algorithm (similar to rsync) to split large files into chunks.
     *   Can back up directly to a remote bup server.
@@ -609,13 +669,30 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 [http://gitorious.org/coldstorage](http://gitorious.org/coldstorage) || [coldstorage-git](https://aur.archlinux.org/packages/coldstorage-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/coldstorage-git)]</sup>
 
+*   **Gibak** — A backup system based on [Git](/index.php/Git "Git").
+    *   Supports binary diffs.
+    *   Uses all of Git's features (such as `.gitignore` for filtering files).
+    *   Uses Git's hook system to save information that Git does not (permissions, mtime, empty directories, etc).
+
+[https://github.com/pangloss/gibak](https://github.com/pangloss/gibak) || [gibak](https://aur.archlinux.org/packages/gibak/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gibak)]</sup>
+
+*   **git-annex assistant** — Creates a synchronised folder on each of your OSX and Linux computers, Android devices, removable drives, NAS appliances, and cloud services.
+
+[http://git-annex.branchable.com/](http://git-annex.branchable.com/) || [git-annex](https://www.archlinux.org/packages/?name=git-annex)
+
+*   **SparkleShare** — Collaboration and sharing tool based on git written in C Sharp.
+
+[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
+
 ## See also
 
+*   [Wikipedia:List of backup software](https://en.wikipedia.org/wiki/List_of_backup_software "wikipedia:List of backup software")
+*   [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software")
 *   [Backing up Linux and other Unix(-like) systems](http://www.halfgaar.net/backing-up-unix)
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416159](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=416159)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=417258](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=417258)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
