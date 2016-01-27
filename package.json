@@ -3,8 +3,7 @@
   "version": "0.0.2",
   "description": "All arch-wiki articles in markdown format, updated every two days.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "/usr/bin/git add -A . && /usr/bin/git commit -a -m 'auto-update' && npm version patch && npm publish && git push --follow-tags && /usr/bin/git push --follow-tags"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
