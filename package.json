@@ -1,10 +1,10 @@
 {
   "name": "arch-wiki-md-repo",
   "version": "0.0.1",
-  "description": "All arch-wiki articles in markdown format, updated four times a day.",
+  "description": "All arch-wiki articles in markdown format, updated every two days.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "$gitpath add -A . && $gitpath commit -a -m 'auto-update' && $npmpath version patch && $npmpath publish && $gitpath push --follow-tags"
+    "update": "/usr/bin/git add -A . && /usr/bin/git commit -a -m 'auto-update' && npm version patch && npm publish && git push --follow-tags && /usr/bin/git push --follow-tags"
   },
   "repository": {
     "type": "git",
