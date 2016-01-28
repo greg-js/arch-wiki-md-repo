@@ -68,6 +68,7 @@ The following incompatibilities require building a custom kernel with fewer feat
 
 *   hibernation is not supported (conflicts with `CONFIG_GRKERNSEC_KMEM`, `CONFIG_PAX_MEMORY_SANITIZE` and `CONFIG_RANDOMIZE_BASE`)
 *   Xen and [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) are not supported (conflicts with `CONFIG_PAX_KERNEXEC` and `CONFIG_PAX_MEMORY_UDEREF`)
+*   `CONFIG_GRKERNSEC_KMEM` is incompatible with software altering the CPU MSR, such as power saving configuration tools like [cpupower](https://www.archlinux.org/packages/?name=cpupower), [powertop](https://www.archlinux.org/packages/?name=powertop) and [x86_energy_perf_policy](https://www.archlinux.org/packages/?name=x86_energy_perf_policy). Rather than disabling the option, you could recompile the kernel with your desired defaults.
 
 Known incompatibilities with other packages:
 
@@ -433,7 +434,7 @@ See [this link.](http://en.wikibooks.org/wiki/Grsecurity/Appendix/Subject_Modes)
 
 PaX and grsecurity implement some hardening features via GCC plugins. The compiler configuration / version used to build the plugins provided in the package needs to be the same when building a kernel module. For example, the compiler provided in the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package will not work - one should use the same compiler toolchain that was used to build the kernel. This also means [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) needs to be rebuilt after even minor GCC upgrades before modules built with the new compiler can work with it. Rebuilding a kernel can be accomplished with the [Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). See bug [FS#43057](https://bugs.archlinux.org/task/43057).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417386](https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417386)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417562](https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417562)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

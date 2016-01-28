@@ -66,7 +66,14 @@ Configuration for this user is located at `/etc/btsync.conf`, and metadata is sa
 
 ## Configuration
 
-A sample configuration file can be created using `btsync --dump-sample-config`. You'll probably want to change some of the settings, including:
+A sample configuration file can be created using:
+
+```
+# btsync --dump-sample-config > ~/.config/btsync/btsync.conf
+
+```
+
+You'll probably want to change some of the settings, including:
 
 *   device_name
 *   storage_path
@@ -141,7 +148,7 @@ Note that this may lead to performance degradation.
 *   [Official BitTorrent Sync Help](http://help.getsync.com/)
 *   [Official BitTorrent Sync FAQ](http://www.bittorrent.com/help/faq/sync)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-01-27]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=BitTorrent_Sync&oldid=394138](https://wiki.archlinux.org/index.php?title=BitTorrent_Sync&oldid=394138)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=BitTorrent_Sync&oldid=417637](https://wiki.archlinux.org/index.php?title=BitTorrent_Sync&oldid=417637)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

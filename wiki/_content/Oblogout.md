@@ -124,7 +124,7 @@ lock = K
 
 When using multiple monitors, oblogout may cover all monitors. If you only want oblogout to appear on one monitor, you can create an application rule in the Openbox rc.xml file set oblogout's position and size.
 
-For example, if you have two monitors, and you only want oblogout to appear on the left monitor (which is 1920x1080), add this to the applications section of `rc.xml`:
+For example, if you have two monitors, and you only want oblogout to appear on the first monitor, add this to the applications section of `rc.xml`:
 
  `~/.config/openbox/rc.xml` 
 
@@ -132,20 +132,16 @@ For example, if you have two monitors, and you only want oblogout to appear on t
 <applications>
   <application name="oblogout">
     <position force="yes">
-      <x>left</x>
-      <y>0</y>
+      <monitor>1</monitor>
     </position>
-    <size>
-      <width>1920</width>
-      <height>1080</height>
-    </size>
+    <fullscreen>yes</fullscreen>
   </application>
   ...
 </applications>
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Oblogout&oldid=408490](https://wiki.archlinux.org/index.php?title=Oblogout&oldid=408490)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Oblogout&oldid=417556](https://wiki.archlinux.org/index.php?title=Oblogout&oldid=417556)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

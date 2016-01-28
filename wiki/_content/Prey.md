@@ -68,7 +68,7 @@ If [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") is instal
 
 There seems to be a bug in version 0.5.3 which gives an error if the SMTP password is set when using "email" post_method, which returns an error, but works fine when executed normally without the --check option.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Prey&oldid=372485](https://wiki.archlinux.org/index.php?title=Prey&oldid=372485)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Prey&oldid=417565](https://wiki.archlinux.org/index.php?title=Prey&oldid=417565)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

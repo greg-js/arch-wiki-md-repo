@@ -32,13 +32,13 @@ Alternatively, add the unofficial [archlinuxfr](/index.php/Unofficial_user_repos
 
 See the [yaourt(8)](http://archlinux.fr/man/yaourt.8.html) and [yaourtrc(5)](http://archlinux.fr/man/yaourtrc.5.html) pages for general information.
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
 
-**This article or section is a candidate for moving to [[]].**
+**This article or section is being considered for deletion.**
 
-**Notes:** The below topics should be covered by yaourtrc(8), not here. (Discuss in [Talk:Yaourt#](https://wiki.archlinux.org/index.php/Talk:Yaourt))
+**Reason:** All topics are already present in yaourt(8) and yaourtrc(5). (Discuss in [Talk:Yaourt#](https://wiki.archlinux.org/index.php/Talk:Yaourt))
 
 ### Persistent local source repositories
 
@@ -69,7 +69,7 @@ EXPORTDIR="/var/cache/pacman/pkg-local"
 
 Yaourt uses `/tmp` (mounted as [tmpfs](/index.php/Tmpfs "Tmpfs"), limited to 50% of RAM) to compile packages, which may be problematic for systems with low RAM or limited swap space. Change the location in `/etc/yaourtrc` by uncommenting and changing the `TMPDIR` variable.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=414338](https://wiki.archlinux.org/index.php?title=Yaourt&oldid=414338)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=417624](https://wiki.archlinux.org/index.php?title=Yaourt&oldid=417624)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -77,4 +77,4 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=414338]
 
 Hidden category:
 
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

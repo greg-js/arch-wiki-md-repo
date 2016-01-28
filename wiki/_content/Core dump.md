@@ -136,7 +136,7 @@ When _gdb_ is started, use the `bt` command to print the backtrace:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_dump&oldid=400961](https://wiki.archlinux.org/index.php?title=Core_dump&oldid=400961)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_dump&oldid=417597](https://wiki.archlinux.org/index.php?title=Core_dump&oldid=417597)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

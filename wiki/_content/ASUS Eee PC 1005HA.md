@@ -87,27 +87,40 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Display and input settings](#Display_and_input_settings)
-*   [3 Powersaving and ACPI](#Powersaving_and_ACPI)
-    *   [3.1 laptop-mode-tools](#laptop-mode-tools)
-    *   [3.2 Gmabooster](#Gmabooster)
-    *   [3.3 CPU frequency scaling](#CPU_frequency_scaling)
-    *   [3.4 Hotkeys](#Hotkeys)
-        *   [3.4.1 Wifi toggle](#Wifi_toggle)
-        *   [3.4.2 Sound volume hotkeys](#Sound_volume_hotkeys)
-        *   [3.4.3 Sleep](#Sleep)
-    *   [3.5 Display settings](#Display_settings)
-*   [4 Hardware](#Hardware)
-    *   [4.1 Ethernet](#Ethernet)
-    *   [4.2 WiFi](#WiFi)
-    *   [4.3 Camera](#Camera)
-    *   [4.4 Microphone](#Microphone)
-*   [5 Hardware Info](#Hardware_Info)
-    *   [5.1 lspci](#lspci)
+*   [2 Boot Booster](#Boot_Booster)
+*   [3 Display and input settings](#Display_and_input_settings)
+*   [4 Powersaving and ACPI](#Powersaving_and_ACPI)
+    *   [4.1 laptop-mode-tools](#laptop-mode-tools)
+    *   [4.2 Gmabooster](#Gmabooster)
+    *   [4.3 CPU frequency scaling](#CPU_frequency_scaling)
+    *   [4.4 Hotkeys](#Hotkeys)
+        *   [4.4.1 Wifi toggle](#Wifi_toggle)
+        *   [4.4.2 Sound volume hotkeys](#Sound_volume_hotkeys)
+        *   [4.4.3 Sleep](#Sleep)
+    *   [4.5 Display settings](#Display_settings)
+*   [5 Hardware](#Hardware)
+    *   [5.1 Ethernet](#Ethernet)
+    *   [5.2 WiFi](#WiFi)
+    *   [5.3 Camera](#Camera)
+    *   [5.4 Microphone](#Microphone)
+*   [6 Hardware Info](#Hardware_Info)
+    *   [6.1 lspci](#lspci)
 
 # Installation
 
 For an in-depth guide on the installation see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+
+# Boot Booster
+
+Boot Booster is a feature that caches the result of the POST check to the hard drive. It can save several seconds off your boot time once activated.
+
+To continue using Boot Booster, create a partition on the disk:
+
+*   It must be a primary partition.
+*   Must be 16MB minimum, see also the article on [partition alignments](/index.php/Partitioning#Partition_alignment "Partitioning").
+*   Must be type 0xef (EFI (FAT-12/16/32). This can be set with [fdisk](/index.php/Fdisk "Fdisk").
+
+After install is complete, enable Boot Booster in the BIOS. On the second boot after enabling, Boot Booster will be fully activated. Boot Booster must be disabled in the BIOS to boot from other devices again.
 
 # Display and input settings
 
@@ -164,7 +177,7 @@ See [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils").
 
 To get the hotkeys working (fn+F1 etc, touchpad lock, powerbutton shutdown, Super hybrid engine toggle), install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup> package from AUR. Configuration is done in the file /etc/conf.d/acpi-eeepc-generic.conf.
 
-acpi-eeepc-generic needs the eeepc_laptop kernel module to be loaded to work. Check with:
+acpi-eeepc-generic needs the eeepc_wmi kernel module to be loaded to work. Check with:
 
 ```
 lsmod | grep eeepc
@@ -360,7 +373,7 @@ Note that this is the 1005HA-M version.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=408673](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=408673)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417622](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417622)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

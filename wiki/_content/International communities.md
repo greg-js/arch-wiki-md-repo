@@ -99,9 +99,9 @@ This list is by no means complete. If you know of a community that is not listed
 
 ### Iran
 
-*   Homepage: [http://www.archlinux.ir/](http://www.archlinux.ir/)
-*   Forums: [http://bbs.archlinux.ir/](http://bbs.archlinux.ir/)
-*   Wiki: [http://wiki.archlinux.ir/](http://wiki.archlinux.ir/)
+*   Homepage: [http://www.archusers.ir/](http://www.archusers.ir/)
+*   Forums: [http://bbs.archusers.ir/](http://bbs.archusers.ir/)
+*   Wiki: [http://wiki.archusers.ir/](http://wiki.archusers.ir/)
 
 ### Italy
 
@@ -191,7 +191,7 @@ This list is by no means complete. If you know of a community that is not listed
 *   [IRC channels](/index.php/IRC_channels "IRC channels")
 *   [Help:i18n#Languages](/index.php/Help:I18n#Languages "Help:I18n")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=International_communities&oldid=404951](https://wiki.archlinux.org/index.php?title=International_communities&oldid=404951)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=International_communities&oldid=417600](https://wiki.archlinux.org/index.php?title=International_communities&oldid=417600)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
