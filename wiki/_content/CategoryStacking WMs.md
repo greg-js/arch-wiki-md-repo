@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Stacking WMs"
 
-The following 17 pages are in this category, out of 17 total.
+The following 16 pages are in this category, out of 16 total.
 
 ### 2
 
@@ -54,13 +54,12 @@ The following 17 pages are in this category, out of 17 total.
 ### W
 
 *   [Window Maker](/index.php/Window_Maker "Window Maker")
-*   [Wingo](/index.php/Wingo "Wingo")
 
 ### X
 
 *   [Xfwm](/index.php/Xfwm "Xfwm")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Stacking_WMs&oldid=386944](https://wiki.archlinux.org/index.php?title=Category:Stacking_WMs&oldid=386944)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Stacking_WMs&oldid=415121](https://wiki.archlinux.org/index.php?title=Category:Stacking_WMs&oldid=415121)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

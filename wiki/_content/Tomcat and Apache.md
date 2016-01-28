@@ -274,3 +274,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomcat_and_Apache&ol
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

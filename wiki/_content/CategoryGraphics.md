@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Graphics"
 
-The following 30 pages are in this category, out of 30 total.
+The following 29 pages are in this category, out of 29 total.
 
 ### A
 
@@ -49,7 +49,6 @@ The following 30 pages are in this category, out of 30 total.
 
 *   [Nouveau](/index.php/Nouveau "Nouveau")
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)")
 *   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
 
 ### O

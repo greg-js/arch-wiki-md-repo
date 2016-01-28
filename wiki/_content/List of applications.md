@@ -37,7 +37,7 @@ This article is a general list of applications sorted by category, as a referenc
             *   [1.2.2.2 Blink-based](#Blink-based)
             *   [1.2.2.3 Webkit-based](#Webkit-based)
             *   [1.2.2.4 Other](#Other)
-    *   [1.3 Downloaders](#Downloaders)
+    *   [1.3 File sharing](#File_sharing)
         *   [1.3.1 FTP](#FTP)
             *   [1.3.1.1 FTP clients](#FTP_clients)
             *   [1.3.1.2 FTP servers](#FTP_servers)
@@ -49,9 +49,8 @@ This article is a general list of applications sorted by category, as a referenc
                 *   [1.3.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
                 *   [1.3.2.2.2 libktorrent backend](#libktorrent_backend)
                 *   [1.3.2.2.3 others](#others)
-        *   [1.3.3 eDonkey clients](#eDonkey_clients)
-        *   [1.3.4 Gnutella](#Gnutella)
-        *   [1.3.5 Video downloaders](#Video_downloaders)
+        *   [1.3.3 Other P2P networks](#Other_P2P_networks)
+        *   [1.3.4 Video downloaders](#Video_downloaders)
     *   [1.4 Communication](#Communication)
         *   [1.4.1 Email clients](#Email_clients)
             *   [1.4.1.1 Console](#Console_3)
@@ -132,37 +131,38 @@ This article is a general list of applications sorted by category, as a referenc
         *   [3.2.1 Udisks](#Udisks)
     *   [3.3 Basic shell commands](#Basic_shell_commands)
     *   [3.4 Integrated development environments](#Integrated_development_environments)
-    *   [3.5 Terminal emulators](#Terminal_emulators)
-        *   [3.5.1 VTE-based](#VTE-based)
-        *   [3.5.2 KMS-based](#KMS-based)
-        *   [3.5.3 framebuffer-based](#framebuffer-based)
-    *   [3.6 Files](#Files)
-        *   [3.6.1 File managers](#File_managers)
-            *   [3.6.1.1 Console](#Console_10)
-            *   [3.6.1.2 Graphical](#Graphical_9)
-        *   [3.6.2 Desktop search engines](#Desktop_search_engines)
-        *   [3.6.3 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [3.6.3.1 Console](#Console_11)
-            *   [3.6.3.2 Graphical](#Graphical_10)
-        *   [3.6.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [3.6.5 Batch renamers](#Batch_renamers)
-    *   [3.7 Disk cleaning](#Disk_cleaning)
-    *   [3.8 Disk usage display](#Disk_usage_display)
-    *   [3.9 Clock synchronization](#Clock_synchronization)
-    *   [3.10 System monitoring](#System_monitoring)
-    *   [3.11 System information viewers](#System_information_viewers)
-        *   [3.11.1 Console](#Console_12)
-        *   [3.11.2 Graphical](#Graphical_11)
-        *   [3.11.3 Others](#Others_2)
-    *   [3.12 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [3.13 Power management](#Power_management)
-    *   [3.14 Clipboard managers](#Clipboard_managers)
-    *   [3.15 Wallpaper setters](#Wallpaper_setters)
-    *   [3.16 Package management](#Package_management)
-    *   [3.17 Input method editor](#Input_method_editor)
-    *   [3.18 Trash management](#Trash_management)
-    *   [3.19 File synchronization](#File_synchronization)
-    *   [3.20 Finders](#Finders)
+    *   [3.5 Build automation](#Build_automation)
+    *   [3.6 Terminal emulators](#Terminal_emulators)
+        *   [3.6.1 VTE-based](#VTE-based)
+        *   [3.6.2 KMS-based](#KMS-based)
+        *   [3.6.3 framebuffer-based](#framebuffer-based)
+    *   [3.7 Files](#Files)
+        *   [3.7.1 File managers](#File_managers)
+            *   [3.7.1.1 Console](#Console_10)
+            *   [3.7.1.2 Graphical](#Graphical_9)
+        *   [3.7.2 Desktop search engines](#Desktop_search_engines)
+        *   [3.7.3 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [3.7.3.1 Console](#Console_11)
+            *   [3.7.3.2 Graphical](#Graphical_10)
+        *   [3.7.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [3.7.5 Batch renamers](#Batch_renamers)
+    *   [3.8 Disk cleaning](#Disk_cleaning)
+    *   [3.9 Disk usage display](#Disk_usage_display)
+    *   [3.10 Clock synchronization](#Clock_synchronization)
+    *   [3.11 System monitoring](#System_monitoring)
+    *   [3.12 System information viewers](#System_information_viewers)
+        *   [3.12.1 Console](#Console_12)
+        *   [3.12.2 Graphical](#Graphical_11)
+        *   [3.12.3 Others](#Others_2)
+    *   [3.13 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [3.14 Power management](#Power_management)
+    *   [3.15 Clipboard managers](#Clipboard_managers)
+    *   [3.16 Wallpaper setters](#Wallpaper_setters)
+    *   [3.17 Package management](#Package_management)
+    *   [3.18 Input method editor](#Input_method_editor)
+    *   [3.19 Trash management](#Trash_management)
+    *   [3.20 File synchronization](#File_synchronization)
+    *   [3.21 Finders](#Finders)
 *   [4 Documents and texts](#Documents_and_texts)
     *   [4.1 Office suites](#Office_suites)
     *   [4.2 Word processors](#Word_processors)
@@ -250,7 +250,8 @@ This article is a general list of applications sorted by category, as a referenc
             *   [7.1.8.4 Application launchers](#Application_launchers)
             *   [7.1.8.5 Logout dialogue](#Logout_dialogue)
         *   [7.1.9 Accessibility](#Accessibility)
-            *   [7.1.9.1 Speech recognition](#Speech_recognition_2)
+            *   [7.1.9.1 Screen reading](#Screen_reading)
+            *   [7.1.9.2 Speech recognition](#Speech_recognition_2)
     *   [7.2 Finance](#Finance)
     *   [7.3 Flashcards](#Flashcards)
     *   [7.4 Time management](#Time_management)
@@ -270,7 +271,7 @@ This article is a general list of applications sorted by category, as a referenc
 
 *   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, GTK and Dmenu clients are available.
 
-[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
+[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
 *   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
 
@@ -280,13 +281,13 @@ This article is a general list of applications sorted by category, as a referenc
 
 [https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through udev and networkd. The service is available with systemd > 210.
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev"). The service is available with _systemd_ > 210.
 
 [http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 *   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
 
-[http://wicd.sourceforge.net/](http://wicd.sourceforge.net/) || [wicd](https://www.archlinux.org/packages/?name=wicd)
+[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 
 ### Web browsers
 
@@ -366,7 +367,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
 
-[https://code.google.com/p/arora/](https://code.google.com/p/arora/) || [arora](https://aur.archlinux.org/packages/arora/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)<sup><small>AUR</small></sup>
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with _vi_-like shortcuts and tiling layouts. As of October 2014 _dwb_ is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
@@ -378,7 +379,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **[Jumanji](/index.php/Jumanji "Jumanji")** — Highly customizable and functional web browser.
 
-[http://pwmt.org/projects/jumanji](http://pwmt.org/projects/jumanji) || [jumanji](https://aur.archlinux.org/packages/jumanji/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jumanji)]</sup>
+[http://pwmt.org/projects/jumanji](http://pwmt.org/projects/jumanji) || [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)<sup><small>AUR</small></sup>
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
 
@@ -386,7 +387,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
 
-[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/maxthon-browser)]</sup>
+[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)<sup><small>AUR</small></sup>
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
 
@@ -402,7 +403,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
 
-[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://aur.archlinux.org/packages/qutebrowser/)<sup><small>AUR</small></sup>
+[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
 
@@ -414,7 +415,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **SlimBoat** — Fast, free secure and powerful web browser based on QtWebkit.
 
-[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)<sup><small>AUR</small></sup>
+[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/slimboat)]</sup>
 
 *   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -436,6 +437,10 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 [https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)<sup><small>AUR</small></sup>
 
+*   **Brave** — At Brave, our goal is to block everything on the web that can cramp your style and compromise your privacy. Annoying ads are yesterday's news, and cookies stay in your jar where they belong. An open source browser created by the co-founder of Mozilla. Find more at [https://www.brave.com/](https://www.brave.com/)
+
+[https://github.com/brave/browser-laptop](https://github.com/brave/browser-laptop) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 ##### Other
 
 *   **[Abaco](https://en.wikipedia.org/wiki/Abaco_(web_browser) "wikipedia:Abaco (web browser)")** — Multi-page graphical web browser for the Plan 9 OS.
@@ -454,7 +459,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 [http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
 
-### Downloaders
+### File sharing
 
 #### FTP
 
@@ -532,7 +537,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 [http://aria2.sourceforge.net/](http://aria2.sourceforge.net/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
-*   **[Ctorrent](/index.php?title=Ctorrent&action=edit&redlink=1 "Ctorrent (page does not exist)")** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
+*   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
 
 [http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)<sup><small>AUR</small></sup>
 
@@ -586,10 +591,6 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 ###### others
 
-*   **QTorrent** — BitTorrent client written in PyQt3.
-
-[http://thegraveyard.org/qtorrent.php](http://thegraveyard.org/qtorrent.php)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2012-09-20]</sup> || [qtorrent](https://aur.archlinux.org/packages/qtorrent/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtorrent)]</sup>
-
 *   **Tixati** — P2P client that uses the BitTorrent protocol.
 
 [http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)<sup><small>AUR</small></sup>
@@ -606,9 +607,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 [http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/](http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/) || [vuze-extreme-mod](https://aur.archlinux.org/packages/vuze-extreme-mod/)<sup><small>AUR</small></sup>
 
-#### eDonkey clients
-
-eDonkey is still the second-largest p2p network (see [Internet Study 2008/2009](http://ipoque.com/en/resources/internet-studies)).
+#### Other P2P networks
 
 See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wiki/Comparison_of_eDonkey_software "wikipedia:Comparison of eDonkey software").
 
@@ -624,7 +623,9 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 [http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
-#### Gnutella
+*   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
+
+[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)<sup><small>AUR</small></sup>
 
 *   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
 
@@ -650,11 +651,11 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
-[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/)<sup><small>AUR</small></sup> [alot-git](https://aur.archlinux.org/packages/alot-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/alot-git)]</sup>
+[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/)<sup><small>AUR</small></sup>
 
 *   **[Alpine](/index.php/Alpine "Alpine")** — Fast, easy-to-use and Apache-licensed email client based on [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
 
-[https://washington.edu/alpine](https://washington.edu/alpine) || [re-alpine](https://aur.archlinux.org/packages/re-alpine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/re-alpine)]</sup> [alpine](https://aur.archlinux.org/packages/alpine/)<sup><small>AUR</small></sup>
+[http://patches.freeiz.com/alpine/](http://patches.freeiz.com/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)<sup><small>AUR</small></sup>
 
 *   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
 
@@ -672,7 +673,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 [http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
 
-*   **Nmh** — A modular mail handling system.
+*   **[nmh](/index.php/Nmh "Nmh")** — A modular mail handling system.
 
 [http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/)<sup><small>AUR</small></sup> [nmh-git](https://aur.archlinux.org/packages/nmh-git/)<sup><small>AUR</small></sup>
 
@@ -712,11 +713,15 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Mature and feature-rich email client. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)
+[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
 *   **Manitou Mail** — Database-driven email system.
 
 [http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manitou-mdx)]</sup> [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manitou-ui)]</sup>
+
+*   **N1** — A new mail client, built on the modern web and designed to be extended.
+
+[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1](https://aur.archlinux.org/packages/n1/)<sup><small>AUR</small></sup>
 
 *   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
 
@@ -754,7 +759,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **ERC** — Powerful, modular, and extensible IRC client for [Emacs](/index.php/Emacs "Emacs").
 
-[http://savannah.gnu.org/projects/erc/](http://savannah.gnu.org/projects/erc/) || [erc-git](https://aur.archlinux.org/packages/erc-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/erc-git)]</sup>
+[http://savannah.gnu.org/projects/erc/](http://savannah.gnu.org/projects/erc/) || included with [emacs](https://www.archlinux.org/packages/?name=emacs)
 
 *   **[ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)")** — Featherweight IRC client, literally `tail -f` the conversation and `echo` back your replies to a file.
 
@@ -774,7 +779,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **sic** — Extremely simple IRC client, similar to [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)").
 
-[http://tools.suckless.org/sic](http://tools.suckless.org/sic) || [sic](https://aur.archlinux.org/packages/sic/)<sup><small>AUR</small></sup>}}
+[http://tools.suckless.org/sic](http://tools.suckless.org/sic) || [sic](https://aur.archlinux.org/packages/sic/)<sup><small>AUR</small></sup>
 
 *   **[WeeChat](https://en.wikipedia.org/wiki/WeeChat "wikipedia:WeeChat")** — Modular, lightweight ncurses-based IRC client.
 
@@ -843,6 +848,10 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 *   **Profanity** — A console based Jabber client inspired by Irssi.
 
 [http://www.profanity.im/](http://www.profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
+
+*   **Poezio** — XMPP client with IRC feeling
+
+[https://poez.io/](https://poez.io/) || [poezio](https://aur.archlinux.org/packages/poezio/)<sup><small>AUR</small></sup>
 
 ###### Graphical clients
 
@@ -922,7 +931,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[Tox](/index.php/Tox "Tox")** — Tox is a distributed, secure messenger with audio and video chat capabilities.
 
-[https://tox.chat/](https://tox.chat/) || [tox-git](https://aur.archlinux.org/packages/tox-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tox-git)]</sup>
+[https://tox.chat/](https://tox.chat/) || see [Tox](/index.php/Tox "Tox")
 
 ###### Graphical
 
@@ -1058,10 +1067,6 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 [http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
 
-*   **Webex** — Proprietary conferencing software.
-
-[http://www.webex.com/](http://www.webex.com/) || [webex](https://aur.archlinux.org/packages/webex/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/webex)]</sup>
-
 ###### Multi-protocol
 
 *   **[SFLPhone](https://en.wikipedia.org/wiki/SFLphone "wikipedia:SFLphone")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support.
@@ -1118,15 +1123,11 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — News aggregator for KDE, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [kdepim-akregator](https://www.archlinux.org/packages/?name=kdepim-akregator)
+[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [akregator](https://www.archlinux.org/packages/?name=akregator)
 
 *   **Blam** — Simple newsreader for GNOME written in C Sharp.
 
 [https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
-
-*   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Excellent Java-based aggregator, which gives users the option to synchronize their feeds across multiple computers. Though according to the official website, project is not being supported any more.
-
-[http://blogbridge.com](http://blogbridge.com) || [blogbridge](https://aur.archlinux.org/packages/blogbridge/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/blogbridge)]</sup>
 
 *   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
 
@@ -1190,7 +1191,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **nn** — Alternative more user-friendly(curses-based) Usenet newsreader for UNIX.
 
-[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nn)]</sup>
+[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)<sup><small>AUR</small></sup>
 
 *   **[NZBGet](/index.php/NZBGet "NZBGet")** — CLI Utility to grab Usenet binary file using .nzb files.
 
@@ -1250,7 +1251,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **Pelican** — A static site generator, powered by Python.
 
-[http://docs.getpelican.com/en/3.5.0/](http://docs.getpelican.com/en/3.5.0/) || [pelican](https://aur.archlinux.org/packages/pelican/)<sup><small>AUR</small></sup>
+[http://docs.getpelican.com/en/3.5.0/](http://docs.getpelican.com/en/3.5.0/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
 
 *   **[Wordpress](/index.php/Wordpress "Wordpress")** — An easy to setup and administer FLOSS content management system featuring a strong and vibrant community with thousands of plugins and themes.
 
@@ -1304,10 +1305,6 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 [http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)<sup><small>AUR</small></sup>
 
-*   **tyrs** — Simple client for Twitter and Identi.ca supporting virtually all its features with nice console UI (unmaintained).
-
-[http://tyrs.nicosphere.net/](http://tyrs.nicosphere.net/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-07-17]</sup> || [tyrs](https://aur.archlinux.org/packages/tyrs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tyrs)]</sup>
-
 *   **turses** — Twitter client for the console based off [tyrs](https://aur.archlinux.org/packages/tyrs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tyrs)]</sup> with major improvements.
 
 [http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)<sup><small>AUR</small></sup>
@@ -1322,9 +1319,9 @@ Pastebin services are often used to quote text or images while collaborating and
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc).
 
-*   **codepad-git** — A codepad.org pastebin client written in python.
+*   **codepad-git** — A [codepad.org](http://www.codepad.org) pastebin client written in python.
 
-[http://www.codepad.org](http://www.codepad.org) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/codepad-git)]</sup>
+[https://github.com/kevr/codepad](https://github.com/kevr/codepad) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/codepad-git)]</sup>
 
 *   **Elmer** — Pastebin client similar to wgetpaste and curlpaste, except written in Perl and usable with wget or curl. Servers: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
 
@@ -1566,10 +1563,6 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 [http://azpainter.sourceforge.jp/](http://azpainter.sourceforge.jp/) || [azpainter](https://aur.archlinux.org/packages/azpainter/)<sup><small>AUR</small></sup>
 
-*   **[Bibble Pro](https://en.wikipedia.org/wiki/Bibble_(software) "wikipedia:Bibble (software)")** — Digital imaging program designed to assist photographers in post-production work and efficient optimization of images created in the Raw image format.
-
-[http://www.corel.com/corel/pages/index.jsp?pgid=12800164](http://www.corel.com/corel/pages/index.jsp?pgid=12800164) || [bibblepro](https://aur.archlinux.org/packages/bibblepro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bibblepro)]</sup>
-
 *   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
 
 [http://www.darktable.org//](http://www.darktable.org//) || [darktable](https://www.archlinux.org/packages/?name=darktable)
@@ -1617,10 +1610,6 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 *   **[MyPaint](https://en.wikipedia.org/wiki/MyPaint "wikipedia:MyPaint")** — Free software graphics application for digital painters.
 
 [http://mypaint.intilinux.com](http://mypaint.intilinux.com) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
-
-*   **Nathive** — "Usable image editor", based on GNOME libraries with a focus on usability and a smooth learning curve.
-
-[http://www.nathive.org/](http://www.nathive.org/) || [nathive](https://aur.archlinux.org/packages/nathive/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nathive)]</sup>
 
 *   **[Pinta](https://en.wikipedia.org/wiki/Pinta_(software) "wikipedia:Pinta (software)")** — Drawing and editing program modeled after [Paint.NET](https://en.wikipedia.org/wiki/Paint.net "wikipedia:Paint.net"). Its goal is to provide a simplified alternative to GIMP for casual users.
 
@@ -1804,10 +1793,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 [http://6xq.net/projects/pianobar/](http://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
 
-*   **PyTone** — Advanced music jukebox with a console interface.
-
-[http://www.luga.de/pytone/](http://www.luga.de/pytone/) || [pytone](https://aur.archlinux.org/packages/pytone/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytone)]</sup>
-
 *   **shell-fm** — Console-based player for the streams provided by [last.fm](http://www.last.fm/).
 
 [https://github.com/jkramer/shell-fm/](https://github.com/jkramer/shell-fm/) || [shell-fm](https://aur.archlinux.org/packages/shell-fm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/shell-fm)]</sup>
@@ -1892,7 +1877,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Noise** — Simple, fast, and good looking music player.
 
-[https://launchpad.net/noise](https://launchpad.net/noise) || [noise](https://www.archlinux.org/packages/?name=noise)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [noise-player](https://www.archlinux.org/packages/?name=noise-player)]</sup>
+[https://launchpad.net/noise](https://launchpad.net/noise) || [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
@@ -1956,7 +1941,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 [https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)<sup><small>AUR</small></sup>
 
-*   **Volnoti** — Volnoti is a lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
+*   **[Volnoti](/index.php/Volnoti "Volnoti")** — A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems.
 
 [https://github.com/davidbrazdil/volnoti](https://github.com/davidbrazdil/volnoti) || [volnoti](https://aur.archlinux.org/packages/volnoti/)<sup><small>AUR</small></sup>
 
@@ -1996,7 +1981,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 [http://more-cowbell.org/](http://more-cowbell.org/) || [cowbell](https://aur.archlinux.org/packages/cowbell/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cowbell)]</sup>
 
-*   **[EasyTag](https://en.wikipedia.org/wiki/EasyTag "wikipedia:EasyTag")** — Utility for viewing, editing and writing ID3 tags of your MP3 files.
+*   **[EasyTag](https://en.wikipedia.org/wiki/EasyTag "wikipedia:EasyTag")** — Utility for viewing, editing and writing ID3 tags of music files, supports many audio formats.
 
 [http://easytag.sourceforge.net/](http://easytag.sourceforge.net/) || [easytag](https://www.archlinux.org/packages/?name=easytag)
 
@@ -2034,7 +2019,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 *   **Qoobar** — Universal QT-based audio tagger (specialized for classical music)
 
-[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qoobar)]</sup>
+[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)<sup><small>AUR</small></sup>
 
 #### Sound editing
 
@@ -2118,15 +2103,11 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 ##### Graphical
 
-See also: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [mpv](/index.php/Mpv "Mpv").
-
-*   **bomi** — Powerful and easy to use multimedia player (mpv backend) (Qt 5).
-
-[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup> (previously [cmplayer](https://aur.archlinux.org/packages/cmplayer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cmplayer)]</sup>), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
+See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [mpv#Front ends](/index.php/Mpv#Front_ends "Mpv").
 
 *   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Simple video player for KDE. Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
 
-[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [dragon](https://www.archlinux.org/packages/?name=dragon)]</sup>
+[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
 
 *   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes Xine as its backend and has excellent support of digital TV (DVB).
 
@@ -2143,10 +2124,6 @@ See also: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [m
 *   **Snappy** — Powerful media player with a minimalistic interface.
 
 [https://wiki.gnome.org/Apps/Snappy](https://wiki.gnome.org/Apps/Snappy) || [snappy-player](https://www.archlinux.org/packages/?name=snappy-player)
-
-*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer_(software) "wikipedia:SMPlayer (software)")** — SMPlayer is a cross-platform graphical front-end for MPlayer and forks of Mplayer using GUI widgets offered by Qt.
-
-[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses GStreamer. Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
@@ -2180,7 +2157,7 @@ See also: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"), [m
 
 *   **subdl** — Automatic subtitle downloader.
 
-[http://code.google.com/p/subdl/](http://code.google.com/p/subdl/) || [subdl](https://www.archlinux.org/packages/?name=subdl)
+[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
 
 *   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
 
@@ -2233,10 +2210,6 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 *   **[LiVES](https://en.wikipedia.org/wiki/LiVES "wikipedia:LiVES")** — Video editor and VJ (live performance) platform.
 
 [http://lives-video.com/](http://lives-video.com/) || [lives](https://aur.archlinux.org/packages/lives/)<sup><small>AUR</small></sup>
-
-*   **Open Movie Editor** — Video editing program designed for basic movie making capabilities, powerful, yet easy to use.
-
-[http://www.openmovieeditor.org/](http://www.openmovieeditor.org/) || [openmovieeditor](https://aur.archlinux.org/packages/openmovieeditor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openmovieeditor)]</sup>
 
 *   **[Open Shot](https://en.wikipedia.org/wiki/OpenShot_Video_Editor "wikipedia:OpenShot Video Editor")** — Non-linear video editor based on MLT framework.
 
@@ -2400,21 +2373,17 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 See also [Wikipedia:Comparison of integrated development environments](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments "wikipedia:Comparison of integrated development environments").
 
-*   **[Anjuta](/index.php/Anjuta "Anjuta")** — Versatile IDE with project management, an application wizard, an interactive debugger, a source editor, version control support and many more tools.
+*   **[Anjuta](https://en.wikipedia.org/wiki/Anjuta "wikipedia:Anjuta")** — Versatile IDE with project management, an application wizard, an interactive debugger, a source editor, version control support and many more tools.
 
 [http://www.anjuta.org/](http://www.anjuta.org/) || [anjuta](https://www.archlinux.org/packages/?name=anjuta)
 
 *   **[Aptana Studio](https://en.wikipedia.org/wiki/Aptana#Aptana_Studio "wikipedia:Aptana")** — IDE based on Eclipse, but geared towards web development, with support for HTML, CSS, Javascript, Ruby on Rails, PHP, Adobe AIR and others.
 
-[http://www.aptana.org/](http://www.aptana.org/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)<sup><small>AUR</small></sup>
+[http://www.aptana.com/](http://www.aptana.com/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)<sup><small>AUR</small></sup>
 
 *   **[Bluefish](https://en.wikipedia.org/wiki/Bluefish_(text_editor) "wikipedia:Bluefish (text editor)")** — GTK+ editor/IDE with an MDI interface, syntax highlighting and support for Python plugins.
 
 [http://bluefish.openoffice.nl/](http://bluefish.openoffice.nl/) || [bluefish](https://www.archlinux.org/packages/?name=bluefish)
-
-*   **[BlueGriffon](https://en.wikipedia.org/wiki/BlueGriffon "wikipedia:BlueGriffon")** — A WYSIWYG content editor for the World Wide Web. Powered by Gecko, the rendering engine of [Firefox](/index.php/Firefox "Firefox"), it can edit Web pages in conformance to Web Standards. It runs on Mac OS X, Windows and Linux.
-
-[http://bluegriffon.org/](http://bluegriffon.org/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
 
 *   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
 
@@ -2424,13 +2393,17 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 [http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)<sup><small>AUR</small></sup>
 
+*   **[Builder](https://en.wikipedia.org/wiki/GNOME_Builder "wikipedia:GNOME Builder")** — General purpose IDE for GNOME.
+
+[https://wiki.gnome.org/Apps/Builder](https://wiki.gnome.org/Apps/Builder) || [gnome-builder](https://www.archlinux.org/packages/?name=gnome-builder)
+
 *   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — Open source and cross-platform C/C++ IDE.
 
 [http://www.codeblocks.org/](http://www.codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
 
 *   **[Cloud9](https://en.wikipedia.org/wiki/Cloud9_IDE "wikipedia:Cloud9 IDE")** — State-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime.
 
-[https://c9.io/](https://c9.io/) || [cloud9](https://aur.archlinux.org/packages/cloud9/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cloud9)]</sup>
+[https://c9.io/](https://c9.io/) || [c9.core](https://aur.archlinux.org/packages/c9.core/)<sup><small>AUR</small></sup>
 
 *   **[Eclipse](/index.php/Eclipse "Eclipse")** — Open source community project, which aims to provide a universal development platform.
 
@@ -2442,7 +2415,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python 3.x and Ruby IDE in PyQt4.
 
-[http://eric-ide.python-projects.org/](http://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric) [eric4](https://aur.archlinux.org/packages/eric4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eric4)]</sup>
+[http://eric-ide.python-projects.org/](http://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
 
 *   **[Gambas](/index.php/Gambas "Gambas")** — Free development environment based on a Basic interpreter with object extensions.
 
@@ -2484,7 +2457,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 [http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://www.archlinux.org/packages/?name=monodevelop)
 
-*   **MPLAB** — IDE for Microchip PIC and dsPIC development
+*   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development
 
 [http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)<sup><small>AUR</small></sup>
 
@@ -2496,7 +2469,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 [http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
 
-*   **[Phpstorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm")** — JetBrains PhpStorm is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform, providing an editor for PHP, HTML and JavaScript with on-the-fly code analysis, error prevention and automated refactorings for PHP and JavaScript code.
+*   **[PHPStorm](/index.php/PHPStorm "PHPStorm")** — JetBrains PhpStorm is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform, providing an editor for PHP, HTML and JavaScript with on-the-fly code analysis, error prevention and automated refactorings for PHP and JavaScript code.
 
 [https://www.jetbrains.com/phpstorm/](https://www.jetbrains.com/phpstorm/) || [phpstorm](https://aur.archlinux.org/packages/phpstorm/)<sup><small>AUR</small></sup> [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)<sup><small>AUR</small></sup>
 
@@ -2512,13 +2485,29 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 [http://qt-project.org/downloads#qt-creator](http://qt-project.org/downloads#qt-creator) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/Scratch "wikipedia:Scratch")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). _Scratch_ is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
+*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). _Scratch_ is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
 
 [http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch) [scratch2](https://aur.archlinux.org/packages/scratch2/)<sup><small>AUR</small></sup>
 
-*   **Spyder** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
+*   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
 
-[http://code.google.com/p/spyderlib/](http://code.google.com/p/spyderlib/) || [spyder](https://www.archlinux.org/packages/?name=spyder)
+[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder)
+
+### Build automation
+
+See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
+
+*   **Apache Ant** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
+
+[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
+
+*   **Apache Maven** — Software project management and comprehension tool.
+
+[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
+
+*   **Gradle** — Powerful build system for the JVM.
+
+[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
 
 ### Terminal emulators
 
@@ -2584,7 +2573,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **[urxvt](/index.php/Urxvt "Urxvt")** — Highly extendable (with Perl) unicode enabled rxvt-clone terminal emulator featuring tabbing, url launching, a Quake style drop-down mode and pseudo-transparency.
 
-[http://software.schmorp.de/pkg/rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
+[http://software.schmorp.de/pkg/rxvt-unicode.html](http://software.schmorp.de/pkg/rxvt-unicode.html) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
 
 *   **[xterm](/index.php/Xterm "Xterm")** — Simple terminal emulator for the X Window System. It provides DEC VT102 and Tektronix 4014 compatible terminals for programs that can't use the window system directly.
 
@@ -2630,7 +2619,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 [http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
 
-*   **Pantheon Terminal** — The Pantheon Terminal Emulator.
+*   **Pantheon Terminal** — A super lightweight, beautiful, and simple terminal emulator. It's designed to be setup with sane defaults and little to no configuration.
 
 [https://launchpad.net/pantheon-terminal](https://launchpad.net/pantheon-terminal) || [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal)
 
@@ -2649,6 +2638,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 *   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
 
 [http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
+
+*   **Terminix** — A tiling terminal emulator for Linux using GTK+ 3
+
+[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix](https://aur.archlinux.org/packages/terminix/)<sup><small>AUR</small></sup>, [terminix-git](https://aur.archlinux.org/packages/terminix-git/)<sup><small>AUR</small></sup>
 
 *   **Termit** — Simple terminal emulator based on the vte library that includes tabs, bookmarks, and the ability to switch encodings.
 
@@ -2712,7 +2705,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
-[http://re-alpine.sourceforge.net/](http://re-alpine.sourceforge.net/) || [re-alpine](https://aur.archlinux.org/packages/re-alpine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/re-alpine)]</sup>
+[http://patches.freeiz.com/alpine/](http://patches.freeiz.com/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)<sup><small>AUR</small></sup>
 
 *   **[Ranger](/index.php/Ranger "Ranger")** — Console-based file manager with vi bindings, customizability, and lots of features.
 
@@ -2738,7 +2731,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE4 desktop.
 
-[http://dolphin.kde.org/](http://dolphin.kde.org/) || [kdebase-dolphin](https://www.archlinux.org/packages/?name=kdebase-dolphin)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [dolphin](https://www.archlinux.org/packages/?name=dolphin)]</sup>
+[http://dolphin.kde.org/](http://dolphin.kde.org/) || [dolphin](https://www.archlinux.org/packages/?name=dolphin)
 
 *   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 
@@ -2876,7 +2869,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **arj** — An archiver that formerly used on DOS/Windows in mid-1990s. This is an open source clone.
 
-[http://arj.sourceforge.net/](http://arj.sourceforge.net/) || [arj](https://aur.archlinux.org/packages/arj/)<sup><small>AUR</small></sup>
+[http://arj.sourceforge.net/](http://arj.sourceforge.net/) || [arj](https://www.archlinux.org/packages/?name=arj)
 
 *   **[cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio")** — GNU tool supporting cpio and tar file archive formats.
 
@@ -2930,7 +2923,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[Ark](https://en.wikipedia.org/wiki/Ark_(software) "wikipedia:Ark (software)")** — Archiving tool included in the KDE desktop.
 
-[http://kde.org/applications/utilities/ark/](http://kde.org/applications/utilities/ark/) || [kdeutils-ark](https://www.archlinux.org/packages/?name=kdeutils-ark)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [ark](https://www.archlinux.org/packages/?name=ark)]</sup>
+[http://kde.org/applications/utilities/ark/](http://kde.org/applications/utilities/ark/) || [ark](https://www.archlinux.org/packages/?name=ark)
 
 *   **Engrampa** — Archive manager for [MATE](/index.php/MATE "MATE")
 
@@ -3034,7 +3027,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[Disk Usage Analyzer](https://en.wikipedia.org/wiki/Disk_Usage_Analyzer "wikipedia:Disk Usage Analyzer") (Baobab)** — Disk usage analyzer for the [GNOME](/index.php/GNOME "GNOME") desktop.
 
-[http://www.marzocca.net/linux/baobab](http://www.marzocca.net/linux/baobab) || [baobab](https://www.archlinux.org/packages/?name=baobab) [baobab36](https://aur.archlinux.org/packages/baobab36/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/baobab36)]</sup>
+[http://www.marzocca.net/linux/baobab](http://www.marzocca.net/linux/baobab) || [baobab](https://www.archlinux.org/packages/?name=baobab)
 
 *   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.
 
@@ -3102,7 +3095,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — Also known as KSysguard, is the [KDE](/index.php/KDE "KDE") task manager and performance monitor.
 
-[http://userbase.kde.org/KSysGuard](http://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
+[http://userbase.kde.org/KSysGuard](http://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **linux process explorer** — Graphical process explorer for Linux.
 
@@ -3124,6 +3117,10 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 [http://batchbin.ueuo.com/projects/trayfreq-archlinux/](http://batchbin.ueuo.com/projects/trayfreq-archlinux/) || [paramano](https://aur.archlinux.org/packages/paramano/)<sup><small>AUR</small></sup>
 
+*   **Sysstat** — A collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
+
+[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
+
 ### System information viewers
 
 #### Console
@@ -3131,10 +3128,6 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 *   **alsi** — A system information tool for Arch Linux. It can be configured for every other system without even touching the source code of the script.
 
 [http://trizenx.blogspot.ro/2012/08/alsi.html](http://trizenx.blogspot.ro/2012/08/alsi.html) || [alsi](https://aur.archlinux.org/packages/alsi/)<sup><small>AUR</small></sup>
-
-*   **archey** — Simple python script that displays the arch logo and some basic information. Depends on python3.
-
-[https://github.com/djmelik/archey](https://github.com/djmelik/archey) || [archey](https://aur.archlinux.org/packages/archey/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/archey)]</sup>
 
 *   **archey2** — Simple python script that displays the arch logo and some basic information. Python 2.x version.
 
@@ -3294,7 +3287,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 *   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
 
-[http://github.com/andreafrancia/trash-cli](http://github.com/andreafrancia/trash-cli) || [trash-cli](https://aur.archlinux.org/packages/trash-cli/)<sup><small>AUR</small></sup>
+[http://github.com/andreafrancia/trash-cli](http://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
 
 ### File synchronization
 
@@ -3548,7 +3541,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Statistical machine translation tool (language data not included).
 
-[http://statmt.org/moses](http://statmt.org/moses) || [moses-git](https://aur.archlinux.org/packages/moses-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/moses-git)]</sup>
+[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/)<sup><small>AUR</small></sup> [mosesdecoder-git](https://aur.archlinux.org/packages/mosesdecoder-git/)<sup><small>AUR</small></sup>
 
 *   **[OmegaT](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT")** — General translator's tool which contains a lot of translation memory features and can give suggestions from Google Translate. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, XLIFF/Okapi, MediaWiki, plain text, TMX and others.
 
@@ -3654,7 +3647,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 [http://acme.cat-v.org](http://acme.cat-v.org) || [plan9port](https://www.archlinux.org/packages/?name=plan9port)
 
-*   **[Atom](https://en.wikipedia.org/wiki/Atom_(text_editor) "wikipedia:Atom (text editor)")** — A promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
+*   **[Atom](/index.php/Atom "Atom")** — A promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
 
 [https://atom.io/](https://atom.io/) || [atom-editor](https://aur.archlinux.org/packages/atom-editor/)<sup><small>AUR</small></sup>
 
@@ -3828,6 +3821,7 @@ for more collection apps, see also [Multimedia#Collection managers](/index.php/M
 
 *   [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup> is able to save both AcroForms and XFA forms into PDF files.
 *   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular) support AcroForms, but not full XFA forms. [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[4]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
+*   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
 
 See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_PDF_software "wikipedia:List of PDF software") and [Wikipedia:DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu").
 
@@ -3949,10 +3943,6 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 #### Comic book (comix/manga)
 
-*   **[Comix](https://en.wikipedia.org/wiki/Comix_(software) "wikipedia:Comix (software)")** — GTK2 image viewer specifically designed to handle comic book archives. Also includes library manager. It's development was stopped in 2009 and moved to MComix.
-
-[http://comix.sourceforge.net/](http://comix.sourceforge.net/) || [comix](https://aur.archlinux.org/packages/comix/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [mcomix](https://www.archlinux.org/packages/?name=mcomix)]</sup>
-
 *   **[MComix](https://en.wikipedia.org/wiki/MComix "wikipedia:MComix")** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
 [http://sourceforge.net/projects/mcomix/](http://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
@@ -4045,9 +4035,9 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 [http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
 
-*   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Small program which is handy for keeping and organizing miscellaneous notes, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
+*   **KNotes** — A program that lets you write the computer equivalent of sticky notes.
 
-[http://www.kde.org/applications/utilities/kjots/](http://www.kde.org/applications/utilities/kjots/) || [kdepim-kjots](https://www.archlinux.org/packages/?name=kdepim-kjots)
+[https://www.kde.org/applications/utilities/knotes/](https://www.kde.org/applications/utilities/knotes/) || [knotes](https://www.archlinux.org/packages/?name=knotes)
 
 *   **NoteCase** — Portable hierarchical note manager, coded in C++ using bindings to the GTK+ toolkit.
 
@@ -4411,6 +4401,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
 
+*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — _a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard._
+
+[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup>
+
 *   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
 
 [http://gnupg.org/](http://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
@@ -4418,6 +4412,14 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **gzsteg** — A utiltiy that can hide data in gzip compressed files
 
 [http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gzsteg)</small>
+
+*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — _a simple interface for GnuPG_ for KDE.
+
+[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
+
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — _GNOME application for managing encryption keys and passwords in the GnomeKeyring._
+
+[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
 *   **silenteye** — A steganography application written in C++, use Qt4 library.
 
@@ -4469,9 +4471,9 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 [https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)<sup><small>AUR</small></sup>
 
-*   **KeePassX** — Free and open source Qt-based password manager (uses KeePass 1.x databases for storage).
+*   **KeePassX** — Free and open source Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
-[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx)
+[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
@@ -4491,7 +4493,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Password Gorilla** — A cross-platform password manager.
 
-[https://github.com/zdia/gorilla/wiki/](https://github.com/zdia/gorilla/wiki/) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)<sup><small>AUR</small></sup> [gorilla](https://aur.archlinux.org/packages/gorilla/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gorilla)]</sup>
+[https://github.com/zdia/gorilla/wiki/](https://github.com/zdia/gorilla/wiki/) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)<sup><small>AUR</small></sup>
 
 *   **Password Safe** — Simple and secure password manager.
 
@@ -4931,11 +4933,11 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")** — A set of design tools for Altera's FPGA chips that includes Quartus II and ModelSim-Altera.
 
-[http://www.altera.com/products/software/sfw-index.jsp](http://www.altera.com/products/software/sfw-index.jsp) || only ModelSim-Altera is packaged [modelsim-altra](https://aur.archlinux.org/packages/modelsim-altra/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+[http://www.altera.com/products/software/sfw-index.jsp](http://www.altera.com/products/software/sfw-index.jsp) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
 
 *   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
 
-[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || not packaged, installation instruction in the wiki page.
+[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
 
 ##### MCU IDE
 
@@ -5022,10 +5024,6 @@ See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipe
 *   **[Splashy](/index.php/Splashy "Splashy")** — A graphical boot process designed to replace the aging Bootsplash program
 
 [https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)<sup><small>AUR</small></sup>
-
-*   **xplash** — New splash program used by Ubuntu starting from 9.10
-
-[https://launchpad.net/xsplash](https://launchpad.net/xsplash) || [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xsplash-bzr)]</sup>
 
 #### Command shells
 
@@ -5122,10 +5120,6 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   **fbpager** — Virtual desktop pager for fluxbox.
 
 [http://www.fluxbox.org/fbpager](http://www.fluxbox.org/fbpager) || [fbpager-git](https://aur.archlinux.org/packages/fbpager-git/)<sup><small>AUR</small></sup>
-
-*   **fluxter** — Workspace pager for [fluxbox](/index.php/Fluxbox "Fluxbox").
-
-[http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html](http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html) || [fluxter](https://www.archlinux.org/packages/?name=fluxter)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
 *   **IPager** — A configurable pager with transparency, originally developed for Fluxbox.
 
@@ -5257,7 +5251,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Bashrun2** — Provides a different, barebones approach to a run dialog, using a specialized Bash session within a small xterm window.
 
-[https://code.google.com/p/bashrun2/](https://code.google.com/p/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bashrun2)]</sup>
+[http://henning-bekel.de/bashrun2/](http://henning-bekel.de/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bashrun2)]</sup>
 
 *   **[dmenu](/index.php/Dmenu "Dmenu")** — Fast and lightweight dynamic menu for X which is also useful as an application launcher.
 
@@ -5356,6 +5350,16 @@ A few simple shutdown managers are available:
 [https://github.com/panjandrum/obshutdown](https://github.com/panjandrum/obshutdown) || [obshutdown](https://aur.archlinux.org/packages/obshutdown/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/obshutdown)]</sup>
 
 #### Accessibility
+
+##### Screen reading
+
+*   **Orca** — Screen reader for individuals who are blind or visually impaired
+
+[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)
+
+*   **[Simple Orca Plugin System](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")** — Plug-in extension for the Orca screen reader
+
+[https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php) || [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/)<sup><small>AUR</small></sup>
 
 ##### Speech recognition
 
@@ -5503,7 +5507,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [kdepim-korganizer](https://www.archlinux.org/packages/?name=kdepim-korganizer)
+[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [korganizer](https://www.archlinux.org/packages/?name=korganizer)
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extension to Mozilla Thunderbird that provides calendar and task support.
 
@@ -5523,7 +5527,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **QTodoTxt** — A cross-platform UI client for `todo.txt` files (see [project's page](http://todotxt.com/))
 
-[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtodotxt-git)]</sup>
+[https://github.com/mNantern/QTodoTxt](https://github.com/mNantern/QTodoTxt) || [qtodotxt](https://aur.archlinux.org/packages/qtodotxt/)<sup><small>AUR</small></sup> [qtodotxt-git](https://aur.archlinux.org/packages/qtodotxt-git/)<sup><small>AUR</small></sup>
 
 *   **Rachota** — Portable time tracker for personal projects.
 
@@ -5602,7 +5606,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
 
-[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [higan](https://www.archlinux.org/packages/?name=higan)]</sup> [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [higan](https://www.archlinux.org/packages/?name=higan)]</sup>
+[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Command line driven multi system emulator.
 
@@ -5694,3 +5698,10 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -149,3 +149,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_Gmail_with_ge
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

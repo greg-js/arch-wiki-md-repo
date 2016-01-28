@@ -56,3 +56,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=LightScribe&oldid=41
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Optical](/index.php/Category:Optical "Category:Optical")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

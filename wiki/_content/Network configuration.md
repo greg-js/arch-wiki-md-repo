@@ -25,6 +25,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
     *   [4.1 Device names](#Device_names)
         *   [4.1.1 Get current device names](#Get_current_device_names)
         *   [4.1.2 Change device name](#Change_device_name)
+        *   [4.1.3 Reverting to traditional device names](#Reverting_to_traditional_device_names)
     *   [4.2 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
     *   [4.3 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
 *   [5 Configure the IP address](#Configure_the_IP_address)
@@ -237,6 +238,15 @@ The device path should match both the new and old device name, since the rule ma
 To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/_DEVPATH_`. Remember to first take down the interface you are trying to rename (e.g. `ip link set down enp1s0`).
 
 **Note:** When choosing the static names **it should be avoided to use names in the format of "eth_X_" and "wlan_X_"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
+
+#### Reverting to traditional device names
+
+If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled with the following:
+
+```
+ # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
+```
 
 ### Set device MTU and queue length
 
@@ -680,8 +690,12 @@ With motherboards such as the Gigabyte GA-990FXA-UD3, booting with IOMMU off (wh
 
 When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=414832](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=414832)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=417554](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=417554)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

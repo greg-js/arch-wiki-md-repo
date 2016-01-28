@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Dynamic WMs"
 
-The following 17 pages are in this category, out of 17 total.
+The following 14 pages are in this category, out of 14 total.
 
 ### A
 
@@ -35,10 +35,6 @@ The following 17 pages are in this category, out of 17 total.
 
 *   [I3](/index.php/I3 "I3")
 
-### M
-
-*   [Monsterwm](/index.php/Monsterwm "Monsterwm")
-
 ### R
 
 *   [Ruby-wmii](/index.php/Ruby-wmii "Ruby-wmii")
@@ -46,7 +42,6 @@ The following 17 pages are in this category, out of 17 total.
 ### S
 
 *   [Sawfish](/index.php/Sawfish "Sawfish")
-*   [Snapwm](/index.php/Snapwm "Snapwm")
 *   [Spectrwm](/index.php/Spectrwm "Spectrwm")
 *   [Sway](/index.php/Sway "Sway")
 
@@ -56,7 +51,6 @@ The following 17 pages are in this category, out of 17 total.
 
 ### W
 
-*   [Wingo](/index.php/Wingo "Wingo")
 *   [WMFS](/index.php/WMFS "WMFS")
 *   [Wmii](/index.php/Wmii "Wmii")
 

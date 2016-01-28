@@ -45,6 +45,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
+*   [27 January 2016] [ASA-201601-31](https://lists.archlinux.org/pipermail/arch-security/2016-January/000536.html) [nginx](https://www.archlinux.org/packages/?name=nginx) denial of service
 *   [25 January 2016] [ASA-201601-30](https://lists.archlinux.org/pipermail/arch-security/2016-January/000535.html) [blueman](https://www.archlinux.org/packages/?name=blueman) privilege escalation
 *   [25 January 2016] [ASA-201601-29](https://lists.archlinux.org/pipermail/arch-security/2016-January/000534.html) [mbedtls](https://www.archlinux.org/packages/?name=mbedtls) man-in-the-middle
 *   [25 January 2016] [ASA-201601-28](https://lists.archlinux.org/pipermail/arch-security/2016-January/000533.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
@@ -510,51 +511,55 @@ Vim-Snippet for vim-ultisnips plugin for easy completing the archlinux template.
 
 ```
 snippet archsec "arch security form"
-Arch Linux Security Advisory ASA-`date -I -u | egrep -o '[0-9]{4}'``date -I -u | egrep -o '[0-9]{2}' | sed '3q;d'`${1}
-=========================================
+Arch Linux Security Advisory ASA-`date -I -u | egrep -o '[0-9]{4}'``date -I -u | egrep -o '[0-9]{2}' | sed '3q;d'`-${1}
+==========================================
 
 Severity: ${2}
 Date    : `date -I -u`
-CVE-ID  : ${3}
-Package : ${4}
-Type    : ${5}
+CVE-ID  : $3
+Package : $4
+Type    : $5
 Remote  : ${6}
 Link    : https://wiki.archlinux.org/index.php/CVE
 
 Summary
 =======
 
-${7}
+The package $4 before version $7 is vulnerable to $5 ${8}
 
 Resolution
 ==========
 
-${8}
+Upgrade to $7.
+
+# pacman -Syu "$4>=$7"
+
+${9:The problems have been fixed upstream in version $7}
 
 Workaround
 ==========
 
-${9}
+${10:None.}
 
 Description
 ===========
 
-${10}
+$3
 
 Impact
 ======
 
-${11}
+${12}
 
 References
 ==========
 
-${12}
+${13}
 endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417184](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417184)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417516](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417516)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

@@ -65,3 +65,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Flumotion&oldid=3743
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Streaming](/index.php/Category:Streaming "Category:Streaming")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

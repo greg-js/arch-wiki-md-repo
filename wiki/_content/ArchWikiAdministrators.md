@@ -9,8 +9,8 @@ Use the _discussion_ tab above each page for page-specific comments. Use [ArchWi
 Contact one of the Administrators for private discussions:
 
 *   [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) - [Send Email](/index.php/Special:EmailUser/Lahwaacz "Special:EmailUser/Lahwaacz")
-*   [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) - [dario {nospam} giova@gmai {nospam} l.com](/index.php/Special:EmailUser/Kynikos "Special:EmailUser/Kynikos")
 *   [Alad](/index.php/User:Alad "User:Alad") ([talk](/index.php/User_talk:Alad "User talk:Alad")) - [Send Email](mailto:alad@archlinux.info)
+*   [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) - [dario {nospam} giova@gmai {nospam} l.com](/index.php/Special:EmailUser/Kynikos "Special:EmailUser/Kynikos")
 *   [Fengchao](/index.php/User:Fengchao "User:Fengchao") ([talk](/index.php/User_talk:Fengchao "User talk:Fengchao")) - [Send Email](/index.php/Special:EmailUser/Fengchao "Special:EmailUser/Fengchao")
 
 The following Administrators are currently inactive (less than 30 edits in the last 30 days):
@@ -22,7 +22,7 @@ The following Administrators are currently inactive (less than 30 edits in the l
 
 Members are periodically and automatically sorted in descending order by the number of edits made in the previous 30 days plus the number of edits made with any associated bot accounts in the same period.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Administrators&oldid=410495](https://wiki.archlinux.org/index.php?title=ArchWiki:Administrators&oldid=410495)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Administrators&oldid=415845](https://wiki.archlinux.org/index.php?title=ArchWiki:Administrators&oldid=415845)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

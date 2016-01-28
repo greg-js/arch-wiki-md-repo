@@ -246,3 +246,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=41
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [CPU](/index.php/Category:CPU "Category:CPU")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

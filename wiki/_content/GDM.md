@@ -572,3 +572,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GDM&oldid=409767](ht
 
 *   [Display managers](/index.php/Category:Display_managers "Category:Display managers")
 *   [GNOME](/index.php/Category:GNOME "Category:GNOME")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

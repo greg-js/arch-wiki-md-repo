@@ -359,3 +359,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=41150
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [TeX](/index.php/Category:TeX "Category:TeX")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Keyboards"
 
-The following 21 pages are in this category, out of 21 total.
+The following 22 pages are in this category, out of 22 total.
 
 ### A
 
@@ -50,6 +50,10 @@ The following 21 pages are in this category, out of 21 total.
 ### M
 
 *   [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")
+
+### R
+
+*   [Razer](/index.php/Razer "Razer")
 
 ### S
 

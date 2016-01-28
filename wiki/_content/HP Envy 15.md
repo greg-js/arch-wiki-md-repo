@@ -282,3 +282,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Envy_15&oldid=380
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [HP](/index.php/Category:HP "Category:HP")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

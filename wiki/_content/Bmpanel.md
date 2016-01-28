@@ -36,3 +36,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Bmpanel&oldid=409481
 
 *   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
 *   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

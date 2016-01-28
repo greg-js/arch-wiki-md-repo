@@ -650,3 +650,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=413358](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

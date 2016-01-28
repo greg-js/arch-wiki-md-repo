@@ -494,3 +494,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=415287
 
 *   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
 *   [Wine](/index.php/Category:Wine "Category:Wine")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -12,12 +12,16 @@ For content organization and general references, please see the note in [Categor
 
 ## Pages in category "Apple"
 
-The following 12 pages are in this category, out of 12 total.
+The following 13 pages are in this category, out of 13 total.
 
 ### A
 
 *   [AirPort](/index.php/AirPort "AirPort")
 *   [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive")
+
+### E
+
+*   [User:Elinux/MacBook Pro 12,1](/index.php/User:Elinux/MacBook_Pro_12,1 "User:Elinux/MacBook Pro 12,1")
 
 ### I
 

@@ -182,8 +182,8 @@ Once those two files are created, reload systemd, enable and start the timer :
 
 ```
 systemctl daemon-reload
-systemctl enable mbsync@user.timer
-systemctl start mbsync@user.timer
+systemctl enable mbsync@`whoami`.timer
+systemctl start mbsync@`whoami`.timer
 
 ```
 
@@ -388,8 +388,12 @@ in the IMAPStore config part of the Exchange, this problem did not occur any mor
 *   [backing up gmail with mbsync](http://kevin.deldycke.com/2012/08/gmail-backup-mbsync/)
 *   [How To Verify SSL Certificate From A Shell Prompt](http://www.cyberciti.biz/faq/test-ssl-certificates-diagnosis-ssl-certificate/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Isync&oldid=413603](https://wiki.archlinux.org/index.php?title=Isync&oldid=413603)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Isync&oldid=417541](https://wiki.archlinux.org/index.php?title=Isync&oldid=417541)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

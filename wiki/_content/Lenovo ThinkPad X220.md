@@ -142,3 +142,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

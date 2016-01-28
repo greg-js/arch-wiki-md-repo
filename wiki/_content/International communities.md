@@ -196,3 +196,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=International_commun
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

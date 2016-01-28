@@ -297,3 +297,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices/Cu
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Laptops](/index.php/Category:Laptops "Category:Laptops")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

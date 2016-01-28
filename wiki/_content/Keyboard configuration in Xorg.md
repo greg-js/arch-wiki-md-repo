@@ -115,7 +115,7 @@ Examples in the following subsections will have the same effect, they will set `
 
 ### Using setxkbmap
 
-_setxkbmap_ sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/%7E/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified by [X configuration files](#Using_X_configuration_files).
+_setxkbmap_ sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified by [X configuration files](#Using_X_configuration_files).
 
 The usage is as follows (see `man 1 setxkbmap`):
 
@@ -345,3 +345,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configurati
 
 *   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

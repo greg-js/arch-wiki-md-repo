@@ -333,3 +333,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=SysVinit&oldid=37624
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
 *   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

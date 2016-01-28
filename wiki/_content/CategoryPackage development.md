@@ -12,7 +12,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Package development"
 
-The following 55 pages are in this category, out of 55 total.
+The following 53 pages are in this category, out of 53 total.
 
 ### A
 
@@ -33,7 +33,6 @@ The following 55 pages are in this category, out of 55 total.
 
 *   [Ccache](/index.php/Ccache "Ccache")
 *   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")
-*   [Christmas Cleanup/2011](/index.php/Christmas_Cleanup/2011 "Christmas Cleanup/2011")
 *   [Clang](/index.php/Clang "Clang")
 *   [CLR package guidelines](/index.php/CLR_package_guidelines "CLR package guidelines")
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
@@ -44,7 +43,6 @@ The following 55 pages are in this category, out of 55 total.
 
 *   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
 *   [Desktop entries](/index.php/Desktop_entries "Desktop entries")
-*   [Desktop entries (简体中文)](/index.php/Desktop_entries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop entries (简体中文)")
 *   [DeveloperWiki:Integrity Check](/index.php/DeveloperWiki:Integrity_Check "DeveloperWiki:Integrity Check")
 *   [DeveloperWiki:Keyring Package](/index.php/DeveloperWiki:Keyring_Package "DeveloperWiki:Keyring Package")
 *   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")

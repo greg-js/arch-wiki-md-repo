@@ -92,3 +92,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Halevt&oldid=412093]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

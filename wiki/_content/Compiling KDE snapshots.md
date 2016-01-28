@@ -351,3 +351,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiling_KDE_snapsh
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [KDE](/index.php/Category:KDE "Category:KDE")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

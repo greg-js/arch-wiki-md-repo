@@ -148,3 +148,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pa
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

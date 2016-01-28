@@ -873,3 +873,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=X_resources&oldid=40
 
 *   [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles")
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden categories:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

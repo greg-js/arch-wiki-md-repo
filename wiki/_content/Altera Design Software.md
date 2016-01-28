@@ -416,3 +416,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Altera_Design_Softwa
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

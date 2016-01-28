@@ -130,3 +130,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=41
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

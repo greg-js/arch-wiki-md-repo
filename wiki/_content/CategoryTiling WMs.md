@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Tiling WMs"
 
-The following 22 pages are in this category, out of 22 total.
+The following 20 pages are in this category, out of 20 total.
 
 ### A
 
@@ -34,10 +34,6 @@ The following 22 pages are in this category, out of 22 total.
 
 *   [I3](/index.php/I3 "I3")
 *   [Ion3](/index.php/Ion3 "Ion3")
-
-### M
-
-*   [Musca](/index.php/Musca "Musca")
 
 ### N
 
@@ -67,7 +63,6 @@ The following 22 pages are in this category, out of 22 total.
 
 ### W
 
-*   [Wingo](/index.php/Wingo "Wingo")
 *   [WMFS2](/index.php/WMFS2 "WMFS2")
 
 ### X

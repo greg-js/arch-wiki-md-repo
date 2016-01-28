@@ -46,3 +46,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Talkd_and_the_talk_c
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

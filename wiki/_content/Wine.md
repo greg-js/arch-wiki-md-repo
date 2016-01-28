@@ -25,7 +25,6 @@ Related articles
     *   [2.7 Desktop launcher menus](#Desktop_launcher_menus)
         *   [2.7.1 Creating menu entries for Wine utilities](#Creating_menu_entries_for_Wine_utilities)
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
-        *   [2.7.3 KDE 4 menu fix](#KDE_4_menu_fix)
 *   [3 Running Windows applications](#Running_Windows_applications)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
@@ -131,8 +130,6 @@ export WINEARCH=win32
 ### Graphics drivers
 
 For most games, Wine requires high performance accelerated graphics drivers. This likely means using proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") or [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") drivers, although the open source [ATI](/index.php/ATI "ATI") driver is increasingly become proficient for use with Wine. [Intel](/index.php/Intel "Intel") drivers should mostly work as well as they are going to out of the box.
-
-See [Gaming On Wine: The Good & Bad Graphics Drivers](http://www.phoronix.com/scan.php?page=news_item&px=MTI5NjU) for more details.
 
 A good sign that your drivers are inadequate or not properly configured is when Wine reports the following in your terminal window:
 
@@ -275,38 +272,6 @@ $ rm ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*
 $ rm ~/.local/share/mime/application/x-wine-extension*
 
 ```
-
-#### KDE 4 menu fix
-
-The Wine menu items [may appear](https://bugs.launchpad.net/ubuntu/+source/wine/+bug/263041) in "Lost & Found" instead of the Wine menu in KDE 4\. This is because `kde-applications.menu` is missing the `MergeDir` option.
-
-Edit `/etc/xdg/menus/kde-applications.menu`
-
-At the end of the file add `<MergeDir>applications-merged</MergeDir>` after `<DefaultMergeDirs/>`, it should look like this:
-
-```
-<Menu>
-        <Include>
-                <And>
-                        <Category>KDE</Category>
-                        <Category>Core</Category>
-                </And>
-        </Include>
-        <DefaultMergeDirs/>
-        **<MergeDir>applications-merged</MergeDir>**
-        <MergeFile>applications-kmenuedit.menu</MergeFile>
-</Menu>
-
-```
-
-Alternatively you can create a symlink to a folder that KDE does see:
-
-```
-$ ln -s ~/.config/menus/applications-merged ~/.config/menus/kde-applications-merged
-
-```
-
-This has the added bonus that an update to KDE will not change it, but is per user instead of system wide.
 
 ## Running Windows applications
 
@@ -642,7 +607,7 @@ It is recommended using winetricks by default to open _.exe_ files, so you can c
 *   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=415571](https://wiki.archlinux.org/index.php?title=Wine&oldid=415571)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=417334](https://wiki.archlinux.org/index.php?title=Wine&oldid=417334)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

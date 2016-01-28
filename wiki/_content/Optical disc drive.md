@@ -514,7 +514,21 @@ Track 01: audio    0 MB (00:00.00) no preemp pad
 
 try another decoder (e.g. mpg123) or try using _cdrecord_ from the [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) package.
 
-If anything worked, you can remove the `dummy` flag to actually burn the CD.
+Note, that the WAV file has to be 16bit Stereo 44100 Hz. Check you WAV tracking using the standard `file` command. Otherwise you will get the following error:
+
+```
+wodim: Inappropriate audio coding in 'file.wav'.
+
+```
+
+To quickly convert a mono file into stereo, you can use sox, or any other application you have available:
+
+```
+sox input.wav -c 2 output.wav
+
+```
+
+If everything worked, you can remove the `dummy` flag to actually burn the CD.
 
 To test the new audio CD, use [MPlayer](/index.php/MPlayer "MPlayer"):
 
@@ -888,7 +902,7 @@ Rebuild the kernel image so that it includes the newly added module:
 *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 *   [Main page of the project Libburnia](http://libburnia-project.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=415780](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=415780)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=417399](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=417399)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

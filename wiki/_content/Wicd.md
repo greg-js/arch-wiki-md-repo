@@ -352,3 +352,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

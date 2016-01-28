@@ -160,3 +160,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1000&old
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ASUS](/index.php/Category:ASUS "Category:ASUS")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

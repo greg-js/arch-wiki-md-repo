@@ -46,3 +46,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=41209
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Office](/index.php/Category:Office "Category:Office")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

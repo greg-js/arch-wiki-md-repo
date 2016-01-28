@@ -175,3 +175,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Speech_recognition&o
 
 *   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

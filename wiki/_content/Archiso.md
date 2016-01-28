@@ -472,3 +472,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533
 
 *   [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems")
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

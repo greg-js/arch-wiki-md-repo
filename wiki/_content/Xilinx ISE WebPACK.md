@@ -352,3 +352,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Xilinx_ISE_WebPACK&o
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

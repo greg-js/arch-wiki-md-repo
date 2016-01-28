@@ -35,3 +35,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mir&oldid=387967](ht
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

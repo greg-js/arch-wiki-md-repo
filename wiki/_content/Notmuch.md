@@ -99,3 +99,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Notmuch&oldid=413712
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

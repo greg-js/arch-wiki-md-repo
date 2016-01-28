@@ -315,3 +315,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualGL&oldid=4112
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
 *   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

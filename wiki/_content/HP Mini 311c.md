@@ -56,3 +56,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Mini_311c&oldid=3
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [HP](/index.php/Category:HP "Category:HP")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

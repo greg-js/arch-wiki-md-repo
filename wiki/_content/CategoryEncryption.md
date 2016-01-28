@@ -10,7 +10,7 @@ The subject encryption groups articles covering basics and configuration of offl
 
 ## Pages in category "Encryption"
 
-The following 27 pages are in this category, out of 27 total.
+The following 25 pages are in this category, out of 25 total.
 
 ### D
 
@@ -24,7 +24,6 @@ The following 27 pages are in this category, out of 27 total.
 *   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
 *   [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration")
 *   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
-*   [DNSCrypt (简体中文)](/index.php/DNSCrypt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "DNSCrypt (简体中文)")
 *   [DNSSEC](/index.php/DNSSEC "DNSSEC")
 
 ### E
@@ -59,17 +58,13 @@ The following 27 pages are in this category, out of 27 total.
 *   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
 *   [Rng-tools](/index.php/Rng-tools "Rng-tools")
 
-### S
-
-*   [Syncthing](/index.php/Syncthing "Syncthing")
-
 ### T
 
 *   [Tcplay](/index.php/Tcplay "Tcplay")
 *   [Tomb](/index.php/Tomb "Tomb")
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Encryption&oldid=385154](https://wiki.archlinux.org/index.php?title=Category:Encryption&oldid=385154)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Encryption&oldid=415171](https://wiki.archlinux.org/index.php?title=Category:Encryption&oldid=415171)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

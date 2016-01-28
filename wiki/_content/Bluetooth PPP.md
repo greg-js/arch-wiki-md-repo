@@ -110,3 +110,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_PPP&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

@@ -254,3 +254,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Badblocks&oldid=3839
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -268,3 +268,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Polkit&oldid=411919]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

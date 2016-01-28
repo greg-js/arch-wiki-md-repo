@@ -712,3 +712,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Pro_Audio&oldid=4110
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Multimedia players"
 
-The following 24 pages are in this category, out of 24 total.
+The following 23 pages are in this category, out of 23 total.
 
 ### A
 
@@ -62,7 +62,6 @@ The following 24 pages are in this category, out of 24 total.
 ### R
 
 *   [RealPlayer](/index.php/RealPlayer "RealPlayer")
-*   [Relaxx](/index.php/Relaxx "Relaxx")
 *   [Rhythmbox](/index.php/Rhythmbox "Rhythmbox")
 
 ### S

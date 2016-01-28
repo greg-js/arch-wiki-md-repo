@@ -93,3 +93,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME/Web&oldid=4120
 
 *   [GNOME](/index.php/Category:GNOME "Category:GNOME")
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

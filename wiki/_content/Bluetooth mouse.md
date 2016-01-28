@@ -28,9 +28,7 @@ Install the [bluez](https://www.archlinux.org/packages/?name=bluez) package whic
 
 **Tip:** Ensure that the bluetooth daemon is started before continuing.
 
-Bluez5 provides the _bluetoothctl_ utility which provides a simple interface for configuring bluetooth devices.
-
-The text below is an example of how you can connect a bluetooth mouse using _bluetoothctl_:
+The _bluetoothctl_ utility provides a simple interface for configuring bluetooth devices. The text below is an example of how you can connect a bluetooth mouse using _bluetoothctl_:
 
 ```
 # bluetoothctl
@@ -83,7 +81,7 @@ Sometimes the device is not active right away. Try starting the interface with:
 
 and searching for devices as shown above.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_mouse&oldid=413720](https://wiki.archlinux.org/index.php?title=Bluetooth_mouse&oldid=413720)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_mouse&oldid=417349](https://wiki.archlinux.org/index.php?title=Bluetooth_mouse&oldid=417349)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

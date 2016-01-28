@@ -74,3 +74,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Yaourt&oldid=414338]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

@@ -202,3 +202,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Software_access_poin
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

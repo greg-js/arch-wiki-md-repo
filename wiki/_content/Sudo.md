@@ -457,3 +457,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sudo&oldid=414993](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

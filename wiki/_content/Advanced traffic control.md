@@ -278,3 +278,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_traffic_con
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Networking](/index.php/Category:Networking "Category:Networking")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

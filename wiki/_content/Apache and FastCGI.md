@@ -92,3 +92,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_and_FastCGI&o
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -121,3 +121,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=41198
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

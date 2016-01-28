@@ -34,6 +34,8 @@ It is highly recommended to update the board BIOS prior to installation. See [of
 
 Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
 
+**Note:** In BIOS version 0033, M.2 is disabled by default due to a bug
+
 ### Graphics
 
 Most NUCs use integrated [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics"). Make sure to install [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") to enjoy the hardware graphics acceleration on supported NUC models.
@@ -74,7 +76,7 @@ The workaround for this issue is to disable all wake-on-CIR (infrared sensor) op
 
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417199](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417199)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417385](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417385)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

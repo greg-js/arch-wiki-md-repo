@@ -208,3 +208,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPC-F11M1E
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sony](/index.php/Category:Sony "Category:Sony")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

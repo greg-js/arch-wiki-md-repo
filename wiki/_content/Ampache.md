@@ -173,7 +173,7 @@ Using the Ampache web interface, we need to allow API access to Ampache from our
 In Amarok, go to _Settings > Services_. Make sure the Ampache Service is enabled and then click _Settings_ button on Ampache plugin.
 
 *   Name : This is an internal name for Amarok, up to you.
-*   Server : This is the fully qualified address for your Ampache server including the [http://](http://).
+*   Server : This is the fully qualified address for your Ampache server including the http://.
 *   Username : This is your username to the Ampache web interface.
 *   Password : This is your password to the Ampache web interface
 
@@ -186,3 +186,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Ampache&oldid=412037
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -40,7 +40,7 @@ The following 14 pages are in this category, out of 14 total.
 
 ### S
 
-*   [Shairport](/index.php/Shairport "Shairport")
+*   [Shairport Sync](/index.php/Shairport_Sync "Shairport Sync")
 *   [Streaming media](/index.php/Streaming_media "Streaming media")
 *   [Streaming using twitch.tv](/index.php/Streaming_using_twitch.tv "Streaming using twitch.tv")
 *   [Streaming With Icecast](/index.php/Streaming_With_Icecast "Streaming With Icecast")

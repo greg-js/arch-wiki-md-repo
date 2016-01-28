@@ -133,7 +133,7 @@ To facilitate administration and inter-language linking, non-English articles sh
 
 For example, if you have an article called [pacman](/index.php/Pacman "Pacman"), you would call the Japanese translation [pacman (日本語)](/index.php/Pacman_(%E6%97%A5%E6%9C%AC%E8%AA%9E) "Pacman (日本語)"), and the Serbian translation [pacman (Српски)](/index.php/Pacman_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Pacman (Српски)").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:Article_naming_guidelines&oldid=384597](https://wiki.archlinux.org/index.php?title=Help:Article_naming_guidelines&oldid=384597)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:Article_naming_guidelines&oldid=413273](https://wiki.archlinux.org/index.php?title=Help:Article_naming_guidelines&oldid=413273)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

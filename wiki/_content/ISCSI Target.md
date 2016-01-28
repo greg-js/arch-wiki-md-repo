@@ -239,3 +239,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Target&oldid=4
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
 *   [Networking](/index.php/Category:Networking "Category:Networking")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

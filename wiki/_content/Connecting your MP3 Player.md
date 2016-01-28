@@ -60,3 +60,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Connecting_your_MP3_
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

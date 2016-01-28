@@ -82,3 +82,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Tile-windows&oldid=4
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -537,3 +537,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Man_page&oldid=40723
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

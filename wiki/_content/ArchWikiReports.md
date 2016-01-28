@@ -26,7 +26,7 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 <td>[VirtualBox](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=next&oldid=300995)</td>
 
-<td>2014-03-02 22:47:46</td>
+<td style="white-space: nowrap;">2014-03-02 22:47:46</td>
 
 <td>content</td>
 
@@ -300,18 +300,6 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 <tr>
 
-<td>[Solid_State_Drives](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&diff=next&oldid=380966)</td>
-
-<td>2015-07-10 10:23:34</td>
-
-<td>content</td>
-
-<td>copy-pasted from the linked Wikipedia page; also sounds like a generic problem of TRIM, in which case it should not be in the mount flag subsection</td>
-
-</tr>
-
-<tr>
-
 <td>[Steam/Game-specific_troubleshooting](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&curid=16228&diff=387162&oldid=381103)</td>
 
 <td>2015-07-23 02:23:55</td>
@@ -396,18 +384,6 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 <tr>
 
-<td>[I3](https://wiki.archlinux.org/index.php?title=I3&diff=403446&oldid=403050)</td>
-
-<td>2015-10-05 17:46:14</td>
-
-<td>content</td>
-
-<td>The longer the more this section gets out of scope</td>
-
-</tr>
-
-<tr>
-
 <td>[Rxvt-unicode](https://wiki.archlinux.org/index.php?title=Rxvt-unicode&curid=6447&diff=404018&oldid=404009)</td>
 
 <td>2015-10-10 11:44:23</td>
@@ -427,18 +403,6 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 <td>content</td>
 
 <td>barely comprehensible, unclear "gnome does not check ..." nor what this aur package does</td>
-
-</tr>
-
-<tr>
-
-<td>[Nano](https://wiki.archlinux.org/index.php?title=Nano&diff=404015&oldid=396870)</td>
-
-<td>2015-10-10 11:37:59</td>
-
-<td>content</td>
-
-<td>no special package is required, and why a cat/xargs pipe?</td>
 
 </tr>
 
@@ -468,18 +432,6 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 <tr>
 
-<td>[Display_manager](https://wiki.archlinux.org/index.php?title=Display_manager&curid=999&diff=405202&oldid=404548)</td>
-
-<td>2015-10-17 08:39:24</td>
-
-<td>content</td>
-
-<td>Completely trivial, all it does is run "exec .xinitrc" ...</td>
-
-</tr>
-
-<tr>
-
 <td>[Tmux](https://wiki.archlinux.org/index.php?title=Tmux&curid=9362&diff=405285&oldid=398381)</td>
 
 <td>2015-10-17 17:39:36</td>
@@ -498,7 +450,7 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 <td>style</td>
 
-<td>so the X220 and T420 require both tp_smapi and acpi_call ?</td>
+<td>so the X220 and T420 require _both_ tp_smapi and acpi_call ?</td>
 
 </tr>
 
@@ -528,13 +480,97 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 <tr>
 
-<td>[Bumblebee](https://wiki.archlinux.org/index.php?title=Bumblebee&diff=next&oldid=409640)</td>
+<td>[VirtualBox](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=413957&oldid=413779)</td>
 
-<td>2015-11-22 15:36:33</td>
+<td>2015-12-31 15:18:01</td>
 
 <td>content</td>
 
-<td>Disabled communication on localhost would break much more things than just bumblebee, I don't see anything specific to this section.</td>
+<td>information was lost on file conflicts, no indication the behaviour changed (if at all)</td>
+
+</tr>
+
+<tr>
+
+<td>[LXQt](https://wiki.archlinux.org/index.php?title=LXQt&curid=13117&diff=413859&oldid=413729)</td>
+
+<td>2015-12-30 16:10:17</td>
+
+<td>content</td>
+
+<td>No proof this is "required" besides a vague edit summary</td>
+
+</tr>
+
+<tr>
+
+<td>[Steam](https://wiki.archlinux.org/index.php?title=Steam&curid=2540&diff=413763&oldid=413532)</td>
+
+<td>2015-12-29 11:25:48</td>
+
+<td>content</td>
+
+<td>relating a wrong ELF class and disabling displays is inaccurate at best</td>
+
+</tr>
+
+<tr>
+
+<td>[NFS/Troubleshooting](https://wiki.archlinux.org/index.php?title=NFS/Troubleshooting&curid=15558&diff=414053&oldid=413169)</td>
+
+<td>2016-01-01 16:51:12</td>
+
+<td>style</td>
+
+<td>unintelligible</td>
+
+</tr>
+
+<tr>
+
+<td>[Unofficial_user_repositories](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&curid=1394&diff=414918&oldid=414760)</td>
+
+<td>2016-01-11 09:10:09</td>
+
+<td>content</td>
+
+<td>repos for different distributions don't belong on archwiki</td>
+
+</tr>
+
+<tr>
+
+<td>[Steam](https://wiki.archlinux.org/index.php?title=Steam&curid=2540&diff=414877&oldid=414674)</td>
+
+<td>2016-01-10 12:49:57</td>
+
+<td>content</td>
+
+<td>purely speculative, editor likely didn't configure [ALSA](/index.php/ALSA "ALSA") correctly</td>
+
+</tr>
+
+<tr>
+
+<td>[Dell_XPS_13_(2016)](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&curid=21659&diff=414780&oldid=414469)</td>
+
+<td>2016-01-09 08:12:31</td>
+
+<td>content</td>
+
+<td>wrong place for [TLP](/index.php/TLP "TLP") workarounds, at least the issue should be restricted to the general case (for which there again is no bug report)</td>
+
+</tr>
+
+<tr>
+
+<td>[Steam](https://wiki.archlinux.org/index.php?title=Steam&curid=2540&diff=414674&oldid=414314)</td>
+
+<td>2016-01-08 02:21:18</td>
+
+<td>content</td>
+
+<td>needs external reference</td>
 
 </tr>
 
@@ -542,7 +578,7 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=409958](https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=409958)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=417518](https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=417518)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

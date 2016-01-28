@@ -39,3 +39,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Modoboa&oldid=388080
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

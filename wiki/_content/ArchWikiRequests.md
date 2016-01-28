@@ -26,80 +26,87 @@ See [ArchWiki:Reports](/index.php/ArchWiki:Reports "ArchWiki:Reports") to report
 *   [3 Modification requests](#Modification_requests)
     *   [3.1 Automatic loading of kernel modules](#Automatic_loading_of_kernel_modules)
     *   [3.2 Links to Gentoo wiki](#Links_to_Gentoo_wiki)
-    *   [3.3 Cleanup: installation category](#Cleanup:_installation_category)
-    *   [3.4 Should we remove or archive obsolete articles?](#Should_we_remove_or_archive_obsolete_articles.3F)
-        *   [3.4.1 List of suggested solutions](#List_of_suggested_solutions)
-        *   [3.4.2 Enforcement](#Enforcement)
-            *   [3.4.2.1 Restoring revisions and redirection](#Restoring_revisions_and_redirection)
-            *   [3.4.2.2 Separation of archive content](#Separation_of_archive_content)
-            *   [3.4.2.3 Double redirects](#Double_redirects)
-            *   [3.4.2.4 Rename Template:Deletion](#Rename_Template:Deletion)
-    *   [3.5 Broken redirects](#Broken_redirects)
-    *   [3.6 Hide irrelevant pages in search suggestions](#Hide_irrelevant_pages_in_search_suggestions)
-    *   [3.7 Article guideline](#Article_guideline)
-        *   [3.7.1 Contributing](#Contributing)
-    *   [3.8 TrackPoint](#TrackPoint)
-    *   [3.9 Renamed software](#Renamed_software)
-        *   [3.9.1 Nautilus got renamed to Gnome Files](#Nautilus_got_renamed_to_Gnome_Files)
-            *   [3.9.1.1 List](#List)
-        *   [3.9.2 XBMC renamed to Kodi](#XBMC_renamed_to_Kodi)
-        *   [3.9.3 Gummiboot](#Gummiboot)
-    *   [3.10 Cleanup: links to non-existent packages](#Cleanup:_links_to_non-existent_packages)
-        *   [3.10.1 Surrounding link text](#Surrounding_link_text)
-    *   [3.11 Strategy for updating package templates](#Strategy_for_updating_package_templates)
-    *   [3.12 index.php in url address](#index.php_in_url_address)
-    *   [3.13 Change drive naming/accessing to UUID?](#Change_drive_naming.2Faccessing_to_UUID.3F)
-    *   [3.14 User and group pacnew files](#User_and_group_pacnew_files)
-    *   [3.15 FAQ](#FAQ)
+    *   [3.3 Should we remove or archive obsolete articles?](#Should_we_remove_or_archive_obsolete_articles.3F)
+        *   [3.3.1 List of suggested solutions](#List_of_suggested_solutions)
+        *   [3.3.2 Enforcement](#Enforcement)
+            *   [3.3.2.1 Restoring revisions and redirection](#Restoring_revisions_and_redirection)
+            *   [3.3.2.2 Separation of archive content](#Separation_of_archive_content)
+            *   [3.3.2.3 Double redirects](#Double_redirects)
+            *   [3.3.2.4 Rename Template:Deletion](#Rename_Template:Deletion)
+    *   [3.4 Broken redirects](#Broken_redirects)
+    *   [3.5 Hide irrelevant pages in search suggestions](#Hide_irrelevant_pages_in_search_suggestions)
+    *   [3.6 Article guideline](#Article_guideline)
+        *   [3.6.1 Contributing](#Contributing)
+    *   [3.7 TrackPoint](#TrackPoint)
+    *   [3.8 Renamed software](#Renamed_software)
+        *   [3.8.1 Nautilus got renamed to Gnome Files](#Nautilus_got_renamed_to_Gnome_Files)
+            *   [3.8.1.1 List](#List)
+        *   [3.8.2 XBMC renamed to Kodi](#XBMC_renamed_to_Kodi)
+        *   [3.8.3 Gummiboot](#Gummiboot)
+    *   [3.9 Cleanup: links to non-existent packages](#Cleanup:_links_to_non-existent_packages)
+        *   [3.9.1 Surrounding link text](#Surrounding_link_text)
+    *   [3.10 Strategy for updating package templates](#Strategy_for_updating_package_templates)
+    *   [3.11 index.php in url address](#index.php_in_url_address)
+    *   [3.12 Change drive naming/accessing to UUID?](#Change_drive_naming.2Faccessing_to_UUID.3F)
+    *   [3.13 User and group pacnew files](#User_and_group_pacnew_files)
+    *   [3.14 FAQ](#FAQ)
 *   [4 Bot requests](#Bot_requests)
 
 ## General requests
 
-[Inaccurate content](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy")
+[Inaccurate content](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
 
 Pages flagged with [Template:Accuracy](/index.php/Template:Accuracy "Template:Accuracy").
 
-[Outdated content](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date")
+[Outdated content](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
 
 Pages flagged with [Template:Out of date](/index.php/Template:Out_of_date "Template:Out of date").
 
-[Irrelevant or unhelpful content](/index.php/Special:WhatLinksHere/Template:Deletion "Special:WhatLinksHere/Template:Deletion")
+[Irrelevant or unhelpful content](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
 
 Pages flagged with [Template:Deletion](/index.php/Template:Deletion "Template:Deletion").
 
-[Incomplete content](/index.php/Special:WhatLinksHere/Template:Expansion "Special:WhatLinksHere/Template:Expansion")
+[Incomplete content](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
 
 Pages flagged with [Template:Expansion](/index.php/Template:Expansion "Template:Expansion").
 
-[Content with language or style issues](/index.php/Special:WhatLinksHere/Template:Style "Special:WhatLinksHere/Template:Style")
+[Content with language or style issues](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
 
 Pages flagged with [Template:Style](/index.php/Template:Style "Template:Style").
 
-[Duplicate effort or overlapping scope](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge")
+[Non-standard laptop pages](/index.php/Category:Pages_or_sections_flagged_with_Template:Laptop_style "Category:Pages or sections flagged with Template:Laptop style")
+
+Pages flagged with [Template:Laptop style](/index.php/Template:Laptop_style "Template:Laptop style").
+
+[Duplicate effort or overlapping scope](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
 
 Pages flagged with [Template:Merge](/index.php/Template:Merge "Template:Merge").
 
-[Misleading names](/index.php/Special:WhatLinksHere/Template:Move "Special:WhatLinksHere/Template:Move")
+[Misleading names](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
 
 Pages flagged with [Template:Move](/index.php/Template:Move "Template:Move").
 
-[Poor translations](/index.php/Special:WhatLinksHere/Template:Bad_translation "Special:WhatLinksHere/Template:Bad translation")
+[Poor translations](/index.php/Category:Pages_or_sections_flagged_with_Template:Bad_translation "Category:Pages or sections flagged with Template:Bad translation")
 
 Pages flagged with [Template:Bad translation](/index.php/Template:Bad_translation "Template:Bad translation").
 
-[Incomplete translations](/index.php/Special:WhatLinksHere/Template:Translateme "Special:WhatLinksHere/Template:Translateme")
+[Incomplete translations](/index.php/Category:Pages_or_sections_flagged_with_Template:Translateme "Category:Pages or sections flagged with Template:Translateme")
 
 Pages flagged with [Template:Translateme](/index.php/Template:Translateme "Template:Translateme"). See also [ArchWiki Translation Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team").
 
-[Incomplete content](/index.php/Special:WhatLinksHere/Template:Stub "Special:WhatLinksHere/Template:Stub")
+[Incomplete content](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
 
 Pages flagged with [Template:Stub](/index.php/Template:Stub "Template:Stub").
 
-[Dead or broken links](/index.php/Special:WhatLinksHere/Template:Dead_link "Special:WhatLinksHere/Template:Dead link")
+[Deprecated titles](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")
+
+Pages flagged with [Template:Redirect](/index.php/Template:Redirect "Template:Redirect").
+
+[Dead or broken links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
 
 Pages flagged with [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link"). Should be repaired or replaced.
 
-[Templates with an undefined parameter](/index.php/Special:WhatLinksHere/Template:META_Error "Special:WhatLinksHere/Template:META Error")
+[Templates with an undefined parameter](/index.php/Category:Pages_with_broken_templates "Category:Pages with broken templates")
 
 Pages automatically flagged with [Template:META Error](/index.php/Template:META_Error "Template:META Error")
 
@@ -107,25 +114,23 @@ Pages automatically flagged with [Template:META Error](/index.php/Template:META_
 
 Pages automatically flagged with [Template:META Unexplained Status Template](/index.php/Template:META_Unexplained_Status_Template "Template:META Unexplained Status Template").
 
-[Application listed without links to packages](/index.php/Special:WhatLinksHere/Template:META_Missing_package "Special:WhatLinksHere/Template:META Missing package")
+[Application listed without links to packages](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")
 
 Pages automatically flagged with [Template:META Missing package](/index.php/Template:META_Missing_package "Template:META Missing package").
 
-[Pages with misspelled or deprecated templates](/index.php/Special:WantedTemplates "Special:WantedTemplates")
+[Misspelled or deprecated templates](/index.php/Special:WantedTemplates "Special:WantedTemplates")
 
 Need to fix template or change to new template.
 
-[Category:Noindexed pages](/index.php/Category:Noindexed_pages "Category:Noindexed pages")
+[Noindexed pages](/index.php/Category:Noindexed_pages "Category:Noindexed pages")
 
 Automatic tracking category.
 
-[Category:Pages using duplicate arguments in template calls](/index.php/Category:Pages_using_duplicate_arguments_in_template_calls "Category:Pages using duplicate arguments in template calls")
+[Duplicate arguments in template calls](/index.php/Category:Pages_using_duplicate_arguments_in_template_calls "Category:Pages using duplicate arguments in template calls")
 
 Automatic tracking category.
 
 Also note that [Special:WantedCategories](/index.php/Special:WantedCategories "Special:WantedCategories") can show additional automatic [tracking categories](https://www.mediawiki.org/wiki/Help:Tracking_categories "mw:Help:Tracking categories").
-
-Filtered lists of English pages flagged with an [article status template](/index.php/Help:Template#Article_status_templates "Help:Template") can be found in [User:Lahwaacz/Flagged pages](/index.php/User:Lahwaacz/Flagged_pages "User:Lahwaacz/Flagged pages").
 
 ### Problem redirects
 
@@ -153,7 +158,7 @@ To fix a broken package link, do **not** simply remove the reference to the pack
 *   If unsure, mark the page or section with an appropriate [status template](/index.php/Help:Template#Article_status_templates "Help:Template") rather than completely removing the reference to the package.
 *   For AUR3 package links marked with [Template:Aur-mirror](/index.php/Template:Aur-mirror "Template:Aur-mirror"), you may consider resubmitting them to the AUR if interested in maintaining them.
 
-To view a list of all broken package links, see [Special:WhatLinksHere/Template:Broken package link](/index.php/Special:WhatLinksHere/Template:Broken_package_link "Special:WhatLinksHere/Template:Broken package link") and [Special:WhatLinksHere/Template:Aur-mirror](/index.php/Special:WhatLinksHere/Template:Aur-mirror "Special:WhatLinksHere/Template:Aur-mirror").
+All pages with broken package links are tracked in [Category:Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links").
 
 ## Creation requests
 
@@ -282,6 +287,8 @@ There are several problems with this, so quick list of tasks:
 
 As the [minimum supported kernel version](/index.php/Help_talk:Style#Minimum_supported_kernel_version "Help talk:Style") is apparently 3.10 at the moment, we should get rid of those [modprobe](https://wiki.archlinux.org/index.php?title=Special:Search&limit=100&offset=220&profile=default&search=modprobe) commands and just link to [Kernel_modules#Configuration](/index.php/Kernel_modules#Configuration "Kernel modules"). -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 21:02, 29 November 2013 (UTC)
 
+When cleaning modprobe usage, I found many `# modprobe fuse` instance. Any one familiar with fuse could confirm if it is still needed? -- [Fengchao](/index.php/User:Fengchao "User:Fengchao") ([talk](/index.php/User_talk:Fengchao "User talk:Fengchao")) 11:59, 24 January 2016 (UTC)
+
 ### Links to Gentoo wiki
 
 [http://en.gentoo-wiki.com/](http://en.gentoo-wiki.com/) is offline for some quite time now, the new address is [http://wiki.gentoo.org/](http://wiki.gentoo.org/). There are several links that need to be updated: [[3]](https://wiki.archlinux.org/index.php?title=Special%3ALinkSearch&target=http%3A%2F%2Fen.gentoo-wiki.com&namespace=0). I don't really know what (and when) happened there, I just suppose that there has been some major restructuring of the Gentoo documentation - there is not direct 1:1 mapping of the old links to the new address, so it will have to be done manually. -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 14:06, 22 February 2014 (UTC)
@@ -289,19 +296,6 @@ As the [minimum supported kernel version](/index.php/Help_talk:Style#Minimum_sup
 Actually, there is [Gentoo Wiki Archives](http://www.gentoo-wiki.info/), but is it safe to link there considering that it is read-only? -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 22:27, 6 March 2014 (UTC)
 
 [http://wiki.gentoo.org/](http://wiki.gentoo.org/) is of course preferable, however if there's really no alternative and the article in the Archives is still relevant, the fact that it's no longer editable shouldn't prevent from linking there. -- [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) 01:43, 8 March 2014 (UTC)
-
-### Cleanup: installation category
-
-[Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") needs a serious cleanup, there are many outdated and/or inappropriate pages. I don't know if my perception of these pages isn't too radical, feel free to comment and possibly hold me down a bit.
-
-**Duplicated:**
-
-*   [Install_from_SSH](/index.php/Install_from_SSH "Install from SSH") and [Remote_Arch_Linux_Install](/index.php/Remote_Arch_Linux_Install "Remote Arch Linux Install") describe basically the same thing
-*   <s>[Installing_Arch_Linux_in_Virtual_Server](/index.php/Installing_Arch_Linux_in_Virtual_Server "Installing Arch Linux in Virtual Server") - merge into [Virtual_Private_Server](/index.php/Virtual_Private_Server "Virtual Private Server")?</s> redirected
-
--- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 22:08, 6 March 2014 (UTC) -- edited on 17:18, 11 July 2014 (UTC)
-
-Agreed, I'll scratch fixed articles off the list. -- [Alad](/index.php/User:Alad "User:Alad") ([talk](/index.php/User_talk:Alad "User talk:Alad")) 21:04, 31 July 2014 (UTC)
 
 ### Should we remove or archive obsolete articles?
 
@@ -531,6 +525,8 @@ I think we should delete [Ubuntu One](/index.php?title=Ubuntu_One&action=edit&re
 +1\. Your heads-up for the second link got overlooked. --[Indigo](/index.php/User:Indigo "User:Indigo") ([talk](/index.php/User_talk:Indigo "User talk:Indigo")) 21:10, 11 January 2015 (UTC)
 
 Done. — [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) 03:34, 12 January 2015 (UTC)
+
+[Help talk:Procedures#Deal with talk pages after redirecting a page to another](/index.php/Help_talk:Procedures#Deal_with_talk_pages_after_redirecting_a_page_to_another "Help talk:Procedures") is related. — [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) 01:37, 2 January 2016 (UTC)
 
 #### List of suggested solutions
 
@@ -1285,8 +1281,12 @@ The [FAQ](/index.php/FAQ "FAQ") could use an entry like "After upgrading my kern
 
 _Here, list requests for repetitive, systemic modifications to a series of existing articles to be performed by a wiki bot._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Requests&oldid=409800](https://wiki.archlinux.org/index.php?title=ArchWiki:Requests&oldid=409800)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Requests&oldid=416989](https://wiki.archlinux.org/index.php?title=ArchWiki:Requests&oldid=416989)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

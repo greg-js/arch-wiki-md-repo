@@ -33,3 +33,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Autodl-irssi&oldid=3
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
 *   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

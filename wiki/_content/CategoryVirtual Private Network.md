@@ -80,3 +80,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Virtual_Pri
 
 *   [Networking](/index.php/Category:Networking "Category:Networking")
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

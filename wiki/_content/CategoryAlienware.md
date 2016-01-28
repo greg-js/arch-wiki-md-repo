@@ -12,10 +12,11 @@ For content organization and general references, please see the note in [Categor
 
 ## Pages in category "Alienware"
 
-The following 3 pages are in this category, out of 3 total.
+The following 4 pages are in this category, out of 4 total.
 
 ### A
 
+*   [Alienware 13](/index.php/Alienware_13 "Alienware 13")
 *   [Alienware 15](/index.php/Alienware_15 "Alienware 15")
 *   [Alienware M11x](/index.php/Alienware_M11x "Alienware M11x")
 *   [Alienware M14xR2](/index.php/Alienware_M14xR2 "Alienware M14xR2")

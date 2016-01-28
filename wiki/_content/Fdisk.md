@@ -197,3 +197,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Fdisk&oldid=391664](
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

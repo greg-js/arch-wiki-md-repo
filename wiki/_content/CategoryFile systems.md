@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "File systems"
 
-The following 78 pages are in this category, out of 78 total.
+The following 79 pages are in this category, out of 79 total.
 
 ### A
 
@@ -59,7 +59,6 @@ The following 78 pages are in this category, out of 78 total.
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [File recovery](/index.php/File_recovery "File recovery")
 *   [File systems](/index.php/File_systems "File systems")
-*   [Find File that Owns a Given Block](/index.php/Find_File_that_Owns_a_Given_Block "Find File that Owns a Given Block")
 *   [Flashcache](/index.php/Flashcache "Flashcache")
 *   [Floppy disks](/index.php/Floppy_disks "Floppy disks")
 *   [Foremost](/index.php/Foremost "Foremost")
@@ -83,6 +82,7 @@ The following 78 pages are in this category, out of 78 total.
 
 ### I
 
+*   [Identify damaged files](/index.php/Identify_damaged_files "Identify damaged files")
 *   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
 
 ### J
@@ -128,6 +128,7 @@ The following 78 pages are in this category, out of 78 total.
 *   [SnapRAID](/index.php/SnapRAID "SnapRAID")
 *   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
 *   [Sparse file](/index.php/Sparse_file "Sparse file")
+*   [Sshfs](/index.php/Sshfs "Sshfs")
 *   [Swap](/index.php/Swap "Swap")
 
 ### T

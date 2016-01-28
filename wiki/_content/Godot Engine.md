@@ -45,3 +45,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Godot_Engine&oldid=4
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

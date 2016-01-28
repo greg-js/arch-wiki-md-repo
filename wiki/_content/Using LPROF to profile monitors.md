@@ -204,3 +204,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

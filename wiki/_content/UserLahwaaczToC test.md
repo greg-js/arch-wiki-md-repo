@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Russian
 
-[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(391)</small>
+[Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(398)</small>
 
 <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small>
 
@@ -24,49 +24,51 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.4.</small> [События](/index.php/Category:Events_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Events (Русский)") <small>(1)</small>
 
-<small>1.5.</small> [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)") <small>(9)</small>
+<small>1.5.</small> [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)") <small>(10)</small>
 
-<small>1.6.</small> [Live системы Arch](/index.php/Category:Live_Arch_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Live Arch systems (Русский)") <small>(1)</small>
+<small>1.6.</small> [Live системы Arch](/index.php/Category:Live_Arch_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Live Arch systems (Русский)") <small>(2)</small>
 
 <small>2.</small> [Приложения](/index.php/Category:Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Applications (Русский)") <small>(10)</small>
 
 <small>2.1.</small> [Специальные возможности](/index.php/Category:Accessibility_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Accessibility (Русский)") <small>(1)</small>
 
-<small>2.2.</small> [Командная оболочка](/index.php/Category:Command_shells_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Command shells (Русский)") <small>(6)</small>
+<small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Application launchers (Русский)") <small>(2)</small>
 
-<small>2.3.</small> [Сжатие данных и архивирование](/index.php/Category:Data_compression_and_archiving_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Data compression and archiving (Русский)") <small>(3)</small>
+<small>2.3.</small> [Командная оболочка](/index.php/Category:Command_shells_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Command shells (Русский)") <small>(6)</small>
 
-<small>2.4.</small> [Системы управления базами данных](/index.php/Category:Database_management_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Database management systems (Русский)") <small>(2)</small>
+<small>2.4.</small> [Сжатие данных и архивирование](/index.php/Category:Data_compression_and_archiving_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Data compression and archiving (Русский)") <small>(3)</small>
 
-<small>2.5.</small> [Эмуляторы](/index.php/Category:Emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Emulators (Русский)") <small>(4)</small>
+<small>2.5.</small> [Системы управления базами данных](/index.php/Category:Database_management_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Database management systems (Русский)") <small>(2)</small>
 
-<small>2.6.</small> [Файловые менеджеры](/index.php/Category:File_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File managers (Русский)") <small>(5)</small>
+<small>2.6.</small> [Эмуляторы](/index.php/Category:Emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Emulators (Русский)") <small>(4)</small>
 
-<small>2.7.</small> [Игры](/index.php/Category:Gaming_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Gaming (Русский)") <small>(2)</small>
+<small>2.7.</small> [Файловые менеджеры](/index.php/Category:File_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File managers (Русский)") <small>(5)</small>
 
-<small>2.8.</small> [Графика и демонстрация рабочего стола](/index.php/Category:Graphics_and_desktop_publishing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics and desktop publishing (Русский)") <small>(4)</small>
+<small>2.8.</small> [Игры](/index.php/Category:Gaming_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Gaming (Русский)") <small>(2)</small>
 
-<small>2.9.</small> [Интернет приложения](/index.php/Category:Internet_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet applications (Русский)") <small>(10) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
+<small>2.9.</small> [Графика и демонстрация рабочего стола](/index.php/Category:Graphics_and_desktop_publishing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics and desktop publishing (Русский)") <small>(4)</small>
 
-<small>2.9.1.</small> [Почтовые клиенты](/index.php/Category:Email_clients_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Email clients (Русский)") <small>(0)</small>
+<small>2.10.</small> [Интернет приложения](/index.php/Category:Internet_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet applications (Русский)") <small>(10) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-<small>2.9.2.</small> [Интернет чат (IRC)](/index.php/Category:Internet_Relay_Chat_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet Relay Chat (Русский)") <small>(2)</small>
+<small>2.10.1.</small> [Почтовые клиенты](/index.php/Category:Email_clients_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Email clients (Русский)") <small>(0)</small>
 
-<small>2.9.3.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(4)</small>
+<small>2.10.2.</small> [Интернет чат (IRC)](/index.php/Category:Internet_Relay_Chat_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet Relay Chat (Русский)") <small>(2)</small>
 
-<small>2.10.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small>
+<small>2.10.3.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(4)</small>
 
-<small>2.11.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small>
+<small>2.11.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small>
 
-<small>2.12.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small>
+<small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small>
 
-<small>2.13.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(2)</small>
+<small>2.13.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small>
 
-<small>2.14.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(6)</small>
+<small>2.14.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(3)</small>
 
-<small>2.15.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small>
+<small>2.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(6)</small>
 
-<small>2.16.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small>
+<small>2.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small>
+
+<small>2.17.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small>
 
 <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(5)</small>
 
@@ -86,7 +88,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(5)</small>
 
-<small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(11)</small>
+<small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(12)</small>
 
 <small>4.5.</small> [Обнаружение устройств и решение проблем](/index.php/Category:Hardware_detection_and_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware detection and troubleshooting (Русский)") <small>(3)</small>
 
@@ -120,7 +122,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.13.1.</small> [Оптические](/index.php/Category:Optical_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Optical (Русский)") <small>(1)</small>
 
-<small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(31)</small>
+<small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(33)</small>
 
 <small>5.1.</small> [Протокол передачи файлов (FTP)](/index.php/Category:File_Transfer_Protocol_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File Transfer Protocol (Русский)") <small>(1)</small>
 
@@ -142,19 +144,21 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.7.</small> [Сетевой мониторинг](/index.php/Category:Network_monitoring_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network monitoring (Русский)") <small>(2)</small>
 
-<small>5.8.</small> [Прокси сервера](/index.php/Category:Proxy_servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Proxy servers (Русский)") <small>(1) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.8.</small> [Network sharing](/index.php/Category:Network_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network sharing (Русский)") <small>(1)</small>
 
-<small>5.9.</small> [Удалённый рабочий стол](/index.php/Category:Remote_desktop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Remote desktop (Русский)") <small>(1)</small>
+<small>5.9.</small> [Прокси сервера](/index.php/Category:Proxy_servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Proxy servers (Русский)") <small>(1) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
-<small>5.10.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(5) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.10.</small> [Удалённый рабочий стол](/index.php/Category:Remote_desktop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Remote desktop (Русский)") <small>(1)</small>
 
-<small>5.11.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small>
+<small>5.11.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(6) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
-<small>5.12.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
+<small>5.12.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Telephony and voice (Русский)") <small>(1)</small>
 
-<small>5.13.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small>
+<small>5.13.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)"))</small>
 
-<small>5.14.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small>
+<small>5.14.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small>
+
+<small>5.15.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small>
 
 <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(6)</small>
 
@@ -174,7 +178,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.3.3.</small> [KDE](/index.php/Category:KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:KDE (Русский)") <small>(3)</small>
 
-<small>6.3.4.</small> [Оконные менеджеры](/index.php/Category:Window_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Window managers (Русский)") <small>(1)</small>
+<small>6.3.4.</small> [Оконные менеджеры](/index.php/Category:Window_managers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Window managers (Русский)") <small>(2)</small>
 
 <small>6.3.4.1.</small> [Динамические оконные менеджеры](/index.php/Category:Dynamic_WMs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dynamic WMs (Русский)") <small>(3)</small>
 
@@ -184,7 +188,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dotfiles (Русский)") <small>(1)</small>
 
-<small>6.5.</small> [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)") <small>(8)</small>
+<small>6.5.</small> [Визульные спецэффекты](/index.php/Category:Eye_candy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Eye candy (Русский)") <small>(10)</small>
 
 <small>6.5.1.</small> [Экран загрузки](/index.php/Category:Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bootsplash (Русский)") <small>(3) (Также в [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)"))</small>
 
@@ -204,7 +208,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.11.</small> [Скрипты](/index.php/Category:Scripts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Scripts (Русский)") <small>(2)</small>
 
-<small>6.12.</small> [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)") <small>(15)</small>
+<small>6.12.</small> [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)") <small>(17)</small>
 
 <small>6.12.1.</small> [Шифрование](/index.php/Category:Encryption_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Encryption (Русский)") <small>(1)</small>
 
@@ -212,17 +216,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.12.3.</small> [Прокси сервера](/index.php/Category:Proxy_servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Proxy servers (Русский)") <small>(1) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-<small>6.12.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(5) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
+<small>6.12.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Secure Shell (Русский)") <small>(6) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
 <small>6.12.5.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small>
 
-<small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(5)</small>
+<small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(6)</small>
 
 <small>6.14.</small> [Виртуализация](/index.php/Category:Virtualization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtualization (Русский)") <small>(2)</small>
 
 <small>6.14.1.</small> [Гипервизоры](/index.php/Category:Hypervisors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hypervisors (Русский)") <small>(2)</small>
 
-<small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(29)</small>
+<small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(31)</small>
 
 ## English
 
@@ -230,9 +234,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(26)</small>
 
-<small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
+<small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(26) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
 
-<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(55)</small>
+<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
 
 <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -246,13 +250,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(11)</small>
 
-<small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(28)</small>
+<small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(27)</small>
 
-<small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small>
+<small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(2)</small>
 
 <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small>
 
-<small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small>
+<small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small>
 
 <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(9)</small>
 
@@ -268,9 +272,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small>
 
-<small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(44)</small>
+<small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(47)</small>
 
-<small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(65) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
+<small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(66) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
 <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small>
 
@@ -302,11 +306,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small>
 
-<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(56)</small>
+<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(57)</small>
 
-<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
+<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(26) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
-<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(55)</small>
+<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
 
 <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -318,15 +322,15 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>3.5.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small>
 
-<small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small>
+<small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small>
 
-<small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(5)</small>
+<small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small>
 
-<small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(9)</small>
+<small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(8)</small>
 
 <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small>
 
-<small>4.4.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(30)</small>
+<small>4.4.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(29)</small>
 
 <small>4.5.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(9)</small>
 
@@ -344,17 +348,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small>
 
-<small>4.8.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(3)</small>
+<small>4.8.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small>
 
-<small>4.8.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small>
+<small>4.8.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(13)</small>
 
-<small>4.8.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small>
+<small>4.8.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(62)</small>
 
 <small>4.8.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small>
 
 <small>4.8.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small>
 
-<small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(46)</small>
+<small>4.8.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(48)</small>
 
 <small>4.8.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(7)</small>
 
@@ -362,7 +366,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.10.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small>
 
-<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(69)</small>
+<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(65)</small>
 
 <small>4.8.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(2)</small>
 
@@ -374,25 +378,25 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>4.8.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small>
 
-<small>4.9.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small>
+<small>4.9.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(5)</small>
 
 <small>4.10.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(16)</small>
 
 <small>4.11.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(20) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
-<small>4.12.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(20)</small>
+<small>4.12.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small>
 
 <small>4.13.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small>
 
 <small>4.14.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small>
 
-<small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small>
+<small>4.15.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small>
 
 <small>4.15.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small>
 
 <small>4.16.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small>
 
-<small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(69)</small>
+<small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small>
 
 <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(6)</small>
 
@@ -400,9 +404,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(10)</small>
 
-<small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
+<small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
-<small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(65) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small>
+<small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(66) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small>
 
 <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small>
 
@@ -418,7 +422,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.9.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small>
 
-<small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(13)</small>
+<small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(14)</small>
 
 <small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
@@ -430,11 +434,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
-<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(63)</small>
+<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(64)</small>
 
 <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(9)</small>
 
-<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(28)</small>
+<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small>
 
 <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(41)</small>
 
@@ -444,21 +448,21 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(15)</small>
 
-<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(23)</small>
+<small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(24)</small>
 
 <small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small>
 
 <small>6.3.2.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(10)</small>
 
-<small>6.3.3.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(7)</small>
+<small>6.3.3.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(6)</small>
 
 <small>6.3.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(1)</small>
 
-<small>6.3.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(17)</small>
+<small>6.3.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(14)</small>
 
-<small>6.3.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small>
+<small>6.3.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(16)</small>
 
-<small>6.3.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(22)</small>
+<small>6.3.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(20)</small>
 
 <small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles") <small>(4)</small>
 
@@ -468,11 +472,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(8)</small>
 
-<small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(78)</small>
+<small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(79)</small>
 
-<small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(14)</small>
+<small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(15)</small>
 
-<small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(41)</small>
+<small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(40)</small>
 
 <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(29)</small>
 
@@ -480,11 +484,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(21)</small>
 
-<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small>
+<small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small>
 
 <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(27)</small>
 
-<small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
+<small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
 <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
@@ -492,13 +496,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small>
 
-<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(37)</small>
+<small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(36)</small>
 
 <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(20)</small>
 
 <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(8)</small>
 
-<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(62)</small>
+<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(61)</small>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=User:Lahwaacz/ToC_test&oldid=398416](https://wiki.archlinux.org/index.php?title=User:Lahwaacz/ToC_test&oldid=398416)"
 

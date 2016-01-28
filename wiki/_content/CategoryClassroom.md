@@ -12,11 +12,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Classroom"
 
-The following 2 pages are in this category, out of 2 total.
-
-### B
-
-*   [Beginners Guide to Package Maintaining](/index.php/Beginners_Guide_to_Package_Maintaining "Beginners Guide to Package Maintaining")
+This category contains only the following page.
 
 ### C
 

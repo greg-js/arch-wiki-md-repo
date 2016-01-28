@@ -8,7 +8,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Other hardware"
 
-The following 20 pages are in this category, out of 20 total.
+The following 22 pages are in this category, out of 22 total.
+
+### B
+
+*   [Belgian eID card reader](/index.php/Belgian_eID_card_reader "Belgian eID card reader")
 
 ### C
 
@@ -17,6 +21,10 @@ The following 20 pages are in this category, out of 20 total.
 ### D
 
 *   [DisplayLink](/index.php/DisplayLink "DisplayLink")
+
+### E
+
+*   [Estonian ID-card](/index.php/Estonian_ID-card "Estonian ID-card")
 
 ### G
 

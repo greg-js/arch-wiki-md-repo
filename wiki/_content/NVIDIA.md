@@ -73,7 +73,7 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
     *   [5.13 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop.2FNVIDIA_Optimus)
         *   [5.13.1 Possible Workaround](#Possible_Workaround)
     *   [5.14 Screen(s) found, but none have a usable configuration](#Screen.28s.29_found.2C_but_none_have_a_usable_configuration)
-    *   [5.15 Blackscreen at X startup with new driver](#Blackscreen_at_X_startup_with_new_driver)
+    *   [5.15 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_.2F_Machine_poweroff_at_X_shutdown)
     *   [5.16 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
     *   [5.17 Blue tint on videos with Flash](#Blue_tint_on_videos_with_Flash)
     *   [5.18 Bleeding overlay with Flash](#Bleeding_overlay_with_Flash)
@@ -1244,13 +1244,15 @@ After re-run X see Xorg.0.log to get valid CRT-x,DFP-x,TV-x values.
 
 `nvidia-xconfig --query-gpu-info` could be helpful.
 
-### Blackscreen at X startup with new driver
+### Blackscreen at X startup / Machine poweroff at X shutdown
 
-If you have installed an update of Nvidia and you screen stay black after launching Xorg. You have to use the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+If you have installed an update of Nvidia and your screen stays black after launching Xorg, or if shutting down Xorg causes a machine poweroff, try the below workarounds. Alternatively, use the [Nouveau](/index.php/Nouveau "Nouveau") driver.
 
-You can also try to add the `nvidia` module directly to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file.
+*   Use the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
-If the screen still stays black with **both** the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") and the `nvidia` module directly in the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file, try re-installing [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) in that order, and finally reload the driver:
+*   You can also try to add the `nvidia` module directly to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file.
+
+*   If the screen still stays black with **both** the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") and the `nvidia` module directly in the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file, try re-installing [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) in that order, and finally reload the driver:
 
 ```
 # modprobe nvidia
@@ -1480,9 +1482,16 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413168](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=413168)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=417484](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=417484)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

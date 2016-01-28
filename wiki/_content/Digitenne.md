@@ -1243,3 +1243,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Digitenne&oldid=3898
 
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
 *   [TV cards](/index.php/Category:TV_cards "Category:TV cards")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

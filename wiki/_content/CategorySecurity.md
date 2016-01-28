@@ -41,7 +41,7 @@ This category has the following 5 subcategories, out of 5 total.
 
 ## Pages in category "Security"
 
-The following 71 pages are in this category, out of 71 total.
+The following 70 pages are in this category, out of 70 total.
 
 ### A
 
@@ -57,7 +57,6 @@ The following 71 pages are in this category, out of 71 total.
 ### B
 
 *   [Bankid](/index.php/Bankid "Bankid")
-*   [Benchmarking disk wipes](/index.php/Benchmarking_disk_wipes "Benchmarking disk wipes")
 *   [Burp suite](/index.php/Burp_suite "Burp suite")
 
 ### C
@@ -75,10 +74,6 @@ The following 71 pages are in this category, out of 71 total.
 *   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
 *   [Disk quota](/index.php/Disk_quota "Disk quota")
 *   [Dual boot with Windows/SafeBoot](/index.php/Dual_boot_with_Windows/SafeBoot "Dual boot with Windows/SafeBoot")
-
-### E
-
-*   [Estonian ID-card](/index.php/Estonian_ID-card "Estonian ID-card")
 
 ### F
 
@@ -144,6 +139,7 @@ The following 71 pages are in this category, out of 71 total.
 *   [Securely wipe disk/Tips and tricks](/index.php/Securely_wipe_disk/Tips_and_tricks "Securely wipe disk/Tips and tricks")
 *   [Security](/index.php/Security "Security")
 *   [Security Advisories](/index.php/Security_Advisories "Security Advisories")
+*   [Security Advisories/Examples](/index.php/Security_Advisories/Examples "Security Advisories/Examples")
 *   [SELinux](/index.php/SELinux "SELinux")
 *   [SHA password hashes](/index.php/SHA_password_hashes "SHA password hashes")
 *   [Snort](/index.php/Snort "Snort")

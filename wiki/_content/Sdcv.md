@@ -72,3 +72,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sdcv&oldid=379577](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

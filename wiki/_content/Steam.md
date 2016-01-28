@@ -161,7 +161,7 @@ env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxc
 
 ```
 
-If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality.
+If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality. WARNING: This also deletes the AppCache (games).
 
 ```
 steam --reset
@@ -595,7 +595,7 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=416520](https://wiki.archlinux.org/index.php?title=Steam&oldid=416520)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=417478](https://wiki.archlinux.org/index.php?title=Steam&oldid=417478)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

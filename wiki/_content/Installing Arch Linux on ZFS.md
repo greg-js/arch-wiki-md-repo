@@ -233,6 +233,10 @@ HOOKS="base udev autodetect modconf block keyboard zfs filesystems"
 
 ```
 
+**Note:**
+
+*   If you are using a separate dataset for `/usr` and have followed the instructions below, you must make sure you have the `usr` hook enabled after `zfs`, or your system will not boot.
+
 *   Regenerate the initramfs with the command:
 
 ```
@@ -254,7 +258,6 @@ set default=0
 
 # (0) Arch Linux
 menuentry "Arch Linux" {
-    search --no-floppy --label --set=root zroot
     linux /vmlinuz-linux zfs=zroot rw
     initrd /initramfs-linux.img
 }
@@ -372,7 +375,7 @@ You can now delete the two files `writehostid.c` and `writehostid`. Your system 
 *   [ZFS cheatsheet](http://lildude.co.uk/zfs-cheatsheet)
 *   [Funtoo ZFS install guide](http://www.funtoo.org/wiki/ZFS_Install_Guide)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_ZFS&oldid=401101](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_ZFS&oldid=401101)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_ZFS&oldid=417424](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_ZFS&oldid=417424)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

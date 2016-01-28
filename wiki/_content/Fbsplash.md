@@ -109,3 +109,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbsplash&oldid=40779
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

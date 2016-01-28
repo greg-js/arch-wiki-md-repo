@@ -77,3 +77,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Hwdetect&oldid=41037
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

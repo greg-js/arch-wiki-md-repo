@@ -30,3 +30,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=306
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

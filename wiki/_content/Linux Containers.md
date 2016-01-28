@@ -407,3 +407,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_Containers&old
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

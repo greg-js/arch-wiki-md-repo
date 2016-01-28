@@ -479,3 +479,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GROMACS&oldid=415192
 
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden category:
+
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

@@ -160,3 +160,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=412
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

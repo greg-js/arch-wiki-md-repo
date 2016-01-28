@@ -111,3 +111,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenStack&oldid=3925
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Networking](/index.php/Category:Networking "Category:Networking")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

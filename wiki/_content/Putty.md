@@ -42,3 +42,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Putty&oldid=399113](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -80,3 +80,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

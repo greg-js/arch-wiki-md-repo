@@ -69,3 +69,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Unclutter&oldid=4121
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

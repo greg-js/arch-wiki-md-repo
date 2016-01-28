@@ -108,3 +108,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Project&oldid=41
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

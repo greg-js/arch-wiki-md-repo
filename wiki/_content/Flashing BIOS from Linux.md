@@ -302,3 +302,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_L
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

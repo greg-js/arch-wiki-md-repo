@@ -228,3 +228,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sync_laptop_desktop&
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

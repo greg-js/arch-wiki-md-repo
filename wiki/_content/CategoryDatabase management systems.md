@@ -40,7 +40,7 @@ The following 13 pages are in this category, out of 13 total.
 
 ### S
 
-*   [Sqlite](/index.php/Sqlite "Sqlite")
+*   [SQLite](/index.php/SQLite "SQLite")
 *   [Sybase](/index.php/Sybase "Sybase")
 
 ### X

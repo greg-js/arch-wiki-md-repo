@@ -18,6 +18,11 @@ On a system with [GnuPG](/index.php/GnuPG "GnuPG") installed, do this by downloa
 
 Alternatively, run `pacman-key -v archlinux-<version>-dual.iso.sig` from an existing Arch Linux installation.
 
+**Note:**
+
+*   The signature itself could be manipulated if it is downloaded from a mirror site, instead of from [archlinux.org](https://archlinux.org/download/) as above. In this case, ensure that the public key, which is used to decode the signature, is signed by another, trustworthy key. The `gpg` command will output the fingerprint of the public key.
+*   Another method to verify the authenticity of the signature is to ensure that the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed the ISO-file. See [Wikipedia:Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") for more information on the public-key process to authenticate keys.
+
 ## Installation methods
 
 The table below offers an overview of the common ways to boot the installation media. As the installation process retrieves packages from a remote repository, these methods require an internet connection; see [Offline installation of packages](/index.php/Offline_installation_of_packages "Offline installation of packages") and [Archiso#Installation without Internet access](/index.php/Archiso#Installation_without_Internet_access "Archiso") when none is available.
@@ -127,13 +132,12 @@ The table below offers an overview of the common ways to boot the installation m
 
 ## Pages in category "Getting and installing Arch"
 
-The following 28 pages are in this category, out of 28 total.
+The following 27 pages are in this category, out of 27 total.
 
 ### A
 
 *   [Arch Linux AMIs for Amazon Web Services](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services")
 *   [Archboot](/index.php/Archboot "Archboot")
-*   [Archboot (Русский)](/index.php/Archboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archboot (Русский)")
 *   [Archiso](/index.php/Archiso "Archiso")
 
 ### B
@@ -196,7 +200,7 @@ The following 28 pages are in this category, out of 28 total.
 *   [Virtual Private Server](/index.php/Virtual_Private_Server "Virtual Private Server")
 *   [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Getting_and_installing_Arch&oldid=404112](https://wiki.archlinux.org/index.php?title=Category:Getting_and_installing_Arch&oldid=404112)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Getting_and_installing_Arch&oldid=417226](https://wiki.archlinux.org/index.php?title=Category:Getting_and_installing_Arch&oldid=417226)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

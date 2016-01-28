@@ -62,3 +62,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=3
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Office](/index.php/Category:Office "Category:Office")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

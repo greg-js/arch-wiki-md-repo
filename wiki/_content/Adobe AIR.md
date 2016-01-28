@@ -101,3 +101,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Adobe_AIR&oldid=3918
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

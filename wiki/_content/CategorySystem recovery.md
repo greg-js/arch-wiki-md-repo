@@ -8,12 +8,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "System recovery"
 
-The following 37 pages are in this category, out of 37 total.
+The following 36 pages are in this category, out of 36 total.
 
 ### A
 
 *   [Archboot](/index.php/Archboot "Archboot")
-*   [Archboot (Русский)](/index.php/Archboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archboot (Русский)")
 
 ### B
 

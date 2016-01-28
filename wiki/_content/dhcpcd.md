@@ -332,3 +332,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpcd&oldid=415062]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

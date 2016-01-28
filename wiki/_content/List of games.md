@@ -234,6 +234,10 @@ Related articles
 
 [http://en.wikipedia.org/wiki/Fortune_(Unix)](http://en.wikipedia.org/wiki/Fortune_(Unix)) || [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
 
+*   **Mah-Jong** — Chinese Classical mahjong (not solitaire) with network support
+
+[http://mahjong.julianbradfield.org/](http://mahjong.julianbradfield.org/) || [mahjong](https://www.archlinux.org/packages/?name=mahjong)
+
 *   **nInvaders** — Ncurses based space invaders clone
 
 [http://ninvaders.sourceforge.net/](http://ninvaders.sourceforge.net/) || [ninvaders](https://aur.archlinux.org/packages/ninvaders/)<sup><small>AUR</small></sup>
@@ -1024,6 +1028,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://lgames.sourceforge.net/index.php?project=LGeneral](http://lgames.sourceforge.net/index.php?project=LGeneral) || [lgeneral](https://aur.archlinux.org/packages/lgeneral/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lgeneral)]</sup>
 
+*   **[Kernel Panic](https://en.wikipedia.org/wiki/Spring_Engine#Kernel_Panic "wikipedia:Spring Engine")** — A game based around combat inside a computer, with 3 unique sides: the System, the Hacker and the Network waging war in a matrix of DOOM! No resource economy exists in KP, with the only constraints being time and space.
+
+[http://springrts.com/wiki/Kernel_Panic](http://springrts.com/wiki/Kernel_Panic) || [spring-kp](https://www.archlinux.org/packages/?name=spring-kp)
+
 *   **[MegaGlest](https://en.wikipedia.org/wiki/MegaGlest "wikipedia:MegaGlest")** — Fork of Glest, a 3D real-time strategy game in a fantastic world.
 
 [http://github.com/megaglest](http://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
@@ -1032,15 +1040,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 [http://www.netpanzer.org/](http://www.netpanzer.org/) || [netpanzer](https://aur.archlinux.org/packages/netpanzer/)<sup><small>AUR</small></sup>
 
-*   **Spring** — RTS game engine inspired by the game _Total Annihilation_.
-
-[http://springrts.com/wiki/Games](http://springrts.com/wiki/Games) || [spring](https://www.archlinux.org/packages/?name=spring)
-
-*   **Kernel Panic** — A game based around combat inside a computer, with 3 unique sides: the System, the Hacker and the Network waging war in a matrix of DOOM! No resource economy exists in KP, with the only constraints being time and space.
-
-[http://springrts.com/wiki/Kernel_Panic](http://springrts.com/wiki/Kernel_Panic) || [spring-kp](https://www.archlinux.org/packages/?name=spring-kp)
-
-*   **Spring: 1944** — Spring:1944 is a WWII themed game with four fully functional sides (US, Germany, USSR, Britain), period-accurate units and strengths. Realism comes second only to creating a game that is fun and accessible to play.
+*   **[Spring:1944](https://en.wikipedia.org/wiki/Spring_Engine#Spring:1944 "wikipedia:Spring Engine")** — A WWII themed game with four fully functional sides (US, Germany, USSR, Britain), period-accurate units and strengths. Realism comes second only to creating a game that is fun and accessible to play.
 
 [http://spring1944.org/](http://spring1944.org/) || [spring-1944](https://www.archlinux.org/packages/?name=spring-1944)
 
@@ -1128,7 +1128,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](http://en.wikipedia.org/wiki/Category:Linux_games)
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=417270](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=417270)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_games&oldid=417338](https://wiki.archlinux.org/index.php?title=List_of_games&oldid=417338)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

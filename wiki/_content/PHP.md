@@ -4,14 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-Related articles
-
-*   [Pdepend](/index.php/Pdepend "Pdepend")
-*   [Php-codesniffer-drupal](/index.php/Php-codesniffer-drupal "Php-codesniffer-drupal")
-*   [PhpMetrics](/index.php/PhpMetrics "PhpMetrics")
-*   [PHPLOC](/index.php/PHPLOC "PHPLOC")
-*   [PhpDox](/index.php/PhpDox "PhpDox")
-
 [PHP](http://www.php.net/) is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 
 ## Contents
@@ -38,11 +30,24 @@ Related articles
     *   [6.4 Netbeans](#Netbeans)
     *   [6.5 PhpStorm](#PhpStorm)
     *   [6.6 Zend Studio](#Zend_Studio)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
-    *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
-    *   [7.3 PHP Warning: PHP Startup: _<module>_: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
-*   [8 See also](#See_also)
+*   [7 Commandline tools](#Commandline_tools)
+    *   [7.1 Box](#Box)
+    *   [7.2 Composer](#Composer)
+    *   [7.3 PDepend](#PDepend)
+    *   [7.4 PHP Coding Standards Fixer](#PHP_Coding_Standards_Fixer)
+    *   [7.5 PHP-CodeSniffer](#PHP-CodeSniffer)
+    *   [7.6 phpcov](#phpcov)
+    *   [7.7 phpDox](#phpDox)
+    *   [7.8 PHPLoc](#PHPLoc)
+    *   [7.9 PhpMetrics](#PhpMetrics)
+    *   [7.10 phptok](#phptok)
+    *   [7.11 PHPUnit](#PHPUnit)
+    *   [7.12 PHPUnit Skeleton Generator](#PHPUnit_Skeleton_Generator)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
+    *   [8.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
+    *   [8.3 PHP Warning: PHP Startup: _<module>_: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -218,7 +223,7 @@ You would need other plugins for JavaScript support and DB query.
 
 ### Netbeans
 
-A complete IDE for many languages including PHP. Includes features like debugging, refactoring, code tempalting, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
+[NetBeans IDE](https://netbeans.org/) is a complete IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
 
 ### PhpStorm
 
@@ -227,6 +232,56 @@ A complete IDE for many languages including PHP. Includes features like debuggin
 ### Zend Studio
 
 [Zend Studio](http://www.zend.com/products/studio/) is the official PHP IDE, based on eclipse. The IDE has autocomplete, advanced code formatting, WYSIWYG html editor, refactoring, and all the eclipse features such as db access and version control integration and whatever you can get from other eclipse plugins. You can install it with the [zendstudio](https://aur.archlinux.org/packages/zendstudio/)<sup><small>AUR</small></sup> package.
+
+## Commandline tools
+
+### Box
+
+[Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/)<sup><small>AUR</small></sup> package.
+
+### Composer
+
+[Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [php-composer](https://www.archlinux.org/packages/?name=php-composer) package.
+
+### PDepend
+
+[PHP Depend](http://pdepend.org/) (pdepend) is software metrics tool for php. It can be installed with the [pdepend](https://aur.archlinux.org/packages/pdepend/)<sup><small>AUR</small></sup> package.
+
+### PHP Coding Standards Fixer
+
+[PHP Coding Standards Fixer](http://cs.sensiolabs.org/) a is PSR-1 and PSR-2 Coding Standards fixer for your code. It can be installed with the [php-cs-fixer](https://aur.archlinux.org/packages/php-cs-fixer/)<sup><small>AUR</small></sup> package.
+
+### PHP-CodeSniffer
+
+[PHP CodeSniffer](http://pear.php.net/package/PHP_CodeSniffer/) tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards. It can be installed with the [php-codesniffer](https://aur.archlinux.org/packages/php-codesniffer/)<sup><small>AUR</small></sup> package.
+
+### phpcov
+
+[phpcov](https://github.com/sebastianbergmann/phpcov) is a command-line frontend for the PHP_CodeCoverage library. It can be installed with the [phpcov](https://aur.archlinux.org/packages/phpcov/)<sup><small>AUR</small></sup> package.
+
+### phpDox
+
+[phpDox](http://phpdox.de/) is the documentation generator for PHP projects. This includes, but is not limited to, API documentation. It can be installed with the [phpdox](https://aur.archlinux.org/packages/phpdox/)<sup><small>AUR</small></sup> package.
+
+### PHPLoc
+
+[PHPLoc](https://github.com/sebastianbergmann/phploc/) is a tool for quickly measuring the size of a PHP project. It can be installed with the [phploc](https://aur.archlinux.org/packages/phploc/)<sup><small>AUR</small></sup> package.
+
+### PhpMetrics
+
+[PhpMetrics](http://www.phpmetrics.org/) provides various metrics about PHP projects. It can be installed with the [phpmetrics](https://aur.archlinux.org/packages/phpmetrics/)<sup><small>AUR</small></sup> package.
+
+### phptok
+
+[phptok](https://github.com/sebastianbergmann/phptok) is a tool for quickly dumping the tokens of a PHP sourcecode file. It can be installed with the [phptok](https://aur.archlinux.org/packages/phptok/)<sup><small>AUR</small></sup> package.
+
+### PHPUnit
+
+[PHPUnit](https://phpunit.de) is a programmer-oriented testing framework for PHP. It can be installed with the [phpunit](https://aur.archlinux.org/packages/phpunit/)<sup><small>AUR</small></sup> package.
+
+### PHPUnit Skeleton Generator
+
+[PHPUnit Skeleton Generator](https://github.com/sebastianbergmann/phpunit-skeleton-generator) is a tool that can generate skeleton test classes from production code classes and vice versa. It can be installed with the [phpunit-skeleton-generator](https://aur.archlinux.org/packages/phpunit-skeleton-generator/)<sup><small>AUR</small></sup> package.
 
 ## Troubleshooting
 
@@ -254,7 +309,7 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdate
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=416353](https://wiki.archlinux.org/index.php?title=PHP&oldid=416353)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=417470](https://wiki.archlinux.org/index.php?title=PHP&oldid=417470)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -170,3 +170,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=SciTE&oldid=374371](
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

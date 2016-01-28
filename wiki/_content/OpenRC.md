@@ -286,3 +286,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -157,3 +157,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Tar&oldid=408772](ht
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -640,3 +640,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=41174
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

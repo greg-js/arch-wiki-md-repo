@@ -123,3 +123,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Official_repositorie
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package management](/index.php/Category:Package_management "Category:Package management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

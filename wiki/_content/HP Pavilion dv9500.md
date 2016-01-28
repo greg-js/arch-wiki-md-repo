@@ -60,3 +60,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv9500&o
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [HP](/index.php/Category:HP "Category:HP")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

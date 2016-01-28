@@ -52,3 +52,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Budgie_Desktop&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -53,3 +53,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=FiSH&oldid=374474](h
 
 *   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

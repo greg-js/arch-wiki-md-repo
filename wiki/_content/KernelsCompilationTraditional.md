@@ -225,3 +225,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernels/Compilation/
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

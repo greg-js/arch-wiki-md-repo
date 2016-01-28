@@ -314,3 +314,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Uswsusp&oldid=410963
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

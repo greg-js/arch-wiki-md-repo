@@ -8,7 +8,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Internationalization"
 
-The following 14 pages are in this category, out of 14 total.
+The following 15 pages are in this category, out of 15 total.
+
+### D
+
+*   [Dasom](/index.php/Dasom "Dasom")
 
 ### F
 

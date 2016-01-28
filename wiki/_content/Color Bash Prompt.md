@@ -722,3 +722,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&ol
 
 *   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
 *   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

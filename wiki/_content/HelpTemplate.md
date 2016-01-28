@@ -187,6 +187,7 @@ The templates that users can use directly in articles on the ArchWiki are listed
 *   [Template:Merge](/index.php/Template:Merge "Template:Merge")
 *   [Template:Move](/index.php/Template:Move "Template:Move")
 *   [Template:Out of date](/index.php/Template:Out_of_date "Template:Out of date")
+*   [Template:Redirect](/index.php/Template:Redirect "Template:Redirect")
 *   [Template:Stub](/index.php/Template:Stub "Template:Stub")
 *   [Template:Style](/index.php/Template:Style "Template:Style")
 *   [Template:Translateme](/index.php/Template:Translateme "Template:Translateme")
@@ -239,7 +240,7 @@ The templates that users can use directly in articles on the ArchWiki are listed
 *   [Template:Template](/index.php/Template:Template "Template:Template")
 *   [http://meta.wikimedia.org/wiki/Help:Template](http://meta.wikimedia.org/wiki/Help:Template)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:Template&oldid=410636](https://wiki.archlinux.org/index.php?title=Help:Template&oldid=410636)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:Template&oldid=414593](https://wiki.archlinux.org/index.php?title=Help:Template&oldid=414593)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

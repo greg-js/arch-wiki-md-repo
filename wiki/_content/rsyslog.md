@@ -561,3 +561,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Rsyslog&oldid=410644
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

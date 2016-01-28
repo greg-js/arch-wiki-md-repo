@@ -159,3 +159,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mathematica&oldid=41
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

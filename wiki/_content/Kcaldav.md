@@ -42,3 +42,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Kcaldav&oldid=400396
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Applications](/index.php/Category:Applications "Category:Applications")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

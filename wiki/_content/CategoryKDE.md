@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "KDE"
 
-The following 7 pages are in this category, out of 7 total.
+The following 6 pages are in this category, out of 6 total.
 
 ### C
 
@@ -21,7 +21,6 @@ The following 7 pages are in this category, out of 7 total.
 ### K
 
 *   [KDE](/index.php/KDE "KDE")
-*   [KDE Packages](/index.php/KDE_Packages "KDE Packages")
 *   [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet")
 *   [KDM](/index.php/KDM "KDM")
 

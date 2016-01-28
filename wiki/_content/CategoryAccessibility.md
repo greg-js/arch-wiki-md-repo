@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Accessibility"
 
-The following 7 pages are in this category, out of 7 total.
+The following 8 pages are in this category, out of 8 total.
 
 ### A
 
@@ -32,6 +32,7 @@ The following 7 pages are in this category, out of 7 total.
 
 ### S
 
+*   [Simple Orca Plugin System](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")
 *   [Speech recognition](/index.php/Speech_recognition "Speech recognition")
 
 ### T

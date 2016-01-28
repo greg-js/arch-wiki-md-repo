@@ -14,10 +14,13 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 The following 12 pages are in this category, out of 12 total.
 
+### A
+
+*   [Atom](/index.php/Atom "Atom")
+
 ### E
 
 *   [Emacs](/index.php/Emacs "Emacs")
-*   [Emacs (Español)](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)")
 *   [Emacs Mediawiki](/index.php/Emacs_Mediawiki "Emacs Mediawiki")
 
 ### G

@@ -10,7 +10,7 @@ The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementatio
 
 ## Pages in category "X server"
 
-The following 62 pages are in this category, out of 62 total.
+The following 61 pages are in this category, out of 61 total.
 
 ### A
 
@@ -69,7 +69,6 @@ The following 62 pages are in this category, out of 62 total.
 
 *   [Nouveau](/index.php/Nouveau "Nouveau")
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)")
 *   [Nvidia TV-out and Video Tearing](/index.php/Nvidia_TV-out_and_Video_Tearing "Nvidia TV-out and Video Tearing")
 
 ### P
@@ -102,6 +101,7 @@ The following 62 pages are in this category, out of 62 total.
 *   [VA-API](/index.php/VA-API "VA-API")
 *   [VDPAU](/index.php/VDPAU "VDPAU")
 *   [Via](/index.php/Via "Via")
+*   [Volnoti](/index.php/Volnoti "Volnoti")
 
 ### W
 
@@ -123,7 +123,6 @@ The following 62 pages are in this category, out of 62 total.
 *   [Xpra](/index.php/Xpra "Xpra")
 *   [Xprofile](/index.php/Xprofile "Xprofile")
 *   [Xrandr](/index.php/Xrandr "Xrandr")
-*   [Xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)")
 *   [XScreenSaver](/index.php/XScreenSaver "XScreenSaver")
 *   [Xvidcap](/index.php/Xvidcap "Xvidcap")
 *   [XvMC](/index.php/XvMC "XvMC")

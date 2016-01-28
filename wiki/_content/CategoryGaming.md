@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Gaming"
 
-The following 44 pages are in this category, out of 44 total.
+The following 47 pages are in this category, out of 47 total.
 
 ### A
 
@@ -20,6 +20,7 @@ The following 44 pages are in this category, out of 44 total.
 
 ### C
 
+*   [Cocos2D-X](/index.php/Cocos2D-X "Cocos2D-X")
 *   [CrossOver](/index.php/CrossOver "CrossOver")
 
 ### D
@@ -63,6 +64,7 @@ The following 44 pages are in this category, out of 44 total.
 ### M
 
 *   [Minecraft](/index.php/Minecraft "Minecraft")
+*   [Minetest](/index.php/Minetest "Minetest")
 
 ### O
 
@@ -94,6 +96,7 @@ The following 44 pages are in this category, out of 44 total.
 ### U
 
 *   [Unity3D](/index.php/Unity3D "Unity3D")
+*   [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4")
 *   [Urban Terror](/index.php/Urban_Terror "Urban Terror")
 
 ### V

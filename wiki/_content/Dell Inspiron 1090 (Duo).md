@@ -381,3 +381,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dell](/index.php/Category:Dell "Category:Dell")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

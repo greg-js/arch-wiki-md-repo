@@ -232,3 +232,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=41214
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

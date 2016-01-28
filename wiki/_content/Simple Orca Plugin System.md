@@ -51,7 +51,7 @@ To setup the plug-in system for the current user, run:
 
 ### Basics
 
-*   The Installation path. This contains the default plug-ins and the administration tools:
+*   The Installation path. This contains the default plug-ins, the documentation,the plugin loader and the administration tools:
 
 `/usr/share/SOPS/`
 
@@ -192,7 +192,7 @@ You can also host plug-ins, making them available for installation via the plug-
 
 The default online resource is: [https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=417277](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=417277)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=417501](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=417501)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

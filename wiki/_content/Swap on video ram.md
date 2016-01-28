@@ -159,3 +159,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Swap_on_video_ram&ol
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

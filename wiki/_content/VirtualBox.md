@@ -1470,3 +1470,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualBox&oldid=414
 
 *   [Emulators](/index.php/Category:Emulators "Category:Emulators")
 *   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -146,3 +146,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Fortune&oldid=406652
 
 *   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
 *   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

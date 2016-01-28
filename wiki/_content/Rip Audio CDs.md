@@ -76,3 +76,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Rip_Audio_CDs&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Optical](/index.php/Category:Optical "Category:Optical")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

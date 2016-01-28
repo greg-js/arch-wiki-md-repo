@@ -153,3 +153,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Frandom&oldid=412611
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

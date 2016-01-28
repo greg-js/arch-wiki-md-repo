@@ -258,3 +258,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_mode_setting&
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

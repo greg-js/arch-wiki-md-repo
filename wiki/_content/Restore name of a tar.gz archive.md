@@ -139,3 +139,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Restore_name_of_a_ta
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

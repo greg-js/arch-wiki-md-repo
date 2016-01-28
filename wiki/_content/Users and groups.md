@@ -237,6 +237,8 @@ In the recommended scenario, where the default group has the same name as the us
 
 Otherwise the file creator's default group (usually the same as the user name) is used.
 
+If a GID change is required temporarily you can also use the _newgrp_ command to change the user's default GID to another GID at runtime. For example, after executing `newgrp _groupname_` files created by the user will be associated with the `_groupname_` GID, without requiring a re-login. To change back to the default GID, execute _newgrp_ without a groupname.
+
 ### Example adding a system user
 
 System users can be used to run processes/daemons under a different user, protecting (e.g. with [chown](/index.php/Chown "Chown")) files and/or directories and more examples of computer hardening.
@@ -282,14 +284,14 @@ To add a user to other groups use (`_additional_groups_` is a comma-separated li
 
 ```
 
+**Warning:** If the `-a` option is omitted in the _usermod_ command above, the user is removed from all groups not listed in `_additional_groups_` (i.e. the user will be member only of those groups listed in `_additional_groups_`).
+
 Alternatively, _gpasswd_ may be used. Though the username can only be added (or removed) from one group at a time.
 
 ```
 # gpasswd --add _username_ _group_
 
 ```
-
-**Warning:** If the `-a` option is omitted in the _usermod_ command above, the user is removed from all groups not listed in `_additional_groups_` (i.e. the user will be member only of those groups listed in `_additional_groups_`).
 
 To enter user information for the [GECOS](#User_database) comment (e.g. the full user name), type:
 
@@ -1040,8 +1042,13 @@ These groups used to be needed before arch migrated to [systemd](/index.php/Syst
 
 </table>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=415021](https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=415021)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=417525](https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=417525)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

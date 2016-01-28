@@ -92,3 +92,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Beep&oldid=411977](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sound](/index.php/Category:Sound "Category:Sound")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

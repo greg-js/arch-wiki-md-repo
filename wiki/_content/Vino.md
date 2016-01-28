@@ -61,3 +61,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Vino&oldid=412207](h
 
 *   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
 *   [GNOME](/index.php/Category:GNOME "Category:GNOME")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

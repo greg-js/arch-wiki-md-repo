@@ -174,3 +174,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=St&oldid=413749](htt
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

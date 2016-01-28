@@ -111,3 +111,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Powernowd&oldid=3925
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -279,3 +279,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Nouveau&oldid=412140
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

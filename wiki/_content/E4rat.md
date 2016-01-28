@@ -241,3 +241,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=E4rat&oldid=404776](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -18,7 +18,7 @@ This category has only the following subcategory.
 
 ## Pages in category "Storage"
 
-The following 18 pages are in this category, out of 18 total.
+The following 19 pages are in this category, out of 19 total.
 
 ### A
 
@@ -26,6 +26,10 @@ The following 18 pages are in this category, out of 18 total.
 *   [AHCI](/index.php/AHCI "AHCI")
 *   [Artigo a2000](/index.php/Artigo_a2000 "Artigo a2000")
 *   [ATA over Ethernet](/index.php/ATA_over_Ethernet "ATA over Ethernet")
+
+### B
+
+*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
 
 ### F
 
@@ -54,7 +58,7 @@ The following 18 pages are in this category, out of 18 total.
 *   [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.")
 *   [Sharkoon 5-Bay RAID Box](/index.php/Sharkoon_5-Bay_RAID_Box "Sharkoon 5-Bay RAID Box")
 *   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
-*   [SSD benchmarking](/index.php/SSD_benchmarking "SSD benchmarking")
+*   [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe")
 *   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
 
 ### T

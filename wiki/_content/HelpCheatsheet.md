@@ -132,7 +132,7 @@ _Do not sign when contributing to an article._
 
 <td>
 
-[Username](/index.php/Special:MyPage "Special:MyPage"), 04:52, 5 December 2015 (UTC)
+[Username](/index.php/Special:MyPage "Special:MyPage"), 10:47, 27 January 2016 (UTC)
 
 </td>
 

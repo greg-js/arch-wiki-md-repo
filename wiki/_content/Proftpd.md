@@ -40,3 +40,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Proftpd&oldid=414869
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

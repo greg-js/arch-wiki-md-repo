@@ -119,3 +119,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mercurial&oldid=4121
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

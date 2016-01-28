@@ -110,3 +110,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Jinzora&oldid=389406
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Streaming](/index.php/Category:Streaming "Category:Streaming")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

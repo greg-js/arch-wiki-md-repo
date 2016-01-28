@@ -117,3 +117,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_RC530&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Samsung](/index.php/Category:Samsung "Category:Samsung")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

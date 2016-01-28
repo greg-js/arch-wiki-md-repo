@@ -829,3 +829,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=414870](h
 
 *   [X server](/index.php/Category:X_server "Category:X server")
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -474,3 +474,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412
 
 *   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

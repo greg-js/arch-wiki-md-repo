@@ -243,3 +243,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=3D_Mouse&oldid=39057
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mice](/index.php/Category:Mice "Category:Mice")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

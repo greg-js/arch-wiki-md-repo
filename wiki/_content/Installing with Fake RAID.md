@@ -433,3 +433,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_with_Fake
 
 *   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

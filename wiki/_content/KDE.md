@@ -850,3 +850,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413672](ht
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [KDE](/index.php/Category:KDE "Category:KDE")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

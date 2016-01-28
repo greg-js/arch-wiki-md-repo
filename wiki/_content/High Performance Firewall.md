@@ -223,3 +223,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=High_Performance_Fir
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

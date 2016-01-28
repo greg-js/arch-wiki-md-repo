@@ -236,3 +236,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine_package_guideli
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
 *   [Wine](/index.php/Category:Wine "Category:Wine")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

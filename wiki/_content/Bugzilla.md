@@ -139,3 +139,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=41204
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
 *   [Development](/index.php/Category:Development "Category:Development")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

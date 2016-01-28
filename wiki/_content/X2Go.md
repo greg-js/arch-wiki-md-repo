@@ -179,3 +179,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=X2Go&oldid=391799](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

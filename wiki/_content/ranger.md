@@ -470,3 +470,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Ranger&oldid=404195]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File managers](/index.php/Category:File_managers "Category:File managers")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

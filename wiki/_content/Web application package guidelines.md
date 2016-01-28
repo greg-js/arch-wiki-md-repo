@@ -90,3 +90,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Web_application_pack
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

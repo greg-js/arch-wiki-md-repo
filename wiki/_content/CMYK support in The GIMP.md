@@ -284,3 +284,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

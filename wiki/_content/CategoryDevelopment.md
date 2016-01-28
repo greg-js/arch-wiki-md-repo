@@ -32,7 +32,7 @@ This category has the following 5 subcategories, out of 5 total.
 
 ## Pages in category "Development"
 
-The following 56 pages are in this category, out of 56 total.
+The following 53 pages are in this category, out of 53 total.
 
 ### A
 
@@ -41,6 +41,7 @@ The following 56 pages are in this category, out of 56 total.
 *   [Android](/index.php/Android "Android")
 *   [Arduino](/index.php/Arduino "Arduino")
 *   [Artificial Intelligence](/index.php/Artificial_Intelligence "Artificial Intelligence")
+*   [Atom](/index.php/Atom "Atom")
 
 ### B
 
@@ -61,7 +62,6 @@ The following 56 pages are in this category, out of 56 total.
 
 *   [Eclipse](/index.php/Eclipse "Eclipse")
 *   [Emacs](/index.php/Emacs "Emacs")
-*   [Emacs (Español)](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)")
 
 ### G
 
@@ -102,16 +102,12 @@ The following 56 pages are in this category, out of 56 total.
 
 ### P
 
-*   [Pdepend](/index.php/Pdepend "Pdepend")
 *   [Php-codesniffer-drupal](/index.php/Php-codesniffer-drupal "Php-codesniffer-drupal")
-*   [PhpDox](/index.php/PhpDox "PhpDox")
-*   [PHPLOC](/index.php/PHPLOC "PHPLOC")
-*   [PhpMetrics](/index.php/PhpMetrics "PhpMetrics")
 *   [PHPUnit](/index.php/PHPUnit "PHPUnit")
 *   [Pygame](/index.php/Pygame "Pygame")
 *   [Pylons](/index.php/Pylons "Pylons")
 *   [PyPy](/index.php/PyPy "PyPy")
-*   [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv")
+*   [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv")
 
 ### R
 
@@ -133,6 +129,7 @@ The following 56 pages are in this category, out of 56 total.
 ### U
 
 *   [Umap](/index.php/Umap "Umap")
+*   [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4")
 
 ### V
 

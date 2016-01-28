@@ -28,7 +28,7 @@ The following 4 pages are in this category, out of 4 total.
 *   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
 *   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:TeX&oldid=385345](https://wiki.archlinux.org/index.php?title=Category:TeX&oldid=385345)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:TeX&oldid=411106](https://wiki.archlinux.org/index.php?title=Category:TeX&oldid=411106)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

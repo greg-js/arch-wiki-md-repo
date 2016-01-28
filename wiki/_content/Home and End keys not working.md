@@ -207,3 +207,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Home_and_End_keys_no
 
 *   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
 *   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

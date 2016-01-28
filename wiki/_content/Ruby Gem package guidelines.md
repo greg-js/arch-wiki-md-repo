@@ -72,3 +72,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby_Gem_package_gui
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

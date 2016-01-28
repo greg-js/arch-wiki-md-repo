@@ -72,7 +72,7 @@ This category has the following 17 subcategories, out of 17 total.
 
 ## Pages in category "Networking"
 
-The following 69 pages are in this category, out of 69 total.
+The following 70 pages are in this category, out of 70 total.
 
 ### A
 
@@ -114,6 +114,7 @@ The following 69 pages are in this category, out of 69 total.
 
 ### H
 
+*   [HAproxy](/index.php/HAproxy "HAproxy")
 *   [Honeyd](/index.php/Honeyd "Honeyd")
 *   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
 

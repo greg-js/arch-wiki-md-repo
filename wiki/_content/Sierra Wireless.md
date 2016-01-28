@@ -25,3 +25,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sierra_Wireless&oldi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Modems](/index.php/Category:Modems "Category:Modems")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

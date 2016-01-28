@@ -264,3 +264,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernels&oldid=410507
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

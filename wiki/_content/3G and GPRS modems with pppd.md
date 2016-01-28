@@ -457,3 +457,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=3G_and_GPRS_modems_w
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Modems](/index.php/Category:Modems "Category:Modems")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

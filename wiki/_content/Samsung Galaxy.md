@@ -42,3 +42,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_Galaxy&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

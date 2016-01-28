@@ -669,7 +669,7 @@ esac
 On the client side only VLC has to be installed, you can start the streaming process with
 
 ```
-vlc "[http://](http://)<VDR's public IP>:3000/extern;250/19"
+vlc "http://<VDR's public IP>:3000/extern;250/19"
 
 ```
 
@@ -706,7 +706,7 @@ cvlc [http://localhost:37890](http://localhost:37890) :http-caching=3000 :sout
 On the remote computer you can open the stream with the following command. If the computer running VDR is behind a router, make sure the port 1234 is being forwarded.
 
 ```
-vlc [http://](http://)<VDR's public IP>:1234
+vlc http://<VDR's public IP>:1234
 
 ```
 
@@ -742,3 +742,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=VDR&oldid=389822](ht
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

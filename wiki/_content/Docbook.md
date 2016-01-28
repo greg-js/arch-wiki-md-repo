@@ -89,3 +89,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Docbook&oldid=374374
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Office](/index.php/Category:Office "Category:Office")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

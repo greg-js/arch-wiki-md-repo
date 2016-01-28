@@ -55,7 +55,6 @@ The following 26 pages are in this category, out of 26 total.
 *   [Arch Linux press coverage](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
 *   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
 *   [Arch Terminology](/index.php/Arch_Terminology "Arch Terminology")
-*   [ArchAnthem](/index.php/ArchAnthem "ArchAnthem")
 *   [ArchMap](/index.php/ArchMap "ArchMap")
 *   [ArchMap/List](/index.php/ArchMap/List "ArchMap/List")
 *   [Artwork](/index.php/Artwork "Artwork")
@@ -87,6 +86,10 @@ The following 26 pages are in this category, out of 26 total.
 ### O
 
 *   [Official repositories](/index.php/Official_repositories "Official repositories")
+
+### S
+
+*   [User:ScriptDevil/ArchAnthem](/index.php/User:ScriptDevil/ArchAnthem "User:ScriptDevil/ArchAnthem")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:About_Arch&oldid=385036](https://wiki.archlinux.org/index.php?title=Category:About_Arch&oldid=385036)"
 

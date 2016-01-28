@@ -167,3 +167,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=H2status&oldid=39221
 
 *   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
 *   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

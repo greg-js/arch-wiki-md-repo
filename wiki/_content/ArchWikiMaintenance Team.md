@@ -121,3 +121,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Maintenance
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

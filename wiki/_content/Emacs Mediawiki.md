@@ -131,3 +131,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs_Mediawiki&oldi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -38,8 +38,8 @@ The following 22 pages are in this category, out of 22 total.
 ### F
 
 *   [Firefox](/index.php/Firefox "Firefox")
+*   [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM")
 *   [Firefox privacy](/index.php/Firefox_privacy "Firefox privacy")
-*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
 *   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
 
 ### G

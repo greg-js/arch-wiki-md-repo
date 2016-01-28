@@ -102,8 +102,8 @@ The wiki's subpage feature (article/subpage) is available for your userpage as w
 Content editing, proofreading, and updating are never-ending tasks on any wiki. If you want to help, just register an account and start performing your magic.
 
 *   Help fulfilling [requests](/index.php/ArchWiki:Requests "ArchWiki:Requests").
-*   Add content to [stubs](/index.php/Special:WhatLinksHere/Template:Stub "Special:WhatLinksHere/Template:Stub") and expand [incomplete](/index.php/Special:WhatLinksHere/Template:Expansion "Special:WhatLinksHere/Template:Expansion") or [poorly-written](/index.php/Special:WhatLinksHere/Template:Poor_writing "Special:WhatLinksHere/Template:Poor writing") articles.
-*   Correct [inaccurate](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy") or [outdated](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date") content, spelling, grammar, language, and [style](/index.php/Help:Style "Help:Style").
+*   Add content to [stubs](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub"), expand [incomplete](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion") articles or tidy up [poorly-written](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style") content.
+*   Correct [inaccurate](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy") or [outdated](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date") content, spelling, grammar, language, and [style](/index.php/Help:Style "Help:Style").
 *   Update the [FAQ](/index.php/FAQ "FAQ") with relevant questions from the forum and remove obsolete questions.
 
 ### Non-Arch users
@@ -121,15 +121,15 @@ Non-Arch users are welcome to contribute; in fact anyone can register an account
 
 Sorting, categorizing, and moving articles around has become a major task for all wiki maintainers implementing and improving the [category tree](/index.php/Table_of_contents "Table of contents").
 
-*   Reduce and [combine](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge") duplicate pages.
+*   Reduce and [combine](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge") duplicate pages.
 *   Improve wiki [navigation](/index.php/Table_of_contents "Table of contents").
 *   Categorize [uncategorized pages](/index.php/Special:UncategorizedPages "Special:UncategorizedPages"), [uncategorized categories](/index.php/Special:UncategorizedCategories "Special:UncategorizedCategories") and [wanted categories](/index.php/Special:WantedCategories "Special:WantedCategories"). See [Help:Style#Categories](/index.php/Help:Style#Categories "Help:Style") and [Help:Style#Category pages](/index.php/Help:Style#Category_pages "Help:Style").
-*   Fix [broken](/index.php/Special:BrokenRedirects "Special:BrokenRedirects") and [double](/index.php/Special:DoubleRedirects "Special:DoubleRedirects") redirects.
+*   Fix [broken](/index.php/Special:BrokenRedirects "Special:BrokenRedirects") and [double](/index.php/Special:DoubleRedirects "Special:DoubleRedirects") redirects. Discuss or apply [proposed redirects](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect").
 *   See [Special:SpecialPages](/index.php/Special:SpecialPages "Special:SpecialPages") for other useful cleanup tools.
 
 ## Translating
 
-[Add](/index.php/Special:WhatLinksHere/Template:Translateme "Special:WhatLinksHere/Template:Translateme") or [improve](/index.php/Special:WhatLinksHere/Template:Bad_translation "Special:WhatLinksHere/Template:Bad translation") translations; ensure that translations are in sync with each other. Some languages have started collaboration projects (see list below) to efficiently organize the translation of the articles. Please consider joining your language's Translation Team or at least informing it when you are starting translating an article.
+[Add](/index.php/Category:Pages_or_sections_flagged_with_Template:Translateme "Category:Pages or sections flagged with Template:Translateme") or [improve](/index.php/Category:Pages_or_sections_flagged_with_Template:Bad_translation "Category:Pages or sections flagged with Template:Bad translation") translations; ensure that translations are in sync with each other. Some languages have started collaboration projects (see list below) to efficiently organize the translation of the articles. Please consider joining your language's Translation Team or at least informing it when you are starting translating an article.
 
 *   [ArchWiki Translation Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team")
 *   [ArchWiki Translation Team (Español)](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)")
@@ -164,7 +164,7 @@ Use the [Arch Linux Bugtracker](https://bugs.archlinux.org/) to report bugs and 
 
 If you have any _generic_ negative remarks or complaints about how the wiki is moderated or administered, please leave a message in [ArchWiki talk:Administrators](/index.php/ArchWiki_talk:Administrators "ArchWiki talk:Administrators"). Of course it should not be necessary to state that it is indeed possible to complain about something using a civil and respectful tone :) For complaints regarding _specific_ edits or articles, please use a more appropriate talk page.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Contributing&oldid=396525](https://wiki.archlinux.org/index.php?title=ArchWiki:Contributing&oldid=396525)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Contributing&oldid=415594](https://wiki.archlinux.org/index.php?title=ArchWiki:Contributing&oldid=415594)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

@@ -354,3 +354,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

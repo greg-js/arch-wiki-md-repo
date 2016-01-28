@@ -1909,7 +1909,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 
 ### Lenovo ThinkPad T440p
 
-*   ClickPad: the whole trackpad clicks, and disabling the trackpad using synclient makes the trackpoint essentially unusable.
+*   ClickPad: the whole trackpad clicks, and disabling the trackpad using older versions of synclient makes the trackpoint essentially unusable. This has been resolved in newer versions of [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
     *   See [this article](http://who-t.blogspot.com.au/2014/03/xorg-synaptics-support-for-lenovo-t440.html) and [previous version](http://who-t.blogspot.com.au/2013/12/lenovo-t440-touchpad-button.html).
     *   Install [xf86-input-synlx40](https://aur.archlinux.org/packages/xf86-input-synlx40/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-synlx40)]</sup> and [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/)<sup><small>AUR</small></sup> for alternative drivers.
 *   Audio:
@@ -1943,12 +1943,13 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 
 *   [Think wiki](http://www.thinkwiki.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=415081](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=415081)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=417393](https://wiki.archlinux.org/index.php?title=Laptop/Lenovo&oldid=417393)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
 
-Hidden category:
+Hidden categories:
 
 *   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

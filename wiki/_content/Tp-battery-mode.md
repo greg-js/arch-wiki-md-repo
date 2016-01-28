@@ -78,3 +78,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp-battery-mode&oldi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Laptops](/index.php/Category:Laptops "Category:Laptops")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -486,3 +486,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Luakit&oldid=412706]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

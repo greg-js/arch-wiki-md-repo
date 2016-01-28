@@ -368,3 +368,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Opera&oldid=404540](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

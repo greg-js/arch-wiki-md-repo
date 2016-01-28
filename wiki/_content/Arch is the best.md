@@ -1718,3 +1718,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_is_the_best&old
 
 *   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
 *   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -138,3 +138,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Mini_5101&oldid=3
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [HP](/index.php/Category:HP "Category:HP")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

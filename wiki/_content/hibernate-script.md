@@ -565,3 +565,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Hibernate-script&old
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

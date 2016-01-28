@@ -82,7 +82,7 @@ For users that desire ZFS builds from stable releases, [zfs-lts](https://aur.arc
 
 Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
 
-**Tip:** You can downgrade your linux version to the one from [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repo if your current kenel is newer. More info on [Downgrading_packages](/index.php/Downgrading_packages "Downgrading packages").
+**Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repo if your current kenel is newer.
 
 ### Root on ZFS
 
@@ -92,15 +92,21 @@ It may be useful to prepare a [customized archiso](#Embed_the_archzfs_packages_i
 
 ### DKMS
 
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
+
+**The factual accuracy of this article or section is disputed.**
+
+**Reason:** This method was reported to not work correctly in January 2016, with pacman not triggering DKMS after a kernel upgrade or reinstalling. (Discuss in [Talk:ZFS#](https://wiki.archlinux.org/index.php/Talk:ZFS))
+
 Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") to rebuild the ZFS modules automatically with every kernel upgrade.
 
 Read the [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") wiki entry for a general understanding of the initial ramdisk environment, and adding the dkms hook [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
 
 Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/)<sup><small>AUR</small></sup> or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/)<sup><small>AUR</small></sup> and apply the post-install instructions given by these packages.
 
-**Warning:** It is advised to use the above methods first before trying the DKMS route. This method currently does not seem to work correctly (at least for me), with pacman not triggering DKMS after a kernel upgrade or reinstalling.
-
-**Tip:** add an I_gnorePkg = package_ entry to _/etc/pacman.conf_ to prevent these packages from upgrading when doing a regular update.
+**Tip:** Add an `IgnorePkg` entry to [pacman.conf](/index.php/Pacman.conf "Pacman.conf") to prevent these packages from upgrading when doing a regular update.
 
 ## Experimenting with ZFS
 
@@ -969,7 +975,7 @@ Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417165](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417165)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417325](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417325)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
@@ -977,5 +983,6 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417165](ht
 
 Hidden categories:
 
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
 *   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
 *   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

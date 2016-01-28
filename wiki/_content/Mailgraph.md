@@ -25,3 +25,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mailgraph&oldid=3936
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

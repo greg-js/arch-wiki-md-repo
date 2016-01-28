@@ -62,3 +62,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=387938
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

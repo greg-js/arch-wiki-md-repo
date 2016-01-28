@@ -277,7 +277,11 @@ It is possible that the environment variables are redefined in other files than 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Locale&oldid=409611](https://wiki.archlinux.org/index.php?title=Locale&oldid=409611)"
 
-[Categories](/index.php/Special:Categories "Special:Categories"):
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
+
+Hidden categories:
 
 *   [Pages using duplicate arguments in template calls](/index.php/Category:Pages_using_duplicate_arguments_in_template_calls "Category:Pages using duplicate arguments in template calls")
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

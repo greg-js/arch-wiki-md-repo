@@ -107,3 +107,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=CurlFtpFS&oldid=3714
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

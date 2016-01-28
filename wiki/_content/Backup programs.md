@@ -99,7 +99,7 @@ Certain rsync-type packages also do snapshot backups by storing files which desc
 
 [http://www.scottlu.com/Content/Link-Backup.html](http://www.scottlu.com/Content/Link-Backup.html) || [link-backup](https://aur.archlinux.org/packages/link-backup/)<sup><small>AUR</small></sup>
 
-*   **[Unison](https://en.wikipedia.org/wiki/Unison_(file_synchronizer) "wikipedia:Unison (file synchronizer)")** — A program that synchronizes files between two machines over network (LAN or Inet) using a smart diff method + rsync. Allows the user to interactively choose which changes to push, pull, or merge.
+*   **[Unison](/index.php/Unison "Unison")** — A program that synchronizes files between two machines over network (LAN or Inet) using a smart diff method + rsync. Allows the user to interactively choose which changes to push, pull, or merge.
 
 [http://www.cis.upenn.edu/~bcpierce/unison/](http://www.cis.upenn.edu/~bcpierce/unison/) || [unison](https://www.archlinux.org/packages/?name=unison)
 
@@ -168,6 +168,10 @@ Certain rsync-type packages also do snapshot backups by storing files which desc
     *   A command line mode.
 
 [http://luckybackup.sourceforge.net/index.html](http://luckybackup.sourceforge.net/index.html) || [luckybackup](https://aur.archlinux.org/packages/luckybackup/)<sup><small>AUR</small></sup>
+
+*   **Synbak** — Meant to unify several backup methods in a single application while supplying a powerful reporting system.
+
+[http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) || [synbak](https://www.archlinux.org/packages/?name=synbak)
 
 *   **syncBackup** — A front-end for rsync that provides a fast and extraordinary copying tool. It offers the most common options that control its behavior and permit very flexible specification of the set of files to be copied.
 
@@ -335,6 +339,10 @@ Most other backup applications tend to create (big) archive files and (of course
 
 [http://sourceforge.net/projects/backerupper/](http://sourceforge.net/projects/backerupper/) || [backerupper](https://aur.archlinux.org/packages/backerupper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/backerupper)]</sup>
 
+*   **DarGUI** — Graphical frontend for the Disk ARchiving utility (DAR) that aims to make it easier and quicker to perform common backup tasks using DAR.
+
+[http://dargui.sourceforge.net/](http://dargui.sourceforge.net/) || [dargui](https://aur.archlinux.org/packages/dargui/)<sup><small>AUR</small></sup>
+
 *   **[Déjà Dup](/index.php/Duplicity "Duplicity")** — A simple GTK+ backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses duplicity as the backend.
     *   Automatic, timed backup configurable in GUI.
     *   Restore wizard.
@@ -342,6 +350,10 @@ Most other backup applications tend to create (big) archive files and (of course
     *   Inherits several features of duplicity.
 
 [https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
+
+*   **sbackup** — Simple backup solution for Gnome desktop. All configuration is accessable via Gnome interface. File and paths can be included and excluded directly or by regex, local and remote backups supported.
+
+[https://launchpad.net/sbackup](https://launchpad.net/sbackup) || [sbackup](https://aur.archlinux.org/packages/sbackup/)<sup><small>AUR</small></sup>
 
 *   **Synkron** — A folder synchronization tool.
     *   Syncs multiple folders.
@@ -680,6 +692,10 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 [http://git-annex.branchable.com/](http://git-annex.branchable.com/) || [git-annex](https://www.archlinux.org/packages/?name=git-annex)
 
+*   **Kup Backup System** — rsync/bup-based software for helping people to keep up-to-date backups.
+
+[http://kde-apps.org/content/show.php/Kup+Backup+System?content=147465](http://kde-apps.org/content/show.php/Kup+Backup+System?content=147465) || [kup](https://www.archlinux.org/packages/?name=kup)
+
 *   **SparkleShare** — Collaboration and sharing tool based on git written in C Sharp.
 
 [http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
@@ -692,7 +708,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=417258](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=417258)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=417547](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=417547)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

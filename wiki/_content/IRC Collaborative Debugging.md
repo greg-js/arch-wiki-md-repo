@@ -91,3 +91,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_Collaborative_De
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

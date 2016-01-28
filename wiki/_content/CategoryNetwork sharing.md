@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Network sharing"
 
-The following 13 pages are in this category, out of 13 total.
+The following 14 pages are in this category, out of 14 total.
 
 ### A
 
@@ -36,15 +36,16 @@ The following 13 pages are in this category, out of 13 total.
 
 *   [Samba](/index.php/Samba "Samba")
 *   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
-*   [Samba 4 Active Directory domain controller (Русский)](/index.php/Samba_4_Active_Directory_domain_controller_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba 4 Active Directory domain controller (Русский)")
 *   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
 *   [Sharing PPP Connection](/index.php/Sharing_PPP_Connection "Sharing PPP Connection")
+*   [Shfs](/index.php/Shfs "Shfs")
+*   [Sshfs](/index.php/Sshfs "Sshfs")
 
 ### W
 
 *   [WebDAV](/index.php/WebDAV "WebDAV")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Network_sharing&oldid=396986](https://wiki.archlinux.org/index.php?title=Category:Network_sharing&oldid=396986)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Network_sharing&oldid=413113](https://wiki.archlinux.org/index.php?title=Category:Network_sharing&oldid=413113)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

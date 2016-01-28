@@ -155,3 +155,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=WTorrent&oldid=41220
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

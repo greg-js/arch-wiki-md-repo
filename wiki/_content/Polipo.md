@@ -201,3 +201,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Polipo&oldid=406637]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

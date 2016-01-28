@@ -119,3 +119,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=CrashPlan&oldid=4113
 
 *   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

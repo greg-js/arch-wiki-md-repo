@@ -278,3 +278,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_OpenOffice&ol
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Office](/index.php/Category:Office "Category:Office")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

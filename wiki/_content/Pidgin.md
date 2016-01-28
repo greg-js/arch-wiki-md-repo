@@ -401,3 +401,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Pidgin&oldid=412742]
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
 *   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -324,3 +324,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Festival&oldid=41207
 
 *   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

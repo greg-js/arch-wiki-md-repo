@@ -228,3 +228,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=X11vnc&oldid=410773]
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -142,3 +142,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dungeon_%26_Dragons_
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
 *   [Wine](/index.php/Category:Wine "Category:Wine")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

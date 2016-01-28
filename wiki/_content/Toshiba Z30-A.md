@@ -185,3 +185,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Z30-A&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

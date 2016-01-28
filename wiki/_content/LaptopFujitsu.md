@@ -141,3 +141,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Fujitsu&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

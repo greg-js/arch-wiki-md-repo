@@ -174,7 +174,7 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 ### Note on Mount Options
 
-As reported by a few users on [the forum](https://bbs.archlinux.org/viewtopic.php?id=205147&p=9) using the `discard` the mount options for your filesystem is not recommended by Intel in [the reference guide of the driver](https://downloadmirror.intel.com/23929/eng/Intel_Linux_NVMe_Driver_Reference_Guide_330602-002.pdf).
+As reported by a few users on [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1593544#p1593544) using the `discard` mount option for your filesystem is not recommended by Intel in [the reference guide of the driver](https://downloadmirror.intel.com/23929/eng/Intel_Linux_NVMe_Driver_Reference_Guide_330602-002.pdf).
 
 An answer from [Intel Communities](https://communities.intel.com/thread/75161?start=0&tstart=0) suggests that the best option is to use the `fstrim` timer which is provided by [util-linux](https://www.archlinux.org/packages/?name=util-linux) and can be enabled simply through:
 
@@ -342,7 +342,7 @@ The linux kernel in testing repository (4.4) supports wifi out-of-the-box, see [
 
 General Discussion Thread on Arch Forum [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417240](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417240)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417310](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417310)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

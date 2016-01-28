@@ -36,3 +36,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=PsyBNC&oldid=392588]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

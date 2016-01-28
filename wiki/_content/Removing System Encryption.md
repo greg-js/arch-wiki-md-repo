@@ -198,3 +198,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Removing_System_Encr
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Encryption](/index.php/Category:Encryption "Category:Encryption")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

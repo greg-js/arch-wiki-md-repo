@@ -644,7 +644,7 @@ GUI</th>
 
 <td>Yes</td>
 
-<td>`nmcli`</td>
+<td>`nmcli`,`nmtui`</td>
 
 </tr>
 
@@ -708,7 +708,7 @@ _NetworkManager_ is an advanced network management tool that is enabled by defau
 
 See [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
-**Note:** GNOME's [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) also works under [Xfce](/index.php/Xfce "Xfce") if you install [xfce4-xfapplet-plugin](https://aur.archlinux.org/packages/xfce4-xfapplet-plugin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xfce4-xfapplet-plugin)]</sup> first. Additionally, there are applets available for [KDE](/index.php/KDE "KDE").
+**Note:** GNOME's [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) also works in other DEs (xfce) or WMs (awesome). All you have to do is startup: `nm-applet sm-disable` .Additionally, there are applets available for [KDE](/index.php/KDE "KDE").
 
 #### WiFi Radar
 
@@ -1321,8 +1321,15 @@ Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any oth
 *   [The Linux Wireless project](http://wireless.kernel.org/)
 *   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413984](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=413984)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=417389](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=417389)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

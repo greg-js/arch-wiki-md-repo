@@ -18,7 +18,7 @@ Related articles
 
 _"Drupal is a free and open source content management system (CMS) and Content Management framework (CMF) written in PHP and distributed under the GNU General Public License."_ - [Wikipedia](http://en.wikipedia.org/wiki/Drupal)
 
-This article describes how to setup Drupal and configure [Apache](/index.php/Apache "Apache"), [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP "PHP"), and [Postfix](/index.php/Postfix "Postfix") to work with it. It is assumed that you have some sort of [LAMP](/index.php/LAMP "LAMP") (Apache, MySQL, PHP) or LAPP (Apache, PostgreSQL, PHP) server already setup.
+This article describes how to setup Drupal and configure [Apache](/index.php/Apache "Apache"), [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP "PHP"), and [Postfix](/index.php/Postfix "Postfix") to work with it. It is assumed that you have some sort of [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP), LAPP (Linux, Apache, PostgreSQL, PHP) or LASP (Linux, Apache, SQLite, PHP) server already setup.
 
 ## Contents
 
@@ -27,11 +27,15 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
     *   [2.1 PHP](#PHP)
     *   [2.2 Apache](#Apache)
     *   [2.3 Drupal](#Drupal)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Sending Mail](#Sending_Mail)
-    *   [3.2 Scheduling with Cron](#Scheduling_with_Cron)
-    *   [3.3 Upload progress not enabled](#Upload_progress_not_enabled)
-*   [4 See also](#See_also)
+*   [3 Commandline tools](#Commandline_tools)
+    *   [3.1 Drush](#Drush)
+    *   [3.2 Drupalconsole](#Drupalconsole)
+    *   [3.3 PHP-Codesniffer-Drupal](#PHP-Codesniffer-Drupal)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Sending Mail](#Sending_Mail)
+    *   [4.2 Scheduling with Cron](#Scheduling_with_Cron)
+    *   [4.3 Upload progress not enabled](#Upload_progress_not_enabled)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -43,8 +47,13 @@ This article describes how to setup Drupal and configure [Apache](/index.php/Apa
 
 Edit `/etc/php/php.ini`:
 
-*   Uncomment the `extension=gd.so` line.
-*   Enable a PDO extension for your database. For MySQL, the line `extension=pdo_mysql.so` should be uncommented.
+*   To enable support for image manipulation uncomment the line `extension=gd.so`
+
+For database support enable a PDO extension for your database
+
+*   To enable support for [SQLite](/index.php/SQLite "SQLite") uncomment the line `extension=pdo_sqlite.so`
+*   To enable support for [MySQL](/index.php/MySQL "MySQL") uncomment the line `extension=pdo_mysql.so`
+*   To enable support for [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") uncomment the line `extension=pdo_pgsql.so`
 
 ### Apache
 
@@ -69,6 +78,20 @@ In `/etc/httpd/conf/httpd.conf`, also uncomment the `LoadModule rewrite_module m
 Edit `/usr/share/webapps/drupal/.htaccess` and replace `Require all denied` by `Require all granted`.
 
 Finally, [restart](/index.php/Daemons#Restarting "Daemons") Apache (`httpd.service`). You can now access the Drupal installation at [http://localhost/drupal](http://localhost/drupal) .
+
+## Commandline tools
+
+### Drush
+
+[Drush](http://www.drush.org/) is a command line shell and Unix scripting interface for Drupal. Drush core ships with lots of useful commands for interacting with code like modules/themes/profiles. Similarly, it runs update.php, executes sql queries and DB migrations, and misc utilities like run cron or clear cache. Drush can be extended by 3rd party commandfiles. It can be installed with the [drush](https://aur.archlinux.org/packages/drush/)<sup><small>AUR</small></sup> package.
+
+### Drupalconsole
+
+[Drupalconsole](https://drupalconsole.com/) is a CLI tool to generate boilerplate code, interact and debug Drupal 8. It can be installed with the [drupalconsole](https://aur.archlinux.org/packages/drupalconsole/)<sup><small>AUR</small></sup> package.
+
+### PHP-Codesniffer-Drupal
+
+[PHP-Codesniffer-Drupal](https://www.drupal.org/project/coder) checks your Drupal code against coding standards and other best practices. It can be installed with the [php-codesniffer-drupal](https://aur.archlinux.org/packages/php-codesniffer-drupal/)<sup><small>AUR</small></sup> package.
 
 ## Tips and tricks
 
@@ -107,7 +130,7 @@ Restart Apache.
 *   [Official Drupal documentation](http://drupal.org/handbook)
 *   [Simple guide to install Drupal on Xampp](http://drupal.org/node/307956)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=415889](https://wiki.archlinux.org/index.php?title=Drupal&oldid=415889)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=417373](https://wiki.archlinux.org/index.php?title=Drupal&oldid=417373)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

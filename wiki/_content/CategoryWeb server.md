@@ -18,7 +18,7 @@ Peer-to-peer networking, bit-torrent clients, chat clients, and other internet-a
 
 ## Pages in category "Web server"
 
-The following 63 pages are in this category, out of 63 total.
+The following 62 pages are in this category, out of 62 total.
 
 ### A
 
@@ -26,7 +26,6 @@ The following 63 pages are in this category, out of 63 total.
 *   [Ampache](/index.php/Ampache "Ampache")
 *   [Ampps](/index.php/Ampps "Ampps")
 *   [Apache and FastCGI](/index.php/Apache_and_FastCGI "Apache and FastCGI")
-*   [Apache and spdy](/index.php/Apache_and_spdy "Apache and spdy")
 *   [Apache Cassandra](/index.php/Apache_Cassandra "Apache Cassandra")
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
 *   [Apache, suEXEC and Virtual Hosts](/index.php/Apache,_suEXEC_and_Virtual_Hosts "Apache, suEXEC and Virtual Hosts")
@@ -41,7 +40,6 @@ The following 63 pages are in this category, out of 63 total.
 ### C
 
 *   [Chef](/index.php/Chef "Chef")
-*   [Create A Home Cloud Server](/index.php/Create_A_Home_Cloud_Server "Create A Home Cloud Server")
 
 ### D
 
@@ -66,6 +64,7 @@ The following 63 pages are in this category, out of 63 total.
 ### H
 
 *   [Habari](/index.php/Habari "Habari")
+*   [Hiawatha](/index.php/Hiawatha "Hiawatha")
 
 ### I
 

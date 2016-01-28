@@ -166,3 +166,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dzen&oldid=413083](h
 *   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
 *   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
 *   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

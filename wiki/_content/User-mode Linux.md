@@ -160,3 +160,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=User-mode_Linux&oldi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

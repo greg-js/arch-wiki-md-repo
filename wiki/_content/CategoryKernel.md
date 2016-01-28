@@ -10,7 +10,7 @@ This subsection contains articles on how to compile/modify/boot the Arch Linux k
 
 ## Pages in category "Kernel"
 
-The following 41 pages are in this category, out of 41 total.
+The following 40 pages are in this category, out of 40 total.
 
 ### A
 
@@ -27,7 +27,6 @@ The following 41 pages are in this category, out of 41 total.
 *   [Dracut](/index.php/Dracut "Dracut")
 *   [DSDT](/index.php/DSDT "DSDT")
 *   [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support")
-*   [Dynamic Kernel Module Support (简体中文)](/index.php/Dynamic_Kernel_Module_Support_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dynamic Kernel Module Support (简体中文)")
 
 ### F
 
@@ -61,7 +60,7 @@ The following 41 pages are in this category, out of 41 total.
 
 ### M
 
-*   [MCE Handling](/index.php/MCE_Handling "MCE Handling")
+*   [Machine-check exception](/index.php/Machine-check_exception "Machine-check exception")
 *   [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
 *   [Modalias](/index.php/Modalias "Modalias")
 *   [Modprobed-db](/index.php/Modprobed-db "Modprobed-db")

@@ -167,3 +167,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Ventrilo&oldid=39278
 
 *   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
 *   [Wine](/index.php/Category:Wine "Category:Wine")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

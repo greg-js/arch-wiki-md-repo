@@ -146,3 +146,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Artwork&oldid=382089
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

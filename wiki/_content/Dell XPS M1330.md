@@ -302,3 +302,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_M1330&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dell](/index.php/Category:Dell "Category:Dell")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -182,3 +182,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Alpine&oldid=414477]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

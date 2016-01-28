@@ -150,3 +150,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_perl&oldid=39941
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

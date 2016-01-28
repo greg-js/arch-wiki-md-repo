@@ -408,3 +408,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=MTP&oldid=411362](ht
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
 *   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

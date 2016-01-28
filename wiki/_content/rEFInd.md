@@ -18,31 +18,38 @@ rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Scripted configuration](#Scripted_configuration)
-    *   [1.2 Manual configuration](#Manual_configuration)
-    *   [1.3 File system drivers](#File_system_drivers)
-        *   [1.3.1 Installing drivers for rEFInd](#Installing_drivers_for_rEFInd)
-        *   [1.3.2 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
-*   [2 Passing kernel parameters](#Passing_kernel_parameters)
-    *   [2.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
-    *   [2.2 Manual boot stanzas](#Manual_boot_stanzas)
-        *   [2.2.1 btrfs subvolume root support](#btrfs_subvolume_root_support)
+    *   [1.1 Scripted installation](#Scripted_installation)
+    *   [1.2 Manual installation](#Manual_installation)
+    *   [1.3 Upgrading](#Upgrading)
+        *   [1.3.1 Systemd automation](#Systemd_automation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
+        *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
+        *   [2.1.2 Manual boot stanzas](#Manual_boot_stanzas)
 *   [3 Using rEFInd with an existing UEFI Windows installation](#Using_rEFInd_with_an_existing_UEFI_Windows_installation)
-*   [4 Upgrading rEFInd](#Upgrading_rEFInd)
-    *   [4.1 Systemd automation](#Systemd_automation)
-*   [5 Apple Macs](#Apple_Macs)
-*   [6 VirtualBox](#VirtualBox)
-*   [7 Tools](#Tools)
-    *   [7.1 UEFI shell](#UEFI_shell)
-    *   [7.2 Memtest86](#Memtest86)
-    *   [7.3 iPXE](#iPXE)
-*   [8 See also](#See_also)
+*   [4 Tools](#Tools)
+    *   [4.1 UEFI shell](#UEFI_shell)
+    *   [4.2 Memtest86](#Memtest86)
+    *   [4.3 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
+    *   [4.4 iPXE](#iPXE)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
+    *   [5.2 btrfs subvolume root support](#btrfs_subvolume_root_support)
+    *   [5.3 Apple Macs](#Apple_Macs)
+    *   [5.4 VirtualBox](#VirtualBox)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-### Scripted configuration
+**Warning:** kernel and initramfs need to reside on a file system which rEFInd can read.
+
+rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, NTFS. Additionally rEFInd can use drivers from the UEFI firmware, i.e. FAT driver (or HFS+ on Macs or ISO-9660 on some systems).
+
+To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
+
+### Scripted installation
 
 rEFInd package includes the `/usr/bin/refind-install` script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, but for many systems it should be sufficient to simply run
 
@@ -51,9 +58,7 @@ rEFInd package includes the `/usr/bin/refind-install` script to simplify the pro
 
 ```
 
-This will attempt to find and mount your [ESP](/index.php/UEFI#EFI_System_Partition "UEFI"), copy rEFInd's files to `/EFI/refind/` on the ESP, and add rEFInd as the default EFI boot entry using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
-
-**Note:** By default `refind-install` installs only the driver for your root file system, if you want additional drivers see [#File system drivers](#File_system_drivers).
+This will attempt to find and mount your [ESP](/index.php/UEFI#EFI_System_Partition "UEFI"), copy rEFInd's files to `/EFI/refind/` on the ESP, and add `rEFInd Boot Manager` as the default EFI boot entry using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
 
 Alternatively you can install rEFInd to the default/fallback boot path `/EFI/BOOT/BOOT*.EFI`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by efibootmgr:
 
@@ -66,13 +71,20 @@ Where **/dev/sdXY** is the partition of your ESP.
 
 You can read the comments in the install script for explanations of the various installation options.
 
+**Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.
+
+```
+# refind-install --usedefault /dev/sdXY --alldrivers
+
+```
+
 After installing rEFInd's files to the ESP, verify that rEFInd has created `refind_linux.conf` containing the required [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (e.g. `root=`) in the same directory as your kernel. If it has not created this file, you will need to set up [#Passing kernel parameters](#Passing_kernel_parameters) manually or you will most likely get a kernel panic on your next boot.
 
 By default, rEFInd will scan all of your drives (that it has drivers for) and add a boot entry for each EFI bootloader it finds, which should include your kernel (since Arch enables [EFISTUB](/index.php/EFISTUB "EFISTUB") by default). So you may have a bootable system at this point.
 
 **Tip:** It is always a good idea to edit the default config `/EFI/refind/refind.conf` on the ESP to ensure that the default options work for you.
 
-### Manual configuration
+### Manual installation
 
 **Tip:** rEFInd can boot Linux in many ways. See [The rEFInd Boot Manager: Methods of Booting Linux](http://www.rodsbooks.com/refind/linux.html) for coverage of the various approaches.
 
@@ -97,8 +109,15 @@ Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry 
 At this point, you should be able to reboot into rEFInd but it will not be able to boot your kernel. If your kernel does not reside on your ESP, rEFInd can mount your partitions to find it - provided it has the right drivers:
 
 ```
-# mkdir $esp/EFI/refind/drivers
-# cp /usr/share/refind/drivers_x64/myrootfs_x64.efi $esp/EFI/refind/drivers
+# mkdir $esp/EFI/refind/drivers_x64
+# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi $esp/EFI/refind/drivers_x64/
+
+```
+
+rEFInd automatically loads all drivers from the subdirectories `drivers` and `drivers__arch_` (e.g. `drivers_x64`) in its install directory.
+
+```
+# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi $esp/EFI/refind/drivers_x64/
 
 ```
 
@@ -127,127 +146,11 @@ You can try out different fonts by copying them and changing the `font` setting 
 
 **Tip:** Pressing F10 in rEFInd will save a screenshot to the top level directory of the ESP.
 
-### File system drivers
+### Upgrading
 
-**Note:** rEFInd does not require your kernel to reside in a specific place, but if it is not on your ESP you will need to use file system drivers for rEFInd to read it.
+Pacman updates the rEFInd files in `/usr/share/refind` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new config file will be copied as `refind.conf-sample` so that you can integrate changes into your config file using a diff tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to copy the new files yourself.
 
-rEFInd currently has **read-only** drivers for these file systems:
-
-*   ReiserFS
-*   Ext2
-*   [Ext4](/index.php/Ext4 "Ext4")
-*   [Btrfs](/index.php/Btrfs "Btrfs")
-*   ISO-9660
-*   HFS+
-*   [NTFS](/index.php/NTFS "NTFS")
-
-**Tip:** To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
-
-#### Installing drivers for rEFInd
-
-rEFInd automatically loads all drivers from the subdirectories `drivers` and `drivers__arch_` (e.g. `drivers_x64`) in its install directory.
-
-```
-# cp /usr/share/refind/drivers_x64/**drivername**_x64.efi $esp/EFI/refind/drivers_x64/
-
-```
-
-**Tip:** If you are using rEFInd's scripted install, you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.
-
-```
-# refind-install --usedefault /dev/sdXY --alldrivers
-
-```
-
-#### Using drivers in UEFI shell
-
-To use rEFInd's drivers in UEFI shell load them using command `load` and refresh mapped drives with `map -r`.
-
-```
-# load FS0:\EFI\refind\drivers\ext4_x64.efi
-# map -r
-
-```
-
-Now you can access your file system from UEFI shell.
-
-## Passing kernel parameters
-
-There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that rEFInd will pass to the kernel.
-
-### For kernels automatically detected by rEFInd
-
-If rEFInd automatically detects your kernel, you can place a `refind_linux.conf` file containing the kernel parameters in the same directory as your kernel. You can use `/usr/share/refind/refind_linux.conf-sample` as a starting point. The first uncommented line of `refind_linux.conf` will be the default parameters for the kernel. Subsequent lines will create entries in a submenu accessible using `+`, `F2`, or `Insert`.
-
-Alternatively, try running:
-
-```
-# refind-mkrlconf
-
-```
-
-Which will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
-
-If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters (e.g. for [Microcode](/index.php/Microcode "Microcode")) you must specify them manually in `refind_linux.conf`.
-
-### Manual boot stanzas
-
-If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in rEFInd's menu. Kernel parameters are set with the `options` keyword. rEFInd will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
-
- `$esp/EFI/refind/refind.conf` 
-
-```
-...
-
-menuentry "Arch Linux" {
-        icon     /EFI/refind/icons/os_arch.png
-        volume   Boot
-        loader   /boot/vmlinuz-linux
-        initrd   /boot/initramfs-linux.img
-        options  "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
-        submenuentry "Boot using fallback initramfs" {
-                initrd /boot/initramfs-linux-fallback.img
-        }
-}
-
-```
-
-It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Ext3#Assigning a label](/index.php/Ext3#Assigning_a_label "Ext3") as an example of assigning a volume label.
-
-#### btrfs subvolume root support
-
-If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
-
- `$esp/EFI/refind/refind.conf` 
-
-```
-...
-
-menuentry "Arch Linux" {
-        icon     /EFI/refind/icons/os_arch.png
-        volume   Boot
-        loader   /boot/vmlinuz-linux
-        initrd   /boot/initramfs-linux.img
-        options  "root=PARTUUID=XXXXXXXX rw rootflags=subvol=ROOT"
-
-...
-        }
-
-```
-
-A failure to do so will otherwise result in the following error message: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
-
-## Using rEFInd with an existing UEFI Windows installation
-
-**Note:** The usual caveats of [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") apply.
-
-rEFInd is compatible with the EFI system partition created by a UEFI Windows installation, so there is no need to create or format another FAT32 partition when installing Arch alongside Windows. Simply mount Windows' ESP and install rEFInd as usual. By default, rEFInd's autodetection feature should recognize any existing Windows/recovery bootloaders.
-
-## Upgrading rEFInd
-
-Pacman updates the rEFInd files in `/usr/share/refind` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new config file will be copied as `refind.conf-sample` so that you can integrate changes into your config file using a diff tool. If your rEFInd required [#Manual configuration](#Manual_configuration), you will need to copy the new files yourself.
-
-### Systemd automation
+#### Systemd automation
 
 To automate this process, you need a .path file for watching for rEFInd updates and a .service file for copying the new files and updating the nvram.
 
@@ -279,18 +182,72 @@ ExecStart=/usr/bin/refind-install
 
 Then [enable](/index.php/Enable "Enable") `refind_update.path`.
 
-## Apple Macs
+## Configuration
 
-[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/)<sup><small>AUR</small></sup> is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry. Assuming your UEFISYS partition is mounted at `/mnt/efi` within OSX, do:
+rEFInd configuration is in `$esp/EFI/refind/redind.conf` (or `$esp/EFI/BOOT/refind.conf` if rEFInd is installed to default/fallback path.)
+
+`refind.conf` contains comments explaining all its options.
+
+### Passing kernel parameters
+
+There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that rEFInd will pass to the kernel.
+
+#### For kernels automatically detected by rEFInd
+
+If rEFInd automatically detects your kernel, you can place a `refind_linux.conf` file containing the kernel parameters in the same directory as your kernel. You can use `/usr/share/refind/refind_linux.conf-sample` as a starting point. The first uncommented line of `refind_linux.conf` will be the default parameters for the kernel. Subsequent lines will create entries in a submenu accessible using `+`, `F2`, or `Insert`.
+
+ `/boot/refind_linux.conf` 
 
 ```
-# bless --setBoot --folder /mnt/efi/EFI/refind --file /mnt/efi/EFI/refind/refind_x64.efi
+"Boot using default options"     "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
+"Boot to terminal"               "root=PARTUUID=XXXXXXXX rw add_efi_memmap systemd.unit=multi-user.target"
+"Boot using fallback initramfs"  "root=PARTUUID=XXXXXXXX rw add_efi_memmap initrd=initramfs-linux-fallback.img"
 
 ```
 
-## VirtualBox
+Alternatively, try running:
 
-Currently, VirtualBox will only boot the default `/EFI/BOOT/BOOT*.EFI` path, so `refind-install` needs to be used with at least the `--usedefault` option. See [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox") for more information.
+```
+# refind-mkrlconf
+
+```
+
+Which will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
+
+If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters (e.g. for [Microcode](/index.php/Microcode "Microcode")) you must specify them manually in `refind_linux.conf`.
+
+#### Manual boot stanzas
+
+If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in rEFInd's menu. Kernel parameters are set with the `options` keyword. rEFInd will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
+
+ `$esp/EFI/refind/refind.conf` 
+
+```
+...
+
+menuentry "Arch Linux" {
+	icon     /EFI/refind/icons/os_arch.png
+	volume   "Arch Linux"
+	loader   /boot/vmlinuz-linux
+	initrd   /boot/initramfs-linux.img
+	options  "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
+	submenuentry "Boot using fallback initramfs" {
+		initrd /boot/initramfs-linux-fallback.img
+	}
+	submenuentry "Boot to terminal" {
+		add_options "systemd.unit=multi-user.target"
+
+}
+
+```
+
+It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Ext3#Assigning a label](/index.php/Ext3#Assigning_a_label "Ext3") as an example of assigning a volume label.
+
+## Using rEFInd with an existing UEFI Windows installation
+
+**Note:** The usual caveats of [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") apply.
+
+rEFInd is compatible with the EFI system partition created by a UEFI Windows installation, so there is no need to create or format another FAT32 partition when installing Arch alongside Windows. Simply mount existing ESP and install rEFInd as usual. By default, rEFInd's autodetection feature should recognize any existing Windows/recovery bootloaders.
 
 ## Tools
 
@@ -300,31 +257,7 @@ rEFInd supports running various 3rd-party tools. Tools need to be installed sepa
 
 ```
 ...
-# Which non-bootloader tools to show on the tools line, and in what
-# order to display them:
-#  shell            - the EFI shell (requires external program; see rEFInd
-#                     documentation for details)
-#  memtest          - the memtest86 program, in EFI/tools, EFI/memtest86,
-#                     EFI/memtest, EFI/tools/memtest86, or EFI/tools/memtest
-#  gptsync          - the (dangerous) gptsync.efi utility (requires external
-#                     program; see rEFInd documentation for details)
-#  gdisk            - the gdisk partitioning program
-#  apple_recovery   - boots the Apple Recovery HD partition, if present
-#  windows_recovery - boots an OEM Windows recovery tool, if present
-#                     (see also the windows_recovery_files option)
-#  mok_tool         - makes available the Machine Owner Key (MOK) maintenance
-#                     tool, MokManager.efi, used on Secure Boot systems
-#  about            - an "about this program" option
-#  exit             - a tag to exit from rEFInd
-#  shutdown         - shuts down the computer (a bug causes this to reboot
-#                     many UEFI systems)
-#  reboot           - a tag to reboot the computer
-#  firmware         - a tag to reboot the computer into the firmware's
-#                     user interface (ignored on older computers)
-#  netboot          - launch the ipxe.efi tool for network (PXE) booting
-# Default is shell,memtest,gdisk,apple_recovery,windows_recovery,mok_tool,about,shutdown,reboot,firmware
-#
-**showtools** **shell**, **memtest**, **netboot**, about, reboot, firmware
+showtools **shell**, **memtest**, **gdisk**, **netboot**, ...
 ...
 
 ```
@@ -337,10 +270,23 @@ Copy `shellx64.efi` to the root of [EFI System Partition](/index.php/Unified_Ext
 
 ### Memtest86
 
-Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") and copy it to `$esp/EFI/tools/`.
+Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/)<sup><small>AUR</small></sup> and copy it to `$esp/EFI/tools/`.
 
 ```
 # cp /usr/share/memtest86-efi/bootx64.efi $esp/EFI/tools/memtest86.efi
+
+```
+
+### GPT fdisk (gdisk)
+
+There is no package for EFI version of gdisk, but you can download a prebuild binary from gdisk author.
+
+Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/).
+
+Extract the archive and copy `gdisk_x64.efi` to to `$esp/EFI/tools/`.
+
+```
+# cp gdisk_x64.efi $esp/EFI/tools/
 
 ```
 
@@ -356,12 +302,62 @@ Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/)<sup><
 
 ```
 
+## Troubleshooting
+
+### Using drivers in UEFI shell
+
+To use rEFInd's drivers in UEFI shell load them using command `load` and refresh mapped drives with `map -r`.
+
+```
+# load FS0:\EFI\refind\drivers\ext4_x64.efi
+# map -r
+
+```
+
+Now you can access your file system from UEFI shell.
+
+### btrfs subvolume root support
+
+If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
+
+ `$esp/EFI/refind/refind.conf` 
+
+```
+...
+
+menuentry "Arch Linux" {
+        icon     /EFI/refind/icons/os_arch.png
+        volume   Boot
+        loader   /boot/vmlinuz-linux
+        initrd   /boot/initramfs-linux.img
+        options  "root=PARTUUID=XXXXXXXX rw rootflags=subvol=ROOT"
+
+...
+        }
+
+```
+
+A failure to do so will otherwise result in the following error message: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
+
+### Apple Macs
+
+[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/)<sup><small>AUR</small></sup> is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry. Assuming your UEFISYS partition is mounted at `/mnt/efi` within OSX, do:
+
+```
+# bless --setBoot --folder /mnt/efi/EFI/refind --file /mnt/efi/EFI/refind/refind_x64.efi
+
+```
+
+### VirtualBox
+
+Currently, VirtualBox will only boot the default `/EFI/BOOT/BOOT*.EFI` path, so `refind-install` needs to be used with at least the `--usedefault` option. See [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox") for more information.
+
 ## See also
 
 *   [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/) by Roderick W. Smith.
 *   `/usr/share/refind/docs/README.txt`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=REFInd&oldid=414270](https://wiki.archlinux.org/index.php?title=REFInd&oldid=414270)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=REFInd&oldid=417462](https://wiki.archlinux.org/index.php?title=REFInd&oldid=417462)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

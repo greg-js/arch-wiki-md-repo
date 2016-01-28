@@ -562,3 +562,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=414105](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

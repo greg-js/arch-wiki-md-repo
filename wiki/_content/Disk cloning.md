@@ -163,6 +163,8 @@ When the image has been split, use the following instead:
 
 ## Disk cloning software
 
+See also [Backup programs#Non-incremental backups](/index.php/Backup_programs#Non-incremental_backups "Backup programs").
+
 ### Disk cloning in Arch
 
 *   [Partclone](/index.php/Partclone "Partclone") provides utilities to save and restore used blocks on a partition and supports _ext2_, _ext3_, _ext4_, _hfs+_, _reiserfs_, _reiser4_, _btrfs_, _vmfs3_, _vmfs5_, _xfs_, _jfs_, _ufs_, _ntfs_, _fat(12/16/32)_, _exfat_. Optionally, an _ncurses_ interface can be used. Partclone is available in the community repository.
@@ -184,7 +186,7 @@ If you wish to backup or propagate your Arch install root, you are probably bett
 *   [Wikipedia:List of disk cloning software](https://en.wikipedia.org/wiki/List_of_disk_cloning_software "wikipedia:List of disk cloning software")
 *   [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?id=4329)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_cloning&oldid=408167](https://wiki.archlinux.org/index.php?title=Disk_cloning&oldid=408167)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_cloning&oldid=417537](https://wiki.archlinux.org/index.php?title=Disk_cloning&oldid=417537)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 

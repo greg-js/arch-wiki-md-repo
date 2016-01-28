@@ -117,3 +117,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Getmail&oldid=412089
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

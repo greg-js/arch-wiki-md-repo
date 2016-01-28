@@ -41,3 +41,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=XFCE_simple_Network_
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

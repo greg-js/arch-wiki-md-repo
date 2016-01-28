@@ -982,3 +982,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=SLiM&oldid=412170](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Display managers](/index.php/Category:Display_managers "Category:Display managers")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

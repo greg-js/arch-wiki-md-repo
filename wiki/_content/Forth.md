@@ -27,3 +27,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Forth&oldid=388110](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

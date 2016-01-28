@@ -118,3 +118,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPy&oldid=359345](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Development](/index.php/Category:Development "Category:Development")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

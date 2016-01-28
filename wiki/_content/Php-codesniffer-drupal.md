@@ -15,6 +15,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Related articles
 
 *   [Drupal](/index.php/Drupal "Drupal")
+*   [PHP-Codesniffer](/index.php?title=PHP-Codesniffer&action=edit&redlink=1 "PHP-Codesniffer (page does not exist)")
 
 [PHP_Codesniffer Drupal](https://www.drupal.org/project/coder) (coder) is a coding standards checker for Drupal .
 
@@ -58,8 +59,12 @@ To analyze some code execute a command like this:
 *   [Drupal Coder page](https://www.drupal.org/project/coder)
 *   [PHP_CodeSniffer page](https://github.com/squizlabs/PHP_CodeSniffer)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Php-codesniffer-drupal&oldid=391625](https://wiki.archlinux.org/index.php?title=Php-codesniffer-drupal&oldid=391625)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Php-codesniffer-drupal&oldid=417335](https://wiki.archlinux.org/index.php?title=Php-codesniffer-drupal&oldid=417335)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Development](/index.php/Category:Development "Category:Development")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

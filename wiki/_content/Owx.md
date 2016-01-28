@@ -81,3 +81,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Owx&oldid=389415](ht
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

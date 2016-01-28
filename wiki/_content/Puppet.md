@@ -105,3 +105,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Puppet&oldid=414687]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [System administration](/index.php/Category:System_administration "Category:System administration")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

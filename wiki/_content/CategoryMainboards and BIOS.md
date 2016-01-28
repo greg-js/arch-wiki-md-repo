@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Mainboards and BIOS"
 
-The following 4 pages are in this category, out of 4 total.
+The following 5 pages are in this category, out of 5 total.
 
 ### A
 
@@ -17,6 +17,10 @@ The following 4 pages are in this category, out of 4 total.
 ### F
 
 *   [Flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux")
+
+### I
+
+*   [Intel NUC](/index.php/Intel_NUC "Intel NUC")
 
 ### M
 

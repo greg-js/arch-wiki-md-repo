@@ -51,3 +51,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=412
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

@@ -132,3 +132,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_8200&o
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

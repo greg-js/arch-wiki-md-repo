@@ -252,3 +252,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Tvcard&oldid=389740]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [TV cards](/index.php/Category:TV_cards "Category:TV cards")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Events"
 
-The following 11 pages are in this category, out of 11 total.
+The following 10 pages are in this category, out of 10 total.
 
 ### A
 
@@ -24,7 +24,6 @@ The following 11 pages are in this category, out of 11 total.
 ### C
 
 *   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")
-*   [Christmas Cleanup/2011](/index.php/Christmas_Cleanup/2011 "Christmas Cleanup/2011")
 
 ### F
 

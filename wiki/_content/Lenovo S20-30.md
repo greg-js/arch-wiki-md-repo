@@ -173,3 +173,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

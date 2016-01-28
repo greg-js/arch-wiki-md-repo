@@ -382,3 +382,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Avahi&oldid=413078](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Networking](/index.php/Category:Networking "Category:Networking")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

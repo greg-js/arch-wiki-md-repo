@@ -205,3 +205,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=DeveloperWiki:Packag
 
 *   [Package development](/index.php/Category:Package_development "Category:Package development")
 *   [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

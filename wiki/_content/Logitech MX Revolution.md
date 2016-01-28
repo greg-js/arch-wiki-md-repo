@@ -164,3 +164,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_MX_Revoluti
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mice](/index.php/Category:Mice "Category:Mice")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

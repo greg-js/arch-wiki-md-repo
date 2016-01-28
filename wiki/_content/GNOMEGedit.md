@@ -70,3 +70,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME/Gedit&oldid=41
 
 *   [GNOME](/index.php/Category:GNOME "Category:GNOME")
 *   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

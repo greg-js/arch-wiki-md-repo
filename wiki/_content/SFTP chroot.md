@@ -296,3 +296,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=SFTP_chroot&oldid=38
 
 *   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
 *   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

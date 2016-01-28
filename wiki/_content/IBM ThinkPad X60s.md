@@ -72,3 +72,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X60s&ol
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [IBM](/index.php/Category:IBM "Category:IBM")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

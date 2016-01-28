@@ -104,3 +104,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Multitouch_Displays&
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

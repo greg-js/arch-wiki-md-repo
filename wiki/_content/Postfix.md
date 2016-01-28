@@ -44,6 +44,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
         *   [7.3.2 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
     *   [7.4 Using Razor](#Using_Razor)
     *   [7.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [7.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -533,14 +534,95 @@ Create /etc/postfix/smtp_header_checks with this content:
 
 Finally, restart postfix.service
 
+### Postfix in a chroot jail
+
+Postfix is not put in a chroot jail by default. The Postfix documentation [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) provides details about how to accomplish such a jail. The steps are outlined below and are based on the chroot-setup script provided in the postfix source code.
+
+First, go into the `master.cf` file in the directory `/etc/postfix` and change all the chroot entries to 'yes' (y) except for the services `qmgr`, `proxymap`, `proxywrite`, `local`, and `virtual`
+
+Second, create two functions that will help us later with copying files over into the chroot jail (see last step)
+
+```
+CP="cp -p"
+
+```
+
+```
+cond_copy() {
+  # find files as per pattern in $1
+  # if any, copy to directory $2
+  dir=`dirname "$1"`
+  pat=`basename "$1"`
+  lr=`find "$dir" -maxdepth 1 -name "$pat"`
+  if test ! -d "$2" ; then exit 1 ; fi
+  if test "x$lr" != "x" ; then $CP $1 "$2" ; fi
+}
+
+```
+
+Next, make the new directories for the jail:
+
+```
+set -e
+umask 022
+
+```
+
+```
+POSTFIX_DIR=${POSTFIX_DIR-/var/spool/postfix}
+cd ${POSTFIX_DIR}
+
+```
+
+```
+mkdir -p etc lib usr/lib/zoneinfo
+test -d /lib64 && mkdir -p lib64
+
+```
+
+Find the localtime file
+
+```
+lt=/etc/localtime
+if test ! -f $lt ; then lt=/usr/lib/zoneinfo/localtime ; fi
+if test ! -f $lt ; then lt=/usr/share/zoneinfo/localtime ; fi
+if test ! -f $lt ; then echo "cannot find localtime" ; exit 1 ; fi
+rm -f etc/localtime
+
+```
+
+Copy localtime and some other system files into the chroot's etc
+
+```
+$CP -f $lt /etc/services /etc/resolv.conf /etc/nsswitch.conf etc
+$CP -f /etc/host.conf /etc/hosts /etc/passwd etc
+ln -s -f /etc/localtime usr/lib/zoneinfo
+
+```
+
+Copy required libraries into the chroot using the previously created function `cond_copy`
+
+```
+cond_copy '/usr/lib/libnss_*.so*' lib
+cond_copy '/usr/lib/libresolv.so*' lib
+cond_copy '/usr/lib/libdb.so*' lib
+
+```
+
+And don't forget to reload postfix.
+
 ## See also
 
 *   [Out of Office](http://linox.be/index.php/2005/07/13/44/) for Squirrelmail
 *   [Postfix Ubuntu documentation](https://help.ubuntu.com/community/Postfix)
 *   [Use Gmail as an SMTP relay](http://sherlock.heroku.com/blog/2012/02/03/setting-up-postfix-to-use-gmail-as-an-smtp-relay-host-in-archlinux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Postfix&oldid=412441](https://wiki.archlinux.org/index.php?title=Postfix&oldid=412441)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Postfix&oldid=417534](https://wiki.archlinux.org/index.php?title=Postfix&oldid=417534)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -103,3 +103,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13&oldid=40
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dell](/index.php/Category:Dell "Category:Dell")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

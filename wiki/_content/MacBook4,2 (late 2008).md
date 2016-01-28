@@ -122,3 +122,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook4,2_(late_200
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Apple](/index.php/Category:Apple "Category:Apple")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

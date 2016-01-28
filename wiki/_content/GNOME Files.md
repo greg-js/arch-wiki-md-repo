@@ -179,3 +179,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=41
 
 *   [File managers](/index.php/Category:File_managers "Category:File managers")
 *   [GNOME](/index.php/Category:GNOME "Category:GNOME")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

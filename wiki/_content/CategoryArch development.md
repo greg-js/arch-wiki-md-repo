@@ -34,7 +34,6 @@ The following 25 pages are in this category, out of 25 total.
 ### C
 
 *   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")
-*   [Christmas Cleanup/2011](/index.php/Christmas_Cleanup/2011 "Christmas Cleanup/2011")
 *   [CVE](/index.php/CVE "CVE")
 
 ### D
@@ -68,6 +67,7 @@ The following 25 pages are in this category, out of 25 total.
 ### S
 
 *   [Security Advisories](/index.php/Security_Advisories "Security Advisories")
+*   [Security Advisories/Examples](/index.php/Security_Advisories/Examples "Security Advisories/Examples")
 
 ### T
 

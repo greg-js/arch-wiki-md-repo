@@ -198,3 +198,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=XWiimote&oldid=40102
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

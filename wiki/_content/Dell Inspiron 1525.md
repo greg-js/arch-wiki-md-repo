@@ -76,3 +76,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1525&o
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Dell](/index.php/Category:Dell "Category:Dell")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

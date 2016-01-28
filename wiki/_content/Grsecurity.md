@@ -42,7 +42,7 @@ The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package 
 
 **Note:** The [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-grsec-lts)]</sup> package used to provide the 3.14 stable branch but it is [no longer available](https://grsecurity.net/announce.php).
 
-After installing the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) or [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-grsec-lts)]</sup> package, you need to edit your [bootloader](/index.php/Bootloader "Bootloader") settings to load vmlinuz-linux-grsec and initramfs-linux-grsec.img.
+After installing the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) or [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-grsec-lts)]</sup> package, you need to edit your [bootloader](/index.php/Bootloader "Bootloader") settings to load `vmlinuz-linux-grsec` and `initramfs-linux-grsec.img`.
 
 Installing the optional [paxd](https://www.archlinux.org/packages/?name=paxd) package causes the PaX exploit mitigations to be enabled, protecting userspace processes. It automatically applies the necessary exceptions for packages in the repositories. See [PaX#PaX exceptions](/index.php/PaX#PaX_exceptions "PaX") for more details.
 
@@ -433,9 +433,14 @@ See [this link.](http://en.wikibooks.org/wiki/Grsecurity/Appendix/Subject_Modes)
 
 PaX and grsecurity implement some hardening features via GCC plugins. The compiler configuration / version used to build the plugins provided in the package needs to be the same when building a kernel module. For example, the compiler provided in the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package will not work - one should use the same compiler toolchain that was used to build the kernel. This also means [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) needs to be rebuilt after even minor GCC upgrades before modules built with the new compiler can work with it. Rebuilding a kernel can be accomplished with the [Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). See bug [FS#43057](https://bugs.archlinux.org/task/43057).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=411126](https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=411126)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417386](https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417386)"
 
 [Categories](/index.php/Special:Categories "Special:Categories"):
 
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

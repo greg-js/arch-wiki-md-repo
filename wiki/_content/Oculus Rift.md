@@ -180,3 +180,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Oculus_Rift&oldid=39
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Graphics](/index.php/Category:Graphics "Category:Graphics")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

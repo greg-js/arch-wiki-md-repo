@@ -99,3 +99,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Floppy_disks&oldid=3
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

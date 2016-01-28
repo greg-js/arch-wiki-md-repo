@@ -12,15 +12,17 @@ Atheros Communications Inc. AR9285 Wireless Network Adapter (PCI-Express) (rev 0
 
 xbacklight from [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) works fine.
 
-## Suspend and resume
+## Brightness control after Suspend and resume
 
 Brightness control works until sleep but after resume it does not.
 
-Adding `acpi_osi=Linux acpi_backlight=vendor` to kernel-line (see [Kernel Parameters](/index.php/Kernel_parameters#When_starting_the_kernel "Kernel parameters")) helped me.
+In the past, adding `acpi_osi=Linux acpi_backlight=vendor` to kernel-line (see [Kernel Parameters](/index.php/Kernel_parameters#When_starting_the_kernel "Kernel parameters")) helped me.
+
+A better solution that works on all DEs I've tested (XFCE,Gnome, Cinnamon) is using the `video.disable_backlight_sysfs_if=1` kernel paramater. This should not be combined with the previously-mentioned kernel parameters.
 
 There is another solution here: [https://bbs.archlinux.org/viewtopic.php?id=132044](https://bbs.archlinux.org/viewtopic.php?id=132044)
 
-The above solution no longer works with modern kernels. Instead what did work is creating a custom xorg configuration file.
+Another possibility is using a custom xorg configuration file. _(Ignored by Gnome 3.16+)_
 
 In a terminal type:
 
@@ -50,7 +52,7 @@ Type the following code:
 
 Save the file; log out and in again.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_R830&oldid=363544](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_R830&oldid=363544)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_R830&oldid=417458](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_R830&oldid=417458)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

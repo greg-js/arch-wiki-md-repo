@@ -218,3 +218,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=DSDT&oldid=414867](h
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

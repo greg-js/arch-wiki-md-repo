@@ -12,7 +12,7 @@ For content organization and general references, please see the note in [Categor
 
 ## Pages in category "Lenovo"
 
-The following 69 pages are in this category, out of 69 total.
+The following 65 pages are in this category, out of 65 total.
 
 ### L
 
@@ -23,14 +23,12 @@ The following 69 pages are in this category, out of 69 total.
 *   [Lenovo Ideapad S10-3](/index.php/Lenovo_Ideapad_S10-3 "Lenovo Ideapad S10-3")
 *   [Lenovo Ideapad s10-3t](/index.php/Lenovo_Ideapad_s10-3t "Lenovo Ideapad s10-3t")
 *   [Lenovo IdeaPad S205](/index.php/Lenovo_IdeaPad_S205 "Lenovo IdeaPad S205")
-*   [Lenovo IdeaPad S400 Touch](/index.php/Lenovo_IdeaPad_S400_Touch "Lenovo IdeaPad S400 Touch")
 *   [Lenovo Ideapad S400u](/index.php/Lenovo_Ideapad_S400u "Lenovo Ideapad S400u")
 *   [Lenovo IdeaPad U330p](/index.php/Lenovo_IdeaPad_U330p "Lenovo IdeaPad U330p")
 *   [Lenovo IdeaPad U430 Touch](/index.php/Lenovo_IdeaPad_U430_Touch "Lenovo IdeaPad U430 Touch")
 *   [Lenovo Ideapad Y480](/index.php/Lenovo_Ideapad_Y480 "Lenovo Ideapad Y480")
 *   [Lenovo Ideapad y530](/index.php/Lenovo_Ideapad_y530 "Lenovo Ideapad y530")
 *   [Lenovo Ideapad Y560](/index.php/Lenovo_Ideapad_Y560 "Lenovo Ideapad Y560")
-*   [Lenovo IdeaPad Y580](/index.php/Lenovo_IdeaPad_Y580 "Lenovo IdeaPad Y580")
 *   [Lenovo IdeaPad Yoga 13](/index.php/Lenovo_IdeaPad_Yoga_13 "Lenovo IdeaPad Yoga 13")
 *   [Lenovo Ideapad Yoga 2 Pro](/index.php/Lenovo_Ideapad_Yoga_2_Pro "Lenovo Ideapad Yoga 2 Pro")
 *   [Lenovo IdeaPad Z510](/index.php/Lenovo_IdeaPad_Z510 "Lenovo IdeaPad Z510")
@@ -50,7 +48,6 @@ The following 69 pages are in this category, out of 69 total.
 *   [Lenovo Thinkpad SL500](/index.php/Lenovo_Thinkpad_SL500 "Lenovo Thinkpad SL500")
 *   [Lenovo ThinkPad T400](/index.php/Lenovo_ThinkPad_T400 "Lenovo ThinkPad T400")
 *   [Lenovo ThinkPad T400s](/index.php/Lenovo_ThinkPad_T400s "Lenovo ThinkPad T400s")
-*   [Lenovo ThinkPad T410](/index.php/Lenovo_ThinkPad_T410 "Lenovo ThinkPad T410")
 *   [Lenovo ThinkPad T420](/index.php/Lenovo_ThinkPad_T420 "Lenovo ThinkPad T420")
 *   [Lenovo ThinkPad T420s](/index.php/Lenovo_ThinkPad_T420s "Lenovo ThinkPad T420s")
 *   [Lenovo ThinkPad T430s](/index.php/Lenovo_ThinkPad_T430s "Lenovo ThinkPad T430s")
@@ -84,7 +81,6 @@ The following 69 pages are in this category, out of 69 total.
 *   [ThinkFinger](/index.php/ThinkFinger "ThinkFinger")
 *   [Thinkpad Fan Control](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control")
 *   [ThinkPad mobile internet](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet")
-*   [ThinkPad multimedia buttons](/index.php/ThinkPad_multimedia_buttons "ThinkPad multimedia buttons")
 *   [ThinkPad OSD](/index.php/ThinkPad_OSD "ThinkPad OSD")
 *   [ThinkPad: Mute button](/index.php/ThinkPad:_Mute_button "ThinkPad: Mute button")
 *   [TrackPoint](/index.php/TrackPoint "TrackPoint")

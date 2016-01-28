@@ -17,7 +17,11 @@ As the Arch Linux ARM project does not maintain an official wiki, pages in this 
 
 ## Pages in category "ARM architecture"
 
-The following 5 pages are in this category, out of 5 total.
+The following 6 pages are in this category, out of 6 total.
+
+### A
+
+*   [Armstone A9](/index.php/Armstone_A9 "Armstone A9")
 
 ### B
 

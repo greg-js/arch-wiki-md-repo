@@ -441,3 +441,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Squid&oldid=413441](
 
 *   [Security](/index.php/Category:Security "Category:Security")
 *   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

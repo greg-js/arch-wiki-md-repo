@@ -137,3 +137,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_storage_devices&
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

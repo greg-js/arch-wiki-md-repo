@@ -28,7 +28,7 @@ This category has the following 4 subcategories, out of 4 total.
 
 ## Pages in category "Desktop environments"
 
-The following 23 pages are in this category, out of 23 total.
+The following 24 pages are in this category, out of 24 total.
 
 ### B
 
@@ -42,7 +42,6 @@ The following 23 pages are in this category, out of 23 total.
 ### D
 
 *   [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")
-*   [Deepin Desktop Environment (简体中文)](/index.php/Deepin_Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Deepin Desktop Environment (简体中文)")
 *   [Default applications](/index.php/Default_applications "Default applications")
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 
@@ -64,10 +63,12 @@ The following 23 pages are in this category, out of 23 total.
 ### M
 
 *   [MATE](/index.php/MATE "MATE")
+*   [Moksha](/index.php/Moksha "Moksha")
 
 ### P
 
 *   [Pantheon](/index.php/Pantheon "Pantheon")
+*   [Papyros shell](/index.php/Papyros_shell "Papyros shell")
 
 ### S
 

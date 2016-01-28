@@ -28,7 +28,7 @@ The following 9 pages are in this category, out of 9 total.
 
 ### M
 
-*   [MCE Handling](/index.php/MCE_Handling "MCE Handling")
+*   [Machine-check exception](/index.php/Machine-check_exception "Machine-check exception")
 *   [Microcode](/index.php/Microcode "Microcode")
 
 ### P

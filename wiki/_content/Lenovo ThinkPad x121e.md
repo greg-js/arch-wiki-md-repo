@@ -149,3 +149,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

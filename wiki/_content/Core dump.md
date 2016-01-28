@@ -142,3 +142,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_dump&oldid=4009
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

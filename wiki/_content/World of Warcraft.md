@@ -414,3 +414,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=World_of_Warcraft&ol
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
 *   [Wine](/index.php/Category:Wine "Category:Wine")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

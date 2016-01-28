@@ -83,3 +83,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Gallery2&oldid=39416
 
 *   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

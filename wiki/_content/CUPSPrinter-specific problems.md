@@ -1318,3 +1318,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer-specifi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Printers](/index.php/Category:Printers "Category:Printers")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

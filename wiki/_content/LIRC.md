@@ -225,3 +225,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=LIRC&oldid=409132](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

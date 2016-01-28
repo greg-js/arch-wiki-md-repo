@@ -4,14 +4,6 @@ From ArchWiki
 
 Jump to: [navigation](#column-one), [search](#searchInput)
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add procedures for creating/moving/deleting pages etc. (Discuss in [Help talk:Procedures#](https://wiki.archlinux.org/index.php/Help_talk:Procedures))
-
 A collection of check lists to be used when performing complex changes to articles.
 
 ## Contents
@@ -63,15 +55,12 @@ Further advanced additional steps:
 
 If page _A_ has been [redirected](/index.php/Help:Editing#Redirects "Help:Editing") to page _B_, for example after merging the content of _A_ into page _B_, and _Talk:A_ exists:
 
-*   If _Talk:B_ does not exist, **move** the entire _Talk:A_ to _Talk:B_.
-    *   If your account has the right to move without leaving a redirect, do so.
-    *   Otherwise, replace the resulting _Talk:A_ redirect with a [Template:Deletion](/index.php/Template:Deletion "Template:Deletion") instance.
+*   If _Talk:B_ does not exist, **move** the entire _Talk:A_ to _Talk:B_, letting MediaWiki automatically redirect _Talk:A_ to _Talk:B_.
 *   If _Talk:B_ exists:
-
-1.  [Move](#Move_a_discussion_to_another_talk_page) relevant discussions from _Talk:A_ to _Talk:B_.
-2.  Once there are no more relevant discussions in _Talk:A_:
-    *   If the history of _Talk:A_ is relevant, redirect it to _Talk:B_.
-    *   If the history of _Talk:A_ is too short to be relevant, flag it with [Template:Deletion](/index.php/Template:Deletion "Template:Deletion").
+    1.  [Move](#Move_a_discussion_to_another_talk_page) the still relevant discussions, if any, from _Talk:A_ to _Talk:B_.
+    2.  Ensure that the discussions left in _Talk:A_, if any, are [closed](/index.php/Help:Discussion#Closing_a_discussion "Help:Discussion").
+        *   If _Talk:A_ hosts discussions that have been closed for less than the period specified in [Help:Discussion#Closing a discussion](/index.php/Help:Discussion#Closing_a_discussion "Help:Discussion"), flag _Talk:A_ with [Template:Redirect](/index.php/Template:Redirect "Template:Redirect"), so that the page will be redirected to _Talk:B_ after the closing period.
+        *   Else, immediately redirect _Talk:A_ to _Talk:B_.
 
 ## Fix double redirects
 
@@ -113,7 +102,7 @@ See [ArchWiki Translation Team#Create a new page and its translation](/index.php
 
     **Tip:** Before deleting the category, make sure that steps 2.-4\. have actually been performed. They can be done later in any order.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:Procedures&oldid=406617](https://wiki.archlinux.org/index.php?title=Help:Procedures&oldid=406617)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:Procedures&oldid=414582](https://wiki.archlinux.org/index.php?title=Help:Procedures&oldid=414582)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

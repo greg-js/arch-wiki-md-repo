@@ -214,3 +214,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=UMID_SE&oldid=375003
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Laptops](/index.php/Category:Laptops "Category:Laptops")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

@@ -338,3 +338,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_TimelineX&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Acer](/index.php/Category:Acer "Category:Acer")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

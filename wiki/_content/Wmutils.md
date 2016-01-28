@@ -25,3 +25,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Wmutils&oldid=399484
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [X server](/index.php/Category:X_server "Category:X server")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

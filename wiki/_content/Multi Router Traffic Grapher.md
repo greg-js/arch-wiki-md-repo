@@ -438,3 +438,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Multi_Router_Traffic
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web server](/index.php/Category:Web_server "Category:Web server")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

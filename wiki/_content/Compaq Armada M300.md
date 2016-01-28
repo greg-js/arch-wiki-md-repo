@@ -177,7 +177,10 @@ xrandr --verbose --output VGA1 --mode 1024x768 -r 75.1 --right-of LVDS1
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compaq_Armada_M300&oldid=309755](https://wiki.archlinux.org/index.php?title=Compaq_Armada_M300&oldid=309755)"
 
-[Categories](/index.php/Special:Categories "Special:Categories"):
+[Category](/index.php/Special:Categories "Special:Categories"):
+
+*   [HP](/index.php/Category:HP "Category:HP")
+
+Hidden category:
 
 *   [Pages using duplicate arguments in template calls](/index.php/Category:Pages_using_duplicate_arguments_in_template_calls "Category:Pages using duplicate arguments in template calls")
-*   [HP](/index.php/Category:HP "Category:HP")

@@ -66,12 +66,11 @@ This category has the following 16 subcategories, out of 16 total.
 
 ## Pages in category "Hardware"
 
-The following 3 pages are in this category, out of 3 total.
+The following 2 pages are in this category, out of 2 total.
 
 ### B
 
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
-*   [Benchmarking disk wipes](/index.php/Benchmarking_disk_wipes "Benchmarking disk wipes")
 
 ### M
 

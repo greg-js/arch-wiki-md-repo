@@ -177,3 +177,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell&oldid=412095
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

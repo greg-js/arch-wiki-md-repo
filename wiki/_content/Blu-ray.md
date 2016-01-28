@@ -263,3 +263,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412351
 
 *   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
 *   [Optical](/index.php/Category:Optical "Category:Optical")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

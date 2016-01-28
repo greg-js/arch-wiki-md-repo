@@ -956,3 +956,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB_Legacy&oldid=40
 
 *   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
 *   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

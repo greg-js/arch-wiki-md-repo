@@ -235,3 +235,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Samsung&oldid
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Samsung](/index.php/Category:Samsung "Category:Samsung")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

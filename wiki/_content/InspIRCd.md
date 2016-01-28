@@ -82,3 +82,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=InspIRCd&oldid=39423
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

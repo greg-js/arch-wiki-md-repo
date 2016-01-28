@@ -76,3 +76,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Belgian_eID_card_rea
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

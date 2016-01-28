@@ -12,12 +12,13 @@ For content organization and general references, please see the note in [Categor
 
 ## Pages in category "Dell"
 
-The following 46 pages are in this category, out of 46 total.
+The following 49 pages are in this category, out of 49 total.
 
 ### D
 
 *   [Dell Chromebook 11](/index.php/Dell_Chromebook_11 "Dell Chromebook 11")
 *   [Dell Inspiron 1090 (Duo)](/index.php/Dell_Inspiron_1090_(Duo) "Dell Inspiron 1090 (Duo)")
+*   [Dell Inspiron 15 3541](/index.php/Dell_Inspiron_15_3541 "Dell Inspiron 15 3541")
 *   [Dell Inspiron 1520](/index.php/Dell_Inspiron_1520 "Dell Inspiron 1520")
 *   [Dell Inspiron 1521](/index.php/Dell_Inspiron_1521 "Dell Inspiron 1521")
 *   [Dell Inspiron 1525](/index.php/Dell_Inspiron_1525 "Dell Inspiron 1525")
@@ -25,6 +26,7 @@ The following 46 pages are in this category, out of 46 total.
 *   [Dell Inspiron 3521](/index.php/Dell_Inspiron_3521 "Dell Inspiron 3521")
 *   [Dell Inspiron 3531](/index.php/Dell_Inspiron_3531 "Dell Inspiron 3531")
 *   [Dell Inspiron 5100](/index.php/Dell_Inspiron_5100 "Dell Inspiron 5100")
+*   [Dell Inspiron 5547](/index.php/Dell_Inspiron_5547 "Dell Inspiron 5547")
 *   [Dell Inspiron 6400](/index.php/Dell_Inspiron_6400 "Dell Inspiron 6400")
 *   [Dell Inspiron Mini 1010](/index.php/Dell_Inspiron_Mini_1010 "Dell Inspiron Mini 1010")
 *   [Dell Inspiron Mini 11z](/index.php/Dell_Inspiron_Mini_11z "Dell Inspiron Mini 11z")
@@ -35,6 +37,7 @@ The following 46 pages are in this category, out of 46 total.
 *   [Dell Latitude D620](/index.php/Dell_Latitude_D620 "Dell Latitude D620")
 *   [Dell Latitude D630](/index.php/Dell_Latitude_D630 "Dell Latitude D630")
 *   [Dell Latitude E5430](/index.php/Dell_Latitude_E5430 "Dell Latitude E5430")
+*   [Dell Latitude E6620](/index.php/Dell_Latitude_E6620 "Dell Latitude E6620")
 *   [Dell Latitude E6x00](/index.php/Dell_Latitude_E6x00 "Dell Latitude E6x00")
 *   [Dell Latitude E7440](/index.php/Dell_Latitude_E7440 "Dell Latitude E7440")
 *   [Dell Mini 10v](/index.php/Dell_Mini_10v "Dell Mini 10v")

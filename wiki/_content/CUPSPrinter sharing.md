@@ -372,3 +372,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Printers](/index.php/Category:Printers "Category:Printers")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

@@ -8,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Pages in category "Firewalls"
 
-The following 11 pages are in this category, out of 11 total.
+The following 10 pages are in this category, out of 10 total.
 
 ### F
 
@@ -22,7 +22,6 @@ The following 11 pages are in this category, out of 11 total.
 
 *   [Ipset](/index.php/Ipset "Ipset")
 *   [Iptables](/index.php/Iptables "Iptables")
-*   [Iptables (Ελληνικά)](/index.php/Iptables_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Iptables (Ελληνικά)")
 
 ### N
 

@@ -204,3 +204,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mount&oldid=413579](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

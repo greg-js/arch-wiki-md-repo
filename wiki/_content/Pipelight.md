@@ -317,3 +317,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Pipelight&oldid=4090
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

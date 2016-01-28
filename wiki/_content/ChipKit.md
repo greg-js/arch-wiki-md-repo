@@ -115,3 +115,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ChipKit&oldid=325954
 
 *   [Development](/index.php/Category:Development "Category:Development")
 *   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

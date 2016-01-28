@@ -873,3 +873,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Redmine&oldid=376992
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

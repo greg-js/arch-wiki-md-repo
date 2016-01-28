@@ -197,3 +197,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412288]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden category:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

@@ -162,3 +162,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Tox&oldid=414272](ht
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

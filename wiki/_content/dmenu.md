@@ -124,3 +124,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dmenu&oldid=412065](
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -93,3 +93,9 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=PyTyle&oldid=392600]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

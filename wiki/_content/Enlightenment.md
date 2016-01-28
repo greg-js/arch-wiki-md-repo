@@ -290,3 +290,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

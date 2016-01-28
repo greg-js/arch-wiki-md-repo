@@ -278,3 +278,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_CVE_Monitoring_
 
 *   [Arch development](/index.php/Category:Arch_development "Category:Arch development")
 *   [Security](/index.php/Category:Security "Category:Security")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

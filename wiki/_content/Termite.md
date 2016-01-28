@@ -141,3 +141,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Termite&oldid=412018
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

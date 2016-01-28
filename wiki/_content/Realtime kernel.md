@@ -150,3 +150,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Realtime_kernel&oldi
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Kernel](/index.php/Category:Kernel "Category:Kernel")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

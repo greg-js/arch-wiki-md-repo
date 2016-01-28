@@ -14,7 +14,7 @@ See also [Hardware Compatibility List](/index.php/Laptop/Asus "Laptop/Asus")
 
 ## Pages in category "ASUS"
 
-The following 61 pages are in this category, out of 61 total.
+The following 62 pages are in this category, out of 62 total.
 
 ### A
 
@@ -57,6 +57,7 @@ The following 61 pages are in this category, out of 61 total.
 *   [ASUS M51SN](/index.php/ASUS_M51SN "ASUS M51SN")
 *   [ASUS N53JN](/index.php/ASUS_N53JN "ASUS N53JN")
 *   [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV")
+*   [ASUS N550JX](/index.php/ASUS_N550JX "ASUS N550JX")
 *   [ASUS N551JM](/index.php/ASUS_N551JM "ASUS N551JM")
 *   [ASUS N55SF](/index.php/ASUS_N55SF "ASUS N55SF")
 *   [ASUS N56jr](/index.php/ASUS_N56jr "ASUS N56jr")

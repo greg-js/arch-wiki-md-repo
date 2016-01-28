@@ -342,3 +342,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin_emulator&old
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
 *   [Emulators](/index.php/Category:Emulators "Category:Emulators")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -57,3 +57,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Dart&oldid=392049](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

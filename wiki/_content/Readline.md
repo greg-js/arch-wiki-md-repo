@@ -209,3 +209,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Readline&oldid=40666
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

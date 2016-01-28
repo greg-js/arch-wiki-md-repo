@@ -339,3 +339,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X200
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

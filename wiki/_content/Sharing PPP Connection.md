@@ -213,3 +213,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connecti
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

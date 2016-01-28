@@ -28,7 +28,7 @@ This category has the following 3 subcategories, out of 3 total.
 
 ## Pages in category "Internet applications"
 
-The following 65 pages are in this category, out of 65 total.
+The following 66 pages are in this category, out of 66 total.
 
 ### A
 
@@ -99,6 +99,10 @@ The following 65 pages are in this category, out of 65 total.
 *   [Newsbeuter](/index.php/Newsbeuter "Newsbeuter")
 *   [Nxt](/index.php/Nxt "Nxt")
 *   [NZBGet](/index.php/NZBGet "NZBGet")
+
+### O
+
+*   [Open-xchange](/index.php/Open-xchange "Open-xchange")
 
 ### P
 

@@ -15,7 +15,7 @@ Christmas Cleanup 2011 was a success, with 9 adoptions and 94 packages moved to 
 ## Previous and upcoming Christmas Cleanups
 
 *   Christmas Cleanup/2012
-*   [Christmas Cleanup/2011](/index.php/Christmas_Cleanup/2011 "Christmas Cleanup/2011")
+*   [Christmas Cleanup/2011](/index.php?title=Christmas_Cleanup/2011&action=edit&redlink=1 "Christmas Cleanup/2011 (page does not exist)")
 
 ## See also
 

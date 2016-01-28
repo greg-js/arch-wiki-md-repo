@@ -20,6 +20,8 @@ Jump to: [navigation](#column-one), [search](#searchInput)
     *   [3.1 Basic Configuration](#Basic_Configuration)
     *   [3.2 Adding repositories](#Adding_repositories)
     *   [3.3 Syntax highlighting](#Syntax_highlighting)
+        *   [3.3.1 Using python-pygments](#Using_python-pygments)
+        *   [3.3.2 Using highlight](#Using_highlight)
 *   [4 Integration](#Integration)
     *   [4.1 Gitosis](#Gitosis)
     *   [4.2 Gitolite](#Gitolite)
@@ -294,7 +296,20 @@ For detailed documentation about the available settings in this configuration fi
 
 ### Syntax highlighting
 
-Cgit supports syntax highlighting when viewing blobs. To enable syntax highlighting, you have to install the [highlight](https://www.archlinux.org/packages/?name=highlight) package.
+Cgit supports syntax highlighting when viewing blobs. To enable syntax highlighting, you have several options.
+
+#### Using python-pygments
+
+Install [python-pygments](https://www.archlinux.org/packages/?name=python-pygments) and add the filter in `/etc/cgitrc`
+
+```
+source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
+
+```
+
+#### Using highlight
+
+Install [highlight](https://www.archlinux.org/packages/?name=highlight)
 
 Edit `/usr/lib/cgit/filters/syntax-highlighting.sh`. Comment out version 2 and comment in version 3. You may want to add `--inline-css` to the options of highlight for a more colorfull output without editing cgit's css file.
 
@@ -313,6 +328,8 @@ Enable the filter in `/etc/cgitrc`
 source-filter=/usr/lib/cgit/filters/syntax-highlighting.sh
 
 ```
+
+Otherwise you can choose to use the [python-pygments](https://www.archlinux.org/packages/?name=python-pygments) package.
 
 Note: If you edit the `/usr/lib/cgit/filters/syntax-highlighting.sh`, the changes will be lost the next time cgit is updated. To avoid this, copy `/usr/lib/cgit/filters/syntax-highlighting.sh` to `/usr/lib/cgit/filters/syntax-highlighting-edited.sh`, and change `/etc/cgitrc` to use the copied file instead
 
@@ -376,7 +393,7 @@ If you have enabled _scan-path_, again, the order in cgitrc matters. _source-fil
 *   [http://git.zx2c4.com/cgit/tree/README](http://git.zx2c4.com/cgit/tree/README)
 *   [http://git.zx2c4.com/cgit/tree/cgitrc.5.txt](http://git.zx2c4.com/cgit/tree/cgitrc.5.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=414109](https://wiki.archlinux.org/index.php?title=Cgit&oldid=414109)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=417551](https://wiki.archlinux.org/index.php?title=Cgit&oldid=417551)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

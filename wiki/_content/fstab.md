@@ -300,3 +300,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Fstab&oldid=413878](
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
 *   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

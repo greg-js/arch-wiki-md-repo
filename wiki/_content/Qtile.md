@@ -38,7 +38,7 @@ Qtile is a full-featured, hackable tiling window manager written in Python. Qtil
 
 ## Starting
 
-To start Qtile add `exec qtile` to your [~/.xinitrc](/index.php/%7E/.xinitrc "~/.xinitrc") and launch [Xorg](/index.php/Xorg "Xorg"). The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new _xterm_ terminal, and `Super+Ctrl+q` to quit Qtile.
+To start Qtile add `exec qtile` to your [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") and launch [Xorg](/index.php/Xorg "Xorg"). The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new _xterm_ terminal, and `Super+Ctrl+q` to quit Qtile.
 
 ## Configuration
 

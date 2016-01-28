@@ -221,3 +221,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=TuxOnIce&oldid=41044
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Power management](/index.php/Category:Power_management "Category:Power management")
+
+Hidden categories:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

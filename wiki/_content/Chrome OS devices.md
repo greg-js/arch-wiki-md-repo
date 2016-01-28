@@ -531,7 +531,7 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 *   Create `/etc/modprobe.d/alsa.conf`, the option `index` will make sure the analog output is the default (and not HDMI), the option `model` will notify the driver our board model which will make the built-in microphone usable (you can try instead `model=alc283-sense-combo`).
 
- `/etc/modprobe.d/alsa.conf`  `options snd_hda_intel index=1 model=alc283-dac-wcaps` 
+ `/etc/modprobe.d/alsa.conf`  `options snd_hda_intel index=1 model=,alc283-chrome` 
 
 *   Use the `~/.asoundrc` file from [[12]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
 
@@ -623,7 +623,7 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=416821](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=416821)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=417398](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=417398)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

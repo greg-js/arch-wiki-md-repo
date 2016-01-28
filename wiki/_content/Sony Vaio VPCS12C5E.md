@@ -70,3 +70,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCS12C5E&
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Sony](/index.php/Category:Sony "Category:Sony")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -156,3 +156,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
+
+Hidden categories:
+
+*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
+*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

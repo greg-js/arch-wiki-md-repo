@@ -109,3 +109,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Snoopy&oldid=392668]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Gaming](/index.php/Category:Gaming "Category:Gaming")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

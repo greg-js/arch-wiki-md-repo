@@ -247,6 +247,10 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 [https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)<sup><small>AUR</small></sup>
 
+*   **Brave** — At Brave, our goal is to block everything on the web that can cramp your style and compromise your privacy. Annoying ads are yesterday's news, and cookies stay in your jar where they belong. An open source browser created by the co-founder of Mozilla. Find more at [https://www.brave.com/](https://www.brave.com/)
+
+[https://github.com/brave/browser-laptop](https://github.com/brave/browser-laptop) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 ##### Other
 
 *   **[Abaco](https://en.wikipedia.org/wiki/Abaco_(web_browser) "wikipedia:Abaco (web browser)")** — Multi-page graphical web browser for the Plan 9 OS.
@@ -1219,12 +1223,13 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 [https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=417058](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=417058)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=417339](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=417339)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
 
-Hidden category:
+Hidden categories:
 
 *   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

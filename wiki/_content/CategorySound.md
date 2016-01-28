@@ -21,7 +21,6 @@ The following 20 pages are in this category, out of 20 total.
 
 *   [Beep](/index.php/Beep "Beep")
 *   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
-*   [Bluetooth headset (简体中文)](/index.php/Bluetooth_headset_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bluetooth headset (简体中文)")
 *   [Bose speakers](/index.php/Bose_speakers "Bose speakers")
 
 ### D
@@ -56,6 +55,10 @@ The following 20 pages are in this category, out of 20 total.
 ### T
 
 *   [Terratec Aureon 7.1](/index.php/Terratec_Aureon_7.1 "Terratec Aureon 7.1")
+
+### V
+
+*   [Volnoti](/index.php/Volnoti "Volnoti")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Sound&oldid=385320](https://wiki.archlinux.org/index.php?title=Category:Sound&oldid=385320)"
 

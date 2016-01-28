@@ -88,3 +88,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Artigo_a2000&oldid=3
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Storage](/index.php/Category:Storage "Category:Storage")
+
+Hidden categories:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

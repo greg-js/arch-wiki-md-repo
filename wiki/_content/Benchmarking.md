@@ -208,3 +208,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=4
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Hardware](/index.php/Category:Hardware "Category:Hardware")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -399,7 +399,7 @@ The following table lists all languages encountered on the wiki along with relat
 
 <td>—</td>
 
-<td>[http://wiki.archlinux.ir/](http://wiki.archlinux.ir/)</td>
+<td>[http://wiki.archusers.ir/](http://wiki.archusers.ir/)</td>
 
 </tr>
 
@@ -584,7 +584,7 @@ Moving local languages to their own wikis is a very welcome and encouraged thing
 *   First move _all_ the articles to the external wiki. Once done, update the interlanguage links to point to the new domain, then fix all their target titles with the new ones. Finally, either delete the local articles, or, upon authorization from the [ArchWiki:Maintenance Team](/index.php/ArchWiki:Maintenance_Team "ArchWiki:Maintenance Team"), redirect them to the external wiki using the interlanguage links.
 *   Set up temporary interlanguage links (e.g. `[[ja-temp:Title]]`) and use them to redirect the various articles to the external wiki as they are moved _one by one_. Once the move is complete, point the regular interlanguage links (i.e. `[[ja:Title]]`) to the external wiki, and update them all with the new target titles. Next, either delete the local redirects, or, upon authorization from the [ArchWiki:Maintenance Team](/index.php/ArchWiki:Maintenance_Team "ArchWiki:Maintenance Team"), update them to use the regular interlanguage links. Finally, disable the temporary interlanguage links.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:I18n&oldid=394505](https://wiki.archlinux.org/index.php?title=Help:I18n&oldid=394505)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Help:I18n&oldid=416062](https://wiki.archlinux.org/index.php?title=Help:I18n&oldid=416062)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

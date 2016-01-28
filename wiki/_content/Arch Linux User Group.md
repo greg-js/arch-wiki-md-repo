@@ -25,3 +25,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_User_Grou
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Events](/index.php/Category:Events "Category:Events")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

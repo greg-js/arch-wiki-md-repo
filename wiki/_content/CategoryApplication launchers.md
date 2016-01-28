@@ -47,7 +47,7 @@ The following 9 pages are in this category, out of 9 total.
 
 *   [Xmobar](/index.php/Xmobar "Xmobar")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Application_launchers&oldid=385046](https://wiki.archlinux.org/index.php?title=Category:Application_launchers&oldid=385046)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Application_launchers&oldid=415380](https://wiki.archlinux.org/index.php?title=Category:Application_launchers&oldid=415380)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

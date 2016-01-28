@@ -115,3 +115,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=412080
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File systems](/index.php/Category:File_systems "Category:File systems")
+
+Hidden category:
+
+*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

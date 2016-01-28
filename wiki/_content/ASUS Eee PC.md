@@ -508,3 +508,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC&oldid=41
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [ASUS](/index.php/Category:ASUS "Category:ASUS")
+
+Hidden category:
+
+*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

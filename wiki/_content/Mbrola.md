@@ -75,3 +75,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Mbrola&oldid=406184]
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

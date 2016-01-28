@@ -184,3 +184,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=File_manager_functio
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [File managers](/index.php/Category:File_managers "Category:File managers")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

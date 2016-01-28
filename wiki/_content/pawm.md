@@ -145,3 +145,7 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=Pawm&oldid=415152](h
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")
+
+Hidden category:
+
+*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

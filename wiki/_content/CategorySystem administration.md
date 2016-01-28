@@ -56,7 +56,7 @@ This category has the following 14 subcategories, out of 14 total.
 
 ## Pages in category "System administration"
 
-The following 28 pages are in this category, out of 28 total.
+The following 29 pages are in this category, out of 29 total.
 
 ### A
 
@@ -74,6 +74,7 @@ The following 28 pages are in this category, out of 28 total.
 
 *   [Chef](/index.php/Chef "Chef")
 *   [Core utilities](/index.php/Core_utilities "Core utilities")
+*   [Cpulimit](/index.php/Cpulimit "Cpulimit")
 
 ### E
 
@@ -125,7 +126,7 @@ The following 28 pages are in this category, out of 28 total.
 
 *   [Windows PE](/index.php/Windows_PE "Windows PE")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:System_administration&oldid=394488](https://wiki.archlinux.org/index.php?title=Category:System_administration&oldid=394488)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:System_administration&oldid=411109](https://wiki.archlinux.org/index.php?title=Category:System_administration&oldid=411109)"
 
 [Category](/index.php/Special:Categories "Special:Categories"):
 

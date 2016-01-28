@@ -194,3 +194,8 @@ Retrieved from "[https://wiki.archlinux.org/index.php?title=File_Sharing_with_We
 [Category](/index.php/Special:Categories "Special:Categories"):
 
 *   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
+
+Hidden categories:
+
+*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
