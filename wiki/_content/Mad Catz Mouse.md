@@ -1,9 +1,5 @@
 # Mad Catz Mouse
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Mad Catz produces a series of gaming mice, for example the Saitek Cyborg R.A.T.3 Mouse (7 buttons USB wired) or the R.A.T9 (7 buttons USB wireless). The mice do not work properly in X without some reconfiguration. This article explains how to make it work with any desktop manager.
 
 ## Contents
@@ -220,7 +216,3 @@ With some tweaking it probably works for other R.A.T. mouses.
 *   [http://askubuntu.com/questions/92546/cyborg-r-a-t-3-gaming-mouse-stops-working-after-a-while-and-or-misbehaves](http://askubuntu.com/questions/92546/cyborg-r-a-t-3-gaming-mouse-stops-working-after-a-while-and-or-misbehaves)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mad_Catz_Mouse&oldid=399304](https://wiki.archlinux.org/index.php?title=Mad_Catz_Mouse&oldid=399304)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

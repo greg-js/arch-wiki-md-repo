@@ -1,9 +1,5 @@
 # WarCraft III
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 WarCraft III is a real-time strategy game created by Blizzard Entertainment. This article will describe how to install and run it and its addon The Frozen Throne on Arch Linux using [Wine](/index.php/Wine "Wine"). WarCraft III can be run with full OpenGL support.
 
 ## Contents
@@ -190,8 +186,3 @@ install following packages: [lib32-alsa-lib](https://www.archlinux.org/packages/
 *   [Snoopy](/index.php/Snoopy "Snoopy")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WarCraft_III&oldid=412449](https://wiki.archlinux.org/index.php?title=WarCraft_III&oldid=412449)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

@@ -1,12 +1,8 @@
 # Bitmessage
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [Bitmessage wiki](https://bitmessage.org/wiki/Main_Page):
 
-_"Bitmessage is a P2P communications protocol used to send encrypted messages to another person or to many subscribers. It is decentralized and trustless, meaning that you need-not inherently trust any entities like root certificate authorities. It uses strong authentication which means that the sender of a message cannot be spoofed, and it aims to hide "non-content" data, like the sender and receiver of messages, from passive eavesdroppers like those running warrantless wiretapping programs."_
+NaN
 
 Bitmessage may be used independently or with TOR. Using it with TOR has additional security benefits.
 
@@ -138,7 +134,7 @@ When you set up Thunderbird to use your bitmessage address, you will need to use
 
 According to the [bitmessage wiki](https://bitmessage.org/wiki/DML):
 
-_A Mailing List without the requirement of a central "authority". Sometimes called Chan (short for channel) because they usually focus on a subject which also is the password for the deterministic address too._
+NaN
 
 A Chan (or a Distributed Mailing List) can be joined or created by hitting _"Join/Create Chan"_ in the file menu. A Passphrase must be entered and the address is generated for creating a can. To join a Chan, you must enter its address and a passphrase (of your choice).
 
@@ -149,11 +145,3 @@ A Chan (or a Distributed Mailing List) can be joined or created by hitting _"Joi
 *   [The Bitmessage forum](https://bitmessage.org/forum/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bitmessage&oldid=407771](https://wiki.archlinux.org/index.php?title=Bitmessage&oldid=407771)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

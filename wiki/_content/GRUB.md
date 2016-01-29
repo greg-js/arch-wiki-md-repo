@@ -1,9 +1,5 @@
 # GRUB
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -1157,12 +1153,3 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=416518](https://wiki.archlinux.org/index.php?title=GRUB&oldid=416518)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

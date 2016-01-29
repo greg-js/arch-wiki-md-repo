@@ -1,9 +1,5 @@
 # Pro Audio
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -92,7 +88,7 @@ You may want to consider the following often seen system optimizations:
 *   Add yourself to the _audio_ [group](/index.php/Group "Group").
 *   Add the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
-**Warning:** Enabling threadirqs seems to be causing system lockups in conjunction with usb devices in at least some kernel versions starting with 3.13 and including at least 3.14-rc2\. See for example [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) and [http://www.spinics.net/lists/linux-usb/msg102504.html](http://www.spinics.net/lists/linux-usb/msg102504.html) also linked from there.  
+**Warning:** Enabling threadirqs seems to be causing system lockups in conjunction with usb devices in at least some kernel versions starting with 3.13 and including at least 3.14-rc2\. See for example [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) and [http://www.spinics.net/lists/linux-usb/msg102504.html](http://www.spinics.net/lists/linux-usb/msg102504.html) also linked from there.
 EDIT: The changelog seems to indicate that this has been fixed in the 3.13.6 vanilla kernel. (Search for threadirqs in [https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6](https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6))
 
 *   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/)<sup><small>AUR</small></sup> kernel.
@@ -330,7 +326,7 @@ From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
 
 The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
 
-_See: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)_
+NaN
 
 ## MIDI
 
@@ -343,7 +339,7 @@ snd_seq_midi
 
 To work with MIDI you can it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
 
-_See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")_
+NaN
 
 ## Environment Variables
 
@@ -431,113 +427,12 @@ options snd_usb_audio vid=0x763 pid=0x2012 device_setup=XXX index=YYY enable=1
 
 where `vid` and `pid` are vendor and product id for M-Audio Fast Track Pro, `index` is desired device number and `device_setup` is desired device setup. Possible values for `device_setup` are:
 
-<table class="wikitable"><caption>device modes</caption>
-
-<tbody>
-
-<tr>
-
-<th>device_setup value</th>
-
-<th>bit depth</th>
-
-<th>frequency</th>
-
-<th>analog output</th>
-
-<th>digital output</th>
-
-<th>analog input</th>
-
-<th>digital input</th>
-
-<th>IO mode</th>
-
-</tr>
-
-<tr>
-
-<td>0x0</td>
-
-<td>16 bit</td>
-
-<td>48kHz</td>
-
-<td>+</td>
-
-<td>+</td>
-
-<td>+</td>
-
-<td>+</td>
-
-<td>4x4</td>
-
-</tr>
-
-<tr>
-
-<td>0x9</td>
-
-<td>24 bit</td>
-
-<td>48kHz</td>
-
-<td>+</td>
-
-<td>+</td>
-
-<td>+</td>
-
-<td>-</td>
-
-<td>2x4</td>
-
-</tr>
-
-<tr>
-
-<td>0x13</td>
-
-<td>24 bit</td>
-
-<td>48kHz</td>
-
-<td>+</td>
-
-<td>+</td>
-
-<td>-</td>
-
-<td>+</td>
-
-<td>2x4</td>
-
-</tr>
-
-<tr>
-
-<td>0x5</td>
-
-<td>24 bit</td>
-
-<td>96kHz</td>
-
-<td>*</td>
-
-<td>*</td>
-
-<td>*</td>
-
-<td>*</td>
-
-<td>2x0 or 0x2</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>device modes</caption>
+| device_setup value | bit depth | frequency | analog output | digital output | analog input | digital input | IO mode |
+| 0x0 | 16 bit | 48kHz | + | + | + | + | 4x4 |
+| 0x9 | 24 bit | 48kHz | + | + | + | - | 2x4 |
+| 0x13 | 24 bit | 48kHz | + | + | - | + | 2x4 |
+| 0x5 | 24 bit | 96kHz | * | * | * | * | 2x0 or 0x2 |
 
 The 24 bit/96kHz mode is special: it provides all input/output, but you can open only one of 4 interfaces at a time. If you for example open output interface and then try to open second output or input interface, you will see error in kernel log:
 
@@ -708,12 +603,3 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 *   [From Windows to Linux: a sound decision](http://www.itwire.com/opinion-and-analysis/open-sauce/36698-from-windows-to-linux-a-sound-decision) - Interview with Geoff "songshop" Beasley, February 2010
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pro_Audio&oldid=411066](https://wiki.archlinux.org/index.php?title=Pro_Audio&oldid=411066)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

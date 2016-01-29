@@ -1,9 +1,5 @@
 # Mailman
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Mailman** is an application for managing electronic mailing lists. Normally you will use it along a _mail server_ and also a _web server_ too; for the first you may pick one between [Postfix](/index.php/Postfix "Postfix"), [Exim](/index.php/Exim "Exim"), [Sendmail](/index.php/Sendmail "Sendmail") and Qmail —if you are unsure about which one to use, Postfix is a very good choice—; as for the latter, any web server is useful, common options are [Apache](/index.php/Apache "Apache"), [Lighttpd](/index.php/Lighttpd "Lighttpd") and [Nginx](/index.php/Nginx "Nginx"). (These three pieces do not necessarily have to run on the same computer.)
 
 Only the Mailman installation will be covered in this article. You can refer to the correspondent wiki pages to learn how to install the mail and web servers.
@@ -411,7 +407,3 @@ are **user** and **group** owned by _mailman_ and that are **group writable**.
 *   [GNU Mailman installation manual](http://list.org/mailman-install/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mailman&oldid=410738](https://wiki.archlinux.org/index.php?title=Mailman&oldid=410738)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

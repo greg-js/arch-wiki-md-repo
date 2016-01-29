@@ -1,9 +1,5 @@
 # pam_mount
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 To have an encrypted home partition (encrypted with, for example, LUKS or ecryptfs) mounted automatically when logging in, you can use pam_mount. It will mount your /home (or whatever mount point you like) when you log in using your login manager or when logging in on console. The encrypted drive's passphrase should be the same as your linux user's password, so you do not have to type in two different passphrases to login.
 
 **Warning:** Pam_mount can also unmount your partitions when you close your last session but this is currently not working due to the use of pam_systemd.so in the pam stack.
@@ -123,7 +119,3 @@ session         optional        pam_gnome_keyring.so auto_start
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pam_mount&oldid=411749](https://wiki.archlinux.org/index.php?title=Pam_mount&oldid=411749)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

@@ -1,9 +1,5 @@
 # ThinkPad OSD
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 New desktop environments ([GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), and maybe even [Xfce](/index.php/Xfce "Xfce")) support their own osd notifications for important events (volume up/down/mute and brightness up/down), which might be enough for most users. In order to use those notifications instead of the ones provided by TPB, map the keyboard-events of those keys to the proper keycodes.
 
 ## Contents
@@ -107,7 +103,3 @@ Finally, restart tpb.
 *   [http://www.thinkwiki.org/wiki/Tpb](http://www.thinkwiki.org/wiki/Tpb)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ThinkPad_OSD&oldid=411379](https://wiki.archlinux.org/index.php?title=ThinkPad_OSD&oldid=411379)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

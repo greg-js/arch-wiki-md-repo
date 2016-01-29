@@ -1,9 +1,5 @@
 # OpenStack
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 OpenStack is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution
 
 ## Contents
@@ -107,12 +103,3 @@ For manual creation, the _essential_ steps are:
 *   [Openstack web site](http://www.openstack.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenStack&oldid=392523](https://wiki.archlinux.org/index.php?title=OpenStack&oldid=392523)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

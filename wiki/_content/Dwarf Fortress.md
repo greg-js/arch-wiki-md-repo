@@ -1,9 +1,5 @@
 # Dwarf Fortress
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Dwarf Fortress](http://www.bay12games.com/dwarves/) is a single-player fantasy game. You can control a dwarven outpost or an adventurer in a randomly generated, persistent world. It is renowned for its highly customizable, complex indepth gameplay.
 
 The game is played with keyboard only, though there exist [mods](http://dwarffortresswiki.org/index.php/DF2014:Utilities#DFHack) which enable mouse support via plugins. Without any graphic mods ([[1]](http://dwarffortresswiki.org/index.php/DF2014:Tilesets)) the game is displayed in a terminal-like window with ASCII characters ([screenshots](http://www.bay12games.com/dwarves/screens.html)).
@@ -97,11 +93,3 @@ If you choose to install StoneSense manually instead of using the AUR package, y
 *   [lib-32-allegro](https://aur.archlinux.org/packages/lib-32-allegro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=413316](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=413316)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

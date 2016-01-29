@@ -1,9 +1,5 @@
 # TerraTec Cinergy T RC MKII USB Stick
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **TerraTec Cinergy T RC MKII** is a USB DVB-T receiver manufactured by TerraTec Electronic GmbH. This page describes the installation of the TerraTec Cinergy T RC MKII USB Stick (USB ID 0ccd:0097). It is supported since kernel version 2.6.37.
 
 ## Verify Device ID
@@ -65,7 +61,3 @@ $ dmesg
 *   [Product Website](http://www.terratec.net/en/products/Cinergy_T_Stick_RC_97818.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TerraTec_Cinergy_T_RC_MKII_USB_Stick&oldid=389738](https://wiki.archlinux.org/index.php?title=TerraTec_Cinergy_T_RC_MKII_USB_Stick&oldid=389738)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

@@ -1,9 +1,5 @@
 # Go package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -299,7 +295,3 @@ package() {
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Go_package_guidelines&oldid=407463](https://wiki.archlinux.org/index.php?title=Go_package_guidelines&oldid=407463)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

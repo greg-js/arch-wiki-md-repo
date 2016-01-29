@@ -1,9 +1,5 @@
 # Guitar Pro
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Guitar Pro is great to transcribe and compose for stringed instruments, organized in terms of tablature notation correctness and ease of use. One use of using Guitar Pro is to create backing tracks and export them to MIDI, then use those as a backing tracks to practice with on an instrument.
 
 This article covers how to start using the outdated Guitar Pro 5.2 with Linux. Native binaries do not exist for Guitar Pro 5, opposed to the case of Guitar Pro 6, so this requires [Wine](/index.php/Wine "Wine") running the windows version and [Timidity](/index.php/Timidity "Timidity") as a MIDI backend.
@@ -74,8 +70,3 @@ Sometimes you will see just whitespaces instead of note heads and some other sym
 *   Guitar Pro 5.x at WineHQ - [http://appdb.winehq.org/objectManager.php?sClass=version&iId=3782](http://appdb.winehq.org/objectManager.php?sClass=version&iId=3782)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Guitar_Pro&oldid=389800](https://wiki.archlinux.org/index.php?title=Guitar_Pro&oldid=389800)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

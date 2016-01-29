@@ -1,12 +1,8 @@
 # RuneScape
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
 
-_RuneScape is a fantasy massively multiplayer online role-playing game (MMORPG) released in January 2001 by Andrew and Paul Gower, and developed and published by Jagex Games Studio. It is a graphical browser game implemented on the client-side in Java or HTML5, and incorporates 3D rendering. The game has had over 200 million accounts created and is recognised by the Guinness World Records as the world's largest free MMORPG and the most-updated game._
+NaN
 
 ## Contents
 
@@ -32,7 +28,3 @@ Rsu-client is an unofficial RuneScape Unix/Linux Client and it's currently the r
 OSBuddy is a third-party toolkit for Old School RuneScape which in addition to a client offers useful features, such as highscores, notes, price checker etc. It's available for installation from the AUR, [osbuddy](https://aur.archlinux.org/packages/osbuddy/)<sup><small>AUR</small></sup>. More information and about the toolkit can be found at: [https://rsbuddy.com/osbuddy/](https://rsbuddy.com/osbuddy/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RuneScape&oldid=413080](https://wiki.archlinux.org/index.php?title=RuneScape&oldid=413080)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

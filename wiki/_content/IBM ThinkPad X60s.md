@@ -1,9 +1,5 @@
 # IBM ThinkPad X60s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IBM ThinkPad X60](/index.php/IBM_ThinkPad_X60 "IBM ThinkPad X60")
@@ -27,11 +23,11 @@ First note that this laptop is available with two different processors.
 
 *   Core Duo
 
-This processor requires the i686 (32-bit) version of Arch Linux. The two RAM slots physically support 2x2GB=4GB RAM. However with a 32-bit kernel only up to ~3GB will be accessible. Unfortunately due to a chipset limitation, even compiling a kernel with the Physical Address Extension (PAE) option (CONFIG_HIGHMEM64G) [[1]](https://aur.archlinux.org/packages.php?ID=24469)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-30]</sup> will not allow access to more than 3GB.
+NaN
 
 *   Core **2** Duo
 
-This processor can run the x86_64 (64-bit) version of Arch Linux, and this is recommended in this case. The full 4GB RAM will be available with the standard Arch x86_64 kernel.
+NaN
 
 A basic Arch Linux installation will do just fine for almost everything. Select the i686 or x86_64 version as indicated above. Install from a USB CD drive or a USB flash drive following the instructions in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
@@ -68,11 +64,3 @@ See [http://www.thinkwiki.org/wiki/How_to_get_special_keys_to_work](http://www.t
 See the article on [pm-utils](/index.php/Pm-utils "Pm-utils"). This works fine.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X60s&oldid=376825](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X60s&oldid=376825)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

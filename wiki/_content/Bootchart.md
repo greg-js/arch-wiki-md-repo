@@ -1,9 +1,5 @@
 # Bootchart
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Bootchart](https://meego.gitorious.org/meego-developer-tools/bootchart) is a handy tool used for profiling the Linux boot sequence, generally used for making your computer boot faster. It consists of the bootchartd daemon, which records and renders a chart of profiling data.
 
 **Note:** Bootchart is now a part of systemd, see [Improve boot performance#Analyzing the boot process](/index.php/Improve_boot_performance#Analyzing_the_boot_process "Improve boot performance") for details. This page covers the original bootchart and bootchart2 (init daemon) before it was merged.
@@ -122,7 +118,3 @@ Note that Bootchart2 can be used along with [E4rat](/index.php/E4rat "E4rat").
 *   [Bootchart home page](http://www.bootchart.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bootchart&oldid=400576](https://wiki.archlinux.org/index.php?title=Bootchart&oldid=400576)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

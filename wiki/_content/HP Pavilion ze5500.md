@@ -1,9 +1,5 @@
 # HP Pavilion ze5500
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This install is written specifically with a HP Pavilion ze5570 notebook, however all notebooks in the series have pretty much the same hardware. Manufactured in 2003 and 2004, the Pavilion 5500 series are older computers but with some lovin' can do pretty well. It's got a Pentium 4 so it's able to run Arch i686 (50786 chip technically but really i686).
 
 ## Contents
@@ -18,101 +14,17 @@ This install is written specifically with a HP Pavilion ze5570 notebook, however
 
 ## Specifications
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Hardware</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>Processor</td>
-
-<td>Mobile Intel Pentium 4 processor 2.66</td>
-
-</tr>
-
-<tr>
-
-<td>Memory</td>
-
-<td>448 MB</td>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>ATi Mobility Radeon IGP 345M, 64MB Shared memory.</td>
-
-</tr>
-
-<tr>
-
-<td>Hard Drive</td>
-
-<td>Fujitsu MHT2060A ATA 60GB</td>
-
-</tr>
-
-<tr>
-
-<td>CD Drive</td>
-
-<td>Samsung SN-324F CDRW/DVD</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td>National Semiconductor DP83815 10/100 Mb/s Ethernet Controller</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td>Broadcom BCM4306 802.11b/g</td>
-
-</tr>
-
-<tr>
-
-<td>Sound</td>
-
-<td>Sound Blaster Pro-compatible 16-bit</td>
-
-</tr>
-
-<tr>
-
-<td>Trackpad</td>
-
-<td>Synaptics with dedicated vertical scroll</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>13.3 inch XGA TFT (1024x769)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Hardware | Description |
+| Processor | Mobile Intel Pentium 4 processor 2.66 |
+| Memory | 448 MB |
+| Video | ATi Mobility Radeon IGP 345M, 64MB Shared memory. |
+| Hard Drive | Fujitsu MHT2060A ATA 60GB |
+| CD Drive | Samsung SN-324F CDRW/DVD |
+| Ethernet | National Semiconductor DP83815 10/100 Mb/s Ethernet Controller |
+| Wireless | Broadcom BCM4306 802.11b/g |
+| Sound | Sound Blaster Pro-compatible 16-bit |
+| Trackpad | Synaptics with dedicated vertical scroll |
+| Display | 13.3 inch XGA TFT (1024x769) |
 
 ## What does not work
 
@@ -148,7 +60,3 @@ echo 'SUSPEND_MODULES="button uhci_hcd"' >> /etc/pm/config.d/config
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_ze5500&oldid=331113](https://wiki.archlinux.org/index.php?title=HP_Pavilion_ze5500&oldid=331113)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

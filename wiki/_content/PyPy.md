@@ -1,9 +1,5 @@
 # PyPy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [PyPy](http://pypy.org/) is an alternate implementation of the [Python](/index.php/Python "Python") 2.7.8 and 3.2.5 interpreters. PyPy's benefits are in the area of speed, memory usage, sandboxing and stacklessness. It is compatible with CPython with [some exceptions](http://pypy.org/compat.html). PyPy also can be used to compile RPython programs to C code.
 
 ## Contents
@@ -114,11 +110,3 @@ $ /opt/pypy/bin/lamson gen -project testproject
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPy&oldid=359345](https://wiki.archlinux.org/index.php?title=PyPy&oldid=359345)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

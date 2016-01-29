@@ -1,9 +1,5 @@
 # Install from existing Linux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
@@ -394,13 +390,3 @@ If less than 700MB are available, examine the packages in the group base, and se
 Once the new Arch Linux system is installed, reboot into the newly created system, and [rsync the entire system](/index.php/Full_system_backup_with_rsync#With_a_single_command "Full system backup with rsync") to the primary partition. Fix the bootloader configuration before rebooting.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&oldid=414054](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&oldid=414054)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

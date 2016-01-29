@@ -1,9 +1,5 @@
 # HandBrakeCLI
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [HandBrakeCLI](http://handbrake.fr/) is command-line driven interface to a collection of built-in libraries which enables the decoding, encoding and conversion of audio and video streams to [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") (M4V) and [MKV](https://en.wikipedia.org/wiki/Matroska "wikipedia:Matroska") container formats with an emphasis on [H.264/MPEG-4 AVC](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC "wikipedia:H.264/MPEG-4 AVC") encoding through [x264](http://www.videolan.org/developers/x264.html).
 
 ## Contents
@@ -56,12 +52,3 @@ ULTRAFAST TESTING
 *   [Official CLI Guide](https://trac.handbrake.fr/wiki/CLIGuide)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HandBrakeCLI&oldid=412094](https://wiki.archlinux.org/index.php?title=HandBrakeCLI&oldid=412094)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

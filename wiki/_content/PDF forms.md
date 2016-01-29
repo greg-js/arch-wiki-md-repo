@@ -1,9 +1,5 @@
 # PDF forms
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -48,12 +44,3 @@ And quoting the aforementioned [thread](https://bbs.archlinux.org/viewtopic.php?
 [Inkscape](http://www.inkscape.org/) is an image editing program that can be used to fill PDF forms by importing the PDF file and simply inserting text fields where you want them to be. Its not really filling the form (the fields will probably still be blank if the forms are to be read electronically), but should work well enough if you intend to print them.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PDF_forms&oldid=404086](https://wiki.archlinux.org/index.php?title=PDF_forms&oldid=404086)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

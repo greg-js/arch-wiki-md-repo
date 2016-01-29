@@ -1,9 +1,5 @@
 # Cacti
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Cacti](http://www.cacti.net/) is a web-based system monitoring and graphing solution.
 
 ## Contents
@@ -181,7 +177,3 @@ Open a browser and go to http://your_server/cacti/. You should be welcomed with 
 *   [http://cacti.net](http://cacti.net)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cacti&oldid=411124](https://wiki.archlinux.org/index.php?title=Cacti&oldid=411124)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

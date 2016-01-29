@@ -1,9 +1,5 @@
 # Tmsu
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [tmsu](http://tmsu.org) is a tool for tagging your files. It provides a simple command-line tool for applying tags and a virtual file-system so that you can get a tagged based view of your files from within any other program.
 
 ## Contents
@@ -32,12 +28,3 @@ tmsu creates symlinks between files, folders and the related tags. That is, it c
 *   [tagsistant](https://aur.archlinux.org/packages/tagsistant/)<sup><small>AUR</small></sup> (alternative semantic filesystem)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmsu&oldid=399131](https://wiki.archlinux.org/index.php?title=Tmsu&oldid=399131)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Search](/index.php/Category:Search "Category:Search")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

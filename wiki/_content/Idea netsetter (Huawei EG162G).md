@@ -1,9 +1,5 @@
 # Idea netsetter (Huawei EG162G)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The HUAWEI EG162G is a EDGE/GPRS modem used for wireless internet access. Linux kernel support this at least from version 2.6.29.4 and thus setting this up is not very hard.
 
 ## Plug it in
@@ -115,7 +111,3 @@ nameserver 208.67.222.222
 If you are already conected to a LAN then change the subnet mask of the lan to 255.0.0.0 and you should be able to use the lan and the netsetter.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Idea_netsetter_(Huawei_EG162G)&oldid=390552](https://wiki.archlinux.org/index.php?title=Idea_netsetter_(Huawei_EG162G)&oldid=390552)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")

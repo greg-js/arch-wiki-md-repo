@@ -1,9 +1,5 @@
 # surf
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [surf](http://surf.suckless.org/) is a simple web browser based on WebKit/GTK+. It is able to display websites and follow links. It supports the XEmbed protocol which makes it possible to embed it in another application. Furthermore, one can point surf to another URI by setting its XProperties.
 
 ## Contents
@@ -68,11 +64,3 @@ See the man page for tabbed for more details and possibilities.
 *   [Hacking surf thread](https://bbs.archlinux.org/viewtopic.php?id=167804/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Surf&oldid=401849](https://wiki.archlinux.org/index.php?title=Surf&oldid=401849)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

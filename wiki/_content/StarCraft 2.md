@@ -1,9 +1,5 @@
 # StarCraft 2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [StarCraft II](http://eu.battle.net/sc2/en/) is a real-time strategy game from Blizzard Entertainment released in 2010\. A native Linux version isn't available, but the game is fully playable using Wine.
 
 ## Contents
@@ -176,8 +172,3 @@ Then add alternate key SCII hotkeys for:
 *   [Patch News](http://eu.battle.net/sc2/en/forum/topic/283440977) (battle.net EU forums)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=StarCraft_2&oldid=412180](https://wiki.archlinux.org/index.php?title=StarCraft_2&oldid=412180)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

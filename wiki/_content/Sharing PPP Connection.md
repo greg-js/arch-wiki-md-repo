@@ -1,9 +1,5 @@
 # Sharing PPP Connection
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -46,7 +42,7 @@ Depending on whether you want to share a wireless or wired connection, you also 
 
 *   Set the PPP connection up.
 
-You can assign an IP address to the interface as usual, by running (as root):
+NaN
 
 ```
 # ip addr add 192.168.0.254 dev eth0
@@ -80,7 +76,7 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 
 ```
 
-In the above the **ppp0** interface is the used PPP interface, you can substitute it for yours if needed.
+NaN
 
 *   You are done! Happy surfing!
 
@@ -132,7 +128,7 @@ Now you should be able to connect to the internet using **eth1** or **eth2**.
 *   Set up the PPP connection.
 *   Set up the WLAN connection: choose an SSID and select Ad-hoc as network type. In the following it is assumed that you are using the **wlan0** interface.
 
-Set the **wlan0** interface up address for example 192.168.0.254\. Setting up the interface is usually done by running:
+NaN
 
 ```
 # iw wlan0 set type ibss
@@ -140,14 +136,14 @@ Set the **wlan0** interface up address for example 192.168.0.254\. Setting up th
 
 ```
 
-After that you can assign an IP address to the interface as usual, by running:
+NaN
 
 ```
 # ip addr add 192.168.0.254 dev wlan0
 
 ```
 
-Please note that different wlan cards may be configured differently and one should adapt this documentation accordingly.
+NaN
 
 *   Set the kernel to router mode. This is done by running:
 
@@ -176,7 +172,7 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 
 ```
 
-In the above the **ppp0** interface is assumed to be the used PPP interface, you can substitute it for yours if needed.
+NaN
 
 *   You are done! Happy surfing!
 
@@ -209,11 +205,3 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 *   [Share your 3G Internet connection over wifi](http://go2linux.garron.me/linux/2011/03/share-your-3g-internet-connection-over-wifi-linux-ipod-touch-925)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connection&oldid=413653](https://wiki.archlinux.org/index.php?title=Sharing_PPP_Connection&oldid=413653)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

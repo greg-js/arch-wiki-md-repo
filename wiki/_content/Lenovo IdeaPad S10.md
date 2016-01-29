@@ -1,9 +1,5 @@
 # Lenovo IdeaPad S10
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -69,11 +65,3 @@ Works out of the box but the internal microphone is not turned on by default. To
 Works out of the box but you cannot boot from it.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S10&oldid=412538](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S10&oldid=412538)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

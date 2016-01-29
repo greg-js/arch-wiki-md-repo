@@ -1,9 +1,5 @@
 # Haskell package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -25,12 +21,3 @@ This document aims to cover standards and guidelines for producing good [Haskell
 [cabal2pkgbuild-git](https://aur.archlinux.org/packages/cabal2pkgbuild-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cabal2pkgbuild-git)]</sup>, available in the [AUR](/index.php/AUR "AUR"), may be used to automatically generate Arch packages from [cabal](/index.php/Haskell#cabal-install "Haskell") build files. It is a wrapper around [cblrepo](https://github.com/magthe/cblrepo). Generally there should be one package (i.e., one [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) per `.cabal` file for a package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell_package_guidelines&oldid=413553](https://wiki.archlinux.org/index.php?title=Haskell_package_guidelines&oldid=413553)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

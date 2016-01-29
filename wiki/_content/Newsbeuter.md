@@ -1,12 +1,8 @@
 # Newsbeuter
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [project web page](http://newsbeuter.org/):
 
-Newsbeuter is an open-source RSS/Atom feed reader for text terminals. It runs on Linux, FreeBSD, Mac OS X and other Unix-like operating systems. Newsbeuter's great configurability and vast number of features make it a perfect choice for people that need a slick and fast feed reader that can be completely controlled via keyboard.
+NaN
 
 ## Contents
 
@@ -199,7 +195,3 @@ If that is not the problem, then you probably have another instance of newsbeute
 *   [Arabesque: Rss with Newsbeuter](http://blog.sanctum.geek.nz/rss-with-newsbeuter/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Newsbeuter&oldid=415933](https://wiki.archlinux.org/index.php?title=Newsbeuter&oldid=415933)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

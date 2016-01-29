@@ -1,12 +1,8 @@
 # Trac
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [project web page](http://trac.edgewall.org):
 
-Trac is an enhanced wiki and issue tracking system for software development projects. Trac uses a minimalistic approach to web-based software project management. Our mission is to help developers write great software while staying out of the way. Trac should impose as little as possible on a team's established development process and policies.
+NaN
 
 ## Contents
 
@@ -91,7 +87,3 @@ Next, you'll want to add users and give permissions to those users. To add users
 For a specific use case, see [SCM Example Trac](/index.php/SCM_Example_Trac "SCM Example Trac").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Trac&oldid=399598](https://wiki.archlinux.org/index.php?title=Trac&oldid=399598)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

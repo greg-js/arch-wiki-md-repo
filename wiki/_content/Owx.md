@@ -1,9 +1,5 @@
 # Owx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -77,11 +73,3 @@ U.S. [Multi-Use Radio Service (MURS)](http://en.wikipedia.org/wiki/Multi-Use_Rad
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Owx&oldid=389415](https://wiki.archlinux.org/index.php?title=Owx&oldid=389415)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

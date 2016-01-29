@@ -1,9 +1,5 @@
 # Lumina
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [AUR](/index.php/AUR "AUR")
@@ -69,11 +65,3 @@ Bugs should be reported to Lumina's repository on [Github](https://github.com/pc
 *   [Lumina Handbook](http://lumina-desktop.org/handbook/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lumina&oldid=413269](https://wiki.archlinux.org/index.php?title=Lumina&oldid=413269)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

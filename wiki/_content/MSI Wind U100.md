@@ -1,9 +1,5 @@
 # MSI Wind U100
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article pertains to the MSI Wind U100 netbook/sub-notebook.
 
 ## Contents
@@ -212,7 +208,3 @@ pm-utils usually works without issues. However, some users have reported that it
 *   [InsanelyWind](http://www.insanelywind.com/forum/) - Community website dedicated to MSI Wind netbooks, includes forums and a wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MSI_Wind_U100&oldid=384216](https://wiki.archlinux.org/index.php?title=MSI_Wind_U100&oldid=384216)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [MSI](/index.php/Category:MSI "Category:MSI")

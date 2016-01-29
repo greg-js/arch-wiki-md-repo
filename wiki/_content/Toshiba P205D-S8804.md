@@ -1,9 +1,5 @@
 # Toshiba P205D-S8804
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 I'm currently working on getting Arch set up on my new Toshiba Satellite P205D-S8804\. This page isn't complete yet, but I'll work on it as I get things up!
 
 ## Contents
@@ -278,7 +274,3 @@ Appears to work flawlessly, although not really speedily. See [Suspend and hiber
 _lsusb_ returns this webcam as a "Chicony USB 2.0" webcam, which is supported via the _uvcvideo_ and snd_usb_audio modules. See [Webcam setup](/index.php/Webcam_setup "Webcam setup") for details.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_P205D-S8804&oldid=400466](https://wiki.archlinux.org/index.php?title=Toshiba_P205D-S8804&oldid=400466)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

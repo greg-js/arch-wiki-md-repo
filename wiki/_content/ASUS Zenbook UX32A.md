@@ -1,9 +1,5 @@
 # ASUS Zenbook UX32A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains infos and tips for installing and configuring Arch Linux on the Asus Zenbook UX32A.
 
 ## Contents
@@ -53,7 +49,3 @@ bindsym XF86KdbBrightnessUp exec asus-kdb-backlight on
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX32A&oldid=376475](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX32A&oldid=376475)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

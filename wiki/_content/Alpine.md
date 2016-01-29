@@ -1,9 +1,5 @@
 # Alpine
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -178,11 +174,3 @@ Replace _YOURPRINTER_ with the name of your printer. Note that these settings ca
 *   [http://www.washington.edu/alpine/](http://www.washington.edu/alpine/) - Official Alpine Page. This page includes links to un-official Alpine pages that have some handy tutorials (argue better than the one provided here), hit `C` to open the config menu.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Alpine&oldid=414477](https://wiki.archlinux.org/index.php?title=Alpine&oldid=414477)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Reiser4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -217,7 +213,3 @@ Run **lilo** to update your config:
 *   If you have problem with **su** command after the change of fs, you should reinstall **coreutils** package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Reiser4&oldid=413596](https://wiki.archlinux.org/index.php?title=Reiser4&oldid=413596)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,9 +1,5 @@
 # Disk encryption
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
@@ -77,32 +73,15 @@ A very strong disk encryption setup (e.g. full system encryption with authentici
 
 ## Data encryption vs system encryption
 
-Data encryption
+NaN
 
-Defined as encrypting only the user's data itself (often located within the `/home` directory, or on removable media like a data DVD), data encryption is the simplest and least intrusive use of disk encryption, but has some significant drawbacks.
+NaN
 
-In modern computing systems, there are many background processes that may cache/store information about user data or parts of the data itself in non-encrypted areas of the hard drive, like:
+NaN
 
-*   swap partitions
-    *   (potential remedies: disable swapping, or use [encrypted swap](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") as well)
-*   `/tmp` (temporary files created by user applications)
-    *   (potential remedies: avoid such applications; mount `/tmp` inside a [ramdisk](/index.php/Ramdisk "Ramdisk"))
-*   `/var` (log files and databases and such; for example, mlocate stores an index of all file names in `/var/lib/mlocate/mlocate.db`)
+NaN
 
-In addition, mere data encryption will leave you vulnerable to offline system tampering attacks (e.g. someone installing a hidden program that [records](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") the passphrase you use to unlock the encrypted data, or waits for you to unlock it and then secretly copies/sends some of the data to a location where the attacker can retrieve it).
-
-System encryption
-
-Defined as the encryption of the operating system _and_ user data, system encryption helps to address some of the inadequacies of data encryption.
-
-Benefits:
-
-*   prevents unauthorized physical access to (and tampering with) operating system files _(but see warning above)_
-*   prevents unauthorized physical access to private data that may be cached by the system
-
-Disadvantages:
-
-*   unlocking of the encrypted parts of the disk can no longer happen during or after user login; it must now happen at boot time
+NaN
 
 In practice, there is not always a clear line between data encryption and system encryption, and many different compromises and customized setups are possible.
 
@@ -134,20 +113,11 @@ Block device encryption methods, on the other hand, operate _below_ the filesyst
 
 The following "block device encryption" solutions are available in Arch Linux:
 
-loop-AES
+NaN
 
-loop-AES is a descendant of cryptoloop and is a secure and fast solution to system encryption. However, loop-AES is considered less user-friendly than other options as it requires non-standard kernel support.
+NaN
 
-dm-crypt
-
-[dm-crypt](/index.php/Dm-crypt "Dm-crypt") is the standard device-mapper encryption functionality provided by the Linux kernel. It can be used directly by those who like to have full control over all aspects of partition and key management. The management of dm-crypt is done with the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) userspace utility. It can be used for the following types of block-device encryption: _LUKS_ (default), _plain_, and has limited features for _loopAES_ and _Truecrypt_ devices.
-
-*   LUKS, used by default, is an additional convenience layer which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use and cryptographic security.
-*   plain dm-crypt mode, being the original kernel functionality, does not employ the convenience layer. It is more difficult to apply the same cryptographic strength with it. When doing so, longer keys (passphrases or keyfiles) are the result. It has, however, other advantages, described in the following.
-
-TrueCrypt
-
-Note that the developers of [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") ended support for it in May 2014\.
+NaN
 
 For practical implications of the chosen layer of operation, see the [comparison table](#practical_implications) below, as well as the general write up for [eCryptfs](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
 
@@ -155,780 +125,106 @@ For practical implications of the chosen layer of operation, see the [comparison
 
 The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") and plain ("-") encryption modes. If a specific feature requires using LUKS, this is indicated by "(with LUKS)". Likewise "(without LUKS)" indicates usage of LUKS is counter-productive to achieve the feature and plain mode should be used.
 
-<table class="wikitable" style="text-align:center; cell-padding:100px;">
-
-<tbody>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+| 
 
 ##### Summary
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Type</th>
-
-<td>block device encryption</td>
-
-<td>block device encryption</td>
-
-<td>block device encryption</td>
-
-<td>stacked filesystem encryption</td>
-
-<td>stacked filesystem encryption</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Main selling points</th>
-
-<td>longest-existing one; possibly the fastest; works on legacy systems</td>
-
-<td>de-facto standard for block device encryption on Linux; very flexible</td>
-
-<td>very portable, well-polished, self-contained solution</td>
-
-<td>slightly faster than EncFS; individual encrypted files portable between systems</td>
-
-<td>easiest one to use; supports non-root administration</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Availability in Arch Linux</th>
-
-<td>must manually compile custom kernel</td>
-
-<td>_kernel modules:_ already shipped with default kernel; _tools:_ [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core]</td>
-
-<td>[truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (read-only features in later versions)</td>
-
-<td>_kernel module:_ already shipped with default kernel; _tools:_ [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community]</td>
-
-<td>[encfs](https://www.archlinux.org/packages/?name=encfs) [community]</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">License</th>
-
-<td>GPL</td>
-
-<td>GPL</td>
-
-<td>custom  
-[[1]](#See_also)</td>
-
-<td>GPL</td>
-
-<td>GPL</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| Type | block device encryption | block device encryption | block device encryption | stacked filesystem encryption | stacked filesystem encryption |
+| Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
+| Availability in Arch Linux | must manually compile custom kernel | _kernel modules:_ already shipped with default kernel; _tools:_ [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (read-only features in later versions) | _kernel module:_ already shipped with default kernel; _tools:_ [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
+| License | GPL | GPL | custom
+[[1]](#See_also) | GPL | GPL |
+| 
 
 ##### Basic classification
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Encrypts</th>
-
-<td>whole block devices</td>
-
-<td>whole block devices</td>
-
-<td>whole block devices</td>
-
-<td>files</td>
-
-<td>files</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Container for encrypted data may be...</th>
-
-<td>a disk or disk partition / a file acting as a virtual partition</td>
-
-<td>a disk or disk partition / a file acting as a virtual partition</td>
-
-<td>a disk or disk partition / a file acting as a virtual partition</td>
-
-<td>a directory in an existing file system</td>
-
-<td>a directory in an existing file system</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Relation to filesystem</th>
-
-<td>operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
-
-<td>operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
-
-<td>operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else</td>
-
-<td>adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read</td>
-
-<td>adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Encryption implemented in...</th>
-
-<td>kernelspace</td>
-
-<td>kernelspace</td>
-
-<td>kernelspace</td>
-
-<td>kernelspace</td>
-
-<td>userspace (using FUSE)</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Cryptographic metadata stored in...</th>
-
-<td> ?</td>
-
-<td>with LUKS: LUKS Header</td>
-
-<td>begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification))</td>
-
-<td>header of each encrypted file</td>
-
-<td>control file at the top level of each EncFs container</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Wrapped encryption key stored in...</th>
-
-<td> ?</td>
-
-<td>with LUKS: LUKS header</td>
-
-<td>begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification))</td>
-
-<td>key file that can be stored anywhere</td>
-
-<td>control file at the top level of each EncFs container</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| Encrypts | whole block devices | whole block devices | whole block devices | files | files |
+| Container for encrypted data may be... | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a directory in an existing file system | a directory in an existing file system |
+| Relation to filesystem | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read |
+| Encryption implemented in... | kernelspace | kernelspace | kernelspace | kernelspace | userspace (using FUSE) |
+| Cryptographic metadata stored in... |  ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | header of each encrypted file | control file at the top level of each EncFs container |
+| Wrapped encryption key stored in... |  ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | key file that can be stored anywhere | control file at the top level of each EncFs container |
+| 
 
 ##### Practical implications
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">File metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✖  
-(file and dir names can be encrypted though)</td>
-
-<td>✖  
-(file and dir names can be encrypted though)</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Can be used to encrypt whole hard drives (including partition tables)</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✖</td>
-
-<td>✖</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Can be used to encrypt swap space</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✖</td>
-
-<td>✖</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Can be used without pre-allocating a fixed amount of space for the encrypted data container</th>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc.</th>
-
-<td>✖  
-[[2]](#See_also)</td>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Allows offline file-based backups of encrypted files</th>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| File metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted | ✔ | ✔ | ✔ | ✖
+(file and dir names can be encrypted though) | ✖
+(file and dir names can be encrypted though) |
+| Can be used to encrypt whole hard drives (including partition tables) | ✔ | ✔ | ✔ | ✖ | ✖ |
+| Can be used to encrypt swap space | ✔ | ✔ | ✔ | ✖ | ✖ |
+| Can be used without pre-allocating a fixed amount of space for the encrypted data container | ✖ | ✖ | ✖ | ✔ | ✔ |
+| Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc. | ✖
+[[2]](#See_also) | ✖ | ✖ | ✔ | ✔ |
+| Allows offline file-based backups of encrypted files | ✖ | ✖ | ✖ | ✔ | ✔ |
+| 
 
 ##### Usability features
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for automounting on login</th>
-
-<td> ?</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for automatic unmounting in case of inactivity</th>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Non-root users can create/destroy containers for encrypted data</th>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>limited</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Provides a GUI</th>
-
-<td>✖</td>
-
-<td>✖</td>
-
-<td>✔</td>
-
-<td>✖</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| Support for automounting on login |  ? | ✔ |  ? | ✔ | ✔ |
+| Support for automatic unmounting in case of inactivity |  ? |  ? |  ? |  ? | ✔ |
+| Non-root users can create/destroy containers for encrypted data | ✖ | ✖ | ✖ | limited | ✔ |
+| Provides a GUI | ✖ | ✖ | ✔ | ✖ | ✔ |
+| 
 
 ##### Security features
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Supported ciphers</th>
-
-<td>AES</td>
-
-<td>AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers)</td>
-
-<td>AES, Twofish, Serpent</td>
-
-<td>AES, Blowfish, Twofish...</td>
-
-<td>AES, Blowfish</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for salting</th>
-
-<td> ?</td>
-
-<td>✔  
-(with LUKS)</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for cascading multiple ciphers</th>
-
-<td> ?</td>
-
-<td>Not in one device, but blockdevices can be cascaded</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-<td>✖</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for key-slot diffusion</th>
-
-<td> ?</td>
-
-<td>✔  
-(with LUKS)</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Protection against key scrubbing</th>
-
-<td>✔</td>
-
-<td>✔  
-(without LUKS)</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for multiple (independently revokable) keys for the same encrypted data</th>
-
-<td> ?</td>
-
-<td>✔  
-(with LUKS)</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td>✖</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Blowfish, Twofish... | AES, Blowfish |
+| Support for salting |  ? | ✔
+(with LUKS) | ✔ | ✔ |  ? |
+| Support for cascading multiple ciphers |  ? | Not in one device, but blockdevices can be cascaded | ✔ |  ? | ✖ |
+| Support for key-slot diffusion |  ? | ✔
+(with LUKS) |  ? |  ? |  ? |
+| Protection against key scrubbing | ✔ | ✔
+(without LUKS) |  ? |  ? |  ? |
+| Support for multiple (independently revokable) keys for the same encrypted data |  ? | ✔
+(with LUKS) |  ? |  ? | ✖ |
+| 
 
 ##### Performance features
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Multithreading support</th>
-
-<td> ?</td>
-
-<td>✔  
-[[8]](#See_also)</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Hardware-accelerated encryption support</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔</td>
-
-<td>✔  
-[[13]](#See_also)</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| Multithreading support |  ? | ✔
+[[8]](#See_also) | ✔ |  ? |  ? |
+| Hardware-accelerated encryption support | ✔ | ✔ | ✔ | ✔ | ✔
+[[13]](#See_also) |
+| 
 
 ##### Block device encryption specific
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Support for (manually) resizing the encrypted block device in-place</th>
-
-<td> ?</td>
-
-<td>✔</td>
-
-<td>✖</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt |
+| Support for (manually) resizing the encrypted block device in-place |  ? | ✔ | ✖ |
+| 
 
 ##### Stacked filesystem encryption specific
 
-</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Supported file systems</th>
-
-<td>ext3, ext4, xfs (with caveats), jfs, nfs...</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Ability to encrypt filenames</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Ability to _not_ encrypt filenames</th>
-
-<td>✔</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Optimized handling of sparse files</th>
-
-<td>✖</td>
-
-<td>✔</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; background:#ddd">
+ | eCryptfs | EncFs |
+| Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... |  ? |
+| Ability to encrypt filenames | ✔ | ✔ |
+| Ability to _not_ encrypt filenames | ✔ | ✔ |
+| Optimized handling of sparse files | ✖ | ✔ |
+| 
 
 ##### Compatibility & prevalence
 
-</th>
-
-<th style="background:#ddd">Loop-AES</th>
-
-<th style="background:#ddd">dm-crypt +/- LUKS</th>
-
-<th style="background:#ddd">Truecrypt</th>
-
-<th style="background:#ddd">eCryptfs</th>
-
-<th style="background:#ddd">EncFs</th>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Supported Linux kernel versions</th>
-
-<td>2.0 or newer</td>
-
-<td>CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td>2.4 or newer</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Encrypted data can also be accessed from Windows</th>
-
-<td>✔  
-(with [[3]](#See_also), [[14]](#See_also))</td>
-
-<td>✔  
-(with [[4]](#See_also), [[14]](#See_also))</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-<td> ?  
-[[9]](#See_also)</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Encrypted data can also be accessed from Mac OS X</th>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td>✔</td>
-
-<td> ?</td>
-
-<td>✔  
-[[5]](#See_also)</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Encrypted data can also be accessed from FreeBSD</th>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td>✖</td>
-
-<td> ?</td>
-
-<td>✔  
-[[6]](#See_also)</td>
-
-</tr>
-
-<tr>
-
-<th style="text-align:left; font-weight:normal; background:#eee">Used by</th>
-
-<td> ?</td>
-
-<td>Debian/Ubuntu installer (system encryption)  
-Fedora installer</td>
-
-<td> ?</td>
-
-<td>Ubuntu installer (home dir encryption)  
-Chromium OS (encryption of cached user data [[7]](#See_also))</td>
-
-<td> ?</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
+| Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? | 2.4 or newer |
+| Encrypted data can also be accessed from Windows | ✔
+(with [[3]](#See_also), [[14]](#See_also)) | ✔
+(with [[4]](#See_also), [[14]](#See_also)) | ✔ |  ? |  ?
+[[9]](#See_also) |
+| Encrypted data can also be accessed from Mac OS X |  ? |  ? | ✔ |  ? | ✔
+[[5]](#See_also) |
+| Encrypted data can also be accessed from FreeBSD |  ? |  ? | ✖ |  ? | ✔
+[[6]](#See_also) |
+| Used by |  ? | Debian/Ubuntu installer (system encryption)
+Fedora installer |  ? | Ubuntu installer (home dir encryption)
+Chromium OS (encryption of cached user data [[7]](#See_also)) |  ? |
 
 ## Preparation
 
@@ -938,38 +234,38 @@ Which disk encryption setup is appropriate for you will depend on your goals (pl
 
 Among other things, you will need to answer the following questions:
 
-What kind of "attacker" do you want to protect against?
+NaN
 
 *   Casual computer user snooping around your disk when your system is turned off / stolen / etc.
 *   Professional cryptanalyst who can get repeated read/write access to your system before and after you use it
 *   Anything in between
 
-What encryption strategy shall be employed?
+NaN
 
 *   Data encryption
 *   System encryption
 *   Something in between
 
-How should swap, `/tmp`, etc. be taken care of?
+NaN
 
 *   Ignore, and hope no data is leaked
 *   Disable or mount as ramdisk
 *   Encrypt _(as part of full disk encryption, or separately)_
 
-How should encrypted parts of the disk be unlocked?
+NaN
 
 *   Passphrase _(same as login password, or separate)_
 *   Keyfile _(e.g. on a USB stick, that you keep in a safe place or carry around with yourself)_
 *   Both
 
-_When_ should encrypted parts of the disk be unlocked?
+NaN
 
 *   Before boot
 *   During boot
 *   At login
 *   Manually on demand _(after login)_
 
-How should multiple users be accomodated?
+NaN
 
 *   Not at all
 *   Using a shared passphrase/key
@@ -988,37 +284,15 @@ Then you can go on to make the required technical choices (see [#Available metho
 
 In practice, it could turn out something like:
 
-Example 1
+NaN
 
-Simple data encryption (internal hard drive) using a virtual folder called `~/Private` in the user's home directory encrypted with [EncFS](/index.php/EncFS "EncFS")  
-└──> encrypted versions of the files stored on-disk in `~/.Private`  
-└──> unlocked on demand with dedicated passphrase
+NaN
 
-Example 2
+NaN
 
-Simple data encryption (removable media), an USB drive encrypted with [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")  
-└──> unlocked when attached to the computer (using dedicated passphrase plus using a covert keyfile such as `~/photos/2006-09-04a.jpg`)
+NaN
 
-Example 3
-
-Partial system encryption with each user's home directory encrypted with [ECryptfs](/index.php/ECryptfs "ECryptfs")  
-└──> unlocked on respective user login, using login passphrase  
-└──> `swap` and `/tmp` partitions encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), using an automatically generated per-session throwaway key  
-└──> indexing/caching of contents of `/home` by _slocate_ (and similar apps) disabled.
-
-Example 4
-
-System encryption - whole hard drive except `/boot` partition (however, `/boot` can be encrypted with [GRUB](/index.php/GRUB "GRUB")) encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS")  
-└──> unlocked during boot, using passphrases or USB stick with keyfiles  
-└──> Maybe different passphrases/keys per user - independently revocable  
-└──> Maybe encryption spanning multiple drives or partition layout flexibility with [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
-
-Example 5
-
-Hidden/plain system encryption - whole hard drive encrypted with [plain dm-crypt](/index.php/Dm-crypt "Dm-crypt")  
-└──> USB-boot, using dedicated passphrase plus USB stick with keyfile  
-└──> data integrity checked before mounting  
-└──> `/boot` partition located on aforementioned USB stick
+NaN
 
 Many other combinations are of course possible. You should carefully plan what kind of setup will be appropriate for your system.
 
@@ -1030,11 +304,11 @@ See [Security#Passwords](/index.php/Security#Passwords "Security").
 
 Before setting up disk encryption on a (part of a) disk, consider securely wiping it first. This consists of overwriting the entire drive or partition with a stream of zero bytes or random bytes, and is done for one or both of the following reasons:
 
-Prevent recovery of previously stored data
+NaN
 
 Disk encryption does not change the fact that individual sectors are only overwritten on demand, when the file system creates or modifies the data those particular sectors hold (see [#How the encryption works](#How_the_encryption_works) below). Sectors which the filesystem considers "not currently used" are not touched, and may still contain remnants of data from previous filesystems. The only way to make sure that all data which you previously stored on the drive can not be [recovered](https://en.wikipedia.org/wiki/Data_recovery "wikipedia:Data recovery"), is to manually erase it. For this purpose it does not matter whether zero bytes or random bytes are used (although wiping with zero bytes will be much faster).
 
-Prevent disclosure of usage patterns on the encrypted drive
+NaN
 
 Ideally, the whole encrypted part of the disk should be indistinguishable from uniformly random data. This way, no unauthorized person can know which and how many sectors actually contain encrypted data - which may be a desirable goal in itself (as part of true confidentiality), and also serves as an additional barrier against attackers trying to break the encryption. In order to satisfy this goal, wiping the disk using high-quality random bytes is crucial.
 
@@ -1089,15 +363,15 @@ See also [Wikipedia:Authenticated encryption](https://en.wikipedia.org/wiki/Auth
 
 The following are examples how to store and cryptographically secure a master key with a keyfile:
 
-Stored in a plaintext keyfile
+NaN
 
 Simply storing the master key in a file (in readable form) is the simplest option. The file - called a "keyfile" - can be placed on a USB stick that you keep in a secure location and only connect to the computer when you want to mount the encrypted parts of the disk (e.g. during boot or login).
 
-Stored in passphrase-protected form in a keyfile or on the disk itself
+NaN
 
 The master key (and thus the encrypted data) can be protected with a secret passphrase, which you will have to remember and enter each time you want to mount the encrypted block device or folder. See [#Cryptographic metadata](#Cryptographic_metadata) below for details.
 
-Randomly generated on-the-fly for each session
+NaN
 
 In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by _anyone_ - which in those particular use-cases is perfectly fine.
 
@@ -1169,71 +443,11 @@ The actual algorithm used for translating between pieces of unencrypted and encr
 
 Disk encryption employs "block ciphers", which operate on fixed-length blocks of data, e.g. 16 bytes (128 bits). At the time of this writing, the predominantly used ones are:
 
-<table class="wikitable" style="margin:0 5em 1.5em 5em;">
-
-<tbody>
-
-<tr>
-
-<th scope="col" style="text-align:left">block size</th>
-
-<th scope="col" style="text-align:left">key size</th>
-
-<th scope="col" style="text-align:left">comment</th>
-
-</tr>
-
-<tr>
-
-<th scope="row" style="text-align:right">[AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard")</th>
-
-<td>128 bits</td>
-
-<td>128, 192 or 256 bits</td>
-
-<td>_approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)_</td>
-
-</tr>
-
-<tr>
-
-<th scope="row" style="text-align:right">[Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) "wikipedia:Blowfish (cipher)")</th>
-
-<td>64 bits</td>
-
-<td>32–448 bits</td>
-
-<td>_one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux_</td>
-
-</tr>
-
-<tr>
-
-<th scope="row" style="text-align:right">[Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish")</th>
-
-<td>128 bits</td>
-
-<td>128, 192 or 256 bits</td>
-
-<td>_developed as successor of Blowfish, but has not attained as much widespread usage_</td>
-
-</tr>
-
-<tr>
-
-<th scope="row" style="text-align:right">[Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) "wikipedia:Serpent (cipher)")</th>
-
-<td>128 bits</td>
-
-<td>128, 192 or 256 bits</td>
-
-<td>Considered the most secure of the five AES-competition finalists[[10]](#See_also)[[11]](#See_also)[[12]](#See_also).</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ block size | key size | comment |
+| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | _approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)_ |
+| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) "wikipedia:Blowfish (cipher)") | 64 bits | 32–448 bits | _one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux_ |
+| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | _developed as successor of Blowfish, but has not attained as much widespread usage_ |
+| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) "wikipedia:Serpent (cipher)") | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[10]](#See_also)[[11]](#See_also)[[12]](#See_also). |
 
 Encrypting/decrypting a sector ([see above](#Basic_principle)) is achieved by dividing it into small blocks matching the cipher's block-size, and following a certain rule-set (a so-called "**mode of operation**") for how to consecutively apply the cipher to the individual blocks.
 
@@ -1299,12 +513,3 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 14.  [^](#compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=416192](https://wiki.archlinux.org/index.php?title=Disk_encryption&oldid=416192)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

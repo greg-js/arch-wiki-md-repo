@@ -1,9 +1,5 @@
 # DNSSEC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -113,7 +109,7 @@ If you want full support of DNSSEC, you need each single application to use DNSS
     *   you need ldns and dnssec-root-zone-trust-anchors packages for this plugin
 *   dnssec-tools + firefox patch: [https://www.dnssec-tools.org/wiki/index.php/Firefox](https://www.dnssec-tools.org/wiki/index.php/Firefox)
 
-### [Chromium](/index.php/Chromium "Chromium")/<s>Google Chrome</s> (secure browsing - enhancement of HTTPS)
+### [Chromium](/index.php/Chromium "Chromium")/~~Google Chrome~~ (secure browsing - enhancement of HTTPS)
 
 *   Vote for [#50874](http://code.google.com/p/chromium/issues/detail?id=50874)
     *   Patches not yet...
@@ -189,14 +185,3 @@ You can check if your router, modem, AP, etc. supports DNSSEC (many different fe
 *   [https://bugs.archlinux.org/task/20325](https://bugs.archlinux.org/task/20325) - [DNSSEC] Add DNS validation support to ArchLinux
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSSEC&oldid=415029](https://wiki.archlinux.org/index.php?title=DNSSEC&oldid=415029)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # Simple stateful firewall
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page explains how to set up a stateful firewall using [iptables](/index.php/Iptables "Iptables"). It also explains what the rules mean and why they are needed. For simplicity, it is split into two major sections. The first section deals with a firewall for a single machine, the second sets up a NAT gateway in addition to the firewall from the first section.
 
 **Warning:** The rules are given in the order that they are executed. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. You should only follow the steps below while you are logged in locally.
@@ -644,11 +640,3 @@ and make sure your rules are loaded when you boot enabling the **iptables** [dae
 *   [25 Most Frequently Used Linux IPTables Rules Examples](http://www.thegeekstuff.com/2011/06/iptables-rules-examples/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&oldid=409969](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&oldid=409969)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

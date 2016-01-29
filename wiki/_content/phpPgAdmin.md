@@ -1,9 +1,5 @@
 # phpPgAdmin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
@@ -209,11 +205,3 @@ to
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpPgAdmin&oldid=413725](https://wiki.archlinux.org/index.php?title=PhpPgAdmin&oldid=413725)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

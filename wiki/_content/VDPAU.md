@@ -1,9 +1,5 @@
 # VDPAU
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [VA-API](/index.php/VA-API "VA-API")
@@ -35,155 +31,53 @@ Related articles
 
 ### Supported formats
 
-<table class="wikitable" style="width: 100%">
-
-<tbody>
-
-<tr>
-
-<th colspan="3">Open source</th>
-
-<th colspan="2">Proprietary</th>
-
-</tr>
-
-<tr>
-
-<th>AMD</th>
-
-<th>Intel</th>
-
-<th>Nvidia</th>
-
-<th>AMD</th>
-
-<th>Nvidia</th>
-
-</tr>
-
-<tr>
-
-<td>MPEG2 decoding</td>
-
-<td>Radeon 9500 and newer</td>
-
-<td>
+ Open source | Proprietary |
+ AMD | Intel | Nvidia | AMD | Nvidia |
+| MPEG2 decoding | Radeon 9500 and newer | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 8 and newer</td>
-
-<td>
+ | GeForce 8 and newer | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 8 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>MPEG4 decoding</td>
-
-<td>Radeon HD 6000 and newer</td>
-
-<td>
+ | GeForce 8 and newer |
+| MPEG4 decoding | Radeon HD 6000 and newer | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 200 and newer</td>
-
-<td>
+ | GeForce 200 and newer | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 200 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>H.264 decoding</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>GMA 4500<sup>1</sup>, Ironlake Graphics and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>HEVC (H.265) decoding</td>
-
-<td>
+ | GeForce 200 and newer |
+| H.264 decoding | Radeon HD 4000 and newer | GMA 4500<sup>1</sup>, Ironlake Graphics and newer | GeForce 8 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
+| HEVC (H.265) decoding | 
 
 <center>—</center>
 
-</td>
-
-<td>
+ | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>
+ | 
 
 <center>—</center>
 
-</td>
-
-<td>
+ | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 900<sup>4</sup> and newer</td>
-
-</tr>
-
-<tr>
-
-<td>VC1 decoding</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>
+ | GeForce 900<sup>4</sup> and newer |
+| VC1 decoding | Radeon HD 4000 and newer | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 8<sup>3</sup> and newer</td>
-
-<td>
+ | GeForce 8<sup>3</sup> and newer | 
 
 <center>—<sup>2</sup></center>
 
-</td>
-
-<td>GeForce 8<sup>3</sup> and newer</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ | GeForce 8<sup>3</sup> and newer |
 
 *   <sup>1</sup> Supported by the [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/)<sup><small>AUR</small></sup> package. See [Intel graphics#H.264 decoding on GMA 4500](/index.php/Intel_graphics#H.264_decoding_on_GMA_4500 "Intel graphics") for instructions and caveats.
 *   <sup>2</sup> As of version 0.3, the VA GL driver doesn't support any other hardware decoder than H.264.
@@ -241,39 +135,30 @@ For more information, see the [PRIME](/index.php/PRIME "PRIME") wiki page.
 
 *   **Adobe Flash Player** — see [Browser plugins#Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins").
 
-|| [flashplugin](https://www.archlinux.org/packages/?name=flashplugin)
+NaN
 
 *   **[MPlayer](/index.php/MPlayer "MPlayer") or [mplayer2](http://www.mplayer2.org/)** — see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer").
 
-|| [mplayer](https://www.archlinux.org/packages/?name=mplayer) [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup>
+NaN
 
 *   **gnome-mplayer** — To enable hardware acceleration: _Edit > Preferences > Player_, then set Video Output to `vdpau`.
 
-|| [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
+NaN
 
 *   **[SMplayer](/index.php/SMplayer "SMplayer")** — To enable hardware acceleration: _Options > Preferences > General > Video_, then set Output driver to `vdpau`.
 
-|| [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+NaN
 
 *   **bomi** — Hardware acceleration can be enabled: _Preferences > Video > Hardware acceleration_.
 
-[https://bomi-player.github.io](https://bomi-player.github.io) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup> [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Mpv](/index.php/Mpv "Mpv")** — see [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv").
 
-|| [mpv](https://www.archlinux.org/packages/?name=mpv)
+NaN
 
 *   **[VLC media player](/index.php/VLC_media_player "VLC media player")** — see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player").
 
-|| [vlc](https://www.archlinux.org/packages/?name=vlc)
+NaN
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413761](https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413761)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

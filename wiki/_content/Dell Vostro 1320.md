@@ -1,9 +1,5 @@
 # Dell Vostro 1320
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -57,139 +53,23 @@ This section is about getting the hardware of the Dell Vostro 1320 running prope
 
 A quick overview which components do work correctly, and which don't. Look at the appropriate section in order to get more details about a component.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td colspan="2">**Dell Vostro 1320 - Overview of the hardware support**</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2">_**Graphics**_</td>
-
-</tr>
-
-<tr>
-
-<td>[NVIDIA® GeForce™ 9300M GS Graphic Card](#NVIDIA.C2.AE_GeForce.E2.84.A2_9300M_GS)</td>
-
-<td style="background-color: green">**working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Integrated GMA X4500 HD Graphics](#GMA_X4500_HD)</td>
-
-<td style="background-color: orange">_untested_</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2">_**Multimedia**_</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background-color: green">**working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Webcam](#Webcam)</td>
-
-<td style="background-color: green">**working**</td>
-
-</tr>
-
-<tr>
-
-<td>Biometric Fingerprint Reader</td>
-
-<td style="background-color: orange">_untested_</td>
-
-</tr>
-
-<tr>
-
-<td>Extra Keyboard Keys</td>
-
-<td style="background-color: green">_working_</td>
-
-</tr>
-
-<tr>
-
-<td>[Card Reader](#Card_Reader)</td>
-
-<td style="background-color: green">_working_</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2">_**Wireless LAN**_</td>
-
-</tr>
-
-<tr>
-
-<td>[Dell Wireless 1397 Mini-Card (802.11 b/g)](#Dell_Wireless_1397_Mini-Card)</td>
-
-<td style="background-color: green">_reported working_</td>
-
-</tr>
-
-<tr>
-
-<td>[Dell Wireless 1510 Mini-Card (802.11n)](#Dell_Wireless_1510_Mini-Card)</td>
-
-<td style="background-color: green">_reported working_</td>
-
-</tr>
-
-<tr>
-
-<td>[Intel Pro Wireless Wi-Fi 5100 (802.11a/g/Draft-n)](#Intel_Pro_Wireless_Wi-Fi_5100)</td>
-
-<td style="background-color: green">**working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Intel WiFi Link 5300 Mini-Card (802.11 a/g/n)](#Intel_WiFi_Link_5300_Mini-Card)</td>
-
-<td style="background-color: green">**working**</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2">_**Bluetooth**_</td>
-
-</tr>
-
-<tr>
-
-<td>[Dell™ Wireless 355 Bluetooth® Module ROW](#Dell.E2.84.A2_Wireless_355_Bluetooth.C2.AE_Module_ROW)</td>
-
-<td style="background-color: green">_working_</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Dell Vostro 1320 - Overview of the hardware support** |
+| _**Graphics**_ |
+| [NVIDIA® GeForce™ 9300M GS Graphic Card](#NVIDIA.C2.AE_GeForce.E2.84.A2_9300M_GS) | **working** |
+| [Integrated GMA X4500 HD Graphics](#GMA_X4500_HD) | _untested_ |
+| _**Multimedia**_ |
+| Audio | **working** |
+| [Webcam](#Webcam) | **working** |
+| Biometric Fingerprint Reader | _untested_ |
+| Extra Keyboard Keys | _working_ |
+| [Card Reader](#Card_Reader) | _working_ |
+| _**Wireless LAN**_ |
+| [Dell Wireless 1397 Mini-Card (802.11 b/g)](#Dell_Wireless_1397_Mini-Card) | _reported working_ |
+| [Dell Wireless 1510 Mini-Card (802.11n)](#Dell_Wireless_1510_Mini-Card) | _reported working_ |
+| [Intel Pro Wireless Wi-Fi 5100 (802.11a/g/Draft-n)](#Intel_Pro_Wireless_Wi-Fi_5100) | **working** |
+| [Intel WiFi Link 5300 Mini-Card (802.11 a/g/n)](#Intel_WiFi_Link_5300_Mini-Card) | **working** |
+| _**Bluetooth**_ |
+| [Dell™ Wireless 355 Bluetooth® Module ROW](#Dell.E2.84.A2_Wireless_355_Bluetooth.C2.AE_Module_ROW) | _working_ |
 
 ## CPU
 
@@ -274,11 +154,3 @@ options sdhci debug_quirks=0x40
 This will disable ADMA.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_1320&oldid=380455](https://wiki.archlinux.org/index.php?title=Dell_Vostro_1320&oldid=380455)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

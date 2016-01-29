@@ -1,9 +1,5 @@
 # Rbenv
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [RVM](/index.php/RVM "RVM")
@@ -54,7 +50,3 @@ rbenv can be extended via a plugin system, and the rbenv wiki includes a [list o
 *   [Official web site](http://rbenv.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rbenv&oldid=410377](https://wiki.archlinux.org/index.php?title=Rbenv&oldid=410377)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

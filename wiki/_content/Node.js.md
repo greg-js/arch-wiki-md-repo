@@ -1,9 +1,5 @@
 # Node.js
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Node.js](http://nodejs.org/) is a javascript runtime environment combined with useful libraries. It uses [Google's V8 engine](https://code.google.com/p/v8/) to execute code outside of the browser. Due to its event-driven, non-blocking I/O model, it is suitable for real-time web applications.
 
 ## Contents
@@ -197,7 +193,3 @@ For further information on [nodejs](https://www.archlinux.org/packages/?name=nod
 *   IRC channel #node.js on irc.freenode.net
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Node.js&oldid=411035](https://wiki.archlinux.org/index.php?title=Node.js&oldid=411035)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

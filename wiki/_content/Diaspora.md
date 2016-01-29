@@ -1,9 +1,5 @@
 # Diaspora
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Diaspora](http://www.diasporafoundation.org/) is the privacy aware, personally controlled, do-it-all, open source social network.
 
 On November 23, 2010 was [announced](http://blog.joindiaspora.com/2010/11/23/private-alpha-released.html) that Diaspora is in [private alpha](http://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha) phase.
@@ -119,7 +115,3 @@ Exclude=diaspora
 *   [Diaspora git](http://github.com/diaspora/diaspora)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Diaspora&oldid=393988](https://wiki.archlinux.org/index.php?title=Diaspora&oldid=393988)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

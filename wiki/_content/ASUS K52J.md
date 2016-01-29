@@ -1,9 +1,5 @@
 # ASUS K52J
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **The parameters depend on the submodel...**
 
 ## Contents
@@ -144,7 +140,3 @@ ff:05.3 Host bridge: Intel Corporation Core Processor Integrated Memory Controll
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_K52J&oldid=377654](https://wiki.archlinux.org/index.php?title=ASUS_K52J&oldid=377654)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

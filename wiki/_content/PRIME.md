@@ -1,9 +1,5 @@
 # PRIME
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 PRIME is a technology used to manage hybrid graphics found on recent laptops ([Optimus for NVIDIA](/index.php/NVIDIA_Optimus "NVIDIA Optimus"), AMD Dynamic Switchable Graphics for Radeon). **PRIME GPU offloading** and **Reverse PRIME** is an attempt to support muxless hybrid graphics in the Linux kernel.
 
 ## Contents
@@ -222,12 +218,3 @@ CLUTTER_VBLANK=True
 *   [Nouveau Optimus](https://wiki.freedesktop.org/nouveau/Optimus/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PRIME&oldid=415470](https://wiki.archlinux.org/index.php?title=PRIME&oldid=415470)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

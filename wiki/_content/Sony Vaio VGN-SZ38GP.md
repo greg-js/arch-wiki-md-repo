@@ -1,9 +1,5 @@
 # Sony Vaio VGN-SZ38GP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -169,12 +165,3 @@ You can control the fan speed by using the **vaiofand** daemon that you can find
 You can automatically turn of some device like the bluetooth, the firewire port, the cd/dvd drive or the audio card by using the **vaiopower** daemon that you can find on this address : [http://vaio-utils.org/power/](http://vaio-utils.org/power/) There is also a PKGBUILD available in [AUR](https://aur.archlinux.org/packages/vaiopower/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VGN-SZ38GP&oldid=409245](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VGN-SZ38GP&oldid=409245)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

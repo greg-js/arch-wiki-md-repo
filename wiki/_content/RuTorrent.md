@@ -1,9 +1,5 @@
 # RuTorrent
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -140,11 +136,3 @@ See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config).
 *   [http://httpd.apache.org/docs/2.2/configuring.html](http://httpd.apache.org/docs/2.2/configuring.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RuTorrent&oldid=416557](https://wiki.archlinux.org/index.php?title=RuTorrent&oldid=416557)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

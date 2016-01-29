@@ -1,9 +1,5 @@
 # Samba
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
@@ -270,19 +266,19 @@ To allow users to mount it as long as the mount point resides in a directory con
 
 _SERVER_
 
-The server name.
+NaN
 
 _sharename_
 
-The shared directory.
+NaN
 
 _mountpoint_
 
-The local directory where the share will be mounted.
+NaN
 
 `-o [options]`
 
-See `man mount.cifs` for more information.
+NaN
 
 **Note:**
 
@@ -734,7 +730,3 @@ Make sure that the server has started. The shared directories should exist and b
 *   [Official Samba site](http://www.samba.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba&oldid=417250](https://wiki.archlinux.org/index.php?title=Samba&oldid=417250)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

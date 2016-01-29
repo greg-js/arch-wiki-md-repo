@@ -1,9 +1,5 @@
 # xdg-open
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Default applications](/index.php/Default_applications "Default applications")
@@ -165,115 +161,15 @@ Your answer becomes the default handler for that type of file. Mimeopen is insta
 
 **Reason:** There may be some benefit to making this a table, but [Template:App](/index.php/Template:App "Template:App") including upstream URLs gives all needed information in a simple manner (Discuss in [Talk:Xdg-open#](https://wiki.archlinux.org/index.php/Talk:Xdg-open))
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name/Package</th>
-
-<th>Method</th>
-
-<th>Based on</th>
-
-<th>Configuration file</th>
-
-</tr>
-
-<tr>
-
-<td>[busking-git](https://aur.archlinux.org/packages/busking-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busking-git)]</sup></td>
-
-<td>Regular expressions</td>
-
-<td>[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo)</td>
-
-<td>custom</td>
-
-</tr>
-
-<tr>
-
-<td>[linopen](https://aur.archlinux.org/packages/linopen/)<sup><small>AUR</small></sup></td>
-
-<td>[file](https://www.archlinux.org/packages/?name=file)</td>
-
-<td>custom</td>
-
-</tr>
-
-<tr>
-
-<td>[mimeo](https://aur.archlinux.org/packages/mimeo/)<sup><small>AUR</small></sup></td>
-
-<td>MIME-type, regular expressions</td>
-
-<td>[file](https://www.archlinux.org/packages/?name=file)</td>
-
-<td>`mimeapps.list`, `defaults.list`; custom is optional</td>
-
-</tr>
-
-<tr>
-
-<td>[mimi-git](https://aur.archlinux.org/packages/mimi-git/)<sup><small>AUR</small></sup></td>
-
-<td>[file](https://www.archlinux.org/packages/?name=file)</td>
-
-<td>custom</td>
-
-</tr>
-
-<tr>
-
-<td>[whippet](https://aur.archlinux.org/packages/whippet/)<sup><small>AUR</small></sup></td>
-
-<td>MIME-type, name, regular expressions</td>
-
-<td>SQLite database or [file](https://www.archlinux.org/packages/?name=file), [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc</td>
-
-<td>custom SQLite database or `mimeapps.list`</td>
-
-</tr>
-
-<tr>
-
-<td>[ayr](https://aur.archlinux.org/packages/ayr/)<sup><small>AUR</small></sup></td>
-
-<td>MIME-type, name, regular expressions</td>
-
-<td>[file](https://www.archlinux.org/packages/?name=file) or [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc</td>
-
-<td>`mimeapps.list`, `defaults.list`</td>
-
-</tr>
-
-<tr>
-
-<td>[sx-open](https://aur.archlinux.org/packages/sx-open/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sx-open)]</sup></td>
-
-<td>Regular expressions</td>
-
-<td>[file](https://www.archlinux.org/packages/?name=file), bash regex</td>
-
-<td>custom</td>
-
-</tr>
-
-<tr>
-
-<td>[ranger](https://www.archlinux.org/packages/?name=ranger) (rifle command)</td>
-
-<td>MIME-type, name, regular expressions</td>
-
-<td>custom</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name/Package | Method | Based on | Configuration file |
+| [busking-git](https://aur.archlinux.org/packages/busking-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busking-git)]</sup> | Regular expressions | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | custom |
+| [linopen](https://aur.archlinux.org/packages/linopen/)<sup><small>AUR</small></sup> | [file](https://www.archlinux.org/packages/?name=file) | custom |
+| [mimeo](https://aur.archlinux.org/packages/mimeo/)<sup><small>AUR</small></sup> | MIME-type, regular expressions | [file](https://www.archlinux.org/packages/?name=file) | `mimeapps.list`, `defaults.list`; custom is optional |
+| [mimi-git](https://aur.archlinux.org/packages/mimi-git/)<sup><small>AUR</small></sup> | [file](https://www.archlinux.org/packages/?name=file) | custom |
+| [whippet](https://aur.archlinux.org/packages/whippet/)<sup><small>AUR</small></sup> | MIME-type, name, regular expressions | SQLite database or [file](https://www.archlinux.org/packages/?name=file), [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | custom SQLite database or `mimeapps.list` |
+| [ayr](https://aur.archlinux.org/packages/ayr/)<sup><small>AUR</small></sup> | MIME-type, name, regular expressions | [file](https://www.archlinux.org/packages/?name=file) or [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | `mimeapps.list`, `defaults.list` |
+| [sx-open](https://aur.archlinux.org/packages/sx-open/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sx-open)]</sup> | Regular expressions | [file](https://www.archlinux.org/packages/?name=file), bash regex | custom |
+| [ranger](https://www.archlinux.org/packages/?name=ranger) (rifle command) | MIME-type, name, regular expressions | custom |
 
 **Note:** Some of the above packages replace `xdg-utils`. Those that do not can be symbolically linked to _xdg-open_ in the user's `$PATH` above `/usr/bin`, but some applications hard-code the absolute path `/usr/bin/xdg-open`. In this case, install [xdg-utils-no-open](https://aur.archlinux.org/packages/xdg-utils-no-open/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and copy the replacement to `/usr/bin/xdg-open`.
 
@@ -323,15 +219,3 @@ When _xdg-open_ fails to detect one of the [desktop environments](/index.php/Des
 Some environment variables, such as `BROWSER`, `DE`, and `DESKTOP_SESSION`, will change the behaviour of the default _xdg-open_. See [Environment variables](/index.php/Environment_variables "Environment variables") for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=416957](https://wiki.archlinux.org/index.php?title=Xdg-open&oldid=416957)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

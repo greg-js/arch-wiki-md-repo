@@ -1,9 +1,5 @@
 # AppArmor
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [AppArmor](https://en.wikipedia.org/wiki/AppArmor "wikipedia:AppArmor") is a [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
 
 ## Contents
@@ -151,12 +147,3 @@ Every breach of policy triggers a message in the system log, and many distributi
 *   [SELinux](/index.php/SELinux "SELinux")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AppArmor&oldid=413079](https://wiki.archlinux.org/index.php?title=AppArmor&oldid=413079)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

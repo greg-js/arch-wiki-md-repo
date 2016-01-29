@@ -1,18 +1,14 @@
 # Ceph
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Ceph is a storage platform with a focus on being distributed, resilient, and having good performance and high reliability. Ceph can also be used as a block storage solution for [virtual machines](https://en.wikipedia.org/wiki/Virtual_Machine "wikipedia:Virtual Machine") or through the use of [FUSE](/index.php/File_systems#FUSE-based_file_systems "File systems"), a conventional filesystem. Ceph is extremely configurable, with administrators being able to control virtually all aspects of the system. A command line interface is used to monitor and control the cluster. The platform also contains authentication & authorization features, and various gateways to make it compatible with systems such as [OpenStack Swift](https://en.wikipedia.org/wiki/OpenStack#Swift "wikipedia:OpenStack") and [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3 "wikipedia:Amazon S3").
 
 From [Wikipedia: Ceph (software)](https://en.wikipedia.org/wiki/Ceph_(software) "wikipedia:Ceph (software)"):
 
-Ceph is a free software storage platform designed to present object, block, and file storage from a single distributed computer cluster. Ceph's main goals are to be completely distributed without a single point of failure, scalable to the exabyte level, and freely-available. The data is replicated, making it fault tolerant.
+NaN
 
 From [Ceph.com](https://ceph.com/):
 
-Ceph is a distributed object store and file system designed to provide excellent performance, reliability and scalability.
+NaN
 
 **Warning:** The recommended installation method for Ceph is via an [upstream tool](https://github.com/ceph/ceph-deploy) which uses [SSH](/index.php/SSH "SSH") to connect to machines with the purpose of automatically installing, configuring, and managing Ceph. The upstream tool (ceph-deploy) does not currently support [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Until ceph-deploy includes support for Arch Linux, it is not possible to use the [quick installation method](http://ceph.com/docs/master/start/) due to the extensive use of the tool. The only other officially documented installation method is the [manual deployment guide](http://ceph.com/docs/master/install/manual-deployment/). This article therefore documents the manual procedure until Arch Linux is supported by the quick method.
 
@@ -79,8 +75,3 @@ As an example, for a monitor named `node1` start and enable `ceph-mon@node1.serv
     *   [Ceph](https://github.com/ceph/ceph)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ceph&oldid=401404](https://wiki.archlinux.org/index.php?title=Ceph&oldid=401404)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

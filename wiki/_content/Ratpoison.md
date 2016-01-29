@@ -1,9 +1,5 @@
 # Ratpoison
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -208,85 +204,18 @@ exec nitrogen --restore
 
 ## Useful keybindings
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>`Ctrl+t` `!` <_Program Name_> Start any program</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `?` Show key bindings</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `c` Start an X terminal</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `n` Switch to next window</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `p` Switch to previous window</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `1`-`9` Switch to windows 1-9</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `k` Close the current window</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `Shift+k` XKill the current application</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `s`,`Shift+s` Split the current frame into two vertical,horizontal ones</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `Tab`, `←`, `↑`, `→`, `↓` Switch to the next, left. top, right, bottom frame.</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `Shift+q` Make the current frame the only one</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+t` `:` Execute a ratpoison command</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| `Ctrl+t` `!` <_Program Name_> Start any program |
+| `Ctrl+t` `?` Show key bindings |
+| `Ctrl+t` `c` Start an X terminal |
+| `Ctrl+t` `n` Switch to next window |
+| `Ctrl+t` `p` Switch to previous window |
+| `Ctrl+t` `1`-`9` Switch to windows 1-9 |
+| `Ctrl+t` `k` Close the current window |
+| `Ctrl+t` `Shift+k` XKill the current application |
+| `Ctrl+t` `s`,`Shift+s` Split the current frame into two vertical,horizontal ones |
+| `Ctrl+t` `Tab`, `←`, `↑`, `→`, `↓` Switch to the next, left. top, right, bottom frame. |
+| `Ctrl+t` `Shift+q` Make the current frame the only one |
+| `Ctrl+t` `:` Execute a ratpoison command |
 
 ## Focus follows mouse
 
@@ -320,12 +249,3 @@ Many [display managers](/index.php/Display_manager "Display manager") (e.g., [Li
 *   [Stumpwm - a successor to Ratpoison written in Common lisp](http://www.nongnu.org/stumpwm/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=415887](https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=415887)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

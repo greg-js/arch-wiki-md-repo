@@ -1,9 +1,5 @@
 # Master Boot Record
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -147,13 +143,3 @@ NOTE: MAKE SURE YOU SELECT THE CORRECT DEVICE.
 *   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Master_Boot_Record&oldid=403209](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&oldid=403209)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

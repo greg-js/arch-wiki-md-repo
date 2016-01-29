@@ -1,9 +1,5 @@
 # AgenDAV
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DAViCal](/index.php/DAViCal "DAViCal")
@@ -45,7 +41,3 @@ Edit the configuration files `/etc/webapps/agendav/{config,caldav,database}.php`
 Serve the app via apache `/etc/webapps/agendav/apache.example.conf`, nginx/php-fpm `/etc/webapps/agendav/nginx.example.conf` or some other webserver.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AgenDAV&oldid=400397](https://wiki.archlinux.org/index.php?title=AgenDAV&oldid=400397)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

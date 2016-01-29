@@ -1,9 +1,5 @@
 # dwb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [dwb](http://portix.bitbucket.org/dwb/) is a lightweight and flexible web browser using the webkit engine. It is customizable through its web interface and fully usable with keyboard shortcuts.
 
 ## Contents
@@ -416,11 +412,3 @@ Browser Plugins can be enabled and disabled through the new [dwb:plugins dwb:plu
 If you are having problems with they layout of websites not loading correctly then give [dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup> a shot.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwb&oldid=413447](https://wiki.archlinux.org/index.php?title=Dwb&oldid=413447)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

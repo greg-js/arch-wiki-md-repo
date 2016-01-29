@@ -1,9 +1,5 @@
 # Dell Latitude D630
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Latitude D630 is a business line laptop made for corporate users who have a need for durability. This article will tell you how to get the basic components of the laptop running with Arch.
 
 ## Contents
@@ -114,7 +110,3 @@ To silence GTK+ apps that love to spew out system beeps for the most mundane of 
 Many of the recommendations for the [Dell Latitude D620#Recommendations](/index.php/Dell_Latitude_D620#Recommendations "Dell Latitude D620") apply here too.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_D630&oldid=410697](https://wiki.archlinux.org/index.php?title=Dell_Latitude_D630&oldid=410697)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

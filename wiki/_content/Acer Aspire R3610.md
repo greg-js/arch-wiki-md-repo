@@ -1,9 +1,5 @@
 # Acer Aspire R3610
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains information on the Acer Aspire Revo R3610 nettop.
 
 ## Contents
@@ -131,7 +127,3 @@ The nVidia Corporation ION VGA is part of the NV50 family. See [NVIDIA](/index.p
 At the time of writing the open source [nouveau driver](/index.php/Nouveau "Nouveau") is supported but HDMI audio output has not been implemented. See [http://nouveau.freedesktop.org/wiki/FeatureMatrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix) for the current progress on the driver.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_R3610&oldid=383290](https://wiki.archlinux.org/index.php?title=Acer_Aspire_R3610&oldid=383290)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

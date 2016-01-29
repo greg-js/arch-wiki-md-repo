@@ -1,9 +1,5 @@
 # fstab
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")
@@ -60,29 +56,7 @@ _file_system_    _dir_    _type_    _options_    _dump_    _pass_
 
 ```
 
-_file system_
-
-The partition or storage device to be mounted.
-
-_dir_
-
-The mountpoint where <file system> is mounted to.
-
-_type_
-
-The file system type of the partition or storage device to be mounted. Many different file systems are supported: `ext2`, `ext3`, `ext4`, `btrfs`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` and `auto`. The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
-
-_options_
-
-Mount options of the filesystem to be used. See the [mount man page](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS). Please note that some options are specific to filesystems; to discover them see below in the aforementioned mount man page.
-
-_dump_
-
-Used by the dump utility to decide when to make a backup. Dump checks the entry and uses the number to decide if a file system should be backed up. Possible entries are 0 and 1\. If 0, dump will ignore the file system; if 1, dump will make a backup. Most users will not have dump installed, so they should put 0 for the _dump_ entry.
-
-_pass_
-
-Used by [fsck](/index.php/Fsck "Fsck") to decide which order filesystems are to be checked. Possible entries are 0, 1 and 2\. The root file system should have the highest priority 1 (unless its type is [btrfs](/index.php/Btrfs "Btrfs"), in which case this field should be 0) - all other file systems you want to have checked should have a 2\. File systems with a value 0 will not be checked by the fsck utility.
+NaN
 
 ## Identifying filesystems
 
@@ -232,11 +206,9 @@ The use of `noatime`, `nodiratime` or `relatime` can impact drive performance.
 
 *   The `strictatime` option updates the _atime_ of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
 
-Using the `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for a rare few like [Mutt](/index.php/Mutt "Mutt") that needs such information. For mutt, you should only use the `relatime` option.
+NaN
 
-The `nodiratime` option disables the writing of file access times only for directories while other files still get access times written.
-
-**Note:** `noatime` already includes `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
+NaN
 
 *   `relatime` enables the writing of file access times only when the file is being modified (unlike `noatime` where the file access time will never be changed and will be older than the modification time). The best compromise might be the use this option since programs like [Mutt](/index.php/Mutt "Mutt") will continue to work, but you will still have a performance boost as the files will not get access times updated unless they are modified. This option is used when the `defaults` keyword option, `atime` option (which means to use the kernel default, which is relatime; see `man 8 mount` and [[1]](http://en.wikipedia.org/wiki/Stat_%28system_call%29#Solutions)) or no options at all are specified in _fstab_ for a given mount point.
 
@@ -295,13 +267,3 @@ Sometimes programs or users cannot access one specific directory due to insuffic
 *   [Adding Samba shares to /etc/fstab](/index.php/Samba#Add_Share_to_.2Fetc.2Ffstab "Samba")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fstab&oldid=413878](https://wiki.archlinux.org/index.php?title=Fstab&oldid=413878)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

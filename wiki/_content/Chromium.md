@@ -1,9 +1,5 @@
 # Chromium
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks")
@@ -147,7 +143,3 @@ Version [46.0.2490.71-2](https://projects.archlinux.org/svntogit/packages.git/co
 *   [List of Chromium command-line switches](http://peter.sh/experiments/chromium-command-line-switches/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromium&oldid=409303](https://wiki.archlinux.org/index.php?title=Chromium&oldid=409303)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

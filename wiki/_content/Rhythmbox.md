@@ -1,9 +1,5 @@
 # Rhythmbox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Rhythmbox** is an audio player that plays and helps organize digital music. It is designed to work well under the [GNOME](/index.php/GNOME "GNOME") desktop using the [GStreamer](/index.php/GStreamer "GStreamer") media framework.
 
 ## Contents
@@ -134,7 +130,3 @@ Creating a lastFM account and login in with the rhythmbox plugin can solve the p
 Install [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rhythmbox&oldid=389774](https://wiki.archlinux.org/index.php?title=Rhythmbox&oldid=389774)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

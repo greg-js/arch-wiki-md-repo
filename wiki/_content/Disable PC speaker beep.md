@@ -1,9 +1,5 @@
 # Disable PC speaker beep
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -158,11 +154,3 @@ This is documented in the [Gnome Developer Handbook](https://developer.gnome.org
 *   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Disable_PC_speaker_beep&oldid=398081](https://wiki.archlinux.org/index.php?title=Disable_PC_speaker_beep&oldid=398081)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

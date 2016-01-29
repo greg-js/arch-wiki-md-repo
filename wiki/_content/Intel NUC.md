@@ -1,9 +1,5 @@
 # Intel NUC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Next Unit of Computing (NUC)](https://en.wikipedia.org/wiki/Next_Unit_of_Computing) is a small-form-factor (SFF) PC designed by Intel and is based on soldered-on low-power i3, i5 and i7 CPUs. Its motherboard measures 4 × 4 inches (10.16 × 10.16 cm).
 
 The barebone kits consist of the board, in a plastic case with a fan, an external power supply and VESA mounting plate. Intel does offer for sale just the NUC motherboards, which have a built-in CPU, although (as of 2013) the price of a NUC motherboard is very close to the corresponding cased kit; third-party cases for the NUC boards are also available.
@@ -77,7 +73,3 @@ The workaround for this issue is to disable all wake-on-CIR (infrared sensor) op
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417385](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=417385)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS")

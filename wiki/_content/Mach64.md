@@ -1,9 +1,5 @@
 # Mach64
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [The Mach 64 chip](http://en.wikipedia.org/wiki/ATI_Mach#Mach_64) is an old graphic accelerator developped by ATI. This board has basic 3D capabilites. Its support on Linux is poor but exists. This page is a walkthrough to setup Mach 64 graphics chipsets (including ATI Rage Pro) and obtain direct rendering on some of them.
 
 ## Contents
@@ -116,8 +112,3 @@ OpenGL renderer string: Mesa DRI Mach64 [Rage Pro] 20051019 AGP 2x x86/MMX/SSE
 If OpenGL renderer string says "Software Rasterizer", DRI is not working, even if direct rendering says "yes".
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mach64&oldid=412129](https://wiki.archlinux.org/index.php?title=Mach64&oldid=412129)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")

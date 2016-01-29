@@ -1,9 +1,5 @@
 # Infinality
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fonts](/index.php/Fonts "Fonts")
@@ -359,13 +355,3 @@ This will remove the entire font cache and recreate it from scratch.
 *   [infinality-bundle-fonts: a free multilingual font collection for Arch](https://bbs.archlinux.org/viewtopic.php?id=170976) - _infinality-bundle-fonts_ support thread in the Arch Linux Forums
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Infinality&oldid=413518](https://wiki.archlinux.org/index.php?title=Infinality&oldid=413518)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fonts](/index.php/Category:Fonts "Category:Fonts")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

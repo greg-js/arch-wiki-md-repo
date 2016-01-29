@@ -1,12 +1,8 @@
 # Jumbo frames
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Jumbo_frame "wikipedia:Jumbo frame"):
 
-_In computer networking, jumbo frames are Ethernet frames with more than 1,500 bytes of payload (MTU). Conventionally, jumbo frames can carry up to 9,000 bytes of payload, but variations exist and some care must be taken when using the term. Many, but not all, Gigabit Ethernet switches and Gigabit Ethernet network interface cards support jumbo frames, but all Fast Ethernet switches and Fast Ethernet network interface cards support only standard-sized frames._
+NaN
 
 Using a larger MTU value (jumbo frames) can significantly speed up your network transfers.
 
@@ -112,125 +108,15 @@ Both machine A and machine B are using EIDE hard drives circa ~2004; a modern SA
 
 _Times and throughput represent the average of three runs._
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>mtu=1500</td>
-
-<td>t (sec)</td>
-
-<td>Kb/sec</td>
-
-<td>mtu=4000</td>
-
-<td>t (sec)</td>
-
-<td>Kb/sec</td>
-
-<td>mtu=9000</td>
-
-<td>t (sec)</td>
-
-<td>Kb/sec</td>
-
-</tr>
-
-<tr>
-
-<td>A to B</td>
-
-<td>48</td>
-
-<td>21,844</td>
-
-<td>A to B</td>
-
-<td>44</td>
-
-<td>23,830</td>
-
-<td>A to B</td>
-
-<td>49</td>
-
-<td>21,398</td>
-
-</tr>
-
-<tr>
-
-<td>B to A</td>
-
-<td>81</td>
-
-<td>12,945</td>
-
-<td>B to A</td>
-
-<td>41</td>
-
-<td>25,574</td>
-
-<td>B to A</td>
-
-<td>41</td>
-
-<td>25,574</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| mtu=1500 | t (sec) | Kb/sec | mtu=4000 | t (sec) | Kb/sec | mtu=9000 | t (sec) | Kb/sec |
+| A to B | 48 | 21,844 | A to B | 44 | 23,830 | A to B | 49 | 21,398 |
+| B to A | 81 | 12,945 | B to A | 41 | 25,574 | B to A | 41 | 25,574 |
 
 **Summary of Test 1**
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>4k vs. 1.5k</td>
-
-<td> % change</td>
-
-<td>9k vs. 1.5k</td>
-
-<td> % change</td>
-
-</tr>
-
-<tr>
-
-<td>A to B</td>
-
-<td>+9 %</td>
-
-<td>A to B</td>
-
-<td>-2 %</td>
-
-</tr>
-
-<tr>
-
-<td>B to A</td>
-
-<td>+98 %</td>
-
-<td>B to A</td>
-
-<td>+98 %</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 4k vs. 1.5k |  % change | 9k vs. 1.5k |  % change |
+| A to B | +9 % | A to B | -2 % |
+| B to A | +98 % | B to A | +98 % |
 
 * * *
 
@@ -238,125 +124,15 @@ _Times and throughput represent the average of three runs._
 
 _Times and throughput represent the average of three runs._
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>mtu=1500</td>
-
-<td>t (sec)</td>
-
-<td>Kb/sec</td>
-
-<td>mtu=4000</td>
-
-<td>t (sec)</td>
-
-<td>Kb/sec</td>
-
-<td>mtu=9000</td>
-
-<td>t (sec)</td>
-
-<td>Kb/sec</td>
-
-</tr>
-
-<tr>
-
-<td>A to B</td>
-
-<td>59</td>
-
-<td>21,753</td>
-
-<td>A to B</td>
-
-<td>51</td>
-
-<td>25,165</td>
-
-<td>A to B</td>
-
-<td>57</td>
-
-<td>22,516</td>
-
-</tr>
-
-<tr>
-
-<td>B to A</td>
-
-<td>94</td>
-
-<td>13,654</td>
-
-<td>B to A</td>
-
-<td>46</td>
-
-<td>27,901</td>
-
-<td>B to A</td>
-
-<td>49</td>
-
-<td>26,193</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| mtu=1500 | t (sec) | Kb/sec | mtu=4000 | t (sec) | Kb/sec | mtu=9000 | t (sec) | Kb/sec |
+| A to B | 59 | 21,753 | A to B | 51 | 25,165 | A to B | 57 | 22,516 |
+| B to A | 94 | 13,654 | B to A | 46 | 27,901 | B to A | 49 | 26,193 |
 
 **Summary of Test 2**
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>4k vs. 1.5k</td>
-
-<td> % change</td>
-
-<td>9k vs. 1.5k</td>
-
-<td> % change</td>
-
-</tr>
-
-<tr>
-
-<td>A to B</td>
-
-<td>+16 %</td>
-
-<td>A to B</td>
-
-<td>+4 %</td>
-
-</tr>
-
-<tr>
-
-<td>B to A</td>
-
-<td>+4%</td>
-
-<td>B to A</td>
-
-<td>+92 %</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 4k vs. 1.5k |  % change | 9k vs. 1.5k |  % change |
+| A to B | +16 % | A to B | +4 % |
+| B to A | +4% | B to A | +92 % |
 
 * * *
 
@@ -384,7 +160,3 @@ Contrary to what some web sites state, this setup works 100% fine. Transfers ins
 *   [Gigabit Ethernet Jumbo Frames - And why you should care](http://sd.wareonearth.com/~phil/jumbo.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jumbo_frames&oldid=337349](https://wiki.archlinux.org/index.php?title=Jumbo_frames&oldid=337349)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

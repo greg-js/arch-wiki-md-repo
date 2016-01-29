@@ -1,9 +1,5 @@
 # Acer Aspire 8920G
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -31,111 +27,19 @@ This is my 1st ever wiki and I hope that by writing this it can benefit another 
 
 ### Standard Hardware
 
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Hardware</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>Processor</td>
-
-<td>Intel(R) Core(TM)2 DuoCPU T8300 @ 2.40GHz</td>
-
-</tr>
-
-<tr>
-
-<td>System Memory</td>
-
-<td>4GB DDR2 667 MHz</td>
-
-</tr>
-
-<tr>
-
-<td>Graphic Card</td>
-
-<td>NVIDIA® GeForce® 9500M GS with up to 1280 MB of TurboCache™ (512 MB of dedicated GDDR2 VRAM, up to 768 MB of shared system memory</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>18.4” Full HD 1920 x 1080 resolution, high-brightness (300- cd/m2) Acer CineCrystal™ TFT LCD, two lamps, 8 ms high-def response time, 16:9 aspect ratio</td>
-
-</tr>
-
-<tr>
-
-<td>Sound Card</td>
-
-<td>Intel High Definition Audio Controller</td>
-
-</tr>
-
-<tr>
-
-<td>CD/DVD</td>
-
-<td>2X Blu-ray Disc™ Super Multi double-layer drive</td>
-
-</tr>
-
-<tr>
-
-<td>Lan</td>
-
-<td>Attansic Technology Corp. Atheros AR8121/AR8113/AR8114 PCI-E Ethernet Controller</td>
-
-</tr>
-
-<tr>
-
-<td>WLan</td>
-
-<td>Intel® Wireless WiFi Link 4965AGN (dual-band quad-mode 802.11a/b/g/Draft-N)</td>
-
-</tr>
-
-<tr>
-
-<td>WPan</td>
-
-<td>Bluetooth® 2.0+EDR (Enhanced Data Rate)</td>
-
-</tr>
-
-<tr>
-
-<td>Webcam</td>
-
-<td>Acer OrbiCam integrated 1.3 megapixel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td>Synaptics PS/2 Port Touchpad</td>
-
-</tr>
-
-<tr>
-
-<td>I/O Interface</td>
-
-<td>
+| Hardware | Description |
+| Processor | Intel(R) Core(TM)2 DuoCPU T8300 @ 2.40GHz |
+| System Memory | 4GB DDR2 667 MHz |
+| Graphic Card | NVIDIA® GeForce® 9500M GS with up to 1280 MB of TurboCache™ (512 MB of dedicated GDDR2 VRAM, up to 768 MB of shared system memory |
+| Display | 18.4” Full HD 1920 x 1080 resolution, high-brightness (300- cd/m2) Acer CineCrystal™ TFT LCD, two lamps, 8 ms high-def response time, 16:9 aspect ratio |
+| Sound Card | Intel High Definition Audio Controller |
+| CD/DVD | 2X Blu-ray Disc™ Super Multi double-layer drive |
+| Lan | Attansic Technology Corp. Atheros AR8121/AR8113/AR8114 PCI-E Ethernet Controller |
+| WLan | Intel® Wireless WiFi Link 4965AGN (dual-band quad-mode 802.11a/b/g/Draft-N) |
+| WPan | Bluetooth® 2.0+EDR (Enhanced Data Rate) |
+| Webcam | Acer OrbiCam integrated 1.3 megapixel |
+| Touchpad | Synaptics PS/2 Port Touchpad |
+| I/O Interface | 
 
 *   1 x ExpressCard™/54 slot
 *   1 x 5-in-one card reader: SD™ Card, MultiMediaCard, Memory Stick®, Memory Stick PRO™ or xD-Picture Card™
@@ -152,29 +56,9 @@ This is my 1st ever wiki and I hope that by writing this it can benefit another 
 *   1 x Acer CineDash media console capacitive human interface device
 *   1 x 105-/106-key keyboard English
 
-</td>
-
-</tr>
-
-<tr>
-
-<td>Printer</td>
-
-<td>HP Color OfficeJet 6300</td>
-
-</tr>
-
-<tr>
-
-<td>NAS</td>
-
-<td>Buffalo Linkstation Pro 1.5Tb</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
+| Printer | HP Color OfficeJet 6300 |
+| NAS | Buffalo Linkstation Pro 1.5Tb |
 
 ## System Files and Command Outputs
 
@@ -240,7 +124,7 @@ Works out of the box. See [Network configuration](/index.php/Network_configurati
 
 I assume by now that you have a working desktop and just need to "tweak" the system for 3-D apps and power management so this is what I changed in my system.
 
-In the /etc/X11/xorg.conf file I made the following changes to allow compiz eye candy and power management. The PowerMizer options are set to lowest performance on battery, with the option of increasing speed if needed and the system will run at full speed when the mains are plugged in.  
+In the /etc/X11/xorg.conf file I made the following changes to allow compiz eye candy and power management. The PowerMizer options are set to lowest performance on battery, with the option of increasing speed if needed and the system will run at full speed when the mains are plugged in.
 
 Make these changes to the Device section
 
@@ -261,11 +145,3 @@ EndSection
 See [Power management](/index.php/Power_management "Power management").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_8920G&oldid=398880](https://wiki.archlinux.org/index.php?title=Acer_Aspire_8920G&oldid=398880)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

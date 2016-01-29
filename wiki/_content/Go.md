@@ -1,9 +1,5 @@
 # Go
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Go](http://golang.org/) is a statically-typed language with syntax loosely derived from that of C, adding garbage collected memory management, type safety, some dynamic-typing capabilities, additional built-in types such as variable-length arrays and key-value maps, and a large standard library.
 
 ## Contents
@@ -118,7 +114,3 @@ For more information, see [FS#30287](https://bugs.archlinux.org/task/30287).
 *   [IDEs and Plugins for Go](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Go&oldid=410726](https://wiki.archlinux.org/index.php?title=Go&oldid=410726)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

@@ -1,9 +1,5 @@
 # Solid State Drives
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
@@ -353,61 +349,10 @@ Using a journaling filesystem such as ext4 on an SSD **without** a journal is an
 
 **Amount of data written (in megabytes) on an ext4 file system mounted with `noatime`.**
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>operation</th>
-
-<th>journal</th>
-
-<th>w/o journal</th>
-
-<th>percent change</th>
-
-</tr>
-
-<tr>
-
-<th>git clone</th>
-
-<td>367.0</td>
-
-<td>353.0</td>
-
-<td>3.81 %</td>
-
-</tr>
-
-<tr>
-
-<th>make</th>
-
-<td>207.6</td>
-
-<td>199.4</td>
-
-<td>3.95 %</td>
-
-</tr>
-
-<tr>
-
-<th>make clean</th>
-
-<td>6.45</td>
-
-<td>3.73</td>
-
-<td>42.17 %</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| operation | journal | w/o journal | percent change |
+| git clone | 367.0 | 353.0 | 3.81 % |
+| make | 207.6 | 199.4 | 3.95 % |
+| make clean | 6.45 | 3.73 | 42.17 % |
 
 _"What the results show is that metadata-heavy workloads, such as make clean, do result in almost twice the amount data written to disk. This is to be expected, since all changes to metadata blocks are first written to the journal and the journal transaction committed before the metadata is written to their final location on disk. However, for more common workloads where we are writing data as well as modifying filesystem metadata blocks, the difference is much smaller."_
 
@@ -523,13 +468,3 @@ If you starting to encounter SATA related errors when using such daemon then you
 *   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=416181](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&oldid=416181)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

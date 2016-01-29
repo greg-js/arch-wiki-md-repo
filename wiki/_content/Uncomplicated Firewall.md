@@ -1,12 +1,8 @@
 # Uncomplicated Firewall
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](https://launchpad.net/ufw):
 
-_Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilter [firewall](/index.php/Firewall "Firewall"). It provides a command line interface and aims to be uncomplicated and easy to use._
+NaN
 
 ## Contents
 
@@ -227,7 +223,3 @@ The module will appear under "Network and Connectivity" category.
 *   [UFW manual](http://manpages.ubuntu.com/manpages/natty/en/man8/ufw.8.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Uncomplicated_Firewall&oldid=411956](https://wiki.archlinux.org/index.php?title=Uncomplicated_Firewall&oldid=411956)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")

@@ -1,9 +1,5 @@
 # Cinnamon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Nemo](/index.php/Nemo "Nemo")
@@ -84,17 +80,7 @@ $ pacman -Ql cinnamon | awk -F'[_.]' '/cs_.+\.py/ {print $2}'
 
 ```
 
-Printers
-
-For configure printers, install the [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer) package.
-
-Networking
-
-To add support for the networking module, enable [Network Manager](/index.php/NetworkManager#Configuration "NetworkManager"). In order for NetworkManager to store Wi-Fi passwords, you will need to also install [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
-
-Bluetooth
-
-For Bluetooth device support, install the [blueberry](https://www.archlinux.org/packages/?name=blueberry) package.
+NaN
 
 ### Applets and extensions
 
@@ -227,7 +213,3 @@ $ ln -s /bin/true /usr/local/bin/nm-applet
 The ability to blacklist particular icons from the system tray (such as the _nm-applet_ icon) has been [requested upstream](https://github.com/linuxmint/Cinnamon/issues/3318).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=415407](https://wiki.archlinux.org/index.php?title=Cinnamon&oldid=415407)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

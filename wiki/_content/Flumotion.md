@@ -1,9 +1,5 @@
 # Flumotion
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -61,11 +57,3 @@ flumotion-worker -d 3 -u user -p password
 *   ncurses: `flumotion-admin-text`
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Flumotion&oldid=374386](https://wiki.archlinux.org/index.php?title=Flumotion&oldid=374386)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

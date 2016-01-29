@@ -1,9 +1,5 @@
 # International communities
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [https://archlinux.org](https://archlinux.org) is the home of the official Arch Linux website, forums, and wiki. However, several unofficial community-run sites are available for international users who would rather communicate in their own language. You can find a list of these communities below.
 
 Please note that our official wiki also supports internationalized content. In addition, we have an international forum where you can post in your native language. These tools can be used in addition to, in parallel with, or as a part of the international communities listed below.
@@ -192,11 +188,3 @@ This list is by no means complete. If you know of a community that is not listed
 *   [Help:i18n#Languages](/index.php/Help:I18n#Languages "Help:I18n")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=International_communities&oldid=417600](https://wiki.archlinux.org/index.php?title=International_communities&oldid=417600)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

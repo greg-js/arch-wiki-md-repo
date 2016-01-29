@@ -1,9 +1,5 @@
 # Network Security Services
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Network Security Services (NSS)** is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 
 Applications built with NSS can support [SSL](https://en.wikipedia.org/wiki/SSL "wikipedia:SSL") v2 and v3, [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), [PKCS](https://en.wikipedia.org/wiki/PKCS "wikipedia:PKCS") #5, #7, [PKCS #11](https://en.wikipedia.org/wiki/PKCS_11 "wikipedia:PKCS 11"), [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12 "wikipedia:PKCS 12"), [S/MIME](https://en.wikipedia.org/wiki/S/MIME "wikipedia:S/MIME"), [X.509](https://en.wikipedia.org/wiki/X.509 "wikipedia:X.509") v3 certificates, and other security standards.
@@ -88,7 +84,3 @@ $ certutil -d sql:$HOME/.pki/nssdb -D -n _certificate_nickname_
 *   [Managing Certificate Trust flags in NSS Database](http://blogs.oracle.com/meena/entry/notes_about_trust_flags) on Meena's blog.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Security_Services&oldid=412137](https://wiki.archlinux.org/index.php?title=Network_Security_Services&oldid=412137)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

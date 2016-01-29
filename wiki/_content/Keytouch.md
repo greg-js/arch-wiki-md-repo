@@ -1,9 +1,5 @@
 # Keytouch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 KeyTouch is a program which allows you to easily configure the extra function keys of your keyboard. This means that you can define, for every individual function key, what to do if it is pressed.
 
 This HOWTO will try to explain how keytouch is used in Arch Linux. For further documentation, please have a look at the [keytouch official documentation](http://keytouch.sourceforge.net/doc.html).
@@ -209,12 +205,3 @@ Satellite-L25-SP141.Toshiba
 That should do the trick.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Keytouch&oldid=392315](https://wiki.archlinux.org/index.php?title=Keytouch&oldid=392315)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

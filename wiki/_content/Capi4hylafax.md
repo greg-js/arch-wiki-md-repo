@@ -1,9 +1,5 @@
 # Capi4hylafax
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -49,11 +45,3 @@ For comments about the package please use this thread: [https://bbs.archlinux.or
 For Hints and Tips please have a look at [Hylafax](/index.php/Hylafax "Hylafax") wiki.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Capi4hylafax&oldid=382709](https://wiki.archlinux.org/index.php?title=Capi4hylafax&oldid=382709)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

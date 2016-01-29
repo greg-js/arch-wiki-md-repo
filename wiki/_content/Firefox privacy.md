@@ -1,9 +1,5 @@
 # Firefox privacy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Firefox](/index.php/Firefox "Firefox")
@@ -169,7 +165,3 @@ Select a known common platform that corresponds with your user agent.
 **Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414549](https://wiki.archlinux.org/index.php?title=Firefox_privacy&oldid=414549)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

@@ -1,9 +1,5 @@
 # CDemu
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [CDemu](http://cdemu.sourceforge.net/) is a software suite designed to emulate an optical drive and disc (including CD-ROMs and DVD-ROMs). It enables you to use other disk image formats that contain more than just the standard ISO-9660 filesystem, for instance .bin/.cue, .nrg, or .ccd images. `mount` can directly handle only .iso disc images (which contain a single filesystem), but many images contain multiple sessions, mixed data/audio tracks… In short, cdemu enables you to mount nearly any kind of image file with ease.
 
 ## Installation
@@ -140,7 +136,3 @@ Displaying daemon and library version:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CDemu&oldid=403941](https://wiki.archlinux.org/index.php?title=CDemu&oldid=403941)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Optical](/index.php/Category:Optical "Category:Optical")

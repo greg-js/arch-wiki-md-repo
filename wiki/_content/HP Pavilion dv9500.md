@@ -1,9 +1,5 @@
 # HP Pavilion dv9500
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -56,11 +52,3 @@ to section "! $inetkbds = ..." in /usr/share/X11/xkb/rules/xorg. Now you can res
 See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv9500&oldid=399209](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv9500&oldid=399209)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

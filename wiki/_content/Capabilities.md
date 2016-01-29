@@ -1,9 +1,5 @@
 # Capabilities
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Capabilities** (POSIX 1003.1e, capabilities(7)) provide fine-grained control over superuser permissions, allowing use of the root user to be avoided. Software developers are encouraged to replace uses of the powerful [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") attribute in a system binary with a more minimal set of capabilities. Many packages make use of capabilities, such as CAP_NET_RAW being used for the `ping` and `ping6` binaries provided by [iputils](https://www.archlinux.org/packages/?name=iputils). This enables e.g. `ping` to be run by a normal user (as with the **setuid** method), while at the same time limiting the security consequences of a potential vulnerability in `ping`.
 
 ## Contents
@@ -100,7 +96,3 @@ $ find /usr/bin /usr/lib -perm /2000 -group root
 *   [DeveloperWiki:Security#Replacing setuid with capabilities](/index.php/DeveloperWiki:Security#Replacing_setuid_with_capabilities "DeveloperWiki:Security")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Capabilities&oldid=412049](https://wiki.archlinux.org/index.php?title=Capabilities&oldid=412049)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

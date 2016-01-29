@@ -1,9 +1,5 @@
 # Armstone A9
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The ArmStone A9 is an ARM developement platform board in PicoITX form factor with Freescale i.MX6 CPU.
 
 ## Contents
@@ -82,7 +78,3 @@ The command `run bootcmd` initiates the boot process by starting the kernel.
 *   [Linux documentation (pdf)](https://www.fs-net.de/assets/download/docu/common/en/FSiMX6_FirstSteps_eng.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=413510](https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=413510)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture")

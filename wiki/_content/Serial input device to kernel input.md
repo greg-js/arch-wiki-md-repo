@@ -1,9 +1,5 @@
 # Serial input device to kernel input
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Although USB is the most popular way to connect input devices such as mice, serial input devices, such as older mice, and more exotic input devices such as 3Dconnexion Spaceballs are still quite usable, either with a serial port built into the computer, or via a USB to serial converter dongle.
 
 The traditional way to support these serially attached input devices was to configure _each_ application with the details such as which serial port the input device was attached to and what protocol the device used. As the most common application people used with a serial input device was X.org / XFree86, this wasn't too much of a problem. However, if you used a variety of applications that needed to talk to the serial input device directly, you may encounter limitations to which serial input device or protocol each application supported. Some applications may not have supported a serial input device you'd have preferred to use.
@@ -127,7 +123,3 @@ To have your serial input device work everytime you boot, enable the service:
 And that is all you have to do!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Serial_input_device_to_kernel_input&oldid=383009](https://wiki.archlinux.org/index.php?title=Serial_input_device_to_kernel_input&oldid=383009)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")

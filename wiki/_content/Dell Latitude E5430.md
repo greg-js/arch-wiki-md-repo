@@ -1,9 +1,5 @@
 # Dell Latitude E5430
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Latitude E5430 is a business line laptop made for corporate users who have a need for durability. This article will tell you how to get the basic components of the laptop running with Arch.
 
 ## Contents
@@ -125,7 +121,3 @@ You should follow instructions for installing [cpufrequtils](/index.php/Cpufrequ
 Make sure you install the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as it is required by the touchpad
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_E5430&oldid=325493](https://wiki.archlinux.org/index.php?title=Dell_Latitude_E5430&oldid=325493)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

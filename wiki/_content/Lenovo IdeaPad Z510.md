@@ -1,9 +1,5 @@
 # Lenovo IdeaPad Z510
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 System Specification](#System_Specification)
@@ -97,7 +93,3 @@ This solution is adapted from [here](http://alsa.opensrc.org/MultipleCards#Reord
 As of Kernel 3.15.2-1, the trackpad - including two-finger scroll - should work out of the box.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Z510&oldid=382033](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Z510&oldid=382033)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

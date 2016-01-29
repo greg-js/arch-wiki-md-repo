@@ -1,9 +1,5 @@
 # DAViCal
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Kcaldav](/index.php/Kcaldav "Kcaldav")
@@ -59,7 +55,3 @@ Then run createdb as root:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DAViCal&oldid=400502](https://wiki.archlinux.org/index.php?title=DAViCal&oldid=400502)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

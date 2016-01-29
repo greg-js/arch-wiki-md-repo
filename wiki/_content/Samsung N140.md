@@ -1,9 +1,5 @@
 # Samsung N140
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article provides information about installing and setting up Arch Linux on the Samsung N140\. It is also relevant for the Samsung N130 which is identical except for the omission of Bluetooth and stereo speakers (and possibly a different battery capacity). There are versions of the N130 which include a 3G cellular modem, available from Vodafone and China Mobile. The [Samsung NC10](/index.php/Samsung_NC10 "Samsung NC10") is similar but not identical to the N140, so you may or may not find useful information on that page.
 
 ## Contents
@@ -275,7 +271,3 @@ Select the CPU frequency governor by adding the following lines to a systemd tmp
 **Note:** Contrary to the advice in many places `hdparm -B 255 /dev/sda` does NOT necessarily turn off advanced power management. What happens depends on the disk model. With the Samsung HM160HI disk 255 results in very frequent spindowns
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_N140&oldid=400994](https://wiki.archlinux.org/index.php?title=Samsung_N140&oldid=400994)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")

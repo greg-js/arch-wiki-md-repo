@@ -1,9 +1,5 @@
 # MySQL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
@@ -51,11 +47,11 @@ Alternative implementations are:
 
 *   **Oracle MySQL** — An implementation by Oracle Corporation.
 
-[https://www.mysql.com/](https://www.mysql.com/) || [mysql](https://aur.archlinux.org/packages/mysql/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Percona Server** — An implementation by Percona LLC.
 
-[http://www.percona.com/software/percona-server/](http://www.percona.com/software/percona-server/) || [percona-server](https://www.archlinux.org/packages/?name=percona-server)
+NaN
 
 **Tip:**
 
@@ -523,7 +519,3 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 *   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MySQL&oldid=415037](https://wiki.archlinux.org/index.php?title=MySQL&oldid=415037)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

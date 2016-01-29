@@ -1,9 +1,5 @@
 # getty
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 A **getty** is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [init](/index.php/Init "Init") and manages a single terminal line. Within the context of a typical Arch Linux installation, the terminals managed by the getty processes are implemented as virtual consoles. Six of these virtual consoles are provided by default and they are usually accessible by pressing `Ctrl+Alt+F1` through `Ctrl+Alt+F6`.
 
 ## Contents
@@ -37,11 +33,3 @@ The [fgetty](https://aur.archlinux.org/packages/fgetty/)<sup><small>AUR</small><
 *   [Automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Getty&oldid=399048](https://wiki.archlinux.org/index.php?title=Getty&oldid=399048)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

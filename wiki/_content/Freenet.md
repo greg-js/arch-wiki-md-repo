@@ -1,9 +1,5 @@
 # Freenet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Freenet](http://freenetproject.org/) is a free and open source software that aims to provide anonymity and freedom of speech through a decentralized peer-to-peer network. Freenet enables its users to share files anonymously, publish freesites without fear of censorship and more. Data is encrypted and routed through multiple nodes making almost impossible to identify who requested the information and what its content is.
 
 ## Contents
@@ -56,7 +52,3 @@ and
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Freenet&oldid=409482](https://wiki.archlinux.org/index.php?title=Freenet&oldid=409482)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

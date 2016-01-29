@@ -1,9 +1,5 @@
 # IBM Websphere Integration Developer 6.2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -37,11 +33,3 @@ $ /opt/IBM/WID62/eclipse -product com.ibm.wbit.feature.ide -showlocation
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_Websphere_Integration_Developer_6.2&oldid=381763](https://wiki.archlinux.org/index.php?title=IBM_Websphere_Integration_Developer_6.2&oldid=381763)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

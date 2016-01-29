@@ -1,9 +1,5 @@
 # ConsoleKit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PolicyKit](/index.php/PolicyKit "PolicyKit")
@@ -217,11 +213,3 @@ See [Session](/index.php/Session "Session") to check the status of your user ses
 *   [Gentoo wiki](http://wiki.gentoo.org/wiki/ConsoleKit)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ConsoleKit&oldid=389660](https://wiki.archlinux.org/index.php?title=ConsoleKit&oldid=389660)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Amarok 1.4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Amarok 2](/index.php/Amarok_2 "Amarok 2")
@@ -183,7 +179,3 @@ Amarok version 1.4 as well as [VLC](/index.php/VLC "VLC") continue to support th
 _Playlists > Radio Streams > Shoutcast Streams_
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Amarok_1.4&oldid=400949](https://wiki.archlinux.org/index.php?title=Amarok_1.4&oldid=400949)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

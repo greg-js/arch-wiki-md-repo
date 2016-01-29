@@ -1,9 +1,5 @@
 # Firewalls
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 A firewall is a system designed to prevent unauthorized access to or from a private network (which could be just one machine). Firewalls can be implemented in only hardware or software, or a combination of both. Firewalls are frequently used to prevent unauthorized Internet users from accessing private networks connected to the Internet, especially intranets. All messages entering or leaving the intranet pass through the firewall, which examines each message and allows, proxys, or denies the traffic based on specified security criteria.
 
 The firewalls listed in this article are overwhelmingly based on the [iptables](/index.php/Iptables "Iptables") program. Consider configuring the iptables process yourself according to its wiki page (listed below) to keep to the [The Arch Way](/index.php/The_Arch_Way "The Arch Way").
@@ -43,65 +39,65 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   **Arno's firewall** — Secure firewall for both single and multi-homed machines. Very easy to configure, handy to manage and highly customizable. Supports: NAT and SNAT, port forwarding, ADSL ethernet modems with both static and dynamically assigned IPs, MAC address filtering, stealth port scan detection, DMZ and DMZ-2-LAN forwarding, protection against SYN/ICMP flooding, extensive user definable logging with rate limiting to prevent log flooding, all IP protocols and VPNs such as IPsec, plugin support to add extra features.
 
-[http://rocky.eld.leidenuniv.nl/](http://rocky.eld.leidenuniv.nl/) || [arno-iptables-firewall](https://aur.archlinux.org/packages/arno-iptables-firewall/)<sup><small>AUR</small></sup>
+NaN
 
 *   **ferm** — Tool to maintain complex firewalls, without having the trouble to rewrite the complex rules over and over again. It allows the entire firewall rule set to be stored in a separate file, and to be loaded with one command. The firewall configuration resembles structured programming-like language, which can contain levels and lists.
 
-[http://ferm.foo-projects.org/](http://ferm.foo-projects.org/) || [ferm](https://www.archlinux.org/packages/?name=ferm)
+NaN
 
 *   **Firehol** — Language to express firewalling rules, not just a script that produces some kind of a firewall. It makes building even sophisticated firewalls easy - the way you want it.
 
-[http://firehol.sourceforge.net/](http://firehol.sourceforge.net/) || [firehol](https://aur.archlinux.org/packages/firehol/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Firetable** — Firewall with "human readable" syntax.
 
-[http://projects.leisink.net/Firetable](http://projects.leisink.net/Firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Shorewall](/index.php/Shorewall "Shorewall")** — High-level tool for configuring Netfilter. You describe your firewall/gateway requirements using entries in a set of configuration files.
 
-[http://www.shorewall.net/](http://www.shorewall.net/) || [shorewall](https://www.archlinux.org/packages/?name=shorewall)
+NaN
 
 *   **[ufw](/index.php/Ufw "Ufw")** — Simple front-end for iptables.
 
-[https://launchpad.net/ufw](https://launchpad.net/ufw) || [ufw](https://www.archlinux.org/packages/?name=ufw)
+NaN
 
 *   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
-[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Vuurmuur** — Powerful firewall manager. It has a simple and easy to learn configuration that allows both simple and complex configurations. The configuration can be fully configured through an [ncurses](https://www.archlinux.org/packages/?name=ncurses) GUI, which allows secure remote administration through SSH or on the console. Vuurmuur supports traffic shaping, has powerful monitoring features, which allow the administrator to look at the logs, connections and bandwidth usage in realtime.
 
-[http://www.vuurmuur.org/](http://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)<sup><small>AUR</small></sup>
+NaN
 
 ### Graphic frontends
 
 *   **Firestarter** — Good GUI for iptables writen on GTK2, it has the ability to use both white and black lists for regulating traffic, it is very simple and easy to use, with good documentation available on their website.
 
-[http://www.fs-security.com/](http://www.fs-security.com/) || [Firestarter](https://aur.archlinux.org/packages/Firestarter/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Firewall Builder** — GUI firewall configuration and management tool that supports iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) and Cisco routers extended access lists. The program runs on Linux, FreeBSD, OpenBSD, Windows and Mac OS X and can manage both local and remote firewalls.
 
-[http://www.fwbuilder.org/](http://www.fwbuilder.org/) || [fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder)
+NaN
 
 *   **firewalld** — Daemon and graphical interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
 
-[https://fedoraproject.org/wiki/FirewallD](https://fedoraproject.org/wiki/FirewallD) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
+NaN
 
 *   **[Gufw](/index.php/Uncomplicated_Firewall#Gufw "Uncomplicated Firewall")** — GTK-based front-end to [ufw](https://www.archlinux.org/packages/?name=ufw) which happens to be a CLI front-end to iptables (gufw->ufw->iptables), is super easy and super simple to use.
 
-[http://gufw.org/](http://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
+NaN
 
 *   **KMyFirewall** — KDE3 GUI for iptables. Firewall editing capabilities are simple enough to use to be suitable for beginners, but also allow for sophisticated tweaking of the firewall settings.
 
-[http://kmyfirewall.sourceforge.net/](http://kmyfirewall.sourceforge.net/) || [kmyfirewall](https://aur.archlinux.org/packages/kmyfirewall/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kmyfirewall)]</sup>
+NaN
 
 *   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
-[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[kcm-ufw](/index.php/Uncomplicated_Firewall#kcm-ufw "Uncomplicated Firewall")** — KDE alternative to Gufw.
 
-[http://kde-apps.org/content/show.php?content=137789](http://kde-apps.org/content/show.php?content=137789) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)<sup><small>AUR</small></sup>
+NaN
 
 ## nftables
 
@@ -111,22 +107,14 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   **[EtherApe](https://en.wikipedia.org/wiki/EtherApe "wikipedia:EtherApe")** — Graphical network monitor for various OSI layers and protocols.
 
-[http://etherape.sourceforge.net/](http://etherape.sourceforge.net/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
+NaN
 
 *   **[Fail2ban](/index.php/Fail2ban "Fail2ban")** — Bans IPs after too many failed authentification attempts against common daemons.
 
-[http://www.fail2ban.org/](http://www.fail2ban.org/) || [fail2ban](https://www.archlinux.org/packages/?name=fail2ban)
+NaN
 
 ## See Also
 
 *   [http://wiki.debian.org/Firewalls](http://wiki.debian.org/Firewalls) - Debian Wiki's list of firewalls
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firewalls&oldid=416044](https://wiki.archlinux.org/index.php?title=Firewalls&oldid=416044)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

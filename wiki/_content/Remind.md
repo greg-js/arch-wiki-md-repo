@@ -1,9 +1,5 @@
 # Remind
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Remind is a sophisticated calendar and alarm program. It includes the following features:
 
 *   A sophisticated scripting language and intelligent handling of exceptions and holidays.
@@ -95,7 +91,3 @@ _Postscript_ files can be converted with `ps2pdf`. Ps2pdf is provided by [ghosts
 *   [remind(1)](http://linux.die.net/man/1/remind) — man page on die.net
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Remind&oldid=352614](https://wiki.archlinux.org/index.php?title=Remind&oldid=352614)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

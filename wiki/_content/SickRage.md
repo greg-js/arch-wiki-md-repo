@@ -1,9 +1,5 @@
 # SickRage
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [SickBeard](/index.php/SickBeard "SickBeard")
@@ -60,11 +56,3 @@ By default, the SickRage webui running on port 8081 is not protected by a passwo
 Sick Rage is a web-application that can be accessed on [http://localhost:8081](http://localhost:8081), when Sick Rage reports that it doesn't know it's version, just hit the update button. It will check for updates, restart itself and set it's current version. The settings are pretty straightforward. If you already have a storage of series, just point Sick Rage to it and it will analyze it and try to add your already downloaded series to it's own list.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SickRage&oldid=414563](https://wiki.archlinux.org/index.php?title=SickRage&oldid=414563)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

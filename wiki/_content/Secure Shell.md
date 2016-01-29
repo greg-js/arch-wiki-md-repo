@@ -1,9 +1,5 @@
 # Secure Shell
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [SSH keys](/index.php/SSH_keys "SSH keys")
@@ -378,7 +374,7 @@ The command-line ssh client is named dbclient.
 
 From the Mosh [website](http://mosh.mit.edu/):
 
-Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. Mosh is a replacement for SSH. It is more robust and responsive, especially over slow connections such as Wi-Fi, cellular, and long-distance.
+NaN
 
 [Install](/index.php/Install "Install") the [mosh](https://www.archlinux.org/packages/?name=mosh) package, or [mosh-git](https://aur.archlinux.org/packages/mosh-git/)<sup><small>AUR</small></sup> for the latest revision.
 
@@ -417,7 +413,7 @@ It is nice to add the verbose (`-v`) flag, because then you can verify that it i
 
 The above step is completely useless if you do not configure your web browser (or other programs) to use this newly created socks tunnel. Since the current version of SSH supports both SOCKS4 and SOCKS5, you can use either of them.
 
-*   For Firefox: _Edit > Preferences > Advanced > Network > Connection > Setting_:  
+*   For Firefox: _Edit > Preferences > Advanced > Network > Connection > Setting_:
     Check the _Manual proxy configuration_ radio button, and enter `localhost` in the _SOCKS host_ text field, and then enter your port number in the next text field (`4711` in the example above).
 
 Firefox does not automatically make DNS requests through the socks tunnel. This potential privacy concern can be mitigated by the following steps:
@@ -1055,12 +1051,3 @@ or in the ~/.ssh/config file:
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=417185](https://wiki.archlinux.org/index.php?title=Secure_Shell&oldid=417185)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

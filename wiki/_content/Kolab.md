@@ -1,9 +1,5 @@
 # Kolab
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Citadel groupware](/index.php/Citadel_groupware "Citadel groupware")
@@ -231,7 +227,3 @@ Changing folders in roundcube should be much faster now, while forcing TLS for r
 *   [https://obs.kolabsys.com/project/show?project=Kolab%3A3.1](https://obs.kolabsys.com/project/show?project=Kolab%3A3.1)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kolab&oldid=414171](https://wiki.archlinux.org/index.php?title=Kolab&oldid=414171)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

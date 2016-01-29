@@ -1,9 +1,5 @@
 # Acer Aspire TimelineX 4820TG
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -172,11 +168,3 @@ Core 2:       +53.0°C  (high = +95.0°C, crit = +105.0°C)
 See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_TimelineX_4820TG&oldid=377639](https://wiki.archlinux.org/index.php?title=Acer_Aspire_TimelineX_4820TG&oldid=377639)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

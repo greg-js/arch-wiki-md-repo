@@ -1,9 +1,5 @@
 # tp_smapi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 tp_smapi is a set of kernel modules that retrieves information from and conveys commands to the hardware of many ThinkPad laptops. This information is presented through the `/sys/devices/platform/smapi` filesystem. Much like the `/proc` filesystem, you can read and write information to these files to get information about and send commands to the hardware. tp_smapi is highly recommended if you're using a supported ThinkPad laptop.
 
 ## Contents
@@ -32,63 +28,23 @@ If you are installing on a recent Thinkpad that has an Ivy Bridge processor or l
 
 It's providing you 3 new [Kernel modules](/index.php/Kernel_modules "Kernel modules").
 
-<table class="wikitable" align="center" style="width:100%; text-align:left;">
-
-<tbody>
-
-<tr style="text-align: center;">
-
-<td colspan="2">**Kernel Module**</td>
-
-</tr>
-
-<tr style="text-align: center;">
-
-<td width="30%">**Name**</td>
-
-<td>**Description**</td>
-
-</tr>
-
-<tr>
-
-<td>tp_smapi</td>
-
-<td>
+| **Kernel Module** |
+| **Name** | **Description** |
+| tp_smapi | 
 
 ThinkPad SMAPI Support
 
-</td>
-
-</tr>
-
-<tr style="border-top:1px solid #aaaaaa;">
-
-<td>hdaps</td>
-
-<td>
+ |
+| hdaps | 
 
 IBM Hard Drive Active Protection System ([HDAPS](/index.php/HDAPS "HDAPS")) driver
 
-</td>
-
-</tr>
-
-<tr style="border-top:1px solid #aaaaaa;">
-
-<td>thinkpad_ec</td>
-
-<td>
+ |
+| thinkpad_ec | 
 
 ThinkPad embedded controller hardware access (tp_smapi and hdaps both depend on it)
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
 
 After a reboot, tp_smapi and its dependencies will get autoloaded and the sysfs-interface under `/sys/devices/platform/smapi` should be fully functional.
 
@@ -258,8 +214,3 @@ The example values 40 and 80 given here are in percent of the full battery capac
 [tp_smapi on ThinkWiki](http://www.thinkwiki.org/wiki/Tp_smapi)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=416983](https://wiki.archlinux.org/index.php?title=Tp_smapi&oldid=416983)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

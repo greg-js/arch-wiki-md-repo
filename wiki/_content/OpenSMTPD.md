@@ -1,9 +1,5 @@
 # OpenSMTPD
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Dovecot](/index.php/Dovecot "Dovecot")
@@ -234,7 +230,3 @@ There are also several handy web sites that can help you test DNS records, deliv
 *   [Simple SMTP server with OpenSMTPD](https://coderwall.com/p/eejzja)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSMTPD&oldid=412145](https://wiki.archlinux.org/index.php?title=OpenSMTPD&oldid=412145)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

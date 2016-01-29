@@ -1,9 +1,5 @@
 # Video encoding
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -80,12 +76,3 @@ MP4 often refers to both the video compression format, and the format of the con
 With a modern container format such as MKV or MP4, it is possible to encode video and audio in any desired format and to put them together in a single file for simultaneous playback. One could for instance pick H.264 / AVC video, and use it together with Vorbis audio and put the resultant in and MP4 container. The resultant file should have no trouble playing on a computer with the requisite software installed, however it could cause problems for mobile phones, smart TVs, set top boxes that have less flexible decoding software.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Video_encoding&oldid=402903](https://wiki.archlinux.org/index.php?title=Video_encoding&oldid=402903)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

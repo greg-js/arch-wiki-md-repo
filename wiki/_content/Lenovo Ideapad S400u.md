@@ -1,9 +1,5 @@
 # Lenovo Ideapad S400u
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers the Arch Linux support for the [Lenovo Ideapad S400u ultrabook](http://mobilesupport.lenovo.com/us/en/documents/pd026502).
 
 ## Contents
@@ -94,7 +90,3 @@ Drivers: [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-
 Works okay with the corresponding Fn keys.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S400u&oldid=412542](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S400u&oldid=412542)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

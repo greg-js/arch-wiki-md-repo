@@ -1,9 +1,5 @@
 # Google Earth
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [project web page](http://support.google.com/earth/bin/answer.py?hl=en&answer=176145):
 
 _"Google Earth allows you to travel the world through a virtual globe and view satellite imagery, maps, terrain, 3D buildings, and much more. With Google Earth's rich, geographical content, you are able to experience a more realistic view of the world. You can fly to your favorite place, search for businesses and even navigate through directions."_
@@ -107,7 +103,3 @@ The solution is to use the legacy [google-earth6](https://aur.archlinux.org/pack
 Memory use can be controlled by limiting the maximum cache size in _Tools > Options... > Cache_, or by lowering the graphics settings in the _3D View_ tab.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Earth&oldid=369303](https://wiki.archlinux.org/index.php?title=Google_Earth&oldid=369303)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

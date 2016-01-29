@@ -1,9 +1,5 @@
 # Microsoft Office 2007
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -258,13 +254,3 @@ $ WINEPREFIX=~/win32 winetricks allfonts
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Office_2007&oldid=345623](https://wiki.archlinux.org/index.php?title=Microsoft_Office_2007&oldid=345623)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

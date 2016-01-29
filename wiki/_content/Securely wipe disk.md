@@ -1,9 +1,5 @@
 # Securely wipe disk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Securely wipe disk/Tips and tricks](/index.php/Securely_wipe_disk/Tips_and_tricks "Securely wipe disk/Tips and tricks")
@@ -422,8 +418,3 @@ The [secure-delete](https://aur.archlinux.org/packages/secure-delete/)<sup><smal
 See [the tools list](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) for more info.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=413142](https://wiki.archlinux.org/index.php?title=Securely_wipe_disk&oldid=413142)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

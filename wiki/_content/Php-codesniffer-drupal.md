@@ -1,9 +1,5 @@
 # Php-codesniffer-drupal
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -60,11 +56,3 @@ To analyze some code execute a command like this:
 *   [PHP_CodeSniffer page](https://github.com/squizlabs/PHP_CodeSniffer)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Php-codesniffer-drupal&oldid=417335](https://wiki.archlinux.org/index.php?title=Php-codesniffer-drupal&oldid=417335)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

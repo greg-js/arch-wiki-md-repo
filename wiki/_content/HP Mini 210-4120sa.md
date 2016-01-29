@@ -1,9 +1,5 @@
 # HP Mini 210-4120sa
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Specifications](#Specifications)
@@ -26,101 +22,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 For full specifications see the [HP 210-4120sa cnet specifications page](http://www.cnet.com/laptops/hp-mini-210-4120sa/4507-3121_7-35268771.html).
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<td>HP Mini 210-4120sa</td>
-
-</tr>
-
-<tr>
-
-<th>Processor</th>
-
-<td>Intel Atom N2800 @ 1.86GHz - (1MB L2 cache, Dual core with Hyper-Threading, Cedarview)</td>
-
-</tr>
-
-<tr>
-
-<th>Architecture</th>
-
-<td>x86</td>
-
-</tr>
-
-<tr>
-
-<th>Graphics</th>
-
-<td>Intel Graphics Media Accelerator 3650 (Integrated)</td>
-
-</tr>
-
-<tr>
-
-<th>Screen</th>
-
-<td>LED Backlit 10.1" (1024x600)</td>
-
-</tr>
-
-<tr>
-
-<th>RAM</th>
-
-<td>Up to 2GB (Possibly 4GB?)</td>
-
-</tr>
-
-<tr>
-
-<th>HDD</th>
-
-<td>320GB 5400RPM HDD (SATA II/SATA-300)</td>
-
-</tr>
-
-<tr>
-
-<th>Optical Drive</th>
-
-<td>None</td>
-
-</tr>
-
-<tr>
-
-<th>Ethernet</th>
-
-<td>Realtek RTL8101E/RTL8102E PCI Express Fast Ethernet controller</td>
-
-</tr>
-
-<tr>
-
-<th>Wireless</th>
-
-<td>Atheros AR9485 802.11a/b/g/n</td>
-
-</tr>
-
-<tr>
-
-<th>Audio</th>
-
-<td>Onboard with Beats Audio</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | HP Mini 210-4120sa |
+| Processor | Intel Atom N2800 @ 1.86GHz - (1MB L2 cache, Dual core with Hyper-Threading, Cedarview) |
+| Architecture | x86 |
+| Graphics | Intel Graphics Media Accelerator 3650 (Integrated) |
+| Screen | LED Backlit 10.1" (1024x600) |
+| RAM | Up to 2GB (Possibly 4GB?) |
+| HDD | 320GB 5400RPM HDD (SATA II/SATA-300) |
+| Optical Drive | None |
+| Ethernet | Realtek RTL8101E/RTL8102E PCI Express Fast Ethernet controller |
+| Wireless | Atheros AR9485 802.11a/b/g/n |
+| Audio | Onboard with Beats Audio |
 
 ### lspci
 
@@ -218,7 +130,3 @@ The multi-card reader is working automatically.
 *   [HP Mini 210-4120sa at HP Support](http://h10025.www1.hp.com/ewfrf/wc/product?cc=uk&lc=en&product=5208350) - BIOS upgrades can be found here
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Mini_210-4120sa&oldid=384279](https://wiki.archlinux.org/index.php?title=HP_Mini_210-4120sa&oldid=384279)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

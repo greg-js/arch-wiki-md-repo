@@ -1,9 +1,5 @@
 # Pydio
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Pydio](https://pydio.com/) (formerly AjaXplorer) is a mature open source web application for file sharing and synchronization.
 
 ## Installation
@@ -78,7 +74,3 @@ Visit the installation wizard page at [http://127.0.0.1/](http://127.0.0.1/) and
 *   [Official ArchLinux installation manual](https://pyd.io/archlinux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pydio&oldid=411116](https://wiki.archlinux.org/index.php?title=Pydio&oldid=411116)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

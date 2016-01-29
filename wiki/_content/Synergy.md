@@ -1,9 +1,5 @@
 # Synergy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Synergy](http://synergy-project.org/) lets you easily share a single mouse and keyboard between multiple computers (even with different operating systems) without the need for special hardware. It is intended for users with multiple computers on their desk since each system uses its own monitor(s).
 
 Redirecting the mouse and keyboard is as simple as moving the mouse off the edge of your screen. Synergy also merges the clipboards of all the systems into one, allowing cut-and-paste between systems. Furthermore, it synchronizes screen savers so they all start and stop together and, if screen locking is enabled, only one screen requires a password to unlock them all.
@@ -470,11 +466,3 @@ You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt"
 *   Official documentation: [http://synergy-project.org/wiki/User_Guide](http://synergy-project.org/wiki/User_Guide)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Synergy&oldid=413724](https://wiki.archlinux.org/index.php?title=Synergy&oldid=413724)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

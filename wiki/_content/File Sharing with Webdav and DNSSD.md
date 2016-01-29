@@ -1,9 +1,5 @@
 # File Sharing with Webdav and DNSSD
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -190,12 +186,3 @@ You should be able to see various entries to do with your server. Look for webda
 7) Open Nautilus and browse the network. You should see the shares you have created. Click on them and they should mount.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=File_Sharing_with_Webdav_and_DNSSD&oldid=397007](https://wiki.archlinux.org/index.php?title=File_Sharing_with_Webdav_and_DNSSD&oldid=397007)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

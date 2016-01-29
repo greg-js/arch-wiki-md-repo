@@ -1,9 +1,5 @@
 # SSD memory cell clearing
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
@@ -119,7 +115,3 @@ Security:
 See the [GRUB EFI Examples](/index.php/GRUB_EFI_Examples "GRUB EFI Examples") for hardware-specific instructions to get GRUB EFI working following a wipe.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SSD_memory_cell_clearing&oldid=400003](https://wiki.archlinux.org/index.php?title=SSD_memory_cell_clearing&oldid=400003)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")

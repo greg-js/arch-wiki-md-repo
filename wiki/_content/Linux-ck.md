@@ -1,9 +1,5 @@
 # Linux-ck
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Linux-ck/Changelog](/index.php/Linux-ck/Changelog "Linux-ck/Changelog")
@@ -258,7 +254,3 @@ It is a common mistake to think that BFS does not support cgroups. It does suppo
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-ck&oldid=404256](https://wiki.archlinux.org/index.php?title=Linux-ck&oldid=404256)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

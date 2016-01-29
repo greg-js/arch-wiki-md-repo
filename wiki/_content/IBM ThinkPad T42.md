@@ -1,9 +1,5 @@
 # IBM ThinkPad T42
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
@@ -61,7 +57,3 @@ See the following: [Wireless Setup#ipw2100 and ipw2200](/index.php/Wireless_Setu
 *   [T42 ThinkWiki page](http://www.thinkwiki.org/wiki/Category:)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T42&oldid=376817](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T42&oldid=376817)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")

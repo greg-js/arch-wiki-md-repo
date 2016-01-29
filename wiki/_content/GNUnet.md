@@ -1,9 +1,5 @@
 # GNUnet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Tor](/index.php/Tor "Tor")
@@ -80,8 +76,3 @@ Suppose you have forgotten which files you indexed, you can look up the pointers
 See [[1]](https://gnunet.org/content/how-start-and-stop-gnunet-peer).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNUnet&oldid=410006](https://wiki.archlinux.org/index.php?title=GNUnet&oldid=410006)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")

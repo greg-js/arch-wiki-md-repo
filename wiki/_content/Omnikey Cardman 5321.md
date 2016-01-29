@@ -1,9 +1,5 @@
 # Omnikey Cardman 5321
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page will explain how to get the Omnikey Cardman 5321 SmartCard Reader up and running under Archlinux. This guide may work for other models to, but this has not been tested.
 
 ## Installation
@@ -55,7 +51,3 @@ Possibly identified card (using /usr/share/pcsc/smartcard_list.txt):
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Omnikey_Cardman_5321&oldid=411279](https://wiki.archlinux.org/index.php?title=Omnikey_Cardman_5321&oldid=411279)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

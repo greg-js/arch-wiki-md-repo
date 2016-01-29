@@ -1,9 +1,5 @@
 # Halevt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes a method to configure halevt and traydevice in order to mount removable media.
 
 ## Contents
@@ -88,11 +84,3 @@ It is better to start halevt individually per user rather than as a system daemo
 Instead of halevt you can use another program based on UDisks - [UDisksEvt](https://bbs.archlinux.org/viewtopic.php?pid=786153). With the most recent version of Traydevice you can setup a complete hal-less (hal is deprecated after all) automounting system. UDisksEvt example configuration file already contains appropriate setup for Traydevice, so it should work out-of-the-box.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Halevt&oldid=412093](https://wiki.archlinux.org/index.php?title=Halevt&oldid=412093)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

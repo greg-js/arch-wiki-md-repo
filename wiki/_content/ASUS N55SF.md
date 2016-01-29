@@ -1,140 +1,18 @@
 # ASUS N55SF
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table style="float:right; border: 1px solid #000;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia graphics</td>
-
-<td style="color:lightgreen">**Working, see below**</td>
-
-<td>nvidia, bumblebee</td>
-
-</tr>
-
-<tr>
-
-<td>Graphic outputs</td>
-
-<td style="color:red">**Not working**</td>
-
-<td>nvidia, bumblebee</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>iwlan</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:lightgreen">**Working, see below**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xhci_hcd</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Special Keys</td>
-
-<td style="color:grey">**Untested**</td>
-
-</tr>
-
-<tr>
-
-<td>Power management</td>
-
-<td style="color:green">**Working, see below**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel graphics | **Working** | xf86-video-intel |
+| Nvidia graphics | **Working, see below** | nvidia, bumblebee |
+| Graphic outputs | **Not working** | nvidia, bumblebee |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | iwlan |
+| Audio | **Working, see below** | snd_hda_intel |
+| Touchpad | **Working** | xf86-input-synaptics |
+| Camera | **Working** | uvcvideo |
+| USB 3.0 | **Working** | xhci_hcd |
+| Card Reader | **Working** |
+| Special Keys | **Untested** |
+| Power management | **Working, see below** |
 
 ## Contents
 
@@ -354,7 +232,3 @@ Should be working out of the box - just remember to install [bluez-firmware](htt
 The USB unbind hook is no longer necessary as of [Linux 3.5](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commitdiff;h=dbf0e4c7257f8d684ec1a3c919853464293de66e).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N55SF&oldid=412029](https://wiki.archlinux.org/index.php?title=ASUS_N55SF&oldid=412029)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

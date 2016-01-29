@@ -1,9 +1,5 @@
 # Bitcoin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -122,21 +118,21 @@ There are several Bitcoin miners in the [AUR](/index.php/AUR "AUR"):
 
 *   **CGMiner** — Multi-threaded multi-pool CPU miner.
 
-[https://github.com/ckolivas/cgminer](https://github.com/ckolivas/cgminer) || [cgminer](https://www.archlinux.org/packages/?name=cgminer) (Note: use [cgminer-gpu](https://aur.archlinux.org/packages/cgminer-gpu/)<sup><small>AUR</small></sup> for GPU mining as its version was the last to support it).
+NaN
 
 **Tip:** you need corresponding opencl package to enable GPU mining, [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia) for Nvidia, and [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/)<sup><small>AUR</small></sup> in AUR for Intel.
 
 *   **cpuminer** — Multi-threaded CPU Miner.
 
-[http://yyz.us/bitcoin/](http://yyz.us/bitcoin/) || [cpuminer-git](https://aur.archlinux.org/packages/cpuminer-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cpuminer-git)]</sup>
+NaN
 
 *   **MiningBeast** — Multi-platform mining software.
 
-[http://miningbeast.com/](http://miningbeast.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+NaN
 
 *   **Phoenix Miner** — Efficient, fast, modular, python-based, OpenCL GPU miner.
 
-[https://github.com/jedi95/Phoenix-Miner](https://github.com/jedi95/Phoenix-Miner) || [phoenix-miner-svn](https://aur.archlinux.org/packages/phoenix-miner-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/phoenix-miner-svn)]</sup>
+NaN
 
 ## Sample config file
 
@@ -255,14 +251,3 @@ paytxfee=0.00
 *   [blockparser](https://github.com/znort987/blockparser) — Fast, quick and dirty bitcoin blockchain parser.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bitcoin&oldid=407570](https://wiki.archlinux.org/index.php?title=Bitcoin&oldid=407570)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages with missing package links](/index.php/Category:Pages_with_missing_package_links "Category:Pages with missing package links")

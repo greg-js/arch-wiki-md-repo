@@ -1,9 +1,5 @@
 # IBM ThinkPad X41
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The X41 and X41t (tablet) are both SATA-based machines that include a SATA-PATA bridge allowing the use of PATA HDDs, see external links for modifications to use SATA HDDs and SSDs. The laptops utilise a Pentium M processor (either 1.5GHz or 1.6GHz), the [Linux-ck](/index.php/Linux-ck "Linux-ck") packages contain optimised packages for this architecture.
 
 This article contains some useful tweaks to make the most of your machine, the tweaks are mainly powersaving biased. With vanilla Arch, around 3 hours battery life was achieved, following powersaving tweaks a bit over than 5 hours was achieved, this was performed with screen brightness at the second highest value.
@@ -144,11 +140,3 @@ If the display keys (Rotate, Escape, Enter, Prev, Next,...) on your X41 tablet a
 *   [A shell/zenity script for common X41t tasks](https://paste.ee/p/EoSef)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X41&oldid=390560](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X41&oldid=390560)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # KDE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -183,11 +179,11 @@ Note that the [SDDM](/index.php/SDDM "SDDM") login screen is not part of this th
 
 **Tip:** For Qt and GTK theme consistency, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-Qt4
+NaN
 
 For Qt4 applications to have a consistent appearance, there are two options: Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and then pick Breeze as GUI Style in `qtconfig-qt4`; or install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style.
 
-GTK+
+NaN
 
 The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in _System Settings > Application Style > GNOME Application Style_.
 
@@ -471,7 +467,7 @@ Name=/home/username/.local/akonadi/akonadi.db
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
 
-_“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications._
+NaN
 
 Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
 
@@ -485,7 +481,7 @@ You can choose between backends based on [GStreamer](/index.php/GStreamer "GStre
 
 In the past other backends were developed as well but are no longer maintained and their AUR packages have been deleted.
 
-**Note:**  
+**Note:**
 
 *   Multiple backends can be installed at once and prioritized at _System Settings > Multimedia > Phonon > Backend_. For Plasma 5 this would be _System Settings > Multimedia > Backend_.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
@@ -846,13 +842,3 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413672](https://wiki.archlinux.org/index.php?title=KDE&oldid=413672)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [KDE](/index.php/Category:KDE "Category:KDE")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

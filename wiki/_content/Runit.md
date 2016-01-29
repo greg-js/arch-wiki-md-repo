@@ -1,9 +1,5 @@
 # Runit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [init](/index.php/Init "Init")
@@ -308,12 +304,3 @@ sv -v i pg_shm
 That's it, you'll have a replica of your postgresql on-disk database published on port 5434, in read-only mode from the memory space utilized from /dev/shm.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Runit&oldid=392636](https://wiki.archlinux.org/index.php?title=Runit&oldid=392636)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

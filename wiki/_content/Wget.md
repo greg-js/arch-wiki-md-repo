@@ -1,9 +1,5 @@
 # Wget
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 GNU Wget is a free software package for retrieving files using HTTP, HTTPS and FTP, the most widely-used Internet protocols. It is a non-interactive commandline tool, so it may easily be called from scripts, cron jobs, terminals without X-Windows support, etc. [[source](http://www.gnu.org/software/wget/)]
 
 ## Contents
@@ -94,7 +90,3 @@ $ wget -np -r -k 'http://your-url-here'
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wget&oldid=408322](https://wiki.archlinux.org/index.php?title=Wget&oldid=408322)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

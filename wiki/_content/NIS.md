@@ -1,9 +1,5 @@
 # NIS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Network Information Service (NIS) is a protocol developed by Sun to allow one to defer user authentication to a server. The server software is in the [ypserv](https://www.archlinux.org/packages/?name=ypserv) package, and the client software is in the [yp-tools](https://www.archlinux.org/packages/?name=yp-tools) package. [ypbind-mt](https://www.archlinux.org/packages/?name=ypbind-mt) is also available, which is a multi threaded version of the client daemon.
 
 **Note:** This article somewhat unfinished. In the future that will change, but in the meantime check the [More resources section](#More_resources).
@@ -282,7 +278,3 @@ See [section 7 of The Linux NIS HOWTO](http://www.tldp.org/HOWTO/NIS-HOWTO/setti
 *   [Quick HOWTO, Configuring NIS](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch30_:_Configuring_NIS)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NIS&oldid=416064](https://wiki.archlinux.org/index.php?title=NIS&oldid=416064)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

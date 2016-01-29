@@ -1,9 +1,5 @@
 # Port Knocking
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Port knocking is a stealth method to externally open ports that, by default, the firewall keeps closed. It works by requiring connection attempts to a series of predefined closed ports. When the correct sequence of port "knocks" (connection attempts) is received, the firewall opens certain port(s) to allow a connection.
 
 The benefit is that, for a regular port scan, it may appear as the service of the port is just not available. This article shows how to use port knocking with either a daemon or with iptables only.
@@ -225,7 +221,3 @@ Connection to 192.168.1.1 closed.
 *   [Wikipedia on Port knocking](http://en.wikipedia.org/wiki/Port_knocking)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Port_Knocking&oldid=416162](https://wiki.archlinux.org/index.php?title=Port_Knocking&oldid=416162)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")

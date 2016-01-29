@@ -1,9 +1,5 @@
 # Convert a single drive system to RAID
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This guide shows how to convert a functional single-drive system to a [RAID](/index.php/RAID "RAID") 1 setup after adding a second drive, without the need to temporarily store the data on a third drive. The procedure can also be adapted, simplifying it, to the conversion of simple non-root partitions, and to other RAID levels.
 
 **Tip:** You may consider using [Raider](https://aur.archlinux.org/packages/Raider/)<sup><small>AUR</small></sup>, which can convert a single disk into a RAID system with a two-pass command.
@@ -358,13 +354,3 @@ unused devices: <none>
 *   [Convert running system to RAID 5](http://askubuntu.com/questions/252795/convert-running-system-to-raid-5) — Example using RAID 5
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Convert_a_single_drive_system_to_RAID&oldid=416026](https://wiki.archlinux.org/index.php?title=Convert_a_single_drive_system_to_RAID&oldid=416026)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

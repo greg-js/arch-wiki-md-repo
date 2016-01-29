@@ -1,9 +1,5 @@
 # Adminer
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Adminer](http://www.adminer.org/) is a simple tool for database management. It's possible to manage [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [Sqlite3](/index.php/Sqlite3 "Sqlite3"), MS SQL and [Oracle](/index.php/Oracle "Oracle").
 
 It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). You can find more pieces of information about this project at the [official page](http://www.adminer.org/en/) or at [Wikipedia](https://en.wikipedia.org/wiki/Adminer "wikipedia:Adminer").
@@ -116,7 +112,3 @@ Then [restart](/index.php/Restart "Restart") the `hiawatha.service`.
 *   [Author's weblog](http://php.vrana.cz/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Adminer&oldid=416077](https://wiki.archlinux.org/index.php?title=Adminer&oldid=416077)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

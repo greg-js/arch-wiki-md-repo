@@ -1,9 +1,5 @@
 # Vsys
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -19,12 +15,3 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 [vsys](https://aur.archlinux.org/packages/vsys/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vsys)]</sup> can be installed from [AUR](/index.php/AUR "AUR").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vsys&oldid=392792](https://wiki.archlinux.org/index.php?title=Vsys&oldid=392792)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

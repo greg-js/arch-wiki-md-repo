@@ -1,9 +1,5 @@
 # Gobi Broadband Modems
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is a short tutorial on connecting to the internet using your gobi modem.
 
 ## Contents
@@ -137,7 +133,3 @@ The final wvdial command should start pppd and the obained IP address should be 
 *   [Huawei E1550 3G modem](/index.php/Huawei_E1550_3G_modem "Huawei E1550 3G modem")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gobi_Broadband_Modems&oldid=417129](https://wiki.archlinux.org/index.php?title=Gobi_Broadband_Modems&oldid=417129)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")

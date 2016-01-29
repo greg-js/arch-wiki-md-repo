@@ -1,9 +1,5 @@
 # Acer Aspire 1691 WLMi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -231,7 +227,3 @@ To use all the keyboard's special keys, I've installed [keytouch](/index.php/Key
 *   This report has been listed in the [Linux Laptop and Notebook Installation Guides Survey: Acer](http://tuxmobil.org/acer.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_1691_WLMi&oldid=403198](https://wiki.archlinux.org/index.php?title=Acer_Aspire_1691_WLMi&oldid=403198)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

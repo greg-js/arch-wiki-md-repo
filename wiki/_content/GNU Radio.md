@@ -1,9 +1,5 @@
 # GNU Radio
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DVB-T](/index.php/DVB-T "DVB-T")
@@ -39,7 +35,3 @@ This should be fixed in the next GNU Radio release. [[1]](https://bbs.archlinux.
 When using an (osmocom) RTL-SDR source, you might see this error. The workaround is to manually set the Gain Mode to `True` or `False`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Radio&oldid=377135](https://wiki.archlinux.org/index.php?title=GNU_Radio&oldid=377135)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")

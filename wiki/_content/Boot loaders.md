@@ -1,9 +1,5 @@
 # Boot loaders
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The boot loader is the first piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") before initiating the [boot process](/index.php/Boot_process "Boot process"). You can use [different kinds](/index.php/Category:Boot_loaders "Category:Boot loaders") of bootloaders in Arch, such as [GRUB](/index.php/GRUB "GRUB") and [Syslinux](/index.php/Syslinux "Syslinux"). Some bootloaders only support BIOS or UEFI and some support both.
 
 This page contains a short introduction about bootloaders available in Arch. For detailed information see the corresponding pages of each bootloader.
@@ -89,7 +85,3 @@ Booting Arch from NeoGRUB has not been tested yet from Windows 8 and/or UEFI sys
 *   [rEFInd Documentation for booting EFISTUB Kernels](http://www.rodsbooks.com/refind/linux.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_loaders&oldid=397545](https://wiki.archlinux.org/index.php?title=Boot_loaders&oldid=397545)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")

@@ -1,9 +1,5 @@
 # Java Media Framework
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Sun JMF site](http://java.sun.com/products/java-media/jmf/): "The Java Media Framework API (JMF) enables audio, video and other time-based media to be added to applications and applets built on Java technology. This optional package, which can capture, playback, stream, and transcode multiple media formats, extends the Java 2 Platform, Standard Edition (J2SE) for multimedia developers by providing a powerful toolkit to develop scalable, cross-platform technology."
 
 ## Contents
@@ -120,11 +116,3 @@ If you want to be able to use sound and video in [OpenOffice.org](/index.php/Ope
 4.  Double click any sound file - A media player will open and the sound will be played
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Java_Media_Framework&oldid=392295](https://wiki.archlinux.org/index.php?title=Java_Media_Framework&oldid=392295)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

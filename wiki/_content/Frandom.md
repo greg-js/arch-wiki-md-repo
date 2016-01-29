@@ -1,9 +1,5 @@
 # Frandom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -148,12 +144,3 @@ This makes frandom 10-20 times faster on this machine, meaning it would take app
 **Summary:** 500 GB in approx. 6.85 hours (connected on USB3)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Frandom&oldid=412611](https://wiki.archlinux.org/index.php?title=Frandom&oldid=412611)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

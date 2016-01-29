@@ -1,9 +1,5 @@
 # Classroom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Arch Classroom](https://bbs.archlinux.org/viewtopic.php?id=143671) is a project to host classes for people to learn new skills and knowledge on various technical topics. The classes are taught by volunteers from the Arch Linux community. Classes are held on IRC and anyone is welcome to attend regardless of their level of expertise.
 
 ## Contents
@@ -26,109 +22,18 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 
 Classes are announced on arch-general, the forums, and other broadcasting places like twitter. A list is given below for easy viewing.
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td align="center" style="background:#f0f0f0;">**Date and Time**</td>
-
-<td align="center" style="background:#f0f0f0;">**Class Title**</td>
-
-<td align="center" style="background:#f0f0f0;">**Instructor(s)**</td>
-
-<td align="center" style="background:#f0f0f0;">**Announcement(S)**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(S)** |
 
 ### Previous classes
 
 Classes that have already happened. (Maybe students and teachers could write up some info on the experience, similar to the arch con pages.)
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td align="center" style="background:#f0f0f0;">**Date**</td>
-
-<td align="center" style="background:#f0f0f0;">**Class Title**</td>
-
-<td align="center" style="background:#f0f0f0;">**Instructor(s)**</td>
-
-<td align="center" style="background:#f0f0f0;">**Logs**</td>
-
-</tr>
-
-<tr>
-
-<td>2013-09-14</td>
-
-<td>_Beginners Guide to Package Maintaining_</td>
-
-<td>gtmanfred and KaiSforza</td>
-
-<td>[16:45 UTC](https://archwomen.org/media/project_classroom/classlogs/2013-09-14-beginner_pkgbuilds1.txt)</td>
-
-</tr>
-
-<tr style="background:#e4e4e4">
-
-<td>2014-04-19</td>
-
-<td>_PKGBUILD Class_</td>
-
-<td>CalimeroTeknik</td>
-
-<td>[9:30 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_09%3a30-UTC.txt) and [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_16%3a00-UTC.txt)</td>
-
-</tr>
-
-<tr>
-
-<td>2014-05-31</td>
-
-<td>_A First Look at the Linux Kernel_</td>
-
-<td>jy2wong</td>
-
-<td>[16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-05-31-a_first_look_at_the_linux_kernel.txt)</td>
-
-</tr>
-
-<tr style="background:#e4e4e4">
-
-<td>2014-09-05</td>
-
-<td>_Introduction to Scheme and Functional Programming_</td>
-
-<td>nisstyre</td>
-
-<td>[20:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-09-05-introduction_to_scheme_and_functional_programming.txt)</td>
-
-</tr>
-
-<tr>
-
-<td>2015-05-17</td>
-
-<td>_An Imperfect Introduction to Static Typing_</td>
-
-<td>HalosGhost</td>
-
-<td>[23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Date** | **Class Title** | **Instructor(s)** | **Logs** |
+| 2013-09-14 | _Beginners Guide to Package Maintaining_ | gtmanfred and KaiSforza | [16:45 UTC](https://archwomen.org/media/project_classroom/classlogs/2013-09-14-beginner_pkgbuilds1.txt) |
+| 2014-04-19 | _PKGBUILD Class_ | CalimeroTeknik | [9:30 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_09%3a30-UTC.txt) and [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_16%3a00-UTC.txt) |
+| 2014-05-31 | _A First Look at the Linux Kernel_ | jy2wong | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-05-31-a_first_look_at_the_linux_kernel.txt) |
+| 2014-09-05 | _Introduction to Scheme and Functional Programming_ | nisstyre | [20:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-09-05-introduction_to_scheme_and_functional_programming.txt) |
+| 2015-05-17 | _An Imperfect Introduction to Static Typing_ | HalosGhost | [23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt) |
 
 ### Requested classes
 
@@ -188,7 +93,3 @@ The following information is required:
 *   [Teaching materials git repository](https://github.com/archwomen/classroom-media)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Classroom&oldid=416009](https://wiki.archlinux.org/index.php?title=Classroom&oldid=416009)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Classroom](/index.php/Category:Classroom "Category:Classroom")

@@ -1,9 +1,5 @@
 # SpeedTouch ADSL Modem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -279,11 +275,3 @@ Any comments or questions, try the discussion page.
 Hope you found this helpful and feel free to improve it!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SpeedTouch_ADSL_Modem&oldid=350672](https://wiki.archlinux.org/index.php?title=SpeedTouch_ADSL_Modem&oldid=350672)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

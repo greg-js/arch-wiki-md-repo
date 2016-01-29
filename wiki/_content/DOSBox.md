@@ -1,9 +1,5 @@
 # DOSBox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [DOSBox](http://www.dosbox.com/) is an x86 PC DOS-emulator for running old DOS games or programs.
 
 ## Contents
@@ -67,8 +63,3 @@ If DOSBox traps your focus, use `Ctrl+F10` to free it.
 *   [http://www.dosgames.com/](http://www.dosgames.com/) - DosGames.com: large repository of DOS games.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DOSBox&oldid=412056](https://wiki.archlinux.org/index.php?title=DOSBox&oldid=412056)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

@@ -1,9 +1,5 @@
 # Diablo II
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page explains how to install Diablo II and play it under Arch Linux. This works as of patch 1.13c.
 
 ## Contents
@@ -166,8 +162,3 @@ Try setting `dsoundhw=Emulation`. This can be done by starting winetricks _Selec
 Try running `D2VidTst.exe` in the game folder and then select _3dfxGlide_. If the game still doesn't start in fullscreen place the `glide3x.dll` into the game folder from this website [http://www.svenswrapper.de/english/downloads.html](http://www.svenswrapper.de/english/downloads.html). It is extra written for running Diablo2 with glide.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Diablo_II&oldid=290005](https://wiki.archlinux.org/index.php?title=Diablo_II&oldid=290005)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

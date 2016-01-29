@@ -1,9 +1,5 @@
 # Sony Vaio VGN-CR120E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -61,11 +57,3 @@ _kernel26>2.6.26_: If you have a kernel that falls beyond the depends for 'r5u87
 _flashcam note_ Flashcam project was a video loopback device that provided a v4l device that worked with flash, this project is now obsolete as flash10 supports v4l2 and as it too is subject to the same breakage that occures to r5u870 with kernel26>2.6.26\. My intention was to continue to use flashcam to take vga video (which works with uvcvideo) and have flashcam provide the proper resolution needed for the various applications--[OrionFyre](/index.php/User:OrionFyre "User:OrionFyre") 15:13, 14 November 2008 (EST)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VGN-CR120E&oldid=349257](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VGN-CR120E&oldid=349257)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

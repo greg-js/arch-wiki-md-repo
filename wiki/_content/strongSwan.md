@@ -1,9 +1,5 @@
 # strongSwan
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup")
@@ -352,11 +348,3 @@ Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enabl
 *   [strongSwan 5: How to create your own VPN](https://www.zeitgeist.se/2013/11/22/strongswan-howto-create-your-own-vpn/) — The source used to write the initial revision of this article, with permission from the original author.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=StrongSwan&oldid=399970](https://wiki.archlinux.org/index.php?title=StrongSwan&oldid=399970)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

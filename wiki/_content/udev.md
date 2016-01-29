@@ -1,16 +1,12 @@
 # udev
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [udisks](/index.php/Udisks "Udisks")
 
 From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
-udev is a device manager for the Linux kernel. As the successor of devfsd and hotplug, udev primarily manages device nodes in the `/dev` directory. At the same time, udev also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.
+NaN
 
 `udev` replaces the functionality of both `hotplug` and `hwdetect`.
 
@@ -536,14 +532,3 @@ SUBSYSTEMS=="scsi", KERNEL=="s[rg][0-9]*", ATTRS{type}=="5", GROUP="optical"
 *   [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Udev&oldid=410447](https://wiki.archlinux.org/index.php?title=Udev&oldid=410447)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

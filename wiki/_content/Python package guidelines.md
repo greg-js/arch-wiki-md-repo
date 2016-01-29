@@ -1,9 +1,5 @@
 # Python package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -47,7 +43,3 @@ Please do not install a directory named just `tests`, as it easily conflicts wit
 An example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto) or at `/usr/share/pacman/PKGBUILD-python.proto`, which is in the [abs](https://www.archlinux.org/packages/?name=abs) package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Python_package_guidelines&oldid=413555](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&oldid=413555)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

@@ -1,12 +1,8 @@
 # Private Internet Access VPN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 PIA is a subscription based service provided from the [PIA](https://www.privateinternetaccess.com/). From the PIA's [How It Works](https://www.privateinternetaccess.com/pages/how-it-works/) page:
 
-PRIVATE INTERNET ACCESS provides state of the art, multi-layered security with advanced privacy protection using VPN tunneling.
+NaN
 
 ## Contents
 
@@ -89,7 +85,3 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 *   [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Private_Internet_Access_VPN&oldid=381414](https://wiki.archlinux.org/index.php?title=Private_Internet_Access_VPN&oldid=381414)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

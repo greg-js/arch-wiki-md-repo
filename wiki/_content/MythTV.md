@@ -1,9 +1,5 @@
 # MythTV
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 MythTV is an application suite designed to provide an amazing multimedia experience. It provides PVR functionality to a Linux based computer and also supports other media types. Combined with a nice, quiet computer and a decent TV, it makes an excellent centerpiece to a home theater system.
 
 ## Contents
@@ -110,7 +106,7 @@ At this point a generic MythTV installation is present that must be refined into
 
 ### Backend setup
 
-Before setting up your backend, make sure you have a functioning _video capture card_ or a _firewire input from a STB_. Unfortunately, that part of setup is outside the scope of this article. If you are in the United States, get an account at [Schedules Direct](http://www.schedulesdirect.org) (this service provides TV listings at a minimal cost). Users outside the United States will need to use screen scrapers ([xmltv](http://wiki.xmltv.org/index.php/Main_Page/)) to do the same job.  
+Before setting up your backend, make sure you have a functioning _video capture card_ or a _firewire input from a STB_. Unfortunately, that part of setup is outside the scope of this article. If you are in the United States, get an account at [Schedules Direct](http://www.schedulesdirect.org) (this service provides TV listings at a minimal cost). Users outside the United States will need to use screen scrapers ([xmltv](http://wiki.xmltv.org/index.php/Main_Page/)) to do the same job.
 
 #### Setting up the database
 
@@ -200,28 +196,28 @@ $ ssh -X user@backend '. /etc/profile.d/perlbin.sh && LANG=C mythtv-setup'
 
 ```
 
-*   **General menu**  
+*   **General menu**
 
-If this is your master backend, put its IP address in the first and fourth fields, identifying this computer as your master and giving its network IP address.  
-On the next page, enter the paths where recordings and the live TV buffer will be stored. LVM or RAID solutions provide easily accessible large scale storage. But again, those are outside the scope of this article. Set the live TV buffer to a size you can handle and leave everything else alone.  
-On the next page, set the settings to your locale. NTSC is mostly used in North America, and be sure to set whether using cable or broadcast.  
-On the next two pages, leave everything as is unless you know for sure you want to change it. On the next page, if you have a fast backend that can handle recordings and flagging jobs simultaneously, it is recommended to set CPU usage to \"High\", maximum simultaneous jobs to 2, and to check the commercial flagging option.  
-On the next page, set these options to taste. Automatic commercial flagging is highly recommended. Ignore the next page and finish.  
+If this is your master backend, put its IP address in the first and fourth fields, identifying this computer as your master and giving its network IP address.
+On the next page, enter the paths where recordings and the live TV buffer will be stored. LVM or RAID solutions provide easily accessible large scale storage. But again, those are outside the scope of this article. Set the live TV buffer to a size you can handle and leave everything else alone.
+On the next page, set the settings to your locale. NTSC is mostly used in North America, and be sure to set whether using cable or broadcast.
+On the next two pages, leave everything as is unless you know for sure you want to change it. On the next page, if you have a fast backend that can handle recordings and flagging jobs simultaneously, it is recommended to set CPU usage to \"High\", maximum simultaneous jobs to 2, and to check the commercial flagging option.
+On the next page, set these options to taste. Automatic commercial flagging is highly recommended. Ignore the next page and finish.
 
-*   **Capture card menu**  
+*   **Capture card menu**
 
-Select your card type from the drop down list. Hauppauge PVR users will select the MPEG-2 encoder card option.  
-Point mythtv-setup to the proper location, usually /dev/v4l/video0  
+Select your card type from the drop down list. Hauppauge PVR users will select the MPEG-2 encoder card option.
+Point mythtv-setup to the proper location, usually /dev/v4l/video0
 
-*   **Video sources menu**  
+*   **Video sources menu**
 
-This is where it gets important to have a source for TV listings. Schedules Direct users should create a new video source, name it, select the North America (Schedules Direct) option, and fill in their logon information. In order to verify that it is correct, go ahead and retrieve the listings.  
+This is where it gets important to have a source for TV listings. Schedules Direct users should create a new video source, name it, select the North America (Schedules Direct) option, and fill in their logon information. In order to verify that it is correct, go ahead and retrieve the listings.
 
-*   **Input connections menu**  
+*   **Input connections menu**
 
 This menu is rather self-explanatory. All you need to do is pick an input on the capture card and tell myth which video source it connects to. Most users will select their tuner and leave all the other inputs alone. Satellite users will select a video input, and on the next page provide the command to change channels on their STB using an external channel change program. This is also outside the scope of this article.
 
-*   **Channel editor menu**  
+*   **Channel editor menu**
 
 This menu is safe to ignore
 
@@ -379,12 +375,3 @@ Be sure to have a look at MythTV's extensive wiki documentation on how to keep y
 *   [http://www.linhes.org](http://www.linhes.org) [A user friendly MythTV and Linux install that uses Arch Linux]
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MythTV&oldid=413614](https://wiki.archlinux.org/index.php?title=MythTV&oldid=413614)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

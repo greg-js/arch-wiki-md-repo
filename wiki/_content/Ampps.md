@@ -1,9 +1,5 @@
 # Ampps
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [AMPPS](http://www.ampps.com/) AMPPS is a LAMP stack of Apache, MySQL, MongoDB, PHP, Perl & Python. It also provides phpMyAdmin, SQLite Manager, RockMongo.
 
 ## Contents
@@ -28,11 +24,11 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ```
 
-assuming version 2.4\. Otherwise adapt the correct version number
+NaN
 
 Start the Ampps Application from the GUI.
 
-Removal
+NaN
 
 Be sure to stop all the services.
 
@@ -65,7 +61,3 @@ Xdebug PHP Extension is already provided with the Ampps Package. Add the followi
 Access the following URL to access phpMyAdmin: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ampps&oldid=388009](https://wiki.archlinux.org/index.php?title=Ampps&oldid=388009)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

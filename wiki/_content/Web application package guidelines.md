@@ -1,9 +1,5 @@
 # Web application package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
 
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
@@ -86,11 +82,3 @@ Start server
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Web_application_package_guidelines&oldid=372762](https://wiki.archlinux.org/index.php?title=Web_application_package_guidelines&oldid=372762)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

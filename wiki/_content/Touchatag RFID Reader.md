@@ -1,9 +1,5 @@
 # Touchatag RFID Reader
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Touchatag is a RFID Reader
 
 ## Contents
@@ -153,7 +149,3 @@ Run tagEventor to test your installation:
 The scripts are located in /etc/gtagEventor. Read the [tagEventor documentation](http://code.google.com/p/tageventor/) on how to use them.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchatag_RFID_Reader&oldid=368766](https://wiki.archlinux.org/index.php?title=Touchatag_RFID_Reader&oldid=368766)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

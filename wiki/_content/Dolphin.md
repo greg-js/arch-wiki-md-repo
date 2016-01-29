@@ -1,9 +1,5 @@
 # Dolphin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
@@ -86,11 +82,3 @@ See [Samba#Unable to overwrite files](/index.php/Samba#Unable_to_overwrite_files
 *   [Dolphin Handbook](https://docs.kde.org/stable/en/applications/dolphin/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin&oldid=417167](https://wiki.archlinux.org/index.php?title=Dolphin&oldid=417167)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

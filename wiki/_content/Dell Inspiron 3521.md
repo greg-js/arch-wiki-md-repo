@@ -1,9 +1,5 @@
 # Dell Inspiron 3521
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Inspiron 3521 is a Dell laptop made in 2012 and comes with UEFI and Windows 8 by default. This guide will tell you how to configure the Dell Inspiron 3521 to run Arch Linux quite well. We will cover: Turning on Legacy BIOS mode, controlling the Fans, and controlling CPU temperatures.
 
 ## Turn on Legacy BIOS
@@ -39,7 +35,3 @@ $ fanControl.rb -no -cl (for constant low) -ch (constant high) -co (constant off
 I personally keep my fan on a Constant Low. I do not have to really worry about summer temps affecting my cpu. Depending on where you live however, you might consider using -ch as otherwise your cpu will melt.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_3521&oldid=380451](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_3521&oldid=380451)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

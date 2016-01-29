@@ -1,9 +1,5 @@
 # SciTE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [SciTE](http://www.scintilla.org/SciTE.html) is a Scintilla based text editor. Originally built to demonstrate the Scintilla text editor library, it has grown to be a general-purpose editor with facilities for building and running programs. It is best used for jobs with simple configurations.
 
 ## Contents
@@ -165,12 +161,3 @@ check.if.already.open=1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SciTE&oldid=374371](https://wiki.archlinux.org/index.php?title=SciTE&oldid=374371)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

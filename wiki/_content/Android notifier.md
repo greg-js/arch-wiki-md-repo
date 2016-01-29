@@ -1,9 +1,5 @@
 # Android notifier
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Android Notifier is a linux application that receives notifications on sms, mms, battery status and more from your phone to your Linux, Mac or Windows PC. This article is about installing and running it in the background on Arch Linux.
 
 ## Contents
@@ -47,12 +43,3 @@ Or just run it from terminal.
 Another option for running desktop notification client is [Cyborg](https://github.com/hades/Cyborg). This client does not support some features of original application, such as encryption
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Android_notifier&oldid=394837](https://wiki.archlinux.org/index.php?title=Android_notifier&oldid=394837)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # CyberPower UPS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes how to install the CyberPower UPS daemon. The main advantage of using a CyberPower UPS is that it is cheap and it can communicate with your Linux box through either a RS-232 or USB serial connection. In the event of a prolonged power outage, should the CyberPower UPS lose most of its battery capacity, it can tell the Linux box to perform a safe shutdown.
 
 ## Installation
@@ -57,7 +53,3 @@ The UPS information shows as following:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CyberPower_UPS&oldid=410457](https://wiki.archlinux.org/index.php?title=CyberPower_UPS&oldid=410457)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

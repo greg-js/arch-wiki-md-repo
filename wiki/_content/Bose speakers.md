@@ -1,9 +1,5 @@
 # Bose speakers
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -45,11 +41,3 @@ Change the default number on both values to the number that corresponds with you
 Then, select the device in _System > Preferences > Sound_ (for Gnome) and change Alsa mixer volume settings.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bose_speakers&oldid=389442](https://wiki.archlinux.org/index.php?title=Bose_speakers&oldid=389442)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

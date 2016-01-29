@@ -1,9 +1,5 @@
 # Privoxy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Tor](/index.php/Tor "Tor")
@@ -143,7 +139,3 @@ http_proxy="http://localhost:8118"
 *   [Tor Official Website](https://www.torproject.org/index.html.en)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Privoxy&oldid=412159](https://wiki.archlinux.org/index.php?title=Privoxy&oldid=412159)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")

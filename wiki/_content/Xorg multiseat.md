@@ -1,9 +1,5 @@
 # Xorg multiseat
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -470,7 +466,7 @@ As soon as you [attach](#Attaching_devices_to_a_seat) the sound card to the seat
 
 If two users want to use the sound card simultaneously, it is necessary to use a sound server, [PulseAudio](/index.php/PulseAudio "PulseAudio") being most prevalent. Usually, the PulseAudio server runs only for active user and does not allow for multiple user instances. Solution to this problem is using the system-wide PulseAudio server. Although this approach is discouraged by its authors, it is probably most applicable setup.
 
-Configuring for system-wide PulseAudio
+NaN
 
 *   Create user pulse and put him into group audio (PulseAudio drops root privileges and changes to user pulse. Group membership allows for device access.)
 *   Create group pulse-access and put users, who will play sound locally into it (Group membership is used for access control for local access to PA daemon.)
@@ -480,7 +476,7 @@ Configuring for system-wide PulseAudio
 
 In `/var/run/pulse` should appear files for communication with daemon, namely pid and native.
 
-User access
+NaN
 
 You can check communication with system daemon as non-root by e.g. `pactl -s "unix:/var/run/pulse/native" list`.
 
@@ -490,7 +486,7 @@ It is possible to enable automatic connection to local daemon in /etc/pulse/clie
 
 The users should be able to connect to PA server. All the cons for system-wide daemon become essentially pros, e.g. ability to control volume of other users streams in pavucontrol.
 
-Troubleshooting
+NaN
 
 It is possible to enable the http interface to PA for debugging in /etc/pulse/default.pa `load-module module-http-protocol-tcp` and then connect to it at [http://localhost:4714/](http://localhost:4714/)
 
@@ -711,12 +707,3 @@ The **ServerVT=7**, **ServerVT=8** would be pass to as **vt7**, **vt8**
 *   [Using udev to configure multi-seat automatically](http://code.lexarcana.com/posts/using-udev-to-configure-fedora-multi-seat-automatically.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg_multiseat&oldid=398967](https://wiki.archlinux.org/index.php?title=Xorg_multiseat&oldid=398967)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

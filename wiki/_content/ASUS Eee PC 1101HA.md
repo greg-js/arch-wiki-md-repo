@@ -1,92 +1,13 @@
 # ASUS Eee PC 1101HA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Video (GMA 500)</td>
-
-<td style="color:green">**Working**</td>
-
-<td>gma500_gfx / fbdev</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:yellow">**Partially working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Video (GMA 500) | **Working** | gma500_gfx / fbdev |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | ath9k |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** |
+| Function Keys | **Partially working** |
 
 ## Contents
 
@@ -152,7 +73,3 @@ should be enough to get all of the keys (except Fn+F7) mapped to keycodes, which
 This model have more temperature than it seems to be "normal". It seems that fan does not work properly. It reaches 69 Celsius degrees.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1101HA&oldid=328773](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1101HA&oldid=328773)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

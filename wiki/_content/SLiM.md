@@ -1,9 +1,5 @@
 # SLiM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -328,649 +324,87 @@ Here is a list of all the slim configuration options and their default values.
 
 `login_cmd` allows **%session** and **%theme**
 
-<table class="wikitable collapsible collapsable collapsed">
-
-<tbody>
-
-<tr>
-
-<th>Option Name</th>
-
-<th>Default Value</th>
-
-</tr>
-
-<tr>
-
-<td>default_path</td>
-
-<td>`/bin:/usr/bin:/usr/local/bin`</td>
-
-</tr>
-
-<tr>
-
-<td>default_xserver</td>
-
-<td>`/usr/bin/X`</td>
-
-</tr>
-
-<tr>
-
-<td>xserver_arguments</td>
-
-<td>`vt07 -auth /var/run/slim.auth`</td>
-
-</tr>
-
-<tr>
-
-<td>numlock</td>
-
-</tr>
-
-<tr>
-
-<td>daemon</td>
-
-<td>`yes`</td>
-
-</tr>
-
-<tr>
-
-<td>xauth_path</td>
-
-<td>`/usr/bin/xauth`</td>
-
-</tr>
-
-<tr>
-
-<td>login_cmd</td>
-
-<td>`exec /bin/bash -login ~/.xinitrc %session`</td>
-
-</tr>
-
-<tr>
-
-<td>halt_cmd</td>
-
-<td>`/sbin/shutdown -h now`</td>
-
-</tr>
-
-<tr>
-
-<td>reboot_cmd</td>
-
-<td>`/sbin/shutdown -r now`</td>
-
-</tr>
-
-<tr>
-
-<td>suspend_cmd</td>
-
-</tr>
-
-<tr>
-
-<td>sessionstart_cmd</td>
-
-</tr>
-
-<tr>
-
-<td>sessionstop_cmd</td>
-
-</tr>
-
-<tr>
-
-<td>console_cmd</td>
-
-<td>`/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T`</td>
-
-</tr>
-
-<tr>
-
-<td>screenshot_cmd</td>
-
-<td>`import -window root /slim.png`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_msg</td>
-
-<td>`Welcome to %host`</td>
-
-</tr>
-
-<tr>
-
-<td>session_msg</td>
-
-<td>`Session:`</td>
-
-</tr>
-
-<tr>
-
-<td>default_user</td>
-
-</tr>
-
-<tr>
-
-<td>focus_password</td>
-
-<td>`no`</td>
-
-</tr>
-
-<tr>
-
-<td>auto_login</td>
-
-<td>`no`</td>
-
-</tr>
-
-<tr>
-
-<td>current_theme</td>
-
-<td>`default`</td>
-
-</tr>
-
-<tr>
-
-<td>lockfile</td>
-
-<td>`/var/run/slim.lock`</td>
-
-</tr>
-
-<tr>
-
-<td>logfile</td>
-
-<td>`/var/log/slim.log`</td>
-
-</tr>
-
-<tr>
-
-<td>authfile</td>
-
-<td>`/var/run/slim.auth`</td>
-
-</tr>
-
-<tr>
-
-<td>shutdown_msg</td>
-
-<td>`The system is halting...`</td>
-
-</tr>
-
-<tr>
-
-<td>reboot_msg</td>
-
-<td>`The system is rebooting...`</td>
-
-</tr>
-
-<tr>
-
-<td>sessiondir</td>
-
-<td>`/usr/share/xsessions/`</td>
-
-</tr>
-
-<tr>
-
-<td>hidecursor</td>
-
-<td>`false`</td>
-
-</tr>
-
-<tr>
-
-<td>input_panel_x</td>
-
-<td>`50%`</td>
-
-</tr>
-
-<tr>
-
-<td>input_panel_y</td>
-
-<td>`40%`</td>
-
-</tr>
-
-<tr>
-
-<td>input_name_x</td>
-
-<td>`200`</td>
-
-</tr>
-
-<tr>
-
-<td>input_name_y</td>
-
-<td>`154`</td>
-
-</tr>
-
-<tr>
-
-<td>input_pass_x</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>input_pass_y</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>input_font</td>
-
-<td>`Verdana:size=11`</td>
-
-</tr>
-
-<tr>
-
-<td>input_color</td>
-
-<td>`#000000`</td>
-
-</tr>
-
-<tr>
-
-<td>input_cursor_height</td>
-
-<td>`20`</td>
-
-</tr>
-
-<tr>
-
-<td>input_maxlength_name</td>
-
-<td>`20`</td>
-
-</tr>
-
-<tr>
-
-<td>input_maxlength_passwd</td>
-
-<td>`20`</td>
-
-</tr>
-
-<tr>
-
-<td>input_shadow_xoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>input_shadow_yoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>input_shadow_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_font</td>
-
-<td>`Verdana:size=14`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_x</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_y</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_shadow_xoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_shadow_yoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>welcome_shadow_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>intro_msg</td>
-
-</tr>
-
-<tr>
-
-<td>intro_font</td>
-
-<td>`Verdana:size=14`</td>
-
-</tr>
-
-<tr>
-
-<td>intro_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>intro_x</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>intro_y</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>background_style</td>
-
-<td>`stretch`</td>
-
-</tr>
-
-<tr>
-
-<td>background_color</td>
-
-<td>`#CCCCCC`</td>
-
-</tr>
-
-<tr>
-
-<td>username_font</td>
-
-<td>`Verdana:size=12`</td>
-
-</tr>
-
-<tr>
-
-<td>username_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>username_x</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>username_y</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>username_msg</td>
-
-<td>`Please enter your username`</td>
-
-</tr>
-
-<tr>
-
-<td>username_shadow_xoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>username_shadow_yoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>username_shadow_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>password_x</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>password_y</td>
-
-<td>`-1`</td>
-
-</tr>
-
-<tr>
-
-<td>password_msg</td>
-
-<td>`Please enter your password`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_font</td>
-
-<td>`Verdana:size=16:bold`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_x</td>
-
-<td>`40`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_y</td>
-
-<td>`40`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_shadow_xoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_shadow_yoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>msg_shadow_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>session_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-<tr>
-
-<td>session_font</td>
-
-<td>`Verdana:size=16:bold`</td>
-
-</tr>
-
-<tr>
-
-<td>session_x</td>
-
-<td>`50%`</td>
-
-</tr>
-
-<tr>
-
-<td>session_y</td>
-
-<td>`90%`</td>
-
-</tr>
-
-<tr>
-
-<td>session_shadow_xoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>session_shadow_yoffset</td>
-
-<td>`0`</td>
-
-</tr>
-
-<tr>
-
-<td>session_shadow_color</td>
-
-<td>`#FFFFFF`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Option Name | Default Value |
+| default_path | `/bin:/usr/bin:/usr/local/bin` |
+| default_xserver | `/usr/bin/X` |
+| xserver_arguments | `vt07 -auth /var/run/slim.auth` |
+| numlock |
+| daemon | `yes` |
+| xauth_path | `/usr/bin/xauth` |
+| login_cmd | `exec /bin/bash -login ~/.xinitrc %session` |
+| halt_cmd | `/sbin/shutdown -h now` |
+| reboot_cmd | `/sbin/shutdown -r now` |
+| suspend_cmd |
+| sessionstart_cmd |
+| sessionstop_cmd |
+| console_cmd | `/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T` |
+| screenshot_cmd | `import -window root /slim.png` |
+| welcome_msg | `Welcome to %host` |
+| session_msg | `Session:` |
+| default_user |
+| focus_password | `no` |
+| auto_login | `no` |
+| current_theme | `default` |
+| lockfile | `/var/run/slim.lock` |
+| logfile | `/var/log/slim.log` |
+| authfile | `/var/run/slim.auth` |
+| shutdown_msg | `The system is halting...` |
+| reboot_msg | `The system is rebooting...` |
+| sessiondir | `/usr/share/xsessions/` |
+| hidecursor | `false` |
+| input_panel_x | `50%` |
+| input_panel_y | `40%` |
+| input_name_x | `200` |
+| input_name_y | `154` |
+| input_pass_x | `-1` |
+| input_pass_y | `-1` |
+| input_font | `Verdana:size=11` |
+| input_color | `#000000` |
+| input_cursor_height | `20` |
+| input_maxlength_name | `20` |
+| input_maxlength_passwd | `20` |
+| input_shadow_xoffset | `0` |
+| input_shadow_yoffset | `0` |
+| input_shadow_color | `#FFFFFF` |
+| welcome_font | `Verdana:size=14` |
+| welcome_color | `#FFFFFF` |
+| welcome_x | `-1` |
+| welcome_y | `-1` |
+| welcome_shadow_xoffset | `0` |
+| welcome_shadow_yoffset | `0` |
+| welcome_shadow_color | `#FFFFFF` |
+| intro_msg |
+| intro_font | `Verdana:size=14` |
+| intro_color | `#FFFFFF` |
+| intro_x | `-1` |
+| intro_y | `-1` |
+| background_style | `stretch` |
+| background_color | `#CCCCCC` |
+| username_font | `Verdana:size=12` |
+| username_color | `#FFFFFF` |
+| username_x | `-1` |
+| username_y | `-1` |
+| username_msg | `Please enter your username` |
+| username_shadow_xoffset | `0` |
+| username_shadow_yoffset | `0` |
+| username_shadow_color | `#FFFFFF` |
+| password_x | `-1` |
+| password_y | `-1` |
+| password_msg | `Please enter your password` |
+| msg_color | `#FFFFFF` |
+| msg_font | `Verdana:size=16:bold` |
+| msg_x | `40` |
+| msg_y | `40` |
+| msg_shadow_xoffset | `0` |
+| msg_shadow_yoffset | `0` |
+| msg_shadow_color | `#FFFFFF` |
+| session_color | `#FFFFFF` |
+| session_font | `Verdana:size=16:bold` |
+| session_x | `50%` |
+| session_y | `90%` |
+| session_shadow_xoffset | `0` |
+| session_shadow_yoffset | `0` |
+| session_shadow_color | `#FFFFFF` |
 
 ## See also
 
@@ -978,11 +412,3 @@ Here is a list of all the slim configuration options and their default values.
 *   [SLiM on GitHub](https://github.com/data-modul/slim)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SLiM&oldid=412170](https://wiki.archlinux.org/index.php?title=SLiM&oldid=412170)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

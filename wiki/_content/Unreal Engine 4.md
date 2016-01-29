@@ -1,9 +1,5 @@
 # Unreal Engine 4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Unreal Engine 4 is the latest version of the videogame Engine Created By Epic Games
 
 The content of this article was originally written on [this page](https://wiki.unrealengine.com/Building_On_Linux) and adapted specifically for Arch Linux.
@@ -131,12 +127,3 @@ $ make UE4Editor-Linux-Debug
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413930](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&oldid=413930)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

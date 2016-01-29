@@ -1,9 +1,5 @@
 # Amavis
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ClamAV](/index.php/ClamAV "ClamAV")
@@ -12,7 +8,7 @@ Related articles
 
 From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
-_amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay._
+NaN
 
 ## Contents
 
@@ -223,11 +219,3 @@ To check that everything is working all right:
 *   [Complete Virtual Mail Server/amvisd spamassassin clamav](https://wiki.gentoo.org/wiki/Complete_Virtual_Mail_Server/amvisd_spamassassin_clamav) on Gentoo wiki.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Amavis&oldid=409034](https://wiki.archlinux.org/index.php?title=Amavis&oldid=409034)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

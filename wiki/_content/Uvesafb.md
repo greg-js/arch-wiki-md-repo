@@ -1,9 +1,5 @@
 # Uvesafb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
@@ -230,12 +226,3 @@ pci=nocrs
 *   [VESA mode numbers](http://infosnews.5cz.de/VESA_BIOS_Extensions.html#VBE_mode_numbers)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Uvesafb&oldid=412201](https://wiki.archlinux.org/index.php?title=Uvesafb&oldid=412201)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

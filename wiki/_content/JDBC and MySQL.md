@@ -1,9 +1,5 @@
 # JDBC and MySQL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes how to set up your Arch system so MySQL Databases can be accessed via Java programs.
 
 ## Contents
@@ -122,7 +118,3 @@ It works !
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JDBC_and_MySQL&oldid=412108](https://wiki.archlinux.org/index.php?title=JDBC_and_MySQL&oldid=412108)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

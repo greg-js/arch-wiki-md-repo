@@ -1,9 +1,5 @@
 # GDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
@@ -14,7 +10,7 @@ Related articles
 
 From [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
-_The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins._
+NaN
 
 [Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") users with a graphical login prompt.
 
@@ -61,7 +57,7 @@ You might also wish to install the following:
 
 *   **gdm3setup** — An interface to configure GDM3, autologin options and change Shell theme
 
-[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)<sup><small>AUR</small></sup>
+NaN
 
 ## Configuration
 
@@ -567,12 +563,3 @@ As of GDM version 3.16, the [Wayland](/index.php/Wayland "Wayland") backend is u
 *   [GDM Reference Manual](https://help.gnome.org/admin/gdm/stable/index.html.en)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GDM&oldid=409767](https://wiki.archlinux.org/index.php?title=GDM&oldid=409767)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

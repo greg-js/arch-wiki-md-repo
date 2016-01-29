@@ -1,9 +1,5 @@
 # rsync
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")
@@ -124,13 +120,7 @@ First, create a script containing the appropriate command options:
 rsync -a --delete /folder/to/backup /location/of/backup &> /dev/null
 ```
 
-`-a` 
-
-indicates that files should be archived, meaning that most of their characteristics are preserved (but **not** ACLs, hard links or extended attributes such as capabilities)
-
-`--delete` 
-
-means files deleted on the source are to be deleted on the backup as well
+NaN
 
 Here, `/folder/to/backup` should be changed to what needs to be backed-up (`/home`, for example) and `/location/to/backup` is where the backup should be saved (`/media/disk`, for instance).
 
@@ -152,17 +142,7 @@ If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this scrip
 rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/to/backup &> /dev/null
 ```
 
-`-e ssh` 
-
-tells rsync to use SSH
-
-`remoteuser` 
-
-is the user on the host `remotehost`
-
-`-a` 
-
-groups all these options `-rlptgoD` (recursive, links, perms, times, group, owner, devices)
+NaN
 
 #### Automated backup with NetworkManager
 
@@ -180,17 +160,7 @@ if [ x"$2" = "xup" ] ; then
 fi
 ```
 
-`-a` 
-
-group all this options `-rlptgoD` recursive, links, perms, times, group, owner, devices
-
-`--files-from` 
-
-read the relative path of _/folder/to/backup_ from this file
-
-`--bwlimit` 
-
-limit I/O bandwidth; KBytes per second
+NaN
 
 Also, the script must have write permission for owner (root, of course) only (see [NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
 
@@ -255,9 +225,7 @@ fi
 rsync -a --delete --inplace --backup --backup-dir=/location/to/backup/incr/$DAY /folder/to/backup/ /location/to/backup/full/ &> /dev/null
 ```
 
-`--inplace` 
-
-implies `--partial` update destination files in-place
+NaN
 
 #### Snapshot backup
 
@@ -342,8 +310,3 @@ To make things really, really simple this script can be run from a [systemd/Time
 [Install](/index.php/Install "Install") the [grsync](https://www.archlinux.org/packages/?name=grsync) package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rsync&oldid=411738](https://wiki.archlinux.org/index.php?title=Rsync&oldid=411738)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

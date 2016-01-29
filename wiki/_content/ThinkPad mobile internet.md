@@ -1,9 +1,5 @@
 # ThinkPad mobile internet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Many Lenovo ThinkPads come with a mobile broadband modem. By inserting a SIM card into the modem, it is possible to use a cellular network to connect to the internet.
 
 ## Contents
@@ -47,9 +43,3 @@ Finally, running `qmi_setup.sh start` should start the cellular internet connect
 *   [Thinkwiki](http://www.thinkwiki.org)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_internet&oldid=412188](https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_internet&oldid=412188)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-*   [Modems](/index.php/Category:Modems "Category:Modems")

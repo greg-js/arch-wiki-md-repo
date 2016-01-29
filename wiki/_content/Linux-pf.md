@@ -1,9 +1,5 @@
 # Linux-pf
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Linux-pf](http://pf.natalenko.name/) is a kernel package based on the stock -ARCH kernel, with the following patches applied:
 
 *   [The latest Con Kolivas' -ck patchset, including BFS](http://ck-hack.blogspot.com/)
@@ -135,11 +131,3 @@ There is a [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=103462
 *   [Patchset changelog](http://freecode.com/projects/pf-kernel)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux-pf&oldid=410531](https://wiki.archlinux.org/index.php?title=Linux-pf&oldid=410531)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

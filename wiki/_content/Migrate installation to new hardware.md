@@ -1,9 +1,5 @@
 # Migrate installation to new hardware
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -176,14 +172,3 @@ For the first two options, consider that you might need adapters to connect the 
 *   [Howto clone a linux system](http://positon.org/clone-a-linux-system-install-to-another-computer)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrate_installation_to_new_hardware&oldid=412687](https://wiki.archlinux.org/index.php?title=Migrate_installation_to_new_hardware&oldid=412687)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

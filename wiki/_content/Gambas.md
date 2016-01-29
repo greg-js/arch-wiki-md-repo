@@ -1,9 +1,5 @@
 # Gambas
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -54,12 +50,3 @@ Gambas supports both the [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt
 *   [Gambas Examples](http://piga.tropicalwikis.com/wiki/Gambas_Examples) - several pieces of example code geared to game development.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gambas&oldid=412087](https://wiki.archlinux.org/index.php?title=Gambas&oldid=412087)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

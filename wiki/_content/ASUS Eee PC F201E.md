@@ -1,9 +1,5 @@
 # ASUS Eee PC F201E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -38,7 +34,3 @@ If the headphone jack is not working, make sure [PulseAudio](/index.php/PulseAud
 *   [Example installation procedure for Asus F201E](https://gist.github.com/yuvadm/509eda44bb2d25c11eeb)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_F201E&oldid=400598](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_F201E&oldid=400598)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

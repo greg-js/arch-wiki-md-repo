@@ -1,9 +1,5 @@
 # FiSH
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -48,13 +44,3 @@ Needed Packages: MIRACL FiSH opt: Irssi (If you did not compile Irssi from sourc
 *   [FiSH -- Secure communications with Internet Relay Chat](http://ultrx.net/doc/fish/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FiSH&oldid=374474](https://wiki.archlinux.org/index.php?title=FiSH&oldid=374474)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

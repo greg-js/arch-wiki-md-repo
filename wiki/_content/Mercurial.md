@@ -1,9 +1,5 @@
 # Mercurial
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Mercurial](http://mercurial.selenic.com/) (commonly referred to as **hg**) is a distributed version control system written in Python and is similar in many ways to [Git](/index.php/Git "Git"), [Bazaar](http://bazaar.canonical.com/) and [Darcs](/index.php/Darcs "Darcs").
 
 ## Contents
@@ -25,7 +21,7 @@ At the minimum you should configure your username or mercurial will most likely 
  `~/.hgrc` 
 
 ```
-[ui]  
+[ui]
 username = John Smith
 ```
 
@@ -34,7 +30,7 @@ To use the graphical browser **hgk** aka. **hg view**, add the following to `~/.
  `~/.hgrc` 
 
 ```
-[extensions]  
+[extensions]
 hgk=
 ```
 
@@ -47,7 +43,7 @@ To remove Mercurial warnings of unverified certificate fingerprints, add the fol
  `~/.hgrc` 
 
 ```
-[web]  
+[web]
 cacerts = /etc/ssl/certs/ca-certificates.crt
 ```
 
@@ -56,7 +52,7 @@ If you are going to be working with large repositories (e.g. [ttf-google-fonts-h
  `~/.hgrc` 
 
 ```
-[extensions]  
+[extensions]
 progress =
 ```
 
@@ -65,7 +61,7 @@ This will show progress bars on longer operations after 3 seconds. If you would 
  `~/.hgrc` 
 
 ```
-[progress]  
+[progress]
 delay = 1.5
 ```
 
@@ -80,15 +76,15 @@ You can either work with a pre-existing repository (collection of code or files)
 To work with a pre-existing repository, you must clone it to a directory of your choice:
 
 ```
-$ mkdir mercurial  
-$ cd mercurial  
+$ mkdir mercurial
+$ cd mercurial
 $ hg clone [http://hg.serpentine.com/tutorial/](http://hg.serpentine.com/tutorial/)
 ```
 
 To create you own, change to the directory you wish to share and initiate a mercurial project
 
 ```
-$ cd myfiles  
+$ cd myfiles
 $ hg init myfiles
 ```
 
@@ -115,11 +111,3 @@ You can then create a `~/.hgignore` to ensure that only the files you wish to in
 *   [Intuxication](http://mercurial.intuxication.org/) - free mercurial hosting
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mercurial&oldid=412131](https://wiki.archlinux.org/index.php?title=Mercurial&oldid=412131)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Ext4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -46,7 +42,7 @@ To format a partition do:
 
 From `man mkfs.ext4`:
 
-_**mke2fs** creates an inode for every_ bytes-per-inode _bytes of space on the disk. The larger the_ bytes-per-inode _ratio, the fewer inodes will be created._
+NaN
 
 Creating a new file, directory, symlink etc. requires at least one free inode. If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
 
@@ -292,11 +288,3 @@ To turn barriers off add the option `barrier=0` to the desired filesystem. For e
  `/etc/fstab`  `/dev/sda5    /    ext4    noatime,barrier=0    0    1` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ext4&oldid=393347](https://wiki.archlinux.org/index.php?title=Ext4&oldid=393347)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

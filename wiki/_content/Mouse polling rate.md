@@ -1,68 +1,15 @@
 # Mouse polling rate
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 If you have invested in a high resolution mouse, adjusting the USB polling rate is a common trick to utilise the added precision it brings. The polling rate (or report rate) determines how often the mouse sends information to your computer. Measured in Hertz (Hz), this setting equates to lag time (in _ms_).
 
 By default, the USB polling rate is set at 125 Hz. The table below represents combinations of _Hz_ values and their corresponding delay time:
 
-<table class="wikitable grid">
-
-<tbody>
-
-<tr>
-
-<th class="header">Hz</th>
-
-<th class="header">ms</th>
-
-</tr>
-
-<tr>
-
-<td>1000</td>
-
-<td>1</td>
-
-</tr>
-
-<tr>
-
-<td>500</td>
-
-<td>2</td>
-
-</tr>
-
-<tr>
-
-<td>250</td>
-
-<td>4</td>
-
-</tr>
-
-<tr>
-
-<td>125</td>
-
-<td>8</td>
-
-</tr>
-
-<tr>
-
-<td>100</td>
-
-<td>10</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Hz | ms |
+| 1000 | 1 |
+| 500 | 2 |
+| 250 | 4 |
+| 125 | 8 |
+| 100 | 10 |
 
 If the polling rate is set at 125 Hz, the mouse cursor can only be updated every 8 milliseconds. In situations where lag is critical (for example games), it is useful to decrease this value to as little as possible. Increasing the polling interval will improve precision at the trade-off of using more CPU resources, therefore care should be taken when adjusting this value.
 
@@ -150,7 +97,3 @@ The `Ivl` field indicates the polling interval, thus 1/Ivl is the polling rate. 
 *   [CS:S Mouse Optimization Guide](http://www.overclock.net/computer-peripherals/173255-cs-s-mouse-optimization-guide.html) -- largely aimed at Windows users, though the same principles apply for Linux.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mouse_polling_rate&oldid=393695](https://wiki.archlinux.org/index.php?title=Mouse_polling_rate&oldid=393695)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

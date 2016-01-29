@@ -1,9 +1,5 @@
 # Xfwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -149,7 +145,3 @@ If this does not fix the tearing, consider disabling Xfwm's composite manager an
 *   [Xfwm - Introduction](http://docs.xfce.org/xfce/xfwm4/introduction)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfwm&oldid=412220](https://wiki.archlinux.org/index.php?title=Xfwm&oldid=412220)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

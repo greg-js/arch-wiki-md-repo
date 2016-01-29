@@ -1,9 +1,5 @@
 # Offline installation of packages
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -247,12 +243,3 @@ Basically, simply download the Powerpill Portable script and run it on the uncon
 Your system is now up-to-date. Simply repeat the steps to keep it that way.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Offline_installation_of_packages&oldid=400872](https://wiki.archlinux.org/index.php?title=Offline_installation_of_packages&oldid=400872)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

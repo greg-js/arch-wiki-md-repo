@@ -1,9 +1,5 @@
 # Tint2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [tint2](https://gitlab.com/o9000/tint2) is a system panel/taskbar for Linux. It is described by its developers as "simple, unobtrusive and light". It can be configured to include (or not include), among other things, a system tray, a task list, a battery monitor and a clock. Its look can also be configured a great deal, and it does not have many dependencies. This makes it ideal for window manager users who want a panel but do not have one by default, like [Openbox](/index.php/Openbox "Openbox") users.
 
 ## Contents
@@ -59,25 +55,7 @@ The option `launcher_icon_theme` seems not to be documented yet.
 
 `panel_items` is a new configuration option which defines which items tint2 shows and in what order:
 
-L
-
-Show Launcher
-
-T
-
-Show Taskbar
-
-S
-
-Show Systray
-
-B
-
-Show Battery status
-
-C
-
-Show Clock
+NaN
 
 ### Applications menu in Openbox
 
@@ -196,7 +174,3 @@ Its also possible to extend tint2 with other applications. To add third party ex
 *   [Tint2 Official Wiki](https://gitlab.com/o9000/tint2/wikis/home)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tint2&oldid=404206](https://wiki.archlinux.org/index.php?title=Tint2&oldid=404206)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

@@ -1,9 +1,5 @@
 # update packages from crontab
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Recovery after failed update or upgrade](/index.php/Recovery_after_failed_update_or_upgrade "Recovery after failed update or upgrade")
@@ -302,7 +298,3 @@ done
 See also: [What to do if pacman-mirrorlist is not installed](/index.php/Mirrors#Official_mirrors "Mirrors").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Update_packages_from_crontab&oldid=410839](https://wiki.archlinux.org/index.php?title=Update_packages_from_crontab&oldid=410839)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

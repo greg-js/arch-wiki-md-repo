@@ -1,9 +1,5 @@
 # Irssi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IRC channels](/index.php/IRC_channels "IRC channels")
@@ -54,109 +50,18 @@ $ irssi
 
 ### Commands
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th style="font-weight: bold;">Command</th>
-
-<th style="font-weight: bold;">Description</th>
-
-</tr>
-
-<tr>
-
-<td>`/server`, `/s`</td>
-
-<td>Change the server of the current network.</td>
-
-</tr>
-
-<tr>
-
-<td>`/connect`, `/c`</td>
-
-<td>Open a new connection to a server. This is used to connect to multiple servers simultaneously (`Ctrl+Shift+x` switches between multiple servers).</td>
-
-</tr>
-
-<tr>
-
-<td>`/disconnect`, `/dc`</td>
-
-<td>Closes the current connection to a server.</td>
-
-</tr>
-
-<tr>
-
-<td>`ALT+(1-0,q-p,etc)`</td>
-
-<td>Changes the currently active window. `Ctrl+n` cycles to the next window, `Ctrl+p` to the previous window.</td>
-
-</tr>
-
-<tr>
-
-<td>`/window 1`</td>
-
-<td>Go to the first window. Windows are ordered by the first two rows on the keyboard: (1-0), (q-p).</td>
-
-</tr>
-
-<tr>
-
-<td>`/window close`, `/wc`</td>
-
-<td>Close the current window.</td>
-
-</tr>
-
-<tr>
-
-<td>`/window move 1`</td>
-
-<td>Move the current window to the first window position.</td>
-
-</tr>
-
-<tr>
-
-<td>`/layout save`</td>
-
-<td>Save the current window positions for later use.</td>
-
-</tr>
-
-<tr>
-
-<td>`/set`</td>
-
-<td>Show a list of current settings.</td>
-
-</tr>
-
-<tr>
-
-<td>`/help`</td>
-
-<td>Describe a provided parameter.</td>
-
-</tr>
-
-<tr>
-
-<td>`/alias`</td>
-
-<td>Create a shortcut.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | Description |
+| `/server`, `/s` | Change the server of the current network. |
+| `/connect`, `/c` | Open a new connection to a server. This is used to connect to multiple servers simultaneously (`Ctrl+Shift+x` switches between multiple servers). |
+| `/disconnect`, `/dc` | Closes the current connection to a server. |
+| `ALT+(1-0,q-p,etc)` | Changes the currently active window. `Ctrl+n` cycles to the next window, `Ctrl+p` to the previous window. |
+| `/window 1` | Go to the first window. Windows are ordered by the first two rows on the keyboard: (1-0), (q-p). |
+| `/window close`, `/wc` | Close the current window. |
+| `/window move 1` | Move the current window to the first window position. |
+| `/layout save` | Save the current window positions for later use. |
+| `/set` | Show a list of current settings. |
+| `/help` | Describe a provided parameter. |
+| `/alias` | Create a shortcut. |
 
 ## Configuration
 
@@ -450,7 +355,3 @@ Another way would be to set your hostname (vhost) with the 'set' command which w
 *   [irssi systemd unit](https://github.com/GutenYe/systemd-units/tree/master/irssi)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Irssi&oldid=412107](https://wiki.archlinux.org/index.php?title=Irssi&oldid=412107)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

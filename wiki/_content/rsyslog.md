@@ -1,9 +1,5 @@
 # rsyslog
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [syslog-ng](/index.php/Syslog-ng "Syslog-ng")
@@ -114,399 +110,45 @@ auth.*                                                  -/var/log/auth
 
 **Note:** The mapping between Facility Number and Keyword is not uniform over different operating systems and different syslog implementations. Use the keyword where possible, until it is determined which numbers are used by Arch.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Facility Number</th>
-
-<th>Keyword</th>
-
-<th>Facility Description</th>
-
-</tr>
-
-<tr>
-
-<td>0</td>
-
-<td>kern</td>
-
-<td>kernel messages</td>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>user</td>
-
-<td>user-level messages</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>mail</td>
-
-<td>mail system</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>daemon</td>
-
-<td>system daemons</td>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>auth</td>
-
-<td>security/authorization messages</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>syslog</td>
-
-<td>messages generated internally by syslogd</td>
-
-</tr>
-
-<tr>
-
-<td>6</td>
-
-<td>lpr</td>
-
-<td>line printer subsystem</td>
-
-</tr>
-
-<tr>
-
-<td>7</td>
-
-<td>news</td>
-
-<td>network news subsystem</td>
-
-</tr>
-
-<tr>
-
-<td>8</td>
-
-<td>uucp</td>
-
-<td>UUCP subsystem</td>
-
-</tr>
-
-<tr>
-
-<td>9</td>
-
-<td>clock daemon</td>
-
-</tr>
-
-<tr>
-
-<td>10</td>
-
-<td>authpriv</td>
-
-<td>security/authorization messages</td>
-
-</tr>
-
-<tr>
-
-<td>11</td>
-
-<td>ftp</td>
-
-<td>FTP daemon</td>
-
-</tr>
-
-<tr>
-
-<td>12</td>
-
-<td>-</td>
-
-<td>NTP subsystem</td>
-
-</tr>
-
-<tr>
-
-<td>13</td>
-
-<td>-</td>
-
-<td>log audit</td>
-
-</tr>
-
-<tr>
-
-<td>14</td>
-
-<td>-</td>
-
-<td>log alert</td>
-
-</tr>
-
-<tr>
-
-<td>15</td>
-
-<td>cron</td>
-
-<td>clock daemon</td>
-
-</tr>
-
-<tr>
-
-<td>16</td>
-
-<td>local0</td>
-
-<td>local use 0 (local0)</td>
-
-</tr>
-
-<tr>
-
-<td>17</td>
-
-<td>local1</td>
-
-<td>local use 1 (local1)</td>
-
-</tr>
-
-<tr>
-
-<td>18</td>
-
-<td>local2</td>
-
-<td>local use 2 (local2)</td>
-
-</tr>
-
-<tr>
-
-<td>19</td>
-
-<td>local3</td>
-
-<td>local use 3 (local3)</td>
-
-</tr>
-
-<tr>
-
-<td>20</td>
-
-<td>local4</td>
-
-<td>local use 4 (local4)</td>
-
-</tr>
-
-<tr>
-
-<td>21</td>
-
-<td>local5</td>
-
-<td>local use 5 (local5)</td>
-
-</tr>
-
-<tr>
-
-<td>22</td>
-
-<td>local6</td>
-
-<td>local use 6 (local6)</td>
-
-</tr>
-
-<tr>
-
-<td>23</td>
-
-<td>local7</td>
-
-<td>local use 7 (local7)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Facility Number | Keyword | Facility Description |
+| 0 | kern | kernel messages |
+| 1 | user | user-level messages |
+| 2 | mail | mail system |
+| 3 | daemon | system daemons |
+| 4 | auth | security/authorization messages |
+| 5 | syslog | messages generated internally by syslogd |
+| 6 | lpr | line printer subsystem |
+| 7 | news | network news subsystem |
+| 8 | uucp | UUCP subsystem |
+| 9 | clock daemon |
+| 10 | authpriv | security/authorization messages |
+| 11 | ftp | FTP daemon |
+| 12 | - | NTP subsystem |
+| 13 | - | log audit |
+| 14 | - | log alert |
+| 15 | cron | clock daemon |
+| 16 | local0 | local use 0 (local0) |
+| 17 | local1 | local use 1 (local1) |
+| 18 | local2 | local use 2 (local2) |
+| 19 | local3 | local use 3 (local3) |
+| 20 | local4 | local use 4 (local4) |
+| 21 | local5 | local use 5 (local5) |
+| 22 | local6 | local use 6 (local6) |
+| 23 | local7 | local use 7 (local7) |
 
 ### Security Levels
 
 As defined in [RFC 5424](http://tools.ietf.org/html/rfc5424), there are eight security levels:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Code</th>
-
-<th>Severity</th>
-
-<th>Keyword</th>
-
-<th>Description</th>
-
-<th>General Description</th>
-
-</tr>
-
-<tr>
-
-<td>0</td>
-
-<td>Emergency</td>
-
-<td>emerg (panic)</td>
-
-<td>System is unusable.</td>
-
-<td>A "panic" condition usually affecting multiple apps/servers/sites. At this level it would usually notify all tech staff on call.</td>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>Alert</td>
-
-<td>alert</td>
-
-<td>Action must be taken immediately.</td>
-
-<td>Should be corrected immediately, therefore notify staff who can fix the problem. An example would be the loss of a primary ISP connection.</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>Critical</td>
-
-<td>crit</td>
-
-<td>Critical conditions.</td>
-
-<td>Should be corrected immediately, but indicates failure in a primary system, an example is a loss of a backup ISP connection.</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>Error</td>
-
-<td>err (error)</td>
-
-<td>Error conditions.</td>
-
-<td>Non-urgent failures, these should be relayed to developers or admins; each item must be resolved within a given time.</td>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>Warning</td>
-
-<td>warning (warn)</td>
-
-<td>Warning conditions.</td>
-
-<td>Warning messages, not an error, but indication that an error will occur if action is not taken, e.g. file system 85% full - each item must be resolved within a given time.</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>Notice</td>
-
-<td>notice</td>
-
-<td>Normal but significant condition.</td>
-
-<td>Events that are unusual but not error conditions - might be summarized in an email to developers or admins to spot potential problems - no immediate action required.</td>
-
-</tr>
-
-<tr>
-
-<td>6</td>
-
-<td>Informational</td>
-
-<td>info</td>
-
-<td>Informational messages.</td>
-
-<td>Normal operational messages - may be harvested for reporting, measuring throughput, etc. - no action required.</td>
-
-</tr>
-
-<tr>
-
-<td>7</td>
-
-<td>Debug</td>
-
-<td>debug</td>
-
-<td>Debug-level messages.</td>
-
-<td>Info useful to developers for debugging the application, not useful during operations.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Code | Severity | Keyword | Description | General Description |
+| 0 | Emergency | emerg (panic) | System is unusable. | A "panic" condition usually affecting multiple apps/servers/sites. At this level it would usually notify all tech staff on call. |
+| 1 | Alert | alert | Action must be taken immediately. | Should be corrected immediately, therefore notify staff who can fix the problem. An example would be the loss of a primary ISP connection. |
+| 2 | Critical | crit | Critical conditions. | Should be corrected immediately, but indicates failure in a primary system, an example is a loss of a backup ISP connection. |
+| 3 | Error | err (error) | Error conditions. | Non-urgent failures, these should be relayed to developers or admins; each item must be resolved within a given time. |
+| 4 | Warning | warning (warn) | Warning conditions. | Warning messages, not an error, but indication that an error will occur if action is not taken, e.g. file system 85% full - each item must be resolved within a given time. |
+| 5 | Notice | notice | Normal but significant condition. | Events that are unusual but not error conditions - might be summarized in an email to developers or admins to spot potential problems - no immediate action required. |
+| 6 | Informational | info | Informational messages. | Normal operational messages - may be harvested for reporting, measuring throughput, etc. - no action required. |
+| 7 | Debug | debug | Debug-level messages. | Info useful to developers for debugging the application, not useful during operations. |
 
 **Tip:** A common mnemonic used to remember the syslog levels in reverse order: "Do I Notice When Evenings Come Around Early".
 
@@ -536,15 +178,9 @@ Installation and configuration steps:
 1.  Install [rsyslog](https://www.archlinux.org/packages/?name=rsyslog).
 2.  Edit `/etc/logrotate.d/rsyslog` and add `/var/log/kernel.log` to the list of logs. Without this modification, the kernel log would grow indefinitely.
 3.  Edit `/etc/rsyslog.conf` and comment everything except for `$ModLoad imklog`. I also kept `$ModLoad immark` to have a heart-beat logged.
-4.  Add the next line to the same configuration file:
+4.  Add the next line to the same configuration file:NaN
 
-     `kern.*     /var/log/kernel.log;RSYSLOG_TraditionalFileFormat` 
-
-    The `kern.*` part catches all messages originating from the kernel. `;RSYSLOG_TraditionalFileFormat` is used here to use a less verbose date format. By default, a date format like `2013-03-09T19:29:33.103897+01:00` is used. Since the kernel log contains a precision already (printk time) and the actual log time is irrelevant, I prefer something like `Mar 9 19:29:13`.
-
-5.  Since rsyslog should operate completely separated from systemd, remove the option that shares a socket with systemd:
-
-     `sed 's/^Sockets=/#&/' /usr/lib/systemd/system/rsyslog.service | sudo tee /etc/systemd/system/rsyslog.service` 
+5.  Since rsyslog should operate completely separated from systemd, remove the option that shares a socket with systemd:NaN
 
 6.  Next, make rsyslog start on boot and start it for this session by [starting](/index.php/Start "Start") and enabling `rsyslog.service`.
 
@@ -556,12 +192,3 @@ Installation and configuration steps:
 *   [rsyslog's versus syslog-ng](http://www.rsyslog.com/doc-rsyslog_ng_comparison.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rsyslog&oldid=410644](https://wiki.archlinux.org/index.php?title=Rsyslog&oldid=410644)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

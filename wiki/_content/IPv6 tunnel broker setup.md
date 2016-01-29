@@ -1,9 +1,5 @@
 # IPv6 tunnel broker setup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Hurricane Electric offers a free [tunnel broker](http://tunnelbroker.net/) service that is relatively painless to use under Arch if you wish to add IPv6 connectivity to an IPv4-only host.
 
 These instructions work for [SixXS](http://www.sixxs.net/) tunnels as well.
@@ -159,7 +155,3 @@ wget https://USERNAME:PASSWORD@ipv4.tunnelbroker.net/ipv4_end.php?tid=TUNNELID
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IPv6_tunnel_broker_setup&oldid=399268](https://wiki.archlinux.org/index.php?title=IPv6_tunnel_broker_setup&oldid=399268)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

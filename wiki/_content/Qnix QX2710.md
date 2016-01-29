@@ -1,9 +1,5 @@
 # Qnix QX2710
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article is a short tutorial on how to get the QX2710 to work well on Linux.
 
 ## Fixing X11 With Nvidia
@@ -35,7 +31,3 @@ EndSection
 *   Save the file then restart X. Your monitor should now be working.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Qnix_QX2710&oldid=357710](https://wiki.archlinux.org/index.php?title=Qnix_QX2710&oldid=357710)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

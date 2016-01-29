@@ -1,9 +1,5 @@
 # Moving an existing install into (or out of) a virtual machine
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [VirtualBox](/index.php/VirtualBox "VirtualBox")
@@ -257,8 +253,3 @@ fsck.ext4: Unable to resolve '...'
 This means that you forgot to add the drive's UUID, label or device name in `/etc/fstab`. The UUID is different every time you format it (or in this case, create one from scratch), and they likely do not match. Check with `blkid`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine&oldid=410663](https://wiki.archlinux.org/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine&oldid=410663)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

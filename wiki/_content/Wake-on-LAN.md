@@ -1,9 +1,5 @@
 # Wake-on-LAN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection (be it the internet or intranet).
 
 ## Contents
@@ -365,12 +361,3 @@ If the computer does not wake after suspend/hibernate when using [TLP](/index.ph
 *   [Wake-On-Lan](http://www.depicus.com/wake-on-lan/woli.aspx)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wake-on-LAN&oldid=411740](https://wiki.archlinux.org/index.php?title=Wake-on-LAN&oldid=411740)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

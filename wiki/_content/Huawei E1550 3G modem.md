@@ -1,9 +1,5 @@
 # Huawei E1550 3G modem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -215,11 +211,3 @@ Use [huawei-ussd](https://aur.archlinux.org/packages/huawei-ussd/)<sup><small>AU
 *   [Huawei E220](/index.php/Huawei_E220 "Huawei E220")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Huawei_E1550_3G_modem&oldid=410606](https://wiki.archlinux.org/index.php?title=Huawei_E1550_3G_modem&oldid=410606)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

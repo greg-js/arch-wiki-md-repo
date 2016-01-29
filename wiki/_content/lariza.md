@@ -1,9 +1,5 @@
 # lariza
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [lariza](https://github.com/vain/lariza/) is a simple web browser using GTK+ 2, GLib and WebKitGTK+. Its features include adblocking, keyword-based searching, a download manager and global content zoom. It provides built-in launching of suckless' [tabbed](https://www.archlinux.org/packages/?name=tabbed) to create tabs with instances of lariza. Additionally it supports the XEmbed protocol which makes it possible to embed it in another application.
 
 ## Contents
@@ -92,7 +88,3 @@ For the complete documentation, please have a look at the github pages.
 *   [page for lariza on Vain's website (german)](http://uninformativ.de/projects/?q=lariza)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lariza&oldid=387901](https://wiki.archlinux.org/index.php?title=Lariza&oldid=387901)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

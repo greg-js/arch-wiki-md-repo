@@ -1,9 +1,5 @@
 # HP Pavilion dv5z
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware Specifications](#Hardware_Specifications)
@@ -214,7 +210,3 @@ options snd-hda-intel model=hp-m4 enable_msi=1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv5z&oldid=353151](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv5z&oldid=353151)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

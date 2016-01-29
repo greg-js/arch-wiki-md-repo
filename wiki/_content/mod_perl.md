@@ -1,9 +1,5 @@
 # mod_perl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -146,11 +142,3 @@ Usually you can just reload:
 Then visit [http://perlwebtest](http://perlwebtest) (if you created a virtual host) or [http://localhost/perlwebtest](http://localhost/perlwebtest) (if you only enabled one directory).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_perl&oldid=399414](https://wiki.archlinux.org/index.php?title=Mod_perl&oldid=399414)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

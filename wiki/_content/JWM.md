@@ -1,9 +1,5 @@
 # JWM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **JWM** (Joe's Window Manager) is a featherweight [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg") written in [C](http://en.wikipedia.org/wiki/C_(programming_language)). It is under active development and maintained by [Joe Wingbermuehle](http://joewing.net/about.shtml). It is the default window manager base for distributions such as [Puppy Linux](http://www.puppylinux.org/) and [Damn Small Linux](http://damnsmalllinux.org/).
 
 JWM uses approximately 5 MB of resident memory under normal operating conditions. As of January 2009, the size of the version present in the [official Arch Linux repositories](/index.php/Official_repositories "Official repositories") is under 76 KB packaged (compare to [dwm](/index.php/Dwm "Dwm") at under 17 KB) and under 171 KB installed (compare to dwm at 68 KB). A minimally compiled version consumes approximately 136 KB of disk space and occupies under 1500 KB of resident memory.
@@ -81,8 +77,8 @@ Change the default `<Tasklist>` settings to match the improved contrast style of
 
 ```
 <TaskListStyle>
-    <strike><ActiveForeground>black</ActiveForeground></strike>
-    <strike><ActiveBackground>gray90:gray70</ActiveBackground></strike>
+    ~~<ActiveForeground>black</ActiveForeground>~~
+    ~~<ActiveBackground>gray90:gray70</ActiveBackground>~~
 </TaskListStyle>
 
 <TaskListStyle>
@@ -249,7 +245,3 @@ $ jwm -p
 *   [Puppy Linux JWM themes exchange](http://www.murga-linux.com/puppy/viewtopic.php?t=23260)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JWM&oldid=401147](https://wiki.archlinux.org/index.php?title=JWM&oldid=401147)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

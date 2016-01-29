@@ -1,9 +1,5 @@
 # QEMU
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
@@ -11,7 +7,7 @@ Related articles
 
 From the [QEMU about page](http://wiki.qemu.org/Main_Page):
 
-_QEMU is a generic and open source machine emulator and virtualizer._
+NaN
 
 When used as a machine emulator, QEMU can run OSes and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your x86 PC). By using dynamic translation, it achieves very good performance.
 
@@ -1215,17 +1211,7 @@ WantedBy=multi-user.target
 
 Then create per-VM configuration files, named `/etc/conf.d/qemu.d/_vm_name_`, with the following variables set:
 
-type
-
-QEMU binary to call. If specified, will be prepended with `/usr/bin/qemu-` and that binary will be used to start the VM. I.e. you can boot e.g. `qemu-system-arm` images with `type="system-arm"`.
-
-args
-
-QEMU command line to start with. Will always be prepended with `-name ${vm} -nographic`.
-
-haltcmd
-
-Command to shut down a VM safely. I am using `-monitor telnet:..` and power off my VMs via ACPI by sending `system_powerdown` to monitor. You can use SSH or some other ways.
+NaN
 
 Example configs:
 
@@ -1543,16 +1529,3 @@ or some other boot hindering process (e.g. can't unpack initramfs, cant start se
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=QEMU&oldid=414471](https://wiki.archlinux.org/index.php?title=QEMU&oldid=414471)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-*   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -1,9 +1,5 @@
 # Scissy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Scissy is a standalone and minimal git hosting service.
 
 ## Contents
@@ -58,7 +54,3 @@ You can get admin by doing:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Scissy&oldid=409711](https://wiki.archlinux.org/index.php?title=Scissy&oldid=409711)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")

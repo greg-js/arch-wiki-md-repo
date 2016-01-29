@@ -1,9 +1,5 @@
 # TunnelBear
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -86,11 +82,3 @@ $ sudo systemctl enable openvpn@TunnelBearJapan.service
 *   [Arch Wiki OpenVPN](https://wiki.archlinux.org/index.php/OpenVPN)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TunnelBear&oldid=378707](https://wiki.archlinux.org/index.php?title=TunnelBear&oldid=378707)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

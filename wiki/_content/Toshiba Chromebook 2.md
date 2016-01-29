@@ -1,9 +1,5 @@
 # Toshiba Chromebook 2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chromebook](/index.php/Chromebook "Chromebook")
@@ -29,7 +25,7 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 
 ## Known Issues
 
-*   Sound doesn't work without the appropriate asound.state file (James Fu's backup can be found here: [https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0](https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0) )  
+*   Sound doesn't work without the appropriate asound.state file (James Fu's backup can be found here: [https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0](https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0) )
 
 *   Support for the keyboard layout may be found in the xkeyboard-config-chromebook package in the AUR
 
@@ -40,11 +36,3 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 *   [https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH](https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Chromebook_2&oldid=416819](https://wiki.archlinux.org/index.php?title=Toshiba_Chromebook_2&oldid=416819)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Backup with hdup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Intro](#Intro)
@@ -234,7 +230,3 @@ On Debian Etch, I had to add the _-P_ option when running _hdup_. This solved th
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_with_hdup&oldid=398170](https://wiki.archlinux.org/index.php?title=Backup_with_hdup&oldid=398170)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

@@ -1,9 +1,5 @@
 # Gold linker
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -37,12 +33,3 @@ ln -s /usr/bin/ld.gold /usr/local/bin/ld
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gold_linker&oldid=342455](https://wiki.archlinux.org/index.php?title=Gold_linker&oldid=342455)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

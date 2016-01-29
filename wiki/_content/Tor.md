@@ -1,9 +1,5 @@
 # Tor
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNUnet](/index.php/GNUnet "GNUnet")
@@ -931,12 +927,3 @@ Now save changes and run the daemon:
 *   [List of tor pluggable transports for obfuscating tor's traffic](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=414065](https://wiki.archlinux.org/index.php?title=Tor&oldid=414065)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

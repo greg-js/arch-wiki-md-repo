@@ -1,9 +1,5 @@
 # Joe
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Joe's Own Editor or Joe is a text editor for Unix. It serves as a stand alone editor and has clones of [Vim](/index.php/Vim "Vim"), [Emacs](/index.php/Emacs "Emacs"), [Pico](/index.php/Nano "Nano") and WordStar. It has syntax highlighting for many common languages like Perl and C, and some for more uncommon languages like Haskell and Ada.
 
 ## Installing and Configuring
@@ -18,7 +14,3 @@ Configuring is very straight forward, it's done through rc files, located in eit
 *   [Wikipedia entry](https://en.wikipedia.org/wiki/Joe%27s_Own_Editor "wikipedia:Joe's Own Editor")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Joe&oldid=411101](https://wiki.archlinux.org/index.php?title=Joe&oldid=411101)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")

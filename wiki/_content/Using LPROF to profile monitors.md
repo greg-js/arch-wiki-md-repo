@@ -1,9 +1,5 @@
 # Using LPROF to profile monitors
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -146,45 +142,8 @@ None of the locations seem to be standard. It is recommended that you put your p
 
 ## Monitor phosphor characteristics
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th style="padding: 3px">make/model</th>
-
-<th style="padding: 3px">monitor type</th>
-
-<th style="padding: 3px">phosphor type</th>
-
-<th style="background:red; color:white">RED</th>
-
-<th style="background:green; color:white">GREEN</th>
-
-<th style="background:blue; color:white">BLUE</th>
-
-</tr>
-
-<tr>
-
-<th style="padding: 3px">DELL P1110</th>
-
-<td style="padding: 3px">CRT</td>
-
-<td style="padding: 3px">P22</td>
-
-<td style="padding: 3px">0.625 / 0.34</td>
-
-<td style="padding: 3px">0.28 / 0.595</td>
-
-<td style="padding: 3px">0.155 / 0.07</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| make/model | monitor type | phosphor type | RED | GREEN | BLUE |
+| DELL P1110 | CRT | P22 | 0.625 / 0.34 | 0.28 / 0.595 | 0.155 / 0.07 |
 
 ## See also
 
@@ -200,11 +159,3 @@ None of the locations seem to be standard. It is recommended that you put your p
 *   [lcms](http://www.littlecms.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profile_monitors&oldid=413011](https://wiki.archlinux.org/index.php?title=Using_LPROF_to_profile_monitors&oldid=413011)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

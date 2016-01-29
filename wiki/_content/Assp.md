@@ -1,9 +1,5 @@
 # Assp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -233,11 +229,3 @@ After successful login at web interface stop the ASSP with `Ctrl+c`. Please chec
 To start/stop/restart the Daemon manually, please read [Performing daemons actions manually](/index.php/Daemon#Performing_daemon_actions_manually "Daemon"), to start at Boot please read [Starting on Boot](/index.php/Daemon#Starting_on_Boot "Daemon").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Assp&oldid=388071](https://wiki.archlinux.org/index.php?title=Assp&oldid=388071)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

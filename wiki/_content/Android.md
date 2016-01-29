@@ -1,9 +1,5 @@
 # Android
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Android notifier](/index.php/Android_notifier "Android notifier")
@@ -648,13 +644,3 @@ rm `find /path/to/android-root -name .repopickle_config`
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=417219](https://wiki.archlinux.org/index.php?title=Android&oldid=417219)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Gaming
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [List of games](/index.php/List_of_games "List of games")
@@ -74,15 +70,11 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform featuring indie games. It can be considered good source of games (if you do not care about security and bugs too much).
 
-[http://www.desura.com/](http://www.desura.com/) || [desura](https://aur.archlinux.org/packages/desura/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Steam](/index.php/Steam "Steam")** — Famous digital distribution and communications platform developed by Valve. It has a large library with over 1000 Linux games. These include popular titles like Dota 2, Counter Strike: Global Offensive, Team Fortress 2, several AAA games, and lots of indie titles.
 
-[http://store.steampowered.com](http://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
-
-*   [Steam under Linux.](http://developer.valvesoftware.com/wiki/Steam_under_Linux)
-*   [See linux-games catalog.](http://store.steampowered.com/browse/linux/)
-*   Not all Steam titles are native, some are packaged to run using Wine.
+NaN
 
 *   The [Humble Store](https://www.humblebundle.com/store)
 
@@ -90,9 +82,7 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   [GOG.com](http://www.gog.com/games/linux)
 
-*   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/)<sup><small>AUR</small></sup> package can be used to download GOG titles from the command line.
-*   GOG.com only officially supports Ubuntu and Linux Mint. Bear this in mind if requesting support from them; you will not get a refund if you are having trouble running games on Arch.
-*   Many GOG.com titles come pre-packaged with DOSBox, ScummVM or Wine.
+NaN
 
 ### Flash
 
@@ -367,12 +357,3 @@ BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archli
 *   [Gaming on Linux](http://www.gamingonlinux.com/) - Active Linux gaming news and editorial source and community
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gaming&oldid=415249](https://wiki.archlinux.org/index.php?title=Gaming&oldid=415249)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

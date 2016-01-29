@@ -1,9 +1,5 @@
 # Free Pascal package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -72,11 +68,3 @@ Please adhere to the following when making an FPC-based package:
 *   add `staticlibs` to `options` if installing an import library
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Free_Pascal_package_guidelines&oldid=392146](https://wiki.archlinux.org/index.php?title=Free_Pascal_package_guidelines&oldid=392146)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

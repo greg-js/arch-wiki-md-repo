@@ -1,9 +1,5 @@
 # ASUS Zenbook UX31E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook UX31E Ultrabook. _(There is probably little/no difference with his 11" little brother, the UX21E)_
 
 ## Contents
@@ -222,7 +218,3 @@ Configure [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") 
 *   [http://www.lesswatts.org/](http://www.lesswatts.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX31E&oldid=376464](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX31E&oldid=376464)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

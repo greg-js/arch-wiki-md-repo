@@ -1,9 +1,5 @@
 # HP Pavilion dv7-1232nr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware Specifications](#Hardware_Specifications)
@@ -72,7 +68,3 @@ All necessary modules are automatically loaded.
 *   Wireless button does not appear to enable/disable wireless, further setup may be needed for this
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv7-1232nr&oldid=196642](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv7-1232nr&oldid=196642)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

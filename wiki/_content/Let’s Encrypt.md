@@ -1,9 +1,5 @@
 # Let’s Encrypt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open certificate authority. It provides tools to request valid ssl certificates straight from the command line.
 
 ## Contents
@@ -81,8 +77,3 @@ WantedBy=timers.target
 If the new certificate is not visible to your web server, you might have to also restart it (e.g. `nginx.service` or `httpd.service`).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Let’s_Encrypt&oldid=417027](https://wiki.archlinux.org/index.php?title=Let’s_Encrypt&oldid=417027)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")

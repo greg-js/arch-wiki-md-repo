@@ -1,9 +1,5 @@
 # UnrealIRCd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[UnrealIRCd](https://www.unrealircd.org/)** (Unreal IRC daemon) is an Open Source IRC Server. Development of UnrealIRCd began in May of 1999\. Unreal was created from the Dreamforge IRCd that was formerly used by the DALnet IRC Network. Over the years, many new and exciting features have been added to Unreal. It is hard to even see a resemblance between the current Unreal and Dreamforge.
 
 ## Installing UnrealIRCd
@@ -32,7 +28,3 @@ If you run into problems where the daemon will not start, try running:
 It will print out the errors and what line they occur on. Often errors are due to problems in your configuration.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=UnrealIRCd&oldid=379721](https://wiki.archlinux.org/index.php?title=UnrealIRCd&oldid=379721)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

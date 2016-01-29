@@ -1,9 +1,5 @@
 # Airvpn
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Configuring OpenVPN to connect as a client to an AirVPN server
 
 [OpenVPN](/index.php/OpenVPN "OpenVPN") describes configuration from scratch for both servers and clients, including generating keys and certificates.
@@ -111,7 +107,3 @@ verb 3
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Airvpn&oldid=412033](https://wiki.archlinux.org/index.php?title=Airvpn&oldid=412033)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

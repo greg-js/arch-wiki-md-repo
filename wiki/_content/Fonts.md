@@ -1,9 +1,5 @@
 # Fonts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Font configuration](/index.php/Font_configuration "Font configuration")
@@ -13,7 +9,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"):
 
-_A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats._
+NaN
 
 Note that certain font licenses may impose some legal limitations.
 
@@ -73,13 +69,7 @@ Note that certain font licenses may impose some legal limitations.
 
 Most computer fonts used today are in either _bitmap_ or _outline_ data formats.
 
-Bitmap fonts
-
-Consist of a matrix of dots or pixels representing the image of each glyph in each face and size.
-
-Outline or _vector_ fonts
-
-Use Bézier curves, drawing instructions and mathematical formulae to describe each glyph, which make the character outlines scalable to any size.
+NaN
 
 ### Common extensions
 
@@ -440,7 +430,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font for Bangla
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont)
 
-(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
+NaN
 
 *   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/)<sup><small>AUR</small></sup> - Indic TrueType fonts from Fedora Project (containing Oriya Fonts and more)
 *   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/)<sup><small>AUR</small></sup> - Devanagari TrueType fonts (contains 283 fonts)
@@ -665,12 +655,3 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 *   [State of Text Rendering](http://behdad.org/text/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fonts&oldid=416564](https://wiki.archlinux.org/index.php?title=Fonts&oldid=416564)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fonts](/index.php/Category:Fonts "Category:Fonts")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

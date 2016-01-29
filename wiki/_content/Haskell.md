@@ -1,9 +1,5 @@
 # Haskell
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Haskell](http://www.haskell.org) is a general purpose, purely functional, programming language.
 
 ## Contents
@@ -49,7 +45,7 @@ Hello, World
 
 To start developing in Haskell easily, one option is the [haskell-platform](http://www.haskell.org/platform/) bundle which is described as:
 
-_The easiest way to get started with programming Haskell. It comes with all you need to get up and running. Think of it as "Haskell: batteries included"._
+NaN
 
 Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-platform)]</sup>), the Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
@@ -83,63 +79,11 @@ The recommended workflow is the following:
 
 The following table documents the advantages and disadvantages of different package management styles.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>**Method**</th>
-
-<th>**Pros**</th>
-
-<th>**Cons**</th>
-
-</tr>
-
-<tr>
-
-<td>[Official repositories](/index.php/Official_repositories "Official repositories")</td>
-
-<td>Provided by ArchLinux developers, consistent versions of packages, already compiled</td>
-
-<td>Only a few packages available</td>
-
-</tr>
-
-<tr>
-
-<td>[ArchHaskell repository](#ArchHaskell_repository)</td>
-
-<td>Provided by ArchHaskell group, consistent versions of packages, already compiled</td>
-
-<td>Need manual intervention to get started with</td>
-
-</tr>
-
-<tr>
-
-<td>[cabal-install](#cabal-install)</td>
-
-<td>All packages available</td>
-
-<td>Installed in home folder, [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) [is not a package manager](https://ivanmiljenovic.wordpress.com/2010/03/15/repeat-after-me-cabal-is-not-a-package-manager), incompatible versions of packages possible (aka. [cabal hell](http://www.haskell.org/haskellwiki/Cabal/Survival#What_is_the_difficulty_caused_by_Cabal-install.3F))</td>
-
-</tr>
-
-<tr>
-
-<td>[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")</td>
-
-<td>Simple to get started</td>
-
-<td>Risk of unmaintained or orphaned packages, incompatible versions of packages possible</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Method** | **Pros** | **Cons** |
+| [Official repositories](/index.php/Official_repositories "Official repositories") | Provided by ArchLinux developers, consistent versions of packages, already compiled | Only a few packages available |
+| [ArchHaskell repository](#ArchHaskell_repository) | Provided by ArchHaskell group, consistent versions of packages, already compiled | Need manual intervention to get started with |
+| [cabal-install](#cabal-install) | All packages available | Installed in home folder, [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) [is not a package manager](https://ivanmiljenovic.wordpress.com/2010/03/15/repeat-after-me-cabal-is-not-a-package-manager), incompatible versions of packages possible (aka. [cabal hell](http://www.haskell.org/haskellwiki/Cabal/Survival#What_is_the_difficulty_caused_by_Cabal-install.3F)) |
+| [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") | Simple to get started | Risk of unmaintained or orphaned packages, incompatible versions of packages possible |
 
 ### ArchHaskell repository
 
@@ -173,12 +117,3 @@ It is possible to install a package system–wide with the `--global` flag, but 
 There is no easy way to do it.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Haskell&oldid=412095](https://wiki.archlinux.org/index.php?title=Haskell&oldid=412095)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

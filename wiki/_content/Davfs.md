@@ -1,9 +1,5 @@
 # Davfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **DAVfs** is a Linux file system driver that allows you to mount a WebDAV server as a disk drive. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources, defined in [RFC 4918](//tools.ietf.org/html/rfc4918).
 
 ## Contents
@@ -106,7 +102,3 @@ use_locks 0
 [http://doc.owncloud.org/server/6.0/user_manual/files/files.html](http://doc.owncloud.org/server/6.0/user_manual/files/files.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Davfs&oldid=412058](https://wiki.archlinux.org/index.php?title=Davfs&oldid=412058)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

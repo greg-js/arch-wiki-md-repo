@@ -1,9 +1,5 @@
 # Alienware 13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This wiki page documents the configuration and troubleshooting specific to the Alienware13 laptop.
 
 See the [Begginer's Guide](https://wiki.archlinux.org/index.php/Beginners%27_guide) for installation instructions.
@@ -183,7 +179,3 @@ Controlling the keyboard from the terminal.
 We can simply add this commands to the energy admin or the startup to make keyboard lights change automatically
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Alienware_13&oldid=414231](https://wiki.archlinux.org/index.php?title=Alienware_13&oldid=414231)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Alienware](/index.php/Category:Alienware "Category:Alienware")

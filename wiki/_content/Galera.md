@@ -1,9 +1,5 @@
 # Galera
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Galera is a synchronous multi-master cluster for MySQL/InnoDB databases. For more information about the product and its features, please visit the [official webpage](http://codership.com/content/using-galera-cluster).
 
 **Note:** Currently replication is supported only for InnoDB tables.
@@ -104,11 +100,3 @@ Once you configured the first node, you should be able to start all other nodes 
 [Galera Wiki](http://www.codership.com/wiki/doku.php?id=galera_wiki) [Percona XtraDB Cluster’s documentation](http://www.percona.com/doc/percona-xtradb-cluster/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Galera&oldid=392188](https://wiki.archlinux.org/index.php?title=Galera&oldid=392188)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

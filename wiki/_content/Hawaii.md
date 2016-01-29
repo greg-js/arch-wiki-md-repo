@@ -1,9 +1,5 @@
 # Hawaii
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Wayland](/index.php/Wayland "Wayland")
@@ -14,7 +10,7 @@ Related articles
 
 From [phoronix.com](http://www.phoronix.com/scan.php?page=news_item&px=MTI4ODA):
 
-The Hawaii Desktop is looking to be the very first [Wayland](/index.php/Wayland "Wayland")-friendly desktop environment for Linux.
+NaN
 
 **Warning:** The Hawaii desktop environment has not reached its stable 1.0 release.
 
@@ -80,7 +76,3 @@ To later import it (for example) on another computer, do:
 *   [https://github.com/hawaii-desktop](https://github.com/hawaii-desktop) Hawaii's github page
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hawaii&oldid=406938](https://wiki.archlinux.org/index.php?title=Hawaii&oldid=406938)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

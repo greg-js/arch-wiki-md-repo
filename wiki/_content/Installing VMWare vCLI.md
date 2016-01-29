@@ -1,9 +1,5 @@
 # Installing VMWare vCLI
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [VMware](/index.php/VMware "VMware")
@@ -90,7 +86,3 @@ Fire up the installation:
 Potential warnings about rpm and versions can be safely ignored.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_VMWare_vCLI&oldid=410175](https://wiki.archlinux.org/index.php?title=Installing_VMWare_vCLI&oldid=410175)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

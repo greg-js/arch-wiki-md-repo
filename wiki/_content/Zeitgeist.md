@@ -1,9 +1,5 @@
 # Zeitgeist
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Zeitgeist](http://zeitgeist-project.com/) is a service which logs user activities and events, anywhere from files opened to websites visited or conversations held via email and more. It makes this information readily available for other applications to use in the form of timelines and statistics. See the [Wikipedia article](https://en.wikipedia.org/wiki/Zeitgeist_(framework) "wikipedia:Zeitgeist (framework)") for a more detailed description of Zeitgeist itself.
 
 ## Installation
@@ -41,11 +37,3 @@ The following applications can be used to browse or search for recent activity u
 For more information see [http://zeitgeist-project.com/experience/](http://zeitgeist-project.com/experience/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Zeitgeist&oldid=413190](https://wiki.archlinux.org/index.php?title=Zeitgeist&oldid=413190)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

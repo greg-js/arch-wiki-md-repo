@@ -1,9 +1,5 @@
 # Ganglia
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Ganglia is a scalable distributed system monitor tool for high-performance computing systems such as clusters and grids. It allows the user to remotely view live or historical statistics (such as CPU load averages or network utilization) for all machines that are being monitored.
 
 Ganglia is available as the [ganglia](https://aur.archlinux.org/packages/ganglia/)<sup><small>AUR</small></sup> package on the [AUR](/index.php/AUR "AUR"), along with the web frontend [ganglia-web](https://aur.archlinux.org/packages/ganglia-web). There is also a reduced-dependency version named [ganglia-minimal](https://aur.archlinux.org/packages/ganglia-minimal/)<sup><small>AUR</small></sup>, which would be appropriate on boxes where you don't require `gmetad` and want to avoid pulling in `rrdtool` as a dependency, which would in turn pull in Cairo and Mesa.
@@ -112,7 +108,3 @@ globals {
 *   E-mail exchange explaining IP and Hostname lookup: [http://www.mail-archive.com/ganglia-general@lists.sourceforge.net/msg01885.html](http://www.mail-archive.com/ganglia-general@lists.sourceforge.net/msg01885.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ganglia&oldid=394260](https://wiki.archlinux.org/index.php?title=Ganglia&oldid=394260)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")

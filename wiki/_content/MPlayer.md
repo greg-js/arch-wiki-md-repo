@@ -1,9 +1,5 @@
 # MPlayer
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [mpv](/index.php/Mpv "Mpv")
@@ -50,21 +46,21 @@ Various flavours of MPlayer can be [installed](/index.php/Pacman "Pacman") from 
 
 *   ****MPlayer**** — Official package
 
-[https://mplayerhq.hu/](https://mplayerhq.hu/) || [mplayer](https://www.archlinux.org/packages/?name=mplayer)
+NaN
 
 Notable variants are:
 
 *   **MPlayer-VAAPI** — VAAPI-enabled version
 
-[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)<sup><small>AUR</small></sup>
+NaN
 
 *   **MPlayer-svn** — Development version
 
-|| [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)<sup><small>AUR</small></sup>
+NaN
 
 *   **MPlayer2** — Fork of MPlayer
 
-[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup> [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer2-git)]</sup>
+NaN
 
 **Note:** _mplayer2_ development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) if you want to use it.
 
@@ -72,31 +68,31 @@ Notable variants are:
 
 *   **Deepin Media Player** — Rich GTK2/Python interface for the Deepin desktop.
 
-[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/deepin-media-player)]</sup>
+NaN
 
 *   **GNOME MPlayer** — Simple GTK+-based GUI for MPlayer.
 
-[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
+NaN
 
 *   **KPlayer** — Multimedia player for KDE4 using mplayer as a backend.
 
-[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)<sup><small>AUR</small></sup>
+NaN
 
 *   **KMPlayer** — Video player plugin for Konqueror and basic MPlayer/Xine/ffmpeg/ffserver/VDR frontend for KDE.
 
-[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Rosa Media Player** — Multimedia player based on SMPlayer with clean and elegant UI.
 
-[http://www.rosalab.com/](http://www.rosalab.com/) || [rosa-media-player](https://aur.archlinux.org/packages/rosa-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rosa-media-player)]</sup>
+NaN
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.).
 
-[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+NaN
 
 *   **Xt7-Player** — Graphical user interface for MPlayer written in Gambas, with a huge list of features.
 
-[http://xt7-player.sourceforge.net/xt7forum/](http://xt7-player.sourceforge.net/xt7forum/) || [xt7-player](https://aur.archlinux.org/packages/xt7-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xt7-player)]</sup>
+NaN
 
 ## Browser integration
 
@@ -507,11 +503,3 @@ The `:1` is to lower the CDROM speed for a constant spin and less noise.
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412708](https://wiki.archlinux.org/index.php?title=MPlayer&oldid=412708)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

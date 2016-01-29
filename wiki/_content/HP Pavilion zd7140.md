@@ -1,9 +1,5 @@
 # HP Pavilion zd7140
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Another work in Progress - by PhrakTure I am currently running Arch on this laptop, 98% problem free... and no I have not yet configured the media card reader, as I have no use for it. If anyone really has a problem, let me know (PM from forums).
 
 ## Contents
@@ -28,11 +24,9 @@ Another work in Progress - by PhrakTure I am currently running Arch on this lapt
 
 *   Video mode detected wrong
 
-Add the following to the device (nvidia driver) section in xorg.conf
+NaN
 
- `Option "IgnoreEDID" "True"` 
-
-*   And the following line to the "Monitor" section  
+*   And the following line to the "Monitor" section
      `Modeline "1440x900"  106.47  1440 1520 1672 1904  900 901 904 932  -hsync +vsync` 
 
 The following Display Subsection (in the Screen Section) will allow you to use the display's native viewing mode.
@@ -51,7 +45,3 @@ EndSubsection
 *   This report is listed at the [TuxMobil: Linux Laptop and Notebook Installation Guides Survey: Hewlett-Packard - HP](http://tuxmobil.org/hp.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_zd7140&oldid=196648](https://wiki.archlinux.org/index.php?title=HP_Pavilion_zd7140&oldid=196648)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

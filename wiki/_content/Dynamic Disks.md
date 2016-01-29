@@ -1,9 +1,5 @@
 # Dynamic Disks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Dynamic Disks is a technology from Microsoft and Veritas Software (now owned by Symantec) that brings LVM and mdadm functionality to Windows. Dynamic Disks first appeared in Windows 2000, but the concept existed in a different implementation under Windows NT Server 4.0\. This feature has been limited to the Professional, Enterprise and/or Server versions of Windows until Windows 7, wherein Home Premium users can create Simple (single partition), Spanned (JBOD), or Striped (RAID0) volumes. Unlike LVM and mdadm, Dynamic Disks always take up the entire disk. If the Dynamic Disk uses MBR partitions, one large partition will hold the data while metadata is stored outside the partition at the end of the disk. If the Dynamic Disk uses GPT partitions, two partition will be used -- a small one at the beginning to hold the metadata and a large one for the data taking up the remainder of the disk space.
 
 ## Uses Under Arch Linux
@@ -76,8 +72,3 @@ Then [enable](/index.php/Enable "Enable") `ldmtool.service`.
 Once this setup is complete, you can add entries to `/etc/fstab` that reference Dynamic Disk volumes and have those mounted like any other volume.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_Disks&oldid=413580](https://wiki.archlinux.org/index.php?title=Dynamic_Disks&oldid=413580)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

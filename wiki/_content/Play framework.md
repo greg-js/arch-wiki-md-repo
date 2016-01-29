@@ -1,9 +1,5 @@
 # Play framework
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -164,12 +160,3 @@ You can manually stop, start or restart your application **in root**.
 *   [Video demonstration](http://blog.greweb.fr/2011/10/how-to-deploy-your-play-applications-on-archlinux-with-daemons/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Play_framework&oldid=392570](https://wiki.archlinux.org/index.php?title=Play_framework&oldid=392570)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

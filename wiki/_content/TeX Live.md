@@ -1,9 +1,5 @@
 # TeX Live
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
@@ -49,13 +45,7 @@ The essential package [texlive-core](https://www.archlinux.org/packages/?name=te
 
 ### texlive-most
 
-<table width="100%">
-
-<tbody>
-
-<tr valign="top">
-
-<td>
+| 
 
 *   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)
 *   [texlive-bibtexextra](https://www.archlinux.org/packages/?name=texlive-bibtexextra)
@@ -63,9 +53,7 @@ The essential package [texlive-core](https://www.archlinux.org/packages/?name=te
 *   [texlive-formatsextra](https://www.archlinux.org/packages/?name=texlive-formatsextra)
 *   [texlive-games](https://www.archlinux.org/packages/?name=texlive-games)
 
-</td>
-
-<td>
+ | 
 
 *   [texlive-genericextra](https://www.archlinux.org/packages/?name=texlive-genericextra)
 *   [texlive-htmlxml](https://www.archlinux.org/packages/?name=texlive-htmlxml)
@@ -73,9 +61,7 @@ The essential package [texlive-core](https://www.archlinux.org/packages/?name=te
 *   [texlive-latexextra](https://www.archlinux.org/packages/?name=texlive-latexextra)
 *   [texlive-music](https://www.archlinux.org/packages/?name=texlive-music)
 
-</td>
-
-<td>
+ | 
 
 *   [texlive-pictures](https://www.archlinux.org/packages/?name=texlive-pictures)
 *   [texlive-plainextra](https://www.archlinux.org/packages/?name=texlive-plainextra)
@@ -83,13 +69,7 @@ The essential package [texlive-core](https://www.archlinux.org/packages/?name=te
 *   [texlive-publishers](https://www.archlinux.org/packages/?name=texlive-publishers)
 *   [texlive-science](https://www.archlinux.org/packages/?name=texlive-science)
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
 
 ### texlive-lang
 
@@ -132,23 +112,23 @@ There are also a few online solutions that let you create TeX-based documents wi
 
 *   **Authorea** — Online collaborative editor for scientific, academic, and technical documents.
 
-[https://www.authorea.com/](https://www.authorea.com/) ||
+NaN
 
 *   **ShareLaTeX** — An open source online LaTeX editor. You can either run your own local version where you can host, edit, collaborate in real-time, and compile your LaTeX documents, or simply use the version hosted on the official website.
 
-[https://www.sharelatex.com/](https://www.sharelatex.com/) ||
+NaN
 
 *   **Overleaf** — (Previously writeLaTeX) Online collaborative LaTeX editor with integrated real-time preview.
 
-[https://www.overleaf.com/](https://www.overleaf.com/) ||
+NaN
 
 *   **cloudTeX** — Social TeX in the cloud.
 
-[https://cloud-tex.com/](https://cloud-tex.com/) ||
+NaN
 
 *   **Papeeria** — Online LaTeX editor.
 
-[http://papeeria.com/](http://papeeria.com/) ||
+NaN
 
 Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 
@@ -355,12 +335,3 @@ Afterwards, you need to run `texhash` to update the TeX database:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=411508](https://wiki.archlinux.org/index.php?title=TeX_Live&oldid=411508)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TeX](/index.php/Category:TeX "Category:TeX")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Logitech Racing Wheel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article describes how to set up a Logitech Formula Force GP Racing Wheel with Arch Linux.
 
 ## Contents
@@ -127,8 +123,3 @@ The Wheel works without any wine configuration in flatout2\. Just the following 
 [Sourceforge wiki: CheckForceFeedback](http://sourceforge.net/apps/mediawiki/libff/index.php?title=CheckForceFeedback)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Racing_Wheel&oldid=383870](https://wiki.archlinux.org/index.php?title=Logitech_Racing_Wheel&oldid=383870)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

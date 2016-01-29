@@ -1,9 +1,5 @@
 # Kerbal Space Program
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Since version 0.19, Kerbal Space Program includes a native Linux version. However, only Ubuntu 12.04 is officialy supported, so it may not work on Arch Linux out of the box.
 
 ## Contents
@@ -112,11 +108,3 @@ Disable "Edge Highlighting (PPFX)" in graphics settings ingame.
 *   [http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread](http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread)!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kerbal_Space_Program&oldid=392308](https://wiki.archlinux.org/index.php?title=Kerbal_Space_Program&oldid=392308)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

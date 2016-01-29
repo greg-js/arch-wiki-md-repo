@@ -1,9 +1,5 @@
 # Gcin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Gcin is a new generation of Chinese input method server developed by Edward Liu. Gcin supports various input methods and works under most Unix-like operating systems. It's one of the most popular Chinese input engines in Taiwan.
 
 ## Contents
@@ -93,11 +89,3 @@ gcin &
 2.  In wine+IE6 with Windows 98 emulation, LC_CTYPE isn't enough if you want to input Chinese on the web-pages - you have to set either LANG or LC_ALL to zh_TW.utf8, which slows down wine a lot. However, you can always type Chinese in the location bar or other places and paste it.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gcin&oldid=412088](https://wiki.archlinux.org/index.php?title=Gcin&oldid=412088)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

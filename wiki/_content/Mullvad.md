@@ -1,9 +1,5 @@
 # Mullvad
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Mullvad is a VPN service based in Sweden which operates [OpenVPN](/index.php/OpenVPN "OpenVPN") and PPTP servers. This article explains how to set up an OpenVPN connection to Mullvad.
 
 ## Configuring OpenVPN
@@ -97,7 +93,3 @@ The VPN can then be [controlled](/index.php/Enabled "Enabled") through `openvpn@
 Mullvad also supply their own [graphical client](https://mullvad.net/en/download/), packaged as [mullvad](https://aur.archlinux.org/packages/mullvad/)<sup><small>AUR</small></sup>.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415851](https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415851)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

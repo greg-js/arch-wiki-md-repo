@@ -1,9 +1,5 @@
 # Window Maker
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Window Maker is a [window manager](/index.php/Window_manager "Window manager") (WM) for the X Window System. It is designed to emulate the NeXT user interface as an OpenStep-compatible environment, and is characterized by low memory demands and high flexibility. As one of the lighter WMs, it is well suited for machines with modest performance specifications.
 
 ## Contents
@@ -210,7 +206,3 @@ Some applications such as [Chromium](/index.php/Chromium "Chromium") will not di
 *   [Window Maker (Wikipedia)](http://en.wikipedia.org/wiki/Window_Maker)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Window_Maker&oldid=413096](https://wiki.archlinux.org/index.php?title=Window_Maker&oldid=413096)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

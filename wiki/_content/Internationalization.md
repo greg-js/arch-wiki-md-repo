@@ -1,36 +1,10 @@
 # Internationalization
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is the main article on the internationalization of an Arch Linux installation. It is meant to offer guidance, as well as crosslink other relevant articles, to customize settings of an Arch Linux installation to work with any supported language.
 
 The article makes use of subpages for instructions specific for languages:
 
-<table class="mw-prefixindex-list-table">
-
-<tbody>
-
-<tr>
-
-<td>[Internationalization/Indic](/index.php/Internationalization/Indic "Internationalization/Indic")</td>
-
-<td>[Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")</td>
-
-<td>[Internationalization/Korean](/index.php/Internationalization/Korean "Internationalization/Korean")</td>
-
-</tr>
-
-<tr>
-
-<td>[Internationalization/Korean (한국어)](/index.php/Internationalization/Korean_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Internationalization/Korean (한국어)")</td>
-
-</tr>
-
-</tbody>
-
-</table>
+NaN
 
 ## Contents
 
@@ -114,7 +88,7 @@ XSETTINGS provides a common API to configure common desktop settings. Similar da
 
 The if GTK+ has debugging enabled, the loaded modules can be seen by
 
- `application --gtk-debug modules` 
+NaN
 
 Otherwise, the modules can be seen by scanning the linked libraries in gdb after attaching to the process.
 
@@ -145,12 +119,3 @@ To disable input method module loading in QT, export QT_IM_MODULE="simple".
 *   [Running and Debugging GTK+ Applications](http://library.gnome.org/devel/gtk/unstable/gtk-running.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Internationalization&oldid=411217](https://wiki.archlinux.org/index.php?title=Internationalization&oldid=411217)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

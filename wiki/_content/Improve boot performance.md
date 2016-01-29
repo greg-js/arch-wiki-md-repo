@@ -1,9 +1,5 @@
 # Improve boot performance
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
@@ -179,12 +175,3 @@ Change `verbose` to `quiet` on the bootloader's kernel line. For some systems, p
 The best way to reduce boot time is not booting at all. Consider [suspending your system to RAM](/index.php/Suspend_and_hibernate#Suspend_to_RAM "Suspend and hibernate") instead.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=401019](https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=401019)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

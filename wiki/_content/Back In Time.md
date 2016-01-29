@@ -1,9 +1,5 @@
 # Back In Time
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Back In Time** is a simple backup tool for Linux inspired by “flyback project” and “TimeVault”. The backup is done by taking snapshots of a specified set of directories.
 
 Back In Time provides a Qt4 GUI which will run on Gnome, KDE and all other DE's.
@@ -46,7 +42,3 @@ If you see the error message in the status bar that BIT cannot find the snapshot
 *   [Upstream Bug Tracker](https://github.com/bit-team/backintime/issues)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Back_In_Time&oldid=416185](https://wiki.archlinux.org/index.php?title=Back_In_Time&oldid=416185)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

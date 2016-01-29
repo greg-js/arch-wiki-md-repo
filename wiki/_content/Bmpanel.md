@@ -1,9 +1,5 @@
 # Bmpanel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [BMPanel](https://code.google.com/p/bmpanel2/) (_BitMap Panel_) is a lightweight, NETWM compliant panel for X11 Window System, which contains a desktop switcher, taskbar, system tray and clock. The application is inspired by simplicity of fspanel. BMPanel has a modern look and feel, while keeping itself tiny and small.
 
 ## Installation
@@ -31,12 +27,3 @@ bmpanel2 --theme=_theme_name_ &
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bmpanel&oldid=409481](https://wiki.archlinux.org/index.php?title=Bmpanel&oldid=409481)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

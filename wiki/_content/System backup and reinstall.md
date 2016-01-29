@@ -1,9 +1,5 @@
 # System backup and reinstall
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This tutorial is to explain how to backup the system configurations and other likewise items in order to expedite a reinstall process.
 
 ## Contents
@@ -179,7 +175,3 @@ rsync --archive /mnt/backup/amiga_$(date +%F)_syscfg/ /mnt/install/
 *   Edits in the kernel ram disk configuration will necessitate its rebuilding before rebooting.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=System_backup_and_reinstall&oldid=397030](https://wiki.archlinux.org/index.php?title=System_backup_and_reinstall&oldid=397030)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

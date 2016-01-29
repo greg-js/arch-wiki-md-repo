@@ -1,9 +1,5 @@
 # Webcam setup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
 
 [![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
@@ -407,7 +403,7 @@ You can either set an alias for skype, or rename the original skype binary in `/
 
 ### Motion
 
-_Motion is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion._
+NaN
 
 [motion](https://www.archlinux.org/packages/?name=motion) can only handle v4l2 devices so if you need to use a camera that only has v4l1 drivers you need to preload v4l1compat.so as previously mentioned. Otherwise you will get loads of errors about motion not able to find a suitable palette.
 
@@ -429,12 +425,3 @@ options uvcvideo quirks=0x80
 **Note:** If delays are visible in the logs, or the camera works periodically, this workaround should apply generally. Bigger values such as `quirks=0x100` are possible.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Webcam_setup&oldid=414535](https://wiki.archlinux.org/index.php?title=Webcam_setup&oldid=414535)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Imaging](/index.php/Category:Imaging "Category:Imaging")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # ClamAV
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Clam AntiVirus](http://www.clamav.net) is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops it primarily detects Windows viruses and malware.
 
 ## Contents
@@ -176,7 +172,3 @@ Correct permissions:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ClamAV&oldid=413129](https://wiki.archlinux.org/index.php?title=ClamAV&oldid=413129)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

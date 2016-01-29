@@ -1,9 +1,5 @@
 # Wordpress
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
@@ -239,7 +235,3 @@ Another option is changing a value in the database table of your Wordpress, spec
 *   [Content management system](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wordpress&oldid=415623](https://wiki.archlinux.org/index.php?title=Wordpress&oldid=415623)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

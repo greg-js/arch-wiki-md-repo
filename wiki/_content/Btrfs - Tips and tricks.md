@@ -1,9 +1,5 @@
 # Btrfs - Tips and tricks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -262,11 +258,3 @@ Then, when the worst happens, use `grub`, or whatever, to add "break" to the ker
 **Note:** If the fsck process has to invalidate the space cache (and/or other caches?) then it is normal for a subsequent boot to hang up for a while (it may give console messages about btrfs-transaction being hung). The system should recover from this after a while.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Btrfs_-_Tips_and_tricks&oldid=375980](https://wiki.archlinux.org/index.php?title=Btrfs_-_Tips_and_tricks&oldid=375980)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

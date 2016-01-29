@@ -1,9 +1,5 @@
 # Rosegarden
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Rosegarden](http://www.rosegardenmusic.com/)** is a digital audio workstation program written in Qt. It acts as an audio and MIDI sequencer, scorewriter and musical composition and editing tool. It is intended to be a free alternative to such applications as Cubase.
 
 ## Contents
@@ -59,8 +55,3 @@ This way, Rosegarden will not launch [jackd](/index.php/JACK "JACK") and you'll 
 *   [Pro Audio](/index.php/Pro_Audio "Pro Audio")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rosegarden&oldid=389815](https://wiki.archlinux.org/index.php?title=Rosegarden&oldid=389815)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

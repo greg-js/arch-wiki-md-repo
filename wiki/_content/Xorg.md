@@ -1,9 +1,5 @@
 # Xorg
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Start X at login](/index.php/Start_X_at_login "Start X at login")
@@ -19,7 +15,7 @@ Related articles
 
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-_The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work._
+NaN
 
 **Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
@@ -110,115 +106,15 @@ In order for video acceleration to work, and often to expose all the modes that 
 
 **Note:** If you have a NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-<table class="wikitable" style="text-align:center">
-
-<tbody>
-
-<tr>
-
-<th>Brand</th>
-
-<th>Type</th>
-
-<th>Driver</th>
-
-<th>[Multilib](/index.php/Multilib "Multilib")</th>
-
-<th>Documentation</th>
-
-</tr>
-
-<tr>
-
-<td rowspan="3" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">**AMD/ATI**</td>
-
-<td rowspan="2">Open source</td>
-
-<td>[xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu)</td>
-
-<td rowspan="2">[lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl)</td>
-
-<td rowspan="2">[ATI](/index.php/ATI "ATI")</td>
-
-</tr>
-
-<tr>
-
-<td>[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)</td>
-
-</tr>
-
-<tr>
-
-<td>Proprietary</td>
-
-<td>[catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup></td>
-
-<td>[lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/)<sup><small>AUR</small></sup></td>
-
-<td>[AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")</td>
-
-</tr>
-
-<tr>
-
-<td style="background: #aff; color: inherit; vertical-align: middle; text-align: center;">**Intel**</td>
-
-<td>Open source</td>
-
-<td>[xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)</td>
-
-<td>[lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl)</td>
-
-<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="4" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">**Nvidia**</td>
-
-<td>Open source</td>
-
-<td>[xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau)</td>
-
-<td>[lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl)</td>
-
-<td>[Nouveau](/index.php/Nouveau "Nouveau")</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="3">Proprietary</td>
-
-<td>[nvidia](https://www.archlinux.org/packages/?name=nvidia)</td>
-
-<td>[lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl)</td>
-
-<td rowspan="3">[NVIDIA](/index.php/NVIDIA "NVIDIA")</td>
-
-</tr>
-
-<tr>
-
-<td>[nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx)</td>
-
-<td>[lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl)</td>
-
-</tr>
-
-<tr>
-
-<td>[nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx)</td>
-
-<td>[lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Brand | Type | Driver | [Multilib](/index.php/Multilib "Multilib") | Documentation |
+| **AMD/ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [ATI](/index.php/ATI "ATI") |
+| [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) |
+| Proprietary | [catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup> | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/)<sup><small>AUR</small></sup> | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| **Intel** | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
+| **Nvidia** | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Nouveau](/index.php/Nouveau "Nouveau") |
+| Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
+| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) |
+| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl) |
 
 Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group.
 
@@ -384,7 +280,7 @@ The DPI of the X server is determined in the following manner:
 3.  If no DisplaySize is given, the monitor size values from DDC are used to derive the DPI, given the screen resolution.
 4.  If DDC does not specify a size, 75 DPI is used by default.
 
-In order to get correct dots per inch (DPI) set, the display size must be recognized or set. Having the correct DPI is especially necessary where fine detail is required (like font rendering). Previously, manufacturers tried to create a standard for 96 DPI (a 10.3" diagonal monitor would be 800x600, a 13.2" monitor 1024x768). These days, screen DPIs vary and may not be equal horizontally and vertically. For example, a 19" widescreen LCD at 1440x900 may have a DPI of 89x87\. To be able to set the DPI, the Xorg server attempts to auto-detect your monitor's physical screen size through the graphic card with [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel"). <s>When the Xorg server knows the physical screen size, it will be able to set the correct DPI depending on resolution size.</s>
+In order to get correct dots per inch (DPI) set, the display size must be recognized or set. Having the correct DPI is especially necessary where fine detail is required (like font rendering). Previously, manufacturers tried to create a standard for 96 DPI (a 10.3" diagonal monitor would be 800x600, a 13.2" monitor 1024x768). These days, screen DPIs vary and may not be equal horizontally and vertically. For example, a 19" widescreen LCD at 1440x900 may have a DPI of 89x87\. To be able to set the DPI, the Xorg server attempts to auto-detect your monitor's physical screen size through the graphic card with [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel"). ~~When the Xorg server knows the physical screen size, it will be able to set the correct DPI depending on resolution size.~~
 
 To see if your display size and DPI are detected/calculated correctly:
 
@@ -479,23 +375,23 @@ The Composite extension for X causes an entire sub-tree of the window hierarchy 
 
 *   **[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr")** — Cairo based composite manager
 
-[http://cairo-compmgr.tuxfamily.org/](http://cairo-compmgr.tuxfamily.org/) || [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Compiz](/index.php/Compiz "Compiz")** — Composite manager for Aiglx and Xgl, with plugins and CCSM
 
-[http://www.compiz.org/](http://www.compiz.org/) || [compiz](https://aur.archlinux.org/packages/compiz/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
 
-[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://aur.archlinux.org/packages/compton/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
 
-[http://cgit.freedesktop.org/xorg/app/xcompmgr/](http://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
+NaN
 
 *   **Unagi** — Modular compositing manager which aims written in C and based on XCB
 
-[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)<sup><small>AUR</small></sup>
+NaN
 
 ## Tips and tricks
 
@@ -632,13 +528,7 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 *   If there is an _empty_ `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
 *   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F2`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
 
-You may also attempt to kill the X server with:
-
- `# pkill X` 
-
-If this does not work, reboot blindly with:
-
- `# reboot` 
+NaN
 
 *   Check specific pages in [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices") if you have issues with keyboard, mouse, touchpad etc.
 *   Search for common problems in [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [NVIDIA](/index.php/NVIDIA "NVIDIA") articles.
@@ -824,14 +714,3 @@ Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See
 Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xorg&oldid=414870](https://wiki.archlinux.org/index.php?title=Xorg&oldid=414870)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

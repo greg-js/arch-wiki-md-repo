@@ -1,9 +1,5 @@
 # Display Power Management Signaling
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[DPMS](https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling "wikipedia:VESA Display Power Management Signaling")** (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. For details on each timeout, see [[1]](http://linux.die.net/man/3/dpmssettimeouts). Note that some monitors make no difference between various DPMS modes.
 
 ## Contents
@@ -75,77 +71,14 @@ $ sleep 1; xset dpms force off
 
 Example commands:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>xset s off</td>
-
-<td>Disable screen saver blanking</td>
-
-</tr>
-
-<tr>
-
-<td>xset s 3600 3600</td>
-
-<td>Change blank time to 1 hour</td>
-
-</tr>
-
-<tr>
-
-<td>xset -dpms</td>
-
-<td>Turn off DPMS</td>
-
-</tr>
-
-<tr>
-
-<td>xset s off -dpms</td>
-
-<td>Disable DPMS and prevent screen from blanking</td>
-
-</tr>
-
-<tr>
-
-<td>xset dpms force off</td>
-
-<td>Turn off screen immediately</td>
-
-</tr>
-
-<tr>
-
-<td>xset dpms force standby</td>
-
-<td>Standby screen</td>
-
-</tr>
-
-<tr>
-
-<td>xset dpms force suspend</td>
-
-<td>Suspend screen</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | Description |
+| xset s off | Disable screen saver blanking |
+| xset s 3600 3600 | Change blank time to 1 hour |
+| xset -dpms | Turn off DPMS |
+| xset s off -dpms | Disable DPMS and prevent screen from blanking |
+| xset dpms force off | Turn off screen immediately |
+| xset dpms force standby | Standby screen |
+| xset dpms force suspend | Suspend screen |
 
 To query the current settings:
 
@@ -251,8 +184,3 @@ $ for i in {0..256}; do setterm -powerdown 0 >> /dev/tty$i; done; unset i;
 *   [DPMS control in X](http://ptspts.blogspot.be/2009/10/screen-blanking-dpms-screen-saver.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&oldid=398742](https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&oldid=398742)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

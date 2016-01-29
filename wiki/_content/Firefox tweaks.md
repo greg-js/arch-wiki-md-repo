@@ -1,9 +1,5 @@
 # Firefox tweaks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Firefox](/index.php/Firefox "Firefox")
@@ -99,43 +95,10 @@ For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Pla
 
 Advanced network settings can be found on the `about:config` page (try searching for _network_).
 
-<table class="wikitable"><caption>Suggested values</caption>
-
-<tbody>
-
-<tr>
-
-<th>Key</th>
-
-<th>Value</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>network.http.pipelining</td>
-
-<td>true</td>
-
-<td>Enable [pipelining](http://www-archive.mozilla.org/projects/netlib/http/pipelining-faq.html) for normal connections</td>
-
-</tr>
-
-<tr>
-
-<td>network.http.proxy.pipelining</td>
-
-<td>true</td>
-
-<td>Enable pipelining for proxy connections</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Suggested values</caption>
+| Key | Value | Description |
+| network.http.pipelining | true | Enable [pipelining](http://www-archive.mozilla.org/projects/netlib/http/pipelining-faq.html) for normal connections |
+| network.http.proxy.pipelining | true | Enable pipelining for proxy connections |
 
 #### Turn off anti-phishing
 
@@ -152,7 +115,7 @@ $ rm -i ~/.mozilla/firefox/<profile_dir>/urlclassifier*
 
 ```
 
-Some of these files might be recreated by Firefox, but they will not grow any larger than their initial size.
+NaN
 
 #### Stop urlclassifier3.sqlite from being created again
 
@@ -217,49 +180,10 @@ In Firefox 3.0, bookmarks, history, passwords are kept in an SQLite databases. S
 
 [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/)<sup><small>AUR</small></sup> does just this.
 
-<table class="wikitable"><caption>Sample size differences comparison</caption>
-
-<tbody>
-
-<tr>
-
-<th>SQLite database</th>
-
-<th>Size Before</th>
-
-<th>Size After</th>
-
-<th> % change</th>
-
-</tr>
-
-<tr>
-
-<td>urlclassifier3.sqlite</td>
-
-<td>37 M</td>
-
-<td>30 M</td>
-
-<td>19 %</td>
-
-</tr>
-
-<tr>
-
-<td>places.sqlite</td>
-
-<td>16 M</td>
-
-<td>2.4 M</td>
-
-<td>85 %</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Sample size differences comparison</caption>
+| SQLite database | Size Before | Size After |  % change |
+| urlclassifier3.sqlite | 37 M | 30 M | 19 % |
+| places.sqlite | 16 M | 2.4 M | 85 % |
 
 #### Cache the entire profile into RAM via tmpfs
 
@@ -413,119 +337,21 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 *   Open the tab Window-Specific Overrides and click on the Add button
 *   Select the following options:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Value</th>
-
-</tr>
-
-<tr>
-
-<td>Matching window property</td>
-
-<td>Window Class Name</td>
-
-</tr>
-
-<tr>
-
-<td>Regular expression to match</td>
-
-<td>Firefox</td>
-
-</tr>
-
-<tr>
-
-<td>Border size</td>
-
-<td>No Border</td>
-
-</tr>
-
-<tr>
-
-<td>Hide window title bar</td>
-
-<td>Enable</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Option | Value |
+| Matching window property | Window Class Name |
+| Regular expression to match | Firefox |
+| Border size | No Border |
+| Hide window title bar | Enable |
 
 Next install [this extension](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/) and set the following settings (leaving other settings to default):
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Value</th>
-
-</tr>
-
-<tr>
-
-<td>Show Custom Caption/TitleBar</td>
-
-<td>Never</td>
-
-</tr>
-
-<tr>
-
-<td>Activate custom borders and corner resizers</td>
-
-<td>Deactivate</td>
-
-</tr>
-
-<tr>
-
-<td>Enable Customizable Buttons (min,max,close)</td>
-
-<td>No (Fx. default)</td>
-
-</tr>
-
-<tr>
-
-<td>Custom Minimize, Max, Close Buttons</td>
-
-<td>Auto. Current theme's skin (fixed position)</td>
-
-</tr>
-
-<tr>
-
-<td>Drag Fx window using Tab-bar background</td>
-
-<td>Enable</td>
-
-</tr>
-
-<tr>
-
-<td>Alternative hide-titlebar feature</td>
-
-<td>Don't use</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Option | Value |
+| Show Custom Caption/TitleBar | Never |
+| Activate custom borders and corner resizers | Deactivate |
+| Enable Customizable Buttons (min,max,close) | No (Fx. default) |
+| Custom Minimize, Max, Close Buttons | Auto. Current theme's skin (fixed position) |
+| Drag Fx window using Tab-bar background | Enable |
+| Alternative hide-titlebar feature | Don't use |
 
 #### Auto-hide Bookmarks Toolbar
 
@@ -719,83 +545,14 @@ Other tips and tweaks.
 
 Before continuing, remember there is a reason some of these variables are not enabled by default, e.g. stability, memory leaks, etc. Go to `about:config` and check the following options:
 
-<table class="wikitable"><caption>Suggested values</caption>
-
-<tbody>
-
-<tr>
-
-<th>Key</th>
-
-<th>Value</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>media.mediasource.enabled</td>
-
-<td>true</td>
-
-<td>Enable [Media Source Extensions](https://en.wikipedia.org/wiki/Media_Source_Extensions "wikipedia:Media Source Extensions") (MSE)</td>
-
-</tr>
-
-<tr>
-
-<td>media.mediasource.mp4.enabled</td>
-
-<td>true (default)</td>
-
-<td>Enable [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") MSE</td>
-
-</tr>
-
-<tr>
-
-<td>media.mediasource.webm.enabled</td>
-
-<td>true</td>
-
-<td>Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. If you use Youtube see [WebM and Youtube](#WebM_and_Youtube).</td>
-
-</tr>
-
-<tr>
-
-<td>media.fragmented-mp4.exposed</td>
-
-<td>true</td>
-
-<td>Enable fragmented MP4 segments</td>
-
-</tr>
-
-<tr>
-
-<td>media.fragmented-mp4.ffmpeg.enabled</td>
-
-<td>true</td>
-
-<td>Enable fragmented MP4 ffmpeg</td>
-
-</tr>
-
-<tr>
-
-<td>media.mediasource.ignore_codecs</td>
-
-<td>true</td>
-
-<td>Enable H.264 MSE, amongst other things (This boolean key has to be created!)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Suggested values</caption>
+| Key | Value | Description |
+| media.mediasource.enabled | true | Enable [Media Source Extensions](https://en.wikipedia.org/wiki/Media_Source_Extensions "wikipedia:Media Source Extensions") (MSE) |
+| media.mediasource.mp4.enabled | true (default) | Enable [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") MSE |
+| media.mediasource.webm.enabled | true | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. If you use Youtube see [WebM and Youtube](#WebM_and_Youtube). |
+| media.fragmented-mp4.exposed | true | Enable fragmented MP4 segments |
+| media.fragmented-mp4.ffmpeg.enabled | true | Enable fragmented MP4 ffmpeg |
+| media.mediasource.ignore_codecs | true | Enable H.264 MSE, amongst other things (This boolean key has to be created!) |
 
 #### WebM and Youtube
 
@@ -973,13 +730,3 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=417146](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=417146)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

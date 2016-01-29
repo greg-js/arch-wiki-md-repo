@@ -1,9 +1,5 @@
 # Smokeping
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Smokeping](http://oss.oetiker.ch/smokeping/index.en.html) allows you to probe a list of servers, store that data using RRDtool, and generate statistical charts based on RRDtool's output. Smokeping consists of two parts. A daemon runs in the background pinging and collecting data at set intervals. A web interface displays that data in the form of graphs.
 
 This wiki page covers a basic setup of the smokeping daemon and the CGI webinterface.
@@ -43,93 +39,16 @@ In addition to the [smokeping](https://www.archlinux.org/packages/?name=smokepin
 
 If you want to use other probes such as the DNS or http probe you will need other packages as shown below. The configuration of these will is not covered by this wiki page.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Probe</th>
-
-<th>Package Needed</th>
-
-</tr>
-
-<tr>
-
-<td>Curl</td>
-
-<td>[curl](https://www.archlinux.org/packages/?name=curl)</td>
-
-</tr>
-
-<tr>
-
-<td>DNS</td>
-
-<td>[bind-tools](https://www.archlinux.org/packages/?name=bind-tools) (for the dig utility)</td>
-
-</tr>
-
-<tr>
-
-<td>EchoPing</td>
-
-<td>[echoping](https://www.archlinux.org/packages/?name=echoping)</td>
-
-</tr>
-
-<tr>
-
-<td>SSH</td>
-
-<td>[openssh](https://www.archlinux.org/packages/?name=openssh)</td>
-
-</tr>
-
-<tr>
-
-<td>TelnetIOSPing</td>
-
-<td>[perl-net-telnet](https://www.archlinux.org/packages/?name=perl-net-telnet)</td>
-
-</tr>
-
-<tr>
-
-<td>AnotherDNS</td>
-
-<td>[perl-net-dns](https://www.archlinux.org/packages/?name=perl-net-dns)</td>
-
-</tr>
-
-<tr>
-
-<td>LDAP</td>
-
-<td>[perl-ldap](https://www.archlinux.org/packages/?name=perl-ldap)</td>
-
-</tr>
-
-<tr>
-
-<td>LDAP (tls)</td>
-
-<td>[perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl)</td>
-
-</tr>
-
-<tr>
-
-<td>Authen</td>
-
-<td>[perl-authen-radius](https://www.archlinux.org/packages/?name=perl-authen-radius)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Probe | Package Needed |
+| Curl | [curl](https://www.archlinux.org/packages/?name=curl) |
+| DNS | [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) (for the dig utility) |
+| EchoPing | [echoping](https://www.archlinux.org/packages/?name=echoping) |
+| SSH | [openssh](https://www.archlinux.org/packages/?name=openssh) |
+| TelnetIOSPing | [perl-net-telnet](https://www.archlinux.org/packages/?name=perl-net-telnet) |
+| AnotherDNS | [perl-net-dns](https://www.archlinux.org/packages/?name=perl-net-dns) |
+| LDAP | [perl-ldap](https://www.archlinux.org/packages/?name=perl-ldap) |
+| LDAP (tls) | [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) |
+| Authen | [perl-authen-radius](https://www.archlinux.org/packages/?name=perl-authen-radius) |
 
 ## Configuration
 
@@ -363,7 +282,3 @@ Smokeping is a powerful tool that can be configured in many ways. You can setup 
 The [SmokeTraceroute](http://oss.oetiker.ch/smokeping/doc/smoketrace.en.html) utility is gone since v2.5.0 according to the [release notes](http://oss.oetiker.ch/smokeping/pub/CHANGES).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Smokeping&oldid=381016](https://wiki.archlinux.org/index.php?title=Smokeping&oldid=381016)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

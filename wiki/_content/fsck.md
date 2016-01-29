@@ -1,9 +1,5 @@
 # fsck
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Ext4](/index.php/Ext4 "Ext4")
@@ -141,7 +137,3 @@ Run an fsck to repair the partition
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fsck&oldid=363202](https://wiki.archlinux.org/index.php?title=Fsck&oldid=363202)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,9 +1,5 @@
 # HP Pavilion DV3-2155MX
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** As of Jun, 13, 2011 (kernel 2.6.39) Archlinux -- and possibly Linux itself -- is not stable on this equipement. You may experience random freezes, reboots and other unrecoverable errors.
 
 ## Introduction
@@ -61,7 +57,3 @@ L2 cache:              2048K
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_DV3-2155MX&oldid=383846](https://wiki.archlinux.org/index.php?title=HP_Pavilion_DV3-2155MX&oldid=383846)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

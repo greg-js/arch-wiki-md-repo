@@ -1,9 +1,5 @@
 # TigerVNC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [x11vnc](/index.php/X11vnc "X11vnc")
@@ -405,8 +401,3 @@ $ x0vncserver -RemapKeys="0x3c->0x2c"
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=414472](https://wiki.archlinux.org/index.php?title=TigerVNC&oldid=414472)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")

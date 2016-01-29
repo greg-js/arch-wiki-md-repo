@@ -1,9 +1,5 @@
 # sysctl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [sysctl](https://en.wikipedia.org/wiki/sysctl "wikipedia:sysctl") is a tool for examining and changing [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") at runtime (package [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) in [official repositories](/index.php/Official_repositories "Official repositories")). sysctl is implemented in procfs, the virtual process file system at `/proc/`.
 
 ## Contents
@@ -193,11 +189,3 @@ Try to change `kernel.io_delay_type` (x86 only):
 *   Kernel network parameters for sysctl [[2]](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412288](https://wiki.archlinux.org/index.php?title=Sysctl&oldid=412288)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

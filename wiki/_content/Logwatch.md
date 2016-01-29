@@ -1,9 +1,5 @@
 # Logwatch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Logwatch](http://www.logwatch.org/) is a powerful and versatile log parser and analyzer. Logwatch is designed to give a unified report of all activity on a server, which can be delivered through the command line or email.
 
 ## Contents
@@ -54,7 +50,3 @@ The default install also includes a cron job, placed in cron.daily. This job wil
 Logwatch reads log files and does not support querying the systemd journal directly. For this reason, a logger like syslog-ng is required to duplicate the journal output into external log files (such as in `/var/log`). A [patch](http://sourceforge.net/p/logwatch/patches/34/) is under development to support the systemd journal. Alternately, a custom script could duplicate some of the logwatch functionality by directly querying the journal and sending email(s), as done in a Python script in [this blog post](https://tim.siosm.fr/blog/2014/02/24/journald-log-scanner-python/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logwatch&oldid=410643](https://wiki.archlinux.org/index.php?title=Logwatch&oldid=410643)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")

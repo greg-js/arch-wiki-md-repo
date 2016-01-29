@@ -1,9 +1,5 @@
 # Concurrent Versions System
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -166,11 +162,3 @@ cvs commit -m "Explain changes here" myfile
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Concurrent_Versions_System&oldid=398885](https://wiki.archlinux.org/index.php?title=Concurrent_Versions_System&oldid=398885)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

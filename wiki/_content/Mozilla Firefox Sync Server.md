@@ -1,9 +1,5 @@
 # Mozilla Firefox Sync Server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -14,9 +10,9 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Firefox_Sync "wikipedia:Firefox Sync"):
 
-_Firefox Sync, originally branded Mozilla Weave, is a browser synchronization feature that allows users to partially synchronize bookmarks, browsing history, preferences, passwords, filled forms, add-ons and the last 25 opened tabs across multiple computers._
+NaN
 
-_It keeps user data on Mozilla servers, but the data is encrypted in such a way that no third party, not even Mozilla, can access user information. It is also possible for the user to host their own Firefox Sync servers, or indeed, for any entity to do so._
+NaN
 
 This page details how you should proceed to host your own (Mozilla) Firefox Sync Server (shortened to FFSync), version 1.1 or version 1.5, and how to host your own Firefox Account server.
 
@@ -291,11 +287,3 @@ The "Advanced Settings" button allows fine tuning of the synchronized elements l
 *   [OwnCloud](/index.php/OwnCloud "OwnCloud") has mozilla sync server application
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mozilla_Firefox_Sync_Server&oldid=388043](https://wiki.archlinux.org/index.php?title=Mozilla_Firefox_Sync_Server&oldid=388043)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

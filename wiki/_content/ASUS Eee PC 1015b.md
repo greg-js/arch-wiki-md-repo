@@ -1,9 +1,5 @@
 # ASUS Eee PC 1015b
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page includes general information regarding Asus EEE PC 1015b and related notes on installing/using Arch Linux on it.
 
 # System Specs
@@ -35,7 +31,3 @@ This page includes general information regarding Asus EEE PC 1015b and related n
 The open source drivers will work adequately. For AMD [catalyst](/index.php/Catalyst "Catalyst") drivers, please use the catalyst and catalyst-utils packages from the AUR.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1015b&oldid=243853](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1015b&oldid=243853)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

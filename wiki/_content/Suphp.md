@@ -1,9 +1,5 @@
 # Suphp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [suPHP](http://www.suphp.org/Home.html) is a tool _for executing PHP scripts with the permissions of their owners_. It consists of an Apache module (mod_suphp) and a setuid root binary (suphp) that is called by the Apache module to change the uid of the process executing the PHP interpreter.
 
 **Tip:** With suPHP you are able, for example, to manage php applications in user's home directories without worry about permissions problems (when creating directories, files or uploads)
@@ -139,7 +135,3 @@ Finally you need to restart your HTTPd server by following command:
 *   [mod_perl](/index.php/Mod_perl "Mod perl") - Apache + Perl
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Suphp&oldid=393098](https://wiki.archlinux.org/index.php?title=Suphp&oldid=393098)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

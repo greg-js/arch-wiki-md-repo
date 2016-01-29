@@ -1,9 +1,5 @@
 # H2status
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [h2status](https://aur.archlinux.org/packages/h2status/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/h2status)]</sup> is a trivial (about 60 LOC) bash wrapper to i3status that nevertheless allows to conveniently:
 
 *   Write custom modules in bash to add full-fledged json entries to the status bar.
@@ -162,12 +158,3 @@ flock (in [util-linux](https://www.archlinux.org/packages/?name=util-linux)) for
 [i3status](https://www.archlinux.org/packages/?name=i3status) configured with output_format="i3bar".
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=H2status&oldid=392217](https://wiki.archlinux.org/index.php?title=H2status&oldid=392217)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

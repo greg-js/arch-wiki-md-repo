@@ -1,9 +1,5 @@
 # Bylaw Amendment
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **This is a page to coordinate the amendment of the bylaws with respect to Standard Voting Procedure. If you are looking for the actual bylaws go here [https://aur.archlinux.org/trusted-user/TUbylaws.html](https://aur.archlinux.org/trusted-user/TUbylaws.html)**
 
 Standard Voting Procedure (SVP) describes the formal procedure used by TUs to accept or reject proposals regarding TU affairs.
@@ -43,7 +39,3 @@ A rejected proposal may not be presented again before a waiting period has passe
 If quorum is not established by the end of the voting period then the proposal is neither accepted nor rejected. A second SVP shall begin to establish the status of the proposal. If the proposal is not accepted at the end of the second SVP then it shall be rejected.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bylaw_Amendment&oldid=196002](https://wiki.archlinux.org/index.php?title=Bylaw_Amendment&oldid=196002)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")

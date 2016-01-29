@@ -1,9 +1,5 @@
 # CMYK support in The GIMP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Using lprof to profile monitors](/index.php/Using_lprof_to_profile_monitors "Using lprof to profile monitors")
@@ -280,11 +276,3 @@ Although Adobe RGB is a common profile, sRGB profiles (especially the new v4 ver
 *   [cmyktool](http://www.blackfiveimaging.co.uk/index.php?article=02Software%2F05CMYKTool) is a standalone program for soft-proofing in CMYK which may be useful if you need to send CMYK to a printer (especially where you want to tweak pure black to avoid halos)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_GIMP&oldid=413314](https://wiki.archlinux.org/index.php?title=CMYK_support_in_The_GIMP&oldid=413314)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

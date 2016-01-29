@@ -1,9 +1,5 @@
 # TrueCrypt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
@@ -719,8 +715,3 @@ If you cannot modify the filesystem, although permissions seem to be correct, th
 *   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=412193](https://wiki.archlinux.org/index.php?title=TrueCrypt&oldid=412193)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,80 +1,14 @@
 # Lenovo ThinkPad Helix
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable"><caption>Hardware Information</caption>
-
-<tbody>
-
-<tr>
-
-<th>Form Factor</th>
-
-<td>Tablet/Ultrabook Convertible (detachable keyboard dock)</td>
-
-</tr>
-
-<tr>
-
-<th>Display</th>
-
-<td>11.6" 1920x1080 LCD with Capacitive and Pen Digitizers</td>
-
-</tr>
-
-<tr>
-
-<th>CPU</th>
-
-<td>3rd Generation (Ivy Bridge) Core i5-3427U or i7-3667U</td>
-
-</tr>
-
-<tr>
-
-<th>RAM</th>
-
-<td>4GiB (i5) or 8GiB (i7) DDR3L RAM (dependent upon CPU)</td>
-
-</tr>
-
-<tr>
-
-<th>Storage</th>
-
-<td>128/160/256GB mSATA SSD</td>
-
-</tr>
-
-<tr>
-
-<th>WiFi</th>
-
-<td>Intel Centrino Advanced-N 6205S mPCI WLAN</td>
-
-</tr>
-
-<tr>
-
-<th>Bluetooth</th>
-
-<td>Broadcom BCM20702 Bluetooth 4.0 (USB connected)</td>
-
-</tr>
-
-<tr>
-
-<th>Camera</th>
-
-<td>5MP Rear and 2MP Front (also USB)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Hardware Information</caption>
+| Form Factor | Tablet/Ultrabook Convertible (detachable keyboard dock) |
+| Display | 11.6" 1920x1080 LCD with Capacitive and Pen Digitizers |
+| CPU | 3rd Generation (Ivy Bridge) Core i5-3427U or i7-3667U |
+| RAM | 4GiB (i5) or 8GiB (i7) DDR3L RAM (dependent upon CPU) |
+| Storage | 128/160/256GB mSATA SSD |
+| WiFi | Intel Centrino Advanced-N 6205S mPCI WLAN |
+| Bluetooth | Broadcom BCM20702 Bluetooth 4.0 (USB connected) |
+| Camera | 5MP Rear and 2MP Front (also USB) |
 
 ## Contents
 
@@ -236,7 +170,3 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416940](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416940)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

@@ -1,9 +1,5 @@
 # Cjdns
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Cjdns](https://github.com/cjdelisle/cjdns) implements an encrypted IPv6 network using public-key cryptography for address allocation and a distributed hash table for routing. This provides near-zero-configuration networking, and prevents many of the security and scalability issues that plague existing networks.
 
 ## Install and configure
@@ -43,7 +39,3 @@ If _cjdns_ did not start, you should check for errors and edit `/etc/cjdroute.co
 *   [Wikipedia:Cjdns](https://en.wikipedia.org/wiki/Cjdns "wikipedia:Cjdns")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cjdns&oldid=390918](https://wiki.archlinux.org/index.php?title=Cjdns&oldid=390918)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

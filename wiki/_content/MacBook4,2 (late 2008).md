@@ -1,9 +1,5 @@
 # MacBook4,2 (late 2008)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -118,11 +114,3 @@ This model of Macbook has Broadcom BCM4328(rev03). There are two methods: (a) us
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook4,2_(late_2008)&oldid=376906](https://wiki.archlinux.org/index.php?title=MacBook4,2_(late_2008)&oldid=376906)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

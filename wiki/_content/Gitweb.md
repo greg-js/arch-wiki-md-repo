@@ -1,9 +1,5 @@
 # Gitweb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Gitweb is the default web interface provided with [git](/index.php/Git "Git") itself and is the basis for other git scripts like [cgit](/index.php/Cgit "Cgit"), [gitosis](/index.php/Gitosis "Gitosis") and others.
 
 Gitweb actually supports fcgi natively, so you do not need to wrap it as a cgi script. [[1]](http://repo.or.cz/w/alt-git.git?a=blob_plain;f=gitweb/INSTALL)[[2]](https://sixohthree.com/1402/running-gitweb-in-fastcgi-mode)
@@ -280,7 +276,3 @@ To solve this issue, just install [perl-cgi](https://www.archlinux.org/packages/
 *   [How To Install A Public Git Repository On A Debian Server](http://www.howtoforge.com/how-to-install-a-public-git-repository-on-a-debian-server) — HowtoForge page used as the main source for this article.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitweb&oldid=391455](https://wiki.archlinux.org/index.php?title=Gitweb&oldid=391455)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")

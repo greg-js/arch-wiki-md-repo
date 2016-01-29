@@ -1,9 +1,5 @@
 # Toshiba Satellite L300
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document applies in particular to Arch Linux on a Toshiba Satellite L300-OG1\. It also applies to the entire L300 series on any modern Linux distribution (which uses at least kernel 2.6.36), and dependent upon what BIOS your system has.
 
 If your laptop has a BIOS version older than v2.20 you probably **will** have fan control problems and the "Fn" key and PC speaker probably will not work. See below for a method to upgrade your BIOS.
@@ -227,7 +223,3 @@ As the first method is straightforward it will not be discussed here. Below is t
 13.  reboot laptop and enter the BIOS setup using "F2". You should see that it has successfully upgraded your BIOS.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_L300&oldid=331669](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_L300&oldid=331669)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

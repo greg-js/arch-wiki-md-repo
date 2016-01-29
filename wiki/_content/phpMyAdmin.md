@@ -1,9 +1,5 @@
 # phpMyAdmin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [phpMyAdmin](http://www.phpmyadmin.net/) is a web-based tool to help manage MySQL databases using an Apache/PHP frontend. It requires a working [LAMP](/index.php/LAMP "LAMP") setup.
 
 ## Contents
@@ -339,11 +335,3 @@ a fix seems to be to make sure you do not have SSL connection between PhpMyAdmin
 **Note:** There surely must be a better fix since 'ssl = true' worked before. Also do not disable SSL if your PhpMyAdmin install is somehow not on the same server as MySQL!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=416235](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=416235)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

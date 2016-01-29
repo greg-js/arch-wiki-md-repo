@@ -1,9 +1,5 @@
 # Sparse file
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article contains information regarding sparse files, their creation, maintenance, and expansion.
 
 ## Contents
@@ -263,7 +259,3 @@ Seeing its contents are still intact, we are good to go! It's amazing!
 *   [http://www.apl.jhu.edu/Misc/Unix-info/tar/tar_85.html](http://www.apl.jhu.edu/Misc/Unix-info/tar/tar_85.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sparse_file&oldid=411474](https://wiki.archlinux.org/index.php?title=Sparse_file&oldid=411474)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

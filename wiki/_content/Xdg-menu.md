@@ -1,9 +1,5 @@
 # Xdg-menu
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **xdg-menu** generates menus for WMs using the [Free Desktop menu standard](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html). You can install [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 The following WMs are supported:
@@ -504,7 +500,3 @@ For example add line:
 *   [A workaround for sawfish](/index.php/Sawfish "Sawfish")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg-menu&oldid=411303](https://wiki.archlinux.org/index.php?title=Xdg-menu&oldid=411303)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

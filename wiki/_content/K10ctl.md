@@ -1,9 +1,5 @@
 # K10ctl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [k10ctl](http://www.ztex.de/misc/k10ctl.e.html) allows you to overclock and undervolt an AMD K10 processor (e.g. Phenom, Phenom II) by changing its P-States.
 
 Lowering the voltage saves energy and leads to less heat and noise.
@@ -147,8 +143,3 @@ For the module 'msr' take a look at [Kernel modules#Loading](/index.php/Kernel_m
 Use [mprime](https://aur.archlinux.org/packages/mprime/)<sup><small>AUR</small></sup> to test the stability of your computer.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=K10ctl&oldid=400293](https://wiki.archlinux.org/index.php?title=K10ctl&oldid=400293)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-*   [CPU](/index.php/Category:CPU "Category:CPU")

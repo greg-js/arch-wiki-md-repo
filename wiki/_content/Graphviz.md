@@ -1,9 +1,5 @@
 # Graphviz
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Graphviz is a package to draw graphs. It generates images in various formats from a text file written in DOT language.
 
 ## Contents
@@ -117,7 +113,3 @@ $ dot -Tpng example.dot -o example.png
 *   [The official Graphviz website](http://www.graphviz.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Graphviz&oldid=417052](https://wiki.archlinux.org/index.php?title=Graphviz&oldid=417052)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

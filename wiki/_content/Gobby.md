@@ -1,9 +1,5 @@
 # Gobby
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [project web page](http://gobby.0x539.de/trac/wiki):
 
 _Gobby is a free collaborative editor supporting multiple documents in one session and a multi-user chat._ It uses GTK+ 2 as its windowing toolkit and thus integrates nicely into the GNOME desktop environment.
@@ -44,7 +40,3 @@ infinoted-0.6 -k key.pem  -c cert.pem
 *   [infinoted wiki](http://gobby.0x539.de/trac/wiki/Infinote/Infinoted)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gobby&oldid=413599](https://wiki.archlinux.org/index.php?title=Gobby&oldid=413599)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")

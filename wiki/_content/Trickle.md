@@ -1,9 +1,5 @@
 # Trickle
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [trickle](https://www.archlinux.org/packages/?name=trickle) is a portable lightweight userspace bandwidth shaper, that either runs in collaborative mode (together with trickled) or in stand alone mode.
 
 It works by preloading its own socket library wrappers, that limit traffic by delaying data.
@@ -152,12 +148,3 @@ TRICKLE_SLENGTH=10
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021](https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden categories:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

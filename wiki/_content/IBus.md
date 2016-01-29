@@ -1,9 +1,5 @@
 # IBus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fcitx](/index.php/Fcitx "Fcitx")
@@ -44,7 +40,7 @@ Additionally, to enable IBus for Qt applications, install the [ibus-qt](https://
 You will need at least one input method, corresponding to the language you wish to type. Available input methods include:
 
 *   [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) - Japanese IME, based on [anthy](https://www.archlinux.org/packages/?name=anthy).
-*   <strike>[ibus-pinyin](https://www.archlinux.org/packages/?name=ibus-pinyin) - Intelligent Chinese Phonetic IME for Hanyu pinyin and Zhuyin (Bopomofo) users. Designed by IBus main author and has many advance features such as English spell checking.</strike> Package currently not maintained and partly broken with latest ibus base. Use [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) instead.
+*   ~~[ibus-pinyin](https://www.archlinux.org/packages/?name=ibus-pinyin) - Intelligent Chinese Phonetic IME for Hanyu pinyin and Zhuyin (Bopomofo) users. Designed by IBus main author and has many advance features such as English spell checking.~~ Package currently not maintained and partly broken with latest ibus base. Use [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) instead.
 *   [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) - Powerful and smart Chinese input method for Chinese (pinyin, zhuyin, with or without tones, double pinyin, Jyutping, Wugniu, Cangjie5 and Wubi 86).
 *   [ibus-chewing](https://www.archlinux.org/packages/?name=ibus-chewing) - Intelligent Chinese Phonetic IME for Zhuyin (Bopomofo) users, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) - Korean IME, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
@@ -270,12 +266,3 @@ If [Ibus does not let you write in a given language](https://code.google.com/p/i
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBus&oldid=412809](https://wiki.archlinux.org/index.php?title=IBus&oldid=412809)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,12 +1,8 @@
 # Nxt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [nxt.org](http://nxt.org/):
 
-_Nxt is a radically enhanced cryptocurrency built from scratch, delivering a unique and decentralized financial platform. Not only does it open up new possibilities – from digital money to transfer of shares – but it addresses all of the most serious deficiencies in existing cryptocurrencies._
+NaN
 
 ## Installation
 
@@ -21,7 +17,3 @@ Once the NXT service is running, start the client by running `nrs` from the term
 For more information on how to use NRS, see the [NXT wiki](http://www.thenxtwiki.org/wiki/Nxt_client_interface).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nxt&oldid=379888](https://wiki.archlinux.org/index.php?title=Nxt&oldid=379888)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

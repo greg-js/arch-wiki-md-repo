@@ -1,9 +1,5 @@
 # Dynamic DNS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Dynamic DNS** or **DDNS** is a method of updating, in real time, a [DNS](/index.php/DNS "DNS") to point to a changing IP address on the Internet. This is used to provide a persistent domain name for a resource lacking a static IP. To use DDNS, you need to both sign up with a DDNS provider and set up an automatic update tool that will notify the provider when your IP address changes.
 
 ## Contents
@@ -33,105 +29,14 @@ After installing, edit the default config `/etc/ddclient/ddclient.conf` to set u
 
 Some of the compatible services are listed below, but you can also check the [examples](http://sourceforge.net/p/ddclient/code/HEAD/tree/trunk/sample-etc_ddclient.conf) and [protocols](http://sourceforge.net/p/ddclient/wiki/protocols/) for more.
 
-<table class="wikitable"><caption>ddclient compatible services</caption>
-
-<tbody>
-
-<tr>
-
-<th>Service</th>
-
-<th>Cost</th>
-
-<th>Available Records</th>
-
-<th>Hostname Limit</th>
-
-<th>Config Notes</th>
-
-<th>Alternative tools</th>
-
-</tr>
-
-<tr>
-
-<th>[ChangeIP](http://www.changeip.com/)</th>
-
-<td>Free or paid</td>
-
-<td>A, AAAA, CNAME, MX, codomains</td>
-
-<td>7 free</td>
-
-</tr>
-
-<tr>
-
-<th>[DNSdynamic](http://www.dnsdynamic.org/)</th>
-
-<td>Free</td>
-
-<td>[example](https://www.dnsdynamic.org/api.php)</td>
-
-</tr>
-
-<tr>
-
-<th>[Duck DNS](https://www.duckdns.org/)</th>
-
-<td>Free</td>
-
-<td>[duckdns](https://aur.archlinux.org/packages/duckdns/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<th>[FreeDNS](http://freedns.afraid.org/)</th>
-
-<td>Free or paid</td>
-
-<td>CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV</td>
-
-<td>5 free</td>
-
-<td>[example](http://freedns.afraid.org/scripts/freedns.clients.php)</td>
-
-<td>[afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/)<sup><small>AUR</small></sup>, [petrified](https://aur.archlinux.org/packages/petrified/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<th>[No-IP](http://www.noip.com/)</th>
-
-<td>Free or paid</td>
-
-<td>3 free, 25+ paid</td>
-
-<td>Use protocol `dyndns2`, server `dynupdate.noip.com`</td>
-
-<td>[noip](https://aur.archlinux.org/packages/noip/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<th>[nsupdate.info](https://www.nsupdate.info/)</th>
-
-<td>Free and open source</td>
-
-<td>A, AAAA</td>
-
-<td>Use protocol `dyndns2`</td>
-
-<td>[inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>ddclient compatible services</caption>
+| Service | Cost | Available Records | Hostname Limit | Config Notes | Alternative tools |
+| [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free |
+| [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
+| [Duck DNS](https://www.duckdns.org/) | Free | [duckdns](https://aur.archlinux.org/packages/duckdns/)<sup><small>AUR</small></sup> |
+| [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/)<sup><small>AUR</small></sup>, [petrified](https://aur.archlinux.org/packages/petrified/)<sup><small>AUR</small></sup> |
+| [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `dyndns2`, server `dynupdate.noip.com` | [noip](https://aur.archlinux.org/packages/noip/)<sup><small>AUR</small></sup> |
+| [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/)<sup><small>AUR</small></sup> |
 
 #### Starting ddclient after networking is up
 
@@ -184,11 +89,3 @@ The following DDNS providers are not compatible with [ddclient](#ddclient) so up
 [System-NS](http://system-ns.com/) is a free service which can be updated via the command line. See [the official documentation](https://system-ns.com/services/dynamic).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=417467](https://wiki.archlinux.org/index.php?title=Dynamic_DNS&oldid=417467)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # HP Pavilion DV1000 Series
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 In this page, i'll try to make your Arch installation on HP Pavillion dv1000 series as easy as i can, If you have something to add please contribute to this page
 
 ## Contents
@@ -58,7 +54,3 @@ The sound should work out of the box.
 *   This report is listed at the [Linux Laptop and Notebook Installation Guides Survey: Hewlett-Packard - HP](http://tuxmobil.org/hp.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_DV1000_Series&oldid=328639](https://wiki.archlinux.org/index.php?title=HP_Pavilion_DV1000_Series&oldid=328639)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

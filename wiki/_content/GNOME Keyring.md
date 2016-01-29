@@ -1,12 +1,8 @@
 # GNOME Keyring
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [GnomeKeyring](https://live.gnome.org/GnomeKeyring/):
 
-_GNOME Keyring is a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications._
+NaN
 
 **Note:** As of July 10, 2015, GNOME Keyring does not handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
 
@@ -38,15 +34,15 @@ Extra utilities:
 
 *   **secret-tool** — Access the GNOME keyring (and any other service implementing the [DBus Secret Service API](http://standards.freedesktop.org/secret-service/)) from the command line.
 
-[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
+NaN
 
 *   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring.
 
-[http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases](http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases) || [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)<sup><small>AUR</small></sup>
+NaN
 
 *   **gkeyring** — Query passwords from the command line, the [Git](/index.php/Git "Git") version can list all passwords without needing to know name or id of the item
 
-[https://github.com/kparal/gkeyring](https://github.com/kparal/gkeyring) || [gkeyring](https://aur.archlinux.org/packages/gkeyring/)<sup><small>AUR</small></sup>, [gkeyring-git](https://aur.archlinux.org/packages/gkeyring-git/)<sup><small>AUR</small></sup>
+NaN
 
 ## Manage using GUI
 
@@ -240,7 +236,3 @@ If you get a password prompt every time you login, and you find that passwords a
 Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select _View_ > _By Keyring_ If there is no keyring in the left column (it will be marked with a lock icon), go to _File_ > _New_ > _Password Keyring_ and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Keyring&oldid=414347](https://wiki.archlinux.org/index.php?title=GNOME_Keyring&oldid=414347)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")

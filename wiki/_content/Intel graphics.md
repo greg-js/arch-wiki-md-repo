@@ -1,9 +1,5 @@
 # Intel graphics
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
@@ -260,7 +256,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 From `man 4 intel`:
 
-_There are a couple of backends available for accelerating the DDX. "UXA" (Unified Acceleration Architecture) is the mature backend that was introduced to support the GEM driver model. It is in the process of being superseded by "SNA" (Sandybridge's New Acceleration). Until that process is complete, the ability to choose which backend to use remains for backwards compatibility._
+NaN
 
 _SNA_ is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with _SNA_ (e.g. pixelated graphics, corrupt text, etc.), try using _UXA_ instead, which can be done by adding the following line to your [configuration file](#Configuration):
 
@@ -426,8 +422,3 @@ For the driver to work on the new Intel Skylake (6th gen.) GPUs, `i915.prelimina
 *   [https://01.org/linuxgraphics/documentation](https://01.org/linuxgraphics/documentation) (includes a list of supported hardware)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=414326](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=414326)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")

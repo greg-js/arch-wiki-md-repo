@@ -1,9 +1,5 @@
 # Papyros shell
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -56,19 +52,19 @@ For additional functionality, you may wish to install the following:
 
 *   **liri-browser** — A Web Browser using the QML Material framework from the Papyros Project.
 
-[https://github.com/liri-browser/liri-browser](https://github.com/liri-browser/liri-browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)<sup><small>AUR</small></sup>
+NaN
 
 *   **liri-player** — A Web player using the QML Material framework from the Papyros Project.
 
-[https://github.com/pierremtb/liri-player](https://github.com/pierremtb/liri-player) || [liri-player-git](https://aur.archlinux.org/packages/liri-player-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **papyros-files** — The file manager for Papyros.
 
-[https://github.com/papyros/files-app](https://github.com/papyros/files-app) || [papyros-files](https://aur.archlinux.org/packages/papyros-files/)<sup><small>AUR</small></sup>
+NaN
 
 *   **papyros-settings** — The file settings for Papyros.
 
-[https://github.com/papyros/settings-app](https://github.com/papyros/settings-app) || [papyros-settings-git](https://aur.archlinux.org/packages/papyros-settings-git/)<sup><small>AUR</small></sup>
+NaN
 
 ## See also
 
@@ -76,11 +72,3 @@ For additional functionality, you may wish to install the following:
 *   [Papyros development](https://github.com/papyros)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=414364](https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=414364)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

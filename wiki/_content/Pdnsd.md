@@ -1,9 +1,5 @@
 # Pdnsd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [pdnsd](http://members.home.nl/p.a.rombouts/pdnsd/index.html) is a DNS server designed for local caching of DNS information. Correctly configured, it can significantly increase browsing speed on a broadband connection. Compared to [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") it can remember its cache after a reboot; "p" stands for persistent.
 
 ## Contents
@@ -61,21 +57,7 @@ Comments are started with either **#** or **/***. The former goes to the end of 
 
 pdnsd needs to know the address of at least one DNS server to collect DNS information from. This part of the setup differs depending on whether you have a broadband connection or dial-up. Broadband users should use the first server section as a starting point, dial-up users the second, leaving the other server sections commented out.
 
-label 
-
-The `label` option is used to uniquely identify a server section. It is completely arbitrary, but one good choice is the name of your ISP.
-
-ip 
-
-This option, used in the default broadband configuration, tells pdnsd the addresses of DNS servers to use. Multiple addresses should be separated by a single comma, with optional whitespace before or after the comma. You can just copy the addresses from `/etc/resolv.conf`.
-
-file 
-
-The `file` option can be used instead of `ip` to specify a set of DNS server IPs. Its value is the path to a file with servers listed in `resolv.conf` format. The default dial-up configuration uses it because the PPP client writes `/etc/ppp/resolv.conf` with the addresses it gets from the PPP server. You should not need to change it unless you want to use a different DNS server than your ISP gives you by default.
-
-interface
-
-The network interface for the uptest=if option. This defaults to eth0, which is most likely incorrect. If the pdnsd service is started but not returning any DNS records, this may be set wrong.
+NaN
 
 The rest of the server section will work without any more changes. For details on all the available options, see the [pdnsd manual](http://members.home.nl/p.a.rombouts/pdnsd/doc.html).
 
@@ -234,7 +216,7 @@ pdnsd allows you to specify hosts or domains that it should never return results
 
 From the pdnsd-ctl(8) manpage:
 
-_**pdnsd-ctl** controls **pdnsd**, a proxy dns server with permanent caching. Note that the status control socket must be enabled (by specifying an option on the pdnsd command line or in the configuration file) before you can use **pdnsd-ctl**._
+NaN
 
 A couple of useful commands to get you started...
 
@@ -287,16 +269,6 @@ The correct name can be found by running: `ifconfig`.
 
 ## FAQs
 
-Q) It does not seem much faster to me. Why? 
-
-**A)** The extra speed gained from running a local DNS cache is all in how long it takes to connect to a server. Throughput, what people normally think of as speed, will not be affected. The difference is most noticeable when browsing the web, as that typically involves small downloads from several servers. With slower connections, especially dial-up, throughput is the primary bottleneck, so there will not be as large a difference percentage-wise.
-
-Q) Why is it so much slower now than before? 
-
-**A)** You almost certainly have the `proxy_only` option turned off in one of the server sections of `pdnsd.conf`. By default, pdnsd frequently asks several DNS servers about a domain to get the most accurate response possible. The `proxy_only` option disables this feature. It should be turned on if you use the DNS server provided by your ISP.
+NaN
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pdnsd&oldid=411942](https://wiki.archlinux.org/index.php?title=Pdnsd&oldid=411942)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")

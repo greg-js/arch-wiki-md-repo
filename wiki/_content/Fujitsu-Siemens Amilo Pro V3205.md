@@ -1,9 +1,5 @@
 # Fujitsu-Siemens Amilo Pro V3205
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -77,11 +73,3 @@ If you have amarok, configure the global shortcuts, setting the multimedia keys 
 *   This report is listed at the [Gentoo wiki](http://gentoo-wiki.com/HARDWARE_Gentoo_on_Fujitsu-Siemens_Amilo_Pro_V3205) and Lubos Vrbka's [homepage](http://www.lubos.vrbka.net/misc_ntb.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fujitsu-Siemens_Amilo_Pro_V3205&oldid=345611](https://wiki.archlinux.org/index.php?title=Fujitsu-Siemens_Amilo_Pro_V3205&oldid=345611)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

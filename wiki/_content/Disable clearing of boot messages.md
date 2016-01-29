@@ -1,9 +1,5 @@
 # Disable clearing of boot messages
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -48,7 +44,3 @@ If you have an old `/etc/issue` that has the "clear TTY" escape sequences, remov
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Disable_clearing_of_boot_messages&oldid=411986](https://wiki.archlinux.org/index.php?title=Disable_clearing_of_boot_messages&oldid=411986)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

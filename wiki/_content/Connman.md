@@ -1,9 +1,5 @@
 # Connman
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -42,43 +38,43 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 *   **cmst** — Qt GUI for ConnMan.
 
-[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)<sup><small>AUR</small></sup>
+NaN
 
 *   **connman-ncurses** — Simple ncurses UI for ConnMan
 
-[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **connman-notify** — Connman event notification client
 
-[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/connman-notify)]</sup>
+NaN
 
 *   **ConnMan-UI** — GTK3 client applet.
 
-[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **connman_dmenu** — Client/frontend for dmenu.
 
-[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **EConnman** — Enlightenment desktop panel applet.
 
-[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)<sup><small>AUR</small></sup>
+NaN
 
 *   **LXQt-Connman-Applet** — LXQt desktop panel applet.
 
-[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **qconnman-ui** — Qt management interface used on O.S. Systems products
 
-[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qconnman-ui-git)]</sup>
+NaN
 
 *   **connman-gtk** — GTK client.
 
-[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)<sup><small>AUR</small></sup>
+NaN
 
 *   **gnome-extension-connman** — Gnome3 extension for connman.
 
-[https://github.com/jgke/gnome-extension-connman](https://github.com/jgke/gnome-extension-connman) || [https://extensions.gnome.org/extension/981/connman-extension/](https://extensions.gnome.org/extension/981/connman-extension/)
+NaN
 
 gnome-extension-connman: contains only some of the functionality without installing connman-gtk.
 
@@ -327,12 +323,3 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 For further detailed information on ConnMan you may refer to the documentation in its git repo at [[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=412739](https://wiki.archlinux.org/index.php?title=Connman&oldid=412739)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

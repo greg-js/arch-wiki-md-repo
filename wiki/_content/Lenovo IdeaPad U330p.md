@@ -1,9 +1,5 @@
 # Lenovo IdeaPad U330p
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -147,7 +143,3 @@ This model does not have an Ethernet port, but it is possible to use a USB-to-Et
 If you need to connect to an external monitor or projector through VGA, you can use an HDMI-to-VGA adapter such as [this one](http://www.lindy-international.com/HDMI-to-VGA-Adapter.htm?websale8=ld0101.ld020102&pi=38191), which works quite well.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_U330p&oldid=410040](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_U330p&oldid=410040)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

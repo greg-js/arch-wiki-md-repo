@@ -1,9 +1,5 @@
 # Sony Vaio VPCF13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Xorg video issues](#Xorg_video_issues)
@@ -74,11 +70,3 @@ Then edit the file in /etc/pm/config.d/defaults with SUSPEND_MODULES="xhci_hcd"
 [http://code.google.com/p/vaio-f11-linux/wiki/AutoDimmingBacklightDaemon](http://code.google.com/p/vaio-f11-linux/wiki/AutoDimmingBacklightDaemon)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCF13&oldid=414915](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCF13&oldid=414915)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

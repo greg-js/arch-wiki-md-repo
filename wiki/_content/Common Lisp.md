@@ -1,9 +1,5 @@
 # Common Lisp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Common Lisp is a highly dynamic multi-paradigm language that emphasizes interactivity and performance.
 
 ## Contents
@@ -33,7 +29,3 @@ For the interactive experience that Common Lisp is known for, see [slime](/index
 *   [Online Specification / Hyperspec](http://www.lispworks.com/documentation/HyperSpec/Front)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Common_Lisp&oldid=402633](https://wiki.archlinux.org/index.php?title=Common_Lisp&oldid=402633)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

@@ -1,9 +1,5 @@
 # Arch based distributions (active)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch based distributions (inactive)](/index.php/Arch_based_distributions_(inactive) "Arch based distributions (inactive)")
@@ -190,7 +186,7 @@ _The name is a contraction of Minimal SYStem 2, and aims to provide support to f
 
 _We wanted a package management system to provide easy installation of packages, and ported Arch Linux's Pacman. This brings many powerful features such as dependency resolution and simple complete system upgrades, as well as providing the build system (makepkg) which is used to make these packages."_
 
-Source: [MSYS2 | SourceForge.net](http://sourceforge.net/projects/msys2/)
+NaN
 
 *   Homepage: [http://sourceforge.net/p/msys2/](http://sourceforge.net/p/msys2/)
 *   Forums: [http://sourceforge.net/p/msys2/discussion/](http://sourceforge.net/p/msys2/discussion/)
@@ -301,7 +297,7 @@ Enlisy is an i686 optimized Linux distribution for Pentium 2 based processors an
 
 _"Frugalware Linux is a general-purpose Linux distribution designed for intermediate users who are familiar with command-line operations. It is based on Slackware, but uses a different package management system, Pacman."_
 
-Source: [Wikipedia](https://en.wikipedia.org/wiki/Frugalware "wikipedia:Frugalware")
+NaN
 
 *   Homepage: [http://frugalware.org/](http://frugalware.org/)
 *   Forums: [http://forums.frugalware.org/](http://forums.frugalware.org/)
@@ -356,7 +352,3 @@ Manjaro-based operating system developed by Blue Systems. Offers customised KDE 
 *   List at distrowatch.com - [http://distrowatch.com/search.php?basedon=Arch&status=Active](http://distrowatch.com/search.php?basedon=Arch&status=Active)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=414301](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=414301)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

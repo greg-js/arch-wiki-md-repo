@@ -1,104 +1,14 @@
 # Acer Aspire V3-371
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working, see notes</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | Working, see notes | i915 |
+| Ethernet | Working | r8169 |
+| Wireless | Working | iwlwifi |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | xf86-input-synaptics |
+| Camera | Working | uvcvideo |
+| Card Reader | Working | rtsx_usb |
+| Bluetooth | Working |
 
 Information for the Acer Aspire V3-371 53L5 (Core i5-5200U, 4GiB RAM, 240GB SSD). Almost everything works right out of the box.
 
@@ -185,7 +95,3 @@ Configure the touchpad as a ClickPad by editing the touchpad section in `/etc/X1
 I experienced a [loss of h-sync when swiching TTYs](https://wiki.archlinux.org/index.php/Intel_graphics#Loss_of_horizontal_sync_when_switching_TTYs) and solved it as suggested by the wiki, by adding `i915.enable_ips=0` as a kernel parameter
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-371&oldid=408270](https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-371&oldid=408270)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

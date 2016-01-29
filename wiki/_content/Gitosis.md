@@ -1,9 +1,5 @@
 # Gitosis
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -312,11 +308,3 @@ keydir is simply a directory that contains public keys of the users. Some of the
 *   [Gitlab](/index.php/Gitlab "Gitlab") – a free git repository management application based on Ruby on Rails and Gitolite.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitosis&oldid=368771](https://wiki.archlinux.org/index.php?title=Gitosis&oldid=368771)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

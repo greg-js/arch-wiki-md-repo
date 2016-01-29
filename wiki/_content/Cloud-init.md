@@ -1,9 +1,5 @@
 # Cloud-init
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Cloud-init is a package that contains utilities for early initialization of cloud instances. It is needed in arch linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
 
 ## Contents
@@ -126,8 +122,3 @@ Package cloud-init provides 4 systemd services, and a systemd target, whose depe
 The [Uplink Labs EC2 images](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services") have all of them enabled, although that appears to be overkill due to the dependencies.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=416551](https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=416551)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

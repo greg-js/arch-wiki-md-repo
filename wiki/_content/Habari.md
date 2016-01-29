@@ -1,9 +1,5 @@
 # Habari
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes how to set up the Habari open source blogging engine on an Arch Linux system. It also tells how to enable your .htaccess file and required php modules that would prevent install errors from occurring.
 
 ## Contents
@@ -121,7 +117,3 @@ Head over to http://yourdomain.com/habari or whatever folder you called it. The 
 *   Habari Themes: [http://wiki.habariproject.org/en/Available_Themes](http://wiki.habariproject.org/en/Available_Themes)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Habari&oldid=413714](https://wiki.archlinux.org/index.php?title=Habari&oldid=413714)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

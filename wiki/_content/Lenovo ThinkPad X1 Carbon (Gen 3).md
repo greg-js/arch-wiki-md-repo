@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X1 Carbon (Gen 3)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon")
@@ -39,85 +35,15 @@ Version: ThinkPad X1 Carbon 3rd
 
 ### Support
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[ALSA](/index.php/ALSA "ALSA")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Touchpad](/index.php/Touchpad "Touchpad")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Power management](/index.php/Power_management "Power management")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Bluetooth](/index.php/Bluetooth "Bluetooth")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Working** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| Camera | Yes |
+| Fingerprint Reader | Yes |
+| [Power management](/index.php/Power_management "Power management") | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 
 ## Configuration
 
@@ -158,7 +84,3 @@ There are stable releases of [libfprint](https://www.archlinux.org/packages/?nam
 *   [ThinkWiki](http://www.thinkwiki.org/wiki/Category:X1_Carbon_(3rd_Gen))
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon_(Gen_3)&oldid=408989](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon_(Gen_3)&oldid=408989)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

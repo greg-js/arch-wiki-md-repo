@@ -1,9 +1,5 @@
 # MacBookPro10,x
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
@@ -424,11 +420,3 @@ Here are a couple of interesting threads:
 *   A [Puppet](/index.php/Puppet "Puppet") module for installing and configuring Arch (optionally with KDE) on the MBP Retina 10,2, along with initial install instructions, is available at [https://github.com/jantman/puppet-archlinux-macbookretina](https://github.com/jantman/puppet-archlinux-macbookretina). It is updated quite frequently, and run daily on its author's laptop.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=413825](https://wiki.archlinux.org/index.php?title=MacBookPro10,x&oldid=413825)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

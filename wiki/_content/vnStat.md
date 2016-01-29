@@ -1,9 +1,5 @@
 # vnStat
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [vnStat](http://humdi.net/vnstat/) is a lightweight (command line) network traffic monitor. It monitors selectable interfaces and stores network traffic logs in a database for later analysis.
 
 ## Contents
@@ -66,7 +62,3 @@ To find more options, use:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VnStat&oldid=412208](https://wiki.archlinux.org/index.php?title=VnStat&oldid=412208)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

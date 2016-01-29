@@ -1,12 +1,8 @@
 # Gateone
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Gate One ✈ Web Terminal Emulator and SSH Client](http://liftoffsoftware.com/Products/GateOne):
 
-_Gate One™ is a web-based Terminal Emulator and SSH client that brings the power of the command line to the web. It requires no browser plugins and is built on top of a powerful plugin system that allows every aspect of its appearance and functionality to be customized._
+NaN
 
 Gate One enables users to access SSH servers over the web. alternatives exist, such as [Guacamole](http://guac-dev.org/). One of Gate One's distinguishing features is the ability to resume sessions from other browsers or to replay sessions.
 
@@ -36,9 +32,7 @@ Gate One is available in the [AUR](/index.php/AUR "AUR") via [gateone-git](https
 
 If you want to be able to upgrade (restart) Gate One without losing user's connected sessions you have to have dtach installed. This option is enabled by default in the configuration.
 
-[dtach](https://www.archlinux.org/packages/?name=dtach)
-
-emulates the detach feature of screen
+NaN
 
 ## Configuration
 
@@ -308,8 +302,3 @@ Gate One package comes with a [systemd](/index.php/Systemd "Systemd") service fi
 It has been reported that Gate One fails to open the terminal. This is because Gate One tries to execute `python`. If the executeable `python` isn't available it could fail, in that case please refer to [Python#Python 2](/index.php/Python#Python_2 "Python")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gateone&oldid=408620](https://wiki.archlinux.org/index.php?title=Gateone&oldid=408620)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

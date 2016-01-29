@@ -1,9 +1,5 @@
 # Bugzilla
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
@@ -134,12 +130,3 @@ Access [http://server-domain-or-ip/bugzilla/](http://server-domain-or-ip/bugzill
 *   [http://blog.samsonis.me/2009/04/bugzilla-on-archlinux/](http://blog.samsonis.me/2009/04/bugzilla-on-archlinux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=412047](https://wiki.archlinux.org/index.php?title=Bugzilla&oldid=412047)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

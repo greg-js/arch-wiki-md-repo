@@ -1,9 +1,5 @@
 # NVIDIA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Nouveau](/index.php/Nouveau "Nouveau")
@@ -97,22 +93,17 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 1\. If you do not know what graphics card you have, find out by issuing:
 
- `$ lspci -k | grep -A 2 -E "(VGA|3D)"` 
+NaN
 
 2\. Determine the necessary driver version for your card by:
 
-*   finding the code name (e.g. NV50, NVC0, etc.) on [nouveau wiki's code names page](http://nouveau.freedesktop.org/wiki/CodeNames)
-*   looking up the name in NVIDIA's [legacy card list](http://www.nvidia.com/object/IO_32667.html): if your card is not there you can use the latest driver
-*   visiting NVIDIA's [driver download site](http://www.nvidia.com/Download/index.aspx)
+NaN
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package along with [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl).
-*   For GeForce 8000/9000, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package along with [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
-*   For GeForce 6000/7000 series cards [NV4x and NV6x] from around 2004-2006, [install](/index.php/Install "Install") the [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) package along with [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
+NaN
 
-*   For even older cards, have a look at [#Unsupported drivers](#Unsupported_drivers).
-*   For the very latest GPU models, it may be required to [install](/index.php/Install "Install") the [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)<sup><small>AUR</small></sup> package, since the stable drivers may not support the newly introduced features.
+NaN
 
 4\. If you are on 64-bit and also need 32-bit OpenGL support, you must also install the equivalent _lib32_ package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) or [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
@@ -252,7 +243,7 @@ Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizont
 
 ### Multiple monitors
 
-_See [Multihead](/index.php/Multihead "Multihead") for more general information_
+NaN
 
 #### Using NVIDIA Settings
 
@@ -583,61 +574,12 @@ Option "SLI" "AA"
 
 The following table presents the available rendering modes.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Value</th>
-
-<th>Behavior</th>
-
-</tr>
-
-<tr>
-
-<td>0, no, off, false, Single</td>
-
-<td>Use only a single GPU when rendering.</td>
-
-</tr>
-
-<tr>
-
-<td>1, yes, on, true, Auto</td>
-
-<td>Enable SLI and allow the driver to automatically select the appropriate rendering mode.</td>
-
-</tr>
-
-<tr>
-
-<td>AFR</td>
-
-<td>Enable SLI and use the alternate frame rendering mode.</td>
-
-</tr>
-
-<tr>
-
-<td>SFR</td>
-
-<td>Enable SLI and use the split frame rendering mode.</td>
-
-</tr>
-
-<tr>
-
-<td>AA</td>
-
-<td>Enable SLI and use SLI antialiasing. Use this in conjunction with full scene antialiasing to improve visual quality.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Value | Behavior |
+| 0, no, off, false, Single | Use only a single GPU when rendering. |
+| 1, yes, on, true, Auto | Enable SLI and allow the driver to automatically select the appropriate rendering mode. |
+| AFR | Enable SLI and use the alternate frame rendering mode. |
+| SFR | Enable SLI and use the split frame rendering mode. |
+| AA | Enable SLI and use SLI antialiasing. Use this in conjunction with full scene antialiasing to improve visual quality. |
 
 Alternatively, you can use the `nvidia-xconfig` utility to insert these changes into `xorg.conf` with a single command:
 
@@ -1483,15 +1425,3 @@ When running multiple monitors in different orientations (through [Xrandr](/inde
 *   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=417484](https://wiki.archlinux.org/index.php?title=NVIDIA&oldid=417484)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

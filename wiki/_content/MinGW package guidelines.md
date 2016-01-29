@@ -1,9 +1,5 @@
 # MinGW package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -142,11 +138,3 @@ package() {
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=416576](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&oldid=416576)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

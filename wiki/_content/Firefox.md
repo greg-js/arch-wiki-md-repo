@@ -1,9 +1,5 @@
 # Firefox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
@@ -53,23 +49,23 @@ Other alternatives include:
 
 *   **Firefox Extended Support Release** — long-term supported version
 
-[https://www.mozilla.org/en-US/firefox/organizations/](https://www.mozilla.org/en-US/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Firefox Beta** — cutting-edge version
 
-[https://www.mozilla.org/en-US/firefox/channel](https://www.mozilla.org/en-US/firefox/channel) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Firefox Aurora/Developer edition** — for developers
 
-[https://www.mozilla.org/en-US/firefox/aurora/](https://www.mozilla.org/en-US/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Firefox Nightly** — nightly builds for testing
 
-[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better KDE integration than is possible through simple Firefox plugins.
 
-[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)<sup><small>AUR</small></sup>
+NaN
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
@@ -380,14 +376,3 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 *   [Firefox themes](https://addons.mozilla.org/en-US/firefox/themes/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox&oldid=417282](https://wiki.archlinux.org/index.php?title=Firefox&oldid=417282)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # Frequently asked questions
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch Terminology](/index.php/Arch_Terminology "Arch Terminology")
@@ -268,7 +264,3 @@ Some distributions may provide minimal installation methods, sharing some simila
 6.  Arch provides excellent, thorough documentation, aiding in the process of system assembly.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&oldid=406312](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&oldid=406312)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

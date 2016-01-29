@@ -1,9 +1,5 @@
 # Resizing LVM-on-LUKS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -171,12 +167,3 @@ Then resize the filesystem to occupy the whole logical volume:
 If all went fine, your `lvhome` filesystem is now as large as your logical volume itself.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Resizing_LVM-on-LUKS&oldid=390800](https://wiki.archlinux.org/index.php?title=Resizing_LVM-on-LUKS&oldid=390800)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

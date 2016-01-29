@@ -1,12 +1,8 @@
 # SQLite
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [project home page](http://www.sqlite.org/):
 
-_SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world. The source code for SQLite is in the public domain._
+NaN
 
 ## Contents
 
@@ -100,7 +96,3 @@ See forum [post](https://bbs.archlinux.org/viewtopic.php?id=109802).
 *   [SQLite - Apress Book](http://www.amazon.com/Definitive-Guide-SQLite-Mike-Owens/dp/1590596730)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SQLite&oldid=411287](https://wiki.archlinux.org/index.php?title=SQLite&oldid=411287)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

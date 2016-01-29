@@ -1,9 +1,5 @@
 # Netconsole
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **netconsole** is a kernel module that sends all kernel log messages (i.e. dmesg) over the network to another computer, without involving user space (e.g. syslogd). Name "netconsole" is a misnomer because it's not really a "console", more like a remote logging service.
 
 It can be used either built-in or as a module. Built-in _netconsole_ initializes immediately after NIC cards and will bring up the specified interface as soon as possible. The module is mainly used for capturing kernel panic output from a headless machine, or in other situations where the user space is no more functional.
@@ -154,13 +150,3 @@ One may need to switch off PC and router firewall, and setup proper router port 
 *   [Boot debugging#netconsole](/index.php/Boot_debugging#netconsole "Boot debugging")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Netconsole&oldid=411793](https://wiki.archlinux.org/index.php?title=Netconsole&oldid=411793)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

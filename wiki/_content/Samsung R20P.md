@@ -1,9 +1,5 @@
 # Samsung R20P
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware specification](#Hardware_specification)
@@ -127,7 +123,3 @@ Proper resolution of the secondary monitor is detected after an X server restart
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_R20P&oldid=309739](https://wiki.archlinux.org/index.php?title=Samsung_R20P&oldid=309739)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")

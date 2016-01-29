@@ -1,9 +1,5 @@
 # Dell Inspiron 1564
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is about my experiences with a Dell Inspiron 1564, using Arch i686.
 
 ## Contents
@@ -22,13 +18,13 @@ There are several configurations of this machine. Mine is as follows:
 
 **RAM:** 3072MB (1x1024 + 1x2048) 1067MHz DDR3 Dual Channel
 
-**Disk:** <strike>320GB Serial ATA (5400RPM)</strike> <strike>**Upgraded with Seagate Momentus 7200.4 500GB**</strike> **Upgraded with WD Scorpio Black 750GB 7200RPM Adv. Format**
+**Disk:** ~~320GB Serial ATA (5400RPM)~~ ~~**Upgraded with Seagate Momentus 7200.4 500GB**~~ **Upgraded with WD Scorpio Black 750GB 7200RPM Adv. Format**
 
 **LCD:** 15.6" 1366X768 HD WLED
 
 **Video:** 512 MB ATI Mobility Radeon HD 4330
 
-**WLAN:** <strike>Dell 1397 Mini (a/b/g) (Broadcom BCM4312 chipset)</strike> **Upgraded with Intel Wireless WiFi Link 5100 agn**
+**WLAN:** ~~Dell 1397 Mini (a/b/g) (Broadcom BCM4312 chipset)~~ **Upgraded with Intel Wireless WiFi Link 5100 agn**
 
 ## Hardware Details
 
@@ -114,7 +110,3 @@ aticonfig --set-pcs-str=DDX,ForceXAA,TRUE
 *   HDMI Audio
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1564&oldid=376009](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1564&oldid=376009)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

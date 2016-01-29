@@ -1,9 +1,5 @@
 # ASUS G55VW
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS G55VW ROG Laptop
 
 ## Contents
@@ -243,7 +239,3 @@ $ kbd_backlight show
 And finally, add some convenient keyboard shortcuts [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_G55VW&oldid=401091](https://wiki.archlinux.org/index.php?title=ASUS_G55VW&oldid=401091)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

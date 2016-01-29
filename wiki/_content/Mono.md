@@ -1,9 +1,5 @@
 # Mono
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Mono is an open source, cross-platform, implementation of C# and the CLR that is binary compatible with Microsoft.NET.
 
 ## Contents
@@ -101,7 +97,3 @@ Try `mozroots --import --ask-remove` which should update monos certificates. `mo
 *   [Instructions for running Mono applications](http://www.mono-project.com/Guide:Running_Mono_Applications)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mono&oldid=412132](https://wiki.archlinux.org/index.php?title=Mono&oldid=412132)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

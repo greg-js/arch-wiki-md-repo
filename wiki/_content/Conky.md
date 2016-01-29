@@ -1,9 +1,5 @@
 # Conky
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -80,19 +76,19 @@ In addition to the basic _conky_ package, there are various [AUR](/index.php/AUR
 
 *   **conky-cli** — _Conky_ without X11 dependencies
 
-|| [conky-cli](https://aur.archlinux.org/packages/conky-cli/)<sup><small>AUR</small></sup>
+NaN
 
 *   **conky-lua** — _Conky_ with Lua support
 
-|| [conky-lua](https://aur.archlinux.org/packages/conky-lua/)<sup><small>AUR</small></sup>
+NaN
 
 *   **conky-lua-nv** — _Conky_ with both Lua and Nvidia support
 
-|| [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)<sup><small>AUR</small></sup>
+NaN
 
 *   **conky-nvidia** — _Conky_ with Nvidia support
 
-|| [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)<sup><small>AUR</small></sup>
+NaN
 
 ## Tips and tricks
 
@@ -646,12 +642,3 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=413358](https://wiki.archlinux.org/index.php?title=Conky&oldid=413358)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

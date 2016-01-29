@@ -1,9 +1,5 @@
 # Browser plugins
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Opera](/index.php/Opera "Opera")
@@ -133,31 +129,23 @@ Fixing this issue only works for the NPAPI plugin and this issue can be fixed vi
 
 *   Using [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flash-fullscreen-patcher)]</sup> which providess wine as a required dependency since the patch has been initially made for Windows.
 
-After the package has been installed, backup `libflashplayer.so`:
+NaN
 
- `# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup` 
-
-Then, patch libflashplayer.so:
-
- `# flash-fullscreen-patcher.sh -i /usr/lib/mozilla/plugins/libflashplayer.so` 
+NaN
 
 *   Using the [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/)<sup><small>AUR</small></sup>.
 
 *   [Patching manually](http://www.webupd8.org/2012/10/ubuntu-multi-monitor-tweaks-full-screen.html):
 
-After the package has been installed, backup `libflashplayer.so`:
+NaN
 
- `# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup` 
+NaN
 
-Then, you will need to alter that file using a hex editor like [ghex](https://www.archlinux.org/packages/?name=ghex). You must open it with root privileges obviously.
+NaN
 
- `# ghex /usr/lib/mozilla/plugins/libflashplayer.so` 
+NaN
 
-Using the hex editor find the string `_NET_ACTIVE_WINDOW`. In ghex the readable string is on the right hand side of the window, and the hex is on the left, you are trying to locate the readable string. It should be easy to find using a search function.
-
-Upon finding `_NET_ACTIVE_WINDOW` rewrite the line, but **do not** change the length of the line, for example `_NET_ACTIVE_WINDOW` becomes `_XET_ACTIVE_WINDOW`.
-
-Save the binary, and restart any processes using the plugin (as this will crash any instance of the plugin in use.)
+NaN
 
 #### Playing DRM-protected content
 
@@ -291,19 +279,19 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 *   **Gecko Media Player** — Mozilla browser plugin to handle media on websites, using MPlayer.
 
-[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
+NaN
 
 *   **GNOME Videos Plugin** — Browser plugin based on the [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos") media player which uses [GStreamer](/index.php/GStreamer "GStreamer").
 
-[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
+NaN
 
 *   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
 
-[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)<sup><small>AUR</small></sup>
+NaN
 
 *   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
 
-[http://git.videolan.org/?p=npapi-vlc.git;a=summary](http://git.videolan.org/?p=npapi-vlc.git;a=summary) || [npapi-vlc-git](https://aur.archlinux.org/packages/npapi-vlc-git/)<sup><small>AUR</small></sup>
+NaN
 
 ## Other
 
@@ -547,12 +535,3 @@ QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=415563](https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=415563)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # GRUB Legacy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -951,12 +947,3 @@ quit
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - Debugging with GRUB, set module values
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB_Legacy&oldid=400617](https://wiki.archlinux.org/index.php?title=GRUB_Legacy&oldid=400617)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T450s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Model description](#Model_description)
@@ -24,251 +20,38 @@ Lenovo ThinkPad T450s
 
 ### Components
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**PCI (lspci)**</td>
-
-<td>**Driver**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Broadwell-U Host Bridge -OPI (rev 09)</td>
-
-<td>bdw_uncore</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Broadwell-U Integrated Graphics (rev 09)</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Broadwell-U Audio Controller (rev 09)</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP USB xHCI Controller (rev 03)</td>
-
-<td>xhci_hcd; xhci_pci</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP MEI Controller #1 (rev 03)</td>
-
-<td>mei_me</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Ethernet Connection (3) I218-LM (rev 03)</td>
-
-<td>e1000e</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP High Definition Audio Controller (rev 03)</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP PCI Express Root Port (rev e3)</td>
-
-<td>pcieport; shpchp</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP USB EHCI Controller (rev 03)</td>
-
-<td>ehci-pci; ehci_pci</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP LPC Controller (rev 03)</td>
-
-<td>lpc-ich; lpc_ich</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP SATA Controller [AHCI Mode] (rev 03)</td>
-
-<td>ahci</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP SMBus Controller (rev 03)</td>
-
-<td>i801_smbus; i2c_i801</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wildcat Point-LP Thermal Management Controller (rev 03)</td>
-
-</tr>
-
-<tr>
-
-<td>Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01)</td>
-
-<td>rtsx_pci</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Wireless 7265 (rev 59)</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**USB (usb-devices/lsusb)**</td>
-
-<td>**Driver**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation USB root hub</td>
-
-<td>hub</td>
-
-</tr>
-
-<tr>
-
-<td>Validity Sensors Fingerprint Reader</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Bluetooth</td>
-
-<td>btusb</td>
-
-</tr>
-
-<tr>
-
-<td>Chicony Electronics Integrated Camera</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **PCI (lspci)** | **Driver** |
+| Intel Corporation Broadwell-U Host Bridge -OPI (rev 09) | bdw_uncore |
+| Intel Corporation Broadwell-U Integrated Graphics (rev 09) | i915 |
+| Intel Corporation Broadwell-U Audio Controller (rev 09) | snd_hda_intel |
+| Intel Corporation Wildcat Point-LP USB xHCI Controller (rev 03) | xhci_hcd; xhci_pci |
+| Intel Corporation Wildcat Point-LP MEI Controller #1 (rev 03) | mei_me |
+| Intel Corporation Ethernet Connection (3) I218-LM (rev 03) | e1000e |
+| Intel Corporation Wildcat Point-LP High Definition Audio Controller (rev 03) | snd_hda_intel |
+| Intel Corporation Wildcat Point-LP PCI Express Root Port (rev e3) | pcieport; shpchp |
+| Intel Corporation Wildcat Point-LP USB EHCI Controller (rev 03) | ehci-pci; ehci_pci |
+| Intel Corporation Wildcat Point-LP LPC Controller (rev 03) | lpc-ich; lpc_ich |
+| Intel Corporation Wildcat Point-LP SATA Controller [AHCI Mode] (rev 03) | ahci |
+| Intel Corporation Wildcat Point-LP SMBus Controller (rev 03) | i801_smbus; i2c_i801 |
+| Intel Corporation Wildcat Point-LP Thermal Management Controller (rev 03) |
+| Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01) | rtsx_pci |
+| Intel Corporation Wireless 7265 (rev 59) | iwlwifi |
+
+| **USB (usb-devices/lsusb)** | **Driver** |
+| Intel Corporation USB root hub | hub |
+| Validity Sensors Fingerprint Reader |
+| Intel Corporation Bluetooth | btusb |
+| Chicony Electronics Integrated Camera | uvcvideo |
 
 ### Support
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Manual</td>
-
-</tr>
-
-<tr>
-
-<td>[ALSA](/index.php/ALSA "ALSA")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Touchpad](/index.php/Touchpad "Touchpad")</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Manual</td>
-
-</tr>
-
-<tr>
-
-<td>[Trackpad](/index.php?title=Trackpad&action=edit&redlink=1 "Trackpad (page does not exist)")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Camera](/index.php?title=Camera&action=edit&redlink=1 "Camera (page does not exist)")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Working** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") | Manual |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Manual |
+| [Trackpad](/index.php?title=Trackpad&action=edit&redlink=1 "Trackpad (page does not exist)") | Yes |
+| [Camera](/index.php?title=Camera&action=edit&redlink=1 "Camera (page does not exist)") | Yes |
 
 ## Configuration
 
@@ -292,279 +75,25 @@ I compiled libfprint-git from the AUR, although it is possible that the version 
 
 All "special" keys either function or map to Xorg special key classes out of the box. Mappings are below:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Key**</td>
-
-<td>**Console Keycode**</td>
-
-<td>**XF86 Keysym**</td>
-
-<td>**Windows 7 Function**</td>
-
-<td>Needs script</td>
-
-</tr>
-
-<tr>
-
-<td>F1</td>
-
-<td>113</td>
-
-<td>XF86AudioMute</td>
-
-<td>Mute speakers</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F2</td>
-
-<td>114</td>
-
-<td>XF86AudioLowerVolume</td>
-
-<td>Decreases the speaker volume</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F3</td>
-
-<td>115</td>
-
-<td>XF86AudioRaiseVolume</td>
-
-<td>Increases the speaker volume</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F4</td>
-
-<td>190</td>
-
-<td>XF86AudioMicMute</td>
-
-<td>Mutes/unmutes microphone</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F5</td>
-
-<td>224</td>
-
-<td>XF86MonBrightnessDown</td>
-
-<td>Darkens display</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F6</td>
-
-<td>225</td>
-
-<td>XF86MonBrightnessUp</td>
-
-<td>Brightens display</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F7</td>
-
-<td>227</td>
-
-<td>XF86Display</td>
-
-<td>Switch between internal and external display</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F8</td>
-
-<td>238</td>
-
-<td>XF86WLAN</td>
-
-<td>Enable/disable wireless</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>F9</td>
-
-<td>171</td>
-
-<td>XF86Tools</td>
-
-<td>Open "Control Panel"</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F10</td>
-
-<td>217</td>
-
-<td>XF86Search</td>
-
-<td>Open "Windows Search"</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F11</td>
-
-<td>120</td>
-
-<td>XF86LaunchA</td>
-
-<td>View open programs</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>F12</td>
-
-<td>144</td>
-
-<td>XF86Explorer</td>
-
-<td>Open "Computer"</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+4</td>
-
-<td>142</td>
-
-<td>XF86Sleep</td>
-
-<td>Enters sleep mode</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+p</td>
-
-<td>119</td>
-
-<td>Pause</td>
-
-<td>Pause</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+s</td>
-
-<td>56+99</td>
-
-<td>Sys_Req</td>
-
-<td>SysReq</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+K</td>
-
-<td>70</td>
-
-<td>Scroll_Lock</td>
-
-<td>Scroll Lock</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+B</td>
-
-<td>29+119</td>
-
-<td>Break</td>
-
-<td>Break</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+Spacebar</td>
-
-<td>NONE</td>
-
-<td>XF86Wakeup</td>
-
-<td>Adjusts keyboard backlight</td>
-
-<td>No</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Key** | **Console Keycode** | **XF86 Keysym** | **Windows 7 Function** | Needs script |
+| F1 | 113 | XF86AudioMute | Mute speakers | No |
+| F2 | 114 | XF86AudioLowerVolume | Decreases the speaker volume | No |
+| F3 | 115 | XF86AudioRaiseVolume | Increases the speaker volume | No |
+| F4 | 190 | XF86AudioMicMute | Mutes/unmutes microphone | No |
+| F5 | 224 | XF86MonBrightnessDown | Darkens display | No |
+| F6 | 225 | XF86MonBrightnessUp | Brightens display | No |
+| F7 | 227 | XF86Display | Switch between internal and external display | No |
+| F8 | 238 | XF86WLAN | Enable/disable wireless | Yes |
+| F9 | 171 | XF86Tools | Open "Control Panel" | No |
+| F10 | 217 | XF86Search | Open "Windows Search" | No |
+| F11 | 120 | XF86LaunchA | View open programs | No |
+| F12 | 144 | XF86Explorer | Open "Computer" | No |
+| Fn+4 | 142 | XF86Sleep | Enters sleep mode | Yes |
+| Fn+p | 119 | Pause | Pause | Yes |
+| Fn+s | 56+99 | Sys_Req | SysReq | Yes |
+| Fn+K | 70 | Scroll_Lock | Scroll Lock | Yes |
+| Fn+B | 29+119 | Break | Break | Yes |
+| Fn+Spacebar | NONE | XF86Wakeup | Adjusts keyboard backlight | No |
 
 Note that there is a BIOS option to change the function keys so that F1 - F12 are the primary and the listed functions are only triggered by the "Fn" key.
 
@@ -578,11 +107,11 @@ The T450s has firmware support for IRST. This will only be available if the T450
 
 [Per Matthew Garrett](https://mjg59.dreamwidth.org/26022.html),
 
-"[t]he concept of IRST is pretty simple. There's a firmware mechanism for setting a sleep timeout. If you suspend your computer and this timeout expires, it'll resume. However, instead of handing control back to the OS, the firmware just copies the entire contents of RAM to a special partition and turns the computer off. Next time you hit the power button, the firmware dumps the partition contents back into RAM and resumes as if nothing had changed. This takes a few seconds longer than resume from S3 but is far faster than resume from hibernation since it starts the moment the system gets power."
+NaN
 
 More specifically:
 
-"[t]he first thing to know about this feature is that it's entirely invisible unless your hard drive is set up correctly. There needs to be a partition that's at least the size of your system's physical RAM. For GPT systems, this needs to have a type GUID of D3BFE2DE-3DAF-11DF-BA-40-E3A556D89593\. For MBR systems, you need a partition type of 0x84\. If the firmware doesn't find an appropriate partition then the OS will get no indication that the firmware supports it."
+NaN
 
 If you are not wiping and repartitioning your disk entirely as you prepare your drive for Arch installation, merely retain the existing IRST partition. It should show up as an unformatted partition whose size is equal to that of the T450s's RAM.
 
@@ -599,7 +128,3 @@ Now if you leave your T450s suspended to RAM for a certain period of time (3 hou
 *   [Phoronix article Fedora on Thinkpad 450s](http://www.phoronix.com/scan.php?page=article&item=lenovo-t450s-linux&num=1)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T450s&oldid=415617](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T450s&oldid=415617)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

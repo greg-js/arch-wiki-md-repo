@@ -1,9 +1,5 @@
 # Oculus Rift
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Oculus Rift is a virtual reality head-mounted display developed by [Oculus VR](http://www.oculusvr.com/).
 
 ## Contents
@@ -176,11 +172,3 @@ If you try to suspend/resume and then use the Rift, the camera will have issues 
 For some reason, it seems that using `ovrd > 0.5.0` with applications compiled against 0.4.4 and below gives a latency reading of many millions of milliseconds (most likely a signed/unsigned change). This means timewarp is always clamped at maximum, and gives a 'swimming' view when using legacy applications. There isn't an ideal fix for this yet, although it is possible to install an old version of the SDK and use that instead.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Oculus_Rift&oldid=392510](https://wiki.archlinux.org/index.php?title=Oculus_Rift&oldid=392510)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

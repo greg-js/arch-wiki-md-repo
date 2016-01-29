@@ -1,9 +1,5 @@
 # Dillo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Dillo](http://www.Dillo.org) is a multi-platform graphical web browser known for its speed and small footprint.
 
 *   Dillo is written in C and C++.
@@ -50,7 +46,3 @@ Second, get rid of the permanent cookies by removing or editing your ~/.dillo/co
 *   [Dillo Home Page](http://www.dillo.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dillo&oldid=412064](https://wiki.archlinux.org/index.php?title=Dillo&oldid=412064)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

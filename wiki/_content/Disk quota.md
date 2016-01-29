@@ -1,12 +1,8 @@
 # Disk quota
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Disk_quota "wikipedia:Disk quota"):
 
-"_A **disk quota** is a limit set by a system administrator that restricts certain aspects of file system usage on modern operating systems. The function of setting quotas to disks is to allocate limited disk-space in a reasonable way._"
+NaN
 
 This article covers the installation and setup of disk quota.
 
@@ -45,14 +41,14 @@ _For journaled quota, see the notes in [#Journaled quota](#Journaled_quota)._
 
 ```
 
-edit it as follows;
+NaN
 
 ```
  /dev/sda1 /home ext4 defaults**,usrquota** 1 1
 
 ```
 
-or aditionally enable the group quota mount option;
+NaN
 
 ```
  /dev/sda1 /home ext4 defaults**,usrquota,grpquota** 1 1
@@ -73,7 +69,7 @@ or aditionally enable the group quota mount option;
 
 ```
 
-or for all partitions with the quota mount options in `/etc/mtab`;
+NaN
 
 ```
  # quotacheck -vguma
@@ -82,7 +78,7 @@ or for all partitions with the quota mount options in `/etc/mtab`;
 
 **Tip:** If you end up with the output "[...]Quotafile $FILE was probably truncated. Cannot save quota settings..." you can try removing the previously created files aquota*
 
-**Tip:** If you get the output "quotacheck: Mountpoint (or device) /home not found or has no quota enabled.  
+**Tip:** If you get the output "quotacheck: Mountpoint (or device) /home not found or has no quota enabled.
 quotacheck: Cannot find filesystem to check or filesystem not mounted with quota option." and you are using a custom kernel, make sure quota support is enabled in your kernel.
 
 **Tip:** In Addition you can try to use "-F vfsold" and "-F vfsv0" afterwards **NOTE:** As of 3.1.6-1, Arch does not support "vfsv1"
@@ -139,23 +135,11 @@ Disk quotas for user **$USER** (uid 1000):
 
 **Note:** to edit group quotas, use `edquota -g $GROUP`.
 
-blocks
-
-Number of 1k blocks currently used by `$USER`.
+NaN
 
 **Note:** Block size is statically set to 1k regardless of filesystem block size. [Explanation](http://stackoverflow.com/questions/2506288/detect-block-size-for-quota-in-linux/2506311#2506311)
 
-inodes
-
-Number of entries by `$USER` in directory file.
-
-soft
-
-Max number of blocks/inodes `$USER` may have on partition before warning is issued and grace period countdown begins. If set to "0" (zero) then no limit is enforced.
-
-hard
-
-Max number of blocks/inodes `$USER` may have on partition. If set to "0" (zero) then no limit is enforced.
+NaN
 
 Configure the `soft` limit grace period:
 
@@ -269,12 +253,3 @@ Number of in use dquot entries (user/group): -1946
 *   [http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html](http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=416124](https://wiki.archlinux.org/index.php?title=Disk_quota&oldid=416124)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

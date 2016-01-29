@@ -1,9 +1,5 @@
 # Autofs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document outlines the procedure needed to set up AutoFS, a package that provides support for automounting removable media or network shares when they are inserted or accessed.
 
 ## Contents
@@ -405,11 +401,3 @@ With certain versions of util-linux, you may not be able to unmount a fuse file 
 *   More information on SSH can be found on the [SSH](/index.php/SSH "SSH") and [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") pages of this wiki.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Autofs&oldid=412681](https://wiki.archlinux.org/index.php?title=Autofs&oldid=412681)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

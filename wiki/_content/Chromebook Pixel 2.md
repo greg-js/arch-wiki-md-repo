@@ -1,9 +1,5 @@
 # Chromebook Pixel 2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 The Chromebook Pixel 2 is a [Chromebook](/index.php/Chromebook "Chromebook") manufactured by Google in 2015\. This page details installing Arch Linux on the Pixel 2.
@@ -121,11 +117,3 @@ Once the device is open, find the red-pink screw with a golden washer, located b
 [Chromium OS device page](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel-2015)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=415749](https://wiki.archlinux.org/index.php?title=Chromebook_Pixel_2&oldid=415749)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

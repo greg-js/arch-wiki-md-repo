@@ -1,9 +1,5 @@
 # ReadyMedia
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [ReadyMedia](https://sourceforge.net/projects/minidlna) (previously **MiniDLNA**) is server software with the aim of being fully compliant with [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance "wikipedia:Digital Living Network Alliance")/[UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play "wikipedia:Universal Plug and Play") clients. The MiniDNLA daemon serves media files (music, pictures, and video) to clients on a network. Example clients include applications such as totem and xbmc, and devices such as portable media players, Smartphones, Televisions, and gaming systems (such as PS3 and Xbox 360).
 
 ReadyMedia is a simple, lightweight alternative to [MediaTomb](/index.php/MediaTomb "MediaTomb"), but has fewer features. It does not have a web interface for administration and must be configured by editing a text file.
@@ -198,7 +194,3 @@ ProtectHome=read-only
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ReadyMedia&oldid=379017](https://wiki.archlinux.org/index.php?title=ReadyMedia&oldid=379017)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")

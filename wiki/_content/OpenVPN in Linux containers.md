@@ -1,9 +1,5 @@
 # OpenVPN in Linux containers
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [AirVPN](/index.php/AirVPN "AirVPN")
@@ -177,8 +173,3 @@ The result should be a firefox window in the host's X server with the title, "Mo
 At this point, the IP and DNS entries corresponding to `/etc/openvpn/myprofile.conf` should be displayed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412878](https://wiki.archlinux.org/index.php?title=OpenVPN_in_Linux_containers&oldid=412878)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

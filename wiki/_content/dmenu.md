@@ -1,9 +1,5 @@
 # dmenu
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [List of applications/Other#Application launchers](/index.php/List_of_applications/Other#Application_launchers "List of applications/Other")
@@ -120,12 +116,3 @@ Note that there will most likely be only one cache file, depending on if `$XDG_C
 *   [Dmenu Hacking thread](https://bbs.archlinux.org/viewtopic.php?id=80145) – Dmenu hacking thread in arch linux forums. An overview of scripts is provided in the [dmenu_scripts collection](https://github.com/orschiro/dmenu-scripts-collection).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dmenu&oldid=412065](https://wiki.archlinux.org/index.php?title=Dmenu&oldid=412065)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

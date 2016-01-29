@@ -1,9 +1,5 @@
 # Hellanzb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Hellanzb is a console based usenet binary downloader written in python. It can be run in daemon mode and several GUI or PHP frontends are available.
 
 **Note:** hellanzb is no longer under active development, although the last release (0.13) is considered stable by the developers and testing team.
@@ -60,11 +56,3 @@ HELLANZB_CONF="/home/${HELLANZB_USER}/.config/hellanzb.conf"
 *   [Screen Tips](/index.php/Screen_Tips "Screen Tips")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hellanzb&oldid=392230](https://wiki.archlinux.org/index.php?title=Hellanzb&oldid=392230)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

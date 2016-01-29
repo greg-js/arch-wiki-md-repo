@@ -1,9 +1,5 @@
 # Power management
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")
@@ -77,28 +73,28 @@ These are the more popular scripts and tools designed to help power saving:
 
 *   **aclidswitch** — Simple Power Management tool to define custom lid, brightness and low battery actions depending on the laptop's AC state.
 
-[https://github.com/orschiro/aclidswitch](https://github.com/orschiro/aclidswitch) || [aclidswitch-git](https://aur.archlinux.org/packages/aclidswitch-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[acpid](/index.php/Acpid "Acpid")** — A daemon for delivering ACPI power management events with netlink support.
 
-[http://sourceforge.net/projects/acpid2/](http://sourceforge.net/projects/acpid2/) || [acpid](https://www.archlinux.org/packages/?name=acpid)
+NaN
 
 *   **[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")** — Utility to configure laptop power saving settings, considered by many to be the de facto utility for power saving though may take a bit of configuration.
 
-[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[pm-utils](/index.php/Pm-utils "Pm-utils")** — Suspend and powerstate setting framework (largely undeveloped now).
 
-[http://pm-utils.freedesktop.org/](http://pm-utils.freedesktop.org/) || [pm-utils](https://www.archlinux.org/packages/?name=pm-utils)
+NaN
 
 *   **[powertop](/index.php/Powertop "Powertop")** — A tool to diagnose issues with power consumption and power management to help set power saving settings.
 
-[https://01.org/powertop/](https://01.org/powertop/) || [powertop](https://www.archlinux.org/packages/?name=powertop)
+NaN
 
 *   [systemd](/index.php/Systemd "Systemd")
 *   **[TLP](/index.php/TLP "TLP")** — Advanced power management for Linux.
 
-[http://linrunner.de/tlp](http://linrunner.de/tlp) || [tlp](https://www.archlinux.org/packages/?name=tlp)
+NaN
 
 ## Power management with systemd
 
@@ -108,73 +104,12 @@ _systemd_ handles some power-related [ACPI](https://en.wikipedia.org/wiki/Advanc
 
 The specified action for each event can be one of `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `lock` or `kexec`. In case of hibernation and suspension, they must be properly [set up](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). If an event is not configured, _systemd_ will use a default action.
 
-<table class="wikitable sortable" border="1">
-
-<tbody>
-
-<tr>
-
-<th>Event handler</th>
-
-<th>Description</th>
-
-<th>Default action</th>
-
-</tr>
-
-<tr>
-
-<td>`HandlePowerKey`</td>
-
-<td>Triggered when the power key/button is pressed.</td>
-
-<td>`poweroff`</td>
-
-</tr>
-
-<tr>
-
-<td>`HandleSuspendKey`</td>
-
-<td>Triggered when the suspend key/button is pressed.</td>
-
-<td>`suspend`</td>
-
-</tr>
-
-<tr>
-
-<td>`HandleHibernateKey`</td>
-
-<td>Triggered when the hibernate key/button is pressed.</td>
-
-<td>`hibernate`</td>
-
-</tr>
-
-<tr>
-
-<td>`HandleLidSwitch`</td>
-
-<td>Triggered when the lid is closed, except in the cases below.</td>
-
-<td>`suspend`</td>
-
-</tr>
-
-<tr>
-
-<td>`HandleLidSwitchDocked`</td>
-
-<td>Triggered when the lid is closed if the system is inserted in a docking station, or more than one display is connected.</td>
-
-<td>`ignore`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Event handler | Description | Default action |
+| `HandlePowerKey` | Triggered when the power key/button is pressed. | `poweroff` |
+| `HandleSuspendKey` | Triggered when the suspend key/button is pressed. | `suspend` |
+| `HandleHibernateKey` | Triggered when the hibernate key/button is pressed. | `hibernate` |
+| `HandleLidSwitch` | Triggered when the lid is closed, except in the cases below. | `suspend` |
+| `HandleLidSwitchDocked` | Triggered when the lid is closed if the system is inserted in a docking station, or more than one display is connected. | `ignore` |
 
 To apply any changes, [restart](/index.php/Restart "Restart") the `systemd-logind` daemon (be warned that this will terminate all login sessions that might still be open).
 
@@ -780,13 +715,3 @@ done
 *   [Ubuntu Wiki's Power Saving Tweaks](https://wiki.ubuntu.com/Kernel/PowerManagement/PowerSavingTweaks)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management&oldid=412937](https://wiki.archlinux.org/index.php?title=Power_management&oldid=412937)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

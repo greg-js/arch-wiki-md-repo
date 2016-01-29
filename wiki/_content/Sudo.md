@@ -1,9 +1,5 @@
 # Sudo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Users and groups](/index.php/Users_and_groups "Users and groups")
@@ -453,12 +449,3 @@ The authors site has a [list of all the options](http://www.sudo.ws/sudo/sudoers
 See [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sudo&oldid=414993](https://wiki.archlinux.org/index.php?title=Sudo&oldid=414993)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

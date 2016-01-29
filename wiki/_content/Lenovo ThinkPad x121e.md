@@ -1,9 +1,5 @@
 # Lenovo ThinkPad x121e
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -145,12 +141,3 @@ If you cannot power off when running on battery, see this thread for a possible 
 If you get errors on boot or resume complaining about the TPM, try changing the settings for the security chip in the BIOS as described in [this thread](https://bbs.archlinux.org/viewtopic.php?id=139415).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121e&oldid=412576](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_x121e&oldid=412576)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

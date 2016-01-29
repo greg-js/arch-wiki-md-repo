@@ -1,9 +1,5 @@
 # Groovebasin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Groovebasin](http://groovebasin.com/) is a music player server with a web-based user interface.
 
 Run it on a server connected to some speakers in your home or office. Guests can control the music player by connecting with a laptop, tablet, or smart phone. Further, you can stream your music library remotely.
@@ -74,8 +70,3 @@ location /groove/ {
 *   [Screenshots](http://groovebasin.com/#screenshots)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Groovebasin&oldid=412092](https://wiki.archlinux.org/index.php?title=Groovebasin&oldid=412092)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

@@ -1,9 +1,5 @@
 # Multi-pointer X
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Xorg servers starting from version 1.7 have a feature called "multi-pointer". Basically it allows to have multiple mouse cursors (each with its own keyboard focus) on the screen and control them with separate physical input devices. It can be used as a crude [multiseat](/index.php/Xorg_multiseat "Xorg multiseat") solution.
 
 ## Contents
@@ -121,7 +117,3 @@ As of 26 September 2010, none of major window managers support multi-pointer.
 *   [Xorg multiseat](/index.php/Xorg_multiseat "Xorg multiseat"). A how-to for a more complicated multi-user environment. Requires 2 different xorg sessions and graphics cards!!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Multi-pointer_X&oldid=387969](https://wiki.archlinux.org/index.php?title=Multi-pointer_X&oldid=387969)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

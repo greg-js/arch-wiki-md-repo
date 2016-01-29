@@ -1,9 +1,5 @@
 # Rust
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Rust](http://rust-lang.org/) is a systems programming language that runs blazingly fast, prevents nearly all segfaults, and guarantees thread and memory safety.
 
 ## Contents
@@ -109,7 +105,3 @@ authors = ["Your Name <you@example.com>"]
 *   [Libraries(crates) avalaible through Cargo](https://crates.io/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rust&oldid=417280](https://wiki.archlinux.org/index.php?title=Rust&oldid=417280)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

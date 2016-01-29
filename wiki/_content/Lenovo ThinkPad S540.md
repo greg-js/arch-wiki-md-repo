@@ -1,9 +1,5 @@
 # Lenovo ThinkPad S540
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page outlines installation tips for Archlinux on the Lenovo Thinkpad S540, and tips on getting the best setup, and known cavaets.
 
 ## Contents
@@ -37,7 +33,3 @@ Currently known cavets with Arch Linux on the s540 are:
 *   Default soft-buttons on the touch pad don't match the markings.This page outlines installation tips for Archlinux on the Lenovo Thinkpad S540, and tips on getting the best setup, and known cavaets.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S540&oldid=412557](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S540&oldid=412557)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

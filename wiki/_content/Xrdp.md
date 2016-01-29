@@ -1,9 +1,5 @@
 # Xrdp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **xrdp** is a daemon that supports Microsoft's [Remote Desktop Protocol](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol "wikipedia:Remote Desktop Protocol") (RDP). It uses Xvnc or X11rdp as a backend.
 
 ## Contents
@@ -86,7 +82,3 @@ _xrdp_ checks only if a session with the same geometry is already opened. It wil
 *   [TigerVNC](/index.php/TigerVNC "TigerVNC") - VNC, an alternative to RDP, also used as backend here
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xrdp&oldid=399611](https://wiki.archlinux.org/index.php?title=Xrdp&oldid=399611)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")

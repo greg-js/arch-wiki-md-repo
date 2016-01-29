@@ -1,9 +1,5 @@
 # DVB-S
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DVB-T](/index.php/DVB-T "DVB-T")
@@ -271,12 +267,3 @@ or use the playlist editor in Xine
 *   [Ubuntuusers.de-Wiki](http://wiki.ubuntuusers.de/TV-Karten) (german)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-S&oldid=399529](https://wiki.archlinux.org/index.php?title=DVB-S&oldid=399529)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

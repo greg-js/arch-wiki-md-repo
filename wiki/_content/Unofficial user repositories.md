@@ -1,9 +1,5 @@
 # Unofficial user repositories
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -1569,13 +1565,3 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=416936](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=416936)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

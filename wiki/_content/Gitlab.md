@@ -1,9 +1,5 @@
 # Gitlab
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Gitolite](/index.php/Gitolite "Gitolite")
@@ -19,7 +15,7 @@ Related articles
 
 From [GitLab's homepage:](https://about.gitlab.com/)
 
-_GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers._
+NaN
 
 An example live version can be found at [GitLab.com](https://gitlab.com/).
 
@@ -88,53 +84,10 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 The [gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small></sup> package installs GitLab's files in a manner that more closely follows standard Linux conventions:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Description</th>
-
-<th>[GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md)</th>
-
-<th>[gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small></sup></th>
-
-</tr>
-
-<tr>
-
-<td>Configuration File GitShell</td>
-
-<td>`/home/git/gitlab-shell/config.yml`</td>
-
-<td>`/etc/webapps/gitlab-shell/config.yml`</td>
-
-</tr>
-
-<tr>
-
-<td>Configuration File GitLab</td>
-
-<td>`/home/git/gitlab/config/gitlab.yml`</td>
-
-<td>`/etc/webapps/gitlab/gitlab.yml`</td>
-
-</tr>
-
-<tr>
-
-<td>User (Home Directory)</td>
-
-<td>`git` (`/home/git`)</td>
-
-<td>`gitlab` (`/var/lib/gitlab`)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md) | [gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small></sup> |
+| Configuration File GitShell | `/home/git/gitlab-shell/config.yml` | `/etc/webapps/gitlab-shell/config.yml` |
+| Configuration File GitLab | `/home/git/gitlab/config/gitlab.yml` | `/etc/webapps/gitlab/gitlab.yml` |
+| User (Home Directory) | `git` (`/home/git`) | `gitlab` (`/var/lib/gitlab`) |
 
 **Tip:** If you are familiar with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") you can edit the PKGBUILD and relevant files to change gitlab's home directory to a place of your liking.
 
@@ -1116,11 +1069,3 @@ Finally, restart the gitlab services and test your site.
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=415425](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=415425)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

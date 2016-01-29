@@ -1,9 +1,5 @@
 # One Time PassWord
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Secure Shell](/index.php/Secure_Shell "Secure Shell")
@@ -127,7 +123,3 @@ Then simply enter your prefix, and the three requested passwords in the order th
 **Note:** Due to a [bug](https://bugzilla.mindrot.org/show_bug.cgi?id=632) in the way OpenSSH calls PAM, the `~/.otpw.lock` file will not be deleted if the user cancels an SSH login using Ctrl-C or the like, and OTPW will always ask for triple passwords after this. The bug is marked as fixed, but it still affects me. As a workaround, one may simply delete the lock file manually, and OTPW will resume normal single-password requests.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=One_Time_PassWord&oldid=409099](https://wiki.archlinux.org/index.php?title=One_Time_PassWord&oldid=409099)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

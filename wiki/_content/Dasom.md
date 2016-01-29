@@ -1,9 +1,5 @@
 # Dasom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IBus](/index.php/IBus "IBus")
@@ -62,7 +58,3 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 *   [Dasom Homepage](http://dasom-im.github.io)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dasom&oldid=413437](https://wiki.archlinux.org/index.php?title=Dasom&oldid=413437)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")

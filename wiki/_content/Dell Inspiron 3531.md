@@ -1,9 +1,5 @@
 # Dell Inspiron 3531
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -192,11 +188,3 @@ echo 100 | sudo tee /sys/class/backlight/intel_backlight/brightness
 (change 100 to your number of choice). To complicate things even more, this value is not saved after reboot if it's less than 390, because systemd is hardcoded to have at least [5% of max_brightness at start-up](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017823.html). If your favorite brightness is below 390, the only way is to run this number on every boot.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_3531&oldid=380454](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_3531&oldid=380454)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

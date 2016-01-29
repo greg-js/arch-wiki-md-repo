@@ -1,9 +1,5 @@
 # Trinity
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
@@ -90,7 +86,3 @@ Then from the command line, just type `startx`. More about [xinitrc](/index.php/
 *   How To Build: [https://wiki.trinitydesktop.org/Category:Developers#Building_and_Distributing_Trinity](https://wiki.trinitydesktop.org/Category:Developers#Building_and_Distributing_Trinity)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Trinity&oldid=408100](https://wiki.archlinux.org/index.php?title=Trinity&oldid=408100)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

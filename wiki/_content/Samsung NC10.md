@@ -1,9 +1,5 @@
 # Samsung NC10
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article aims to provide information on installing and setting up Arch Linux on the Samsung NC10.
 
 A lot of the information is derived from the [Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=58117), and from several hints scattered around in the ArchWiki.
@@ -184,7 +180,7 @@ As an example, here is how to bind the keys for volume control:
 
 ```
 
-For your NC10 Fn keysums may differ. If any Fn keys do not work with the above `.xbindkeysrc`, you should check the keysum values with `xbindkeys -k`.
+NaN
 
 3\. Run `xbindkeys` and volume control should work within an X session!
 
@@ -210,11 +206,3 @@ See [power saving](/index.php/Power_saving "Power saving").
 There is no official support from Samsung on how to upgrade your BIOS from anything else than Windows XP / 7, although there's an exellent guide on how to update your BIOS without Windows installed on your computer at all [here](http://www.voria.org/forum/viewtopic.php?t=248).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_NC10&oldid=377031](https://wiki.archlinux.org/index.php?title=Samsung_NC10&oldid=377031)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

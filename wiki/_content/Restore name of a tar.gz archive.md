@@ -1,9 +1,5 @@
 # Restore name of a tar.gz archive
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Post recovery tasks](/index.php/Post_recovery_tasks "Post recovery tasks")
@@ -135,11 +131,3 @@ echo $XX
 Files will be restored with pattern like `$HOME/tar-gz/Sorted/MIXE` where _MIXE_ is the first 4 letters of a filename. You can adjust it with the `cut -c1-4` command inside the script. In the `$HOME/tar-gz/BadName` places damaged files or files where it was impossible to get filename. In the `$HOME/tar-gz/Duples` places duplicates of files with pattern _filename.tar.gz_Duplicate123_ where 123 is a number of a processed file.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Restore_name_of_a_tar.gz_archive&oldid=401678](https://wiki.archlinux.org/index.php?title=Restore_name_of_a_tar.gz_archive&oldid=401678)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Asus Q500A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Booting](#Booting)
@@ -76,7 +72,3 @@ This laptop is equipped with [Bluetooth](/index.php/Bluetooth "Bluetooth"), so m
 [Keyboard backlight#Asus](/index.php/Keyboard_backlight#Asus "Keyboard backlight")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Asus_Q500A&oldid=373068](https://wiki.archlinux.org/index.php?title=Asus_Q500A&oldid=373068)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

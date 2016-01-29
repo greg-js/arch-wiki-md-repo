@@ -1,9 +1,5 @@
 # Archiso
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO")
@@ -467,13 +463,3 @@ After all of these, now you can follow the [Beginners' guide#Locale](/index.php/
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533](https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems")
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

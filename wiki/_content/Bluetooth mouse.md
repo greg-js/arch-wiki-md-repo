@@ -1,9 +1,5 @@
 # Bluetooth mouse
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
@@ -82,8 +78,3 @@ Sometimes the device is not active right away. Try starting the interface with:
 and searching for devices as shown above.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_mouse&oldid=417349](https://wiki.archlinux.org/index.php?title=Bluetooth_mouse&oldid=417349)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")

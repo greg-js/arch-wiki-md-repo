@@ -1,9 +1,5 @@
 # Change root
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
@@ -239,7 +235,3 @@ Chroot requires root privileges, which may not be desirable or possible for the 
 *   [Basic Chroot](https://help.ubuntu.com/community/BasicChroot)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Change_root&oldid=415058](https://wiki.archlinux.org/index.php?title=Change_root&oldid=415058)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

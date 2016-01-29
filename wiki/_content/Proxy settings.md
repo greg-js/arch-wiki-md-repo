@@ -1,9 +1,5 @@
 # Proxy settings
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
@@ -264,8 +260,3 @@ $ cntlm -v
 Use `127.0.0.1:<port>` or `localhost:<port>` as a proxy adress. `<port>` matches the `Listen` parameter in `/etc/cntlm.conf`, which by default is `3128`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Proxy_settings&oldid=406411](https://wiki.archlinux.org/index.php?title=Proxy_settings&oldid=406411)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")

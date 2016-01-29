@@ -1,9 +1,5 @@
 # Logrotate
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Cron](/index.php/Cron "Cron")
@@ -11,7 +7,7 @@ Related articles
 
 From [https://fedorahosted.org/logrotate/](https://fedorahosted.org/logrotate/):
 
-_The logrotate utility is designed to simplify the administration of log files on a system which generates a lot of log files. Logrotate allows for the automatic rotation compression, removal and mailing of log files. Logrotate can be set to handle a log file daily, weekly, monthly or when the log file gets to a certain size._
+NaN
 
 By default, logrotate's _rotation_ consists of renaming existing log files with a numerical suffix, then recreating the original _empty_ log file. For example, `/var/log/syslog.log` is renamed `/var/log/syslog.log.1`. If `/var/log/syslog.log.1` already exists from a previous rotation, it is first renamed `/var/log/syslog.log.2`. (The number of backlogs to keep can be configured.)
 
@@ -48,8 +44,3 @@ To fix this, add the user `exim` to the group `log`. Then change the group of th
 *   [Logrotate on Gentoo Linux Wiki](http://wiki.gentoo.org/wiki/Logrotate)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logrotate&oldid=412607](https://wiki.archlinux.org/index.php?title=Logrotate&oldid=412607)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")

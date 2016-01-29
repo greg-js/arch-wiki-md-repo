@@ -1,9 +1,5 @@
 # HiDPI
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Font configuration](/index.php/Font_configuration "Font configuration")
@@ -329,7 +325,3 @@ The default console font will be very small on hidpi displays, the largest font 
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417178](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417178)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")

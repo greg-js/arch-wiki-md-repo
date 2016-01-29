@@ -1,9 +1,5 @@
 # Keyboard configuration in console
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
@@ -158,7 +154,3 @@ $ systemctl start kbdrate.service
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&oldid=400875](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&oldid=400875)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

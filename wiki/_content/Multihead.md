@@ -1,9 +1,5 @@
 # Multihead
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -387,11 +383,3 @@ Note that:
 *   ['How I got Dual Monitors with Nouveau Driver' forums thread](https://bbs.archlinux.org/viewtopic.php?pid=652861)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Multihead&oldid=387970](https://wiki.archlinux.org/index.php?title=Multihead&oldid=387970)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

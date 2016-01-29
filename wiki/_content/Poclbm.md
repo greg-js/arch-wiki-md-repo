@@ -1,9 +1,5 @@
 # Poclbm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Poclbm (Python OpenCL Bitcoin miner) is a python program/script made by m0mchil on Github ([https://github.com/m0mchil/poclbm](https://github.com/m0mchil/poclbm)), it mines Bitcoins using an OpenCL capable device. Here's how to install and use it as a systemd service.
 
 ## Contents
@@ -67,7 +63,3 @@ WantedBy=multi-user.target
 The user-specific arguments need to be adapted as described in [#Execute the miner](#Execute_the_miner). Then [start](/index.php/Start "Start") the service using _systemctl_.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Poclbm&oldid=368742](https://wiki.archlinux.org/index.php?title=Poclbm&oldid=368742)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

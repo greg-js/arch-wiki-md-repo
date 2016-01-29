@@ -1,9 +1,5 @@
 # Tablet PC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Here are some hints for getting Arch Linux working on your tablet PC. These instructions contain information for getting the stylus, stylus rotation, and screen rotation to work properly on a tablet PC.
 
 ## Contents
@@ -471,11 +467,3 @@ normal left inverted right
 **Note:** The following driver(s) are known not to support rotation: fglrx
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tablet_PC&oldid=409330](https://wiki.archlinux.org/index.php?title=Tablet_PC&oldid=409330)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

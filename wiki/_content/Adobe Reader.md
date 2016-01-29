@@ -1,9 +1,5 @@
 # Adobe Reader
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Securing Adobe Reader
 
 ### TOMOYO
@@ -233,7 +229,3 @@ The output of this command will show you rejected actions for Adobe Reader, so y
 Detailed guide about TOMOYO configuring can be found [here](http://tomoyo.sourceforge.jp/2.5/index.html.en).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Adobe_Reader&oldid=248310](https://wiki.archlinux.org/index.php?title=Adobe_Reader&oldid=248310)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X1 Carbon (Gen 2)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon")
@@ -406,12 +402,3 @@ The dock has DisplayPort and DVI on the back, and either work, but only one at a
 All other ports on the dock work as expected.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon_(Gen_2)&oldid=401242](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon_(Gen_2)&oldid=401242)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

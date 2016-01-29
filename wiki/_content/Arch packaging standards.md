@@ -1,9 +1,5 @@
 # Arch packaging standards
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
@@ -109,109 +105,7 @@ Other prototypes are found in `/usr/share/pacman` from the pacman and abs packag
 
 *   Package files should follow these **general directory guidelines**:
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td>`/etc`</td>
-
-<td>**System-essential** configuration files</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/bin`</td>
-
-<td>Binaries</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/lib`</td>
-
-<td>Libraries</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/include`</td>
-
-<td>Header files</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/lib/{pkg}`</td>
-
-<td>Modules, plugins, etc.</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/share/doc/{pkg}`</td>
-
-<td>Application documentation</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/share/info`</td>
-
-<td>GNU Info system files</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/share/man`</td>
-
-<td>Manpages</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/share/{pkg}`</td>
-
-<td>Application data</td>
-
-</tr>
-
-<tr>
-
-<td>`/var/lib/{pkg}`</td>
-
-<td>Persistent application storage</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/{pkg}`</td>
-
-<td>Configuration files for `{pkg}`</td>
-
-</tr>
-
-<tr>
-
-<td>`/opt/{pkg}`</td>
-
-<td>Large self-contained packages such as Java, etc.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+NaN
 
 *   Packages should not contain any of the following directories:
     *   `/bin`
@@ -311,9 +205,3 @@ Be sure to read the above guidelines first - important points are listed on this
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_packaging_standards&oldid=394881](https://wiki.archlinux.org/index.php?title=Arch_packaging_standards&oldid=394881)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

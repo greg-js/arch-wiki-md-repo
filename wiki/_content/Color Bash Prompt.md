@@ -1,9 +1,5 @@
 # Color Bash Prompt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bash](/index.php/Bash "Bash")
@@ -88,8 +84,8 @@ The following settings provides more professional prompts.
 
 A green/blue prompt for _regular users_:
 
-chiri ~/docs $ echo "sample output text"  
-sample output text  
+chiri ~/docs $ echo "sample output text"
+sample output text
 chiri ~/docs $ _
 
  `PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'` 
@@ -109,8 +105,8 @@ The last color-set sequence, `\[\e[1;37m\]`, is not closed, so the remaining tex
 
 A red/blue prompt for _root_:
 
-root ~/docs # echo "sample output text"  
-sample output text  
+root ~/docs # echo "sample output text"
+sample output text
 root ~/docs # _
 
  `PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]'` 
@@ -129,7 +125,7 @@ This is for **256 color terminals**, which is where the `\033[38;5;22m` terminal
 
 ```
 802/1024MB      1.28 1.20 1.13 3/94 18563
-[5416:17880 0:70] 05:35:50 Wed Apr 21 [srot@host.sqpt.net:/dev/pts/0 +1] ~  
+[5416:17880 0:70] 05:35:50 Wed Apr 21 [srot@host.sqpt.net:/dev/pts/0 +1] ~
 
 (1:70)$ _
 ```
@@ -259,14 +255,14 @@ On_IWhite='\e[0;107m'   # White
 
 To use in commands from your shell environment:
 
-$ echo -e "${txtblu}test"  
-test  
-$ echo -e "${bldblu}test"  
-**test**  
-$ echo -e "${undblu}test"  
-**test**  
-$ echo -e "${bakblu}test"  
-**test**  
+$ echo -e "${txtblu}test"
+test
+$ echo -e "${bldblu}test"
+**test**
+$ echo -e "${undblu}test"
+**test**
+$ echo -e "${bakblu}test"
+**test**
 $ _
 
  `PS1="\[$txtblu\]foo\[$txtred\] bar\[$txtrst\] baz : "` 
@@ -354,8 +350,8 @@ The environment variable `COLUMNS` contains the number of columns of the termina
 
 Use the following prompt to see the return value of last command:
 
-0 ;) : true  
-0 ;) : false  
+0 ;) : true
+0 ;) : false
 1 ;( :
 
 ```
@@ -367,8 +363,8 @@ _Zero_ is a green smiley and _non-zero_ a red one. So your prompt will smile if 
 
 But you will probably want to include the username and hostname as well, like this:
 
-0 ;) andy@alba ~ $ true  
-0 ;) andy@alba ~ $ false  
+0 ;) andy@alba ~ $ true
+0 ;) andy@alba ~ $ false
 1 ;( andy@alba ~ $ _
 
 ```
@@ -378,10 +374,10 @@ PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\];)\"; e
 
 Or, if you want, you can build your prompt using the ✓ unicode symbol for a _zero_ status and the ✗ unicode symbol for a _nonzero_ status:
 
-0 ✓ andy@alba ~ $ true  
-0 ✓ andy@alba ~ $ false  
-1 ✗ andy@alba ~ $ I\ will\ try\ to\ type\ a\ wrong\ command...  
-bash: I will try to type a wrong command...: command not found  
+0 ✓ andy@alba ~ $ true
+0 ✓ andy@alba ~ $ false
+1 ✗ andy@alba ~ $ I\ will\ try\ to\ type\ a\ wrong\ command...
+bash: I will try to type a wrong command...: command not found
 127 ✗ andy@alba ~ $ _
 
 ```
@@ -455,144 +451,144 @@ For a brown [Fortune](/index.php/Fortune "Fortune") prompt, add:
 
 To read 10 latest news items from the [Arch official website](https://www.archlinux.org/news/), user [grufo](https://aur.archlinux.org/account.php?Action=AccountInfo&ID=33208) has [written](https://bbs.archlinux.org/viewtopic.php?id=146850) a small and coloured RSS escaping script (_scrollable_):
 
-   :: Arch Linux: Recent news updates ::  
- [ https://www.archlinux.org/news/ ]  
+   :: Arch Linux: Recent news updates ::
+ [ https://www.archlinux.org/news/ ]
 
-The latest and greatest news from the Arch Linux distribution.  
+The latest and greatest news from the Arch Linux distribution.
 
- en-us Sun, 04 Nov 2012 16:09:46 +0000  
+ en-us Sun, 04 Nov 2012 16:09:46 +0000
 
-   :: End of initscripts support ::  
- [ https://www.archlinux.org/news/end-of-initscripts-support/ ]  
+   :: End of initscripts support ::
+ [ https://www.archlinux.org/news/end-of-initscripts-support/ ]
 
-Tom Gundersen wrote:  
-As systemd is now the default init system, Arch Linux is receiving minimal testing on initscripts systems. Due to a lack of resources and interest, we are unlikely to work on fixing initscripts-specific bugs, and may close them as WONTFIX.  
-We therefore strongly encourage all users to migrate to systemd as soon as possible. See the systemd migration guide [ https://wiki.archlinux.org/index.php/Systemd ].  
-To ease the transition, initscripts support will remain in the official repositories for the time being, unless otherwise stated. As of January 2013, we will start removing initscripts support (e.g., rc scripts) from individual packages without further notice.  
+Tom Gundersen wrote:
+As systemd is now the default init system, Arch Linux is receiving minimal testing on initscripts systems. Due to a lack of resources and interest, we are unlikely to work on fixing initscripts-specific bugs, and may close them as WONTFIX.
+We therefore strongly encourage all users to migrate to systemd as soon as possible. See the systemd migration guide [ https://wiki.archlinux.org/index.php/Systemd ].
+To ease the transition, initscripts support will remain in the official repositories for the time being, unless otherwise stated. As of January 2013, we will start removing initscripts support (e.g., rc scripts) from individual packages without further notice.
 
- Tom Gundersen Sun, 04 Nov 2012 16:09:46 +0000 tag:www.archlinux.org,2012-11-04:/news/end-of-initscripts-support/  
+ Tom Gundersen Sun, 04 Nov 2012 16:09:46 +0000 tag:www.archlinux.org,2012-11-04:/news/end-of-initscripts-support/
 
-   :: November release of install media available ::  
- [ https://www.archlinux.org/news/november-release-of-install-media-available/ ]  
+   :: November release of install media available ::
+ [ https://www.archlinux.org/news/november-release-of-install-media-available/ ]
 
-Pierre Schmitz wrote:  
-The latest snapshot of our install and rescue media can be found on our Download [ https://www.archlinux.org/download/ ] page. The 2012.11.01 ISO image mainly contains minor bug fixes, cleanups and new packages compared to the previous one:  
- * First media with Linux 3.6  
- * copytoram=n can be used to not copy the image to RAM on network boot. This is probably unreliable but an option for systems with very low memory.  
- * cowfile_size boot parameter mainly for persistent COW on VFAT. See the README [ https://projects.archlinux.org/archiso.git/plain/docs/README.bootparams?id=v4 ] file for details.  
+Pierre Schmitz wrote:
+The latest snapshot of our install and rescue media can be found on our Download [ https://www.archlinux.org/download/ ] page. The 2012.11.01 ISO image mainly contains minor bug fixes, cleanups and new packages compared to the previous one:
+ * First media with Linux 3.6
+ * copytoram=n can be used to not copy the image to RAM on network boot. This is probably unreliable but an option for systems with very low memory.
+ * cowfile_size boot parameter mainly for persistent COW on VFAT. See the README [ https://projects.archlinux.org/archiso.git/plain/docs/README.bootparams?id=v4 ] file for details.
 
- Pierre Schmitz Fri, 02 Nov 2012 17:54:15 +0000 tag:www.archlinux.org,2012-11-02:/news/november-release-of-install-media-available/  
+ Pierre Schmitz Fri, 02 Nov 2012 17:54:15 +0000 tag:www.archlinux.org,2012-11-02:/news/november-release-of-install-media-available/
 
-   :: Bug Squashing Day: Saturday 17th November ::  
- [ https://www.archlinux.org/news/bug-squashing-day-saturday-17th-november/ ]  
+   :: Bug Squashing Day: Saturday 17th November ::
+ [ https://www.archlinux.org/news/bug-squashing-day-saturday-17th-november/ ]
 
-Allan McRae wrote:  
-The number of bugs in the Arch Linux bug tracker is creeping up so it is time for some extermination.  
-This is a great way for the community to get involved and help the Arch Linux team. The process is simple. First look at a bug for your favorite piece of software in the bug tracker and check if it still occurs. If it does, check the upstream project for a fix and test it to confirm it works. If there is no fix available, make sure the bug has been filed in the upstream tracker.  
-Join us on the #archlinux-bugs IRC channel. We are spread across timezones, so people should be around all day.  
+Allan McRae wrote:
+The number of bugs in the Arch Linux bug tracker is creeping up so it is time for some extermination.
+This is a great way for the community to get involved and help the Arch Linux team. The process is simple. First look at a bug for your favorite piece of software in the bug tracker and check if it still occurs. If it does, check the upstream project for a fix and test it to confirm it works. If there is no fix available, make sure the bug has been filed in the upstream tracker.
+Join us on the #archlinux-bugs IRC channel. We are spread across timezones, so people should be around all day.
 
- Allan McRae Thu, 01 Nov 2012 12:28:51 +0000 tag:www.archlinux.org,2012-11-01:/news/bug-squashing-day-saturday-17th-november/  
+ Allan McRae Thu, 01 Nov 2012 12:28:51 +0000 tag:www.archlinux.org,2012-11-01:/news/bug-squashing-day-saturday-17th-november/
 
-   :: ConsoleKit replaced by logind ::  
- [ https://www.archlinux.org/news/consolekit-replaced-by-logind/ ]  
+   :: ConsoleKit replaced by logind ::
+ [ https://www.archlinux.org/news/consolekit-replaced-by-logind/ ]
 
-Allan McRae wrote:  
-With GNOME 3.6, polkit and networkmanager moving to [extra], ConsoleKit has now been removed from the repositories. Any package that previously depended on it now relies on systemd-logind instead. That means that the system must be booted with systemd to be fully functional.  
-In addition to GNOME, both KDE and XFCE are also affected by this change.  
+Allan McRae wrote:
+With GNOME 3.6, polkit and networkmanager moving to [extra], ConsoleKit has now been removed from the repositories. Any package that previously depended on it now relies on systemd-logind instead. That means that the system must be booted with systemd to be fully functional.
+In addition to GNOME, both KDE and XFCE are also affected by this change.
 
- Allan McRae Tue, 30 Oct 2012 22:17:39 +0000 tag:www.archlinux.org,2012-10-30:/news/consolekit-replaced-by-logind/  
+ Allan McRae Tue, 30 Oct 2012 22:17:39 +0000 tag:www.archlinux.org,2012-10-30:/news/consolekit-replaced-by-logind/
 
-   :: systemd is now the default on new installations ::  
- [ https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/ ]  
+   :: systemd is now the default on new installations ::
+ [ https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/ ]
 
-Thomas Bächler wrote:  
-The base group now contains the systemd-sysvcompat package. This means that all new installations will boot with systemd by default.  
-As some packages still lack native systemd units, users can install the initscripts package and use the DAEMONS array in /etc/rc.conf to start services using the legacy rc.d scripts.  
-This change does not affect existing installations. For the time being, the initscripts and sysvinit packages remain available from our repositories. However, individual packages may now start relying on the system being booted with systemd.  
-Please refer to the wiki [ https://wiki.archlinux.org/index.php/Systemd ] for how to transition an existing installation to systemd.  
+Thomas Bächler wrote:
+The base group now contains the systemd-sysvcompat package. This means that all new installations will boot with systemd by default.
+As some packages still lack native systemd units, users can install the initscripts package and use the DAEMONS array in /etc/rc.conf to start services using the legacy rc.d scripts.
+This change does not affect existing installations. For the time being, the initscripts and sysvinit packages remain available from our repositories. However, individual packages may now start relying on the system being booted with systemd.
+Please refer to the wiki [ https://wiki.archlinux.org/index.php/Systemd ] for how to transition an existing installation to systemd.
 
- Thomas Bächler Sat, 13 Oct 2012 09:29:38 +0000 tag:www.archlinux.org,2012-10-13:/news/systemd-is-now-the-default-on-new-installations/  
+ Thomas Bächler Sat, 13 Oct 2012 09:29:38 +0000 tag:www.archlinux.org,2012-10-13:/news/systemd-is-now-the-default-on-new-installations/
 
-   :: Install medium 2012.10.06 introduces systemd ::  
- [ https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/ ]  
+   :: Install medium 2012.10.06 introduces systemd ::
+ [ https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/ ]
 
-Pierre Schmitz wrote:  
-The October release of the Arch Linux install medium is available for Download [ https://www.archlinux.org/download/ ] and can be used for new installs or as a rescue system. It contains a set of updated packages and the following notable changes:  
- * systemd is used to boot up the live system.  
- * initscripts are no longer available on the live system but are still installed by default on the target system. This is likely to change in the near future.  
- * EFI boot and setup has been simplified.  
- * gummiboot is used to display a menu on EFI systems.  
- * The following new packages are available on the live system: ethtool, fsarchiver, gummiboot-efi, mc, partclone, partimage, refind-efi, rfkill, sudo, testdisk, wget, xl2tpd  
+Pierre Schmitz wrote:
+The October release of the Arch Linux install medium is available for Download [ https://www.archlinux.org/download/ ] and can be used for new installs or as a rescue system. It contains a set of updated packages and the following notable changes:
+ * systemd is used to boot up the live system.
+ * initscripts are no longer available on the live system but are still installed by default on the target system. This is likely to change in the near future.
+ * EFI boot and setup has been simplified.
+ * gummiboot is used to display a menu on EFI systems.
+ * The following new packages are available on the live system: ethtool, fsarchiver, gummiboot-efi, mc, partclone, partimage, refind-efi, rfkill, sudo, testdisk, wget, xl2tpd
 
- Pierre Schmitz Sun, 07 Oct 2012 16:58:03 +0000 tag:www.archlinux.org,2012-10-07:/news/install-medium-20121006-introduces-systemd/  
+ Pierre Schmitz Sun, 07 Oct 2012 16:58:03 +0000 tag:www.archlinux.org,2012-10-07:/news/install-medium-20121006-introduces-systemd/
 
-   :: New install medium 2012.09.07 ::  
- [ https://www.archlinux.org/news/new-install-medium-20120907/ ]  
+   :: New install medium 2012.09.07 ::
+ [ https://www.archlinux.org/news/new-install-medium-20120907/ ]
 
-Pierre Schmitz wrote:  
-As is customary by now there is a new install medium available at the beginning of this month. The live system can be downloaded from Download [ https://www.archlinux.org/download/ ] and be used for new installs or as a rescue system.  
-In addition to a couple of updated packages and bug fixes the following changes stand out:  
- * First medium with Linux 3.5 (3.5.3)  
- * The script boot parameter works again (FS#31022 [ https://bugs.archlinux.org/task/31022 ])  
- * When booting via PXE and NFS or NBD the ISO will be copied to RAM to ensure a more stable usage.  
- * The live medium contains usb_modeswitch and wvdial which e.g. allows to establish a network connection using an UMTS USB dongle  
- * Furthermore the newest versions of initscripts, systemd and netcfg are included.  
+Pierre Schmitz wrote:
+As is customary by now there is a new install medium available at the beginning of this month. The live system can be downloaded from Download [ https://www.archlinux.org/download/ ] and be used for new installs or as a rescue system.
+In addition to a couple of updated packages and bug fixes the following changes stand out:
+ * First medium with Linux 3.5 (3.5.3)
+ * The script boot parameter works again (FS#31022 [ https://bugs.archlinux.org/task/31022 ])
+ * When booting via PXE and NFS or NBD the ISO will be copied to RAM to ensure a more stable usage.
+ * The live medium contains usb_modeswitch and wvdial which e.g. allows to establish a network connection using an UMTS USB dongle
+ * Furthermore the newest versions of initscripts, systemd and netcfg are included.
 
- Pierre Schmitz Sat, 08 Sep 2012 09:48:52 +0000 tag:www.archlinux.org,2012-09-08:/news/new-install-medium-20120907/  
+ Pierre Schmitz Sat, 08 Sep 2012 09:48:52 +0000 tag:www.archlinux.org,2012-09-08:/news/new-install-medium-20120907/
 
-   :: Fontconfig 2.10.1 update - manual intervention required ::  
- [ https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/ ]  
+   :: Fontconfig 2.10.1 update - manual intervention required ::
+ [ https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/ ]
 
-Andreas Radke wrote:  
-The fontconfig 2.10.1 update overwrites symlinks created by the former package version. These symlinks need to be removed before the update:  
+Andreas Radke wrote:
+The fontconfig 2.10.1 update overwrites symlinks created by the former package version. These symlinks need to be removed before the update:
 
-rm /etc/fonts/conf.d/20-unhint-small-vera.conf  
-rm /etc/fonts/conf.d/20-fix-globaladvance.conf  
-rm /etc/fonts/conf.d/29-replace-bitmap-fonts.conf  
-rm /etc/fonts/conf.d/30-metric-aliases.conf  
-rm /etc/fonts/conf.d/30-urw-aliases.conf  
-rm /etc/fonts/conf.d/40-nonlatin.conf  
-rm /etc/fonts/conf.d/45-latin.conf  
-rm /etc/fonts/conf.d/49-sansserif.conf  
-rm /etc/fonts/conf.d/50-user.conf  
-rm /etc/fonts/conf.d/51-local.conf  
-rm /etc/fonts/conf.d/60-latin.conf  
-rm /etc/fonts/conf.d/65-fonts-persian.conf  
-rm /etc/fonts/conf.d/65-nonlatin.conf  
-rm /etc/fonts/conf.d/69-unifont.conf  
-rm /etc/fonts/conf.d/80-delicious.conf  
-rm /etc/fonts/conf.d/90-synthetic.conf  
-pacman -Syu fontconfig  
+rm /etc/fonts/conf.d/20-unhint-small-vera.conf
+rm /etc/fonts/conf.d/20-fix-globaladvance.conf
+rm /etc/fonts/conf.d/29-replace-bitmap-fonts.conf
+rm /etc/fonts/conf.d/30-metric-aliases.conf
+rm /etc/fonts/conf.d/30-urw-aliases.conf
+rm /etc/fonts/conf.d/40-nonlatin.conf
+rm /etc/fonts/conf.d/45-latin.conf
+rm /etc/fonts/conf.d/49-sansserif.conf
+rm /etc/fonts/conf.d/50-user.conf
+rm /etc/fonts/conf.d/51-local.conf
+rm /etc/fonts/conf.d/60-latin.conf
+rm /etc/fonts/conf.d/65-fonts-persian.conf
+rm /etc/fonts/conf.d/65-nonlatin.conf
+rm /etc/fonts/conf.d/69-unifont.conf
+rm /etc/fonts/conf.d/80-delicious.conf
+rm /etc/fonts/conf.d/90-synthetic.conf
+pacman -Syu fontconfig
 
-Main systemwide configuration should be done by symlinks (especially for autohinting, sub-pixel and lcdfilter):  
+Main systemwide configuration should be done by symlinks (especially for autohinting, sub-pixel and lcdfilter):
 
-cd /etc/fonts/conf.d  
-ln -s ../conf.avail/XX-foo.conf  
+cd /etc/fonts/conf.d
+ln -s ../conf.avail/XX-foo.conf
 
-Also check Font Configuration [ https://wiki.archlinux.org/index.php/Font_Configuration ] and Fonts [ https://wiki.archlinux.org/index.php/Fonts ].  
+Also check Font Configuration [ https://wiki.archlinux.org/index.php/Font_Configuration ] and Fonts [ https://wiki.archlinux.org/index.php/Fonts ].
 
- Andreas Radke Thu, 06 Sep 2012 13:54:23 +0000 tag:www.archlinux.org,2012-09-06:/news/fontconfig-2101-update-manual-intervention-required/  
+ Andreas Radke Thu, 06 Sep 2012 13:54:23 +0000 tag:www.archlinux.org,2012-09-06:/news/fontconfig-2101-update-manual-intervention-required/
 
-   :: netcfg-2.8.9 drops deprecated rc.conf compatibility ::  
- [ https://www.archlinux.org/news/netcfg-289-drops-initscripts-compatibility/ ]  
+   :: netcfg-2.8.9 drops deprecated rc.conf compatibility ::
+ [ https://www.archlinux.org/news/netcfg-289-drops-initscripts-compatibility/ ]
 
-Florian Pritz wrote:  
-Users of netcfg should configure all interfaces in /etc/conf.d/netcfg rather than /etc/rc.conf.  
+Florian Pritz wrote:
+Users of netcfg should configure all interfaces in /etc/conf.d/netcfg rather than /etc/rc.conf.
 
- Florian Pritz Sat, 11 Aug 2012 20:00:02 +0000 tag:www.archlinux.org,2012-08-11:/news/netcfg-289-drops-initscripts-compatibility/  
+ Florian Pritz Sat, 11 Aug 2012 20:00:02 +0000 tag:www.archlinux.org,2012-08-11:/news/netcfg-289-drops-initscripts-compatibility/
 
-   :: Install media 2012.08.04 available ::  
- [ https://www.archlinux.org/news/install-media-20120804-available/ ]  
+   :: Install media 2012.08.04 available ::
+ [ https://www.archlinux.org/news/install-media-20120804-available/ ]
 
-Pierre Schmitz wrote:  
-The August snapshot of our live and install media comes with updated packages and the following changes on top of the previous ISO image [ /news/install-media-20120715-released/ ]:  
- * GRUB 2.0 instead of the legacy 0.9 version is available.  
- * The Installation Guide [ https://wiki.archlinux.org/index.php/Installation_Guide ] can be found at /root/install.txt.  
- * ZSH with Grml's configuration [ http://grml.org/zsh/ ] is used as interactive shell to provide a user friendly and more convenient environment. This includes completion support for pacstrap, arch-chroot, pacman and most other tools.  
- * The network daemon is started by default which will automatically setup your network if DHCP is available.  
-Note that all these changes only affect the live system and not the base system you install using pacstrap. The ISO image can be downloaded from our download page [ /download/ ]. The next snapshot is scheduled for September.  
+Pierre Schmitz wrote:
+The August snapshot of our live and install media comes with updated packages and the following changes on top of the previous ISO image [ /news/install-media-20120715-released/ ]:
+ * GRUB 2.0 instead of the legacy 0.9 version is available.
+ * The Installation Guide [ https://wiki.archlinux.org/index.php/Installation_Guide ] can be found at /root/install.txt.
+ * ZSH with Grml's configuration [ http://grml.org/zsh/ ] is used as interactive shell to provide a user friendly and more convenient environment. This includes completion support for pacstrap, arch-chroot, pacman and most other tools.
+ * The network daemon is started by default which will automatically setup your network if DHCP is available.
+Note that all these changes only affect the live system and not the base system you install using pacstrap. The ISO image can be downloaded from our download page [ /download/ ]. The next snapshot is scheduled for September.
 
- Pierre Schmitz Sat, 04 Aug 2012 17:24:30 +0000 tag:www.archlinux.org,2012-08-04:/news/install-media-20120804-available/  
+ Pierre Schmitz Sat, 04 Aug 2012 17:24:30 +0000 tag:www.archlinux.org,2012-08-04:/news/install-media-20120804-available/
 
 andy@alba _
 
@@ -717,13 +713,3 @@ and use `__git_ps1` inside `PS1` or `PROMPT_COMMAND`. See [Don't Reinvent the Wh
 *   [Liquid Prompt — a useful adaptive prompt for Bash & zsh](https://github.com/nojhan/liquidprompt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=412243](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=412243)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

@@ -1,9 +1,5 @@
 # Ad-hoc networking
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -164,7 +160,3 @@ WantedBy=multi-user.target
 *   [Share your 3G Internet connection over wifi](http://go2linux.garron.me/linux/2011/03/share-your-3g-internet-connection-over-wifi-linux-ipod-touch-925)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ad-hoc_networking&oldid=409555](https://wiki.archlinux.org/index.php?title=Ad-hoc_networking&oldid=409555)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")

@@ -1,9 +1,5 @@
 # Mythstream
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Mythstream is an unofficial plugin for MythTV which enables internet audio/video streams. This is a short howto on getting mythstream to work on Arch Linux.
 
 ## Contents
@@ -73,7 +69,3 @@ In /usr/share/mythtv/mainmenu.xml,
 *   [MythTV](http://www.mythtv.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mythstream&oldid=263188](https://wiki.archlinux.org/index.php?title=Mythstream&oldid=263188)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")

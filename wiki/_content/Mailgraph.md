@@ -1,9 +1,5 @@
 # Mailgraph
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -21,11 +17,3 @@ Symlink `/usr/share/webapps/mailgraph` to some web-accessible location.
 Start the daemon `systemctl start mailgraph`
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mailgraph&oldid=393659](https://wiki.archlinux.org/index.php?title=Mailgraph&oldid=393659)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

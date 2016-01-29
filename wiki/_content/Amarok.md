@@ -1,9 +1,5 @@
 # Amarok
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4")
@@ -123,11 +119,3 @@ start `avahi-daemon` [systemd](/index.php/Systemd "Systemd") service.
 [List of applications#Audio players](/index.php/List_of_applications#Audio_players "List of applications")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Amarok&oldid=412036](https://wiki.archlinux.org/index.php?title=Amarok&oldid=412036)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

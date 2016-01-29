@@ -1,9 +1,5 @@
 # TT-RSS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Tiny Tiny RSS is an open source web-based news feed (RSS/Atom) aggregator, designed to allow you to read news from any location, while feeling as close to a real desktop application as possible.
 
 ## Installation
@@ -85,7 +81,3 @@ $ systemctl status tt-rss
 to check that it's running fine.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TT-RSS&oldid=414205](https://wiki.archlinux.org/index.php?title=TT-RSS&oldid=414205)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

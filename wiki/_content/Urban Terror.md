@@ -1,9 +1,5 @@
 # Urban Terror
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -172,12 +168,3 @@ cat /proc/asound/card*/id
 [UT-Forums: Urban Terror GTKRadiant Tutorial](http://forums.urbanterror.info/topic/13539-complete-linux-gtkradiant-urt-mapping-how-to/page__hl__urtpack__fromsearch__1__s__0bed93b96b8f19a3707143f46acfb964) _Please note_ that the example from this guide has no light and Urban Terror will just display black walls.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Urban_Terror&oldid=414785](https://wiki.archlinux.org/index.php?title=Urban_Terror&oldid=414785)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

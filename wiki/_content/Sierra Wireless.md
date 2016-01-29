@@ -1,9 +1,5 @@
 # Sierra Wireless
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -21,11 +17,3 @@ The next steps are to place these scripts in the right places under /etc/ppp, se
 Note that the stock Arch kernel seems to include support for this type of card, and that the drivers available from Sierra are for older kernel versions than those found in Arch.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sierra_Wireless&oldid=383275](https://wiki.archlinux.org/index.php?title=Sierra_Wireless&oldid=383275)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

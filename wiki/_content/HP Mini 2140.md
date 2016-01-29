@@ -1,9 +1,5 @@
 # HP Mini 2140
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The HP Mini 2140 is a 10.2" Netbook PC released in early 2009.
 
 ## Contents
@@ -99,7 +95,3 @@ Now reboot and you should hear sound when running "_speaker-test -c 2_". As per 
 *   [Wikipedia:HP Mini 2140](https://en.wikipedia.org/wiki/HP_Mini_2140 "wikipedia:HP Mini 2140")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Mini_2140&oldid=376804](https://wiki.archlinux.org/index.php?title=HP_Mini_2140&oldid=376804)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

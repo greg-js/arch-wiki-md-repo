@@ -1,9 +1,5 @@
 # Xmobar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **xmobar** is a lightweight, text-based, status bar written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It was originally designed to be used together with [Xmonad](/index.php/Xmonad "Xmonad"), but it is also usable with any other [window manager](/index.php/Window_manager "Window manager"). While _xmobar_ is written in Haskell, no knowledge of the language is required to install and use it.
 
 ## Contents
@@ -336,12 +332,3 @@ in your `.xmobarrc`.
 *   [dzen and xmobar hacking thread](https://bbs.archlinux.org/viewtopic.php?pid=304851)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmobar&oldid=415584](https://wiki.archlinux.org/index.php?title=Xmobar&oldid=415584)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

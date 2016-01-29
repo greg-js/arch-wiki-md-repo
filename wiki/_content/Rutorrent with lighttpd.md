@@ -1,9 +1,5 @@
 # Rutorrent with lighttpd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -396,11 +392,3 @@ For problems with rutorrent or lighttpd, the best place to check first is probab
 *   [Using XMLRPC with rtorrent](http://libtorrent.rakshasa.no/wiki/RTorrentXMLRPCGuide)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rutorrent_with_lighttpd&oldid=416563](https://wiki.archlinux.org/index.php?title=Rutorrent_with_lighttpd&oldid=416563)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

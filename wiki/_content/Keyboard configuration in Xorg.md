@@ -1,9 +1,5 @@
 # Keyboard configuration in Xorg
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
@@ -340,14 +336,3 @@ Option "AutoRepeat" "_delay_ _rate_"
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=401103](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=401103)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

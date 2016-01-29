@@ -1,9 +1,5 @@
 # Git
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Super Quick Git Guide](/index.php/Super_Quick_Git_Guide "Super Quick Git Guide")
@@ -576,53 +572,12 @@ The Git package comes with a prompt script. To enable it, source the `/usr/share
 
 When changing to a directory of a Git repository, the prompt will change to show the branch name. Extra details can be set to be shown by the prompt:
 
-<table class="wikitable"><caption></caption>
-
-<tbody>
-
-<tr>
-
-<th>Shell variable</th>
-
-<th>Information</th>
-
-</tr>
-
-<tr>
-
-<td>GIT_PS1_SHOWDIRTYSTATE</td>
-
-<td>**+** for staged, ***** if unstaged.</td>
-
-</tr>
-
-<tr>
-
-<td>GIT_PS1_SHOWSTASHSTATE</td>
-
-<td>**$** if something is stashed.</td>
-
-</tr>
-
-<tr>
-
-<td>GIT_PS1_SHOWUNTRACKEDFILES</td>
-
-<td>**%** if there are untracked files.</td>
-
-</tr>
-
-<tr>
-
-<td>GIT_PS1_SHOWUPSTREAM</td>
-
-<td>**<,>,<>** behind, ahead, or diverged from upstream.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption></caption>
+| Shell variable | Information |
+| GIT_PS1_SHOWDIRTYSTATE | **+** for staged, ***** if unstaged. |
+| GIT_PS1_SHOWSTASHSTATE | **$** if something is stashed. |
+| GIT_PS1_SHOWUNTRACKEDFILES | **%** if there are untracked files. |
+| GIT_PS1_SHOWUPSTREAM | **<,>,<>** behind, ahead, or diverged from upstream. |
 
 `GIT_PS1_SHOWUPSTREAM` will need to be set to `auto` for changes to take effect.
 
@@ -808,11 +763,3 @@ For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Git
 *   [A comparison of protocols offered by GitHub](https://gist.github.com/grawity/4392747)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Git&oldid=411278](https://wiki.archlinux.org/index.php?title=Git&oldid=411278)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

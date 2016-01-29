@@ -1,9 +1,5 @@
 # pm-utils
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
@@ -215,17 +211,7 @@ named `modules` or `config` into `/etc/pm/config.d` and it will override the set
 
 ### Available variables for use in config files
 
-SUSPEND_MODULES="button"
-
-the list of modules to be unloaded before suspend
-
-SLEEP_MODULE="tuxonice uswsusp kernel"
-
-the default sleep/wake systems to try
-
-HIBERNATE_MODE="shutdown"
-
-forces the system to shut down rather than reboot
+NaN
 
 ### Disabling a hook
 
@@ -255,21 +241,7 @@ HOOK_BLACKLIST="hal-cd-polling intel-audio-powersave journal-commit laptop-mode 
 
 If you want to do something specific to your setup during suspend or hibernate, then you can easily put your own hook into `/etc/pm/sleep.d`. The hooks in this directory will be called in alphabetic order during suspend (that is the reason their names all start with 2 digits, to make the ordering explicit) and in the reverse order during resume. The general convention to be followed on number ordering is:.
 
-00 - 49
-
-User and most package supplied hooks. If a hook assumes that all of the usual services and userspace infrastructure is still running, it should be here.
-
-50 - 74
-
-Service handling hooks. Hooks that start or stop a service belong in this range. At or before 50, hooks can assume that all services are still enabled.
-
-75 - 89
-
-Module and non-core hardware handling. If a hook needs to load/unload a module, or if it needs to place non-video hardware that would otherwise break suspend or hibernate into a safe state, it belongs in this range. At or before 75, hooks can assume all modules are still loaded.
-
-90 - 99
-
-Reserved for critical suspend hooks.
+NaN
 
 I am showing a pretty useless demonstration hook here, that will just put some informative lines into your log file:
 
@@ -310,23 +282,11 @@ There is also the possibility to set the machine into high-power and low-power m
 
 The hooks for suspend are placed in
 
-`/usr/lib/pm-utils/sleep.d`
-
-distribution / package provided hooks
-
-`/etc/pm/sleep.d`
-
-hooks added by the system administrator
+NaN
 
 The hooks for the power state are placed in
 
-`/usr/lib/pm-utils/power.d`
-
-distribution / package provided hooks
-
-`/etc/pm/power.d`
-
-hooks added by the system administrator
+NaN
 
 Hooks in `/etc/pm/` take precedence over those in `/usr/lib/pm-utils/`, so the system administrator can override the defaults provided by the distribution.
 
@@ -783,11 +743,3 @@ If you're using KDE, log off once and the hibernation option should be gone.
 *   [Hibernate after sleep](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep) - An example of a custom pm-utils hook where hibernation is triggered after a period of time in suspension
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pm-utils&oldid=412156](https://wiki.archlinux.org/index.php?title=Pm-utils&oldid=412156)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

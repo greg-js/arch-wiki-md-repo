@@ -1,9 +1,5 @@
 # Clevo W840SU
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The W840SU is a device by the taiwanese OEM manufacturer Clevo. It is sold as Schenker S403, Tuxedo Book UC1402 and Nexoc B401\. A touch version exists as W840SU-T or UT1402\. The hardware is configurable and includes an Intel Haswell Core i3/i5/i7, Intel HD 4400 graphics, a 7 mm harddrive, a mSATA device (storage, 3g/LTE modem) and a HDMI output.
 
 ## Contents
@@ -82,7 +78,3 @@ The touchpad works out of the box with the _synaptics_ driver. All current featu
 Suspend to disk works best with kernel 3.14.43-2-lts. Newer kernels, including the new LTS 4.1.9 and 4.2 series lead to black screens or reboots immediately after resuming. Further information may be found in [https://bugs.archlinux.org/task/44807](https://bugs.archlinux.org/task/44807) .
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Clevo_W840SU&oldid=416230](https://wiki.archlinux.org/index.php?title=Clevo_W840SU&oldid=416230)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Clevo](/index.php/Category:Clevo "Category:Clevo")

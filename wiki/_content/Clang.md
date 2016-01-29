@@ -1,9 +1,5 @@
 # Clang
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Clang](http://clang.llvm.org/) is a C/C++/Objective C compiler based on LLVM. It is distributed under the BSD Licence.
 
 ## Contents
@@ -46,7 +42,3 @@ $ scan-build gcc -c t1.c t2.c
 *   [scan-build: running the analyzer from the command line](http://clang-analyzer.llvm.org/scan-build.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Clang&oldid=361634](https://wiki.archlinux.org/index.php?title=Clang&oldid=361634)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

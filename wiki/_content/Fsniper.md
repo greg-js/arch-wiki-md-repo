@@ -1,9 +1,5 @@
 # Fsniper
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -126,12 +122,3 @@ The daemon can then be started by typing
 or by placing fsniper in the daemons section of your [`/etc/rc.conf`](/index.php/Rc.conf "Rc.conf").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fsniper&oldid=399035](https://wiki.archlinux.org/index.php?title=Fsniper&oldid=399035)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

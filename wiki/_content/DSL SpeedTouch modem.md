@@ -1,9 +1,5 @@
 # DSL SpeedTouch modem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -163,7 +159,3 @@ If you are having problems you can check pppd debug messages by adding **debug**
 For the origin of this doc, feedback or requests go to the [Forum discussion](https://bbs.archlinux.org/viewtopic.php?p=80638)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DSL_SpeedTouch_modem&oldid=374782](https://wiki.archlinux.org/index.php?title=DSL_SpeedTouch_modem&oldid=374782)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")

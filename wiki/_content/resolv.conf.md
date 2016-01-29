@@ -1,18 +1,14 @@
 # resolv.conf
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Maximizing performance#Network](/index.php/Maximizing_performance#Network "Maximizing performance")
 
 The configuration file for DNS resolvers is `/etc/resolv.conf`. From its [man page](http://www.kernel.org/doc/man-pages/online/pages/man5/resolv.conf.5.html):
 
-_"The resolver is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). The resolver configuration file contains information that is read by the resolver routines the first time they are invoked by a process. The file is designed to be human readable and contains a list of keywords with values that provide various types of resolver information._
+NaN
 
-_If this file does not exist, only the name server on the local machine will be queried; the domain name is determined from the hostname and the domain search path is constructed from the domain name."_
+NaN
 
 ## Contents
 
@@ -233,7 +229,3 @@ options timeout:1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Resolv.conf&oldid=406220](https://wiki.archlinux.org/index.php?title=Resolv.conf&oldid=406220)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")

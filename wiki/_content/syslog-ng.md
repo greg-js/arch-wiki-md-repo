@@ -1,9 +1,5 @@
 # syslog-ng
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [rsyslog](/index.php/Rsyslog "Rsyslog")
@@ -586,7 +582,3 @@ YEAR_DAY=148
 *   [RFC 3339](http://tools.ietf.org/html/rfc3339) - Date and Time on the Internet: Timestamps
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslog-ng&oldid=414505](https://wiki.archlinux.org/index.php?title=Syslog-ng&oldid=414505)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")

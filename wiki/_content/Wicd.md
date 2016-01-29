@@ -1,9 +1,5 @@
 # Wicd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -348,11 +344,3 @@ Alternatively, as a workaround you might consider switching to [dhclient](https:
 *   [Bug report mentioning /etc/xdg/autostart and wicd-client behavior](https://bugs.archlinux.org/task/22423)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211](https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

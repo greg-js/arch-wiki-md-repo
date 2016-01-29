@@ -1,9 +1,5 @@
 # GTK+
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
@@ -13,7 +9,7 @@ Related articles
 
 From the [GTK+ website](http://www.gtk.org):
 
-_GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites._
+NaN
 
 GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_Project "GNU Project") for the [GIMP](/index.php/GIMP "GIMP") but is now a very popular toolkit with bindings for many languages. This article will explore the tools used to configure the GTK+ theme, style, icon, font and font size, and also detail manual configuration.
 
@@ -67,7 +63,7 @@ $ GTK2_RC_FILES=/usr/share/themes/Industrial/gtk-2.0/gtkrc gimp
 
 ```
 
-will launch GIMP with the Industrial theme.
+NaN
 
 *   For GTK+ 3, use the `GTK_THEME` environment variable, for example:
 
@@ -76,7 +72,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
 
-will launch GNOME Calculator with the dark variant of Adwaita theme.
+NaN
 
 More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR").
 
@@ -84,81 +80,81 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Breeze** — GTK+ version of KDE's default widget theme.
 
-[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
+NaN
 
 *   **Deepin** — Default theme for the Deepin desktop.
 
-[https://gitcafe.com/Deepin/deepin-gtk-theme](https://gitcafe.com/Deepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
+NaN
 
 *   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: _Adwaita_, _HighContrast_
 
-[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
+NaN
 
 *   **MATE Themes** — Default themes for the MATE desktop. Includes: _BlackMATE_, _BlueMenta_, _Blue-Submarine_, _ContrastHigh_, _ContrastHighInverse_, _GreenLaguna_, _Green-Submarine_, _Menta_, _TraditionalGreen_, _TraditionalOk_, _TraditionalOkTest_
 
-[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
+NaN
 
 *   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce).
 
-[https://numixproject.org/](https://numixproject.org/) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
+NaN
 
 *   **Arc** — A flat theme with a modern look and transparent elements.
 
-[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Ceti-2** — Theme for GTK 3, GTK 2 and Gnome-Shell.
 
-[http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140](http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
 
-[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
 
-[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
 
-[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Orion** — A modern and light GTK theme.
 
-[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
 
-[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Zukitwo** — Themes for GTK, gnome-shell and more.
 
-[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)<sup><small>AUR</small></sup>
+NaN
 
 **Only GTK+ 2 is supported:**
 
 *   **GTK+ Engines** — Theme engines for GTK+ 2\. Includes: _Clearlooks_, _Crux_, _Industrial_, _Mist_, _Redmond_, _ThinIce_
 
-[https://github.com/GNOME/gtk-engines](https://github.com/GNOME/gtk-engines) || [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)
+NaN
 
 *   **Xfce Gtk+ Engine** — Xfce Gtk+-2.0 engine and themes
 
-[http://git.xfce.org/xfce/gtk-xfce-engine/](http://git.xfce.org/xfce/gtk-xfce-engine/) || [gtk-xfce-engine](https://www.archlinux.org/packages/?name=gtk-xfce-engine)
+NaN
 
 *   **Oxygen-Gtk** — Port of the default KDE widget theme (Oxygen) to GTK2
 
-[https://projects.kde.org/projects/playground/artwork/oxygen-gtk/](https://projects.kde.org/projects/playground/artwork/oxygen-gtk/) || [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2)
+NaN
 
 *   **Aurora Gtk Engine** — Latest member of the Clearlooks family.
 
-[http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438](http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438) || [gtk-engine-aurora](https://www.archlinux.org/packages/?name=gtk-engine-aurora)
+NaN
 
 *   **Openbox Themes** — Various themes for the Openbox window manager.
 
-[https://www.debian.org/](https://www.debian.org/) || [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes)
+NaN
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
-[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
+NaN
 
 There are a number of additional GTK+ themes in the [AUR](/index.php/AUR "AUR"): [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [search for gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
 
@@ -188,33 +184,29 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 *   **KDE GTK Configurator** — Application that allows you to change style and font of GTK+2 and Gtk+3 applications.
 
-[https://projects.kde.org/kde-gtk-config](https://projects.kde.org/kde-gtk-config) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
-
-After installation, `kde-gtk-config` can also be found in _System Settings > Application Style > GTK_.
+NaN
 
 *   **LXAppearance** — Desktop independent GTK+2 and GTK+3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
 
-[http://wiki.lxde.org/en/LXAppearance](http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
+NaN
 
 **Only GTK+ 2 is supported:**
 
 *   **GTK-KDE4** — Application that allows you to change style and font of GTK+2 applications in KDE4.
 
-[http://kde-look.org/content/show.php?content=74689](http://kde-look.org/content/show.php?content=74689) || [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/)<sup><small>AUR</small></sup>
-
-After installation, `gtk-kde4` can also be found in _System Settings > Lost and Found > GTK style_.
+NaN
 
 *   **GTK+ Change Theme** — Little program that lets you change your GTK+ 2.0 theme (considered a better alternative to _switch2_).
 
-[http://plasmasturm.org/code/gtk-chtheme/](http://plasmasturm.org/code/gtk-chtheme/) || [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
+NaN
 
 *   **GTK+ Preference Tool** — GTK+ theme selector and font switcher.
 
-[http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs)
+NaN
 
 *   **GTK+ Theme Switch** — Simple GTK+ theme switcher.
 
-[http://muhri.net/nav.php3?node=gts](http://muhri.net/nav.php3?node=gts) || [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
+NaN
 
 ## Configuration
 
@@ -605,7 +597,3 @@ gtk-xft-rgba=rgb
 *   [gtkmm Reference Manual](http://developer.gnome.org/gtkmm/stable/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=413014](https://wiki.archlinux.org/index.php?title=GTK%2B&oldid=413014)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits")

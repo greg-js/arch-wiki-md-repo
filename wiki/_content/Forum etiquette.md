@@ -1,9 +1,5 @@
 # Forum etiquette
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 These guidelines have been developed over time based on the extensive experience of the moderation team with input by the community. The Arch forums are no-nonsense in nature.
 
 ## Contents
@@ -171,7 +167,7 @@ If a user is apologetic, interested in a peaceful solution and wishes to have th
 *   Choose one topic per thread. Long threads are typically discouraged in the technical issue subforums.
 *   Post your question in only one subforum; pick the most relevant, and post there.
 *   When responding to an existing thread, always read the original post and attempt to focus on the original topic.
-*   Finally, when a solution is found, mark your thread as solved by editing the first post and prepending the tag [SOLVED] to the title in the "Subject" field.  
+*   Finally, when a solution is found, mark your thread as solved by editing the first post and prepending the tag [SOLVED] to the title in the "Subject" field.
     Note that you should avoid using [CLOSED], which is instead used by the system to mark a thread which is no longer accessible for new posts.
 *   If a thread is marked as [SOLVED], do not reply stating the equivalent of "I am having a similar issue.."; start a new thread and link to the [SOLVED] thread, if relevant.
 
@@ -192,7 +188,3 @@ Therefore, do not post discussions about or link to criminal solicitation in any
 The free and open exchange of assistance, speech, ideas and opinions is highly regarded and encouraged on the forums, but it must be noted that the freedom granted to forum members is _relative freedom_. It exists within the boundaries of the above guidelines and principles. Complaints of censorship are therefore baseless and unfounded, since this necessary framework must simultaneously provide reasonable limitations. To illustrate, we are aware of the physical laws which govern energy and matter, yet we do not complain of their oppression. Instead, we recognize that such laws are essential for our welfare. Likewise, the Arch community's high standards reflected in these guidelines regulate community freedom for the common good and protection of all. The key, then, to true freedom on the forums is to cultivate benevolence toward others and harmonize our attitude with the Arch Way by bringing only benefit to our peers. In addition, this allows members to satisfy all contributive impulses without aggravating themselves or encroaching on the freedom of others. Embracing the above principles and obeying the forum guidelines therefore benefits the entire community by providing freedom from the harmful and negative consequences of a more chaotic approach.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Forum_etiquette&oldid=395918](https://wiki.archlinux.org/index.php?title=Forum_etiquette&oldid=395918)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

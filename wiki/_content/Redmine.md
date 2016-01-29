@@ -1,9 +1,5 @@
 # Redmine
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
@@ -73,33 +69,8 @@ Although this guide will go through the entire installation process, this is not
 
 ### Ruby
 
-<table border="1" class="wikitable" style="text-align:center;">
-
-<tbody>
-
-<tr>
-
-<th>Redmine version</th>
-
-<th>Supported Ruby Versions</th>
-
-<th>Rails version used</th>
-
-</tr>
-
-<tr>
-
-<th>3.0.2</th>
-
-<td style="text-align:left;">**ruby** 1.9.3<sup>3</sup>, 2.0.0<sup>2</sup>, 2.1, 2.2<sup>1</sup></td>
-
-<td>**Rails** 4.2<sup>0</sup></td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Redmine version | Supported Ruby Versions | Rails version used |
+| 3.0.2 | **ruby** 1.9.3<sup>3</sup>, 2.0.0<sup>2</sup>, 2.1, 2.2<sup>1</sup> | **Rails** 4.2<sup>0</sup> |
 
 There are two simple ways to install Ruby: installing the [ruby](https://www.archlinux.org/packages/?name=ruby) package as described in [ruby](/index.php/Ruby "Ruby") or installing RVM as described in [RVM](/index.php/RVM "RVM") **(recommended)**.
 
@@ -173,82 +144,18 @@ To install [tomcat6](https://www.archlinux.org/packages/?name=tomcat6) or [tomca
 
 ### SCM (Source Code Management)
 
-<table border="1">
+| SCM | Supported versions | Comments |
+| [Git](http://git-scm.com) | >=1.5.4.2 |
+| [Subversion](http://subversion.apache.org) | 1.3, 1.4, 1.5, 1.6 & 1.7 | 1.3 or higher required.
 
-<tbody>
+Does not support Ruby Bindings for Subversion.
 
-<tr>
-
-<th>SCM</th>
-
-<th>Supported versions</th>
-
-<th>Comments</th>
-
-</tr>
-
-<tr>
-
-<td>[Git](http://git-scm.com)</td>
-
-<td>>=1.5.4.2</td>
-
-</tr>
-
-<tr>
-
-<td>[Subversion](http://subversion.apache.org)</td>
-
-<td>1.3, 1.4, 1.5, 1.6 & 1.7</td>
-
-<td>1.3 or higher required.  
-
-Does not support Ruby Bindings for Subversion.  
-
-Subversion 1.7.0 and 1.7.1 contains bugs [#9541](http://www.redmine.org/issues/9541)</td>
-
-</tr>
-
-<tr>
-
-<td>[Mercurial](http://www.selenic.com/mercurial)</td>
-
-<td>>=1.6</td>
-
-<td>Support bellow version 1.6 is droped as seen in [#9465](http://www.redmine.org/issues/9465).</td>
-
-</tr>
-
-<tr>
-
-<td>[Bazaar](http://bazaar-vcs.org)</td>
-
-<td>>= 2.0.4</td>
-
-</tr>
-
-<tr>
-
-<td>[Darcs](http://darcs.net)</td>
-
-<td>>=1.0.7</td>
-
-</tr>
-
-<tr>
-
-<td>[CVS](http://www.nongnu.org/cvs)</td>
-
-<td>1.12.12</td>
-
-<td>1.12 required.  
-Will not work with CVSNT.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+Subversion 1.7.0 and 1.7.1 contains bugs [#9541](http://www.redmine.org/issues/9541) |
+| [Mercurial](http://www.selenic.com/mercurial) | >=1.6 | Support bellow version 1.6 is droped as seen in [#9465](http://www.redmine.org/issues/9465). |
+| [Bazaar](http://bazaar-vcs.org) | >= 2.0.4 |
+| [Darcs](http://darcs.net) | >=1.0.7 |
+| [CVS](http://www.nongnu.org/cvs) | 1.12.12 | 1.12 required.
+Will not work with CVSNT. |
 
 More information can be read at [Redmine Repositories Wiki](http://www.redmine.org/projects/redmine/wiki/RedmineRepositories).
 
@@ -869,11 +776,3 @@ to your Gemfile.local
 *   [Official install guide from Redmine Wiki](http://www.redmine.org/projects/redmine/wiki/RedmineInstall)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Redmine&oldid=376992](https://wiki.archlinux.org/index.php?title=Redmine&oldid=376992)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

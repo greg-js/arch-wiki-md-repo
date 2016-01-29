@@ -1,9 +1,5 @@
 # Suricata
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From the project [home page](http://suricata-ids.org/):
 
-_Suricata is a high performance Network IDS, IPS and Network Security Monitoring engine. Open Source and owned by a community run non-profit foundation, the Open Information Security Foundation (OISF). Suricata is developed by the OISF and its supporting vendors._
+NaN
 
 ## Contents
 
@@ -64,11 +60,3 @@ For example, if the network interface is `eth0` , the service name is `suricata@
 **Tip:** If the service file is not yet included in AUR you can find it here: [[2]](http://pastebin.archlinux.fr/468715). Place this file under `/usr/lib/systemd/system/suricata@.service`
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Suricata&oldid=416021](https://wiki.archlinux.org/index.php?title=Suricata&oldid=416021)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

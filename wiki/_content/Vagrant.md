@@ -1,9 +1,5 @@
 # Vagrant
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -145,16 +141,16 @@ Here is a list of places to get all sorts of vagrant base boxes for different pu
 
 *   [Vagrant Cloud](https://vagrantcloud.com/) is HashiCorp's official site for Vagrant boxes. You can browse user-submitted boxes or upload your own. A single Vagrant Cloud box can support multiple providers with versioning.
 
-*   [vagrantbox.es](http://vagrantbox.es/)  
+*   [vagrantbox.es](http://vagrantbox.es/)
     A List of vagrant base boxes. Initiated by Gareth Rushgrove [@garethr](https://twitter.com/garethr) hosted on Heroku using Nginx. See the story here: [The Vagrantbox.es Story](http://www.morethanseven.net/2012/07/01/The-vagrantbox.es-story/).
 
-*   Opscode [bento](https://github.com/opscode/bento)  
+*   Opscode [bento](https://github.com/opscode/bento)
     We all know what bento means in Japanese, right? In this case, they are **NOT** lunch boxes **BUT** extremely useful base boxes which can be used to test cookbooks or private chef (Chef Server and Client). Distributions included: Ubuntu Server, Debian, CentOS, Fedora and FreeBSD.
 
-*   [Puppet Labs Vagrant Boxes](http://puppet-vagrant-boxes.puppetlabs.com/)  
+*   [Puppet Labs Vagrant Boxes](http://puppet-vagrant-boxes.puppetlabs.com/)
     Pre-rolled vagrant boxes, ready for use. Made by the folks at Puppet Labs.
 
-*   [Vagrant Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/)  
+*   [Vagrant Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/)
     It has been there since Jan, 2013\. For some reason Canonical has NOT officially promoted it yet, may be still in beta. Remember these are vanilla images, NOT very useful without Chef or Puppet.
 
 ## Troubleshooting
@@ -172,12 +168,3 @@ Installing [net-tools](https://www.archlinux.org/packages/?name=net-tools) packa
 *   [official Vagrant documentation](http://docs.vagrantup.com/v2/getting-started/project_setup.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vagrant&oldid=408066](https://wiki.archlinux.org/index.php?title=Vagrant&oldid=408066)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

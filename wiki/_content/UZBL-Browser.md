@@ -1,9 +1,5 @@
 # UZBL-Browser
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Uzbl](http://www.uzbl.org/) is a lightweight browser based on **uzbl-core**. **Uzbl** adheres to the UNIX philosophy of "Write programs that do one thing and do it well". The uzbl-browser package includes uzbl-core, uzbl-browser and uzbl-event-manager. Most users will want to use **uzbl-browser** or **uzbl-tabbed** as they provide the fullest set of tools for browsing. Uzbl-browser allows for a single page per window (with as many windows as you want), while uzbl-tabbed provides a wrapper for uzbl-browser and implements basic tabs with multiple pages per window.
 
 ## Contents
@@ -170,7 +166,3 @@ Parcellite can cause problems at the time of selecting text under uzbl - just di
 *   [Configuration file](https://github.com/Dieterbe/uzbl/raw/master/examples/config/config)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=414917](https://wiki.archlinux.org/index.php?title=UZBL-Browser&oldid=414917)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

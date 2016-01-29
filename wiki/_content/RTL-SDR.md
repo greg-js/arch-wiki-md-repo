@@ -1,9 +1,5 @@
 # RTL-SDR
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DVB-T](/index.php/DVB-T "DVB-T")
@@ -55,7 +51,3 @@ Some popular applications that use RTL-SDR:
 *   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux, see [gqrx](/index.php/Gqrx "Gqrx")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=415245](https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=415245)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

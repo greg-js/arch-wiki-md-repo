@@ -1,9 +1,5 @@
 # Bug Day
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 About](#About)
@@ -38,9 +34,3 @@ Discussion about the bugs should be taking place in **#archlinux-bugs** on [IRC]
 *   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bug_Day&oldid=383995](https://wiki.archlinux.org/index.php?title=Bug_Day&oldid=383995)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Events](/index.php/Category:Events "Category:Events")

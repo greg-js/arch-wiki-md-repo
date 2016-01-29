@@ -1,9 +1,5 @@
 # Quassel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Quassel (sometimes referred to as Quassel IRC) is a cross-platform IRC client introduced in 2008\. It is dual-licensed under GPLv2 and GPLv3, while most graphical data is licensed under the LGPL and provided by the [Oxygen Team](http://www.oxygen-icons.org/). The client part of Quassel uses the Qt framework for its user interface.
 
 ## Contents
@@ -77,7 +73,3 @@ If you were previously using quassel-monolithic, your settings might be messed u
 Then start quasselcore again and connect from your client, you should now get the wizard to show, however, all settings will have to be re-entered.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Quassel&oldid=416151](https://wiki.archlinux.org/index.php?title=Quassel&oldid=416151)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

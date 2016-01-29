@@ -1,9 +1,5 @@
 # Google Authenticator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Google Authenticator](https://github.com/google/google-authenticator) provides a two-step authentication procedure using one-time passcodes (OTP). The OTP generator application is available for iOS, Android and Blackberry. Similar to [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") the authentication mechanism integrates into the Linux PAM system. This guide shows the installation and configuration of this mechanism.
 
 ## Contents
@@ -124,7 +120,3 @@ SSH to your host from another machine and/or from another terminal window:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=415949](https://wiki.archlinux.org/index.php?title=Google_Authenticator&oldid=415949)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

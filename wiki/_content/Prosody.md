@@ -1,9 +1,5 @@
 # Prosody
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Prosody](http://prosody.im/) (pronunciation: [1](http://www.merriam-webster.com/cgi-bin/audio.pl?prosod05.wav=prosody%27), [2](http://www.merriam-webster.com/cgi-bin/audio.pl?prosod04.wav=prosody%27)) is an [XMPP](http://xmpp.org/) server written in the [Lua](http://www.lua.org/) programming language. Prosody is designed to be lightweight and highly extensible. It is licensed under a permissive [MIT license](http://prosody.im/source/mit). Prosody is available for Arch Linux in the Community repository with some optional dependencies available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Previous experience with building and installing packages from the AUR and basic knowledge of XMPP will be very helpful when following the guide.
@@ -38,32 +34,17 @@ Previous experience with building and installing packages from the AUR and basic
 
 Prosody has optional depedencies that although not strictly required for its operation, provide useful features. These dependencies may also have to be built and installed from the AUR. If you are unfamiliar with how to build and install packages from the AUR please see [AUR User Guidelines#Installing packages](/index.php/AUR_User_Guidelines#Installing_packages "AUR User Guidelines").
 
-TLS/SSL Support (Recommended)
+NaN
 
-Allow Prosody to encrypt streams to prevent eavesdropping.  
-_Requires:_ [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
+NaN
 
-MySQL/Postgresql Backend
-
-Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.  
-_Requires:_ [luadbi](https://aur.archlinux.org/packages/luadbi/)<sup><small>AUR</small></sup>
-
-Better Connection Scaling (Recommended)
-
-Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.  
-_Requires:_ [lua51-event](https://aur.archlinux.org/packages/lua51-event/)<sup><small>AUR</small></sup>
+NaN
 
 **Warning:** Due to an open issue, when enabled luaevent, all s2s functionality breaks. A fix is expected in v0.10 [[1]](https://prosody.im/issues/issue/555)
 
-Stream Compression
+NaN
 
-Allow Prosody to compress client-to-server streams for compatible clients to save bandwidth.  
-_Requires:_ [lua51-zlib](https://www.archlinux.org/packages/?name=lua51-zlib)
-
-Cyrus SASL Support
-
-Allow Prosody to use the [Cyrus SASL](http://asg.web.cmu.edu/sasl/sasl-library.html) library to provide authentication.  
-_Requires:_ [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lua-cyrussasl)]</sup>
+NaN
 
 ## Configuration
 
@@ -184,11 +165,11 @@ This will enable the MUC component on host `conference.example.com`.
 
 To use an extra module download its raw file(s) from the source browser (when viewing a file, search for the link "View raw file"). Alternatively and likely easier, use Mercurial to clone the entire repository:
 
-Prosody 0.9+
+NaN
 
 `$ hg clone https://hg.prosody.im/prosody-modules/ prosody-modules`
 
-Prosody 0.8
+NaN
 
 `$ hg clone http://0-8.prosody-modules.googlecode.com/hg/ prosody-modules`
 
@@ -223,17 +204,17 @@ Will return `true` if the connection is compressed or `nil` if it is not.
 
 One of Prosody's primary design principles is to be simple to use and configure. However, issues can still arise (and likely will as is the case with any complex software). If you encounter a problem there are a variety of steps you can take to narrow down the cause:
 
-*   **Check for known issues**  
+*   **Check for known issues**
     Look at the [release notes](http://prosody.im/doc/release) for your Prosody version to see if your issue is listed as a known issue. Also check the [issue tracker](http://code.google.com/p/lxmppd/issues/list) to see if your issue has already been reported.
-*   **Check configuration syntax**  
+*   **Check configuration syntax**
     Run `luac5.1 -p /etc/prosody/prosody.cfg.lua` to check for any syntax errors in your configuration file. If there is no output your syntax is fine.
-*   **Check the log**  
+*   **Check the log**
     Errors are only logged if there is a critical problem so always address those issues. If you think you have a very low level issue (like protocol compatibility between clients and servers with Prosody) then you can enable the very verbose debug level logging.
-*   **Check permissions**  
+*   **Check permissions**
     The Prosody package should add a new `prosody` user and group to your system and set appropriate permissions, but it is always good to double check. Ensure that `/etc/prosody` and `/var/lib/prosody` are owned by the `prosody` user and that the user has appropriate permissions to read and write to those paths and all contained files.
-*   **Check listening ports**  
+*   **Check listening ports**
     When troubleshooting connection issues make sure that Prosody is actually listening for connections. You may do so by running `ss -tul` and making sure that `xmpp-client` (port 5222) and `xmpp-server` (port 5269) are listed.
-*   **Restart**  
+*   **Restart**
     Like most things, it does not hurt to restart Prosody (`systemctl restart prosody`) to see if it resolves an issue.
 
 If you are unable to resolve your issue yourself there are a variety of resources you can use to seek help. In order of immediacy with which you will likely receive help:
@@ -260,11 +241,3 @@ Two development packages are maintained for Prosody in the AUR, [prosody-devel](
 *   [Prosody Modules](https://hg.prosody.im/prosody-modules/) (Extra Modules)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Prosody&oldid=414545](https://wiki.archlinux.org/index.php?title=Prosody&oldid=414545)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

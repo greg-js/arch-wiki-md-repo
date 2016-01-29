@@ -1,9 +1,5 @@
 # Fprint
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui")
@@ -11,7 +7,7 @@ Related articles
 
 From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
-_The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices._
+NaN
 
 The idea is to use the built-in fingerprint reader in some notebooks for login using PAM. This article will also explain how to use regular password for backup login method (solely fingerprint scanner is not recommended due to numerous reasons).
 
@@ -71,7 +67,3 @@ You will be asked to scan the given finger. After that, the signature is created
 For more information, see `man fprintd`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fprint&oldid=407047](https://wiki.archlinux.org/index.php?title=Fprint&oldid=407047)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")

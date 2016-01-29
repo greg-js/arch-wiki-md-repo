@@ -1,9 +1,5 @@
 # Dzen
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -160,13 +156,3 @@ echo "hello world" | dzen2 -fn 'Times New Roman' -p
 *   2007-12-04 - Arch Linux - [dzen & xmobar Hacking Thread](https://bbs.archlinux.org/viewtopic.php?id=40637)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dzen&oldid=413083](https://wiki.archlinux.org/index.php?title=Dzen&oldid=413083)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

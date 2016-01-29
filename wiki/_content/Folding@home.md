@@ -1,12 +1,8 @@
 # Folding@home
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](http://folding.stanford.edu/):
 
-_Help Stanford University scientists studying Alzheimer's, Huntington's, Parkinson's, and many cancers by simply running a piece of software on your computer. The problems we are trying to solve require so many calculations, we ask people to donate their unused computer power to crunch some of the numbers. In just 5 minutes... Add your computer to over 333,684 others around the world to form the world's largest distributed supercomputer._
+NaN
 
 ## Contents
 
@@ -132,12 +128,3 @@ On foldingathome-smp 6.43, the _unitinfo.txt_ file is not placed inside the user
 *   Extended Arch team statistics in [extremeoverclocking.com](http://folding.extremeoverclocking.com/team_summary.php?s=&t=45032)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Folding@home&oldid=392138](https://wiki.archlinux.org/index.php?title=Folding@home&oldid=392138)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

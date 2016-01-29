@@ -1,9 +1,5 @@
 # Server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This guide will give you an overview for the most common server options in existence and will outline some administration and security guidelines.
 
 ## Contents
@@ -215,11 +211,3 @@ Once you've got the base setup down, there's lots of other cool, optional stuff 
 *   [https://www.php.net/](https://www.php.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Server&oldid=417223](https://wiki.archlinux.org/index.php?title=Server&oldid=417223)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

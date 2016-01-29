@@ -1,9 +1,5 @@
 # Experimenting with ZFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ZFS](/index.php/ZFS "ZFS")
@@ -323,37 +319,9 @@ Since ZFS is a copy-on-write filesystem, every file exists the second it is writ
 
 To keep this simple, we will create a dataset within the zpool and snapshot it. Snapshots can be taken either of the entire zpool or of a dataset within the pool. They differ only in their naming conventions:
 
-<table class="wikitable" align="center">
-
-<tbody>
-
-<tr>
-
-<th>Snapshot Target</th>
-
-<th>Snapshot Name</th>
-
-</tr>
-
-<tr>
-
-<td>Entire zpool</td>
-
-<td>zpool@snapshot-name</td>
-
-</tr>
-
-<tr>
-
-<td>Dataset</td>
-
-<td>zpool/dataset@snapshot-name</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Snapshot Target | Snapshot Name |
+| Entire zpool | zpool@snapshot-name |
+| Dataset | zpool/dataset@snapshot-name |
 
 Make a new data set and take ownership of it.
 
@@ -597,7 +565,3 @@ If you have any problems accessing your pool at any time, try export and reimpor
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Experimenting_with_ZFS&oldid=398203](https://wiki.archlinux.org/index.php?title=Experimenting_with_ZFS&oldid=398203)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,9 +1,5 @@
 # BIND
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -173,7 +169,7 @@ interface-interval <rescan-timeout-in-minutes>;
 
 ```
 
-parameter into `named.conf` options section. Max value is 28 days. (40320 min)  
+parameter into `named.conf` options section. Max value is 28 days. (40320 min)
 You can disable this feature by setting its value to 0.
 
 Then restart the service.
@@ -232,11 +228,3 @@ Now, reload systemd `systemctl daemon-reload`, then start the service `systemctl
 *   [DNS Glossary](http://www.menandmice.com/knowledgehub/dnsglossary)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=BIND&oldid=405362](https://wiki.archlinux.org/index.php?title=BIND&oldid=405362)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

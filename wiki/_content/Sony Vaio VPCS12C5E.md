@@ -1,9 +1,5 @@
 # Sony Vaio VPCS12C5E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -66,12 +62,3 @@ So far there have been some people ran into several issues with this model (and 
 *   [http://code.google.com/p/vaio-f11-linux/](http://code.google.com/p/vaio-f11-linux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCS12C5E&oldid=383924](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCS12C5E&oldid=383924)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

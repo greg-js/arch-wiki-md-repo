@@ -1,9 +1,5 @@
 # HP Pavilion dv6018
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -96,11 +92,3 @@ bcm43xx is unstable. NDISWrapper is buggy. bcm43xx developers swear bcm4311 (use
 On A similar dv6000, ndiswrapper works flawlessly with the bcm4311 chipset.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv6018&oldid=374297](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv6018&oldid=374297)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

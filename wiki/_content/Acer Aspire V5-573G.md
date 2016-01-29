@@ -1,116 +1,15 @@
 # Acer Aspire V5-573G
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia graphics</td>
-
-<td style="color:lightgreen">**Working, see below**</td>
-
-<td>nvidia, bumblebee</td>
-
-</tr>
-
-<tr>
-
-<td>Graphic outputs</td>
-
-<td style="color:green">**Working**</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath3k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel graphics | **Working** | i915 |
+| Nvidia graphics | **Working, see below** | nvidia, bumblebee |
+| Graphic outputs | **Working** | i915 |
+| Ethernet | **Working** | r8169 |
+| Wireless | **Working** | ath9k |
+| Bluetooth | **Working** | ath3k |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** | xf86-input-synaptics |
+| Camera | **Working** | uvcvideo |
 
 General info about the **Acer Aspire V5-573G** laptop. Everything pretty much works out of the box, follow standard documentation for details.
 
@@ -130,11 +29,11 @@ General info about the **Acer Aspire V5-573G** laptop. Everything pretty much wo
 
 ## Disabling UEFI Secure Boot
 
-To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/app/answers/detail/a_id/29349/) in the BIOS settings. Then you should be able to boot Arch.
+To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/app/answers/detail/a_id/29349/) in the BIOS settings. Then you should be able to disable Secure Boot and boot Arch.
 
 ## mSATA Slot
 
-Laptop has an empty mSATA [SSD](/index.php/SSD "SSD") slot, which can be used for almost anything you want to. For example, you can [set](/index.php/Partitioning "Partitioning") it as your `/` partition, which will improve boot speed and overall perfomance, when `/home` and, probably, `/var` is located on your HDD. Although it can't be used as boot device, so you will have to create `/boot` partition on the HDD and install [bootloader](/index.php/Bootloader "Bootloader") there.
+Laptop has an empty mSATA [SSD](/index.php/SSD "SSD") slot, which can be used for almost anything you want to. For example, you can use it as your `/` [partition](/index.php/Partitioning "Partitioning"), which will improve boot and application startup times, with `/home` and possibly `/var` located on your HDD. However, it can't be used as the primary boot device, so you will have to create a `/boot` partition on the HDD and install your [bootloader](/index.php/Bootloader "Bootloader") there.
 
 ## Hardware
 
@@ -220,8 +119,4 @@ If you do not have 4.0 sound sources, you may want to make PulseAudio automatica
 *   [Drivers and Manuals](http://www.acer.co.uk/ac/en/GB/content/drivers/4843;-;Aspire%20V5-573G) Official support page
 *   [Acer Aspire V5-573G](http://wiki.gentoo.org/wiki/Acer_Aspire_V5-573G) Gentoo Wiki
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_V5-573G&oldid=394297](https://wiki.archlinux.org/index.php?title=Acer_Aspire_V5-573G&oldid=394297)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_V5-573G&oldid=417809](https://wiki.archlinux.org/index.php?title=Acer_Aspire_V5-573G&oldid=417809)"

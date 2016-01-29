@@ -1,18 +1,14 @@
 # Overlay filesystem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 
 From [the initial kernel commit](https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c)
 
-_Overlayfs allows one, usually read-write, directory tree to be overlaid onto another, read-only directory tree. All modifications go to the upper, writable layer. This type of mechanism is most often used for live CDs but there's a wide variety of other uses._
+NaN
 
-_The implementation differs from other "union filesystem" implementations in that after a file is opened all operations go directly to the underlying, lower or upper, filesystems. This simplifies the implementation and allows native performance in these cases._
+NaN
 
 Overlayfs has been in the linux kernel since 3.18.[[1]](https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c)
 
@@ -42,7 +38,3 @@ The `noauto` and `x-systemd.automount` mount options are necessary to prevent sy
 *   [Overlay Filesystem documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Overlay_filesystem&oldid=380541](https://wiki.archlinux.org/index.php?title=Overlay_filesystem&oldid=380541)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

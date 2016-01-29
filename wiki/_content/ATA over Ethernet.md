@@ -1,9 +1,5 @@
 # ATA over Ethernet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ATA over Ethernet (AoE) is a network protocol developed by the Brantley Coile Company, designed for simple, high-performance access of SATA storage devices over Ethernet networks. It is used to build storage area networks (SANs) with low-cost, standard technologies.
 
 ## Contents
@@ -77,8 +73,3 @@ Now the device can be used as a normal device. It will also show up in fdisk! So
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ATA_over_Ethernet&oldid=308260](https://wiki.archlinux.org/index.php?title=ATA_over_Ethernet&oldid=308260)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

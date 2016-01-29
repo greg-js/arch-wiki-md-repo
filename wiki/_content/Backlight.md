@@ -1,9 +1,5 @@
 # Backlight
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Screen brightness might be tricky to control. On some machines physical hardware switches are missing and software solutions may not work well. However, it is generally possible; be sure to use a method that works for your hardware.
 
 There are many ways to adjust the screen backlight of a monitor, laptop or integrated panel (such as the iMac) using software, but depending on hardware and model, sometimes only some options are available. This article aims to summarize all possible ways to adjust the backlight.
@@ -367,12 +363,3 @@ done
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Backlight&oldid=415558](https://wiki.archlinux.org/index.php?title=Backlight&oldid=415558)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

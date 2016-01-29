@@ -1,9 +1,5 @@
 # CherryMusic
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[CherryMusic](http://www.fomori.org/cherrymusic/)** is a music streaming server based on [CherryPy](http://www.cherrypy.org/) and [jPlayer](http://jplayer.org/). It can be run remotely or on a single computer and is designed to handle huge music libraries (3 TB and more) but also works well with small collections. In contrast to [MPD](/index.php/MPD "MPD"), [Icecast](/index.php/Icecast "Icecast") and the like, CherryMusic allows multiple users to (individually) login via HTTP/HTTPS using a web browser, browse/search the music database and create/edit playlists and stream music to the browser. From the [website](http://www.fomori.org/cherrymusic/):
 
 "CherryMusic is a standalone music server written in python based on CherryPy and jPlayer. It is intended to be an alternative to Last.fm, Spotify, Grooveshark... you name it."
@@ -191,8 +187,8 @@ The search parameters of the search algorithm can be adjusted manually via the f
 
 ## 3rd Party Extensions
 
-*   CherryMusic Control - A Playback control plugin for Firefox:  
-    [https://addons.mozilla.org/en-US/firefox/addon/cherrymusic-control](https://addons.mozilla.org/en-US/firefox/addon/cherrymusic-control)  
+*   CherryMusic Control - A Playback control plugin for Firefox:
+    [https://addons.mozilla.org/en-US/firefox/addon/cherrymusic-control](https://addons.mozilla.org/en-US/firefox/addon/cherrymusic-control)
     Which is also developed on github: [https://github.com/Sets88/cherrymusicctrl](https://github.com/Sets88/cherrymusicctrl)
 
 ## Troubleshooting
@@ -245,8 +241,3 @@ proxy_http_version 1.1;
 *   [CherryMusic on GitHub](https://github.com/devsnd/cherrymusic)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CherryMusic&oldid=389756](https://wiki.archlinux.org/index.php?title=CherryMusic&oldid=389756)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

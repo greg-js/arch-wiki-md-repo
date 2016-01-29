@@ -1,9 +1,5 @@
 # systemd-nspawn
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
@@ -260,13 +256,3 @@ It can sometimes be impossible to upgrade some packages on the container, [files
 *   [Running Firefox in a systemd-nspawn container](http://dabase.com/e/12009/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412459](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412459)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

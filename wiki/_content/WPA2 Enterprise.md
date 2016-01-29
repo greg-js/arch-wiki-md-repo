@@ -1,9 +1,5 @@
 # WPA2 Enterprise
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration")
@@ -120,12 +116,3 @@ Alternatively, adapt an example configuration from [[3]](https://gist.githubuser
 WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[5]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[6]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA2_Enterprise&oldid=412733](https://wiki.archlinux.org/index.php?title=WPA2_Enterprise&oldid=412733)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

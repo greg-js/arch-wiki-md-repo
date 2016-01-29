@@ -1,9 +1,5 @@
 # Moodle
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [MySQL](/index.php/MySQL "MySQL")
@@ -11,7 +7,7 @@ Related articles
 
 From [Wikipedia](http://en.wikipedia.org):
 
-[Moodle](https://en.wikipedia.org/wiki/Moodle "wikipedia:Moodle") (abbreviation for Modular Object-Oriented Dynamic Learning Environment) is a free source e-learning software platform, also known as a Course Management System, Learning Management System, or Virtual Learning Environment (VLE).
+NaN
 
 This article describes how to set up the Moodle server on an Arch Linux system. Usage is not covered. For more help visit [its home page](http://www.moodle.org).
 
@@ -142,7 +138,3 @@ Happy Moodling !
 *   [http://www.mysql.com/](http://www.mysql.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Moodle&oldid=416226](https://wiki.archlinux.org/index.php?title=Moodle&oldid=416226)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

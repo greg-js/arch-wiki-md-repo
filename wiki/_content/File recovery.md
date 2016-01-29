@@ -1,9 +1,5 @@
 # File recovery
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Post recovery tasks#Photorec](/index.php/Post_recovery_tasks#Photorec "Post recovery tasks")
@@ -248,12 +244,3 @@ Hopefully, the content of the deleted file is now in _OutputFile_, which can be 
 *   [Data Recovery](https://help.ubuntu.com/community/DataRecovery) on the Ubuntu wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=File_recovery&oldid=415431](https://wiki.archlinux.org/index.php?title=File_recovery&oldid=415431)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

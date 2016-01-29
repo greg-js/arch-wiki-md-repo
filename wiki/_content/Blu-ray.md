@@ -1,9 +1,5 @@
 # Blu-ray
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
@@ -258,12 +254,3 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412351](https://wiki.archlinux.org/index.php?title=Blu-ray&oldid=412351)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [Optical](/index.php/Category:Optical "Category:Optical")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

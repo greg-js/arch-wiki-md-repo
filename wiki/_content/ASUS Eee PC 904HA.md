@@ -1,9 +1,5 @@
 # ASUS Eee PC 904HA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installing Arch](#Installing_Arch)
@@ -140,7 +136,3 @@ Hotkey driver kernel module name: eeepc-laptop
 Do not enable any of the "ASUS Laptop" options you might find in ACPI or Misc devices menus (unless they're Eee specific, of course.) They do not pertain to Eees and will fail to load if built as modules and manually attempted.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_904HA&oldid=298151](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_904HA&oldid=298151)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

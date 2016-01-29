@@ -1,9 +1,5 @@
 # Casper CN-VLA2830A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware Information](#Hardware_Information)
@@ -125,7 +121,3 @@ UEFI or Legacy mode. Legacy mode is not tested.
 Tested with Ubuntu 14.04 for now.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Casper_CN-VLA2830A&oldid=384563](https://wiki.archlinux.org/index.php?title=Casper_CN-VLA2830A&oldid=384563)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Casper](/index.php/Category:Casper "Category:Casper")

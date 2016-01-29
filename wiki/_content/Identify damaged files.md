@@ -1,9 +1,5 @@
 # Identify damaged files
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article gives details on how to find out which file owns a given block. The main purpose for doing so is finding out which file was damaged in the event a storage device develops any bad blocks (that way you'll know if you lost anything important).
 
 For most of these commands you will have to be either root or a user that has direct read access to the drive you are checking (being a member of the disk group should be enough). As usual, a current backup is always a good idea, especially if imminent drive failure is suspected.[S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") can help with determining that.
@@ -248,7 +244,3 @@ smartctl -l selftest /dev/sdx
 [EXT2/3 badblocks howto](http://smartmontools.sourceforge.net/badblockhowto.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Identify_damaged_files&oldid=415193](https://wiki.archlinux.org/index.php?title=Identify_damaged_files&oldid=415193)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

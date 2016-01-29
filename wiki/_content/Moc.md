@@ -1,9 +1,5 @@
 # Moc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **M**usic **O**n **C**onsole is a lightweight music player which consists of 2 parts, a server (Moc) and a player/interface (Mocp). This is similar to [mpd](/index.php/Mpd "Mpd"), but unlike _mpd_, Moc comes with an interface. Its server does not support remote access.
 
 ## Contents
@@ -44,142 +40,23 @@ $ mocp
 
 This will start the server and interface. Some useful shortcuts (case sensitive):
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Start playing a track</td>
-
-<td>`Enter`</td>
-
-</tr>
-
-<tr>
-
-<td>Pause track</td>
-
-<td>`Space` or `p`</td>
-
-</tr>
-
-<tr>
-
-<td>Play next track</td>
-
-<td>`n`</td>
-
-</tr>
-
-<tr>
-
-<td>Play previous track</td>
-
-<td>`b`</td>
-
-</tr>
-
-<tr>
-
-<td>Switch from playlist browsing to  
-filesystem browsing (and vice versa)</td>
-
-<td>`Tab`</td>
-
-</tr>
-
-<tr>
-
-<td>Add one track to the playlist</td>
-
-<td>`a`</td>
-
-</tr>
-
-<tr>
-
-<td>Remove track from playlist</td>
-
-<td>`d`</td>
-
-</tr>
-
-<tr>
-
-<td>Add a folder recursively to playlist</td>
-
-<td>`Shift+a`</td>
-
-</tr>
-
-<tr>
-
-<td>Clear playlist</td>
-
-<td>`Shift+c`</td>
-
-</tr>
-
-<tr>
-
-<td>Increase volume 5%</td>
-
-<td>`.` (dot)</td>
-
-</tr>
-
-<tr>
-
-<td>Decrease volume 5%</td>
-
-<td>`,` (comma)</td>
-
-</tr>
-
-<tr>
-
-<td>Increase volume 1%</td>
-
-<td>`>`</td>
-
-</tr>
-
-<tr>
-
-<td>Decrease volume 1%</td>
-
-<td>`<`</td>
-
-</tr>
-
-<tr>
-
-<td>Change volume to 10%</td>
-
-<td>`meta+1`</td>
-
-</tr>
-
-<tr>
-
-<td>Change volume to 20%</td>
-
-<td>`meta+2`</td>
-
-</tr>
-
-<tr>
-
-<td>Quit player</td>
-
-<td>`q`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Start playing a track | `Enter` |
+| Pause track | `Space` or `p` |
+| Play next track | `n` |
+| Play previous track | `b` |
+| Switch from playlist browsing to
+filesystem browsing (and vice versa) | `Tab` |
+| Add one track to the playlist | `a` |
+| Remove track from playlist | `d` |
+| Add a folder recursively to playlist | `Shift+a` |
+| Clear playlist | `Shift+c` |
+| Increase volume 5% | `.` (dot) |
+| Decrease volume 5% | `,` (comma) |
+| Increase volume 1% | `>` |
+| Decrease volume 1% | `<` |
+| Change volume to 10% | `meta+1` |
+| Change volume to 20% | `meta+2` |
+| Quit player | `q` |
 
 **Note:** To shut down the server, use `Shift+q` or:
 
@@ -215,19 +92,19 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 *   **dmenu_mocp** — Dmenu frontend to MOC
 
-[https://github.com/mutantturkey/mocicon](https://github.com/mutantturkey/mocicon) || [dmenu_mocp](https://aur.archlinux.org/packages/dmenu_mocp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu_mocp)]</sup>
+NaN
 
 *   **mocicon** — GTK panel applet to control MOC
 
-[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)<sup><small>AUR</small></sup>
+NaN
 
 *   **moc-tray** — Quick and easy access to mocp basic functions
 
-[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
+NaN
 
 *   **eXo** — Qt frontend to MOC, supports scrobbling
 
-[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=exo)</small>
+NaN
 
 ## systemd service file
 
@@ -291,11 +168,3 @@ See [original report](http://moc.daper.net/node/262) and [Debian bugs](https://b
 *   [Official documentation](http://moc.daper.net/documentation)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Moc&oldid=407557](https://wiki.archlinux.org/index.php?title=Moc&oldid=407557)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

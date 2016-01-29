@@ -1,9 +1,5 @@
 # Nsd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Nsd is an authoritative DNS resolver.
 
 ## Contents
@@ -185,7 +181,3 @@ The examples here all assume that only ipv4 is being used. Corresponding configu
 It is also possible to change the configuration files and interfaces on which the server is listening so that dns queries from machines outside of the local network can access specific machines within the LAN. This is useful for web and mail servers which are accessible from anywhere, and the same techniques can be employed as has been achieved using bind for many years, in combination with appropriate port forwarding in the network firewall machines, to allow incoming requests to access the correct machine.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nsd&oldid=371627](https://wiki.archlinux.org/index.php?title=Nsd&oldid=371627)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")

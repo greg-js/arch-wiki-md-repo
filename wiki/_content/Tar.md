@@ -1,9 +1,5 @@
 # Tar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [GNU's Tar Page](http://www.gnu.org/software/tar/):
 
-_"The `Tar` program provides the ability to create tar archives, as well as various other kinds of manipulation. For example, you can use Tar on previously created archives to extract files, to store additional files, or to update or list files which were already stored."_
+NaN
 
 As an early Unix compression format, `tar` files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") `Tar` program by default.
 
@@ -36,71 +32,15 @@ $ tar xvf file.EXTENSION
 
 Forcing a given format:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>File Type</th>
-
-<th>Extraction Command</th>
-
-</tr>
-
-<tr>
-
-<td>`file.tar`</td>
-
-<td>`tar xvf file.tar`</td>
-
-</tr>
-
-<tr>
-
-<td>`file.tgz`</td>
-
-<td>`tar xvzf file.tgz`</td>
-
-</tr>
-
-<tr>
-
-<td>`file.tar.gz`</td>
-
-<td>`tar xvzf file.tar.gz`</td>
-
-</tr>
-
-<tr>
-
-<td>`file.tar.bz`</td>
-
-<td>`bzip -cd file.bz | tar xvf -`</td>
-
-</tr>
-
-<tr>
-
-<td>`file.tar.bz2`</td>
-
-<td>`tar xvjf file.tar.bz2`  
-`bzip2 -cd file.bz2 | tar xvf -`</td>
-
-</tr>
-
-<tr>
-
-<td>`file.tar.xz`</td>
-
-<td>`tar xvJf file.tar.xz`  
-`xz -cd file.xz | tar xvf -`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| File Type | Extraction Command |
+| `file.tar` | `tar xvf file.tar` |
+| `file.tgz` | `tar xvzf file.tgz` |
+| `file.tar.gz` | `tar xvzf file.tar.gz` |
+| `file.tar.bz` | `bzip -cd file.bz | tar xvf -` |
+| `file.tar.bz2` | `tar xvjf file.tar.bz2`
+`bzip2 -cd file.bz2 | tar xvf -` |
+| `file.tar.xz` | `tar xvJf file.tar.xz`
+`xz -cd file.xz | tar xvf -` |
 
 The construction of some of these `tar` arguments may be considered legacy, but they are still useful when performing specific operations. The **Compatibility** section of `tar`'s [man page](/index.php/Man_page "Man page") shows how they work in detail.
 
@@ -153,11 +93,3 @@ tar -xvjf etc-backup.tar.bz2
 *   [GNU tar manual](http://www.gnu.org/software/tar/manual/index.html) (Also available via `info tar`)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tar&oldid=408772](https://wiki.archlinux.org/index.php?title=Tar&oldid=408772)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

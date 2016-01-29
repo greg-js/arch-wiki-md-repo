@@ -1,9 +1,5 @@
 # Dell Latitude 3550
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -27,8 +23,8 @@ Intel Core i7-5500U Processor, NVIDIA GeForce 830M 2GB Graphics 15.6" FHD (1920x
 
 ## Installation
 
-You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running  
-booting: uefi boot works with [Gummiboot](/index.php/Gummiboot "Gummiboot")  
+You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running
+booting: uefi boot works with [Gummiboot](/index.php/Gummiboot "Gummiboot")
 I try witch efibootmgr but have kernel panic
 
 ## Hardware
@@ -83,7 +79,7 @@ Detected modules
 
 ### Graphic
 
-Install [Bumblebee](/index.php/Bumblebee "Bumblebee")  
+Install [Bumblebee](/index.php/Bumblebee "Bumblebee")
 add following lines in `/etc/bumblebee/xorg.conf.nvidia` :
 
 ```
@@ -104,7 +100,7 @@ Not tested
 
 ### Keyboard
 
-keyboard [issue](http://en.community.dell.com/support-forums/laptop/f/3518/t/19593360?pi239031352=1)  
+keyboard [issue](http://en.community.dell.com/support-forums/laptop/f/3518/t/19593360?pi239031352=1)
 bios version [A5](http://downloads.dell.com/FOLDER02951247M/1/3550A05.exe) : fix keyboard issue
 
 ### Touchpad
@@ -116,11 +112,3 @@ works with [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptic
 install from aur [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_3550&oldid=382118](https://wiki.archlinux.org/index.php?title=Dell_Latitude_3550&oldid=382118)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

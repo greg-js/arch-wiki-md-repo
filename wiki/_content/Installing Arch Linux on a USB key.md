@@ -1,9 +1,5 @@
 # Installing Arch Linux on a USB key
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
@@ -198,7 +194,3 @@ $ eatmydata firefox
 *   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&oldid=398959](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&oldid=398959)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")

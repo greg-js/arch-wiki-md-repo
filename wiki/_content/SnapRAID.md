@@ -1,9 +1,5 @@
 # SnapRAID
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 SnapRAID is a folder-based backup tool that behaves like a software or hardware Raid5/6 disk raid, but is not a disk raid itself. There is no realtime recovery, free space between disks cannot be combined and manual excution of backup is needed.
 
 Because of the nature of folder-based backup, SnapRAID is more flexible and simpler than software raids. Although disk raids have advantages such as realtime backup, increased complexity or reduced performance are the drawback. Not to mention a two-disk failure or a sata URE happening to Raid5 could damage all data, which is not the case with SnapRAID. Thus the use of SnapRAID is logical when backup is the main goal rather than preventing a system from going offline due to disk failure.
@@ -112,7 +108,3 @@ To begin recovery
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=416562](https://wiki.archlinux.org/index.php?title=SnapRAID&oldid=416562)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

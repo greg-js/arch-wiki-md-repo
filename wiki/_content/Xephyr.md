@@ -1,9 +1,5 @@
 # Xephyr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -49,11 +45,3 @@ You can also launch Xephyr with your [xinitrc](/index.php/Xinitrc "Xinitrc") usi
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xephyr&oldid=387994](https://wiki.archlinux.org/index.php?title=Xephyr&oldid=387994)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

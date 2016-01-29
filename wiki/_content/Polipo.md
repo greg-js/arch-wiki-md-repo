@@ -1,16 +1,12 @@
 # Polipo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Squid](/index.php/Squid "Squid")
 
 From [Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
-"_Polipo is a small and fast caching web proxy (a web cache, an HTTP proxy, a proxy server). While Polipo was designed to be used by one person or a small group of people, there is nothing that prevents it from being used by a larger group._"
+NaN
 
 Unlike [Squid](/index.php/Squid "Squid"), Polipo is very light on resources and simple to configure. This makes it ideal for single user systems and other uncomplicated setups. Do keep in mind, however, that this versatility comes at a cost: Polipo will increase its space usage without restriction as it is not aware of how big its disk cache grows. This perceived fault is by design, since omitting these sanity checks drastically reduces Polipo's memory usage and overall toll on the system. A practical way of restricting disk usage is by making Polipo run as its own user and employing [disk quota](/index.php/Disk_quota "Disk quota").
 
@@ -197,11 +193,3 @@ See [this thread](https://bbs.archlinux.org/viewtopic.php?id=86452) for more inf
 *   [The Polipo Manual](http://www.pps.jussieu.fr/~jch/software/polipo/manual/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Polipo&oldid=406637](https://wiki.archlinux.org/index.php?title=Polipo&oldid=406637)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

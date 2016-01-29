@@ -1,9 +1,5 @@
 # Apple Fusion Drive
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Apple uses a [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID") alternative called CoreStorage to merge the ssd and hdd into a single logical volume (sold as Fusion). We need to remove this volume, so we can reinstall OSx to the hdd without using the ssd.
 
 ## Contents
@@ -93,7 +89,3 @@ Make sure you specify a partition on the ssd as '--device'! Otherwise OSX will b
 *   [http://arstechnica.com/apple/2012/11/achieving-fusion-with-a-service-training-doc-ars-tears-open-apples-fusion-drive/2/](http://arstechnica.com/apple/2012/11/achieving-fusion-with-a-service-training-doc-ars-tears-open-apples-fusion-drive/2/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Apple_Fusion_Drive&oldid=414562](https://wiki.archlinux.org/index.php?title=Apple_Fusion_Drive&oldid=414562)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")

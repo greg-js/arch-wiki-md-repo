@@ -1,9 +1,5 @@
 # Emacs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs") is an extensible, customizable, self-documenting real-time display editor. At the core of Emacs lies an [Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp") interpreter, the language in which the majority of Emacs' built-in functionality and extensions are implemented. GTK is the default X toolkit used as of GNU Emacs 22, though it functions equally well within a CLI environment. The text-editing capabilities of Emacs are often compared to that of [vim](/index.php/Vim "Vim").
 
 ## Contents
@@ -822,23 +818,23 @@ Semantic will work for a few seconds parsing the libraries included from your fi
 
 Once done, you can start using the great Semantic features:
 
-Smart completion
+NaN
 
 Press **C-c , SPC** to complete a symbol at point. If it is an argument, it will check for type correctness.
 
-Jump to symbol
+NaN
 
 Press **C-c , j** to prompt for a symbol and jump to its definition. You can use auto-completion with **TAB**. Use a capital **J** to search for symbol accross files.
 
-List symbol calls
+NaN
 
 Press **C-c , g** to prompt for a symbol and list the places where it is being referred to. You can use **n** and **p** to navigate through the resulting entries. Press **RET** to toggle details, and **RET** again on a reference to jump to it. Use a capital **G** in the first command to work across files.
 
-Refactoring
+NaN
 
 First list use of the symbol you want to refactor with the aforementioned command. Now press **(** to start defining a macro on the symbol. This is actually much more powerful than refactoring since you can apply any function to the symbol and even act on its surrounding symbols. Press **C-x )** to finish the macro and **E** to call it.
 
-Describe symbol
+NaN
 
 Call the following function to display details on a symbol.
 
@@ -1448,7 +1444,7 @@ A way to solve it is just put the line above on your startup file, `~/.emacs`:
 
 And no, it isn't a bug, but a feature of new Emacs versions. Reading the subsequent messages about it on the mail list, we found it ([http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html](http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html)):
 
-_It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be classified as a feature ... Maybe it's just because the file is auto-loaded though pretty useless._
+NaN
 
 ### C-M-% and some other bindings do not work in emacs nox
 
@@ -1635,13 +1631,3 @@ The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Softw
 *   [Official reference card](http://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs&oldid=412694](https://wiki.archlinux.org/index.php?title=Emacs&oldid=412694)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

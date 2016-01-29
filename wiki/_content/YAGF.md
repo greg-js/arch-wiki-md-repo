@@ -1,9 +1,5 @@
 # YAGF
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [List of applications#OCR software](/index.php/List_of_applications#OCR_software "List of applications")
@@ -63,7 +59,3 @@ The recognized text may be saved to disc as a text or html file in UTF-8 encodin
 *   [https://launchpad.net/cuneiform-linux](https://launchpad.net/cuneiform-linux) - Linux port of Cuneiform
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=YAGF&oldid=413954](https://wiki.archlinux.org/index.php?title=YAGF&oldid=413954)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")

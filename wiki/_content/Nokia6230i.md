@@ -1,9 +1,5 @@
 # Nokia6230i
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Common settings](#Common_settings)
@@ -172,7 +168,3 @@ Use command
 ### Restore
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nokia6230i&oldid=205808](https://wiki.archlinux.org/index.php?title=Nokia6230i&oldid=205808)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")

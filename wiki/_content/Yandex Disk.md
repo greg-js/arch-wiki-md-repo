@@ -1,9 +1,5 @@
 # Yandex Disk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Yandex Disk](https://disk.yandex.ru) is a free cloud storage service created by Yandex.ru that gives you access to your photos, videos and documents from any internet-enabled device. The Yandex.Disk client console lets you:
 
 *   synchronize files and folders with your Disk
@@ -69,7 +65,3 @@ Here're some examples of use:
 [http://help.yandex.com/disk/cli-clients.xml](http://help.yandex.com/disk/cli-clients.xml)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Yandex_Disk&oldid=380434](https://wiki.archlinux.org/index.php?title=Yandex_Disk&oldid=380434)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

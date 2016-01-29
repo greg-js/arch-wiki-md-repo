@@ -1,9 +1,5 @@
 # Sinhala Unicode Support
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page explains how to get the Sinhala unicode support and sinhala unicode input to work using [IBus](/index.php/IBus "IBus") (sayura-ibus) or [scim](/index.php/Scim "Scim") (sayura-scim).
 
 ## Contents
@@ -88,11 +84,3 @@ export QT_IM_MODULE="scim"
 *   [Enabling Unicode Sinhala in GNU/Linux HOWTO](http://www.nongnu.org/sinhala/doc/howto/sinhala-howto.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sinhala_Unicode_Support&oldid=392661](https://wiki.archlinux.org/index.php?title=Sinhala_Unicode_Support&oldid=392661)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

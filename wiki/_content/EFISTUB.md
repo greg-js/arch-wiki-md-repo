@@ -1,9 +1,5 @@
 # EFISTUB
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -310,7 +306,3 @@ where XXXX is the number that appears in the output of `efibootmgr` command agai
 More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI"). Forum post [https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) .
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=EFISTUB&oldid=410722](https://wiki.archlinux.org/index.php?title=EFISTUB&oldid=410722)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")

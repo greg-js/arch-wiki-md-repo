@@ -1,9 +1,5 @@
 # Spotify
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Spotify](http://www.spotify.com/) is a digital music service that gives you access to millions of songs.
 
 This Internet music service allows you to select any song in its database and stream for free. The service was recently introduced to the United States after previously being exclusive to Europe. The Linux client is only officially packaged for Debian and Fedora distributions, but is also available in the AUR: [spotify](https://aur.archlinux.org/packages/spotify/)<sup><small>AUR</small></sup>. Officially, they recommend that Linux users run the windows client under Wine. There are also the occasional voice ads in between songs for users who do not wish to subscribe.
@@ -384,7 +380,7 @@ This will tell dwm to start spotify as a floating window associated with the tag
 
 ### Broken search, browsing or radio
 
-Spotify [bug report](http://community.spotify.com/t5/Help-Desktop-Linux-Mac-and/Bug-Desktop-Linux-0-9-0-133-gd18ed589-Having-mixed-locale-breaks/td-p/418270) concerning non-english locales
+NaN
 
 If various tabs like browsing only show a blank screen, the search field doesn't seem to do anything or the radio page is broken (stuck when starting and unsresponsive to input) you might be using a custom locale.
 
@@ -489,12 +485,3 @@ So your full launch path should look something like this:
 *   [http://www.spotify.com/int/download/previews/](http://www.spotify.com/int/download/previews/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Spotify&oldid=415287](https://wiki.archlinux.org/index.php?title=Spotify&oldid=415287)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

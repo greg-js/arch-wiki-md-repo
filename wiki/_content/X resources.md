@@ -1,9 +1,5 @@
 # X resources
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Xresources** is a user-level configuration _dotfile_, typically located at `~/.Xresources`. It can be used to set [X resources](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), which are configuration parameters for X client applications.
 
 They can do many operations, including:
@@ -135,29 +131,15 @@ xscreensaver.Dialog.headingFont: -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
 ```
 
-name
+NaN
 
-The name of the application, such as xterm, xpdf, etc
+NaN
 
-class
+NaN
 
-The classification used to group resources together. Class names are typically uppercase.
+NaN
 
-resource
-
-The name of the resource whose value is to be changed. Resources are typically lowercase with uppercase concatenation.
-
-value
-
-The actual value of the resource. This can be 1 of 3 types:
-
-*   Integer (whole numbers)
-*   Boolean (true/false, yes/no, on/off)
-*   String (a string of characters) (for example a word (`white`), a color (`#ffffff`), or a path (`/usr/bin/firefox`))
-
-delimiters
-
-A dot (`**.**`) is used to signify each step down into the hierarchy — in the above example we start at name, then descend into Class, and finally into the resource itself. A colon (`**:**`) is used to separate the resource declaration from the actual value.
+NaN
 
 #### Wildcard matching
 
@@ -868,13 +850,3 @@ Check out these links for some real world examples of X resource files, contribu
 *   [Xcolors by dkeg](http://beta.andrewrcraig.us/index.php?page=xcolors)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=X_resources&oldid=403404](https://wiki.archlinux.org/index.php?title=X_resources&oldid=403404)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

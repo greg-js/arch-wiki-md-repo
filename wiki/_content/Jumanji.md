@@ -1,9 +1,5 @@
 # Jumanji
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [jumanji](http://pwmt.org/projects/jumanji/) is a web browser that provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction like _vimperator_ does.
 
 ## Contents
@@ -167,7 +163,3 @@ C-q       = exit
 *   [The current forum thread](https://bbs.archlinux.org/viewtopic.php?id=115119)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jumanji&oldid=415874](https://wiki.archlinux.org/index.php?title=Jumanji&oldid=415874)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

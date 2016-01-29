@@ -1,9 +1,5 @@
 # Open Database Connectivity
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Open Database Connectivity, commonly ODBC, is an open specification for providing application developers with a predictable API with which to access Data Sources. An ODBC **engine** needs **drivers** to be able to interact with **databases**.
 
 ## Contents
@@ -197,11 +193,3 @@ This website got me going on ODBC with MySQL but left out some things that were 
 To work around error messages this URL proved helpful so here it is as well.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Open_Database_Connectivity&oldid=392512](https://wiki.archlinux.org/index.php?title=Open_Database_Connectivity&oldid=392512)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # USB flash installation media
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [CD Burning](/index.php/CD_Burning "CD Burning")
@@ -491,13 +487,3 @@ syslinux.exe -m -a -d /Boot/Settings X:
 *   [openSUSE wiki - SDB:Live USB stick](http://en.opensuse.org/SDB:Live_USB_stick)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=416855](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=416855)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

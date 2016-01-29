@@ -1,9 +1,5 @@
 # Binfmt misc for Java
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [Wikipedia](https://en.wikipedia.org/wiki/binfmt_misc "wikipedia:binfmt misc"):
 
-"_binfmt_misc is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines._"
+NaN
 
 In plain language, this allows you to take a [Java](/index.php/Java "Java") jar file that you would ordinarily run via a line such as
 
@@ -437,11 +433,3 @@ echo ':DOSWin:M::MZ::/usr/bin/wine:' > /proc/sys/fs/binfmt_misc/register
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Binfmt_misc_for_Java&oldid=383059](https://wiki.archlinux.org/index.php?title=Binfmt_misc_for_Java&oldid=383059)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

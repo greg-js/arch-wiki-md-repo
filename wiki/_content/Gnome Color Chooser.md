@@ -1,9 +1,5 @@
 # Gnome Color Chooser
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
@@ -159,12 +155,3 @@ Allow you to change icon sizes, as of the time of this writing.
 Advanced: (presumably) Allows you to select "engines" for each subset.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnome_Color_Chooser&oldid=417045](https://wiki.archlinux.org/index.php?title=Gnome_Color_Chooser&oldid=417045)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

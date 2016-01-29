@@ -1,9 +1,5 @@
 # Flash DRM content
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 DRM content on Flash still requires HAL to play. This is apparent for example with Google Play Movies, Amazon Instant Video, WatchESPN or Demand 5 (Channel 5 UK). If you attempt to play a DRM-protected content without HAL, you may see the following error: `an error occurred and your player could not be updated`.
 
 To deliver DRM-protected content, Flash calls several functions provided by the HAL daemon and its libraries. While Flash-based players remain popular, HAL has been deprecated and is not commonly installed on newer systems. To provide the necessary HAL functionality on such systems, you can either install the full HAL package and run the HAL daemon or install a modified HAL library "stub" that uses the modern UDisks daemon instead.
@@ -97,7 +93,3 @@ $ rm -rf ~/.adobe/Flash_Player/{NativeCache,AssetCache,APSPrivateData2}
 *   [Watching movies from Google Play on Arch Linux](http://isenmann.blogspot.gr/2012/08/watching-movies-from-google-play-with.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Flash_DRM_content&oldid=407798](https://wiki.archlinux.org/index.php?title=Flash_DRM_content&oldid=407798)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

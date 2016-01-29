@@ -1,9 +1,5 @@
 # LilyPond
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Lilypond is a Free Software score writing application. Its input is a plain text file in the lilypond music writing format, and its output is in either postscript or Portable Document Format.
 
 ## Contents
@@ -87,7 +83,3 @@ For better usability my settings are: under _Global Options > Docking_ put the _
 *   For a tutorial on how to use this software visit LilyPond [[4]](http://lilypond.org/) website.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LilyPond&oldid=360427](https://wiki.archlinux.org/index.php?title=LilyPond&oldid=360427)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

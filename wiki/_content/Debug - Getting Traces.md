@@ -1,9 +1,5 @@
 # Debug - Getting Traces
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
@@ -227,12 +223,3 @@ Use the complete stack trace to inform developers of a bug you have discovered b
 *   [gdb mini intro](http://linux.bytesex.org/gdb.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Debug_-_Getting_Traces&oldid=410383](https://wiki.archlinux.org/index.php?title=Debug_-_Getting_Traces&oldid=410383)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

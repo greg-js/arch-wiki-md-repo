@@ -1,9 +1,5 @@
 # Ubiquity Commands
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -227,7 +223,3 @@ CmdUtils.CreateCommand({
 *   [The Ubiquity article on The Sysadmin Wiki, featuring Ubiquity commands](http://sysadmin.wikia.com/wiki/Ubiquity)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ubiquity_Commands&oldid=327685](https://wiki.archlinux.org/index.php?title=Ubiquity_Commands&oldid=327685)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

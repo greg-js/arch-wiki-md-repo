@@ -1,9 +1,5 @@
 # Unity
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -88,85 +84,15 @@ $ ./"What_can_I_update?.py"
 
 The following section lists packages that, whilst not required for the Unity shell to function, do serve to enhance the user experience:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Functionality</th>
-
-<th>Package(s)</th>
-
-</tr>
-
-<tr>
-
-<td>Notifications</td>
-
-<td>[notify-osd](https://www.archlinux.org/packages/?name=notify-osd)</td>
-
-</tr>
-
-<tr>
-
-<td>Screen locking</td>
-
-<td>_gnome-screensaver-ubuntu_</td>
-
-</tr>
-
-<tr>
-
-<td>Online accounts</td>
-
-<td>[signon-keyring-extension](https://aur.archlinux.org/packages/signon-keyring-extension/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/signon-keyring-extension)]</sup>, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/)</td>
-
-</tr>
-
-<tr>
-
-<td>SSH</td>
-
-<td>[gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring)</td>
-
-</tr>
-
-<tr>
-
-<td>HUD & menubar integration</td>
-
-<td>[appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt)]</sup>, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/)<sup><small>AUR</small></sup>, [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<td>File and Folder lens</td>
-
-<td>_zeitgeist-ubuntu_</td>
-
-</tr>
-
-<tr>
-
-<td>Configuration</td>
-
-<td>[gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), _unity-tweak-tool_</td>
-
-</tr>
-
-<tr>
-
-<td>Pidgin integration</td>
-
-<td>_pidgin-indicator_</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Functionality | Package(s) |
+| Notifications | [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) |
+| Screen locking | _gnome-screensaver-ubuntu_ |
+| Online accounts | [signon-keyring-extension](https://aur.archlinux.org/packages/signon-keyring-extension/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/signon-keyring-extension)]</sup>, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
+| SSH | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) |
+| HUD & menubar integration | [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt)]</sup>, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/)<sup><small>AUR</small></sup>, [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/)<sup><small>AUR</small></sup> |
+| File and Folder lens | _zeitgeist-ubuntu_ |
+| Configuration | [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), _unity-tweak-tool_ |
+| Pidgin integration | _pidgin-indicator_ |
 
 ## Tips and tricks
 
@@ -236,11 +162,3 @@ As of February 2015, the required package _perlxml_ is unavailable, try _pidgin-
 *   [Unity in Launchpad](https://launchpad.net/unity)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity&oldid=412834](https://wiki.archlinux.org/index.php?title=Unity&oldid=412834)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

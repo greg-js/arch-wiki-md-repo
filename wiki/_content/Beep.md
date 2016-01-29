@@ -1,9 +1,5 @@
 # Beep
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -88,11 +84,3 @@ While many people are happy with the traditional beep sound, some may like to ch
 *   [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Beep&oldid=411977](https://wiki.archlinux.org/index.php?title=Beep&oldid=411977)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

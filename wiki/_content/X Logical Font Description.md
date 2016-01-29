@@ -1,9 +1,5 @@
 # X Logical Font Description
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fonts](/index.php/Fonts "Fonts")
@@ -56,185 +52,80 @@ $ xlsfonts -ll -fn fixed
 
 The following table provides a description of the font name fields. The elements are listed in the same order as they appear in a font name. The names used by xfontsel are listed below the longer uppercase names.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td align="center">FOUNDRY  
-_fndry_</td>
-
-<td>The supplier of the font.
+| FOUNDRY
+_fndry_ | The supplier of the font.
 
 Specify this field when two different fonts share the same FAMILY_NAME, for example, `courier`. Otherwise the wildcard, `*`, may be substituted.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">FAMILY_NAME  
-_fmly_</td>
-
-<td>The typeface name, defined by the foundry. Usually, fonts with the same family name are visually similar.</td>
-
-</tr>
-
-<tr>
-
-<td align="center">WEIGHT_NAME  
-_wght_</td>
-
-<td>The degree of blackness of the glyphs, defined by the foundry. Common values are `bold` and `medium`.</td>
-
-</tr>
-
-<tr>
-
-<td align="center">SLANT  
-_slant_</td>
-
-<td>Common values are `r` for Roman or upright, and `i` and `o` for the slanted italic and oblique typefaces.
+ |
+| FAMILY_NAME
+_fmly_ | The typeface name, defined by the foundry. Usually, fonts with the same family name are visually similar. |
+| WEIGHT_NAME
+_wght_ | The degree of blackness of the glyphs, defined by the foundry. Common values are `bold` and `medium`. |
+| SLANT
+_slant_ | Common values are `r` for Roman or upright, and `i` and `o` for the slanted italic and oblique typefaces.
 
 Usually this needs to be specified.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">SETWIDTH_NAME  
-_sWdth_</td>
-
-<td>Values are set by the designer, examples are `normal`, `narrow` or `condensed` identifying the width.
+ |
+| SETWIDTH_NAME
+_sWdth_ | Values are set by the designer, examples are `normal`, `narrow` or `condensed` identifying the width.
 
 A value should be set, not wildcarded, when there are two or more possible values.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">ADD_STYLE  
-_adstyl_</td>
-
-<td>Often an empty field, but values may be supplied by the foundry.
+ |
+| ADD_STYLE
+_adstyl_ | Often an empty field, but values may be supplied by the foundry.
 
 In xfontsel, an empty field is chosen by selecting `(nil)` from the dropdown box. It's often safe to wildcard this field with `*`.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">PIXEL_SIZE  
-_pxlsz_</td>
-
-<td>The body size of a font for a particular POINT_SIZE and RESOLUTION_Y. Changes the height of a font independent of the point size for which the font was designed.
+ |
+| PIXEL_SIZE
+_pxlsz_ | The body size of a font for a particular POINT_SIZE and RESOLUTION_Y. Changes the height of a font independent of the point size for which the font was designed.
 
 A zero, `0`, or a `*` may be used for scalable fonts if you specify POINT_SIZE.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">POINT_SIZE  
-_ptSz_</td>
-
-<td>The body heighth for which the font was designed. Values are expressed as tenths of a point (one point is nominally one seventy-secondth of an inch).
+ |
+| POINT_SIZE
+_ptSz_ | The body heighth for which the font was designed. Values are expressed as tenths of a point (one point is nominally one seventy-secondth of an inch).
 
 See [Font sizes](#Font_Sizes).
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">RESOLUTION_X  
-_resx_</td>
-
-<td>The horizontal resolution as an integer-string for which the font was designed. The values are expressed as pixels or dpi.
+ |
+| RESOLUTION_X
+_resx_ | The horizontal resolution as an integer-string for which the font was designed. The values are expressed as pixels or dpi.
 
 For scalable fonts this may safely be set to zero or `*`, bitmap fonts usually use `75` or `100`.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">RESOLUTION_Y  
-_resy_</td>
-
-<td>The vertical dpi for which the font was designed.
+ |
+| RESOLUTION_Y
+_resy_ | The vertical dpi for which the font was designed.
 
 Similar to RESOLUTION_X, scalable fonts can have this value set to zero or `*`. For bitmaps, only one of RESOLUTION_X or RESOLUTION_Y needs to be identified. The other may be wildcarded.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">SPACING  
-_spc_</td>
-
-<td>`p`– For proportional fonts
+ |
+| SPACING
+_spc_ | `p`– For proportional fonts
 
 `m` – Monospace; all the glyphs have the same logical width.
 
 `c` – Character cell; each glyph occupies a "frame" and the frames all have equal width. This is typewriter spacing. Some older applications may leave glyph fragments when the display is refreshed if fonts with the `m` spacing are used. For these applications, try using a font with `c` spacing.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">AVERAGE_WIDTH  
-_avgWdth_</td>
-
-<td>Arithmetic mean of the widths of all glyphs. Zero is used for proportional fonts.
+ |
+| AVERAGE_WIDTH
+_avgWdth_ | Arithmetic mean of the widths of all glyphs. Zero is used for proportional fonts.
 
 It is safe to wildcard this value with *.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">CHARSET_REGISTRY  
-_rgstry_</td>
-
-<td>Always paired with the next field, this names the registration authority for the character encoding used. Examples are `iso10646` and `koi8`.
+ |
+| CHARSET_REGISTRY
+_rgstry_ | Always paired with the next field, this names the registration authority for the character encoding used. Examples are `iso10646` and `koi8`.
 
 It's always safe to choose an available registry that is compatible with the user's locale settings.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">CHARSET_ENCODING  
-_encdng_</td>
-
-<td>An identifier for the character set encoding.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
+| CHARSET_ENCODING
+_encdng_ | An identifier for the character set encoding. |
 
 ## Font Sizes
 
@@ -319,7 +210,3 @@ $ xset fp rehash
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=X_Logical_Font_Description&oldid=414624](https://wiki.archlinux.org/index.php?title=X_Logical_Font_Description&oldid=414624)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fonts](/index.php/Category:Fonts "Category:Fonts")

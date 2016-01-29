@@ -1,9 +1,5 @@
 # Openbox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -200,27 +196,27 @@ Several GUI applications are available to quickly and easily configure your Open
 
 *   **ObConf** — A GTK2 based configuration tool for the Openbox window manager.
 
-[http://openbox.org/wiki/ObConf:About](http://openbox.org/wiki/ObConf:About) || [obconf](https://www.archlinux.org/packages/?name=obconf)
+NaN
 
 *   **LXAppearance ObConf** — Plugin for LXAppearance to configure Openbox. Note that not all options to configure Openbox are available in this plugin, so you might want to install obconf anyway.
 
-[http://lxde.org](http://lxde.org) || [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf)
+NaN
 
 *   **LXInput** — LXDE keyboard and mouse configuration
 
-[http://lxde.org](http://lxde.org) || [lxinput](https://www.archlinux.org/packages/?name=lxinput)
+NaN
 
 *   **LXRandR** — LXDE monitor configuration.
 
-[http://wiki.lxde.org/en/LXRandR](http://wiki.lxde.org/en/LXRandR) || [lxrandr](https://www.archlinux.org/packages/?name=lxrandr)
+NaN
 
 *   **obkey** — Configure Openbox keyboard shortcuts
 
-[https://code.google.com/p/obkey/](https://code.google.com/p/obkey/) || [obkey](https://aur.archlinux.org/packages/obkey/)<sup><small>AUR</small></sup>
+NaN
 
 *   **ob-autostart** — A simple autostart application for Openbox.
 
-[http://pastebin.com/012YgXTk](http://pastebin.com/012YgXTk) || [ob-autostart](https://aur.archlinux.org/packages/ob-autostart/)<sup><small>AUR</small></sup>
+NaN
 
 Programs and applications relating to the configuration of Openbox's desktop menu are discussed in the [Menus](#Menus) section.
 
@@ -1110,13 +1106,3 @@ Some application windows (such as Firefox windows) may load behind the currently
 *   [An Openbox guide](http://urukrama.wordpress.com/openbox-guide/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Openbox&oldid=410461](https://wiki.archlinux.org/index.php?title=Openbox&oldid=410461)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

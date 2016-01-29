@@ -1,9 +1,5 @@
 # Docbook
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -85,11 +81,3 @@ cannot parse [http://docbook.sourceforge.net/release/xsl/current/manpages/docboo
 Then reinstall [docbook-xml](https://www.archlinux.org/packages/?name=docbook-xml) and [docbook-xsl](https://www.archlinux.org/packages/?name=docbook-xsl). If something has corrupted the catalog file, this will run `xmlcatalog` and rebuild `/etc/xml/catalog`, which may resolve these compile errors.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Docbook&oldid=374374](https://wiki.archlinux.org/index.php?title=Docbook&oldid=374374)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

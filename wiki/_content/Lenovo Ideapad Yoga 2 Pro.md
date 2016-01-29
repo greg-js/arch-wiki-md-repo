@@ -1,9 +1,5 @@
 # Lenovo Ideapad Yoga 2 Pro
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -12,105 +8,16 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** Missing templates, poorly organized (Discuss in [Talk:Lenovo Ideapad Yoga 2 Pro#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Ideapad_Yoga_2_Pro))
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working***</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchscreen</td>
-
-<td style="color:green">**Working**</td>
-
-<td>usbtouchscreen</td>
-
-</tr>
-
-<tr>
-
-<td>Accelerometer</td>
-
-<td style="color:red">**Not Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:blue">**Unknown**</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Graphics | **Working** | xf86-video-intel |
+| Wireless | **Working*** | iwlwifi |
+| Audio | **Working** | snd_hda_intel |
+| Touchscreen | **Working** | usbtouchscreen |
+| Accelerometer | **Not Working** |
+| Touchpad | **Working** | xf86-input-synaptics |
+| Camera | **Working** |
+| Card Reader | **Unknown** |
+| Bluetooth | **Working** |
 
 ## Contents
 
@@ -178,143 +85,19 @@ No keypad available at all.
 
 **Note:** BIOS has a setting to flip the behavior of the FN key.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Keys</th>
-
-<th>Function</th>
-
-<th>X sees</th>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F1`</td>
-
-<td>Audio mute/unmute</td>
-
-<td>XF86AudioMute</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F2`</td>
-
-<td>Audio volume down</td>
-
-<td>XF86AudioLowerVolume</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F3`</td>
-
-<td>Audio volume up</td>
-
-<td>XF86AudioRaiseVolume</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F4`</td>
-
-<td>Close application</td>
-
-<td>`Alt_L+F4`</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F5`</td>
-
-<td>Refresh page</td>
-
-<td>`F5`</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F6`</td>
-
-<td>Disable Touchpad</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F7`</td>
-
-<td>Airplane mode</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F8`</td>
-
-<td>Unknown</td>
-
-<td>`Alt_L+Tab`</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F9`</td>
-
-<td>Turn off LCD</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F10`</td>
-
-<td>Toggle display</td>
-
-<td>`Super+p`</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F11`</td>
-
-<td>Dim LCD backlight</td>
-
-<td>XF86MonBrightnessDown</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F12`</td>
-
-<td>Brighten LCD backlight</td>
-
-<td>XF86MonBrightnessUp</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Keys | Function | X sees |
+| `Fn+F1` | Audio mute/unmute | XF86AudioMute |
+| `Fn+F2` | Audio volume down | XF86AudioLowerVolume |
+| `Fn+F3` | Audio volume up | XF86AudioRaiseVolume |
+| `Fn+F4` | Close application | `Alt_L+F4` |
+| `Fn+F5` | Refresh page | `F5` |
+| `Fn+F6` | Disable Touchpad |  ? |
+| `Fn+F7` | Airplane mode |  ? |
+| `Fn+F8` | Unknown | `Alt_L+Tab` |
+| `Fn+F9` | Turn off LCD |  ? |
+| `Fn+F10` | Toggle display | `Super+p` |
+| `Fn+F11` | Dim LCD backlight | XF86MonBrightnessDown |
+| `Fn+F12` | Brighten LCD backlight | XF86MonBrightnessUp |
 
 ### Hardware keys on right side
 
@@ -391,7 +174,7 @@ esac
 
 The touchpad sends random input from time to time, especially when lid is closed. If you like your computer to keep running when the lid is closed, you may want to disable the touchpad with ACPI events:
 
-/etc/acpi/actions/lid.sh
+NaN
 
 ```
 #!/bin/bash
@@ -468,11 +251,3 @@ You can easily rotate screen with xrandr, however it does not rotate touchscreen
 *   an installation guide written by Ubuntu users: [[3]](http://askubuntu.com/questions/367963/ubuntu-on-lenovo-yoga-2-pro).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Yoga_2_Pro&oldid=414415](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Yoga_2_Pro&oldid=414415)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

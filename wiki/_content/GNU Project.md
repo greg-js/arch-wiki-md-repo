@@ -1,9 +1,5 @@
 # GNU Project
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
@@ -19,13 +15,7 @@ Related articles
 
 From [http://www.gnu.org/](http://www.gnu.org/)
 
-_The GNU Project was launched in 1984 to develop the GNU operating system, a complete Unix-like operating system which is free software—software which respects your freedom._
-
-_Unix-like operating systems are built from a software collection of applications, libraries, and developer tools—plus a program to allocate resources and talk to the hardware, known as a kernel. [...]_
-
-_The combination of GNU and Linux is the GNU/Linux operating system, now used by millions and sometimes incorrectly called simply “Linux”._
-
-_The name “GNU” is a recursive acronym for “GNU's Not Unix!”_
+NaN
 
 The aim of the GNU Project is to produce a totally free operating system. While the GNU kernel has not reached a stable version, the project has resulted in the creation of many tools that power most Unix-like operating systems. [Arch Linux](/index.php/Arch_Linux "Arch Linux") is such a system, using GNU software like the [GRUB](/index.php/GRUB "GRUB") bootloader, [Bash](/index.php/Bash "Bash") shell, and numerous other utilities and libraries.
 
@@ -78,11 +68,11 @@ Among **base-devel** are several members of the [GNU toolchain](https://en.wikip
 
 [GNU Build System](https://en.wikipedia.org/wiki/GNU_build_system "wikipedia:GNU build system") (autotools):
 
-**automatically configure source code:** [autoconf](https://www.archlinux.org/packages/?name=autoconf)
+NaN
 
-**automatically create Makefiles:** [automake](https://www.archlinux.org/packages/?name=automake)
+NaN
 
-**library support script:** [libtool](https://www.archlinux.org/packages/?name=libtool)
+NaN
 
 ## Other Tools
 
@@ -103,12 +93,3 @@ Many other optional GNU tools are available in the [official repositories](/inde
 For a list of all current GNU projects, see [All GNU Packages](http://www.gnu.org/software/software.html#allgnupkgs)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Project&oldid=411293](https://wiki.archlinux.org/index.php?title=GNU_Project&oldid=411293)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

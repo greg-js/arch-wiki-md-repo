@@ -1,9 +1,5 @@
 # msmtp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [mutt](/index.php/Mutt "Mutt")
@@ -305,13 +301,3 @@ auth plain
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Msmtp&oldid=416206](https://wiki.archlinux.org/index.php?title=Msmtp&oldid=416206)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # init Rosetta
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -22,188 +18,23 @@ You can omit the `.service` and `.target` extensions, especially if temporarily 
 
 ## SysVinit
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>systemd</th>
-
-<th>SysVinit</th>
-
-<th>OpenRC</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`systemctl list-units`</td>
-
-<td>`rc.d list`</td>
-
-<td>`rc-status`</td>
-
-<td>List running services status</td>
-
-</tr>
-
-<tr>
-
-<td>`systemctl --failed`</td>
-
-<td>`rc-status --crashed`</td>
-
-<td>Check failed services</td>
-
-</tr>
-
-<tr>
-
-<td>`systemctl --all`</td>
-
-<td>`rc-update -v show`</td>
-
-<td>Display all available services.</td>
-
-</tr>
-
-<tr>
-
-<td>`systemctl (start, stop, restart, status) daemon.service`</td>
-
-<td>`rc.d (start, stop, restart) daemon`</td>
-
-<td>`rc-service daemon (start, stop, restart, status)`</td>
-
-<td>Change service state.</td>
-
-</tr>
-
-<tr>
-
-<td>`systemctl (enable, disable) daemon.service`</td>
-
-<td>`chkconfig daemon (on, off)`</td>
-
-<td>`rc-update (add, del) daemon`</td>
-
-<td>Turn service on or off.</td>
-
-</tr>
-
-<tr>
-
-<td>`systemctl daemon-reload`</td>
-
-<td>`chkconfig daemon --add`</td>
-
-<td>Create or modify configuration.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| systemd | SysVinit | OpenRC | Description |
+| `systemctl list-units` | `rc.d list` | `rc-status` | List running services status |
+| `systemctl --failed` | `rc-status --crashed` | Check failed services |
+| `systemctl --all` | `rc-update -v show` | Display all available services. |
+| `systemctl (start, stop, restart, status) daemon.service` | `rc.d (start, stop, restart) daemon` | `rc-service daemon (start, stop, restart, status)` | Change service state. |
+| `systemctl (enable, disable) daemon.service` | `chkconfig daemon (on, off)` | `rc-update (add, del) daemon` | Turn service on or off. |
+| `systemctl daemon-reload` | `chkconfig daemon --add` | Create or modify configuration. |
 
 ### Targets table
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>systemd Target</th>
-
-<th>SysV Runlevel</th>
-
-<th>Notes</th>
-
-</tr>
-
-<tr>
-
-<td>runlevel0.target, poweroff.target</td>
-
-<td>0</td>
-
-<td>Shut down the system.</td>
-
-</tr>
-
-<tr>
-
-<td>runlevel1.target, rescue.target</td>
-
-<td>1, s, single</td>
-
-<td>Single user mode.</td>
-
-</tr>
-
-<tr>
-
-<td>runlevel2.target, runlevel4.target, multi-user.target</td>
-
-<td>2, 4</td>
-
-<td>User-defined/Site-specific runlevels. By default, identical to 3.</td>
-
-</tr>
-
-<tr>
-
-<td>runlevel3.target, multi-user.target</td>
-
-<td>3</td>
-
-<td>Multi-user, non-graphical. Users can usually login via multiple consoles or via the network.</td>
-
-</tr>
-
-<tr>
-
-<td>runlevel5.target, graphical.target</td>
-
-<td>5</td>
-
-<td>Multi-user, graphical. Usually has all the services of runlevel 3 plus a graphical login.</td>
-
-</tr>
-
-<tr>
-
-<td>runlevel6.target, reboot.target</td>
-
-<td>6</td>
-
-<td>Reboot</td>
-
-</tr>
-
-<tr>
-
-<td>emergency.target</td>
-
-<td>emergency</td>
-
-<td>Emergency shell</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| systemd Target | SysV Runlevel | Notes |
+| runlevel0.target, poweroff.target | 0 | Shut down the system. |
+| runlevel1.target, rescue.target | 1, s, single | Single user mode. |
+| runlevel2.target, runlevel4.target, multi-user.target | 2, 4 | User-defined/Site-specific runlevels. By default, identical to 3. |
+| runlevel3.target, multi-user.target | 3 | Multi-user, non-graphical. Users can usually login via multiple consoles or via the network. |
+| runlevel5.target, graphical.target | 5 | Multi-user, graphical. Usually has all the services of runlevel 3 plus a graphical login. |
+| runlevel6.target, reboot.target | 6 | Reboot |
+| emergency.target | emergency | Emergency shell |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Init_Rosetta&oldid=362994](https://wiki.archlinux.org/index.php?title=Init_Rosetta&oldid=362994)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

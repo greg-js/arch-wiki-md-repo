@@ -1,16 +1,12 @@
 # Scala
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Java](/index.php/Java "Java")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Scala_(programming_language)):
 
-_Scala is an object-functional programming and scripting language for general software applications. Scala has full support for functional programming (including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, etc.) and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than most general purpose programming languages. Many of Scala's design decisions were inspired by criticism over the shortcomings of Java._
+NaN
 
 ## Installation
 
@@ -50,7 +46,3 @@ Many different [IDEs](/index.php/IDE#Integrated_development_environments "IDE") 
 *   [Learn X=Scala in Y minutes](http://learnxinyminutes.com/docs/scala/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Scala&oldid=413155](https://wiki.archlinux.org/index.php?title=Scala&oldid=413155)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

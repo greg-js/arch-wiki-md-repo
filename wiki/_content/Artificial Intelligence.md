@@ -1,9 +1,5 @@
 # Artificial Intelligence
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -28,13 +24,3 @@ There are a few 'Artificial Intelligence' demos and libraries in the AUR.
 *   [python-orange](https://aur.archlinux.org/packages/python-orange/)<sup><small>AUR</small></sup>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Artificial_Intelligence&oldid=391935](https://wiki.archlinux.org/index.php?title=Artificial_Intelligence&oldid=391935)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

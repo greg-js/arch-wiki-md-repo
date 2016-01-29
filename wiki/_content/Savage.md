@@ -1,9 +1,5 @@
 # Savage
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -80,8 +76,3 @@ This decade-old chipset has little support and is likely better off without acce
 Unfortunately, there is no framebuffer driver for the Savage chipset. Your best bet is to set the framebuffer video mode by the vga kernel parameter. For example, put vga = 0x314 at the end of your parameters for an 800x600 framebuffer, or vga = 0x317 for a 1024x768 framebuffer.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Savage&oldid=387979](https://wiki.archlinux.org/index.php?title=Savage&oldid=387979)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")

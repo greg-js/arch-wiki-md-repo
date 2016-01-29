@@ -1,9 +1,5 @@
 # Acer Aspire 3624 WXMi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
@@ -51,11 +47,3 @@ alias xinit='xinit -- -dpi 81'
 So that when issuing the xinit command, it will always use that DPI resolution.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_3624_WXMi&oldid=415198](https://wiki.archlinux.org/index.php?title=Acer_Aspire_3624_WXMi&oldid=415198)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")

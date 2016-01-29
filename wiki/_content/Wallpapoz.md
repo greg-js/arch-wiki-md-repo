@@ -1,9 +1,5 @@
 # Wallpapoz
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Wallpapoz is a tool that provides dynamic wallpapers for the [GNOME](/index.php/GNOME "GNOME") and [Xfce](/index.php/Xfce "Xfce") desktops. Moreover different wallpapers can be used for different desktops. This article will explain how to install, configure and use Wallpapoz.
 
 ## Contents
@@ -107,11 +103,3 @@ The script takes the first line from the old version of the xml file to keep the
 *   [Project website](https://vajrasky.wordpress.com/wallpapoz/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wallpapoz&oldid=392801](https://wiki.archlinux.org/index.php?title=Wallpapoz&oldid=392801)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

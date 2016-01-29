@@ -1,9 +1,5 @@
 # dnsmasq
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **dnsmasq** provides services as a DNS cacher and a DHCP server. As a Domain Name Server (DNS) it can cache DNS queries to improve connection speeds to previously visited sites, and as a DHCP server [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) can be used to provide internal IP addresses and routes to computers on a LAN. Either or both of these services can be implemented. dnsmasq is considered to be lightweight and easy to configure; it is designed for personal computer use or for use on a network with less than 50 computers. It also comes with a [PXE](/index.php/PXE "PXE") server.
 
 ## Contents
@@ -304,11 +300,3 @@ address=/#/1.2.3.4
 *   [Caching Nameserver using dnsmasq, and a few other tips and tricks.](http://www.g-loaded.eu/2010/09/18/caching-nameserver-using-dnsmasq/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=415694](https://wiki.archlinux.org/index.php?title=Dnsmasq&oldid=415694)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # systemd-boot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -296,11 +292,3 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=416510](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=416510)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

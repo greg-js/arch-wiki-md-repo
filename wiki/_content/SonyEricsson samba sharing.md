@@ -1,9 +1,5 @@
 # SonyEricsson samba sharing
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 You can have acess to Sony Ericsson phones and phone cards via samba sharing. It works even with old firmware and you have still full functional phone, not like USB mass storage mode.
 
 ## Contents
@@ -69,7 +65,3 @@ enter name and password you choosed in phone
 [Czech-language wiki](http://www.abclinuxu.cz/poradna/hardware/show/250631)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SonyEricsson_samba_sharing&oldid=250561](https://wiki.archlinux.org/index.php?title=SonyEricsson_samba_sharing&oldid=250561)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")

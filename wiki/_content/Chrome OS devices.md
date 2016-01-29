@@ -1,9 +1,5 @@
 # Chrome OS devices
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chrome OS devices/Chromebook](/index.php/Chrome_OS_devices/Chromebook "Chrome OS devices/Chromebook")
@@ -624,13 +620,3 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=417398](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=417398)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

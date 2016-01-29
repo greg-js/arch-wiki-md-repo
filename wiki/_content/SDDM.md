@@ -1,9 +1,5 @@
 # SDDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -11,7 +7,7 @@ Related articles
 
 The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop. From Wikipedia:
 
-_Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11\. SDDM was written from scratch in C++11 and supports theming via QML. It is the successor of the KDE Display Manager and is used in conjunction with KDE Frameworks 5, KDE Plasma 5 and KDE Applications 5._
+NaN
 
 ## Contents
 
@@ -171,8 +167,3 @@ MinimumUid=500 #My UID is 501
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SDDM&oldid=416512](https://wiki.archlinux.org/index.php?title=SDDM&oldid=416512)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [KDE](/index.php/Category:KDE "Category:KDE")
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

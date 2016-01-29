@@ -1,9 +1,5 @@
 # ps2pdf
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -41,7 +37,3 @@ ps2pdf -sPAPERSIZE=a4 -dOptimize=true -dEmbedAllFonts=true YourPSFile.ps
 *   you cannot choose the paper orientation in ps2pdf. If your input PS file is healthy, it already contains the orientation information. If you are trying to use an Encapsulated PS file, you will have problems, if it does not fit in the -sPAPERSIZE you specified, because EPS files usually do not contain paper orientation informaiton. a workaround is creating a new paper in ghostscript settings (call it e.g. "slide") and use it as -sPAPERSIZE=slide
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ps2pdf&oldid=305709](https://wiki.archlinux.org/index.php?title=Ps2pdf&oldid=305709)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")

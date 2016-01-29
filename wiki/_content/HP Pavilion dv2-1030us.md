@@ -1,9 +1,5 @@
 # HP Pavilion dv2-1030us
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 With a bit of work, nearly all features can be made to work correctly. HDMI out, and the webcam have not been tested yet, so their setup and operation is not covered in this article.
 
 ## Contents
@@ -158,7 +154,3 @@ After changing this, just restart your system and wireless should be working aga
 Instead of radeonhd drivers you can use the proprietary catalyst drivers for better performance. The catalyst drivers are available in the [AUR](/index.php/AUR "AUR") and setup is exactly as described on the [ATI](/index.php/ATI "ATI") page. Installing an [AUR Helper](/index.php/AUR_Helper "AUR Helper") is recommended if you intend to maintain such a system. It will make the process of building packages from the AUR much easier.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv2-1030us&oldid=196634](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv2-1030us&oldid=196634)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

@@ -1,9 +1,5 @@
 # AHCI
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **AHCI**, abbreviation for _a_dvanced _h_ost _c_ontroller _i_nterface, is the native work mode for SATA drives. AHCI has two main benefits: support for hot pluggable SATA drives (mimicking USB drives' behavior) and NCQ, or _n_ative _c_ommand _q_ueuing. It has been present in the Linux kernel since version 2.6.19 and will be loaded automatically in current Arch kernel.
 
 ## Configure from BIOS
@@ -59,7 +55,3 @@ ata2.00: 625142448 sectors, multi 16: LBA48 NCQ (depth 31/32)
 *   [NCQ on Wikipedia](http://en.wikipedia.org/wiki/NCQ)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AHCI&oldid=408378](https://wiki.archlinux.org/index.php?title=AHCI&oldid=408378)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")

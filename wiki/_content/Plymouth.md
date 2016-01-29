@@ -1,9 +1,5 @@
 # Plymouth
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) is a project from Fedora providing a flicker-free graphical boot process. It relies on [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) to set the native resolution of the display as early as possible, then provides an eye-candy splash screen leading all the way up to the login manager.
 
 ## Contents
@@ -193,12 +189,3 @@ After installing and selecting your theme, you should rebuild the initrd image t
 *   [Related forum thread](https://bbs.archlinux.org/viewtopic.php?id=81406)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Plymouth&oldid=417560](https://wiki.archlinux.org/index.php?title=Plymouth&oldid=417560)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

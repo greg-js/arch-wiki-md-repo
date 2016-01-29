@@ -1,9 +1,5 @@
 # Gmrun
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Gmrun](http://sourceforge.net/projects/gmrun) (Gnome Completion-Run) is an lightweight application launcher similar to [GNOME](/index.php/GNOME "GNOME") Run, [Application Finder](http://docs.xfce.org/xfce/xfce4-appfinder/start), [KRunner](http://userbase.kde.org/Plasma/Krunner), etc.
 
 ## Contents
@@ -97,45 +93,7 @@ EXT:pdf = epdfview %s
 
 ```
 
-ShowDotFiles (1 or 0)
-
-whether to show dotfiles (e.g. `.gmrunrc`) in the auto-complete menu.
-
-TabTimeout (1 or 0)
-
-Whether to show the tab complete menu automatically when something is inputted.
-
-Terminal
-
-The command to run when `Ctrl+Enter` is pressed without other input.
-
-TermExec
-
-The command to run when running a specific command in the terminal (e.g. `ls ~`).
-
-URL_http
-
-The command to run when a web address is entered.
-
-URL_mailto
-
-The command to run when an email address is entered.
-
-EXT
-
-extension: The application to open files with a certain extension.
-
-Top and Left
-
-The placement of the Gmrun window (in pixels from the respective edge).
-
-Width
-
-The width in pixels of the window.
-
-History
-
-Length of command history that is stored.
+NaN
 
 ### Adding Custom Shortcuts
 
@@ -158,7 +116,3 @@ g:Arch
 You can use your [desktop environment](/index.php/Desktop_environment "Desktop environment")'s or [window manager](/index.php/Window_manager "Window manager")'s keybinding settings to set one for Gmrun.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gmrun&oldid=393586](https://wiki.archlinux.org/index.php?title=Gmrun&oldid=393586)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")

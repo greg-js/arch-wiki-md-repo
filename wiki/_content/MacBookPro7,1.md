@@ -1,9 +1,5 @@
 # MacBookPro7,1
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [MacBook](/index.php/MacBook "MacBook")
@@ -282,7 +278,7 @@ blacklist brcm80211
 
 ```
 
-<del>Although using PIO should be much slower than using [DMA](http://en.wikipedia.org/wiki/Direct_memory_access), I haven't noticed any performance drop.</del> Further testing showed repetitive occurrences of noticable performance drops. Mostly expressed as rapid decrease of transfer speed, sometimes even dropped connections. It also seems that b43 driver has issues operating at 5Ghz.
+~~Although using PIO should be much slower than using [DMA](http://en.wikipedia.org/wiki/Direct_memory_access), I haven't noticed any performance drop.~~ Further testing showed repetitive occurrences of noticable performance drops. Mostly expressed as rapid decrease of transfer speed, sometimes even dropped connections. It also seems that b43 driver has issues operating at 5Ghz.
 
 Some later kernels are giving me more success (without PIO), but still some wifi drops have occurred.
 
@@ -303,11 +299,3 @@ Running the drivers in **efi-mode** requires setting some PCI registers before t
 **To be continued..**
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro7,1&oldid=376908](https://wiki.archlinux.org/index.php?title=MacBookPro7,1&oldid=376908)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

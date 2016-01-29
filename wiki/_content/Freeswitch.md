@@ -1,9 +1,5 @@
 # Freeswitch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [FreeSWITCH](http://www.freeswitch.org) telephony engine is a powerful system enabling voice, video, presence, chat, and other media types via a variety of protocols.
 
 ## Contents
@@ -56,8 +52,3 @@ You can dial into the FreeSWITCH public voice conference, for instance, by diali
 FreeSWITCH support is available in #freeswitch on Freenode
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Freeswitch&oldid=389796](https://wiki.archlinux.org/index.php?title=Freeswitch&oldid=389796)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")

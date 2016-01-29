@@ -1,146 +1,19 @@
 # HP Envy 14
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table style="float:right; border: 1px solid #000;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>AMD</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-radeon</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>iwlagn</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td style="color:orange">**Partially Working**</td>
-
-<td>xhci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>USB 2.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ehci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>eSATA</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend to RAM</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel |
+| AMD | **Working** | xf86-video-radeon |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | iwlagn |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** |
+| Camera | **Working** | uvcvideo |
+| USB 3.0 | **Partially Working** | xhci-hcd |
+| USB 2.0 | **Working** | ehci-hcd |
+| eSATA | **Working** |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
+| Suspend to RAM | **Working** |
 
 ## Contents
 
@@ -231,7 +104,3 @@ Works out of the box.
 Works out of the box, including keyboard back light activation (shift-fn-f5).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Envy_14&oldid=384051](https://wiki.archlinux.org/index.php?title=HP_Envy_14&oldid=384051)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

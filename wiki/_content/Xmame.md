@@ -1,9 +1,5 @@
 # Xmame
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Xmame](http://freecode.com/projects/xmame) is an arcade machine emulator in Linux. With proper ROMs, Xmame starts out with a series of emulators and over 5000 games. Unfortunately, arcade ROM images for individual games are a legal gray area for PC users. You are warned, if you are to download such ROMs.
 
 ## Installation & Configuration
@@ -38,12 +34,3 @@ $ xmame game.zip
 Press TAB to customize the input keys after the game starts. Happy emulating!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmame&oldid=392859](https://wiki.archlinux.org/index.php?title=Xmame&oldid=392859)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

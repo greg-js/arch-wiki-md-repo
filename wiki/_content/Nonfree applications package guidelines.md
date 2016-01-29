@@ -1,9 +1,5 @@
 # Nonfree applications package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -43,25 +39,15 @@ There are multiple reasons for packaging even non-packageable software:
 
 *   Simplification of installation/removal process
 
-This is applicable even to the simplest of apps, which consist of a single script to be installed into `/usr/bin`. Instead of issuing:
-
- `$ chmod +x _filename_` 
-
- `# cp _filename_ /usr/bin/` 
-
-you can type just
-
- `# makepkg -i` 
-
-Most non-free applications are obviously much more complicated, but the burden of downloading an archive/installer from a homepage (often full of advertising), unpacking/decrypting it, hand-writing stereotypical launcher scripts and doing other similar tasks can be effectively lightened by a well-written packaging script.
+NaN
 
 *   Utilizing pacman capabilities
 
-The ability to track state, perform automatic updates of any installed piece of software, determine ownership of every single file, and store compressed packages in a well-organized cache is what makes GNU/Linux distributions so powerful.
+NaN
 
 *   Sharing code and knowledge
 
-It is simpler to apply tweaks, fix bugs and seek/provide help in a single public place like AUR versus submitting patches to proprietary developers who may have ceased support or asking vague questions on general purpose forums.
+NaN
 
 ## Common rules
 
@@ -96,23 +82,9 @@ For most commercial games there is no way to (legally) download game files, whic
 
 *   **There is only one way to obtain files**
 
-*   Software is distributed in archive/installer
+NaN
 
-Add the required file to `sources` array:
-
- `sources=(... "_originalname_::**file://**_originalname_")` 
-
-This way the link to file in AUR web interface will look different from names of files included in source tarball.
-
-Add following comment on package page:
-
- `Need archive/installer to work.` 
-
-and explain the details in PKGBUILD source.
-
-*   Software is distributed on compact-disk
-
-Add installer script and `.install` file to package contents, like in package [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tsukihime-en)]</sup>.
+NaN
 
 *   **There are several ways to obtain files**
 
@@ -164,12 +136,3 @@ In order to determine exact type of file run `file _file_of_unknown_type_`.
 Proprietary software often have no separate icon files, so there is nothing to use in [.desktop](/index.php/.desktop ".desktop") file creation. Happily `.ico` files can be easily extracted from executables with programs from [icoutils](https://www.archlinux.org/packages/?name=icoutils) package. You can even do it on fly during `build` phase (example can be found in [sugarsdelight](https://aur.archlinux.org/packages/sugarsdelight/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sugarsdelight)]</sup>).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&oldid=392501](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&oldid=392501)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

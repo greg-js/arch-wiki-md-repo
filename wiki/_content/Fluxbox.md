@@ -1,9 +1,5 @@
 # Fluxbox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Fluxbox is yet another window manager for X11\. It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox is very light on resources and fast, yet provides interesting window management tools such as tabbing and grouping. Its configuration files are easy to understand and edit and there are hundreds of Fluxbox "styles" to make your desktop look great. Arch Linux with Fluxbox can turn an old Pentium 800 box with just 256MB of RAM into a very usable computer.
 
 ## Contents
@@ -365,7 +361,3 @@ To make a help function in your menu, just add in `~/.fluxbox/menu`:
 *   [Arch Linux Fluxbox screenshots](https://bbs.archlinux.org/viewtopic.php?id=90260)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fluxbox&oldid=402698](https://wiki.archlinux.org/index.php?title=Fluxbox&oldid=402698)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

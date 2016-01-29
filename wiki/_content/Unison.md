@@ -1,9 +1,5 @@
 # Unison
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Unison** is a bidirectional file synchronization tool that runs on Unix-like operating systems (including Linux, Mac OS X, and Solaris) and Windows. It allows two replicas of a collection of files and directories to be stored on different hosts (or different disks on the same host), modified separately, and then brought up to date by propagating the changes in each replica to the other. It also unrestricted in terms of which system can be the host.
 
 ## Contents
@@ -184,11 +180,3 @@ When syncing configuration files which would vary (e.g., due to endemic applicat
 *   _[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)_ on TWiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Unison&oldid=412198](https://wiki.archlinux.org/index.php?title=Unison&oldid=412198)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

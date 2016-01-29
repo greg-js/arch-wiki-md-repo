@@ -1,9 +1,5 @@
 # HP Pavilion DV7-4263cl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Arch Linux is currently running successfully on this laptop. This page is a major work in progress
 
 ## Contents
@@ -96,7 +92,3 @@ The touchpad is known as a clickpad. Usage of clickpads are significantly differ
 *   double tap in upper left corner to disable - doesn't work
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_DV7-4263cl&oldid=196644](https://wiki.archlinux.org/index.php?title=HP_Pavilion_DV7-4263cl&oldid=196644)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

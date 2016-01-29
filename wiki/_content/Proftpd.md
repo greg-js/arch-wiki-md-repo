@@ -1,9 +1,5 @@
 # Proftpd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -36,11 +32,3 @@ To head off a common problem, for anonymous access to work with /bin/false as th
 *   [BLFS: ProFTPD](http://www.linuxfromscratch.org/blfs/view/7.6/server/proftpd.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Proftpd&oldid=414869](https://wiki.archlinux.org/index.php?title=Proftpd&oldid=414869)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

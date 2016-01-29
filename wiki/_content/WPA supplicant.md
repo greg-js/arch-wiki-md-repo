@@ -1,9 +1,5 @@
 # WPA supplicant
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -380,8 +376,3 @@ In some instances it was found that storing the passphrase cleartext in the `psk
 *   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=415066](https://wiki.archlinux.org/index.php?title=WPA_supplicant&oldid=415066)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")

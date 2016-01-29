@@ -1,9 +1,5 @@
 # rTorrent
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [rTorrent](https://rakshasa.github.io/rtorrent/) is a quick and efficient BitTorrent client that uses, and is in development alongside, the libTorrent (not to be confused with [libtorrent-rasterbar](https://www.archlinux.org/packages/?name=libtorrent-rasterbar)) library. It is written in C++ and uses the [ncurses](https://en.wikipedia.org/wiki/ncurses "wikipedia:ncurses") programming library, which means it uses a text user interface. When combined with a terminal multiplexer (e.g. [GNU Screen](/index.php/GNU_Screen "GNU Screen") or [Tmux](/index.php/Tmux "Tmux")) and [Secure Shell](/index.php/Secure_Shell "Secure Shell"), it becomes a convenient remote [BitTorrent client](https://en.wikipedia.org/wiki/BitTorrent_(protocol)#Operation "wikipedia:BitTorrent (protocol)").
 
 ## Contents
@@ -156,117 +152,19 @@ rTorrent relies exclusively on keyboard shortcuts for user input. A quick refere
 
 **Note:** Striking `Ctrl-q` twice in quick succession will make rTorrent shutdown without waiting to send a stop announce to the connected trackers.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th width="75">Cmd</th>
-
-<th>Action</th>
-
-</tr>
-
-<tr>
-
-<td>Ctrl-q</td>
-
-<td>Quit application</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl-s</td>
-
-<td>Start download. Runs hash first unless already done.</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl-d</td>
-
-<td>Stop an active download or remove a stopped download</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl-k</td>
-
-<td>Stop and close the files of an active download.</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl-r</td>
-
-<td>Initiate hash check of torrent. Starts downloading if file is not available.</td>
-
-</tr>
-
-<tr>
-
-<td>Left</td>
-
-<td>Returns to the previous screen</td>
-
-</tr>
-
-<tr>
-
-<td>Right</td>
-
-<td>Goes to the next screen</td>
-
-</tr>
-
-<tr>
-
-<td>Backspace/Return</td>
-
-<td>Adds the specified *.torrent</td>
-
-</tr>
-
-<tr>
-
-<td>a|s|d</td>
-
-<td>Increase global upload throttle about 1|5|50 KB/s</td>
-
-</tr>
-
-<tr>
-
-<td>A|S|D</td>
-
-<td>Increase global download throttle about 1|5|50 KB/s</td>
-
-</tr>
-
-<tr>
-
-<td>z|x|c</td>
-
-<td>Decrease global upload throttle about 1|5|50 KB/s</td>
-
-</tr>
-
-<tr>
-
-<td>Z|X|C</td>
-
-<td>Decrease global download throttle about 1|5|50 KB/s</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Cmd | Action |
+| Ctrl-q | Quit application |
+| Ctrl-s | Start download. Runs hash first unless already done. |
+| Ctrl-d | Stop an active download or remove a stopped download |
+| Ctrl-k | Stop and close the files of an active download. |
+| Ctrl-r | Initiate hash check of torrent. Starts downloading if file is not available. |
+| Left | Returns to the previous screen |
+| Right | Goes to the next screen |
+| Backspace/Return | Adds the specified *.torrent |
+| a|s|d | Increase global upload throttle about 1|5|50 KB/s |
+| A|S|D | Increase global download throttle about 1|5|50 KB/s |
+| z|x|c | Decrease global upload throttle about 1|5|50 KB/s |
+| Z|X|C | Decrease global download throttle about 1|5|50 KB/s |
 
 ### Redundant mapping
 
@@ -908,12 +806,3 @@ Deletes all torrents older than 48 hours:
 *   2009-03-11 - Arch Linux - [HOWTO: rTorrent stats in Conky](https://bbs.archlinux.org/viewtopic.php?id=67304)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RTorrent&oldid=411243](https://wiki.archlinux.org/index.php?title=RTorrent&oldid=411243)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

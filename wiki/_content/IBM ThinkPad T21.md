@@ -1,9 +1,5 @@
 # IBM ThinkPad T21
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Works with no known issues. Tested on 2008.03 and 2008.06\.
 
 ## Contents
@@ -186,11 +182,3 @@ EndSection
 *   [Thinkwiki](http://www.thinkwiki.org/wiki/Category:T21)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T21&oldid=383141](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T21&oldid=383141)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

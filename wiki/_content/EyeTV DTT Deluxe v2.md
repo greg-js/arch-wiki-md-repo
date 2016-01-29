@@ -1,9 +1,5 @@
 # EyeTV DTT Deluxe v2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 There is not much information about the EyeTV DTT Deluxe v2 on the web so here we go.
 
 ## Contents
@@ -69,7 +65,3 @@ vlc channels.conf
 [http://www.kernellabs.com/blog/?p=1378](http://www.kernellabs.com/blog/?p=1378)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=EyeTV_DTT_Deluxe_v2&oldid=389744](https://wiki.archlinux.org/index.php?title=EyeTV_DTT_Deluxe_v2&oldid=389744)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

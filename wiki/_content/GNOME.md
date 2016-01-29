@@ -1,9 +1,5 @@
 # GNOME
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -129,23 +125,23 @@ These packages are not in the above mentioned groups:
 
 *   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — A simple user interface to access [libvirt](/index.php/Libvirt "Libvirt") virtual machines.
 
-[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
+NaN
 
 *   **GNOME Initial Setup** — A simple, easy, and safe way to prepare a new system.
 
-[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
+NaN
 
 *   **GNOME PackageKit** — Collection of graphical tools for PackageKit to be used in the GNOME desktop.
 
-[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+NaN
 
 *   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — A C/C++ debugger.
 
-[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
+NaN
 
 *   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — Lets you install and update applications and system extensions.
 
-[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+NaN
 
 ## GNOME Sessions
 
@@ -212,85 +208,15 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 
 **Tip:** Searching for the legacy name of an application in the Shell search bar will successfully return the application in question. For instance, searching for _nautilus_ will return _Files_.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Current</th>
-
-<th>Legacy</th>
-
-</tr>
-
-<tr>
-
-<td>[Files](/index.php/Files "Files")</td>
-
-<td>Nautilus</td>
-
-</tr>
-
-<tr>
-
-<td>[Web](/index.php/GNOME_Web "GNOME Web")</td>
-
-<td>Epiphany</td>
-
-</tr>
-
-<tr>
-
-<td>Videos</td>
-
-<td>Totem</td>
-
-</tr>
-
-<tr>
-
-<td>Main Menu</td>
-
-<td>Alacarte</td>
-
-</tr>
-
-<tr>
-
-<td>Document Viewer</td>
-
-<td>Evince</td>
-
-</tr>
-
-<tr>
-
-<td>Disk Usage Analyser</td>
-
-<td>Baobab</td>
-
-</tr>
-
-<tr>
-
-<td>Image Viewer</td>
-
-<td>EoG (Eye of GNOME)</td>
-
-</tr>
-
-<tr>
-
-<td>[Passwords and Keys](/index.php/GNOME_Keyring "GNOME Keyring")</td>
-
-<td>Seahorse</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Current | Legacy |
+| [Files](/index.php/Files "Files") | Nautilus |
+| [Web](/index.php/GNOME_Web "GNOME Web") | Epiphany |
+| Videos | Totem |
+| Main Menu | Alacarte |
+| Document Viewer | Evince |
+| Disk Usage Analyser | Baobab |
+| Image Viewer | EoG (Eye of GNOME) |
+| [Passwords and Keys](/index.php/GNOME_Keyring "GNOME Keyring") | Seahorse |
 
 ## Configuration
 
@@ -672,13 +598,11 @@ GNOME provides a disk utility to manipulate storage drive settings. These are so
 
 *   **Enable write cache** is a feature that most hard drives provide. Data is cached and allocated at chosen times to improve system performance. Not recommended unless the computer has a backup battery pack or is a laptop as data would be lost on power failure.
 
-_Settings_ > _Drive Settings_ > _Write Cache_ > **On**
+NaN
 
 *   **Automatic Mount Options** can mount drives and partitions that are GPT based - will use default, recommended options.
 
-**Warning:** This setting erases related [fstab](/index.php/Fstab "Fstab") entries
-
-_Partition Settings_ > _Edit Mount Options_ > _Automatic Mount Options_ > **On**
+NaN
 
 ### Hiding applications from the menu
 
@@ -844,15 +768,15 @@ Alternatively, a number of tools are available to automate the process:
 
 *   **mkwlppr** — This script creates XML files that can act as dynamic wallpapers for GNOME by referring to multiple wallpapers.
 
-[http://pastebin.com/019G2rCy](http://pastebin.com/019G2rCy) || see [mkwlppr](http://pastebin.com/019G2rCy)
+NaN
 
 *   **[Wallpapoz](/index.php/Wallpapoz "Wallpapoz")** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
 
-[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wallpapoz)]</sup>
+NaN
 
 *   **CreBS** — A Python/GTK application used to create and set desktop wallpaper slideshows for GNOME.
 
-[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/crebs)]</sup>
+NaN
 
 For setting the XML file as the default background, see [#Lock screen and background](#Lock_screen_and_background).
 
@@ -956,29 +880,8 @@ Locate the folder where your extensions are installed. It might be `~/.local/sha
 
 Edit each occurrence of `metadata.json` which appears in each extension sub-folder.
 
-<table border="0">
-
-<tbody>
-
-<tr>
-
-<td>Insert:</td>
-
-<td>`"shell-version": ["3.x"]`</td>
-
-</tr>
-
-<tr>
-
-<td>Instead of (for example):</td>
-
-<td>`"shell-version": ["3.4"]`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Insert: | `"shell-version": ["3.x"]` |
+| Instead of (for example): | `"shell-version": ["3.4"]` |
 
 `"3.x"` indicates the extension works with every shell version. If it breaks, you will know to change it back.
 
@@ -1041,15 +944,15 @@ Maximizing windows may cause artifacts as of GNOME 3.12.0 - see the following [f
 
 ### Tear-free video with Intel HD Graphics
 
-DRI3
+NaN
 
 According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. [Enable](/index.php/Intel_Graphics#Direct_Rendering_Infrastructure_3_.28DRI3.29 "Intel Graphics") it in the Xorg driver. You can change `AccelMethod` to your preference in the configuration file created, but the line must be included when the file is created; otherwise, `gnome-session` will crash upon login in a non-Wayland session.
 
-Intel TearFree
+NaN
 
 Enabling the [Xorg Intel TearFree option](/index.php/Intel_Graphics#Tear-free_video "Intel Graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts makes it redundant with the use of a compositor (it increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)).
 
-Mutter tweaks
+NaN
 
 **Note:** This workaround has been [reported](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c0) to have side effects and may not fix tearing in all cases.
 
@@ -1116,12 +1019,3 @@ The dash is the "toolbar" that appears, by default, [on the left](https://en.wik
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME&oldid=412355](https://wiki.archlinux.org/index.php?title=GNOME&oldid=412355)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Getting involved
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 In evolutionary biology, [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) "wikipedia:Co-operation (evolution)") describes interactions where an individual pays a small cost to yield a larger benefit to one or more others. If this costly contribution is reciprocated, everyone involved can benefit tremendously. This principle also applies to proactive members of the Arch community wanting to get involved and contribute to their favorite Linux distribution. Their participation benefits not only the community member and their fellow Archers, but all users of [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 This article describes how both new and experienced Arch users can contribute to the community. Note that this is not an exhaustive list.
@@ -85,99 +81,59 @@ Arch's community maintains many projects. Feel free to include yours!
 
 Arch-specific groups that you can engage in.
 
-[ArchMap](/index.php/ArchMap "ArchMap")
+NaN
 
-The ArchMap project creates a map of Arch Linux users all over the world.
+NaN
 
-[ArchAudio](http://archaudio.org)
+NaN
 
-A third-party package repository and online discussion board for Arch Linux pro-audio users.
+NaN
 
-[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
+NaN
 
-Place for reddit users to discuss Arch related issues.
+NaN
 
-[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
-
-A Google Plus community for Arch Linux users to interact, post questions, or general Arch Linux news conversations.
-
-[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
-
-Local meet-up for users.
-
-[Arch Women](http://archwomen.org/)
-
-Group with the intention of resolving possible hurdles for female Arch users ([forum thread](https://bbs.archlinux.org/viewtopic.php?id=136184)).
-
-[LinkedIn Group](http://www.linkedin.com/groups?gid=1399787)
-
-Arch Linux group for users and professionals.
+NaN
 
 ### Software
 
 Community-developed software that focuses on Arch Linux.
 
-[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+NaN
 
-A large community-driven repository for Arch users.
+NaN
 
-[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+NaN
 
-Unofficial binary repositories maintained by community members.
+NaN
 
-[AUR helpers](/index.php/AUR_helpers "AUR helpers")
-
-Utilities to aid end users in using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-
-[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
-
-Graphical front-ends for [pacman](/index.php/Pacman "Pacman").
-
-[NetGUI](http://www.github.com/codywd/NetGUI)
-
-Graphical front end for [Netctl](/index.php/Netctl "Netctl").
+NaN
 
 ### ArchWiki browsing
 
 They offer you some different methods to visit ArchWiki.
 
-[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
+NaN
 
-Pages from Arch Wiki optimized for offline browsing. Package: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
+NaN
 
-[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
+NaN
 
-Arch-wiki-lite is designed to offer the smoothest possible experience for the poor person stuck without internet access or any way of starting a graphical web browser. Package: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
-
-[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
-
-A simple viewer for the ArchLinux Wiki online. Page content is formatted for optimal mobile viewing.
-
-[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
-
-A simple curses interface for MediaWiki sites such as ArchWiki or Wikipedia. Packages: [wikicurses](https://aur.archlinux.org/packages/wikicurses/)<sup><small>AUR</small></sup>, [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/)<sup><small>AUR</small></sup>.
+NaN
 
 ### Services
 
 Services specifically made for Arch users.
 
-[ArchLinux.me](http://archlinux.me)
+NaN
 
-Arch Linux Blogs, to register read [this forum post](https://bbs.archlinux.org/viewtopic.php?id=73622).
+NaN
 
-[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
-
-VPS-based @archlinux.info emails.
-
-[ProjectArch.tk](https://bbs.archlinux.org/viewtopic.php?id=206735&)
-
-Free ZNC accounts for Arch Linux users.
+NaN
 
 ### Other
 
-[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
-
-A trusted user's arch-related projects.
+NaN
 
 ## FAQ
 
@@ -211,7 +167,3 @@ Feel free to share wallpapers, splash screens, color palettes, widgets, themes, 
 See also [Arch Linux Art](https://www.archlinux.org/art/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Getting_involved&oldid=413525](https://wiki.archlinux.org/index.php?title=Getting_involved&oldid=413525)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

@@ -1,9 +1,5 @@
 # Locale
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
 
 ## Contents
@@ -84,18 +80,15 @@ LC_TIME=en_DK.UTF-8
 
 *   A **system-wide** locale can be set by creating or editing `/etc/locale.conf`. The same result can be obtained with the _localectl_ command:
 
- `# localectl set-locale LANG=en_US.UTF-8` 
+NaN
 
-See `man 1 localectl` for details.
+NaN
 
-**Tip:** During system installation, if the output of _locale_ is to your liking, you can save a little time by doing: `locale > /etc/locale.conf` while chrooted.
+NaN
 
 *   The system-wide locale can be overridden in each **user session** by creating or editing `~/.config/locale.conf` (or, in general, `$XDG_CONFIG_HOME/locale.conf` or `$HOME/.config/locale.conf`).
 
-**Tip:**
-
-*   This can also allow keeping the logs in `/var/log` in English while using the local language in the user environment.
-*   You can create a `/etc/skel/.config/locale.conf` file so that any new users added using _useradd_ and the `-m` option will have `~/.config/locale.conf` automatically generated.
+NaN
 
 The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale.sh`.
 
@@ -276,12 +269,3 @@ It is possible that the environment variables are redefined in other files than 
 *   [Locale environment variables](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Locale&oldid=409611](https://wiki.archlinux.org/index.php?title=Locale&oldid=409611)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden categories:
-
-*   [Pages using duplicate arguments in template calls](/index.php/Category:Pages_using_duplicate_arguments_in_template_calls "Category:Pages using duplicate arguments in template calls")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

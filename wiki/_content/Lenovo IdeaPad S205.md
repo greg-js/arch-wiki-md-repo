@@ -1,9 +1,5 @@
 # Lenovo IdeaPad S205
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -84,7 +80,3 @@ The open source [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-v
 You can also install the proprietary [Catalyst](/index.php/Catalyst "Catalyst") driver, but it causes glitches when waking up from hibernation. Also you may run into errors when using the HDMI output on some Monitors.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S205&oldid=390756](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_S205&oldid=390756)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

@@ -1,9 +1,5 @@
 # Internet sharing
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Android tethering](/index.php/Android_tethering "Android tethering")
@@ -138,7 +134,3 @@ If you are able to connect the two PCs but cannot send data (for example, if the
 *   [Xyne's guide and scripts for launching a subnet with DHCP and DNS](http://xyne.archlinux.ca/notes/network/dhcp_with_dns.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Internet_sharing&oldid=412105](https://wiki.archlinux.org/index.php?title=Internet_sharing&oldid=412105)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

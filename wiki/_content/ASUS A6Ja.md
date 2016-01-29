@@ -1,9 +1,5 @@
 # ASUS A6Ja
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -182,14 +178,10 @@ Lapsus is a set of programs created to help manage additional laptop features su
 
 ```
 
-<strike>Prerequisites: acpi4asus from CVS (at least a version > 0.41).</strike> In your /etc/modprobe.d/ directory, blacklist the 'acpi_asus' module and add the 'asus_laptop' in the /etc/modules-load.d directory.
+~~Prerequisites: acpi4asus from CVS (at least a version > 0.41).~~ In your /etc/modprobe.d/ directory, blacklist the 'acpi_asus' module and add the 'asus_laptop' in the /etc/modules-load.d directory.
 
 Install [lapsus](https://github.com/aur-archive/lapsus) or [lapsus-svn](https://github.com/aur-archive/lapsus-svn) from the AUR archive. There will be certain complications. First, the berlios.de site on which the lapsus project was formerly hosted has closed down. Fortunately, the code is [archived on Google Code](https://code.google.com/p/lapsus/). You will need to modify the PKGBUILD accordingly. If you succeed in building the code you will need to create a lapsus.service file, since the PKGBUILDS antedate the adoption of systemd.
 
 Now start the lapsusd daemon: **systemctl start lapsusd**. If if works well, then enable it **systemctl enable lapsusd**.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_A6Ja&oldid=408077](https://wiki.archlinux.org/index.php?title=ASUS_A6Ja&oldid=408077)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

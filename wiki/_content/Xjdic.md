@@ -1,9 +1,5 @@
 # Xjdic
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes how to set up Jim Breen's Japanese-English dictionary program, xjdic. While the procedure itself isn't difficult, it may be confusing for first-time users.
 
 xjdic should be run on a terminal with JIS, Shift-JIS or EUC-JP encoding.
@@ -107,7 +103,3 @@ And you'll probably need to make your own ~/.xjdicrc file. Start by copying syst
 *   [xjdic packages](https://aur.archlinux.org/packages.php?K=xjdic) in AUR
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xjdic&oldid=198184](https://wiki.archlinux.org/index.php?title=Xjdic&oldid=198184)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")

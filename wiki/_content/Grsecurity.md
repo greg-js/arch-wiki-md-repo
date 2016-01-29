@@ -1,9 +1,5 @@
 # Grsecurity
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PaX](/index.php/PaX "PaX")
@@ -68,7 +64,7 @@ The following incompatibilities require building a custom kernel with fewer feat
 
 *   hibernation is not supported (conflicts with `CONFIG_GRKERNSEC_KMEM`, `CONFIG_PAX_MEMORY_SANITIZE` and `CONFIG_RANDOMIZE_BASE`)
 *   Xen and [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) are not supported (conflicts with `CONFIG_PAX_KERNEXEC` and `CONFIG_PAX_MEMORY_UDEREF`)
-*   `CONFIG_GRKERNSEC_KMEM` is incompatible with software altering the CPU MSR, such as power saving configuration tools like [cpupower](https://www.archlinux.org/packages/?name=cpupower), [powertop](https://www.archlinux.org/packages/?name=powertop) and [x86_energy_perf_policy](https://www.archlinux.org/packages/?name=x86_energy_perf_policy). Rather than disabling the option, you could recompile the kernel with your desired defaults.
+*   `CONFIG_GRKERNSEC_KMEM` is incompatible with software altering the CPU MSR, such as power saving configuration tools like [cpupower](https://www.archlinux.org/packages/?name=cpupower), [powertop](https://www.archlinux.org/packages/?name=powertop) and [x86_energy_perf_policy](https://www.archlinux.org/packages/?name=x86_energy_perf_policy) (optionally used by [tlp](https://www.archlinux.org/packages/?name=tlp)). Rather than disabling the option, you could recompile the kernel with your desired defaults.
 
 Known incompatibilities with other packages:
 
@@ -434,14 +430,4 @@ See [this link.](http://en.wikibooks.org/wiki/Grsecurity/Appendix/Subject_Modes)
 
 PaX and grsecurity implement some hardening features via GCC plugins. The compiler configuration / version used to build the plugins provided in the package needs to be the same when building a kernel module. For example, the compiler provided in the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package will not work - one should use the same compiler toolchain that was used to build the kernel. This also means [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) needs to be rebuilt after even minor GCC upgrades before modules built with the new compiler can work with it. Rebuilding a kernel can be accomplished with the [Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). See bug [FS#43057](https://bugs.archlinux.org/task/43057).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417562](https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417562)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417786](https://wiki.archlinux.org/index.php?title=Grsecurity&oldid=417786)"

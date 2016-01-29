@@ -1,9 +1,5 @@
 # X11vnc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [TigerVNC](/index.php/TigerVNC "TigerVNC")
@@ -223,12 +219,3 @@ Please update if this works / not works for any other [display manager](/index.p
 If screensaver starts every 1-2 second, start x11vnc with -nodpms key.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=X11vnc&oldid=410773](https://wiki.archlinux.org/index.php?title=X11vnc&oldid=410773)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Fujitsu Siemens Lifebook P7010
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -135,12 +131,3 @@ There is now a driver in alpha test stage on Sourceforge [http://sourceforge.net
 *   This report is listed at the [TuxMobil: Linux Laptop and Notebook Installation Guides Survey: Fujitsu-Siemens - FSC](http://tuxmobil.org/fujitsu.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fujitsu_Siemens_Lifebook_P7010&oldid=353569](https://wiki.archlinux.org/index.php?title=Fujitsu_Siemens_Lifebook_P7010&oldid=353569)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

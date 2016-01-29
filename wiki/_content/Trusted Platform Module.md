@@ -1,9 +1,5 @@
 # Trusted Platform Module
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Trusted Platform Module (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
 
 In practice a TPM can be used for various different security applications such as secure boot and key storage.
@@ -53,19 +49,19 @@ Some other tools of interest:
 
 *   **tpmmanager** — A Qt front-end to tpm-tools
 
-[http://sourceforge.net/projects/tpmmanager](http://sourceforge.net/projects/tpmmanager) || [tpmmanager](https://aur.archlinux.org/packages/tpmmanager/)<sup><small>AUR</small></sup>
+NaN
 
 *   **openssl_tpm_engine** — OpenSSL engine which interfaces with the TSS API
 
-[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [openssl_tpm_engine](https://aur.archlinux.org/packages/openssl_tpm_engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openssl_tpm_engine)]</sup>
+NaN
 
 *   **tpm_keyring2** — A key manager for TPM based eCryptfs keys
 
-[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [tpm_keyring2](https://aur.archlinux.org/packages/tpm_keyring2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpm_keyring2)]</sup>
+NaN
 
 *   **opencryptoki** — A PKCS#11 implementation for Linux. It includes drivers and libraries to enable IBM cryptographic hardware as well as a software token for testing.
 
-[http://sourceforge.net/projects/opencryptoki](http://sourceforge.net/projects/opencryptoki) || [opencryptoki](https://aur.archlinux.org/packages/opencryptoki/)<sup><small>AUR</small></sup>
+NaN
 
 ### Basics
 
@@ -132,12 +128,3 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 *   [TPM Fundamentals (PDF)](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Trusted_Platform_Module&oldid=416502](https://wiki.archlinux.org/index.php?title=Trusted_Platform_Module&oldid=416502)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

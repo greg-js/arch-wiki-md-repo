@@ -1,9 +1,5 @@
 # ISCSI Initiator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
@@ -157,8 +153,3 @@ Many of the `iscsiadm` operations require that the iSCSI daemon `iscsid` is runn
 *   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") Booting Arch Linux with / on an iSCSI target.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&oldid=412101](https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&oldid=412101)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

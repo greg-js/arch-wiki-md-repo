@@ -1,9 +1,5 @@
 # Readline
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Readline** is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. Before reading this page please refer to the library home [page](http://www.gnu.org/s/readline/) as only subtle configuration will be introduced here.
 
 ## Contents
@@ -205,11 +201,3 @@ set echo-control-characters off
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Readline&oldid=406663](https://wiki.archlinux.org/index.php?title=Readline&oldid=406663)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

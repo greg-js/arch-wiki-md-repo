@@ -1,9 +1,5 @@
 # llpp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **llpp** is a lightweight, fast and featureful PDF, EPUB, XPS and CBZ viewer based on MuPDF.
 
 ## Contents
@@ -120,7 +116,3 @@ gc.py done.
 *   [llpp git repo](http://repo.or.cz/w/llpp.git)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Llpp&oldid=394178](https://wiki.archlinux.org/index.php?title=Llpp&oldid=394178)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")

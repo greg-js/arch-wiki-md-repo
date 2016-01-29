@@ -1,9 +1,5 @@
 # Splashy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Splashy](http://alioth.debian.org/projects/splashy/) is a userspace implementation of a splash screen for Linux systems. It provides a graphical environment during system boot using the Linux framebuffer layer via [directfb](http://www.directfb.org).
 
 ## Contents
@@ -84,12 +80,3 @@ Rebuild your kernel image with:
 and reboot.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Splashy&oldid=392676](https://wiki.archlinux.org/index.php?title=Splashy&oldid=392676)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

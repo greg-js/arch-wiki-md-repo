@@ -1,9 +1,5 @@
 # Common Access Card
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page explains how to setup Arch to use a US Department of Defense [Common Access Card](http://en.wikipedia.org/wiki/Common_Access_Card) (CAC). It was tested with a Dell Smart Card Reader Keyboard and a SCM SCR3310\. Others may not work.
 
 ## Contents
@@ -117,7 +113,3 @@ Possibly identified card (using /usr/share/pcsc/smartcard_list.txt):
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Common_Access_Card&oldid=390798](https://wiki.archlinux.org/index.php?title=Common_Access_Card&oldid=390798)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

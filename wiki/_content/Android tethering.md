@@ -1,9 +1,5 @@
 # Android tethering
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Tethering is a way to have internet access on your PC through your smartphone using its network connection. USB tethering and Wi-Fi access point tethering are natively supported since Android Froyo (2.2). In older versions of the Android OS, most unofficial ROMs have this option enabled.
 
 ## Contents
@@ -46,9 +42,7 @@ Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by
 *   Enable the tethering option from your phone. This is usually done from `Settings --> Wireless & Networks --> Internet tethering` (or `Tethering & portable hotspot`, for more recent versions)
 *   Make sure that the USB interface is recognized by the system by using the following command:
 
- `$ ip link` 
-
-You should be able to see a `usb0` or `enp?s??u?` device listed like this (notice the enp0s20u3 device).
+NaN
 
  `# ip link` 
 
@@ -70,7 +64,7 @@ You should be able to see a `usb0` or `enp?s??u?` device listed like this (notic
 
 *   The final step is to [configure a network connection](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") on this interface. For example:
 
- `# dhcpcd enp0s20u3` 
+NaN
 
 #### Using systemd-networkd with udev
 
@@ -145,9 +139,7 @@ Run the AziLink application in the phone and select "About" at the bottom to rec
 3.  Run AziLink and make sure that the **Service active** option at the top is checked.
 4.  Run the following commands in your Linux PC:
 
- `$ adb forward tcp:41927 tcp:41927` 
-
- `# openvpn AziLink.ovpn` 
+NaN
 
  `AziLink.ovpn` 
 
@@ -223,12 +215,3 @@ Clockworkmod Tether is a tethering app for android, but also requires software i
 When _adb_ is working, the command line will repeated say "Checking phone status...". Make sure you launch the android app as well.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Android_tethering&oldid=412038](https://wiki.archlinux.org/index.php?title=Android_tethering&oldid=412038)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

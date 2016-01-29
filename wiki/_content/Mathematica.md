@@ -1,9 +1,5 @@
 # Mathematica
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -155,12 +151,3 @@ If you have a [HiDPI](/index.php/HiDPI "HiDPI") screen, such as an Apple Retina 
 *   [Official Support](http://www.wolfram.com/support/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mathematica&oldid=412130](https://wiki.archlinux.org/index.php?title=Mathematica&oldid=412130)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

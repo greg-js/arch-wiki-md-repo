@@ -1,9 +1,5 @@
 # InfiniBand
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -113,41 +109,13 @@ An InfiniBand cable can be used to directly link two computers without a switch;
 
 Adapters, switches, routers, and bridges/gateways must be specifically made for InfiniBand.
 
-HCA (Host Channel Adapter)
-
-Like an Ethernet NIC (Network Interface Card). Connects the InfiniBand cable to the PCI Express bus, at the full speed of the bus if the proper generation of HCA is used. An end node on an InfiniBand network, executes transport-level functions, and supports the InfiniBand verbs interface.
-
-Switch
-
-Like an Ethernet NIC. Moves packets from one link to another on the same InfiniBand subnet.
-
-Router
-
-Like an Ethernet router. Moves packets between different InfiniBand subnets.
-
-Bridge/Gateway
-
-A standalone piece of hardware, or a computer performing this function. Bridges InfiniBand and Ethernet networks.
+NaN
 
 ### GUID
 
 Like Ethernet MAC addresses, but a device has multiple GUID's. Assigned by the hardware manufacturer, and remains the same through reboots. 64-bit addresses (24-bit manufacturer prefix and 40-bit device identifier.) Given to adapters, switches, routers, and bridges/gateways.
 
-Node GUID
-
-Identifies the HCA, Switch, or Router
-
-Port GUID
-
-Identifies a port on a HCA, Switch, or Router (even a HCA often has multiple ports)
-
-System GUID
-
-Allows treating multiple GUIDs as one entity
-
-LID (Local IDentifier)
-
-16-bit addresses, assigned by the Subnet Manager when picked up by the Subnet Manager. Used for routing packets. Not persistent through reboots.
+NaN
 
 ### NEED ANOTHER NAME
 
@@ -159,15 +127,9 @@ LID (Local IDentifier)
 
 **Reason:** Give the section a proper heading. (Discuss in [Talk:InfiniBand#](https://wiki.archlinux.org/index.php/Talk:InfiniBand))
 
-SM (Subnet Manager)
+NaN
 
-Actively manages an InfiniBand subnet. Can be implemented as a software program on a computer connected to the InfiniBand network, built in to an InfiniBand switch, or as a specialized InfiniBand device. Initializes and configures everything else on the subnet, including assigning LIDs (Local IDentifiers.) Establishes traffic paths through the subnet. Isolates faults. Prevents unauthorized Subnet Managers. You can have multiple switches all on one subnet, under one Subnet Manager. You can have redundant Subnet Managers on one subnet, but only one can be active at a time.
-
-MAD (MAnagement Datagram)
-
-Standard message format for subnet manager to and from InfiniBand device communication, carried by a UD (Unreliable Datagram.)
-
-UD (Unreliable Datagram)
+NaN
 
 ### Software
 
@@ -234,135 +196,21 @@ Recent kernels have InfiniBand modules compiled in, and they just need to be loa
     *   Its `/usr/lib/udev/rules.d/98-rdma.rules` attempts loading hardware kernel modules cxgb*, ib_*, mlx*, iw_*, be2net, and usnic*.
     *   Its `/usr/bin/rdma-init-kernel` (which is what `rdma.service` starts) loads kernel modules requested by `/etc/rdma.conf`.
 
-<table class="wikitable"><caption>/etc/rdma.conf supports these options</caption>
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>If yes, loads category</th>
-
-<th>of these kernel modules</th>
-
-</tr>
-
-<tr>
-
-<td>(Always)</td>
-
-<td>Core</td>
-
-<td>ib_core, ib_mad, ib_sa, and ib_addr</td>
-
-</tr>
-
-<tr>
-
-<td>(Always)</td>
-
-<td>Core user</td>
-
-<td>ib_umad, ib_uverbs, ib_ucm, and rdma_ucm</td>
-
-</tr>
-
-<tr>
-
-<td>(Always)</td>
-
-<td>Core connection manager</td>
-
-<td>iw_cm, ib_cm, and rdma_cm</td>
-
-</tr>
-
-<tr>
-
-<td>IPOIB_LOAD=yes (default yes)*</td>
-
-<td>Internet Protocol over InfiniBand</td>
-
-<td>ib_ipoib</td>
-
-</tr>
-
-<tr>
-
-<td>RDS_LOAD=yes (default no)</td>
-
-<td>Reliable Datagram Service</td>
-
-<td>rds, rds_tcp, and rds_rdma</td>
-
-</tr>
-
-<tr>
-
-<td>SRP_LOAD=yes (default no)</td>
-
-<td>SCSI Remote Protocol initiator</td>
-
-<td>ib_srp</td>
-
-</tr>
-
-<tr>
-
-<td>SRPT_LOAD=yes (default no)</td>
-
-<td>SCSI Remote Protocol target</td>
-
-<td>ib_srpt</td>
-
-</tr>
-
-<tr>
-
-<td>ISER_LOAD=yes (default no)</td>
-
-<td>iSCSI over RDMA initiator</td>
-
-<td>ib_iser.</td>
-
-</tr>
-
-<tr>
-
-<td>ISERT_LOAD=yes (default no)</td>
-
-<td>iSCSI over RDMA target</td>
-
-<td>ib_isert.</td>
-
-</tr>
-
-<tr>
-
-<td>(if lhca devices)</td>
-
-<td>IBM pSeries Adapters (rare)</td>
-
-<td>ib_ehca</td>
-
-</tr>
-
-<tr>
-
-<td>(if be2net module)</td>
-
-<td>Emulex Adpaters (rare)</td>
-
-<td>ocrdma</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-* ib_ipoib also loaded a dependency for `RDS_LOAD=yes`, or if `/etc/rdma.conf` doesn't exist
+<caption>/etc/rdma.conf supports these options</caption>
+| Option | If yes, loads category | of these kernel modules |
+| (Always) | Core | ib_core, ib_mad, ib_sa, and ib_addr |
+| (Always) | Core user | ib_umad, ib_uverbs, ib_ucm, and rdma_ucm |
+| (Always) | Core connection manager | iw_cm, ib_cm, and rdma_cm |
+| IPOIB_LOAD=yes (default yes)* | Internet Protocol over InfiniBand | ib_ipoib |
+| RDS_LOAD=yes (default no) | Reliable Datagram Service | rds, rds_tcp, and rds_rdma |
+| SRP_LOAD=yes (default no) | SCSI Remote Protocol initiator | ib_srp |
+| SRPT_LOAD=yes (default no) | SCSI Remote Protocol target | ib_srpt |
+| ISER_LOAD=yes (default no) | iSCSI over RDMA initiator | ib_iser. |
+| ISERT_LOAD=yes (default no) | iSCSI over RDMA target | ib_isert. |
+| (if lhca devices) | IBM pSeries Adapters (rare) | ib_ehca |
+| (if be2net module) | Emulex Adpaters (rare) | ocrdma |
+
+NaN
 
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rdma.service`
 
@@ -415,9 +263,7 @@ Name=_interface_
 Address=192.168.2.1/24
 ```
 
-[restart](/index.php/Restart "Restart") (or [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable")) `systemd-networkd.service`
-
-*   [static IP address via systemd service](/index.php/Network_configuration#systemd_service "Network configuration"): (replacing the IP addresses as needed, to use a subnet that does not conflict with your existing private network IP addresses)
+NaN
 
  `/etc/conf.d/net-conf-_interface_` 
 
@@ -427,7 +273,7 @@ netmask=24
 broadcast=192.168.2.255
 ```
 
-[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `network@_interface_.service`
+NaN
 
 #### Connection mode
 
@@ -467,61 +313,10 @@ Different setups will see different results. Some people see a gigantic (double+
 
 Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples given in this article, here are author's results on a SDR speed InfiniBand network (8 theoretical Gb/s) with various fine-tuning:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Mode</th>
-
-<th>MTU</th>
-
-<th>MB/s</th>
-
-<th>us latency</th>
-
-</tr>
-
-<tr>
-
-<td>datagram</td>
-
-<td>2044</td>
-
-<td>707</td>
-
-<td>19.4</td>
-
-</tr>
-
-<tr>
-
-<td>connected</td>
-
-<td>2044</td>
-
-<td>353</td>
-
-<td>18.9</td>
-
-</tr>
-
-<tr>
-
-<td>connected</td>
-
-<td>65520</td>
-
-<td>726</td>
-
-<td>19.6</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Mode | MTU | MB/s | us latency |
+| datagram | 2044 | 707 | 19.4 |
+| connected | 2044 | 353 | 18.9 |
+| connected | 65520 | 726 | 19.6 |
 
 **Tip:** It's usually best to have an entire subnet using the same connection and MTU settings. Mixing and matching appears to work, but not optimally.
 
@@ -892,12 +687,3 @@ librdmacm (and formerly libsdp) use `LD_PRELOAD` to intercept non-Infiniband pro
 libsdp was deprecated. The ib_sdp kernel module is no longer maintained or distributed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=InfiniBand&oldid=414700](https://wiki.archlinux.org/index.php?title=InfiniBand&oldid=414700)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # IBM ThinkPad T23
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -12,7 +8,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** This page may be missing instructions for certain hardware
 
-Doesn't cover modem setup, could use a section on that. -- [mulesryan](https://wiki.archlinux.org/index.php/User:Mulesryan) ([talk](/index.php?title=User_talk:Mulesryan&action=edit&redlink=1 "User talk:Mulesryan (page does not exist)")) 03:51, 8 Feb 2014 (CST) (Discuss in [Talk:IBM ThinkPad T23#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_T23))
+NaN
 
 ## Contents
 
@@ -41,7 +37,7 @@ Doesn't cover modem setup, could use a section on that. -- [mulesryan](https://w
 
 Make sure [Xorg](/index.php/Xorg "Xorg") is installed, and then [install](/index.php/Install "Install") [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the following contents:  
+Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the following contents:
 
 ```
 # xorg.conf -'man xorg.conf'
@@ -64,7 +60,7 @@ Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the fol
   ...
 ```
 
-→ See also: [Xorg](/index.php/Xorg "Xorg")
+NaN
 
 #### Advanced Installation
 
@@ -74,41 +70,12 @@ The savage driver supports two types of hardware acceleration: XAA and EXA. Unfo
 
 This means you must run [xorg-server](/index.php?title=Xorg-server&action=edit&redlink=1 "Xorg-server (page does not exist)") < 1.13, because starting in 1.13 XAA was removed.
 
-<table class="wikitable" style="text-align:center">
+| Video Card | Xorg Driver | Mesa DRI Driver | Packages needed for DRI |
+| **S3 SuperSavage IX** | [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) | [savage-dri](https://www.archlinux.org/packages/?name=savage-dri)<sup>†</sup> | [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) (<2.3.6-2)<sup>‡</sup> [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) (<1.13)<sup>§</sup>, [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) (<2.7.3-2), [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) (<0.4.3-2), [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa) (<2.3.2-2) |
 
-<tbody>
-
-<tr>
-
-<th>Video Card</th>
-
-<th>Xorg Driver</th>
-
-<th>Mesa DRI Driver</th>
-
-<th>Packages needed for DRI</th>
-
-</tr>
-
-<tr>
-
-<td>**S3 SuperSavage IX**</td>
-
-<td>[xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage)</td>
-
-<td>[savage-dri](https://www.archlinux.org/packages/?name=savage-dri)<sup>†</sup></td>
-
-<td>[xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) (<2.3.6-2)<sup>‡</sup> [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) (<1.13)<sup>§</sup>, [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) (<2.7.3-2), [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) (<0.4.3-2), [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa) (<2.3.2-2)</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<sup>† - '--disable-shared-dricore' configure flag required (enabled by default in [official repositories](/index.php/Official_repositories "Official repositories"))  
-‡ - '--enable-dri' configure flag required  
-§ - '--enable-dri' configure flag required  
+<sup>† - '--disable-shared-dricore' configure flag required (enabled by default in [official repositories](/index.php/Official_repositories "Official repositories"))
+‡ - '--enable-dri' configure flag required
+§ - '--enable-dri' configure flag required
 </sup>
 
 ##### Configuration
@@ -152,7 +119,7 @@ If you've set up everything correctly, you should see this in /var/log/Xorg.0.lo
 ..
 [ 63286.233] (II) AIGLX: enabled GLX_SGI_make_current_read
 [ 63286.233] (II) AIGLX: Loaded and initialized savage
-[ 63286.233] (II) GLX: Initialized DRI GL provider for screen 0  
+[ 63286.233] (II) GLX: Initialized DRI GL provider for screen 0
 
 ```
 
@@ -165,7 +132,7 @@ If you've set up everything correctly, you should see this in /var/log/Xorg.0.lo
 
 ```
 
-Are you using the versions of the packages specified? Are you using XAA acceleration? Did you compile with the configure flags specified?  
+Are you using the versions of the packages specified? Are you using XAA acceleration? Did you compile with the configure flags specified?
 
 ### Power Management
 
@@ -232,13 +199,3 @@ to `~/.xmodmap`.
 *   [Thinkwiki](http://www.thinkwiki.org/wiki/Category:T23)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T23&oldid=412098](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T23&oldid=412098)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

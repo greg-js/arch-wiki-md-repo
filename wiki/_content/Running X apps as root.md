@@ -1,9 +1,5 @@
 # Running X apps as root
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 By default, and for security reasons, root will be unable to connect to a non-root user's X server. There are multiple ways of allowing root to do so, if it is necessary.
 
 ## The most secure methods
@@ -53,7 +49,7 @@ These methods will allow root to connect to a non-root user's X server, but pres
 
 *   **Temporarily allow root access**
 
-*   xhost
+NaN
 
 ```
 $ xhost +
@@ -80,13 +76,13 @@ $ xhost + localhost
 
 *   **Permanently allow root access**
 
-**Method 1**: Add the line
+NaN
 
 `session optional pam_xauth.so`
 
 to `/etc/pam.d/su` and `/etc/pam.d/su-l`. Then switch to your root user using 'su' or 'su -'.
 
-**Method 2**: Globally in `/etc/profile`
+NaN
 
 Add the following to `/etc/profile`
 
@@ -107,7 +103,3 @@ export XAUTHORITY=/home/usersname/.Xauthority kwrite
 (to allow root to access kwrite, for instance.)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Running_X_apps_as_root&oldid=387977](https://wiki.archlinux.org/index.php?title=Running_X_apps_as_root&oldid=387977)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

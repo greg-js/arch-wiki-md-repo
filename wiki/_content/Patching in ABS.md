@@ -1,9 +1,5 @@
 # Patching in ABS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document covers the steps to creating and/or applying patches to packages when using [ABS](/index.php/ABS "ABS").
 
 ## Creating patches
@@ -65,7 +61,3 @@ Most developers create patches from the parent directory of the directory that i
 *   [http://pkgs.fedoraproject.org/cgit/](http://pkgs.fedoraproject.org/cgit/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Patching_in_ABS&oldid=339946](https://wiki.archlinux.org/index.php?title=Patching_in_ABS&oldid=339946)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

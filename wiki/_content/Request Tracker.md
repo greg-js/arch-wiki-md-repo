@@ -1,9 +1,5 @@
 # Request Tracker
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -109,8 +105,3 @@ Depending on your setup, RT may suggest altering your RT_SiteConfig.pm file to b
 Now that you've got RT up and running on your webserver, use it! See [Best Practical's online documentation](http://bestpractical.com/rt/docs.html) for configuring RT.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Request_Tracker&oldid=388054](https://wiki.archlinux.org/index.php?title=Request_Tracker&oldid=388054)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

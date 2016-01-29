@@ -1,9 +1,5 @@
 # Lemonbar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [lemonbar](https://github.com/LemonBoy/bar) is a lightweight bar based on XCB. It provides foreground/background color switching along with text alignment and colored under/overlining of text, full utf8 support and reduced memory footprint. Nothing less and nothing more.
 
 ## Contents
@@ -45,89 +41,19 @@ If you want the text in `lemonbar` to update through a script, you need to add t
 
 The special color `-` indicates the default color (which is set by command-line flags, or is otherwise the default white text on a black background).
 
-<table border="1">
-
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>Meaning</th>
-
-</tr>
-
-<tr>
-
-<td>`%{F_color_}`</td>
-
-<td>Use _color_ as the foreground/font color</td>
-
-</tr>
-
-<tr>
-
-<td>`%{B_color_}`</td>
-
-<td>Use _color_ as the background</td>
-
-</tr>
-
-<tr>
-
-<td>`%{U_color_}`</td>
-
-<td>Use _color_ for under/overlining the text</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | Meaning |
+| `%{F_color_}` | Use _color_ as the foreground/font color |
+| `%{B_color_}` | Use _color_ as the background |
+| `%{U_color_}` | Use _color_ for under/overlining the text |
 
 #### Text alignment
 
 `lemonbar` also supports alignment of text. It uses the following commands to align the text
 
-<table border="1">
-
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>Meaning</th>
-
-</tr>
-
-<tr>
-
-<td>`%{l}`</td>
-
-<td>Aligns the text to the left</td>
-
-</tr>
-
-<tr>
-
-<td>`%{c}`</td>
-
-<td>Aligns the text to the center</td>
-
-</tr>
-
-<tr>
-
-<td>`%{r}`</td>
-
-<td>Aligns the text to the right</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | Meaning |
+| `%{l}` | Aligns the text to the left |
+| `%{c}` | Aligns the text to the center |
+| `%{r}` | Aligns the text to the right |
 
 #### Examples
 
@@ -176,7 +102,3 @@ done
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lemonbar&oldid=415421](https://wiki.archlinux.org/index.php?title=Lemonbar&oldid=415421)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

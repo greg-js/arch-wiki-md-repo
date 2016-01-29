@@ -1,9 +1,5 @@
 # Toshiba Satellite A660
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 ACPI and Power Saving](#ACPI_and_Power_Saving)
@@ -64,7 +60,3 @@ Untested.
 Untested.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_A660&oldid=377066](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_A660&oldid=377066)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

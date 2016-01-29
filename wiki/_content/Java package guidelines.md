@@ -1,9 +1,5 @@
 # Java package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -113,7 +109,3 @@ For most packages, `java-runtime` is what is needed to simply run software writt
 *   [jdk](https://aur.archlinux.org/packages/jdk/)<sup><small>AUR</small></sup> (non-free)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=414092](https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=414092)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

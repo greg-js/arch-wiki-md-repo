@@ -1,9 +1,5 @@
 # Humble Bundle
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [Humble Bundle](https://humblebundle.com) is a platform to sell collections of games (or "bundles") at a price determined by the purchaser. The website also maintains a storefront for traditional purchases.
 
 ## Linux Support
@@ -46,7 +42,3 @@ Now installation of Humble Bundle games will be a simple installation command aw
 **Warning:** Since AUR automators will download files to the /tmp directory excessively large game files will likely cause /tmp to run out of room. The manual method is best for very large downloads.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Humble_Bundle&oldid=413439](https://wiki.archlinux.org/index.php?title=Humble_Bundle&oldid=413439)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

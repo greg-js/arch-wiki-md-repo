@@ -1,9 +1,5 @@
 # Invoiceplane
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -58,13 +54,3 @@ Visit the installation wizard page at [http://127.0.0.1/invoiceplane/setup](http
 *   [Documentation](https://github.com/InvoicePlane/InvoicePlane/wiki)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=392279](https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=392279)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

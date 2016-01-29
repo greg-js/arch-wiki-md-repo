@@ -1,9 +1,5 @@
 # Package Proxy Cache
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 If you want to install the same Arch packages over and over - like for testing AIF profiles - it could help if you wouldn't have to get the packages every time from the internet. This article shows you how to setup a [Squid](/index.php/Squid "Squid") proxy that only caches arch packages and can be used with aif/pacman/wget/etc with minimal configuration on the client system.
 
 ## Contents
@@ -108,7 +104,7 @@ and for packages that are delivered from the cache:
 Before running /arch/setup, add variables for your proxy. To do so, run on the console:
 
 ```
-# export http_proxy='[http://your_squid_machine_ip:3128'](http://your_squid_machine_ip:3128')  
+# export http_proxy='[http://your_squid_machine_ip:3128'](http://your_squid_machine_ip:3128')
 # export ftp_proxy='[ftp://your_squid_machine_ip:3128'](ftp://your_squid_machine_ip:3128')
 ```
 
@@ -117,7 +113,3 @@ Now just use /arch/setup to normally install the system, and it should use your 
 **Note:** If you want to use the proxy settings in the installed system, you need to add the http_proxy and/or ftp_proxy variables in an appropriate place on the installed system. (like /etc/profile.d/proxy.sh)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Package_Proxy_Cache&oldid=404877](https://wiki.archlinux.org/index.php?title=Package_Proxy_Cache&oldid=404877)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

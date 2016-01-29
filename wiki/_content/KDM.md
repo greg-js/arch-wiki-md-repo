@@ -1,9 +1,5 @@
 # KDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -213,12 +209,3 @@ $ chmod o+r ~/.face.icon
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KDM&oldid=414010](https://wiki.archlinux.org/index.php?title=KDM&oldid=414010)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [KDE](/index.php/Category:KDE "Category:KDE")
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

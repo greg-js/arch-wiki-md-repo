@@ -1,106 +1,14 @@
 # Alienware 15
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>nouveau _or_ nvidia</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>linux-uvc</td>
-
-</tr>
-
-<tr>
-
-<td>Wi-Fi</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>btusb</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>alx</td>
-
-</tr>
-
-<tr>
-
-<td>Card reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | Working | xf86-video-intel |
+| Nvidia | Working | nouveau _or_ nvidia |
+| Touchpad | Working | xf86-input-synaptics |
+| Camera | Working | linux-uvc |
+| Wi-Fi | Working | iwlwifi |
+| Bluetooth | Working | btusb |
+| Ethernet | Working | alx |
+| Card reader | Working | rtsx_usb |
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop")
 
@@ -211,7 +119,3 @@ to
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Alienware_15&oldid=412507](https://wiki.archlinux.org/index.php?title=Alienware_15&oldid=412507)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Alienware](/index.php/Category:Alienware "Category:Alienware")

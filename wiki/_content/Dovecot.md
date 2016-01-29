@@ -1,9 +1,5 @@
 # Dovecot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Postfix](/index.php/Postfix "Postfix")
@@ -209,7 +205,3 @@ default_pass_scheme = SHA512-CRYPT
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dovecot&oldid=412648](https://wiki.archlinux.org/index.php?title=Dovecot&oldid=412648)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

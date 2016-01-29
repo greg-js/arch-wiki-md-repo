@@ -1,9 +1,5 @@
 # Blueman
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
@@ -127,12 +123,3 @@ Should the error persist or another occur then try using [obexftp](https://www.a
 *   [Blueman development](https://github.com/blueman-project/blueman), on GitHub
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Blueman&oldid=411737](https://wiki.archlinux.org/index.php?title=Blueman&oldid=411737)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

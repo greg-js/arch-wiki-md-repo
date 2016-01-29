@@ -1,116 +1,15 @@
 # ASUS N550JV
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>nouveau _or_ nvidia</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>linux-uvc</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>btusb</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | Working | xf86-video-intel |
+| Nvidia | Working | nouveau _or_ nvidia |
+| Ethernet | Working | r8169 |
+| Wireless | Working | ath9k |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | xf86-input-synaptics |
+| Camera | Working | linux-uvc |
+| Card Reader | Working | rtsx_usb |
+| Bluetooth | Working | btusb |
 
 [ASUS N550JV](http://www.asus.com/Notebooks_Ultrabooks/N550JV/specifications/) - this article covers hardware specific configuration. All topics covered can be performed after an installation of Arch Linux has been finished and the machine rebooted into it.
 
@@ -345,204 +244,29 @@ The touchpad can be toggled using a `xinput` [script](/index.php/Touchpad_Synapt
 
 If you prefer using a [Window manager](/index.php/Window_manager "Window manager") rather than a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), most settings will not work out of the box, so you might need to manually bind every single `FN` button combination. How to bind, see [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
 
-<table class="wikitable"><caption>FN buttons output</caption>
-
-<tbody>
-
-<tr>
-
-<th>Buttons</th>
-
-<th>Output</th>
-
-</tr>
-
-<tr>
-
-<td>Media Button</td>
-
-<td>XF86AudioMedia (xmodmap)</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F1</td>
-
-<td>XF86Sleep</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F2</td>
-
-<td>XF86WLAN</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F3</td>
-
-<td>XF86KbdBrightnessDown</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F4</td>
-
-<td>XF86KbdBrightnessUp</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F5</td>
-
-<td>XF86MonBrightnessDown</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F6</td>
-
-<td>XF86MonBrightnessUp</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F7</td>
-
-<td>XF86Launch0 (xmodmap)</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F8</td>
-
-<td>XF86Display</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F9</td>
-
-<td>XF86TouchpadToggle</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F10</td>
-
-<td>XF86AudioMute</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F11</td>
-
-<td>XF86AudioLowerVolume</td>
-
-</tr>
-
-<tr>
-
-<td>FN + F12</td>
-
-<td>XF86AudioRaiseVolume</td>
-
-</tr>
-
-<tr>
-
-<td>FN + C</td>
-
-<td>XF86Launch1</td>
-
-</tr>
-
-<tr>
-
-<td>FN + V</td>
-
-<td>XF86WebCam</td>
-
-</tr>
-
-<tr>
-
-<td>FN + Space</td>
-
-<td>XF86Launch6</td>
-
-</tr>
-
-<tr>
-
-<td>FN + NumEnter</td>
-
-<td>XF86Calculator</td>
-
-</tr>
-
-<tr>
-
-<td>FN + Left</td>
-
-<td>XF86AudioPrev</td>
-
-</tr>
-
-<tr>
-
-<td>FN + Right</td>
-
-<td>XF86AudioNext</td>
-
-</tr>
-
-<tr>
-
-<td>FN + Up</td>
-
-<td>XF86AudioStop</td>
-
-</tr>
-
-<tr>
-
-<td>FN + Down</td>
-
-<td>XF86AudioPlay</td>
-
-</tr>
-
-<tr>
-
-<td>FN + Delete</td>
-
-<td>Insert</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>FN buttons output</caption>
+| Buttons | Output |
+| Media Button | XF86AudioMedia (xmodmap) |
+| FN + F1 | XF86Sleep |
+| FN + F2 | XF86WLAN |
+| FN + F3 | XF86KbdBrightnessDown |
+| FN + F4 | XF86KbdBrightnessUp |
+| FN + F5 | XF86MonBrightnessDown |
+| FN + F6 | XF86MonBrightnessUp |
+| FN + F7 | XF86Launch0 (xmodmap) |
+| FN + F8 | XF86Display |
+| FN + F9 | XF86TouchpadToggle |
+| FN + F10 | XF86AudioMute |
+| FN + F11 | XF86AudioLowerVolume |
+| FN + F12 | XF86AudioRaiseVolume |
+| FN + C | XF86Launch1 |
+| FN + V | XF86WebCam |
+| FN + Space | XF86Launch6 |
+| FN + NumEnter | XF86Calculator |
+| FN + Left | XF86AudioPrev |
+| FN + Right | XF86AudioNext |
+| FN + Up | XF86AudioStop |
+| FN + Down | XF86AudioPlay |
+| FN + Delete | Insert |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414717](https://wiki.archlinux.org/index.php?title=ASUS_N550JV&oldid=414717)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

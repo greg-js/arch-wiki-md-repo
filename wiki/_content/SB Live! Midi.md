@@ -1,9 +1,5 @@
 # SB Live! Midi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _SB Live!_ uses a wavetable synthesizer for its MIDI output. Therefore, in order to get MIDI output you need to load the SoundFont banks into the card. This is done by the `asfxload` utility from `awesfx` package.
 
 ## Contents
@@ -49,12 +45,3 @@ sfxload -D _n_ /usr/share/sounds/sf2/CT4MGM.SF2
 _n_ is the number of sound cards. 0 is first sound card, 1 second and so on.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SB_Live!_Midi&oldid=392640](https://wiki.archlinux.org/index.php?title=SB_Live!_Midi&oldid=392640)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

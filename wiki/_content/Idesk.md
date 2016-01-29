@@ -1,9 +1,5 @@
 # Idesk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Idesk is a simple program for adding icons to your X desktop. It can also manage your wallpaper with a built in changer similar to that found in Windows 7.
 
 ## Contents
@@ -78,7 +74,3 @@ end
 The [idesk-extras](https://aur.archlinux.org/packages/idesk-extras/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR") provides a graphical configuration tool for Idesk. It can be started by running the `idesktool` command. Users can use Idesktool to create and remove icons, modify settings and restart Idesk.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Idesk&oldid=412102](https://wiki.archlinux.org/index.php?title=Idesk&oldid=412102)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

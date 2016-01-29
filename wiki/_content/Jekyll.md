@@ -1,9 +1,5 @@
 # Jekyll
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Jekyll](http://jekyllrb.com/) is a simple, blog aware, static site generator written in Ruby and developed by GitHub co-founder [Tom Preston-Werner](http://tom.preston-werner.com/). It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. It is the engine behind [GitHub Pages](http://pages.github.com/).
 
 Werner announced the release of Jekyll on [his website](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html) on November 17, 2008.
@@ -233,7 +229,3 @@ It is recommended to define server options in your `_config.yml`. The default wi
     *   [http://rubygems.org/gems/directory_watcher](http://rubygems.org/gems/directory_watcher) - Directory Watcher
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jekyll&oldid=417195](https://wiki.archlinux.org/index.php?title=Jekyll&oldid=417195)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

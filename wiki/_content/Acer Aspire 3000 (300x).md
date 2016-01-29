@@ -1,9 +1,5 @@
 # Acer Aspire 3000 (300x)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page was created using knowledge collected while playing with Acer Aspire 3003 WLMi, but it will be probably compatible with other 300x Aspires. You can add your laptops to the compatibility list.
 
 ## Contents
@@ -124,7 +120,3 @@ MODULES="pata_acpi pata_sis ata_generic scsi_mod **sisfb** ..."
     *   [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_3000_(300x)&oldid=330346](https://wiki.archlinux.org/index.php?title=Acer_Aspire_3000_(300x)&oldid=330346)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

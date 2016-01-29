@@ -1,9 +1,5 @@
 # Nvidia TV-out and Video Tearing
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -94,11 +90,11 @@ In the section **X Screen 0**, there is an entry called **X Server XVideo Settin
 
 Now you will see three entries:
 
-1.  **Video Texture Adaptor**  
+1.  **Video Texture Adaptor**
     Enable => **Sync to VBlank** (Make sure this is checked with a tick)
-2.  **Video Blitter Adaptor**  
+2.  **Video Blitter Adaptor**
     Enable => **Sync to VBlank** (Make sure this is checked with a tick)
-3.  **Sync to this display device**  
+3.  **Sync to this display device**
     Select => **TV-0 (TV-0)**
 
 Then click on **Quit** to save changes.
@@ -142,7 +138,3 @@ Then reboot your system.
 **[6]** [https://bbs.archlinux.org/viewtopic.php?pid=1017705#p1017705](https://bbs.archlinux.org/viewtopic.php?pid=1017705#p1017705)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nvidia_TV-out_and_Video_Tearing&oldid=387973](https://wiki.archlinux.org/index.php?title=Nvidia_TV-out_and_Video_Tearing&oldid=387973)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

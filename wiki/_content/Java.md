@@ -1,9 +1,5 @@
 # Java
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Java Package Guidelines](/index.php/Java_Package_Guidelines "Java Package Guidelines")
@@ -11,7 +7,7 @@ Related articles
 
 From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)"):
 
-Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture.
+NaN
 
 Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7 and 8\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
@@ -61,163 +57,30 @@ The following packages are available in the [official repositories](/index.php/O
 
 ### OpenJDK 7
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Package name</th>
-
-<th>Use</th>
-
-</tr>
-
-<tr>
-
-<td>[jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless)</td>
-
-<td>Java runtime environment (_JRE_) without any graphical tool - version 7</td>
-
-</tr>
-
-<tr>
-
-<td>[jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk)</td>
-
-<td>Complete Java Runtime Environment (_JRE_) - version 7</td>
-
-</tr>
-
-<tr>
-
-<td>[jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk)</td>
-
-<td>Java Development Kit (_JDK_) - version 7</td>
-
-</tr>
-
-<tr>
-
-<td>[openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc)</td>
-
-<td>OpenJDK javadoc - version 7</td>
-
-</tr>
-
-<tr>
-
-<td>[openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)</td>
-
-<td>OpenJDK sources - version 7</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Package name | Use |
+| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Java runtime environment (_JRE_) without any graphical tool - version 7 |
+| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Complete Java Runtime Environment (_JRE_) - version 7 |
+| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Java Development Kit (_JDK_) - version 7 |
+| [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | OpenJDK javadoc - version 7 |
+| [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | OpenJDK sources - version 7 |
 
 ### OpenJDK 8
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Package name</th>
-
-<th>Use</th>
-
-</tr>
-
-<tr>
-
-<td>[jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless)</td>
-
-<td>Java runtime environment (_JRE_) without any graphical tool - version 8</td>
-
-</tr>
-
-<tr>
-
-<td>[jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk)</td>
-
-<td>Complete Java Runtime Environment (_JRE_) - version 8</td>
-
-</tr>
-
-<tr>
-
-<td>[jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk)</td>
-
-<td>Java Development Kit (_JDK_) - version 8</td>
-
-</tr>
-
-<tr>
-
-<td>[openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc)</td>
-
-<td>OpenJDK javadoc - version 8</td>
-
-</tr>
-
-<tr>
-
-<td>[openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)</td>
-
-<td>OpenJDK sources - version 8</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Package name | Use |
+| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Java runtime environment (_JRE_) without any graphical tool - version 8 |
+| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Complete Java Runtime Environment (_JRE_) - version 8 |
+| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Java Development Kit (_JDK_) - version 8 |
+| [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | OpenJDK javadoc - version 8 |
+| [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | OpenJDK sources - version 8 |
 
 ### OpenJFX
 
 JavaFX is also available from the official repositories. It requires the OpenJDK 8\.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Package name</th>
-
-<th>Use</th>
-
-</tr>
-
-<tr>
-
-<td>[java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx)</td>
-
-<td>Java OpenJFX 8 client application platform (open-source implementation of JavaFX)</td>
-
-</tr>
-
-<tr>
-
-<td>[java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc)</td>
-
-<td>OpenJFX javadoc</td>
-
-</tr>
-
-<tr>
-
-<td>[java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)</td>
-
-<td>OpenJFX sources</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Package name | Use |
+| [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | Java OpenJFX 8 client application platform (open-source implementation of JavaFX) |
+| [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | OpenJFX javadoc |
+| [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) | OpenJFX sources |
 
 ## Flagging packages as out-of-date
 
@@ -466,12 +329,3 @@ Non-reparenting window managers user should set the following environment variab
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=417062](https://wiki.archlinux.org/index.php?title=Java&oldid=417062)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

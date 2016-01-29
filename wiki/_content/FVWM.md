@@ -1,9 +1,5 @@
 # FVWM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 FVWM is a stable, powerful, efficient, and ICCCM-compliant multiple virtual desktop window manager for the X Window system. It requires some effort to learn to use it well, since it is almost entirely configured by editing configuration files with a text editor, but those who persist end up with a desktop environment that works exactly the way they want it to work. Although using FVWM does not require any knowlege of programming languages, it is possible to extend the power of FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM has a [Perl library](http://www.fvwm.org/documentation/perllib/) that makes creating FVWM modules in Perl possible and easy. Development is active, and support is excellent. And for those who wonder, FVWM means Feeble Virtual Window Manager.
 
 ## Contents
@@ -74,11 +70,3 @@ When you start FVWM for the first time, you will get something that looks very b
 14.  [An example of a Fvwm module written in Perl](http://petermblair.com/2009/02/my-first-fvwm-module/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FVWM&oldid=413756](https://wiki.archlinux.org/index.php?title=FVWM&oldid=413756)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

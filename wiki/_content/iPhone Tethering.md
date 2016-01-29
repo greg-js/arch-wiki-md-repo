@@ -1,9 +1,5 @@
 # iPhone Tethering
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Unless disabled by your provider, it's possible to share your iPhone's 3G data connection over WiFi, USB and Bluetooth without needing to jailbreak. WiFi requires no additional configuration provided your computer can connect to wireless networks, and you'll find instructions for USB and Bluetooth below.
 
 ## Contents
@@ -152,12 +148,3 @@ To bring the interface down and un-tether:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IPhone_Tethering&oldid=414307](https://wiki.archlinux.org/index.php?title=IPhone_Tethering&oldid=414307)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

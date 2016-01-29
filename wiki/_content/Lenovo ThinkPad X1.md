@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X1
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Model description](#Model_description)
@@ -88,7 +84,3 @@ The Firmware and it's installer can be found on station-drivers.com: [[1]](http:
 *   Since this is not officially propagated from Lenovo proceed with caution!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1&oldid=412571](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1&oldid=412571)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

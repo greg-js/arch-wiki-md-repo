@@ -1,9 +1,5 @@
 # Lenovo IdeaPad Flex 10
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Lenovo Flex 10 is a flexible dual-mode laptop computer with a 10.1" screen released in 2014\. It comes preinstalled with Windows 8/8.1\. The Flex 10 hardware is well supported in recent Linux kernels and enjoys good driver support for most of its components.
 
 ## Contents
@@ -126,7 +122,3 @@ Also after suspend or hibernate resume the touchscreen may appear as not respond
 At the moment there is no known real touch input support in addition to the plain mouse emulation.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Flex_10&oldid=361082](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Flex_10&oldid=361082)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

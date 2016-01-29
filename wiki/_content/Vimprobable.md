@@ -1,9 +1,5 @@
 # Vimprobable
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Vimprobable](http://www.vimprobable.org/) is a WWW browser that behaves like the Vimperator plugin available for Mozilla [Firefox](/index.php/Firefox "Firefox"). It is based on the WebKit engine (using GTK bindings). It is a fork of the currently abandoned vimpression.
 
 ## Contents
@@ -113,7 +109,3 @@ exec vimprobable2 -e $(</tmp/tabbed.xid) $( [[  "$1"  ]] && echo "$1") &
 *   [A screencast](http://vimeo.com/53829053) introduction to Vimprobable
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vimprobable&oldid=414470](https://wiki.archlinux.org/index.php?title=Vimprobable&oldid=414470)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

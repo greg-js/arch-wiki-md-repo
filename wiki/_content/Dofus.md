@@ -1,9 +1,5 @@
 # Dofus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Dofus](http://www.dofus.com) is an MMORPG by [Ankama](http://www.ankama.com).
 
 ## AUR
@@ -58,7 +54,3 @@ A known problem is that some systems require <tt>unset SESSION_MANAGER</tt> in t
 Occasionally the updater cannot function because of a leftover process from previous runs. Killing <tt>transition</tt> processes can solve this problem.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dofus&oldid=376650](https://wiki.archlinux.org/index.php?title=Dofus&oldid=376650)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T420
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers the installation and configuration of Arch Linux on a Lenovo T420 laptop.
 
 ## Contents
@@ -279,7 +275,3 @@ This is a problem on many laptops and can be fixed by [blacklisting](/index.php/
 *   [Arch Linux on ThinkPad T420i](http://sysphere.org/~anrxc/j/articles/thinkpad-t420/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=415756](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420&oldid=415756)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

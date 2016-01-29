@@ -1,9 +1,5 @@
 # Removing System Encryption
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -46,57 +42,11 @@ Download and burn the latest archlive cd, reboot system and boot to cd.
 
 An example setup is shown here:
 
-<table class="wikitable" style="text-align: center;">
-
-<tbody>
-
-<tr>
-
-<td colspan="4">disk</td>
-
-</tr>
-
-<tr>
-
-<td style="background-color: #888888;">ntfs</td>
-
-<td colspan="2">myvg(lvm)</td>
-
-<td style="background-color: yellow;">ntfs</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="3" style="background-color: #888888;">other os</td>
-
-<td>cryptswap(lv)</td>
-
-<td style="background-color: green;">cryptroot(lv)</td>
-
-<td rowspan="3" style="background-color: yellow;">Shared</td>
-
-</tr>
-
-<tr>
-
-<td>luks</td>
-
-<td style="background-color: green;">luks</td>
-
-</tr>
-
-<tr>
-
-<td>swap</td>
-
-<td style="background-color: green;">root(xfs)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| disk |
+| ntfs | myvg(lvm) | ntfs |
+| other os | cryptswap(lv) | cryptroot(lv) | Shared |
+| luks | luks |
+| swap | root(xfs) |
 
 The grey sections only add a frame of reference and can be disregarded. The green partitions will be modified. Green text must match your system's setup. The yellow partition will be used as storage space and may be changed at will. In the example system: myvg contains lvs called cryptroot and cryptswap. they are located at /dev/mapper/myvg_cryptroot and /dev/mapper/myvg_cryptswap. Upon boot, luks is used along with a few crypttab entries to create /dev/mapper/root and /dev/mapper/swap. Swap will not be unencrypted as part of this guide, as undoing the swap encryption does not require any complex backup or restoration.
 
@@ -194,11 +144,3 @@ xfs_copy -db <u>/media/Shared/backup_root.img</u> /dev/mapper/myvg-root #notice 
 You need to boot into your operating system and edit /etc/crypttab, /etc/mkinitcpio.conf, /etc/fstab, and possibly /boot/grub/menu.lst.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Removing_System_Encryption&oldid=373574](https://wiki.archlinux.org/index.php?title=Removing_System_Encryption&oldid=373574)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Herbstluftwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Herbstluftwm](http://herbstluftwm.org) is a manual tiling window manager for X11 using Xlib and Glib.
 
 ## Contents
@@ -184,7 +180,3 @@ close HOOKS or die "unfinished love story: $! $?"; # happens on hlwm crash
 *   [User git repository #2](https://github.com/ylixir/hlwm-config) with autostart and panel written in Python
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Herbstluftwm&oldid=415595](https://wiki.archlinux.org/index.php?title=Herbstluftwm&oldid=415595)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

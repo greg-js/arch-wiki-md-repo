@@ -1,9 +1,5 @@
 # Xdmcp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page intends to allow remote sessions using "X Display Manager Control Protocol" (XDMCP). See the GDM documention for more information on the parameters: [http://library.gnome.org/admin/gdm/3.6/configuration.html.en#xdmcpsection](http://library.gnome.org/admin/gdm/3.6/configuration.html.en#xdmcpsection).
 
 ## Contents
@@ -194,7 +190,3 @@ If the login screen is created again and again and unresponsive, you are trying 
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413831](https://wiki.archlinux.org/index.php?title=Xdmcp&oldid=413831)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

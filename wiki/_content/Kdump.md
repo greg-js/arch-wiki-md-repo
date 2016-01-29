@@ -1,9 +1,5 @@
 # Kdump
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Kexec](/index.php/Kexec "Kexec")
@@ -147,8 +143,3 @@ Follow _man crash_ or [http://people.redhat.com/~anderson/crash_whitepaper/](htt
 *   [http://www.dedoimedo.com/computers/www.dedoimedo.com-crash-book.pdf](http://www.dedoimedo.com/computers/www.dedoimedo.com-crash-book.pdf) - The crash book
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kdump&oldid=376115](https://wiki.archlinux.org/index.php?title=Kdump&oldid=376115)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

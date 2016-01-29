@@ -1,9 +1,5 @@
 # Xbindkeys
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xmodmap](/index.php/Xmodmap "Xmodmap")
@@ -183,12 +179,3 @@ $ xbindkeys -n
 By pressing the non-working key, you will be able to see any error _xbindkeys_ encounter (e.g: mistyped command/keycode,...).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=414703](https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=414703)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

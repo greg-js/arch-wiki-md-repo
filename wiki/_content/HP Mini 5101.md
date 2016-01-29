@@ -1,9 +1,5 @@
 # HP Mini 5101
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Video](#Video)
@@ -134,11 +130,3 @@ Install [hpfall](https://aur.archlinux.org/packages.php?ID=45093) from AUR and a
 See also [Shock protection for HP/Compaq laptops](/index.php/Laptop#Hard_disk_shock_protection "Laptop").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Mini_5101&oldid=392219](https://wiki.archlinux.org/index.php?title=HP_Mini_5101&oldid=392219)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

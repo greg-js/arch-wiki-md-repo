@@ -1,9 +1,5 @@
 # Echo Mia
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article will discuss how to setting up the Echo Mia (Midi) soundcard to work under Arch, and how to resolve the hardware mixing issue in ALSA. It also implies that [ALSA](/index.php/ALSA "ALSA") is set up properly. Proper software mixing is found to be possible with dmix with a slightly tweaked ~/.asoundrc.
 
 The Arch kernel includes the Mia modules necessary, however the firmware needs to be installed. The alsa-firmware package can be obtained from the AUR. After the firmware is installed, you should consider blacklisting other sound card modules in /etc/rc.conf, or reindex them in /etc/modprobe.d/.
@@ -89,7 +85,3 @@ ctl.!default {
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Echo_Mia&oldid=238011](https://wiki.archlinux.org/index.php?title=Echo_Mia&oldid=238011)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")

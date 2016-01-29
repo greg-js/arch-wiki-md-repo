@@ -1,9 +1,5 @@
 # Profile-sync-daemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon")
@@ -289,7 +285,3 @@ _psd_ is a bash script and should therefore run on any Linux distro. Around a do
 *   [http://bernaerts.dyndns.org/linux/250-ubuntu-tweaks-ssd](http://bernaerts.dyndns.org/linux/250-ubuntu-tweaks-ssd)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=414081](https://wiki.archlinux.org/index.php?title=Profile-sync-daemon&oldid=414081)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

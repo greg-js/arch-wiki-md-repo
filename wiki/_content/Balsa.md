@@ -1,9 +1,5 @@
 # Balsa
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Balsa is a small and light email client written the GNOME project. As such it has tight integration with Gnome, however works quite well with other desktops or window managers.
 
 ## Installation
@@ -35,7 +31,3 @@ ln -s /usr/bin/chromium /usr/lib/firefox/firefox
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Balsa&oldid=314801](https://wiki.archlinux.org/index.php?title=Balsa&oldid=314801)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

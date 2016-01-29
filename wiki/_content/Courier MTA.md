@@ -1,9 +1,5 @@
 # Courier MTA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Postfix](/index.php/Postfix "Postfix")
@@ -232,19 +228,9 @@ Now we need to tell courier the who is who on this box -- who we serve e-mail fo
 
 For example, lets say you have a server at _blahfarm.com_. Usually they make your server a host on their domain. This is likely something like _server234.blahfarm.com_ . Now, you want your server available from the web by a more meaningful and even cooler name, so you buy (or rent) a domain name like _my-cool-domain.ca_ . In this case the setup looks like this:
 
-locals:
+NaN
 
-localhost
-
-server237.blahfarm.com
-
-hosteddomains:
-
-my-cool-domain.ca
-
-project1.my-cool-domain.ca
-
-smtp.my-cool-domain.ca
+NaN
 
 **Note:** Any subdomain like _project1.my-cool-domain.ca_ or _smtp.my-cool-domain.ca_ also must also be in `/etc/courier/hosteddomains` if you want to have email addresses like _info@project1.my-cool-domain.ca_
 
@@ -402,7 +388,3 @@ Something similar (you just get Error 513 - Syntax Error) happens in this case:
 because domain2 is not valid. You can send to mail.domain2 which will work around that. For boxes at the internet and properly configured domains this is absolutely no problem, since you are always part of a domain and thus have one dot (.) behind the @.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Courier_MTA&oldid=391582](https://wiki.archlinux.org/index.php?title=Courier_MTA&oldid=391582)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

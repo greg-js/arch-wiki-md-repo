@@ -1,9 +1,5 @@
 # TGT iSCSI Target
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
@@ -176,7 +172,3 @@ tgt-admin -s
 *   [Configuration File Guide](http://wpkg.org/TGT-admin)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TGT_iSCSI_Target&oldid=403805](https://wiki.archlinux.org/index.php?title=TGT_iSCSI_Target&oldid=403805)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")

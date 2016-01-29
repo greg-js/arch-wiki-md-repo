@@ -1,9 +1,5 @@
 # LXDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LXDE](/index.php/LXDE "LXDE")
@@ -184,7 +180,3 @@ theme=theme_name
 LXDM does not support the XDMCP protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LXDM&oldid=407991](https://wiki.archlinux.org/index.php?title=LXDM&oldid=407991)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

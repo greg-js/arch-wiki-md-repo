@@ -1,9 +1,5 @@
 # Subsonic
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/)<sup><small>AUR</small></sup> package on [AUR](/index.php/AUR "AUR").
 
 ## Contents
@@ -59,53 +55,9 @@ The FFmpeg transcoder doesn't handle FLAC files well, and clients will often fai
 
 Start Subsonic and go to `settings > transcoding`. Ensure that the default FFmpeg transcoder does not get used on files with a "flac" extension, then add a new entry. You'll end up with something like this:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Convert from</th>
-
-<th>Convert to</th>
-
-<th>Step 1</th>
-
-<th>Step 2</th>
-
-</tr>
-
-<tr>
-
-<td>mp3 default</td>
-
-<td>... NOT flac ...</td>
-
-<td>mp3</td>
-
-<td>ffmpeg ...</td>
-
-</tr>
-
-<tr>
-
-<td>mp3 flac</td>
-
-<td>flac</td>
-
-<td>mp3</td>
-
-<td>flac --silent --decode --stdout %s</td>
-
-<td>lame --silent -h -b %b -</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Convert from | Convert to | Step 1 | Step 2 |
+| mp3 default | ... NOT flac ... | mp3 | ffmpeg ... |
+| mp3 flac | flac | mp3 | flac --silent --decode --stdout %s | lame --silent -h -b %b - |
 
 ### UTF-8 file names not added to the database
 
@@ -132,11 +84,3 @@ Once you start the server, pay close attention to the Transcoding options, as yo
 *   [Official web site](http://www.subsonic.org)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Subsonic&oldid=412181](https://wiki.archlinux.org/index.php?title=Subsonic&oldid=412181)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -1,9 +1,5 @@
 # HP Pavilion dv7-2120so
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware Specifications](#Hardware_Specifications)
@@ -85,7 +81,3 @@ JMicron card reader not working. Further setup needed for this.
 *   eSATA Port
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv7-2120so&oldid=288867](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv7-2120so&oldid=288867)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

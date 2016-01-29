@@ -1,9 +1,5 @@
 # PHP package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -25,7 +21,3 @@ PHP packages should install files into `/usr/share/php/`. This path should be in
 In most cases, the `arch` array should contain `'any'` because most PHP packages are architecture independent.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=415302](https://wiki.archlinux.org/index.php?title=PHP_package_guidelines&oldid=415302)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

@@ -1,9 +1,5 @@
 # wmii
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [i3](/index.php/I3 "I3")
@@ -448,11 +444,3 @@ status() {
 *   IRC channel is #wmii on the OFTC IRC network
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wmii&oldid=414093](https://wiki.archlinux.org/index.php?title=Wmii&oldid=414093)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

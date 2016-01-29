@@ -1,9 +1,5 @@
 # GpsDrive
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _GpsDrive is a car (bike, ship, plane) navigation system. GpsDrive displays your position provided from your GPS receiver on a zoomable map. The maps are autoselected for best resolution depending of your position and can be downloaded from the Internet. Speech output is supported via the "speech dispatcher" software. All GPS receivers supported by gpsd should be usable._
 
 _GpsDrive is written in C with use of the GTK+ toolkit under the GPL license, and runs with Linux, Mac OSX, and FreeBSD._
@@ -331,144 +327,22 @@ The following ManageHook setup requires the `XMonad.Hooks.ManageHelpers` module 
 
 ### Scripts packaged with GpsDrive
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Script</th>
-
-<th>Details</th>
-
-<th>Status</th>
-
-</tr>
-
-<tr>
-
-<td>geoinfo.pl</td>
-
-<td>Retrieves POI data from different sources and imports them into a mySQL database.</td>
-
-<td>**(Deprecated)** GpsDrive now uses an SQLite database located at `~/.gpsdrive/waypoints.db` instead of MySQL to manage user points.</td>
-
-</tr>
-
-<tr>
-
-<td>gpsdrive-update-mapnik-poitypes.pl</td>
-
-<td>Stores GpsDrive-compatible POI information inside the 'poi' column of the PostGIS/Mapnik database.</td>
-
-<td>**(Deprecated)** GpsDrive now uses an SQLite database located at `/usr/share/gpsdrive/osm.db` to store OpenStreetMap POI data.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Script | Details | Status |
+| geoinfo.pl | Retrieves POI data from different sources and imports them into a mySQL database. | **(Deprecated)** GpsDrive now uses an SQLite database located at `~/.gpsdrive/waypoints.db` instead of MySQL to manage user points. |
+| gpsdrive-update-mapnik-poitypes.pl | Stores GpsDrive-compatible POI information inside the 'poi' column of the PostGIS/Mapnik database. | **(Deprecated)** GpsDrive now uses an SQLite database located at `/usr/share/gpsdrive/osm.db` to store OpenStreetMap POI data. |
 
 ## Links/References
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>[http://sourceforge.net/apps/mediawiki/gpsdrive/index.php](http://sourceforge.net/apps/mediawiki/gpsdrive/index.php)</td>
-
-<td>GpsDrive Wiki</td>
-
-</tr>
-
-<tr>
-
-<td>[http://downloads.cloudmade.com](http://downloads.cloudmade.com)</td>
-
-<td>OSM Extraction Service</td>
-
-</tr>
-
-<tr>
-
-<td>[http://wiki.openstreetmap.org/wiki/Planet.osm](http://wiki.openstreetmap.org/wiki/Planet.osm)</td>
-
-<td>Planet.osm</td>
-
-</tr>
-
-<tr>
-
-<td>[http://wiki.openstreetmap.org/wiki/Mapnik](http://wiki.openstreetmap.org/wiki/Mapnik)</td>
-
-<td>OSM Mapnik Directions</td>
-
-</tr>
-
-<tr>
-
-<td>[http://wiki.openstreetmap.org/wiki/Mapnik/PostGIS](http://wiki.openstreetmap.org/wiki/Mapnik/PostGIS)</td>
-
-<td>OSM Mapnik/PostGIS Directions</td>
-
-</tr>
-
-<tr>
-
-<td>[http://wiki.openstreetmap.org/wiki/Map_Icons](http://wiki.openstreetmap.org/wiki/Map_Icons)</td>
-
-<td>OSM Map Icon Information</td>
-
-</tr>
-
-<tr>
-
-<td>[http://wiki.openstreetmap.org/wiki/Osm2pgsql](http://wiki.openstreetmap.org/wiki/Osm2pgsql)</td>
-
-<td>OSM osm2pgsql Page</td>
-
-</tr>
-
-<tr>
-
-<td>[https://wiki.archlinux.org/index.php/PostgreSQL](https://wiki.archlinux.org/index.php/PostgreSQL)</td>
-
-<td>Archwiki PostgreSQL Page</td>
-
-</tr>
-
-<tr>
-
-<td>[http://www.postgresql.org/docs/current/static/auth-methods.html](http://www.postgresql.org/docs/current/static/auth-methods.html)</td>
-
-<td>PostgreSQL Auth Methods</td>
-
-</tr>
-
-<tr>
-
-<td>[http://www.davidpashley.com/articles/postgresql-user-administration.html](http://www.davidpashley.com/articles/postgresql-user-administration.html)</td>
-
-<td>PostgreSQL User Administration</td>
-
-</tr>
-
-<tr>
-
-<td>file:///usr/share/doc/postgresql/html/xplang-install.html</td>
-
-<td>PostgreSQL Installing Languages</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| [http://sourceforge.net/apps/mediawiki/gpsdrive/index.php](http://sourceforge.net/apps/mediawiki/gpsdrive/index.php) | GpsDrive Wiki |
+| [http://downloads.cloudmade.com](http://downloads.cloudmade.com) | OSM Extraction Service |
+| [http://wiki.openstreetmap.org/wiki/Planet.osm](http://wiki.openstreetmap.org/wiki/Planet.osm) | Planet.osm |
+| [http://wiki.openstreetmap.org/wiki/Mapnik](http://wiki.openstreetmap.org/wiki/Mapnik) | OSM Mapnik Directions |
+| [http://wiki.openstreetmap.org/wiki/Mapnik/PostGIS](http://wiki.openstreetmap.org/wiki/Mapnik/PostGIS) | OSM Mapnik/PostGIS Directions |
+| [http://wiki.openstreetmap.org/wiki/Map_Icons](http://wiki.openstreetmap.org/wiki/Map_Icons) | OSM Map Icon Information |
+| [http://wiki.openstreetmap.org/wiki/Osm2pgsql](http://wiki.openstreetmap.org/wiki/Osm2pgsql) | OSM osm2pgsql Page |
+| [https://wiki.archlinux.org/index.php/PostgreSQL](https://wiki.archlinux.org/index.php/PostgreSQL) | Archwiki PostgreSQL Page |
+| [http://www.postgresql.org/docs/current/static/auth-methods.html](http://www.postgresql.org/docs/current/static/auth-methods.html) | PostgreSQL Auth Methods |
+| [http://www.davidpashley.com/articles/postgresql-user-administration.html](http://www.davidpashley.com/articles/postgresql-user-administration.html) | PostgreSQL User Administration |
+| file:///usr/share/doc/postgresql/html/xplang-install.html | PostgreSQL Installing Languages |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GpsDrive&oldid=401241](https://wiki.archlinux.org/index.php?title=GpsDrive&oldid=401241)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

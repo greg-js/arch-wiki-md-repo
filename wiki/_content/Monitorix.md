@@ -1,9 +1,5 @@
 # Monitorix
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon")
@@ -103,7 +99,3 @@ Also add `url_prefix_proxy = http://your.domain.com` to `/etc/monitorix/monitori
 [Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> is a package which provides a pseudo-daemon that makes use of tmpfs to store RRD Databases for Monitorix. Doing so will greatly reduce hdd reads/writes.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Monitorix&oldid=415392](https://wiki.archlinux.org/index.php?title=Monitorix&oldid=415392)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")

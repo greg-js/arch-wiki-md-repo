@@ -1,9 +1,5 @@
 # Desktop notifications
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GTK+](/index.php/GTK%2B "GTK+")
@@ -45,47 +41,43 @@ You can choose one of the following implementations:
 
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — A notification-daemon applet is available for AWN.
 
-[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment").
 
-[https://github.com/linuxdeepin/deepin-notifications](https://github.com/linuxdeepin/deepin-notifications) || [deepin-notifications](https://www.archlinux.org/packages/?name=deepin-notifications)
+NaN
 
 *   **Dunst** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
-[http://www.knopwob.org/dunst/](http://www.knopwob.org/dunst/) || [dunst](https://www.archlinux.org/packages/?name=dunst)
+NaN
 
 *   **LXQt Notification Daemon** — Notification server for [LXQt](/index.php/LXQt "LXQt").
 
-[https://github.com/lxde/lxqt-notificationd](https://github.com/lxde/lxqt-notificationd) || [lxqt-notificationd](https://www.archlinux.org/packages/?name=lxqt-notificationd)
+NaN
 
 *   **Notification Daemon** — The notification server used by [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback").
 
-[https://github.com/GNOME/notification-daemon](https://github.com/GNOME/notification-daemon) || [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon)
-
-You can run it manually using `/usr/lib/notification-daemon-1.0/notification-daemon`.
+NaN
 
 *   **MATE Notification Daemon** — Notification server for [MATE](/index.php/MATE "MATE").
 
-[https://github.com/mate-desktop/mate-notification-daemon/](https://github.com/mate-desktop/mate-notification-daemon/) || GTK+ 2: [mate-notification-daemon](https://www.archlinux.org/packages/?name=mate-notification-daemon), GTK+ 3 (experimental): [mate-notification-daemon-gtk3](https://www.archlinux.org/packages/?name=mate-notification-daemon-gtk3)
+NaN
 
 *   **Notify OSD** — Notification server for [Unity](/index.php/Unity "Unity").
 
-[https://launchpad.net/notify-osd](https://launchpad.net/notify-osd) || [notify-osd](https://www.archlinux.org/packages/?name=notify-osd)
+NaN
 
 *   **statnot** — Small, lightweight notification daemon that can output notifications to the root window's title, stdout or FIFO pipes, making it integrate very well with tiling window managers.
 
-[https://github.com/halhen/statnot](https://github.com/halhen/statnot) || [statnot](https://aur.archlinux.org/packages/statnot/)<sup><small>AUR</small></sup>
+NaN
 
 *   **twmn** — Notification system for tiling window managers.
 
-[https://github.com/sboli/twmn](https://github.com/sboli/twmn) || [twmn-git](https://aur.archlinux.org/packages/twmn-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Xfce Notification Daemon** — Notification server for [Xfce](/index.php/Xfce "Xfce").
 
-[http://goodies.xfce.org/projects/applications/xfce4-notifyd](http://goodies.xfce.org/projects/applications/xfce4-notifyd) || [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd)
-
-**Tip:** To configure xfce4-notifyd, run the following command: `xfce4-notifyd-config`.
+NaN
 
 ## Usage in programming
 
@@ -450,12 +442,3 @@ End Class
 *   [Python example](http://hashbang.fr/tutoriel-notify.html) (french article)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413772](https://wiki.archlinux.org/index.php?title=Desktop_notifications&oldid=413772)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

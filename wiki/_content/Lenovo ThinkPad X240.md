@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X240
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -33,153 +29,20 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
 
 **Tip:** Below were the tested configurations at the current time.
 
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Feature</th>
-
-<th>X240</th>
-
-<th>X240 (20AMS4SM00)</th>
-
-</tr>
-
-<tr>
-
-<td>CPU</td>
-
-<td>Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz</td>
-
-<td>Intel(R) Core(TM) i5-4210U CPU @ 2.7GHz</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td>Intel HD 4400 - Haswell-ULT</td>
-
-<td>Intel HD 4400 - Haswell-ULT</td>
-
-</tr>
-
-<tr>
-
-<td>Ram</td>
-
-<td>8 GB</td>
-
-<td>8 GB</td>
-
-</tr>
-
-<tr>
-
-<td>Disk</td>
-
-<td>Samsung 5120 SSD</td>
-
-<td>Seagate ST500LM000-SSHD-8GB</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>12.5" IPS FHD (1920x1080)</td>
-
-<td>12.5" IPS FHD (1920x1080)</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td>Intel Corporation Wireless 7260</td>
-
-<td>Intel Corporation Wireless 7260</td>
-
-</tr>
-
-<tr>
-
-<td>Built-in Battery</td>
-
-<td>9 Cell</td>
-
-<td>9 Cell</td>
-
-</tr>
-
-<tr>
-
-<td>Additional Plugable Battery</td>
-
-<td>6 Cell 19+</td>
-
-<td>6 Cell 19+</td>
-
-</tr>
-
-<tr>
-
-<td>Backlight Keyboard</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>ThinkLight</td>
-
-<td>No</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint Scanner</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | X240 | X240 (20AMS4SM00) |
+| CPU | Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz | Intel(R) Core(TM) i5-4210U CPU @ 2.7GHz |
+| Graphics | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT |
+| Ram | 8 GB | 8 GB |
+| Disk | Samsung 5120 SSD | Seagate ST500LM000-SSHD-8GB |
+| Display | 12.5" IPS FHD (1920x1080) | 12.5" IPS FHD (1920x1080) |
+| Wireless | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 |
+| Built-in Battery | 9 Cell | 9 Cell |
+| Additional Plugable Battery | 6 Cell 19+ | 6 Cell 19+ |
+| Backlight Keyboard | Yes | Yes |
+| ThinkLight | No | No |
+| Fingerprint Scanner | Yes | Yes |
+| Bluetooth | Yes | Yes |
+| Camera | Yes | Yes |
 
 ### System Configuration
 
@@ -286,11 +149,3 @@ On some X240 and other TP 4xx models, persisting grey noise is hearable when the
 *   [X240 on ThinkWiki.org](http://www.thinkwiki.org/wiki/Category:X240)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X240&oldid=391457](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X240&oldid=391457)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

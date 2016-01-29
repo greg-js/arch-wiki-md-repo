@@ -1,9 +1,5 @@
 # Xdg user directories
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [xdg-menu](/index.php/Xdg-menu "Xdg-menu")
@@ -95,11 +91,3 @@ $ xdg-user-dir TEMPLATES
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412259](https://wiki.archlinux.org/index.php?title=Xdg_user_directories&oldid=412259)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

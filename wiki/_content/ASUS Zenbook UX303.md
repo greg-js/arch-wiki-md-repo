@@ -1,9 +1,5 @@
 # ASUS Zenbook UX303
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX303](http://www.asus.com/Notebooks_Ultrabooks/UX303LN/) Ultrabook.
 
 There is a lot a models but 2 main models, UX303LN with 2 graphic cards (intel & nvidia) and UX303LA with only an intel graphic card.
@@ -213,6 +209,8 @@ Battery life may depend on the type of LCD panel. The above values are shown for
 
 There have been suggestions that "discharging at zero rate" while on AC is a battery calibration issue solvable by allowing the battery to fully discharge and then charging it back to full capacity.
 
+It is also recommended to install the [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") AUR package. On a UX303LB laptop (Broadwell) this increases battery life significantly.
+
 ### Microphone
 
 Microphone works out of the box. If you cannot record or use VoIP, make sure the microphone is not muted.
@@ -235,8 +233,4 @@ If the USB Ports are only working with USB 2.0 devices, disable "XHCI Pre-Boot M
 
 Be aware, that after deactivating "XHCI Pre-Boot Mode" the ports will only work in USB 2.0 mode.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=413448](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=413448)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=417737](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX303&oldid=417737)"

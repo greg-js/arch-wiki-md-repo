@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X120e
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
@@ -205,13 +201,3 @@ HIBERNATE_MODE="shutdown"
 [X120e on ThinkWiki](http://www.thinkwiki.org/wiki/Category:X120e) [Undervolting the AMD Fusion with PHC-tool](http://www.linux-phc.org/forum/viewtopic.php?f=7&t=269)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X120e&oldid=412575](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X120e&oldid=412575)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

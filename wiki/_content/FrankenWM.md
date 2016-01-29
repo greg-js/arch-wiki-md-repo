@@ -1,9 +1,5 @@
 # FrankenWM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 FrankenWM is a dynamic tiling [window manager](/index.php/Window_manager "Window manager"), comparable to dwm or awesome. This means there are a number of predefined layouts that are used to tile the windows. The source code is based on monsterwm-xcb, but includes a lot of bugfixes and additonal features like extensive runtime configuration, a scratchpad window, window minimizing, floating control via keyboard and currently 13 different tiling layouts.
 
 ## Contents
@@ -62,7 +58,3 @@ This is normal behaviour, as FrankenWM does not come with a bar included or a de
 Have a look at the `config.h` used to build your currently running version of FrankenWM, which is located in the build directory. Make sure that both the shortcut to run the `termcmd`/`menucmd` command and the `termcmd`/`menucmd` itself are set properly to start an installed terminal/menu.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FrankenWM&oldid=389395](https://wiki.archlinux.org/index.php?title=FrankenWM&oldid=389395)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

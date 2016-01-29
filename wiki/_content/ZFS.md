@@ -1,9 +1,5 @@
 # ZFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -955,7 +951,7 @@ WantedBy=local-fs.target
 *   [Solaris Internals -- ZFS Troubleshooting Guide](http://www.solarisinternals.com/wiki/index.php/ZFS_Troubleshooting_Guide)
 *   [Pingdom details how it backs up 5TB of MySQL data every day with ZFS](http://royal.pingdom.com/2013/06/04/zfs-backup/)
 
-Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
+NaN
 
 1.  [VDEVs](https://pthree.org/2012/12/04/zfs-administration-part-i-vdevs/)
 2.  [RAIDZ Levels](https://pthree.org/2012/12/05/zfs-administration-part-ii-raidz/)
@@ -976,13 +972,3 @@ Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417325](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417325)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

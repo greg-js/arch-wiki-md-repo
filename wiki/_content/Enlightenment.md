@@ -1,9 +1,5 @@
 # Enlightenment
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -179,13 +175,7 @@ To alter the GTK+ theme, go to _Settings > All > Look > Application Theme_.
 
 ### Modules and Gadgets
 
-Module
-
-Name used in enlightenment to refer to the "backing" code for a gadget.
-
-Gadget
-
-Front-end or user interface that should help the end users of Enlightenment do something.
+NaN
 
 Many Modules provide Gadgets that can be added to your desktop or on a shelf. Some Modules (such as CPUFreq) only provide a single Gadget while others (such as Composite) provide additional features without any gadgets. Note that certain gadgets such as Systray can only be added to a shelf while others such as Moon can only be loaded on the desktop.
 
@@ -286,11 +276,3 @@ Shadows, Transparent effects _et all_ can be found in MMB or RMB /Settings, unde
 *   [irc://irc.freenode.net#e](irc://irc.freenode.net#e)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=412390](https://wiki.archlinux.org/index.php?title=Enlightenment&oldid=412390)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

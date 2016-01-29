@@ -1,9 +1,5 @@
 # Vertex VW110L - Ufon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article details the configuration and use of the Vertex VW110L modem for the U:Fon service.
 
 ## Contents
@@ -90,7 +86,3 @@ Try screen or minicom to get an informations from **/dev/ttyUSB1**.
 If something doesn't work, see /var/log/messages for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vertex_VW110L_-_Ufon&oldid=206807](https://wiki.archlinux.org/index.php?title=Vertex_VW110L_-_Ufon&oldid=206807)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")

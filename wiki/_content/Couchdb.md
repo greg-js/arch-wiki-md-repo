@@ -1,9 +1,5 @@
 # Couchdb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _"Apache CouchDB is a document-oriented database that can be queried and indexed in a MapReduce fashion using JavaScript."_ - [CouchDB homepage](http://couchdb.apache.org/)
 
 ## Contents
@@ -86,7 +82,3 @@ See [create a read-only database](http://lizconlan.github.com/sandbox/securing-c
 *   [create a read-only database](http://lizconlan.github.com/sandbox/securing-couchdb.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Couchdb&oldid=409775](https://wiki.archlinux.org/index.php?title=Couchdb&oldid=409775)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

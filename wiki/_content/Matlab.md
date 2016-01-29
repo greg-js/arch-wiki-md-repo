@@ -1,9 +1,5 @@
 # Matlab
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Octave](/index.php/Octave "Octave")
@@ -20,7 +16,7 @@ Related articles
 
 From the [official website](http://www.mathworks.com/products/matlab/):
 
-_MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java._
+NaN
 
 ## Contents
 
@@ -321,12 +317,3 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=415035](https://wiki.archlinux.org/index.php?title=Matlab&oldid=415035)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Jabberd2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 jabberd2 is an [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") server, written in the C language and licensed as Free software under the GNU General Public License. It was inspired by jabberd14.
 
 ## Contents
@@ -54,11 +50,3 @@ Read [Daemons](/index.php/Daemons "Daemons") for more information.
 *   [Jabberd2 homepage](http://jabberd2.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=414789](https://wiki.archlinux.org/index.php?title=Jabberd2&oldid=414789)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

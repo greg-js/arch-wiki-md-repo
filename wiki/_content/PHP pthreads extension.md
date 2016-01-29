@@ -1,9 +1,5 @@
 # PHP pthreads extension
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 If you wish to have POSIX multi-threading you will need the pthreads extension. To install the pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) extension using `pecl` you are required to use a compiled version of PHP with the the thread safety support flag `--enable-maintainer-zts`. currently the most clean way to do this would be to rebuild the original package with the proper flag.
 
 Check what packages depend on the [php](https://www.archlinux.org/packages/?name=php) package, for example:
@@ -76,7 +72,3 @@ makepkg -si
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP_pthreads_extension&oldid=388118](https://wiki.archlinux.org/index.php?title=PHP_pthreads_extension&oldid=388118)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

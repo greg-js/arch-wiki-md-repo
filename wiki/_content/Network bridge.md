@@ -1,9 +1,5 @@
 # Network bridge
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
@@ -195,11 +191,3 @@ See also [Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkCon
 *   [Official documentation for iproute2](http://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=414091](https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=414091)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

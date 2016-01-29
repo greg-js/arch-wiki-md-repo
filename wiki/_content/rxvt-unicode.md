@@ -1,9 +1,5 @@
 # rxvt-unicode
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a highly customizable [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") forked from [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Commonly known as `urxvt`, rxvt-unicode can be [daemonized](/index.php/Daemon "Daemon") to run clients within a single [process](https://en.wikipedia.org/wiki/Process_(computing) "wikipedia:Process (computing)") in order to minimize the use of system resources. Developed by Marc Lehmann, some of the more outstanding features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), the ability to display multiple font types and support for [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") extensions.
 
 ## Contents
@@ -361,77 +357,14 @@ URxvt.url-select.underline: true
 
 **Key commands:**
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Key</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>Alt+u</td>
-
-<td>Enter selection mode. The last URL on your screen will be selected. You can repeat `Alt+u` to select the next upward URL.</td>
-
-</tr>
-
-<tr>
-
-<td>k</td>
-
-<td>Select next upward URL</td>
-
-</tr>
-
-<tr>
-
-<td>j</td>
-
-<td>Select next downward URL</td>
-
-</tr>
-
-<tr>
-
-<td>Return</td>
-
-<td>Open selected URL in browser and quit selection mode</td>
-
-</tr>
-
-<tr>
-
-<td>o</td>
-
-<td>Open selected URL in browser without quitting selection mode</td>
-
-</tr>
-
-<tr>
-
-<td>y</td>
-
-<td>Copy (yank) selected URL and quit selection mode</td>
-
-</tr>
-
-<tr>
-
-<td>Esc</td>
-
-<td>Cancel URL selection mode</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Key | Description |
+| Alt+u | Enter selection mode. The last URL on your screen will be selected. You can repeat `Alt+u` to select the next upward URL. |
+| k | Select next upward URL |
+| j | Select next downward URL |
+| Return | Open selected URL in browser and quit selection mode |
+| o | Open selected URL in browser without quitting selection mode |
+| y | Copy (yank) selected URL and quit selection mode |
+| Esc | Cancel URL selection mode |
 
 ### Simple tabs
 
@@ -444,69 +377,13 @@ URxvt.perl-ext-common: ...,tabbed,...
 
 To control tabs use:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Key</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>Shift+Down</td>
-
-<td>New tab</td>
-
-</tr>
-
-<tr>
-
-<td>Shift+Left</td>
-
-<td>Go to left tab</td>
-
-</tr>
-
-<tr>
-
-<td>Shift+Right</td>
-
-<td>Go to right tab</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl+Left</td>
-
-<td>Move tab to the left</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl+Right</td>
-
-<td>Move tab to the right</td>
-
-</tr>
-
-<tr>
-
-<td>Ctrl+d</td>
-
-<td>Close tab</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Key | Description |
+| Shift+Down | New tab |
+| Shift+Left | Go to left tab |
+| Shift+Right | Go to right tab |
+| Ctrl+Left | Move tab to the left |
+| Ctrl+Right | Move tab to the right |
+| Ctrl+d | Close tab |
 
 You can change the colors of tabs with the following:
 
@@ -973,45 +850,10 @@ URxvt.perl-ext-common: default,matcher,tabbed
 
 #### Tab control
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Key</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>Shift+Left</td>
-
-<td>Switch to the tab left of the current one</td>
-
-</tr>
-
-<tr>
-
-<td>Shift+Right</td>
-
-<td>Switch to the tab right of the current one</td>
-
-</tr>
-
-<tr>
-
-<td>Shift+Down</td>
-
-<td>Create a new tab</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Key | Description |
+| Shift+Left | Switch to the tab left of the current one |
+| Shift+Right | Switch to the tab right of the current one |
+| Shift+Down | Create a new tab |
 
 You can also use your mouse to switch the tabs by clicking the wished one and create a new tab by clicking on _[NEW].\\_
 
@@ -1188,11 +1030,3 @@ URxvt*skipBuiltinGlyphs:    true
 *   [urxvtperl](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/src/urxvt.pm) - Official Perl extension reference
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rxvt-unicode&oldid=412689](https://wiki.archlinux.org/index.php?title=Rxvt-unicode&oldid=412689)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

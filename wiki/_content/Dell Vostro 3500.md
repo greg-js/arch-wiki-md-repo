@@ -1,9 +1,5 @@
 # Dell Vostro 3500
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -169,13 +165,3 @@ This laptop comes with Optimus switchable graphics configuration. This is a muxl
 Works well under [bumblebee](/index.php/Bumblebee "Bumblebee") with 3D acceleration on both [NVIDIA](/index.php/NVIDIA "NVIDIA") and [nouveau](/index.php/Nouveau "Nouveau") drivers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_3500&oldid=400579](https://wiki.archlinux.org/index.php?title=Dell_Vostro_3500&oldid=400579)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

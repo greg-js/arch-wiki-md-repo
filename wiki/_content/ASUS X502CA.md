@@ -1,9 +1,5 @@
 # ASUS X502CA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This laptop has some hardware that does not work well out of-the-box. With some extra effort it should work on Arch Linux with the possible exception of the wireless interface. For those that are considering this laptop for Linux use: Reconsider, there are Asus laptops that are probably better suited for Linux.
 
 ## Contents
@@ -47,7 +43,3 @@ I have tried to configure this. I am not really satisfied with the huge touchpad
 *   [http://askubuntu.com/questions/128023/synaptics-touchpad-sensitivity-issue](http://askubuntu.com/questions/128023/synaptics-touchpad-sensitivity-issue)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_X502CA&oldid=356042](https://wiki.archlinux.org/index.php?title=ASUS_X502CA&oldid=356042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

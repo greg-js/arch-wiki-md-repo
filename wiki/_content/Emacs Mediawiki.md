@@ -1,9 +1,5 @@
 # Emacs Mediawiki
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Emacs](/index.php/Emacs "Emacs")
@@ -127,11 +123,3 @@ will specifically use the [dwb](/index.php/Dwb "Dwb") browser.
 *   [launchpad project page](https://launchpad.net/mediawiki-el)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Emacs_Mediawiki&oldid=410375](https://wiki.archlinux.org/index.php?title=Emacs_Mediawiki&oldid=410375)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

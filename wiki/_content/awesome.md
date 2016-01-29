@@ -1,12 +1,8 @@
 # awesome
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [awesome website](https://awesome.naquadah.org/):
 
-_[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) "wikipedia:awesome (window manager)") is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment._
+NaN
 
 ## Contents
 
@@ -111,83 +107,34 @@ Some good examples of rc.lua would be as follows:
 
 Several extensions are available for awesome (3.5+):
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th style="font-weight: bold;">Extension</th>
-
-<th style="font-weight: bold;">Functionality</th>
-
-</tr>
-
-<tr>
-
-<td>
+| Extension | Functionality |
+| 
 
 *   [Revelation](http://awesome.naquadah.org/wiki/Revelation)
 
-</td>
-
-<td>Bring up a view of all opened clients</td>
-
-</tr>
-
-<tr>
-
-<td>
+ | Bring up a view of all opened clients |
+| 
 
 *   [Shifty](http://awesome.naquadah.org/wiki/Shifty)
 
-</td>
-
-<td>Dynamic tagging</td>
-
-</tr>
-
-<tr>
-
-<td>
+ | Dynamic tagging |
+| 
 
 *   [Naughty](http://awesome.naquadah.org/wiki/Naughty)
 
-</td>
-
-<td>Pop-up notifications</td>
-
-</tr>
-
-<tr>
-
-<td>
+ | Pop-up notifications |
+| 
 
 *   [Vicious](http://awesome.naquadah.org/wiki/Vicious) ([README](http://git.sysphere.org/vicious/tree/README))
 *   [Obvious](http://awesome.naquadah.org/wiki/Obvious)
 *   [Bashets](http://awesome.naquadah.org/wiki/Bashets)
 
-</td>
-
-<td>Additional [widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome)</td>
-
-</tr>
-
-<tr>
-
-<td>
+ | Additional [widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome) |
+| 
 
 *   [Run or raise](http://awesome.naquadah.org/wiki/Run_or_raise)
 
-</td>
-
-<td>Start a program if no instance exists, else jump to it</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ | Start a program if no instance exists, else jump to it |
 
 ### Autorun programs
 
@@ -657,14 +604,3 @@ It does not work when the console application is invoked from a GTK terminal (e.
 *   [https://bbs.archlinux.org/viewtopic.php?id=88926](https://bbs.archlinux.org/viewtopic.php?id=88926) - share your awesome!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Awesome&oldid=409325](https://wiki.archlinux.org/index.php?title=Awesome&oldid=409325)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Java Runtime Environment fonts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fonts](/index.php/Fonts "Fonts")
@@ -37,61 +33,12 @@ _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=_setting'_
 
 Where `_setting_` is one of the values:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Setting</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`off`, `false`, `default`</td>
-
-<td>No anti-aliasing</td>
-
-</tr>
-
-<tr>
-
-<td>`on`</td>
-
-<td>Full anti-aliasing</td>
-
-</tr>
-
-<tr>
-
-<td>`gasp`</td>
-
-<td>Use the font's built-in hinting instructions</td>
-
-</tr>
-
-<tr>
-
-<td>`lcd`, `lcd_hrgb`</td>
-
-<td>Anti-aliasing tuned for many popular LCD monitors</td>
-
-</tr>
-
-<tr>
-
-<td>`lcd_hbgr`, `lcd_vrgb`, `lcd_vbgr`</td>
-
-<td>Alternative LCD monitor setting</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Setting | Description |
+| `off`, `false`, `default` | No anti-aliasing |
+| `on` | Full anti-aliasing |
+| `gasp` | Use the font's built-in hinting instructions |
+| `lcd`, `lcd_hrgb` | Anti-aliasing tuned for many popular LCD monitors |
+| `lcd_hbgr`, `lcd_vrgb`, `lcd_vbgr` | Alternative LCD monitor setting |
 
 The `gasp` and `lcd` settings work well in many instances.
 
@@ -148,7 +95,3 @@ Place font files under the directory below. Create the directory if it does not 
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Java_Runtime_Environment_fonts&oldid=403025](https://wiki.archlinux.org/index.php?title=Java_Runtime_Environment_fonts&oldid=403025)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fonts](/index.php/Category:Fonts "Category:Fonts")

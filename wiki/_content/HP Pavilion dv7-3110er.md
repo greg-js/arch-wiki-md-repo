@@ -1,9 +1,5 @@
 # HP Pavilion dv7-3110er
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article is written from personal experience and the experience gained from resource archlinux.org. I would like to express my gratitude for creating this resource.
 
 ## Contents
@@ -969,7 +965,3 @@ MODULES=(... r8168 ... )
 - nVidia GeForce GT 230M (sees only 256 MB of video RAM), need for swap on video ram
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv7-3110er&oldid=390568](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv7-3110er&oldid=390568)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

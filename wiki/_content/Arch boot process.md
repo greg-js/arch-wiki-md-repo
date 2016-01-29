@@ -1,9 +1,5 @@
 # Arch boot process
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
@@ -123,8 +119,3 @@ Once the user's [shell](/index.php/Shell "Shell") is started, it will typically 
 *   [NeoSmart: The BIOS/MBR Boot Process](https://neosmart.net/wiki/mbr-boot-process/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_boot_process&oldid=408556](https://wiki.archlinux.org/index.php?title=Arch_boot_process&oldid=408556)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

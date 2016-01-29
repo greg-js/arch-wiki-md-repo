@@ -1,9 +1,5 @@
 # Pacman Development
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Interested in Pacman Development? This page should help you get started.
 
 Remember that if **you** think something belongs on this page, add it! The current pacman developers are not likely to know what people need to know and should be on this page.
@@ -37,14 +33,14 @@ A handful of the "regulars" have their own repositories with work in progress, w
 
 ### Allan McRae
 
-Web: [https://projects.archlinux.org/users/allan/pacman.git/](https://projects.archlinux.org/users/allan/pacman.git/)  
-Clone: [git://projects.archlinux.org/users/allan/pacman.git](git://projects.archlinux.org/users/allan/pacman.git)  
+Web: [https://projects.archlinux.org/users/allan/pacman.git/](https://projects.archlinux.org/users/allan/pacman.git/)
+Clone: [git://projects.archlinux.org/users/allan/pacman.git](git://projects.archlinux.org/users/allan/pacman.git)
 Clone: [https://projects.archlinux.org/git/users/allan/pacman.git](https://projects.archlinux.org/git/users/allan/pacman.git)
 
 ### Dan McGee
 
-Web: [http://code.toofishes.net/cgit/dan/pacman.git/](http://code.toofishes.net/cgit/dan/pacman.git/)  
-Clone: [git://code.toofishes.net/dan/pacman.git](git://code.toofishes.net/dan/pacman.git)  
+Web: [http://code.toofishes.net/cgit/dan/pacman.git/](http://code.toofishes.net/cgit/dan/pacman.git/)
+Clone: [git://code.toofishes.net/dan/pacman.git](git://code.toofishes.net/dan/pacman.git)
 Clone: [http://code.toofishes.net/git/dan/pacman.git](http://code.toofishes.net/git/dan/pacman.git)
 
 ## Git Tips
@@ -129,7 +125,3 @@ Get toofishes working branch
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman_Development&oldid=382994](https://wiki.archlinux.org/index.php?title=Pacman_Development&oldid=382994)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development")

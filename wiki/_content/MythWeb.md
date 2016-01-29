@@ -1,9 +1,5 @@
 # MythWeb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 MythWeb is a web interface for [MythTV](/index.php/MythTV "MythTV")
 
 ## Contents
@@ -213,7 +209,3 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 *   [MythTV Wiki page on MythWeb](http://www.mythtv.org/wiki/MythWeb)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MythWeb&oldid=414204](https://wiki.archlinux.org/index.php?title=MythWeb&oldid=414204)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

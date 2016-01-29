@@ -1,9 +1,5 @@
 # Gnumeric
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -42,11 +38,3 @@ To start Gnumeric with a different locale, just run
 *   [Gnumeric Official Website](http://projects.gnome.org/gnumeric/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=412091](https://wiki.archlinux.org/index.php?title=Gnumeric&oldid=412091)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

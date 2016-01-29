@@ -1,74 +1,12 @@
 # ASUS X553MA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers configuration specific to this laptop's hardware.
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Kernel modules**</td>
-
-<td>**X.org modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth adapter</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Does not work</td>
-
-<td>wl</td>
-
-</tr>
-
-<tr>
-
-<td>GPU</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works</td>
-
-<td>i915</td>
-
-<td>intel_drv</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works</td>
-
-<td>psmouse</td>
-
-<td>synaptics_drv</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless NIC</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Works</td>
-
-<td>wl</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Kernel modules** | **X.org modules** |
+| Bluetooth adapter | Does not work | wl |
+| GPU | Works | i915 | intel_drv |
+| Touchpad | Works | psmouse | synaptics_drv |
+| Wireless NIC | Works | wl |
 
 ## Contents
 
@@ -118,7 +56,3 @@ Set the BIOS setting `OS Selection` in the `Advanced` menu to `Windows 7`.
 It is possible to successfully boot by either disabling ACPI or overriding the DSDT, but some devices might no longer operate.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_X553MA&oldid=413851](https://wiki.archlinux.org/index.php?title=ASUS_X553MA&oldid=413851)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

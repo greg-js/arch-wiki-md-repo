@@ -1,9 +1,5 @@
 # Logitech MX Master
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Logitech MX Master](http://www.logitech.com/en-us/product/mx-master)
 
 ## Usage
@@ -66,7 +62,3 @@ $ pkill xbindkeys && xbindkeys
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_MX_Master&oldid=409368](https://wiki.archlinux.org/index.php?title=Logitech_MX_Master&oldid=409368)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

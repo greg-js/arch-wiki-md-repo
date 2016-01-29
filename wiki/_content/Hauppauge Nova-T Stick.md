@@ -1,9 +1,5 @@
 # Hauppauge Nova-T Stick
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Hauppauge Nova-T Stick is an USB2.0 DVB-T tuner with an additional antenna port.
 
 ## Contents
@@ -110,7 +106,3 @@ A fast way is to just open your _leipzig.conf_ with VLC and enjoy watching!
 *   [Hauppauge Germany product page](http://www.hauppauge.de/pages/products/data_novatstick.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hauppauge_Nova-T_Stick&oldid=389739](https://wiki.archlinux.org/index.php?title=Hauppauge_Nova-T_Stick&oldid=389739)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

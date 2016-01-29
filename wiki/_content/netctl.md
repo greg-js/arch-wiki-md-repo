@@ -1,9 +1,5 @@
 # netctl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
@@ -45,6 +41,7 @@ Related articles
     *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
     *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
     *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
+    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -53,76 +50,14 @@ Related articles
 
 Optional dependencies are shown in the table below.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Feature</th>
-
-<th>Dependency</th>
-
-<th>netctl program  
-(if relevant)</th>
-
-</tr>
-
-<tr>
-
-<td>Automatic wireless connections</td>
-
-<td>[wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond)</td>
-
-<td>`netctl-auto`</td>
-
-</tr>
-
-<tr>
-
-<td>Automatic wired connections</td>
-
-<td>[ifplugd](https://www.archlinux.org/packages/?name=ifplugd)</td>
-
-<td>`netctl-ifplugd`</td>
-
-</tr>
-
-<tr>
-
-<td>WPA</td>
-
-<td>[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)</td>
-
-</tr>
-
-<tr>
-
-<td>DHCP</td>
-
-<td>[dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) or [dhclient](https://www.archlinux.org/packages/?name=dhclient)</td>
-
-</tr>
-
-<tr>
-
-<td>Wifi menus</td>
-
-<td>[dialog](https://www.archlinux.org/packages/?name=dialog)</td>
-
-</tr>
-
-<tr>
-
-<td>PPPoE</td>
-
-<td>[ppp](https://www.archlinux.org/packages/?name=ppp)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | Dependency | netctl program
+(if relevant) |
+| Automatic wireless connections | [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) | `netctl-auto` |
+| Automatic wired connections | [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) | `netctl-ifplugd` |
+| WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |
+| DHCP | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) or [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
+| Wifi menus | [dialog](https://www.archlinux.org/packages/?name=dialog) |
+| PPPoE | [ppp](https://www.archlinux.org/packages/?name=ppp) |
 
 **Warning:** Do not enable concurrent, conflicting network service. Use `systemctl --type=service` to ensure that no other network service is running before enabling a _netctl_ profile/service.
 
@@ -339,7 +274,7 @@ See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise"
 
 From [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 
-_The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed._
+NaN
 
 #### Load balancing
 
@@ -727,6 +662,28 @@ Many laptops have a hardware button (or switch) to turn off wireless card, howev
 
 If you want _netctl-auto_ to automatically unblock your wireless card to connect to a particular network, set `RFKill=++auto++` option for the wireless connection of your choice, as specified in the [netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) man page.
 
+### RTNETLINK answers: File exists (with multiple NICs)
+
+This is a very misleading response, it really means that you have assigned a default gateway in an earlier netctl control file. When netctl starts up the nth NIC and goes to set it's local route, it fails because there's already a default route from n-1.
+
+Remove it and everything works, except you no longer have a default route and so can't access things such as the internet. ExecUpPost doesn't work as it gets executed for each network card.
+
+What I did was create a new service, defaultrouter.service and here is the .service file:
+
+ `/etc/system/system/defaultrouter.service` 
+
+```
+[Unit]
+Description
+Requires=netctl.service
+After=netctl.service
+Before=ntpd.service,dnsmasq.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
+```
+
 ## See also
 
 *   [Initial mailing list announcement](https://lists.archlinux.org/pipermail/arch-projects/2012-December/003473.html)
@@ -734,14 +691,4 @@ If you want _netctl-auto_ to automatically unblock your wireless card to connect
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=415516](https://wiki.archlinux.org/index.php?title=Netctl&oldid=415516)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=417748](https://wiki.archlinux.org/index.php?title=Netctl&oldid=417748)"

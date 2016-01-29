@@ -1,9 +1,5 @@
 # XWiki
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 XWiki is an open-source enterprise-ready wiki written in Java, with a focus on extensibility. For more information, see the [Wikipedia article](https://en.wikipedia.org/wiki/XWiki "wikipedia:XWiki"), and the [XWiki Homepage](http://www.xwiki.org).
 
 You may also be interested in [Foswiki](/index.php/Foswiki "Foswiki"), which caters to similar needs, but is written in Perl.
@@ -64,7 +60,3 @@ The only solution I'm aware of so far is to create a new `Host` element in Tomca
 *   Instruct Nginx to proxy to `[http://xwiki:8080/](http://xwiki:8080/)` instead.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XWiki&oldid=388067](https://wiki.archlinux.org/index.php?title=XWiki&oldid=388067)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

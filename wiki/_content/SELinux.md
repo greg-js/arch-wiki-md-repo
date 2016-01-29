@@ -1,9 +1,5 @@
 # SELinux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Security](/index.php/Security "Security")
@@ -44,167 +40,26 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
 
 Current status of those elements in Arch Linux:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Status</th>
-
-<th>Available at</th>
-
-</tr>
-
-<tr>
-
-<td>SELinux enabled kernel</td>
-
-<td>Implemented</td>
-
-<td>Removed since the 3.14 official Arch kernel: The main complaint was the lack of Kconfig option to disable audit by default. Available in the AUR.</td>
-
-</tr>
-
-<tr>
-
-<td>SELinux Userspace tools and libraries</td>
-
-<td>Work in progress: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux)</td>
-
-<td>Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux)</td>
-
-</tr>
-
-<tr>
-
-<td>SELinux Policy</td>
-
-<td>Work in progress, will probably be named selinux-policy-arch</td>
-
-<td>No working repository for now.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Status | Available at |
+| SELinux enabled kernel | Implemented | Removed since the 3.14 official Arch kernel: The main complaint was the lack of Kconfig option to disable audit by default. Available in the AUR. |
+| SELinux Userspace tools and libraries | Work in progress: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux) | Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) |
+| SELinux Policy | Work in progress, will probably be named selinux-policy-arch | No working repository for now. |
 
 Summary of changes in AUR as compared to official core packages:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Status and comments</th>
-
-</tr>
-
-<tr>
-
-<td>linux</td>
-
-<td>Need a rebuild with some KConfig options enabled</td>
-
-</tr>
-
-<tr>
-
-<td>coreutils</td>
-
-<td>Need a rebuild to link with libselinux</td>
-
-</tr>
-
-<tr>
-
-<td>cronie</td>
-
-<td>Need a rebuild with `--with-selinux` flag</td>
-
-</tr>
-
-<tr>
-
-<td>findutils</td>
-
-<td>Need SELinux patch, already upstream</td>
-
-</tr>
-
-<tr>
-
-<td>openssh</td>
-
-<td>Need a rebuild with `--with-selinux` flag</td>
-
-</tr>
-
-<tr>
-
-<td>pam</td>
-
-<td>Need a rebuild with `--enable-selinux` flag for Linux-PAM ; Need a patch for pam_unix2, which only removes a function already implemented in a library elsewhere</td>
-
-</tr>
-
-<tr>
-
-<td>pambase</td>
-
-<td>Configuration changes to add pam_selinux.so</td>
-
-</tr>
-
-<tr>
-
-<td>psmisc</td>
-
-<td>Need a patch, already upstream. Will be in version 22.21</td>
-
-</tr>
-
-<tr>
-
-<td>shadow</td>
-
-<td>Need a rebuild with `-lselinux` and `--with-selinux` flags</td>
-
-</tr>
-
-<tr>
-
-<td>sudo</td>
-
-<td>Need a rebuild with `--enable-selinux` flag</td>
-
-</tr>
-
-<tr>
-
-<td>systemd</td>
-
-<td>Need a rebuild with `--enable-selinux` flag</td>
-
-</tr>
-
-<tr>
-
-<td>util-linux</td>
-
-<td>Need a rebuild with `--enable-selinux` flag</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Status and comments |
+| linux | Need a rebuild with some KConfig options enabled |
+| coreutils | Need a rebuild to link with libselinux |
+| cronie | Need a rebuild with `--with-selinux` flag |
+| findutils | Need SELinux patch, already upstream |
+| openssh | Need a rebuild with `--with-selinux` flag |
+| pam | Need a rebuild with `--enable-selinux` flag for Linux-PAM ; Need a patch for pam_unix2, which only removes a function already implemented in a library elsewhere |
+| pambase | Configuration changes to add pam_selinux.so |
+| psmisc | Need a patch, already upstream. Will be in version 22.21 |
+| shadow | Need a rebuild with `-lselinux` and `--with-selinux` flags |
+| sudo | Need a rebuild with `--enable-selinux` flag |
+| systemd | Need a rebuild with `--enable-selinux` flag |
+| util-linux | Need a rebuild with `--enable-selinux` flag |
 
 All of the other SELinux-related packages may be included without changes nor risks.
 
@@ -230,101 +85,57 @@ All SELinux related packages belong to the _selinux_ group in the AUR as well as
 
 #### SELinux aware system utilities
 
-[coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/)<sup><small>AUR</small></sup>
+NaN
 
-Modified coreutils package compiled with SELinux support enabled. It replaces the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package
+NaN
 
-[selinux-flex](https://aur.archlinux.org/packages/selinux-flex/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/selinux-flex)]</sup>
+NaN
 
-Flex version needed only to build checkpolicy. The normal flex package causes a failure in the checkmodule command. It replaces the [flex](https://www.archlinux.org/packages/?name=flex) package.
+NaN
 
-[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/)<sup><small>AUR</small></sup> and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup>
+NaN
 
-PAM package with pam_selinux.so. and the underlying base package. They replace the [pam](https://www.archlinux.org/packages/?name=pam) and [pambase](https://www.archlinux.org/packages/?name=pambase) packages respectively.
+NaN
 
-[systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>
+NaN
 
-An SELinux aware version of Systemd. It replaces the [systemd](https://www.archlinux.org/packages/?name=systemd) package.
+NaN
 
-[util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)<sup><small>AUR</small></sup>
+NaN
 
-Modified util-linux package compiled with SELinux support enabled. It replaces the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
+NaN
 
-[findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/)<sup><small>AUR</small></sup>
+NaN
 
-Patched findutils package compiled with SELinux support to make searching of files with specified security context possible. It replaces the [findutils](https://www.archlinux.org/packages/?name=findutils) package.
-
-[sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/)<sup><small>AUR</small></sup>
-
-Modified [sudo](/index.php/Sudo "Sudo") package compiled with SELinux support which sets the security context correctly. It replaces the [sudo](https://www.archlinux.org/packages/?name=sudo) package.
-
-[psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)<sup><small>AUR</small></sup>
-
-Psmisc package compiled with SELinux support; for example, it adds the `-Z` option to `killall`. It replaces the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package.
-
-[shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/)<sup><small>AUR</small></sup>
-
-Shadow package compiled with SELinux support; contains a modified `/etc/pam.d/login` file to set correct security context for user after login. It replaces the [shadow](https://www.archlinux.org/packages/?name=shadow) package.
-
-[cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)<sup><small>AUR</small></sup>
-
-Fedora fork of Vixie cron with SELinux enabled. It replaces the [cronie](https://www.archlinux.org/packages/?name=cronie) package.
-
-[logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)<sup><small>AUR</small></sup>
-
-Logrotate package compiled with SELinux support. It replaces the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package.
-
-[openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)<sup><small>AUR</small></sup>
-
-OpenSSH package compiled with SELinux support to set security context for user sessions. It replaces the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
+NaN
 
 #### SELinux userspace utilities
 
-[checkpolicy](https://aur.archlinux.org/packages/checkpolicy/)<sup><small>AUR</small></sup>
+NaN
 
-Tools to build SELinux policy
+NaN
 
-[libselinux](https://aur.archlinux.org/packages/libselinux/)<sup><small>AUR</small></sup>
+NaN
 
-Library for security-aware applications. Python bindings needed for _semanage_ and _setools_ now included.
+NaN
 
-[libsemanage](https://aur.archlinux.org/packages/libsemanage/)<sup><small>AUR</small></sup>
+NaN
 
-Library for policy management. Python bindings needed for _semanage_ and _setools_ now included.
-
-[libsepol](https://aur.archlinux.org/packages/libsepol/)<sup><small>AUR</small></sup>
-
-Library for binary policy manipulation.
-
-[policycoreutils](https://aur.archlinux.org/packages/policycoreutils/)<sup><small>AUR</small></sup>
-
-SELinux core utils such as newrole, setfiles, etc.
-
-[sepolgen](https://aur.archlinux.org/packages/sepolgen/)<sup><small>AUR</small></sup>
-
-A Python library for parsing and modifying policy source.
+NaN
 
 #### SELinux policy packages
 
-[selinux-refpolicy](https://aur.archlinux.org/packages/selinux-refpolicy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/selinux-refpolicy)]</sup>
+NaN
 
-Precompiled modular-otherways-vanilla Reference policy with headers and documentation but without sources.
+NaN
 
-[selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/)<sup><small>AUR</small></sup>
-
-Reference policy sources
-
-[selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup>
-
-Precompiled modular Reference policy with headers and documentation but without sources. Development Arch Linux Refpolicy patch included, but for now [February 2011] it only fixes some issues with `/etc/rc.d/*` labeling.
+NaN
 
 **Note:** The _selinux-refpolicy-arch_ package was last updated in 2011, hence it seems doubtful that it is useful any longer.
 
 #### Other SELinux tools
 
-[setools](https://aur.archlinux.org/packages/setools/)<sup><small>AUR</small></sup>
-
-CLI and GUI tools to manage SELinux
+NaN
 
 ### Installation
 
@@ -611,13 +422,7 @@ The place to look for SELinux errors is the systemd journal. In order to see SEL
 
 There are some tools/commands that can greatly help with SELinux.
 
-restorecon
-
-Restores the context of a file/directory (or recursively with `-R`) based on any policy rules
-
-chcon
-
-Change the context on a specific file
+NaN
 
 ### Reporting issues
 
@@ -635,12 +440,3 @@ Please report issues on GitHub: [https://github.com/archlinuxhardened/selinux/is
 *   [ArchLinux, SELinux and You (archived)](https://web.archive.org/web/20140816115906/http://jamesthebard.net/archlinux-selinux-and-you-a-trip-down-the-rabbit-hole/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682](https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

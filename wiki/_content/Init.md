@@ -1,9 +1,5 @@
 # Init
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -39,93 +35,93 @@ These components combine to the init _system_. Some inits include the service ma
 
 *   **[systemd](/index.php/Systemd "Systemd")** — Dependency-based init system with aggressive parallelization, process supervision using cgroups, and the ability to depend on a given mount point or dbus service.
 
-[http://freedesktop.org/wiki/Software/systemd/](http://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+NaN
 
 *   **[Upstart](https://en.wikipedia.org/wiki/Upstart "wikipedia:Upstart")** — Event-based init system which handles starting, stopping and supervising of tasks and services.
 
-[http://upstart.ubuntu.com/](http://upstart.ubuntu.com/) || [upstart](https://aur.archlinux.org/packages/upstart/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/upstart)]</sup>
+NaN
 
 *   **initng** — Dependency-based init system with parallelization and asynchronous start.
 
-[http://initng.sourceforge.net/trac](http://initng.sourceforge.net/trac) || [initng-git](https://aur.archlinux.org/packages/initng-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/initng-git)]</sup>
+NaN
 
 *   **Epoch** — Single-threaded init system designed for minimal footprint, compatibility and unified configuration.
 
-[http://universe2.us/epoch.html](http://universe2.us/epoch.html) || [epoch-init-system](https://aur.archlinux.org/packages/epoch-init-system/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epoch-init-system)]</sup>
+NaN
 
 *   **finit** — Fast and extensible init, originally based on EeePC fastinit.
 
-[https://github.com/troglobit/finit](https://github.com/troglobit/finit) || [finit-arc](https://aur.archlinux.org/packages/finit-arc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/finit-arc)]</sup> / [finit-arc-git](https://aur.archlinux.org/packages/finit-arc-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/finit-arc-git)]</sup>
+NaN
 
 ## Inits
 
 *   **[BusyBox](/index.php/BusyBox "BusyBox")** — Utilities for rescue and embedded systems.
 
-[http://busybox.net/](http://busybox.net/) || [busybox](https://www.archlinux.org/packages/?name=busybox)
+NaN
 
 *   **[SysVinit](/index.php/SysVinit "SysVinit")** — Traditional System V init.
 
-[http://savannah.nongnu.org/projects/sysvinit](http://savannah.nongnu.org/projects/sysvinit) || [sysvinit](https://aur.archlinux.org/packages/sysvinit/)<sup><small>AUR</small></sup>
+NaN
 
 *   **ninit** — Fork from [minit](http://www.fefe.de/minit/)
 
-[http://riemann.fmi.uni-sofia.bg/ninit/](http://riemann.fmi.uni-sofia.bg/ninit/) || [ninit](https://aur.archlinux.org/packages/ninit/)<sup><small>AUR</small></sup>
+NaN
 
 *   **sinit** — Simple init initially based on Rich Felker’s minimal init.
 
-[http://core.suckless.org/sinit](http://core.suckless.org/sinit) || [sinit](https://aur.archlinux.org/packages/sinit/)<sup><small>AUR</small></sup>
+NaN
 
 ## Init scripts
 
 *   **initscripts-fork** — Maintained fork of SysVinit scripts in Arch Linux.
 
-[https://bitbucket.org/TZ86/initscripts-fork/overview](https://bitbucket.org/TZ86/initscripts-fork/overview) || [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)<sup><small>AUR</small></sup>
+NaN
 
 *   **minirc** — Minimal init script designed for BusyBox.
 
-[https://github.com/hut/minirc/](https://github.com/hut/minirc/) || [minirc-git](https://aur.archlinux.org/packages/minirc-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **OpenRC Arch services** — OpenRC service scripts compatible to Arch Linux.
 
-[https://github.com/andrewgregory/openrc-arch-services](https://github.com/andrewgregory/openrc-arch-services) || [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **spark-rc** — A simple rc script to kickstart your system.
 
-[https://github.com/fbt/spark-rc](https://github.com/fbt/spark-rc) || [spark-rc](https://aur.archlinux.org/packages/spark-rc/)<sup><small>AUR</small></sup>
+NaN
 
 *   **watchman-sm-services** — Examples of services for watchman.
 
-[https://github.com/fbt/watchman-services](https://github.com/fbt/watchman-services) || [watchman-sm-services-git](https://aur.archlinux.org/packages/watchman-sm-services-git/)<sup><small>AUR</small></sup>
+NaN
 
 ## Service managers
 
 *   **daemontools** — Collection of tools for managing UNIX services.
 
-[http://cr.yp.to/daemontools.html](http://cr.yp.to/daemontools.html) || [daemontools](https://aur.archlinux.org/packages/daemontools/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Monit](https://en.wikipedia.org/wiki/Monit "wikipedia:Monit")** — Monit is a process supervision tool for Unix and Linux. With monit, system status can be viewed directly from the command line, or via the native HTTP(S) web server.
 
-[http://mmonit.com/monit/](http://mmonit.com/monit/) || [monit](https://www.archlinux.org/packages/?name=monit)
+NaN
 
 *   **[OpenRC](/index.php/OpenRC "OpenRC")** — Dependency-based rc system that works with the system-provided init, normally SysVinit.
 
-[http://www.gentoo.org/proj/en/base/openrc/](http://www.gentoo.org/proj/en/base/openrc/) || [openrc](https://aur.archlinux.org/packages/openrc/)<sup><small>AUR</small></sup>
+NaN
 
 *   **perp** — Persistent process (service) supervisor and managment framework for UNIX.
 
-[http://b0llix.net/perp/](http://b0llix.net/perp/) || [perp](https://aur.archlinux.org/packages/perp/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[runit](/index.php/Runit "Runit")** — UNIX init scheme with service supervision, a replacement for SysVinit, and other init schemes.
 
-[http://smarden.org/runit/](http://smarden.org/runit/) || [runit](https://aur.archlinux.org/packages/runit/)<sup><small>AUR</small></sup>
+NaN
 
 *   **s6** — Small suite of programs for UNIX, designed to allow service supervision in the line of daemontools and runit.
 
-[http://skarnet.org/software/s6/](http://skarnet.org/software/s6/) || [s6](https://aur.archlinux.org/packages/s6/)<sup><small>AUR</small></sup>
+NaN
 
 *   **watchman** — A not-so-simple service manager for Linux.
 
-[https://github.com/fbt/watchman](https://github.com/fbt/watchman) || [watchman-sm](https://aur.archlinux.org/packages/watchman-sm/)<sup><small>AUR</small></sup>
+NaN
 
 ## Configuration
 
@@ -214,11 +210,3 @@ To setup a chroot with a new PID namespace you can use jchroot.[[6]](http://vinc
 *   [A history of modern init systems (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=415699](https://wiki.archlinux.org/index.php?title=Init&oldid=415699)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

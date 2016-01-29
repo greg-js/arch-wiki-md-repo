@@ -1,9 +1,5 @@
 # Logitech Quickcam Pro 9000
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -32,12 +28,3 @@ ACTION=="add", SUBSYSTEM=="video4linux", DRIVERS=="uvcvideo", RUN+="/lib/udev/uv
 After the installation, disconnect and reconnect your camera to trigger the rules, then start guvcview once as root, just to let it initialize the AF controls. If you are not yet a member of the "video" group, you should add yourself to it and login anew. After this you should be able to use the cameras full feature set, including autofocus, even as a regular user.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Quickcam_Pro_9000&oldid=407360](https://wiki.archlinux.org/index.php?title=Logitech_Quickcam_Pro_9000&oldid=407360)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Imaging](/index.php/Category:Imaging "Category:Imaging")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

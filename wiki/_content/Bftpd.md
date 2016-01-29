@@ -1,9 +1,5 @@
 # Bftpd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **bftpd** is a Small, easy-to-configure FTP server for UNIX-like systems.
 
 ## Contents
@@ -41,11 +37,3 @@ Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`.
 *   [bftpd tutorial](http://bftpd.sourceforge.net/doc/en/bftpd-tutorial.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bftpd&oldid=413686](https://wiki.archlinux.org/index.php?title=Bftpd&oldid=413686)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

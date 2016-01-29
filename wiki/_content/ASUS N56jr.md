@@ -1,112 +1,15 @@
 # ASUS N56jr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia</td>
-
-<td style="color:green">**Working**</td>
-
-<td>nvidia</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>evdev?</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:blue">**Unknown**</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:blue">**Unknown**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel |
+| Nvidia | **Working** | nvidia |
+| Ethernet | **Working** | r8169 |
+| Wireless | **Working** | ath9k |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** | xf86-input-synaptics |
+| Camera | **Working** | evdev? |
+| Card Reader | **Unknown** |
+| Bluetooth | **Unknown** |
 
 Related articles
 
@@ -123,93 +26,16 @@ Related articles
 
 # Hardware
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**CPU**</td>
-
-<td>Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz</td>
-
-</tr>
-
-<tr>
-
-<td>**RAM**</td>
-
-<td>12 GB (1x4GB,1x8GB)</td>
-
-</tr>
-
-<tr>
-
-<td>**Display**</td>
-
-<td>15.6" LCD</td>
-
-</tr>
-
-<tr>
-
-<td>**Integrated Graphics**</td>
-
-<td>Intel HD 4000</td>
-
-</tr>
-
-<tr>
-
-<td>**Discrete Graphics**</td>
-
-<td>NVIDIA GeForce GTX 760M</td>
-
-</tr>
-
-<tr>
-
-<td>**Sound**</td>
-
-<td>Intel HD Audio</td>
-
-</tr>
-
-<tr>
-
-<td>**Ethernet**</td>
-
-<td>RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller</td>
-
-</tr>
-
-<tr>
-
-<td>**Wireless**</td>
-
-<td>AR9485 Wireless Network Adapter</td>
-
-</tr>
-
-<tr>
-
-<td>**Hard Disk**</td>
-
-<td>1 TB 5400rpm SATA</td>
-
-</tr>
-
-<tr>
-
-<td>**Touchpad**</td>
-
-<td>ETPS/2 Elantech Touchpad</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **CPU** | Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz |
+| **RAM** | 12 GB (1x4GB,1x8GB) |
+| **Display** | 15.6" LCD |
+| **Integrated Graphics** | Intel HD 4000 |
+| **Discrete Graphics** | NVIDIA GeForce GTX 760M |
+| **Sound** | Intel HD Audio |
+| **Ethernet** | RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller |
+| **Wireless** | AR9485 Wireless Network Adapter |
+| **Hard Disk** | 1 TB 5400rpm SATA |
+| **Touchpad** | ETPS/2 Elantech Touchpad |
 
 # Configuration
 
@@ -238,7 +64,3 @@ Gesture support is provided via [xf86-input-synaptics-mtpatch](https://aur.archl
 The command `touchegg` will have to be executed every time the GUI loads (maybe add it to gnome-session or the equivalent for your WM?).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N56jr&oldid=328989](https://wiki.archlinux.org/index.php?title=ASUS_N56jr&oldid=328989)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

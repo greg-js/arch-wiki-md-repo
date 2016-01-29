@@ -1,9 +1,5 @@
 # Installing Arch Linux on ZFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ZFS](/index.php/ZFS "ZFS")
@@ -376,7 +372,3 @@ You can now delete the two files `writehostid.c` and `writehostid`. Your system 
 *   [Funtoo ZFS install guide](http://www.funtoo.org/wiki/ZFS_Install_Guide)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_ZFS&oldid=417424](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_ZFS&oldid=417424)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")

@@ -1,9 +1,5 @@
 # UMID SE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -210,11 +206,3 @@ Does not seem to be even connected. Not visible at all. Probably needs to be ena
 The AMI BIOS of the UMID SE can be read out and decrypted using cmospwd which is in AUR.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=UMID_SE&oldid=375003](https://wiki.archlinux.org/index.php?title=UMID_SE&oldid=375003)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

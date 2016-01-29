@@ -1,9 +1,5 @@
 # Active Directory Integration
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Samba](/index.php/Samba "Samba")
@@ -856,7 +852,3 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 *   Likewise
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=415435](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&oldid=415435)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

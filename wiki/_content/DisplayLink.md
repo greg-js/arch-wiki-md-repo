@@ -1,9 +1,5 @@
 # DisplayLink
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 DisplayLink devices on Linux still only have experimental support. While some people have had success in using them, it is generally not an easy process and not guaranteed to work. The steps on this page describe the generally most successful methods of using external monitors with DisplayLink.
 
 ## Contents
@@ -179,7 +175,3 @@ If once you set up your DisplayLink your entire desktop becomes slow, try settin
 *   [Release Notes](http://downloads.displaylink.com/releasenotes/DisplayLink_Ubuntu_1.0.68_release-note.txt): Latest release notes for DisplayLink Ubuntu Software
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DisplayLink&oldid=415471](https://wiki.archlinux.org/index.php?title=DisplayLink&oldid=415471)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

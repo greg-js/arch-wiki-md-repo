@@ -1,9 +1,5 @@
 # pkgstats
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 pkgstats sends a list of all installed packages, [kernel modules](https://www.archlinux.org/news/pkgstats-now-collects-modules-usage/), the architecture and the mirror you are using to the Arch Linux project. This information is anonymous and cannot be used to identify the user, but it will help Arch developers prioritize their efforts.
 
 ## Installation
@@ -25,7 +21,3 @@ Statistics are available at [https://www.archlinux.de/?page=Statistics](https://
 You can read the official [forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431) for more info.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgstats&oldid=412444](https://wiki.archlinux.org/index.php?title=Pkgstats&oldid=412444)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

@@ -1,9 +1,5 @@
 # OpenTTD
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 OpenTTD is a tile-based transportation management game based on [Transport Tycoon Deluxe](https://en.wikipedia.org/wiki/Transport_Tycoon_Deluxe "wikipedia:Transport Tycoon Deluxe"). The game is in the community repository.
 
 ## Contents
@@ -145,7 +141,3 @@ Detailed information about cheats are available [here](https://secure.openttd.or
 *   [OpenTTD Wiki](http://wiki.openttd.org/Main_Page)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenTTD&oldid=381011](https://wiki.archlinux.org/index.php?title=OpenTTD&oldid=381011)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

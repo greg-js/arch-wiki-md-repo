@@ -1,9 +1,5 @@
 # FTP over SSH
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
@@ -55,8 +51,3 @@ TLS             1
 Now restart the `pure-ftpd.service` daemon and you should be able to log in with SFTP-enabled clients, e.g. [filezilla](https://www.archlinux.org/packages/?name=filezilla) or [SmartFTP](https://www.smartftp.com/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FTP_over_SSH&oldid=362439](https://wiki.archlinux.org/index.php?title=FTP_over_SSH&oldid=362439)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")

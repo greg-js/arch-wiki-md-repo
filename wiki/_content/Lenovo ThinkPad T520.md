@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T520
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -63,11 +59,3 @@ You might also try to set the nomodeset kernel commandline flags:
 Although, currently (Oct 2013, kernel 3.11.6), my T520 boots in "Discrete Graphics" mode only when i disable the GRUB2 framebuffer, but **do not** set any of the nomodeset kernel options.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T520&oldid=412568](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T520&oldid=412568)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # IBM ThinkPad X31
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The IBM Thinkpad X31 is a wonderful little laptop which contains everything you need for your everyday work, and even some gaming, if you tweak things a little. The X31 is rock solid, light (3.7 lbs), and nowadays very cheap. The only drawback is the lack of internal optical drive. You can see the specs of the X31 on [ThinkWiki](http://www.thinkwiki.org/wiki/Category:X31), a wonderful resource with additional information.
 
 ## Contents
@@ -360,12 +356,3 @@ echo enable,0xffffffff >/proc/acpi/ibm/hotkey
 to `/etc/rc.local` or somewhere similar for the events to be recognized.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X31&oldid=401272](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_X31&oldid=401272)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

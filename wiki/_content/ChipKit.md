@@ -1,9 +1,5 @@
 # ChipKit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [ChipKit](http://chipkit.net/started-mplab-ide/) is a Microprocessor platform produced by Digilent Inc. which provides an [Arduino](/index.php/Arduino "Arduino") like environment and a physically compatible board, but runs the much quicker and more powerful PIC32 series of Processors.
 
 There are two boards, the Uno32 which has 128k of Flash and 16k of RAM, and the Max32 which has 512k of Flash and 128k of RAM. Both boards run at 80Mhz. Prices are $27 and $50 respectively, so comparable with standard and advanced Arduinos.
@@ -110,12 +106,3 @@ MPIDE ships only with a 64 bit version of librxtxSerial.so, if you're on 32 bit,
 *   [Max32 page at Digilent](http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ChipKit&oldid=325954](https://wiki.archlinux.org/index.php?title=ChipKit&oldid=325954)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

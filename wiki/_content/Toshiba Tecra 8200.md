@@ -1,9 +1,5 @@
 # Toshiba Tecra 8200
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 INSTALL in a toshiba tecra 8200](#INSTALL_in_a_toshiba_tecra_8200)
@@ -128,11 +124,3 @@ ntpdate pool.ntp.org
 *   [ifplugd](http://0pointer.de/lennart/projects/ifplugd/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_8200&oldid=392741](https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_8200&oldid=392741)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

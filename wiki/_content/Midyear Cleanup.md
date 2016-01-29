@@ -1,9 +1,5 @@
 # Midyear Cleanup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is about the yearly midyear cleanup of packages in [community] at the 19th of June.
 
 ## About
@@ -19,9 +15,3 @@ Twice a year, the packages in [community] are cleaned up. This event happens ap
 *   [Arch Translation Day](/index.php/Arch_Translation_Day "Arch Translation Day")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Midyear_Cleanup&oldid=375204](https://wiki.archlinux.org/index.php?title=Midyear_Cleanup&oldid=375204)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Events](/index.php/Category:Events "Category:Events")

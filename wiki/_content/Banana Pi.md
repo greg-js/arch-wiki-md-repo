@@ -1,9 +1,5 @@
 # Banana Pi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [manufacturer](http://www.lemaker.org/):
 
 > Banana Pi is an open-source single-board computer. It can run Android 4.4, Ubuntu, Debian, Rasberry Pi Image, as well as the Cubieboard Image. It uses the AllWinner A20 SoC, and has 1GB DDR3 SDRAM
@@ -56,43 +52,9 @@ See the [Banana Pi documentation](http://wiki.lemaker.org/SD_card_installation).
 
 Luckily the [SSH daemon](/index.php/Secure_Shell "Secure Shell") is already installed by default. The default login data is:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Type</th>
-
-<th>Username</th>
-
-<th>Password</th>
-
-</tr>
-
-<tr>
-
-<td>Root</td>
-
-<td>`root`</td>
-
-<td>`bananapi`</td>
-
-</tr>
-
-<tr>
-
-<td>User</td>
-
-<td>`bananapi`</td>
-
-<td>`bananapi`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Type | Username | Password |
+| Root | `root` | `bananapi` |
+| User | `bananapi` | `bananapi` |
 
 ## X.org driver
 
@@ -210,41 +172,9 @@ Of course the following values might differ from yours, as they are dependend on
 
 I connected two different external HDDs (3,5" with external energy source) via SATA-L to eSATA-I cable to the Banana Pi. My reading/writing results using [dd](/index.php/Benchmarking/Data_storage_devices#Using_dd "Benchmarking/Data storage devices") (average of 3 run times):
 
-<table style="text-align: center;" class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>HDD 1 (2 TB)</th>
-
-<th>HDD 2 (4 TB)</th>
-
-</tr>
-
-<tr>
-
-<th>Reading</th>
-
-<td>81.8 MB/s</td>
-
-<td>115.5 MB/s</td>
-
-</tr>
-
-<tr>
-
-<th>Writing</th>
-
-<td>37.6 MB/s</td>
-
-<td>39,4 MB/s</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ HDD 1 (2 TB) | HDD 2 (4 TB) |
+| Reading | 81.8 MB/s | 115.5 MB/s |
+| Writing | 37.6 MB/s | 39,4 MB/s |
 
 ### Network
 
@@ -257,12 +187,3 @@ Benchmarking was done using `iperf` (average of 3 run times). Client BPi and Ser
 *   [Manufacturers FAQ](http://wiki.lemaker.org/FAQ)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Banana_Pi&oldid=412488](https://wiki.archlinux.org/index.php?title=Banana_Pi&oldid=412488)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # JDownloader
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 JDownloader is a Download Manager written in Java. JDownloader can download normal files, but also files from online file hosting services like Rapidshare.com.
 
 ## Contents
@@ -62,11 +58,3 @@ Choose User Interface and then switch the style to Light(GTK). (If you're using 
 see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JDownloader&oldid=414048](https://wiki.archlinux.org/index.php?title=JDownloader&oldid=414048)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

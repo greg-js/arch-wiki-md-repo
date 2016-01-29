@@ -1,9 +1,5 @@
 # Kernel Panics
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -125,12 +121,3 @@ Now, use the kernel details in the command below.
 Now is the time to reboot and see if the system modifications have stopped the panic. If reverting to an older kernel works, do not forget to [check the arch-newspage](https://www.archlinux.org/news/) to check what went wrong with the kernel build. If there is no mention of the problem there, then go to the bug reporting area and search for it there. If you still do not find it, open a new bug report and attach those files you saved during the troubleshooting step above.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_Panics&oldid=376853](https://wiki.archlinux.org/index.php?title=Kernel_Panics&oldid=376853)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

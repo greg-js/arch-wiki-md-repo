@@ -1,9 +1,5 @@
 # ASUS Eee PC 1215n
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -14,97 +10,18 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Notice: Kernel Panic Issue**
 
-Kernels 3.10.6 - 3.10.10 cause kernel panics with the brcmsmac WiFi driver.
+NaN
 
-If you need one of these kernels, see [section](https://wiki.archlinux.org/index.php/ASUS_Eee_PC_1215n#brcmsmac_WiFi_driver_kernel_panic) below for work-around. Otherwise, update kernel to 3.11.1+
+NaN
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Module**</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c [[1]](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx)</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>[brcmsmac](https://wiki.archlinux.org/index.php/Broadcom_wireless#brcmsmac.2Fbrcmfmac); [broadcom-wl](https://wiki.archlinux.org/index.php/Broadcom_wireless#broadcom-wl)</td>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td style="color:green">**Working**</td>
-
-<td>[i915](https://www.archlinux.org/packages/extra/x86_64/xf86-video-intel/); [nvidia](https://wiki.archlinux.org/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA); [noveau](https://wiki.archlinux.org/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNouveau)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>[snd-hda-intel](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture)</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>[uvcvideo](https://wiki.archlinux.org/index.php/Webcam_Setup#linux-uvc)</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-<td>[usb-storage](https://wiki.archlinux.org/index.php/USB_Storage_Devices#Getting_a_kernel_that_supports_usb_storage)</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:darkorange">**Partial**</td>
-
-<td>eeepc-wmi [[2]](http://acpi4asus.sourceforge.net/)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Module** |
+| Ethernet | **Working** | atl1c [[1]](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx) |
+| Wireless | **Working** | [brcmsmac](https://wiki.archlinux.org/index.php/Broadcom_wireless#brcmsmac.2Fbrcmfmac); [broadcom-wl](https://wiki.archlinux.org/index.php/Broadcom_wireless#broadcom-wl) |
+| Video | **Working** | [i915](https://www.archlinux.org/packages/extra/x86_64/xf86-video-intel/); [nvidia](https://wiki.archlinux.org/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA); [noveau](https://wiki.archlinux.org/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNouveau) |
+| Audio | **Working** | [snd-hda-intel](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture) |
+| Camera | **Working** | [uvcvideo](https://wiki.archlinux.org/index.php/Webcam_Setup#linux-uvc) |
+| Card Reader | **Working** | [usb-storage](https://wiki.archlinux.org/index.php/USB_Storage_Devices#Getting_a_kernel_that_supports_usb_storage) |
+| Function Keys | **Partial** | eeepc-wmi [[2]](http://acpi4asus.sourceforge.net/) |
 
 This page includes general information regarding Asus EEE PC 1215n and related notes on installing/using Arch Linux on it.
 
@@ -300,11 +217,3 @@ There is a kernel parameter which must be added in linux 3.0 kernel to use energ
 After connecting to an access point, the system's kernel will panic. To stop the connection, press your WiFi toggle button while booting Arch to temporarily disable your wireless. Your kernel can be patched to correct the issue until the kernel is officially updated. Use 'sudo pacman -U /path/to/kernel/patch.pkg.tar.xz' to install. [Patch](https://bbs.archlinux.org/viewtopic.php?pid=1314588#p1314588).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1215n&oldid=383288](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1215n&oldid=383288)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

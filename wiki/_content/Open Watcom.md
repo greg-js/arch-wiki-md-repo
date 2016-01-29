@@ -1,9 +1,5 @@
 # Open Watcom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Open Watcom** is a **Fortran/C/C++'** compiler [with many cross-compilation targets](http://www.openwatcom.org/index.php/About_Open_Watcom). Those old enough most likely fondly remember old DOS games ending with the [DOS4GW](https://en.wikipedia.org/wiki/DOS/4G "wikipedia:DOS/4G") extender, where the "W" stands for "watcom". In general it was a [very popular compiler for high-end games](https://en.wikipedia.org/wiki/Watcom_C_compiler "wikipedia:Watcom C compiler") at the time for producing very efficient binaries in memory-constrained environments (like DOS). Watcom [lives on](http://www.openwatcom.com/index.php/History) as Open Watcom, with an [official release](http://www.openwatcom.org/) at version 1.9 and an [unofficial fork](https://github.com/open-watcom) at version 2.0.
 
 ## Contents
@@ -171,11 +167,3 @@ One area where GCC is stronger than Open Watcom is language support. To mitigate
 The Open Watcom community is relatively small, with moderate activity on [Reddit](http://www.reddit.com/r/OpenWatcom/). The primary discussions are done on the "contributors" and "users.c_cpp" groups on the Open Watcom [newsgroups](news://news.openwatcom.org/) a third option is the user forums on [sourceforge](http://sourceforge.net/p/openwatcom/discussion/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Open_Watcom&oldid=398773](https://wiki.archlinux.org/index.php?title=Open_Watcom&oldid=398773)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

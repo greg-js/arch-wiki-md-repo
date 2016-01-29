@@ -1,9 +1,5 @@
 # PacketTracer
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Cisco Packet Tracer is a powerful network simulation program that allows students to experiment with network behavior and ask “what if” questions. As an integral part of the Networking Academy comprehensive learning experience, Packet Tracer provides simulation, visualization, authoring, assessment, and collaboration capabilities and facilitates the teaching and learning of complex technology concepts. [Source](https://www.netacad.com/web/about-us/cisco-packet-tracer)
 
 ## Contents
@@ -87,9 +83,3 @@ You may use these videos as supplements to the installation to either ease or vi
 *   [Cisco Packet Tracer-based Assessment Environment Check](http://skills.netacad.net/check/check.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PacketTracer&oldid=412152](https://wiki.archlinux.org/index.php?title=PacketTracer&oldid=412152)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

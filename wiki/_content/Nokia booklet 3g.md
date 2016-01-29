@@ -1,9 +1,5 @@
 # Nokia booklet 3g
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Nokia Booklet 3G is a small, light and nice Netbook with some interesting features:
 
 *   Aluminium frame.
@@ -81,7 +77,3 @@ In general, try to keep simple and avoid bogus applications. Remember that you'r
 *   [Nokia official support](http://www.nokia.com/us-en/support/product/nokia-booklet-3g/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nokia_booklet_3g&oldid=376436](https://wiki.archlinux.org/index.php?title=Nokia_booklet_3g&oldid=376436)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Nokia](/index.php/Category:Nokia "Category:Nokia")

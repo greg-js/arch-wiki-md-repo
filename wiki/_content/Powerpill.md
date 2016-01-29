@@ -1,9 +1,5 @@
 # Powerpill
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Powerpill is a Pacman wrapper that uses parallel and segmented downloading to try to speed up downloads for Pacman. Internally it uses Aria2 and Reflector to achieve this. Powerpill can also use Rsync for official mirrors that support it. This can be efficient for users who already use full bandwidth when downloading from a single mirror. [Pacserve](/index.php/Pacserve "Pacserve") is also supported via the configuration file and will be used before downloading from external mirrors. Example: One wants to update and issues a _pacman -Syu_ which returns a list of 20 packages that are available for update totally 200 megs. If the user downloads them via pacman, they will come down one-at-a-time. If the user downloads them via powerpill, they will come down simultaneously in many cases several times faster (depending on one's connection speed, the availability of packages on servers, and speed from server/load, etc.)
 
 A test of pacman vs. powerpill on one system revealed a 4x speed up in the above scenario where the pacman downloads averages 300 kB/sec and the powerpill downloads averaged 1.2 MB/sec.
@@ -110,7 +106,3 @@ explicity in /etc/pacman.conf as explained in this post [Arch forum post](https:
 *   [powerpill reborn](https://bbs.archlinux.org/viewtopic.php?id=153818) - powerpill is back :)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Powerpill&oldid=410020](https://wiki.archlinux.org/index.php?title=Powerpill&oldid=410020)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

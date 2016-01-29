@@ -1,9 +1,5 @@
 # Local Mirror
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** If you want to create an official mirror see [this page](https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors).
 
 ## Contents
@@ -189,7 +185,3 @@ Then to update your partial mirror, simply execute pacman -Syu. Note this doesn'
 *   For physical media (such as flash drive) the following can be used: Server = file:///mnt/media/repo/$repo/os/$arch (_where /mnt/media/repo is directory where local mirror located_)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Local_Mirror&oldid=414289](https://wiki.archlinux.org/index.php?title=Local_Mirror&oldid=414289)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

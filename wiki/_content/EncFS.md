@@ -1,9 +1,5 @@
 # EncFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
@@ -225,8 +221,8 @@ See more at [https://github.com/Harvie/Programs/tree/master/bash/encfs/automount
 
 #### How to
 
-**1.** You need USB automount working for this - like thunar or nautilus does.  
-**2.** Make encrypted folder on your drive, eg.: `encfs /media/USB/somename /media/USB/somename.plain` (and then unmount everything).  
+**1.** You need USB automount working for this - like thunar or nautilus does.
+**2.** Make encrypted folder on your drive, eg.: `encfs /media/USB/somename /media/USB/somename.plain` (and then unmount everything).
 **3.** Create a `~/.config/fsniper/config` file:
 
 ```
@@ -291,9 +287,9 @@ rm "$lock" 2>/dev/null
 
 ```
 
-**5.** Make sure that /usr/lib/git-core/git-gui--askpass is working for you (that is why you need git package - but you can adjust the helper script).  
-**6.** Try `fsniper --log-to-stdout` in terminal (askpass should appear when USB drive is inserted).  
-**7.** Add `fsniper --daemon` to your session.  
+**5.** Make sure that /usr/lib/git-core/git-gui--askpass is working for you (that is why you need git package - but you can adjust the helper script).
+**6.** Try `fsniper --log-to-stdout` in terminal (askpass should appear when USB drive is inserted).
+**7.** Add `fsniper --daemon` to your session.
 **8.** Do not forget to unmount encfs before removing drive.
 
 ### Mount using KDE KWallet
@@ -365,8 +361,3 @@ $ ls -la ~/restoremythesis
 *   [Security audit](https://defuse.ca/audits/encfs.htm) of EncFS by Taylor Hornby (January 14, 2014).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=EncFS&oldid=415795](https://wiki.archlinux.org/index.php?title=EncFS&oldid=415795)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,9 +1,5 @@
 # Wine
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
@@ -608,11 +604,3 @@ It is recommended using winetricks by default to open _.exe_ files, so you can c
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=417334](https://wiki.archlinux.org/index.php?title=Wine&oldid=417334)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

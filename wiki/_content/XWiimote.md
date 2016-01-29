@@ -1,9 +1,5 @@
 # XWiimote
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article is about the Nintendo Wii Remote Linux kernel driver. This driver is part of upstream Linux since version 3.1\. It is an easy to use drop-in replacement for the older user-space drivers like [cwiid](/index.php/Wiimote "Wiimote"). You can use your Wii Remote for all purposes with this driver, for instance as an [X](/index.php/X "X") input device or joystick controller for your Linux games.
 
 **Note:** The XWiimote tools are still experimental. Connecting and managing your Wii Remote works well and there is a driver to use the Wii Remote as X11 input, but extended features may still be missing.
@@ -194,11 +190,3 @@ The wiimote should disconnect and the power led go off. Pressing the power butto
 *   [[4]](http://dvdhrm.wordpress.com/2012/02/26/xf86-input-xwiimote-0-2/): Developer blog about Wii Remotes
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XWiimote&oldid=401024](https://wiki.archlinux.org/index.php?title=XWiimote&oldid=401024)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

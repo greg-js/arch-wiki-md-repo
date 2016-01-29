@@ -1,9 +1,5 @@
 # Kernel module package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -59,12 +55,3 @@ The separation of modules and accompanying files allows multiple kernel module p
 If a package includes a kernel module that is meant to override an existing module of the same name, such module should be placed in the `/lib/modules/2.6.xx-ARCH/updates` directory. When **depmod** is run, modules in this directory will take precedence.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_module_package_guidelines&oldid=409750](https://wiki.archlinux.org/index.php?title=Kernel_module_package_guidelines&oldid=409750)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

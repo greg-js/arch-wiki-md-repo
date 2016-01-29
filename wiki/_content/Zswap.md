@@ -1,9 +1,5 @@
 # Zswap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
@@ -92,7 +88,3 @@ it can also be set at runtime by writing it to /sys/module/zswap/parameters/comp
 *   [Archlinux forum thread](https://bbs.archlinux.org/viewtopic.php?id=169585).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Zswap&oldid=407046](https://wiki.archlinux.org/index.php?title=Zswap&oldid=407046)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

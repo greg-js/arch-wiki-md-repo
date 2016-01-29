@@ -1,9 +1,5 @@
 # Dell Vostro 1720
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page deals with setting up Arch Linux on the Dell Vostro 1720 laptop. This page links to the wiki pages relevant for this laptop. In order to avoid information duplication, this page only states information that is not on the linked wiki pages.
 
 ## Contents
@@ -103,7 +99,3 @@ B: ABS=1000003
 This laptop has the following touchpad: AlpsPS/2 ALPS GlidePoint. Follow the instructions for the AlpsPS/2 ALPS GlidePoint here: [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_1720&oldid=376607](https://wiki.archlinux.org/index.php?title=Dell_Vostro_1720&oldid=376607)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

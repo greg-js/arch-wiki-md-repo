@@ -1,9 +1,5 @@
 # systemd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd/User](/index.php/Systemd/User "Systemd/User")
@@ -18,7 +14,7 @@ Related articles
 
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
-_systemd_ is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.
+NaN
 
 **Note:** For a detailed explanation as to why Arch has moved to _systemd_, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
@@ -398,93 +394,14 @@ The runlevels that held a defined meaning under sysvinit (i.e., 0, 1, 3, 5, and 
 
 ### Targets table
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>SysV Runlevel</th>
-
-<th>systemd Target</th>
-
-<th>Notes</th>
-
-</tr>
-
-<tr>
-
-<td>0</td>
-
-<td>runlevel0.target, poweroff.target</td>
-
-<td>Halt the system.</td>
-
-</tr>
-
-<tr>
-
-<td>1, s, single</td>
-
-<td>runlevel1.target, rescue.target</td>
-
-<td>Single user mode.</td>
-
-</tr>
-
-<tr>
-
-<td>2, 4</td>
-
-<td>runlevel2.target, runlevel4.target, multi-user.target</td>
-
-<td>User-defined/Site-specific runlevels. By default, identical to 3.</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>runlevel3.target, multi-user.target</td>
-
-<td>Multi-user, non-graphical. Users can usually login via multiple consoles or via the network.</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>runlevel5.target, graphical.target</td>
-
-<td>Multi-user, graphical. Usually has all the services of runlevel 3 plus a graphical login.</td>
-
-</tr>
-
-<tr>
-
-<td>6</td>
-
-<td>runlevel6.target, reboot.target</td>
-
-<td>Reboot</td>
-
-</tr>
-
-<tr>
-
-<td>emergency</td>
-
-<td>emergency.target</td>
-
-<td>Emergency shell</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| SysV Runlevel | systemd Target | Notes |
+| 0 | runlevel0.target, poweroff.target | Halt the system. |
+| 1, s, single | runlevel1.target, rescue.target | Single user mode. |
+| 2, 4 | runlevel2.target, runlevel4.target, multi-user.target | User-defined/Site-specific runlevels. By default, identical to 3. |
+| 3 | runlevel3.target, multi-user.target | Multi-user, non-graphical. Users can usually login via multiple consoles or via the network. |
+| 5 | runlevel5.target, graphical.target | Multi-user, graphical. Usually has all the services of runlevel 3 plus a graphical login. |
+| 6 | runlevel6.target, reboot.target | Reboot |
+| emergency | emergency.target | Emergency shell |
 
 ### Change current target
 
@@ -830,15 +747,4 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 *   [Gentoo Wiki systemd page](http://wiki.gentoo.org/wiki/Systemd)
 *   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=417128](https://wiki.archlinux.org/index.php?title=Systemd&oldid=417128)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd&oldid=417725](https://wiki.archlinux.org/index.php?title=Systemd&oldid=417725)"

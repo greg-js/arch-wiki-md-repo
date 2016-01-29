@@ -1,9 +1,5 @@
 # PostFix Howto With SASL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Postfix](/index.php/Postfix "Postfix")
@@ -11,7 +7,7 @@ Related articles
 
 From [Postfix's site](http://www.postfix.org/SASL_README.html):
 
-_People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering._
+NaN
 
 ## Contents
 
@@ -143,7 +139,3 @@ Finally [restart](/index.php/Restart "Restart") both postfix and dovecot service
 *   [Centos Howto Postfix SASL](http://wiki.centos.org/HowTos/postfix_sasl)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PostFix_Howto_With_SASL&oldid=409824](https://wiki.archlinux.org/index.php?title=PostFix_Howto_With_SASL&oldid=409824)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

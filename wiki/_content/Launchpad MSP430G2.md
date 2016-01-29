@@ -1,9 +1,5 @@
 # Launchpad MSP430G2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Follow these steps in order to use Energia for the [Launchpad MSP-EXP430G2](http://www.ti.com/tool/MSP-EXP430G2) board.
 
 [Install](/index.php/Install "Install") package [java-rxtx](https://www.archlinux.org/packages/?name=java-rxtx) from the [official repositories](/index.php/Official_repositories "Official repositories").
@@ -58,7 +54,3 @@ Reboot (or restart udev, log out and log in).
 Plug your launchpad and start energia.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Launchpad_MSP430G2&oldid=412119](https://wiki.archlinux.org/index.php?title=Launchpad_MSP430G2&oldid=412119)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

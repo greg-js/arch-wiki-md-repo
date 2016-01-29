@@ -1,9 +1,5 @@
 # Alienware M14xR2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This wiki page documents the configuration and troubleshooting specific to the Alienware M14xR2 laptop.
 
 See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for installation instructions.
@@ -267,7 +263,3 @@ The updater provided by Dell is windows only. If you want to update and you don'
 It contains the flasing utility and the update file (isflashWin.bin). WARNING: This file should not be used with the DOS flashit utility! As it seems this file is an MSDOS executable file which holds LZMA data inside. I could never get it working.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Alienware_M14xR2&oldid=298105](https://wiki.archlinux.org/index.php?title=Alienware_M14xR2&oldid=298105)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Alienware](/index.php/Category:Alienware "Category:Alienware")

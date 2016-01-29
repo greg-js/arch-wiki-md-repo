@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T420s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Fans](#Fans)
@@ -223,7 +219,3 @@ To make sound work, make sure all channels are unmuted via alsamixer or similar,
 See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420s&oldid=412566](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T420s&oldid=412566)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

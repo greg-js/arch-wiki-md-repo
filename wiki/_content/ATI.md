@@ -1,9 +1,5 @@
 # ATI
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
@@ -378,15 +374,15 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 
 *   **Radeon-tray** — A small program to control the power profiles of your Radeon card via systray icon. It is written in PyQt4 and is suitable for non-Gnome users.
 
-[https://github.com/StuntsPT/Radeon-tray](https://github.com/StuntsPT/Radeon-tray) || [radeon-tray](https://aur.archlinux.org/packages/radeon-tray/)<sup><small>AUR</small></sup>
+NaN
 
 *   **power-play-switcher** — A gui for changing powerplay setting of the open source driver for ati radeon video cards.
 
-[https://code.google.com/p/power-play-switcher/](https://code.google.com/p/power-play-switcher/) || [power-play-switcher](https://aur.archlinux.org/packages/power-play-switcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/power-play-switcher)]</sup>
+NaN
 
 *   **Gnome-shell-extension-Radeon-Power-Profile-Manager** — A small extension for Gnome-shell that will allow you to change the power profile of your radeon card when using the open source drivers.
 
-[https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager](https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager) || [gnome-shell-extension-radeon-ppm](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-ppm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-shell-extension-radeon-ppm)]</sup> [gnome-shell-extension-radeon-power-profile-manager-git](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-power-profile-manager-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-shell-extension-radeon-power-profile-manager-git)]</sup>
+NaN
 
 ### Other notes
 
@@ -747,14 +743,3 @@ Try booting with the [kernel parameter](/index.php/Kernel_parameter "Kernel para
 Since kernel 4.1.4, [dpm](#Dynamic_power_management) is broken on certain R9 270X cards (chip device number 6810, subsystem 174b:e271, shown as Curacao XT, PC Partner Limited / Sapphire Technology Device e271 in lspci). The regression is caused by a [fix](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=ea039f927524e36c15b5905b4c9469d788591932) for cards with the same PCI ids. Disabling dpm (add `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")) solves the problem.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ATI&oldid=414835](https://wiki.archlinux.org/index.php?title=ATI&oldid=414835)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

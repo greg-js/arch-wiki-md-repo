@@ -1,9 +1,5 @@
 # Acer C710 Chromebook
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chromebook](/index.php/Chromebook "Chromebook")
@@ -66,11 +62,3 @@ You would need an aluminium foil to short the hardware write-protection jumper.
 *   [Return to stock guide (untested)](https://johnlewis.ie/mediawiki/index.php?title=Flashing_coreboot_build_to_stock_firmware_or_different_coreboot_build_on_Acer_C7_(C710))
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_C710_Chromebook&oldid=408195](https://wiki.archlinux.org/index.php?title=Acer_C710_Chromebook&oldid=408195)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

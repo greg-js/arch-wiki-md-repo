@@ -1,9 +1,5 @@
 # Pam abl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [One Time PassWord](/index.php/One_Time_PassWord "One Time PassWord")
@@ -178,8 +174,3 @@ In practice, the sshd_config settings "MaxStartups" (default 10) and to a lesser
 In the meantime, the workaround is to set "MaxAuthTries" to 1 (or expect that an additional "MaxStartups" number of attempts could be made above and beyond what you specify in your pam_abl config).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pam_abl&oldid=409101](https://wiki.archlinux.org/index.php?title=Pam_abl&oldid=409101)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-*   [Security](/index.php/Category:Security "Category:Security")

@@ -1,9 +1,5 @@
 # Dell Precision M65
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -288,7 +284,3 @@ Works on Arch using Gnome.
 Not tested
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Precision_M65&oldid=196585](https://wiki.archlinux.org/index.php?title=Dell_Precision_M65&oldid=196585)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

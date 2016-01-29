@@ -1,9 +1,5 @@
 # Samsung Chromebook (ARM)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
@@ -349,7 +345,3 @@ By short-circuiting the pads as per the diagram linked, your SoC will boot from 
 *   [http://archlinuxarm.org/forum/viewtopic.php?t=4016](http://archlinuxarm.org/forum/viewtopic.php?t=4016)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_Chromebook_(ARM)&oldid=400993](https://wiki.archlinux.org/index.php?title=Samsung_Chromebook_(ARM)&oldid=400993)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture")

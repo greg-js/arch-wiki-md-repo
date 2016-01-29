@@ -1,9 +1,5 @@
 # UWMWiFi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 UWMWiFi is the wireless network used by the University of Wisconsin-Milwaukee.
 
 ## Contents
@@ -106,7 +102,3 @@ This will be tested and validated in the future.
 *   [http://www4.uwm.edu/technology/authenticated/wifi/uwm/](http://www4.uwm.edu/technology/authenticated/wifi/uwm/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=UWMWiFi&oldid=388098](https://wiki.archlinux.org/index.php?title=UWMWiFi&oldid=388098)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")

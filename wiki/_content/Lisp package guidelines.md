@@ -1,9 +1,5 @@
 # Lisp package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -113,7 +109,3 @@ People currently maintaining lisp-specific packages that do not need to be lisp-
 *   Translate this page and future updates to this page.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lisp_package_guidelines&oldid=396021](https://wiki.archlinux.org/index.php?title=Lisp_package_guidelines&oldid=396021)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

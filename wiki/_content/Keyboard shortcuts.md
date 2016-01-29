@@ -1,9 +1,5 @@
 # Keyboard shortcuts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article provides a list of (not commonly known) default keyboard shortcuts and provides information about user customization.
 
 ## Contents
@@ -32,69 +28,13 @@ To use these, they must first be activated with either `sysctl kernel.sysrq=1` o
 
 A common idiom to remember this is "**R**eboot **E**ven **I**f **S**ystem **U**tterly **B**roken" (also referred to as "REISUB"). Alternatively, think of it as "BUSIER" backwards.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Keyboard Shortcut</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`Alt+SysRq+r` **Unraw**</td>
-
-<td>Take control of keyboard back from X.</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+SysRq+e` **Terminate**</td>
-
-<td>Send SIGTERM to all processes, allowing them to terminate gracefully.</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+SysRq+i` **Kill**</td>
-
-<td>Send SIGKILL to all processes, forcing them to terminate immediately.</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+SysRq+s` **Sync**</td>
-
-<td>Flush data to disk.</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+SysRq+u` **Unmount**</td>
-
-<td>Unmount and remount all filesystems read-only.</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+SysRq+b` **Reboot**</td>
-
-<td>Reboot</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Keyboard Shortcut | Description |
+| `Alt+SysRq+r` **Unraw** | Take control of keyboard back from X. |
+| `Alt+SysRq+e` **Terminate** | Send SIGTERM to all processes, allowing them to terminate gracefully. |
+| `Alt+SysRq+i` **Kill** | Send SIGKILL to all processes, forcing them to terminate immediately. |
+| `Alt+SysRq+s` **Sync** | Flush data to disk. |
+| `Alt+SysRq+u` **Unmount** | Unmount and remount all filesystems read-only. |
+| `Alt+SysRq+b` **Reboot** | Reboot |
 
 **Tip:**
 
@@ -109,376 +49,58 @@ See [Magic SysRq key - Wikipedia](https://en.wikipedia.org/wiki/Magic_SysRq_key 
 
 #### Virtual console
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Keyboard Shortcut</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+Alt+Del`</td>
-
-<td>Reboots Computer (specified by the symlink `/usr/lib/systemd/system/ctrl-alt-del.target`)</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+F1`, `F2`, `F3`, ...</td>
-
-<td>Switch to _n_-th virtual console</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+ ←`</td>
-
-<td>Switch to previous virtual console</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+ →`</td>
-
-<td>Switch to next virtual console</td>
-
-</tr>
-
-<tr>
-
-<td>`Scroll Lock`</td>
-
-<td>When Scroll Lock is activated, input/output is locked</td>
-
-</tr>
-
-<tr>
-
-<td>`Shift+PgUp`/`PgDown`</td>
-
-<td>Scrolls console buffer up/down</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+c`</td>
-
-<td>Kills current task</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+d`</td>
-
-<td>Inserts an EOF</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+z`</td>
-
-<td>Pauses current Task</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Keyboard Shortcut | Description |
+| `Ctrl+Alt+Del` | Reboots Computer (specified by the symlink `/usr/lib/systemd/system/ctrl-alt-del.target`) |
+| `Alt+F1`, `F2`, `F3`, ... | Switch to _n_-th virtual console |
+| `Alt+ ←` | Switch to previous virtual console |
+| `Alt+ →` | Switch to next virtual console |
+| `Scroll Lock` | When Scroll Lock is activated, input/output is locked |
+| `Shift+PgUp`/`PgDown` | Scrolls console buffer up/down |
+| `Ctrl+c` | Kills current task |
+| `Ctrl+d` | Inserts an EOF |
+| `Ctrl+z` | Pauses current Task |
 
 #### Readline
 
 GNU readline is a commonly used library for line-editing; it is used for example by Bash, FTP, and many more (see the details of [readline](https://www.archlinux.org/packages/?name=readline) package under "Required By" for more examples). readline is also customizable (see man page for details).
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Keyboard Shortcut</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+l`</td>
-
-<td>Clear the screen</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2" align="center">**Cursor Movement**</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+b`</td>
-
-<td>Move cursor one character to the left</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+f`</td>
-
-<td>Move cursor one character to the right</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+b`</td>
-
-<td>Move cursor one word to the left</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+f`</td>
-
-<td>Move cursor one word to the right</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+a`</td>
-
-<td>Move cursor to start of the line</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+e`</td>
-
-<td>Move cursor to end of the line</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2" align="center">**Copy & Paste**</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+u`</td>
-
-<td>Cut everything from line start to cursor</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+k`</td>
-
-<td>Cut everything from the cursor to end of the line</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+d`</td>
-
-<td>Cut the current word after the cursor</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+w`</td>
-
-<td>Cut the current word before the cursor</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+y`</td>
-
-<td>Paste the previous cut text</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+y`</td>
-
-<td>Paste the second latest cut text</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+Ctrl+y`</td>
-
-<td>Paste the first argument of the previous command</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+.`/`_`</td>
-
-<td>Paste the last argument of the previous command</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2" align="center">**History**</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+p`</td>
-
-<td>Move to the previous line</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+n`</td>
-
-<td>Move to the next line</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+s`</td>
-
-<td>Search</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+r`</td>
-
-<td>Reverse search</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+j`</td>
-
-<td>End search</td>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+g`</td>
-
-<td>Abort search (restores original line)</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+r`</td>
-
-<td>Restores all changes made to line</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2" align="center">**Completion**</td>
-
-</tr>
-
-<tr>
-
-<td>`Tab`</td>
-
-<td>Auto-complete a name</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+?`</td>
-
-<td>List all possible completions</td>
-
-</tr>
-
-<tr>
-
-<td>`Alt+*`</td>
-
-<td>Insert all possible completions</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Keyboard Shortcut | Description |
+| `Ctrl+l` | Clear the screen |
+| **Cursor Movement** |
+| `Ctrl+b` | Move cursor one character to the left |
+| `Ctrl+f` | Move cursor one character to the right |
+| `Alt+b` | Move cursor one word to the left |
+| `Alt+f` | Move cursor one word to the right |
+| `Ctrl+a` | Move cursor to start of the line |
+| `Ctrl+e` | Move cursor to end of the line |
+| **Copy & Paste** |
+| `Ctrl+u` | Cut everything from line start to cursor |
+| `Ctrl+k` | Cut everything from the cursor to end of the line |
+| `Alt+d` | Cut the current word after the cursor |
+| `Ctrl+w` | Cut the current word before the cursor |
+| `Ctrl+y` | Paste the previous cut text |
+| `Alt+y` | Paste the second latest cut text |
+| `Alt+Ctrl+y` | Paste the first argument of the previous command |
+| `Alt+.`/`_` | Paste the last argument of the previous command |
+| **History** |
+| `Ctrl+p` | Move to the previous line |
+| `Ctrl+n` | Move to the next line |
+| `Ctrl+s` | Search |
+| `Ctrl+r` | Reverse search |
+| `Ctrl+j` | End search |
+| `Ctrl+g` | Abort search (restores original line) |
+| `Alt+r` | Restores all changes made to line |
+| **Completion** |
+| `Tab` | Auto-complete a name |
+| `Alt+?` | List all possible completions |
+| `Alt+*` | Insert all possible completions |
 
 ### X11
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Keyboard Shortcut</th>
-
-<th>Description</th>
-
-<th>Notes</th>
-
-</tr>
-
-<tr>
-
-<td>`Ctrl+Alt+F1`, `F2`, `F3`, ...</td>
-
-<td>Switch to _n_-th virtual console</td>
-
-</tr>
-
-<tr>
-
-<td>`Shift+Insert`  
-`Mouse Button 2`</td>
-
-<td>Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard")</td>
-
-<td>By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)).</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Keyboard Shortcut | Description | Notes |
+| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to _n_-th virtual console |
+| `Shift+Insert`
+`Mouse Button 2` | Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard") | By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)). |
 
 ## User customization
 
@@ -590,14 +212,3 @@ The command get the window which has focus from the xserver and triggers a click
 *   [The Linux keyboard and console HOWTO](http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=412643](https://wiki.archlinux.org/index.php?title=Keyboard_shortcuts&oldid=412643)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

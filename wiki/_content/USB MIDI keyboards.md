@@ -1,9 +1,5 @@
 # USB MIDI keyboards
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This how-to assumes that you are using [ALSA](/index.php/ALSA "ALSA") and that your sound card is set up so you can listen to music. Known to work using this how-to is the Evolution MK-631 USB midi keyboard with SB Live! Value card. Execute these instructions as an unprivileged user unless otherwise noted.
 
 ## Contents
@@ -140,7 +136,3 @@ Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up
 4.  Go to qjackctl, click **Connect** and choose the ALSA tab. On the left side you will see connected MIDI keyboard, on the left side - QSynth. Choose MIDI keyboard and QSynth, and click **Connect**.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_MIDI_keyboards&oldid=369088](https://wiki.archlinux.org/index.php?title=USB_MIDI_keyboards&oldid=369088)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

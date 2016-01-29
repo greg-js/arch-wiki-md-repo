@@ -1,9 +1,5 @@
 # Dokuwiki
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 "DokuWiki is a standards-compliant, simple-to-use wiki which allows users to create rich documentation repositories. It provides an environment for individuals, teams and companies to create and collaborate using a simple yet powerful syntax that ensures data files remain structured and readable outside the wiki."
 
 "Unlimited page revisions allows restoration to any earlier page version, and with data stored in plain text files, no database is required. A powerful plugin architecture allows for extension and enhancement of the core system. See the features section for a full description of what DokuWiki has to offer."[[1]](http://wiki.splitbrain.org/wiki:dokuwiki)
@@ -223,7 +219,3 @@ A quick breakdown of the directories of interest in the current (2008-05-05) ver
 The [DokuWiki main site](http://www.dokuwiki.org/) has all of the information and help that you could possibly need.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dokuwiki&oldid=414212](https://wiki.archlinux.org/index.php?title=Dokuwiki&oldid=414212)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")

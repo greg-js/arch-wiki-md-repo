@@ -1,16 +1,12 @@
 # MediaTomb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Streaming media](/index.php/Streaming_media "Streaming media")
 
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
 
-_MediaTomb is an open source (GPL) UPnP MediaServer with a nice web user interface, it allows you to stream your digital media through your home network and listen to/watch it on a variety of UPnP compatible devices._
+NaN
 
 MediaTomb enables users to stream digital media to UPnP compatible devices like the PlayStation 3 (the Xbox 360 is not yet supported). Several alternatives exist, such as [FUPPES](http://sourceforge.net/projects/fuppes), [ps3mediaserver](http://code.google.com/p/ps3mediaserver/), and [uShare](/index.php/UShare "UShare"). One of MediaTomb's distinguishing features is the ability to customize the server layout based on extracted metadata (scriptable virtual containers); MediaTomb is highly flexible.
 
@@ -270,7 +266,3 @@ From [http://mediatomb.cc/pages/documentation#id2856362](http://mediatomb.cc/pag
 The "-i" command-line option to bind to a specific IP address does not work. Bug reported in 2010 to [Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=693301) and [Upstream](http://sourceforge.net/p/mediatomb/bugs/76). The webserver remains accessible on all interfaces.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaTomb&oldid=412346](https://wiki.archlinux.org/index.php?title=MediaTomb&oldid=412346)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")

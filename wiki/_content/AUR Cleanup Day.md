@@ -1,9 +1,5 @@
 # AUR Cleanup Day
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 About](#About)
@@ -157,10 +153,3 @@ echo "\nRemoved $count directories.\n";
 *   [Arch Translation Day](/index.php/Arch_Translation_Day "Arch Translation Day")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_Cleanup_Day&oldid=400702](https://wiki.archlinux.org/index.php?title=AUR_Cleanup_Day&oldid=400702)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Events](/index.php/Category:Events "Category:Events")
-*   [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository")

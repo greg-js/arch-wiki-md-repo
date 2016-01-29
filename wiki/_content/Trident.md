@@ -1,9 +1,5 @@
 # Trident
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -125,12 +121,3 @@ If you have updateded you kernel from version 3.x.y to 3.x.(y+1) and experience 
 This is on purpose. When compiling (running makepkg) the tridentfb modules is build against the currently installed and running kernel. To update the kernel, remove the tridentfb package first. After you have installed the new kernel, reboot. Then you can rebuild and reinstall the tridentfb package from AUR. (Currently the tridentfb package calculates its version automatically to match your kernel version. So you don't need to edit the PKGBUILD file after a kernel update.)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Trident&oldid=392748](https://wiki.archlinux.org/index.php?title=Trident&oldid=392748)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

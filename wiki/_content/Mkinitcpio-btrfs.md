@@ -1,9 +1,5 @@
 # Mkinitcpio-btrfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
@@ -145,12 +141,3 @@ APPEND root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw
 **Warning:** If you've set the default subvolume you **MUST NOT** add `subvol=__active` to your `APPEND` line.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mkinitcpio-btrfs&oldid=393502](https://wiki.archlinux.org/index.php?title=Mkinitcpio-btrfs&oldid=393502)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

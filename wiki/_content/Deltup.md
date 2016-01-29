@@ -1,9 +1,5 @@
 # Deltup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Delta updates save time and size in downloading and updating the system. Packages that are downloaded will be a sort of "diff" of the new package, which will be used to patch the old package into the new package at the end of the download.
 
 ## Contents
@@ -93,7 +89,3 @@ kdeartwork-kscreensaver-4.6.3-1-x86_64.pkg.tar.xz	2011-May-06 08:57:57	589.2K	 a
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Deltup&oldid=412061](https://wiki.archlinux.org/index.php?title=Deltup&oldid=412061)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

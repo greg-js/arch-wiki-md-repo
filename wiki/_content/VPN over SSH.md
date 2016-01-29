@@ -1,9 +1,5 @@
 # VPN over SSH
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 There are several ways to set up a Virtual Private Network through SSH. Note that, while this may be useful from time to time, it may not be a full replacement for a regular VPN. See for example [[1]](http://sites.inka.de/bigred/devel/tcp-tcp.html).
 
 ## Contents
@@ -107,8 +103,3 @@ Next, replace the default route with the tunnel
 *   [Router](/index.php/Router "Router")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VPN_over_SSH&oldid=411512](https://wiki.archlinux.org/index.php?title=VPN_over_SSH&oldid=411512)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

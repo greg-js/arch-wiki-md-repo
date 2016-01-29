@@ -1,9 +1,5 @@
 # HexChat
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [HexChat](http://hexchat.github.io/) is a multi-platform IRC client for [GTK+](/index.php/GTK%2B "GTK+").
 
 ## Contents
@@ -76,8 +72,3 @@ $ xchat --existing --command="gui show"
 *   [XChat command line options](https://xchatdata.net/Using/CommandLineOptions)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HexChat&oldid=382652](https://wiki.archlinux.org/index.php?title=HexChat&oldid=382652)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

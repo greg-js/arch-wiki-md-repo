@@ -1,16 +1,12 @@
 # Vifm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ranger](/index.php/Ranger "Ranger")
 
 From the [Vifm](http://vifm.info/) home page:
 
-_Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from mutt._
+NaN
 
 If you use vi, Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
 
@@ -203,7 +199,3 @@ Single stroke to access command line
 `vifm` assumes that you are using `vim` and will throw errors if it doesn't find it. If you are using {`vi`, you need to edit your `~/.vifm/vifmrc` file. Comment out the line `set vicmd=vim` and replace it with `set vicmd=vi`. Note that, just like `.exrc`, comment lines are introduced by double quotes.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vifm&oldid=412206](https://wiki.archlinux.org/index.php?title=Vifm&oldid=412206)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")

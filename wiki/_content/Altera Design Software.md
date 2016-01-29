@@ -1,9 +1,5 @@
 # Altera Design Software
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This tutorial shows how to download, install, and configure the following software from Altera:
 
 *   Quartus II Subscription Edition v15.0
@@ -411,12 +407,3 @@ ModelSim> vlib work
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Altera_Design_Software&oldid=414896](https://wiki.archlinux.org/index.php?title=Altera_Design_Software&oldid=414896)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Xen
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
@@ -11,7 +7,7 @@ Related articles
 
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
-_Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances._
+NaN
 
 **Warning:** Do not run other virtualization software such as [VirtualBox](/index.php/VirtualBox "VirtualBox") when running Xen hypervisor, it might hang your system. See this [bug report (wontfix)](https://www.virtualbox.org/ticket/12146).
 
@@ -476,15 +472,3 @@ This is caused by `/etc/udev/rules.d/xend.rules`. Xend is deprecated and not use
 *   [The wiki at xen.org](http://wiki.xen.org/wiki/Main_Page)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xen&oldid=417082](https://wiki.archlinux.org/index.php?title=Xen&oldid=417082)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

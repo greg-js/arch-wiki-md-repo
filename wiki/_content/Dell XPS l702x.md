@@ -1,9 +1,5 @@
 # Dell XPS l702x
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is work in progress
 
 This page is about Dell XPS l702x hardware configuration
@@ -183,7 +179,3 @@ Volume keys configuration with [PulseAudio](/index.php/PulseAudio "PulseAudio") 
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_l702x&oldid=384441](https://wiki.archlinux.org/index.php?title=Dell_XPS_l702x&oldid=384441)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

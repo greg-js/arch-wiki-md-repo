@@ -1,16 +1,12 @@
 # Munin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [project web page](http://munin-monitoring.org/):
 
-_Munin_ the monitoring tool surveys all your computers and remembers what it saw. It presents all the information in graphs through a web interface. Its emphasis is on plug and play capabilities. After completing a installation a high number of monitoring plugins will be playing with no more effort.
+NaN
 
-Using Munin you can easily monitor the performance of your computers, networks, SANs, applications, weather measurements and whatever comes to mind. It makes it easy to determine "what's different today" when a performance problem crops up. It makes it easy to see how you're doing capacity-wise on any resources.
+NaN
 
-Munin uses the excellent [RRDTool](http://oss.oetiker.ch/rrdtool/) (written by Tobi Oetiker) and the framework is written in Perl, while plugins may be written in any language. Munin has a master/node architecture in which the master connects to all the nodes at regular intervals and asks them for data. It then stores the data in RRD files, and (if needed) updates the graphs. One of the main goals has been ease of creating new plugins (graphs). [[1]](http://munin-monitoring.org/)
+NaN
 
 Simply put, Munin allows you to make graphs about system statistics. You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/) to see some examples of what it can do.
 
@@ -331,7 +327,3 @@ Install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) and co
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Munin&oldid=417235](https://wiki.archlinux.org/index.php?title=Munin&oldid=417235)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")

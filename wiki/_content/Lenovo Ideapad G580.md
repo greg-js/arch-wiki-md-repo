@@ -1,9 +1,5 @@
 # Lenovo Ideapad G580
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The 15.6" Lenovo G580 laptop PC combines top notch essentials – such as cutting-edge 3rd generation Intel® Core™ i Series processors – with a price you can afford. This ideal entry-level PC also boasts solid multimedia features like stereo speakers, HD visuals and the latest Intel® HD Graphics.
 
 ## Installation
@@ -24,7 +20,3 @@ To see additional sources of power drain, install [powertop](https://www.archlin
 See [Powertop](/index.php/Powertop "Powertop") for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_G580&oldid=376867](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_G580&oldid=376867)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

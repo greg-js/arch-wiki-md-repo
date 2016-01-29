@@ -1,9 +1,5 @@
 # Ruby Gem package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -68,11 +64,3 @@ The gem installation can be automated completely with the tool [pacgem](https://
 There is also [gem2arch](https://aur.archlinux.org/packages/gem2arch/)<sup><small>AUR</small></sup> tools which aid in automating the process of creating a ruby gem PKGBUILD. Make sure to manually check the PKGBUILD after generation.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby_Gem_package_guidelines&oldid=408720](https://wiki.archlinux.org/index.php?title=Ruby_Gem_package_guidelines&oldid=408720)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

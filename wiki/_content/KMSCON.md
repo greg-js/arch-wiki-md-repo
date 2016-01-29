@@ -1,9 +1,5 @@
 # KMSCON
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [KMS](/index.php/KMS "KMS")
@@ -12,7 +8,7 @@ Related articles
 
 From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/tree/README):
 
-_Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console._
+NaN
 
 ## Contents
 
@@ -95,7 +91,3 @@ The file and folder are not part of the package and therefore have to be created
 *   As version 7, if you cannot control the audio, add your user to **audio** [group](/index.php/Group "Group"). Be aware of the [shortcomings](/index.php/Alsa#Installation "Alsa") of this choice.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KMSCON&oldid=411995](https://wiki.archlinux.org/index.php?title=KMSCON&oldid=411995)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

@@ -1,9 +1,5 @@
 # LDAP authentication
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
@@ -428,8 +424,6 @@ auth           required        pam_nologin.so
 
 ```
 
-**Note:** Note that if you intend to use sudo with sssd, you need to recompile sudo with sssd support as it is not enabled by default.
-
 ##### 2\. Password Management
 
 In order to enable users to change their passwords using `passwd` edit `/etc/pam.d/passwd` as follows.
@@ -459,9 +453,4 @@ Once you have logged in with a user the credentials will be cached and you will 
 *   [Discussion on suse's mailing lists about nss-pam-ldapd](http://readlist.com/lists/suse.com/suse-linux-e/36/182642.html)
 *   [Fedora's SSSD User Guide](https://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/chap-SSSD_User_Guide-Introduction.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=415600](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=415600)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=417815](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=417815)"

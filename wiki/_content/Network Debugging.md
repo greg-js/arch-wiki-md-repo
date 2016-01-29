@@ -1,9 +1,5 @@
 # Network Debugging
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [VLAN](/index.php/VLAN "VLAN")
@@ -231,11 +227,3 @@ $ traceroute 8.8.4.4
 Traceroute also used ICMP to determine the path and hence there can be "no reply" answers as well when ICMP traffic is blocked.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Debugging&oldid=383889](https://wiki.archlinux.org/index.php?title=Network_Debugging&oldid=383889)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

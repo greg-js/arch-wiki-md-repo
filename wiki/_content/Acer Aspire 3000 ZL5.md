@@ -1,9 +1,5 @@
 # Acer Aspire 3000 ZL5
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -172,11 +168,3 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
     *   [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_3000_ZL5&oldid=375952](https://wiki.archlinux.org/index.php?title=Acer_Aspire_3000_ZL5&oldid=375952)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

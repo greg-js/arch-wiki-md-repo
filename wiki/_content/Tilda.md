@@ -1,9 +1,5 @@
 # Tilda
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Tilda](https://github.com/lanoxx/tilda/) is a "pop-up virtual terminal" for X, just like [Yakuake](/index.php/Yakuake "Yakuake") ([KDE](/index.php/KDE "KDE")) or [Guake](/index.php/Guake "Guake") ([GNOME](/index.php/GNOME "GNOME")), but a little more lightweight and a little more maintained than sjterm.
 
 ## Why Tilda
@@ -152,7 +148,3 @@ double_buffer = false
 It is important you enable the pulldown-animation, otherwise Tilda will keep jumping down each time you unhide it, must be a dwm issue.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tilda&oldid=410119](https://wiki.archlinux.org/index.php?title=Tilda&oldid=410119)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

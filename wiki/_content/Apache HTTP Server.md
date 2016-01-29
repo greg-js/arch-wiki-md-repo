@@ -1,9 +1,5 @@
 # Apache HTTP Server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PHP](/index.php/PHP "PHP")
@@ -64,39 +60,39 @@ User http
 
 ```
 
-For security reasons, as soon as Apache is started by the root user (directly or via startup scripts) it switches to this UID. The default user is _http_, which is created automatically during installation.
+NaN
 
 ```
 Listen 80
 
 ```
 
-This is the port Apache will listen to. For Internet-access with router, you have to forward the port.
+NaN
 
-If you want to setup Apache for local development you may want it to be only accessible from your computer. Then change this line to `Listen 127.0.0.1:80`.
+NaN
 
 ```
 ServerAdmin you@example.com
 
 ```
 
-This is the admin's email address which can be found on e.g. error pages.
+NaN
 
 ```
 DocumentRoot "/srv/http"
 
 ```
 
-This is the directory where you should put your web pages.
+NaN
 
-Change it, if you want to, but do not forget to also change `<Directory "/srv/http">` to whatever you changed your `DocumentRoot` to, or you will likely get a **403 Error** (lack of privileges) when you try to access the new document root. Do not forget to change the `Require all denied` line to `Require all granted`, otherwise you will get a **403 Error**. Remember that the DocumentRoot directory and its parent folders must allow execution permission to others (can be set with `chmod o+x /path/to/DocumentRoot`), otherwise you will get a **403 Error**.
+NaN
 
 ```
 AllowOverride None
 
 ```
 
-This directive in `<Directory>` sections causes Apache to completely ignore `.htaccess` files. Note that this is now the default for Apache 2.4, so you need to explicitly allow overrides if you plan to use `.htaccess` files. If you intend to use `mod_rewrite` or other settings in `.htaccess` files, you can allow which directives declared in that file can override server configuration. For more info refer to the [Apache documentation](http://httpd.apache.org/docs/current/mod/core.html#allowoverride).
+NaN
 
 **Tip:** If you have issues with your configuration you can have Apache check the configuration with: `apachectl configtest`
 
@@ -515,7 +511,7 @@ you need to replace `mpm_event_module` with `mpm_prefork_module`:
  `/etc/httpd/conf/httpd.conf` 
 
 ```
-<s>LoadModule mpm_event_module modules/mod_mpm_event.so</s>
+~~LoadModule mpm_event_module modules/mod_mpm_event.so~~
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
@@ -555,11 +551,3 @@ and restart `httpd.service`.
 *   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=416561](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&oldid=416561)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

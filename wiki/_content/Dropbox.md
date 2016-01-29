@@ -1,9 +1,5 @@
 # Dropbox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Backup programs](/index.php/Backup_programs "Backup programs")
@@ -365,11 +361,3 @@ install -dm0 ~/.dropbox-dist
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dropbox&oldid=415754](https://wiki.archlinux.org/index.php?title=Dropbox&oldid=415754)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

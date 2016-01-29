@@ -1,9 +1,5 @@
 # IRC Cloaks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Developers](#Developers)
@@ -54,363 +50,83 @@ id@archlinux/developer/nickname
 
 ### Aaron Griffin
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>phrakture</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | phrakture |
 
 ### Andreas Radke
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>andyrtr</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | andyrtr |
 
 ### Dan McGee
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>toofishes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | toofishes |
 
 ### Daniel Isenmann
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>ise</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | ise |
 
 ### Don Stewart
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>dons</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | dons |
 
 ### Douglas Soares de Andrade
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>dsa</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | dsa |
 
 ### Eric Belanger
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>_Snowman_</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | _Snowman_ |
 
 ### Eduardo Romero
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>kensai</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | kensai |
 
 ### Felix Yan
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>felixonmars</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | felixonmars |
 
 ### Hugo Doria
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>hdoria</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | hdoria |
 
 ### Giovanni Scafora
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>voidnull</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | voidnull |
 
 ### Ionuț Bîru
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>wonder or ioni</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | wonder or ioni |
 
 ### Jeff Mickey
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>codemac</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | codemac |
 
 ### Pierre Schmitz
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>pierres</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | pierres |
 
 ### Roman Kyrylych
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>romashka</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | romashka |
 
 ### Simo Leone
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>neotuli</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | neotuli |
 
 ### Thomas Bächler
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>brain0</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | brain0 |
 
 ### Tobias Kieslich
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>neri</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | neri |
 
 ### Tom Killian
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>tomk</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | tomk |
 
 ### Vesa Kaihlavirta
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>vegai</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | vegai |
 
 ## Trusted Users
 
@@ -423,201 +139,47 @@ id@archlinux/trusteduser/nickname
 
 ### Alexander Rødseth
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>xyproto</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | xyproto |
 
 ### Anders Bergh
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>anders</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | anders |
 
 ### Andrea Scarpino
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>bash</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | bash |
 
 ### Angel Velasquez
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>angvp</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | angvp |
 
 ### Bartłomiej Piotrowski
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>Barthalion</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | Barthalion |
 
 ### György Balló
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>City-busz</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | City-busz |
 
 ### Jakob Gruber
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>schuay</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | schuay |
 
 ### Jaroslav Lichtblau
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>drag0nl0rd</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | drag0nl0rd |
 
 ### Laurent Carlier
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>lordheavy</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | lordheavy |
 
 ### Maxime Gauduin
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>alucryd</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | alucryd |
 
 ### Mikko Seppälä
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>Neverther</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | Neverther |
 
 # Who needs cloaks?
 
@@ -625,24 +187,6 @@ id@archlinux/trusteduser/nickname
 
 ### Stefan Husmann
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="padding-right:20px;">IRC</td>
-
-<td>haawda</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| IRC | haawda |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_Cloaks&oldid=322503](https://wiki.archlinux.org/index.php?title=IRC_Cloaks&oldid=322503)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

@@ -1,9 +1,5 @@
 # Etckeeper
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Etckeeper lets you keep `/etc` under version control.
 
 ## Contents
@@ -122,11 +118,3 @@ Change to `etc/.git` and add your remote Github repository:
 Now each time you run your wrapper script or alias from above, changes will be automatically commited to your Github repo.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=411988](https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=411988)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

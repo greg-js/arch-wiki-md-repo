@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge E335
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -20,85 +16,15 @@ This laptop has no optical drives, so an alternate installation method is requir
 
 ## Hardware support
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Works</th>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless (Broadcom BCM43228)</td>
-
-<td>Yes (tested with _w_ driver)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td>Yes (using [PulseAudio](/index.php/PulseAudio "PulseAudio"))</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>USB 2.0</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td>Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Works |
+| Video | Yes |
+| Ethernet | Yes |
+| Wireless (Broadcom BCM43228) | Yes (tested with _w_ driver) |
+| Audio | Yes (using [PulseAudio](/index.php/PulseAudio "PulseAudio")) |
+| Camera | Yes |
+| Card Reader | Yes |
+| USB 2.0 | Yes |
+| USB 3.0 | Yes |
 
 ### lspci
 
@@ -135,11 +61,3 @@ This laptop has no optical drives, so an alternate installation method is requir
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E335&oldid=412549](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E335&oldid=412549)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

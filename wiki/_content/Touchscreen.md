@@ -1,9 +1,5 @@
 # Touchscreen
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -126,11 +122,3 @@ xinput --map-to-output 14 LVDS1
 [Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=412702](https://wiki.archlinux.org/index.php?title=Touchscreen&oldid=412702)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

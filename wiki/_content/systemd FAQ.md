@@ -1,9 +1,5 @@
 # systemd FAQ
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
@@ -154,8 +150,3 @@ This happens when using `systemctl enable` and the symlink it tries to create in
 To solve this problem, either first disable the relevant display manager before enabling the new one, or use `systemctl -f enable` to overwrite an existing symlink.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=412016](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=412016)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

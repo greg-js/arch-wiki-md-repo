@@ -1,14 +1,10 @@
 # Fluxbox Style Guide
 
-From ArchWiki
+NaN
 
-Jump to: [navigation](#column-one), [search](#searchInput)
+NaN
 
-_This is a list of all the theme items that can be customized in a fluxbox theme.cfg_
-
-_This file is in two parts: the first explains what each of the items does the second part is a complete list that can be copied and pasted into a theme.cfg to get you started._
-
-_This has been specially structured to group the relevant items_
+NaN
 
 ## Contents
 
@@ -95,7 +91,7 @@ non-pixmap options: uses **.color to color the objects, use** .colorTo for gradi
 
 ```
 
-e.g menu.frame: Flat Gradient Vertical  
+e.g menu.frame: Flat Gradient Vertical
 or
 
 ```
@@ -170,7 +166,7 @@ e.g.toolbar.shaped: true
 
 ### {alpha}
 
-a transparency setting - should be an integer between 0 and 255 where 0 is invisible/transparent  
+a transparency setting - should be an integer between 0 and 255 where 0 is invisible/transparent
 and 255 is solid/opaque - 150 is popular
 
 e.g.window.alpha: 255
@@ -311,89 +307,89 @@ A theme.cfg template is laid out below:
 
 #### General settings
 
-toolbar.borderWidth: {integer}  
-toolbar.borderColor: {color}  
+toolbar.borderWidth: {integer}
+toolbar.borderColor: {color}
 
-toolbar.shaped: {boolean}  
-toolbar.alpha: {alpha}  
-toolbar.height: {integer}  
+toolbar.shaped: {boolean}
+toolbar.alpha: {alpha}
+toolbar.height: {integer}
 
 #### The clock area
 
-toolbar.clock.font: {font}  
-toolbar.clock.textColor: {color}  
-toolbar.clock.justify: {justify}  
+toolbar.clock.font: {font}
+toolbar.clock.textColor: {color}
+toolbar.clock.justify: {justify}
 
-toolbar.clock: {texture type}  
-toolbar.clock.pixmap: {filename}  
-toolbar.clock.color: {color}  
-toolbar.clock.colorTo: {color}  
-toolbar.clock.borderWidth: {integer}  
-toolbar.clock.borderColor: {color}  
+toolbar.clock: {texture type}
+toolbar.clock.pixmap: {filename}
+toolbar.clock.color: {color}
+toolbar.clock.colorTo: {color}
+toolbar.clock.borderWidth: {integer}
+toolbar.clock.borderColor: {color}
 
 #### The workspace title area
 
-toolbar.workspace.font: {font}  
-toolbar.workspace.textColor: {color}  
-toolbar.workspace.justify: {justify}  
+toolbar.workspace.font: {font}
+toolbar.workspace.textColor: {color}
+toolbar.workspace.justify: {justify}
 
-toolbar.workspace: {texture type}  
-toolbar.workspace.pixmap: {filename}  
-toolbar.workspace.color: {color}  
-toolbar.workspace.colorTo: {color}  
-toolbar.workspace.borderWidth: {integer}  
-toolbar.workspace.borderColor: {color}  
+toolbar.workspace: {texture type}
+toolbar.workspace.pixmap: {filename}
+toolbar.workspace.color: {color}
+toolbar.workspace.colorTo: {color}
+toolbar.workspace.borderWidth: {integer}
+toolbar.workspace.borderColor: {color}
 
 #### The iconbar
 
-where windows are shown depending on Iconbar Mode which is set by right-clicking on the fluxbox toolbar  
+where windows are shown depending on Iconbar Mode which is set by right-clicking on the fluxbox toolbar
 
-toolbar.iconbar.borderWidth: {integer}  
-toolbar.iconbar.borderColor: {color}  
+toolbar.iconbar.borderWidth: {integer}
+toolbar.iconbar.borderColor: {color}
 
 #### Empty - when no windows are shown as icons
 
-toolbar.iconbar.empty: {texture type}  
-toolbar.iconbar.empty.pixmap: {filename}  
-toolbar.iconbar.empty.color: {color}  
-toolbar.iconbar.empty.colorTo: {color}  
+toolbar.iconbar.empty: {texture type}
+toolbar.iconbar.empty.pixmap: {filename}
+toolbar.iconbar.empty.color: {color}
+toolbar.iconbar.empty.colorTo: {color}
 
 #### Focused window icon
 
-toolbar.iconbar.focused.font: {font}  
-toolbar.iconbar.focused.textColor: {color}  
-toolbar.iconbar.focused.justify: {justify}  
-toolbar.iconbar.focused: {texture type}  
-toolbar.iconbar.focused.pixmap: {filename}  
-toolbar.iconbar.focused.color: {color}  
-toolbar.iconbar.focused.colorTo: {color}  
-toolbar.iconbar.focused.borderWidth: {integer}  
-toolbar.iconbar.focused.borderColor: {color}  
+toolbar.iconbar.focused.font: {font}
+toolbar.iconbar.focused.textColor: {color}
+toolbar.iconbar.focused.justify: {justify}
+toolbar.iconbar.focused: {texture type}
+toolbar.iconbar.focused.pixmap: {filename}
+toolbar.iconbar.focused.color: {color}
+toolbar.iconbar.focused.colorTo: {color}
+toolbar.iconbar.focused.borderWidth: {integer}
+toolbar.iconbar.focused.borderColor: {color}
 
 #### Unfocused window icon
 
-toolbar.iconbar.unfocused.font: {font}  
-toolbar.iconbar.unfocused.textColor: {color}  
-toolbar.iconbar.unfocused.justify: {justify}  
-toolbar.iconbar.unfocused: {texture type}  
-toolbar.iconbar.unfocused.pixmap: {filename}  
-toolbar.iconbar.unfocused.color: {color}  
-toolbar.iconbar.unfocused.colorTo: {color}  
-toolbar.iconbar.unfocused.borderWidth: {integer}  
-toolbar.iconbar.unfocused.borderColor: {color}  
+toolbar.iconbar.unfocused.font: {font}
+toolbar.iconbar.unfocused.textColor: {color}
+toolbar.iconbar.unfocused.justify: {justify}
+toolbar.iconbar.unfocused: {texture type}
+toolbar.iconbar.unfocused.pixmap: {filename}
+toolbar.iconbar.unfocused.color: {color}
+toolbar.iconbar.unfocused.colorTo: {color}
+toolbar.iconbar.unfocused.borderWidth: {integer}
+toolbar.iconbar.unfocused.borderColor: {color}
 
 #### The toolbar buttons for prevworkspace, nextworkspace, prevwindow and next window
 
-toolbar.button {texture type}  
-toolbar.button.pixmap: {filename}  
-toolbar.button.color: {color}  
-toolbar.button.colorTo: {color}  
-toolbar.button.picColor: {color}  
-toolbar.button.pressed: {texture type}  
-toolbar.button.pressed.pixmap: {filename}  
-toolbar.button.pressed.color: {color}  
-toolbar.button.pressed.colorTo: {color}  
-toolbar.button.pressed.picColor: {color}  
+toolbar.button {texture type}
+toolbar.button.pixmap: {filename}
+toolbar.button.color: {color}
+toolbar.button.colorTo: {color}
+toolbar.button.picColor: {color}
+toolbar.button.pressed: {texture type}
+toolbar.button.pressed.pixmap: {filename}
+toolbar.button.pressed.color: {color}
+toolbar.button.pressed.colorTo: {color}
+toolbar.button.pressed.picColor: {color}
 
 ### The windows
 
@@ -401,13 +397,13 @@ focus is the currently selected window - unfocus is in the background
 
 #### General
 
-window.font: {font}  
-window.justify: {justify}  
-window.roundCorners: {round}  
-window.alpha: {alpha}  
-window.bevelWidth: {integer}  
-window.borderWidth: {integer}  
-window.borderColor: {color}  
+window.font: {font}
+window.justify: {justify}
+window.roundCorners: {round}
+window.alpha: {alpha}
+window.bevelWidth: {integer}
+window.borderWidth: {integer}
+window.borderColor: {color}
 
 ### Focused and unfocused window
 
@@ -415,76 +411,76 @@ window.borderColor: {color}
 
 the "background" of the window title. This is layered under window.label - see the note in part one
 
-window.title.height: {integer}  
-window.title.focus: {texture type}  
-window.title.focus.pixmap: {filename}  
-window.title.focus.color: {color}  
-window.title.focus.colorTo: {color}  
-window.title.unfocus: {texture type}  
-window.title.unfocus.pixmap: {filename}  
-window.title.unfocus.color: {color}  
-window.title.unfocus.colorTo: {color}  
+window.title.height: {integer}
+window.title.focus: {texture type}
+window.title.focus.pixmap: {filename}
+window.title.focus.color: {color}
+window.title.focus.colorTo: {color}
+window.title.unfocus: {texture type}
+window.title.unfocus.pixmap: {filename}
+window.title.unfocus.color: {color}
+window.title.unfocus.colorTo: {color}
 
 #### label
 
 the text background. This is layered over window.title - see the note in part one
 
-window.label.focus: {texture type}  
-window.label.focus.pixmap: {filename}  
-window.label.focus.color: {color}  
-window.label.focus.colorTo: {color}  
-window.label.focus.textColor: {color}  
-window.label.unfocus: {texture type}  
-window.label.unfocus.pixmap: {filename}  
-window.label.unfocus.color: {color}  
-window.label.unfocus.colorTo: {color}  
-window.label.unfocus.textColor: {color}  
+window.label.focus: {texture type}
+window.label.focus.pixmap: {filename}
+window.label.focus.color: {color}
+window.label.focus.colorTo: {color}
+window.label.focus.textColor: {color}
+window.label.unfocus: {texture type}
+window.label.unfocus.pixmap: {filename}
+window.label.unfocus.color: {color}
+window.label.unfocus.colorTo: {color}
+window.label.unfocus.textColor: {color}
 
 #### handle
 
 the bar along the bottom of the window for resizing vertically
 
-window.handleWidth: {integer}  
-window.handle.focus: {texture type}  
-window.handle.focus.pixmap: {filename}  
-window.handle.focus.color: {color}  
-window.handle.focus.colorTo: {color}  
-window.handle.unfocus: {texture type}  
-window.handle.unfocus.pixmap: {filename}  
-window.handle.unfocus.color: {color}  
-window.handle.unfocus.colorTo: {color}  
+window.handleWidth: {integer}
+window.handle.focus: {texture type}
+window.handle.focus.pixmap: {filename}
+window.handle.focus.color: {color}
+window.handle.focus.colorTo: {color}
+window.handle.unfocus: {texture type}
+window.handle.unfocus.pixmap: {filename}
+window.handle.unfocus.color: {color}
+window.handle.unfocus.colorTo: {color}
 
 #### grips
 
 either side of the handle for resizing in horizontally and vertically
 
-window.grip.focus: {texture type}  
-window.grip.focus.pixmap: {filename}  
-window.grip.focus.color: {color}  
-window.grip.focus.colorTo: {color}  
-window.grip.unfocus: {texture type}  
-window.grip.unfocus.pixmap: {filename}  
-window.grip.unfocus.color: {color}  
-window.grip.unfocus.colorTo: {color}  
+window.grip.focus: {texture type}
+window.grip.focus.pixmap: {filename}
+window.grip.focus.color: {color}
+window.grip.focus.colorTo: {color}
+window.grip.unfocus: {texture type}
+window.grip.unfocus.pixmap: {filename}
+window.grip.unfocus.color: {color}
+window.grip.unfocus.colorTo: {color}
 
 #### button
 
 sets the background for the window buttons - not visible if window buttons (below) are used
 
-window.button.focus: {texture type}  
-window.button.focus.pixmap: {filename}  
-window.button.focus.color: {color}  
-window.button.focus.colorTo: {color}  
-window.button.focus.picColor: {color}  
-window.button.unfocus: {texture type}  
-window.button.unfocus.pixmap: {filename}  
-window.button.unfocus.color: {color}  
-window.button.unfocus.colorTo: {color}  
-window.button.unfocus.picColor: {color}  
-window.button.pressed: {texture type}  
-window.button.pressed.pixmap: {filename}  
-window.button.pressed.color: {color}  
-window.button.pressed.colorTo: {color}  
+window.button.focus: {texture type}
+window.button.focus.pixmap: {filename}
+window.button.focus.color: {color}
+window.button.focus.colorTo: {color}
+window.button.focus.picColor: {color}
+window.button.unfocus: {texture type}
+window.button.unfocus.pixmap: {filename}
+window.button.unfocus.color: {color}
+window.button.unfocus.colorTo: {color}
+window.button.unfocus.picColor: {color}
+window.button.pressed: {texture type}
+window.button.pressed.pixmap: {filename}
+window.button.pressed.color: {color}
+window.button.pressed.colorTo: {color}
 
 #### window buttons
 
@@ -492,100 +488,95 @@ close, max and min, shade, stick and stuck
 
 #### close
 
-window.close.pixmap: {filename}  
-window.close.unfocus.pixmap: {filename}  
-window.close.pressed.pixmap: {filename}  
+window.close.pixmap: {filename}
+window.close.unfocus.pixmap: {filename}
+window.close.pressed.pixmap: {filename}
 
 #### max
 
-window.maximize.pixmap: {filename}  
-window.maximize.unfocus.pixmap: {filename}  
-window.maximize.pressed.pixmap: {filename}  
+window.maximize.pixmap: {filename}
+window.maximize.unfocus.pixmap: {filename}
+window.maximize.pressed.pixmap: {filename}
 
 #### icon
 
-window.iconify.pixmap: {filename}  
-window.iconify.unfocus.pixmap: {filename}  
-window.iconify.pressed.pixmap: {filename}  
+window.iconify.pixmap: {filename}
+window.iconify.unfocus.pixmap: {filename}
+window.iconify.pressed.pixmap: {filename}
 
 #### stick
 
-window.stick.pixmap: {filename}  
-window.stick.unfocus.pixmap: {filename}  
-window.stick.pressed.pixmap: {filename}  
+window.stick.pixmap: {filename}
+window.stick.unfocus.pixmap: {filename}
+window.stick.pressed.pixmap: {filename}
 
 #### stuck
 
-window.stuck.pixmap: {filename}  
-window.stuck.unfocus.pixmap: {filename}  
+window.stuck.pixmap: {filename}
+window.stuck.unfocus.pixmap: {filename}
 
 ### The menu
 
 #### general settings
 
-menu.borderWidth: {integer}  
-menu.bevelWidth: {integer}  
-menu.borderColor: {color}  
+menu.borderWidth: {integer}
+menu.bevelWidth: {integer}
+menu.borderColor: {color}
 
 #### title - top of each menu
 
-menu.title.font: {font}  
-menu.title.textColor: {color}  
-menu.title.justify: {justify}  
-menu.title: {texture type}  
-menu.title.pixmap: {filename}  
-menu.title.color: {color}  
-menu.title.colorTo: {color}  
+menu.title.font: {font}
+menu.title.textColor: {color}
+menu.title.justify: {justify}
+menu.title: {texture type}
+menu.title.pixmap: {filename}
+menu.title.color: {color}
+menu.title.colorTo: {color}
 
 #### frame - menu body
 
-menu.frame.font: {font}  
-menu.frame.textColor: {color}  
-menu.frame.disableColor: {color}  
-menu.frame.justify: {justify}  
-menu.frame: {texture type}  
-menu.frame.pixmap: {filename}  
-menu.frame.color: {color}  
-menu.frame.colorTo: {color}  
+menu.frame.font: {font}
+menu.frame.textColor: {color}
+menu.frame.disableColor: {color}
+menu.frame.justify: {justify}
+menu.frame: {texture type}
+menu.frame.pixmap: {filename}
+menu.frame.color: {color}
+menu.frame.colorTo: {color}
 
 #### hilite
 
 how the options are highlighted when mouse is over them
 
-menu.hilite.textColor: {color}  
-menu.hilite: {texture type}  
-menu.hilite.pixmap: {filename}  
-menu.hilite.color: {color}  
-menu.hilite.colorTo: {color}  
+menu.hilite.textColor: {color}
+menu.hilite: {texture type}
+menu.hilite.pixmap: {filename}
+menu.hilite.color: {color}
+menu.hilite.colorTo: {color}
 
 #### details
 
-menu.roundCorners: {round}  
-menu.bullet.position: {justify}  
-menu.bullet: {bullet}  
-menu.submenu.pixmap: {filename}  
-menu.selected.pixmap: {filename}  
-menu.unselected.pixmap: {filename}  
+menu.roundCorners: {round}
+menu.bullet.position: {justify}
+menu.bullet: {bullet}
+menu.submenu.pixmap: {filename}
+menu.selected.pixmap: {filename}
+menu.unselected.pixmap: {filename}
 
 #### set the wallpaper with an app...
 
-rootCommand: {string}  
+rootCommand: {string}
 
 #### The slit
 
 settings for the slit - not applicable if slit alpha is set to 0
 
-slit: {texture type}  
-slit.pixmap: {filename}  
-slit.color: {color}  
-slit.colorTo: {color}  
-slit.borderWidth: {integer}  
-slit.bevelWidth: {integer}  
-slit.borderColor: {color}  
+slit: {texture type}
+slit.pixmap: {filename}
+slit.color: {color}
+slit.colorTo: {color}
+slit.borderWidth: {integer}
+slit.bevelWidth: {integer}
+slit.borderColor: {color}
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fluxbox_Style_Guide&oldid=367793](https://wiki.archlinux.org/index.php?title=Fluxbox_Style_Guide&oldid=367793)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

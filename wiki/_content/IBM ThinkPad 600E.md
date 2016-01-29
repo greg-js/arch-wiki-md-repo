@@ -1,9 +1,5 @@
 # IBM ThinkPad 600E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -98,11 +94,3 @@ Both ACPI and APM work in this machine without any big problems. The stock Arch 
 *   [The 600E section on ThinkWiki](http://www.thinkwiki.org/wiki/Category:600E)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_600E&oldid=382938](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_600E&oldid=382938)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

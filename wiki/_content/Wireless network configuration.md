@@ -1,9 +1,5 @@
 # Wireless network configuration
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -175,66 +171,19 @@ Procedure and tools required will depend on several factors:
 
 The following table shows the different methods that can be used to activate and manage a wireless connection, depending on the encryption and management types, and the various tools that are required. Although there may be other possibilities, these are the most frequently used:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Management method</th>
-
-<th>Interface activation</th>
-
-<th>Wireless connection management  
-(/=alternatives)</th>
-
-<th>Assigning IP address  
-(/=alternatives)</th>
-
-</tr>
-
-<tr>
-
-<td>[Manually managed](#Manual_setup),  
-with no or WEP encryption</td>
-
-<td>[ip](/index.php/Core_utilities#ip "Core utilities")</td>
-
-<td>[iw](https://www.archlinux.org/packages/?name=iw) / [iwconfig](https://www.archlinux.org/packages/?name=wireless_tools)</td>
-
-<td>[ip](/index.php/Core_utilities#ip "Core utilities") / [dhcpcd](/index.php/Dhcpcd "Dhcpcd") / [dhclient](https://www.archlinux.org/packages/?name=dhclient) / [networkd](/index.php/Networkd "Networkd")</td>
-
-</tr>
-
-<tr>
-
-<td>[Manually managed](#Manual_setup),  
-with WPA or WPA2 PSK encryption</td>
-
-<td>[ip](/index.php/Core_utilities#ip "Core utilities")</td>
-
-<td>[iw](https://www.archlinux.org/packages/?name=iw) / [iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) + [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant")</td>
-
-<td>[ip](/index.php/Core_utilities#ip "Core utilities") / [dhcpcd](/index.php/Dhcpcd "Dhcpcd") / [dhclient](https://www.archlinux.org/packages/?name=dhclient) / [networkd](/index.php/Networkd "Networkd")</td>
-
-</tr>
-
-<tr>
-
-<td>[Automatically managed](#Automatic_setup),  
-with network profiles support</td>
-
-<td colspan="3" align="center">[netctl](/index.php/Netctl "Netctl"), [Wicd](/index.php/Wicd "Wicd"), [NetworkManager](/index.php/NetworkManager "NetworkManager"), etc.  
+| Management method | Interface activation | Wireless connection management
+(/=alternatives) | Assigning IP address
+(/=alternatives) |
+| [Manually managed](#Manual_setup),
+with no or WEP encryption | [ip](/index.php/Core_utilities#ip "Core utilities") | [iw](https://www.archlinux.org/packages/?name=iw) / [iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) | [ip](/index.php/Core_utilities#ip "Core utilities") / [dhcpcd](/index.php/Dhcpcd "Dhcpcd") / [dhclient](https://www.archlinux.org/packages/?name=dhclient) / [networkd](/index.php/Networkd "Networkd") |
+| [Manually managed](#Manual_setup),
+with WPA or WPA2 PSK encryption | [ip](/index.php/Core_utilities#ip "Core utilities") | [iw](https://www.archlinux.org/packages/?name=iw) / [iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) + [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") | [ip](/index.php/Core_utilities#ip "Core utilities") / [dhcpcd](/index.php/Dhcpcd "Dhcpcd") / [dhclient](https://www.archlinux.org/packages/?name=dhclient) / [networkd](/index.php/Networkd "Networkd") |
+| [Automatically managed](#Automatic_setup),
+with network profiles support | [netctl](/index.php/Netctl "Netctl"), [Wicd](/index.php/Wicd "Wicd"), [NetworkManager](/index.php/NetworkManager "NetworkManager"), etc.
 
 These tools pull in the required dependencies from the list of packages in the manual method.
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
 
 ### Manual setup
 
@@ -242,15 +191,11 @@ Just like other network interfaces, the wireless ones are controlled with _ip_ f
 
 You will need to install a basic set of tools for managing the wireless connection. Either:
 
-*   [iw](https://www.archlinux.org/packages/?name=iw) - only supports the nl80211 (netlink) standard. It does not support the older WEXT (Wireless EXTentions) standard. If _iw_ does not see your card, this may be the reason.
-
-or
-
-*   [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) - currently deprecated, but still widely supported. Use this for modules using the WEXT standard.
+NaN
 
 For WPA/WPA2 encryption, you will also need:
 
-*   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - works with both WEXT and nl80211.
+NaN
 
 The table below gives an overview of comparable commands for _iw_ and _wireless_tools_ (see [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples). These user-space tools work extremely well and allow complete manual control of wireless connection.
 
@@ -260,103 +205,15 @@ The table below gives an overview of comparable commands for _iw_ and _wireless_
 *   Examples in this section assume that your wireless device interface is `wlan0` and that you are connecting to `_your_essid_` wifi access point. Replace both accordingly. To find your wireless device interface, see [#Getting some useful information](#Getting_some_useful_information).
 *   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. _iwlist_), will exit without error but not produce the correct output either, which can be confusing.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>_iw_ command</th>
-
-<th>_wireless_tools_ command</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 link</td>
-
-<td>iwconfig wlan0</td>
-
-<td>Getting link status.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 scan</td>
-
-<td>iwlist wlan0 scan</td>
-
-<td>Scanning for available access points.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 set type ibss</td>
-
-<td>iwconfig wlan0 mode ad-hoc</td>
-
-<td>Setting the operation mode to _ad-hoc_.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 connect _your_essid_</td>
-
-<td>iwconfig wlan0 essid _your_essid_</td>
-
-<td>Connecting to open network.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 connect _your_essid_ 2432</td>
-
-<td>iwconfig wlan0 essid _your_essid_ freq 2432M</td>
-
-<td>Connecting to open network specifying channel.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 connect _your_essid_ key 0:_your_key_</td>
-
-<td>iwconfig wlan0 essid _your_essid_ key _your_key_</td>
-
-<td>Connecting to WEP encrypted network using hexadecimal key.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 connect _your_essid_ key 0:_your_key_</td>
-
-<td>iwconfig wlan0 essid _your_essid_ key s:_your_key_</td>
-
-<td>Connecting to WEP encrypted network using ASCII key.</td>
-
-</tr>
-
-<tr>
-
-<td>iw dev wlan0 set power_save on</td>
-
-<td>iwconfig wlan0 power on</td>
-
-<td>Enabling power save.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| _iw_ command | _wireless_tools_ command | Description |
+| iw dev wlan0 link | iwconfig wlan0 | Getting link status. |
+| iw dev wlan0 scan | iwlist wlan0 scan | Scanning for available access points. |
+| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Setting the operation mode to _ad-hoc_. |
+| iw dev wlan0 connect _your_essid_ | iwconfig wlan0 essid _your_essid_ | Connecting to open network. |
+| iw dev wlan0 connect _your_essid_ 2432 | iwconfig wlan0 essid _your_essid_ freq 2432M | Connecting to open network specifying channel. |
+| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key _your_key_ | Connecting to WEP encrypted network using hexadecimal key. |
+| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key s:_your_key_ | Connecting to WEP encrypted network using ASCII key. |
+| iw dev wlan0 set power_save on | iwconfig wlan0 power on | Enabling power save. |
 
 **Note:** Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Association](#Association).
 
@@ -574,115 +431,18 @@ And before disabling the interface you would first flush the IP address and gate
 
 There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously. The following table compares the different connection managers, additional notes are in subsections below.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Connection manager</th>
-
-<th>Network  
-profiles  
-support</th>
-
-<th>Roaming  
-(auto connect dropped  
-or changed location)</th>
-
-<th>[PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support  
-(e.g. 3G modem)</th>
-
-<th>Official  
-GUI</th>
-
-<th>Console tools</th>
-
-</tr>
-
-<tr>
-
-<td>[Connman](/index.php/Connman "Connman")</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>No</td>
-
-<td>`connmanctl`</td>
-
-</tr>
-
-<tr>
-
-<td>[netctl](/index.php/Netctl "Netctl")</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>No</td>
-
-<td>`netctl`,`wifi-menu`</td>
-
-</tr>
-
-<tr>
-
-<td>[NetworkManager](/index.php/NetworkManager "NetworkManager")</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>`nmcli`,`nmtui`</td>
-
-</tr>
-
-<tr>
-
-<td>[Wicd](/index.php/Wicd "Wicd")</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-<td>No</td>
-
-<td>Yes</td>
-
-<td>`wicd-curses`</td>
-
-</tr>
-
-<tr>
-
-<td>[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")</td>
-
-<td>Yes</td>
-
-<td> ?</td>
-
-<td> ?</td>
-
-<td>Yes</td>
-
-<td>`wifi-radar`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Connection manager | Network
+profiles
+support | Roaming
+(auto connect dropped
+or changed location) | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
+(e.g. 3G modem) | Official
+GUI | Console tools |
+| [Connman](/index.php/Connman "Connman") | Yes | Yes | Yes | No | `connmanctl` |
+| [netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | No | `netctl`,`wifi-menu` |
+| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli`,`nmtui` |
+| [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | Yes | `wicd-curses` |
+| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes |  ? |  ? | Yes | `wifi-radar` |
 
 #### Connman
 
@@ -962,7 +722,7 @@ Unified driver for Ralink chipsets (it replaces `rt2500`, `rt61`, `rt73`, etc). 
 
 A list of devices supported by the modules is available at the project's [homepage](http://rt2x00.serialmonkey.com/wiki/index.php/Hardware).
 
-Additional notes
+NaN
 
 *   Since kernel 3.0, rt2x00 includes also these drivers: `rt2800pci`, `rt2800usb`.
 *   Since kernel 3.0, the staging drivers `rt2860sta` and `rt2870sta` are replaced by the mainline drivers `rt2800pci` and `rt2800usb`<sup>[[3]](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=fefecc6989b4b24276797270c0e229c07be02ad3)</sup>.
@@ -1322,14 +1082,3 @@ Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any oth
 *   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=417389](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=417389)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

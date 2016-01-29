@@ -1,9 +1,5 @@
 # Asterisk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Asterisk](http://www.asterisk.org) is a complete PBX (private branch exchange) in software. It runs on Linux, BSD, Windows and OS X and provides all of the features you would expect from a PBX and more. Asterisk does voice over IP in four protocols, and can interoperate with almost all standards-based telephony equipment using relatively inexpensive hardware.
 
 Asterisk provides voice-mail services with directory, call conferencing, interactive voice response and call queuing. It has support for three-way calling, caller ID services, ADSI, IAX, SIP, H.323 (as both client and gateway), MGCP (call manager only) and SCCP/Skinny.
@@ -330,11 +326,3 @@ Now you should be able to dial `101` from `me1` and talk to `me2`.
 If you receive a 404 Not Found error check your `extensions.conf` and the number you dialed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Asterisk&oldid=414389](https://wiki.archlinux.org/index.php?title=Asterisk&oldid=414389)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

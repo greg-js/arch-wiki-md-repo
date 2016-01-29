@@ -1,9 +1,5 @@
 # iSCSI Boot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
@@ -194,9 +190,3 @@ Now your new system can mount the file systems from iSCSI target drive after reb
 If you are having problems with detecting your eth0 interface you may need to explicitly install the kernel module for your NIC in the MODULES line in [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Boot&oldid=412100](https://wiki.archlinux.org/index.php?title=ISCSI_Boot&oldid=412100)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Storage](/index.php/Category:Storage "Category:Storage")

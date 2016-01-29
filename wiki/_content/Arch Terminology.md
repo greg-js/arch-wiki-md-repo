@@ -1,9 +1,5 @@
 # Arch Terminology
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is intended to be a page to demystify common terms used among the Arch Linux community. Feel free to add or modify any terms, but please use that particular section's edit option. If you decide to add one, please put it in alphabetical order.
 
 ## Contents
@@ -225,7 +221,3 @@ If udev receives a device event, it matches its configured rules against the ava
 [This!](/index.php/Main_page "Main page") A place to find documentation about Arch Linux. Anyone can add and modify the documentation.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Terminology&oldid=387828](https://wiki.archlinux.org/index.php?title=Arch_Terminology&oldid=387828)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

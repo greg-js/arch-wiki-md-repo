@@ -1,9 +1,5 @@
 # FreeNX
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [FreeNX - the free NX](http://freenx.berlios.de/):
 
-NX is an exciting new technology for remote display. It provides _near local speed_ application responsiveness over high latency, low bandwidth links. The core libraries for NX are provided by [NoMachine](http://www.nomachine.com/) under the GPL. FreeNX is a GPL implementation of the NX Server and NX Client Components.
+NaN
 
 ## Contents
 
@@ -286,7 +282,7 @@ Display:
 
 You are able to connect to your current X session via NX client now.
 
-— [FreeNX to existing display (opensuse.org)](http://en.opensuse.org/SDB:FreeNX_to_existing_display)
+NaN
 
 ## Setting up non-KDE or GNOME desktop managers
 
@@ -504,13 +500,3 @@ Start eclipse using (see [https://bugs.eclipse.org/bugs/show_bug.cgi?id=386955](
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FreeNX&oldid=414544](https://wiki.archlinux.org/index.php?title=FreeNX&oldid=414544)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

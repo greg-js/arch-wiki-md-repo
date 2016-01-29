@@ -1,9 +1,5 @@
 # Hostsblock
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -26,11 +22,3 @@ Related articles
 *   [http://jasonwryan.com/blog/2013/12/28/hostsblock/](http://jasonwryan.com/blog/2013/12/28/hostsblock/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=306128](https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=306128)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

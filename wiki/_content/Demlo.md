@@ -1,9 +1,5 @@
 # Demlo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Demlo](http://ambrevar.bitbucket.org/demlo/) is a batch music tagger and library organizer powered by Lua and FFmpeg. It supports transcoding, case checking, cue sheets, online tagging with MusicBrainz, manual tag editing with you favorite editor, cover downloading and processing, and more.
 
 ## Contents
@@ -105,7 +101,3 @@ See `demlo -h` and the [demlo manual](https://godoc.org/bitbucket.org/ambrevar/d
 *   [Development page](https://bitbucket.org/ambrevar/demlo)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Demlo&oldid=414979](https://wiki.archlinux.org/index.php?title=Demlo&oldid=414979)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

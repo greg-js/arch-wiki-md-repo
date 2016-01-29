@@ -1,9 +1,5 @@
 # Razer
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -148,7 +144,7 @@ Feature still not working: pinch to zoom, 3rd mouse button
 [Source](http://forum.notebookreview.com/razer/729380-razer-blade-pro-under-linux.html)
 
 *   SwitchBlade UI doesn't work due to lack of drivers.
-*   <strike>Trackpad scrolling does not work.</strike>
+*   ~~Trackpad scrolling does not work.~~
 
 #### Possible trackpad solution
 
@@ -186,14 +182,3 @@ There are currently two Python scripts available to enable macro keys under Linu
     *   also bundles scripts to create and execute macros
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Razer&oldid=417046](https://wiki.archlinux.org/index.php?title=Razer&oldid=417046)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

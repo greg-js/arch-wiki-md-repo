@@ -1,9 +1,5 @@
 # HP Pavilion dv9510eo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -101,7 +97,3 @@ Additionally, the IR remote seems to work out of the box also!
 Bluetooth, HDMI, Modem, Fingerprint reader
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv9510eo&oldid=376418](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv9510eo&oldid=376418)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

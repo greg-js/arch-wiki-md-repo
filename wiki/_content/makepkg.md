@@ -1,9 +1,5 @@
 # makepkg
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
@@ -398,14 +394,4 @@ $ grep -R "$(pwd)/src" pkg/
 *   [A Brief Tour of the Makepkg Process](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
 *   [makepkg source code](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=417609](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=417609)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Makepkg&oldid=417802](https://wiki.archlinux.org/index.php?title=Makepkg&oldid=417802)"

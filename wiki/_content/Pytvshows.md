@@ -1,9 +1,5 @@
 # Pytvshows
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Pytvshows is a python script for downloading .torrent files from trvrss.net or eztv.it. The configuration is very easy and pytvshows remembers the series you already watched.
 
 ## Contents
@@ -80,11 +76,3 @@ Please use a other time otherwise it will get to many hits at the same time.
 [http://sourceforge.net/projects/pytvshows/](http://sourceforge.net/projects/pytvshows/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pytvshows&oldid=412165](https://wiki.archlinux.org/index.php?title=Pytvshows&oldid=412165)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

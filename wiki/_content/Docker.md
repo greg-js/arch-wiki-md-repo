@@ -1,9 +1,5 @@
 # Docker
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
@@ -262,7 +258,3 @@ If starting the docker service fails and `journalctl` says that no loopback devi
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Docker&oldid=416166](https://wiki.archlinux.org/index.php?title=Docker&oldid=416166)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

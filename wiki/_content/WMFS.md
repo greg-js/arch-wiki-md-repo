@@ -1,9 +1,5 @@
 # WMFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -278,11 +274,3 @@ done
 *   #wmfs on Freenode
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WMFS&oldid=406907](https://wiki.archlinux.org/index.php?title=WMFS&oldid=406907)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

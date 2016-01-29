@@ -1,9 +1,5 @@
 # Mir
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [KMS](/index.php/KMS "KMS")
@@ -31,11 +27,3 @@ A development version of Mir is available in the [AUR](/index.php/AUR "AUR") pac
 *   [https://github.com/chenxiaolong/UnityNext-for-Arch](https://github.com/chenxiaolong/UnityNext-for-Arch)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mir&oldid=387967](https://wiki.archlinux.org/index.php?title=Mir&oldid=387967)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

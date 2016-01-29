@@ -1,9 +1,5 @@
 # USB Armory
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [USB armory](http://inversepath.com/usbarmory) from Inverse Path is an open source hardware design, implementing a flash drive sized computer.
 
 The compact USB powered device provides a platform for developing and running a variety of applications.
@@ -114,7 +110,3 @@ Follow [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Sec
 *   [https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets](https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets) How to present USB Armory as a mass storage, hid device and ethernet adapter at the same time
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_Armory&oldid=388875](https://wiki.archlinux.org/index.php?title=USB_Armory&oldid=388875)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture")

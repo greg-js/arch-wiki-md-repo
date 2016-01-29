@@ -1,9 +1,5 @@
 # Clover
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -67,7 +63,3 @@ Configuration is done through an xml file `config.plist` under path `EFI/CLOVER`
 *   [http://sourceforge.net/projects/cloverefiboot/](http://sourceforge.net/projects/cloverefiboot/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Clover&oldid=408025](https://wiki.archlinux.org/index.php?title=Clover&oldid=408025)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")

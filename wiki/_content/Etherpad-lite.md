@@ -1,9 +1,5 @@
 # Etherpad-lite
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Gobby](/index.php/Gobby "Gobby")
@@ -80,7 +76,3 @@ Due to a bug in `socket.io`, using etherpad-lite with [lighttpd](https://www.arc
 *   [Developement page on GitHub](https://github.com/ether/etherpad-lite)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Etherpad-lite&oldid=399731](https://wiki.archlinux.org/index.php?title=Etherpad-lite&oldid=399731)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

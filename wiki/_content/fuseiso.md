@@ -1,9 +1,5 @@
 # fuseiso
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -111,11 +107,3 @@ This second action will unmount the mounted iso and remove the folder from the d
 Sometimes you have to logout to be able to mount any image of the given types simply by right clicking it in Files and selecting _Mount ISO_. To unmount it again, just right click the corresponding folder on your desktop and select _Unmount ISO_.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=412080](https://wiki.archlinux.org/index.php?title=Fuseiso&oldid=412080)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

@@ -1,12 +1,8 @@
 # Avahi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)"):
 
-_"[Avahi](http://avahi.org/) is a free [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL)."_
+NaN
 
 ## Contents
 
@@ -378,11 +374,3 @@ The entry in `avahi-browse` should now be:
 *   [http://www.zeroconf.org/](http://www.zeroconf.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Avahi&oldid=413078](https://wiki.archlinux.org/index.php?title=Avahi&oldid=413078)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

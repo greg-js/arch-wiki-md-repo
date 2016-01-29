@@ -1,136 +1,18 @@
 # ASUS N53JN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia</td>
-
-<td style="color:orange">**Partially Working**</td>
-
-<td>bumblebee</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xhci_hcd</td>
-
-</tr>
-
-<tr>
-
-<td>eSATA</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend</td>
-
-<td style="color:orange">**Working, look bellow**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel |
+| Nvidia | **Partially Working** | bumblebee |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | ath9k |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** |
+| Camera | **Working** | uvcvideo |
+| USB 3.0 | **Working** | xhci_hcd |
+| eSATA | **Working** |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
+| Suspend | **Working, look bellow** |
 
 ## Contents
 
@@ -225,7 +107,3 @@ The USB unbind hook is no longer necessary as of [Linux 3.5](http://git.kernel.o
 The laptop still hangs if you disable nVidia GPU and try to suspend! However, a workaround that works with [ASUS N82JV](/index.php/ASUS_N82JV "ASUS N82JV") consists in blacklisting nouveau. That still allows the user to power the card off in that laptop.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N53JN&oldid=328607](https://wiki.archlinux.org/index.php?title=ASUS_N53JN&oldid=328607)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

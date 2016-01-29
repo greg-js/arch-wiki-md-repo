@@ -1,9 +1,5 @@
 # Sup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Sup** is a powerful new mail client developed for people who manage lots of mail. It can be viewed as a cross between Mutt and Gmail, with very fast operation and search, tagging, automatic contact management, support for a wide variety of accounts at once, and more.
 
 ## Contents
@@ -300,7 +296,3 @@ it is possible that you also have this issue, try to run the other executables s
 *   [Philosophical statement](https://github.com/sup-heliotrope/sup/blob/develop/doc/Philosophy.txt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sup&oldid=383724](https://wiki.archlinux.org/index.php?title=Sup&oldid=383724)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

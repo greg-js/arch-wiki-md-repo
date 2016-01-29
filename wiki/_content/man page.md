@@ -1,9 +1,5 @@
 # man page
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **man pages** (abbreviation for "manual pages") are the extensive documentation that comes preinstalled with almost all substantial UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware info files, GNU's attempt at replacing the traditional man page format.
@@ -136,7 +132,7 @@ Color-enabled man pages allow for a clearer presentation and easier digestion of
 
 ### Using less (Recommended)
 
-<small>_Source: [Less Colors For Man Pages | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)_</small>
+NaN
 
 This method has the advantage that `less` has a bigger feature set than `most`, and is the default for viewing man pages.
 
@@ -286,7 +282,7 @@ setkey edit "v"
 
 ### Colored man pages on xterm or rxvt-unicode
 
-<small>_Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small><sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-09-10]</sup>
+NaN
 
 A quick way to add color to manual pages viewed on [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` or [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is to modify `~/.Xresources`.
 
@@ -533,13 +529,3 @@ Arch Linux specific pages:
 *   [Setting colors for less](http://unix.stackexchange.com/a/147) and [solving related problems](http://unix.stackexchange.com/a/6357) (threads on StackExchange)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Man_page&oldid=407234](https://wiki.archlinux.org/index.php?title=Man_page&oldid=407234)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

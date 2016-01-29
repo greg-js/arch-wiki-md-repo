@@ -1,9 +1,5 @@
 # Network Time Protocol daemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Time](/index.php/Time "Time")
@@ -183,7 +179,7 @@ ExecStart=/usr/bin/hwclock -w
 
 _ntpd_ can be started by your network manager, so that the daemon only runs when the computer is online.
 
-Netctl
+NaN
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
@@ -201,11 +197,11 @@ ExecDownPre='killall ntpd || true'
 
 ```
 
-NetworkManager
+NaN
 
 The _ntpd_ daemon can be brought up/down along with a network connection through the use of NetworkManager's [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") scripts. The [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) package installs one, pre-configured to start and stop the [ntpd service](#Start_ntpd_at_boot) with a connection.
 
-Wicd
+NaN
 
 For [Wicd](/index.php/Wicd "Wicd"), create a start script in the `postconnect` directory and a stop script in the `predisconnect` directory. Remember to make them executable:
 
@@ -229,7 +225,7 @@ systemctl stop ntpd &
 
 See also [Wicd#Scripts](/index.php/Wicd#Scripts "Wicd").
 
-KDE
+NaN
 
 KDE can use NTP (ntp must be installed) by right clicking the clock and selecting _Adjust date/time_. However, this requires the ntp daemon to be [disabled](/index.php/Disable "Disable") before configuring KDE to use NTP. [[2]](https://bugs.kde.org/show_bug.cgi?id=178968)
 
@@ -347,11 +343,3 @@ It is relatively difficult to be sure that your driftfile configuration is actua
 *   [http://www.akadia.com/services/ntp_synchronize.html](http://www.akadia.com/services/ntp_synchronize.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&oldid=412005](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&oldid=412005)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

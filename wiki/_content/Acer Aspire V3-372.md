@@ -1,104 +1,14 @@
 # Acer Aspire V3-372
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>r8168</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>ath10k_pci (Workaround, see below)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>(see below)</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Untested</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Untested</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | Working | i915 |
+| Ethernet | Working | r8168 |
+| Wireless | Working | ath10k_pci (Workaround, see below) |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | (see below) |
+| Camera | Untested | uvcvideo |
+| Card Reader | Untested | rtsx_usb |
+| Bluetooth | Working |
 
 Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD). Because the device is rather new many drivers still need to be developed for it (_05\. November 2015_).
 
@@ -185,7 +95,3 @@ RTNETLINK answers: Resource temporarily unavailable
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-372&oldid=411961](https://wiki.archlinux.org/index.php?title=Acer_Aspire_V3-372&oldid=411961)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

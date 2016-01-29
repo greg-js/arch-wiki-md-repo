@@ -1,9 +1,5 @@
 # WeeChat
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IRC channels](/index.php/IRC_channels "IRC channels")
@@ -340,7 +336,3 @@ and the help will be displayed in the main buffer (usually buffer 1).
 *   [Thoughtbot article on weechat and slack](http://robots.thoughtbot.com/weechat-for-slacks-irc-gateway)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WeeChat&oldid=412210](https://wiki.archlinux.org/index.php?title=WeeChat&oldid=412210)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

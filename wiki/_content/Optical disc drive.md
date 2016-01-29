@@ -1,9 +1,5 @@
 # Optical disc drive
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Codecs](/index.php/Codecs "Codecs")
@@ -14,7 +10,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
 
-In computing, an optical disc drive (ODD) is a disk drive that uses laser light or electromagnetic waves within or near the visible light spectrum as part of the process of reading or writing data to or from optical discs. Some drives can only read from discs, but recent drives are commonly both readers and recorders, also called burners or writers. Compact discs, DVDs, and Blu-ray discs are common types of optical media which can be read and recorded by such drives. Optical drive is the generic name; drives are usually described as "CD" "DVD", or "Blu-ray", followed by "drive", "writer", etc.
+NaN
 
 ## Contents
 
@@ -118,25 +114,7 @@ Each of those options are explained in the following sections.
 
 #### Basic options
 
-`-V`
-
-Specifies the name (that is assigned to) of the file system. The ISO 9660 standard specs impose the limitations of 32-character string length, as well as limiting the characters allowed to sets of: "A" to "Z", "0" to "9", and "_". This volume label will probably show up as mount point if the medium is mounted automatically.
-
-`-J`
-
-Enables [Joliet](https://en.wikipedia.org/wiki/Joliet_(file_system) "wikipedia:Joliet (file system)") extension, which allocates special space to store file names in Unicode (up to 64 UTF-16 characters for each file).
-
-`-joliet-long`
-
-Increases maximum length of file names from 64 to 103 UTF-16 characters in Joliet table. Non-compliant to Joliet specs and not commonly supported.
-
-`-r`
-
-Enables [Wikipedia:Rock Ridge](https://en.wikipedia.org/wiki/Rock_Ridge "wikipedia:Rock Ridge") extension, which adds POSIX file system semantics to an image, including support of long 255-character filenames and Unix-style file permissions.
-
-`-o`
-
-Sets the file path for the resulting ISO image.
+NaN
 
 #### graft-points
 
@@ -151,9 +129,7 @@ $ mkisofs -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
 
 ```
 
-`-graft-points`
-
-Enables the recognition of _pathspecs_ which consist of a target address in the ISO file system (e.g. `/photos`) and a source address on hard disk (e.g. `/home/user/photos`). Both are separated by a "=" character.
+NaN
 
 So this example puts the disk directory `/home/user/photos`, `/home/user/mail` and `/home/user/holidays/photos`, respectively in the ISO image as `/photos`, `/mail` and `/photos/holidays`.
 
@@ -576,47 +552,47 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 *   **[AcetoneISO](https://en.wikipedia.org/wiki/AcetoneISO "wikipedia:AcetoneISO")** — All-in-one ISO tool (supports BIN, MDF, NRG, IMG, DAA, DMG, CDI, B5I, BWI, PDI and ISO).
 
-[http://sourceforge.net/projects/acetoneiso](http://sourceforge.net/projects/acetoneiso) || [acetoneiso2](https://www.archlinux.org/packages/?name=acetoneiso2)
+NaN
 
 *   **BashBurn** — Lightweight terminal based menu frontend for CD/DVD burning tools.
 
-[http://bashburn.dose.se/](http://bashburn.dose.se/) || [bashburn](https://www.archlinux.org/packages/?name=bashburn)
+NaN
 
 *   **[Brasero](https://en.wikipedia.org/wiki/Brasero_(software) "wikipedia:Brasero (software)")** — Disc burning application for the GNOME desktop that is designed to be as simple as possible. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
-[https://wiki.gnome.org/Apps/Brasero](https://wiki.gnome.org/Apps/Brasero) || [brasero](https://www.archlinux.org/packages/?name=brasero)
+NaN
 
 *   **cdw** — Ncurses frontend to _cdrecord_, _mkisofs_, _growisofs_, _dvd+rw-mediainfo_, _dvd+rw-format_ and _xorriso_.
 
-[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[GnomeBaker](https://en.wikipedia.org/wiki/GnomeBaker "wikipedia:GnomeBaker")** — Full featured CD/DVD burning application for the GNOME desktop.
 
-[http://gnomebaker.sourceforge.net/](http://gnomebaker.sourceforge.net/) || [gnomebaker](https://aur.archlinux.org/packages/gnomebaker/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Graveman** — GTK-based CD/DVD burning application. It requires configuration to point to correct devices.
 
-[http://graveman.tuxfamily.org/](http://graveman.tuxfamily.org/) || [graveman](https://aur.archlinux.org/packages/graveman/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/graveman)]</sup>
+NaN
 
 *   **[isomaster](https://en.wikipedia.org/wiki/ISO_Master "wikipedia:ISO Master")** — ISO image editor.
 
-[http://littlesvr.ca/isomaster](http://littlesvr.ca/isomaster) || [isomaster](https://aur.archlinux.org/packages/isomaster/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD burning application based on KDElibs.
 
-[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
+NaN
 
 *   **[X-CD-Roast](https://en.wikipedia.org/wiki/X-CD-Roast "wikipedia:X-CD-Roast")** — Lightweight _cdrtools_ front-end for CD and DVD writing.
 
-[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcdroast)]</sup>
+NaN
 
 *   **Xfburn** — Simple front-end to the libburnia libraries with support for CD/DVD(-RW), ISO images, and BurnFree.
 
-[http://goodies.xfce.org/projects/applications/xfburn](http://goodies.xfce.org/projects/applications/xfburn) || [xfburn](https://www.archlinux.org/packages/?name=xfburn)
+NaN
 
 *   **xorriso-tcltk** — Graphical front-end to ISO and CD/DVD/BD burn tool xorriso
 
-[https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif](https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif) || [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+NaN
 
 ## Playback
 
@@ -642,55 +618,55 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[Abcde](https://en.wikipedia.org/wiki/ABCDE "wikipedia:ABCDE")** — Comprehensive command-line tool for ripping audio CDs.
 
-[http://abcde.einval.com/](http://abcde.einval.com/) || [abcde](https://www.archlinux.org/packages/?name=abcde)
+NaN
 
 *   **[Asunder](https://en.wikipedia.org/wiki/Asunder "wikipedia:Asunder")** — GTK+-based CD ripping program.
 
-[http://littlesvr.ca/asunder/](http://littlesvr.ca/asunder/) || [asunder](https://www.archlinux.org/packages/?name=asunder)
+NaN
 
 *   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Compact Disc Digital Audio (CDDA) Digital Audio Extraction (DAE) tool.
 
-[http://xiph.org/paranoia/index.html](http://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
+NaN
 
 *   **Gnac** — Audio converter for GNOME.
 
-[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
+NaN
 
 *   **Goobox** — CD player and ripper for GNOME.
 
-[https://people.gnome.org/~paobac/goobox/](https://people.gnome.org/~paobac/goobox/) || [goobox](https://www.archlinux.org/packages/?name=goobox)
+NaN
 
 *   **[Grip](https://en.wikipedia.org/wiki/Grip_(software) "wikipedia:Grip (software)")** — Fast and light CD ripper within the GNOME project that resembles [Audiograbber](https://en.wikipedia.org/wiki/Audiograbber "wikipedia:Audiograbber").
 
-[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip)
+NaN
 
 *   **KAudioCreator** — Program for ripping and encoding Audio CDs and encoding files from disk.
 
-[http://kde-apps.org/content/show.php/KAudioCreator?content=107645](http://kde-apps.org/content/show.php/KAudioCreator?content=107645) || [kaudiocreator](https://www.archlinux.org/packages/?name=kaudiocreator)
+NaN
 
 *   **morituri** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
 
-[http://thomas.apestaart.org/morituri/trac/](http://thomas.apestaart.org/morituri/trac/) || [morituri](https://www.archlinux.org/packages/?name=morituri)
+NaN
 
 *   **ripperX** — GTK+ program to rip and encode MP3 files.
 
-[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+NaN
 
 *   **ripright** — Minimal CD ripper modeled on autorip.
 
-[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)<sup><small>AUR</small></sup>
+NaN
 
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
-[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+NaN
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper for GNOME.
 
-[http://burtonini.com/blog/computers/sound-juicer](http://burtonini.com/blog/computers/sound-juicer) || [sound-juicer](https://www.archlinux.org/packages/?name=sound-juicer)
+NaN
 
 *   **soundKonverter** — Front-end to various audio converters.
 
-[http://www.kde-apps.org/content/show.php?content=29024](http://www.kde-apps.org/content/show.php?content=29024) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+NaN
 
 ### DVD
 
@@ -703,31 +679,31 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **dvd-vr** — Tool which easily converts VRO files extracted from a [DVD-VR](https://en.wikipedia.org/wiki/DVD-VR "wikipedia:DVD-VR") and splits them in regular VOB files.
 
-[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dvd-vr)]</sup>
+NaN
 
 *   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Tool for pure data extraction which does not transcode. It is useful for creating _exact_ copies of encrypted DVDs in conjunction with **libdvdcss** or for decrypting video for other utilities unable to read encrypted DVDs.
 
-[http://dvdbackup.sourceforge.net/](http://dvdbackup.sourceforge.net/) || [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup)
+NaN
 
 *   **[FFmpeg](/index.php/FFmpeg "FFmpeg")** — Complete and free Internet live audio and video broadcasting solution for Linux/Unix, capable to do a direct rip in any format (audio/video) from a DVD-Video ISO image, just select the input as the ISO image and proceed with the desired options. It also allows to downmixing, shrinking, spliting, selecting streams among other features.
 
-[http://ffmpeg.org/](http://ffmpeg.org/) || See [article](/index.php/FFmpeg#Package_installation "FFmpeg")
+NaN
 
 *   **HandBrake** — Multithreaded video transcoder, which offers both a graphical and command-line interface with many preset configurations.
 
-[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
+NaN
 
 *   **Hybrid** — Multi platform Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an mp4/m2ts/mkv/webm/mov/avi container, a Blu-ray or an AVCHD structure.
 
-[http://www.selur.de/](http://www.selur.de/) || [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool released under the GNU GPL. It is a close sibling to MPlayer and can convert all the formats that MPlayer understands into a variety of compressed and uncompressed formats using different codecs. Wrapper programs like [h264enc](https://aur.archlinux.org/packages/h264enc/)<sup><small>AUR</small></sup> and [undvd](https://aur.archlinux.org/packages/undvd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/undvd)]</sup> can provide an assistive interface. Many [GUI frontends](/index.php/MEncoder#GUI_frontends "MEncoder") are available.
 
-[http://www.mplayerhq.hu/](http://www.mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
+NaN
 
 *   **Transcode** — Video/DVD ripper and encoder with the CLI.
 
-[http://tcforge.berlios.de/](http://tcforge.berlios.de/) || [transcode](https://www.archlinux.org/packages/?name=transcode)
+NaN
 
 #### dvd::rip
 
@@ -903,12 +879,3 @@ Rebuild the kernel image so that it includes the newly added module:
 *   [Main page of the project Libburnia](http://libburnia-project.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=417399](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=417399)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [Optical](/index.php/Category:Optical "Category:Optical")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

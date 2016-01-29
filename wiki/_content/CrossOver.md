@@ -1,9 +1,5 @@
 # CrossOver
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Wine](/index.php/Wine "Wine")
@@ -33,8 +29,3 @@ There is also a way to generate a logfile to assist you in tracking down errors 
 Although the libSM.so.6 library was not shown in the cxdiag list of missing libraries - it DID appear in the logfile. The library belongs to the lib32-libsm package. If you're having problems getting your application to run, you might want to try installing lib32-libsm.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CrossOver&oldid=381043](https://wiki.archlinux.org/index.php?title=CrossOver&oldid=381043)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

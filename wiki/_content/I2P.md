@@ -1,14 +1,10 @@
 # I2P
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the I2P homepage:
 
-_I2P is an anonymizing network, offering a simple layer that identity-sensitive applications can use to securely communicate. All data is wrapped with several layers of encryption, and the network is both distributed and dynamic, with no trusted parties._
+NaN
 
-_Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others._
+NaN
 
 ## Installation
 
@@ -43,7 +39,3 @@ HTTPS 127.0.0.1 4445
 *   [I2P Wikipedia entry](http://en.wikipedia.org/wiki/I2p)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=I2P&oldid=409364](https://wiki.archlinux.org/index.php?title=I2P&oldid=409364)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

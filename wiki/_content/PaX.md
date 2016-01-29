@@ -1,9 +1,5 @@
 # PaX
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [grsecurity](/index.php/Grsecurity "Grsecurity")
@@ -200,8 +196,3 @@ Return to function (memcpy, PIE)         : Killed
 *   [PaX documentation](https://pax.grsecurity.net/docs/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PaX&oldid=411141](https://wiki.archlinux.org/index.php?title=PaX&oldid=411141)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Security](/index.php/Category:Security "Category:Security")

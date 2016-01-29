@@ -1,9 +1,5 @@
 # SSH keys
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 SSH keys serve as a means of identifying yourself to an SSH server using [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") and [challenge-response authentication](https://en.wikipedia.org/wiki/Challenge-response_authentication "wikipedia:Challenge-response authentication"). One immediate advantage this method has over traditional password authentication is that you can be authenticated by the server without ever having to send your password over the network. Anyone eavesdropping on your connection will not be able to intercept and crack your password because it is never actually transmitted. Additionally, using SSH keys for authentication virtually eliminates the risk posed by brute-force password attacks by drastically reducing the chances of the attacker correctly guessing the proper credentials.
 
 As well as offering additional security, SSH key authentication can be more convenient than the more traditional password authentication. When used with a program known as an SSH agent, SSH keys can allow you to connect to a server, or multiple servers, without having to remember or enter your password for each system.
@@ -727,7 +723,7 @@ See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePas
 
 ### Key ignored by the server
 
-If it appears that the SSH server is ignoring your keys, ensure that you have the proper permissions set on all relevant files.  
+If it appears that the SSH server is ignoring your keys, ensure that you have the proper permissions set on all relevant files.
 For the local machine:
 
 ```
@@ -774,13 +770,3 @@ Failing this, run the sshd in debug mode and monitor the output while connecting
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=416065](https://wiki.archlinux.org/index.php?title=SSH_keys&oldid=416065)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

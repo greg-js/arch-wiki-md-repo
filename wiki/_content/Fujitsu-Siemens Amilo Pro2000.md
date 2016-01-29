@@ -1,9 +1,5 @@
 # Fujitsu-Siemens Amilo Pro2000
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Touchpad synaptics](/index.php?title=Touchpad_synaptics&action=edit&redlink=1 "Touchpad synaptics (page does not exist)")
@@ -20,7 +16,3 @@ Alt+Function key commands work ok. For left-side buttons, in kernel is a module 
 *   This report is listed at the [TuxMobil: Linux Laptop and Notebook Installation Guides Survey: Fujitsu-Siemens - FSC](http://tuxmobil.org/fujitsu.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fujitsu-Siemens_Amilo_Pro2000&oldid=345612](https://wiki.archlinux.org/index.php?title=Fujitsu-Siemens_Amilo_Pro2000&oldid=345612)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")

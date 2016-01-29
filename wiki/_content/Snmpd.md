@@ -1,9 +1,5 @@
 # Snmpd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _**[SNMP](http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package._
 
 ## Contents
@@ -108,7 +104,3 @@ SNMPv2-MIB::sysName.0 = STRING: myhost
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Snmpd&oldid=363973](https://wiki.archlinux.org/index.php?title=Snmpd&oldid=363973)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

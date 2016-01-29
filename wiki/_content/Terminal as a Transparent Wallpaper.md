@@ -1,9 +1,5 @@
 # Terminal as a Transparent Wallpaper
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 There are two popular ways of configuring a Linux terminal to work transparently over a wallpaper, without any borders, menu bars or toolbars. This is very popular among developers because of its practical and coolness factor. Example: for use it to view source-code or get an interactive process status of the system with htop. Something like conky, but not quite.
 
 ## Contents
@@ -35,7 +31,7 @@ To achieve our desired look we will need to edit the default configurations:
 ```
 Under _General_ tab, **uncheck** "Always on Top".
 
-Under _Appearance_ you can edit the **height** and **width** to your liking,  
+Under _Appearance_ you can edit the **height** and **width** to your liking,
  but make sure you **check** "Enable Transparency" and make the "Level of Transparency" **100%**.
 
 Under _Colors_ tab, **chose** "Green on Black" or "Personalize".
@@ -168,8 +164,3 @@ By naming the the terminal with _--title_ one can easily identify it's window an
 **Note:** _Wmctrl_ is intended for use with Window managers which meet the EWMH/NetWM specifications. The following was tested only on Xfce4 with Xfwm4 so it is unconfirmed whether it will work with other desktop environments/window managers correctly as of this writing. For a list on environments which wmctrl may work with visit [http://en.wikipedia.org/wiki/Wmctrl](http://en.wikipedia.org/wiki/Wmctrl)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Terminal_as_a_Transparent_Wallpaper&oldid=308985](https://wiki.archlinux.org/index.php?title=Terminal_as_a_Transparent_Wallpaper&oldid=308985)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

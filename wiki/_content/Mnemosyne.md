@@ -1,9 +1,5 @@
 # Mnemosyne
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Mnemosyne](http://mnemosyne-proj.org) is an open-source, cross-platform flashcard program that uses a [spaced repetition](http://en.wikipedia.org/wiki/Spaced_repetition) algorithm for maximizing learning efficiency.
 
 It is inspired by the proprietary [SuperMemo](http://www.supermemo.com) and comparable to [Anki](/index.php/Anki "Anki"), but with a stronger focus on a minimalist, distraction-free UI and simple but flexible work-flow.
@@ -59,7 +55,3 @@ The Mnemosyne website offers:
 *   [Anki](/index.php/Anki "Anki") - another open-source flashcard program using spaced repetition
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mnemosyne&oldid=408758](https://wiki.archlinux.org/index.php?title=Mnemosyne&oldid=408758)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

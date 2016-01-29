@@ -1,9 +1,5 @@
 # ASUS Eee PC 1201n
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -69,11 +65,3 @@ Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201n&oldid=376463](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201n&oldid=376463)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

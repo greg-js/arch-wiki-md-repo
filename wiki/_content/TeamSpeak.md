@@ -1,12 +1,8 @@
 # TeamSpeak
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:TeamSpeak"):
 
-TeamSpeak is proprietary Voice over IP software that allows computer users to speak on a chat channel with fellow computer users, much like a telephone conference call.
+NaN
 
 ## Contents
 
@@ -123,7 +119,3 @@ $ rm /var/log/teamspeak3-server/*.log
 *   [Official documentation](http://www.teamspeak.com/?page=literature)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TeamSpeak&oldid=404189](https://wiki.archlinux.org/index.php?title=TeamSpeak&oldid=404189)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")

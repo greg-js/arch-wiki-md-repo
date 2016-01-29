@@ -1,9 +1,5 @@
 # Cursor themes
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The display server is accompanied by a _cursor theme_ that helps various aspects of GUI navigation and manipulation. The display server includes a cursor theme, however, other cursor themes can be installed and selected.
 
 ## Contents
@@ -268,7 +264,3 @@ For more information see [Awesome wiki](http://awesome.naquadah.org/wiki/FAQ#How
 *   [man Xcursor](http://www.x.org/releases/current/doc/man/man3/Xcursor.3.xhtml) — For more information about cursors in X (supported directories, formats, compatibility, etc.).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cursor_themes&oldid=417220](https://wiki.archlinux.org/index.php?title=Cursor_themes&oldid=417220)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

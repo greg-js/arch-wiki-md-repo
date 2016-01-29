@@ -1,9 +1,5 @@
 # Arch Linux press coverage
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipedia:Arch Linux") and [Arch Linux on DistroWatch](http://distrowatch.com/table.php?distribution=arch).
 
 ## Contents
@@ -285,7 +281,3 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 *   [Distribution Release: Arch Linux 0.2](http://distrowatch.com/?newsid=00201) DistroWatch.com 2002-04-18
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416931](https://wiki.archlinux.org/index.php?title=Arch_Linux_press_coverage&oldid=416931)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

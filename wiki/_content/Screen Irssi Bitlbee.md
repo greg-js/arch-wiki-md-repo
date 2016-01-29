@@ -1,9 +1,5 @@
 # Screen Irssi Bitlbee
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [WeeChat](/index.php/WeeChat "WeeChat")
@@ -194,8 +190,3 @@ If you use a laptop, you likely suspend and change wireless networks often, whic
 To fix this, try [Mosh](/index.php/Secure_Shell#SSH_alternative:_Mobile_Shell_-_responsive.2C_survives_disconnects "Secure Shell"), which is a shell that seamlessly deals with reconnection after resuming or changing wireless networks.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Screen_Irssi_Bitlbee&oldid=376225](https://wiki.archlinux.org/index.php?title=Screen_Irssi_Bitlbee&oldid=376225)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

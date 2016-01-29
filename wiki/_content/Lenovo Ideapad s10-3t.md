@@ -1,9 +1,5 @@
 # Lenovo Ideapad s10-3t
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 System Specification](#System_Specification)
@@ -98,12 +94,3 @@ waiting for events
 Here are some [ideas](http://www.thinkwiki.org/wiki/HDAPS#Applications) what to do with it.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_s10-3t&oldid=412540](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_s10-3t&oldid=412540)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

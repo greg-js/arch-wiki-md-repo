@@ -1,9 +1,5 @@
 # fbpad
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [fbpad](http://repo.or.cz/w/fbpad.git) is a small framebuffer terminal that manages many terminals through single character tags. It is exceptionally lightweight, being written in C and using its own font format, tinyfont, which avoids [xorg](/index.php/Xorg "Xorg") font dependencies. fbpad optionally supports 256 colors, bold fonts, and saving the framebuffer contents to memory, all which combined make fbpad a viable alternative to the [X](/index.php/X "X") server for many purposes.
 
 ## Contents
@@ -169,7 +165,3 @@ Here are a few recommendations for programs that enhance the usability of a fram
 *   [litcave](http://litcave.rudi.ir), the homepage of Ali Gholami Rudi's software projects
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpad&oldid=376063](https://wiki.archlinux.org/index.php?title=Fbpad&oldid=376063)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

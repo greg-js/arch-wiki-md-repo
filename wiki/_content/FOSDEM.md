@@ -1,9 +1,5 @@
 # FOSDEM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 2012](#2012)
@@ -107,7 +103,3 @@ if you really don't like something on this list, please mention. maybe we'll do 
 #### Meetups
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FOSDEM&oldid=384027](https://wiki.archlinux.org/index.php?title=FOSDEM&oldid=384027)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Events](/index.php/Category:Events "Category:Events")

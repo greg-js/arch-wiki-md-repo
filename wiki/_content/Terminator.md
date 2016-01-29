@@ -1,9 +1,5 @@
 # Terminator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Terminator](http://gnometerminator.blogspot.com/p/introduction.html) is a [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") supporting tabs and multiple resizable terminal panels in one window native based on [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal").
 
 ## Contents
@@ -73,7 +69,3 @@ Terminator also supports plugins. Please read [Writing Terminator plugins](http:
 *   [Terminator BZR](http://code.launchpad.net/terminator/) - Source code
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Terminator&oldid=414784](https://wiki.archlinux.org/index.php?title=Terminator&oldid=414784)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

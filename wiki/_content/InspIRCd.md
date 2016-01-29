@@ -1,9 +1,5 @@
 # InspIRCd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -78,11 +74,3 @@ The first start fails sometimes so try restarting until you get no errors. After
 *   [Inspire IRCd (irc channel)](irc://irc.inspircd.org/inspircd)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=InspIRCd&oldid=394234](https://wiki.archlinux.org/index.php?title=InspIRCd&oldid=394234)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

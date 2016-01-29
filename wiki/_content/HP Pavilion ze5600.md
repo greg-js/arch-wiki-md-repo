@@ -1,9 +1,5 @@
 # HP Pavilion ze5600
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document applies in particular to ArchLinux on an HP Pavilion ze5615CA laptop. It also applies to the entire ze5600 series on any modern Linux distribution that uses kernel 2.6.39 or later. Feel free to contact the author with problems or suggestions (lagagnon at gmail.com , English or Spanish).
 
 ## Contents
@@ -108,7 +104,3 @@ It is possible that a BIOS upgrade may fix some of the missing key scancodes and
 This procedure should be foolproof yet did not work for the author. The Phlash software started up but hangs at reading the .bin file. It is possible that "Phlash" balks at reading data from USB. Someone needs to test this with an external floppy drive device and see if a BIOS flash upgrade really does work on this laptop.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_ze5600&oldid=400586](https://wiki.archlinux.org/index.php?title=HP_Pavilion_ze5600&oldid=400586)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

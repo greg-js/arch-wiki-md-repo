@@ -1,9 +1,5 @@
 # Acer Aspire v5-171
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -62,7 +58,3 @@ You may also want to lock the touchpad while typing. Run
 *   turn on/off screen: ok.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_v5-171&oldid=306540](https://wiki.archlinux.org/index.php?title=Acer_Aspire_v5-171&oldid=306540)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

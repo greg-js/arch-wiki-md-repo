@@ -1,9 +1,5 @@
 # Cgit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Cgit](http://git.zx2c4.com/cgit/) is an attempt to create a fast web interface for the [git](/index.php/Git "Git") version control system, using a built in cache to decrease pressure on the git server.
 
 ## Contents
@@ -309,9 +305,9 @@ source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
 
 #### Using highlight
 
-Install [highlight](https://www.archlinux.org/packages/?name=highlight)
+Install the [highlight](https://www.archlinux.org/packages/?name=highlight) package.
 
-Edit `/usr/lib/cgit/filters/syntax-highlighting.sh`. Comment out version 2 and comment in version 3. You may want to add `--inline-css` to the options of highlight for a more colorfull output without editing cgit's css file.
+Copy `/usr/lib/cgit/filters/syntax-highlighting.sh` to `/usr/lib/cgit/filters/syntax-highlighting-edited.sh`. Then, in the copied file, comment out version 2 and comment in version 3. You may want to add `--inline-css` to the options of highlight for a more colorful output without editing cgit's css file.
 
 ```
  # This is for version 2
@@ -325,25 +321,11 @@ Edit `/usr/lib/cgit/filters/syntax-highlighting.sh`. Comment out version 2 and c
 Enable the filter in `/etc/cgitrc`
 
 ```
-source-filter=/usr/lib/cgit/filters/syntax-highlighting.sh
-
-```
-
-Otherwise you can choose to use the [python-pygments](https://www.archlinux.org/packages/?name=python-pygments) package.
-
-Note: If you edit the `/usr/lib/cgit/filters/syntax-highlighting.sh`, the changes will be lost the next time cgit is updated. To avoid this, copy `/usr/lib/cgit/filters/syntax-highlighting.sh` to `/usr/lib/cgit/filters/syntax-highlighting-edited.sh`, and change `/etc/cgitrc` to use the copied file instead
-
-```
 source-filter=/usr/lib/cgit/filters/syntax-highlighting-edited.sh
 
 ```
 
-Alternately you can prevent pacman from extracting the file by adding the following to `/etc/pacman.conf`:
-
-```
-NoExtract = usr/lib/cgit/filters/syntax-highlighting.sh
-
-```
+**Note:** Editing `/usr/lib/cgit/filters/syntax-highlighting.sh` directly would lose all the modifications as soon as [cgit](https://www.archlinux.org/packages/?name=cgit) is updated.
 
 ## Integration
 
@@ -393,8 +375,4 @@ If you have enabled _scan-path_, again, the order in cgitrc matters. _source-fil
 *   [http://git.zx2c4.com/cgit/tree/README](http://git.zx2c4.com/cgit/tree/README)
 *   [http://git.zx2c4.com/cgit/tree/cgitrc.5.txt](http://git.zx2c4.com/cgit/tree/cgitrc.5.txt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=417551](https://wiki.archlinux.org/index.php?title=Cgit&oldid=417551)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgit&oldid=417806](https://wiki.archlinux.org/index.php?title=Cgit&oldid=417806)"

@@ -1,9 +1,5 @@
 # Arch Linux Event Calendar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Yearly events
 
 *   [Midyear Cleanup](/index.php/Midyear_Cleanup "Midyear Cleanup") - 19th of June
@@ -20,7 +16,3 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 *   [Linux conferences](/index.php/Linux_conferences "Linux conferences")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_Event_Calendar&oldid=362965](https://wiki.archlinux.org/index.php?title=Arch_Linux_Event_Calendar&oldid=362965)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Events](/index.php/Category:Events "Category:Events")

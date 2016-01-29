@@ -1,9 +1,5 @@
 # Boot debugging
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -63,8 +59,3 @@ Another option is to [enable](/index.php/Enable "Enable") `debug-shell.service`,
 *   [How to Isolate Linux ACPI Issues](https://web.archive.org/web/20120217124742/http://www.lesswatts.org/projects/acpi/debug.php)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=414511](https://wiki.archlinux.org/index.php?title=Boot_debugging&oldid=414511)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

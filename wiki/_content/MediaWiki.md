@@ -1,9 +1,5 @@
 # MediaWiki
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** If you are using xampp, instead of [LAMP](/index.php/LAMP "LAMP"), there are different steps you need to take after installing. More info [here](https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_XAMPP#381)
 
 ## Contents
@@ -220,11 +216,3 @@ parsoidConfig.setInterwiki( 'localhost', 'http://localhost/mediawiki/api.php' );
 After that simply [enable](/index.php/Enable "Enable") and start `parsoid.service`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=412002](https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=412002)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

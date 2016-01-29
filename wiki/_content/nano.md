@@ -1,9 +1,5 @@
 # nano
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [GNU nano](http://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. _nano_ supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. _nano_ opened with an empty buffer typically occupies under 1.5 MB of resident memory.
 
 ## Contents
@@ -176,241 +172,30 @@ set nowrap
 
 #### Shortcut lists overview
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Key1</th>
-
-<th>Key2</th>
-
-<th>Command</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>^G</td>
-
-<td>F1</td>
-
-<td>Get Help</td>
-
-<td>Displays the online help files within the session window. A suggested read for nano users of all levels</td>
-
-</tr>
-
-<tr>
-
-<td>^X</td>
-
-<td>F2</td>
-
-<td>Exit</td>
-
-<td>Close and exit nano</td>
-
-</tr>
-
-<tr>
-
-<td>^O</td>
-
-<td>F3</td>
-
-<td>WriteOut</td>
-
-<td>Save the contents of the current file buffer to a file on the disk</td>
-
-</tr>
-
-<tr>
-
-<td>^J</td>
-
-<td>F4</td>
-
-<td>Justify</td>
-
-<td>Aligns text according to the geometry of the console window</td>
-
-</tr>
-
-<tr>
-
-<td>^R</td>
-
-<td>F5</td>
-
-<td>Read File</td>
-
-<td>Inserts another file into the current one at the cursor location</td>
-
-</tr>
-
-<tr>
-
-<td>^W</td>
-
-<td>F6</td>
-
-<td>Where</td>
-
-<td>Perform a case-insensitive string, or regular expression search</td>
-
-</tr>
-
-<tr>
-
-<td>^Y</td>
-
-<td>F7</td>
-
-<td>Prev Page</td>
-
-<td>Display the previous buffered screen</td>
-
-</tr>
-
-<tr>
-
-<td>^V</td>
-
-<td>F8</td>
-
-<td>Next Page</td>
-
-<td>Display the next buffered screen</td>
-
-</tr>
-
-<tr>
-
-<td>^K</td>
-
-<td>F9</td>
-
-<td>Cut Text</td>
-
-<td>Cut and store the current line from the beginning of the line to the end of the line</td>
-
-</tr>
-
-<tr>
-
-<td>^U</td>
-
-<td>F10</td>
-
-<td>UnCut Text</td>
-
-<td>Paste the contents of the cut buffer to the current cursor location</td>
-
-</tr>
-
-<tr>
-
-<td>^C</td>
-
-<td>F11</td>
-
-<td>Cur Pos</td>
-
-<td>Display line, column and character position information at the current location of the cursor</td>
-
-</tr>
-
-<tr>
-
-<td>^T</td>
-
-<td>F12</td>
-
-<td>To Spell</td>
-
-<td>Spellcheck the contents of the buffer with the built-in `spell`, if available</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Key1 | Key2 | Command | Description |
+| ^G | F1 | Get Help | Displays the online help files within the session window. A suggested read for nano users of all levels |
+| ^X | F2 | Exit | Close and exit nano |
+| ^O | F3 | WriteOut | Save the contents of the current file buffer to a file on the disk |
+| ^J | F4 | Justify | Aligns text according to the geometry of the console window |
+| ^R | F5 | Read File | Inserts another file into the current one at the cursor location |
+| ^W | F6 | Where | Perform a case-insensitive string, or regular expression search |
+| ^Y | F7 | Prev Page | Display the previous buffered screen |
+| ^V | F8 | Next Page | Display the next buffered screen |
+| ^K | F9 | Cut Text | Cut and store the current line from the beginning of the line to the end of the line |
+| ^U | F10 | UnCut Text | Paste the contents of the cut buffer to the current cursor location |
+| ^C | F11 | Cur Pos | Display line, column and character position information at the current location of the cursor |
+| ^T | F12 | To Spell | Spellcheck the contents of the buffer with the built-in `spell`, if available |
 
 **Tip:** See the nano online help files via `Ctrl+g` within nano and the [nano Command Manual](http://www.nano-editor.org/dist/v2.1/nano.html) for complete descriptions and additional support.
 
 #### Selected toggle functions
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Key1</th>
-
-<th>Key2</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>Meta+c</td>
-
-<td>Esc+c</td>
-
-<td>Toggles support for line, column and character position information</td>
-
-</tr>
-
-<tr>
-
-<td>Meta+i</td>
-
-<td>Esc+i</td>
-
-<td>Toggles support for the auto indentation of lines</td>
-
-</tr>
-
-<tr>
-
-<td>Meta+k</td>
-
-<td>Esc+k</td>
-
-<td>Toggles support for cutting text from the current cursor position to the end of the line</td>
-
-</tr>
-
-<tr>
-
-<td>Meta+m</td>
-
-<td>Esc+m</td>
-
-<td>Toggles mouse support for cursor placement, marking and shortcut execution</td>
-
-</tr>
-
-<tr>
-
-<td>Meta+x</td>
-
-<td>Esc+x</td>
-
-<td>Toggles the display of the shortcut list at the bottom of the nano screen for additional screen space</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Key1 | Key2 | Description |
+| Meta+c | Esc+c | Toggles support for line, column and character position information |
+| Meta+i | Esc+i | Toggles support for the auto indentation of lines |
+| Meta+k | Esc+k | Toggles support for cutting text from the current cursor position to the end of the line |
+| Meta+m | Esc+m | Toggles mouse support for cursor placement, marking and shortcut execution |
+| Meta+x | Esc+x | Toggles the display of the shortcut list at the bottom of the nano screen for additional screen space |
 
 **Tip:** [Feature Toggles](http://www.nano-editor.org/dist/v2.1/nano.html#Feature-Toggles) lists the global toggles available for nano.
 
@@ -441,7 +226,3 @@ Some window managers have keybindings that conflict with nano, for example `Alt+
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nano&oldid=416958](https://wiki.archlinux.org/index.php?title=Nano&oldid=416958)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")

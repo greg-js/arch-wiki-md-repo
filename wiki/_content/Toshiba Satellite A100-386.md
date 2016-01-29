@@ -1,9 +1,5 @@
 # Toshiba Satellite A100-386
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 ACPI and Power Saving](#ACPI_and_Power_Saving)
@@ -81,7 +77,3 @@ Untested but should work.
 Works fine out-of-the-box.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_A100-386&oldid=400455](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_A100-386&oldid=400455)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

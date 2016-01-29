@@ -1,9 +1,5 @@
 # XMLTV HOWTO
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -98,11 +94,3 @@ If all is well, it should churn out reams and reams of channel programme data. I
 except there'll be pages of it.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XMLTV_HOWTO&oldid=408735](https://wiki.archlinux.org/index.php?title=XMLTV_HOWTO&oldid=408735)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

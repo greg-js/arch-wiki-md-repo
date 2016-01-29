@@ -1,9 +1,5 @@
 # Terratec Aureon 7.1
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Terratec Aureon 7.1 USB is an affordable external sound card which supports optical and digital output through S/PDIF with full 5.1/7.1 surround sound. To use this card, install [ALSA](/index.php/ALSA "ALSA") (which has support for this sound card). To configure the card for usage, follow these steps:
 
 ## Contents
@@ -109,7 +105,3 @@ I recommend using XBMC for media playback, as most receivers do no support the A
 To change volume using amixer and hotkeys, use the following command (for example): `amixer set 'Master' 5+`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Terratec_Aureon_7.1&oldid=262593](https://wiki.archlinux.org/index.php?title=Terratec_Aureon_7.1&oldid=262593)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")

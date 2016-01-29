@@ -1,9 +1,5 @@
 # Distcc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [TORQUE](/index.php/TORQUE "TORQUE")
@@ -41,13 +37,7 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
 
 ## Terms
 
-master
-
-The master is the computer which initiates and distributes the compilation to the configured slaves.
-
-slaves
-
-The slaves are running the distcc daemon which accepts incoming compilation requests send by the master.
+NaN
 
 ## Getting started
 
@@ -386,12 +376,3 @@ d /tmp/.distcc 0755 <username> users -
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Distcc&oldid=416849](https://wiki.archlinux.org/index.php?title=Distcc&oldid=416849)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

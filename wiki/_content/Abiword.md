@@ -1,9 +1,5 @@
 # Abiword
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Abiword](http://www.abisource.com/) is a word processor that provides a lighter alternative for [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer and [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, while at the same time providing great functionality. Abiword supports many standard document types, such as ODF documents, Microsoft Word documents, WordPerfect documents, Rich Text Format documents and HTML web pages.
 
 ## Contents
@@ -89,11 +85,3 @@ Do **not** just save a blank `.awt` file! You must trick Abiword into using a `.
 As soon as the conflict between Abiword and libgnomeprint is resovled, these instructions will no longer be neccessary and should be removed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Abiword&oldid=394227](https://wiki.archlinux.org/index.php?title=Abiword&oldid=394227)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

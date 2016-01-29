@@ -1,9 +1,5 @@
 # MATE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
@@ -14,7 +10,7 @@ Related articles
 
 From [MATE homepage](http://mate-desktop.org/):
 
-_The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience._
+NaN
 
 ## Contents
 
@@ -55,93 +51,14 @@ _The MATE Desktop Environment is the continuation of GNOME 2\. It provides an in
 
 MATE is largely composed of GNOME 2 applications and utilities, forked and renamed to avoid conflicting with their GNOME 3 counterparts. Below is a list of common GNOME applications which have been renamed in MATE.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Application</th>
-
-<th>GNOME 2</th>
-
-<th>MATE</th>
-
-</tr>
-
-<tr>
-
-<td>menu editor</td>
-
-<td>Alacarte</td>
-
-<td style="font-weight: bold;">Mozo</td>
-
-</tr>
-
-<tr>
-
-<td>file manager</td>
-
-<td>Nautilus</td>
-
-<td style="font-weight: bold;">Caja</td>
-
-</tr>
-
-<tr>
-
-<td>window manager</td>
-
-<td>Metacity</td>
-
-<td style="font-weight: bold;">Marco</td>
-
-</tr>
-
-<tr>
-
-<td>text editor</td>
-
-<td>Gedit</td>
-
-<td style="font-weight: bold;">Pluma</td>
-
-</tr>
-
-<tr>
-
-<td>image viewer</td>
-
-<td>Eye of GNOME</td>
-
-<td style="font-weight: bold;">Eye of MATE</td>
-
-</tr>
-
-<tr>
-
-<td>document viewer</td>
-
-<td>Evince</td>
-
-<td style="font-weight: bold;">Atril</td>
-
-</tr>
-
-<tr>
-
-<td>archive manager</td>
-
-<td>File Roller</td>
-
-<td style="font-weight: bold;">Engrampa</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Application | GNOME 2 | MATE |
+| menu editor | Alacarte | Mozo |
+| file manager | Nautilus | Caja |
+| window manager | Metacity | Marco |
+| text editor | Gedit | Pluma |
+| image viewer | Eye of GNOME | Eye of MATE |
+| document viewer | Evince | Atril |
+| archive manager | File Roller | Engrampa |
 
 Other applications and core components prefixed with GNOME (such as GNOME Terminal, GNOME Panel, GNOME Menus, etc.) have had the prefix changed to MATE so they become MATE Panel, MATE Menus etc.
 
@@ -160,51 +77,51 @@ There are additional official packages not included in the [mate](https://www.ar
 
 *   **GNOME Main Menu** — A MATE panel applet similar to the traditional main-menu, but with a few additions.
 
-[http://mate-desktop.org](http://mate-desktop.org) || [gnome-main-menu](https://www.archlinux.org/packages/?name=gnome-main-menu)
+NaN
 
 *   **MATE Netbook** — This applet will automatically maximize all windows and provides an application switcher applet.
 
-[http://mate-desktop.org](http://mate-desktop.org) || [mate-netbook](https://www.archlinux.org/packages/?name=mate-netbook)
+NaN
 
 There are also a number of other unofficial MATE applications that are contributed to and maintained by the MATE community and therefore not included in the [mate](https://www.archlinux.org/groups/x86_64/mate/) or [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) groups.
 
 *   **MATE AccountsDialog** — An application to view and modify user accounts information for MATE.
 
-[https://github.com/NiceandGently/mate-accountsdialog](https://github.com/NiceandGently/mate-accountsdialog) || [mate-accountsdialog](https://www.archlinux.org/packages/?name=mate-accountsdialog)
+NaN
 
 *   **Lock Keys Applet** — A MATE panel applet that shows which of the CapsLock, NumLock and ScrollLock keys are on and which are off.
 
-[http://www.zavedil.com/mate-lock-keys-applet/](http://www.zavedil.com/mate-lock-keys-applet/) || [mate-applet-lockkeys](https://www.archlinux.org/packages/?name=mate-applet-lockkeys)
+NaN
 
 *   **Online Radio Applet** — A MATE panel applet to let you play your favourite online radio station with a single click.
 
-[http://www.zavedil.com/online-radio-applet/](http://www.zavedil.com/online-radio-applet/) || [mate-applet-streamer](https://www.archlinux.org/packages/?name=mate-applet-streamer)
+NaN
 
 *   **MATE Color Manager** — Color management application for MATE.
 
-[https://github.com/NiceandGently/mate-color-manager](https://github.com/NiceandGently/mate-color-manager) || [mate-color-manager](https://www.archlinux.org/packages/?name=mate-color-manager)
+NaN
 
 *   **MATE Disk Utility** — Disk management application for MATE.
 
-[https://github.com/NiceandGently/mate-disk-utility](https://github.com/NiceandGently/mate-disk-utility) || [mate-disk-utility](https://www.archlinux.org/packages/?name=mate-disk-utility)
+NaN
 
 *   **MATE Screensaver Hacks** — Enable screensavers from xscreensaver for MATE.
 
-[http://www.jwz.org/xscreensaver/](http://www.jwz.org/xscreensaver/) || [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks)
+NaN
 
 *   **Variety** — Variety changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
 
-[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
+NaN
 
 The followings are also available via the AUR and integrate with MATE but the packages are not maintained by the MATE team.
 
 *   **MATE Menu** — Advanced menu for MATE Panel, a fork of MintMenu.
 
-[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://aur.archlinux.org/packages/mate-menu/)<sup><small>AUR</small></sup>
+NaN
 
 *   **MATE Tweak** — Tweak tool for MATE, a fork of mintDesktop.
 
-[https://bitbucket.org/ubuntu-mate/mate-tweak](https://bitbucket.org/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)<sup><small>AUR</small></sup>
+NaN
 
 Additional packages need to be installed to take advantage of some of Caja's advanced features - see [File manager functionality](/index.php/File_manager_functionality "File manager functionality").
 
@@ -222,25 +139,7 @@ Alternatively, to start MATE with _startx_, append `exec mate-session` to your `
 
 MATE can be configured with it's _Control Center_ application (_mate-control-center_) provided by the [mate-control-center](https://www.archlinux.org/packages/?name=mate-control-center) package. To manage some hardware, you may need to install additional tools.
 
-Audio
-
-[ALSA](/index.php/ALSA "ALSA") and [PulseAudio](/index.php/PulseAudio "PulseAudio") backends are supported by the [mate-media](https://www.archlinux.org/packages/?name=mate-media) package.
-
-Bluetooth
-
-For [Bluetooth](/index.php/Bluetooth "Bluetooth") device support, install the [blueman](https://www.archlinux.org/packages/?name=blueman) package. See [Blueman](/index.php/Blueman "Blueman").
-
-Networking
-
-For configuring the network, install the [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) package. See [NetworkManager](/index.php/NetworkManager "NetworkManager").
-
-Power
-
-UPower backend is supported by the [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager) package.
-
-Printers
-
-For configuring the printers, install the [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer) package.
+NaN
 
 ### Accessibility
 
@@ -338,7 +237,7 @@ Replace `false` with `true` for the icons to reappear.
 
 The _marco_ window manager can be replaced with another window manager via either of the following methods:
 
-Using DConf (recommended)
+NaN
 
 Execute the following to specify a different window manager for MATE:
 
@@ -347,7 +246,7 @@ $ dconf write /org/mate/desktop/session/required-components/windowmanager _wm-na
 
 ```
 
-Using MATE session autostart
+NaN
 
 You can autostart a window manager of your choice using _mate-session-properties_. This means that the autostarted window manager will replace the default window manager at login. Navigate to _System_ -> _Preferences_ -> _Startup Applications_. In the dialog click _Add._ The command should take the syntax `_wm-name_ --replace`.
 
@@ -448,7 +347,7 @@ where _icon_ is the name of your icon. Do not include the file extension in the 
 
 ### Panel speed settings
 
-Hide/Unhide delay
+NaN
 
 To adjust the amount of time it takes for the panel to disappear or reappear when autohide is enabled, execute the following:
 
@@ -459,7 +358,7 @@ $ dconf write /org/mate/panel/toplevels/_panel_/(un)hide-delay _time_
 
 where _panel_ is either _top_ or _bottom_ and _time_ is a value in miliseconds, e.g. 300.
 
-Animation speed
+NaN
 
 To set the speed at which panel animations occur, execute the following:
 
@@ -550,7 +449,3 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 *   [_The MATE Desktop Environment_](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MATE&oldid=412249](https://wiki.archlinux.org/index.php?title=MATE&oldid=412249)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

@@ -1,9 +1,5 @@
 # Powertop
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Power saving](/index.php/Power_saving "Power saving")
@@ -83,7 +79,3 @@ If you experience inaccurate measurement, then it is likely that you need to cal
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Powertop "wikipedia:Powertop")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Powertop&oldid=412158](https://wiki.archlinux.org/index.php?title=Powertop&oldid=412158)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

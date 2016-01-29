@@ -1,9 +1,5 @@
 # Dual boot with Windows
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Dual boot with Windows/SafeBoot](/index.php/Dual_boot_with_Windows/SafeBoot "Dual boot with Windows/SafeBoot")
@@ -205,12 +201,3 @@ The usb-stick for installing Windows 8.1 seems to need a MBR partition table (no
 *   [Booting Windows from a desktop shortcut](https://bbs.archlinux.org/viewtopic.php?id=140049)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&oldid=415619](https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&oldid=415619)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

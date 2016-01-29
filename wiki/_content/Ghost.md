@@ -1,9 +1,5 @@
 # Ghost
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
 ## Contents
@@ -140,7 +136,3 @@ $ systemctl start ghost-example-com
 If everything is working fine, you can [enable](/index.php/Enable "Enable") the new unit `ghost-example-com` as well as the webserver `nginx.service`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ghost&oldid=406732](https://wiki.archlinux.org/index.php?title=Ghost&oldid=406732)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

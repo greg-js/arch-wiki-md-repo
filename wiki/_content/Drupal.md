@@ -1,9 +1,5 @@
 # Drupal
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
@@ -131,7 +127,3 @@ Restart Apache.
 *   [Simple guide to install Drupal on Xampp](http://drupal.org/node/307956)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Drupal&oldid=417373](https://wiki.archlinux.org/index.php?title=Drupal&oldid=417373)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

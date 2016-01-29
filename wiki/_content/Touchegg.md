@@ -1,9 +1,5 @@
 # Touchegg
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Touchegg](https://code.google.com/p/touchegg/) is a multitouch gesture program, that runs as a user in the background, and adds multitouch support to window managers.
 
 ## Contents
@@ -64,7 +60,3 @@ Alternatively, you can modify your [.xprofile](/index.php/.xprofile ".xprofile")
  `~/.xprofile`  `touchegg &` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchegg&oldid=409576](https://wiki.archlinux.org/index.php?title=Touchegg&oldid=409576)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

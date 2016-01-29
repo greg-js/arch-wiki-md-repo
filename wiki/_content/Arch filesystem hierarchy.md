@@ -1,9 +1,5 @@
 # Arch filesystem hierarchy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ABS](/index.php/ABS "ABS")
@@ -19,7 +15,3 @@ Arch Linux is among the many distributions that follow the [filesystem hierarchy
 *   [Linux FHS Homepage](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_filesystem_hierarchy&oldid=394878](https://wiki.archlinux.org/index.php?title=Arch_filesystem_hierarchy&oldid=394878)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

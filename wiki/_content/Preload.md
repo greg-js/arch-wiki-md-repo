@@ -1,9 +1,5 @@
 # Preload
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Preloading is the action of putting and keeping target files into the RAM. The benefit is that preloaded applications start more quickly because reading from the RAM is always quicker than from the hard drive. However, part of your RAM will be dedicated to this task, but no more than if you kept the application open. Therefore preloading is best used with large and often-used applications like Firefox and LibreOffice.
 
 ## Contents
@@ -60,7 +56,3 @@ The configuration file is located in `/etc/preload.conf`, it contains default se
 *   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Preload&oldid=416505](https://wiki.archlinux.org/index.php?title=Preload&oldid=416505)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

@@ -1,9 +1,5 @@
 # Evolution
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Evolution is a [GNOME](/index.php/GNOME "GNOME") mail client it supports IMAP, Microsoft Exchange Server and Novell GroupWise. It also has a calender function that supports vcal, csv, google calendar and many more. You can also organise your contacts, tasks and memos with Evolution. The beautiful thing about Evolution is that it's easy to use and integrates with the GNOME environment. You can see your calendar, tasks and location in the GNOME panel along with the weather and date. Just add the clock to your GNOME panel.
 
 ## Contents
@@ -299,12 +295,3 @@ A possible solution is to switch to "Work Offline" select "Don't Synchronize” 
 [Tudelft Evolution 2.24 Setup](http://www.tudelft.nl/live/pagina.jsp?id=babae0a3-1479-4501-9ec4-e308153735dc&lang=nl)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Evolution&oldid=415372](https://wiki.archlinux.org/index.php?title=Evolution&oldid=415372)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

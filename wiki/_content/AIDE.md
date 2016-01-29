@@ -1,9 +1,5 @@
 # AIDE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 AIDE is a host-based intrusion detection system (HIDS) for checking the integrity of files. It does this by creating a baseline database of files on an initial run, and then checks this database against the system on subsequent runs. File properties that can be checked against include inode, permissions, modification time, file contents, etc.
 
 AIDE only does file integrity checks. It does not check for rootkits or parse logfiles for suspicious activity, like some other HIDS (such as OSSEC) do. For these features, you can use an additional HIDS ([see here](http://www.la-samhna.de/library/scanners.html) for a possibly biased comparison), or use standalone rootkit scanners (rkhunter, chkrootkit) and log monitoring solutions ([logwatch](/index.php/Logwatch "Logwatch"), logcheck).
@@ -76,7 +72,3 @@ Since the database is stored on the root filesystem, attackers can easily modify
 *   [Samhain Labs - file integrity checkers](http://www.la-samhna.de/library/scanners.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AIDE&oldid=412026](https://wiki.archlinux.org/index.php?title=AIDE&oldid=412026)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

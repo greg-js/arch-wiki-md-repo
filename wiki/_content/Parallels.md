@@ -1,9 +1,5 @@
 # Parallels
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -153,11 +149,3 @@ A very helpful tool is `prlcc`. It changes the resolution of the display (in the
 In general, updating system packages like the linux kernel or Xorg can break Parallels tools and you will need to re-install them. In some cases, new packages will be incompatible with the tools and they will stop working - in that case you will need to roll back the newly installed packages and wait until Parallels releases a new product build before updating your guest (in the hope they have resolved any previous incompatibilities).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Parallels&oldid=398964](https://wiki.archlinux.org/index.php?title=Parallels&oldid=398964)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

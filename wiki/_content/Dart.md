@@ -1,12 +1,8 @@
 # Dart
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the language's [home page](http://dartlang.org):
 
-_Dart is a cohesive, scalable platform for building apps that run on the web (where you can use Polymer) or on servers (such as with Google Cloud Platform). Use the Dart language, libraries, and tools to write anything from simple scripts to full-featured apps._
+NaN
 
 ## Contents
 
@@ -53,11 +49,3 @@ Dart has its own editor, based on Eclipse, and it is available in the AUR as [da
 [vim-dart-plugin](https://aur.archlinux.org/packages/vim-dart-plugin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vim-dart-plugin)]</sup> provides a Vim plugin that supports the Dart language's syntax and provides highlighting for the language.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dart&oldid=392049](https://wiki.archlinux.org/index.php?title=Dart&oldid=392049)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

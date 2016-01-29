@@ -1,9 +1,5 @@
 # Upside Down Ternet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article explains how to create a transparent Squid proxy server using mogrify to flip the images upside down.
 
 ## Contents
@@ -135,7 +131,3 @@ Read [Daemons](/index.php/Daemons "Daemons") for more information.
 *   [Upside-Down-Ternet XKCD](http://xkcd.com/341/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Upside_Down_Ternet&oldid=412200](https://wiki.archlinux.org/index.php?title=Upside_Down_Ternet&oldid=412200)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

@@ -1,9 +1,5 @@
 # Lenovo Ideapad y530
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Making stuff work](#Making_stuff_work)
@@ -50,7 +46,3 @@ For full brightness:
 Any ideas? Currently you have to reboot to make it work.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_y530&oldid=351781](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_y530&oldid=351781)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

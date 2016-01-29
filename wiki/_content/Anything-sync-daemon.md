@@ -1,9 +1,5 @@
 # Anything-sync-daemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
@@ -195,7 +191,3 @@ Yes, run asd with the "clean" switch to delete snapshots.
 Post in the [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=139141) with comments or concerns.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&oldid=411975](https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&oldid=411975)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

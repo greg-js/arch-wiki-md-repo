@@ -1,9 +1,5 @@
 # Fdisk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -45,7 +41,7 @@ A summary of the typical usage of _gdisk_:
 
 *   Start _gdisk_ against your drive as root (_disk-device_ may be e.g. `/dev/sda`):
 
- `# gdisk _disk-device_` 
+NaN
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty GUID partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
@@ -67,7 +63,7 @@ Note that in the olden days, _fdisk_ used cylinders as the default display unit,
 
 *   Start _fdisk_ against your drive as root (_disk-device_ may be e.g. `/dev/sda`):
 
- `# fdisk _disk-device_` 
+NaN
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
@@ -192,13 +188,3 @@ Syncing disks.
 In case this does not work because _fdisk_ encountered an error, you can use the `q` command to exit.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fdisk&oldid=391664](https://wiki.archlinux.org/index.php?title=Fdisk&oldid=391664)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

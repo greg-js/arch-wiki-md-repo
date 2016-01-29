@@ -1,9 +1,5 @@
 # Software access point
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -198,11 +194,3 @@ unmanaged-devices=mac:<hwaddr>
 *   [tutorial and script for configuring a subnet with DHCP and DNS](http://xyne.archlinux.ca/notes/network/dhcp_with_dns.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Software_access_point&oldid=407520](https://wiki.archlinux.org/index.php?title=Software_access_point&oldid=407520)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

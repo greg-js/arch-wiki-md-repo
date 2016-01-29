@@ -1,9 +1,5 @@
 # Torch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -21,12 +17,3 @@ Install [torch7](https://aur.archlinux.org/packages/torch7/)<sup><small>AUR</sma
 I recommend you then follow through with the tutorial available here [[1]](http://code.madbits.com/wiki/doku.php?id=tutorial_basics).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Torch&oldid=392740](https://wiki.archlinux.org/index.php?title=Torch&oldid=392740)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

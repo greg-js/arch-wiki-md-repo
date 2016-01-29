@@ -1,9 +1,5 @@
 # ISCSI Target
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")
@@ -68,7 +64,7 @@ After starting the target (see above) you enter the configuration shell with `# 
 In this shell you include a block device (here: `/dev/disk/by-id/md-name-nas:iscsi`) to use with
 
 ```
-/> cd backstores/block  
+/> cd backstores/block
 /backstores/block> create md_block0 /dev/disk/by-id/md-name-nas:iscsi
 ```
 
@@ -77,7 +73,7 @@ In this shell you include a block device (here: `/dev/disk/by-id/md-name-nas:isc
 You then create an iSCSI Qualified Name (iqn) and a target portal group (tpg) with
 
 ```
-...> cd /iscsi  
+...> cd /iscsi
 /iscsi> create
 ```
 
@@ -88,14 +84,14 @@ In order to tell LIO that your block device should get used as _backstore_ for t
 **Note:** Remember that you can type `cd` to select the path of your <iqn>/tpg1
 
 ```
-.../tpg1> cd luns  
+.../tpg1> cd luns
 .../tpg1/luns> create /backstores/block/md_block0
 ```
 
 Then you need to create a _portal_, making a daemon listen for incoming connections:
 
 ```
-.../luns/lun0> cd ../../portals  
+.../luns/lun0> cd ../../portals
 .../portals> create
 ```
 
@@ -104,7 +100,7 @@ Targetcli will tell you the IP and port where LIO is listening for incoming conn
 In order for a client/[initiator](/index.php/ISCSI_Initiator "ISCSI Initiator") to connect you need to include the iqn of the initiator in the target configuration:
 
 ```
-...> cd ../../acls  
+...> cd ../../acls
 .../acls> create iqn.2005-03.org.open-iscsi:SERIAL
 ```
 
@@ -234,13 +230,3 @@ Also you can "iscsi-target" to DAEMONS in /etc/rc.conf so that it starts up duri
 *   [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") in order to use the correct block device for a target
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ISCSI_Target&oldid=402168](https://wiki.archlinux.org/index.php?title=ISCSI_Target&oldid=402168)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

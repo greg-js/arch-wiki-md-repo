@@ -1,9 +1,5 @@
 # Talkd and the talk command
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -42,11 +38,3 @@ Starting from inetutils 1.9.1.341-2, talk.service and talk.socket files are prov
  `# systemctl start talk` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Talkd_and_the_talk_command&oldid=326175](https://wiki.archlinux.org/index.php?title=Talkd_and_the_talk_command&oldid=326175)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -1,9 +1,5 @@
 # Google Summer of Code
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Arch Linux development team is considering to participate this year in [Google Summer of Code (GSoC)](http://www.google-melange.com/gsoc/homepage/google/gsoc2012), here is a draft on what areas we are needing improvements.
 
 The deadline to apply to mentor students is Friday, 9 March at 23:00 GMT. Google will begin accepting student applications on 26 March.
@@ -41,7 +37,3 @@ The main idea here is to help the development of these tools, improving it, maki
 *   Netcfg (?)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Google_Summer_of_Code&oldid=381003](https://wiki.archlinux.org/index.php?title=Google_Summer_of_Code&oldid=381003)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")

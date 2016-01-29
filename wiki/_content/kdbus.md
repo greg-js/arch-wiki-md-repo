@@ -1,9 +1,5 @@
 # kdbus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 kdbus is an alternative in-kernel implementation of [D-Bus](/index.php/D-Bus "D-Bus").
 
 ## Installation
@@ -23,8 +19,3 @@ Also check that `/sys/fs/kdbus/` contains the `0-system/` folder, denoting the s
 *   [systemd developer google+ post on kdbus](https://plus.google.com/u/0/+DavidHerrmann/posts/3wNuKCJeGJs)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kdbus&oldid=410781](https://wiki.archlinux.org/index.php?title=Kdbus&oldid=410781)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

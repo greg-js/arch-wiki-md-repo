@@ -1,9 +1,5 @@
 # Exaile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Exaile](http://www.exaile.org/) is a music manager and player for GTK+ written in Python. It incorporates automatic fetching of album art, lyrics fetching, Last.fm scrobbling, support for many portable media players, internet radio such as shoutcast, and tabbed playlists.
 
 ## Contents
@@ -78,7 +74,3 @@ You need to install the [python2-pylast](https://www.archlinux.org/packages/?nam
 Unfortunately, Exaile does **not** support smb protocol.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Exaile&oldid=412073](https://wiki.archlinux.org/index.php?title=Exaile&oldid=412073)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

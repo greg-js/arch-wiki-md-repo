@@ -1,9 +1,5 @@
 # Ocrdesktop
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -183,11 +179,3 @@ The debug output is send to the std output. So you have to pipe it.
 **Tip:** OCRdesktop stores a copy of all images (original, upscaled and manipulated) in /tmp/ in debug mode
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ocrdesktop&oldid=399629](https://wiki.archlinux.org/index.php?title=Ocrdesktop&oldid=399629)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Nodm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -34,7 +30,3 @@ sudo systemctl enable nodm
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nodm&oldid=409449](https://wiki.archlinux.org/index.php?title=Nodm&oldid=409449)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

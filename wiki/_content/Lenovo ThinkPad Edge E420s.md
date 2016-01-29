@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge E420s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -35,85 +31,15 @@ This article covers the Arch Linux support for the Lenovo ThinkPad Edge E420s la
 
 Using **kernel 2.6.38.3**
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Works</th>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless (Intel Centrino Wireless-N 1000)</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Not Tested</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Finger Print Reader</td>
-
-<td>Not Tested</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td>Not Tested</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Works |
+| Video | Yes |
+| Ethernet | Yes |
+| Wireless (Intel Centrino Wireless-N 1000) | Yes |
+| Bluetooth | Not Tested |
+| Audio | Yes |
+| Camera | Yes |
+| Finger Print Reader | Not Tested |
+| Card Reader | Not Tested |
 
 ### lspci
 
@@ -190,11 +116,3 @@ modprobe psmouse proto=bare
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E420s&oldid=412550](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E420s&oldid=412550)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

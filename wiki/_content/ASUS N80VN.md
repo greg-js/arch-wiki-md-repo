@@ -1,9 +1,5 @@
 # ASUS N80VN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -38,11 +34,3 @@ There's a /dev/video0 device present, it gets detected properly. However, when o
 Apparently, from the USB ID of the camera, it's a Syntek USB 2.0 UVC PC Camera ([[1]](http://linux-uvc.berlios.de/)) and should be supported. However, I can't make it work.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N80VN&oldid=259487](https://wiki.archlinux.org/index.php?title=ASUS_N80VN&oldid=259487)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

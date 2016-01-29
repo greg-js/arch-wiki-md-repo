@@ -1,9 +1,5 @@
 # TLP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Laptop](/index.php/Laptop "Laptop")
@@ -11,7 +7,7 @@ Related articles
 
 From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
-TLP brings you the benefits of advanced power management for Linux without the need to understand every technical detail. TLP comes with a default configuration already optimized for battery life, so you may just install and forget it. Nevertheless TLP is highly customizable to fulfill your specific requirements.
+NaN
 
 ## Contents
 
@@ -83,7 +79,3 @@ TLP provides several command line tools. See [TLP commands](http://linrunner.de/
 *   [TLP - Linux Advanced Power Management](http://linrunner.de/tlp) - Project homepage & documentation.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TLP&oldid=413400](https://wiki.archlinux.org/index.php?title=TLP&oldid=413400)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

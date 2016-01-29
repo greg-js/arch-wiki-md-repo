@@ -1,9 +1,5 @@
 # Pylons
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## What is Pylons?
 
 Quoting the [Pylons Python Web Framework web site](http://pylonshq.com):
@@ -31,7 +27,3 @@ Install Pylons like in [instruction](http://wiki.pylonshq.com/display/pylonsdocs
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pylons&oldid=197989](https://wiki.archlinux.org/index.php?title=Pylons&oldid=197989)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

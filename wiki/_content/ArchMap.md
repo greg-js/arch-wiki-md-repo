@@ -1,9 +1,5 @@
 # ArchMap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Google Earth](/index.php/Google_Earth "Google Earth")
@@ -76,7 +72,3 @@ You can refresh the data by right-clicking the ArchMap folder and selecting _Ref
 Go to the [ArchMap List page](/index.php/ArchMap/List "ArchMap/List"), follow the instructions, then use the [**edit**] button to add yourself to the map.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchMap&oldid=392928](https://wiki.archlinux.org/index.php?title=ArchMap&oldid=392928)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

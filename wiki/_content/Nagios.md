@@ -1,9 +1,5 @@
 # Nagios
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Nagios](http://www.nagios.org/) is an open source host, service and network monitoring program. It monitors specified hosts and services, alerting you to any developing issues, errors or improvements. This article describes the installation and configuration of Nagios.
 
 ## Contents
@@ -340,7 +336,3 @@ You can now see the rdiff-backup status by clicking on Services on the left side
 *   [NagiosForge](http://www.nagiosforge.org/) a repository for ad
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nagios&oldid=391728](https://wiki.archlinux.org/index.php?title=Nagios&oldid=391728)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

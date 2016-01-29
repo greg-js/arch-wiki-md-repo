@@ -1,9 +1,5 @@
 # Latitude E5520
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware Details](#Hardware_Details)
@@ -132,7 +128,3 @@ sdhci-pci 0000:09:00.1: Invalid iomem size. You may experience problems.
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Latitude_E5520&oldid=383865](https://wiki.archlinux.org/index.php?title=Latitude_E5520&oldid=383865)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

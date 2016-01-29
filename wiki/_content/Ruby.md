@@ -1,9 +1,5 @@
 # Ruby
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Ruby is a dynamic, interpreted, open source programming language with a focus on simplicity and productivity.
 
 ## Contents
@@ -211,7 +207,7 @@ See [Unofficial user repositories#quarry](/index.php/Unofficial_user_repositorie
 
 Then install required gem `# pacman -S ruby-$gemname`.
 
-If you have general questions - send it at the project announcement [https://bbs.archlinux.org/viewtopic.php?id=182729](https://bbs.archlinux.org/viewtopic.php?id=182729)  
+If you have general questions - send it at the project announcement [https://bbs.archlinux.org/viewtopic.php?id=182729](https://bbs.archlinux.org/viewtopic.php?id=182729)
 If you have bugreports or code improvements - file at github [https://github.com/anatol/quarry](https://github.com/anatol/quarry)
 
 ## See also
@@ -221,7 +217,3 @@ If you have bugreports or code improvements - file at github [https://github.com
 *   Bundler - [http://bundler.io/](http://bundler.io/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby&oldid=415681](https://wiki.archlinux.org/index.php?title=Ruby&oldid=415681)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

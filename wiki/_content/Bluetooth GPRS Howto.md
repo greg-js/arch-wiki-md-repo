@@ -1,9 +1,5 @@
 # Bluetooth GPRS Howto
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -360,12 +356,3 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_GPRS_Howto&oldid=317365](https://wiki.archlinux.org/index.php?title=Bluetooth_GPRS_Howto&oldid=317365)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

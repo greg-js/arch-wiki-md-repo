@@ -1,16 +1,12 @@
 # BOINC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [BOINC website](http://boinc.berkeley.edu/):
 
-Use the idle time on your computer (Windows, Mac, or Linux) to cure diseases, study global warming, discover pulsars, and do many other types of scientific research. It's safe, secure, and easy.
+NaN
 
 From [Wikipedia:BOINC](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC"):
 
-The Berkeley Open Infrastructure for Network Computing (BOINC) is a non-commercial middleware system for volunteer and grid computing. It was originally developed to support the SETI@home project before it became useful as a platform for other distributed applications in areas as diverse as mathematics, medicine, molecular biology, climatology, and astrophysics. The intent of BOINC is to make it possible for researchers to tap into the enormous processing power of personal computers around the world.
+NaN
 
 ## Contents
 
@@ -115,13 +111,7 @@ Also, if it is important to you, check if the project makes the data and results
 
 Some projects provide only 32bit applications which may require 32bit libraries to run work units or show graphics. You will find most of these libraries in the [multilib] repository.
 
-To run WUs (e.g. Climateprediction)
-
-[lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), [lib32-glib2](https://www.archlinux.org/packages/?name=lib32-glib2)
-
-To show graphics (e.g. Several projects of WCG, Climateprediction)
-
-[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxdamage](https://www.archlinux.org/packages/?name=lib32-libxdamage), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl), [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libjpeg6)]</sup> (AUR), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
+NaN
 
 ## Troubleshooting
 
@@ -174,13 +164,3 @@ Your new work units should now be able to download. If you have any trouble, the
 *   [Wikipedia entry](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=BOINC&oldid=400170](https://wiki.archlinux.org/index.php?title=BOINC&oldid=400170)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

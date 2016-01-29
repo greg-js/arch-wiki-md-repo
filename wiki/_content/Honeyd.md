@@ -1,9 +1,5 @@
 # Honeyd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -107,8 +103,3 @@ You can read "Virtual Honeypots: From Botnet Tracking to Intrusion Detection" by
 [http://ulissesaraujo.wordpress.com/2008/12/08/deploying-honeypots-with-honeyd/](http://ulissesaraujo.wordpress.com/2008/12/08/deploying-honeypots-with-honeyd/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Honeyd&oldid=414954](https://wiki.archlinux.org/index.php?title=Honeyd&oldid=414954)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")

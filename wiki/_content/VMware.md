@@ -1,9 +1,5 @@
 # VMware
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
@@ -570,12 +566,3 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 You may also want to have a look at the module directories in `/usr/lib/modules/_kernel_name_/misc/` for any leftovers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VMware&oldid=416519](https://wiki.archlinux.org/index.php?title=VMware&oldid=416519)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

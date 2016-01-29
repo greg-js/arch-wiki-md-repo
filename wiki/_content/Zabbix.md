@@ -1,9 +1,5 @@
 # Zabbix
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Zabbix](http://zabbix.com) is a full-featured monitoring solution for larger networks. It can discover all kind of networking devices using different methods, check machine states and applications, sending pre-defined alarm messages and visualize complex data correlations.
 
 ## Contents
@@ -129,7 +125,3 @@ You have to restart `zabbix-agentd` to apply the new configuration. The keyword 
 *   [Official manual for version 2.0](https://www.zabbix.com/documentation/doku.php?id=2.0)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Zabbix&oldid=388256](https://wiki.archlinux.org/index.php?title=Zabbix&oldid=388256)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

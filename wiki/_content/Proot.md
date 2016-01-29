@@ -1,9 +1,5 @@
 # Proot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [proot](http://proot.me/) is program that implements functionality similar to GNU/Linux's [chroot](/index.php/Chroot "Chroot"), `mount --bind`, and binfmt_misc in user-space, allowing an unprivileged user to execute programs with an alternative root directory, much like a chroot "jail". This is useful in cases where a chroot is not possible due to a lack of root privileges.
 
 ## Installation
@@ -45,11 +41,3 @@ proot internally utilizes the qemu user-mode emulator to allow programs to be ru
 Like chroot, proot provides only filesystem level isolation. Programs inside the proot "jail" share the same kernel, hardware, process space, and networking subsystem. chroot and proot are not designed to be substitutes for real [virtualization](/index.php?title=Virtualization&action=edit&redlink=1 "Virtualization (page does not exist)") applications, such as hypervisors and paravirtualizers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Proot&oldid=412743](https://wiki.archlinux.org/index.php?title=Proot&oldid=412743)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

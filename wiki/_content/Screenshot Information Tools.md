@@ -1,9 +1,5 @@
 # Screenshot Information Tools
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -63,12 +59,3 @@ Here is a compiled list of the community-made screenshot information tools. Thes
 *   AUR: [fetch-git](https://aur.archlinux.org/packages/fetch-git/)<sup><small>AUR</small></sup>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Screenshot_Information_Tools&oldid=416002](https://wiki.archlinux.org/index.php?title=Screenshot_Information_Tools&oldid=416002)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

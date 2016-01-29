@@ -1,9 +1,5 @@
 # Logitech Marble Mouse
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The **Logitech Marble Mouse** is a pointing device with four buttons and a trackball. It is also known as the **Trackman Marble**. The Marble Mouse is symmetrical, making it well-suited for use with either hand. [Picture](http://www.logitech.com/assets/21083/21083.png). Out-of-the box it does not scroll, but you can configure it to enable this.
 
 ## Contents
@@ -43,113 +39,16 @@ Hardware IDs for the Marble Mouse buttons remain constant, regardless of device 
 
 When no additional configuration is specified, buttons are mapped to these functions:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>ID    </th>
-
-<th>Hardware Action    </th>
-
-<th>Result                </th>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>Large button left</td>
-
-<td>normal click</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>Both large buttons</td>
-
-<td>middle-click  †</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>Large button right</td>
-
-<td>right-click</td>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>_(not a button)_</td>
-
-<td>-</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>_(not a button)_</td>
-
-<td>-</td>
-
-</tr>
-
-<tr>
-
-<td>6</td>
-
-<td>_(not a button)_</td>
-
-<td>-</td>
-
-</tr>
-
-<tr>
-
-<td>7</td>
-
-<td>_(not a button)_</td>
-
-<td>-</td>
-
-</tr>
-
-<tr>
-
-<td>8</td>
-
-<td>Small button left</td>
-
-<td>browser back</td>
-
-</tr>
-
-<tr>
-
-<td>9</td>
-
-<td>Small button right</td>
-
-<td>browser forward</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| ID     | Hardware Action     | Result                 |
+| 1 | Large button left | normal click |
+| 2 | Both large buttons | middle-click  † |
+| 3 | Large button right | right-click |
+| 4 | _(not a button)_ | - |
+| 5 | _(not a button)_ | - |
+| 6 | _(not a button)_ | - |
+| 7 | _(not a button)_ | - |
+| 8 | Small button left | browser back |
+| 9 | Small button right | browser forward |
 
 **Note:**
 
@@ -160,63 +59,11 @@ When no additional configuration is specified, buttons are mapped to these funct
 *   The result shown above occurs when no modifier key is pressed.
 *   A different result may occur when a modifier key such as _Ctrl_ is held while a button is clicked.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>ID    </th>
-
-<th>Hardware Action    </th>
-
-<th>Result                </th>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>_Roll ball down_</td>
-
-<td>move cursor down</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>_Roll ball up_</td>
-
-<td>move cursor up</td>
-
-</tr>
-
-<tr>
-
-<td>6</td>
-
-<td>_Roll ball left_</td>
-
-<td>move cursor left</td>
-
-</tr>
-
-<tr>
-
-<td>7</td>
-
-<td>_Roll ball right_</td>
-
-<td>move cursor right</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| ID     | Hardware Action     | Result                 |
+| 4 | _Roll ball down_ | move cursor down |
+| 5 | _Roll ball up_ | move cursor up |
+| 6 | _Roll ball left_ | move cursor left |
+| 7 | _Roll ball right_ | move cursor right |
 
 **Note:**
 
@@ -426,85 +273,12 @@ In this example, either of the two small buttons may be clicked to send a _**whe
 
 Finally, clicking both large buttons simultaneously sends the _**browser back**_ event. There is no button to send _browser forward_.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>ID    </th>
-
-<th>Hardware Action         </th>
-
-<th>Result (this configuration)     </th>
-
-<th>New assignment</th>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>Large button left</td>
-
-<td>normal click</td>
-
-<td>1</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>Both large buttons</td>
-
-<td>browser back</td>
-
-<td>8</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>Large button right</td>
-
-<td>right-click</td>
-
-<td>3</td>
-
-</tr>
-
-<tr>
-
-<td>8</td>
-
-<td>Small button left  †</td>
-
-<td>wheel-click</td>
-
-<td>2</td>
-
-</tr>
-
-<tr>
-
-<td>9</td>
-
-<td>Small button right  ‡      </td>
-
-<td>wheel-click</td>
-
-<td>2</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| ID     | Hardware Action          | Result (this configuration)      | New assignment |
+| 1 | Large button left | normal click | 1 |
+| 2 | Both large buttons | browser back | 8 |
+| 3 | Large button right | right-click | 3 |
+| 8 | Small button left  † | wheel-click | 2 |
+| 9 | Small button right  ‡       | wheel-click | 2 |
 
 **Note:**
 
@@ -679,7 +453,3 @@ The slightest horizontal motion triggers a URL redirection. To fix this:
 *   Chrome web store: [AutoScroll extension](https://chrome.google.com/webstore/detail/occjjkgifpmdgodlplnacmkejpdionan)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse&oldid=413115](https://wiki.archlinux.org/index.php?title=Logitech_Marble_Mouse&oldid=413115)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

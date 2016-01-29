@@ -1,9 +1,5 @@
 # Official repositories
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Mirrors](/index.php/Mirrors "Mirrors")
@@ -131,8 +127,3 @@ After a kernel in _core_ [broke many user systems](https://www.archlinux.org/new
 In late 2009/the beginning of 2010, with the advent of some new filesystems and the desire to support them during installation, along with the realization that _core_ was never clearly defined (just "important packages, handpicked by developers"), the repository received a more accurate description.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Official_repositories&oldid=411280](https://wiki.archlinux.org/index.php?title=Official_repositories&oldid=411280)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

@@ -1,9 +1,5 @@
 # dm-crypt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
@@ -11,7 +7,7 @@ Related articles
 
 From the cryptsetup project's [wiki](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt):
 
-Device-mapper is infrastructure in the Linux 2.6 and 3.x kernel that provides a generic way to create virtual layers of block devices. Device-mapper crypt target provides transparent encryption of block devices using the kernel crypto API. The user can basically specify one of the symmetric ciphers, an encryption mode, a key (of any allowed size), an iv generation mode and then the user can create a new block device in /dev. Writes to this device will be encrypted and reads decrypted. You can mount your filesystem on it as usual or stack dm-crypt device with another device like RAID or LVM volume. Basic documentation of dm-crypt mapping table comes with kernel source and the latest version is available in git repository.
+NaN
 
 ## Contents
 
@@ -69,8 +65,3 @@ See [Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties
 *   [DOXBOX](https://github.com/t-d-k/doxbox) - Supports unlocking LUKS encrypted volumes in Microsoft Windows.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt&oldid=415416](https://wiki.archlinux.org/index.php?title=Dm-crypt&oldid=415416)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

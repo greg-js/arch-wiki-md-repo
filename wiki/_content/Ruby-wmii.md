@@ -1,9 +1,5 @@
 # Ruby-wmii
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -267,7 +263,3 @@ Add your configuration URL to the list
 [_Gandalf_](http://wael.nasreddine.com/cgi-bin/viewvc.cgi/wael/trunk/etc-wmii-3.5/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby-wmii&oldid=376219](https://wiki.archlinux.org/index.php?title=Ruby-wmii&oldid=376219)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

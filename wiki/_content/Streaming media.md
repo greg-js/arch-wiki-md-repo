@@ -1,9 +1,5 @@
 # Streaming media
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -61,11 +57,3 @@ And here is a list of DLNA controller applications. These can be used to control
 *   [GNOME Videos](https://wiki.gnome.org/Apps/Videos) ([totem](https://www.archlinux.org/packages/?name=totem)), via the "Channels" tab, after having installed [grilo-plugins](https://www.archlinux.org/packages/?name=grilo-plugins), [gupnp-av](https://www.archlinux.org/packages/?name=gupnp-av) and [dleyna-server](https://www.archlinux.org/packages/?name=dleyna-server)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=416537](https://wiki.archlinux.org/index.php?title=Streaming_media&oldid=416537)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

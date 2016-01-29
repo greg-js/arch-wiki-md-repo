@@ -1,9 +1,5 @@
 # Bluetooth
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bluez4](/index.php/Bluez4 "Bluez4")
@@ -124,9 +120,8 @@ After=bluetooth.service sys-subsystem-bluetooth-devices-%i.device suspend.target
 
 [Service]
 Type=oneshot
-#We could also do a 200 char long call to bluez via dbus. Except this does not work since bluez does not react to dbus at this point of the resume sequence and I do not know how I get this service to run at a time it does. So we just ignore bluez and force %i up using hciconfig. Welcome to the 21st century.
-#ExecStart=/usr/bin/dbus-send --system --type=method_call --dest=org.bluez /org/bluez/%I org.freedesktop.DBus.Properties.Set string:org.bluez.Adapter1 string:Powered variant:boolean:true
-ExecStart=/usr/bin/hciconfig %i up
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=/usr/bin/dbus-send --system --type=method_call --dest=org.bluez /org/bluez/%I org.freedesktop.DBus.Properties.Set string:org.bluez.Adapter1 string:Powered variant:boolean:true
 
 [Install]
 WantedBy=suspend.target
@@ -519,12 +514,4 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415971](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=415971)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=417690](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=417690)"

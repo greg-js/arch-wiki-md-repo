@@ -1,9 +1,5 @@
 # RethinkDB
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 RethinkDB is a document-oriented database similar to [MongoDB](/index.php/MongoDB "MongoDB") but aims to overcome scalability and practical limitation of the latter. [[1]](http://www.rethinkdb.com/docs/comparisons/mongodb/) [[2]](http://www.rethinkdb.com/blog/mongodb-biased-comparison/) RethinkDB is built to store JSON documents, and scale to multiple machines with very little effort. It has a pleasant query language that supports really useful queries like table joins and group by, and is easy to setup and learn.
 
 ## Installing RethinkDB
@@ -56,7 +52,3 @@ where <NAME> is the name of you configuration that you'll going to use later. Ch
 'default' instance is created at installation time for your convinence. Its data is stored in /var/lib/rethinkdb/default
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RethinkDB&oldid=409772](https://wiki.archlinux.org/index.php?title=RethinkDB&oldid=409772)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

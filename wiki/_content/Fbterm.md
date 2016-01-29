@@ -1,9 +1,5 @@
 # Fbterm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [KMSCON](/index.php/KMSCON "KMSCON")
@@ -33,18 +29,9 @@ Related articles
 
 From [http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/):
 
-_FbTerm is a fast terminal emulator for linux with frame buffer device or VESA video card. Features include:_
+NaN
 
-*   _mostly as fast as terminal of linux kernel while accelerated scrolling is enabled_
-*   _select font with fontconfig and draw text with freetype2, same as Qt/Gtk+ based GUI apps_
-*   _dynamically create/destroy up to 10 windows initially running default shell_
-*   _record scroll-back history for every window_
-*   _auto-detect text encoding with current locale, support double width scripts like Chinese, Japanese etc_
-*   _switch between configurable additional text encodings with hot keys on the fly_
-*   _copy/past selected text between windows with mouse when gpm server is running_
-*   _change the orientation of screen display, a.k.a. screen rotation_
-*   _lightweight input method framework with client-server architecture_
-*   _background image for eye candy_
+NaN
 
 ## Installation
 
@@ -106,11 +93,3 @@ echo -en "\e]P7ffffff"
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbterm&oldid=403790](https://wiki.archlinux.org/index.php?title=Fbterm&oldid=403790)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Qtile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
@@ -11,7 +7,7 @@ Related articles
 
 From [Qtile web site](http://qtile.org/):
 
-Qtile is a full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
+NaN
 
 ## Contents
 
@@ -191,7 +187,3 @@ echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
 *   [tilenol](https://github.com/tailhook/tilenol) - A window manager inspired by Qtile.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Qtile&oldid=390203](https://wiki.archlinux.org/index.php?title=Qtile&oldid=390203)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

@@ -1,9 +1,5 @@
 # Shfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Shfs** is a simple and easy to use Linux kernel module which allows you to mount remote filesystems using a plain shell (ssh) connection. When using shfs, you can access all remote files just like the local ones, only the access is governed through the transport security of ssh.
 
 **Note:** The FUSE-based [Sshfs](/index.php/Sshfs "Sshfs") is much more widely used, as shfs has not been updated since 2004.
@@ -69,14 +65,8 @@ userid@remoteMachine:/remoteDirectory /home/userid/remoteDirectory shfs rw,user,
 
 ## External Links
 
-*   [http://shfs.sourceforge.net/](http://shfs.sourceforge.net/) for a supposed to be complete reference.  
+*   [http://shfs.sourceforge.net/](http://shfs.sourceforge.net/) for a supposed to be complete reference.
 
 *   [http://www.openssh.com/](http://www.openssh.com/) for a really complete reference ;)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Shfs&oldid=413601](https://wiki.archlinux.org/index.php?title=Shfs&oldid=413601)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

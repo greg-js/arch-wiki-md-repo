@@ -1,9 +1,5 @@
 # Vino
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -56,12 +52,3 @@ If you use a standalone [window manager](/index.php/Window_manager "Window manag
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vino&oldid=412207](https://wiki.archlinux.org/index.php?title=Vino&oldid=412207)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

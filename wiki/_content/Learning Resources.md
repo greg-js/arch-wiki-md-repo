@@ -1,9 +1,5 @@
 # Learning Resources
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Programming/Scripting](#Programming.2FScripting)
@@ -105,7 +101,3 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 ### [LaTeX](http://www.latex-project.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Learning_Resources&oldid=415469](https://wiki.archlinux.org/index.php?title=Learning_Resources&oldid=415469)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

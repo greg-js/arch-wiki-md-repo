@@ -1,9 +1,5 @@
 # Dell Chromebook 11
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chromebook](/index.php/Chromebook "Chromebook")
@@ -131,7 +127,3 @@ When using stock Coreboot firmware (and not [John Lewis' builds of Coreboot](/in
 A patch adding this support was accepted to the Linux upstream sources and would be included in kernel 4.0. As a temporary measure you can compile a kernel with [this patch](https://gist.github.com/dhead666/6a6ae3c5e328cb15e503).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Chromebook_11&oldid=405301](https://wiki.archlinux.org/index.php?title=Dell_Chromebook_11&oldid=405301)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

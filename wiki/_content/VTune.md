@@ -1,9 +1,5 @@
 # VTune
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Linux 4.0](#Linux_4.0)
@@ -139,11 +135,3 @@ Installing Intel VTune 9.1 on Arch Linux
     *   As of kernel 2.6.31 there was an api change, find_task_by_pid_ns() cannot be found. The only recourse is to downgrade your kernel to 2.6.30 or to wait for Intel to update the driver source code. If someone has a patch that resolves the issue you can post it here.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VTune&oldid=399986](https://wiki.archlinux.org/index.php?title=VTune&oldid=399986)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

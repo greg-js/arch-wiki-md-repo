@@ -1,9 +1,5 @@
 # Yakuake
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [KDE](/index.php/KDE "KDE")
@@ -113,7 +109,3 @@ $ dbus-send  --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.y
 *   [Yakuake scripting on coderwall.com](https://coderwall.com/p/kq9ghg/yakuake-scripting)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Yakuake&oldid=412226](https://wiki.archlinux.org/index.php?title=Yakuake&oldid=412226)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

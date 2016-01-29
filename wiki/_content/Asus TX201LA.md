@@ -1,9 +1,5 @@
 # Asus TX201LA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -85,83 +81,13 @@ Even though system is capable of running current stable kernel it maybe worth sp
 
 When configuring kernel don't forget to enable drivers/options for following device specific components:
 
-<table border="1">
-
-<tbody>
-
-<tr>
-
-<th>Component</th>
-
-<th>HW Name</th>
-
-<th>Kernel menu item</th>
-
-</tr>
-
-<tr>
-
-<td>WIFI</td>
-
-<td>Realtek 8821AE</td>
-
-<td>Device Drivers -> Network Device Support -> Realtek rtlwifi family -> Realtek 8821AE</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td>Elantech EPS/2 Touchpad</td>
-
-<td>Device Drivers -> Input device support -> Mice -> PS/2 Mouse -> Elantech PS/2 Protocol extension</td>
-
-</tr>
-
-<tr>
-
-<td>Touchscreen</td>
-
-<td>Atmel maXTouch Digitizer</td>
-
-<td>Device Drivers -> HID Support -> Special HID Drivers -> HID Multitouch Pannels</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Realtek USB HCI</td>
-
-<td>Networking Support -> Bluetooth Subsystem Support -> Bluetooth Device Drivers -> HCI USB Driver</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td>Intel HD + Conexant</td>
-
-<td>Device Drivers -> Sound card support -> Advanced Linux Sound Architecture -> HD Audio -> Conexant and HDMI</td>
-
-</tr>
-
-<tr>
-
-<td>WebCAM</td>
-
-<td>Chicony HD USB Video</td>
-
-<td>Device Drivers -> Multimedia Support -> Media USB Adapters -> USB Video Class</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Component | HW Name | Kernel menu item |
+| WIFI | Realtek 8821AE | Device Drivers -> Network Device Support -> Realtek rtlwifi family -> Realtek 8821AE |
+| Touchpad | Elantech EPS/2 Touchpad | Device Drivers -> Input device support -> Mice -> PS/2 Mouse -> Elantech PS/2 Protocol extension |
+| Touchscreen | Atmel maXTouch Digitizer | Device Drivers -> HID Support -> Special HID Drivers -> HID Multitouch Pannels |
+| Bluetooth | Realtek USB HCI | Networking Support -> Bluetooth Subsystem Support -> Bluetooth Device Drivers -> HCI USB Driver |
+| Audio | Intel HD + Conexant | Device Drivers -> Sound card support -> Advanced Linux Sound Architecture -> HD Audio -> Conexant and HDMI |
+| WebCAM | Chicony HD USB Video | Device Drivers -> Multimedia Support -> Media USB Adapters -> USB Video Class |
 
 #### ACPI
 
@@ -196,17 +122,7 @@ If the driver still doesn't work (most of the time it doesn't - certain hardware
 
 Wireless switch does not work by default on linux. ACPI handler detects Win8 OS and delegates rfkill management to software driver, which is missing. One way to handle this is to remove Windows 2012 OSI string - which may affect other ACPI handlers though. When OSI is below Win8 - asus-nb-wmi's wapf parameter influences how hardware switch is acting. WAPF handling is different from the one documented in asus-nb-wmi.c - the implementation states following:
 
-Bit 3 is set (0x4)
-
-Full software control, only keypress is sent (0x88) and handler terminates.
-
-Bit 1 is set (0x1)
-
-Fn switch toggles both radios (toggling airplane mode), sending corresponding ACPI key event when they are on or off.
-
-Any other values
-
-Toggles radios in a sequence - both off, WL on/BT off, WL off/BT on, both on.
+NaN
 
 If OSI string is required to be preserved - the only way out is using driver for ACPI device ([ASHS](https://github.com/rufferson/ashs)) which will handle events and do radio management.
 
@@ -274,12 +190,3 @@ Useless keys then are Wireless/Airplane-Mode(fn+F2), Backlight (fn+F5-F7) and Di
 *   [Linux Laptop Usability Matrix](http://www.linlap.com/asus_transformer_book_trio_tx201la)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Asus_TX201LA&oldid=366527](https://wiki.archlinux.org/index.php?title=Asus_TX201LA&oldid=366527)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

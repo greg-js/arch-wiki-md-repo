@@ -1,9 +1,5 @@
 # Installation guide
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). If looking for a more detailed installation guide see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), or [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") for specific installation cases.
 
 Most help can be found on the wiki or through the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
@@ -153,7 +149,3 @@ See [General recommendations](/index.php/General_recommendations "General recomm
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Installation_guide&oldid=408953](https://wiki.archlinux.org/index.php?title=Installation_guide&oldid=408953)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")

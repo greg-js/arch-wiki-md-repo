@@ -1,9 +1,5 @@
 # Input Japanese using uim
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -86,13 +82,13 @@ Recommended Japanese fonts are as follows.
 
 *   [adobe-source-han-sans](https://github.com/adobe-fonts/source-han-sans) || [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) or [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts)
 
-Open-source OTF fonts developed by Adobe.
+NaN
 
 #### Serif and Sans-serif
 
 *   [IPA fonts](http://ossipedia.ipa.go.jp/ipafont/) || [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont)
 
-An open source OTF font set including sans-serif (Gothic) and serif (Mincho) glyphs provided by Information-technology Promotion Agency, Japan (IPA).
+NaN
 
 If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art) properly, use one of the following fonts:
 
@@ -255,7 +251,7 @@ _uim_mozc="yes"
 
 ##### Registering Mozc
 
-**Warning:** You **must** run the following command whenever you upgrade or (re-)install uim.  
+**Warning:** You **must** run the following command whenever you upgrade or (re-)install uim.
 # uim-module-manager --register mozc
 
 #### Google CGI API for Japanese input
@@ -578,25 +574,8 @@ You can choose icons for darker background (uim 1.6.0 or later).
 
 ## See also
 
-uim
+NaN
 
-[uim official document](http://code.google.com/p/uim/wiki/OfficialUserDocument)
-
-[uim on wikibooks](http://en.wikibooks.org/wiki/Uim)
-
-Fonts
-
-[Japanese fonts showcase](http://www.geocities.jp/ep3797/japanese_fonts.html)
-
-[modified Japanese fonts](http://www.geocities.jp/ep3797/modified_fonts_01.html)
+NaN
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=412103](https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=412103)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

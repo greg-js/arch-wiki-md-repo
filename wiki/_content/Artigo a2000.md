@@ -1,9 +1,5 @@
 # Artigo a2000
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -84,12 +80,3 @@ aes-128-cbc      58151.15k   143278.68k   234072.58k   297020.42k   342166.19k
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Artigo_a2000&oldid=370332](https://wiki.archlinux.org/index.php?title=Artigo_a2000&oldid=370332)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Dell Vostro 3360
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Specifications](#Specifications)
@@ -207,7 +203,3 @@ otherwise errors during hibernation may occur. They do not interrupt hibernation
 Works out-of-the-box.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_3360&oldid=378410](https://wiki.archlinux.org/index.php?title=Dell_Vostro_3360&oldid=378410)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

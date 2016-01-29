@@ -1,9 +1,5 @@
 # Samsung Series 7 Slate XE700T1A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 System Specification](#System_Specification)
@@ -124,83 +120,11 @@ The touchscreen is calibrated via axis inversion and axes swap. Swapping the axe
 
 The wacom tablet however, simply uses a number, 0, 1, 2 or 3, however, these don't correspond to the XRandR numbers.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Orientation</th>
-
-<th>XRandR</th>
-
-<th>Evdev Axis Inversion</th>
-
-<th>Evdev Axis Swap</th>
-
-<th>Wacom Rotation</th>
-
-</tr>
-
-<tr>
-
-<td>0°</td>
-
-<td>0</td>
-
-<td>0 0</td>
-
-<td>0</td>
-
-<td>0</td>
-
-</tr>
-
-<tr>
-
-<td>90°</td>
-
-<td>1</td>
-
-<td>1 0</td>
-
-<td>1</td>
-
-<td>2</td>
-
-</tr>
-
-<tr>
-
-<td>180°</td>
-
-<td>2</td>
-
-<td>1 1</td>
-
-<td>0</td>
-
-<td>3</td>
-
-</tr>
-
-<tr>
-
-<td>270°</td>
-
-<td>3</td>
-
-<td>0 1</td>
-
-<td>1</td>
-
-<td>1</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Orientation | XRandR | Evdev Axis Inversion | Evdev Axis Swap | Wacom Rotation |
+| 0° | 0 | 0 0 | 0 | 0 |
+| 90° | 1 | 1 0 | 1 | 2 |
+| 180° | 2 | 1 1 | 0 | 3 |
+| 270° | 3 | 0 1 | 1 | 1 |
 
 For non-permanent rotations, there is a simple sh script. [Download slate.sh](http://ubuntuone.com/6P2w9SAxKdKzidx3MWfkA1)
 
@@ -295,11 +219,3 @@ $ xinput set-prop 13 "Device Enabled" 1
 While the touch screen is disabled, the pen still works as expected, meaning that you can write your notes, whilst resting you hand on the tablet.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_Series_7_Slate_XE700T1A&oldid=412830](https://wiki.archlinux.org/index.php?title=Samsung_Series_7_Slate_XE700T1A&oldid=412830)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

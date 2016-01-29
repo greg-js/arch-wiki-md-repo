@@ -1,9 +1,5 @@
 # Dell Inspiron 6400
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The goal of this article is to provide a comprehensive guide for Dell Inspiron 6400 owners seeking to install Arch Linux. It will attempt to cover all facets of hardware management, including wireless networking and hotkey support. Although this guide has been written specifically for the Inspiron 6400, many of the sub-sections can be applied to other Dell Inspiron models, including:
 
 *   Dell Inspiron 640m
@@ -328,7 +324,3 @@ Gentoo Wiki: [HARDWARE Dell Inspiron 6400](http://gentoo-wiki.com/HARDWARE_Dell_
 Gentoo Wiki: [HARDWARE Dell Inspiron 6400 Fixes for common problems](http://gentoo-wiki.com/HARDWARE_Dell_Inspiron_6400_Fixes_for_common_problems)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_6400&oldid=376454](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_6400&oldid=376454)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

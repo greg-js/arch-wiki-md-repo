@@ -1,9 +1,5 @@
 # Logitech MX1000
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Disclaimer: this information is current as of Arch Linux 2007.08 (Don't Panic). For later releases, your mileage may vary. In the true spirit of a Wiki, if you determine that this content needs to be updated for a later release, please go ahead and do so!
 
 ## Contents
@@ -134,33 +130,33 @@ When you are done with this, you will have a complete map of your mouse in its "
 When I did this for the MX1000 under Arch 2007.08, I got the following:
 
 ```
-Mouse Button                 xev Button Number    Current Fn      Desired Fn  
+Mouse Button                 xev Button Number    Current Fn      Desired Fn
 
-----------------------------------------------------------------------------  
+----------------------------------------------------------------------------
 
-Left Click                   1                    Left Click      Left Click  
+Left Click                   1                    Left Click      Left Click
 
-Scroll Wheel Center Click    2                    Center Click    Center Click  
+Scroll Wheel Center Click    2                    Center Click    Center Click
 
-Right Click                  3                    Right Click     Right Click  
+Right Click                  3                    Right Click     Right Click
 
-Scroll Fwd Roll              4                    Scroll Fwd      Scroll Fwd  
+Scroll Fwd Roll              4                    Scroll Fwd      Scroll Fwd
 
-Scroll Back Roll             5                    Scroll Back     Scroll Back  
+Scroll Back Roll             5                    Scroll Back     Scroll Back
 
-Back Thumb Button            8                    None            Browser Back  
+Back Thumb Button            8                    None            Browser Back
 
-Forward Thumb Button         9                    None            Browser Fwd  
+Forward Thumb Button         9                    None            Browser Fwd
 
-Center Thumb Button          10                   None            None  
+Center Thumb Button          10                   None            None
 
-Scroll Fwd Button            11                   None            None  
+Scroll Fwd Button            11                   None            None
 
-Scroll Back Button           12                   None            None  
+Scroll Back Button           12                   None            None
 
-Left Horizontal Scroll       13                   None            Left Scroll  
+Left Horizontal Scroll       13                   None            Left Scroll
 
-Right Horizontal Scroll      14                   None            Right Scroll  
+Right Horizontal Scroll      14                   None            Right Scroll
 
 ```
 
@@ -280,7 +276,3 @@ Of course, this is not MX1000 specific at all - you can apply these steps to ANY
 All done! Simple n'est pas? :-) Enjoy your MX1000!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_MX1000&oldid=382961](https://wiki.archlinux.org/index.php?title=Logitech_MX1000&oldid=382961)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

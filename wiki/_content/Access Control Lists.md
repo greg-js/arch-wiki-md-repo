@@ -1,9 +1,5 @@
 # Access Control Lists
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **A**ccess **C**ontrol **L**ist (ACL) provides an additional, more flexible permission mechanism for file systems. It is designed to assist with `UNIX` file permissions. ACL allows you to give permissions for any user or group to any disc resource.
 
 ## Contents
@@ -247,7 +243,3 @@ As the above output shows, `other`s no longer have any permissions, but `webserv
 *   An old but still relevant (and thorough) [guide](http://www.vanemery.com/Linux/ACL/linux-acl.html) to ACL
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Access_Control_Lists&oldid=414056](https://wiki.archlinux.org/index.php?title=Access_Control_Lists&oldid=414056)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

@@ -1,9 +1,5 @@
 # Slrn
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Slrn is a text-based news client. It runs through a textual user interface and is highly customizable. It uses the S-Lang library.
 
 ## Contents
@@ -106,7 +102,3 @@ misc.test: 1-210917
 *   [slrn FAQ](http://slrn.sourceforge.net/docs/slrn-FAQ.html#toc3) slrn frequently asked questions
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Slrn&oldid=311010](https://wiki.archlinux.org/index.php?title=Slrn&oldid=311010)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

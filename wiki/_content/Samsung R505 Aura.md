@@ -1,9 +1,5 @@
 # Samsung R505 Aura
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ### LCD Brightness
 
 See [Backlight](/index.php/Backlight "Backlight").
@@ -55,7 +51,3 @@ to the DAEMONS section of your rc.conf, you can ensure that the values you just 
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_R505_Aura&oldid=368752](https://wiki.archlinux.org/index.php?title=Samsung_R505_Aura&oldid=368752)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")

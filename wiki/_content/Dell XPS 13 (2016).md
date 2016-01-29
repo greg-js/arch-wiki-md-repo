@@ -1,9 +1,5 @@
 # Dell XPS 13 (2016)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -12,113 +8,16 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Notes:** This page is a work in progress; you're warmly invited to contribute! (Discuss in [Talk:Dell XPS 13 (2016)#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13_(2016)))
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
-
-<td>brcmfmac</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after installing firmware</td>
-
-<td>btbcm</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<td>Webcam</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_pci</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless switch</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Not supported yet</td>
-
-<td> ?</td>
-
-</tr>
-
-<tr>
-
-<td>Function/Multimedia Keys</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td> ?</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Video | Works after configuration | i915 |
+| Wireless | Works after configuration | brcmfmac |
+| Bluetooth | Works after installing firmware | btbcm |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Works after configuration |  ? |
+| Webcam | Working | uvcvideo |
+| Card Reader | Working | rtsx_pci |
+| Wireless switch | Not supported yet |  ? |
+| Function/Multimedia Keys | Working |  ? |
 
 The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. Unlike its predecessor, it has no official Linux support yet. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.
 
@@ -144,7 +43,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 ## BIOS updates
 
-[BIOS update 1.1.9](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=376N9) was released on 2016-01-13\. Store the update binary on your EFI partition (`/boot/efi`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update 1.2.3](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=T0R1K) was released on 2016-01-29\. Store the update binary on your EFI partition (`/boot/efi`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ## SATA controller
 
@@ -274,7 +173,7 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 ## Sound
 
-Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run `alsamixer` from [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools). Select your soundcard with F6 and set the headset-gain to 22 (3rd lever from the left) or use the `amixer` command:
+Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). Select your soundcard with F6 and set the headset-gain to 22 (3rd lever from the left) or use the `amixer` command:
 
 ```
  $ amixer -c 0 cset 'numid=10' 1
@@ -342,12 +241,4 @@ The linux kernel in testing repository (4.4) supports wifi out-of-the-box, see [
 
 General Discussion Thread on Arch Forum [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417310](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417310)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417855](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417855)"

@@ -1,9 +1,5 @@
 # Acer Aspire One D250
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 There are a lot of netbooks under the Aspire One banner. Here's a third-party website that lists them (at least up through 2009): [Aspire One Cheatsheet](http://netbookscoop.com/buyers-guide/aspire-one-cheatsheets/)
 
 *   Booted with acpi=off to keep from hanging on acpi module loading
@@ -57,450 +53,48 @@ Here's lspci:
 
 The Aspire One US keyboard when operating under WinXP has a number of special keys which are accessed by holding down the Function/Fn key and the relevant key. Some of these operate under Arch as well, but most do not.
 
-<table class="wikitable"><caption>**Fn+ Data**</caption>
-
-<tbody>
-
-<tr>
-
-<th>Fn+</th>
-
-<th>Action in WinXP</th>
-
-<th>Console Keycode/Effect</th>
-
-<th>X Keycode/Effect</th>
-
-</tr>
-
-<tr>
-
-<td>Left Arrow</td>
-
-<td>LCD Brighten</td>
-
-<td>112; works OOB but also types "?" character</td>
-
-<td>No symbol; works OOB</td>
-
-</tr>
-
-<tr>
-
-<td>Down Arrow</td>
-
-<td>Volume Down</td>
-
-<td>114</td>
-
-<td>XF86AudioLowerVolume</td>
-
-</tr>
-
-<tr>
-
-<td>Right Arrow</td>
-
-<td>LCD Dim</td>
-
-<td>118; works OOB but also types "?" character</td>
-
-<td>plusminus; works OOB but also types +/- symbol</td>
-
-</tr>
-
-<tr>
-
-<td>Pg Up</td>
-
-<td>Home</td>
-
-<td>102</td>
-
-<td>Home</td>
-
-</tr>
-
-<tr>
-
-<td>Up Arrow</td>
-
-<td>Volume Up</td>
-
-<td>115</td>
-
-<td>XF86AudioRaiseVolume</td>
-
-</tr>
-
-<tr>
-
-<td>Pg Dn</td>
-
-<td>End</td>
-
-<td>107</td>
-
-<td>End</td>
-
-</tr>
-
-<tr>
-
-<td>m</td>
-
-<td>Keypad 0</td>
-
-<td>82; works with NumLk on</td>
-
-<td>with Fn gives KP_Insert; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>.</td>
-
-<td>Keypad .</td>
-
-<td>83; works with NumLk on</td>
-
-<td>with Fn gives KP_Delete; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>/</td>
-
-<td>Keypad +</td>
-
-<td>78; works with NumLk on</td>
-
-<td>works</td>
-
-</tr>
-
-<tr>
-
-<td>j</td>
-
-<td>Keypad 1</td>
-
-<td>79; works with NumLk on</td>
-
-<td>with Fn gives KP_End; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>k</td>
-
-<td>Keypad 2</td>
-
-<td>80; works with NumLk on</td>
-
-<td>with Fn gives KP_Down; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>l</td>
-
-<td>Keypad 3</td>
-
-<td>81; works with NumLk on</td>
-
-<td>with Fn gives KP_Next; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td> ;</td>
-
-<td>Keypad -</td>
-
-<td>74; works with NumLk on</td>
-
-<td>with Fn gives KP_; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>u</td>
-
-<td>Keypad 4</td>
-
-<td>75; works with NumLk on</td>
-
-<td>with Fn gives KP_Left; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>l</td>
-
-<td>Keypad 5</td>
-
-<td>76; works with NumLk on</td>
-
-<td>with Fn gives KP_Begin; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>o</td>
-
-<td>Keypad 6</td>
-
-<td>77; works with NumLk on</td>
-
-<td>with Fn gives KP_Right; works with NumLk on</td>
-
-</tr>
-
-<tr>
-
-<td>p</td>
-
-<td>Keypad *</td>
-
-<td>55; works with NumLk on</td>
-
-<td>works</td>
-
-</tr>
-
-<tr>
-
-<td>7</td>
-
-<td>Keypad 7</td>
-
-<td>71;</td>
-
-</tr>
-
-<tr>
-
-<td>8</td>
-
-<td>Keypad 8</td>
-
-<td>72;</td>
-
-</tr>
-
-<tr>
-
-<td>9</td>
-
-<td>Keypad 9</td>
-
-<td>73;</td>
-
-</tr>
-
-<tr>
-
-<td>0</td>
-
-<td>Keypad /</td>
-
-<td>98;</td>
-
-</tr>
-
-<tr>
-
-<td>F1</td>
-
-<td>Launch Fn key help</td>
-
-<td>None</td>
-
-</tr>
-
-<tr>
-
-<td>F2</td>
-
-<td>Launch System Properties</td>
-
-<td>None</td>
-
-</tr>
-
-<tr>
-
-<td>F3</td>
-
-<td>Launch Power Options</td>
-
-<td>None</td>
-
-</tr>
-
-<tr>
-
-<td>F4</td>
-
-<td>Sleep Mode</td>
-
-<td>None</td>
-
-</tr>
-
-<tr>
-
-<td>F5</td>
-
-<td>Toggle to external display</td>
-
-<td>225</td>
-
-</tr>
-
-<tr>
-
-<td>F6</td>
-
-<td>Turn off LCD backlight</td>
-
-<td>Works OOB</td>
-
-</tr>
-
-<tr>
-
-<td>F7</td>
-
-<td>Turn touchpad off/on</td>
-
-<td>Works OOB</td>
-
-</tr>
-
-<tr>
-
-<td>F8</td>
-
-<td>Mute/unmute</td>
-
-<td>None</td>
-
-</tr>
-
-<tr>
-
-<td>F11</td>
-
-<td>NumLk</td>
-
-<td>None; works (including LED)</td>
-
-</tr>
-
-<tr>
-
-<td>F12</td>
-
-<td>Scr Lk</td>
-
-<td>None</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>**Fn+ Data**</caption>
+| Fn+ | Action in WinXP | Console Keycode/Effect | X Keycode/Effect |
+| Left Arrow | LCD Brighten | 112; works OOB but also types "?" character | No symbol; works OOB |
+| Down Arrow | Volume Down | 114 | XF86AudioLowerVolume |
+| Right Arrow | LCD Dim | 118; works OOB but also types "?" character | plusminus; works OOB but also types +/- symbol |
+| Pg Up | Home | 102 | Home |
+| Up Arrow | Volume Up | 115 | XF86AudioRaiseVolume |
+| Pg Dn | End | 107 | End |
+| m | Keypad 0 | 82; works with NumLk on | with Fn gives KP_Insert; works with NumLk on |
+| . | Keypad . | 83; works with NumLk on | with Fn gives KP_Delete; works with NumLk on |
+| / | Keypad + | 78; works with NumLk on | works |
+| j | Keypad 1 | 79; works with NumLk on | with Fn gives KP_End; works with NumLk on |
+| k | Keypad 2 | 80; works with NumLk on | with Fn gives KP_Down; works with NumLk on |
+| l | Keypad 3 | 81; works with NumLk on | with Fn gives KP_Next; works with NumLk on |
+|  ; | Keypad - | 74; works with NumLk on | with Fn gives KP_; works with NumLk on |
+| u | Keypad 4 | 75; works with NumLk on | with Fn gives KP_Left; works with NumLk on |
+| l | Keypad 5 | 76; works with NumLk on | with Fn gives KP_Begin; works with NumLk on |
+| o | Keypad 6 | 77; works with NumLk on | with Fn gives KP_Right; works with NumLk on |
+| p | Keypad * | 55; works with NumLk on | works |
+| 7 | Keypad 7 | 71; |
+| 8 | Keypad 8 | 72; |
+| 9 | Keypad 9 | 73; |
+| 0 | Keypad / | 98; |
+| F1 | Launch Fn key help | None |
+| F2 | Launch System Properties | None |
+| F3 | Launch Power Options | None |
+| F4 | Sleep Mode | None |
+| F5 | Toggle to external display | 225 |
+| F6 | Turn off LCD backlight | Works OOB |
+| F7 | Turn touchpad off/on | Works OOB |
+| F8 | Mute/unmute | None |
+| F11 | NumLk | None; works (including LED) |
+| F12 | Scr Lk | None |
 
 As you can see, some of the stuff "Just Works" and some of the stuff (Fn+F1, F2, F3) will never work, since it doesn't produce a keycode of any sort. I used Compiz keybindings deal with the things in the middle and to compensate for the things that won't ever work.
 
-<table class="wikitable"><caption>**Keybindings**</caption>
-
-<tbody>
-
-<tr>
-
-<th>Keys</th>
-
-<th>Action in WinXP</th>
-
-<th>Bound Action</th>
-
-<th>Commandline</th>
-
-</tr>
-
-<tr>
-
-<td>Alt+F1</td>
-
-<td>Launch Fn key help</td>
-
-<td>Launch Xorg man page browser</td>
-
-<td>export MANPATH=/usr/share/man; xman -notopbox</td>
-
-</tr>
-
-<tr>
-
-<td>Alt+F2</td>
-
-<td>Launch System Properties</td>
-
-<td>Launch GTK hardware browser</td>
-
-<td>/usr/bin/gksu /usr/sbin/lshw-gtk</td>
-
-</tr>
-
-<tr>
-
-<td>F3</td>
-
-<td>Launch Power Options</td>
-
-<td>Launch GTK power properties browser</td>
-
-<td>/usr/bin/gnome-power-statistics</td>
-
-</tr>
-
-<tr>
-
-<td>F4</td>
-
-<td>Sleep Mode</td>
-
-<td>Suspend to RAM</td>
-
-<td>/usr/bin/dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend</td>
-
-</tr>
-
-<tr>
-
-<td>F5</td>
-
-<td>Toggle to external display</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>**Keybindings**</caption>
+| Keys | Action in WinXP | Bound Action | Commandline |
+| Alt+F1 | Launch Fn key help | Launch Xorg man page browser | export MANPATH=/usr/share/man; xman -notopbox |
+| Alt+F2 | Launch System Properties | Launch GTK hardware browser | /usr/bin/gksu /usr/sbin/lshw-gtk |
+| F3 | Launch Power Options | Launch GTK power properties browser | /usr/bin/gnome-power-statistics |
+| F4 | Sleep Mode | Suspend to RAM | /usr/bin/dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend |
+| F5 | Toggle to external display |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_One_D250&oldid=377630](https://wiki.archlinux.org/index.php?title=Acer_Aspire_One_D250&oldid=377630)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

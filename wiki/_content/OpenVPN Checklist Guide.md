@@ -1,9 +1,5 @@
 # OpenVPN Checklist Guide
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article summarizes the install process required for OpenVPN. See [OpenVPN](/index.php/OpenVPN "OpenVPN") instead for a walkthrough.
 
 ## Contents
@@ -119,7 +115,3 @@ Optionally, enable for autostart on boot the daemon. (In this example, is `openv
 Read [Daemon](/index.php/Daemon "Daemon") for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_Checklist_Guide&oldid=412147](https://wiki.archlinux.org/index.php?title=OpenVPN_Checklist_Guide&oldid=412147)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

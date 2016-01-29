@@ -1,9 +1,5 @@
 # Cocos2D-X
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports multiple platforms such as iOS, Android, WinXP/7/8, WP8, BlackBerry, MeeGo, Marmelade, WebOS, Mac OS X. This page will focus entirely on properly configuring this package for initial usage. For other documentation, click [here](#See_also).
 
 ## Contents
@@ -75,7 +71,3 @@ $ sdkbox update
 *   [Particle2DX](http://particle2dx.com/) - Cocos2D-X Particle Generator
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cocos2D-X&oldid=413552](https://wiki.archlinux.org/index.php?title=Cocos2D-X&oldid=413552)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

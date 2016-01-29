@@ -1,9 +1,5 @@
 # GNU Parted
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GParted](/index.php/GParted "GParted")
@@ -153,7 +149,7 @@ The following command will be used to create partitions:
 *   `_part-type_` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
 *   `_fs-type_` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#Create filesystems](#Create_filesystems). The _mkpart_ command does not actually create the file system: the `_fs-type_` parameter will simply be used by _parted_ to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
 
-**Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an _ext4_-formatted partition.
+NaN
 
 *   `_start_` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1M` means start at 1MiB.
 *   `_end_` is the end of the partition from the start of the device (_not_ from the `_start_` value). It has the same syntax as `_start_`, for example `100%` means end at the end of the device (use all the remaining space).
@@ -330,8 +326,3 @@ The warning means the partition start is not aligned. Enter "Ignore" to go ahead
 *   [Resize an ext3/ext4 partition](http://positon.org/resize-an-ext3-ext4-partition)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Parted&oldid=412084](https://wiki.archlinux.org/index.php?title=GNU_Parted&oldid=412084)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

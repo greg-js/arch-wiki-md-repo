@@ -1,12 +1,8 @@
 # Redshift
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [redshift project web page](http://jonls.dk/redshift/):
 
-_Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com) [...]._
+NaN
 
 The project is developed on [GitHub](https://github.com/jonls/redshift).
 
@@ -178,9 +174,3 @@ If using Gnome, you can also toggle Location Services to "On" in "Settings -> Pr
 *   [Redshift on github](http://github.com/jonls/redshift)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Redshift&oldid=414968](https://wiki.archlinux.org/index.php?title=Redshift&oldid=414968)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

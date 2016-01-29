@@ -1,9 +1,5 @@
 # Downgrading packages
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
@@ -97,11 +93,3 @@ The [downgrade](https://aur.archlinux.org/packages/downgrade/)<sup><small>AUR</s
 See [Official repositories#Disabling testing repositories](/index.php/Official_repositories#Disabling_testing_repositories "Official repositories").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=416583](https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=416583)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

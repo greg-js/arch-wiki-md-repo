@@ -1,9 +1,5 @@
 # TuxOnIce
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
@@ -217,12 +213,3 @@ For the graphical interface run:
 *   Another good source of information is the [Gentoo wiki](http://en.gentoo-wiki.com/wiki/TuxOnIce)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TuxOnIce&oldid=410443](https://wiki.archlinux.org/index.php?title=TuxOnIce&oldid=410443)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

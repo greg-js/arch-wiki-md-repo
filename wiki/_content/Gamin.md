@@ -1,9 +1,5 @@
 # Gamin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -32,12 +28,3 @@ Now you can install the [gamin](https://www.archlinux.org/packages/?name=gamin) 
 *   [FAM, Gamin and inotify](http://www.noah.org/wiki/FAM,_Gamin,_inotify)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamin&oldid=399042](https://wiki.archlinux.org/index.php?title=Gamin&oldid=399042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

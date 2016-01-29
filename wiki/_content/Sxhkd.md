@@ -1,9 +1,5 @@
 # Sxhkd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
@@ -11,7 +7,7 @@ Related articles
 
 From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
 
-_sxhkd is a simple X hotkey daemon with a powerful and compact configuration syntax._
+NaN
 
 ## Contents
 
@@ -60,8 +56,3 @@ After configuring it, you may wish to setup sxhkd to [autostart](/index.php/Auto
 *   [ArchLinux forum thread](https://bbs.archlinux.org/viewtopic.php?id=155613)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sxhkd&oldid=391821](https://wiki.archlinux.org/index.php?title=Sxhkd&oldid=391821)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-*   [X server](/index.php/Category:X_server "Category:X server")

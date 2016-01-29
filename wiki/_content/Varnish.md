@@ -1,9 +1,5 @@
 # Varnish
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Varnish Cache is a web application accelerator also known as a caching HTTP reverse proxy. You install it in front of any server that speaks HTTP and configure it to cache the contents.
 
 ## Multiple backends
@@ -61,7 +57,3 @@ If the previous VCL configuration reload failed, try loading the VCL file manual
 4.  Start the child proccess (optional): `varnish> start` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Varnish&oldid=388064](https://wiki.archlinux.org/index.php?title=Varnish&oldid=388064)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

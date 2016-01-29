@@ -1,9 +1,5 @@
 # ranger
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
@@ -44,61 +40,13 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
 
 To start ranger, launch a [terminal](/index.php/List_of_applications#Terminal_emulators "List of applications") and run `ranger`.
 
-<table class="wikitable"><caption></caption>
-
-<tbody>
-
-<tr>
-
-<th>Key</th>
-
-<th>Command</th>
-
-</tr>
-
-<tr>
-
-<td>`?`</td>
-
-<td>Open the manual</td>
-
-</tr>
-
-<tr>
-
-<td>`1?`</td>
-
-<td>List keybindings</td>
-
-</tr>
-
-<tr>
-
-<td>`2?`</td>
-
-<td>List commands</td>
-
-</tr>
-
-<tr>
-
-<td>`3?`</td>
-
-<td>List settings</td>
-
-</tr>
-
-<tr>
-
-<td>`l`, `Enter`</td>
-
-<td>Launch files</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption></caption>
+| Key | Command |
+| `?` | Open the manual |
+| `1?` | List keybindings |
+| `2?` | List commands |
+| `3?` | List settings |
+| `l`, `Enter` | Launch files |
 
 ## Configuration
 
@@ -466,11 +414,3 @@ set draw_borders true
 *   [Ranger tutorial](http://bloerg.net/2012/10/17/ranger-file-manager.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ranger&oldid=404195](https://wiki.archlinux.org/index.php?title=Ranger&oldid=404195)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

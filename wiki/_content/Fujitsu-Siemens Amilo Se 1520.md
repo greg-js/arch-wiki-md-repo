@@ -1,9 +1,5 @@
 # Fujitsu-Siemens Amilo Se 1520
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
@@ -92,7 +88,3 @@ Alt+Function key commands work ok, but the special buttons on the left side of t
 *   See my personal page [about](http://wiki.mobbing-gegner.de/AmiloSi1520), feel free a help
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fujitsu-Siemens_Amilo_Se_1520&oldid=345613](https://wiki.archlinux.org/index.php?title=Fujitsu-Siemens_Amilo_Se_1520&oldid=345613)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")

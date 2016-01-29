@@ -1,9 +1,5 @@
 # Guild Wars 2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _Guild Wars 2_ is a game developed by NC Soft. Currently a native client is only available for Windows and Mac systems. It is runnable through wine though.
 
 ## Contents
@@ -84,7 +80,3 @@ The percent of the download resets every time the launcher is started, but the a
 If you have only one file remaining, switch to a language other than english or spanish, let it download that information, and then switch back to English.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Guild_Wars_2&oldid=409890](https://wiki.archlinux.org/index.php?title=Guild_Wars_2&oldid=409890)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

@@ -1,9 +1,5 @@
 # Install from SSH
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article is intended to show users how to install Arch remotely via an [SSH](/index.php/SSH "SSH") connection. Consider this approach over the standard one in scenarios such as the following:
 
 *   HTPC without a proper monitor (e.g. an SDTV);
@@ -43,8 +39,3 @@ $ ssh root@_ip.address.of.target_
 From here one is presented with the live environment's welcome message and is able to administer the target machine as if sitting at the physical keyboard. At this point, if the intent is to simply install Arch from the live media, follow the guide at [Installation guide](/index.php/Installation_guide "Installation guide"). If the intent is to edit an existing Linux install that got broken, follow the [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") wiki article.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_from_SSH&oldid=410450](https://wiki.archlinux.org/index.php?title=Install_from_SSH&oldid=410450)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

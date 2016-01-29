@@ -1,9 +1,5 @@
 # libinput
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -12,9 +8,9 @@ Related articles
 
 From the [libinput](http://wayland.freedesktop.org/libinput/doc/latest/index.html) project:
 
-libinput is a library that handles input devices for display servers and other applications that need to directly deal with input devices.
+NaN
 
-libinput originates from weston, the [Wayland](/index.php/Wayland "Wayland") reference compositor.
+NaN
 
 The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [product documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
 
@@ -109,7 +105,3 @@ Compare the output of [software supported input trackpad driver](http://ix.io/m6
 *   [Peter Hutterer's Blog](http://who-t.blogspot.com.au/) - numerous posts on libinput from one of the project's hackers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Libinput&oldid=409780](https://wiki.archlinux.org/index.php?title=Libinput&oldid=409780)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")

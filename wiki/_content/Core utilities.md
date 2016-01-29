@@ -1,9 +1,5 @@
 # Core utilities
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bash](/index.php/Bash "Bash")
@@ -53,213 +49,27 @@ This article deals with so-called _core_ utilities on a GNU/Linux system, such a
 
 The following table lists basic shell commands every Linux user should be familiar with. Commands in **bold** are part of the shell, others are separate programs called from the shell. See the below sections and _Related articles_ for details.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>Description</th>
-
-<th>Example</th>
-
-</tr>
-
-<tr>
-
-<td>man</td>
-
-<td>Show manual page for a command</td>
-
-<td>man ed</td>
-
-</tr>
-
-<tr>
-
-<td>**cd**</td>
-
-<td>Change directory</td>
-
-<td>cd /etc/pacman.d</td>
-
-</tr>
-
-<tr>
-
-<td>mkdir</td>
-
-<td>Create a directory</td>
-
-<td>mkdir ~/newfolder</td>
-
-</tr>
-
-<tr>
-
-<td>rmdir</td>
-
-<td>Remove empty directory</td>
-
-<td>rmdir ~/emptyfolder</td>
-
-</tr>
-
-<tr>
-
-<td>rm</td>
-
-<td>Remove a file</td>
-
-<td>rm ~/file.txt</td>
-
-</tr>
-
-<tr>
-
-<td>rm -r</td>
-
-<td>Remove directory and contents</td>
-
-<td>rm -r ~/.cache</td>
-
-</tr>
-
-<tr>
-
-<td>ls</td>
-
-<td>List files</td>
-
-<td>ls *.avi</td>
-
-</tr>
-
-<tr>
-
-<td>ls -a</td>
-
-<td>List hidden files</td>
-
-<td>ls -a /home/archie</td>
-
-</tr>
-
-<tr>
-
-<td>ls -al</td>
-
-<td>List hidden files and file properties</td>
-
-</tr>
-
-<tr>
-
-<td>mv</td>
-
-<td>Move a file</td>
-
-<td>mv ~/compressed.zip ~/archive/compressed2.zip</td>
-
-</tr>
-
-<tr>
-
-<td>cp</td>
-
-<td>Copy a file</td>
-
-<td>cp ~/.bashrc ~/.bashrc.bak</td>
-
-</tr>
-
-<tr>
-
-<td>chmod +x</td>
-
-<td>Make a file executable</td>
-
-<td>chmod +x ~/.local/bin/myscript.sh</td>
-
-</tr>
-
-<tr>
-
-<td>cat</td>
-
-<td>Show file contents</td>
-
-<td>cat /etc/hostname</td>
-
-</tr>
-
-<tr>
-
-<td>strings</td>
-
-<td>Show printable characters in binary files</td>
-
-<td>strings /usr/bin/free</td>
-
-</tr>
-
-<tr>
-
-<td>find</td>
-
-<td>Search for a file</td>
-
-<td>find ~ -name myfile</td>
-
-</tr>
-
-<tr>
-
-<td>mount</td>
-
-<td>Mount a partition</td>
-
-<td>mount /dev/sdc1 /media/usb</td>
-
-</tr>
-
-<tr>
-
-<td>df -h</td>
-
-<td>Show remaining space on all partitions</td>
-
-</tr>
-
-<tr>
-
-<td>ps -A</td>
-
-<td>Show all running processes</td>
-
-</tr>
-
-<tr>
-
-<td>killall</td>
-
-<td>Kill all running instances of a process</td>
-
-</tr>
-
-<tr>
-
-<td>ss -at</td>
-
-<td>Display a list of open TCP sockets</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | Description | Example |
+| man | Show manual page for a command | man ed |
+| **cd** | Change directory | cd /etc/pacman.d |
+| mkdir | Create a directory | mkdir ~/newfolder |
+| rmdir | Remove empty directory | rmdir ~/emptyfolder |
+| rm | Remove a file | rm ~/file.txt |
+| rm -r | Remove directory and contents | rm -r ~/.cache |
+| ls | List files | ls *.avi |
+| ls -a | List hidden files | ls -a /home/archie |
+| ls -al | List hidden files and file properties |
+| mv | Move a file | mv ~/compressed.zip ~/archive/compressed2.zip |
+| cp | Copy a file | cp ~/.bashrc ~/.bashrc.bak |
+| chmod +x | Make a file executable | chmod +x ~/.local/bin/myscript.sh |
+| cat | Show file contents | cat /etc/hostname |
+| strings | Show printable characters in binary files | strings /usr/bin/free |
+| find | Search for a file | find ~ -name myfile |
+| mount | Mount a partition | mount /dev/sdc1 /media/usb |
+| df -h | Show remaining space on all partitions |
+| ps -A | Show all running processes |
+| killall | Kill all running instances of a process |
+| ss -at | Display a list of open TCP sockets |
 
 ## cat
 
@@ -278,7 +88,7 @@ EOF
 
 ```
 
-A better alternative is the _echo_ command:
+NaN
 
 ```
 $ echo "\
@@ -311,13 +121,9 @@ By default, _dd_ outputs nothing until the task has finished. To monitor the pro
 
 Other _dd_-like programs feature periodical status output, e.g. a simple progress bar.
 
-dcfldd 
+NaN
 
-[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.<sup>[[1]](http://dcfldd.sourceforge.net/)</sup>
-
-ddrescue 
-
-GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
+NaN
 
 ## grep
 
@@ -420,189 +226,24 @@ See `man sponge` for details.
 
 **Note:** The _ip_ utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Object</th>
-
-<th>Purpose</th>
-
-<th>Manual Page Name</th>
-
-</tr>
-
-<tr>
-
-<td>ip addr</td>
-
-<td>protocol address management</td>
-
-<td>ip-address</td>
-
-</tr>
-
-<tr>
-
-<td>ip addrlabel</td>
-
-<td>protocol address label management</td>
-
-<td>ip-addrlabel</td>
-
-</tr>
-
-<tr>
-
-<td>ip l2tp</td>
-
-<td>tunnel Ethernet over IP (L2TPv3)</td>
-
-<td>ip-l2tp</td>
-
-</tr>
-
-<tr>
-
-<td>ip link</td>
-
-<td>network device configuration</td>
-
-<td>ip-link</td>
-
-</tr>
-
-<tr>
-
-<td>ip maddr</td>
-
-<td>multicast addresses management</td>
-
-<td>ip-maddress</td>
-
-</tr>
-
-<tr>
-
-<td>ip monitor</td>
-
-<td>watch for netlink messages</td>
-
-<td>ip-monitor</td>
-
-</tr>
-
-<tr>
-
-<td>ip mroute</td>
-
-<td>multicast routing cache management</td>
-
-<td>ip-mroute</td>
-
-</tr>
-
-<tr>
-
-<td>ip mrule</td>
-
-<td>rule in multicast routing policy db</td>
-
-</tr>
-
-<tr>
-
-<td>ip neigh</td>
-
-<td>neighbour/ARP tables management</td>
-
-<td>ip-neighbour</td>
-
-</tr>
-
-<tr>
-
-<td>ip netns</td>
-
-<td>process network namespace management</td>
-
-<td>ip-netns</td>
-
-</tr>
-
-<tr>
-
-<td>ip ntable</td>
-
-<td>neighbour table configuration</td>
-
-<td>ip-ntable</td>
-
-</tr>
-
-<tr>
-
-<td>ip route</td>
-
-<td>routing table management</td>
-
-<td>ip-route</td>
-
-</tr>
-
-<tr>
-
-<td>ip rule</td>
-
-<td>routing policy database management</td>
-
-<td>ip-rule</td>
-
-</tr>
-
-<tr>
-
-<td>ip tcp_metrics</td>
-
-<td>management for TCP Metrics</td>
-
-<td>ip-tcp_metrics</td>
-
-</tr>
-
-<tr>
-
-<td>ip tunnel</td>
-
-<td>tunnel configuration</td>
-
-<td>ip-tunnel</td>
-
-</tr>
-
-<tr>
-
-<td>ip tuntap</td>
-
-<td>manage TUN/TAP devices</td>
-
-</tr>
-
-<tr>
-
-<td>ip xfrm</td>
-
-<td>manage IPsec policies</td>
-
-<td>ip-xfrm</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Object | Purpose | Manual Page Name |
+| ip addr | protocol address management | ip-address |
+| ip addrlabel | protocol address label management | ip-addrlabel |
+| ip l2tp | tunnel Ethernet over IP (L2TPv3) | ip-l2tp |
+| ip link | network device configuration | ip-link |
+| ip maddr | multicast addresses management | ip-maddress |
+| ip monitor | watch for netlink messages | ip-monitor |
+| ip mroute | multicast routing cache management | ip-mroute |
+| ip mrule | rule in multicast routing policy db |
+| ip neigh | neighbour/ARP tables management | ip-neighbour |
+| ip netns | process network namespace management | ip-netns |
+| ip ntable | neighbour table configuration | ip-ntable |
+| ip route | routing table management | ip-route |
+| ip rule | routing policy database management | ip-rule |
+| ip tcp_metrics | management for TCP Metrics | ip-tcp_metrics |
+| ip tunnel | tunnel configuration | ip-tunnel |
+| ip tuntap | manage TUN/TAP devices |
+| ip xfrm | manage IPsec policies | ip-xfrm |
 
 The `help` command is available for all objects. For example, typing `ip addr help` will show you the command syntax available for the address object. For advanced usage see the [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
 
@@ -708,15 +349,11 @@ In case that the program does not provide any similar option, it is possible to 
 
 *   **stdoutisatty** — A small program which catches the `isatty` function call.
 
-[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)<sup><small>AUR</small></sup>
-
-Example: `stdoutisatty _program_ | less`
+NaN
 
 *   **unbuffer** — A tclsh script comes with expect, it invokes desired program within a pty.
 
-[http://expect.sourceforge.net/example/unbuffer.man.html](http://expect.sourceforge.net/example/unbuffer.man.html) || [expect](https://www.archlinux.org/packages/?name=expect)
-
-Example: `unbuffer _program_ | less`
+NaN
 
 Alternatively, using [zpty](http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzpty-Module) module from [zsh](/index.php/Zsh "Zsh"): [[2]](http://lilydjwg.is-programmer.com/2011/6/29/using-zpty-module-of-zsh.27677.html)
 
@@ -762,11 +399,11 @@ $ pty _program_ | less
 
 *   Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
 
-`alias ls='ls --color=auto'`
+NaN
 
 The next step will further enhance the colored _ls_ output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
 
-`eval $(dircolors -b)`
+NaN
 
 ## mkdir
 
@@ -774,9 +411,7 @@ The next step will further enhance the colored _ls_ output; for example, broken 
 
 *   To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
 
- `alias mkdir='mkdir -p -v'` 
-
-The `-v` switch make it verbose.
+NaN
 
 *   Changing mode of a just created directory using _chmod_ is not necessary as the `-m` option lets you define the access permissions.
 
@@ -788,9 +423,7 @@ The `-v` switch make it verbose.
 
 *   It can be very dangerous so it is prudent to limit its scope:
 
- `alias mv=' timeout 8 mv -iv'` 
-
-This alias suspends _mv_ after eight seconds, asks confirmation to delete three or more files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
+NaN
 
 ## od
 
@@ -820,11 +453,7 @@ Use of _strace_ shows that `pv` is stopped with `SIGTTOU`.
 
 *   It can be very dangerous, so it is prudent to limit its scope:
 
- `alias rm=' timeout 3 rm -Iv --one-file-system'` 
-
-This alias suspends _rm_ after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
-
-Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
+NaN
 
 *   To remove directories known to be empty, use _rmdir_ as it fails in case of files inside the target.
 
@@ -856,13 +485,3 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)")
 *   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=416598](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=416598)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

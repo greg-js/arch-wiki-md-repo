@@ -1,9 +1,5 @@
 # Packaging Brother printer drivers
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Brother supplies Linux drivers for its printers, however they are not in an easily packaged format. This article explains what adjustments to the contents of the RPM packages supplied by Brother will need to be made to create a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for the printer driver. Additional example PKGBUILDs for Brother printers can be found by searching in the [AUR](/index.php/AUR "AUR").
 
 ## Contents
@@ -80,12 +76,3 @@ This may also need to be added.
 Because some of the supplied binaries are 32 bit only, on an x86_64 system some additional [multilib](/index.php/Multilib "Multilib") packages such as a 32 bit version of glibc ([lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc)) may need to be installed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Packaging_Brother_printer_drivers&oldid=409433](https://wiki.archlinux.org/index.php?title=Packaging_Brother_printer_drivers&oldid=409433)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Printers](/index.php/Category:Printers "Category:Printers")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

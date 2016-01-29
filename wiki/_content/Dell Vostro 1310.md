@@ -1,9 +1,5 @@
 # Dell Vostro 1310
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -93,11 +89,3 @@ Hibernate/Suspend works out of the box with pm-utils however integration with HA
 *   Restart the HAL service or your machine for the change take affect.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_1310&oldid=398905](https://wiki.archlinux.org/index.php?title=Dell_Vostro_1310&oldid=398905)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

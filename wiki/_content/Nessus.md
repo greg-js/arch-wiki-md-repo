@@ -1,9 +1,5 @@
 # Nessus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Nessus](https://en.wikipedia.org/wiki/Nessus_(software) "wikipedia:Nessus (software)") is a proprietary [vulnerability scanner](https://en.wikipedia.org/wiki/Vulnerability_scanner "wikipedia:Vulnerability scanner") available free of charge for personal use. There are [over 40,000 plugins](http://www.tenable.com/plugins/) covering a large range of both local and remote flaws.
 
 ## Contents
@@ -50,8 +46,3 @@ The package can be removed with [pacman](/index.php/Pacman#Removing_packages "Pa
 *   [The multilanguage official documentation](http://www.tenable.com/products/nessus/documentation)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nessus&oldid=407456](https://wiki.archlinux.org/index.php?title=Nessus&oldid=407456)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")

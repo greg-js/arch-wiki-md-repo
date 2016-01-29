@@ -1,10 +1,6 @@
 # Wifi Radar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-[WiFi Radar](http://wifi-radar.tuxfamily.org/) is a nifty little GUI program that lets you switch wireless networks with ease.
+NaN
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
@@ -47,11 +43,3 @@ Run `wifi-radar` from your application menu. If you want to view the available n
 [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") -- The wireless setup wiki page
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=412212](https://wiki.archlinux.org/index.php?title=Wifi_Radar&oldid=412212)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

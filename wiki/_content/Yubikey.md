@@ -1,9 +1,5 @@
 # Yubikey
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Yubikey is a small [USB token](http://en.wikipedia.org/wiki/Security_token) that generates [One-Time Passwords](http://en.wikipedia.org/wiki/One-time_password) (OTP). It is manufactured by [Yubico](http://www.yubico.com/).
 
 One of its strengths is that it emulates a USB keyboard to send the OTP as text, and thus requires only USB HID drivers found on practically all desktop computers.
@@ -227,7 +223,3 @@ These steps will allow you to use the OpenPGP functionality of your YubiKey.
 4.  To verify that your YubiKey is ready to be used run `pcsc_scan` which will provide some informations about the connected device. Further you can use `gpg --card-status` to verify that GPG can interact with the card.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Yubikey&oldid=415250](https://wiki.archlinux.org/index.php?title=Yubikey&oldid=415250)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

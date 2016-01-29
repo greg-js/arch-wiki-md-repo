@@ -1,9 +1,5 @@
 # SCP and SFTP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
@@ -67,8 +63,3 @@ The package comes with a script to create a chroot. To use it:
 *   sftp-server may require some libnss modules such as libnss_files. Copy them to chroot's `/lib` path.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SCP_and_SFTP&oldid=401270](https://wiki.archlinux.org/index.php?title=SCP_and_SFTP&oldid=401270)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")

@@ -1,9 +1,5 @@
 # GUID Partition Table
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -42,53 +38,11 @@ GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified
 
 To understand GPT it is important to understand what MBR is and what its disadvantages are. The MBR partition table stores the partitions info in the first sector of a hard disk as follows:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Location in the HDD</th>
-
-<th>Purpose of the Code</th>
-
-</tr>
-
-<tr>
-
-<td>`001-440 bytes`</td>
-
-<td>MBR boot code that is launched by the BIOS.</td>
-
-</tr>
-
-<tr>
-
-<td>`441-446 bytes`</td>
-
-<td>MBR disk signature.</td>
-
-</tr>
-
-<tr>
-
-<td>`447-510 bytes`</td>
-
-<td>Partition table (of primary and extended partitions, not logical).</td>
-
-</tr>
-
-<tr>
-
-<td>`511-512 bytes`</td>
-
-<td>MBR boot signature 0xAA55.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Location in the HDD | Purpose of the Code |
+| `001-440 bytes` | MBR boot code that is launched by the BIOS. |
+| `441-446 bytes` | MBR disk signature. |
+| `447-510 bytes` | Partition table (of primary and extended partitions, not logical). |
+| `511-512 bytes` | MBR boot signature 0xAA55. |
 
 The entire information about the primary partitions is limited to the 64 bytes allotted. To extend this, extended partitions were used. An extended partition is simply a primary partition in the MBR which acts like a container for other partitions called logical partitions. So one is limited to either 4 primary partitions, or 3 primary and 1 extended partitions with many logical partitions inside it.
 
@@ -103,61 +57,12 @@ The entire information about the primary partitions is limited to the 64 bytes a
 
 GUID Partition Table (GPT) uses GUIDs (or UUIDs in linux world) to define partitions and its types, hence the name. The GPT consists of:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Location in the HDD</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>First logical sector of the disk or First 512 bytes</td>
-
-<td>Protective MBR - Same as a normal MBR but the 64-byte area contains a single 0xEE type Primary partition entry defined over the entire size of the disk or in case of >2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"), upto a partition size of 2 TiB.</td>
-
-</tr>
-
-<tr>
-
-<td>Second logical sector of the disk or Next 512 bytes</td>
-
-<td>Primary GPT Header - Contains the Unique Disk GUID, Location of the Primary Partition Table, Number of possible entries in partition table, CRC32 checksums of itself and the Primary Partition Table, Location of the Secondary (or Backup) GPT Header</td>
-
-</tr>
-
-<tr>
-
-<td>16 KiB (by default) following the second logical sector of the disk</td>
-
-<td>Primary GPT Table - 128 Partition entries (by default, can be higher), each with an entry of size 128 bytes (hence total of 16 KiB for 128 partition entries). Sector numbers are stored as 64-bit LBA and each partition has a Partition Type GUID and a Unique Partition GUID.</td>
-
-</tr>
-
-<tr>
-
-<td>16 KiB (by default) before the last logical sector of the disk</td>
-
-<td>Secondary GPT table - It is byte-for-byte identical to the Primary table. Used mainly for recovery in case the primary partition table is damaged.</td>
-
-</tr>
-
-<tr>
-
-<td>Last logical sector of the disk or Last 512 bytes</td>
-
-<td>Secondary GPT Header - Contains the Unique Disk GUID, Location of the Secondary Partition Table, Number of possible entries in the partition table, CRC32 checksums of itself and the Secondary Partition Table, Location of the Primary GPT Header. This header can be used to recover GPT info in case the primary header is corrupted.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Location in the HDD | Purpose |
+| First logical sector of the disk or First 512 bytes | Protective MBR - Same as a normal MBR but the 64-byte area contains a single 0xEE type Primary partition entry defined over the entire size of the disk or in case of >2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"), upto a partition size of 2 TiB. |
+| Second logical sector of the disk or Next 512 bytes | Primary GPT Header - Contains the Unique Disk GUID, Location of the Primary Partition Table, Number of possible entries in partition table, CRC32 checksums of itself and the Primary Partition Table, Location of the Secondary (or Backup) GPT Header |
+| 16 KiB (by default) following the second logical sector of the disk | Primary GPT Table - 128 Partition entries (by default, can be higher), each with an entry of size 128 bytes (hence total of 16 KiB for 128 partition entries). Sector numbers are stored as 64-bit LBA and each partition has a Partition Type GUID and a Unique Partition GUID. |
+| 16 KiB (by default) before the last logical sector of the disk | Secondary GPT table - It is byte-for-byte identical to the Primary table. Used mainly for recovery in case the primary partition table is damaged. |
+| Last logical sector of the disk or Last 512 bytes | Secondary GPT Header - Contains the Unique Disk GUID, Location of the Secondary Partition Table, Number of possible entries in the partition table, CRC32 checksums of itself and the Secondary Partition Table, Location of the Primary GPT Header. This header can be used to recover GPT info in case the primary header is corrupted. |
 
 ### Advantages of GPT
 
@@ -338,7 +243,3 @@ After sorting the partitions, it might be required to adjust the `/etc/fstab` an
 9.  Fedora developer discussion on [BIOS/GPT configuration](http://mjg59.dreamwidth.org/8035.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GUID_Partition_Table&oldid=388324](https://wiki.archlinux.org/index.php?title=GUID_Partition_Table&oldid=388324)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

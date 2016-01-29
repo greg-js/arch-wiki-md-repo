@@ -1,9 +1,5 @@
 # Music Player Daemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -305,51 +301,51 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 *   **mpc** — Command line user interface for MPD server
 
-[http://www.musicpd.org/clients/mpc/](http://www.musicpd.org/clients/mpc/) || [mpc](https://www.archlinux.org/packages/?name=mpc)
+NaN
 
 *   **ncmpc** — Ncurses client for mpd
 
-[http://www.musicpd.org/clients/ncmpc/](http://www.musicpd.org/clients/ncmpc/) || [ncmpc](https://www.archlinux.org/packages/?name=ncmpc)
+NaN
 
 *   **[ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp")** — Almost exact clone of ncmpc with some new features written in C++ (tag editor, search engine)
 
-[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp)
+NaN
 
 *   **pms** — Highly configurable and accessible ncurses client
 
-[http://pms.sourceforge.net/](http://pms.sourceforge.net/) || [pmus](https://aur.archlinux.org/packages/pmus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pmus)]</sup>
+NaN
 
 *   **vimpc** — Ncurses based MPD client with vi-like key bindings
 
-[http://sourceforge.net/projects/vimpc/](http://sourceforge.net/projects/vimpc/) || [vimpc](https://aur.archlinux.org/packages/vimpc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vimpc)]</sup>
+NaN
 
 ### Graphical
 
 *   **Ario** — Very feature-rich GTK2 GUI client for mpd, inspired by Rhythmbox
 
-[http://ario-player.sourceforge.net/](http://ario-player.sourceforge.net/) || [ario](https://www.archlinux.org/packages/?name=ario)
+NaN
 
 *   **QmpdClient** — GUI client written with Qt 4.x
 
-[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
+NaN
 
 *   **Sonata** — Elegant Python GTK+ client
 
-[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
+NaN
 
 *   **gmpc** — GTK2 frontend for Music Player Daemon. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
-[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
+NaN
 
 *   **Cantata** — High-feature, Qt4, Qt5 or KDE4 client for MPD with very configurable interface
 
-[https://code.google.com/p/cantata/](https://code.google.com/p/cantata/) || [cantata](https://www.archlinux.org/packages/?name=cantata)
+NaN
 
 ### Web
 
 *   **Patchfork** — Web client for MPD written in PHP and Ajax
 
-[http://mpd.wikia.com/wiki/Client:Pitchfork](http://mpd.wikia.com/wiki/Client:Pitchfork) || [patchfork-git](https://aur.archlinux.org/packages/patchfork-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/patchfork-git)]</sup>.
+NaN
 
 ## See also
 
@@ -358,12 +354,3 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=417054](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=417054)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,14 +1,10 @@
 # Apache OpenOffice
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** Official support for [OpenOffice.org](/index.php/OpenOffice.org "OpenOffice.org") was dropped in favor of [LibreOffice](/index.php/LibreOffice "LibreOffice"), the "Document Foundation" fork of the project, which also includes enhancements and additional features. See [Dropping Oracle OpenOffice (arch-general)](https://mailman.archlinux.org/pipermail/arch-general/2011-March/018819.html).
 
 From [Why Apache OpenOffice](http://why.openoffice.org/):
 
-_Apache OpenOffice is the leading open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more. It is available in many languages and works on all common computers. It stores all your data in an international open standard format and can also read and write files from other common office software packages. It can be downloaded and used completely free of charge for any purpose._
+NaN
 
 ## Contents
 
@@ -274,11 +270,3 @@ export MOZILLA_CERTIFICATE_FOLDER=$HOME/.mozilla/firefox/XXXXXX.default/
 See more about [certificate detection](http://wiki.openoffice.org/wiki/Certificate_Detection).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_OpenOffice&oldid=400951](https://wiki.archlinux.org/index.php?title=Apache_OpenOffice&oldid=400951)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

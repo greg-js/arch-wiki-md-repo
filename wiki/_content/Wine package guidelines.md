@@ -1,9 +1,5 @@
 # Wine package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -231,12 +227,3 @@ export WINEDLLOVERRIDES="mscoree,mshtml="
 You can also disable them via `winecfg`: just set mscoree/mshtml to Disable.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine_package_guidelines&oldid=392823](https://wiki.archlinux.org/index.php?title=Wine_package_guidelines&oldid=392823)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

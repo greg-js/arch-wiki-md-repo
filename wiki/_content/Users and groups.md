@@ -1,9 +1,5 @@
 # Users and groups
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
@@ -47,13 +43,13 @@ Users may be grouped together into a "group", and users may be added to an exist
 
 From [In UNIX Everything is a File](http://ph7spot.com/musings/in-unix-everything-is-a-file):
 
-_The UNIX operating system crystallizes a couple of unifying ideas and concepts that shaped its design, user interface, culture and evolution. One of the most important of these is probably the mantra: "everything is a file," widely regarded as one of the defining points of UNIX._
+NaN
 
-_This key design principle consists of providing a unified paradigm for accessing a wide range of input/output resources: documents, directories, hard-drives, CD-ROMs, modems, keyboards, printers, monitors, terminals and even some inter-process and network communications. The trick is to provide a common abstraction for all of these resources, each of which the UNIX fathers called a "file." Since every "file" is exposed through the same API, you can use the same set of basic commands to read/write to a disk, keyboard, document or network device._
+NaN
 
 From [Extending UNIX File Abstraction for General-Purpose Networking](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
 
-_A fundamental and very powerful, consistent abstraction provided in UNIX and compatible operating systems is the file abstraction. Many OS services and device interfaces are implemented to provide a file or file system metaphor to applications. This enables new uses for, and greatly increases the power of, existing applications — simple tools designed with specific uses in mind can, with UNIX file abstractions, be used in novel ways. A simple tool, such as cat, designed to read one or more files and output the contents to standard output, can be used to read from I/O devices through special device files, typically found under the `/dev` directory. On many systems, audio recording and playback can be done simply with the commands, "`cat /dev/audio > myfile`" and "`cat myfile > /dev/audio`," respectively._
+NaN
 
 Every file on a GNU/Linux system is owned by a user and a group. In addition, there are three types of access permissions: read, write, and execute. Different access permissions can be applied to a file's owning user, owning group, and others (those without ownership). One can determine a file's owners and permissions by viewing the long listing format of the [ls](/index.php/Core_utilities#ls "Core utilities") command:
 
@@ -113,69 +109,13 @@ See [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.
 
 **Warning:** Do not edit these files by hand. There are utilities that properly handle locking and avoid invalidating the format of the database. See [#User management](#User_management) and [#Group management](#Group_management) for an overview.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>File</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>`/etc/shadow`</td>
-
-<td>Secure user account information</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/passwd`</td>
-
-<td>User account information</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/gshadow`</td>
-
-<td>Contains the shadowed information for group accounts</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/group`</td>
-
-<td>Defines the groups to which users belong</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/sudoers`</td>
-
-<td>List of who can run what by sudo</td>
-
-</tr>
-
-<tr>
-
-<td>`/home/*`</td>
-
-<td>Home directories</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| File | Purpose |
+| `/etc/shadow` | Secure user account information |
+| `/etc/passwd` | User account information |
+| `/etc/gshadow` | Contains the shadowed information for group accounts |
+| `/etc/group` | Defines the groups to which users belong |
+| `/etc/sudoers` | List of who can run what by sudo |
+| `/home/*` | Home directories |
 
 ## User management
 
@@ -466,225 +406,34 @@ If the user is currently logged in, he/she must log out and in again for the cha
 
 Workstation/desktop users often add their non-root user to some of following groups to allow access to peripherals and other hardware and facilitate system administration:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Group</th>
-
-<th>Affected files</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>games</td>
-
-<td>`/var/games`</td>
-
-<td>Access to some game software.</td>
-
-</tr>
-
-<tr>
-
-<td>rfkill</td>
-
-<td>`/dev/rfkill`</td>
-
-<td>Right to control wireless devices power state (used by [rfkill](https://www.archlinux.org/packages/?name=rfkill)).</td>
-
-</tr>
-
-<tr>
-
-<td>users</td>
-
-<td>Standard users group.</td>
-
-</tr>
-
-<tr>
-
-<td>uucp</td>
-
-<td>`/dev/ttyS[0-9]`, `/dev/tts/[0-9]`, `/dev/ttyACM[0-9]`</td>
-
-<td>Serial and USB devices such as modems, handhelds, RS-232/serial ports.</td>
-
-</tr>
-
-<tr>
-
-<td>wheel</td>
-
-<td>Administration group, commonly used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It can also be used to gain full read access to [journal](/index.php/Systemd#Journal "Systemd") files.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Group | Affected files | Purpose |
+| games | `/var/games` | Access to some game software. |
+| rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| users | Standard users group. |
+| uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]`, `/dev/ttyACM[0-9]` | Serial and USB devices such as modems, handhelds, RS-232/serial ports. |
+| wheel | Administration group, commonly used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It can also be used to gain full read access to [journal](/index.php/Systemd#Journal "Systemd") files. |
 
 ### System groups
 
 The following groups are used for system purposes and are not likely to be used by novice Arch users:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Group</th>
-
-<th>Affected files</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>bin</td>
-
-<td>none</td>
-
-<td>Historical</td>
-
-</tr>
-
-<tr>
-
-<td>daemon</td>
-
-</tr>
-
-<tr>
-
-<td>dbus</td>
-
-<td>used internally by [dbus](https://www.archlinux.org/packages/?name=dbus)</td>
-
-</tr>
-
-<tr>
-
-<td>ftp</td>
-
-<td>`/srv/ftp`</td>
-
-<td>used by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers like [Proftpd](/index.php/Proftpd "Proftpd")</td>
-
-</tr>
-
-<tr>
-
-<td>fuse</td>
-
-<td>Used by fuse to allow user mounts.</td>
-
-</tr>
-
-<tr>
-
-<td>http</td>
-
-</tr>
-
-<tr>
-
-<td>kmem</td>
-
-<td>`/dev/port`, `/dev/mem`, `/dev/kmem`</td>
-
-</tr>
-
-<tr>
-
-<td>mail</td>
-
-<td>`/usr/bin/mail`</td>
-
-</tr>
-
-<tr>
-
-<td>mem</td>
-
-</tr>
-
-<tr>
-
-<td>nobody</td>
-
-<td>Unprivileged group.</td>
-
-</tr>
-
-<tr>
-
-<td>polkitd</td>
-
-<td>[polkit](/index.php/Polkit "Polkit") group.</td>
-
-</tr>
-
-<tr>
-
-<td>proc</td>
-
-<td>`/proc/_pid_/`</td>
-
-<td>A group authorized to learn processes information otherwise prohibited by `hidepid=` mount option of the [proc filesystem](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). The group must be explicitly set with the `gid=` mount option.</td>
-
-</tr>
-
-<tr>
-
-<td>root</td>
-
-<td>`/*`</td>
-
-<td>Complete system administration and control (root, admin).</td>
-
-</tr>
-
-<tr>
-
-<td>smmsp</td>
-
-<td>[sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") group.</td>
-
-</tr>
-
-<tr>
-
-<td>systemd-journal</td>
-
-<td>`/var/log/journal/*`</td>
-
-<td>Provides access to the complete systemd logs. Otherwise, only user generated messages are displayed.</td>
-
-</tr>
-
-<tr>
-
-<td>tty</td>
-
-<td>`/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx`</td>
-
-<td>Eg. to acces `/dev/ACMx`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Group | Affected files | Purpose |
+| bin | none | Historical |
+| daemon |
+| dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |
+| ftp | `/srv/ftp` | used by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers like [Proftpd](/index.php/Proftpd "Proftpd") |
+| fuse | Used by fuse to allow user mounts. |
+| http |
+| kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
+| mail | `/usr/bin/mail` |
+| mem |
+| nobody | Unprivileged group. |
+| polkitd | [polkit](/index.php/Polkit "Polkit") group. |
+| proc | `/proc/_pid_/` | A group authorized to learn processes information otherwise prohibited by `hidepid=` mount option of the [proc filesystem](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). The group must be explicitly set with the `gid=` mount option. |
+| root | `/*` | Complete system administration and control (root, admin). |
+| smmsp | [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") group. |
+| systemd-journal | `/var/log/journal/*` | Provides access to the complete systemd logs. Otherwise, only user generated messages are displayed. |
+| tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` | Eg. to acces `/dev/ACMx` |
 
 ### Software groups
 
@@ -692,215 +441,32 @@ These groups are used by certain non-essential software. Sometimes they are used
 
 **Note:** Do **not** create the groups manually, they will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. [FS#42182](https://bugs.archlinux.org/task/42182)
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Group</th>
-
-<th>Affected files</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>adbusers</td>
-
-<td>devices nodes under `/dev/`</td>
-
-<td>Right to access [Android](/index.php/Android "Android") Debugging Bridge.</td>
-
-</tr>
-
-<tr>
-
-<td>avahi</td>
-
-</tr>
-
-<tr>
-
-<td>bumblebee</td>
-
-<td>`/run/bumblebee.socket`</td>
-
-<td>Right to launch applications with Bumblebee to utilize NVIDIA Optimus GPUs.</td>
-
-</tr>
-
-<tr>
-
-<td>cdemu</td>
-
-<td>`/dev/vhba_ctl`</td>
-
-<td>Right to use [CDemu](/index.php/CDemu "CDemu") drive emulation.</td>
-
-</tr>
-
-<tr>
-
-<td>clamav</td>
-
-<td>`/var/lib/clamav/*`, `/var/log/clamav/*`</td>
-
-<td>Used by [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus").</td>
-
-</tr>
-
-<tr>
-
-<td>gdm</td>
-
-<td>X server authorization directory (ServAuthDir)</td>
-
-<td>[GDM](/index.php/GDM "GDM") group.</td>
-
-</tr>
-
-<tr>
-
-<td>locate</td>
-
-<td>`/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate`</td>
-
-<td>Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command.</td>
-
-</tr>
-
-<tr>
-
-<td>mpd</td>
-
-<td>`/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, optionally music directories</td>
-
-<td>[MPD](/index.php/MPD "MPD") group.</td>
-
-</tr>
-
-<tr>
-
-<td>networkmanager</td>
-
-<td>Requirement for your user to connect wirelessly with [NetworkManager](/index.php/NetworkManager "NetworkManager"). This group is not included with Arch by default so it must be added manually.</td>
-
-</tr>
-
-<tr>
-
-<td>ntp</td>
-
-<td>`/var/lib/ntp/*`</td>
-
-<td>[NTPd](/index.php/NTPd "NTPd") group.</td>
-
-</tr>
-
-<tr>
-
-<td>thinkpad</td>
-
-<td>`/dev/misc/nvram`</td>
-
-<td>Used by ThinkPad users for access to tools such as [tpb](/index.php/Tpb "Tpb").</td>
-
-</tr>
-
-<tr>
-
-<td>vboxsf</td>
-
-<td>virtual machines' shared folders</td>
-
-<td>Used by [VirtualBox](/index.php/VirtualBox "VirtualBox").</td>
-
-</tr>
-
-<tr>
-
-<td>vboxusers</td>
-
-<td>`/dev/vboxdrv`</td>
-
-<td>Right to use VirtualBox software.</td>
-
-</tr>
-
-<tr>
-
-<td>vmware</td>
-
-<td>Right to use [VMware](/index.php/VMware "VMware") software.</td>
-
-</tr>
-
-<tr>
-
-<td>wireshark</td>
-
-<td>Right to capture packets with [Wireshark](/index.php/Wireshark "Wireshark").</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Group | Affected files | Purpose |
+| adbusers | devices nodes under `/dev/` | Right to access [Android](/index.php/Android "Android") Debugging Bridge. |
+| avahi |
+| bumblebee | `/run/bumblebee.socket` | Right to launch applications with Bumblebee to utilize NVIDIA Optimus GPUs. |
+| cdemu | `/dev/vhba_ctl` | Right to use [CDemu](/index.php/CDemu "CDemu") drive emulation. |
+| clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | Used by [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus"). |
+| gdm | X server authorization directory (ServAuthDir) | [GDM](/index.php/GDM "GDM") group. |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command. |
+| mpd | `/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, optionally music directories | [MPD](/index.php/MPD "MPD") group. |
+| networkmanager | Requirement for your user to connect wirelessly with [NetworkManager](/index.php/NetworkManager "NetworkManager"). This group is not included with Arch by default so it must be added manually. |
+| ntp | `/var/lib/ntp/*` | [NTPd](/index.php/NTPd "NTPd") group. |
+| thinkpad | `/dev/misc/nvram` | Used by ThinkPad users for access to tools such as [tpb](/index.php/Tpb "Tpb"). |
+| vboxsf | virtual machines' shared folders | Used by [VirtualBox](/index.php/VirtualBox "VirtualBox"). |
+| vboxusers | `/dev/vboxdrv` | Right to use VirtualBox software. |
+| vmware | Right to use [VMware](/index.php/VMware "VMware") software. |
+| wireshark | Right to capture packets with [Wireshark](/index.php/Wireshark "Wireshark"). |
 
 ### Deprecated or unused groups
 
 Following groups are currently of no use for anyone:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Group</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>log</td>
-
-<td>Access to log files in `/var/log/` created by [syslog-ng](/index.php/Syslog-ng "Syslog-ng").</td>
-
-</tr>
-
-<tr>
-
-<td>ssh</td>
-
-<td><s>[Sshd](/index.php/Sshd "Sshd") can be configured to only allow members of this group to login.</s> This is true for any arbitrary group; the `ssh` group is not created by default, hence non-standard.</td>
-
-</tr>
-
-<tr>
-
-<td>stb-admin</td>
-
-<td>**Unused!** Right to access [system-tools-backends](http://system-tools-backends.freedesktop.org/)</td>
-
-</tr>
-
-<tr>
-
-<td>kvm</td>
-
-<td>Adding a user to the `kvm` group used to be required to allow non-root users to access virtual machines using [KVM](/index.php/KVM "KVM"). This has been deprecated in favor of using [udev](/index.php/Udev "Udev") rules, and this is done automatically.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Group | Purpose |
+| log | Access to log files in `/var/log/` created by [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
+| ssh | ~~[Sshd](/index.php/Sshd "Sshd") can be configured to only allow members of this group to login.~~ This is true for any arbitrary group; the `ssh` group is not created by default, hence non-standard. |
+| stb-admin | **Unused!** Right to access [system-tools-backends](http://system-tools-backends.freedesktop.org/) |
+| kvm | Adding a user to the `kvm` group used to be required to allow non-root users to access virtual machines using [KVM](/index.php/KVM "KVM"). This has been deprecated in favor of using [udev](/index.php/Udev "Udev") rules, and this is done automatically. |
 
 #### Pre-systemd groups
 
@@ -914,141 +480,18 @@ Following groups are currently of no use for anyone:
 
 These groups used to be needed before arch migrated to [systemd](/index.php/Systemd "Systemd"). That is no longer the case, as long as the _logind_ session is not broken (see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") to check it). The groups can even cause some functionality to break. See [SysVinit#Migration to systemd](/index.php/SysVinit#Migration_to_systemd "SysVinit") for details.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Group</th>
-
-<th>Affected files</th>
-
-<th>Purpose</th>
-
-</tr>
-
-<tr>
-
-<td>audio</td>
-
-<td>`/dev/audio`, `/dev/snd/*`, `/dev/rtc0`</td>
-
-<td>Direct access to sound hardware, for all sessions (requirement is imposed by both [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS")). Local sessions already have the ability to play sound and access mixer controls.</td>
-
-</tr>
-
-<tr>
-
-<td>camera</td>
-
-<td>Access to [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras").</td>
-
-</tr>
-
-<tr>
-
-<td>disk</td>
-
-<td>`/dev/sda[1-9]`, `/dev/sdb[1-9]`</td>
-
-<td>Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`.</td>
-
-</tr>
-
-<tr>
-
-<td>floppy</td>
-
-<td>`/dev/fd[0-9]`</td>
-
-<td>Access to floppy drives.</td>
-
-</tr>
-
-<tr>
-
-<td>lp</td>
-
-<td>`/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups`, `/dev/parport[0-9]`</td>
-
-<td>Access to printer hardware; enables the user to manage print jobs.</td>
-
-</tr>
-
-<tr>
-
-<td>network</td>
-
-<td>Right to change network settings such as when using [NetworkManager](/index.php/NetworkManager "NetworkManager").</td>
-
-</tr>
-
-<tr>
-
-<td>optical</td>
-
-<td>`/dev/sr[0-9]`, `/dev/sg[0-9]`</td>
-
-<td>Access to optical devices such as CD and DVD drives.</td>
-
-</tr>
-
-<tr>
-
-<td>power</td>
-
-<td>Right to use [Pm-utils](/index.php/Pm-utils "Pm-utils") (suspend, hibernate...) and power management controls.</td>
-
-</tr>
-
-<tr>
-
-<td>scanner</td>
-
-<td>`/var/lock/sane`</td>
-
-<td>Access to scanner hardware.</td>
-
-</tr>
-
-<tr>
-
-<td>storage</td>
-
-<td>Access to removable drives such as USB hard drives, flash/jump drives, MP3 players; enables the user to mount storage devices.</td>
-
-</tr>
-
-<tr>
-
-<td>sys</td>
-
-<td>Right to administer printers in [CUPS](/index.php/CUPS "CUPS").</td>
-
-</tr>
-
-<tr>
-
-<td>video</td>
-
-<td>`/dev/fb/0`, `/dev/misc/agpgart`</td>
-
-<td>Access to video capture devices, 2D/3D hardware acceleration, framebuffer ([X](/index.php/X "X") can be used _without_ belonging to this group). Local sessions already have the ability to use hardware acceleration and video capture.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Group | Affected files | Purpose |
+| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions (requirement is imposed by both [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS")). Local sessions already have the ability to play sound and access mixer controls. |
+| camera | Access to [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras"). |
+| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
+| floppy | `/dev/fd[0-9]` | Access to floppy drives. |
+| lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups`, `/dev/parport[0-9]` | Access to printer hardware; enables the user to manage print jobs. |
+| network | Right to change network settings such as when using [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
+| optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Access to optical devices such as CD and DVD drives. |
+| power | Right to use [Pm-utils](/index.php/Pm-utils "Pm-utils") (suspend, hibernate...) and power management controls. |
+| scanner | `/var/lock/sane` | Access to scanner hardware. |
+| storage | Access to removable drives such as USB hard drives, flash/jump drives, MP3 players; enables the user to mount storage devices. |
+| sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
+| video | `/dev/fb/0`, `/dev/misc/agpgart` | Access to video capture devices, 2D/3D hardware acceleration, framebuffer ([X](/index.php/X "X") can be used _without_ belonging to this group). Local sessions already have the ability to use hardware acceleration and video capture. |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=417525](https://wiki.archlinux.org/index.php?title=Users_and_groups&oldid=417525)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

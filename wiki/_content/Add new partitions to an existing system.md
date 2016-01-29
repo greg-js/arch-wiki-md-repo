@@ -1,9 +1,5 @@
 # Add new partitions to an existing system
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Partitioning](/index.php/Partitioning "Partitioning")
@@ -135,7 +131,3 @@ Finally make the new changes permanent by adding the new mount configuration to 
 If you have disabled any running processes, restart or enable them, check the files on your new partitions to insure all is well and check the logs for any permission errors. Then reboot and make sure it all works as expected.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Add_new_partitions_to_an_existing_system&oldid=400638](https://wiki.archlinux.org/index.php?title=Add_new_partitions_to_an_existing_system&oldid=400638)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,9 +1,5 @@
 # pkgfile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [pacman](/index.php/Pacman "Pacman")
@@ -86,8 +82,3 @@ Since [version 2.2](https://github.com/fish-shell/fish-shell/releases/tag/2.2.0)
 By default, pkgfile will be updated daily. To change this schedule, [edit the unit file](/index.php/Systemd#Editing_provided_units "Systemd").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=412007](https://wiki.archlinux.org/index.php?title=Pkgfile&oldid=412007)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

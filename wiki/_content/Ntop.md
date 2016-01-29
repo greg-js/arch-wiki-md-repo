@@ -1,9 +1,5 @@
 # Ntop
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Ntop](http://www.ntop.org/products/ntop/) is a network traffic probe based on [libcap](http://www.tcpdump.org/), that offers RMON-like network traffic statistics accessible via a web browser.
 
 ## Contents
@@ -95,7 +91,3 @@ NTOP_ARGS="-i enp1s0 -w 127.0.0.1:3000"
 This is the IP you will use to access the web interface.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ntop&oldid=409446](https://wiki.archlinux.org/index.php?title=Ntop&oldid=409446)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

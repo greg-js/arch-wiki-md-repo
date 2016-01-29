@@ -1,9 +1,5 @@
 # MAC address spoofing
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article gives several methods to spoof a Media Access Control (MAC) address.
 
 ## Contents
@@ -247,8 +243,3 @@ If you cannot connect to a DHCPv4 network and you are using dhcpcd, which is the
 *   [Article on DebianAdmin](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) with more _macchanger_ options
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MAC_address_spoofing&oldid=402597](https://wiki.archlinux.org/index.php?title=MAC_address_spoofing&oldid=402597)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")

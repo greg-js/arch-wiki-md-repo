@@ -1,9 +1,5 @@
 # Fortune
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -141,12 +137,3 @@ $ fortune -c | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fortune&oldid=406652](https://wiki.archlinux.org/index.php?title=Fortune&oldid=406652)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

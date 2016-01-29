@@ -1,9 +1,5 @@
 # Arch compared to other distributions
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
@@ -34,6 +30,7 @@ This page attempts to draw a comparison between Arch Linux and other popular GNU
     *   [4.1 FreeBSD](#FreeBSD)
     *   [4.2 NetBSD](#NetBSD)
     *   [4.3 OpenBSD](#OpenBSD)
+    *   [4.4 OS X](#OS_X)
 *   [5 See also](#See_also)
 
 ## Source-based
@@ -230,12 +227,22 @@ The OpenBSD project produces a free, multi-platform 4.4BSD-based UNIX-like opera
 
 *   In contrast to a GNU/Linux system like Arch, but in common with most other BSD-based operating systems, the OpenBSD kernel and userland programs, such as the shell and common tools (like _ls_, _cp_, _cat_ and _ps_), are developed together in a single source repository.
 
+### OS X
+
+Apple's OS X is UNIX-based, and its similarities with Arch end there.
+
+*   Arch is a distribution of Linux, but OS X is based from Unix TSS (Which derives all code from the original BSD) and FreeBSD.
+
+*   OS X is "Baby-proofed", and assumes that all users are not technically competent. All folders in the root directory, except for /Applications (For "Applications", which are bundles of binaries and related files), /Library (For Shared OS X Libraries), /System (For System Library Files), and /Users (Equivalent to Arch's /home), are hidden by default, and /usr is write-only, even as the root user. It also stores all binaries and files related to programs that it expects users to run in /Applications, removing the need for novice users to access /bin.
+
+*   OS X does not come with a command-line package manager. Apple expects users to install packages from the "Mac App Store", and by default, doesn't let any third-party programs from other sources run. For extra command-line utilities, it is recommended to install another package manager, such as [Homebrew](http://brew.sh/).
+
+*   "Aqua", a desktop environment and theme build for Mac OS X, is pre-installed with OS X, and not removable.
+
+*   Arch is freely distributable. OS X has a license which restricts the user in many ways (Explaination [here](http://robb.weblaws.org/2015/10/17/os-x-el-capitan-license-in-plain-english/)).
+
 ## See also
 
 *   [DistroWatch](http://distrowatch.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=405701](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=405701)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=417741](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=417741)"

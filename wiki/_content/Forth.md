@@ -1,9 +1,5 @@
 # Forth
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -23,11 +19,3 @@ Forth has been a recognized programming language since the 1970's. ColorForth is
 _Starting Forth_ is a good book to learn forth by Leo Brodie: [http://home.iae.nl/users/mhx/sf.html](http://home.iae.nl/users/mhx/sf.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Forth&oldid=388110](https://wiki.archlinux.org/index.php?title=Forth&oldid=388110)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

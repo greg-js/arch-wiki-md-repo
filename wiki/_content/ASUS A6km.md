@@ -1,9 +1,5 @@
 # ASUS A6km
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes troubleshooting and configuration specific to the **Asus A6km** laptop.
 
 On this model, a known buggy BIOS problem results in a system hang when any USB device, such as a mouse, is attached at bootup. This can be fixed using a downgraded BIOS version (can be downloaded [here](http://people.bath.ac.uk/enxspd/laptop/Opensuse103_Laptop.html)). The installation described uses this 202 BIOS version and so far no problems have been encountered, even the power management modules behave properly.
@@ -170,11 +166,3 @@ For cpu scaling, see [CPU frequency scaling](/index.php/CPU_frequency_scaling "C
 For suspend-to-ram, follow the instructions in the [Suspend to RAM](/index.php/Suspend_to_RAM "Suspend to RAM") page.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_A6km&oldid=380065](https://wiki.archlinux.org/index.php?title=ASUS_A6km&oldid=380065)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

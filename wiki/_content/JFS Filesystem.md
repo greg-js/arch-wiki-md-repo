@@ -1,9 +1,5 @@
 # JFS Filesystem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -63,9 +59,7 @@ JFS is a modern file system supporting many features, a few of which are listed 
 *   dynamic space allocation for i-nodes, i.e. no running out of i-nodes on file systems with large number of small files.
 *   Directory structures designed for speed and efficiency:
 
-- directories with eight or fewer entries have their contents storied inline within that directory's i-node.
-
-- directories with more than eight entries have their contents stored in a [B+ tree](https://en.wikipedia.org/wiki/B%2B_tree "wikipedia:B+ tree") keyed on name.
+NaN
 
 *   JFS utilizes extents for allocating blocks for large files.
 *   Support for extended attributes in addition to standard Unix-style permissions.
@@ -331,7 +325,3 @@ JFS is a stable, feature-rich file system that hasn't been publicized as much as
 *   Some [filesystem benchmarks](http://fsbench.netnation.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JFS_Filesystem&oldid=410225](https://wiki.archlinux.org/index.php?title=JFS_Filesystem&oldid=410225)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

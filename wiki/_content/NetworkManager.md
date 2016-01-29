@@ -1,9 +1,5 @@
 # NetworkManager
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -245,7 +241,7 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-All users in the `network` group will be able to add and remove networks without a password. This will not work under [systemd](/index.php/Systemd "Systemd") if you do not have an active session with _systemd-logind_.
+NaN
 
 ### Network services with NetworkManager dispatcher
 
@@ -318,7 +314,7 @@ fi
 
 In this example we want to connect automatically to a previously defined VPN connection after connecting to a specific Wi-Fi network. First thing to do is to create the dispatcher script that defines what to do after we are connected to the network.
 
-1\. Create the dispatcher script:
+NaN
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
 
@@ -349,7 +345,7 @@ If you would like to attempt to automatically connect to VPN for all Wi-Fi netwo
 
 If you require and tick the `nm-applet` option to _Make the VPN connection available to all users_, trying to connect may still fail and NetworkManager will complain about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), which brings us to step 2:
 
-2\. Either edit the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/_name of your VPN connection_` and change the `password-flags` and `secret-flags` from `1` to `0`.
+NaN
 
 Alternatively put the password directly in the configuration file adding the section `vpn-secrets`:
 
@@ -739,7 +735,7 @@ Log out and log back in to complete.
 
 ```
 
-Next time you log in, you should be asked if you want the password to be unlocked automatically on login.
+NaN
 
 #### SLiM login manager
 
@@ -787,12 +783,3 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414909](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414909)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

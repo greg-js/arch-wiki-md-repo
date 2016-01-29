@@ -1,12 +1,8 @@
 # Bottle
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Bottle: Python Web Framework](http://bottlepy.org/docs/dev/):
 
-_Bottle is a fast, simple and lightweight WSGI micro web-framework for Python. It is distributed as a single file module and has no dependencies other than the Python Standard Library._
+NaN
 
 ## Contents
 
@@ -23,19 +19,19 @@ _Bottle is a fast, simple and lightweight WSGI micro web-framework for Python. I
 
 *   Routing:
 
-Requests to function-call mapping with support for clean and dynamic URLs.
+NaN
 
 *   Templates:
 
-Fast and pythonic built-in template engine and support for mako, jinja2 and cheetah templates.
+NaN
 
 *   Utilities:
 
-Convenient access to form data, file uploads, cookies, headers and other HTTP related metadata.
+NaN
 
 *   Server:
 
-Built-in HTTP development server and support for paste, fapws3, bjoern, Google App Engine, cherrypy or any other WSGI capable HTTP server.
+NaN
 
 ## Installing Bottle
 
@@ -149,7 +145,3 @@ def index(name='World'):
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bottle&oldid=388015](https://wiki.archlinux.org/index.php?title=Bottle&oldid=388015)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

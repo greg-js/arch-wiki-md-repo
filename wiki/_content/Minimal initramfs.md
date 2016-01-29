@@ -1,9 +1,5 @@
 # Minimal initramfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
@@ -145,7 +141,3 @@ Now that you have a known-good bootable initramfs, it's time to slim down the in
 Once you've slimmed your initramfs as far as it will go, remove (or comment-out) the `normal_*` lines from your `.preset` files and remove the `initramfs-linux*-normal.img` files from `/boot`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Minimal_initramfs&oldid=382385](https://wiki.archlinux.org/index.php?title=Minimal_initramfs&oldid=382385)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

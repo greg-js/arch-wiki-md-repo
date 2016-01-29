@@ -1,9 +1,5 @@
 # WMFS2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -19,7 +15,7 @@ Related articles
 
 From the [project home page](http://wmfs.info/):
 
-_WMFS<sup>2</sup> is a lightweight and highly configurable tiling window manager for X written in C. WMFS<sup>2</sup> is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable._
+NaN
 
 ## Contents
 
@@ -268,11 +264,3 @@ Dmenu customization options can be used just as easily; just add them to the str
 This is the section of the statusbar dedicated to displaying various system data, such as available hard drive space, CPU frequency, or information about the currently playing song in [mpd](https://www.archlinux.org/packages/?name=mpd). The text is fed into the bar from external scripts via the **wmfs -c status** command. The information can be displayed as plain or colored text, colored boxes, progressbars, positionbars, graphs, icons and pop-up tooltips. This can be accomplished using either individual bash scripts written to suit the user's needs, or by piping [conky](https://www.archlinux.org/packages/?name=conky) data directly into the statusbar.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WMFS2&oldid=399138](https://wiki.archlinux.org/index.php?title=WMFS2&oldid=399138)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

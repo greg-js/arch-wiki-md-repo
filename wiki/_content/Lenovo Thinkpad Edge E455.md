@@ -1,9 +1,5 @@
 # Lenovo Thinkpad Edge E455
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -12,103 +8,15 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Lenovo Thinkpad Edge E455#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Thinkpad_Edge_E455))
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>AMD</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-video-ati</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtl8723be</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>linux-uvc</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_pci</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>bluez</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| AMD | Working | xf86-video-ati |
+| Ethernet | Working | r8169 |
+| Wireless | Working | rtl8723be |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | xf86-input-synaptics |
+| Camera | Working | linux-uvc |
+| Card Reader | Working | rtsx_pci |
+| Bluetooth | Working | bluez |
 
 ## Contents
 
@@ -131,117 +39,19 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Tip:** Below are the tested configurations at the time.
 
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Feature</th>
-
-<th>Configuration</th>
-
-</tr>
-
-<tr>
-
-<td>System</td>
-
-<td>E455 20DE-CTO1WW</td>
-
-</tr>
-
-<tr>
-
-<td>CPU</td>
-
-<td>AMD(R) A10-7300 Radeon R6(R) CPU @ 1.9GHz</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td>AMD Radeon R6 (Integrated Card) + AMD Radeon R7 M260DX (Discrete Card)</td>
-
-</tr>
-
-<tr>
-
-<td>Ram</td>
-
-<td>4GB</td>
-
-</tr>
-
-<tr>
-
-<td>Disk</td>
-
-<td>500GB</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>14" WHD</td>
-
-</tr>
-
-<tr>
-
-<td>Wi-Fi</td>
-
-<td>Realtek RTL8723BE PCIe Wireless Network Adapter</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td>Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 10)</td>
-
-</tr>
-
-<tr>
-
-<td>Backlit Keyboard</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint Scanner</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Cam</td>
-
-<td>Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | Configuration |
+| System | E455 20DE-CTO1WW |
+| CPU | AMD(R) A10-7300 Radeon R6(R) CPU @ 1.9GHz |
+| Graphics | AMD Radeon R6 (Integrated Card) + AMD Radeon R7 M260DX (Discrete Card) |
+| Ram | 4GB |
+| Disk | 500GB |
+| Display | 14" WHD |
+| Wi-Fi | Realtek RTL8723BE PCIe Wireless Network Adapter |
+| Ethernet | Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 10) |
+| Backlit Keyboard | No |
+| Fingerprint Scanner | No |
+| Bluetooth | Yes |
+| Cam | Yes |
 
 ## System Configuration
 
@@ -302,11 +112,3 @@ Reload the "psmouse" kernel module when functionality ceases. Eventually it will
 In order to fix these problems, use the libinput driver instead of synaptics.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_Edge_E455&oldid=401532](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_Edge_E455&oldid=401532)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

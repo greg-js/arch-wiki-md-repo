@@ -1,9 +1,5 @@
 # Lenovo Ideapad S10-3
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 System Specification](#System_Specification)
@@ -208,11 +204,3 @@ esac
 **Note:** With Kernel 3.10.10-1 the function keys, including Wifi, touchpad, volume, and brightness, work out of the box
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S10-3&oldid=412539](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_S10-3&oldid=412539)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

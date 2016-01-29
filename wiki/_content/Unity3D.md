@@ -1,12 +1,8 @@
 # Unity3D
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Unity - Game engine, tools and multiplatform](https://unity3d.com/unity):
 
-_Unity is a flexible and powerful development platform for creating multiplatform 3D and 2D games and interactive experiences. It's a complete ecosystem for anyone who aims to build a business on creating high-end content and connecting to their most loyal and enthusiastic players and customers._
+NaN
 
 Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 
@@ -94,11 +90,3 @@ Users have [reported](http://forum.unity3d.com/threads/unity-on-arch-manjaro-lin
 See how to generate the xdg files here: [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Unity3D&oldid=414012](https://wiki.archlinux.org/index.php?title=Unity3D&oldid=414012)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

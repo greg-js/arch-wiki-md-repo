@@ -1,9 +1,5 @@
 # Velox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Velox](https://github.com/michaelforney/velox) is a dynamic tiling window manager for wayland. Is is currently under development.
 
 ## Installation
@@ -25,11 +21,3 @@ If you are using the [velox](https://aur.archlinux.org/packages/velox/)<sup><sma
 If you are using [velox-git](https://aur.archlinux.org/packages/velox-git/)<sup><small>AUR</small></sup>, you will have to install the package [libinput](https://www.archlinux.org/packages/?name=libinput) from the extras reposiroty as well as [swc-git](https://aur.archlinux.org/packages/swc-git/)<sup><small>AUR</small></sup> from the AUR since the velox-git AUR package is out of date. When these packages are installed, you simply execute _swc-launch velox_ from your terminal.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Velox&oldid=392781](https://wiki.archlinux.org/index.php?title=Velox&oldid=392781)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Dell Vostro 1000
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -19,87 +15,14 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ## Hardware
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Ati Radeon Xpress</td>
-
-<td style="color:green">**Working**</td>
-
-<td>fglrx (cataylst), radeon</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>b44</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>[broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, b43, ndiswrapper</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Modem</td>
-
-<td style="color:orange">**Untested**</td>
-
-</tr>
-
-<tr>
-
-<td>PCMCIA Slot</td>
-
-<td style="color:orange">**Untested**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Ati Radeon Xpress | **Working** | fglrx (cataylst), radeon |
+| Ethernet | **Working** | b44 |
+| Wireless | **Working** | [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, b43, ndiswrapper |
+| Audio | **Working** | snd_hda_intel |
+| Modem | **Untested** |
+| PCMCIA Slot | **Untested** |
+| Card Reader | **Working** |
 
 ## Problems
 
@@ -172,7 +95,7 @@ You may need a workaround because the backlight does not come back after Resumin
 
 Install [Pm-utils](/index.php/Pm-utils "Pm-utils"), and create this file:
 
-**/etc/pm/sleep.d/radeonlight**
+NaN
 
 ```
 #!/bin/bash
@@ -207,11 +130,3 @@ Now to make it work you need [radeontool](https://www.archlinux.org/packages/?na
 And **DONE**, you can suspend and resume with pm-utils normally.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_1000&oldid=398902](https://wiki.archlinux.org/index.php?title=Dell_Vostro_1000&oldid=398902)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

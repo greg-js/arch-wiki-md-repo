@@ -1,9 +1,5 @@
 # Ventrilo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Ventrilo](http://www.ventrilo.com/) is a voice communication program for Windows that runs quite well on the latest [Wine](/index.php/Wine "Wine"). This article outlines a few workarounds necessary to using Ventrilo naturally on Linux.
 
 **Note:** Running Ventrilo under Wine is no longer necessary; [Mangler](http://www.mangler.org/) is a stable open-source client in the community repository ([mangler](https://www.archlinux.org/packages/?name=mangler)) that connects to Ventrilo 3.0 servers.
@@ -162,12 +158,3 @@ Should none of this work and problems still persist, switching to pulseaudio mig
 *   [Ubuntu Forums Source](http://ubuntuforums.org/showpost.php?p=2662867&postcount=83)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ventrilo&oldid=392782](https://wiki.archlinux.org/index.php?title=Ventrilo&oldid=392782)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

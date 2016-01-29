@@ -1,9 +1,5 @@
 # pyLoad
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [pyLoad](http://pyload.org/) is a fast, lightweight and full featured download manager for many One-Click-Hoster, container formats like DLC, video sites or just plain http/ftp links ([supported hosts](http://pyload.org/hoster)). It aims for low hardware requirements and platform independence to be runnable on all kind of systems (desktop pc, netbook, NAS, router). Despite its strict restriction it is packed full of features just like webinterface, captcha recognition, unrar and much more.
 
 pyLoad is divided into core and clients, to make it easily remote accessible. Currently there are ([screenshots](http://pyload.org/screenshots)):
@@ -181,11 +177,3 @@ To have it started automatically on boot, enable _pyload_ service.
 [FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/)<sup><small>AUR</small></sup> (Java).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PyLoad&oldid=412161](https://wiki.archlinux.org/index.php?title=PyLoad&oldid=412161)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Lenovo IdeaPad Yoga 13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -24,45 +20,10 @@ Models covered: Lenovo IdeaPad Yoga 13
 
 Sub-models options :
 
-<table class="wikitable sortable collapsible" style="text-align: left;">
-
-<tbody>
-
-<tr>
-
-<th>Diffefenses</th>
-
-<th>Value</th>
-
-</tr>
-
-<tr>
-
-<td>CPU</td>
-
-<td>Intel i3, i5, i7</td>
-
-</tr>
-
-<tr>
-
-<td>RAM</td>
-
-<td>4GB, 8GB</td>
-
-</tr>
-
-<tr>
-
-<td>SSD</td>
-
-<td>128 GB, 256 GB</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Diffefenses | Value |
+| CPU | Intel i3, i5, i7 |
+| RAM | 4GB, 8GB |
+| SSD | 128 GB, 256 GB |
 
 ## Contents
 
@@ -80,109 +41,18 @@ Sub-models options :
 
 ## Overall Status
 
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Feature</th>
-
-<th>Status</th>
-
-</tr>
-
-<tr>
-
-<td>Boot Standard Kernel</td>
-
-<td>OK</td>
-
-</tr>
-
-<tr>
-
-<td>Detect SSD</td>
-
-<td>OK</td>
-
-</tr>
-
-<tr>
-
-<td>CPU Frequency Scaling</td>
-
-<td>not tested</td>
-
-</tr>
-
-<tr>
-
-<td>Hibernation</td>
-
-<td>not tested</td>
-
-</tr>
-
-<tr>
-
-<td>Sleep / Suspend</td>
-
-<td>OK</td>
-
-</tr>
-
-<tr>
-
-<td>Switch to External Screen</td>
-
-<td>OK</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless/Bluetooth</td>
-
-<td>with troubles</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless/Wifi</td>
-
-<td>with troubles</td>
-
-</tr>
-
-<tr>
-
-<td>Keyboard's Hotkeys</td>
-
-<td>not all</td>
-
-</tr>
-
-<tr>
-
-<td>Touch screen</td>
-
-<td>works, but multitouch is a problem</td>
-
-</tr>
-
-<tr>
-
-<td>Card reader</td>
-
-<td>OK</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | Status |
+| Boot Standard Kernel | OK |
+| Detect SSD | OK |
+| CPU Frequency Scaling | not tested |
+| Hibernation | not tested |
+| Sleep / Suspend | OK |
+| Switch to External Screen | OK |
+| Wireless/Bluetooth | with troubles |
+| Wireless/Wifi | with troubles |
+| Keyboard's Hotkeys | not all |
+| Touch screen | works, but multitouch is a problem |
+| Card reader | OK |
 
 ## Display
 
@@ -265,13 +135,3 @@ Internal Wi-Fi driver (r8723au) is working with a huge troubles with current ker
 *   [Lenovo IdeaPad Yoga 13](https://en.wikipedia.org/wiki/Lenovo_IdeaPad_Yoga_13 "wikipedia:Lenovo IdeaPad Yoga 13")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=415083](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_Yoga_13&oldid=415083)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # XFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -147,7 +143,3 @@ or shortly (`finobt` depends `crc`)
 *   [XFS Wikipedia Entry](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XFS&oldid=412601](https://wiki.archlinux.org/index.php?title=XFS&oldid=412601)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

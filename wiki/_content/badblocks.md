@@ -1,9 +1,5 @@
 # badblocks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 badblocks is a program to test storage devices for bad blocks.
 
 In case of a HDD the whole sector should get retired. A sector is a subdivision of a track on a storage device and sectors that have become bad cannot be used because they have become permanently damaged (a bad sector can have adverse effects ranging from changing a letter in a text file to causing a binary program to have a segmentation fault).
@@ -75,31 +71,11 @@ Pass completed, 0 bad blocks found. (0/0/0 errors)
 
 Options:
 
--w
-
-do a destructive write test
-
--s
-
-show progress-bar
-
--v
-
-be "verbose" and output bad sectors detected to stdout
+NaN
 
 Additional options you might consider:
 
--p <number>
-
-run through the extensive four pass test <number> of sequent iterations
-
--o </path/to/output-file>
-
-print bad sectors to <output-file> instead of stdout
-
--t <test_pattern> 
-
-Specify a pattern. See below.
+NaN
 
 #### define specific test pattern
 
@@ -250,12 +226,3 @@ feed this to _badblocks_:
 *   [My hard disk has bad sectors or is developing bad sectors over time](http://www.pcguide.com/ts/x/comp/hdd/errorsBadSectors-c.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Badblocks&oldid=383991](https://wiki.archlinux.org/index.php?title=Badblocks&oldid=383991)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # Sony Vaio VGN NR320FH
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -21,7 +17,7 @@ options snd-hda-intel model=sony-assamd
 
 Also here's my alsa-info.sh output: [link[[1]](http://www.alsa-project.org/db/?f=87a0375da784b69f99081b708f4b1cc1c02479d7)]
 
-Needs some work
+NaN
 
 *   FN Keys (Volume)
     *   **Solution:** Use xev to map the keyodes. Then load them:
@@ -61,11 +57,3 @@ KeymapNotify event, serial 34, synthetic NO, window 0x0,
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VGN_NR320FH&oldid=349256](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VGN_NR320FH&oldid=349256)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

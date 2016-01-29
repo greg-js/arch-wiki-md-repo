@@ -1,9 +1,5 @@
 # Surfraw
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [surfraw](http://surfraw.alioth.debian.org/) provides a fast UNIX command line interface to a variety of popular WWW search engines. Surfraw was originally created by Julian Assange.
 
 ## Installation
@@ -67,8 +63,3 @@ sr archwiki _article_name_
 For a full list of web site search scripts see: [List of Elvi](http://surfraw.alioth.debian.org/#elvilist)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414983](https://wiki.archlinux.org/index.php?title=Surfraw&oldid=414983)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Search](/index.php/Category:Search "Category:Search")

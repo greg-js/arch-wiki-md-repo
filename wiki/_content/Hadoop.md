@@ -1,9 +1,5 @@
 # Hadoop
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Apache spark](/index.php/Apache_spark "Apache spark")
@@ -28,73 +24,11 @@ Install the [hadoop](https://aur.archlinux.org/packages/hadoop/)<sup><small>AUR<
 
 By default, hadoop is already configured for pseudo-distributed operation. Some environment variables are set in `/etc/profile.d/hadoop.sh` with different values than traditional hadoop.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th scope="col">ENV</th>
-
-<th scope="col">Value</th>
-
-<th scope="col">Description</th>
-
-<th scope="col">Permission</th>
-
-</tr>
-
-<tr>
-
-<td align="center">HADOOP_CONF_DIR</td>
-
-<td align="left">`/etc/hadoop`</td>
-
-<td align="center">`Where configuration files are stored.`</td>
-
-<td align="left">Read</td>
-
-</tr>
-
-<tr>
-
-<td align="center">HADOOP_LOG_DIR</td>
-
-<td align="left">`/tmp/hadoop/log`</td>
-
-<td align="center">`Where log files are stored.`</td>
-
-<td align="left">Read and Write</td>
-
-</tr>
-
-<tr>
-
-<td align="center">HADOOP_SLAVES</td>
-
-<td align="left">`/etc/hadoop/slaves`</td>
-
-<td align="center">`File naming remote slave hosts.`</td>
-
-<td align="left">Read</td>
-
-</tr>
-
-<tr>
-
-<td align="center">HADOOP_PID_DIR</td>
-
-<td align="left">`/tmp/hadoop/run`</td>
-
-<td align="center">`Where pid files are stored.`</td>
-
-<td align="left">Read and Write</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| ENV | Value | Description | Permission |
+| HADOOP_CONF_DIR | `/etc/hadoop` | `Where configuration files are stored.` | Read |
+| HADOOP_LOG_DIR | `/tmp/hadoop/log` | `Where log files are stored.` | Read and Write |
+| HADOOP_SLAVES | `/etc/hadoop/slaves` | `File naming remote slave hosts.` | Read |
+| HADOOP_PID_DIR | `/tmp/hadoop/run` | `Where pid files are stored.` | Read and Write |
 
 You also should set up the following files correctly.
 
@@ -232,7 +166,3 @@ When you're done, stop the daemons with:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hadoop&oldid=415430](https://wiki.archlinux.org/index.php?title=Hadoop&oldid=415430)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing")

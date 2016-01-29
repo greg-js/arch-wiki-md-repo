@@ -1,22 +1,14 @@
 # Stumpwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 StumpWM is a tiling, keyboard driven X11 window manager written entirely in Common Lisp.
 
 The successor to the cult classic [Ratpoison](/index.php/Ratpoison "Ratpoison"), StumpWM adds all the flexibility and hackability of Common Lisp, allowing the user to make modifications to the source of the window manager even while it is running. It is also known as "the emacs of WMs."
 
 From [StumpWM's homepage](https://stumpwm.github.io/):
 
-"StumpWM attempts to be customizable yet visually minimal. There are no window decorations, no icons, and no buttons. It does have various hooks to attach your personal customizations, and variables to tweak.
+NaN
 
-*   Hack the good hack
-*   Debug your good hack
-*   Customize your window manager
-
-While it's running That's right. With a 100% Common Lisp window manager there's no stopping the hacks. Just re-eval and GO!"
+NaN
 
 Want to see it in action? A StumpWM user created a [video](http://www.archive.org/details/TheStumpWMExperience).
 
@@ -88,11 +80,3 @@ If you are an emacs user, you will find an emacs minor mode for editing StumpWM 
 in the REPL, it can be solved by deleting `~/.Xauthority`. See [this issue on github](https://github.com/sabetts/stumpwm/issues/1)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=413346](https://wiki.archlinux.org/index.php?title=Stumpwm&oldid=413346)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

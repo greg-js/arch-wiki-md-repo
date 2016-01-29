@@ -1,9 +1,5 @@
 # Dell Inspiron 15 3541
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
@@ -121,11 +117,3 @@ power management: ts ttp tm 100mhzsteps hwpstate [12] [13]
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_15_3541&oldid=416925](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_15_3541&oldid=416925)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")

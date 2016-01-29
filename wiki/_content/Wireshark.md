@@ -1,9 +1,5 @@
 # Wireshark
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Wireshark is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education. Originally named Ethereal, in May 2006 the project was renamed Wireshark due to trademark issues.
 
 ## Contents
@@ -82,8 +78,3 @@ If you want to see all the current UDP packets, type `udp` into the "Filter" bar
 *   If you would like to see all the incoming and outgoing traffic for a specific address, enter `ip.addr == 1.2.3.4`, replacing `1.2.3.4` with the relevant IP address.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireshark&oldid=416216](https://wiki.archlinux.org/index.php?title=Wireshark&oldid=416216)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

@@ -1,9 +1,5 @@
 # Time
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time (DST) if applicable. This article explains what they are and how to read/set them.
 
 ## Contents
@@ -284,13 +280,3 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Time&oldid=414907](https://wiki.archlinux.org/index.php?title=Time&oldid=414907)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS")
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

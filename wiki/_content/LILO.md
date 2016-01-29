@@ -1,9 +1,5 @@
 # LILO
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -130,7 +126,3 @@ It is possible that running the `lilo` command after a kernel upgrade results in
 *   [List of kernel paramaters with further explanation and grouped by like options ('Kernel Boot Command-Line Parameter Reference', _Linux Kernel In A Nutshell_)](http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LILO&oldid=397497](https://wiki.archlinux.org/index.php?title=LILO&oldid=397497)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")

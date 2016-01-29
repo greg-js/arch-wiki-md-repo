@@ -1,9 +1,5 @@
 # quvi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -38,11 +34,3 @@ This can be configured as a default behavior by creating
 *   [Quvi homepage](http://quvi.sourceforge.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Quvi&oldid=389771](https://wiki.archlinux.org/index.php?title=Quvi&oldid=389771)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # PB BU45
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Arch Linux in the Packard Bell BU45](#Arch_Linux_in_the_Packard_Bell_BU45)
@@ -286,7 +282,3 @@ If you want, you can hibernate and resume your system with the help of the kerne
 I found this solution in a forum and do not know why it wasn't working or why it works now. Some help would be welcomed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PB_BU45&oldid=256749](https://wiki.archlinux.org/index.php?title=PB_BU45&oldid=256749)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")

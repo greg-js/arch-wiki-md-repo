@@ -1,12 +1,8 @@
 # lrzip
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [web page](http://ck.kolivas.org/apps/lrzip/):
 
-[Long Range ZIP](http://lrzip.kolivas.org/) (or Lzma RZIP) is a compression program optimised for large files. The larger the file and the more memory you have, the better the compression advantage this will provide, especially once the files are larger than 100MB. The advantage can be chosen to be either size (much smaller than bzip2) or speed (much faster than bzip2).
+NaN
 
 ## Contents
 
@@ -106,7 +102,3 @@ See the [README](http://ck.kolivas.org/apps/lrzip/README) included with the sour
 On [https://github.com/ckolivas/lrzip](https://github.com/ckolivas/lrzip)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lrzip&oldid=412124](https://wiki.archlinux.org/index.php?title=Lrzip&oldid=412124)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")

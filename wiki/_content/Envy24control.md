@@ -1,9 +1,5 @@
 # Envy24control
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -183,53 +179,10 @@ The codec sample rate can be locked to a specific rate by selecting _Locked_. Wh
 
 ##### Settings combinations and their behaviors
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th align="center">Locked</th>
-
-<th>Reset</th>
-
-<th>Behavior</th>
-
-</tr>
-
-<tr>
-
-<td align="center">-</td>
-
-<td align="center">X</td>
-
-<td>Software applications can set codec sample rate; card returns to selected rate when not in use (default and recommended)</td>
-
-</tr>
-
-<tr>
-
-<td align="center">-</td>
-
-<td align="center">-</td>
-
-<td>Software applications can set codec sample rate; card leaves rate at last rate specified when not in use</td>
-
-</tr>
-
-<tr>
-
-<td align="center">X</td>
-
-<td align="center">-</td>
-
-<td>Codec sample rate is locked to selected rate; applications may not specify other rates (beware XRUNS!)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Locked | Reset | Behavior |
+| - | X | Software applications can set codec sample rate; card returns to selected rate when not in use (default and recommended) |
+| - | - | Software applications can set codec sample rate; card leaves rate at last rate specified when not in use |
+| X | - | Codec sample rate is locked to selected rate; applications may not specify other rates (beware XRUNS!) |
 
 #### Actual Rate
 
@@ -360,12 +313,3 @@ envy24control is loosely based on the UI and functionality provided by the Windo
 *   [Delta Audiophile 2496](http://www.m-audio.com/images/global/manuals/Audiophile2496_Manual.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Envy24control&oldid=417066](https://wiki.archlinux.org/index.php?title=Envy24control&oldid=417066)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

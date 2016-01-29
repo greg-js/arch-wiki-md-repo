@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X1 Carbon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)")
@@ -328,11 +324,3 @@ This works:
 *   Video (follow [DisplayLink](/index.php/DisplayLink "DisplayLink") guide)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon&oldid=415507](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X1_Carbon&oldid=415507)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

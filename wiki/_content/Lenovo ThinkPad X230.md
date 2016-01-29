@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X230
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [fprint](/index.php/Fprint "Fprint")
@@ -202,7 +198,3 @@ STOP_CHARGE_THRESH_BAT0=100
 *   [A Hacker's Ongoing Review for Lenovo ThinkPad X230](https://gist.github.com/bassu/8478346)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X230&oldid=412581](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X230&oldid=412581)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

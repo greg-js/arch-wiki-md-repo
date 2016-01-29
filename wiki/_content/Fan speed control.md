@@ -1,9 +1,5 @@
 # Fan speed control
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
@@ -152,7 +148,3 @@ To make _fancontrol_ start automatically on every boot, [enable](/index.php/Enab
 For the `i8kmon` service to be capable of controlling the fan, the `auto` config option needs to be set to `1` in `/etc/i8kutils/i8kmon.conf`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fan_speed_control&oldid=395904](https://wiki.archlinux.org/index.php?title=Fan_speed_control&oldid=395904)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [CPU](/index.php/Category:CPU "Category:CPU")

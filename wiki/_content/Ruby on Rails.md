@@ -1,9 +1,5 @@
 # Ruby on Rails
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Ruby on Rails](http://rubyonrails.org/), often shortened to Rails or RoR, is an open source web application framework for the Ruby programming language. It is intended to be used with an Agile development methodology that is used by web developers for rapid development.
 
 This document describes how to set up the Ruby on Rails Framework on an Arch Linux system.
@@ -870,7 +866,3 @@ and to access both CMSs through _refinery.domain.com_ and _browser.domain.com_.
 *   Mongrel [http://mongrel.rubyforge.org](http://mongrel.rubyforge.org).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby_on_Rails&oldid=398965](https://wiki.archlinux.org/index.php?title=Ruby_on_Rails&oldid=398965)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

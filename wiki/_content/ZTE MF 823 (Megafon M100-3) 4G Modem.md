@@ -1,9 +1,5 @@
 # ZTE MF 823 (Megafon M100-3) 4G Modem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Device Identification](#Device_Identification)
@@ -168,11 +164,3 @@ Now the device should act as a ethernet interface no matter which system you plu
 [Gsmforum.ru - ZTE MF823 thread (in Russian), check #7 thread for unlock instructions](http://www.gsmforum.ru/threads/188925-ZTE-MF823-%D0%B8-%D0%B2%D1%81%D1%91-%D1%87%D1%82%D0%BE-%D1%81-%D0%BD%D0%B8%D0%BC-%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BE)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ZTE_MF_823_(Megafon_M100-3)_4G_Modem&oldid=402195](https://wiki.archlinux.org/index.php?title=ZTE_MF_823_(Megafon_M100-3)_4G_Modem&oldid=402195)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

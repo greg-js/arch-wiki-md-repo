@@ -1,9 +1,5 @@
 # Bash
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bash/Functions](/index.php/Bash/Functions "Bash/Functions")
@@ -59,85 +55,12 @@ Bash is considered an **interactive shell** when its standard input and error ar
 
 See [6.2 Bash Startup Files](http://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files) and [DotFiles](http://mywiki.wooledge.org/DotFiles) for a complete description.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>File</th>
-
-<th>Description</th>
-
-<th>Login shells <sup>(see note)</sup></th>
-
-<th>Interactive, _non-login_ shells</th>
-
-</tr>
-
-<tr>
-
-<td>`/etc/profile`</td>
-
-<td>[Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`.</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
-
-</tr>
-
-<tr>
-
-<td>`~/.bash_profile`</td>
-
-<td>Per-user, after `/etc/profile`. If this file does not exist, `~/.bash_login` and `~/.profile` are checked in that order. The skeleton file `/etc/skel/.bash_profile` also sources `~/.bashrc`.</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
-
-</tr>
-
-<tr>
-
-<td>`~/.bash_logout`</td>
-
-<td>After exit of a login shell.</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/bash.bashrc`</td>
-
-<td>Depends on the `-DSYS_BASHRC="/etc/bash.bashrc"` compilation flag. Sources `/usr/share/bash-completion/bash_completion`.</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>`~/.bashrc`</td>
-
-<td>Per-user, after `/etc/bash.bashrc`.</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| File | Description | Login shells <sup>(see note)</sup> | Interactive, _non-login_ shells |
+| `/etc/profile` | [Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`. | Yes | No |
+| `~/.bash_profile` | Per-user, after `/etc/profile`. If this file does not exist, `~/.bash_login` and `~/.profile` are checked in that order. The skeleton file `/etc/skel/.bash_profile` also sources `~/.bashrc`. | Yes | No |
+| `~/.bash_logout` | After exit of a login shell. | Yes | No |
+| `/etc/bash.bashrc` | Depends on the `-DSYS_BASHRC="/etc/bash.bashrc"` compilation flag. Sources `/usr/share/bash-completion/bash_completion`. | No | Yes |
+| `~/.bashrc` | Per-user, after `/etc/bash.bashrc`. | No | Yes |
 
 **Note:**
 
@@ -488,12 +411,3 @@ For example:
 *   [How to change the title of an xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=413121](https://wiki.archlinux.org/index.php?title=Bash&oldid=413121)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # MythTV Walkthrough
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -744,11 +740,3 @@ taskset -c 0 mythtv-setup
 and it should ... hopefully ... work. I understand this is a known bug connected with QT reentrancy and is being fixed in MythTV 0.21
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MythTV_Walkthrough&oldid=389809](https://wiki.archlinux.org/index.php?title=MythTV_Walkthrough&oldid=389809)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

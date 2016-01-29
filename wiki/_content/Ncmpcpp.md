@@ -1,9 +1,5 @@
 # Ncmpcpp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [mpd](/index.php/Mpd "Mpd")
@@ -148,7 +144,3 @@ A listing of key bindings and their respective functions is available from withi
 [dotshare.it configurations](http://dotshare.it/category/mpd/ncmpcpp/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=412135](https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=412135)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

@@ -1,9 +1,5 @@
 # Silent boot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is for those who prefer to limit the verbosity of their system to a strict minimum, either for aesthetics or other reasons. Following this guide will remove all text from the bootup process. [Video demonstration](http://www.youtube.com/watch?v=tuqhsqrhXk0)
 
 ## Contents
@@ -99,7 +95,3 @@ TimeoutSec=0
 See [this](http://www.freedesktop.org/software/systemd/man/systemd-fsck@.service.html) for more info on the options you can pass to `systemd-fsck` - you can change how often the service will check (or not) your filesystems.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Silent_boot&oldid=409135](https://wiki.archlinux.org/index.php?title=Silent_boot&oldid=409135)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

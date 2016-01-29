@@ -1,16 +1,12 @@
 # NFS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [NFS/Troubleshooting](/index.php/NFS/Troubleshooting "NFS/Troubleshooting")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"):
 
-_Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed._
+NaN
 
 ## Contents
 
@@ -256,17 +252,11 @@ servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=1
 
 Some additional mount options to consider are include:
 
-rsize and wsize
+NaN
 
-The `rsize` value is the number of bytes used when reading from the server. The `wsize` value is the number of bytes used when writing to the server. The default for both is 1024, but using higher values such as 8192 can improve throughput. This is not universal. It is recommended to test after making this change, see [#Performance tuning](#Performance_tuning).
+NaN
 
-timeo
-
-The `timeo` value is the amount of time, in tenths of a second, to wait before resending a transmission after an RPC timeout. After the first timeout, the timeout value is doubled for each retry for a maximum of 60 seconds or until a major timeout occurs. If connecting to a slow server or over a busy network, better performance can be achieved by increasing this timeout value.
-
-_netdev
-
-The `_netdev` option tells the system to wait until the network is up before trying to mount the share. systemd assumes this for NFS, but anyway it is good practice to use it for all types of networked file systems
+NaN
 
 **Note:** Setting the sixth field (fs_passno) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 
@@ -280,7 +270,7 @@ One might have to reboot the client to make systemd aware of the changes to fsta
 
 **Tip:**
 
-*   The `noauto` mount option will not mount the NFS share until it is accessed: use `auto` for it to be available immediately.  
+*   The `noauto` mount option will not mount the NFS share until it is accessed: use `auto` for it to be available immediately.
     If experiencing any issues with the mount failing due to the network not being up/available, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`. It will ensure that `network.target` has all the links available prior to being active.
 *   The `users` mount option would allow user mounts, but be aware it implies further options as `noexec` for example.
 *   The `x-systemd.idle-timeout=1min` option will unmount the NFS share automatically after 1 minute of non-use. Good for laptops which might suddenly disconnect from the network.
@@ -538,8 +528,3 @@ There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshootin
 *   [NFS on Snow Leopard](https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NFS&oldid=413209](https://wiki.archlinux.org/index.php?title=NFS&oldid=413209)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

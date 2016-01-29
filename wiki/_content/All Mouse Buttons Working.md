@@ -1,9 +1,5 @@
 # All Mouse Buttons Working
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -723,7 +719,7 @@ Sample `~/.imwheelrc` to enable back/forward thumb buttons for all applications 
 ```
 "^chromium$"
 None, Up, Button4, 3
-None, Down, Button5, 3  
+None, Down, Button5, 3
 
 ".*"
 None, Thumb1, Alt_L|Left
@@ -786,13 +782,3 @@ For similar setup, specially for Logitech MX, see:
 *   [http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu](http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=412405](https://wiki.archlinux.org/index.php?title=All_Mouse_Buttons_Working&oldid=412405)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

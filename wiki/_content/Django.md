@@ -1,9 +1,5 @@
 # Django
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Django](http://www.djangoproject.com) is a high-level [Python](/index.php/Python "Python") Web framework which follows the model–view–template (MVT) architectural pattern.
 
 ## Installation
@@ -27,7 +23,3 @@ This will create a _mysite_ directory in your current directory. It will also cr
 More information you will find in the [official Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/) and [Django documentation](https://docs.djangoproject.com/en/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Django&oldid=376036](https://wiki.archlinux.org/index.php?title=Django&oldid=376036)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

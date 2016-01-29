@@ -1,9 +1,5 @@
 # Shairport Sync
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Shairport Sync is an AirPlay audio player — it plays audio streamed from iTunes, iOS devices and third-party AirPlay sources such as ForkedDaapd and others. Audio played by a Shairport Sync-powered device stays synchronised with the source and hence with similar devices playing the same source. In this way, synchronised multi-room audio is possible without difficulty. (Hence the name Shairport Sync, BTW.)
 
 Shairport Sync does not support AirPlay video or photo streaming.
@@ -23,7 +19,3 @@ The configuration file can be found at `/etc/shairport-sync.conf`. It contains u
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shairport-sync.service` using systemd.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Shairport_Sync&oldid=413849](https://wiki.archlinux.org/index.php?title=Shairport_Sync&oldid=413849)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")

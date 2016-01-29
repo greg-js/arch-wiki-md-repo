@@ -1,9 +1,5 @@
 # NZBGet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [NZBGet](http://www.nzbget.net/) is an Usenet-client written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
 
 ## Contents
@@ -104,7 +100,3 @@ This may happen when the user edited the NZBGet configuration by the Web-interfa
 *   [Performance Tips](http://nzbget.net/Performance_tips)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413832](https://wiki.archlinux.org/index.php?title=NZBGet&oldid=413832)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

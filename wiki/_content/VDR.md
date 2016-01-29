@@ -1,9 +1,5 @@
 # VDR
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -136,7 +132,7 @@ $ cd ..
 
 ```
 
-if not downloaded, [https://aur.archlinux.org/packages/start-stop-daemon/](https://aur.archlinux.org/packages/start-stop-daemon/)  
+if not downloaded, [https://aur.archlinux.org/packages/start-stop-daemon/](https://aur.archlinux.org/packages/start-stop-daemon/)
 replace the contents PKGBUILD [https://aur.archlinux.org/packages/st/start-stop-daemon/PKGBUILD](https://aur.archlinux.org/packages/st/start-stop-daemon/PKGBUILD)
 
 #### vdr
@@ -738,12 +734,3 @@ This guide is not intended to be complete and it never will be. Hopefully, with 
 *   [German User Forum](http://www.vdr-portal.de/board/portal.php)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VDR&oldid=389822](https://wiki.archlinux.org/index.php?title=VDR&oldid=389822)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

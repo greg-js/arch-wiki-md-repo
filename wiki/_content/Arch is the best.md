@@ -1,9 +1,5 @@
 # Arch is the best
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The **Arch is the best** project is a very sophisticated and exquisite, ego-boosting and mind-blowing (albeit perhaps a bit over-engineered) project which gives proof of Arch's superiority.
 
 ## Contents
@@ -26,18 +22,14 @@ A sample PKGBUILD called [archbest-mod1](https://aur.archlinux.org/packages/arch
 
 The "Arch is the best" project is ported to many programming languages.
 
-1C:Enterprise 7.7/8/8.1/8.2
-
-A procedural domain-specific compiled dynamically-typed programming language mostly similar to VisualBasic which is used in "1C:Enterprise" products widespread in Russia and other CIS countries.
+NaN
 
 ```
 Предупреждение("Arch is the best!");
 
 ```
 
-Ada
-
-A systems critical programming language.
+NaN
 
 ```
 with Ada.Text_IO;
@@ -49,27 +41,21 @@ end HelloWorld;
 
 ```
 
-APL
-
-A Programming Language.
+NaN
 
 ```
 'Arch is the best!'
 
 ```
 
-ATS
-
-A functional programming language that uses dependent types to improve programs' reliability.
+NaN
 
 ```
 implement main () = println! "Arch is the best!"
 
 ```
 
-Awk
-
-A data-driven programming language designed for processing text-based data.
+NaN
 
 ```
 BEGIN {
@@ -78,9 +64,7 @@ BEGIN {
 
 ```
 
-Befunge
-
-Believed to be the first two-dimensional, ASCII-based, general-purpose (in the sense of "you could plausibly write Hunt the Wumpus in it") programming language.
+NaN
 
 ```
 <v"Arch is the best!"0
@@ -88,18 +72,14 @@ Believed to be the first two-dimensional, ASCII-based, general-purpose (in the s
 
 ```
 
-Boo
-
-A stablished object oriented statically typed programming language for .NET and Mono with a python inspired syntax and a special focus on metaprogramming through language and compiler extensibility features such as macros and custom compilation pipelines.
+NaN
 
 ```
 print "Arch is the best!"
 
 ```
 
-Bourne shell
-
-The original program, should be compatible with any shell.
+NaN
 
 ```
 #!/bin/sh
@@ -107,9 +87,7 @@ echo "Arch is the best!"
 
 ```
 
-Bourne shell (Alternate)
-
-Handy for piping the output to your favourite IRC/email/IM client. Should work with any shell.
+NaN
 
 ```
 #!/bin/sh
@@ -117,7 +95,7 @@ yes Arch is the best!
 
 ```
 
-Bourne shell (Dynamically updated)
+NaN
 
 ```
  #!/bin/bash
@@ -125,7 +103,7 @@ Bourne shell (Dynamically updated)
 
 ```
 
-or
+NaN
 
 ```
  #!/bin/bash
@@ -133,9 +111,7 @@ or
 
 ```
 
-brainfuck
-
-Doesn't the language name explain it?
+NaN
 
 ```
 ++>++++++>+++++<+[>[->+<]<->++++++++++<]>>.<[-]>[-<++>]
@@ -145,9 +121,7 @@ Doesn't the language name explain it?
 
 ```
 
-C
-
-Note the three space indenting used in this project, much like that used by other superior beings.
+NaN
 
 ```
 #include <stdio.h>
@@ -160,9 +134,7 @@ int main(void)
 
 ```
 
-C#
-
-Intended to be a simple, modern, general-purpose, object-oriented programming language.
+NaN
 
 ```
 using System;
@@ -176,9 +148,7 @@ public class ArchIsTheBest
 
 ```
 
-C++
-
-Arch == Linux++
+NaN
 
 ```
 #include <iostream>
@@ -191,9 +161,7 @@ int main ()
 
 ```
 
-COBOL
-
-A simple, lightweight programming language.
+NaN
 
 ```
     IDENTIFICATION DIVISION.
@@ -205,18 +173,14 @@ A simple, lightweight programming language.
 
 ```
 
-CoffeeScript
-
-A programming language that transcompiles to JavaScript.
+NaN
 
 ```
 alert 'Arch is the best!'
 
 ```
 
-Clojure
-
-A Lisp dialect that runs on the JVM.
+NaN
 
 ```
 (def translations {"english" "Arch is the best!",
@@ -241,7 +205,7 @@ A Lisp dialect that runs on the JVM.
 
 ```
 
-or
+NaN
 
 ```
 (def translations {"english" "Arch is the best!",
@@ -256,16 +220,14 @@ or
 
 ```
 
-or
+NaN
 
 ```
 (prn "Arch is the best!")
 
 ```
 
-Common Lisp
-
-Tested on SBCL, feel free to add more of the translations.
+NaN
 
 ```
 #!/usr/bin/sbcl --script
@@ -293,18 +255,14 @@ Tested on SBCL, feel free to add more of the translations.
 
 ```
 
-Common Lisp (Alternate)
-
-Should run on any implementation (Clisp, Allegro, SBCL...)
+NaN
 
 ```
 (princ "Arch is the best!")
 
 ```
 
-D
-
-A C-style language. The benefits of hindsight, with modern conveniences.
+NaN
 
 ```
  import std.stdio : writeln;
@@ -315,9 +273,7 @@ A C-style language. The benefits of hindsight, with modern conveniences.
 
 ```
 
-Dart
-
-Google's javascript killer
+NaN
 
 ```
  main(){
@@ -326,9 +282,7 @@ Google's javascript killer
 
 ```
 
-Dogescript
-
-Doge-friendly JavaScript
+NaN
 
 ```
  console.loge with '                So Arch'
@@ -337,18 +291,14 @@ Doge-friendly JavaScript
 
 ```
 
-Emacs Lisp
-
-A dialect of the Lisp programming language used by the GNU Emacs and XEmacs text editors
+NaN
 
 ```
  (message "Arch is the best!")
 
 ```
 
-Erlang
-
-A concurrent, garbage-collected programming language and runtime system.
+NaN
 
 ```
 -module(arch).
@@ -357,7 +307,7 @@ A concurrent, garbage-collected programming language and runtime system.
 
 ```
 
-Or using message passing between processes
+NaN
 
 ```
  -module(arch).
@@ -379,27 +329,21 @@ Or using message passing between processes
 
 ```
 
-F#
-
-A strongly-typed, functional-first programming language for writing simple code to solve complex problems.
+NaN
 
 ```
 printfn "Arch is the best!"
 
 ```
 
-Factor
-
-High-level stack-based language.
+NaN
 
 ```
 "Arch is the best" print
 
 ```
 
-FIM++
-
-A wordy, imperative, dynamically-typed, and interpreted language that can use Java classes.
+NaN
 
 ```
 Dear Princess Celestia: Letter About Arch Linux.
@@ -409,16 +353,14 @@ Your faithful student, Twilight Sparkle
 
 ```
 
-Forth
-
-Stack-based language.
+NaN
 
 ```
 ." Arch is the best" cr -- kiss way
 
 ```
 
-Fortran95
+NaN
 
 ```
 program arch
@@ -427,9 +369,7 @@ end program arch
 
 ```
 
-Genie
-
-A new programming language, that allows for a more modern programming style while being able to effortlessly create and use GObjects natively.
+NaN
 
 ```
 init
@@ -437,9 +377,7 @@ init
 
 ```
 
-Gjs
-
-A Javascript binding for GNOME. It's mainly based on Spidermonkey javascript engine and the GObject introspection framework.
+NaN
 
 ```
 #!/usr/bin/env gjs
@@ -447,9 +385,7 @@ print ('Arch is the best');
 
 ```
 
-Go
-
-A language created by Google that's a love child between C, C++ and Python.
+NaN
 
 ```
 package main
@@ -462,27 +398,21 @@ func main() {
 
 ```
 
-Groovy
-
-An agile and dynamic language for the Java Virtual Machine.
+NaN
 
 ```
 println 'Arch is the best!' 
 
 ```
 
-Haskell
-
-The language where IO is easy and unproblematic.
+NaN
 
 ```
 main = putStrLn "Arch is the best!"
 
 ```
 
-HTML
-
-A markup language used to create and define web pages and their content.
+NaN
 
 ```
 <!DOCTYPE html>
@@ -497,18 +427,14 @@ A markup language used to create and define web pages and their content.
 
 ```
 
-Io
-
-A pure object-oriented programming language inspired by Smalltalk, Self, Lua, Lisp, Act1, and NewtonScript.
+NaN
 
 ```
 "Arch is the best!" println
 
 ```
 
-Java
-
-An extremely portable language, this will run on pretty much anything, it might even run on your toaster!
+NaN
 
 ```
 public class ArchIsTheBest {
@@ -519,34 +445,28 @@ public class ArchIsTheBest {
 
 ```
 
-JavaScript
-
-Also known as ECMAScript, a prototype-based object-oriented scripting language.
+NaN
 
 ```
 console.log('Arch is the best!');
 
 ```
 
-JavaScript (in a web browser)
+NaN
 
 ```
 alert('Arch is the best!');
 
 ```
 
-Julia
-
-A fresh approach to numerical computing.
+NaN
 
 ```
 println("Arch is the best!")
 
 ```
 
-LilyPond
-
-A powerful music engraving program with an intuitive LaTeX-like input language.
+NaN
 
 ```
 \version "2.12.3"
@@ -562,9 +482,7 @@ A powerful music engraving program with an intuitive LaTeX-like input language.
 
 ```
 
-LOLCODE
-
-Why not?
+NaN
 
 ```
 HAI
@@ -574,18 +492,14 @@ KTHXBYE
 
 ```
 
-Lua
-
-A lightweight, extensible programming language.
+NaN
 
 ```
 print "Arch is the best!"
 
 ```
 
-Malbolge
-
-A language created to make programming as hard as possible.
+NaN
 
 ```
  bCBA@?>=<;:9876543210/.-,+*)('&%$#"!~}|{zyxwvutsrqponmlkjihgfedcba`_^]
@@ -596,18 +510,14 @@ A language created to make programming as hard as possible.
 
 ```
 
-Morpho
-
-Morpho is a multi-paradigm programming language that supports procedural, object-oriented and functional programming.
+NaN
 
 ```
 writeln("Arch is the best!");
 
 ```
 
-Nasm(x86_64) (or yasm)
-
-Notice that the string is in the .text section, which feels superior.
+NaN
 
 ```
 ;nasm -f elf64 arch.asm
@@ -630,63 +540,49 @@ len equ $-msg
 
 ```
 
-Nimrod
-
-Portable lightweight programming language.
+NaN
 
 ```
 echo "Arch is the best!"
 
 ```
 
-node.js
-
-a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications, using an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+NaN
 
 ```
 console.log('Arch is the best!');
 
 ```
 
-Objective-C
-
-A reflective, object-oriented programming language that adds Smalltalk-style messaging to the C programming language.
+NaN
 
 ```
 NSLog(@"Arch is the best!");
 
 ```
 
-OCaml
-
-The main implementation of the Caml programming language.
+NaN
 
 ```
 print_endline "Arch is the best!"
 
 ```
 
-Octave
-
-High-level interpreted language, primarily intended for numerical computations.
+NaN
 
 ```
 printf("Arch is the best!\n")
 
 ```
 
-Ook!
-
-brainfuck, translated to Orangutan.
+NaN
 
 ```
 Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook. Ook. Ook! Ook? Ook. Ook? Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook? Ook. Ook? Ook! Ook? Ook. Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook! Ook? Ook! Ook! Ook? Ook! Ook. Ook? Ook! Ook? Ook! Ook! Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook? Ook! Ook? Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook? Ook! Ook? Ook. Ook! Ook. Ook. Ook? Ook. Ook? Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook? Ook. Ook? Ook. Ook! Ook. Ook. Ook? Ook. Ook? Ook. Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook. Ook? Ook. Ook! Ook. Ook. Ook? Ook. Ook? Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook! Ook. Ook? Ook. Ook? Ook. Ook. Ook. Ook! Ook. Ook! Ook? Ook! Ook! Ook? Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook.
 
 ```
 
-Pascal
-
-An influential imperative and procedural programming language.
+NaN
 
 ```
 program ArchIsTheBest;
@@ -696,9 +592,7 @@ end.
 
 ```
 
-Perl
-
-A high-level, general-purpose, interpreted, dynamic programming language.
+NaN
 
 ```
 #!/usr/bin/perl
@@ -706,9 +600,7 @@ print "Arch is the best!\n";
 
 ```
 
-PHP
-
-A general-purpose scripting language.
+NaN
 
 ```
 <?php
@@ -717,9 +609,7 @@ A general-purpose scripting language.
 
 ```
 
-Pixilang
-
-Make me pixels.
+NaN
 
 ```
 print("Arch is the best!",0,0,#1897D1)
@@ -727,9 +617,7 @@ frame
 
 ```
 
-Pony
-
-An object-oriented, actor-model, capabilities-secure, high performance programming language.
+NaN
 
 ```
 actor Main
@@ -738,9 +626,7 @@ actor Main
 
 ```
 
-Portable GNU assembler
-
-`as -o arch.o arch.s && ld -o arch -O0 arch.o`
+NaN
 
 ```
    .section .data
@@ -765,27 +651,21 @@ _start:
 
 ```
 
-Processing
-
-An open source programming language and IDE built for the electronic arts and visual design.
+NaN
 
 ```
 println("Arch is the best!");
 
 ```
 
-Prolog
-
-A general purpose logic programming language associated with artificial intelligence and computational linguistics.
+NaN
 
 ```
 format('Arch is the best~n',[]).
 
 ```
 
-Python
-
-A general-purpose high-level programming language.
+NaN
 
 ```
 #!/usr/bin/env python3
@@ -793,18 +673,14 @@ print('Arch is the best!')
 
 ```
 
-QBASIC
-
-An interpreter for a variant of the BASIC programming language which is based on QuickBASIC.
+NaN
 
 ```
 PRINT "Arch is the best!"
 
 ```
 
-R
-
-A language for statistical computing (and much more!).
+NaN
 
 ```
 archIsBest <- function() { cat("Arch is the best!\n") }
@@ -812,9 +688,7 @@ archIsBest()
 
 ```
 
-Ruby
-
-A dynamic, reflective, general purpose object-oriented programming language.
+NaN
 
 ```
 #!/usr/bin/ruby -w
@@ -822,9 +696,7 @@ puts 'Arch is the best!'
 
 ```
 
-Rust
-
-Rust is a systems programming language that runs blazingly fast, prevents almost all crashes, and eliminates data races.
+NaN
 
 ```
 fn main() {
@@ -833,9 +705,7 @@ fn main() {
 
 ```
 
-Scala
-
-A multi paradigm language that runs on the JVM.
+NaN
 
 ```
  object ArchIsBest extends App {
@@ -844,9 +714,7 @@ A multi paradigm language that runs on the JVM.
 
 ```
 
-Scheme
-
-A dialect of Lisp.
+NaN
 
 ```
 (display "Arch is the best!\n")
@@ -865,9 +733,7 @@ or in XunDu style
 
 ```
 
-Seed
-
-A library and interpreter, dynamically bridging the WebKit JavaScriptCore engine, with the GNOME platform.
+NaN
 
 ```
 #!/usr/bin/env seed
@@ -875,9 +741,7 @@ print ('Arch is the best');
 
 ```
 
-Shoes
-
-A Ruby version using Shoes for a GUI.
+NaN
 
 ```
 Shoes.app :width => 135, :height => 30 do
@@ -886,9 +750,7 @@ end
 
 ```
 
-SQL
-
-Structured Query Language, the query language for relational databases
+NaN
 
 ```
 SELECT 'Arch is the best!';
@@ -896,18 +758,14 @@ SELECT 'Arch is the best!' from dual; -- for Oracle DB
 
 ```
 
-Standard ML
-
-A general-purpose, modular, functional programming language with compile-time type checking and type inference.
+NaN
 
 ```
 print "Arch is the best!\n"
 
 ```
 
-Tcl/Tk
-
-A scripting language that is commonly used for rapid prototyping, scripted applications, GUIs and testing.
+NaN
 
 ```
 #!/usr/bin/env tclsh
@@ -915,9 +773,7 @@ puts "Arch is the best!"
 
 ```
 
-UEFI
-
-An extensible firmware framework
+NaN
 
 ```
 #include <Uefi.h>
@@ -933,9 +789,7 @@ ArchIsTheBest (
 
 ```
 
-Vala
-
-Vala is a new programming language that aims to bring modern programming language features to GNOME developers without imposing any additional runtime requirements and without using a different ABI compared to applications and libraries written in C.
+NaN
 
 ```
 void main(string[] args) {
@@ -944,9 +798,7 @@ stdout.printf("\nArch is the best!\n\n");
 
 ```
 
-Wiring (Arduino)
-
-Built on Processing, the open source programming language developed at the Massachusetts Institute of Technology.
+NaN
 
 ```
 void setup()
@@ -960,9 +812,7 @@ void loop()
 
 ```
 
-X11 
-
-X11 is an architecture independent system for display of graphical user interfaces.
+NaN
 
 ```
 #include <stdio.h>
@@ -1004,329 +854,329 @@ int main()
 
 ## Translations
 
-Ancient Chinese
+NaN
 
 ```
 阿祺，盡善矣。
 
 ```
 
-Ancient Greek (Attic)
+NaN
 
 ```
 Ἡ Ἀψίς ἄριστην ἐστί!
 
 ```
 
-Arabic
+NaN
 
 ```
 ارتش هو الأفضل
 
 ```
 
-Australian
+NaN
 
 ```
 Arch is fair dinkum, mate!
 
 ```
 
-Bahasa Indonesia
+NaN
 
 ```
 Arch terbaik!
 
 ```
 
-Basque
+NaN
 
 ```
 Arch onena da!
 
 ```
 
-Belarusian
+NaN
 
 ```
 Арч - самы лепшы!
 
 ```
 
-Bengali
+NaN
 
 ```
 আর্চ সবচেয়ে ভালো!
 
 ```
 
-British
+NaN
 
 ```
 Arch is simply spiffing.
 
 ```
 
-Bulgarian
+NaN
 
 ```
 Арч е най-добрият!
 
 ```
 
-Catalan
+NaN
 
 ```
 Arch és el millor!
 
 ```
 
-Chinese (Simplified)
+NaN
 
 ```
 Arch 最棒了！
 
 ```
 
-Chinese (Traditional)
+NaN
 
 ```
 Arch 好棒棒！
 
 ```
 
-Chinese (Taobao Style - 淘宝体)
+NaN
 
 ```
 Arch，好评哦，亲！
 
 ```
 
-Czech
+NaN
 
 ```
 Arch je nejlepší!
 
 ```
 
-Croatian
+NaN
 
 ```
 Arch je najbolji!
 
 ```
 
-Danish
+NaN
 
 ```
 Arch er bedst!
 
 ```
 
-Doge
+NaN
 
 ```
 So Arch, Much Good, Wow
 
 ```
 
-Dutch
+NaN
 
 ```
 Arch is de beste!
 
 ```
 
-Esperanto
+NaN
 
 ```
 Arch plejbonas!
 
 ```
 
-Estonian
+NaN
 
 ```
 Arch on parim!
 
 ```
 
-Fikonspråket
+NaN
 
 ```
 Firch Arkon fir äkon fist bäkon
 
 ```
 
-Filipino
+NaN
 
 ```
 Mabuhay ang Arch!
 
 ```
 
-Finnish
+NaN
 
 ```
 Arch on paras!
 
 ```
 
-French
+NaN
 
 ```
 Arch est le meilleur!
 
 ```
 
-Galician
+NaN
 
 ```
 Arch é o mellor!
 
 ```
 
-German
+NaN
 
 ```
 Arch ist das Beste!
 
 ```
 
-Greek (Modern)
+NaN
 
 ```
 Το Αρτς είναι το καλύτερο!
 
 ```
 
-Haitian Creole
+NaN
 
 ```
 Arch se meye bagay!
 
 ```
 
-Hantec
+NaN
 
 ```
 Arch je nejbetélnější!
 
 ```
 
-Hebrew
+NaN
 
 ```
 ארצ' זה הכי אחי!
 
 ```
 
-Hindi
+NaN
 
 ```
 आर्च सर्वोत्तम है ।
 
 ```
 
-Hungarian
+NaN
 
 ```
 Az Arch a legjobb!
 
 ```
 
-Irish
+NaN
 
 ```
 Arch é is fearr!
 
 ```
 
-Italian
+NaN
 
 ```
 Arch è il migliore!
 
 ```
 
-Japanese
+NaN
 
 ```
 Archが一番ですよ！
 
 ```
 
-Kazakh
+NaN
 
 ```
 Арч - ең жақсы!
 
 ```
 
-Klingon
+NaN
 
 ```
 Arch'pu'ta"a'
 
 ```
 
-Korean
+NaN
 
 ```
 아치가 최고입니다!
 
 ```
 
-Latin
+NaN
 
 ```
 Arch optimus est!
 
 ```
 
-Latvian
+NaN
 
 ```
 Arch ir labākais!
 
 ```
 
-Leet
+NaN
 
 ```
 4rch 15 7h3 b357!
 
 ```
 
-Lithuanian
+NaN
 
 ```
 Arch yra geriausias!
 
 ```
 
-Lojban
+NaN
 
 ```
 la .artc. xagrai
 
 ```
 
-Lolcat
+NaN
 
 ```
 ARCH IZ TEH BEST!
 
 ```
 
-Malayalam
+NaN
 
 ```
 ആർച് ആണ് ഏറ്റവും നല്ലത്
 
 ```
 
-Mapudungun
+NaN
 
 writting system: Unificado
 
@@ -1363,133 +1213,133 @@ Zoy kümey Arch _or_ Zoy kvmey Arch
 
 ```
 
-Marathi
+NaN
 
 ```
 आर्च सगळ्यात भारी आहे!
 
 ```
 
-Nepali
+NaN
 
 ```
 आर्च सबैभन्दा राम्रो हो!
 
 ```
 
-Norwegian
+NaN
 
 ```
 Arch er best!
 
 ```
 
-Old English
+NaN
 
 ```
 Arch biþ betst!
 
 ```
 
-Persian
+NaN
 
 ```
 آرچ بهترین است
 
 ```
 
-Pig Latin
+NaN
 
 ```
 Archway isway ethay estbay!
 
 ```
 
-Polish
+NaN
 
 ```
 Arch jest najlepszy!
 
 ```
 
-Portuguese
+NaN
 
 ```
 Arch é o melhor!
 
 ```
 
-Québécois
+NaN
 
 ```
 Arch est le plus meilleure du monde!
 
 ```
 
-Romanian
+NaN
 
 ```
 Аrch e cel mai bun!
 
 ```
 
-Russian
+NaN
 
 ```
 Арч:лучший!
 
 ```
 
-Serbian
+NaN
 
 ```
 Arch je najbolji!
 
 ```
 
-Singaporean
+NaN
 
 ```
 Arch the best lah!
 
 ```
 
-Slovenian
+NaN
 
 ```
 Arch je najboljši!
 
 ```
 
-Spanish (Standard)
+NaN
 
 ```
 ¡Arch es el mejor!
 
 ```
 
-Spanish (Argentina)
+NaN
 
 ```
 Arch es una mazza!!
 
 ```
 
-Spanish (Chile)
+NaN
 
 ```
 Arch es bacán
 
 ```
 
-Spanish (Chile, alternative)
+NaN
 
 ```
 Arch es la raja
 
 ```
 
-Spanish (Chile, marginal)
+NaN
 
 (written in IPA because standard Spanish doesn't have these sounds)
 
@@ -1498,77 +1348,77 @@ Spanish (Chile, marginal)
 
 ```
 
-Spanish (Uruguay)
+NaN
 
 ```
 Arch la rompe!
 
 ```
 
-Swedish
+NaN
 
 ```
 Arch är bäst!
 
 ```
 
-Turkish
+NaN
 
 ```
 Arch en iyisidir!
 
 ```
 
-Tamil
+NaN
 
 ```
 ஆர்ச்சே சிறந்தது!
 
 ```
 
-Telugu
+NaN
 
 ```
 ఆర్చ్ ఉత్తమమైనది!
 
 ```
 
-Thai
+NaN
 
 ```
 อาค์ชเทพเมพขิงขิง
 
 ```
 
-Toki Pona
+NaN
 
 ```
 Arch li pona mute!
 
 ```
 
-Ukrainian
+NaN
 
 ```
 Arch:найкращий!
 
 ```
 
-Urdu
+NaN
 
 ```
 آرچ سب سے بہتر ہے!
 
 ```
 
-Vietnamese
+NaN
 
 ```
 Arch là tốt nhất!
 
 ```
 
-Welsh (Cymraeg)
+NaN
 
 Emphasis on Arch:
 
@@ -1588,7 +1438,7 @@ Y gorau un yw Arch!
 
 ## Encodings
 
-ASCII Banner
+NaN
 
 ```
                    _       _       _   _            _               _   _
@@ -1600,112 +1450,112 @@ ASCII Banner
 
 ```
 
-Base64
+NaN
 
 ```
 QXJjaCBpcyB0aGUgYmVzdCEK
 
 ```
 
-Binary ASCII
+NaN
 
 ```
 0100000101110010011000110110100000100000011010010111001100100000011101000110100001100101001000000110001001100101011100110111010000100001
 
 ```
 
-Braille
+NaN
 
 ```
 ⠁⠗⠉⠓⠀⠊⠎⠀⠮⠀⠃⠑⠎⠞⠲
 
 ```
 
-Desrever (Reversed)
+NaN
 
 ```
 !tseb eht si hcrA
 
 ```
 
-h4x0r
+NaN
 
 ```
 4rch 15 7h3 b357!
 
 ```
 
-Hexadecimal ASCII
+NaN
 
 ```
 4172636820697320746865206265737421
 
 ```
 
-md5sum
+NaN
 
 ```
 2d9092e089d77a8e23f47ba3dfe77027
 
 ```
 
-Morse Code
+NaN
 
 ```
 .- .-. -.-. ....   .. ...   - .... .   -... . ... -
 
 ```
 
-ROT13
+NaN
 
 ```
 Nepu vf gur orfg!
 
 ```
 
-sha1sum
+NaN
 
 ```
 7f6ed0bf29abbd7e796ca1311c84a7a21a68a656
 
 ```
 
-sha224sum
+NaN
 
 ```
 af15cd556676d37f916a35e2cf74f04cf7b1805b3244ec418c3927d8
 
 ```
 
-sha256sum
+NaN
 
 ```
 107139d6b9a15fd97acf743e5806823c8ff868fde8b7c28cfcc2c9184df644ae
 
 ```
 
-sha384sum
+NaN
 
 ```
 769ec295d876483aa6cec7ff7997296c8ff2236630b0e48b059576143b60ab30adefec9321d8acc2a133219dfb302bc5
 
 ```
 
-sha512sum
+NaN
 
 ```
 b0917f66d05278106808d25f51001b038856fa7171b935d450b4bcbf1e8b82ed6a5a2f49d99734e1efc7ad3d1b8a33519008635d4e1aa3e65a5e70c4de649aad
 
 ```
 
-Upside Down
+NaN
 
 ```
 ¡ʇsǝq ǝɥʇ s! ɥɔɹ∀
 
 ```
 
-URL Encoded
+NaN
 
 ```
 Arch%20is%20the%20best!
@@ -1713,12 +1563,3 @@ Arch%20is%20the%20best!
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_is_the_best&oldid=412617](https://wiki.archlinux.org/index.php?title=Arch_is_the_best&oldid=412617)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,16 +1,12 @@
 # PXE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Diskless System](/index.php/Diskless_System "Diskless System")
 
 From [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"):
 
-_The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems._
+NaN
 
 In this guide, PXE is used to boot the installation media with an appropriate option-rom that supports PXE on the target. This works well when you already have a server set up.
 
@@ -205,9 +201,3 @@ It highly recommended to leave this option alone, and should only be disabled if
 **Note:** As this requires loop-mounting squashfs from a mounted remote filesystem, `copytoram=n` and `[archiso_pxe_http](#HTTP)` are mutually exclusive.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PXE&oldid=416848](https://wiki.archlinux.org/index.php?title=PXE&oldid=416848)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

@@ -1,9 +1,5 @@
 # SystemTap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [SystemTap](http://sourceware.org/systemtap/) provides free software (GPL) infrastructure to simplify the gathering of information about the running Linux system.
 
 ## Contents
@@ -129,7 +125,3 @@ Alternately,
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SystemTap&oldid=415399](https://wiki.archlinux.org/index.php?title=SystemTap&oldid=415399)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

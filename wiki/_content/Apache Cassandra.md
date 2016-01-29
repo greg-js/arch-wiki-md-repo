@@ -1,9 +1,5 @@
 # Apache Cassandra
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Apache Spark](/index.php/Apache_Spark "Apache Spark")
@@ -27,7 +23,3 @@ $ pip install cassandra-driver
 For more information on how to use the Python API for Cassandra, see the [API documentation](https://datastax.github.io/python-driver/api/index.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_Cassandra&oldid=401931](https://wiki.archlinux.org/index.php?title=Apache_Cassandra&oldid=401931)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

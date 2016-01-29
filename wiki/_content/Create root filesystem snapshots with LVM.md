@@ -1,9 +1,5 @@
 # Create root filesystem snapshots with LVM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LVM](/index.php/LVM "LVM")
@@ -123,7 +119,3 @@ OOMScoreAdjust=-1000
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Create_root_filesystem_snapshots_with_LVM&oldid=413157](https://wiki.archlinux.org/index.php?title=Create_root_filesystem_snapshots_with_LVM&oldid=413157)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

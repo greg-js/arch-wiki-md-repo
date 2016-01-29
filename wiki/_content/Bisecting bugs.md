@@ -1,9 +1,5 @@
 # Bisecting bugs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Often when reporting bugs encountered with projects such as Mesa or Linux kernel, a user may be asked to bisect between the last known version that worked for them and the newer version which is causing them problems in order to see what is the troublesome commit. On Arch this can be done fairly trivially thanks to the functionality of the [AUR](/index.php/AUR "AUR").
 
 ## Contents
@@ -118,8 +114,3 @@ Reverting to an original version of the package can be done by installing the pa
 *   [git-bisect(1)](https://www.kernel.org/pub/software/scm/git/docs/git-bisect.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bisecting_bugs&oldid=408010](https://wiki.archlinux.org/index.php?title=Bisecting_bugs&oldid=408010)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")

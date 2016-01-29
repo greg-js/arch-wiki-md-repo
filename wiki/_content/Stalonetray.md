@@ -1,9 +1,5 @@
 # Stalonetray
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Stalonetray is a stand-alone freedesktop.org and KDE system tray for the [X Window System](/index.php/X_Window_System "X Window System"). It has full XEMBED support, minimal dependencies and works with virtually any EWMH-compliant window manager. Window managers that are reported to work well with stalonetray are: [FVWM](/index.php/FVWM "FVWM"), [Openbox](/index.php/Openbox "Openbox"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), [Ion3](/index.php/Ion3 "Ion3"), [Compiz](/index.php/Compiz "Compiz"), [Xmonad](/index.php/Xmonad "Xmonad"), [dwm](/index.php/Dwm "Dwm"), and [awesome](/index.php/Awesome "Awesome").
 
 ## Contents
@@ -95,7 +91,3 @@ kludges force_icons_size
 *   [http://stalonetray.sourceforge.net/manpage.html](http://stalonetray.sourceforge.net/manpage.html) - Stalonetray manual page
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Stalonetray&oldid=412179](https://wiki.archlinux.org/index.php?title=Stalonetray&oldid=412179)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

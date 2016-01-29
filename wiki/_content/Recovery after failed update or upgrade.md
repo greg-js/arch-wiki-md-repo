@@ -1,9 +1,5 @@
 # Recovery after failed update or upgrade
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
@@ -116,7 +112,3 @@ Create a minimal installation of the Linux with a user that will be logged in au
 By creating bootable ISO image or [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS") that can be started with [GRUB](/index.php/GRUB "GRUB"). Those can be preconfigured even with minimal needed applications, X server or Wayland and users. After boot you can automatize mount of path to `/usr/`, `/home/` or other custom folders that can exist on physical storage or in a file. It is useful for protection of boot and kernel settings from possible damages. Users will be able to updated programs if partition/file is mounted to `/var/lib/pacman/` and has writeable access to it.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Recovery_after_failed_update_or_upgrade&oldid=410356](https://wiki.archlinux.org/index.php?title=Recovery_after_failed_update_or_upgrade&oldid=410356)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

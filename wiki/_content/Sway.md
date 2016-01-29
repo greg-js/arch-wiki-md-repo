@@ -1,9 +1,5 @@
 # Sway
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _sway_ (SirCmpwn's Wayland window manager) is an attempt to create a [Wayland](/index.php/Wayland "Wayland") version of [i3](/index.php/I3 "I3"), as an alternative to the official i3 Wayland port, i3way.
 
 **Note:** This is still a work in progress so caution is advised. However, it is deemed ready for regular use by the creator.
@@ -114,8 +110,3 @@ However, if you want to start _sway_ in an X session for testing purposes it is 
 *   [Github project](https://github.com/SirCmpwn/sway)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sway&oldid=416066](https://wiki.archlinux.org/index.php?title=Sway&oldid=416066)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

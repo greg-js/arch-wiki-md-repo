@@ -1,9 +1,5 @@
 # Hamachi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) "wikipedia:Hamachi (software)") is a proprietary (closed source) commercial VPN software. With Hamachi you can organize two or more computers with an Internet connection into their own virtual network for direct secure communication.
 
 ## Contents
@@ -93,7 +89,3 @@ The following GUI frontends for Hamachi are available in the AUR:
 *   [Project home page](https://secure.logmein.com/products/hamachi/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hamachi&oldid=411224](https://wiki.archlinux.org/index.php?title=Hamachi&oldid=411224)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

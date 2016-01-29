@@ -1,9 +1,5 @@
 # Compton
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Compton is a lightweight, standalone composite manager, suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not natively provide compositing functionality. Compton itself is a fork of [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcompmgr-dana)]</sup>, which in turn is a fork of [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). See the [compton github page](https://github.com/chjj/compton) for further information.
 
 Compton in particular is notable for fixing numerous bugs found in its predecessors, and as such, is popular due to its reliability and stability. Numerous additional improvements and configuration options have also been implemented, including a faster GLX (OpenGL) backend (disabled by default), default inactive/active window opacity, window frame transparency, window background blur, window color inversion, painting rate throttling, VSync, condition-based fine-tune control, configuration file reading, and D-Bus control.
@@ -197,12 +193,3 @@ When facing high CPU use with `--backend glx` or tearing with `--vsync` enabled,
 *   [Howto: Using Compton for tear-free compositing on XFCE or LXDE](http://ubuntuforums.org/showthread.php?t=2144468&p=12644745#post12644745)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compton&oldid=400530](https://wiki.archlinux.org/index.php?title=Compton&oldid=400530)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

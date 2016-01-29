@@ -1,9 +1,5 @@
 # Cross-compiling tools package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -190,11 +186,3 @@ and vice versa may result in different outcomes (often caused by recursive self-
 [http://wiki.osdev.org/GCC_Cross-Compiler](http://wiki.osdev.org/GCC_Cross-Compiler)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cross-compiling_tools_package_guidelines&oldid=392043](https://wiki.archlinux.org/index.php?title=Cross-compiling_tools_package_guidelines&oldid=392043)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

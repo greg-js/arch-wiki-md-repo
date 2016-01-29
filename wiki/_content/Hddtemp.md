@@ -1,9 +1,5 @@
 # Hddtemp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [lm sensors](/index.php/Lm_sensors "Lm sensors")
@@ -128,7 +124,3 @@ $ echo '"Samsung SSD 840 EVO 250G B" 190 C "Samsung SSD 840 EVO 250GB"' >> /usr/
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hddtemp&oldid=412096](https://wiki.archlinux.org/index.php?title=Hddtemp&oldid=412096)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")

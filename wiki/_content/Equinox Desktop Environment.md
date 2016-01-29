@@ -1,9 +1,5 @@
 # Equinox Desktop Environment
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [Equinox Desktop Environment (EDE)](http://equinox-project.org/) is a DE designed to be simple, extremely light-weight and fast.
 
 It primarily offers the most basic things: A window manager ([PekWM](/index.php/PekWM "PekWM") is used by default), a simple GUI including a panel, a daemon watching removable media and a notification daemon. Other than that there's not much more than some configuration progams, a calculator, etc. Beginning with version 2.0, EDE follows the FreeDesktop.org guidelines.
@@ -70,7 +66,3 @@ Due to the nature of the DE, it obviously makes sense to install light-weight so
 *   Terminal emulator: [Xterm](/index.php/Xterm "Xterm")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Equinox_Desktop_Environment&oldid=398941](https://wiki.archlinux.org/index.php?title=Equinox_Desktop_Environment&oldid=398941)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

@@ -1,9 +1,5 @@
 # Windows PE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Windows PE](http://technet.microsoft.com/en-us/library/cc766093(v=ws.10).aspx) is a lightweight version of Windows intended to be used for installation of Windows Vista and later versions of Windows, as well as for system maintenance. It runs entirely from memory and can be booted from the network. This page describes how customized Windows PE images can be created, and optionally published on the network, using only free software packages on an Arch Linux machine along with Microsoft's Windows Automated Installation Kit (WAIK). The WAIK can be downloaded at no cost and is only needed to extract the `boot.wim` file that contains the initial copy of Windows PE, along with a couple boot files.
 
 **Warning:**
@@ -156,11 +152,3 @@ You may want to do this to add additional Windows applications that you want to 
 *   [Another article about making Windows PE images on Linux](http://www.thinkwiki.org/wiki/Windows_PE)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=412213](https://wiki.archlinux.org/index.php?title=Windows_PE&oldid=412213)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

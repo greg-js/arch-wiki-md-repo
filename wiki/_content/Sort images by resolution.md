@@ -1,9 +1,5 @@
 # Sort images by resolution
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File recovery](/index.php/File_recovery "File recovery")
@@ -220,7 +216,3 @@ echo Total processed files: $CountAll
 [sort photos into folders based on EXIF data](http://mikebeach.org/2011/12/10/bash-script-to-automatically-sort-photos-into-folders-based-on-exif-data-for-ubuntu-linux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sort_images_by_resolution&oldid=401679](https://wiki.archlinux.org/index.php?title=Sort_images_by_resolution&oldid=401679)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

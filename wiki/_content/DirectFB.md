@@ -1,9 +1,5 @@
 # DirectFB
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -29,12 +25,3 @@ DirectFB includes an internal window manager. To move a window in the internal w
 *   [TLDP: Framebuffer HOWTO](http://www.tldp.org/HOWTO/Framebuffer-HOWTO/x168.html#AEN170)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DirectFB&oldid=392062](https://wiki.archlinux.org/index.php?title=DirectFB&oldid=392062)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

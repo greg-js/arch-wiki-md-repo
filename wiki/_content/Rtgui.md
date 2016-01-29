@@ -1,9 +1,5 @@
 # Rtgui
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 rtGui is a web based front end for rTorrent - the Linux command line BitTorrent client. It is written in PHP and uses XML-RPC to communicate with the rTorrent client.
 
 ## Contents
@@ -86,7 +82,3 @@ cp config.php.example config.php
 Modify `config.php` to suit your needs
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rtgui&oldid=414622](https://wiki.archlinux.org/index.php?title=Rtgui&oldid=414622)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

@@ -1,9 +1,5 @@
 # Snapper
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Btrfs](/index.php/Btrfs "Btrfs")
@@ -402,7 +398,3 @@ By default, `updatedb` will also index the `.snapshots` directory created by sna
  `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Snapper&oldid=414878](https://wiki.archlinux.org/index.php?title=Snapper&oldid=414878)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

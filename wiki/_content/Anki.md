@@ -1,9 +1,5 @@
 # Anki
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Anki](http://ankisrs.net/) is an [SRS](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") (Spaced Repetition System), a program which allows you to create, manage and review [flashcards](https://en.wikipedia.org/wiki/Flashcard "wikipedia:Flashcard"). Because spaced repetition algorithms are a lot more efficient than traditional study methods, you can either greatly decrease your time spent studying, or greatly increase the amount you learn. Anki is very flexible and also allows the creation of templates. Android and iOS apps are available and synchronization between devices is supported.
 
 This guide shows you how to install Anki.
@@ -43,11 +39,3 @@ After creating a new deck, you need to select "Japanese" as the deck model in "d
 *   [Mnemosyne](/index.php/Mnemosyne "Mnemosyne") - another open-source flashcard program using spaced repetition
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Anki&oldid=391911](https://wiki.archlinux.org/index.php?title=Anki&oldid=391911)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

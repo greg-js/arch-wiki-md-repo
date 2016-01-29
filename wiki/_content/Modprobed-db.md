@@ -1,9 +1,5 @@
 # Modprobed-db
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Kernels](/index.php/Kernels "Kernels")
@@ -159,125 +155,13 @@ Comparisons using version 3.8.8-1 of the Arch kernel (from ABS):
 
 **Note:** The modprobed.db on the test machine contains 209 lines; YMMV based on specific usage and needs.
 
-<table border="1">
-
-<tbody>
-
-<tr>
-
-<td>**Machine CPU**</td>
-
-<td>**# of threads**</td>
-
-<td>**make localmodconfig**</td>
-
-<td>**# of Modules**</td>
-
-<td>**Modules' Size on HDD**</td>
-
-<td>**Compilation Time**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel i7-3770K @ 4.50 GHz</td>
-
-<td>8</td>
-
-<td>No</td>
-
-<td>3,025</td>
-
-<td>129 MB</td>
-
-<td>7 min 37 sec</td>
-
-</tr>
-
-<tr>
-
-<td>Intel i7-3770K @ 4.50 GHz</td>
-
-<td>8</td>
-
-<td>Yes</td>
-
-<td>230</td>
-
-<td>18 MB</td>
-
-<td>1 min 13 sec</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Q9550 @ 3.40 GHz</td>
-
-<td>4</td>
-
-<td>No</td>
-
-<td>3,025</td>
-
-<td>129 MB</td>
-
-<td>14 min 21 sec</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Q9550 @ 3.40 GHz</td>
-
-<td>4</td>
-
-<td>Yes</td>
-
-<td>230</td>
-
-<td>18 MB</td>
-
-<td>2 min 20 sec</td>
-
-</tr>
-
-<tr>
-
-<td>Intel E5200 @ 3.33 GHz</td>
-
-<td>2</td>
-
-<td>No</td>
-
-<td>3,025</td>
-
-<td>129 MB</td>
-
-<td>34 min 35 sec</td>
-
-</tr>
-
-<tr>
-
-<td>Intel E5200 @ 3.33 GHz</td>
-
-<td>2</td>
-
-<td>Yes</td>
-
-<td>230</td>
-
-<td>18 MB</td>
-
-<td>5 min 46 sec</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Machine CPU** | **# of threads** | **make localmodconfig** | **# of Modules** | **Modules' Size on HDD** | **Compilation Time** |
+| Intel i7-3770K @ 4.50 GHz | 8 | No | 3,025 | 129 MB | 7 min 37 sec |
+| Intel i7-3770K @ 4.50 GHz | 8 | Yes | 230 | 18 MB | 1 min 13 sec |
+| Intel Q9550 @ 3.40 GHz | 4 | No | 3,025 | 129 MB | 14 min 21 sec |
+| Intel Q9550 @ 3.40 GHz | 4 | Yes | 230 | 18 MB | 2 min 20 sec |
+| Intel E5200 @ 3.33 GHz | 2 | No | 3,025 | 129 MB | 34 min 35 sec |
+| Intel E5200 @ 3.33 GHz | 2 | Yes | 230 | 18 MB | 5 min 46 sec |
 
 *   **13x less modules built**
 *   **7x less space**
@@ -307,11 +191,3 @@ $ time make -jx modules
 **Note:** The Arch standard is to gzip each module; the numbers shown in the table above are not gzip'ed but the savings ratio will be unaffected by this.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Modprobed-db&oldid=410433](https://wiki.archlinux.org/index.php?title=Modprobed-db&oldid=410433)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

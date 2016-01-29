@@ -1,9 +1,5 @@
 # PCManFM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LXDE](/index.php/LXDE "LXDE")
@@ -15,7 +11,7 @@ Related articles
 
 From the project [home page](http://wiki.lxde.org/en/PCManFM):
 
-_PCMan File Manager (PCManFM) is a file manager application developed by Hong Jen Yee from Taiwan which is meant to be a replacement for Nautilus, Konqueror and Thunar. Released under the GNU General Public License, PCManFM is free software. PCManFM is the standard file manager in [LXDE](/index.php/LXDE "LXDE"), which is also developed by the same author in conjunction with other developers._
+NaN
 
 ## Contents
 
@@ -263,11 +259,3 @@ See the [mounting without a password](/index.php/Polkit#Mounting_storage_without
 See the General troubleshooting article on [Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PCManFM&oldid=412422](https://wiki.archlinux.org/index.php?title=PCManFM&oldid=412422)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # Pantheon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Pantheon](http://elementaryos.org/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and Mac OS X.
 
 ## Contents
@@ -248,11 +244,3 @@ The 'gala' window manager is most likely not running. [#Via .xinitrc](#Via_.xini
 The indicators that are displayed in the wingpanel are split into separate packages. [#Installation](#Installation) Install additional indicators such as [indicator-datetime](https://aur.archlinux.org/packages/indicator-datetime/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-datetime)]</sup>, [indicator-power](https://aur.archlinux.org/packages/indicator-power/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-power)]</sup> or [indicator-sound](https://aur.archlinux.org/packages/indicator-sound/)<sup><small>AUR</small></sup>.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pantheon&oldid=404071](https://wiki.archlinux.org/index.php?title=Pantheon&oldid=404071)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

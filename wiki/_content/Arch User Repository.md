@@ -1,9 +1,5 @@
 # Arch User Repository
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
@@ -261,7 +257,7 @@ See [Git](/index.php/Git "Git") for more information.
 *   Disownment requests will be granted after two weeks if the current maintainer did not react.
 *   **Package merging has been implemented**, users still have to resubmit a package under a new name and may request merging of the old version's comments and votes.
 *   Removal requests require the following information:
-    *   Reason for deletion, at least a short note  
+    *   Reason for deletion, at least a short note
         **Notice:** A package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
     *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
     *   For merge requests: Name of the package base to merge into.
@@ -430,13 +426,3 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 *   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415934](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&oldid=415934)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # ASUS U32U
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -96,54 +92,10 @@ Internal Mic Boost: 51
 
 ## Video
 
-<table class="wikitable" style="text-align:center">
-
-<tbody>
-
-<tr>
-
-<th>Brand</th>
-
-<th>Type</th>
-
-<th>Driver</th>
-
-<th>[Multilib](/index.php/Multilib "Multilib") Package  
-(for 32-bit applications on Arch x86_64)</th>
-
-<th> Documentation </th>
-
-</tr>
-
-<tr>
-
-<td rowspan="2" bgcolor="#f7e3e3">** AMD/ATI **</td>
-
-<td> Open source </td>
-
-<td>[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)</td>
-
-<td>[lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa)</td>
-
-<td>[ATI](/index.php/ATI "ATI")</td>
-
-</tr>
-
-<tr>
-
-<td>Proprietary</td>
-
-<td>[catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/catalyst-dkms)]</sup></td>
-
-<td>[lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup></td>
-
-<td>[AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Brand | Type | Driver | [Multilib](/index.php/Multilib "Multilib") Package
+(for 32-bit applications on Arch x86_64) |  Documentation  |
+| ** AMD/ATI ** |  Open source  | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [ATI](/index.php/ATI "ATI") |
+| Proprietary | [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/catalyst-dkms)]</sup> | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup> | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
 
 ## Touchpad
 
@@ -198,12 +150,3 @@ Closing Lid seems to suspend computer (to be confirmed, otherwise install [acpi]
 Works out of the box
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_U32U&oldid=399198](https://wiki.archlinux.org/index.php?title=ASUS_U32U&oldid=399198)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

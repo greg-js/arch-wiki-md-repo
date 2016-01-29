@@ -1,28 +1,24 @@
 # Parental Control
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Several methods exist to protect and limit child activity on a computer.
 
 ## Applications
 
 *   **timekpr** — A program controlling use of user accounts. It can limit by access duration with the daemon _timed_, and configure at what time users can log in. A client in the traybar warns the users about their time running out, while administration is done in a graphical GTK GUI.
 
-[https://launchpad.net/timekpr](https://launchpad.net/timekpr) || [timekpr](https://aur.archlinux.org/packages/timekpr/)<sup><small>AUR</small></sup>
+NaN
 
 *   **timeoutd** — A lightweight alternative to timekpr, it scans `/var/run/utmp` every minute and checks `/etc/timeouts` for an entry matching a restricted user. Restrictions are based on idle time, login time, maximum time, and time of day.
 
-|| [timeoutd](https://aur.archlinux.org/packages/timeoutd/)<sup><small>AUR</small></sup>
+NaN
 
 *   **logkeys** — A daemon that logs keypresses into a logfile for later inspection. The log file resides by default in `/var/log`, but it is recommended to move it to an encrypted partition; it will for example contain every password entered in the system. For supervision purposes, the `--no-func-keys` option is recommended.
 
-[http://code.google.com/p/logkeys/](http://code.google.com/p/logkeys/) || [logkeys-git](https://aur.archlinux.org/packages/logkeys-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **logkeys-keymaps** — Necessary to log keys with logkeys (`--keymap` option) using a localized, non-US keyboard.
 
-|| [logkeys-keymaps-git](https://aur.archlinux.org/packages/logkeys-keymaps-git/)<sup><small>AUR</small></sup>
+NaN
 
 ## Whitelist with Tinyproxy and Firehol
 
@@ -72,7 +68,3 @@ myhostname
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Parental_Control&oldid=374735](https://wiki.archlinux.org/index.php?title=Parental_Control&oldid=374735)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

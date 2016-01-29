@@ -1,9 +1,5 @@
 # Kexec
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Systemd](/index.php/Systemd "Systemd")
@@ -118,8 +114,3 @@ It is also possible to load kernel manually and then let systemd handle service 
 *   [Reboot Linux faster using kexec](https://web.archive.org/web/20090505132901/http://www.ibm.com/developerworks/linux/library/l-kexec.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kexec&oldid=412115](https://wiki.archlinux.org/index.php?title=Kexec&oldid=412115)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

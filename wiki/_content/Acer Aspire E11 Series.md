@@ -1,96 +1,15 @@
 # Acer Aspire E11 Series
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Network](/index.php/Network "Network")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Manual</td>
-
-</tr>
-
-<tr>
-
-<td>Atheros Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[ALSA](/index.php/ALSA "ALSA")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Touchpad](/index.php/Touchpad "Touchpad")</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Manual</td>
-
-</tr>
-
-<tr>
-
-<td>[Webcam](/index.php/Webcam "Webcam")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Power management](/index.php/Power_management "Power management")</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Working** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Network](/index.php/Network "Network") | Yes |
+| [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") | Manual |
+| Atheros Wireless | Yes |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Manual |
+| [Webcam](/index.php/Webcam "Webcam") | Yes |
+| Card Reader | Yes |
+| [Power management](/index.php/Power_management "Power management") | No |
 
 [Aspire E11 Series](http://us.acer.com/ac/en/US/content/models/laptops/aspire-e11)
 
@@ -257,11 +176,3 @@ Fortunately, Ubuntu Forums user Ephialta links to a Windows driver update archiv
 *   [Installing Linux on Acer E11-111 (ES1-111-C3NT)](http://blog.mdda.net/oss/2014/11/16/acer-e11-es1-111-c3nt-linux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=416005](https://wiki.archlinux.org/index.php?title=Acer_Aspire_E11_Series&oldid=416005)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Znc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **ZNC** is an advanced IRC bouncer that is left connected so an IRC client can disconnect/reconnect without losing the chat session.
 
 ## Contents
@@ -56,7 +52,3 @@ If you enabled the control panel module, `/msg *controlpanel help` for a list of
 *   [ZNC's website](http://wiki.znc.in/ZNC)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Znc&oldid=379583](https://wiki.archlinux.org/index.php?title=Znc&oldid=379583)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

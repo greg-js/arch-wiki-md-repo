@@ -1,9 +1,5 @@
 # Slime
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -59,7 +55,3 @@ Alternatively, for a fancier slime setup, you can change the above lines to:
 *   [Paul Graham's Lisp resources](http://www.paulgraham.com/lisp.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Slime&oldid=412174](https://wiki.archlinux.org/index.php?title=Slime&oldid=412174)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

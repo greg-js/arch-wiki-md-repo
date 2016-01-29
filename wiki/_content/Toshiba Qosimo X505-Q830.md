@@ -1,9 +1,5 @@
 # Toshiba Qosimo X505-Q830
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 lspci](#lspci)
@@ -83,7 +79,7 @@ Works out of the box.
 
 #### Wireless
 
-<s>Requires additional drivers: [rtl8192se](https://aur.archlinux.org/packages.php?ID=34281) (or [dkms-rtl8192se](https://aur.archlinux.org/packages.php?ID=47330))</s> Kernel version 3.0 introduced drivers out-of-the-box for this chipset:
+~~Requires additional drivers: [rtl8192se](https://aur.archlinux.org/packages.php?ID=34281) (or [dkms-rtl8192se](https://aur.archlinux.org/packages.php?ID=47330))~~ Kernel version 3.0 introduced drivers out-of-the-box for this chipset:
 
 ```
 
@@ -169,7 +165,3 @@ Works out of the box.
 Note: When booting from USB, the drives change during boot. When prompted that the boot drive can not be found, remove and re-insert the USB stick.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Qosimo_X505-Q830&oldid=383941](https://wiki.archlinux.org/index.php?title=Toshiba_Qosimo_X505-Q830&oldid=383941)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

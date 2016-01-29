@@ -1,9 +1,5 @@
 # MongoDB
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 MongoDB (from hu**mongo**us) is an open source document-oriented database system developed and supported by [MongoDB Inc. (formerly 10gen)](http://www.mongodb.com/). It is part of the NoSQL family of database systems. Instead of storing data in tables as is done in a "classical" relational database, MongoDB stores structured data as JSON-like documents with dynamic schemas (MongoDB calls the format [BSON](http://bsonspec.org/)), making the integration of data in certain types of applications easier and faster.
 
 ## Contents
@@ -74,7 +70,3 @@ After running the repair as root, the files will be owned by the root user, whil
 Check that the [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) package is up to date. MongoDB requires a specific version, however, the package does not restrict the version of this dependency.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MongoDB&oldid=409754](https://wiki.archlinux.org/index.php?title=MongoDB&oldid=409754)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

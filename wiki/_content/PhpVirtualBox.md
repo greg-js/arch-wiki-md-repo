@@ -1,9 +1,5 @@
 # PhpVirtualBox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **phpVirtualBox** is an open source, AJAX implementation of the [VirtualBox](/index.php/VirtualBox "VirtualBox") user interface written in [PHP](/index.php/PHP "PHP"). As a modern web interface, it allows you to access and control remote VirtualBox instances. Much of its verbage and some of its code is based on the (inactive) vboxweb project. phpVirtualBox was designed to allow users to administer VirtualBox in a headless environment - mirroring the VirtualBox GUI through its web interface.
 
 ## Contents
@@ -175,7 +171,3 @@ on virtualization server and set username and password to empty strings and set 
 *   [systemd vboxweb.service mod when needing to start as non-root user](https://bbs.archlinux.org/viewtopic.php?id=147175)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=413711](https://wiki.archlinux.org/index.php?title=PhpVirtualBox&oldid=413711)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

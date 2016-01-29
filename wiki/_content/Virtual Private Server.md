@@ -1,16 +1,12 @@
 # Virtual Private Server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Server](/index.php/Server "Server")
 
 From [Wikipedia:Virtual private server](https://en.wikipedia.org/wiki/Virtual_private_server "wikipedia:Virtual private server"):
 
-_Virtual private server (VPS) is a term used by Internet hosting services to refer to a virtual machine. The term is used for emphasizing that the virtual machine, although running in software on the same physical computer as other customers' virtual machines, is in many respects functionally equivalent to a separate physical computer, is dedicated to the individual customer's needs, has the privacy of a separate physical computer, and can be configured to run server software._
+NaN
 
 This article discusses the use of Arch Linux on Virtual Private Servers, and includes some fixes and installation instructions specific to VPSes.
 
@@ -42,541 +38,44 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 *   [Installing under chroot](/index.php/Installation_guide "Installation guide"), for example with the help of the [vps2arch](https://github.com/drizzt/vps2arch) script (it will download the latest iso; be particularly aware of the systemd 220/221 [bug](https://github.com/systemd/systemd/issues/421)), or
 *   Following [#Installing the latest Arch Linux on any OpenVZ provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_provider) instructions, using rsync to synchronize Arch over the top of another distribution.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Provider</th>
-
-<th>Arch Release</th>
-
-<th>Virtualization</th>
-
-<th>Locations</th>
-
-<th>Notes</th>
-
-</tr>
-
-<tr>
-
-<td>[A MilesWeb VPS](http://www.milesweb.com/vps-hosting.php)</td>
-
-<td>2013.10.14</td>
-
-<td>OpenVZ</td>
-
-<td>Europe, India, US</td>
-
-<td>Latest Arch Linux available on OpenVZ platform. Quick setup, 24/7 support via Live Chat, Email and Phone. VPS starts from $20 / mo</td>
-
-</tr>
-
-<tr>
-
-<td>[123 Systems](http://123systems.net)</td>
-
-<td>2010.05.xx</td>
-
-<td>OpenVZ</td>
-
-<td>Dallas, US-TX</td>
-
-<td>Arch available as a selection upon reinstall. Very old (2.6.18-308) kernel - See [OpenVZ troubleshooting](#OpenVZ:_kernel_too_old_for_glibc). Limited information available before purchase. Cannot verify Arch Linux version without purchase.</td>
-
-</tr>
-
-<tr>
-
-<td>[4smart.cz](http://www.4smart.cz)</td>
-
-<td>2013.08 (x86_64)</td>
-
-<td>OpenVZ</td>
-
-<td>Europe, Prague</td>
-
-<td>when updating system make sure you use [tredaelli-systemd] in pacman.conf (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")</td>
-
-</tr>
-
-<tr>
-
-<td>[AUSWEB](http://ausweb.com.au)</td>
-
-<td>Latest Only (clarify?)</td>
-
-<td>VMware ESXi</td>
-
-<td>Sydney, AU</td>
-
-<td>Latest ISO (clarify?) of Arch Available. Enterprise Service.</td>
-
-</tr>
-
-<tr>
-
-<td>[affinity.net.nz](https://www.affinity.net.nz)</td>
-
-<td>2013.08.01</td>
-
-<td>KVM</td>
-
-<td>Auckland, New Zealand (NZ)</td>
-
-<td>IRC channel is #affinity on ircs.kiwicon.org</td>
-
-</tr>
-
-<tr>
-
-<td>[Atlantic.Net](http://www.atlantic.net/)</td>
-
-<td>2015.05.01</td>
-
-<td>KVM</td>
-
-<td>NYC/SF/Toronto/Dallas/Orlando, US & Canada</td>
-
-<td>100% SSD 1-click ArchLinux from $5/mo for 512M/20GB SSD, ready in 30 seconds</td>
-
-</tr>
-
-<tr>
-
-<td>[BuyVM](http://www.buyvm.net/)</td>
-
-<td>2013.07.01</td>
-
-<td>KVM</td>
-
-<td>LA, Buffalo NY</td>
-
-<td>Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually.</td>
-
-</tr>
-
-<tr>
-
-<td>[Coinshost](https://coinshost.com/en/vps)</td>
-
-<td>2015.04</td>
-
-<td>Xen</td>
-
-<td>Zurich, Switzerland</td>
-
-<td>$3/mo for 512M/20GB. Bitcoin and other cryptocurrencies accepted.</td>
-
-</tr>
-
-<tr>
-
-<td>[DirectVPS](https://www.directvps.nl/)</td>
-
-<td>2014.01.xx</td>
-
-<td>OpenVZ</td>
-
-<td>Amsterdam, NL; Rotterdam, NL</td>
-
-<td>Dutch language site. Version verifyable by clicking through [https://www.directvps.nl/try-1.plp?p=31](https://www.directvps.nl/try-1.plp?p=31)</td>
-
-</tr>
-
-<tr>
-
-<td>[Edis](http://en.edis.at/)</td>
-
-<td>[2013.03.01](http://www.edis.at/en/support-and-service/faq/server-faq/which-distributions-are-available-with-edis-kvm-vps-plans/)</td>
-
-<td>vServer, KVM, OpenVZ</td>
-
-<td>[Multiple international locations](http://www.edis.at/en/server/kvm-vps/austria/).</td>
-
-<td>Also offer dedicated server options as well as an "off-shore" location at the Isle of Man (IM).</td>
-
-</tr>
-
-<tr>
-
-<td>[Gandi](https://www.gandi.net/hosting/)</td>
-
-<td>2013.10.27</td>
-
-<td>Xen</td>
-
-<td>Paris, FR; Baltimore, MD, US; Bissen, LU</td>
-
-<td>Very granular scaling of system resources (e.g. RAM, disk space); IPv6-only option available; you can supply your own install image, version based on keyring package version</td>
-
-</tr>
-
-<tr>
-
-<td>[GigaTux](https://www.gigatux.com/virtual.php)</td>
-
-<td>[2013.06.01](https://www.gigatux.com/distro/)</td>
-
-<td>Xen</td>
-
-<td>Chicago, US-IL; Frankfurt, DE; London, GB; San Jose, US-CA</td>
-
-</tr>
-
-<tr>
-
-<td>[Host Virtual](http://www.vr.org/)</td>
-
-<td>[2011.08.19](http://www.vr.org/os/linux-vps/archlinux-vps)</td>
-
-<td>KVM</td>
-
-<td>[Multiple International Locations](http://www.vr.org/cloud-locations/)</td>
-
-<td>Appears to use KVM virtualization. Site lists "Xen based virtualization" and [features](http://www.vr.org/features/) lists ability to install from ISO.</td>
-
-</tr>
-
-<tr>
-
-<td>[Hostigation](https://hostigation.com/)</td>
-
-<td>[2010.05 i686](https://hostigation.com/wiki/index.php?title=KVM:Install)</td>
-
-<td>OpenVZ, KVM</td>
-
-<td>Charlotte, US-NC; Los Angeles, US-CA</td>
-
-<td>You can [migrate to x86_64](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling").</td>
-
-</tr>
-
-<tr>
-
-<td>[IntoVPS](http://www.intovps.com)</td>
-
-<td>2012.09.xx</td>
-
-<td>OpenVZ</td>
-
-<td>Amsterdam, NL; Bucharest, RO; Dallas, US-TX; Fremont, US-CA; London, GB</td>
-
-<td>Blog has not been updated since September, 2012 which included the Arch Linux update.</td>
-
-</tr>
-
-<tr>
-
-<td>[Kloud51](https://www.kloud51.com)</td>
-
-<td>2014.7.7</td>
-
-<td>OpenVZ</td>
-
-<td>US-CA, Canada</td>
-
-<td>Choose from 2 images. A bare-bones system or a pre-configured Desktop with OpenBox, XRDP, Firefox, SSH Brute Force, Geany, and Yaourt.</td>
-
-</tr>
-
-<tr>
-
-<td>[Leapswitch Networks](https://leapswitch.com)</td>
-
-<td>[2013.10.xx]</td>
-
-<td>OpenVZ/KVM</td>
-
-<td>USA, India, Portugal, Spain, Ukraine, Germany</td>
-
-<td>ArchLinux currently available in Control Panel for reinstall, not on order form.</td>
-
-</tr>
-
-<tr>
-
-<td>[Linode.com](https://www.linode.com)</td>
-
-<td>[2015.02.xx](https://www.linode.com/faq.cfm)</td>
-
-<td>Xen, KVM</td>
-
-<td>[Tokyo, JP; Multiple US; London, GB](https://www.linode.com/speedtest/)</td>
-
-<td>To run a custom kernel, install [linux-linode](https://aur.archlinux.org/packages/linux-linode/)<sup><small>AUR</small></sup>. ([linux](https://www.archlinux.org/packages/?name=linux) will break on a 32-bit Linode.)</td>
-
-</tr>
-
-<tr>
-
-<td>[LYLIX](http://lylix.net/)</td>
-
-<td>[2014.01.xx](http://lylix.net/archlinux)</td>
-
-<td>OpenVZ</td>
-
-<td>Multiple US; Europe</td>
-
-<td>32-bit and 64-bit available</td>
-
-</tr>
-
-<tr>
-
-<td>[Node Deploy](http://www.nodedeploy.com)</td>
-
-<td>2014.10.01</td>
-
-<td>OpenVZ, KVM</td>
-
-<td>Germany (DE); Los Angeles, US-CA; Atlanta, US-GA; Phoenix, US-AZ</td>
-
-<td>"At NodeDeploy we support virtually every linux distribution." Arch Linux is listed under their Operating Systems. No version information.</td>
-
-</tr>
-
-<tr>
-
-<td>[Netcup](http://netcup.de)</td>
-
-<td>2012.11.xx</td>
-
-<td>KVM</td>
-
-<td>Germany (DE)</td>
-
-<td>German language site.</td>
-
-</tr>
-
-<tr>
-
-<td>[OnePoundWebHosting](http://onepoundwebhosting.co.uk)</td>
-
-<td>2013.05.xx</td>
-
-<td>Xen PV, Xen HVM</td>
-
-<td>United Kingdom (UK)</td>
-
-<td>They are a registrar too. Unable to verify server locations.</td>
-
-</tr>
-
-<tr>
-
-<td>[proPlay.de](https://www.proplay.biz/)</td>
-
-<td>2012.12.xx</td>
-
-<td>OpenVZ, KVM</td>
-
-<td>Germany (DE)</td>
-
-<td>German language site.</td>
-
-</tr>
-
-<tr>
-
-<td>[QuickVZ](https://www.quickvz.com)</td>
-
-<td>2013.10</td>
-
-<td>OpenVZ, Xen</td>
-
-<td>Amsterdam, Netherlands (NL); Stockholm, Sweden (SE)</td>
-
-<td>Provide hardened Arch Linux images along with Enterprise services (e,g. VPN, Virtual Private LAN Service (VPLS) and Virtual Routers.</td>
-
-</tr>
-
-<tr>
-
-<td>[Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/)</td>
-
-<td>2013.6</td>
-
-<td>Xen</td>
-
-<td>[Multiple international locations](https://www.rackspace.com/whyrackspace/network/datacenters/)</td>
-
-<td>Billed per hour. Use their "next gen" VPSes (using the mycloud.rackspace.com panel); the Arch image on the first gen Rackspace VPSes is out of date.</td>
-
-</tr>
-
-<tr>
-
-<td>[RamHost.us](http://www.ramhost.us)</td>
-
-<td>[2013.05.01](http://www.ramhost.us/?page=news)</td>
-
-<td>OpenVZ, KVM</td>
-
-<td>Los Angeles, US-CA; Great Britain (GB); Atlanta, US-GA; Germany (DE)</td>
-
-<td>You can request a newer ISO on RamHost's IRC network.</td>
-
-</tr>
-
-<tr>
-
-<td>[RamNode](http://www.ramnode.com)</td>
-
-<td>[2013.07.01](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=48)</td>
-
-<td>[SSD and SSD Cached:](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=39) [OpenVZ, KVM](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=52)</td>
-
-<td>[Seattle, WA USA, Atlanta, GA USA](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=18)</td>
-
-<td>You can request Host/CPU passthrough with KVM service.[[3]](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=66) Frequent use of discount promotions.[[4]](https://twitter.com/search?q=ramnode%20code&src=typd)</td>
-
-</tr>
-
-<tr>
-
-<td>[Tilaa](http://www.tilaa.nl/)</td>
-
-<td>2014.10.01</td>
-
-<td>[KVM](https://www.tilaa.com/pages/vps/technology)</td>
-
-<td>Amsterdam, NL</td>
-
-<td>English or Dutch language site.</td>
-
-</tr>
-
-<tr>
-
-<td>[TransIP](https://www.transip.eu/)</td>
-
-<td>[2013.05.01](https://www.transip.eu/vps/vps-os/)</td>
-
-<td>[KVM](https://www.transip.eu/vps/vps-technology/)</td>
-
-<td>Amsterdam, NL</td>
-
-<td>English language site. Registrar.</td>
-
-</tr>
-
-<tr>
-
-<td>[XenVZ](http://www.xenvz.co.uk/)</td>
-
-<td>2009.12.07</td>
-
-<td>OpenVZ, Xen</td>
-
-<td>United Kingdom (UK), United States (US)</td>
-
-<td>[Hardware](http://www.xenvz.co.uk/faq.php#use2)</td>
-
-</tr>
-
-<tr>
-
-<td>[Virpus](http://www.virpus.com/)</td>
-
-<td>[2014.11.07](http://virpus.com/linux-vps.php)</td>
-
-<td>Xen</td>
-
-<td>Kansas City, US-KS; Los Angeles, US-CA</td>
-
-<td>A subcompany of Wow Technologies, Inc. 24/7 support via Live Chat, Email, Phone, and Ticket System. Service starts at $5/month.</td>
-
-</tr>
-
-<tr>
-
-<td>[Virtual Master](http://www.virtualmaster.com/)</td>
-
-<td>2012-08</td>
-
-<td> ??</td>
-
-<td>Europe, Prague</td>
-
-</tr>
-
-<tr>
-
-<td>[Vmline](http://www.vmline.pl/)</td>
-
-<td>2013.09.01</td>
-
-<td>KVM, OpenVZ</td>
-
-<td>Kraków, PL</td>
-
-<td>[S-Net](http://www.s-net.pl/en/) reseller. Full virtualization. Polish language site.</td>
-
-</tr>
-
-<tr>
-
-<td>[VPSBG.eu](https://vpsbg.eu/)</td>
-
-<td>2013.10</td>
-
-<td>OpenVZ</td>
-
-<td>[Sofia, Bulgaria](https://vpsbg.eu/en/index.php?page=vps-datacenter)</td>
-
-<td>Offshore VPS in Bulgaria - anonymous registrations and Bitcoin are accepted.</td>
-
-</tr>
-
-<tr>
-
-<td>[VPS6.NET](https://vps6.net/)</td>
-
-<td>2013.01.xx </td>
-
-<td>OpenVZ, Xen, HVM-ISO</td>
-
-<td>[Multiple US](http://vps6.net/network/); Frankfurt, DE; Bucharest, RO; Istanbul, TR</td>
-
-<td>Registrar.</td>
-
-</tr>
-
-<tr>
-
-<td>[VPS.NET](http://www.vps.net/)</td>
-
-<td>2014.01.xx </td>
-
-<td>OpenVZ, Xen, HVM-ISO</td>
-
-<td>[US, Canada, UK, Brazil, Netherlands, France, Germany, Japan, Singapore, India, Austrlia](http://vps.net/cloud-datacenter-locations); Multiple</td>
-
-<td>Managed & Un managed VPS service provider, multiple OS and configurations..</td>
-
-</tr>
-
-<tr>
-
-<td>[World4You](http://www.world4you.com/)</td>
-
-<td>2015.10.28</td>
-
-<td>OpenVZ</td>
-
-<td>Austria (AT)</td>
-
-<td>Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Provider | Arch Release | Virtualization | Locations | Notes |
+| [A MilesWeb VPS](http://www.milesweb.com/vps-hosting.php) | 2013.10.14 | OpenVZ | Europe, India, US | Latest Arch Linux available on OpenVZ platform. Quick setup, 24/7 support via Live Chat, Email and Phone. VPS starts from $20 / mo |
+| [123 Systems](http://123systems.net) | 2010.05.xx | OpenVZ | Dallas, US-TX | Arch available as a selection upon reinstall. Very old (2.6.18-308) kernel - See [OpenVZ troubleshooting](#OpenVZ:_kernel_too_old_for_glibc). Limited information available before purchase. Cannot verify Arch Linux version without purchase. |
+| [4smart.cz](http://www.4smart.cz) | 2013.08 (x86_64) | OpenVZ | Europe, Prague | when updating system make sure you use [tredaelli-systemd] in pacman.conf (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") |
+| [AUSWEB](http://ausweb.com.au) | Latest Only (clarify?) | VMware ESXi | Sydney, AU | Latest ISO (clarify?) of Arch Available. Enterprise Service. |
+| [affinity.net.nz](https://www.affinity.net.nz) | 2013.08.01 | KVM | Auckland, New Zealand (NZ) | IRC channel is #affinity on ircs.kiwicon.org |
+| [Atlantic.Net](http://www.atlantic.net/) | 2015.05.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click ArchLinux from $5/mo for 512M/20GB SSD, ready in 30 seconds |
+| [BuyVM](http://www.buyvm.net/) | 2013.07.01 | KVM | LA, Buffalo NY | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
+| [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | $3/mo for 512M/20GB. Bitcoin and other cryptocurrencies accepted. |
+| [DirectVPS](https://www.directvps.nl/) | 2014.01.xx | OpenVZ | Amsterdam, NL; Rotterdam, NL | Dutch language site. Version verifyable by clicking through [https://www.directvps.nl/try-1.plp?p=31](https://www.directvps.nl/try-1.plp?p=31) |
+| [Edis](http://en.edis.at/) | [2013.03.01](http://www.edis.at/en/support-and-service/faq/server-faq/which-distributions-are-available-with-edis-kvm-vps-plans/) | vServer, KVM, OpenVZ | [Multiple international locations](http://www.edis.at/en/server/kvm-vps/austria/). | Also offer dedicated server options as well as an "off-shore" location at the Isle of Man (IM). |
+| [Gandi](https://www.gandi.net/hosting/) | 2013.10.27 | Xen | Paris, FR; Baltimore, MD, US; Bissen, LU | Very granular scaling of system resources (e.g. RAM, disk space); IPv6-only option available; you can supply your own install image, version based on keyring package version |
+| [GigaTux](https://www.gigatux.com/virtual.php) | [2013.06.01](https://www.gigatux.com/distro/) | Xen | Chicago, US-IL; Frankfurt, DE; London, GB; San Jose, US-CA |
+| [Host Virtual](http://www.vr.org/) | [2011.08.19](http://www.vr.org/os/linux-vps/archlinux-vps) | KVM | [Multiple International Locations](http://www.vr.org/cloud-locations/) | Appears to use KVM virtualization. Site lists "Xen based virtualization" and [features](http://www.vr.org/features/) lists ability to install from ISO. |
+| [Hostigation](https://hostigation.com/) | [2010.05 i686](https://hostigation.com/wiki/index.php?title=KVM:Install) | OpenVZ, KVM | Charlotte, US-NC; Los Angeles, US-CA | You can [migrate to x86_64](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling"). |
+| [IntoVPS](http://www.intovps.com) | 2012.09.xx | OpenVZ | Amsterdam, NL; Bucharest, RO; Dallas, US-TX; Fremont, US-CA; London, GB | Blog has not been updated since September, 2012 which included the Arch Linux update. |
+| [Kloud51](https://www.kloud51.com) | 2014.7.7 | OpenVZ | US-CA, Canada | Choose from 2 images. A bare-bones system or a pre-configured Desktop with OpenBox, XRDP, Firefox, SSH Brute Force, Geany, and Yaourt. |
+| [Leapswitch Networks](https://leapswitch.com) | [2013.10.xx] | OpenVZ/KVM | USA, India, Portugal, Spain, Ukraine, Germany | ArchLinux currently available in Control Panel for reinstall, not on order form. |
+| [Linode.com](https://www.linode.com) | [2015.02.xx](https://www.linode.com/faq.cfm) | Xen, KVM | [Tokyo, JP; Multiple US; London, GB](https://www.linode.com/speedtest/) | To run a custom kernel, install [linux-linode](https://aur.archlinux.org/packages/linux-linode/)<sup><small>AUR</small></sup>. ([linux](https://www.archlinux.org/packages/?name=linux) will break on a 32-bit Linode.) |
+| [LYLIX](http://lylix.net/) | [2014.01.xx](http://lylix.net/archlinux) | OpenVZ | Multiple US; Europe | 32-bit and 64-bit available |
+| [Node Deploy](http://www.nodedeploy.com) | 2014.10.01 | OpenVZ, KVM | Germany (DE); Los Angeles, US-CA; Atlanta, US-GA; Phoenix, US-AZ | "At NodeDeploy we support virtually every linux distribution." Arch Linux is listed under their Operating Systems. No version information. |
+| [Netcup](http://netcup.de) | 2012.11.xx | KVM | Germany (DE) | German language site. |
+| [OnePoundWebHosting](http://onepoundwebhosting.co.uk) | 2013.05.xx | Xen PV, Xen HVM | United Kingdom (UK) | They are a registrar too. Unable to verify server locations. |
+| [proPlay.de](https://www.proplay.biz/) | 2012.12.xx | OpenVZ, KVM | Germany (DE) | German language site. |
+| [QuickVZ](https://www.quickvz.com) | 2013.10 | OpenVZ, Xen | Amsterdam, Netherlands (NL); Stockholm, Sweden (SE) | Provide hardened Arch Linux images along with Enterprise services (e,g. VPN, Virtual Private LAN Service (VPLS) and Virtual Routers. |
+| [Rackspace Cloud](http://www.rackspace.com/cloud/cloud_hosting_products/servers/) | 2013.6 | Xen | [Multiple international locations](https://www.rackspace.com/whyrackspace/network/datacenters/) | Billed per hour. Use their "next gen" VPSes (using the mycloud.rackspace.com panel); the Arch image on the first gen Rackspace VPSes is out of date. |
+| [RamHost.us](http://www.ramhost.us) | [2013.05.01](http://www.ramhost.us/?page=news) | OpenVZ, KVM | Los Angeles, US-CA; Great Britain (GB); Atlanta, US-GA; Germany (DE) | You can request a newer ISO on RamHost's IRC network. |
+| [RamNode](http://www.ramnode.com) | [2013.07.01](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=48) | [SSD and SSD Cached:](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=39) [OpenVZ, KVM](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=52) | [Seattle, WA USA, Atlanta, GA USA](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=18) | You can request Host/CPU passthrough with KVM service.[[3]](https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=66) Frequent use of discount promotions.[[4]](https://twitter.com/search?q=ramnode%20code&src=typd) |
+| [Tilaa](http://www.tilaa.nl/) | 2014.10.01 | [KVM](https://www.tilaa.com/pages/vps/technology) | Amsterdam, NL | English or Dutch language site. |
+| [TransIP](https://www.transip.eu/) | [2013.05.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | English language site. Registrar. |
+| [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
+| [Virpus](http://www.virpus.com/) | [2014.11.07](http://virpus.com/linux-vps.php) | Xen | Kansas City, US-KS; Los Angeles, US-CA | A subcompany of Wow Technologies, Inc. 24/7 support via Live Chat, Email, Phone, and Ticket System. Service starts at $5/month. |
+| [Virtual Master](http://www.virtualmaster.com/) | 2012-08 |  ?? | Europe, Prague |
+| [Vmline](http://www.vmline.pl/) | 2013.09.01 | KVM, OpenVZ | Kraków, PL | [S-Net](http://www.s-net.pl/en/) reseller. Full virtualization. Polish language site. |
+| [VPSBG.eu](https://vpsbg.eu/) | 2013.10 | OpenVZ | [Sofia, Bulgaria](https://vpsbg.eu/en/index.php?page=vps-datacenter) | Offshore VPS in Bulgaria - anonymous registrations and Bitcoin are accepted. |
+| [VPS6.NET](https://vps6.net/) | 2013.01.xx  | OpenVZ, Xen, HVM-ISO | [Multiple US](http://vps6.net/network/); Frankfurt, DE; Bucharest, RO; Istanbul, TR | Registrar. |
+| [VPS.NET](http://www.vps.net/) | 2014.01.xx  | OpenVZ, Xen, HVM-ISO | [US, Canada, UK, Brazil, Netherlands, France, Germany, Japan, Singapore, India, Austrlia](http://vps.net/cloud-datacenter-locations); Multiple | Managed & Un managed VPS service provider, multiple OS and configurations.. |
+| [World4You](http://www.world4you.com/) | 2015.10.28 | OpenVZ | Austria (AT) | Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm) |
 
 ## Installation
 
@@ -664,12 +163,3 @@ At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (do not
 See [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_.28PVHVM_mode.29 "Xen") and/or [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_.28PV_mode.29 "Xen").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=415074](https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&oldid=415074)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Python (한국어)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
@@ -12,9 +8,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC "wikipedia:파이썬"):
 
-_파이썬(Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum) 이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다._
-
-_파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다._
+NaN
 
 ## Contents
 
@@ -115,11 +109,3 @@ readline.parse_and_bind("tab: complete")
 *   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Python_(한국어)&oldid=404642](https://wiki.archlinux.org/index.php?title=Python_(한국어)&oldid=404642)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

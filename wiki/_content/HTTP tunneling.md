@@ -1,9 +1,5 @@
 # HTTP tunneling
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 In networking, tunneling is using a protocol of higher level (in our case HTTP) to transport a lower level protocol (in our case TCP).
 
 ## Contents
@@ -116,8 +112,3 @@ $ ssh user@final_server -o "ProxyCommand=nc -X connect -x some-proxy:$proxy_port
 See [Using a SOCKS proxy](/index.php/Using_a_SOCKS_proxy "Using a SOCKS proxy").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HTTP_tunneling&oldid=408506](https://wiki.archlinux.org/index.php?title=HTTP_tunneling&oldid=408506)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

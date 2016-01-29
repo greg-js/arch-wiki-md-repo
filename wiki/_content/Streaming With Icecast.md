@@ -1,9 +1,5 @@
 # Streaming With Icecast
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -301,11 +297,3 @@ The above mentioned sonata and mplayer methods can be used.
 *   [[1]](http://en.flossmanuals.net/TheoraCookbook/FfmpegStreaming) - oggfwd and ffmpeg2theora howto.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_With_Icecast&oldid=378958](https://wiki.archlinux.org/index.php?title=Streaming_With_Icecast&oldid=378958)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

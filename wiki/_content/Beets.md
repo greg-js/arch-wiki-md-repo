@@ -1,9 +1,5 @@
 # Beets
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Beets](http://beets.radbox.org/) is a music tagger and library organizer using the [MusicBrainz](http://musicbrainz.org/) database.
 
 ## Contents
@@ -98,7 +94,3 @@ Beets includes support for Bash shell [command completion](/index.php/Bash#Tab_c
 You will also need to [install](/index.php/Install "Install") [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) for this to work.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Beets&oldid=412043](https://wiki.archlinux.org/index.php?title=Beets&oldid=412043)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

@@ -1,9 +1,5 @@
 # ASUS UL30A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 About the laptop](#About_the_laptop)
@@ -179,11 +175,3 @@ Bus 008 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_UL30A&oldid=387122](https://wiki.archlinux.org/index.php?title=ASUS_UL30A&oldid=387122)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # ASUS UX301LA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains information specific to the ASUS Zenbook UX301LA. Some of it may also be applicable to similar models, depending on the specific configuration. You might also want to look at [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A").
 
 ## Contents
@@ -129,7 +125,3 @@ As you have probably noticed, the UX301 family of laptops will reach 80° Celsiu
 *   [Installing Arch on ASUS UX301LA](https://github.com/chrisberkhout/kiste)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_UX301LA&oldid=403970](https://wiki.archlinux.org/index.php?title=ASUS_UX301LA&oldid=403970)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

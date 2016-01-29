@@ -1,9 +1,5 @@
 # Convert any Movie to DVD Video
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
@@ -11,7 +7,7 @@ Related articles
 
 MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package. See [MPlayer](/index.php/MPlayer "MPlayer") for details. [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup> [does not include MEncoder](http://www.mplayer2.org/differences/#mencoder-is-no-longer-available).
 
-_Why another article about this process?_ There is a plethora of articles, man pages, and blog entries about how to convert any movie to a standard DVD Video viewable on any hardware DVD player. However, most of those pages focus on one aspect of this process. The point of this article is to summarize most of the available knowledge in only one place.
+NaN
 
 ## Contents
 
@@ -797,7 +793,3 @@ Now you know how-to make the **.mpg** files; if you want making a menu for your 
 *   [http://www.gentoo-wiki.info/FFmpeg/DivX_to_DVD](http://www.gentoo-wiki.info/FFmpeg/DivX_to_DVD) gives an example of using ffmpeg to quickly create the mpg from e.g. an avi. This might be useful if mencoder doesn't seem to handle some input files (has happened).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Convert_any_Movie_to_DVD_Video&oldid=389785](https://wiki.archlinux.org/index.php?title=Convert_any_Movie_to_DVD_Video&oldid=389785)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

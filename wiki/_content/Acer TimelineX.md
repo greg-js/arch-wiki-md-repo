@@ -1,9 +1,5 @@
 # Acer TimelineX
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -14,129 +10,18 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Hardware is a 4820TG/5820TG, but should be similar for all these laptops.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ati</td>
-
-<td style="color:orange">**Partially Working**</td>
-
-<td>xf86-video-ati</td>
-
-</tr>
-
-<tr>
-
-<td>Ati</td>
-
-<td style="color:green">**Working**</td>
-
-<td>fglrx</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-<td>bluetooth</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c (2.6.36)</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k / wl</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>bcm4357 / wl</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel |
+| Ati | **Partially Working** | xf86-video-ati |
+| Ati | **Working** | fglrx |
+| Bluetooth | **Working** | bluetooth |
+| Ethernet | **Working** | atl1c (2.6.36) |
+| Wireless | **Working** | ath9k / wl |
+| Wireless | **Working** | bcm4357 / wl |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
 
 ## Contents
 
@@ -334,11 +219,3 @@ Ethernet chip driver is buggy in the 2.6.35 kernel.
 2.  [Usind acpi_call module to switch on/off](http://linux-hybrid-graphics.blogspot.com/2010/07/using-acpicall-module-to-switch-onoff.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_TimelineX&oldid=393348](https://wiki.archlinux.org/index.php?title=Acer_TimelineX&oldid=393348)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

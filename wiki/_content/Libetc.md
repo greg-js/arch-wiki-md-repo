@@ -1,9 +1,5 @@
 # Libetc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** libetc is unmaintained upstream. You can use rewritefs instead.
 
 This is for those who are tired of having a messy $HOME folder cluttered with loads of dotfiles/dotfolders.
@@ -62,7 +58,3 @@ Those files need to be in your $HOME, but you can link them into $XDG_CONFIG_HOM
 Be sure to read the README there : [http://ordiluc.net/fs/libetc](http://ordiluc.net/fs/libetc)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Libetc&oldid=375772](https://wiki.archlinux.org/index.php?title=Libetc&oldid=375772)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles")

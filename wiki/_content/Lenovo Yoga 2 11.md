@@ -1,9 +1,5 @@
 # Lenovo Yoga 2 11
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers the Arch Linux support for the Lenovo Yoga 2 11 Laptop.
 
 ## Contents
@@ -71,77 +67,14 @@ confirmed the wifi card was working. I was able to get a connection by setting u
 
 Tested model 20332 on **Kernel 3.16.1** (stable).
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Working? (Yes/No)</th>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>Yes (xf86-video-intel and intel-dri for 3D)</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td>N/A</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td>Yes (module: ath9k)</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes (module: bluetooth)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td>Yes (module: snd_hda_intel)</td>
-
-</tr>
-
-<tr>
-
-<td>Web Camera</td>
-
-<td>Yes (tested with Skype)</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td>Not Tested</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Working? (Yes/No) |
+| Video | Yes (xf86-video-intel and intel-dri for 3D) |
+| Ethernet | N/A |
+| Wireless | Yes (module: ath9k) |
+| Bluetooth | Yes (module: bluetooth) |
+| Audio | Yes (module: snd_hda_intel) |
+| Web Camera | Yes (tested with Skype) |
+| Card Reader | Not Tested |
 
 ### lspci
 
@@ -288,7 +221,3 @@ The laptop folds fully into a tablet. Out of the box, the keyboard is automatica
 There is also a Windows button by the screen, however key down events are only reported when the button is released (in tandem with the key release event).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Yoga_2_11&oldid=412582](https://wiki.archlinux.org/index.php?title=Lenovo_Yoga_2_11&oldid=412582)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

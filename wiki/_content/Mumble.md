@@ -1,12 +1,8 @@
 # Mumble
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)"):
 
-_Mumble is a voice over IP (VoIP) application primarily designed for use by gamers, similar to programs such as TeamSpeak and Ventrilo._
+NaN
 
 This page goes over installation and configuration of both the client portion of the software (Mumble) and the server portion (Murmur).
 
@@ -129,12 +125,3 @@ or permanently fixed by creating a udev rule
 but be weary this exposes all your input devices to all your applications!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mumble&oldid=402931](https://wiki.archlinux.org/index.php?title=Mumble&oldid=402931)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

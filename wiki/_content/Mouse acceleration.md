@@ -1,9 +1,5 @@
 # Mouse acceleration
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 There are several ways of setting mouse acceleration: by editing [Xorg](/index.php/Xorg "Xorg") configuration files, [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) which provides _xset_ and _xinput_, and configuration interfaces common in [desktop environments](/index.php/Desktop_environments "Desktop environments").
 
 ## Contents
@@ -220,12 +216,3 @@ and restart X.
 **Note:** The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. Speed settings < 0 are a percentage of the default speed (e.g. -0.3 is 70% of the normal speed), speeds > 0 are times 2, so 0.5 is 200% and 1.0 is 300% of the normal speed. For example, to adjust the mouse speed down to 50%, use `xinput --set-prop 8 'libinput Accel Speed' -0.5`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414770](https://wiki.archlinux.org/index.php?title=Mouse_acceleration&oldid=414770)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

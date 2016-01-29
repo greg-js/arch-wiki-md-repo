@@ -1,9 +1,5 @@
 # Croscore Fonts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -117,11 +113,3 @@ Append following lines to your font configuration file, eg. /etc/fonts/local.con
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=415570](https://wiki.archlinux.org/index.php?title=Croscore_Fonts&oldid=415570)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fonts](/index.php/Category:Fonts "Category:Fonts")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

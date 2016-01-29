@@ -1,9 +1,5 @@
 # Dell Latitude E6x00
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Latitude E-Series: 6400/6500.
 
 This article will tell you how to get the basic components of the laptop running with Arch.
@@ -289,7 +285,3 @@ $ cat /etc/X11/xorg.conf
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_E6x00&oldid=374461](https://wiki.archlinux.org/index.php?title=Dell_Latitude_E6x00&oldid=374461)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

@@ -1,9 +1,5 @@
 # ArchHaskell
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The ArchHaskell group works on providing [Haskell](/index.php/Haskell "Haskell") packages to the wider Arch Linux community. The goal is to provide all of [Hackage](http://hackage.haskell.org) as binary packages for easy installation.
 
 ## Contents
@@ -165,11 +161,3 @@ For example, for haskell-foo, ensure:
 There can be some problems switching to [ArchHaskell repository](#ArchHaskell_repository) when some Haskell packages are already installed from [official repositories](/index.php/Official_repositories "Official repositories"). The surest way is to remove all Haskell related packages, synchronize the [pacman](/index.php/Pacman "Pacman") packages database, and reinstall all the needed packages. Also for Xmonad users, be sure to install `haskell-xmonad` package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=415587](https://wiki.archlinux.org/index.php?title=ArchHaskell&oldid=415587)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Automatic login to virtual console
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -58,8 +54,3 @@ ExecStart=-/usr/bin/agetty --autologin _username_ -s %I 115200,38400,9600 vt102
 *   [Change default runlevel/target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=416228](https://wiki.archlinux.org/index.php?title=Automatic_login_to_virtual_console&oldid=416228)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Security](/index.php/Category:Security "Category:Security")

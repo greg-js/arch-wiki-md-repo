@@ -1,9 +1,5 @@
 # Chainload El-Torito ISO
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -141,11 +137,3 @@ When searching, I found quite a lot of information on how to chainload a *REAL* 
 I also came across alot of info on how to boot self-contained or INT13h ISOs.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Chainload_El-Torito_ISO&oldid=376584](https://wiki.archlinux.org/index.php?title=Chainload_El-Torito_ISO&oldid=376584)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,9 +1,5 @@
 # Puppet Dashboard
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** This wiki entry is a work-in-progress.
 
 Related articles
@@ -12,7 +8,7 @@ Related articles
 
 From the [Puppet Dashboard website](http://projects.puppetlabs.com/projects/dashboard/):
 
-_The Puppet Dashboard is a web interface and reporting tool for your Puppet installation. Dashboard facilitates management and configuration tasks, provides a quick visual snapshot of important system information, and delivers valuable reports._
+NaN
 
 ## Contents
 
@@ -77,7 +73,3 @@ Your database is now configured.
 ### Create a database.yml file that matches your database
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Puppet_Dashboard&oldid=320070](https://wiki.archlinux.org/index.php?title=Puppet_Dashboard&oldid=320070)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

@@ -1,9 +1,5 @@
 # RepRap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 RepRap is an open-source 3D printer project. A RepRap prints objects of plastic and is intended for rapid-prototyping, the printer itself is built with small plastic parts which can be printed out and replaced. This page explains how to install RepRap host software on Arch Linux and how to print 3D models. More information is available on the [RepRap homepage](http://www.reprap.org).
 
 ## Contents
@@ -183,7 +179,3 @@ Read more at [http://www.repetier.com/](http://www.repetier.com/)
 [http://reprapbook.appspot.com/](http://reprapbook.appspot.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RepRap&oldid=398116](https://wiki.archlinux.org/index.php?title=RepRap&oldid=398116)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Printers](/index.php/Category:Printers "Category:Printers")

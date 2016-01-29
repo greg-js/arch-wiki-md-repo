@@ -1,9 +1,5 @@
 # Pure-FTPd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
@@ -142,7 +138,3 @@ Available backends are:
 *   [Virtual users](http://download.pureftpd.org/pub/pure-ftpd/doc/README.Virtual-Users)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pure-FTPd&oldid=387008](https://wiki.archlinux.org/index.php?title=Pure-FTPd&oldid=387008)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")

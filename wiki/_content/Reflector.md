@@ -1,9 +1,5 @@
 # Reflector
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Mirrors](/index.php/Mirrors "Mirrors")
@@ -156,7 +152,3 @@ COUNTRY=United States
 Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Reflector&oldid=414454](https://wiki.archlinux.org/index.php?title=Reflector&oldid=414454)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

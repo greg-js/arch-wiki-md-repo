@@ -1,9 +1,5 @@
 # Sony Vaio Pro SVP-1x21
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -247,11 +243,3 @@ echo 0 | sudo tee /sys/devices/platform/sony-laptop/battery_care_limiter
 Some users are having issues with the usb port labeled with a lightning bolt not working for anything but charging. This is a known issue for many Sony laptops.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_Pro_SVP-1x21&oldid=380043](https://wiki.archlinux.org/index.php?title=Sony_Vaio_Pro_SVP-1x21&oldid=380043)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

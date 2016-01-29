@@ -1,9 +1,5 @@
 # Sdcv
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [sdcv](https://www.archlinux.org/packages/?name=sdcv) is the console version of the StarDict program that provides console access to dictionaries in StarDict's format
 
 ## Contents
@@ -68,11 +64,3 @@ alias def="/usr/bin/sdcv"
 *   [Official web site](http://sdcv.sourceforge.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sdcv&oldid=379577](https://wiki.archlinux.org/index.php?title=Sdcv&oldid=379577)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

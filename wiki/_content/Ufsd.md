@@ -1,9 +1,5 @@
 # Ufsd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Ufsd](http://www.paragon-software.com/home/ntfs-linux-per/) is a closed-source driver for Microsoft's NTFS file system that includes read and write support, developed by Paragon GmbH. It is currently (as of 29-Aug, 2013) free for personal use. It offers significantly faster writes to ntfs filesystems than the default ntfs-3g driver. This document will describe how to setup ufsd to work on your computer.
 
 ## Contents
@@ -103,11 +99,3 @@ To load the ufsd driver at startup, create a `*.conf` file (e.g. `ufsd.conf`) in
 *   [Ufsd options](http://kb.paragon-software.com/paragon/include/templ/object2.jsp?objId=5833)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ufsd&oldid=412196](https://wiki.archlinux.org/index.php?title=Ufsd&oldid=412196)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

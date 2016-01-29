@@ -1,9 +1,5 @@
 # HP Chromebook 14
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chromebook](/index.php/Chromebook "Chromebook")
@@ -192,11 +188,3 @@ See disassembly pictures [[1]](http://imgur.com/a/aGSQC), [[2]](http://imgur.com
 *   [Disassembly instructions (official)](http://h10032.www1.hp.com/ctg/Manual/c03936089.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Chromebook_14&oldid=399168](https://wiki.archlinux.org/index.php?title=HP_Chromebook_14&oldid=399168)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

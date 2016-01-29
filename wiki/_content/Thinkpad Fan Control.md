@@ -1,18 +1,14 @@
 # Thinkpad Fan Control
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the Thinkpad Fan Control website:
 
-_tp-fan monitors temperatures and controls fan speed of IBM/Lenovo ThinkPad notebooks. tp-fan is an open-source project released under the GPL v3._
+NaN
 
-_The tpfand daemon controls the system fan in software. It can be used to make the notebook more quiet. However this will also result in higher system temperatures that may damage and/or shorten the lifespan of the computer. Since version 0.90 fan trigger temperatures can be configured separately for each temperature sensor._
+NaN
 
-_This project also provides the tpfan-admin GTK+ frontend to monitor system temperature and adjust fan trigger temperatures._
+NaN
 
-_Warning: This program may damage your notebook. The author does not take any responsibility for damages caused by the use of this program._
+NaN
 
 ## Contents
 
@@ -59,11 +55,3 @@ or by automatically loading it on system startup:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Thinkpad_Fan_Control&oldid=392723](https://wiki.archlinux.org/index.php?title=Thinkpad_Fan_Control&oldid=392723)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

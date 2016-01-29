@@ -1,9 +1,5 @@
 # ASUS Eee PC 1201NL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -20,117 +16,17 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** Does not comply with [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:ASUS Eee PC 1201NL#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_1201NL))
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia GeForce 9400M</td>
-
-<td style="color:green">**Working**</td>
-
-<td>nvidia</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1e</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>rtl8192se</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-<td>acpi-eeepc-generic</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend2RAM</td>
-
-<td style="color:green">**Working**</td>
-
-<td>pm-utils</td>
-
-</tr>
-
-<tr>
-
-<td>Hibernate</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uswsusp-git</td>
-
-</tr>
-
-<tr>
-
-<td>Multi-input touchpad</td>
-
-<td style="color:red">**Only emulation**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Nvidia GeForce 9400M | **Working** | nvidia |
+| Ethernet | **Working** | atl1e |
+| Wireless | **Working** | rtl8192se |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** |
+| Card Reader | **Working** |
+| Function Keys | **Working** | acpi-eeepc-generic |
+| Suspend2RAM | **Working** | pm-utils |
+| Hibernate | **Working** | uswsusp-git |
+| Multi-input touchpad | **Only emulation** |
 
 **This is just a draft - more detailed instructions coming up soon + more detailed tests**
 
@@ -243,12 +139,3 @@ Reboot
 Load kernel with parameters acpi_osi=Linux vga=0x034d
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201NL&oldid=408674](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201NL&oldid=408674)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

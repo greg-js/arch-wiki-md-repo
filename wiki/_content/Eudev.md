@@ -1,9 +1,5 @@
 # Eudev
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [OpenRC](/index.php/OpenRC "OpenRC")
@@ -88,7 +84,3 @@ Your files in `/etc/sysctl.d/` might disappear after removing [systemd](https://
 *   [Github: Eudev](https://github.com/gentoo/eudev)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Eudev&oldid=403197](https://wiki.archlinux.org/index.php?title=Eudev&oldid=403197)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")

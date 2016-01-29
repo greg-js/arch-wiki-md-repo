@@ -1,9 +1,5 @@
 # Console mouse support
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 GPM, short for General Purpose Mouse, is a daemon that provides mouse support for Linux virtual consoles.
 
 ## Installation
@@ -49,7 +45,3 @@ Once a suitable configuration has been found, [start](/index.php/Start "Start") 
 For more information see [man page](/index.php/Man_page "Man page") `gpm (8)`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Console_mouse_support&oldid=395840](https://wiki.archlinux.org/index.php?title=Console_mouse_support&oldid=395840)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

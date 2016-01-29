@@ -1,9 +1,5 @@
 # Maple
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Octave](/index.php/Octave "Octave")
@@ -13,7 +9,7 @@ Related articles
 
 From the [official website](http://www.maplesoft.com/products/maple/):
 
-_Maple is a high-level language and interactive environment for numerical computation, visualization, and programming. Using Maple, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java._
+NaN
 
 ## Contents
 
@@ -41,7 +37,3 @@ Once the package is installed, you will need to provide a license activation cod
 In order to get Maple to accept your activation code, you may need to install the [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/) package from the AUR. This will fake a standard Linux standard base runtime and convince the authentication server to accept your valid activation code. The [lsb-release](https://www.archlinux.org/packages/community/any/lsb-release/) package does not solve this issue, as the [MapleSoft installation support site](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) might lead one to believe.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Maple&oldid=409953](https://wiki.archlinux.org/index.php?title=Maple&oldid=409953)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")

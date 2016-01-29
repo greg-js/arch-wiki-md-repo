@@ -1,9 +1,5 @@
 # Maximizing performance
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ccache](/index.php/Ccache "Ccache")
@@ -99,7 +95,7 @@ $ glxinfo | grep direct
 
 The simplest and most efficient way of improving overall performance is to run lightweight environments and applications.
 
-*   Use a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Choices include [Awesome](/index.php/Awesome "Awesome"), [dwm](/index.php/Dwm "Dwm"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [i3](/index.php/I3 "I3"), [IceWM](/index.php/IceWM "IceWM"), [JWM](/index.php/JWM "JWM"), [Openbox](/index.php/Openbox "Openbox"), [wmii](/index.php/Wmii "Wmii") and [xmonad](/index.php/Xmonad "Xmonad"). If choosing a desktop environment, consider [LXDE](/index.php/LXDE "LXDE") or [Xfce](/index.php/Xfce "Xfce").
+*   Use a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment").
 *   Use `pstree` or [htop](https://www.archlinux.org/packages/?name=htop) to list running daemons and their resource use.
 
 ### Benchmarking
@@ -462,16 +458,4 @@ ac_add_options --enable-profile-guided-optimization
 
 to your `.mozconfig` file.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=417067](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=417067)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware](/index.php/Category:Hardware "Category:Hardware")
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=417731](https://wiki.archlinux.org/index.php?title=Maximizing_performance&oldid=417731)"

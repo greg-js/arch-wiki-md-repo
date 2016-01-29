@@ -1,9 +1,5 @@
 # Dell Latitude C600
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 In an attempt to give back to the Arch community I decided to write a wiki page about my laptop the Dell Latitude C600 and what I've found out about it, it's treated me well and plays fairly nicely with Linux. I would recommend it.
 
 Much of this information has been based off of the wiki page for the [Dell Latitude C600](http://gentoo-wiki.com/HARDWARE_Dell_Latitude_C600) at the Gentoo wiki and the [linux-dell-laptops faq](http://www.whacked.net/ldl/faq/) page which although old is still very good, I suggest you also read both of these if you do not find answers here.
@@ -24,10 +20,10 @@ Much of this information has been based off of the wiki page for the [Dell Latit
 
 # Known Hardware
 
-**Cardbus:** 2 slots, Texas Instruments PCI1420  
-**Audio:** 3Com Corporation 3c556 Hurricane CardBus [Cyclone] (rev 10)  
-**Video:** ATI Technologies Inc Rage Mobility M3 AGP 2x (rev 02)  
-**Ethernet:** 3Com Corporation 3c556 Hurricane CardBus [Cyclone] (rev 10)  
+**Cardbus:** 2 slots, Texas Instruments PCI1420
+**Audio:** 3Com Corporation 3c556 Hurricane CardBus [Cyclone] (rev 10)
+**Video:** ATI Technologies Inc Rage Mobility M3 AGP 2x (rev 02)
+**Ethernet:** 3Com Corporation 3c556 Hurricane CardBus [Cyclone] (rev 10)
 **Modem:** 3Com Corporation Mini PCI 56k Winmodem (rev 10)
 
 # PCMCIA Cardbus
@@ -137,7 +133,3 @@ The little joystick in the center of the keyboard also works perfectly.
 *   This document is listed at the [TuxMobil Linux laptop and notebook installation guides survey (DELL)](http://tuxmobil.org/dell.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_C600&oldid=416982](https://wiki.archlinux.org/index.php?title=Dell_Latitude_C600&oldid=416982)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

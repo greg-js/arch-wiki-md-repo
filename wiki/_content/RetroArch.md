@@ -1,9 +1,5 @@
 # RetroArch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** RetroArch is not affiliated with [Arch Linux](/index.php/Arch_Linux "Arch Linux").
 
 RetroArch is a modular, command-line driven, multi-system emulator that is designed to be fast, lightweight, and portable. Some of its features can be found on few other emulators, such as real-time rewinding and game-aware shading based on the libretro API.
@@ -22,15 +18,15 @@ RetroArch is a modular, command-line driven, multi-system emulator that is desig
 
 **RetroArch** — Stable version.
 
-[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://aur.archlinux.org/packages/retroarch/)<sup><small>AUR</small></sup>
+NaN
 
 **RetroArch (git)** — Development version.
 
-[http://www.libretro.com/](http://www.libretro.com/) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)<sup><small>AUR</small></sup>
+NaN
 
 **RetroArch-Phoenix (git)** — GTK+ front-end, development version.
 
-[https://github.com/Themaister/RetroArch-Phoenix](https://github.com/Themaister/RetroArch-Phoenix) || [retroarch-phoenix-git](https://aur.archlinux.org/packages/retroarch-phoenix-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/retroarch-phoenix-git)]</sup>, or [retroarch-phoenix-qt-git](https://aur.archlinux.org/packages/retroarch-phoenix-qt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/retroarch-phoenix-qt-git)]</sup> (qt build)
+NaN
 
 ## Usage
 
@@ -93,12 +89,3 @@ This is, however, a solution that should be not be used if tweaking RetroArch's 
 *   [Documentation for developers](http://github.com/libretro/libretro.github.com/wiki/Documentation-devs)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RetroArch&oldid=407580](https://wiki.archlinux.org/index.php?title=RetroArch&oldid=407580)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

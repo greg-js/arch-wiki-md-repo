@@ -1,9 +1,5 @@
 # Godot Engine
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -41,11 +37,3 @@ To be able to export your project, you will need prebuilt binaries. If using the
 *   [https://github.com/okamstudio/godot](https://github.com/okamstudio/godot)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Godot_Engine&oldid=414042](https://wiki.archlinux.org/index.php?title=Godot_Engine&oldid=414042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

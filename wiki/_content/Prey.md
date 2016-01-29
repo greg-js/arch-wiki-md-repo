@@ -1,9 +1,5 @@
 # Prey
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Prey](http://www.preyproject.com/) is a set of bash scripts that helps you track your computer when it is stolen.
 
 This guide shows you how to install Prey.
@@ -69,8 +65,3 @@ If [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") is instal
 There seems to be a bug in version 0.5.3 which gives an error if the SMTP password is set when using "email" post_method, which returns an error, but works fine when executed normally without the --check option.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Prey&oldid=417565](https://wiki.archlinux.org/index.php?title=Prey&oldid=417565)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")

@@ -1,9 +1,5 @@
 # Stress Test
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -60,71 +56,13 @@ gcc compiling: 1.2720 V (steady).
 
 This machine running with a vcore of +0.005 (in offset mode) remains stable in both mprime and linpack for hours, but throws errors under both x264 and gcc after only several minutes.
 
-<table class="wikitable" align="center">
-
-<tbody>
-
-<tr>
-
-<th>Voltage Demand</th>
-
-<th>Program</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td rowspan="4" bgcolor="#fffacd">**Medium**</td>
-
-</tr>
-
-<tr>
-
-<td>_Cc/Gcc_</td>
-
-<td>Both cc/gcc compilation is a great method of stress testing. Both are available in the _base-devel_ group.</td>
-
-</tr>
-
-<tr>
-
-<td>_HandBrake-cli_</td>
-
-<td>[handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings.</td>
-
-</tr>
-
-<tr>
-
-<td>_Systester_</td>
-
-<td>[systester](https://aur.archlinux.org/packages/systester/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/systester)]</sup> Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability.</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="3" bgcolor="#f7e3e3">**High**</td>
-
-<td>_mprime_</td>
-
-<td>[mprime-bin](https://aur.archlinux.org/packages/mprime-bin/)<sup><small>AUR</small></sup> factors large numbers and is an excellent way to stress CPU and memory.</td>
-
-</tr>
-
-<tr>
-
-<td>_linpack_</td>
-
-<td>[linpack](https://aur.archlinux.org/packages/linpack/)<sup><small>AUR</small></sup> - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Voltage Demand | Program | Description |
+| **Medium** |
+| _Cc/Gcc_ | Both cc/gcc compilation is a great method of stress testing. Both are available in the _base-devel_ group. |
+| _HandBrake-cli_ | [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings. |
+| _Systester_ | [systester](https://aur.archlinux.org/packages/systester/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/systester)]</sup> Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
+| **High** | _mprime_ | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/)<sup><small>AUR</small></sup> factors large numbers and is an excellent way to stress CPU and memory. |
+| _linpack_ | [linpack](https://aur.archlinux.org/packages/linpack/)<sup><small>AUR</small></sup> - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |
 
 ## Stressing CPU and Memory
 
@@ -242,11 +180,3 @@ Either download and burn the ISO to a CD and boot from it, or install [memtest86
 **Tip:** Allowing Memtest86+ to run for >10 cycles without errors is usually sufficient.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=415398](https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=415398)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [CPU](/index.php/Category:CPU "Category:CPU")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

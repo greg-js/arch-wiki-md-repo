@@ -1,9 +1,5 @@
 # LVM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
@@ -13,7 +9,7 @@ Related articles
 
 From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux) "wikipedia:Logical Volume Manager (Linux)"):
 
-LVM is a [logical volume manager](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management") for the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"); it manages disk drives and similar mass-storage devices.
+NaN
 
 ## Contents
 
@@ -362,7 +358,7 @@ You can restrict the volumes that are activated automatically by setting the `au
 
 #### Physical volumes
 
-After extending of prior to reducing the size of a device that has a physical volume on it, you need to grow or shrink the PV using `pvresize`.
+After extending or prior to reducing the size of a device that has a physical volume on it, you need to grow or shrink the PV using `pvresize`.
 
 ##### Growing
 
@@ -700,7 +696,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 From [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html):
 
-_The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG._
+NaN
 
 #### Create
 
@@ -815,7 +811,7 @@ Symptoms:
 
 Cause:
 
-Removing an external LVM drive without deactivating the volume group(s) first. Before you disconnect, make sure to:
+NaN
 
 ```
 # vgchange -an _volume group name_
@@ -862,12 +858,4 @@ Make sure to remove snapshot volumes before generating grub.cfg.
 *   [LVM2 Mirrors vs. MD Raid 1](http://www.joshbryan.com/blog/2008/01/02/lvm2-mirrors-vs-md-raid-1/) post by Josh Bryan
 *   [Ubuntu LVM Guide Part 1](http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html)[Part 2 detals snapshots](http://www.tutonics.com/2012/12/lvm-guide-part-2-snapshots.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LVM&oldid=415909](https://wiki.archlinux.org/index.php?title=LVM&oldid=415909)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LVM&oldid=417810](https://wiki.archlinux.org/index.php?title=LVM&oldid=417810)"

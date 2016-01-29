@@ -1,9 +1,5 @@
 # SFTP chroot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -291,13 +287,3 @@ Now the user can log in with SFTP, they are chrooted to `/home/user`, but they s
 *   [http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config](http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SFTP_chroot&oldid=385957](https://wiki.archlinux.org/index.php?title=SFTP_chroot&oldid=385957)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

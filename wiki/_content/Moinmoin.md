@@ -1,9 +1,5 @@
 # Moinmoin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 "MoinMoin is an advanced, easy to use and extensible WikiEngine with a large community of users. Said in a few words, it is about collaboration on easily editable web pages." MoinMoin is written in python2.
 
 ## Contents
@@ -98,7 +94,3 @@ WantedBy=multi-user.target
 You should now be able to reach your wiki under wiki.your.domain. For further information on how to configure MoinMoin refer to the [MoinMoinWiki](http://moinmo.in/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Moinmoin&oldid=388041](https://wiki.archlinux.org/index.php?title=Moinmoin&oldid=388041)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

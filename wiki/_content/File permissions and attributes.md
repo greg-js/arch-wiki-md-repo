@@ -1,9 +1,5 @@
 # File permissions and attributes
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Users and groups](/index.php/Users_and_groups "Users and groups")
@@ -529,11 +525,3 @@ user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 *   [Backup and restore file permissions in Linux](http://www.concrete5.org/documentation/how-tos/designers/backup-and-restore-file-permissions-in-linux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&oldid=406729](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&oldid=406729)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

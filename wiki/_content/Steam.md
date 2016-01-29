@@ -1,9 +1,5 @@
 # Steam
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
@@ -11,7 +7,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
-_Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses._
+NaN
 
 [Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
 
@@ -161,7 +157,9 @@ env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxc
 
 ```
 
-If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality. WARNING: This also deletes the AppCache (games).
+If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality.
+
+**Warning:** `--reset` also deletes your games (the AppCache).
 
 ```
 steam --reset
@@ -201,7 +199,7 @@ and then run steam.
 
 ### Native runtime: steam.sh line 756 Segmentation fault
 
-Valve GitHub [issue 3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
+NaN
 
 As per the bug report above, Steam crashes with `/home/<username>/.local/share/Steam/steam.sh: line 756: <variable numeric code> Segmentation fault (core dumped)` when running with STEAM_RUNTIME=0.
 
@@ -216,7 +214,7 @@ Notice that the workaround is necessary because the bug affects systems with lib
 
 ### The close button only minimizes the window
 
-Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issues/1025)
+NaN
 
 To close the Steam window (and remove it from the taskbar) when you press **x**, but keep Steam running in the tray, export the environment variable `STEAM_FRAME_FORCE_CLOSE=1`. See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
 
@@ -595,13 +593,4 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=417478](https://wiki.archlinux.org/index.php?title=Steam&oldid=417478)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=417713](https://wiki.archlinux.org/index.php?title=Steam&oldid=417713)"

@@ -1,9 +1,5 @@
 # ASUS Eee PC 1001HA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 General Information](#General_Information)
@@ -69,7 +65,3 @@ First deactivate this option in the BIOS Boot settings, then turn off your compu
 You can use graphical tools such as lxrandr, arandr or a command line tools, such as [xrandr](/index.php/Xrandr "Xrandr").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1001HA&oldid=380788](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1001HA&oldid=380788)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

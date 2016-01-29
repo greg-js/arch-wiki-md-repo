@@ -1,9 +1,5 @@
 # Wmutils
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Using [wmutils](https://github.com/wmutils) (_window manipulation utilities_), you can do a multitude of simple tasks such as listing windows, moving/resizing/teleporting them, changing their visibilty, changing their stacking order, and more. You can even chain commands together to complete actions that other window managers cannot do.
 
 ## Installation
@@ -21,11 +17,3 @@ _wmutils_, however, is only a windows manipulation utility. A [window manager](/
 **Reason:** No "following sections" for the moment. (Discuss in [Talk:Wmutils#](https://wiki.archlinux.org/index.php/Talk:Wmutils))
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wmutils&oldid=399484](https://wiki.archlinux.org/index.php?title=Wmutils&oldid=399484)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

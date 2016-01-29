@@ -1,9 +1,5 @@
 # Ttytter
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -56,12 +52,3 @@ To enable ANSI colours and some other features here is a template .ttytterrc whi
 For a more indepth look at ttytter & its commands see the [ttytter homepage](http://www.floodgap.com/software/ttytter/#bt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ttytter&oldid=360642](https://wiki.archlinux.org/index.php?title=Ttytter&oldid=360642)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

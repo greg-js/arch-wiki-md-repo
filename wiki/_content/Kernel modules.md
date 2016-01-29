@@ -1,9 +1,5 @@
 # Kernel modules
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
@@ -248,9 +244,3 @@ A module will not be loaded if the "vermagic" string contained within the kernel
 *   [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_modules&oldid=417080](https://wiki.archlinux.org/index.php?title=Kernel_modules&oldid=417080)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

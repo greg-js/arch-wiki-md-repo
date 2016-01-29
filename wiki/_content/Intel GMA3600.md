@@ -1,9 +1,5 @@
 # Intel GMA3600
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
@@ -112,8 +108,3 @@ mplayer -lavdopts threads=4 -fs myvideo.avi
 *   [http://communities.intel.com/message/158477](http://communities.intel.com/message/158477)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_GMA3600&oldid=393591](https://wiki.archlinux.org/index.php?title=Intel_GMA3600&oldid=393591)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")

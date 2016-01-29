@@ -1,9 +1,5 @@
 # ownCloud
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
@@ -13,7 +9,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
-_ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)._
+NaN
 
 The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [#Apache configuration](#Apache_configuration) and [#Nginx + uwsgi_php configuration](#Nginx_.2B_uwsgi_php_configuration).
 
@@ -527,7 +523,7 @@ To enable contacts and calendar sync:
     2.  Enable mod_rewrite.so in httpd.conf
     3.  create a new DAVdroid account in the _Account_ settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; _DAVdroid_ will find itself the right URLs)
 
-For an older version of the app but with still useful info, see [this article](http://www.slsmk.com/sync-android-contacts-calendar-and-files-to-owncloud/).
+NaN
 
 *   if using an Android version below 4.0 and favouring Free/Libre software solutions, give a try to [aCal](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=com.morphoss.acal) for calendar and contacts sync or CalDAV Sync Adapter ([F-Droid](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=org.gege.caldavsyncadapter)) for just calendar sync; if you are willing to use non-libre software, then the [recommended solution](http://doc.owncloud.org/server/7.0/user_manual/pim/contacts.html#synchronizing-with-android) is to use [CardDAV-Sync and CalDAV-Sync](http://dmfs.org/).
 
@@ -824,12 +820,3 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=415403](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=415403)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Multitouch Displays
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -100,12 +96,3 @@ Orientation 0
 If you want gestures in your window manager, install [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and read its [docs](https://code.google.com/p/touchegg/wiki/Main).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Multitouch_Displays&oldid=409605](https://wiki.archlinux.org/index.php?title=Multitouch_Displays&oldid=409605)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

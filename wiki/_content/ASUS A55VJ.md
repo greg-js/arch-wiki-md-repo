@@ -1,9 +1,5 @@
 # ASUS A55VJ
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Model A55VJ-SXH161 (also K55VJ):](#Model_A55VJ-SXH161_.28also_K55VJ.29:)
@@ -172,11 +168,3 @@ Works fine with [backlight-control](https://aur.archlinux.org/packages/backlight
 Works with [dkms-rts_bpp](https://aur.archlinux.org/packages/dkms-rts_bpp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dkms-rts_bpp)]</sup> from aur, remember to blacklist existing mmc modules.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_A55VJ&oldid=391872](https://wiki.archlinux.org/index.php?title=ASUS_A55VJ&oldid=391872)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Catwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 About](#About)
@@ -148,7 +144,3 @@ If both of those do not work, try to use one of the devices outputted by the _am
 _alsamixer_
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Catwm&oldid=378534](https://wiki.archlinux.org/index.php?title=Catwm&oldid=378534)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge E130
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers the Arch Linux support for the Lenovo ThinkPad Edge E130 laptop.
 
 ## Contents
@@ -35,85 +31,15 @@ No special steps are needed during setup, everyhing (WiFi, Network, Modem) seeme
 
 Tested model 33588CG (BIOS H4ET92WW v2.52 04/18/2013) on **Kernel 3.11.1** (stable) and **Kernel 3.11.1 with CK1 patchset** (linux-ck-ivybridge package from [Repo-ck](/index.php/Repo-ck "Repo-ck"))
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Working? (Yes/No)</th>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>Yes (xf86-video-intel and intel-dri for 3D; KMS works too)</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet (Realtek RTL8111/8168 Gigabit Ethernet (rev 07))</td>
-
-<td>Yes (module: r8169)</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless (Intel Wireless-N 2230 (rev c4))</td>
-
-<td>Yes (module: iwlwifi)</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes (module: bluetooth; use blueman for GUI)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td>Yes (module: snd_hda_intel)</td>
-
-</tr>
-
-<tr>
-
-<td>Web Camera</td>
-
-<td>Yes (test with skype or this command: mplayer tv:// -tv driver=v4l2 )</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader (Chicony)</td>
-
-<td>Not Tested</td>
-
-</tr>
-
-<tr>
-
-<td>Modem (Ericcson Modem)</td>
-
-<td>Yes (using NetworkManager with modemmanager)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Working? (Yes/No) |
+| Video | Yes (xf86-video-intel and intel-dri for 3D; KMS works too) |
+| Ethernet (Realtek RTL8111/8168 Gigabit Ethernet (rev 07)) | Yes (module: r8169) |
+| Wireless (Intel Wireless-N 2230 (rev c4)) | Yes (module: iwlwifi) |
+| Bluetooth | Yes (module: bluetooth; use blueman for GUI) |
+| Audio | Yes (module: snd_hda_intel) |
+| Web Camera | Yes (test with skype or this command: mplayer tv:// -tv driver=v4l2 ) |
+| Card Reader (Chicony) | Not Tested |
+| Modem (Ericcson Modem) | Yes (using NetworkManager with modemmanager) |
 
 ### lspci
 
@@ -197,11 +123,3 @@ KMS lets you set high native resolution early during system boot. Follow guideli
 [Plymouth](/index.php/Plymouth "Plymouth") provides a flicker-free graphical boot processs. Seemed to work without problems.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E130&oldid=392337](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E130&oldid=392337)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

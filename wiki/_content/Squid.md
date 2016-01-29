@@ -1,9 +1,5 @@
 # Squid
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From the squid [website](http://www.squid-cache.org):
 
-_Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL._
+NaN
 
 While squid works wonderfully in large corporations and schools, it can also benefit the home user too. However, if you're looking for a more lightweight single-user proxy, you should try [Polipo](/index.php/Polipo "Polipo").
 
@@ -436,13 +432,3 @@ fi
 *   [Elite Proxy Config Example(cached)](https://archive.is/oOdiT) ([cache-two](https://web.archive.org/web/20130425134032/http://gotux.net/arch-linux/squid-proxy-server/))
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Squid&oldid=413441](https://wiki.archlinux.org/index.php?title=Squid&oldid=413441)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

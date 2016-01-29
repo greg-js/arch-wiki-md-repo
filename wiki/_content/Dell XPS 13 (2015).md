@@ -1,108 +1,16 @@
 # Dell XPS 13 (2015)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)").
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>wl _or_ iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after installing firmware</td>
-
-<td>btbcm</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after configuration</td>
-
-<td>hid_multitouch</td>
-
-</tr>
-
-<tr>
-
-<td>Webcam</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>linux-uvc</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless switch</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Works, but is [problematic](#rfkill_issues_with_Broadcom_wireless) with Broadcom WiFi</td>
-
-<td>rfkill</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Video | Working | i915 |
+| Wireless | Working | wl _or_ iwlwifi |
+| Bluetooth | Works after installing firmware | btbcm |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Works after configuration | hid_multitouch |
+| Webcam | Working | linux-uvc |
+| Card Reader | Working | rtsx_usb |
+| Wireless switch | Works, but is [problematic](#rfkill_issues_with_Broadcom_wireless) with Broadcom WiFi | rfkill |
 
 The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of the XPS 13 line, and like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team. They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
 
@@ -198,9 +106,9 @@ By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This
 
 ### High quality ICC monitor profiles
 
-An ICC profile is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. Since every monitor is different it is possible to achieve better results calibrating your own monitor, but if you don't have a colorimeter or a spectrophotometer you will get far better results with the following XYZ LUT + MATRIX profiles made with a ~3500 patches testchart instead of the canned ones. If you previously didn't install a canned profile you will notice a night and day difference in color accuracy. Do not use a profile made for the QHD+ version with the FHD one and vice versa. The profiles has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. The monitor has been turned on for at least 30 minutes before commencing the calibration.
+An ICC profile is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. Since every monitor is different it is possible to achieve better results calibrating your own monitor, but if you don't have a colorimeter or a spectrophotometer you will get far better results with the following XYZ LUT + MATRIX profiles made with a ~3500 patches testchart instead of the canned ones. If you previously didn't install a canned profile you will notice a night and day difference in color accuracy. Do not use a profile made for the QHD+ version with the FHD one and vice versa. The profiles has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on at least 30 minutes before commencing the calibration.
 
-*   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!LpMGUJCD!cqGOyY-BCHL3znTZI-kwwagLWD0gnaarKTurdzRH1Qo).This profile has been made with DBC on, so I will upload another profile with DBC off
+*   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
 
 **Note:** You should disable Dynamic Brightness Control to accurately calibrate the QHD+ display: [https://github.com/advancingu/XPS13Linux/issues/2](https://github.com/advancingu/XPS13Linux/issues/2)
 
@@ -303,12 +211,4 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=417307](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=417307)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=417665](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=417665)"

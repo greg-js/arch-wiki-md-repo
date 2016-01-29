@@ -1,9 +1,5 @@
 # TOMOYO Linux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [TOMOYO Linux](http://tomoyo.sourceforge.jp/) is Mandatory Access Control (MAC) implementation for Linux. It was launched in March 2003 and is sponsored by [NTT Data Corporation](http://www.nttdata.co.jp/en/). TOMOYO Linux focuses on the behaviour of a system, allowing each process to declare behaviours and resources needed to achieve its purpose. It can be used as a system analysis tool as well as an access restriction tool.
 
 The security goal of TOMOYO Linux is to provide "MAC that covers practical requirements for most users and keeps usable for most administrators". TOMOYO Linux is not a tool for just security professionals, but also for average users and administrators.
@@ -266,45 +262,10 @@ As the system runs, TOMOYO Linux will create domains and add them to the tree. T
 
 Profiles can be assigned to each domain. There are four default profiles:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Disabled</td>
-
-<td>Works as if regular kernel.</td>
-
-</tr>
-
-<tr>
-
-<td>Learning</td>
-
-<td>Do not reject an access request if it violates policy. Append the request to policy.</td>
-
-</tr>
-
-<tr>
-
-<td>Permissive</td>
-
-<td>Do not reject an access request if it violates policy. Do not append the request to policy.</td>
-
-</tr>
-
-<tr>
-
-<td>Enforcing</td>
-
-<td>Reject an access request if it violates policy. Do not append the request to policy.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Disabled | Works as if regular kernel. |
+| Learning | Do not reject an access request if it violates policy. Append the request to policy. |
+| Permissive | Do not reject an access request if it violates policy. Do not append the request to policy. |
+| Enforcing | Reject an access request if it violates policy. Do not append the request to policy. |
 
 The learning profile can be used to analyse the system or a specific application. Once all of the desired access requests of a domain have been identified, the policy for that domain can be edited as required before selecting the enforcing profile. This can be done for any and all domains from the start of system boot.
 
@@ -327,8 +288,3 @@ The learning profile can be used to analyse the system or a specific application
 *   [SELinux](/index.php/SELinux "SELinux")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TOMOYO_Linux&oldid=364949](https://wiki.archlinux.org/index.php?title=TOMOYO_Linux&oldid=364949)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

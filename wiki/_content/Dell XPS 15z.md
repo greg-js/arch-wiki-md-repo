@@ -1,112 +1,17 @@
 # Dell XPS 15z
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th width="160" style="border-bottom: 2px solid;">Device</th>
-
-<th width="120" style="border-bottom: 2px solid">Status</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Network</th>
-
-<th style="background: #228B22; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Wireless</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Sound</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Bluetooth</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Touchpad</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Graphics</th>
-
-<th style="background: #FF7F00; border-bottom: 1px solid">Modify</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Screen</th>
-
-<th style="background: #FF7F00; border-bottom: 1px solid">Modify</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">USB 3.0</th>
-
-<th style="background: #FFFFFF; border-bottom: 1px solid">Not tested</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Webcam</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Card Reader</th>
-
-<th style="background: #FF7F00; border-bottom: 1px solid">Modify</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">System info</th>
-
-<th style="background: #FFFFFF; border-bottom: 1px solid">Not tested</th>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Status |
+| Network | Works |
+| Wireless | Works |
+| Sound | Works |
+| Bluetooth | Works |
+| Touchpad | Works |
+| Graphics | Modify |
+| Screen | Modify |
+| USB 3.0 | Not tested |
+| Webcam | Works |
+| Card Reader | Modify |
+| System info | Not tested |
 
 ## Contents
 
@@ -226,7 +131,3 @@ To make the card reader function enter the following command:
 This will allow it to auto mount cards until the next reboot
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_15z&oldid=398940](https://wiki.archlinux.org/index.php?title=Dell_XPS_15z&oldid=398940)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

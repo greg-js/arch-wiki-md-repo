@@ -1,9 +1,5 @@
 # PHP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [PHP](http://www.php.net/) is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 
 ## Contents
@@ -310,7 +306,3 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdate
 *   [PHP Official Website](http://www.php.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=417470](https://wiki.archlinux.org/index.php?title=PHP&oldid=417470)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

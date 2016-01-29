@@ -1,9 +1,5 @@
 # Lenovo Ideapad Y480
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Lenovo IdeaPad Y480 is compatible with Arch Linux for the most part. However there are some tidbits we need to tweak in depending on our needs. This article, like many others in this wiki, assumes the user has already read through the [Beginner's Guide](/index.php/Beginner%27s_Guide "Beginner's Guide") and related articles and has installed most, if not all, of the needed drivers. We will focus mostly on tweaking the system.
 
 ## Contents
@@ -48,7 +44,3 @@ SwitchString=ACEN DCEN CPVER:[1] FHRST RESSEN PTDIS
 A working download can be found [here](https://drive.google.com/folderview?id=0BzueXo1sGj4uaFhDakZLZUFJaXc&usp=sharing)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Y480&oldid=366434](https://wiki.archlinux.org/index.php?title=Lenovo_Ideapad_Y480&oldid=366434)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

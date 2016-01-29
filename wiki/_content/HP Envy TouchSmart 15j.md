@@ -1,9 +1,5 @@
 # HP Envy TouchSmart 15j
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Specifications](#Specifications)
@@ -33,116 +29,25 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 I've created this page based on my HP ENVY TouchSmart 15-j004sa (model number E6B23EA) with the following specifications
 
-<table class="wikitable">
+| Microprocessor | Intel Core i7-4700MQ (2.4 GHz, 6 MB cache, 4 cores) |
+| Chipset | Intel HM87 Express |
+| Memory | 16 GB DDR3 SDRAM |
+| Video Graphics | NVIDIA GeForce GT 740M (2 GB DDR3 dedicated) |
+| Hard Drive | 1 TB 5400 rpm SATA |
+| Display | 39.6 cm (15.6”) full HD BrightView LED-backlit Touchscreen (1920 x 1080) |
+| Network Card | Integrated 10/100/1000 Gigabit Ethernet LAN (RJ-45 connector) |
+| Wireless Connectivity | Intel 802.11b/g/n with Widi; Bluetooth |
+| Sound | Beats Audio with 4 speakers and two HP Triple Bass Reflex Subwoofer |
+| Pointing Device | HP Clickpad supporting multi-touch gestures |
+| Camera | HP TrueVision HD Webcam with integrated dual array digital microphone |
+| External Ports | Multi-format digital media card reader for SD cards
 
-<tbody>
-
-<tr>
-
-<td>Microprocessor</td>
-
-<td>Intel Core i7-4700MQ (2.4 GHz, 6 MB cache, 4 cores)</td>
-
-</tr>
-
-<tr>
-
-<td>Chipset</td>
-
-<td>Intel HM87 Express</td>
-
-</tr>
-
-<tr>
-
-<td>Memory</td>
-
-<td>16 GB DDR3 SDRAM</td>
-
-</tr>
-
-<tr>
-
-<td>Video Graphics</td>
-
-<td>NVIDIA GeForce GT 740M (2 GB DDR3 dedicated)</td>
-
-</tr>
-
-<tr>
-
-<td>Hard Drive</td>
-
-<td>1 TB 5400 rpm SATA</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>39.6 cm (15.6”) full HD BrightView LED-backlit Touchscreen (1920 x 1080)</td>
-
-</tr>
-
-<tr>
-
-<td>Network Card</td>
-
-<td>Integrated 10/100/1000 Gigabit Ethernet LAN (RJ-45 connector)</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless Connectivity</td>
-
-<td>Intel 802.11b/g/n with Widi; Bluetooth</td>
-
-</tr>
-
-<tr>
-
-<td>Sound</td>
-
-<td>Beats Audio with 4 speakers and two HP Triple Bass Reflex Subwoofer</td>
-
-</tr>
-
-<tr>
-
-<td>Pointing Device</td>
-
-<td>HP Clickpad supporting multi-touch gestures</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>HP TrueVision HD Webcam with integrated dual array digital microphone</td>
-
-</tr>
-
-<tr>
-
-<td>External Ports</td>
-
-<td>Multi-format digital media card reader for SD cards
-
-1 HDMI  
-1 headphone-out/microphone-in combo  
-4 USB 3.0 (1 Boost)  
+1 HDMI
+1 headphone-out/microphone-in combo
+4 USB 3.0 (1 Boost)
 1 RJ45
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
 
 ## Installation
 
@@ -211,45 +116,10 @@ The laptop contains several speakers. I think 2 front speakers and one on the ba
 
 Install [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools), and use `hdajackretask` with the following configuration. Use `Show unconnected pins` to show all available options.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Pin ID</th>
-
-<th>override</th>
-
-</tr>
-
-<tr>
-
-<td>0x0d</td>
-
-<td>Internal speaker</td>
-
-</tr>
-
-<tr>
-
-<td>0x0f</td>
-
-<td>Internal speaker</td>
-
-</tr>
-
-<tr>
-
-<td>0x10</td>
-
-<td>Internal speaker (LFE)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Pin ID | override |
+| 0x0d | Internal speaker |
+| 0x0f | Internal speaker |
+| 0x10 | Internal speaker (LFE) |
 
 Orange mute LED works as expected.
 
@@ -298,7 +168,3 @@ Dual-booting with Windows works, but the UEFI firmware sometimes decides to chan
 Soft-rebooting from Linux to Windows can cause issues, I experience that the audio jack stops working after a soft reboot. The solution is to power off the machine from Linux and start it again and boot Windows first.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Envy_TouchSmart_15j&oldid=384466](https://wiki.archlinux.org/index.php?title=HP_Envy_TouchSmart_15j&oldid=384466)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

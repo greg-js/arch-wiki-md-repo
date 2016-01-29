@@ -1,9 +1,5 @@
 # Step-by-step debugging guide
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
@@ -202,11 +198,3 @@ However, if you think there is something wrong with the application itself, and 
 *   [Gentoo guide for getting useful backtraces](https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Step-by-step_debugging_guide&oldid=411889](https://wiki.archlinux.org/index.php?title=Step-by-step_debugging_guide&oldid=411889)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # IPv6 - 6in4 Tunnel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -36,7 +32,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 Arch Linux uses a BSD-style network interface configuration located in _/etc/rc.conf_, which can make exotic network configurations interesting, to say the least. The following rc.d script is meant to help remedy the situation by providing a configurable wrapper to sanely manage a 6in4 link interface.
 
-*   This script uses the _route2_ method; make sure that the **iproute2** package is installed.
+NaN
 
 As _root_, write the following rc.d init script to _/etc/rc.d/6in4-tunnel_:
 
@@ -161,7 +157,7 @@ To delete the 6in4 tunnel link and remove the interface:
 
 The following method allows _/etc/rc.d/6in4-tunnel_ to start automatically at system startup.
 
-*   Verify that the 6in4 tunnel link is configured and working properly before doing this!
+NaN
 
 As _root_, insert _6in4-tunnel_ right after _network_ in the **DAEMONS** line of _/etc/rc.conf_.
 
@@ -186,12 +182,3 @@ DAEMONS=(syslog-ng iptables ip6tables network 6in4-tunnel openntpd ...
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IPv6_-_6in4_Tunnel&oldid=340817](https://wiki.archlinux.org/index.php?title=IPv6_-_6in4_Tunnel&oldid=340817)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # acpid
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ACPI modules](/index.php/ACPI_modules "ACPI modules")
@@ -293,7 +289,3 @@ Where _handler.sh_ can be a script similar to `/etc/acpi/handler.sh`.
 *   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acpid&oldid=415466](https://wiki.archlinux.org/index.php?title=Acpid&oldid=415466)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

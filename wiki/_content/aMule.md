@@ -1,9 +1,5 @@
 # aMule
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 aMule is an eMule-like client for the eD2k and Kademlia networks, supporting multiple platforms.
 
 ## Contents
@@ -101,7 +97,3 @@ The option "-i amule" includes the amule icon (a custom file may be specified ad
 *   [Getting_Started at aMule wiki](http://wiki.amule.org/wiki/Getting_Started).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AMule&oldid=401408](https://wiki.archlinux.org/index.php?title=AMule&oldid=401408)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

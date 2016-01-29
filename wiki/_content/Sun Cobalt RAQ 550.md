@@ -1,9 +1,5 @@
 # Sun Cobalt RAQ 550
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -236,11 +232,3 @@ Unfortunatly, information about the Cobalt RAQ servers is sparse and scattered. 
 *   My homepage [[5]](http://users.opengate.be/~glenn/cobaltraq/): Some usefull stuff
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sun_Cobalt_RAQ_550&oldid=401117](https://wiki.archlinux.org/index.php?title=Sun_Cobalt_RAQ_550&oldid=401117)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

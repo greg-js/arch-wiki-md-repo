@@ -1,9 +1,5 @@
 # Nitrogen
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [feh](/index.php/Feh "Feh")
@@ -67,11 +63,3 @@ $ rm -r ~/.config/nitrogen/
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nitrogen&oldid=403920](https://wiki.archlinux.org/index.php?title=Nitrogen&oldid=403920)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

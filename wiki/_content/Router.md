@@ -1,9 +1,5 @@
 # Router
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -278,13 +274,3 @@ See [Snort](/index.php/Snort "Snort").
 *   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Router&oldid=415051](https://wiki.archlinux.org/index.php?title=Router&oldid=415051)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

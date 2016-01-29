@@ -1,9 +1,5 @@
 # Sharkoon 5-Bay RAID Box
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Sharkoon 5-Bay RAID Box external Raid USB3/eSata case [[1]](http://www.sharkoon.com/?q=en/node/1809).
 
 ## Known issues
@@ -15,7 +11,3 @@ The SMART values of the top most HDD can't be accessed. When using the HDDs with
 For updating the driver the easyest way is to use the windows installer. download the latest firmware+installer for windows from station-drivers.com [[3]](http://www.station-drivers.com/index.php/downloads/Drivers/Jmicron/JMS539-Sata-USB-3.0-Controller/JMS-539-Firmware-Version-255.31.3.41.22/) Plug the Sharkoon 5-Bay RAID Box in a USB2 socket at your windows computer (a USB3 socket should not work for the updating process after that it can be used with USB3 again of course). Install the new firmware with the downloaded installer.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sharkoon_5-Bay_RAID_Box&oldid=366002](https://wiki.archlinux.org/index.php?title=Sharkoon_5-Bay_RAID_Box&oldid=366002)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")

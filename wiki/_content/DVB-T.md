@@ -1,9 +1,5 @@
 # DVB-T
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DVB-S](/index.php/DVB-S "DVB-S")
@@ -221,8 +217,3 @@ If you bump into problems, try these tools to help debug:
 *   `femon -H` shows signal statistics
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=417134](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=417134)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

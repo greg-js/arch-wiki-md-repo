@@ -1,9 +1,5 @@
 # Crystal
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Crystal](http://crystal-lang.org) is a statically typed, compiled programming language with [Ruby](/index.php/Ruby "Ruby") inspired syntax and global type interference.
 
 ## Installation
@@ -50,7 +46,3 @@ For more options see:
 *   [#crystal-lang IRC channel](http://webchat.freenode.net/?channels=#crystal-lang)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Crystal&oldid=408778](https://wiki.archlinux.org/index.php?title=Crystal&oldid=408778)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

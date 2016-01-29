@@ -1,9 +1,5 @@
 # Toshiba Satellite R830
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Wi-Fi & Ethernet
 
 Atheros Communications Inc. AR9285 Wireless Network Adapter (PCI-Express) (rev 01) and Intel Corporation 82579V Gigabit Ethernet with kernel 3.8 work out of the box.
@@ -53,7 +49,3 @@ Type the following code:
 Save the file; log out and in again.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_R830&oldid=417458](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_R830&oldid=417458)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

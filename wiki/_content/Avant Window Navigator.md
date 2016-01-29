@@ -1,9 +1,5 @@
 # Avant Window Navigator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
@@ -31,165 +27,24 @@ Related articles
 
 The most of the applets require some additional packages, which are listed in optdepends. Make sure that you installed them before enable an applet:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Applet name</td>
-
-<td>Dependencies</td>
-
-<td>Optional dependences</td>
-
-</tr>
-
-<tr>
-
-<td>animal-farm</td>
-
-<td>[fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)</td>
-
-</tr>
-
-<tr>
-
-<td>battery</td>
-
-<td>[upower](https://www.archlinux.org/packages/?name=upower)</td>
-
-</tr>
-
-<tr>
-
-<td>comics</td>
-
-<td>[python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg)</td>
-
-</tr>
-
-<tr>
-
-<td>cairo-clock</td>
-
-<td>[python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg)</td>
-
-<td>[python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil)</td>
-
-</tr>
-
-<tr>
-
-<td>calendar</td>
-
-<td>[python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<td>cpufreq</td>
-
-<td>[gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets)</td>
-
-</tr>
-
-<tr>
-
-<td>dialect</td>
-
-<td>[python-xklavier](https://aur.archlinux.org/packages/python-xklavier/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python-xklavier)]</sup></td>
-
-</tr>
-
-<tr>
-
-<td>feeds</td>
-
-<td>[python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser)</td>
-
-</tr>
-
-<tr>
-
-<td>hardware-sensors</td>
-
-<td>[python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg)</td>
-
-<td>[hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)</td>
-
-</tr>
-
-<tr>
-
-<td>media-control</td>
-
-<td>[banshee](https://www.archlinux.org/packages/?name=banshee)</td>
-
-</tr>
-
-<tr>
-
-<td>media-player</td>
-
-<td>[gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python)</td>
-
-</tr>
-
-<tr>
-
-<td>mail</td>
-
-<td>[python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser)</td>
-
-</tr>
-
-<tr>
-
-<td>slickswitcher</td>
-
-<td>[python2-wnck](https://www.archlinux.org/packages/?name=python2-wnck)</td>
-
-<td>[python2-gconf](https://www.archlinux.org/packages/?name=python2-gconf)</td>
-
-</tr>
-
-<tr>
-
-<td>stacks</td>
-
-<td>[python2-libgnome](https://www.archlinux.org/packages/?name=python2-libgnome) [python2-gnomedesktop](https://www.archlinux.org/packages/?name=python2-gnomedesktop)</td>
-
-</tr>
-
-<tr>
-
-<td>thinkhdaps</td>
-
-<td>[python2-pyinotify](https://www.archlinux.org/packages/?name=python2-pyinotify)</td>
-
-</tr>
-
-<tr>
-
-<td>tomboy-applet</td>
-
-<td>[tomboy](https://www.archlinux.org/packages/?name=tomboy)</td>
-
-</tr>
-
-<tr>
-
-<td>volume-control</td>
-
-<td>[gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Applet name | Dependencies | Optional dependences |
+| animal-farm | [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod) |
+| battery | [upower](https://www.archlinux.org/packages/?name=upower) |
+| comics | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) |
+| cairo-clock | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) |
+| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/)<sup><small>AUR</small></sup> |
+| cpufreq | [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets) |
+| dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python-xklavier)]</sup> |
+| feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
+| hardware-sensors | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) |
+| media-control | [banshee](https://www.archlinux.org/packages/?name=banshee) |
+| media-player | [gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python) |
+| mail | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
+| slickswitcher | [python2-wnck](https://www.archlinux.org/packages/?name=python2-wnck) | [python2-gconf](https://www.archlinux.org/packages/?name=python2-gconf) |
+| stacks | [python2-libgnome](https://www.archlinux.org/packages/?name=python2-libgnome) [python2-gnomedesktop](https://www.archlinux.org/packages/?name=python2-gnomedesktop) |
+| thinkhdaps | [python2-pyinotify](https://www.archlinux.org/packages/?name=python2-pyinotify) |
+| tomboy-applet | [tomboy](https://www.archlinux.org/packages/?name=tomboy) |
+| volume-control | [gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python) |
 
 ### Compositing
 
@@ -224,12 +79,3 @@ You may want to try [DockbarX](https://launchpad.net/dockbar), a task manager ap
 *   [AWN on Launchpad](https://launchpad.net/awn)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Avant_Window_Navigator&oldid=408677](https://wiki.archlinux.org/index.php?title=Avant_Window_Navigator&oldid=408677)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

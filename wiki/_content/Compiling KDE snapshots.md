@@ -1,9 +1,5 @@
 # Compiling KDE snapshots
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article provides step-by-step guide how to compile your own KDE git/svn snapshot from sources using [kde-snapshots](https://gitorious.org/kde-snapshots-repo) scripts. These scripts are used for [[kde-snapshots] repo](https://bbs.archlinux.org/viewtopic.php?pid=994402).
 
 ## Contents
@@ -347,11 +343,3 @@ Since KDE is now in the middle of SVN->git migration, it's necessary to check `p
 *   ${pkgbase}_${scm}_pkgs is array of ${pkgbase}'s submodules located in ${scm} (git or svn) repository. For example, all kdesupport submodules are in git already, so the array kdesupport_git_pkgs will fetch all submodules from `git://anongit.kde.org/${submodule}` to `${srcdir}/${pkgbase}/${submodule}`. When the submodule is named like `${submodule}:${alternative_name}`, it will be cloned from `git://anongit.kde.org/${submodule}` to `${srcdir}/${pkgbase}/${alternative_name}`. You can specify alternative URL of a submodule by entering `@git://alternative.git/repository`. When the base package does not have any submodules, like for example kdelibs, a `@${pkgbase}` must be provided in the submodules.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiling_KDE_snapshots&oldid=392022](https://wiki.archlinux.org/index.php?title=Compiling_KDE_snapshots&oldid=392022)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [KDE](/index.php/Category:KDE "Category:KDE")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

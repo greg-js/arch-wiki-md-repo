@@ -1,9 +1,5 @@
 # Toshiba Z30-A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 High-performance ultrabook laptop of Toshiba think for professionals and business. Portégé Z30-A is a long-lasting battery, full-size ports and Intel® Core™ processor laptop of 13.3" and 1.2Kg.
 
 ## Contents
@@ -21,101 +17,17 @@ High-performance ultrabook laptop of Toshiba think for professionals and busines
 
 ## Specifications
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Name</td>
-
-<td>Series Toshiba Portege Z30-A</td>
-
-</tr>
-
-<tr>
-
-<td>Processor</td>
-
-<td>Haswell microarchitecture (4th generation)</td>
-
-</tr>
-
-<tr>
-
-<td>Screen</td>
-
-<td>13.3" 1366x768 Widescreen</td>
-
-</tr>
-
-<tr>
-
-<td>RAM</td>
-
-<td>4-8-16GB</td>
-
-</tr>
-
-<tr>
-
-<td>HDD</td>
-
-<td>Toshiba SDD (128 [THNSNJ128GMCU], 256, 512 GB)</td>
-
-</tr>
-
-<tr>
-
-<td>Optical Drive</td>
-
-<td>none</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td>Haswell-ULT Integrated Graphics Controller (Intel® HD Graphics 4400)</td>
-
-</tr>
-
-<tr>
-
-<td>Network</td>
-
-<td>Ethernet - Intel I218-V, Wifi - Intel Wireless 3160</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td>ALPS (Trackstick+Mousepad)</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint reader</td>
-
-<td>USB Validity Sensors</td>
-
-</tr>
-
-<tr>
-
-<td>Smart Card Reader</td>
-
-<td>O2 Micro, Inc. OZ776</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Series Toshiba Portege Z30-A |
+| Processor | Haswell microarchitecture (4th generation) |
+| Screen | 13.3" 1366x768 Widescreen |
+| RAM | 4-8-16GB |
+| HDD | Toshiba SDD (128 [THNSNJ128GMCU], 256, 512 GB) |
+| Optical Drive | none |
+| Graphics | Haswell-ULT Integrated Graphics Controller (Intel® HD Graphics 4400) |
+| Network | Ethernet - Intel I218-V, Wifi - Intel Wireless 3160 |
+| Touchpad | ALPS (Trackstick+Mousepad) |
+| Fingerprint reader | USB Validity Sensors |
+| Smart Card Reader | O2 Micro, Inc. OZ776 |
 
 ## Installation and configuration
 
@@ -181,11 +93,3 @@ The backlight works correctly if it is configured on BIOS. `toshiba_acpi` kernel
 The last version of [fprintd](https://www.archlinux.org/packages/?name=fprintd) has support for it. However, the image usually is wrong (lengthened) and needs two, three or more tries to obtain verifications.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Z30-A&oldid=404200](https://wiki.archlinux.org/index.php?title=Toshiba_Z30-A&oldid=404200)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

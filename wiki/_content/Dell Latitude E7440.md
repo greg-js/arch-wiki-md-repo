@@ -1,9 +1,5 @@
 # Dell Latitude E7440
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -88,7 +84,7 @@ As a benchmark I've used the redraw time of pidgin GTK windows and the mouse mov
 
 Tested on: i3-git, mesa-full-i965 and xf86-video-intel-git 2.99.911-1 but this was reproducing on the stable versions of mesa and i915 driver.
 
-Laptop bios version A05\. <strike>Meanwhile I've upgraded to bios version A08 and this issue seems to have been fixed.</strike> Nope, it's still not fixed. If you want the video card to perform at full speed it is my impression you need to boot with the AC connected.
+Laptop bios version A05\. ~~Meanwhile I've upgraded to bios version A08 and this issue seems to have been fixed.~~ Nope, it's still not fixed. If you want the video card to perform at full speed it is my impression you need to boot with the AC connected.
 
 This is actually a "feature" called Intel SpeedStep, that reduces performance in order to extend battery life. It can be disabled in BIOS. The linux kernel seems to support it so it should be possible to configure this on OS level.
 
@@ -103,7 +99,7 @@ This is actually a "feature" called Intel SpeedStep, that reduces performance in
 
 *   The O2 Micro SD-card reader may only work with linux>=3.14.
 
-*   <s>It seems that bluetooth on Intel 7260 is not working out of the box, but I don't know how to test it further. _Tested and seems to be working. Bluetooth is usable with "gnome-control-center bluetooth"._</s>
+*   ~~It seems that bluetooth on Intel 7260 is not working out of the box, but I don't know how to test it further. _Tested and seems to be working. Bluetooth is usable with "gnome-control-center bluetooth"._~~
 
 *   Webcam does not work with Virtualbox (as of community/virtualbox 4.3.6-1), but it works with native programs such as skype.
 
@@ -121,7 +117,7 @@ If you use BIOS+[MBR](/index.php/MBR "MBR") boot method and msdos partition tabl
 
 ### Keyboard inputs the same character multiple times on one keypress
 
-Happens with A10 bios. <s>Downgrading to A08 is the only fix for now</s>. Also applies for Dell Latitude E7240.
+Happens with A10 bios. ~~Downgrading to A08 is the only fix for now~~. Also applies for Dell Latitude E7240.
 
 **UPDATE:** A new BIOS version has been released, [A14](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=0P7G1&fileId=3430208686), which addresses this problem with the internal keyboard.
 
@@ -163,12 +159,3 @@ After updating to the 4.2.0 kernel (in testing as of 9/9/15) my latitude hangs w
 [Dell Latitude E7440 | Post-installation et optimisation (French)](http://williamhollacsek.com/blog/2013/09/12/dell-latitude-e7440-optimisation)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_E7440&oldid=402169](https://wiki.archlinux.org/index.php?title=Dell_Latitude_E7440&oldid=402169)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

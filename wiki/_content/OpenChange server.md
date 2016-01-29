@@ -1,9 +1,5 @@
 # OpenChange server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
@@ -1284,11 +1280,3 @@ include conf/extra/ocsmanager-apache.conf
 Now just restart `httpd` and `samba`. If you have made it this far, and your DNS is configured correctly, you should be able to configure an Outlook client with only an email address, username, and password. For Outlook (or other MAPI clients that support RPC/HTTPS, you need open only port 443, at the edge. Obviously, you still need to consider additional configuration for Postfix (spam and virus filtering, more restrictive use of SMTPD and SMTP, open ports 25 and 587) if you intend to receive mail from the internet. You will probably also want to move the various HTTPD pieces into virtual hosts, provide redirection on 80 for secure services, etc., but those exercises are covered in great detail elsewhere.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenChange_server&oldid=411689](https://wiki.archlinux.org/index.php?title=OpenChange_server&oldid=411689)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

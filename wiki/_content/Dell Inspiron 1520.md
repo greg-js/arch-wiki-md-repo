@@ -1,9 +1,5 @@
 # Dell Inspiron 1520
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
@@ -68,11 +64,3 @@ To activate the microphone with `alsamixer`, open `alsamixer` and press `Tab`. N
 *   This report is listed at the [TuxMobil: Linux Laptop and Notebook Installation Guides Survey: DELL](http://tuxmobil.org/dell.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1520&oldid=417031](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1520&oldid=417031)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")

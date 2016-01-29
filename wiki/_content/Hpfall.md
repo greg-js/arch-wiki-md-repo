@@ -1,9 +1,5 @@
 # Hpfall
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **hpfall** is a simple daemon providing HDD shock protection for HP laptops supporting the feature officially called "HP Mobile Data Protection System 3D" or "HP 3D DriveGuard".
 
 ## Contents
@@ -65,7 +61,3 @@ Go to it's directory and run:
 Lift you laptop into free space and simulate free fall while holding it firmly with your hands. About 10 cm should be enough. If the disk protection works then you should hear your HDD making "click" sound, see one of your laptop's LEDs flashing and the watch value's background should permanently turn black.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hpfall&oldid=399053](https://wiki.archlinux.org/index.php?title=Hpfall&oldid=399053)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

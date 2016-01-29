@@ -1,9 +1,5 @@
 # Dell Inspiron Mini 11z
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Inspiron Mini 11z is a netbook from Dell.
 
 ## Contents
@@ -66,7 +62,3 @@ UVC 1.00 compatible - should work out of the box, with the latest kernel (rememb
 If you encounter an error about a missing gstreamer plugin (vp8enc), install the metapackage "gstreamer0.10-plugins", which will include "gstreamer0.10-bad-plugins", containing the plugin in question
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_Mini_11z&oldid=376619](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_Mini_11z&oldid=376619)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

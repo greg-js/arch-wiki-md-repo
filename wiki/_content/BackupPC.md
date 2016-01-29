@@ -1,9 +1,5 @@
 # BackupPC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **BackupPC** is a high-performance, enterprise-grade system for backing up Unix, Linux, WinXX, and MacOSX PCs, desktops and laptops to a server's disk. BackupPC is highly configurable and easy to install and maintain.
 
 Given the ever decreasing cost of disks and raid systems, it is now practical and cost effective to backup a large number of machines onto a server's local disk or network storage. For some sites this might be the complete backup solution. For other sites additional permanent archives could be created by periodically backing up the server to tape.
@@ -261,7 +257,3 @@ Alias           /BackupPC/images        /usr/share/BackupPC/files/
 *   [BackupPC documentation](http://backuppc.sourceforge.net/faq/BackupPC.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=BackupPC&oldid=412042](https://wiki.archlinux.org/index.php?title=BackupPC&oldid=412042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

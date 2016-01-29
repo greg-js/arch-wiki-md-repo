@@ -1,9 +1,5 @@
 # nmh
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [S-nail](/index.php/S-nail "S-nail")
@@ -86,77 +82,14 @@ _Nmh_ is also capable of retrieving mail via POP. A basic POP setup (see inc (1)
 
 To become familiar with basic nmh usage, learn and practice the following commands:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th width="75">Command</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>inc</td>
-
-<td>Incorporate new mail.</td>
-
-</tr>
-
-<tr>
-
-<td>scan</td>
-
-<td>Scan the contents of the current folder.</td>
-
-</tr>
-
-<tr>
-
-<td>folder/folders</td>
-
-<td>Change the current folder or list folders and their contents.</td>
-
-</tr>
-
-<tr>
-
-<td>show</td>
-
-<td>Display messages.</td>
-
-</tr>
-
-<tr>
-
-<td>comp</td>
-
-<td>Compose a new message.</td>
-
-</tr>
-
-<tr>
-
-<td>repl</td>
-
-<td>Reply to a message.</td>
-
-</tr>
-
-<tr>
-
-<td>refile</td>
-
-<td>Move a message to another folder.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | Description |
+| inc | Incorporate new mail. |
+| scan | Scan the contents of the current folder. |
+| folder/folders | Change the current folder or list folders and their contents. |
+| show | Display messages. |
+| comp | Compose a new message. |
+| repl | Reply to a message. |
+| refile | Move a message to another folder. |
 
 ## Frontends
 
@@ -181,7 +114,3 @@ While _nmh_ is fully usable from the command-line, several console-based and gra
 *   ['MH & nmh: Email for Users & Programmers' (book)](http://rand-mh.sourceforge.net/book/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nmh&oldid=376938](https://wiki.archlinux.org/index.php?title=Nmh&oldid=376938)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

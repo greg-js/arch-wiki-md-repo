@@ -1,9 +1,5 @@
 # Jalbum
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -59,11 +55,3 @@ Sample Jalbums are available from the official [Jalbum site](http://jalbum.net/e
 *   One can further customize the bananalbum skin to display EXIF data to the right of the photo by following the advice in [this thread](http://jalbum.net/forum/thread.jspa?threadID=29443).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jalbum&oldid=394163](https://wiki.archlinux.org/index.php?title=Jalbum&oldid=394163)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

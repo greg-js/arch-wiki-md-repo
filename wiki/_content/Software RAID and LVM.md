@@ -1,9 +1,5 @@
 # Software RAID and LVM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [RAID](/index.php/RAID "RAID")
@@ -54,107 +50,15 @@ Although [RAID](/index.php/RAID "RAID") and [LVM](/index.php/LVM "LVM") may seem
 
 **Tip:** It is good practice to ensure that only the drives involved in the installation are attached while performing the installation.
 
-<table border="1" width="100%" style="text-align:center;">
+| **LVM Logical Volumes** | `/` | `/var` | `/swap` | `/home` |
 
-<tbody>
+| **LVM Volume Groups** | `/dev/VolGroupArray` |
 
-<tr>
+| **RAID Arrays** | `/dev/md0` | `/dev/md1` |
 
-<td width="150px" align="left">**LVM Logical Volumes**</td>
+| **Physical Partitions** | `/dev/sda1` | `/dev/sdb1` | `/dev/sdc1` | `/dev/sda2` | `/dev/sdb2` | `/dev/sdc2` |
 
-<td>`/`</td>
-
-<td>`/var`</td>
-
-<td>`/swap`</td>
-
-<td>`/home`</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table border="1" width="100%" style="text-align:center;">
-
-<tbody>
-
-<tr>
-
-<td width="150px" align="left">**LVM Volume Groups**</td>
-
-<td>`/dev/VolGroupArray`</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table border="1" width="100%" style="text-align:center;">
-
-<tbody>
-
-<tr>
-
-<td width="150px" align="left">**RAID Arrays**</td>
-
-<td>`/dev/md0`</td>
-
-<td>`/dev/md1`</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table border="1" width="100%" style="text-align:center;">
-
-<tbody>
-
-<tr>
-
-<td width="150px" align="left">**Physical Partitions**</td>
-
-<td>`/dev/sda1`</td>
-
-<td>`/dev/sdb1`</td>
-
-<td>`/dev/sdc1`</td>
-
-<td>`/dev/sda2`</td>
-
-<td>`/dev/sdb2`</td>
-
-<td>`/dev/sdc2`</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table border="1" width="100%" style="text-align:center;">
-
-<tbody>
-
-<tr>
-
-<td width="150px" align="left">**Hard Drives**</td>
-
-<td>`/dev/sda`</td>
-
-<td>`/dev/sdb`</td>
-
-<td>`/dev/sdc`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Hard Drives** | `/dev/sda` | `/dev/sdb` | `/dev/sdc` |
 
 ### Swap space
 
@@ -570,8 +474,3 @@ For further information on how to maintain your software RAID or LVM review the 
 *   2011-03-12 - Arch Linux - [Some newbie questions about installation, LVM, grub, RAID](https://bbs.archlinux.org/viewtopic.php?id=114965)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Software_RAID_and_LVM&oldid=413953](https://wiki.archlinux.org/index.php?title=Software_RAID_and_LVM&oldid=413953)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

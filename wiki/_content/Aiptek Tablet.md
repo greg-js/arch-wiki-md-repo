@@ -1,9 +1,5 @@
 # Aiptek Tablet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This has been tested with an Aiptek HyperPen 12000U. I have no idea if it works with a different tablet.
 
 ## Installation
@@ -76,11 +72,3 @@ Edit -> Input Devices -> Aiptek
 *   X-Tilt, Y-Tilt and Wheel shouldn't matter
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Aiptek_Tablet&oldid=410285](https://wiki.archlinux.org/index.php?title=Aiptek_Tablet&oldid=410285)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

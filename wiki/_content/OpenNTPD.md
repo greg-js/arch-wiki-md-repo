@@ -1,9 +1,5 @@
 # OpenNTPD
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -207,11 +203,3 @@ This will wait 5 minutes before starting openntpd, which should give the system 
 *   [http://www.openntpd.org](http://www.openntpd.org)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenNTPD&oldid=414567](https://wiki.archlinux.org/index.php?title=OpenNTPD&oldid=414567)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

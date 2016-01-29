@@ -1,9 +1,5 @@
 # Dell Latitude E6620
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Latitude E6220.
 
 This article will tell you how to get the basic components of the laptop running with Arch.
@@ -58,7 +54,3 @@ For the TouchPad to work correctly install the [xf86-input-synaptics](https://ww
 To get the wireless working, see the Broadcom Wireless wiki page: [https://wiki.archlinux.org/index.php/broadcom_wireless#Installation](https://wiki.archlinux.org/index.php/broadcom_wireless#Installation)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_E6620&oldid=416842](https://wiki.archlinux.org/index.php?title=Dell_Latitude_E6620&oldid=416842)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

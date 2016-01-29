@@ -1,9 +1,5 @@
 # Festival
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Festival](http://www.cstr.ed.ac.uk/projects/festival/) is a general multi-lingual speech synthesis system developed at CSTR ([Centre for Speech Technology Research](http://www.cstr.ed.ac.uk/)).
 
 Festival offers a general framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech through a number APIs: from shell level, though a Scheme command interpreter, as a C++ library, from Java, and an Emacs interface. Festival is multi-lingual (currently British English, American English, Italian, Czech and Spanish, with other languages available in prototype.)
@@ -319,13 +315,3 @@ Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 *   [Festival manual](http://www.cstr.ed.ac.uk/projects/festival/manual/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Festival&oldid=412078](https://wiki.archlinux.org/index.php?title=Festival&oldid=412078)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

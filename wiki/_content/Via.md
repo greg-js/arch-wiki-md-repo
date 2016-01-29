@@ -1,9 +1,5 @@
 # Via
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Different Unichrome family display drivers](#Different_Unichrome_family_display_drivers)
@@ -107,12 +103,3 @@ If your computer crashes when closing X, you may try not using vesa driver for k
 *   [Unichrome-project](http://unichrome.sourceforge.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Via&oldid=412205](https://wiki.archlinux.org/index.php?title=Via&oldid=412205)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,102 +1,14 @@
 # ASUS Eee PC 1000HE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel 945GM</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1e</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k or rt2860sta</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-<td>btusb</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel 945GM | **Working** | xf86-video-intel |
+| Ethernet | **Working** | atl1e |
+| Wireless | **Working** | ath9k or rt2860sta |
+| Bluetooth | **Working** | btusb |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
 
 ## Contents
 
@@ -356,11 +268,3 @@ To simply test the camera, you may use [MPlayer](/index.php/MPlayer "MPlayer"):
 The webcam is reported to work with [Skype](/index.php/Skype "Skype").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1000HE&oldid=408671](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1000HE&oldid=408671)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Roundcube
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Roundcube](http://roundcube.net) is a full-featured, [PHP](/index.php/PHP "PHP") web-based mail client.
 
 ## Contents
@@ -253,7 +249,3 @@ Further usage instructions can be found [here](https://github.com/blind-coder/rc
 *   [Official installation manual](http://trac.roundcube.net/wiki/Howto_Install)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Roundcube&oldid=413100](https://wiki.archlinux.org/index.php?title=Roundcube&oldid=413100)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

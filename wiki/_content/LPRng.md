@@ -1,9 +1,5 @@
 # LPRng
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _The LPRng software is an enhanced, extended, and portable implementation of the Berkeley LPR print spooler functionality. While providing the same interface and meeting RFC1179 requirements, the implementation is completely new and provides support for the following features: lightweight (no databases needed) lpr, lpc, and lprm programs; dynamic redirection of print queues; automatic job holding; highly verbose diagnostics; multiple printers serving a single queue; client programs do not need to run SUID root; greatly enhanced security checks; and a greatly improved permission and authorization mechanism._[[1]](http://www.lprng.org/)
 
 LPRng is mature and stable and incorporates a flexible print filtering mechanism. It excels as a print server but can be used as a print client. It can also print from [CUPS](/index.php/CUPS "CUPS") clients installed on other machines with minor hand configuration on the CUPS side.
@@ -204,7 +200,3 @@ Double-sided printing of Postscript files is effected in the example filters by 
 In this case, send the Postscript file to a single-side print queue. The print filter `psfilter` set up for single-sided printing does no filtering of Postscript files.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LPRng&oldid=384863](https://wiki.archlinux.org/index.php?title=LPRng&oldid=384863)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Printers](/index.php/Category:Printers "Category:Printers")

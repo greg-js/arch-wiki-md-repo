@@ -1,9 +1,5 @@
 # XScreenSaver
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DPMS](/index.php/DPMS "DPMS")
@@ -190,11 +186,3 @@ xscreensaver.verbose:true
 *   [Homepage for XScreenSaver](http://www.jwz.org/xscreensaver/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XScreenSaver&oldid=414157](https://wiki.archlinux.org/index.php?title=XScreenSaver&oldid=414157)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Partclone
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Partclone](http://partclone.org), like the well-known [Partimage](http://www.partimage.org/Main_Page), can be used to back up and restore a partition while considering only used blocks.
 
 ## Contents
@@ -54,7 +50,3 @@ zcat ~/image_sda1.pcl.gz | partclone.ext4 -r -o /dev/sda1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Partclone&oldid=393562](https://wiki.archlinux.org/index.php?title=Partclone&oldid=393562)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

@@ -1,9 +1,5 @@
 # xmodmap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -38,15 +34,7 @@ _xmodmap_ is not directly related to [X KeyBoard extension](/index.php/X_KeyBoar
 
 There are two types of keyboard values in [Xorg](/index.php/Xorg "Xorg"): _keycodes_ and _keysyms_.
 
-keycode
-
-The _keycode_ is the numeric representation received by the kernel when a key or a mouse button is pressed.
-
-keysym
-
-The _keysym_ is the value assigned to the _keycode_. For example, pressing `A` generates the `keycode 73`, which is mapped to the `keysym 0×61`, which matches `A` in the [ASCII table](https://en.wikipedia.org/wiki/ASCII "wikipedia:ASCII").
-
-The _keysyms_ are managed by [Xorg](/index.php/Xorg "Xorg") in a table of _keycodes_ defining the _keycode_-_keysym_ relations, which is called the [keymap table](#Keymap_table). This can be shown by running `xmodmap`.
+NaN
 
 ## Installation
 
@@ -252,8 +240,3 @@ keycode 19 = equal 0 0 equal dead_doubleacute doubleacute dead_doubleacute
 *   [List of Keysyms Recognised by Xmodmap](http://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap) on [LinuxQuestions](http://linuxquestions.org)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmodmap&oldid=398830](https://wiki.archlinux.org/index.php?title=Xmodmap&oldid=398830)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-*   [X server](/index.php/Category:X_server "Category:X server")

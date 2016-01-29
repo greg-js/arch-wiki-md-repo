@@ -1,9 +1,5 @@
 # EPSXe playstation emulator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ePSXe (enhanced PSX emulator) is a PlayStation emulator for x86-based PC hardware with Microsoft Windows or Linux, as well as devices running Android. It was written by three authors, using the aliases _Calb_, __Demo__ and _Galtor_. ePSXe is closed source with the exception of the application programming interface (API) for its plug-ins.
 
 ## Contents
@@ -75,8 +71,3 @@ If the sound plugin does not work and you are using alsa, run:
 *   Pete's PSX plugins - [http://www.pbernert.com/index.htm](http://www.pbernert.com/index.htm)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=EPSXe_playstation_emulator&oldid=394347](https://wiki.archlinux.org/index.php?title=EPSXe_playstation_emulator&oldid=394347)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")

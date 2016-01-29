@@ -1,9 +1,5 @@
 # ASUS G73SW
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Model G73SW-XN2:](#Model_G73SW-XN2:)
@@ -231,7 +227,3 @@ Works fine with no configuration required.
 *   VGA output
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_G73SW&oldid=301657](https://wiki.archlinux.org/index.php?title=ASUS_G73SW&oldid=301657)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

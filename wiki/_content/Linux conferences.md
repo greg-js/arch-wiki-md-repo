@@ -1,9 +1,5 @@
 # Linux conferences
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The idea behind this page is to make a list of big Linux conferences at which we'd like to have Arch Linux represented. The idea is that we can all contribute to it and coordinate on the dates, details, and who's going.
 
 ## Contents
@@ -20,369 +16,68 @@ The idea behind this page is to make a list of big Linux conferences at which we
 
 ## FOSDEM
 
-<table>
-
-<tbody>
-
-<tr>
-
-<th align="left">Quote:</th>
-
-<td>FOSDEM meetings are recognized as "The best Free Software and Open Source events in Europe"</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Site:</th>
-
-<td>[https://fosdem.org/](https://fosdem.org/)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Wikipedia:</th>
-
-<td>[Wikipedia:FOSDEM](https://en.wikipedia.org/wiki/FOSDEM "wikipedia:FOSDEM")</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Where:</th>
-
-<td>Brussels, Belgium</td>
-
-</tr>
-
-<tr>
-
-<th align="left">When:</th>
-
-<td>February, 23th-24th (in 2008)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Since:</th>
-
-<td>2001</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Arch presence:</th>
-
-<td>no booths, but in 2010, JGC, Thomas, Roman, and Dieter were there. In 2011, Dieter was there (both times in Arch clothing)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Quote: | FOSDEM meetings are recognized as "The best Free Software and Open Source events in Europe" |
+| Site: | [https://fosdem.org/](https://fosdem.org/) |
+| Wikipedia: | [Wikipedia:FOSDEM](https://en.wikipedia.org/wiki/FOSDEM "wikipedia:FOSDEM") |
+| Where: | Brussels, Belgium |
+| When: | February, 23th-24th (in 2008) |
+| Since: | 2001 |
+| Arch presence: | no booths, but in 2010, JGC, Thomas, Roman, and Dieter were there. In 2011, Dieter was there (both times in Arch clothing) |
 
 ## FrOSCon
 
-<table>
-
-<tbody>
-
-<tr>
-
-<th align="left">Site:</th>
-
-<td>[http://www.froscon.de/en/home/](http://www.froscon.de/en/home/)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Where:</th>
-
-<td>Sankt Augustin, Germany</td>
-
-</tr>
-
-<tr>
-
-<th align="left">When:</th>
-
-<td>August, 23th-24th (2008); August, 25th-26th (2007); June, 24th-25th (2006)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Since:</th>
-
-<td>2006</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Arch presence:</th>
-
-<td>2007, 2008, 2009</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Site: | [http://www.froscon.de/en/home/](http://www.froscon.de/en/home/) |
+| Where: | Sankt Augustin, Germany |
+| When: | August, 23th-24th (2008); August, 25th-26th (2007); June, 24th-25th (2006) |
+| Since: | 2006 |
+| Arch presence: | 2007, 2008, 2009 |
 
 ## Linux Bier Wanderung
 
-<table>
-
-<tbody>
-
-<tr>
-
-<th align="left">Site:</th>
-
-<td>[http://www.linuxbierwanderung.com/](http://www.linuxbierwanderung.com/)  
-[http://lbw2008.palfreman.com/](http://lbw2008.palfreman.com/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-03-16]</sup>  
-[http://compsoc.dur.ac.uk/mediawiki/index.php/Mini_LBW_2008](http://compsoc.dur.ac.uk/mediawiki/index.php/Mini_LBW_2008)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Wikipedia:</th>
-
-<td>[Wikipedia:Linux Bier Wanderung](https://en.wikipedia.org/wiki/Linux_Bier_Wanderung "wikipedia:Linux Bier Wanderung")</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Where:</th>
-
-<td>different European country each summer,  
-in 2008 - Samnaun-Compatsch, Switzerland,  
-Durham, UK (mini-LBW)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">When:</th>
-
-<td>August, 9th-17th (2008)  
-September, 26th-28th (2008, mini-LBW)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Since:</th>
-
-<td>1999</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Arch presence:</th>
-
-<td>not yet :(</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Site: | [http://www.linuxbierwanderung.com/](http://www.linuxbierwanderung.com/)
+[http://lbw2008.palfreman.com/](http://lbw2008.palfreman.com/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-03-16]</sup>
+[http://compsoc.dur.ac.uk/mediawiki/index.php/Mini_LBW_2008](http://compsoc.dur.ac.uk/mediawiki/index.php/Mini_LBW_2008) |
+| Wikipedia: | [Wikipedia:Linux Bier Wanderung](https://en.wikipedia.org/wiki/Linux_Bier_Wanderung "wikipedia:Linux Bier Wanderung") |
+| Where: | different European country each summer,
+in 2008 - Samnaun-Compatsch, Switzerland,
+Durham, UK (mini-LBW) |
+| When: | August, 9th-17th (2008)
+September, 26th-28th (2008, mini-LBW) |
+| Since: | 1999 |
+| Arch presence: | not yet :( |
 
 ## Linux-Kongress
 
-<table>
-
-<tbody>
-
-<tr>
-
-<th align="left">Quote:</th>
-
-<td>Linux-Kongress is by far one of the most traditional Linux conferences with a focus on development and cutting edge topics</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Site:</th>
-
-<td>[http://www.linux-kongress.org/](http://www.linux-kongress.org/)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Wikipedia:</th>
-
-<td>[Wikipedia:Linux Kongress](https://en.wikipedia.org/wiki/Linux_Kongress "wikipedia:Linux Kongress")</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Where:</th>
-
-<td>Hamburg, Germany</td>
-
-</tr>
-
-<tr>
-
-<th align="left">When:</th>
-
-<td>October, 7th-10th (2008)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Since:</th>
-
-<td>1997</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Arch presence:</th>
-
-<td>not yet :(</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Quote: | Linux-Kongress is by far one of the most traditional Linux conferences with a focus on development and cutting edge topics |
+| Site: | [http://www.linux-kongress.org/](http://www.linux-kongress.org/) |
+| Wikipedia: | [Wikipedia:Linux Kongress](https://en.wikipedia.org/wiki/Linux_Kongress "wikipedia:Linux Kongress") |
+| Where: | Hamburg, Germany |
+| When: | October, 7th-10th (2008) |
+| Since: | 1997 |
+| Arch presence: | not yet :( |
 
 ## LinuxTag
 
-<table>
-
-<tbody>
-
-<tr>
-
-<th align="left">Quote:</th>
-
-<td>Europe's leading exhibition on Linux and Open Source</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Site:</th>
-
-<td>[http://www.linuxtag.org/](http://www.linuxtag.org/)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Wikipedia:</th>
-
-<td>[Wikipedia:LinuxTag](https://en.wikipedia.org/wiki/LinuxTag "wikipedia:LinuxTag")</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Where:</th>
-
-<td>Berlin, Germany (since 2007)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">When:</th>
-
-<td>May, 28th-31th (2008)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Since:</th>
-
-<td>1996</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Arch presence:</th>
-
-<td>2007</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Quote: | Europe's leading exhibition on Linux and Open Source |
+| Site: | [http://www.linuxtag.org/](http://www.linuxtag.org/) |
+| Wikipedia: | [Wikipedia:LinuxTag](https://en.wikipedia.org/wiki/LinuxTag "wikipedia:LinuxTag") |
+| Where: | Berlin, Germany (since 2007) |
+| When: | May, 28th-31th (2008) |
+| Since: | 1996 |
+| Arch presence: | 2007 |
 
 ## SCALE
 
-<table>
-
-<tbody>
-
-<tr>
-
-<th align="left">Site:</th>
-
-<td>[https://www.socallinuxexpo.org/scale/14x/](https://www.socallinuxexpo.org/scale/14x/)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Where:</th>
-
-<td>Pasadena Convention Center, Pasadena, CA, USA</td>
-
-</tr>
-
-<tr>
-
-<th align="left">When:</th>
-
-<td>January 21-24, 2016</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Since:</th>
-
-<td>2016</td>
-
-</tr>
-
-<tr>
-
-<th align="left">Arch user presence:</th>
-
-<td>Arch Linux Distribution Users, contact Systemservers re booth participation</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Site: | [https://www.socallinuxexpo.org/scale/14x/](https://www.socallinuxexpo.org/scale/14x/) |
+| Where: | Pasadena Convention Center, Pasadena, CA, USA |
+| When: | January 21-24, 2016 |
+| Since: | 2016 |
+| Arch user presence: | Arch Linux Distribution Users, contact Systemservers re booth participation |
 
 ## Linux World Expo 2006
 
-Boston, MA  
-April 3-5, 2006  
+Boston, MA
+April 3-5, 2006
 [http://www.linuxworldexpo.com/](http://www.linuxworldexpo.com/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-03-16]</sup>
 
 ## More
@@ -405,11 +100,3 @@ A few notes about conference preparation:
 *   Have a donation box. You will get donations.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_conferences&oldid=413635](https://wiki.archlinux.org/index.php?title=Linux_conferences&oldid=413635)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Events](/index.php/Category:Events "Category:Events")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

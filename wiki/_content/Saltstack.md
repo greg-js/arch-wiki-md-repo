@@ -1,14 +1,8 @@
 # Saltstack
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [docs.saltstack.com](http://docs.saltstack.com/):
 
-_Salt is a new approach to infrastructure management. Easy enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with them in seconds._
-
-_Salt delivers a dynamic communication bus for instrastructures that can be used for orchestration, remote execution, configuration management and much more._
+NaN
 
 ## Contents
 
@@ -121,11 +115,3 @@ for more commands see documentation or run:
 *   [http://docs.saltstack.com/](http://docs.saltstack.com/) - Official documentation
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Saltstack&oldid=412505](https://wiki.archlinux.org/index.php?title=Saltstack&oldid=412505)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

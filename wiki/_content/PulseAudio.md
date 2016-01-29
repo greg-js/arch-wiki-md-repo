@@ -1,9 +1,5 @@
 # PulseAudio
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
@@ -111,85 +107,20 @@ PulseAudio runs as a server daemon that can run either system-wide or on per-use
 
 Defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. The defaults are sensible for most users.
 
-<table class="wikitable"><caption>Notable configuration options</caption>
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Description</th>
-
-</tr>
-
-</tbody>
-
-<caption></caption>
-
-<tbody>
-
-<tr>
-
-<td>system-instance</td>
-
-<td>Run the daemon as a system-wide instance. Highly discouraged as it can introduce security issues. Useful on (headless) systems that have no real local users. Defaults to `no`.</td>
-
-</tr>
-
-</tbody>
-
-<caption></caption>
-
-<tbody>
-
-<tr>
-
-<td>resample-method</td>
-
-<td>Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
+<caption>Notable configuration options</caption>
+| Option | Description |<caption></caption>
+| system-instance | Run the daemon as a system-wide instance. Highly discouraged as it can introduce security issues. Useful on (headless) systems that have no real local users. Defaults to `no`. |<caption></caption>
+| resample-method | Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
 
 **Tip:** In some cases PulseAudio will generate a high CPU load. This can happen when multiple streams are resampled (individually). If this is a common use-case in a workflow, it should be considered to create an additional sink at a matching sample rate which can then be fed into the main sink, resampling only once.
 
-</td>
-
-</tr>
-
-</tbody>
-
-<caption></caption>
-
-<tbody>
-
-<tr>
-
-<td>flat-volumes</td>
-
-<td>`flat-volumes` scales the device-volume with the volume of the "loudest" application. For example, raising the VoIP call volume will raise the hardware volume and adjust the music-player volume so it stays where it was, without having to lower the volume of the music-player manually. Defaults to `yes` upstream, but to `no` within Arch.
+ |<caption></caption>
+| flat-volumes | `flat-volumes` scales the device-volume with the volume of the "loudest" application. For example, raising the VoIP call volume will raise the hardware volume and adjust the music-player volume so it stays where it was, without having to lower the volume of the music-player manually. Defaults to `yes` upstream, but to `no` within Arch.
 
 **Note:** The default behavior upstream can sometimes be confusing and some applications, unaware of this feature, can set their volume to 100% at startup, potentially blowing your speakers or your ears. This is why Arch defaults to the classic (ALSA) behavior by setting this to `no`.
 
-</td>
-
-</tr>
-
-</tbody>
-
-<caption></caption>
-
-<tbody>
-
-<tr>
-
-<td>default-fragments</td>
-
-<td>Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |<caption></caption>
+| default-fragments | Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues. |
 
 #### default.pa
 
@@ -274,7 +205,7 @@ You may want to use ALSA directly in most of your applications while still being
 
 *   Edit `/etc/pulse/default.pa`.
 
-Find and uncomment lines which load back-end drivers. Add **device** parameters as follows. Then find and comment lines which load autodetect modules.
+NaN
 
 ```
 load-module module-alsa-sink **device=dmix**
@@ -294,7 +225,7 @@ $ chmod +x ~/.kde4/env/kmix_disable_pulse.sh
 
 *   Now, reboot your computer and try running ALSA and PulseAudio applications at the same time. They both should produce sound simultaneously.
 
-Use [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) to control PulseAudio volume if needed.
+NaN
 
 ### OSS
 
@@ -657,14 +588,3 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416818](https://wiki.archlinux.org/index.php?title=PulseAudio&oldid=416818)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

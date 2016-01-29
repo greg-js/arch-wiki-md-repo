@@ -1,9 +1,5 @@
 # MSI Wind U120
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article pertains to installing Arch Linux on the [MSI](http://www.msi.com/) Wind U120 netbook. It does not cover the entire installation process, but rather any quirks that are above and beyond what you might encounter during a routine Arch installation.
 
 ## Contents
@@ -276,7 +272,3 @@ Power Button
 *   [MSIWind.net](http://msiwind.net/) - Community website dedicated to MSI Wind netbooks, includes forums and a wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MSI_Wind_U120&oldid=412127](https://wiki.archlinux.org/index.php?title=MSI_Wind_U120&oldid=412127)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [MSI](/index.php/Category:MSI "Category:MSI")

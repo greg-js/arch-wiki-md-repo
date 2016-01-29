@@ -1,9 +1,5 @@
 # R
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Intel C++](/index.php/Intel_C%2B%2B "Intel C++")
@@ -290,8 +286,3 @@ Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-
 *   [RSeek](http://www.rseek.org/) A search engine for R related material.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=R&oldid=414617](https://wiki.archlinux.org/index.php?title=R&oldid=414617)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

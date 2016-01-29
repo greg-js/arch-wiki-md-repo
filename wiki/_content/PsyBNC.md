@@ -1,9 +1,5 @@
 # PsyBNC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -32,12 +28,3 @@ It is also suggested that you chown everything in /usr/bin/psybnc/ to the user t
 If you would like to create psybnc.conf manually (or for more information about configuring psybnc), you may find [the official psybnc help](http://psybnc.at/help.html) and [LunarShells.com psybnc Tutorial](http://www.lunarshells.com/install_psybnc.php#setup) helpful.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PsyBNC&oldid=392588](https://wiki.archlinux.org/index.php?title=PsyBNC&oldid=392588)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

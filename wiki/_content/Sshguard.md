@@ -1,9 +1,5 @@
 # Sshguard
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
@@ -178,7 +174,3 @@ Then use the following command to unban, with the line-number as identified in t
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshguard&oldid=414745](https://wiki.archlinux.org/index.php?title=Sshguard&oldid=414745)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

@@ -1,9 +1,5 @@
 # Netatalk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Netatalk is a free, open-source implementation of the Apple Filing Protocol (AFP). It allows Unix-like operating systems to serve as file servers for Macintosh computers.
 
 ## Contents
@@ -77,7 +73,7 @@ Edit the afpd configuration file (`/etc/netatalk/afpd.conf`), and add a line sim
  `/etc/netatalk/afpd.conf` 
 
 ```
-...  
+...
 - -mimicmodel TimeCapsule6,106 -setuplog "default log_warn /var/log/afpd.log"
 ```
 
@@ -90,7 +86,7 @@ Edit the volumes configuration file `/etc/netatalk/AppleVolumes.default`, and ap
  `/etc/netatalk/AppleVolumes.default` 
 
 ```
-...  
+...
 <path_to_share> <sharename> allow:<username> options:usedots,upriv,tm
 ```
 
@@ -133,11 +129,3 @@ Bonjour/Zeroconf is now a requirement of netatalk and is compiled by default. No
 You may need to enable and/or start `avahi-daemon.service` [using systemd](/index.php/Systemd#Using_units "Systemd") if it is not running yet.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Netatalk&oldid=408753](https://wiki.archlinux.org/index.php?title=Netatalk&oldid=408753)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

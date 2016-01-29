@@ -1,9 +1,5 @@
 # DSDT
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ACPI modules](/index.php/ACPI_modules "ACPI modules")
@@ -212,13 +208,3 @@ and reboot. Done!
 To check if you are really using your own DSDT read your table again `# cat /sys/firmware/acpi/tables/DSDT > dsdt.dat` and decompile it with `iasl -d dsdt.dat`
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DSDT&oldid=414867](https://wiki.archlinux.org/index.php?title=DSDT&oldid=414867)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

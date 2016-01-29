@@ -1,9 +1,5 @@
 # Advanced Linux Sound Architecture
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")
@@ -749,7 +745,7 @@ defaults.pcm.rate_converter "speexrate_medium"
 
 ```
 
-**Note:** It is also possible to use [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate) converters, which are only about half as fast as the _speexrate_ converters but do not achieve much greater performance. See [discussion](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
+**Note:** It is also possible to use [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate) converters, which are only about half as fast as the _speexrate_ converters but do not achieve much higher quality. See [discussion](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
 
 **Note:** It is also possible to use lavcrate resamplers that use [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) With filter sizes of lavcrate_faster:4 lavcrate_fast:8 lavcrate:16 lavcrate_high:32 lavcrate_higher:64 With the last 2 options being equal to Kodi low and medium quality resamplers respectively
 
@@ -890,12 +886,4 @@ amixer set Master toggle
 *   [A close look at ALSA: ALSA concept introduction](http://www.volkerschatz.com/noise/alsa.html)
 *   [Linux ALSA sound notes](http://www.sabi.co.uk/Notes/linuxSoundALSA.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=416937](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=416937)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=417801](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&oldid=417801)"

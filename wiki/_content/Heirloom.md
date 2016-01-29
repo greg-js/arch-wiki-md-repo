@@ -1,9 +1,5 @@
 # Heirloom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [Heirloom project](http://heirloom.sourceforge.net/) mantains classical UNIX tools and utilities for modern open source operating systems.
 
 ## Contents
@@ -127,7 +123,3 @@ The Heirloom Documentation tools provides an alternative to **groff** with power
 The Heirloom packaging tools are a port of Sun SVR4's package management system, which was released as open source with opensolaris. This package requires the Heirloom shell, devtools and toolchest and is available as an [heirloom-pkgtools-cvs](https://aur.archlinux.org/packages/heirloom-pkgtools-cvs/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Heirloom&oldid=409682](https://wiki.archlinux.org/index.php?title=Heirloom&oldid=409682)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")

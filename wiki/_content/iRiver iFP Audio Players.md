@@ -1,9 +1,5 @@
 # iRiver iFP Audio Players
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -149,11 +145,3 @@ The `ifpline` commands can easily be incorporated into your own shell scripts to
 5.  Run `ifpline ls /` to see some files and ensure it is working.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IRiver_iFP_Audio_Players&oldid=383152](https://wiki.archlinux.org/index.php?title=IRiver_iFP_Audio_Players&oldid=383152)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

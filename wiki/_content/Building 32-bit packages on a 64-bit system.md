@@ -1,9 +1,5 @@
 # Building 32-bit packages on a 64-bit system
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Build 32-bit packages in a 64-bit environment
 
 **Note:** [devtools](https://www.archlinux.org/packages/?name=devtools) is needed. Because of circular dependencies, you may need to install [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) at the same time.
@@ -58,7 +54,3 @@ Now you can use makechrootpkg to build i686 packages like this:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Building_32-bit_packages_on_a_64-bit_system&oldid=390128](https://wiki.archlinux.org/index.php?title=Building_32-bit_packages_on_a_64-bit_system&oldid=390128)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

@@ -1,9 +1,5 @@
 # Smart Common Input Method platform
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -244,12 +240,3 @@ This is a rather sloppy workaround. Also, even with this workaround, Korean user
 *   [See the official news page for more details](https://www.archlinux.org/news/166/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Smart_Common_Input_Method_platform&oldid=401115](https://wiki.archlinux.org/index.php?title=Smart_Common_Input_Method_platform&oldid=401115)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

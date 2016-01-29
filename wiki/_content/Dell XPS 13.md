@@ -1,9 +1,5 @@
 # Dell XPS 13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -99,11 +95,3 @@ Issues with the trackpad were originally solved with the hardware enablement (Sp
 The touchpad may not work correctly with the touchscreen, with different solutions depending on the kernel version. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1431327).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13&oldid=401094](https://wiki.archlinux.org/index.php?title=Dell_XPS_13&oldid=401094)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

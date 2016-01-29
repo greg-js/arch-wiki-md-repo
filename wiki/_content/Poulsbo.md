@@ -1,9 +1,5 @@
 # Poulsbo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
@@ -293,12 +289,3 @@ After doing so, `qemu -full-screen` works for me.
 *   [Poulsbo Discussion in Arch BBS](https://bbs.archlinux.org/viewtopic.php?id=78719)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Poulsbo&oldid=392576](https://wiki.archlinux.org/index.php?title=Poulsbo&oldid=392576)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Fingerprint-gui
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fprint](/index.php/Fprint "Fprint")
@@ -107,8 +103,3 @@ The manual indicates that to use this function, mount your USB drive and ensure 
 **Note:** Security warning: Everyone who has access to both, your computer and the external media, can decrypt the password-file! Never leave the computer and the media unattended at the same place! Connect this media only while logon and don't use it if other persons have root-access to your computer.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fingerprint-gui&oldid=376770](https://wiki.archlinux.org/index.php?title=Fingerprint-gui&oldid=376770)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")

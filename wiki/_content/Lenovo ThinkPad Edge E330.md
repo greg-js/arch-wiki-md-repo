@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge E330
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers the Arch Linux support for the Lenovo ThinkPad Edge E330s laptop.
 
 ## Contents
@@ -34,93 +30,16 @@ My notebook is a Lenovo 3354ALG/3354ALG, BIOS H3ET65WW(1.02) 09/12/2012 with a C
 
 Using **kernel 3.7.2**
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Works</th>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless (Intel Centrino Wireless-N 2230 (rev c4)</td>
-
-<td>Yes (but a bit slower than expected, not above 150 MBit/s)</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>USB 2.0</td>
-
-<td>Yes - see below</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td>Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Works |
+| Video | Yes |
+| Ethernet | Yes |
+| Wireless (Intel Centrino Wireless-N 2230 (rev c4) | Yes (but a bit slower than expected, not above 150 MBit/s) |
+| Bluetooth | Yes |
+| Audio | Yes |
+| Camera | Yes |
+| Card Reader | Yes |
+| USB 2.0 | Yes - see below |
+| USB 3.0 | Yes |
 
 ### lspci
 
@@ -228,7 +147,3 @@ blacklist thinkpad_acpi # it not used by this model and gives warnings about unk
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E330&oldid=412548](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E330&oldid=412548)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

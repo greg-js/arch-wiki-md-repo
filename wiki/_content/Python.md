@@ -1,9 +1,5 @@
 # Python
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
@@ -12,9 +8,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
-_Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C. The language provides constructs intended to enable clear programs on both a small and large scale._
-
-_Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management, and has a large and comprehensive standard library._
+NaN
 
 ## Contents
 
@@ -194,27 +188,27 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **TkInter** — Tk bindings
 
-[http://wiki.python.org/moin/TkInter](http://wiki.python.org/moin/TkInter) || standard module
+NaN
 
 *   **pyQt** — [Qt](/index.php/Qt "Qt") bindings
 
-[http://www.riverbankcomputing.co.uk/software/pyqt/intro](http://www.riverbankcomputing.co.uk/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
+NaN
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 
-[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
+NaN
 
 *   **pyGTK** — [GTK+ 2](/index.php/GTK%2B "GTK+") bindings
 
-[http://www.pygtk.org/](http://www.pygtk.org/) || [pygtk](https://www.archlinux.org/packages/?name=pygtk)
+NaN
 
 *   **PyGObject** — [GTK+ 2/3](/index.php/GTK%2B "GTK+") bindings via GObject Introspection
 
-[https://wiki.gnome.org/PyGObject/](https://wiki.gnome.org/PyGObject/) || [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) [python-gobject2](https://www.archlinux.org/packages/?name=python-gobject2) [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
+NaN
 
 *   **wxPython** — wxWidgets bindings
 
-[http://wxpython.org/](http://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
+NaN
 
 To use these with Python, you may need to install the associated widget kits.
 
@@ -262,14 +256,3 @@ to autostart the browser and run the IPython kernel. You can select the python v
 *   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Python&oldid=413030](https://wiki.archlinux.org/index.php?title=Python&oldid=413030)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

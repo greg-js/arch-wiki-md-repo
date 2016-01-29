@@ -1,9 +1,5 @@
 # Dell Inspiron 1521
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The following is what I have found while using Arch on my Inspiron 1521\. User experience may vary.
 
 ## Contents
@@ -112,7 +108,3 @@ DAEMONS=( ... net-profiles ... )
 I have not tried the modem to see if it works.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1521&oldid=298149](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1521&oldid=298149)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

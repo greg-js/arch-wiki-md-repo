@@ -1,9 +1,5 @@
 # mkinitcpio
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
@@ -44,7 +40,7 @@ Related articles
 
 mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio man page](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
 
-_The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features._
+NaN
 
 Traditionally, the kernel was responsible for all hardware detection and initialization tasks early in the [boot process](/index.php/Boot_process "Boot process") before mounting the root file system and passing control to `init`. However, as technology advances, these tasks have become increasingly complex.
 
@@ -116,29 +112,7 @@ The primary configuration file for **mkinitcpio** is `/etc/mkinitcpio.conf`. Add
 
 Users can modify six variables within the configuration file:
 
-`MODULES`
-
-Kernel modules to be loaded before any boot hooks are run.
-
-`BINARIES`
-
-Additional binaries to be included in the initramfs image.
-
-`FILES`
-
-Additional files to be included in the initramfs image.
-
-`HOOKS`
-
-Hooks are scripts that execute in the initial ramdisk.
-
-`COMPRESSION`
-
-Used to compress the initramfs image.
-
-`COMPRESSION_OPTIONS`
-
-Extra arguments to pass to the `COMPRESSION` program. Usage of this setting is strongly discouraged. mkinitcpio will handle special requirements for compressors (e.g. passing `--check=crc32` to xz), and misusage can easily lead to an unbootable system.
+NaN
 
 ### MODULES
 
@@ -206,271 +180,40 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 
 A table of common hooks and how they affect image creation and runtime follows. Note that this table is not complete, as packages can provide custom hooks.
 
-<table class="wikitable sortable"><caption>**Current hooks**</caption>
-
-<tbody>
-
-<tr>
-
-<th>Hook</th>
-
-<th>Installation</th>
-
-<th>Runtime</th>
-
-</tr>
-
-<tr>
-
-<td>**base**</td>
-
-<td>Sets up all initial directories and installs base utilities and libraries. Always add this hook as the first hook unless you know what you are doing.</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**systemd**</td>
-
-<td>This will install a basic systemd setup in your initramfs, and is meant to replace the _base_, _usr_ and _udev_ hooks. Other hooks (like encryption) would need to be ported, and may not work as intended. It is **required**, if you use any other systemd specific hooks ("sd-*") from below. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 207, this hook does not work as intended when combined with lvm2 and may break your boot. Use the _sd-lvm2_ hook instead of the _lvm2_ one. You also may wish to still include the _base_ hook (before this hook) to ensure that a rescue shell exists on your initramfs. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 217 this hook also installs the service and binary helper needed for resuming from [hibernation](/index.php/Hibernation "Hibernation").
+<caption>**Current hooks**</caption>
+| Hook | Installation | Runtime |
+| **base** | Sets up all initial directories and installs base utilities and libraries. Always add this hook as the first hook unless you know what you are doing. | -- |
+| **systemd** | This will install a basic systemd setup in your initramfs, and is meant to replace the _base_, _usr_ and _udev_ hooks. Other hooks (like encryption) would need to be ported, and may not work as intended. It is **required**, if you use any other systemd specific hooks ("sd-*") from below. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 207, this hook does not work as intended when combined with lvm2 and may break your boot. Use the _sd-lvm2_ hook instead of the _lvm2_ one. You also may wish to still include the _base_ hook (before this hook) to ensure that a rescue shell exists on your initramfs. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 217 this hook also installs the service and binary helper needed for resuming from [hibernation](/index.php/Hibernation "Hibernation").
 
 **Warning:** The emergency shell feature provided by this hook is non-functional as of 2015-07-07\. A separate hook has to provide a shell, `/sbin/sulogin`, `/etc/shadow`, `/etc/gshadow`, as well as ensure a keyboard driver module like `atkbd` is loaded. The **base** hook only provides the shell. See [FS#36265](https://bugs.archlinux.org/task/36265), [FS#45480](https://bugs.archlinux.org/task/45480).
 
-</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**btrfs**</td>
-
-<td>Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for root and the use of subvolumes.</td>
-
-<td>Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when no udev hook is present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook.</td>
-
-</tr>
-
-<tr>
-
-<td>**udev**</td>
-
-<td>Adds udevd, udevadm, and a small subset of udev rules to your image.</td>
-
-<td>Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using the udev hook is recommended.</td>
-
-</tr>
-
-<tr>
-
-<td>**autodetect**</td>
-
-<td>Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full.</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**modconf**</td>
-
-<td>Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d`</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**block**</td>
-
-<td>Adds all block device modules, formerly separately provided by the _fw_, _mmc_, _pata_, _sata_, _scsi_, _usb_, and _virtio_ hooks.</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**pcmcia**</td>
-
-<td>Adds the necessary modules for PCMCIA devices. You need to have [pcmciautils](https://www.archlinux.org/packages/?name=pcmciautils) installed to use this.</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**net**</td>
-
-<td>Adds the necessary modules for a network device. For PCMCIA net devices, please add the **pcmcia** hook too.</td>
-
-<td>Provides handling for an NFS-based root file system.</td>
-
-</tr>
-
-<tr>
-
-<td>**dmraid**</td>
-
-<td>Provides support for fakeRAID root devices. You must have [dmraid](https://www.archlinux.org/packages/?name=dmraid) installed to use this. Note that it is preferred to use `mdadm` with the **mdadm_udev** hook with fakeRAID if your controller supports it.</td>
-
-<td>Locates and assembles fakeRAID block devices using `dmraid`.</td>
-
-</tr>
-
-<tr>
-
-<td>**mdadm**</td>
-
-<td>Provides support for assembling RAID arrays from `/etc/mdadm.conf`, or autodetection during boot. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. The **mdadm_udev** hook is preferred over this hook.</td>
-
-<td>Locates and assembles software RAID block devices using `mdassemble`.</td>
-
-</tr>
-
-<tr>
-
-<td>**mdadm_udev**</td>
-
-<td>Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section and add the **shutdown** hook in order to avoid unnecessary RAID rebuilds on reboot.</td>
-
-<td>Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above _mdadm_ hook).</td>
-
-</tr>
-
-<tr>
-
-<td>**keyboard**</td>
-
-<td>Adds the necessary modules for keyboard devices. Use this if you have an USB keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added to, but this should not be relied on.</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**keymap**</td>
-
-<td>Adds the specified keymap(s) from `/etc/vconsole.conf` to the initramfs.</td>
-
-<td>Loads the specified keymap(s) from `/etc/vconsole.conf` during early userspace.</td>
-
-</tr>
-
-<tr>
-
-<td>**consolefont**</td>
-
-<td>Adds the specified console font from `/etc/vconsole.conf` to the initramfs.</td>
-
-<td>Loads the specified console font from `/etc/vconsole.conf` during early userspace.</td>
-
-</tr>
-
-<tr>
-
-<td>**sd-vconsole**</td>
-
-<td>Adds the keymap(s) and console font specified in `/etc/vconsole.conf` to the systemd-based initramfs.</td>
-
-<td>Loads the specified keymap(s) and console font during early userspace.</td>
-
-</tr>
-
-<tr>
-
-<td>**encrypt**</td>
-
-<td>Adds the `dm_crypt` kernel module and the `cryptsetup` tool to the image. You must have [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) installed to use this.</td>
-
-<td>Detects and unlocks an encrypted root partition. See [#Runtime customization](#Runtime_customization) for further configuration.</td>
-
-</tr>
-
-<tr>
-
-<td>**sd-encrypt**</td>
-
-<td>This hook allows for an encrypted root device with systemd initramfs.
+ | -- |
+| **btrfs** | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for root and the use of subvolumes. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when no udev hook is present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
+| **udev** | Adds udevd, udevadm, and a small subset of udev rules to your image. | Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using the udev hook is recommended. |
+| **autodetect** | Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full. | -- |
+| **modconf** | Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d` | -- |
+| **block** | Adds all block device modules, formerly separately provided by the _fw_, _mmc_, _pata_, _sata_, _scsi_, _usb_, and _virtio_ hooks. | -- |
+| **pcmcia** | Adds the necessary modules for PCMCIA devices. You need to have [pcmciautils](https://www.archlinux.org/packages/?name=pcmciautils) installed to use this. | -- |
+| **net** | Adds the necessary modules for a network device. For PCMCIA net devices, please add the **pcmcia** hook too. | Provides handling for an NFS-based root file system. |
+| **dmraid** | Provides support for fakeRAID root devices. You must have [dmraid](https://www.archlinux.org/packages/?name=dmraid) installed to use this. Note that it is preferred to use `mdadm` with the **mdadm_udev** hook with fakeRAID if your controller supports it. | Locates and assembles fakeRAID block devices using `dmraid`. |
+| **mdadm** | Provides support for assembling RAID arrays from `/etc/mdadm.conf`, or autodetection during boot. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. The **mdadm_udev** hook is preferred over this hook. | Locates and assembles software RAID block devices using `mdassemble`. |
+| **mdadm_udev** | Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section and add the **shutdown** hook in order to avoid unnecessary RAID rebuilds on reboot. | Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above _mdadm_ hook). |
+| **keyboard** | Adds the necessary modules for keyboard devices. Use this if you have an USB keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added to, but this should not be relied on. | -- |
+| **keymap** | Adds the specified keymap(s) from `/etc/vconsole.conf` to the initramfs. | Loads the specified keymap(s) from `/etc/vconsole.conf` during early userspace. |
+| **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
+| **sd-vconsole** | Adds the keymap(s) and console font specified in `/etc/vconsole.conf` to the systemd-based initramfs. | Loads the specified keymap(s) and console font during early userspace. |
+| **encrypt** | Adds the `dm_crypt` kernel module and the `cryptsetup` tool to the image. You must have [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) installed to use this. | Detects and unlocks an encrypted root partition. See [#Runtime customization](#Runtime_customization) for further configuration. |
+| **sd-encrypt** | This hook allows for an encrypted root device with systemd initramfs.
 
 See the man page of systemd-cryptsetup-generator(8) for available kernel command line options. Alternatively, if the file `/etc/crypttab.initramfs` exists, it will be added to the initramfs as `/etc/crypttab`. See the crypttab(5) manpage for more information on crypttab syntax.
 
-</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**lvm2**</td>
-
-<td>Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this.</td>
-
-<td>Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM").</td>
-
-</tr>
-
-<tr>
-
-<td>**fsck**</td>
-
-<td>Adds the fsck binary and file system-specific helpers. If added after the **autodetect** hook, only the helper specific to your root file system will be added. Usage of this hook is **strongly** recommended, and it is required with a separate `/usr` partition.</td>
-
-<td>Runs fsck against your root device (and `/usr` if separate) prior to mounting. The default configuration of the bootloader is suitable, if in doubt read this [explanation](https://bbs.archlinux.org/viewtopic.php?pid=1307895#p1307895).</td>
-
-</tr>
-
-<tr>
-
-<td>**resume**</td>
-
-<td>--</td>
-
-<td>Tries to resume from the "suspend to disk" state. Works with both _swsusp_ and _[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")_. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. Intended to work along with the `base` hook, the `systemd` hook provides its own resume mechanism.</td>
-
-</tr>
-
-<tr>
-
-<td>**filesystems**</td>
-
-<td>This includes necessary file system modules into your image. This hook is **required** unless you specify your file system modules in MODULES.</td>
-
-<td>--</td>
-
-</tr>
-
-<tr>
-
-<td>**shutdown**</td>
-
-<td>Adds shutdown initramfs support. Usage of this hook was strongly recommended before mkinitcpio 0.16, if you have a separate `/usr` partition or encrypted root. From mkinitcpio 0.16 onwards, it is deemed [not necessary](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html).</td>
-
-<td>Unmounts and disassembles devices on shutdown.</td>
-
-</tr>
-
-<tr>
-
-<td>**usr**</td>
-
-<td>Add supports for `/usr` on a separate partition.</td>
-
-<td>Mounts the `/usr` partition after the real root has been mounted.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ | -- |
+| **lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
+| **fsck** | Adds the fsck binary and file system-specific helpers. If added after the **autodetect** hook, only the helper specific to your root file system will be added. Usage of this hook is **strongly** recommended, and it is required with a separate `/usr` partition. | Runs fsck against your root device (and `/usr` if separate) prior to mounting. The default configuration of the bootloader is suitable, if in doubt read this [explanation](https://bbs.archlinux.org/viewtopic.php?pid=1307895#p1307895). |
+| **resume** | -- | Tries to resume from the "suspend to disk" state. Works with both _swsusp_ and _[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")_. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. Intended to work along with the `base` hook, the `systemd` hook provides its own resume mechanism. |
+| **filesystems** | This includes necessary file system modules into your image. This hook is **required** unless you specify your file system modules in MODULES. | -- |
+| **shutdown** | Adds shutdown initramfs support. Usage of this hook was strongly recommended before mkinitcpio 0.16, if you have a separate `/usr` partition or encrypted root. From mkinitcpio 0.16 onwards, it is deemed [not necessary](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html). | Unmounts and disassembles devices on shutdown. |
+| **usr** | Add supports for `/usr` on a separate partition. | Mounts the `/usr` partition after the real root has been mounted. |
 
 ### COMPRESSION
 
@@ -515,9 +258,7 @@ Runtime configuration options can be passed to `init` and certain hooks via the 
 
 ### init from base hook
 
-`root`
-
-This is the most important parameter specified on the kernel command line, as it determines what device will be mounted as your proper root device. mkinitcpio is flexible enough to allow a wide variety of formats, for example:
+NaN
 
 ```
 root=/dev/sda1                                                # /dev node
@@ -529,17 +270,11 @@ root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660            # GPT partition UU
 
 **Note:** The following boot parameters alter the default behavior of `init` in the initramfs environment. See `/usr/lib/initcpio/init` for details. They will not work when `systemd` hook is being used since the `init` from `base` hook is replaced.
 
-`break`
+NaN
 
-If `break` or `break=premount` is specified, `init` pauses the boot process (after loading hooks, but before mounting the root file system) and launches an interactive shell which can be used for troubleshooting purposes. This shell can be launched after the root has been mounted by specifying `break=postmount`. Normal boot continues after exiting from the shell.
+NaN
 
-`disablehooks`
-
-Disable hooks at runtime by adding `disablehooks=hook1[,hook2,...]`. For example: `disablehooks=resume` 
-
-`earlymodules`
-
-Alter the order in which modules are loaded by specifying modules to load early via `earlymodules=mod1[,mod2,...]`. (This may be used, for example, to ensure the correct ordering of multiple network interfaces.)
+NaN
 
 See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [man mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212) for other parameters.
 
@@ -573,7 +308,7 @@ The `<autoconf>` parameter can appear alone as the value to the 'ip' parameter (
 
 For parameters explanation, see the [kernel doc](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt).
 
-Examples
+NaN
 
 ```
  ip=127.0.0.1:::::lo:none  --> Enable the loopback interface.
@@ -726,13 +461,3 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=415782](https://wiki.archlinux.org/index.php?title=Mkinitcpio&oldid=415782)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden categories:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

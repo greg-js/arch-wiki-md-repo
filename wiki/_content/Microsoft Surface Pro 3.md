@@ -1,9 +1,5 @@
 # Microsoft Surface Pro 3
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -191,12 +187,3 @@ If after doing these steps doesn't still work. Flash the archiso image once more
 This can happen sometimes when you restart. The solution was to shutdown and reboot. (not restart)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=417570](https://wiki.archlinux.org/index.php?title=Microsoft_Surface_Pro_3&oldid=417570)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,9 +1,5 @@
 # Bridge with netctl
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
@@ -78,11 +74,3 @@ If any of the bridged devices (e.g. `eth0`, `tap0`) had [dhcpcd](/index.php/Dhcp
 Finally, [start and enable](/index.php/Netctl#Just_one_profile "Netctl") your `/etc/netctl/bridge`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bridge_with_netctl&oldid=413612](https://wiki.archlinux.org/index.php?title=Bridge_with_netctl&oldid=413612)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

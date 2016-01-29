@@ -1,9 +1,5 @@
 # E4rat
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
@@ -237,11 +233,3 @@ If you are annoyed by the e4rat-preload message during boot, decrease verbose to
 *   [Improved e4rat-preload - forum thread](https://bbs.archlinux.org/viewtopic.php?id=117776)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=E4rat&oldid=404776](https://wiki.archlinux.org/index.php?title=E4rat&oldid=404776)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

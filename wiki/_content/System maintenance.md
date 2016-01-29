@@ -1,9 +1,5 @@
 # System maintenance
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
@@ -237,12 +233,3 @@ The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is a
 To make it available as a boot option, you will need to update your [bootloader](/index.php/Bootloader "Bootloader")'s configuration file to use the LTS kernel and ram disk: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=416131](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=416131)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

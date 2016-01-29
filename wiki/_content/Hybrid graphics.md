@@ -1,9 +1,5 @@
 # Hybrid graphics
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _Hybrid-graphics is a concept involving two graphics cards on same computer, it was first designed to control power consumption in laptops and is extending to desktop computers as well_.
 
 ## Contents
@@ -175,12 +171,3 @@ The above config will be loaded at boot by systemd. What it does is write the sp
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hybrid_graphics&oldid=412951](https://wiki.archlinux.org/index.php?title=Hybrid_graphics&oldid=412951)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # dwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [dmenu](/index.php/Dmenu "Dmenu")
@@ -454,7 +450,3 @@ This will cause dwm to ignore resize requests from all client windows, not just 
 *   [dwm: Tags are not workspaces](http://wongdev.com/blog/dwm-tags-are-not-workspaces/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwm&oldid=416147](https://wiki.archlinux.org/index.php?title=Dwm&oldid=416147)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

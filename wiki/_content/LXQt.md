@@ -1,9 +1,5 @@
 # LXQt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LXDE](/index.php/LXDE "LXDE")
@@ -37,31 +33,31 @@ For additional functionality, you may wish to install the following:
 
 *   **[Connman](/index.php/Connman "Connman")** — Network manager like [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
-[http://git.kernel.org/cgit/network/connman](http://git.kernel.org/cgit/network/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
+NaN
 
 *   **LXQt Connman applet** — LXQt system-tray applet for [Connman](/index.php/Connman "Connman").
 
-[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **LXImage-Qt** — Image viewer and screenshot tool for LXQt.
 
-[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)<sup><small>AUR</small></sup>
+NaN
 
 *   **ObConf-Qt** — The Qt port of ObConf, the [Openbox](/index.php/Openbox "Openbox") configuration tool.
 
-[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)<sup><small>AUR</small></sup>
+NaN
 
 *   **QTerminal** — Lightweight Qt-based terminal emulator.
 
-[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — The recommended display manager for LXQt.
 
-[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
+NaN
 
 *   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — A screen saver required for screen locking in LXQt.
 
-[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
+NaN
 
 Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
 
@@ -127,7 +123,3 @@ As LXQt is a lightweight desktop, a plain install will not provide many desktop 
 *   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LXQt&oldid=415023](https://wiki.archlinux.org/index.php?title=LXQt&oldid=415023)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

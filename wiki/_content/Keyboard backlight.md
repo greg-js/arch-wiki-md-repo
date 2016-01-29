@@ -1,9 +1,5 @@
 # Keyboard backlight
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Any vendor
 
 You can control your computer keyboard backlight via the [D-Bus](/index.php/D-Bus "D-Bus") interface. The benefits of using it are that no modification to device files is required and it is vendor agnostic.
@@ -71,7 +67,3 @@ WantedBy=multi-user.target
 You are now able to use a keyboard backlight changer script. For an example, see [ASUS G55VW#keyboard backlight script](/index.php/ASUS_G55VW#keyboard_backlight_script "ASUS G55VW").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_backlight&oldid=417057](https://wiki.archlinux.org/index.php?title=Keyboard_backlight&oldid=417057)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

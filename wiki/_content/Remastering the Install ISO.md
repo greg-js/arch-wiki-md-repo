@@ -1,9 +1,5 @@
 # Remastering the Install ISO
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Archiso](/index.php/Archiso "Archiso")
@@ -304,11 +300,3 @@ It supports aufs among other things, making it an option for live CDs.
 *   [Linux Live Kit](http://www.linux-live.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&oldid=416525](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&oldid=416525)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

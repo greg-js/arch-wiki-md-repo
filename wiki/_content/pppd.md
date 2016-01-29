@@ -1,9 +1,5 @@
 # pppd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **ppp** (Paul's PPP Package) is an open source package which implements the [point-to-point protocol](https://en.wikipedia.org/wiki/point-to-point_protocol "wikipedia:point-to-point protocol") (PPP) on Linux and Solaris systems. It is implemented as single _pppd_ daemon and acts as backend for [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd), [pptpd](https://www.archlinux.org/packages/?name=pptpd) and [netctl](/index.php/Netctl "Netctl"). [3G](https://en.wikipedia.org/wiki/3G "wikipedia:3G"), [L2TP](https://en.wikipedia.org/wiki/L2TP "wikipedia:L2TP") and [PPPoE](https://en.wikipedia.org/wiki/PPPoE "wikipedia:PPPoE") connections are internally based on PPP protocol and therefore can be managed by ppp.
 
 ## Contents
@@ -309,11 +305,3 @@ or just add such alias if it does not exist.
 The correct module will be loaded after reboot.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pppd&oldid=394332](https://wiki.archlinux.org/index.php?title=Pppd&oldid=394332)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

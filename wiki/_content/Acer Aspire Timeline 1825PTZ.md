@@ -1,9 +1,5 @@
 # Acer Aspire Timeline 1825PTZ
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Acer Aspire Timeline 1825PTZ is a Netvertible from Acer. Also look at [Acer Aspire Timeline 1810tz](/index.php/Acer_Aspire_Timeline_1810tz "Acer Aspire Timeline 1810tz").
 
 ## Contents
@@ -249,7 +245,3 @@ To start mplayer showing the webcam:
 See [ALSA](/index.php/ALSA "ALSA").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_Timeline_1825PTZ&oldid=376535](https://wiki.archlinux.org/index.php?title=Acer_Aspire_Timeline_1825PTZ&oldid=376535)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

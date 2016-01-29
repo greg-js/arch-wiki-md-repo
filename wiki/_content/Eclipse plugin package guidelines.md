@@ -1,9 +1,5 @@
 # Eclipse plugin package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -130,7 +126,3 @@ Next is the `features` section. It creates the necessary directories, one for ev
 *   If new installed plugins do not appear in Eclipse, try with a clean `~/.eclipse` directory, for example by renaming the existing one. Be aware that this will of course make all the user-installed plugins via Marketplace unavailable.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=416944](https://wiki.archlinux.org/index.php?title=Eclipse_plugin_package_guidelines&oldid=416944)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

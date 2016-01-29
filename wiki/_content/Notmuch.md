@@ -1,9 +1,5 @@
 # Notmuch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [mutt](/index.php/Mutt "Mutt")
@@ -95,11 +91,3 @@ If you use [mutt](/index.php/Mutt "Mutt") as your MUA, then notmuch is an excell
 Refer to the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) man page for configuration information. This [blogpost](http://jasonwryan.com/blog/2012/05/23/notmuch/) steps through how to setup notmuch with mutt, but the information is a little outdated.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Notmuch&oldid=413712](https://wiki.archlinux.org/index.php?title=Notmuch&oldid=413712)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

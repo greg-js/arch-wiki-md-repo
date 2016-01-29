@@ -1,9 +1,5 @@
 # Sony Vaio VPCS-A3Z9R
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -64,7 +60,3 @@ to enable ATI graphics card for mycommand
 WiFi, HDMI output port and Fn hotkeys (display brightness, volume) are working out of the box.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCS-A3Z9R&oldid=375245](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPCS-A3Z9R&oldid=375245)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")

@@ -1,9 +1,5 @@
 # ASUS AT3IONT-I
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes the steps necessary to get all of the features of the ASUS AT3IONT-I working correctly. It assumes you already successfully installed Arch Linux and installed the basic software ([ALSA](/index.php/ALSA "ALSA") for audio, **wireless_tools** and **wpa_supplicant** packages for wireless in the Deluxe edition, etc.)
 
 ## Contents
@@ -91,9 +87,7 @@ As a result, this section will focus on getting the included remote working with
 
 **Tip:** It might be easier to just buy a decent IR receiver/remote combo that is know to work well in Linux to get the most functionality. But if you're stubborn, read on!
 
-Note: 
-
-If you know more about the nitty gritty aspects of kernel driver development and IR remotes, please take a look at [this thread](http://ubuntuforums.org/showthread.php?t=1458300&page=4) to see if functionality can be added to this driver, especially for basic MCE remotes.
+NaN
 
 Download the source and then extract with `tar -xvf hid-philips-asus.tar`. The resulting directory will include the source files, along with a Linux-to-X11 input key map. Before you build the source, you must edit `mappings.h`. This file maps the button presses to Linux input keys. Be aware that Linux input _**does not equal**_ X11 input. Graphical programs, such as media players, XBMC, and the like, are only aware of X11 inputs, and so you must match a X11 input with a Linux input to. That's what the `map_linux_to_x11.txt` file is for.
 
@@ -133,7 +127,3 @@ After that, all the buttons on the Asus remote should work. If you find that you
 [ASUS AT3IONT-I deluxe on Ubuntu forums](http://ubuntuforums.org/showthread.php?t=1458300)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_AT3IONT-I&oldid=297871](https://wiki.archlinux.org/index.php?title=ASUS_AT3IONT-I&oldid=297871)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS")

@@ -1,9 +1,5 @@
 # KDevelop 4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _"[KDevelop](http://kdevelop.org/) is a free, open source IDE (Integrated Development Environment) for MS Windows, Mac OS X, Linux, Solaris and FreeBSD. It is a feature-full, plugin extensible IDE for C/C++ and other programming languages. It is based on KDevPlatform, and the [KDE](/index.php/KDE "KDE") and [Qt](/index.php/Qt "Qt") libraries and is under development since 1998."_
 
 ## Contents
@@ -71,7 +67,3 @@ As of June 18 2009, the following plugins are available from KDE's svn repositor
 **Warning:** As of June 17 2009, do not install the php-docs plugin because it causes the php plugin to stop working.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KDevelop_4&oldid=412114](https://wiki.archlinux.org/index.php?title=KDevelop_4&oldid=412114)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

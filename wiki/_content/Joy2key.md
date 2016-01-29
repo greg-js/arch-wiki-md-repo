@@ -1,9 +1,5 @@
 # Joy2key
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -132,12 +128,3 @@ References to the sources where I learned about this:
 *   [[3]](http://wiki.xbmc.org/index.php?title=Installing_XBMC_for_Linux#Autostarting_XBMC) XBMC wiki: _Installing XBMC for Linux > Autostarting XBMC_
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Joy2key&oldid=401102](https://wiki.archlinux.org/index.php?title=Joy2key&oldid=401102)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

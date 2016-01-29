@@ -1,9 +1,5 @@
 # Acer Timeline 3830
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -371,7 +367,3 @@ Fn+F3 (wireless), Fn+F6 (blank screen) and Fn+F7 (touchpad) all seem to work fin
 ### ACPI events
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Timeline_3830&oldid=383754](https://wiki.archlinux.org/index.php?title=Acer_Timeline_3830&oldid=383754)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

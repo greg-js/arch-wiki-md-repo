@@ -1,9 +1,5 @@
 # uShare
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Streaming media](/index.php/Streaming_media "Streaming media")
@@ -123,7 +119,3 @@ The tcp/USHARE_PORT and udp/1900 need to be added to your firewall. It is recomm
 If you have problems with xvid/divx files, a possible work around would be to change mime types from avi files from /usr/share/mime/packages/freedesktop.xml from "video/x-msvideo" to "video/x-ms-wmv", update database with `update-mime-database /usr/share/mime/` and restart ushare. This procedure was taken from [This blog post](http://salinasv.blogspot.com/2010/06/stream-divxxvid-from-linux-to-your-xbox.html) and [this mail](https://lists.ubuntu.com/archives/ubuntu-us-nm/2007-December/000368.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=UShare&oldid=372980](https://wiki.archlinux.org/index.php?title=UShare&oldid=372980)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")

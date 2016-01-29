@@ -1,9 +1,5 @@
 # Postfix
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PostFix Howto With SASL](/index.php/PostFix_Howto_With_SASL "PostFix Howto With SASL")
@@ -15,7 +11,7 @@ Related articles
 
 From [Postfix's site](http://www.postfix.org/):
 
-_Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different._
+NaN
 
 The goal of this article is to setup Postfix and explain what the basic configuration files do. There are instructions for setting up local system user-only delivery and a link to a guide for virtual user delivery.
 
@@ -75,41 +71,37 @@ It is recommended to enable secure SMTP as described in [#Secure SMTP](#Secure_S
 
 *   `myhostname` should be set if your mail server has multiple domains, and you do not want the primary domain to be the mail host. You should have both a DNS A record and an MX record point to this hostname.
 
- `myhostname = mail.nospam.net` 
+NaN
 
 *   `mydomain` is usually the value of `myhostname`, minus the first part. If your domain is wonky, then just set it manually.
 
- `mydomain = nospam.net` 
+NaN
 
 *   `myorigin` is where the email will be seen as being sent from. I usually set this to the value of `mydomain`. For simple servers, this works fine. This is for mail originating from a local account. Since we are not doing local delivery (except sending), then this is not really as important as it normally would be.
 
- `myorigin = $mydomain` 
+NaN
 
 *   `mydestination` is the lookup for local users.
 
- `mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain` 
+NaN
 
 *   `mynetworks` and `mynetwork_style` control relaying, and whom is allowed to. We do not want any relaying.
 
-For our sakes, we will simply set `mynetwork_style` to host, as we are trying to make a standalone Postfix host, that people will use webmail on. No relaying, no other MTA's. Just webmail.
-
- `mynetworks_style = host` 
+NaN
 
 *   `relaydomains` controls the destinations that Postfix will relay TO. The default value is empty. This should be fine for now.
 
- `relay_domains =` 
+NaN
 
 *   `home_mailbox` or `mail_spool_directory` control how mail is delivered/stored for the users.
 
-If set, `mail_spool_directory` specifies an absolute path where mail gets delivered. By default Postfix stores mails in `/var/spool/mail`.
+NaN
 
- `mail_spool_directory = /home/vmailer` 
+NaN
 
-Alternatively, if set, `home_mailbox` specifies a mailbox relative to the user's home directory where mail gets delivered (eg: /home/vmailer).
+NaN
 
-Courier-IMAP requires "Maildir" format, so you **must** set it like the following example with trailing slash:
-
- `home_mailbox = Maildir/` 
+NaN
 
 **Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration:
 
@@ -618,11 +610,3 @@ And don't forget to reload postfix.
 *   [Use Gmail as an SMTP relay](http://sherlock.heroku.com/blog/2012/02/03/setting-up-postfix-to-use-gmail-as-an-smtp-relay-host-in-archlinux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Postfix&oldid=417534](https://wiki.archlinux.org/index.php?title=Postfix&oldid=417534)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

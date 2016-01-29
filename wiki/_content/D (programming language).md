@@ -1,12 +1,8 @@
 # D (programming language)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(programming_language) "wikipedia:D (programming language)"):
 
-"The D programming language, also known simply as D, is an object-oriented, imperative, multi-paradigm system programming language by Walter Bright of Digital Mars. It originated as a re-engineering of C++, but even though it is predominantly influenced by that language, it is not a variant of it. D has redesigned some C++ features and has been influenced by concepts used in other programming languages, such as Java, C#, and Eiffel".
+NaN
 
 ## Contents
 
@@ -79,7 +75,3 @@ The main difference is that the dmd's back end is not FOSS (licensed from Symant
 *   [Planet D](http://planet.dsource.org/) - A collection of blogs about D
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=410005](https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=410005)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

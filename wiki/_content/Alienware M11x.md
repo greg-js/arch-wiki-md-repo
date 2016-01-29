@@ -1,9 +1,5 @@
 # Alienware M11x
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This wiki page documents the configuration and troubleshooting specific to the Alienware M11x laptop.
 
 See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for installation instructions.
@@ -142,8 +138,8 @@ cat switch
 
 ```
 
-`echo "DDIS" > /sys/kernel/debug/vgaswitcheroo/switch` <= switch to discrete card  
-`echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch` <= switch to onboard card  
+`echo "DDIS" > /sys/kernel/debug/vgaswitcheroo/switch` <= switch to discrete card
+`echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch` <= switch to onboard card
 `echo "OFF" > /sys/kernel/debug/vgaswitcheroo/switch` <= power-down the card not in use
 
 Use 'nvidia-settings' to configure the video card, and multiple screens if using the discrete/NVIDIA card.
@@ -160,7 +156,7 @@ Use 'nvidia-settings' to configure the video card, and multiple screens if using
 4.  make sure to add the username allowed to change the backlight settings to the **video** group in `/etc/group`
 5.  create an alias in your shell startup, and turn the brightness up or down via command, in turn you could tie this to a button combination in your xwindow manager settings.
 
-.bashrc
+NaN
 
 ```
 alias brup='/sbin/backlight up'
@@ -169,7 +165,7 @@ alias brget='/sbin/backlight get'
 
 ```
 
-.tcshrc
+NaN
 
 ```
 alias brup '/sbin/backlight up'
@@ -238,7 +234,3 @@ exit 0
 *   A C-program which cycles through colors, plus information about how to understand it, can be found at [[1]](http://www.dettus.net/alienware).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Alienware_M11x&oldid=408841](https://wiki.archlinux.org/index.php?title=Alienware_M11x&oldid=408841)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Alienware](/index.php/Category:Alienware "Category:Alienware")

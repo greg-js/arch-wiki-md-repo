@@ -1,9 +1,5 @@
 # Install bundled 32-bit system in 64-bit system
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article presents one way of running 32-bit applications, which may be of use to those who do not wish to install the lib32-* libraries from the multilib repository and instead prefer to isolate 32bit applications. The approach involves creating a "chroot jail" to handle 32-bit apps.
 
 **Tip:** Xyne has created a package that installs a minimalist 32-bit chroot as described below. See [[1]](https://bbs.archlinux.org/viewtopic.php?id=97629) and [[2]](http://xyne.archlinux.ca/projects/arch32-light) for details.
@@ -427,12 +423,3 @@ Simply make sure the `/var/run/cups` directory exists in the chroot environment 
 and printers should be available from 32-bit chroot applications immediately.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Install_bundled_32-bit_system_in_64-bit_system&oldid=412104](https://wiki.archlinux.org/index.php?title=Install_bundled_32-bit_system_in_64-bit_system&oldid=412104)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

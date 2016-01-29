@@ -1,9 +1,5 @@
 # Textadept
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Textadept](http://foicica.com/textadept/) describes itself as a "a fast, minimalist, and remarkably extensible cross-platform text editor". With a very lightweight code base written in C, it relies on Lua for its extensibility. The editor works both in a graphical (GTK2) and in a CLI environment (Curses).
 
 ## Contents
@@ -59,8 +55,3 @@ You can easily keep up to date all your modules with version control tools.
 *   [Wiki](http://foicica.com/wiki/textadept)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Textadept&oldid=414778](https://wiki.archlinux.org/index.php?title=Textadept&oldid=414778)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")

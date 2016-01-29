@@ -1,9 +1,5 @@
 # Convert Flac to Mp3
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
@@ -136,15 +132,15 @@ For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the 
 
 *   **SoundConverter** — A dedicated audio transcoding utility built for the [GNOME](/index.php/GNOME "GNOME") desktop and relying on GStreamer. It can make use of [GNOME Audio Profiles](http://library.gnome.org/users/gnome-audio-profiles/stable/gnome-audio-profiles-usage.html.en) and features multithreaded conversions. It can also extract the audio from videos.
 
-[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+NaN
 
 *   **soundKonverter** — A Qt graphical frontend to various audio manipulation programs. Features conversion, ripping and other audio manipulation functionalities.
 
-[https://github.com/HessiJames/soundkonverter/wiki](https://github.com/HessiJames/soundkonverter/wiki) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+NaN
 
 *   **[WinFF](https://en.wikipedia.org/wiki/FFmpeg#Projects_using_FFmpeg "wikipedia:FFmpeg")** — A GUI for the powerful multimedia converter FFmpeg. Features dedicated profiles for audio transcoding.
 
-[http://code.google.com/p/winff/](http://code.google.com/p/winff/) || [winff](https://www.archlinux.org/packages/?name=winff)
+NaN
 
 ## See also
 
@@ -154,7 +150,3 @@ For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the 
 *   [http://wiki.hydrogenaudio.org/index.php?title=Flac](http://wiki.hydrogenaudio.org/index.php?title=Flac) - More information on FLAC.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Convert_Flac_to_Mp3&oldid=401683](https://wiki.archlinux.org/index.php?title=Convert_Flac_to_Mp3&oldid=401683)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

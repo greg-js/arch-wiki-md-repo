@@ -1,9 +1,5 @@
 # Btrfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -13,11 +9,11 @@ Related articles
 
 From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")
 
-_Btrfs (B-tree file system, variously pronounced: "Butter F S", "Better F S", "B-tree F S", or simply "Bee Tee Arr Eff Ess") is a GPL-licensed experimental copy-on-write file system for Linux. Development began at Oracle Corporation in 2007._
+NaN
 
 From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page)
 
-_Btrfs is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration. Jointly developed at Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO and many others, Btrfs is licensed under the GPL and open for contribution from anyone._
+NaN
 
 **Warning:**
 
@@ -142,13 +138,9 @@ As this is a file system that is still in active development, changes and regres
 #### Examples
 
 *   **Linux 3.15**
-    *   Btrfs on a SSD for system installation and an emphasis on maximizing performance (also read [#SSD TRIM](#SSD_TRIM))
+    *   Btrfs on a SSD for system installation and an emphasis on maximizing performance (also read [#SSD TRIM](#SSD_TRIM))NaN
 
-     `noatime,discard,ssd,compress=lzo,space_cache` 
-
-    *   Btrfs on a HDD for archival purposes with an emphasis on maximizing space.
-
-     `noatime,autodefrag,compress-force=lzo,space_cache` 
+    *   Btrfs on a HDD for archival purposes with an emphasis on maximizing space.NaN
 
 ### Displaying used/free space
 
@@ -566,11 +558,3 @@ See [Btrfsck](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more informat
     *   [Doing Fast Incremental Backups With Btrfs Send and Receive](http://marc.merlins.org/perso/btrfs/post_2014-03-22_Btrfs-Tips_-Doing-Fast-Incremental-Backups-With-Btrfs-Send-and-Receive.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Btrfs&oldid=416342](https://wiki.archlinux.org/index.php?title=Btrfs&oldid=416342)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

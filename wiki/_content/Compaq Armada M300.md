@@ -1,9 +1,5 @@
 # Compaq Armada M300
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article describes the additional configuration needed on a brand new Arch Linux installation to get the most of a Compaq Armada M300 laptop.
 
 This laptop is very old but with Arch Linux and the following setup it is still useful for browsing, skyping and even "light open officing".
@@ -176,11 +172,3 @@ xrandr --verbose --output VGA1 --mode 1024x768 -r 75.1 --right-of LVDS1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compaq_Armada_M300&oldid=309755](https://wiki.archlinux.org/index.php?title=Compaq_Armada_M300&oldid=309755)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages using duplicate arguments in template calls](/index.php/Category:Pages_using_duplicate_arguments_in_template_calls "Category:Pages using duplicate arguments in template calls")

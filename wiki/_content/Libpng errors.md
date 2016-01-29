@@ -1,9 +1,5 @@
 # Libpng errors
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Problem](#Problem)
@@ -25,16 +21,10 @@ The simplest solution is simply to remove the embedded profile from your image. 
 
 ### GIMP
 
-To remove the embedded profile, go to `Image > Mode > Assign Color Profile` and set it to `RGB workspace(sRGB built-in)`
-
-To change the embedded profile, go to `Image > Mode > Convert to Color Profile` where you can choose a profile you already have loaded or load a new one from disk.
+NaN
 
 ### ImageMagick
 
-To remove the embedded profile, just run `% convert -strip <input filename> <output filename>`
+NaN
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Libpng_errors&oldid=394164](https://wiki.archlinux.org/index.php?title=Libpng_errors&oldid=394164)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")

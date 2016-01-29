@@ -1,9 +1,5 @@
 # hdparm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Securely_wipe_disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk")
@@ -50,45 +46,10 @@ Modern hard drives support numerous power management features, the most common o
 
 **Warning:** Too aggressive power management can reduce the lifespan of your hard drive due to frequent parking and spindowns.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Parameter</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`-B`</td>
-
-<td>Set the [Advanced Power Management](https://en.wikipedia.org/wiki/Advanced_Power_Management "wikipedia:Advanced Power Management") feature. Possible values are between 1 and 255, low values mean more aggressive power management and higher values mean better performance. Values from 1 to 127 permit spin-down, whereas values from 128 to 254 do not. A value of 255 completely disables the feature.</td>
-
-</tr>
-
-<tr>
-
-<td>`-S`</td>
-
-<td>Set the standby (spindown) timeout for the drive. The timeout specifies how long to wait in idle (with no disk activity) before turning off the motor to save power. The value of 0 disables spindown, the values from 1 to 240 specify multiples of 5 seconds and values from 241 to 251 specify multiples of 30 minutes.</td>
-
-</tr>
-
-<tr>
-
-<td>`-M`</td>
-
-<td>Set the [Automatic Acoustic Management](https://en.wikipedia.org/wiki/Automatic_Acoustic_Management "wikipedia:Automatic Acoustic Management") feature. Most modern hard disk drives have the ability to speed down the head movements to reduce their noise output. The possible value depends on the disk, some disks may not support this feature.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Parameter | Description |
+| `-B` | Set the [Advanced Power Management](https://en.wikipedia.org/wiki/Advanced_Power_Management "wikipedia:Advanced Power Management") feature. Possible values are between 1 and 255, low values mean more aggressive power management and higher values mean better performance. Values from 1 to 127 permit spin-down, whereas values from 128 to 254 do not. A value of 255 completely disables the feature. |
+| `-S` | Set the standby (spindown) timeout for the drive. The timeout specifies how long to wait in idle (with no disk activity) before turning off the motor to save power. The value of 0 disables spindown, the values from 1 to 240 specify multiples of 5 seconds and values from 241 to 251 specify multiples of 30 minutes. |
+| `-M` | Set the [Automatic Acoustic Management](https://en.wikipedia.org/wiki/Automatic_Acoustic_Management "wikipedia:Automatic Acoustic Management") feature. Most modern hard disk drives have the ability to speed down the head movements to reduce their noise output. The possible value depends on the disk, some disks may not support this feature. |
 
 To query current value, pass the parameter without a value. For example:
 
@@ -171,8 +132,3 @@ chmod +x /usr/lib/systemd/system-sleep/hdparm_set
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hdparm&oldid=414755](https://wiki.archlinux.org/index.php?title=Hdparm&oldid=414755)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Storage](/index.php/Category:Storage "Category:Storage")

@@ -1,9 +1,5 @@
 # Huawei E220
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -124,7 +120,7 @@ You can now connect immediately, but probably only as root, which is **not** a d
 
 ## Slow Start
 
-_Edit: This section is nullified if you have UDEV and HAL workarounds, or a script, or a package from AUR._  
+_Edit: This section is nullified if you have UDEV and HAL workarounds, or a script, or a package from AUR._
 
 So why then? Well, for some reason those of us on newer kernels still have to ride the old ways. In some cases, all that is needed to be done is to remove the _usb-storage_ module first, then load _usbserial_ with the device IDs. The first _cat_ command on this page will have that information, while _lsusb_ is an alternative. Anyhow, the IDs are the same for almost all E220s, so you can copy wholesale.
 
@@ -229,13 +225,9 @@ Then you add default route and dns as usually:
 
 # Links
 
-[http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/](http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/)  
-[http://oozie.fm.interia.pl/pro/huawei-e220/](http://oozie.fm.interia.pl/pro/huawei-e220/)  
-[http://mybroadband.co.za/vb/showthread.php?t=21726](http://mybroadband.co.za/vb/showthread.php?t=21726)  
+[http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/](http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/)
+[http://oozie.fm.interia.pl/pro/huawei-e220/](http://oozie.fm.interia.pl/pro/huawei-e220/)
+[http://mybroadband.co.za/vb/showthread.php?t=21726](http://mybroadband.co.za/vb/showthread.php?t=21726)
 [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Huawei_E220&oldid=382937](https://wiki.archlinux.org/index.php?title=Huawei_E220&oldid=382937)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")

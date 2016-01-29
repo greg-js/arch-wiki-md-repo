@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge E430
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -39,85 +35,15 @@ For UEFI info to E430 go to [UEFI/Hardware#Lenovo Thinkpad Edge E430 3254-DAQ](/
 
 As of kernel 3.4.6-1
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Works</th>
-
-</tr>
-
-<tr>
-
-<td>Video (Intel HD4000)</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet (Realtek RTL8111/8168B)</td>
-
-<td>Yes*</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless (Realtek RTL8188CE/Thinkpad b/g/n)</td>
-
-<td>Yes*</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Centrino 2230 - Yes (01/07/13)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio (Intel HD Audio)</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>Yes (01/07/13)</td>
-
-</tr>
-
-<tr>
-
-<td>Finger Print Reader</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader (Realtek RTS5229)</td>
-
-<td>Yes*</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Works |
+| Video (Intel HD4000) | Yes |
+| Ethernet (Realtek RTL8111/8168B) | Yes* |
+| Wireless (Realtek RTL8188CE/Thinkpad b/g/n) | Yes* |
+| Bluetooth | Centrino 2230 - Yes (01/07/13) |
+| Audio (Intel HD Audio) | Yes |
+| Camera | Yes (01/07/13) |
+| Finger Print Reader | Yes |
+| Card Reader (Realtek RTS5229) | Yes* |
 
 As usual, Realtek devices require a little work. See below.
 
@@ -164,7 +90,7 @@ If, like me, you failed to realize that the wireless card was a horribly support
 
 The card reader will not work out-of-the-box pre-3.8, but thanks to Icetonic, the necessary kernel module, [rts5229](https://aur.archlinux.org/packages.php?ID=60832), can be found from the Realtek website or from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Download the tarball and install with [makepkg](/index.php/Makepkg "Makepkg").
 
-**Note:** <s>My personal experience with the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") was that Realtek uses some ridiculous "login" for their ftp download link, thereby dynamically changing the address. I was able to navigate to the site and copy the download link address and insert it into the PKGBUILD so that I could create a pkg.tar.gz and install it with [pacman](/index.php/Pacman "Pacman").</s> Thanks to gehidore for hosting this file. This problem is now fixed.
+**Note:** ~~My personal experience with the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") was that Realtek uses some ridiculous "login" for their ftp download link, thereby dynamically changing the address. I was able to navigate to the site and copy the download link address and insert it into the PKGBUILD so that I could create a pkg.tar.gz and install it with [pacman](/index.php/Pacman "Pacman").~~ Thanks to gehidore for hosting this file. This problem is now fixed.
 
 ## Fingerprint Reader
 
@@ -232,11 +158,3 @@ $ cat /proc/acpi/ibm/fan
 Starting X on an E430 with an Intel Core i7-3612QM and monitors plugged into both the HDMI and VGA ports results in a crash. Only "fix" I've found is to wait until starting X before plugging in one of the monitors.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E430&oldid=412554](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E430&oldid=412554)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

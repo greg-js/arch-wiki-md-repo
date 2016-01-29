@@ -1,9 +1,5 @@
 # Lenovo ThinkPad S440
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article was written to assist you with getting archlinux run on the Lenovo ThinkPad S440\. It is meant to be help you with some tricky points aside to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"): A guide through the whole process of installing and configuring Arch Linux; written for new or inexperienced users.
 
 ## Contents
@@ -113,11 +109,3 @@ Works flawlessly with with [pm-utils](https://www.archlinux.org/packages/?name=p
 With [cpupower](https://www.archlinux.org/packages/?name=cpupower), [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup> and [acpid](https://www.archlinux.org/packages/?name=acpid) installed and graphics switched to intel gpu, I get over 9 hours battery life.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=412556](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=412556)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

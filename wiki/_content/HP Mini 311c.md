@@ -1,9 +1,5 @@
 # HP Mini 311c
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -52,11 +48,3 @@ And restart If problem : If after restart your wirless don’t work, verify if 
 Sound work out of box but i recommand install and use of PulseAudio ION is supported by nvidia drivers For get hardward acceleration working with mplayer, you need to get ffmpeg-vdpau and mplayer-svn from AUR
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Mini_311c&oldid=390558](https://wiki.archlinux.org/index.php?title=HP_Mini_311c&oldid=390558)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

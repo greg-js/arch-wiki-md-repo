@@ -1,9 +1,5 @@
 # Twm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Twm is a window manager for X11\. It is a small program, being built against Xlib rather than using a widget library, and as such, it is very light on system resources. Though simple, it is highly configurable; fonts, colours, border widths, title bar buttons, etc. can all be set by the user.
 
 ## Contents
@@ -74,7 +70,3 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 8.  Kask, Eeri. "[TWM -- Revised Edition -- Again](http://lists.x.org/archives/xorg/2010-January/048401.html)", _lists.x.org_, January 3, 2010.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Twm&oldid=378512](https://wiki.archlinux.org/index.php?title=Twm&oldid=378512)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

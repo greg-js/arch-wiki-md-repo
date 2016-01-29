@@ -1,9 +1,5 @@
 # Acer Aspire E5-573
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -136,7 +132,3 @@ initrd	/initramfs-linux.img
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_E5-573&oldid=411830](https://wiki.archlinux.org/index.php?title=Acer_Aspire_E5-573&oldid=411830)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

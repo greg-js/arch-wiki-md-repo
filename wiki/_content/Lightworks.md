@@ -1,9 +1,5 @@
 # Lightworks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -19,11 +15,3 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 Install the [lwks-openssl](https://aur.archlinux.org/packages/lwks-openssl/)<sup><small>AUR</small></sup> package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lightworks&oldid=409378](https://wiki.archlinux.org/index.php?title=Lightworks&oldid=409378)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

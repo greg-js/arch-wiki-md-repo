@@ -1,9 +1,5 @@
 # Arch Linux April Jokes
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Every first day of April, the Arch Linux website traditionally features an [April Fools' Day](https://en.wikipedia.org/wiki/April_Fools%27_Day "wikipedia:April Fools' Day") joke on the front page. This document collects the jokes as a fun reading for readers of this Wiki.
 
 ## Contents
@@ -215,7 +211,3 @@ Some GTK 2.x related packages were also upgraded to suit the requirements of gno
 Before the above _news_ was posted, the GNOME project had released 2.0 in 2002, and latest release before the 1st of April 2004 was GNOME 2.2.[[5]](http://www.greaterbostonrubyandrails.com/Release.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_April_Jokes&oldid=380980](https://wiki.archlinux.org/index.php?title=Arch_Linux_April_Jokes&oldid=380980)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T530
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -81,11 +77,3 @@ The Mobile Broadband modem may need the following change to be made into module 
 *   [Technical specifications](https://www.lenovo.com/products/us/tech-specs/laptop/thinkpad/t-series/t530/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T530&oldid=402103](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T530&oldid=402103)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

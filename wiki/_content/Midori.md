@@ -1,9 +1,5 @@
 # Midori
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
@@ -151,11 +147,3 @@ Simple right-click somewhere on the top window to customize toolbars. It is poss
 *   [Midori FAQ](http://wiki.xfce.org/midori/faq)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Midori&oldid=408800](https://wiki.archlinux.org/index.php?title=Midori&oldid=408800)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

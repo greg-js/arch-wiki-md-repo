@@ -1,9 +1,5 @@
 # ACPI modules
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [acpid](/index.php/Acpid "Acpid")
@@ -11,7 +7,7 @@ Related articles
 
 From [ACPI site](http://www.acpi.info/):
 
-_ACPI (Advanced Configuration and Power Interface) is an open industry specification co-developed by Hewlett-Packard, Intel, Microsoft, Phoenix, and Toshiba._
+NaN
 
 ACPI modules are kernel modules for different ACPI parts. They enable special ACPI functions or add information to `/proc` or `/sys`. These information can be parsed by [acpid](/index.php/Acpid "Acpid") for events or other monitoring applications.
 
@@ -147,7 +143,3 @@ If notebook does not start, just remove the AC adapter and battery for 5 seconds
 *   [Wikipedia:Advanced Configuration and Power Interface](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ACPI_modules&oldid=412025](https://wiki.archlinux.org/index.php?title=ACPI_modules&oldid=412025)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

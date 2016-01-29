@@ -1,9 +1,5 @@
 # Gopher
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Gopher is a protocol for information transfer over the internet that was very popular before HTTP took over as the dominant protocol, but there is still a community of gopher users that prefer the simplicity of the protocol over the more complex and large protocols more often encountered. A few examples of gopher sites can be found [here.](gopher://gopher.floodgap.com/1/new) Note that not all browsers support gopher, or have incomplete support. Firefox has limited support, but it can be enhanced with [this](https://addons.mozilla.org/en-US/firefox/addon/7685) add-on.
 
 ## Contents
@@ -75,7 +71,3 @@ To browse gopherspace as it was originally intended to be browsed, you can build
 [GoFish Homepage](http://gofish.sourceforge.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gopher&oldid=353388](https://wiki.archlinux.org/index.php?title=Gopher&oldid=353388)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

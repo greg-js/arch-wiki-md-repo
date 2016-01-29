@@ -1,9 +1,5 @@
 # GParted
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
@@ -37,127 +33,22 @@ Related articles
 
 The base GParted package doesn't come with support for all filesystems. Here is a brief list of additional packages you can install to add support for different filesystems:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Package**</td>
-
-<td>**Filesystem**</td>
-
-</tr>
-
-<tr>
-
-<td>[btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)</td>
-
-<td>[Btrfs](/index.php/Btrfs "Btrfs")</td>
-
-</tr>
-
-<tr>
-
-<td>[dosfstools](https://www.archlinux.org/packages/?name=dosfstools)</td>
-
-<td>fat16/32</td>
-
-</tr>
-
-<tr>
-
-<td>[e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)</td>
-
-<td>ext2/[ext3](/index.php/Ext3 "Ext3")/[ext4](/index.php/Ext4 "Ext4") (v1.41+)</td>
-
-</tr>
-
-<tr>
-
-<td>[exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)</td>
-
-<td>exfat</td>
-
-</tr>
-
-<tr>
-
-<td>[f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)</td>
-
-<td>[F2FS](/index.php/F2FS "F2FS")</td>
-
-</tr>
-
-<tr>
-
-<td>[jfsutils](https://www.archlinux.org/packages/?name=jfsutils)</td>
-
-<td>[JFS](/index.php/JFS "JFS")</td>
-
-</tr>
-
-<tr>
-
-<td>[ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)</td>
-
-<td>[NTFS](/index.php/NTFS "NTFS")</td>
-
-</tr>
-
-<tr>
-
-<td>[reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)<sup><small>AUR</small></sup></td>
-
-<td>[Reiser4](/index.php/Reiser4 "Reiser4")</td>
-
-</tr>
-
-<tr>
-
-<td>[reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)</td>
-
-<td>Reiser3</td>
-
-</tr>
-
-<tr>
-
-<td>[xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)</td>
-
-<td>[XFS](/index.php/XFS "XFS")</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Package** | **Filesystem** |
+| [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | [Btrfs](/index.php/Btrfs "Btrfs") |
+| [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | fat16/32 |
+| [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | ext2/[ext3](/index.php/Ext3 "Ext3")/[ext4](/index.php/Ext4 "Ext4") (v1.41+) |
+| [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | exfat |
+| [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | [F2FS](/index.php/F2FS "F2FS") |
+| [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | [JFS](/index.php/JFS "JFS") |
+| [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | [NTFS](/index.php/NTFS "NTFS") |
+| [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)<sup><small>AUR</small></sup> | [Reiser4](/index.php/Reiser4 "Reiser4") |
+| [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Reiser3 |
+| [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | [XFS](/index.php/XFS "XFS") |
 
 #### Additional functionality
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Package**</td>
-
-<td>**Functionality**</td>
-
-</tr>
-
-<tr>
-
-<td>[mtools](https://www.archlinux.org/packages/?name=mtools)</td>
-
-<td>Utilities for MS-DOS disks. Needed if you want to change the label of FAT volumes.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Package** | **Functionality** |
+| [mtools](https://www.archlinux.org/packages/?name=mtools) | Utilities for MS-DOS disks. Needed if you want to change the label of FAT volumes. |
 
 Note that when you install GParted via pacman, it will list these for you also.
 
@@ -235,8 +126,3 @@ You need rebuild package using following configuration:
 ./configure --enable-online-resize --enable-libparted-dmraid
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GParted&oldid=412086](https://wiki.archlinux.org/index.php?title=GParted&oldid=412086)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

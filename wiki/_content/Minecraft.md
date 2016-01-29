@@ -1,9 +1,5 @@
 # Minecraft
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Minecraft is a game about breaking and placing blocks. At first, people built structures to protect against nocturnal monsters, but as the game grew players worked together to create wonderful, imaginative things.
 
 ## Contents
@@ -100,11 +96,3 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 *   [Reddit Minecraft community](http://www.reddit.com/r/minecraft)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Minecraft&oldid=417208](https://wiki.archlinux.org/index.php?title=Minecraft&oldid=417208)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

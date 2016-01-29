@@ -1,9 +1,5 @@
 # Getting PKGBUILDS From SVN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Do NOT download the whole repo](#Do_NOT_download_the_whole_repo)
@@ -87,7 +83,3 @@ You can also specify a date. If no revision on that day exists, svn will grab th
 It is possible to checkout packages at versions before they were moved to another repository as well; check the logs thoroughly for the date they were moved or the last revision number.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Getting_PKGBUILDS_From_SVN&oldid=369685](https://wiki.archlinux.org/index.php?title=Getting_PKGBUILDS_From_SVN&oldid=369685)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

@@ -1,9 +1,5 @@
 # Fbpanel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [fbpanel](http://aanatoly.github.io/fbpanel/) is a lightweight NETWM compliant desktop panel. This article describes the installation and configuration of fbpanel.
 
 ## Contents
@@ -54,9 +50,3 @@ Plugin {
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=415766](https://wiki.archlinux.org/index.php?title=Fbpanel&oldid=415766)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")

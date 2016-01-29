@@ -1,9 +1,5 @@
 # BusyBox
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** Do not expect full drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options. One purpose of this Wiki is to document missing features and the problems they cause (in order to device work-arounds). Make sure that the replacement(s) that you install fill your needs before proceeding.
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -131,12 +127,3 @@ diff3 sdiff
 See [Gentoo wiki](https://wiki.gentoo.org/wiki/Mdev).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=BusyBox&oldid=412048](https://wiki.archlinux.org/index.php?title=BusyBox&oldid=412048)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

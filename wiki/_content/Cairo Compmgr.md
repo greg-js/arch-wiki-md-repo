@@ -1,9 +1,5 @@
 # Cairo Compmgr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr")
@@ -55,8 +51,3 @@ If you just want Xcompmgr's behaviour, you can disable a lot of the plugins stra
 *   [Wikipedia:Compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cairo_Compmgr&oldid=387949](https://wiki.archlinux.org/index.php?title=Cairo_Compmgr&oldid=387949)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

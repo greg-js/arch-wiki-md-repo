@@ -1,9 +1,5 @@
 # GNOME package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -73,7 +69,3 @@ Basically, the only thing that has to be changed is the `pkgname` variable on to
 For an example of above rules, take a look at the gedit PKGBUILD and the `.install` file supplied above: [https://projects.archlinux.org/svntogit/packages.git/tree/gedit/repos/extra-x86_64/](https://projects.archlinux.org/svntogit/packages.git/tree/gedit/repos/extra-x86_64/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_package_guidelines&oldid=395926](https://wiki.archlinux.org/index.php?title=GNOME_package_guidelines&oldid=395926)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

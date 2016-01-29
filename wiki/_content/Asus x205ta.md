@@ -1,9 +1,5 @@
 # Asus x205ta
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Booting Arch install media](#Booting_Arch_install_media)
@@ -280,7 +276,3 @@ Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affe
 Does not work yet.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Asus_x205ta&oldid=415290](https://wiki.archlinux.org/index.php?title=Asus_x205ta&oldid=415290)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

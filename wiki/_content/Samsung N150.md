@@ -1,9 +1,5 @@
 # Samsung N150
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article describes the installation and configuration of 64-bit Arch Linux on the Samsung N150 netbook. Based on the output from _dmidecode_, this material might also be useful for the N210, N220 and NB30 models.
 
 ## Contents
@@ -400,100 +396,13 @@ Then add the following to the bottom of the file:
 
 Now custom keyboard shortcuts can be added to Gnome by means of the "Keyboard Shortcuts" preferences.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Command</th>
-
-<th>Key</th>
-
-</tr>
-
-<tr>
-
-<td>Touchpad disabled</td>
-
-<td>/usr/local/bin/report_touchpad off</td>
-
-<td>Press Fn+F10 while touchpad enabled</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad enabled</td>
-
-<td>/usr/local/bin/report_touchpad on</td>
-
-<td>Press Fn+F10 while touchpad disabled</td>
-
-</tr>
-
-<tr>
-
-<td>Toggle CPU frequency scaling</td>
-
-<td>/usr/local/bin/cpufreq_toggle_osd</td>
-
-<td>Fn+F8</td>
-
-</tr>
-
-<tr>
-
-<td>Raise backlight</td>
-
-<td>sudo /usr/local/bin/backlight up</td>
-
-<td>Fn+Up arrow</td>
-
-</tr>
-
-<tr>
-
-<td>Lower backlight</td>
-
-<td>sudo /usr/local/bin/backlight down</td>
-
-<td>Fn+Down arrow</td>
-
-</tr>
-
-<tr>
-
-<td>Toggle wireless</td>
-
-<td>sudo /usr/local/bin/rftoggle</td>
-
-<td>Fn+F9</td>
-
-</tr>
-
-<tr>
-
-<td>Toggle backlight</td>
-
-<td>sudo /usr/local/bin/backlight toggle</td>
-
-<td>Fn+F5</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Command | Key |
+| Touchpad disabled | /usr/local/bin/report_touchpad off | Press Fn+F10 while touchpad enabled |
+| Touchpad enabled | /usr/local/bin/report_touchpad on | Press Fn+F10 while touchpad disabled |
+| Toggle CPU frequency scaling | /usr/local/bin/cpufreq_toggle_osd | Fn+F8 |
+| Raise backlight | sudo /usr/local/bin/backlight up | Fn+Up arrow |
+| Lower backlight | sudo /usr/local/bin/backlight down | Fn+Down arrow |
+| Toggle wireless | sudo /usr/local/bin/rftoggle | Fn+F9 |
+| Toggle backlight | sudo /usr/local/bin/backlight toggle | Fn+F5 |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_N150&oldid=381013](https://wiki.archlinux.org/index.php?title=Samsung_N150&oldid=381013)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

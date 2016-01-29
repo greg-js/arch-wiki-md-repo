@@ -1,9 +1,5 @@
 # HP Pavilion g6-2103ax
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 (This is a work-in-progress. I recently bought one of these laptops, and this article will attempt to explain what I did to dual-boot Arch with the HP Factory installed Windows 7.)
 
 ## Contents
@@ -21,53 +17,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 The g6-2103ax is a 2012 model 15.6” laptop, with the AMD A6 processor and a dedicated graphics card.
 
-CPU
-
-AMD A6-4400M APU with Radeon graphics
-
-2.7 GHz, 1 MiB second-level cache
-
-GPU
-
-Internal: AMD Radeon HD 7520G, 800Mhz, 512MB
-
-Dedicated: AMD Radeon HD 7670M, 800Mhz, 512MB
-
-Memory
-
-4 GiB DDR3, 1600 MHz
-
-Display
-
-15.6” LED
-
-Multimedia
-
-HP CDDVDW SN-208BB CD/DVD writer
-
-Sound: ???
-
-Networking
-
-Wireless: Atheros AR9485 wireless adaptor
-
-Ethernet: Realtek RTL8101E/RTL8102E PCI Express fast ethernet controller
-
-Storage
-
-Seagate ST500LM012 HN0M5, 500GB (465GiB)
-
-Factory partitions are SYSTEM, WINDOWS C, HP_RECOVERY, and HP_TOOLS
-
-External ports
-
-3× USB-3
-
-SD card reader
-
-1× HDMI
-
-1× VGA-compatible
+NaN
 
 ## Notes about factory settings
 
@@ -114,7 +64,3 @@ I couldn’t get the system to boot using the [open-source drivers](/index.php/A
 If you want to remove Windows 7 and opt for a pure Arch install, I’d recommend retaining the `HP_TOOLS` partition as it provides options for installing BIOS updates, as well as thorough hardware tests.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_g6-2103ax&oldid=298250](https://wiki.archlinux.org/index.php?title=HP_Pavilion_g6-2103ax&oldid=298250)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

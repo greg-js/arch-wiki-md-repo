@@ -1,9 +1,5 @@
 # Default applications
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
@@ -54,87 +50,17 @@ The modern method to start applications is using [Desktop entries](/index.php/De
 
 [freedesktop.org](http://www.freedesktop.org/wiki) recommends how to specify default (preferred) applications for MIME-types in their [Association between MIME types and applications](http://standards.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) standard. This involves writing into files called `mimeapps.list` which are looked up in the following order of paths:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Path</th>
-
-<th>Usage</th>
-
-</tr>
-
-<tr>
-
-<td>`$HOME/.config/$desktop-mimeapps.list`</td>
-
-<td>user overrides, desktop-specific</td>
-
-</tr>
-
-<tr>
-
-<td>`$HOME/.config/mimeapps.list`</td>
-
-<td>user overrides</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/xdg/$desktop-mimeapps.list`</td>
-
-<td>sysadmin and vendor overrides, desktop-specific</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/xdg/mimeapps.list`</td>
-
-<td>sysadmin and vendor overrides</td>
-
-</tr>
-
-<tr>
-
-<td>`$HOME/.local/share/applications/$desktop-mimeapps.list`</td>
-
-<td>for compatibility but now deprecated, desktop-specific</td>
-
-</tr>
-
-<tr>
-
-<td>`$HOME/.local/share/applications/mimeapps.list`</td>
-
-<td>for compatibility but now deprecated</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/local/share/applications/$desktop-mimeapps.list` and  
-`/usr/share/applications/$desktop-mimeapps.list`</td>
-
-<td>distribution-provided defaults, desktop-specific</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/local/share/applications/mimeapps.list` and  
-`/usr/share/applications/mimeapps.list`</td>
-
-<td>distribution-provided defaults</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Path | Usage |
+| `$HOME/.config/$desktop-mimeapps.list` | user overrides, desktop-specific |
+| `$HOME/.config/mimeapps.list` | user overrides |
+| `/etc/xdg/$desktop-mimeapps.list` | sysadmin and vendor overrides, desktop-specific |
+| `/etc/xdg/mimeapps.list` | sysadmin and vendor overrides |
+| `$HOME/.local/share/applications/$desktop-mimeapps.list` | for compatibility but now deprecated, desktop-specific |
+| `$HOME/.local/share/applications/mimeapps.list` | for compatibility but now deprecated |
+| `/usr/local/share/applications/$desktop-mimeapps.list` and
+`/usr/share/applications/$desktop-mimeapps.list` | distribution-provided defaults, desktop-specific |
+| `/usr/local/share/applications/mimeapps.list` and
+`/usr/share/applications/mimeapps.list` | distribution-provided defaults |
 
 In this table, `$VARS` are environment variables and `$desktop` is the name of the current desktop (in lowercase), for example `kde`, `gnome`, `xfce`, etc.
 
@@ -286,12 +212,3 @@ Sometimes, a certain application will not appear in the right-click _Open With..
 You may also have to edit the `MimeType` list in the `.desktop` file if you install extensions that allow an application to handle additional MIME types.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Default_applications&oldid=401269](https://wiki.archlinux.org/index.php?title=Default_applications&oldid=401269)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

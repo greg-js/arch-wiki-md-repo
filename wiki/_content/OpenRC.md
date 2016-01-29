@@ -1,9 +1,5 @@
 # OpenRC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [eudev](/index.php/Eudev "Eudev")
@@ -73,83 +69,13 @@ See [Init#Configuration](/index.php/Init#Configuration "Init").
 
 OpenRC services are enabled by issuing `rc-update add _service_name_ _runlevel_` as root. It is recommended to at least enable the following services:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Service name</th>
-
-<th>[Runlevel](https://wiki.gentoo.org/wiki/OpenRC#Named_runlevels)</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>udev</td>
-
-<td>sysinit</td>
-
-<td>Device hot-plugging</td>
-
-</tr>
-
-<tr>
-
-<td>alsa</td>
-
-<td>default</td>
-
-<td>[ALSA](/index.php/ALSA "ALSA") state</td>
-
-</tr>
-
-<tr>
-
-<td>acpid</td>
-
-<td>default</td>
-
-<td>ACPI events</td>
-
-</tr>
-
-<tr>
-
-<td>dbus</td>
-
-<td>default</td>
-
-<td>Messaging bus</td>
-
-</tr>
-
-<tr>
-
-<td>dcron</td>
-
-<td>default</td>
-
-<td>Scheduling</td>
-
-</tr>
-
-<tr>
-
-<td>syslog-ng</td>
-
-<td>default</td>
-
-<td>System logs</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Service name | [Runlevel](https://wiki.gentoo.org/wiki/OpenRC#Named_runlevels) | Description |
+| udev | sysinit | Device hot-plugging |
+| alsa | default | [ALSA](/index.php/ALSA "ALSA") state |
+| acpid | default | ACPI events |
+| dbus | default | Messaging bus |
+| dcron | default | Scheduling |
+| syslog-ng | default | System logs |
 
 See also [Native services](https://wiki.gentoo.org/wiki/Systemd#Native_services) and [Daemons](/index.php/Daemons "Daemons").
 
@@ -282,11 +208,3 @@ See [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") for more information.
 *   [Manjaro wiki](https://wiki.manjaro.org/index.php?title=OpenRC,_an_alternative_to_systemd)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,12 +1,8 @@
 # Duply
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [duply.net](http://www.duply.net/):
 
-_Duply is a frontend for the mighty duplicity magic. [Duplicity](/index.php/Duplicity "Duplicity") is a python based shell application that makes encrypted incremental backups to remote storages._
+NaN
 
 ## Contents
 
@@ -108,8 +104,3 @@ chmod 600 $backup_file
 Copy the _*.tar.gz_ file to a secure storage location such as LastPass, KeePass, Peerio or an offline USB harddrive. The configuration file should accessable even if access is lost to the computer being backed up because the whole point of the backup is that it can be recovered even if the computer is lost or destroyed.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Duply&oldid=401447](https://wiki.archlinux.org/index.php?title=Duply&oldid=401447)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

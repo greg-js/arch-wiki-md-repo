@@ -1,9 +1,5 @@
 # Extra keyboard keys in Xorg
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
@@ -53,7 +49,7 @@ See the main article: [keytouch](/index.php/Keytouch "Keytouch").
 
 From [actkbd home page](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
 
-[actkbd](https://aur.archlinux.org/packages/actkbd/)<sup><small>AUR</small></sup> (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
+NaN
 
 A sample configuration and guide is available [here](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
 
@@ -64,13 +60,3 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 **Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xbindkeys_config)]</sup> from the [AUR](/index.php/AUR "AUR").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_Xorg&oldid=392110](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_Xorg&oldid=392110)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

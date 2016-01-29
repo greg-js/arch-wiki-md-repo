@@ -1,9 +1,5 @@
 # Open Sound System
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [Open Sound System](https://en.wikipedia.org/wiki/Open_Sound_System "wikipedia:Open Sound System") (or **OSS**) is an alternative sound architecture for Unix-like and POSIX-compatible systems. OSS version 3 was the original sound system for Linux, but was superseded by the [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") (or **ALSA**) in 2002 when OSS version 4 became proprietary software. OSSv4 became free software again in 2007 when [4Front Technologies](http://www.opensound.com/) released its source code and provided it under the GPL license.
 
 ## Contents
@@ -206,83 +202,13 @@ The basic `ossxmix` controls look like:
 
 For high definition (HD) audio, `ossxmix` will color jack configurations by their pre-defined jack colors:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Color</th>
-
-<th>Type</th>
-
-<th>Connector</th>
-
-</tr>
-
-<tr style="color:black;background:lightgreen">
-
-<td>green</td>
-
-<td>front channels (stereo output)</td>
-
-<td>3.5mm TRS</td>
-
-</tr>
-
-<tr style="color:white;background:black">
-
-<td>black</td>
-
-<td>rear channels (stereo output)</td>
-
-<td>3.5mm TRS</td>
-
-</tr>
-
-<tr style="color:white;background:gray">
-
-<td>grey</td>
-
-<td>side channels (stereo output)</td>
-
-<td>3.5mm TRS</td>
-
-</tr>
-
-<tr style="color:black;background:gold">
-
-<td>gold</td>
-
-<td>center and subwoofer (dual output)</td>
-
-<td>3.5mm TRS</td>
-
-</tr>
-
-<tr style="color:black;background:lightblue">
-
-<td>blue</td>
-
-<td>line level (stereo input)</td>
-
-<td>3.5mm TRS</td>
-
-</tr>
-
-<tr style="color:black;background:pink">
-
-<td>pink</td>
-
-<td>microphone (mono input)</td>
-
-<td>3.5mm TS</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Color | Type | Connector |
+| green | front channels (stereo output) | 3.5mm TRS |
+| black | rear channels (stereo output) | 3.5mm TRS |
+| grey | side channels (stereo output) | 3.5mm TRS |
+| gold | center and subwoofer (dual output) | 3.5mm TRS |
+| blue | line level (stereo input) | 3.5mm TRS |
+| pink | microphone (mono input) | 3.5mm TS |
 
 ### Saving Mixer Levels
 
@@ -301,20 +227,17 @@ Other mixers that have support for OSS:
 
 *   **Gnome Volume Control** — for [GNOME](/index.php/GNOME "GNOME").
 
-[http://library.gnome.org/users/gnome-volume-control/stable/](http://library.gnome.org/users/gnome-volume-control/stable/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
+NaN
 
 *   **Kmix** — for [KDE](/index.php/KDE "KDE").
 
-[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)
+NaN
 
 *   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#Graphical "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing _Preferences_ and then changing:
 
-*   _Driver_: `OSS`.
-*   _Default Channel_: `vmix0-outvol` (find out what channel to use with `ossmix`).
-*   _Default Mixer_: `ossxmix`.
-*   In the _MiniMixer_ tab (optional), add `vmix0-outvol` and optionally others.
+NaN
 
-[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+NaN
 
 ## Configuring Applications for OSS
 
@@ -559,21 +482,7 @@ By default the sample rate is 48000hz. There are several conditions in which you
 
 Some example sample rates:
 
-44100hz
-
-Sample rate of standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(CD_standard) "wikipedia:Red Book (CD standard)") audio CDs.
-
-88000hz
-
-Sample rate of [SACD](https://en.wikipedia.org/wiki/Super_Audio_CD "wikipedia:Super Audio CD") high definition audio discs/downloads. It is rare that your motherboard will support this sample rate.
-
-96000hz
-
-Sample rate of most high definition audio downloads. If your motherboard is an [AC'97](https://en.wikipedia.org/wiki/AC%2797 "wikipedia:AC'97") motherboard, this is likely to be your highest bitrate.
-
-192000hz
-
-Sample rate of BluRay, and some (very few) high definition downloads. Support for external audio receiver equipment is limited to high end audio. Not all motherboards support this. An example of a motherboard chipset that would support this includes [HD Audio](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio").
+NaN
 
 To check what your sample rate is currently set to, run:
 
@@ -961,7 +870,3 @@ By default, OSS plays back the microphone through the speakers. To disable this 
 *   [opensound-devel mailing list](http://sourceforge.net/p/opensound/mailman/opensound-devel/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Open_Sound_System&oldid=406901](https://wiki.archlinux.org/index.php?title=Open_Sound_System&oldid=406901)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")

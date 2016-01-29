@@ -1,9 +1,5 @@
 # Gogs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -91,11 +87,3 @@ The current package (gogs-git* and gogs>=0.4.2) support custom themes. The locat
 *   [Official Documentation](http://gogs.io/docs/intro/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gogs&oldid=411950](https://wiki.archlinux.org/index.php?title=Gogs&oldid=411950)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

@@ -1,120 +1,17 @@
 # ASUS Eee PC T101MT
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Information**</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>Intel GMA 3150</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>3.0.0</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:yellow">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend2RAM</td>
-
-<td style="color:yellow">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Hibernate</td>
-
-<td style="color:red">**Not working**</td>
-
-</tr>
-
-<tr>
-
-<td>Touchscreen</td>
-
-<td style="color:green">**Working**</td>
-
-<td>3.0.0</td>
-
-</tr>
-
-<tr>
-
-<td>Multi-Touch</td>
-
-<td style="color:yellow">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Information** |
+| Graphics | **Working** | Intel GMA 3150 |
+| Ethernet | **Working** |
+| Wireless | **Working** |
+| Audio | **Working** |
+| Camera | **Working** | 3.0.0 |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
+| Suspend2RAM | **Working** |
+| Hibernate | **Not working** |
+| Touchscreen | **Working** | 3.0.0 |
+| Multi-Touch | **Working** |
 
 ## Contents
 
@@ -145,7 +42,7 @@ Graphics, Ethernet, Wireless, Audio and the Card Reader work "out of the box".
 
 Is working fine with Ekiga
 
-If Skype displays the image upside-down  
+If Skype displays the image upside-down
 to fix this use command:
 
 for x86_x64
@@ -551,7 +448,3 @@ For N570 versions:
 *   [Ubuntu T101MT Howto](http://ubuntuforums.org/showthread.php?t=1468376)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_T101MT&oldid=408435](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_T101MT&oldid=408435)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

@@ -1,9 +1,5 @@
 # Laptop Mode Tools
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [acpid](/index.php/Acpid "Acpid")
@@ -367,8 +363,3 @@ Multiple IDs can be seperated with spaces.
 *   [Mailing List Archives](http://mailman.samwel.tk/pipermail/laptop-mode/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&oldid=398270](https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&oldid=398270)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

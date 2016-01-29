@@ -1,9 +1,5 @@
 # Atomic Bomberman
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Atomic Bomberman is a PC game developed by Interplay and released in 1997\. It can be played on Arch using [Wine](/index.php/Wine "Wine").
 
 ## Contents
@@ -80,8 +76,3 @@ See also this forum thread: [wine forum: IPX works via wired network, not via wi
 *   [WineHQ - Atomic Bomberman 1.0](http://appdb.winehq.org/objectManager.php?sClass=version&iId=4774&iTestingId=9967)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Atomic_Bomberman&oldid=277254](https://wiki.archlinux.org/index.php?title=Atomic_Bomberman&oldid=277254)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

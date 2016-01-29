@@ -1,9 +1,5 @@
 # Toshiba Tecra M4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -148,11 +144,3 @@ I customized the given script a bit, because turning right and inverted made no 
 *   sound does work, if you reload the snd_intel8x0 module after boot - do not know, why
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_M4&oldid=400569](https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_M4&oldid=400569)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Laptop style](/index.php/Category:Pages_or_sections_flagged_with_Template:Laptop_style "Category:Pages or sections flagged with Template:Laptop style")

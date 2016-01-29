@@ -1,9 +1,5 @@
 # Acer Aspire One AOD150
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article pertains to the 10.1" Acer Aspire One D150 models made available in February 2009\. At this time, the AOD150 series feature standard SATA hard drives only, therefore much of the information found in the [Acer Aspire One](/index.php/Acer_Aspire_One "Acer Aspire One") article does not apply. This article attempts to trim the fat.
 
 ## Contents
@@ -118,11 +114,3 @@ $ make
 The last step requires being logged in as **root**. Reboot and the wired ethernet card should now be recognized on your D250.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_One_AOD150&oldid=375949](https://wiki.archlinux.org/index.php?title=Acer_Aspire_One_AOD150&oldid=375949)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

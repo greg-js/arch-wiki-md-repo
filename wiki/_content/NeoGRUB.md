@@ -1,9 +1,5 @@
 # NeoGRUB
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub ) from EasyBCD, it embeds an implementation of GRUB Legacy _inside the Windows Bootloader_. This implementation can boot Arch Linux and other Linuxes _directly, without chainloading a Linux bootloader installed on the linux's /boot._
 
 This can be helpful if you find that updates to Arch are breaking your Arch's GRUB or Syslinux.
@@ -31,7 +27,3 @@ More information of the nature and workings of EasyBCD and NeoGRUB is at the dev
 note that that last link has an example to boot Ubuntu. Ubuntu adds version numbers to its vmlinuz and initrd files, which would require that you update the NeoGRUB every kernel update. Arch does not have this problem. Also note that Arch uses initramfs, not initrd, but you still use the syntax in the code box above.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NeoGRUB&oldid=414788](https://wiki.archlinux.org/index.php?title=NeoGRUB&oldid=414788)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")

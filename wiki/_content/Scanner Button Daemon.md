@@ -1,9 +1,5 @@
 # Scanner Button Daemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -143,7 +139,3 @@ include(scanner.d/snapscan.conf)
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Scanner_Button_Daemon&oldid=381014](https://wiki.archlinux.org/index.php?title=Scanner_Button_Daemon&oldid=381014)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Imaging](/index.php/Category:Imaging "Category:Imaging")

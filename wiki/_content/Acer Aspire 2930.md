@@ -1,9 +1,5 @@
 # Acer Aspire 2930
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -65,7 +61,3 @@ Worked with no additional configuration
 Works after [synaptics](/index.php/Synaptics "Synaptics") is installed. For touchpad taps follow configuration instructions copying /usr/share/X11/xorg.conf.d/50-synaptics.conf to /etc/X11/xorg.conf.d/
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_2930&oldid=416554](https://wiki.archlinux.org/index.php?title=Acer_Aspire_2930&oldid=416554)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

@@ -1,9 +1,5 @@
 # Gqrx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")
@@ -32,7 +28,3 @@ $ gqrx-alsa
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gqrx&oldid=409571](https://wiki.archlinux.org/index.php?title=Gqrx&oldid=409571)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

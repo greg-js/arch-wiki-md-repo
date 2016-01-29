@@ -1,9 +1,5 @@
 # HP Envy 15t-j000 Quad Edition
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -14,99 +10,15 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 The HP Envy 15t-j000 Quad Edition is a laptop released in 2013.
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel (on some versions use NVIDIA with bumblebee)</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-<td>rts5229</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint Reader</td>
-
-<td style="color:red">**Not Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel (on some versions use NVIDIA with bumblebee) |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | iwlwifi |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** | synaptics |
+| Camera | **Working** |
+| Card Reader | **Working** | rts5229 |
+| Fingerprint Reader | **Not Working** |
 
 ## Contents
 
@@ -217,11 +129,3 @@ This laptop has a mSATA bay that can include a cache hard drive. This mSATA can 
 ## Dual Boot
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Envy_15t-j000_Quad_Edition&oldid=368727](https://wiki.archlinux.org/index.php?title=HP_Envy_15t-j000_Quad_Edition&oldid=368727)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

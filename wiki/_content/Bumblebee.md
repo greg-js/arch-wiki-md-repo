@@ -1,9 +1,5 @@
 # Bumblebee
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
@@ -78,7 +74,7 @@ Install:
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
 
-**Note:** [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) depends on [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) and provides all [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl), [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl) and [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl) to avoid dependency conflict between the respective libgl versions.
+NaN
 
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
@@ -213,122 +209,21 @@ The method of compress will affect performance in the GPU/CPU usage. Compressed 
 
 Compressed methods
 
-*   `jpeg`
-*   `rgb`
-*   `yuv`
+NaN
 
 Uncompressed methods
 
-*   `proxy`
-*   `xv`
+NaN
 
 Here is a performance table tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>FPS</th>
-
-<th>Score</th>
-
-<th>Min FPS</th>
-
-<th>Max FPS</th>
-
-</tr>
-
-<tr>
-
-<td>optirun unigine-heaven</td>
-
-<td>25.0</td>
-
-<td>630</td>
-
-<td>16.4</td>
-
-<td>36.1</td>
-
-</tr>
-
-<tr>
-
-<td>optirun -c jpeg unigine-heaven</td>
-
-<td>24.2</td>
-
-<td>610</td>
-
-<td>9.5</td>
-
-<td>36.8</td>
-
-</tr>
-
-<tr>
-
-<td>optirun -c rgb unigine-heaven</td>
-
-<td>25.1</td>
-
-<td>632</td>
-
-<td>16.6</td>
-
-<td>35.5</td>
-
-</tr>
-
-<tr>
-
-<td>optirun -c yuv unigine-heaven</td>
-
-<td>24.9</td>
-
-<td>626</td>
-
-<td>16.5</td>
-
-<td>35.8</td>
-
-</tr>
-
-<tr>
-
-<td>optirun -c proxy unigine-heaven</td>
-
-<td>25.0</td>
-
-<td>629</td>
-
-<td>16.0</td>
-
-<td>36.1</td>
-
-</tr>
-
-<tr>
-
-<td>optirun -c xv unigine-heaven</td>
-
-<td>22.9</td>
-
-<td>577</td>
-
-<td>15.4</td>
-
-<td>32.2</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | FPS | Score | Min FPS | Max FPS |
+| optirun unigine-heaven | 25.0 | 630 | 16.4 | 36.1 |
+| optirun -c jpeg unigine-heaven | 24.2 | 610 | 9.5 | 36.8 |
+| optirun -c rgb unigine-heaven | 25.1 | 632 | 16.6 | 35.5 |
+| optirun -c yuv unigine-heaven | 24.9 | 626 | 16.5 | 35.8 |
+| optirun -c proxy unigine-heaven | 25.0 | 629 | 16.0 | 36.1 |
+| optirun -c xv unigine-heaven | 22.9 | 577 | 15.4 | 32.2 |
 
 **Note:** Lag spikes occurred when `jpeg` compression method was used.
 
@@ -553,9 +448,7 @@ Driver=nvidia
 *   In order for your DP Monitor to show up with the correct resolution in your VIRTUAL Display you might have to edit the Monitor section in your `/etc/X11/xorg.nvidia.conf`. Since this is extra work, you could try to continue with your auto-generated file. Come back to this step in the instructions if you find that the resolution of the VIRTUAL Display as shown by xrandr is not correct.
     *   First you have to generate a Modeline. You can use the tool [amlc](http://zi.fi/amlc/), which will genearte a Modeline if you input a few basic parameters.
 
-Example: 24" 1920x1080 Monitor
-
-start the tool with `amlc -c`
+NaN
 
 ```
 Monitor Identifier: Samsung 2494
@@ -649,7 +542,7 @@ EndSection  # Samsung 2494
 *   Take note of the position of the VIRTUAL display in the list of Outputs as shown by xrandr. The counting starts from zero, i.e. if it is the third display shown, you would specify `-x 2` as parameter to `screenclone` (Note: This might not always be correct. If you see your internal laptop display cloned on the monitor, try `-x 2` anyway.)
 *   Clone the contents of the VIRTUAL display onto the X server created by bumblebee, which is connected to the DisplayPort monitor via the NVIDIA chip:
 
-`screenclone -d :8 -x 2`
+NaN
 
 Thats it, all three displays should be up and running now.
 
@@ -922,55 +815,9 @@ $ optiprime glxgears
 
 In conclusion, it doesn't make significant performance improvement, but as mentioned above, it should remove mouse input delay lag.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>FPS</th>
-
-<th>Score</th>
-
-<th>Min FPS</th>
-
-<th>Max FPS</th>
-
-</tr>
-
-<tr>
-
-<td>optiprime unigine-heaven</td>
-
-<td>31.5</td>
-
-<td>793</td>
-
-<td>22.3</td>
-
-<td>54.8</td>
-
-</tr>
-
-<tr>
-
-<td>primusrun unigine-heaven</td>
-
-<td>31.4</td>
-
-<td>792</td>
-
-<td>18.7</td>
-
-<td>54.2</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Command | FPS | Score | Min FPS | Max FPS |
+| optiprime unigine-heaven | 31.5 | 793 | 22.3 | 54.8 |
+| primusrun unigine-heaven | 31.4 | 792 | 18.7 | 54.2 |
 
 _Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>._
 
@@ -1000,14 +847,3 @@ In some systems, it can happens that the nvidia module is loaded after resuming 
 Join us at #bumblebee at freenode.net.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416589](https://wiki.archlinux.org/index.php?title=Bumblebee&oldid=416589)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

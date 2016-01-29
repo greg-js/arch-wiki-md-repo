@@ -1,9 +1,5 @@
 # Ext3
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -122,10 +118,6 @@ I get filesystem errors even with this tips. Do not disable lengthy boot time ch
 
 If you have some big partitions, do not enable full journaling on them. I experienced reproducible freezes (about 30 seconds) when enabling this on my 250GB home partition.
 
-Did you try tweaking bdflush as described [by Daniel Robbins](http://www.ibm.com/developerworks/linux/library/l-fs8.html)?
+NaN
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ext3&oldid=405543](https://wiki.archlinux.org/index.php?title=Ext3&oldid=405543)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

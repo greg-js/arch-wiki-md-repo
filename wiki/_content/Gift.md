@@ -1,9 +1,5 @@
 # Gift
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [http://gift.sourceforge.net/about.mhtml](http://gift.sourceforge.net/about.mhtml):
 
 "GiFT is a collection of various software components geared towards improving the overall usability of a multitude of peer-to-peer file-sharing networks. This goal is accomplished by unifying the components such that a user of the software may choose any of the available interfaces to access any of the available networks. The central application, giftd, uses a plugin-based architecture capable of using multiple networks simultaneously through a single user interface."
@@ -68,7 +64,3 @@ Then it means you didn't read the `gift-setup` instructions properly. And it can
 *   For any questions, e-mail at dauoalagio@gmail.com
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gift&oldid=302637](https://wiki.archlinux.org/index.php?title=Gift&oldid=302637)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

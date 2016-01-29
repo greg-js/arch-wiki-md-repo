@@ -1,9 +1,5 @@
 # Midnight Commander
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
@@ -41,11 +37,11 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 
 *   **mc-solarized-git** — Solarized color scheme for Midnight Commander
 
-[https://github.com/nkulikov/mc-solarized-skin](https://github.com/nkulikov/mc-solarized-skin) || [mc-solarized-git](https://aur.archlinux.org/packages/mc-solarized-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **mc-skin-candy** — Candy color scheme (256color)
 
-[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) ||
+NaN
 
 See also `**Skins**` in `man mc`.
 
@@ -210,11 +206,3 @@ If the _Find file_ dialog (accessible with `Alt+?`) shows no results, check the 
 *   [Draft of documentation](https://www.midnight-commander.org/wiki/doc)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Midnight_Commander&oldid=410944](https://wiki.archlinux.org/index.php?title=Midnight_Commander&oldid=410944)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

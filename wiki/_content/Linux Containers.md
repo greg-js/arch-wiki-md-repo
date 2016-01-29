@@ -1,9 +1,5 @@
 # Linux Containers
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [AirVPN](/index.php/AirVPN "AirVPN")
@@ -402,12 +398,3 @@ And then assign your IP through your preferred method **inside** the container, 
 *   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=413406](https://wiki.archlinux.org/index.php?title=Linux_Containers&oldid=413406)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

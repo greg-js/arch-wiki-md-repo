@@ -1,9 +1,5 @@
 # Very Secure FTP Daemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **vsftpd** (Very Secure FTP Daemon) is a lightweight, stable and secure FTP server for UNIX-like systems.
 
 ## Contents
@@ -496,11 +492,3 @@ listen=NO
 *   [vsftpd.conf man page](http://vsftpd.beasts.org/vsftpd_conf.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon&oldid=415622](https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon&oldid=415622)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

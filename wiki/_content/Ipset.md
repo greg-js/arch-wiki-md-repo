@@ -1,9 +1,5 @@
 # Ipset
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")
@@ -102,12 +98,3 @@ To delete all sets:
 Please see the man page for ipset for further information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ipset&oldid=412106](https://wiki.archlinux.org/index.php?title=Ipset&oldid=412106)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

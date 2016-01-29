@@ -1,9 +1,5 @@
 # Creating packages for other distributions
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
@@ -44,43 +40,43 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 **cowdancer** — Copy-on-write wrapper for pbuilder
 
-[https://packages.debian.org/sid/cowdancer](https://packages.debian.org/sid/cowdancer) || [cowdancer](https://aur.archlinux.org/packages/cowdancer/)<sup><small>AUR</small></sup>
+NaN
 
 **debootstrap** — A tool used to create a Debian base system from scratch, without requiring the availability of dpkg or apt.
 
-[https://packages.debian.org/sid/debootstrap](https://packages.debian.org/sid/debootstrap) || [debootstrap](https://aur.archlinux.org/packages/debootstrap/)<sup><small>AUR</small></sup>
+NaN
 
 **devscripts** — Scripts to make the life of a Debian Package maintainer easier
 
-[https://packages.debian.org/sid/devscripts](https://packages.debian.org/sid/devscripts) || [devscripts](https://aur.archlinux.org/packages/devscripts/)<sup><small>AUR</small></sup>
+NaN
 
 **dh-autoreconf** — Debhelper add-on to call autoreconf and clean up after the build
 
-[https://packages.debian.org/sid/dh-autoreconf](https://packages.debian.org/sid/dh-autoreconf) || [dh-autoreconf](https://aur.archlinux.org/packages/dh-autoreconf/)<sup><small>AUR</small></sup>
+NaN
 
 **dh-make** — Tool that converts source archives into Debian package source
 
-[https://packages.debian.org/sid/dh-make](https://packages.debian.org/sid/dh-make) || [dh-make](https://aur.archlinux.org/packages/dh-make/)<sup><small>AUR</small></sup>
+NaN
 
 **[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
 
-[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)<sup><small>AUR</small></sup>
+NaN
 
 **dput** — Debian package upload tool
 
-[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)<sup><small>AUR</small></sup>
+NaN
 
 **git-buildpackage** — Tools from Debian to integrate the package build system with Git
 
-[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)<sup><small>AUR</small></sup>
+NaN
 
 **pbuilder-ubuntu** — Chroot environment for building Debian packages
 
-[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)<sup><small>AUR</small></sup>
+NaN
 
 **[quilt](https://en.wikipedia.org/wiki/Quilt "wikipedia:Quilt")** — Manage a series of patches by keeping track of the changes each patch makes
 
-[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
+NaN
 
 **Note:** Missing tools: _lintian_, _reprepo_, _equivs_, _cdbs_, _svn-buildpackage_, _javahelper_
 
@@ -156,11 +152,11 @@ $ dpkg-buildpackage -d -us -uc -S
 
 **rpm-org** — RPM.org fork, used in major RPM distros
 
-[http://www.rpm.org/](http://www.rpm.org/) || [rpm-org](https://aur.archlinux.org/packages/rpm-org/)<sup><small>AUR</small></sup>
+NaN
 
 **mock** — Takes Source RPMs and builds RPMs from them in a chroot
 
-[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock-git](https://aur.archlinux.org/packages/mock-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mock-git)]</sup>
+NaN
 
 ### See also
 
@@ -265,12 +261,3 @@ Prefer: ca-certificates-utils ca-certificates
 *   [BBS - Original discussion](https://bbs.archlinux.org/viewtopic.php?id=182198)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages_for_other_distributions&oldid=402868](https://wiki.archlinux.org/index.php?title=Creating_packages_for_other_distributions&oldid=402868)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

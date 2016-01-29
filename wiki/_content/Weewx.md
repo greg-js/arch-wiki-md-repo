@@ -1,9 +1,5 @@
 # Weewx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -168,11 +164,3 @@ To install PIL download the source from here: [http://www.pythonware.com/product
 Then, after installing the arch developer tools: `pacman -S base-devel` Install the freetype2 tools: `pacman -S freetype2` You will then need to symbolic link the freetype2 directory to freetype because the PIL build looks for the freetype header files in the freetype directoy not in freetype2.: `ln -s /usr/include/freetype2 /usr/include/freetype` THEN you can build and install PIL from your build directory: `./setup.py install` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Weewx&oldid=412457](https://wiki.archlinux.org/index.php?title=Weewx&oldid=412457)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

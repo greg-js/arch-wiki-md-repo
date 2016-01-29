@@ -1,9 +1,5 @@
 # Aura
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Aura** is a multilingual package manager for Arch Linux written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It connects to both the official [ABS](/index.php/ABS "ABS") repositories and to the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), allowing easy control of all packages on an Arch system. It allows all pacman operations and provides new custom ones for dealing with [AUR](/index.php/AUR "AUR") packages. Aura caches built package files, so they can be managed like any ABS package would. This includes downgrading with `-C`.
 
 See the [README](https://github.com/aurapm/aura/blob/master/README.md) and [documentation](https://github.com/aurapm/aura/tree/master/doc) for general information.
@@ -86,7 +82,3 @@ Either add this function to your corresponding rc/profile or as a stand-alone sc
 *   [Aura's ArchLinux forum post](https://bbs.archlinux.org/viewtopic.php?id=155778)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Aura&oldid=415585](https://wiki.archlinux.org/index.php?title=Aura&oldid=415585)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository")

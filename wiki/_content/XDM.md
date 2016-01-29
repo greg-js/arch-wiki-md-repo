@@ -1,16 +1,12 @@
 # XDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
 
 From [XDM manual page](http://www.xfree86.org/current/xdm.1.html):
 
-_Xdm manages a collection of X displays, which may be on the local host or remote servers. The design of xdm was guided by the needs of X terminals as well as The Open Group standard XDMCP, the X Display Manager Control Protocol. Xdm provides services similar to those provided by init, getty and login on character terminals: prompting for login name and password, authenticating the user, and running a "session."_
+NaN
 
 XDM provides a simple and straightforward graphical login prompt.
 
@@ -127,7 +123,3 @@ xlogin*allowNullPasswd: true
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XDM&oldid=414368](https://wiki.archlinux.org/index.php?title=XDM&oldid=414368)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

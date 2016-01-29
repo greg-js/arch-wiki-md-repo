@@ -1,9 +1,5 @@
 # Base2plan9
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [base](https://wiki.archlinux.org/index.php/DeveloperWiki:Core-Repository)2[plan9](https://www.archlinux.org/packages/community/x86_64/plan9port/) project aims to offer drop-in replacements for various central parts of the Arch linux base system.
 
 **IMPORTANT: Do not expect 100% drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options. One purpose of this Wiki is to document missing features and the problems they cause (in order to devise work-arounds). Make sure that the replacement(s) that you install fill your needs before proceeding.**
@@ -160,11 +156,3 @@ Some utilities are not offered by neither Plan9port, custom scripts, Heirloom no
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Base2plan9&oldid=391955](https://wiki.archlinux.org/index.php?title=Base2plan9&oldid=391955)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

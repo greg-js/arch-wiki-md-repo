@@ -1,9 +1,5 @@
 # Mutt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [fdm](/index.php/Fdm "Fdm")
@@ -1545,11 +1541,3 @@ Newcomers may find it quite hard to find help for Mutt. Actually most of the top
 *   [muttrc builder](http://www.muttrcbuilder.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mutt&oldid=416920](https://wiki.archlinux.org/index.php?title=Mutt&oldid=416920)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

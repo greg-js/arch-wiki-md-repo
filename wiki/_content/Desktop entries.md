@@ -1,24 +1,10 @@
 # Desktop entries
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Desktop entries is a [freedesktop.org](http://www.freedesktop.org/wiki/) standard for specifying the behaviour of programs running on [Xorg](/index.php/Xorg "Xorg"). It is a configuration file that describes how an application is launched and how it appears in a menu with an icon. The most common desktop entries are the `.desktop` and `.directory` files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
 
 There are roughly three types of desktop entries:
 
-Application 
-
-a shortcut to an application
-
-Link 
-
-a shortcut to a web link.
-
-Directory 
-
-a container of meta data of a menu entry
+NaN
 
 The following sections will roughly explain how these are created and validated.
 
@@ -108,111 +94,14 @@ This will give you very verbose and useful warnings and error messages.
 
 Here is a short overview of image formats commonly used for icons.
 
-<table class="wikitable" align="center"><caption>Support for image formats for icons as specified by the [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/latest/ar01s02.html).</caption>
-
-<tbody>
-
-<tr>
-
-<th>Extension</th>
-
-<th>Full Name and/or Description</th>
-
-<th>Graphics Type</th>
-
-<th>Container Format</th>
-
-<th>Supported</th>
-
-</tr>
-
-<tr>
-
-<th align="left">.[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics")</th>
-
-<td>Portable Network Graphics</td>
-
-<td>[Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics")</td>
-
-<td bgcolor="red">no</td>
-
-<td bgcolor="#00cc00">yes</td>
-
-</tr>
-
-<tr>
-
-<th align="left">.[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics")</th>
-
-<td>Scalable Vector Graphics</td>
-
-<td>[Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics")</td>
-
-<td bgcolor="red">no</td>
-
-<td bgcolor="#66cc00">yes (optional)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">.[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap")</th>
-
-<td>X PixMap</td>
-
-<td>[Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics")</td>
-
-<td bgcolor="red">no</td>
-
-<td bgcolor="yellow">yes (deprecated)</td>
-
-</tr>
-
-<tr>
-
-<th align="left">.[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format")</th>
-
-<td>Graphics Interchange Format</td>
-
-<td>[Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics")</td>
-
-<td bgcolor="red">no</td>
-
-<td bgcolor="red">no</td>
-
-</tr>
-
-<tr>
-
-<th align="left">.[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) "wikipedia:ICO (icon image file format)")</th>
-
-<td>MS Windows Icon Format</td>
-
-<td>[Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics")</td>
-
-<td bgcolor="#00cc00">yes</td>
-
-<td bgcolor="red">no</td>
-
-</tr>
-
-<tr>
-
-<th align="left">.[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image")</th>
-
-<td>Apple Icon Image</td>
-
-<td>[Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics")</td>
-
-<td bgcolor="#00cc00">yes</td>
-
-<td bgcolor="red">no</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Support for image formats for icons as specified by the [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/latest/ar01s02.html).</caption>
+| Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |
+| .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | yes |
+| .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | no | yes (optional) |
+| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | yes (deprecated) |
+| .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | no | no |
+| .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) "wikipedia:ICO (icon image file format)") | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | yes | no |
+| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | yes | no |
 
 ### Converting icons
 
@@ -334,7 +223,7 @@ If you use an XDG-compliant desktop environment, such as GNOME or KDE, the deskt
 
 *   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
 
-*   GNOME also starts files found in `/usr/share/gnome/autostart/`
+NaN
 
 *   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
 
@@ -356,7 +245,3 @@ For an explanation of the desktop file standard refer to [Desktop Entry Specific
 *   [information for developers](http://freedesktop.org/wiki/Howto_desktop_files)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Desktop_entries&oldid=409972](https://wiki.archlinux.org/index.php?title=Desktop_entries&oldid=409972)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

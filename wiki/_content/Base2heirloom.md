@@ -1,9 +1,5 @@
 # Base2heirloom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -87,11 +83,3 @@ Some utilities are not offered by neither Heirloom nor Busybox.
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Base2heirloom&oldid=350006](https://wiki.archlinux.org/index.php?title=Base2heirloom&oldid=350006)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

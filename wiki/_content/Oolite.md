@@ -1,9 +1,5 @@
 # Oolite
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Oolite](http://www.oolite.org/) is a space trading / sim game based on the well-known Elite game from the 80's.
 
 ## Contents
@@ -92,7 +88,3 @@ If you wish to use shaders:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Oolite&oldid=383894](https://wiki.archlinux.org/index.php?title=Oolite&oldid=383894)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

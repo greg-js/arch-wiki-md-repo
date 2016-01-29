@@ -1,9 +1,5 @@
 # Migrating Between Architectures Without Reinstalling
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page documents two potential methods of migrating installed systems between i686 (32-bit) and x86_64 (64-bit) architectures, in either direction. The methods avoid reinstalling the entire system. One method uses a liveCD, the other modifies the system from within.
 
 **Warning:** Unless explicitly stated, all these methods are **untested** and may irreparably damage your system. Continue at your own risk.
@@ -315,7 +311,3 @@ If, after completion, you find that mutt hangs on opening mail folders, try rena
 *   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=413508](https://wiki.archlinux.org/index.php?title=Migrating_Between_Architectures_Without_Reinstalling&oldid=413508)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

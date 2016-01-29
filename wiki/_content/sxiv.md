@@ -1,9 +1,5 @@
 # sxiv
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [feh](/index.php/Feh "Feh")
@@ -114,7 +110,3 @@ echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
 *   Sxiv for keyboard layout [bépo](https://en.wikipedia.org/wiki/Keyboard_layout#B.C3.89PO "wikipedia:Keyboard layout") (keyboard layout in the spirit of [Dvorak](https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard "wikipedia:Dvorak Simplified Keyboard") for french speakers) : [Sxiv bépo](http://bepo.fr/wiki/Vim#Visionneuse_d.27image_Sxiv).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sxiv&oldid=415688](https://wiki.archlinux.org/index.php?title=Sxiv&oldid=415688)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")

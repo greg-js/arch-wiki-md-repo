@@ -1,9 +1,5 @@
 # iptables
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")
@@ -438,7 +434,3 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Iptables&oldid=416553](https://wiki.archlinux.org/index.php?title=Iptables&oldid=416553)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")

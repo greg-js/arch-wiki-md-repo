@@ -1,9 +1,5 @@
 # Chruby
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -30,11 +26,3 @@ You can install [chruby](https://aur.archlinux.org/packages/chruby/)<sup><small>
 *   [ruby-install](https://github.com/postmodern/ruby-install#readme)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Chruby&oldid=299581](https://wiki.archlinux.org/index.php?title=Chruby&oldid=299581)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

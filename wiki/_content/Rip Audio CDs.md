@@ -1,9 +1,5 @@
 # Rip Audio CDs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -29,13 +25,7 @@ CD rippers are designed to extract ("rip") the raw digital audio (in a format co
 
 Music is usually stored on audio CDs in an uncompressed format (requires a lot of space, e.g. 700MB for only 80 minutes of audio). Extracting the audio from the CD usually involves compressing it so that it requires less space using:
 
-Lossless compression
-
-same quality, less space.
-
-Lossy compression
-
-lower quality, much less space.
+NaN
 
 Most common formats to convert to are: APE and FLAC for lossless and MP3 and OGG for lossy.
 
@@ -72,12 +62,3 @@ If the CD ripper you used does not support the format you wanted to convert to y
 *   RIAA and actual laws allow backup of physically obtained media under these conditions [RIAA - The Law](https://www.riaa.com/physicalpiracy.php?content_selector=piracy_online_the_law).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rip_Audio_CDs&oldid=376998](https://wiki.archlinux.org/index.php?title=Rip_Audio_CDs&oldid=376998)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Optical](/index.php/Category:Optical "Category:Optical")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

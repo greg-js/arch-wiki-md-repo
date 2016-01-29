@@ -1,9 +1,5 @@
 # Simple Orca Plugin System
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -53,15 +49,15 @@ To setup the plug-in system for the current user, run:
 
 *   The Installation path. This contains the default plug-ins, the documentation,the plugin loader and the administration tools:
 
-`/usr/share/SOPS/`
+NaN
 
 *   The path for user plug-ins is:
 
-`~/.config/SOPS/plugins-available/`
+NaN
 
 *   The following path is used for all enabled (active) plug-ins. All plug-ins in that folder will be loaded, if they are valid:
 
-`~/.config/SOPS/plugins-enabled/`
+NaN
 
 ### Administration tools
 
@@ -119,7 +115,8 @@ Only a few combinations of modifiers are valid. Those are predefined by Orca. Va
 *   `alt` i.e. `description__-__alt__+__key_y.sh`
 *   `control` i.e. `description__-__control__+__key_b.sh`
 *   `shift` i.e. `description__-__shift__+__key_c.sh`
-*   `control__+__alt` i.e. `description__-__control__+__alt+key_w.py`
+*   `control + alt` i.e. `description__-__control__+__alt+key_w.py`
+*   `shift + alt` i.e. `description__-__shift__+__alt__+__key_y.sh`
 
 As `key_<key>` you can use every alphanumerical key.
 
@@ -192,12 +189,4 @@ You can also host plug-ins, making them available for installation via the plug-
 
 The default online resource is: [https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=417501](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=417501)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=418039](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=418039)"

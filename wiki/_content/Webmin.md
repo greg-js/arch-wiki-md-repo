@@ -1,12 +1,8 @@
 # Webmin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](http://www.webmin.com/):
 
-_Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like `/etc/passwd`, and lets you manage a system from the console or remotely. See the [standard modules](http://www.webmin.com/standard.html) page for a list of all the functions built into Webmin, or check out the [screenshots](http://www.webmin.com/demo.html)._
+NaN
 
 ## Contents
 
@@ -62,7 +58,3 @@ The password of a webmin user can be reset using the perl script included with t
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Webmin&oldid=409656](https://wiki.archlinux.org/index.php?title=Webmin&oldid=409656)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

@@ -1,9 +1,5 @@
 # Insync
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Dropbox](/index.php/Dropbox "Dropbox")
@@ -68,7 +64,3 @@ ExecStart=/usr/bin/insync start
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Insync&oldid=407199](https://wiki.archlinux.org/index.php?title=Insync&oldid=407199)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

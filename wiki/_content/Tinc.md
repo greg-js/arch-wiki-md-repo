@@ -1,9 +1,5 @@
 # Tinc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -214,11 +210,3 @@ In case of a linux kernel update you have to either restart your system or reins
 Make sure you have [TUN/TAP support](/index.php/OpenVPN#Configure_the_system_for_TUN.2FTAP_support "OpenVPN") enabled.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tinc&oldid=412191](https://wiki.archlinux.org/index.php?title=Tinc&oldid=412191)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

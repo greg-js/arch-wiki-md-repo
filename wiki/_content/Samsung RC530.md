@@ -1,9 +1,5 @@
 # Samsung RC530
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -113,11 +109,3 @@ Use bbswitch and add it to your kernel modules sections:
 URL: [Bumblebee](/index.php/Bumblebee "Bumblebee")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_RC530&oldid=377033](https://wiki.archlinux.org/index.php?title=Samsung_RC530&oldid=377033)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

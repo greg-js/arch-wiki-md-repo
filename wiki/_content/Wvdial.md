@@ -1,9 +1,5 @@
 # Wvdial
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 WvDial is a Point-to-Point Protocol dialer: it dials a modem and starts pppd in order to connect to the Internet.
 
 ## Contents
@@ -135,7 +131,7 @@ $ ls -l /usr/bin/wvdial
 
 ### Using sudo
 
-_See main article: [sudo](/index.php/Sudo "Sudo")_
+NaN
 
 [sudo](/index.php/Sudo "Sudo") arguably offers the most secure option to allow regular users to establish dial-up connections using `wvdial`. It can be used to give permission both on a per-user and group basis. Another benefit of using `sudo` is that it is only needed to do the setup once; both previous solutions will be "undone" when a new package of `wvdial` is installed.
 
@@ -233,7 +229,3 @@ where VVVV is the hexadecimal vendor ID from lsusb, MMMM is the hexadecimal prod
 The final wvdial command should start pppd and the obained IP address should be visible in the terminal output. At that point the internet connection should be live, which can be easily checked with a web browser or by pinging an external IP address.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wvdial&oldid=414627](https://wiki.archlinux.org/index.php?title=Wvdial&oldid=414627)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

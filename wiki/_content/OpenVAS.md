@@ -1,9 +1,5 @@
 # OpenVAS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 OpenVAS stands for Open Vulnerability Assessment System and is a network security scanner with associated tools like a graphical user front-end. The core component is a server with a set of network vulnerability tests (NVTs) to detect security problems in remote systems and applications.
 
 ## Contents
@@ -159,8 +155,3 @@ The database needs to be migrated when moving to a new major version:
 *   [OpenVAS](http://www.openvas.org/) Official OpenVAS website.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=416857](https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=416857)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")

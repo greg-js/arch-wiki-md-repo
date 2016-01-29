@@ -1,9 +1,5 @@
 # Configure virtual console colors
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The colors in the Linux virtual console running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB` where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
 
 ## Reusing ~/.Xdefaults settings
@@ -48,7 +44,3 @@ To restore your original `issue` just run the following: `mv /etc/issue /etc/iss
 Credits & Original thread can be found here: [https://bbs.archlinux.org/viewtopic.php?pid=386429#p386429](https://bbs.archlinux.org/viewtopic.php?pid=386429#p386429)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Configure_virtual_console_colors&oldid=359136](https://wiki.archlinux.org/index.php?title=Configure_virtual_console_colors&oldid=359136)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

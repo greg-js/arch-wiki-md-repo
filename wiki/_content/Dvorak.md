@@ -1,9 +1,5 @@
 # Dvorak
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is a quick blurb for setting or converting your keymaps to dvorak instead of qwerty.
 
 ## Contents
@@ -44,21 +40,17 @@ In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 
 ## Typing tutors
 
-Console
+NaN
 
 *   [DvorakNG](https://aur.archlinux.org/packages/DvorakNG/)<sup><small>AUR</small></sup>
 
-GUI
+NaN
 
 *   [kdeedu-ktouch](https://www.archlinux.org/packages/?name=kdeedu-ktouch) (includes Dvorak lessons in English, French, German & Spanish)
 *   [klavaro](https://www.archlinux.org/packages/?name=klavaro) Dvorak lessons: (BG; BR; DE_neo2; EO; FR; FR_bépo; TR; UK; US; US_BR; US_ES; US_SE)
 
-WEB
+NaN
 
 *   [http://typeyourway.com/](http://typeyourway.com/) - _Your keyboard, Your Words, Your Rules, Learn to Type Your Way_
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dvorak&oldid=399951](https://wiki.archlinux.org/index.php?title=Dvorak&oldid=399951)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

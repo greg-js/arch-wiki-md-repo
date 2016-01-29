@@ -1,9 +1,5 @@
 # XvMC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [VA-API](/index.php/VA-API "VA-API")
@@ -40,11 +36,11 @@ The open source drivers should work without any configuration. For the proprieta
 
 *   For NVIDIA GPUs:
 
- `libXvMCNVIDIA_dynamic.so.1` 
+NaN
 
 *   For AMD GPUs:
 
- `libAMDXvBA.so.1` 
+NaN
 
 ## Supported software
 
@@ -87,8 +83,3 @@ or
 *   [Xine's xxmc plugin](http://www.grogy.com/local_doc/share/doc/xine-lib/README_xxmc.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=XvMC&oldid=388002](https://wiki.archlinux.org/index.php?title=XvMC&oldid=388002)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")

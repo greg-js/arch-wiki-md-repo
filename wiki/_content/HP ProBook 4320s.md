@@ -1,9 +1,5 @@
 # HP ProBook 4320s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** Because of my bluetooth not working, I'am still stuck to the uncomfortable option to master the ugly touthpad here. As of FEB/2012 this is still true, except that bluetooth can be enabled with a special procedure involving Windows
 
 ## Contents
@@ -317,7 +313,3 @@ I suspect the problem to be there...
 Another article on [Arch and ProBook 4320s](http://sysphere.org/~anrxc/j/articles/probook/index.html), with solutions to various usability problems (audio, clickpad, wireless...).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_ProBook_4320s&oldid=282623](https://wiki.archlinux.org/index.php?title=HP_ProBook_4320s&oldid=282623)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

@@ -1,9 +1,5 @@
 # General troubleshooting
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
@@ -45,27 +41,13 @@ In order to resolve an issue that you are having, it is _absolutely crucial_ to 
 
 The following gives a number of questions for you whenever dealing with a malfunctioning system. Under each question there are notes explaining how you should be answering each question, followed by some light examples on how to easily gather data output and what tools can be used to review logs and the journal.
 
-1.  What is the issue(s)?
+1.  What is the issue(s)?NaN
 
-    Be _as precise as possible_. This will help you not get confused and/or side-tracked when looking up specific information.
+2.  Are there error messages? (if any)NaN
 
-2.  Are there error messages? (if any)
+3.  Can you reproduce the issue?NaN
 
-    Copy and paste _full outputs_ that contain **error messages** related to your issue into a separate file, such as `$HOME/issue.log`. For example, to forward the output of the following [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") command to `$HOME/issue.log`:
-
-     `$ mkinitcpio -p linux >> $HOME/issue.log` 
-
-3.  Can you reproduce the issue?
-
-    If so, give _exact_ **step-by-step** instructions/commands needed to do so.
-
-4.  When did you first encounter these issues and what was changed between then and when the system was operating without error?
-
-    If it occurred right after an update then, list **all packages that were updated**. Include _version numbers_, also, paste the entire update from [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). Also take note of the statuses of _any_ service(s) needed to support the malfunctioning application(s) using [systemd](/index.php/Systemd "Systemd")'s systemctl tools. For example, to forward the output of the following [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") command to `$HOME/issue.log`:
-
-     `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
-
-    **Note:** Using `**>>**` will ensure any previous text in `$HOME/issue.log` will not be overwritten.
+4.  When did you first encounter these issues and what was changed between then and when the system was operating without error?NaN
 
 ### Be more specific
 
@@ -245,15 +227,3 @@ en_GB:aspell
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=414390](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=414390)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

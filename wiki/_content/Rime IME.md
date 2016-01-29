@@ -1,9 +1,5 @@
 # Rime IME
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Rime IME](https://rime.github.io/)** is an input method engine for entering Chinese characters supporting a wide range of input methods. Rime IME can be used with the [IBus](/index.php/IBus "IBus") and [Fcitx](/index.php/Fcitx "Fcitx") input method frameworks.
 
 ## Contents
@@ -133,7 +129,3 @@ Rime allows you to change everything you can imagine and more examples are provi
 *   [Rime IME Wiki at Github](https://github.com/rime/home/wiki)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rime_IME&oldid=409566](https://wiki.archlinux.org/index.php?title=Rime_IME&oldid=409566)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")

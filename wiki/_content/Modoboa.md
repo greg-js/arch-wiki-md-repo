@@ -1,9 +1,5 @@
 # Modoboa
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -35,11 +31,3 @@ A full list of features can be viewed at [Modoboa features page](http://modoboa.
 It is written in [Python](/index.php/Python "Python") and uses the [Django](/index.php/Django "Django"), jQuery and Bootstrap frameworks.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Modoboa&oldid=388080](https://wiki.archlinux.org/index.php?title=Modoboa&oldid=388080)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

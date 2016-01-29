@@ -1,9 +1,5 @@
 # Naemon
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Naemon](http://www.naemon.org/) is the new monitoring suite that aims to be faster and more stable, while giving you a clearer view of the state of your network.
 
 ## Contents
@@ -62,7 +58,3 @@ The default username and password is admin, admin.
 *   [Andreas Ericsson: The future of Nagios](http://www.youtube.com/watch?v=YgbbyyNIiHc)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Naemon&oldid=370477](https://wiki.archlinux.org/index.php?title=Naemon&oldid=370477)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

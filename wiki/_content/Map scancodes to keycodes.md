@@ -1,9 +1,5 @@
 # Map scancodes to keycodes
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** This page assumes that you have read [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys"), which provides wider context to the problem.
 
 Mapping _scancodes_ to _keycodes_ is universal and not specific to Linux console or Xorg, which means that changes to this mapping will be effective in both.
@@ -149,7 +145,3 @@ failed to set scancode 620d3 to keycode 31
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Map_scancodes_to_keycodes&oldid=408871](https://wiki.archlinux.org/index.php?title=Map_scancodes_to_keycodes&oldid=408871)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

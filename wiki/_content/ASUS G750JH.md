@@ -1,9 +1,5 @@
 # ASUS G750JH
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Model G750JH-DB72-CA:](#Model_G750JH-DB72-CA:)
@@ -223,7 +219,3 @@ Works fine using [bluez](https://www.archlinux.org/packages/?name=bluez) with no
 *   BD-ROM reading
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_G750JH&oldid=364919](https://wiki.archlinux.org/index.php?title=ASUS_G750JH&oldid=364919)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

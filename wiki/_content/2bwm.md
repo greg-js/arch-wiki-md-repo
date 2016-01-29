@@ -1,9 +1,5 @@
 # 2bwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** 2bwm is still in alpha stage and should be used cautiously. At the moment, 2bwm is only for advanced users.
 
 [2bwm](https://aur.archlinux.org/packages/2bwm/)<sup><small>AUR</small></sup> is a fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
@@ -158,7 +154,3 @@ Setting `borders[0]` to a negative number will make the outer border turn into a
 *   [2bwm](https://github.com/venam/2bwm) - the GitHub repository for 2bwm
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=2bwm&oldid=414463](https://wiki.archlinux.org/index.php?title=2bwm&oldid=414463)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

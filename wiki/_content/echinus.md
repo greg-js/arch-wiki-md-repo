@@ -1,9 +1,5 @@
 # echinus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [dmenu](/index.php/Dmenu "Dmenu")
@@ -101,7 +97,3 @@ echinus supports some parts of EWMH - the following are known to work:
 *   [http://plhk.ru/gallery/echinus027.png](http://plhk.ru/gallery/echinus027.png)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Echinus&oldid=410328](https://wiki.archlinux.org/index.php?title=Echinus&oldid=410328)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

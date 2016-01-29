@@ -1,9 +1,5 @@
 # Syslinux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -837,14 +833,14 @@ boot: ../vmlinuz-linux root=/dev/sda2 rw initrd=../initramfs-linux.img
 
 If you do not have access to `boot:` in [ramfs](/index.php/Ramdisk "Ramdisk"), and therefore temporarily unable to boot kernel again,
 
-1\. Create a temporary directory, in order to mount your root partition (if it does not exist already):
+NaN
 
 ```
  # mkdir -p /new_root
 
 ```
 
-2\. Mount `/` under `/new_root` (in case `/boot/` is on the same partition, otherwise you will need to mount them both):
+NaN
 
 **Note:** Busybox cannot mount `/boot` if it is on its own ext2 partition.
 
@@ -853,9 +849,7 @@ If you do not have access to `boot:` in [ramfs](/index.php/Ramdisk "Ramdisk"), a
 
 ```
 
-3\. Use `vim` and edit `syslinux.cfg` again to suit your needs and save file.
-
-4\. Reboot.
+NaN
 
 ### Fsck fails on root partition
 
@@ -1000,13 +994,3 @@ invalid or corrupt kernel image.
 *   [Multiboot USB using Syslinux](http://blog.jak.me/2013/01/03/creating-a-multiboot-usb-stick-using-syslinux/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-05-15]</sup>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslinux&oldid=416566](https://wiki.archlinux.org/index.php?title=Syslinux&oldid=416566)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

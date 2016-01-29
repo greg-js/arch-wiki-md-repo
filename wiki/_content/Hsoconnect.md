@@ -1,9 +1,5 @@
 # Hsoconnect
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -88,12 +84,3 @@ crw-rw---- 1 root network 252, 2 Aug 11 13:46 /dev/ttyHS2
 *   [Icon 225 3G specifications](http://www.option.com/en/products/products/usb-modems/icon225/specifications/#start)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hsoconnect&oldid=392236](https://wiki.archlinux.org/index.php?title=Hsoconnect&oldid=392236)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

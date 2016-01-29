@@ -1,9 +1,5 @@
 # AMD Catalyst
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ATI](/index.php/ATI "ATI")
@@ -1268,12 +1264,3 @@ To solve this, you should downgrade Xorg. A helpful list of steps can be found o
 *   [Unofficial ATI Linux Driver Bugzilla](http://ati.cchtml.com/query.cgi)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=414392](https://wiki.archlinux.org/index.php?title=AMD_Catalyst&oldid=414392)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

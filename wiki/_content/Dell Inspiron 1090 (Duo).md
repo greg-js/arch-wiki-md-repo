@@ -1,9 +1,5 @@
 # Dell Inspiron 1090 (Duo)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Inspiron 1090 (also Dell Inspiron Duo or Dell Duo) is a notebook/tablet convertible with a touchscreen with two-finger multitouch support. The touchscreen (with multitouch), wireless/bluetooth controller, sound system, webcam and CrystalHD chip work without problem. The only component which currently does not work is the [#Accelerometer](#Accelerometer).
 
 ## Contents
@@ -377,12 +373,3 @@ exit 0
 *   [Luke Ross' website](http://lukeross.name/dell/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(Duo)&oldid=412060](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1090_(Duo)&oldid=412060)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

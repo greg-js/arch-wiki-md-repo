@@ -1,9 +1,5 @@
 # Sendmail
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -195,11 +191,3 @@ Do not forget to process it again with
  `# makemap hash /etc/mail/virtusertable.db < /etc/mail/virtusertable` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sendmail&oldid=414090](https://wiki.archlinux.org/index.php?title=Sendmail&oldid=414090)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

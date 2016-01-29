@@ -1,9 +1,5 @@
 # Xpra
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the [Xpra website](http://xpra.org/):
 
 Xpra is '[screen](/index.php/Screen "Screen") for X': it allows you to run X programs, usually on a remote host, direct their display to your local machine, and then to disconnect from these programs and reconnect from the same or another machine, without losing any state. It gives you remote access to individual applications.
@@ -178,7 +174,3 @@ Example:
 *   [Xpra website](http://xpra.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xpra&oldid=387999](https://wiki.archlinux.org/index.php?title=Xpra&oldid=387999)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

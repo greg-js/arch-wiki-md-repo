@@ -1,9 +1,5 @@
 # Pass
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [pass](http://www.zx2c4.com/projects/password-store/) is a simple password manager for the command line. Passwords are stored inside gpg encrypted files in a simple directory tree structure. pass is a shell script that makes use of existing tools like [gnupg](https://www.archlinux.org/packages/?name=gnupg), [pwgen](https://www.archlinux.org/packages/?name=pwgen), [tree](https://www.archlinux.org/packages/?name=tree) and [git](https://www.archlinux.org/packages/?name=git).
 
 ## Contents
@@ -84,7 +80,3 @@ There is now a stable release of [qtpass](https://aur.archlinux.org/packages/qtp
 *   [A more comprehensive pass tutorial](http://blog.sanctum.geek.nz/linux-crypto-passwords/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pass&oldid=413133](https://wiki.archlinux.org/index.php?title=Pass&oldid=413133)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

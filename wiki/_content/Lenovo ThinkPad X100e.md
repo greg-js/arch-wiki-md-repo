@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X100e
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -80,11 +76,3 @@ Try these steps:
 Currently able to get power usage to under 12W with wifi *on*: [[1]](http://lh6.ggpht.com/_6-8K9TAVt1M/TMoagwDkKuI/AAAAAAAAAGk/q4EWZtotYUQ/s800/2010-10-28-175113_1366x768_scrot.png)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X100e&oldid=412573](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X100e&oldid=412573)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

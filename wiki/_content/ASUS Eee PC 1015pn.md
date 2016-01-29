@@ -1,9 +1,5 @@
 # ASUS Eee PC 1015pn
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Asus 1015PN is a dual-core netbook with Nvidia IOn graphics for better gaming. It works fine with Linux OSs. This article provides some information on hardwares specs and some knowledge base about it.
 
 ## Contents
@@ -206,11 +202,3 @@ These are the acpi calls that Bumblebee will use to dynamically control the powe
 *   [http://www.asus.com/Notebooks_Ultrabooks/Eee_PC_1015PN](http://www.asus.com/Notebooks_Ultrabooks/Eee_PC_1015PN)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1015pn&oldid=399521](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1015pn&oldid=399521)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # HP Compaq nc4400
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
 
 [![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
@@ -86,11 +82,3 @@ See [SMART](/index.php/SMART "SMART"). Example `/etc/smartd.conf`:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Compaq_nc4400&oldid=417022](https://wiki.archlinux.org/index.php?title=HP_Compaq_nc4400&oldid=417022)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")
-
-Hidden category:
-
-*   [Pages flagged with Template:Redirect](/index.php/Category:Pages_flagged_with_Template:Redirect "Category:Pages flagged with Template:Redirect")

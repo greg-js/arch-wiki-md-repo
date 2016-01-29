@@ -1,9 +1,5 @@
 # HP Compaq 6510b
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The HP 6510b is a compact yet powerful laptop with a high-resolution screen (if you pick the WXGA+ version). It has been labeled "Novel SuSE Enterprise certified" by HP, which should mean Linux runs fine on it.
 
 ## Contents
@@ -129,7 +125,3 @@ Bus 001 Device 001: ID 0000:0000
 The AuthenTec device is the fingerprint reader, the Hewlett-Packard one is the Bluetooth module.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Compaq_6510b&oldid=399595](https://wiki.archlinux.org/index.php?title=HP_Compaq_6510b&oldid=399595)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

@@ -1,116 +1,15 @@
 # HP ProBook 4530s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel and fglrx (Catalyst)</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-<td>bluetooth</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-<td>sdhci/sdhci_pci, jmb38x_ms</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics-led</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-<td>hp_wmi</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Graphics | **Working** | xf86-video-intel and fglrx (Catalyst) |
+| Bluetooth | **Working** | bluetooth |
+| Ethernet | **Working** | r8169 |
+| Wireless | **Working** | ath9k |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** | sdhci/sdhci_pci, jmb38x_ms |
+| Touchpad | **Working** | xf86-input-synaptics-led |
+| Function Keys | **Working** | hp_wmi |
 
 ## Contents
 
@@ -218,7 +117,7 @@ Touchpad function works with [xf86-input-synaptics](https://www.archlinux.org/pa
 
 ```
 
-SD cards tested and working. <strike>Memory Stick cards do not work, despite having module **jmb38x_ms** loaded. Dmesg does not show any info about Memory Stick card being inserted.</strike> With 3.4.7 kernel, Memory Stick card works as intended.
+SD cards tested and working. ~~Memory Stick cards do not work, despite having module **jmb38x_ms** loaded. Dmesg does not show any info about Memory Stick card being inserted.~~ With 3.4.7 kernel, Memory Stick card works as intended.
 
 #### Function keys
 
@@ -236,7 +135,7 @@ Works with [hpfall-git](https://aur.archlinux.org/packages/hpfall-git/)<sup><sma
 
 Module **acpi-cpufreq** and at least one of CPU governors (**cpufreq_ondemand**, **cpufreq_conservative**, etc.) are required. More informations on [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
 
-**Note:** <s>i915 module parameter i915_enable_rc6 can give up to 2 hours of additional battery life. However it is considered unstable and might cause crashes and graphical glitches. Add **i915.i915_enable_rc6=1** to the kernel command line of your bootloader to try it.</s>
+**Note:** ~~i915 module parameter i915_enable_rc6 can give up to 2 hours of additional battery life. However it is considered unstable and might cause crashes and graphical glitches. Add **i915.i915_enable_rc6=1** to the kernel command line of your bootloader to try it.~~
 
 *   With laptop-mode-tools, tune from powertop2 and i915_enable_rc6 parameter I was able to get about 5:30h of estimated battery life.
 *   Keep in mind that the powertop "good/bad" parameters will not survive a reboot. [As of 3.4.x](http://intellinuxgraphics.org/2012.07.html) rc6 is enabled by default for Ivy Bridge and Sandy Bridge processors. The default (marked -1) is equivalent of i915_enable_rc6=3 which enables rc6 and rc6p. An additional, lower power state can also be enabled by using i915_enable_rc6=7, though this has been reported to sometimes come at the cost of stability. Also, as of [2011Q4](http://intellinuxgraphics.org/2011Q4.html) the i915 module in Sandy Bridge and Ivy Bridge also have framebuffer compression enabled by default.
@@ -269,7 +168,3 @@ Core 1:         +50.0°C  (high = +80.0°C, crit = +85.0°C)
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_ProBook_4530s&oldid=402645](https://wiki.archlinux.org/index.php?title=HP_ProBook_4530s&oldid=402645)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

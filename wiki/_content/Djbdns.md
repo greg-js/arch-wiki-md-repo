@@ -1,9 +1,5 @@
 # Djbdns
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article outlines how to install [djbdns](http://cr.yp.to/djbdns.html) (dnscache and tinydns) on Arch Linux.
 
 ## Installation
@@ -31,11 +27,3 @@ ln -s /etc/tinydns /service
 **Note**: Change `myip` to your public ip. If `[myip]` is omitted dnscache will run on localhost.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Djbdns&oldid=413315](https://wiki.archlinux.org/index.php?title=Djbdns&oldid=413315)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

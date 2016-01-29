@@ -1,9 +1,5 @@
 # Modalias
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -197,11 +193,3 @@ This article shows others modalias templates, i.e. for usb, dmi and acpi subtype
 *   [Modalias strings - a practical way to map "stuff" to hardware](http://people.skolelinux.org/pere/blog/Modalias_strings___a_practical_way_to_map__stuff__to_hardware.html) by Petter Reinholdtsen
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Modalias&oldid=371641](https://wiki.archlinux.org/index.php?title=Modalias&oldid=371641)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

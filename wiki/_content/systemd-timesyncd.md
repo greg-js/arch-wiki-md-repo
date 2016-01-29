@@ -1,9 +1,5 @@
 # systemd-timesyncd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Time](/index.php/Time "Time")
@@ -15,7 +11,7 @@ Related articles
 
 From the [systemd mailing list](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html):
 
-_systemd-timesyncd_ is a daemon that has been added for synchronizing the system clock across the network. It implements an SNTP client. In contrast to NTP implementations such as chrony or the NTP reference server this only implements a client side, and does not bother with the full NTP complexity, focusing only on querying time from one remote server and synchronizing the local clock to it. Unless you intend to serve NTP to networked clients or want to connect to local hardware clocks this simple NTP client should be more than appropriate for most installations. The daemon runs with minimal privileges, and has been hooked up with networkd to only operate when network connectivity is available. The daemon saves the current clock to disk every time a new NTP sync has been acquired, and uses this to possibly correct the system clock early at bootup, in order to accommodate for systems that lack an RTC such as the Raspberry Pi and embedded devices, and make sure that time monotonically progresses on these systems, even if it is not always correct. To make use of this daemon a new system user and group "systemd-timesync" needs to be created on installation of systemd.
+NaN
 
 ## Installation
 
@@ -80,7 +76,3 @@ The NTP server to be used will be determined using the following rules:
 *   [Forum: Using systemd-timesync instead of NTP](https://bbs.archlinux.org/viewtopic.php?id=182172)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-timesyncd&oldid=402647](https://wiki.archlinux.org/index.php?title=Systemd-timesyncd&oldid=402647)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

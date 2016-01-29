@@ -1,9 +1,5 @@
 # Skype
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -876,13 +872,3 @@ $ echo _username_ _password_ | skype --pipelogin
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Skype&oldid=412173](https://wiki.archlinux.org/index.php?title=Skype&oldid=412173)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

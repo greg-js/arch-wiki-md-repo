@@ -1,9 +1,5 @@
 # Exim with remote SMTP server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes how to set up Exim (a mail transfer agent) to use a remote smtp server, for example your ISP's smtp server.
 
 ## Contents
@@ -274,11 +270,3 @@ For added security, use a per-application password. This works with Google Apps 
 If you are getting a "451 Temporary Local Problem" when testing SMTP, you are probably sending as root. By default Exim will not allow you to send as root.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Exim_with_remote_SMTP_server&oldid=404158](https://wiki.archlinux.org/index.php?title=Exim_with_remote_SMTP_server&oldid=404158)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Eclipse
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Eclipse](https://eclipse.org) is an open source community project, which aims to provide a universal development platform. The Eclipse project is most widely known for its cross-platform integrated development environment (IDE). The Arch Linux packages (and this guide) relate specifically to the IDE.
 
 The Eclipse IDE is largely written in Java but can be used to develop applications in a number of languages, including Java, C/C++, PHP, Perl and Python. The IDE can also provide subversion support and task management.
@@ -84,79 +80,79 @@ To receive update notifications, go to _Window > Preferences > Install/Update > 
 
 *   **AVR** — AVR microcontroller plugin.
 
-[http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin](http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin) || [eclipse-avr](https://aur.archlinux.org/packages/eclipse-avr/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Aptana** — HTML5/CSS3/JavaScript/Ruby/Rails/PHP/Pydev/Django support. Also available as standalone application.
 
-[http://www.aptana.com/](http://www.aptana.com/) || [eclipse-aptana](https://aur.archlinux.org/packages/eclipse-aptana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eclipse-aptana)]</sup> [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Eclipse CDT** — C/C++ support.
 
-[https://www.eclipse.org/cdt/](https://www.eclipse.org/cdt/) || [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp)
+NaN
 
 *   **Eclipse PDT** — [PHP](/index.php/PHP "PHP") support.
 
-[https://www.eclipse.org/pdt/](https://www.eclipse.org/pdt/) || [eclipse-pdt](https://aur.archlinux.org/packages/eclipse-pdt/)<sup><small>AUR</small></sup>
+NaN
 
 *   **EclipseFP** — [Haskell](/index.php/Haskell "Haskell") support.
 
-[https://eclipsefp.github.io/](https://eclipsefp.github.io/) || [eclipse-eclipsefp](https://aur.archlinux.org/packages/eclipse-eclipsefp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eclipse-eclipsefp)]</sup>
+NaN
 
 *   **EGit** — [Git](/index.php/Git "Git") support.
 
-[https://www.eclipse.org/egit](https://www.eclipse.org/egit) || [eclipse-egit](https://aur.archlinux.org/packages/eclipse-egit/)<sup><small>AUR</small></sup>
+NaN
 
 *   **EPIC** — Perl support.
 
-[http://www.epic-ide.org/](http://www.epic-ide.org/) || [eclipse-epic](https://aur.archlinux.org/packages/eclipse-epic/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eclipse-epic)]</sup>
+NaN
 
 *   **IvyDE** — IvyDE dependency Manager.
 
-[https://ant.apache.org/ivy/ivyde/](https://ant.apache.org/ivy/ivyde/) || [eclipse-ivyde](https://aur.archlinux.org/packages/eclipse-ivyde/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Markdown** — Markdown editor plugin for Eclipse.
 
-[http://www.winterwell.com/software/markdown-editor.php](http://www.winterwell.com/software/markdown-editor.php) || [eclipse-markdown](https://aur.archlinux.org/packages/eclipse-markdown/)<sup><small>AUR</small></sup>
+NaN
 
 *   **MercurialEclipse** — [Mercurial](/index.php/Mercurial "Mercurial") support.
 
-[https://bitbucket.org/mercurialeclipse/main/wiki/Home](https://bitbucket.org/mercurialeclipse/main/wiki/Home) || [eclipse-mercurial](https://aur.archlinux.org/packages/eclipse-mercurial/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Mylyn** — Task lists support.
 
-[https://www.eclipse.org/mylyn/](https://www.eclipse.org/mylyn/) || [eclipse-mylyn](https://aur.archlinux.org/packages/eclipse-mylyn/)<sup><small>AUR</small></sup>
+NaN
 
 *   **PHPEclipse** — Alternative PHP support.
 
-[http://www.phpeclipse.com/](http://www.phpeclipse.com/) || [eclipse-phpeclipse](https://aur.archlinux.org/packages/eclipse-phpeclipse/)<sup><small>AUR</small></sup>
+NaN
 
 *   **PyDev** — [Python](/index.php/Python "Python") support.
 
-[http://pydev.org/](http://pydev.org/) || [eclipse-pydev](https://aur.archlinux.org/packages/eclipse-pydev/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Subclipse** — [Subversion](/index.php/Subversion "Subversion") support.
 
-[http://subclipse.tigris.org/](http://subclipse.tigris.org/) || [eclipse-subclipse](https://aur.archlinux.org/packages/eclipse-subclipse/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Subversive** — Alternative Subversion support.
 
-[https://www.eclipse.org/subversive/](https://www.eclipse.org/subversive/) || [eclipse-subversive](https://aur.archlinux.org/packages/eclipse-subversive/)<sup><small>AUR</small></sup>
+NaN
 
 *   **TestNG** — TestNG support.
 
-[http://testng.org/doc/eclipse.html](http://testng.org/doc/eclipse.html) || [eclipse-testng](https://aur.archlinux.org/packages/eclipse-testng/)<sup><small>AUR</small></sup>
+NaN
 
 *   **TeXlipse** — [LaTeX](/index.php/LaTeX "LaTeX") support.
 
-[http://texlipse.sourceforge.net/](http://texlipse.sourceforge.net/) || [eclipse-texlipse](https://aur.archlinux.org/packages/eclipse-texlipse/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Eclipse PTP** — Parallel Programming C/C++ support.
 
-[https://www.eclipse.org/ptp/](https://www.eclipse.org/ptp/) || [eclipse-ptp](https://aur.archlinux.org/packages/eclipse-ptp/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Checkstyle** — Eclipse Checkstyle support.
 
-[http://eclipse-cs.sourceforge.net/](http://eclipse-cs.sourceforge.net/) || [eclipse-checkstyle](https://aur.archlinux.org/packages/eclipse-checkstyle/)<sup><small>AUR</small></sup>
+NaN
 
 ## Enable javadoc integration
 
@@ -266,11 +262,3 @@ SWT_GTK3=0 eclipse
 *   [How to use Subversion with Eclipse](https://www.ibm.com/developerworks/library/os-ecl-subversion/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416480](https://wiki.archlinux.org/index.php?title=Eclipse&oldid=416480)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # PekWM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [The Pek Window Manager](http://pekwm.org) is written by Claes Nästen. The code is based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It also has an expanded feature-set, including window grouping (not unlike to [ion3](/index.php/Ion3 "Ion3"), pwm, or even [fluxbox](/index.php/Fluxbox "Fluxbox")), auto properties, xinerama and keygrabber that supports keychains, and much more.
 
 ## Contents
@@ -278,7 +274,3 @@ Try setting the [environment variable](/index.php/Environment_variable "Environm
 *   [Howto: Install and configure Pekwm](http://ubuntuforums.org/showthread.php?t=662204)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PekWM&oldid=402098](https://wiki.archlinux.org/index.php?title=PekWM&oldid=402098)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

@@ -1,9 +1,5 @@
 # Dell Inspiron N5010
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Intro](#Intro)
@@ -255,7 +251,3 @@ blacklist intel_ips
 *   [Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/651104)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_N5010&oldid=221376](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_N5010&oldid=221376)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

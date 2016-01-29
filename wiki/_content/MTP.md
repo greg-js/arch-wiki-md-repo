@@ -1,9 +1,5 @@
 # MTP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
@@ -224,7 +220,7 @@ $ fusermount -u ~/mnt
 
 ### Android File Transfer
 
-FUSE interface
+NaN
 
 ```
 $ mkdir ~/my-device
@@ -234,7 +230,7 @@ $ ./aft-mtp-mount ~/my-device
 
 If you want album art to be displayed, it must be named `albumart.xxx` and placed first in the destination folder. Then copy other files. Also, note that fuse could be 7-8 times slower than ui/cli file transfer.
 
-Qt user interface
+NaN
 
 Start the application, choose a destination folder and click any button on the toolbar. Available options are: _Upload Album_, _Upload Directory_ and _Upload Files_. The latter two are self-explanatory. _Upload album_ searches the source directory for album covers, and sets the best available cover.
 
@@ -403,12 +399,3 @@ Exec=dolphin "mtp:/"
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MTP&oldid=411362](https://wiki.archlinux.org/index.php?title=MTP&oldid=411362)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

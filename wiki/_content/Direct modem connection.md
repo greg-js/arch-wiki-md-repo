@@ -1,9 +1,5 @@
 # Direct modem connection
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
@@ -178,8 +174,3 @@ alias hang='sudo /usr/bin/killall pppd'
 Now you can connect by running `dial` from a terminal and disconnect with `hang`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Direct_modem_connection&oldid=396979](https://wiki.archlinux.org/index.php?title=Direct_modem_connection&oldid=396979)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")

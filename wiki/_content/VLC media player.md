@@ -1,12 +1,8 @@
 # VLC media player
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](http://www.videolan.org/vlc/):
 
-_VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols._
+NaN
 
 ## Contents
 
@@ -255,11 +251,3 @@ in the vlc.desktop file. [[2]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bu
 *   [Control VLC via a browser](http://wiki.videolan.org/Control_VLC_via_a_browser)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=414353](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=414353)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Libcanberra
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GTK+](/index.php/GTK%2B "GTK+")
@@ -138,7 +134,3 @@ public class HelloWorld {
 *   [Libcanberra Reference Manual](http://0pointer.de/lennart/projects/libcanberra/gtkdoc/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Libcanberra&oldid=412860](https://wiki.archlinux.org/index.php?title=Libcanberra&oldid=412860)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

@@ -1,9 +1,5 @@
 # Setting up a uclibc development system
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -83,19 +79,19 @@ These are best statically linked for use in an _initramfs_, and they will be muc
 *   Create directory **unionfs/** inside **home**
 *   Create file **fistdev.mk**:
 
-# Unionfs Makefile modifications  
-EXTRACFLAGS=-DUNIONFS_NDEBUG  
-PREFIX=/usr  
-UNIONFS_DEBUG_CFLAG=  
+# Unionfs Makefile modifications
+EXTRACFLAGS=-DUNIONFS_NDEBUG
+PREFIX=/usr
+UNIONFS_DEBUG_CFLAG=
 
-# This builds static utils - but with glibc they get VERY big!  
-UNIONFS_OPT_CFLAG=-Os -static  
+# This builds static utils - but with glibc they get VERY big!
+UNIONFS_OPT_CFLAG=-Os -static
 
-# This stuff is necessary for compiling the kernel module  
-# when a kernel other than the running one is the target.  
-# It is not needed for the utilities.  
-LINUXSRC=/usr/src/linux  
-TOPINC=-I$(LINUXSRC)/include  
+# This stuff is necessary for compiling the kernel module
+# when a kernel other than the running one is the target.
+# It is not needed for the utilities.
+LINUXSRC=/usr/src/linux
+TOPINC=-I$(LINUXSRC)/include
 MODDIR=/lib/modules/2.6.xx
 
 *   Unpack the _unionfs_ tar-ball within **unionfs/**
@@ -111,8 +107,8 @@ I was playing around with LinuxLive scripts and the version supplied there seeme
 *   Unpack _busybox-1.0.1_ within the **home/** directory
 *   Provide a **.config** as described above
 *   _cd_ to the **busybox-1.0.1/** directory
-*   make oldconfig  
-    make dep  
+*   make oldconfig
+    make dep
     make
 *   Copy out **busybox**
 
@@ -454,12 +450,3 @@ I was playing around with LinuxLive scripts and the version supplied there seeme
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Setting_up_a_uclibc_development_system&oldid=382820](https://wiki.archlinux.org/index.php?title=Setting_up_a_uclibc_development_system&oldid=382820)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # Acer Aspire S7-392
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the Acer Aspire S7-392 Laptop.
 
 This page only applies to the 392 model (4th Gen Intel CPU), and may not be entirely correct for the 391 or 191 models (3rd Gen Intel CPU).
@@ -95,7 +91,3 @@ Since some of these come with HiDPI displays the default console font is barely 
 This laptop uses Intel Corporation Wireless 7260 WiFi chipset. With the current firmware it might have issues connecting when signal is suboptimal. Disabling power save mode on the chip improves the connection times and connection speed. See [Wireless network configuration#Power saving](/index.php/Wireless_network_configuration#Power_saving "Wireless network configuration") on how to disable it and make it permanent.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_S7-392&oldid=376517](https://wiki.archlinux.org/index.php?title=Acer_Aspire_S7-392&oldid=376517)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

@@ -1,9 +1,5 @@
 # Network configuration
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
@@ -691,11 +687,3 @@ With motherboards such as the Gigabyte GA-990FXA-UD3, booting with IOMMU off (wh
 When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=417554](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=417554)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

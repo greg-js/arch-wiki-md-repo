@@ -1,9 +1,5 @@
 # Procmail
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Procmail is a program for filtering, sorting and storing email. It can be used both on mail clients and mail servers. It can be used to filter out spam, checking for viruses, to send automatic replies, etc.
 
 The goal of this article is to teach the configuration of procmail. This article assumes you already have either a email client ([mutt](/index.php/Mutt "Mutt"), [nmh](/index.php/Nmh "Nmh"), etc) or a mail server ([sendmail](/index.php/Sendmail "Sendmail"), [postfix](/index.php/Postfix "Postfix"), etc) working, that can use (or requires) procmail. It also assumes you have at least basic knowledge on regular expressions. This article will give only a minimal explanation, for a complete manual, check the `man procmailrc`
@@ -166,7 +162,3 @@ $HOME/mail/jokes
 *   [Procmail Homepage](http://www.procmail.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Procmail&oldid=412160](https://wiki.archlinux.org/index.php?title=Procmail&oldid=412160)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

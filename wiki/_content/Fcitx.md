@@ -1,9 +1,5 @@
 # Fcitx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
 
 [![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
@@ -279,12 +275,3 @@ To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-con
 *   [Fcitx Wiki](http://fcitx-im.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412803](https://wiki.archlinux.org/index.php?title=Fcitx&oldid=412803)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Translateme](/index.php/Category:Pages_or_sections_flagged_with_Template:Translateme "Category:Pages or sections flagged with Template:Translateme")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

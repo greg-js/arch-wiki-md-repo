@@ -1,9 +1,5 @@
 # HP Pavilion dv6179ea
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Work in progress, this might take a while - by Grimn
 
 Currently using Arch Core Dump (2.6.23 kernel).
@@ -96,7 +92,3 @@ sensors-detect detects 3 modules: i2c-i801, eeprom and coretemp but Ksensors onl
 Still trying to get it working properly.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv6179ea&oldid=376807](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv6179ea&oldid=376807)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

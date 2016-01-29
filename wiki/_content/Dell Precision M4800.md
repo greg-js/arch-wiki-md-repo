@@ -1,9 +1,5 @@
 # Dell Precision M4800
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Dell Precision M4800 laptop is a mobile workstation released in late 2013.
 
 **Note:** The author of this article ordered the system pre-installed with Ubuntu, so some assumptions made in this article may differ if your system came pre-installed with Windows (e.g. Secure Boot).
@@ -102,7 +98,3 @@ If following [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD
 *   When closing the GUI (e.g. by logging out of Cinnamon), the screen goes black, and the virtual console does not appear like it should.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Precision_M4800&oldid=384393](https://wiki.archlinux.org/index.php?title=Dell_Precision_M4800&oldid=384393)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

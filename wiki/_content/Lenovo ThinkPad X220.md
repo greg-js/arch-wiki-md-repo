@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X220
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -138,13 +134,3 @@ in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Mo
 *   [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/)<sup><small>AUR</small></sup> for ThinkPad X220 Tablet rotation, docking, etc scripts
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411999](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411999)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

@@ -1,92 +1,13 @@
 # ASUS Eee PC 1005P
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td style="color:green">**Working**</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Video | **Working** | i915 |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | ath9k |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
 
 This article describes both the 1005P and the 1005PE, since the only difference of the 1005PE is wlan n and a bigger harddrive.
 
@@ -219,7 +140,3 @@ Some work out of the box (see [ASUS Eee PC 1005HA#Hotkeys](/index.php/ASUS_Eee_P
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005P&oldid=380442](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005P&oldid=380442)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

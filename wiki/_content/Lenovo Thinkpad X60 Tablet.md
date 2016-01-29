@@ -1,9 +1,5 @@
 # Lenovo Thinkpad X60 Tablet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IBM ThinkPad X60](/index.php/IBM_ThinkPad_X60 "IBM ThinkPad X60")
@@ -382,7 +378,7 @@ Restart acpid:
 
 Specifications can be found here [on ThinkWiki](http://www.thinkwiki.org/wiki/Category:X60_Tablet)
 
-lspci
+NaN
 
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
@@ -411,7 +407,7 @@ lspci
 
 ```
 
-lsusb
+NaN
 
 ```
 Bus 005 Device 003: ID 0a5c:2110 Broadcom Corp. 
@@ -425,11 +421,3 @@ Bus 001 Device 001: ID 1d6b:0002
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_X60_Tablet&oldid=412583](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_X60_Tablet&oldid=412583)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

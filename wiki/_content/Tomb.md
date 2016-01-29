@@ -1,9 +1,5 @@
 # Tomb
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
@@ -13,11 +9,7 @@ Related articles
 
 From [the official website](http://tomb.dyne.org/):
 
-Tomb is 100% free and open source software to make strong encryption easy to use.
-
-A tomb is like a locked folder that can be safely transported and hidden in a filesystem.
-
-Keys can be kept separate: for instance the tomb on your computer and the key on a USB stick.
+NaN
 
 Tomb aims to be a really simple to use software to manage "encrypted directories", called tombs. A tomb can only be opened if you both have a keyfile and you know the password. It also has advanced features, like steganography.
 
@@ -86,7 +78,3 @@ It includes almost all features tomb offers, but is still in active development 
 *   [advanced features](https://github.com/dyne/Tomb/wiki/Advancedfeatures)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomb&oldid=414881](https://wiki.archlinux.org/index.php?title=Tomb&oldid=414881)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")

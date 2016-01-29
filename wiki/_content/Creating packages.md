@@ -1,9 +1,5 @@
 # Creating packages
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
@@ -107,13 +103,7 @@ Example PKGBUILDs are located in `/usr/share/pacman/`. An explanation of possibl
 
 _makepkg_ defines two variables that you should use as part of the build and install process:
 
-`srcdir`
-
-This points to the directory where _makepkg_ extracts or symlinks all files in the source array.
-
-`pkgdir`
-
-This points to the directory where _makepkg_ bundles the installed package, which becomes the root directory of your built package.
+NaN
 
 All of them contain _absolute_ paths, which means, you do not have to worry about your working directory if you use these variables properly.
 
@@ -252,8 +242,3 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 *   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=413747](https://wiki.archlinux.org/index.php?title=Creating_packages&oldid=413747)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

@@ -1,9 +1,5 @@
 # Duplicity
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Duplicity is a network backup program.
 
 It can save snapshots of directories and files to a remote GnuPG encrypted tar file, which acts as a backup repository. Connecting with the remote backup repository can take place through any of the following protocols: rsync, ftp, HSI, WebDAV, Tahoe-LAFS, or Amazon S3.
@@ -144,8 +140,3 @@ gpg_start
 *   [Déjà Dup home page](https://launchpad.net/deja-dup)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Duplicity&oldid=412067](https://wiki.archlinux.org/index.php?title=Duplicity&oldid=412067)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

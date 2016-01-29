@@ -1,9 +1,5 @@
 # Adobe AIR
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Adobe Integrated Runtime (AIR)](https://en.wikipedia.org/wiki/Adobe_Integrated_Runtime "wikipedia:Adobe Integrated Runtime") is a cross-platform runtime environment developed by Adobe Systems for building rich Internet applications using Adobe Flash, Adobe Flex, HTML, or Ajax, that can be deployed as desktop applications.
 
 ## Contents
@@ -96,12 +92,3 @@ Run with the command:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Adobe_AIR&oldid=391895](https://wiki.archlinux.org/index.php?title=Adobe_AIR&oldid=391895)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

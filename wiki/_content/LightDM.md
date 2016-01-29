@@ -1,9 +1,5 @@
 # LightDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -417,7 +413,3 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=415925](https://wiki.archlinux.org/index.php?title=LightDM&oldid=415925)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

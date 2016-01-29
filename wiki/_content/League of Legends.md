@@ -1,9 +1,5 @@
 # League of Legends
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -348,12 +344,3 @@ For a permanent solution:
 If you have the proprietary AMD fglrx driver installed, you should install trough winetricks the `directx9` package (Not d3dx_y)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=League_of_Legends&oldid=411663](https://wiki.archlinux.org/index.php?title=League_of_Legends&oldid=411663)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

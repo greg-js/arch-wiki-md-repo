@@ -1,9 +1,5 @@
 # Logitech G300
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## How to make G300 work correctly
 
 This Wiki page will show you how to get your G00 mouse working as desired.
@@ -35,7 +31,3 @@ Simply execute the code above to see if it's working.
 And you could put it into your xinitrc.d to make it load automatically.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_G300&oldid=259533](https://wiki.archlinux.org/index.php?title=Logitech_G300&oldid=259533)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")

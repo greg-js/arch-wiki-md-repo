@@ -1,9 +1,5 @@
 # Palm Evolution
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document is written to help a new user set up a Palm Pilot in Evolution. It has been tested with my Zire 71 (USB connection) and a Palm T/X (Wifi connection), but should work with most Palm Pilot devices.
 
 Additions for anyone using different devices are appreciated. I have put in what I _think_ will work, but as I only have the one device I can't test anything other than that device.
@@ -139,11 +135,3 @@ If you wish you can have an Applet on the menu bar which allows you to synchroni
 Now Hotsyncing will give a progress dialog.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Palm_Evolution&oldid=380125](https://wiki.archlinux.org/index.php?title=Palm_Evolution&oldid=380125)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

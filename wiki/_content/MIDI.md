@@ -1,9 +1,5 @@
 # MIDI
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 MIDI itself, which stands for "Musical Instrument Digital Interface", is just a protocol and standard for communication between musical instruments and any device that understands the language. It can be used to control an array of synthesizers, make a tin can sound like a drum, or even operate industrial equipments.
 
 The scope of this article, however, will mainly focus on the usage of MIDI in computer systems for playback of files that contain MIDI data. These files usually come with the **.mid** extension, and were hugely popular in the golden days of multimedia computing to share music. In professional music composition/arrangement, it still plays a vital role.
@@ -143,11 +139,3 @@ MIDI to WAVE converter and player. See [TiMidity++](/index.php/Timidity "Timidit
 MIDI player and a daemon adding MIDI support to ALSA. See [FluidSynth](/index.php/FluidSynth "FluidSynth").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MIDI&oldid=410870](https://wiki.archlinux.org/index.php?title=MIDI&oldid=410870)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

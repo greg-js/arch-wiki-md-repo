@@ -1,9 +1,5 @@
 # SickBeard
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Dropbox](/index.php/Dropbox "Dropbox")
@@ -51,7 +47,3 @@ This will create the directory, based on `/usr/lib/tmpfiles.d/sickbeard.conf` wh
 You can read more about this problem [in this forum thread](https://bbs.archlinux.org/viewtopic.php?id=158625).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SickBeard&oldid=353244](https://wiki.archlinux.org/index.php?title=SickBeard&oldid=353244)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

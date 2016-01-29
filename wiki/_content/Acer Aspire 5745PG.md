@@ -1,9 +1,5 @@
 # Acer Aspire 5745PG
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Same laptop as the [Acer Aspire 5745G](/index.php/Acer_Aspire_5745g "Acer Aspire 5745g"), but this one has an integrated (USB-connected) touch screen. Everything seems to work fine except for:
 
 *   Brightness increasing-decreasing: In gnome-shell one strike of the keys increases/decreases two levels of brigthness. One corresponds to the Operating System responding to the key, while the other is because of the BIOS responding as well. This can be solved by disabling GnomeShell brigthness controls or following this guide [here](/index.php/Backlight "Backlight").
@@ -168,7 +164,3 @@ to rotate the touchscreen axis' if you, for example, have rotated the screen wit
 To increase/decrease the brightness without any keystroke you can use the files located in /sys/class/backlight/ (use cat and echo).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_5745PG&oldid=409675](https://wiki.archlinux.org/index.php?title=Acer_Aspire_5745PG&oldid=409675)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

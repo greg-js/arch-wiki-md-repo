@@ -1,12 +1,8 @@
 # Hylafax
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [HylaFAX home page](http://www.hylafax.org/content/Main_Page):
 
-_HylaFAX is an enterprise-class system for sending and receiving facsimiles as well as for sending alpha-numeric pages. The software is designed around a client-server architecture. Fax modems may reside on a single machine on a network and clients can submit an outbound job from any other machine on the network. Client software is designed to be lightweight and easy to port. HylaFAX is designed to be very robust and reliable. The fax server is designed to guard against unexpected failures in the software, in the configuration, in the hardware and in general use. HylaFAX can support multiple modems and a heavy traffic load. If you expect to send more than a few facsimiles a day, then HylaFAX is the fax package for you!_
+NaN
 
 ## Contents
 
@@ -136,7 +132,3 @@ Windows Apps:
 *   SuSEfax is also a nice client for Windows. Get it here: [ftp://ftp.suse.com/pub/suse/discontinued/i386/SuSEFax_WIN32](ftp://ftp.suse.com/pub/suse/discontinued/i386/SuSEFax_WIN32).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hylafax&oldid=389414](https://wiki.archlinux.org/index.php?title=Hylafax&oldid=389414)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice")

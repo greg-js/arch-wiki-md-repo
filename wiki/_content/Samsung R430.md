@@ -1,9 +1,5 @@
 # Samsung R430
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page aims to provide as much information as possible to make the Samsung R430 laptop work. There are many variations of the hardware of the unit, so if you had to do something not listed here, please add it.
 
 ## Contents
@@ -87,11 +83,3 @@ Obviously, like before, you need to load the module for it to work, either by us
 To make managing the features of the notebook easier, you can install [samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)<sup><small>AUR</small></sup>. Just install it and follow the instructions given by the install script.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_R430&oldid=392651](https://wiki.archlinux.org/index.php?title=Samsung_R430&oldid=392651)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

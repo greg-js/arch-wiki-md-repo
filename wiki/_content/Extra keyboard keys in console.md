@@ -1,9 +1,5 @@
 # Extra keyboard keys in console
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
@@ -123,7 +119,3 @@ $ loadkeys /usr/local/share/kbd/keymaps/personal.map
 However this keymap only active for the current session. In order to load the keymap at boot, specify the full path to the file in `KEYMAP` variable in `/etc/vconsole.conf`. The file does not have to be gzipped as the official keymaps provided by [kbd](https://www.archlinux.org/packages/?name=kbd).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_console&oldid=393580](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_console&oldid=393580)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

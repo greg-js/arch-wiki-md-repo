@@ -1,9 +1,5 @@
 # GNU Screen
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [tmux](/index.php/Tmux "Tmux")
@@ -331,7 +327,3 @@ add following to ~/.screenrc
 *   [Xpra - An utility to detach/reattach X programs, in a way similar as screen does for command line based programs](/index.php/Xpra "Xpra")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNU_Screen&oldid=412085](https://wiki.archlinux.org/index.php?title=GNU_Screen&oldid=412085)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

@@ -1,9 +1,5 @@
 # Flyspray
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
@@ -41,7 +37,3 @@ You will then need to change the `.htaccess` file at `/usr/share/webapps/flyspra
 *   [Flyspray Official Website](http://www.flyspray.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Flyspray&oldid=411071](https://wiki.archlinux.org/index.php?title=Flyspray&oldid=411071)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

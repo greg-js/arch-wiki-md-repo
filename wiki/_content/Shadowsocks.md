@@ -1,9 +1,5 @@
 # Shadowsocks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Shadowsocks](http://shadowsocks.org) is a lightweight socks5 proxy, written in python.
 
 ## Contents
@@ -47,93 +43,16 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 
 **Tip:** To specify multiple server IPs, the following syntax can be used `"server":["1.1.1.1","2.2.2.2"],`
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Explanation</th>
-
-</tr>
-
-<tr>
-
-<td>server</td>
-
-<td>the address your server listens</td>
-
-</tr>
-
-<tr>
-
-<td>server_port</td>
-
-<td>server port</td>
-
-</tr>
-
-<tr>
-
-<td>local_address</td>
-
-<td>the address your local listens</td>
-
-</tr>
-
-<tr>
-
-<td>local_port</td>
-
-<td>local port</td>
-
-</tr>
-
-<tr>
-
-<td>password</td>
-
-<td>password used for encryption</td>
-
-</tr>
-
-<tr>
-
-<td>timeout</td>
-
-<td>in seconds</td>
-
-</tr>
-
-<tr>
-
-<td>method</td>
-
-<td>default: "aes-256-cfb", see [Encryption](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)</td>
-
-</tr>
-
-<tr>
-
-<td>fast_open</td>
-
-<td>use [TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open), true / false</td>
-
-</tr>
-
-<tr>
-
-<td>workers</td>
-
-<td>number of workers</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Explanation |
+| server | the address your server listens |
+| server_port | server port |
+| local_address | the address your local listens |
+| local_port | local port |
+| password | password used for encryption |
+| timeout | in seconds |
+| method | default: "aes-256-cfb", see [Encryption](https://github.com/shadowsocks/shadowsocks/wiki/Encryption) |
+| fast_open | use [TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open), true / false |
+| workers | number of workers |
 
 To adjust the logging level, the option `"verbose": _value_` may be added, with one of the following value:
 
@@ -221,7 +140,3 @@ To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20) or _ChaCha20_ cyphers, i
 *   [Backup GitHub project](https://github.com/shadowsocks-backup/shadowsocks) (the original project has been "removed according to regulations" in August 2015)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Shadowsocks&oldid=398354](https://wiki.archlinux.org/index.php?title=Shadowsocks&oldid=398354)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers")

@@ -1,9 +1,5 @@
 # Swap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Zswap](/index.php/Zswap "Zswap")
@@ -15,7 +11,7 @@ This page provides an introduction to swap space and paging on GNU/Linux. It cov
 
 From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
-_Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available._
+NaN
 
 Support for swap is provided by the Linux kernel and user-space utilities from the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 
@@ -274,7 +270,3 @@ If two or more areas have the same priority, and it is the highest priority avai
 There is no necessity to use [RAID](/index.php/RAID "RAID") for swap performance reasons. The kernel itself can stripe swapping on several devices, if you just give them the same priority in the `/etc/fstab` file. Refer to [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3) for details.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Swap&oldid=403633](https://wiki.archlinux.org/index.php?title=Swap&oldid=403633)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

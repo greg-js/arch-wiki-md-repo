@@ -1,9 +1,5 @@
 # MacBookPro9,2 (Mid-2012)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [MacBook](/index.php/MacBook "MacBook")
@@ -221,11 +217,3 @@ To make settings permanent, just modify `/etc/X11/xorg.conf.d/10-synaptics.conf`
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBookPro9,2_(Mid-2012)&oldid=401105](https://wiki.archlinux.org/index.php?title=MacBookPro9,2_(Mid-2012)&oldid=401105)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

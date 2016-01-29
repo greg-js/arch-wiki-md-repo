@@ -1,9 +1,5 @@
 # Multilib
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
@@ -69,7 +65,3 @@ Then update the package list and upgrade with `pacman -Syu`.
 *   [arch-multilib](//mailman.archlinux.org/mailman/listinfo/arch-multilib) mailing list
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Multilib&oldid=411025](https://wiki.archlinux.org/index.php?title=Multilib&oldid=411025)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

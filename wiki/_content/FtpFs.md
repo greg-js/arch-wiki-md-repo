@@ -1,12 +1,8 @@
 # FtpFs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia](http://en.wikipedia.org/wiki/FTPFS):
 
-"[FTPFS](http://ftpfs.sourceforge.net/) (File Transfer Protocol FileSystem) is an obsoleted Linux kernel module that allows the user to _mount a FTP server onto the local filesystem_".
+NaN
 
 The old implementation (ftpfs) was replaced by [LUFS](http://lufs.sourceforge.net/) (UserLand FileSystem), which in turn was made obsolete by [FUSE](http://fuse.sourceforge.net/) (Filesystem in Userspace).
 
@@ -79,8 +75,3 @@ Unmount:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FtpFs&oldid=378842](https://wiki.archlinux.org/index.php?title=FtpFs&oldid=378842)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol")

@@ -1,9 +1,5 @@
 # Comgt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [Linux UMTS/GPRS command-line tool](http://comgt.sourceforge.net/):
 
-_Comgt is a command line tool for controlling, configuring and interacting with Option Wireless 3G and 2G (HSDPA, UMTS, EDGE, GPRS, GSM) data devices within the Linux environment._
+NaN
 
 ## Installation
 
@@ -28,12 +24,3 @@ Install [comgt](https://aur.archlinux.org/packages/comgt/)<sup><small>AUR</small
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Comgt&oldid=392020](https://wiki.archlinux.org/index.php?title=Comgt&oldid=392020)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

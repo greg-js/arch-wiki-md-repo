@@ -1,9 +1,5 @@
 # Lenovo Thinkpad SL500
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -325,12 +321,3 @@ fi
 [Thread](https://bbs.archlinux.org/viewtopic.php?id=82447) on the forums concerning configuration of Arch Linux on the SL series
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_SL500&oldid=412558](https://wiki.archlinux.org/index.php?title=Lenovo_Thinkpad_SL500&oldid=412558)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

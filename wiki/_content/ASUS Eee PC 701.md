@@ -1,9 +1,5 @@
 # ASUS Eee PC 701
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -416,173 +412,15 @@ libata.dma=0
 
 The following are reported battery runtimes:
 
-<table class="wikitable" style="text-align:left"><caption>Battery runtimes</caption>
-
-<tbody>
-
-<tr>
-
-<th>Task</th>
-
-<th>Series</th>
-
-<th>Wireless</th>
-
-<th>Screen Brightness</th>
-
-<th>FSB Speed</th>
-
-<th>Fan Speed</th>
-
-<th>Runtime</th>
-
-<th>Comments</th>
-
-</tr>
-
-<tr>
-
-<th>DVD Playback</th>
-
-<td>701</td>
-
-<td>On</td>
-
-<td>Max</td>
-
-<td>85mhz</td>
-
-<td>100%</td>
-
-<td>134min</td>
-
-<td>Reading DVD ISO from 16gig SDHC Card</td>
-
-</tr>
-
-<tr>
-
-<th>DVD Playback</th>
-
-<td>701</td>
-
-<td>Off</td>
-
-<td>Max</td>
-
-<td>85mhz</td>
-
-<td>100%</td>
-
-<td> ???</td>
-
-<td>Reading DVD ISO from 16gig SDHC Card</td>
-
-</tr>
-
-<tr>
-
-<th>AVI Playback</th>
-
-<td>701</td>
-
-<td>Off</td>
-
-<td>Max</td>
-
-<td>85mhz</td>
-
-<td>100%</td>
-
-<td> ???</td>
-
-<td>Reading AVI from SSD</td>
-
-</tr>
-
-<tr>
-
-<th>IM and Surf</th>
-
-<td>701</td>
-
-<td>On</td>
-
-<td>~30%</td>
-
-<td> ???</td>
-
-<td>low</td>
-
-<td>173min</td>
-
-<td>Normal web-browsing, Flash should reduce runtime a lot !</td>
-
-</tr>
-
-<tr>
-
-<th>Programming and PDF reading</th>
-
-<td>1000HA</td>
-
-<td>Off</td>
-
-<td>~40%</td>
-
-<td> ???</td>
-
-<td>low</td>
-
-<td>+6hs</td>
-
-<td>Using Evince and SPE under XFCE with camera and USB disabled</td>
-
-</tr>
-
-<tr>
-
-<th>Surf and OOo</th>
-
-<td>1000HA</td>
-
-<td>On</td>
-
-<td>~40%</td>
-
-<td> ???</td>
-
-<td>low</td>
-
-<td>+4hs</td>
-
-<td>Stock kernel without laptop-mode</td>
-
-</tr>
-
-<tr>
-
-<th>Surf and OOo</th>
-
-<td>1000HA</td>
-
-<td>On</td>
-
-<td>~40%</td>
-
-<td> ???</td>
-
-<td>low</td>
-
-<td>5hs</td>
-
-<td>Stock kernel with laptop-mode and other tweaks</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Battery runtimes</caption>
+| Task | Series | Wireless | Screen Brightness | FSB Speed | Fan Speed | Runtime | Comments |
+| DVD Playback | 701 | On | Max | 85mhz | 100% | 134min | Reading DVD ISO from 16gig SDHC Card |
+| DVD Playback | 701 | Off | Max | 85mhz | 100% |  ??? | Reading DVD ISO from 16gig SDHC Card |
+| AVI Playback | 701 | Off | Max | 85mhz | 100% |  ??? | Reading AVI from SSD |
+| IM and Surf | 701 | On | ~30% |  ??? | low | 173min | Normal web-browsing, Flash should reduce runtime a lot ! |
+| Programming and PDF reading | 1000HA | Off | ~40% |  ??? | low | +6hs | Using Evince and SPE under XFCE with camera and USB disabled |
+| Surf and OOo | 1000HA | On | ~40% |  ??? | low | +4hs | Stock kernel without laptop-mode |
+| Surf and OOo | 1000HA | On | ~40% |  ??? | low | 5hs | Stock kernel with laptop-mode and other tweaks |
 
 N.B. - Will add battery runtimes as I am able to test them, please contribute.
 
@@ -593,12 +431,3 @@ Still tweaking, but disabling everything from BIOS got me about 6 hours and a ha
 -- ekuber
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_701&oldid=414011](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_701&oldid=414011)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

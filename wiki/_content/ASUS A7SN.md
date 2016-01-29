@@ -1,9 +1,5 @@
 # ASUS A7SN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -115,7 +111,3 @@ Front hotkeys should work our of box. If you use Gnome, go to System -> Preferen
 Here are some useful utilities:
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_A7SN&oldid=208351](https://wiki.archlinux.org/index.php?title=ASUS_A7SN&oldid=208351)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

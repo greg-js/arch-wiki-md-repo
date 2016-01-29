@@ -1,9 +1,5 @@
 # libvirt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
@@ -61,9 +57,7 @@ Because of its daemon/client architecture, libvirt needs only be installed on th
 
 *   Other virtualization backends include [LXC](/index.php/LXC "LXC"), [VirtualBox](/index.php/VirtualBox "VirtualBox") and [Xen](/index.php/Xen "Xen"). See their respective page for installation instructions.
 
-**Note:** The [libvirt LXC driver](http://libvirt.org/drvlxc.html) has no dependency on the [LXC](/index.php/LXC "LXC") userspace tools provided by [lxc](https://www.archlinux.org/packages/?name=lxc), therefore there is no need to install it if planning on using this driver.
-
-**Warning:** [Xen](/index.php/Xen "Xen") support is available but not by default. You need to use the [ABS](/index.php/ABS "ABS") to modify [libvirt](https://www.archlinux.org/packages/?name=libvirt)'s [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and build it without the `--without-xen` option.
+NaN
 
 Other supported hypervisors are listed [here](http://libvirt.org/drivers.html).
 
@@ -96,7 +90,7 @@ For _**system**_-level administration (i.e. global settings and image-_volume_ l
 
 From [libvirt: Connection authentication](http://libvirt.org/auth.html#ACL_server_config):
 
-The libvirt daemon allows the administrator to choose the authentication mechanisms used for client connections on each network socket independently. This is primarily controlled via the libvirt daemon master config file in `/etc/libvirt/libvirtd.conf`. Each of the libvirt sockets can have its authentication mechanism configured independently. There is currently a choice of `none`, `polkit` and `sasl`.
+NaN
 
 Because [libvirt](https://www.archlinux.org/packages/?name=libvirt) pulls [polkit](https://www.archlinux.org/packages/?name=polkit) as a dependency during installation, [polkit](#Using_polkit) is used as the default value for the `unix_sock_auth` parameter ([source](http://libvirt.org/auth.html#ACL_server_polkit)). [File-based permissions](#Authenticate_with_file-based_permissions) remain nevertheless available.
 
@@ -418,7 +412,7 @@ $ virsh autostart _domain_ --disable
 
 Shutdown domain on host shutdown:
 
-Running domains can be automatically suspended/shutdown at host shutdown using the `libvirt-guests.service` systemd service. This same service will resume/startup the suspended/shutdown domain automatically at host startup. Read `/etc/conf.d/libvirt-guests` for service options.
+NaN
 
 Edit a domain's XML configuration:
 
@@ -594,11 +588,3 @@ if (__name__ == "__main__"):
 *   [libvirt Networking Handbook](https://jamielinux.com/docs/libvirt-networking-handbook/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Libvirt&oldid=413990](https://wiki.archlinux.org/index.php?title=Libvirt&oldid=413990)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

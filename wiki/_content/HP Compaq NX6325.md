@@ -1,9 +1,5 @@
 # HP Compaq NX6325
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article describes specific steps to configure hardware on the notebook model HP Compaq NX6325.
 
 ## Contents
@@ -65,7 +61,3 @@ The multi-card reader work out-of-the-box with the latest kernel.
 The Authentec fingerprint reader works with the installation and configuration of [fprint](https://wiki.archlinux.org/index.php/Fprint)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Compaq_NX6325&oldid=376800](https://wiki.archlinux.org/index.php?title=HP_Compaq_NX6325&oldid=376800)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

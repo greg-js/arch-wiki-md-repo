@@ -1,9 +1,5 @@
 # Calibrating Touchscreen
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -152,11 +148,3 @@ If, after following these instructions, multiple clicks occur in different place
 [Calibrate Translation Matrix Documentation in the X.Org Wiki](http://www.x.org/wiki/XInputCoordinateTransformationMatrixUsage)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Calibrating_Touchscreen&oldid=227221](https://wiki.archlinux.org/index.php?title=Calibrating_Touchscreen&oldid=227221)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

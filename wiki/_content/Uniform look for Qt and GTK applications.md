@@ -1,9 +1,5 @@
 # Uniform look for Qt and GTK applications
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GTK+](/index.php/GTK%2B "GTK+")
@@ -99,11 +95,11 @@ To set a style as default, you can use [qt5ct](https://www.archlinux.org/package
 
 *   Calling `kgtk-wrapper` directly and using the GTK+ 2.x binary as an argument:
 
- `$ /usr/bin/kgtk-wrapper gimp` 
+NaN
 
 *   Modifying the KDE .desktop shortcuts files you can find at `/usr/share/applications/` to prefix the `Exec` statement with kgtk-wrapper.
 
-e.g. with [GIMP](/index.php/GIMP "GIMP"), edit the `/usr/share/applications/gimp.desktop` shortcut file and replace `Exec=gimp-2.8 %U` by `Exec=kgtk-wrapper gimp-2.8 %U`.
+NaN
 
 ### Using a GTK+ icon theme in Qt apps
 
@@ -221,12 +217,3 @@ Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~
 Newer versions of [gtk-qt-engine](https://aur.archlinux.org/packages/gtk-qt-engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtk-qt-engine)]</sup> use `~/.gtkrc2.0-kde` and set the export variable in `~/.kde/env/gtk-qt-engine.rc.sh`. If you recently removed **gtk-qt-engine** and are trying to set a GTK+ theme then you must also remove `~/.kde/env/gtk-qt-engine.rc.sh` and reboot. Doing this will ensure that GTK+ looks for its settings in the standard `~/.gtkrc2.0` instead of the `~/.gtkrc2.0-kde` file.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=415955](https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=415955)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

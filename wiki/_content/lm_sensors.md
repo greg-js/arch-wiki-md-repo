@@ -1,9 +1,5 @@
 # lm_sensors
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [hddtemp](/index.php/Hddtemp "Hddtemp")
@@ -466,9 +462,9 @@ If users wishing to deploy lm_sensors on multiple machines can use either of the
 
 Some K10 processors have issues with their temperature sensor. From the kernel documentation (`linux-<version>/Documentation/hwmon/k10temp`):
 
-_All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter._
+NaN
 
-_Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter._
+NaN
 
 On affected machines the module will report "unreliable CPU thermal sensor; monitoring disabled". Users which to force it can:
 
@@ -532,13 +528,3 @@ Now you can also use [fancontrol](/index.php/Fancontrol "Fancontrol") to control
 This is caused by lm-sensors messing with the Vcom values of the screen while probing for sensors. It has been discussed and solved at the forums already: [https://bbs.archlinux.org/viewtopic.php?id=193048](https://bbs.archlinux.org/viewtopic.php?id=193048) However, make sure to read through the thread carefully before running any of the suggested commands.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lm_sensors&oldid=413343](https://wiki.archlinux.org/index.php?title=Lm_sensors&oldid=413343)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
-*   [CPU](/index.php/Category:CPU "Category:CPU")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

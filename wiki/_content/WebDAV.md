@@ -1,9 +1,5 @@
 # WebDAV
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 WebDAV (**Web** **D**istributed **A**uthoring and **V**ersioning) is an extension of HTTP 1.1 and therefore can be considered to be a procotol. It contains a set of concepts and accompanying extension methods to allow read and write across the HTTP 1.1 protocol. Instead of using [NFS](/index.php/NFS "NFS") or [SMB](/index.php/SMB "SMB"), WebDAV offers file transfers via HTTP.
 
 The goal of this how to is to setup a simple WebDAV configuration using Apache.
@@ -166,7 +162,3 @@ Do not forget to restart apache after making changes!
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WebDAV&oldid=397006](https://wiki.archlinux.org/index.php?title=WebDAV&oldid=397006)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

@@ -1,9 +1,5 @@
 # Seq24
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -39,11 +35,3 @@ To set a MIDI instrument, bring up a track editor window by right clicking a "tr
 seq24 has the ability to connect to other MIDI devices and software through the [JACK](/index.php/JACK "JACK") software, including QSynth, amSynth, and ZynAddSubFX.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Seq24&oldid=392657](https://wiki.archlinux.org/index.php?title=Seq24&oldid=392657)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Paramano
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Paramano is a Gtk3 application released under the GPL that lets you select your cores' governor or frequency from a tray icon and displays information about your battery graphically. Paramano is designed to be desktop-environment-independent so it depends only on Gtk3, a system tray and sudo. It's a nice addition to Xfce, LXDE, dwm, and so on.
 
 ## Contents
@@ -61,8 +57,3 @@ your_user_name ALL = NOPASSWD: /usr/bin/paramano-set
 *   [Original Trayfreq Website](http://trayfreq.sourceforge.net)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Paramano&oldid=363954](https://wiki.archlinux.org/index.php?title=Paramano&oldid=363954)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-*   [CPU](/index.php/Category:CPU "Category:CPU")

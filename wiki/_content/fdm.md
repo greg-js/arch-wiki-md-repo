@@ -1,9 +1,5 @@
 # fdm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Alpine](/index.php/Alpine "Alpine")
@@ -140,7 +136,3 @@ $ crontab -e
 *   [fdm-users mailing list](https://lists.sourceforge.net/lists/listinfo/fdm-users)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fdm&oldid=411264](https://wiki.archlinux.org/index.php?title=Fdm&oldid=411264)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

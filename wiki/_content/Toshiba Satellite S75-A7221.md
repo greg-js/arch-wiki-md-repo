@@ -1,9 +1,5 @@
 # Toshiba Satellite S75-A7221
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -37,11 +33,3 @@ When booting, whether installing or post-install, you will need to add `acpi_bac
 ## Sound
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_S75-A7221&oldid=352857](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_S75-A7221&oldid=352857)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

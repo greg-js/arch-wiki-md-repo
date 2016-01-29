@@ -1,9 +1,5 @@
 # getmail
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -113,11 +109,3 @@ Then configure [procmail](/index.php/Procmail "Procmail") to filter your mail.
 *   How to [Backup Gmail with getmail](/index.php/Backup_Gmail_with_getmail "Backup Gmail with getmail").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Getmail&oldid=412089](https://wiki.archlinux.org/index.php?title=Getmail&oldid=412089)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

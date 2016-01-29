@@ -1,9 +1,5 @@
 # Thunar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xfce](/index.php/Xfce "Xfce")
@@ -14,7 +10,7 @@ Related articles
 
 From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
-_Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time._
+NaN
 
 ## Contents
 
@@ -54,31 +50,31 @@ Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File mana
 
 *   **Thunar Archive Plugin** — Plugin which allows you to create and extract archive files using contextual menu items. It does not create or extract archives directly, but instead acts as a frontend for other programs such as File Roller ([file-roller](https://www.archlinux.org/packages/?name=file-roller)), Ark ([ark](https://www.archlinux.org/packages/?name=ark)) or Xarchiver ([xarchiver](https://www.archlinux.org/packages/?name=xarchiver)). Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-[http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
+NaN
 
 *   **Thunar Media Tags Plugin** — Plugin which allows you to view detailed information about media files. It also has a bulk renamed and allows editing of media tags. It supports ID3 (the MP3 file format's system) and Ogg/Vorbis tags. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
+NaN
 
 *   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
-[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)<sup><small>AUR</small></sup>
+NaN
 
 *   **[Thunar Volume Manager](#Thunar_Volume_Manager)** — Automatic management of removeable devices in Thunar. Part of [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
-[http://goodies.xfce.org/projects/thunar-plugins/thunar-volman](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) || [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman)
+NaN
 
 *   **Tumbler** — External program to generate thumbnails. Also install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) to enable video thumbnailing.
 
-[http://git.xfce.org/xfce/tumbler/tree/README](http://git.xfce.org/xfce/tumbler/tree/README) || [tumbler](https://www.archlinux.org/packages/?name=tumbler)
+NaN
 
 *   **RAW Thumbnailer** — A lightweight and fast raw image thumbnailer that is needed to display raw thumbnails.
 
-[https://code.google.com/p/raw-thumbnailer/](https://code.google.com/p/raw-thumbnailer/) || [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer)
+NaN
 
 *   **libgsf** — The GNOME Structured File Library is a utility library for reading and writing structured file formats. Install if you need support for odf thumbnails
 
-[http://directory.fsf.org/wiki/Libgsf](http://directory.fsf.org/wiki/Libgsf) || [libgsf](https://www.archlinux.org/packages/?name=libgsf)
+NaN
 
 ## Thunar Volume Manager
 
@@ -168,107 +164,20 @@ This section covers useful custom actions which can be accessed through `Edit ->
 
 To use this action you need to have [catfish](https://www.archlinux.org/packages/?name=catfish) installed. The optional dependency [mlocate](https://www.archlinux.org/packages/?name=mlocate) should be installed as well.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Command</th>
-
-<th>File patterns</th>
-
-<th>Appears if selection contains</th>
-
-</tr>
-
-<tr>
-
-<th>Search</th>
-
-<td>`catfish --path=%f`</td>
-
-<td>*</td>
-
-<td>Directories</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Command | File patterns | Appears if selection contains |
+| Search | `catfish --path=%f` | * | Directories |
 
 ### Scan for viruses
 
 To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://aur.archlinux.org/packages/clamtk/)<sup><small>AUR</small></sup> installed.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Command</th>
-
-<th>File patterns</th>
-
-<th>Appears if selection contains</th>
-
-</tr>
-
-<tr>
-
-<th>Scan for virus</th>
-
-<td>`clamtk %F`</td>
-
-<td>*</td>
-
-<td>Select all</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Command | File patterns | Appears if selection contains |
+| Scan for virus | `clamtk %F` | * | Select all |
 
 ### Link to Dropbox
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Command</th>
-
-<th>File patterns</th>
-
-<th>Appears if selection contains</th>
-
-</tr>
-
-<tr>
-
-<th>Link to Dropbox</th>
-
-<td>`ln -s %f /path/to/DropboxFolder`</td>
-
-<td>*</td>
-
-<td>Directories, other files</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Command | File patterns | Appears if selection contains |
+| Link to Dropbox | `ln -s %f /path/to/DropboxFolder` | * | Directories, other files |
 
 Please note that when using many custom actions to symlink files and folder to a particular place, it might be useful to put them into the `Send To` folder of the context menu to avoid that the menu itself gets bloated. This is fairly easy to achieve and requires a .desktop file in `~/.local/share/Thunar/sendto` for each action to perform. Say we want to put the above Dropbox symlink action into Send To, we create a `dropbox_folder.desktop` with the following content. The new applied action will be active after restarting Thunar.
 
@@ -357,7 +266,3 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 *   This [list](http://goodies.xfce.org/projects/thunar-plugins/start) of plugins
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunar&oldid=416479](https://wiki.archlinux.org/index.php?title=Thunar&oldid=416479)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")

@@ -1,16 +1,12 @@
 # IceWM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Window manager](/index.php/Window_manager "Window manager")
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 
-_IceWM is a window manager for the X Window System graphical infrastructure, written by Marko Maček. It was coded from scratch in C++ and is released under the terms of the GNU Lesser General Public License. It is relatively lightweight in terms of memory and CPU usage, and comes with themes that allow it to imitate the UI of Windows 95, OS/2, Motif, and other graphical user interfaces._
+NaN
 
 ## Contents
 
@@ -169,7 +165,3 @@ If you have defined shutdown and reboot commands (such as systemctl poweroff and
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Overview and tutorial from polishlinux.org
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IceWM&oldid=380950](https://wiki.archlinux.org/index.php?title=IceWM&oldid=380950)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

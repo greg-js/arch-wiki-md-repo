@@ -1,9 +1,5 @@
 # Irssi-otr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [irssi-otr](http://irssi-otr.tuxfamily.org/) module brings [Off-the-Record Messaging](http://www.cypherpunks.ca/otr/) to your [favorite IRC client](http://irssi.org/).
 
 ## Contents
@@ -73,8 +69,3 @@ And finally we convert some escaped HTML characters:
 These are just some basic replaces, just extend them if you need more.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Irssi-otr&oldid=398171](https://wiki.archlinux.org/index.php?title=Irssi-otr&oldid=398171)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")

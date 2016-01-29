@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X140e
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
@@ -75,11 +71,3 @@ See [Power saving#Bluetooth](/index.php/Power_saving#Bluetooth "Power saving").
 For the open-source driver, follow the information in [ATI#Powersaving](/index.php/ATI#Powersaving "ATI").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X140e&oldid=412579](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X140e&oldid=412579)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

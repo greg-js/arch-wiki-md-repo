@@ -1,9 +1,5 @@
 # Ktorrent
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Ktorrent](http://ktorrent.org/) is a the BitTorrent client for KDE.
 
 ## Installation
@@ -198,7 +194,3 @@ esac
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ktorrent&oldid=304393](https://wiki.archlinux.org/index.php?title=Ktorrent&oldid=304393)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

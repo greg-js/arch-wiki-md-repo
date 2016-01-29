@@ -1,9 +1,5 @@
 # Kodi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Kodi (previously known as XBMC), is a free, [open source (GPL)](http://www.gnu.org/copyleft/gpl.html) multimedia player that originally ran on the first-generation [XBox](https://en.wikipedia.org/wiki/Microsoft_Xbox "wikipedia:Microsoft Xbox"), and now runs on Linux, OS X, Windows, Android and iOS. Kodi can be used to play/view the most popular video, audio, and picture formats, and many more lesser-known formats, including:
 
 *   Video - DVD-Video, VCD/SVCD, MPEG-1/2/4, DivX, XviD, Matroska
@@ -558,11 +554,3 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 **Note:** xbmc-addons-chinese:Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kodi&oldid=414105](https://wiki.archlinux.org/index.php?title=Kodi&oldid=414105)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

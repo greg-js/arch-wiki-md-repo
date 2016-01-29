@@ -1,9 +1,5 @@
 # Foremost
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File Recovery](/index.php/File_Recovery "File Recovery")
@@ -59,8 +55,3 @@ The parameter `-t all` tries to recover all known file types.
 *   Entry in Forensicswiki.org: [http://www.forensicswiki.org/wiki/Foremost](http://www.forensicswiki.org/wiki/Foremost)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Foremost&oldid=408536](https://wiki.archlinux.org/index.php?title=Foremost&oldid=408536)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

@@ -1,9 +1,5 @@
 # Xampp
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [XAMPP](http://www.apachefriends.org/en/xampp.html) is an easy to install Apache distribution containing MySQL, PHP and Perl. It contains: Apache, MySQL, PHP & PEAR, Perl, ProFTPD, phpMyAdmin, OpenSSL, GD, Freetype2, libjpeg, libpng, gdbm, zlib, expat, Sablotron, libxml, Ming, Webalizer, pdf class, ncurses, mod_perl, FreeTDS, gettext, mcrypt, mhash, eAccelerator, SQLite and IMAP C-Client.
 
 ## Contents
@@ -242,12 +238,3 @@ netstat -a -n
 For the entries marked as LISTEN in the last column, look at the Listen column. It should always start with 127.0.0.1 or ::1 but not with 0.0.0.0.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xampp&oldid=409606](https://wiki.archlinux.org/index.php?title=Xampp&oldid=409606)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

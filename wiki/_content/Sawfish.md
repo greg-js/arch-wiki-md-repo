@@ -1,9 +1,5 @@
 # Sawfish
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Sawfish is a highly customizable [window manager](/index.php/Window_manager "Window manager"). Formerly it has been the standard Window manager of the GNOME desktop, but because of a change of maintainership this is no longer true. This article will show you how to install and configure it for standalone use (without GNOME).
 
 ## Contents
@@ -136,7 +132,3 @@ Restart Sawfish to effect the changes.
 *   [Sawfish wiki](http://sawfish.wikia.com/wiki/Main_Page) - Official website
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sawfish&oldid=411304](https://wiki.archlinux.org/index.php?title=Sawfish&oldid=411304)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

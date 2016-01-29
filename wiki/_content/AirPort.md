@@ -1,16 +1,12 @@
 # AirPort
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Shairport](/index.php/Shairport "Shairport")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/AirPort "wikipedia:AirPort"):
 
-"_AirPort is the name given to a series of Apple products using the (Wi-Fi) protocols (802.11b, 802.11g, 802.11n and 802.11ac). These products comprise a number of wireless routers and wireless cards. The AirPort Extreme name was originally intended to signify the addition of the 802.11g protocol to these products._"
+NaN
 
 Apple sells a number of AirPort models: AirPort Express, AirPort Extreme, and AirPort Time Capsule. The AirPort Extreme is distinguished from the AirPort Express in that it has better WiFi (802.11ac instead of 802.11n, and 1.3 Gbps instead of 300 Mbps), better Ethernet ports (four gigabit ports instead of two 10/100BASE‑T ports), the ability to connect a hard drive to the USB port to share on the network, and the loss of the ability to stream music. The AirPort Time Capsule is essentially the AirPort Extreme, but with a 2-3 TB hard drive added, depending on which model you buy. All AirPort models have the ability to share printers on the network (through the USB port), and all AirPort models support up to 50 users.
 
@@ -73,8 +69,3 @@ ErrorPolicy stop-printer
 See the [CUPS](/index.php/CUPS "CUPS") wiki page for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AirPort&oldid=391735](https://wiki.archlinux.org/index.php?title=AirPort&oldid=391735)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")

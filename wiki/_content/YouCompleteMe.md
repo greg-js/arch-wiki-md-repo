@@ -1,9 +1,5 @@
 # YouCompleteMe
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) (shortened as YCM) is a code-completion engine for [Vim](/index.php/Vim "Vim"). It supports the following languages:
 
 *   C/C++
@@ -242,8 +238,3 @@ Due to [a bug](https://bugs.kde.org/show_bug.cgi?id=341157) in KDE Framework5/Qt
 *   [Project homepage](http://valloric.github.io/YouCompleteMe/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=YouCompleteMe&oldid=413167](https://wiki.archlinux.org/index.php?title=YouCompleteMe&oldid=413167)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")

@@ -1,9 +1,5 @@
 # Backup Gmail with getmail
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -145,11 +141,3 @@ getmailrc: credential/login error ([ALERT] Please log in via your web browser: [
 To bypass this Gmail security feature, one must [enable access for less secure apps](https://www.google.com/settings/security/lesssecureapps)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_Gmail_with_getmail&oldid=377542](https://wiki.archlinux.org/index.php?title=Backup_Gmail_with_getmail&oldid=377542)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

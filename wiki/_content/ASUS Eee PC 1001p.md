@@ -1,9 +1,5 @@
 # ASUS Eee PC 1001p
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -109,11 +105,3 @@ Two-Finger scrolling works with a `/etc/X11/xorg.conf` like this:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1001p&oldid=208367](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1001p&oldid=208367)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

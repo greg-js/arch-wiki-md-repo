@@ -1,9 +1,5 @@
 # WTorrent
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -151,12 +147,3 @@ Include conf/extra/php5_module.conf
 And make sure that `SCGIMount /RPC2 127.0.0.1:5000` is added after the Supplemental configuration section.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WTorrent&oldid=412209](https://wiki.archlinux.org/index.php?title=WTorrent&oldid=412209)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -1,9 +1,5 @@
 # ASUS Eee PC 1000
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 For now, this is just some notes on the Asus EeePC 1000\. The difference between the 1000 and the 901 are more subtle than just the screen size.
 
 For more information, see other pages:
@@ -156,11 +152,3 @@ Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1000&oldid=408670](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1000&oldid=408670)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

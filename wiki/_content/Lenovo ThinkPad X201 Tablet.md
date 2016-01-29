@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X201 Tablet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The X201 Tablet is a quad core convertable laptop produced by Lenovo. See [Thinkwiki](http://www.thinkwiki.org/wiki/Category:X201_Tablet) for more information.
 
 Follow the [Installation guide](/index.php/Installation_guide "Installation guide") or [Beginner's Guide](/index.php/Beginner%27s_Guide "Beginner's Guide") to get a base install working.
@@ -183,7 +179,3 @@ Such a bios can be found at [this forum post at mydigitallife.info.](http://foru
 You can either use Windows to flash, or a DOS boot disk with [phlash16.exe](https://www.wimsbios.com/files/flashers/phoenix/phlash16-1.7.0.21.zip) and the 02C2100.ROM from the forum post's rar like I did. To do it this way, first upgrade the BIOS to the [latest version from Lenovo.](http://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/6quj19us.iso) Then, rename "02C2100.ROM" to "BIOS.WPH", save it to your DOS boot disk and run phlash16.exe.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X201_Tablet&oldid=412580](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X201_Tablet&oldid=412580)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

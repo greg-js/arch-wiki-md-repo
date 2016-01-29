@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T400s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Lenovo ThinkPad T400](/index.php/Lenovo_ThinkPad_T400 "Lenovo ThinkPad T400")
@@ -432,13 +428,3 @@ There are a few installation guides for Linux on a Lenovo ThinkPad T400s.
 *   A german [review](http://www.notebookcheck.com/Test-Lenovo-ThinkPad-T400s-Notebook.20960.0.html) by [notebookcheck.com](http://www.notebookcheck.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400s&oldid=412562](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T400s&oldid=412562)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

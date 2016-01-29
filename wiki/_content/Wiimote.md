@@ -1,9 +1,5 @@
 # Wiimote
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article will go through the basic steps required to have a working Wiimote in Linux for general use. It will not go into much detail for some steps as there are many guides already written for some parts already.
 
 **Note:** The approach shown on this page is based on software which is no longer developed upstream. There is a new effort on creating a Wii Remote driver based on the new Linux kernel Wii Remote driver. See [XWiimote](/index.php/XWiimote "XWiimote") if you want to test the new Wii Remote software stack.
@@ -131,7 +127,3 @@ MODULES="uinput ...."
 *   [XWiimote](/index.php/XWiimote "XWiimote")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wiimote&oldid=378435](https://wiki.archlinux.org/index.php?title=Wiimote&oldid=378435)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")

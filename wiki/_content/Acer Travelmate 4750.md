@@ -1,98 +1,14 @@
 # Acer Travelmate 4750
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table style="float:right; border: 1px solid #000;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules/package**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet & Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:yellow">**most Work**</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules/package** |
+| Intel graphics | **Working** | xf86-video-intel |
+| Ethernet & Wireless | **Working** | ath9k |
+| Audio | **Working** | intel |
+| Touchpad | **Working** |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** |
+| Function Keys | **most Work** |
+| Suspend | **Working** |
 
 2012/08/02 Setup ArchLinux by just copy file system from old machine. I changed the /etc/fstab and install xf86-video-intel, it works now.
 
@@ -310,7 +226,3 @@ systemctl enable acpid  # keep it workable for next boot
 *   turn off bluetooth
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Travelmate_4750&oldid=328612](https://wiki.archlinux.org/index.php?title=Acer_Travelmate_4750&oldid=328612)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

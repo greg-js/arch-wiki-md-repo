@@ -1,9 +1,5 @@
 # Compile kernel module
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Kernel](/index.php/Kernel "Kernel")
@@ -108,7 +104,3 @@ If you are compiling module for early boot which is copied to [Initramfs](/index
 *   [The Linux Kernel Module Programming Guide](http://www.tldp.org/LDP/lkmpg/2.6/html/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compile_kernel_module&oldid=417078](https://wiki.archlinux.org/index.php?title=Compile_kernel_module&oldid=417078)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")

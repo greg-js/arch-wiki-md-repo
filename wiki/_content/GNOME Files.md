@@ -1,9 +1,5 @@
 # GNOME Files
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
@@ -47,40 +43,35 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 *   **Eiciel** — Include extension which add graphical [ACL](/index.php/ACL "ACL") editor into the file properties window.
 
-[http://rofi.roger-ferrer.org/eiciel/](http://rofi.roger-ferrer.org/eiciel/) || [eiciel](https://aur.archlinux.org/packages/eiciel/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Folder Color** — Change the color of each icon separately then you are easily notice the right folder!
 
-[http://foldercolor.tuxfamily.org/](http://foldercolor.tuxfamily.org/) || [folder-color-nautilus-bzr](https://aur.archlinux.org/packages/folder-color-nautilus-bzr/)<sup><small>AUR</small></sup>
-
-**Tip:** This extension works only with these icon-themes which contain additional colored icons, eg:  
-[numix-icon-theme-git](https://aur.archlinux.org/packages/numix-icon-theme-git/)<sup><small>AUR</small></sup>, [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/)<sup><small>AUR</small></sup>, [vivacious-folder-colors-addon](https://aur.archlinux.org/packages/vivacious-folder-colors-addon/)<sup><small>AUR</small></sup>, [humanitycolors-icon-theme](https://aur.archlinux.org/packages/humanitycolors-icon-theme/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/humanitycolors-icon-theme)]</sup>
+NaN
 
 *   **Nautilus Actions** — Configures programs to be launched when files are selected in Files
 
-[http://www.nautilus-actions.org/](http://www.nautilus-actions.org/) || [nautilus-actions](https://www.archlinux.org/packages/?name=nautilus-actions)
+NaN
 
 *   **Nautilus Admin** — Add to menu: "Open as administrator" or "Edit as administrator"
 
-[https://bitbucket.org/brunonova/nautilus-admin](https://bitbucket.org/brunonova/nautilus-admin) || [nautilus-admin](https://aur.archlinux.org/packages/nautilus-admin/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Nautilus Terminal** — Terminal embedded in Files. It is always open in the current folder, and follows the navigation.
 
-[http://projects.flogisoft.com/nautilus-terminal/](http://projects.flogisoft.com/nautilus-terminal/) || [nautilus-terminal](https://www.archlinux.org/packages/?name=nautilus-terminal)
+NaN
 
 *   **Open in Terminal** — A Files plugin for opening terminals in arbitrary local paths
 
-[http://ftp.gnome.org/pub/GNOME/sources/nautilus-open-terminal](http://ftp.gnome.org/pub/GNOME/sources/nautilus-open-terminal) || [nautilus-open-terminal](https://www.archlinux.org/packages/?name=nautilus-open-terminal)
-
-**Tip:** This plugin is not needed if you have [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) installed: since version 3.10.0-2 it provides the extension `/usr/lib/nautilus/extensions-3.0/libterminal-nautilus.so` which creates an entry in Files' context menu for opening the selected directory in a new terminal - see [this commit](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gnome-terminal&id=b143484f73a75663abacb69435fd663c348861d2).
+NaN
 
 *   **Send to Menu** — Files context menu for sending files.
 
-[http://download.gnome.org/sources/nautilus-sendto/](http://download.gnome.org/sources/nautilus-sendto/) || [nautilus-sendto](https://www.archlinux.org/packages/?name=nautilus-sendto)
+NaN
 
 *   **Seahorse Nautilus** — PGP encryption and signing for Files
 
-[http://git.gnome.org/browse/seahorse-nautilus/](http://git.gnome.org/browse/seahorse-nautilus/) || [seahorse-nautilus](https://www.archlinux.org/packages/?name=seahorse-nautilus)
+NaN
 
 ## Configuration
 
@@ -174,12 +165,3 @@ inode/directory=org.gnome.Nautilus.desktop
 **Tip:** If you want the change to be system-wide, run the command above as root or create/edit the file `/usr/share/applications/mimeapps.list` and add the line there.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=412081](https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=412081)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

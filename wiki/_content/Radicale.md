@@ -1,9 +1,5 @@
 # Radicale
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DAViCal](/index.php/DAViCal "DAViCal")
@@ -68,7 +64,3 @@ The next step is to set up a virtual host for radicale. An example:
 Since it uses the CalDav and CardDav protocals, it should support most clients. Currently, the officially supported list is this: Mozilla Lightning GNOME Evolution KDE KOrganizer aCal, ContactSync, CalendarSync, CalDAV-Sync CardDAV-Sync and DAVdroid for Google Android InfCloud, CalDavZAP, CardDavMATE Apple iOS Mac OSX Calendar/Contacts syncEvolution
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Radicale&oldid=409928](https://wiki.archlinux.org/index.php?title=Radicale&oldid=409928)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

@@ -1,9 +1,5 @@
 # Dell Studio 1737
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 About this laptop](#About_this_laptop)
@@ -162,7 +158,3 @@ Keyboard works out of the box. For touchpad read the [Synaptics](/index.php/Syna
 Ethernet works out of the box. Wireless may work out of the box depending on your wifi card. If you have a Broadcom BCM43XX card, you will need to install the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> driver from the [AUR](/index.php/AUR "AUR"). Read [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") guide for details. [b43](/index.php/Broadcom_wireless#b43.2Fb43legacy "Broadcom wireless") driver can work as well, if supplied with proper firmware.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Studio_1737&oldid=368717](https://wiki.archlinux.org/index.php?title=Dell_Studio_1737&oldid=368717)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

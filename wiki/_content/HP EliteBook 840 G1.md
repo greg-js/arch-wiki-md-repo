@@ -1,154 +1,20 @@
 # HP EliteBook 840 G1
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table style="float:right; border: 1px solid #000;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>AMD graphics ([PRIME](/index.php/PRIME "PRIME"))</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-ati</td>
-
-</tr>
-
-<tr>
-
-<td>HDMI</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint reader</td>
-
-<td style="color:red">**Not working**</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xhci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>Memory Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Smart Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ccid, pcsclite</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working (except mic.)**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel graphics | **Working** | xf86-video-intel |
+| AMD graphics ([PRIME](/index.php/PRIME "PRIME")) | **Working** | xf86-video-ati |
+| HDMI | **Working** | xf86-video-intel |
+| Ethernet | **Working** |
+| Wireless | **Working** |
+| Bluetooth | **Working** |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** | xf86-input-synaptics |
+| Camera | **Working** | uvcvideo |
+| Fingerprint reader | **Not working** |
+| USB 3.0 | **Working** | xhci-hcd |
+| Memory Card Reader | **Working** |
+| Smart Card Reader | **Working** | ccid, pcsclite |
+| Function Keys | **Working (except mic.)** |
 
 ## Contents
 
@@ -225,7 +91,3 @@ This feature needs to be enabled in the bios / uefi setup: _Advanced > Built-in 
 *   [Setting GRUB as the default boot manager on a UEFI-based system](https://bbs.archlinux.org/viewtopic.php?id=168904&p=1)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_EliteBook_840_G1&oldid=407266](https://wiki.archlinux.org/index.php?title=HP_EliteBook_840_G1&oldid=407266)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

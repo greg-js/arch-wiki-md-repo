@@ -1,9 +1,5 @@
 # Starcraft
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is about the 1998 Starcraft, if you are looking for Starcraft 2, go [here](/index.php/Starcraft2 "Starcraft2").
 
 ## Installation
@@ -37,8 +33,3 @@ If the Audio tab could not detect OSS, even if you manually try to select this i
 *   [WineHQ's AppDB entry for StarCraft](http://appdb.winehq.org/objectManager.php?sClass=application&iId=72)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Starcraft&oldid=400630](https://wiki.archlinux.org/index.php?title=Starcraft&oldid=400630)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

@@ -1,9 +1,5 @@
 # Benchmarking
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
@@ -204,11 +200,3 @@ See also:
 *   [Unigine.com](http://unigine.com/download/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412704](https://wiki.archlinux.org/index.php?title=Benchmarking&oldid=412704)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware](/index.php/Category:Hardware "Category:Hardware")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

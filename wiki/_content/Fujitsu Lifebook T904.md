@@ -1,9 +1,5 @@
 # Fujitsu Lifebook T904
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Troubleshooting](#Troubleshooting)
@@ -120,11 +116,3 @@ Ensure modprobe has the correct aliases:
 **Note:** A reboot will likely be required for functional xorg touch/pen input.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fujitsu_Lifebook_T904&oldid=384457](https://wiki.archlinux.org/index.php?title=Fujitsu_Lifebook_T904&oldid=384457)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

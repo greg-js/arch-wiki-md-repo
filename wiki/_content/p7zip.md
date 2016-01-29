@@ -1,9 +1,5 @@
 # p7zip
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 p7zip is command line port of [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") for [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") systems, including Linux.
 
 ## Contents
@@ -62,7 +58,3 @@ The package includes three binaries, `/usr/bin/7z`, `/usr/bin/7za`, and `/usr/bi
 *   [How to use 7zip on Linux command Line.](https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/how_to_use_7zip_on_linux_command_line144?lang=en)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=P7zip&oldid=412149](https://wiki.archlinux.org/index.php?title=P7zip&oldid=412149)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")

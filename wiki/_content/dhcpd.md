@@ -1,9 +1,5 @@
 # dhcpd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd")
@@ -153,7 +149,3 @@ filename "/pxelinux.0";
 This section can either be in an entire `subnet` or just in a `host` definition. `next-server` is the IP of the TFTP Server, and `filename` is the filename of the image to boot. For more information see [PXE](/index.php/PXE "PXE").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dhcpd&oldid=412063](https://wiki.archlinux.org/index.php?title=Dhcpd&oldid=412063)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

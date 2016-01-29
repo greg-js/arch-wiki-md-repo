@@ -1,9 +1,5 @@
 # CrashPlan
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 CrashPlan is a backup program that backs up data to remote servers, other computers, or hard drives. Backing up to the cloud servers requires a monthly subscription.
 
 ## Contents
@@ -114,12 +110,3 @@ If you use real time protection for your backup set and have a lot of files to b
 *   [Wikipedia:CrashPlan](https://en.wikipedia.org/wiki/CrashPlan "wikipedia:CrashPlan")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CrashPlan&oldid=411361](https://wiki.archlinux.org/index.php?title=CrashPlan&oldid=411361)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

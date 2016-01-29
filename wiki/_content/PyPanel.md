@@ -1,24 +1,12 @@
 # PyPanel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [PyPanel sourceforge page](http://pypanel.sourceforge.net/):
 
-PyPanel is a lightweight panel/taskbar written in Python and C for X11 window managers. It can be easily customized to match any desktop theme or taste. PyPanel works with EWMH compliant WMs (Openbox, PekWM, FVWM, etc.) and is distributed under the GNU General Public License v2\.
+NaN
 
-Some of the customizable features include:
+NaN
 
-*   Transparency with shading/tinting
-*   Panel dimensions, location and layout
-*   Font type and colors with Xft and shadow support
-*   Button events/actions
-*   Clock and workspace name display
-*   System Tray (Notification Area)
-*   Autohiding
-*   Application Launcher
-*   Custom Application Icons
+NaN
 
 ## Contents
 
@@ -142,8 +130,3 @@ $ touch ~/.Xauthority
 *   [PyPanel SourceForge page](http://pypanel.sourceforge.net)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PyPanel&oldid=415382](https://wiki.archlinux.org/index.php?title=PyPanel&oldid=415382)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

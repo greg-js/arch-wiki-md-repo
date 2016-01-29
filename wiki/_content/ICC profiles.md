@@ -1,9 +1,5 @@
 # ICC profiles
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 As it pertains to general desktop use, an ICC profile is a binary file which contains precise data regarding the color attributes of an input, or output device ([Source](http://en.wikipedia.org/wiki/ICC_profile)). Single, or multiple profiles can be applied across a system and its devices to produce consistent and repeatable results for graphic and document editing and publishing. ICC profiles are typically calibrated with a [(tristimulus) colorimeter](http://en.wikipedia.org/wiki/Tristimulus_colorimeter), or a spectrophotometer when absolute color accuracy is required.
 
 ## Contents
@@ -210,7 +206,3 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=414055](https://wiki.archlinux.org/index.php?title=ICC_profiles&oldid=414055)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")

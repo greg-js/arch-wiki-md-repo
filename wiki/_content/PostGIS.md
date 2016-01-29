@@ -1,9 +1,5 @@
 # PostGIS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 PostGIS adds support for geographic objects in the PostgreSQL database. This document describes the process for installing PostGIS and creating a template PostGIS database. It is assumed that PostgreSQL has been installed. If it hasn't, please refer to the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") page.
 
 ## Contents
@@ -122,7 +118,3 @@ This happends when adding postgis as an extension. The libjson-c package has cha
 The fix is to download the postgis PKGBUILD and then change the version to '2.1.0rc1'. Don't forget to change the sha256sum.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PostGIS&oldid=410630](https://wiki.archlinux.org/index.php?title=PostGIS&oldid=410630)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

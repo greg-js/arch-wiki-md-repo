@@ -1,9 +1,5 @@
 # iPod
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Audiobook](/index.php/Audiobook "Audiobook")
@@ -139,7 +135,7 @@ If you do decide to take the CLI way, a good guide is available at [http://trac.
 
 #### DVD to iPod
 
-**Get from:** [podencoder](https://aur.archlinux.org/packages/podencoder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/podencoder)]</sup>  
+**Get from:** [podencoder](https://aur.archlinux.org/packages/podencoder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/podencoder)]</sup>
 **Depends on:** aur/gpac mplayer
 
 Has detailed help, and is fairly self explanatory.
@@ -148,7 +144,7 @@ An alternative is to use a method suggested at [DVD Ripping](/index.php/DVD_Ripp
 
 #### Video File to iPod
 
-**Get from:** [http://thomer.com/howtos/mp4ize](http://thomer.com/howtos/mp4ize)  
+**Get from:** [http://thomer.com/howtos/mp4ize](http://thomer.com/howtos/mp4ize)
 **Depends on:** [mplayer](https://www.archlinux.org/packages/?name=mplayer)
 
 This is a Ruby script to convert video files to an mp4 suitable for an iPod or iPhone.
@@ -513,12 +509,3 @@ Your iPod can now be managed with Amarok or gtkpod.
     *   [Apple trailers downloader script](http://wiki.gotux.net/code/perl/atget)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IPod&oldid=412462](https://wiki.archlinux.org/index.php?title=IPod&oldid=412462)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Neovim
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Neovim is a fork of [Vim](/index.php/Vim "Vim") aiming to improve user experience, plugins, and GUIs.
 
 ## Contents
@@ -44,8 +40,3 @@ To get more info about the transition run the following command in neovim:
 *   [Github wiki](https://github.com/neovim/neovim/wiki)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Neovim&oldid=408983](https://wiki.archlinux.org/index.php?title=Neovim&oldid=408983)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")

@@ -1,9 +1,5 @@
 # 9vx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 9vx is an implementation of the simple x86 virtual machine vx32 specifically designed for running real Plan9 on other host systems.
 
 ## Contents
@@ -60,7 +56,3 @@ Recent advances in 9front and possibly 9atom makes those distributions possible 
 Also, for the CWFS of 9front, you need to make a disk image of at least 12 GiB.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=9vx&oldid=198018](https://wiki.archlinux.org/index.php?title=9vx&oldid=198018)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")

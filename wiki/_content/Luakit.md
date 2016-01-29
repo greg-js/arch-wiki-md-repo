@@ -1,9 +1,5 @@
 # Luakit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Luakit](http://mason-larobina.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts.
 
 ## Contents
@@ -482,11 +478,3 @@ domain_props = {
 *   [Cheatsheet](http://shariebeth.com/computers/luakitcheatsheet.txt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Luakit&oldid=412706](https://wiki.archlinux.org/index.php?title=Luakit&oldid=412706)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

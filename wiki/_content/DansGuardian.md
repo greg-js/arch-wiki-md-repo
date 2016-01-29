@@ -1,16 +1,8 @@
 # DansGuardian
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](http://dansguardian.org):
 
-_DansGuardian is an award winning Open Source web content filter which currently runs on Linux, FreeBSD, OpenBSD, NetBSD, Mac OS X, HP-UX, and Solaris. It filters the actual content of pages based on many methods including phrase matching, PICS filtering and URL filtering. It does not purely filter based on a banned list of sites like lesser totally commercial filters._
-
-_DansGuardian is designed to be completely flexible and allows you to tailor the filtering to your exact needs. It can be as draconian or as unobstructive as you want. The default settings are geared towards what a primary school might want but DansGuardian puts you in control of what you want to block._
-
-_DansGuardian is a true web content filter._
+NaN
 
 DansGuardian is excellent at filtering pages from the Internet as it examines both the URL and the content of the page, and it has many options to allow you to fine tune the process. To run DansGuardian, you will first need a proxy in place. DansGuardian will work with many proxy servers, such as [Polipo](/index.php/Polipo "Polipo") or [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy), but [Squid](/index.php/Squid "Squid") is the recommended one.
 
@@ -89,7 +81,3 @@ If you wish to change the page that gets displayed to users when a website is bl
 If you would like a web-based frontend to manage DansGuardian, you could use [Webmin](/index.php/Webmin "Webmin") with the DansGuardian [Webmin Module](http://sourceforge.net/projects/dgwebminmodule/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DansGuardian&oldid=410325](https://wiki.archlinux.org/index.php?title=DansGuardian&oldid=410325)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

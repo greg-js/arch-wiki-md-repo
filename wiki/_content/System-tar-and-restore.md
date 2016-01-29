@@ -1,9 +1,5 @@
 # System-tar-and-restore
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **System-tar-and-restore** contains two bash scripts, **backup.sh** and **restore.sh**. The former makes a tar backup of your system. The latter restores the backup or transfers your system using [rsync](https://www.archlinux.org/packages/?name=rsync) in desired partition(s). The scripts include two interfaces, **cli** and **dialog** (ncurses). If you plan to use the second, install [dialog](https://www.archlinux.org/packages/?name=dialog) from the [official repositories](/index.php/Official_repositories "Official repositories"). Also a [gui wrapper](https://github.com/tritonas00/system-tar-and-restore#gui) is available. Install [gtkdialog](https://www.archlinux.org/packages/?name=gtkdialog) and run `star-gui.sh` as root in order to use it.
 
 ## Contents
@@ -85,7 +81,3 @@ All options can also be passed using arguments. See `restore.sh --help`, `man sy
 When the process completes, you may want to check `/tmp/restore.log`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=System-tar-and-restore&oldid=414895](https://wiki.archlinux.org/index.php?title=System-tar-and-restore&oldid=414895)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

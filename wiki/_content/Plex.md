@@ -1,9 +1,5 @@
 # Plex
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Plex is a media player system and software suite consisting of many player applications for 10-foot user interfaces and an associated media server that organizes personal media stored on local devices. Integrated Plex Channels provide users with access to a growing number of online content providers such as YouTube, Vimeo, TEDTalks, and CNN among others. Plex also provides integration for cloud services including Dropbox, Box, Google Drive, Copy and Bitcasa.
 
 Plex for Linux is split into a closed-source server Plex Media Server, and an open-source client Plex Home Theater, a fork of the popular XBMC.
@@ -107,11 +103,7 @@ If you share your libraries with some friends, but want the data to go through y
 #### How to
 
 1.  Go to your vpn provider settings and ask for a port. _(We're going to assume ours gave us the port 11652)_
-2.  Then add the following command to your boot sequence _(rc.local for example)_
-
-    `# iptables -t nat -A PREROUTING -i tun0 -p tcp --dport 11652 -j REDIRECT --to-ports 32400`
-
-    _(We're going to assume you're using the tun0 interface for openvpn)_
+2.  Then add the following command to your boot sequence _(rc.local for example)_NaN
 
 3.  Finally, go to your plex server settings, enable advanced settings and define the custom port at 11652
 
@@ -161,11 +153,3 @@ With the PleXBMC add-on, Kodi can be used as a replacement for PHT.
 Install the [kodi](https://www.archlinux.org/packages/?name=kodi) package, then follow the instructions over [here](http://kodi.wiki/view/Add-on:PleXBMC).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Plex&oldid=415966](https://wiki.archlinux.org/index.php?title=Plex&oldid=415966)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

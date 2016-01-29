@@ -1,9 +1,5 @@
 # Polkit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Session](/index.php/Session "Session")
@@ -12,7 +8,7 @@ Related articles
 
 From [polkit homepage](http://www.freedesktop.org/wiki/Software/polkit/):
 
-_polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications._
+NaN
 
 Polkit is used for controlling system-wide privileges. It provides an organized way for non-privileged processes to communicate with privileged ones. In contrast to systems such as sudo, it does not grant root permission to an entire process, but rather allows a finer level of control of centralized system policy.
 
@@ -264,11 +260,3 @@ polkit.addAdminRule(function(action, subject) {
 *   [Polkit manual page](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Polkit&oldid=411919](https://wiki.archlinux.org/index.php?title=Polkit&oldid=411919)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

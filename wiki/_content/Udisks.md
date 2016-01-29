@@ -1,9 +1,5 @@
 # Udisks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [udev](/index.php/Udev "Udev")
@@ -229,7 +225,3 @@ Run as a workaround:
 *   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=415918](https://wiki.archlinux.org/index.php?title=Udisks&oldid=415918)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")

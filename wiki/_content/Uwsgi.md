@@ -1,9 +1,5 @@
 # Uwsgi
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Uwsgi is a fast, self-healing and developer/sysadmin-friendly application container server coded in pure C.
 
 ## Contents
@@ -285,11 +281,3 @@ At this point your application should be served, issue `127.0.0.1` on your brows
 *   [Apache and uwsgi](http://uwsgi-docs.readthedocs.org/en/latest/Apache.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Uwsgi&oldid=412202](https://wiki.archlinux.org/index.php?title=Uwsgi&oldid=412202)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

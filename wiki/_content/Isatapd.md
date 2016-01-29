@@ -1,9 +1,5 @@
 # Isatapd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Daemon](/index.php/Daemon "Daemon")
@@ -28,7 +24,3 @@ If you want to modify other options instead of using the default values, have a 
 Start and enable isatapd systemd [service](/index.php/Systemd#Using_units "Systemd").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Isatapd&oldid=352761](https://wiki.archlinux.org/index.php?title=Isatapd&oldid=352761)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

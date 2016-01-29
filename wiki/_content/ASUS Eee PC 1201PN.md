@@ -1,9 +1,5 @@
 # ASUS Eee PC 1201PN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Other than the noted differences, the settings for the [ASUS Eee PC 1201NL](/index.php/ASUS_Eee_PC_1201NL "ASUS Eee PC 1201NL") apply to the 1201PN.
 
 ## Wireless
@@ -23,7 +19,3 @@ Disable the other settings and use your WMs default keybinding manager (or Xbind
 [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") Simply bind your keys to the necessary action.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201PN&oldid=376561](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201PN&oldid=376561)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

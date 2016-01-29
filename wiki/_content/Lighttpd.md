@@ -1,9 +1,5 @@
 # Lighttpd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Lighttpd](http://www.lighttpd.net/) is "a secure, fast, compliant, and very flexible [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") that has been optimized for high-performance environments. It has a very low memory footprint compared to other webservers and takes care of cpu-load. Its advanced feature-set ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, Output-Compression, URL-Rewriting and many more) make lighttpd the perfect webserver-software for every server that suffers load problems."
 
 ## Contents
@@ -473,11 +469,3 @@ include "conf.d/compress.conf"
 *   [Lighttpd wiki](http://redmine.lighttpd.net/projects/lighttpd/wiki)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lighttpd&oldid=412896](https://wiki.archlinux.org/index.php?title=Lighttpd&oldid=412896)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

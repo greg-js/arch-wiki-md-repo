@@ -1,9 +1,5 @@
 # Unclutter
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -65,11 +61,3 @@ Unclutter is a tool from the early 90s and has not been updated since. It works 
 [http://linuxappfinder.com/package/unclutter](http://linuxappfinder.com/package/unclutter) - Unclutter on Linux App Finder
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Unclutter&oldid=412197](https://wiki.archlinux.org/index.php?title=Unclutter&oldid=412197)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

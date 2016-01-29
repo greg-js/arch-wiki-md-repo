@@ -1,9 +1,5 @@
 # PostgreSQL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PhpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")
@@ -273,11 +269,11 @@ template1 | postgres | UTF8      | C         | C     |
 
 *   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Web-based administration tool for PostgreSQL.
 
-[http://phppgadmin.sourceforge.net](http://phppgadmin.sourceforge.net) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)
+NaN
 
 *   **pgAdmin** — GUI-based administration tool for PostgreSQL.
 
-[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3)
+NaN
 
 ## Setup HHVM to work with PostgreSQL
 
@@ -352,11 +348,11 @@ If you had custom settings in configuration files like `pg_hba.conf` and `postgr
 
 If the `pg_upgrade` step fails with:
 
-*   _cannot write to log file pg_upgrade_internal.log  
-    Failure, exiting_  
+*   _cannot write to log file pg_upgrade_internal.log
+    Failure, exiting_
     Make sure you are in a directory that the postgres user has enough rights to write the log file to (`/tmp` for example). Or use `su - postgres` instead of `sudo -u postgres`.
 
-*   _LC_COLLATE error that says that old and new values are different_  
+*   _LC_COLLATE error that says that old and new values are different_
     Figure out what the old locale was, `C` or `en_US.UTF-8` for example, and force it when calling `initdb`.
 
 ```
@@ -364,8 +360,8 @@ If the `pg_upgrade` step fails with:
 
 ```
 
-*   _There seems to be a postmaster servicing the old cluster.  
-    Please shutdown that postmaster and try again._  
+*   _There seems to be a postmaster servicing the old cluster.
+    Please shutdown that postmaster and try again._
     Make sure postgres is not running. If you still get the error, then chances are there is an old PID file you need to clear out.
 
  `$ sudo -u postgres ls -l /var/lib/postgres/data-9.2` 
@@ -396,7 +392,7 @@ $ sudo -u postgres mv /var/lib/postgres/data-9.2/postmaster.pid /tmp
 
 ```
 
-*   _ERROR: could not access file "$libdir/postgis-2.0": No such file or directory_  
+*   _ERROR: could not access file "$libdir/postgis-2.0": No such file or directory_
     Retrieve `postgis-2.0.so` from [postgis](https://www.archlinux.org/packages/?name=postgis) for version postgresql 9.2 () and copy it to `/opt/pgsql-9.2/lib` (make sure the privileges are right).
 
 ### Detailed instructions
@@ -469,12 +465,3 @@ PostgreSQL periodically updates its internal "statistics" file. By default, this
 Install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and edit the `php.ini` file uncommenting the lines `extension=pdo_pgsql.so` and `extension=pgsql.so`, then restart `httpd`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412008](https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412008)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

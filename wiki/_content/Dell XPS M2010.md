@@ -1,9 +1,5 @@
 # Dell XPS M2010
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -156,7 +152,3 @@ The following devices/functions were untested:
 *   Internal modem
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_M2010&oldid=384440](https://wiki.archlinux.org/index.php?title=Dell_XPS_M2010&oldid=384440)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

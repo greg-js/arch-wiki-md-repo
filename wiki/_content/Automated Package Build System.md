@@ -1,9 +1,5 @@
 # Automated Package Build System
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 What is an Automated Build System](#What_is_an_Automated_Build_System)
@@ -211,7 +207,3 @@ Links:
 *   [https://github.com/archlinuxarm/plugbuild](https://github.com/archlinuxarm/plugbuild) - An automated distributed build system used to build archlinux-arm, written in perl
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Automated_Package_Build_System&oldid=276495](https://wiki.archlinux.org/index.php?title=Automated_Package_Build_System&oldid=276495)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

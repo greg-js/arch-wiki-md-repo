@@ -1,9 +1,5 @@
 # Atom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Atom](https://atom.io/) is an open-source text editor developed by GitHub that is licensed under the MIT License. It is written predominantly in CoffeeScript and JavaScript and uses Node.js as its runtime environment. It is extensively extensible via use of over 3,500 available packages and 1,000 themes. It uses its own package manager for managing these packages and themes, apm.
 
 ## Installation
@@ -37,8 +33,3 @@ $ apm install _package_name1_ _package_name2_ _package_name3_ ...
 *   [terminal-plus](https://atom.io/packages/terminal-plus) which adds an embedded terminal window to Atom.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Atom&oldid=417077](https://wiki.archlinux.org/index.php?title=Atom&oldid=417077)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")

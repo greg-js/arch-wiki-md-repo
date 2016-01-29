@@ -1,9 +1,5 @@
 # Juniper VPN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -69,17 +65,7 @@ cafile=/etc/ssl/bar-chain.pem
 certfile=
 ```
 
-cafile
-
-ca chain to verify the host certificate
-
-certfile
-
-host certificate in DER format. Cafile or certfile must be configured, you can download them from your VPN sign-in page (certificate information, export certificate).
-
-realm
-
-You can find out your realm by viewing the page source of your VPN sign-in page: just search for the word realm in it.
+NaN
 
 5) Start / stop network connect:
 
@@ -399,12 +385,3 @@ The [OpenConnect](http://www.infradead.org/openconnect/) VPN client has recently
 To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect) from the Archlinux respositories. If you want NetworkManager support, also install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), and restart NetworkManager.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Juniper_VPN&oldid=399058](https://wiki.archlinux.org/index.php?title=Juniper_VPN&oldid=399058)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

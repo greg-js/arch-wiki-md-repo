@@ -1,9 +1,5 @@
 # JACK Audio Connection Kit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -415,11 +411,3 @@ Run VLC and change the following menu options:
 *   [Pro Audio](/index.php/Pro_Audio "Pro Audio")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415263](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=415263)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # ArchAudio
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _This page contains information related to a [third-party initiative](/index.php/Getting_involved#Community_projects "Getting involved"). You may be looking for [Pro Audio](/index.php/Pro_Audio "Pro Audio") and not even know it!_
 
 If you have come here from another page, or were referred, you are probably interested in the [ArchAudio](http://archaudio.org/) [repositories](http://archaudio.org/packages/).
@@ -238,7 +234,3 @@ svn ci -m "$yourmessage" # to finally commit all changes
 *   Always check the upstream changelog if an update does not go smoothly
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchAudio&oldid=389736](https://wiki.archlinux.org/index.php?title=ArchAudio&oldid=389736)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sound](/index.php/Category:Sound "Category:Sound")

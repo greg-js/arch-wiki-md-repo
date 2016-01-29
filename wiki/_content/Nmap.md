@@ -1,9 +1,5 @@
 # Nmap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From the [official website](http://nmap.org/):
 
-_Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime._
+NaN
 
 **Warning:** Invoking network scan techniques on systems, hosts or network ranges other than those under the own responsibility is illegal in quite a few jurisdictions. Double-check you scan your own hosts only (see [#List scan](#List_scan)), or re-confirm the approval of the respective owner, before executing a scan!
 
@@ -134,139 +130,23 @@ This will cause Nmap to ping every one of the specified addresses and then repor
 
 Nmap uses different kinds of ping packets when run with user or root privileges and when scanning the same or different subnets:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>External IP</th>
-
-<th>Local IP</th>
-
-</tr>
-
-<tr>
-
-<th>User privileges</th>
-
-<td>TCP SYN at ports 80 & 443</td>
-
-<td>TCP SYN at ports 80 & 443 and ARP</td>
-
-</tr>
-
-<tr>
-
-<th>Root privileges</th>
-
-<td>TCP SYN at ports 80 & 443 and IGMP</td>
-
-<td>ARP</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ External IP | Local IP |
+| User privileges | TCP SYN at ports 80 & 443 | TCP SYN at ports 80 & 443 and ARP |
+| Root privileges | TCP SYN at ports 80 & 443 and IGMP | ARP |
 
 ### Ping scan types
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Ping scan type</th>
-
-</tr>
-
-<tr>
-
-<td>`-Pn`</td>
-
-<td>Disable ping scan entirely</td>
-
-</tr>
-
-<tr>
-
-<td>`-PS`</td>
-
-<td>TCP **S**YN (default at port 80)</td>
-
-</tr>
-
-<tr>
-
-<td>`-PA`</td>
-
-<td>TCP **A**CK (default at port 80)</td>
-
-</tr>
-
-<tr>
-
-<td>`-PU`</td>
-
-<td>**U**DP</td>
-
-</tr>
-
-<tr>
-
-<td>`-PY`</td>
-
-<td>SCTP INIT</td>
-
-</tr>
-
-<tr>
-
-<td>`-PE`</td>
-
-<td>ICMP **E**cho</td>
-
-</tr>
-
-<tr>
-
-<td>`-PP`</td>
-
-<td>ICMP timestam**p**</td>
-
-</tr>
-
-<tr>
-
-<td>`-PM`</td>
-
-<td>ICMP address **m**ask</td>
-
-</tr>
-
-<tr>
-
-<td>`-PO`</td>
-
-<td>**O**ther IP protocol</td>
-
-</tr>
-
-<tr>
-
-<td>`-PR`</td>
-
-<td>[ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol "wikipedia:Address Resolution Protocol") scan</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Option | Ping scan type |
+| `-Pn` | Disable ping scan entirely |
+| `-PS` | TCP **S**YN (default at port 80) |
+| `-PA` | TCP **A**CK (default at port 80) |
+| `-PU` | **U**DP |
+| `-PY` | SCTP INIT |
+| `-PE` | ICMP **E**cho |
+| `-PP` | ICMP timestam**p** |
+| `-PM` | ICMP address **m**ask |
+| `-PO` | **O**ther IP protocol |
+| `-PR` | [ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol "wikipedia:Address Resolution Protocol") scan |
 
 `-Pn` is useful when the machine is heavily firewalled, TCP 80 and 443 ports and IGMP requests are blocked, but the IP address might still have a machine listening on other less common ports.
 
@@ -307,117 +187,19 @@ $ nmap -p -
 
 ### Scan types
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Port scan type</th>
-
-</tr>
-
-<tr>
-
-<td>`-sP`</td>
-
-<td>[Ping scan](#Ping_scan) only</td>
-
-</tr>
-
-<tr>
-
-<td>`-sS`</td>
-
-<td>TCP SYN (stealth) (Default as root)</td>
-
-</tr>
-
-<tr>
-
-<td>`-sT`</td>
-
-<td>TCP connect (Default as user)</td>
-
-</tr>
-
-<tr>
-
-<td>`-sA`</td>
-
-<td>TCP ACK</td>
-
-</tr>
-
-<tr>
-
-<td>`-sF`</td>
-
-<td>TCP FIN</td>
-
-</tr>
-
-<tr>
-
-<td>`-sX`</td>
-
-<td>TCP FIN, SYN, ACK</td>
-
-</tr>
-
-<tr>
-
-<td>`-sW`</td>
-
-<td>TCP window</td>
-
-</tr>
-
-<tr>
-
-<td>`-sM`</td>
-
-<td>TCP Miamon</td>
-
-</tr>
-
-<tr>
-
-<td>`-sU`</td>
-
-<td>UDP scan</td>
-
-</tr>
-
-<tr>
-
-<td>`-sI`</td>
-
-<td>Idle scan</td>
-
-</tr>
-
-<tr>
-
-<td>`-b`</td>
-
-<td>FTP bounce scan</td>
-
-</tr>
-
-<tr>
-
-<td>`-sO`</td>
-
-<td>Other IP protocol</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Option | Port scan type |
+| `-sP` | [Ping scan](#Ping_scan) only |
+| `-sS` | TCP SYN (stealth) (Default as root) |
+| `-sT` | TCP connect (Default as user) |
+| `-sA` | TCP ACK |
+| `-sF` | TCP FIN |
+| `-sX` | TCP FIN, SYN, ACK |
+| `-sW` | TCP window |
+| `-sM` | TCP Miamon |
+| `-sU` | UDP scan |
+| `-sI` | Idle scan |
+| `-b` | FTP bounce scan |
+| `-sO` | Other IP protocol |
 
 ## Anti-scanning techniques
 
@@ -429,19 +211,19 @@ It has 4 parameters:
 
 *   `--psd-weight-threshold _threshold_`, default value: `21`
 
-Total weight of the latest TCP/UDP packets with different destination ports coming from the same host to be treated as port scan sequence.
+NaN
 
 *   `--psd-delay-threshold _delay_`, default value: `300` (3 seconds)
 
-Delay (in hundredths of second) for the packets with different destination ports coming from the same host to be treated as possible port scan subsequence.
+NaN
 
 *   `--psd-lo-ports-weight _weight_`, default value: `3`
 
-Weight of the packet with privileged (<=1024) destination port.
+NaN
 
 *   `--psd-hi-ports-weight _weight_`, default value: `1`
 
-Weight of the packet with non-priviliged (>1024) destination port.
+NaN
 
 The principle behind PSD is simple. If requests from a single IP have gained a value more than _threshold_ in _delay_ seconds, then the IP is classified as a port scanner. In a math expression:
 
@@ -592,19 +374,19 @@ Nmap has built-in support for for file output alongside with terminal output:
 
 *   `-oN _filename_`
 
-Normal output, same as the terminal output
+NaN
 
 *   `-oX _filename_`
 
-XML output, contains very detailed information about the scan, easy to parse with software
+NaN
 
 *   `-oG _filename_`
 
-Grepable output, deprecated
+NaN
 
 *   `-oA`
 
-All of the above combined. Creates files called `_sitename_.nmap`, `_sitename_.xml` and `_sitename_.gnmap` if no filename is specified
+NaN
 
 For example to output to the terminal, to file and to XML file:
 
@@ -620,12 +402,3 @@ $ nmap -oN output.txt -oX output.xml scanme.nmap.org
 *   [Nmap on Wikipedia](https://en.wikipedia.org/wiki/Nmap "wikipedia:Nmap")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nmap&oldid=413277](https://wiki.archlinux.org/index.php?title=Nmap&oldid=413277)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

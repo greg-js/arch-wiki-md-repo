@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X200
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Lenovo ThinkPad X200 is a high-quality laptop featuring a 12.1" widescreen WXGA display, an Intel Core 2 Duo processor (2.26 - 2.66GHz), an Intel Graphics Media Accelerator 4500MHD and up to 8GB of RAM whilst still maintaining impressive battery life.
 
 ## Contents
@@ -335,11 +331,3 @@ For more information see [[1]](http://www.thinkwiki.org/wiki/Problem_with_high_p
 *   [Example installation procedure for X200s](https://gist.github.com/yuvadm/52b3f350293a96501478)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X200&oldid=392341](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X200&oldid=392341)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

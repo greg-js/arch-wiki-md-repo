@@ -1,9 +1,5 @@
 # Repo-ck
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Linux-ck](/index.php/Linux-ck "Linux-ck")
@@ -38,157 +34,23 @@ CPU-specific optimizations are invoked by selecting _Processor type and features
 
 Packages marked with `*` are available only for the 64-bit systems, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1423574#p1423574).
 
-<table class="wikitable" align="center">
-
-<tbody>
-
-<tr>
-
-<th>CPU Type</th>
-
-<th>Group Alias</th>
-
-<th>Details</th>
-
-</tr>
-
-<tr>
-
-<td style="background: #aff; color: inherit; vertical-align: middle; text-align: center;">**Generic**</td>
-
-<td>_ck-generic_</td>
-
-<td>Generic kernel similar to the official Arch Linux kernel.</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="10" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">**Intel**</td>
-
-<td>_ck-atom_</td>
-
-<td>Intel Atom specific optimizations.</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-silvermont *_</td>
-
-<td>Intel Silvermont specific optimizations.</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-core2_</td>
-
-<td>Intel Core 2-family including Dual and Quads.</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-nehalem *_</td>
-
-<td>Intel 1st Generation Core i3/i5/i7-family</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-sandybridge *_</td>
-
-<td>Intel 2nd Generation Core i3/i5/i7-family</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-ivybridge *_</td>
-
-<td>Intel 3rd Generation Core i3/i5/i7-family</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-haswell *_</td>
-
-<td>Intel 4th Generation Core i3/i5/i7-family</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-broadwell *_</td>
-
-<td>Intel 5th Generation Core i3/i5/i7-family</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-p4_</td>
-
-<td>Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon).</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-pentm_</td>
-
-<td>Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M).</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="5" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">**AMD**</td>
-
-<td>_ck-kx_</td>
-
-<td>AMD K7/K8-family</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-k10 *_</td>
-
-<td>AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor.</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-bobcat *_</td>
-
-<td>CPUs based on AMD Family 14h cores with x86-64 instruction set support.</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-bulldozer *_</td>
-
-<td>CPUs based on AMD Family 15h cores with x86-64 instruction set support.</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-piledriver *_</td>
-
-<td>CPUs based on AMD Family 15h cores with x86-64 instruction set support.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| CPU Type | Group Alias | Details |
+| **Generic** | _ck-generic_ | Generic kernel similar to the official Arch Linux kernel. |
+| **Intel** | _ck-atom_ | Intel Atom specific optimizations. |
+| _ck-silvermont *_ | Intel Silvermont specific optimizations. |
+| _ck-core2_ | Intel Core 2-family including Dual and Quads. |
+| _ck-nehalem *_ | Intel 1st Generation Core i3/i5/i7-family |
+| _ck-sandybridge *_ | Intel 2nd Generation Core i3/i5/i7-family |
+| _ck-ivybridge *_ | Intel 3rd Generation Core i3/i5/i7-family |
+| _ck-haswell *_ | Intel 4th Generation Core i3/i5/i7-family |
+| _ck-broadwell *_ | Intel 5th Generation Core i3/i5/i7-family |
+| _ck-p4_ | Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon). |
+| _ck-pentm_ | Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M). |
+| **AMD** | _ck-kx_ | AMD K7/K8-family |
+| _ck-k10 *_ | AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor. |
+| _ck-bobcat *_ | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
+| _ck-bulldozer *_ | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
+| _ck-piledriver *_ | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
 
 ## Selecting the correct CPU optimized package
 
@@ -205,147 +67,22 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 
 **Note:** This table has been updated to show the new simplified march options that ship with GCC v4.9+. For more information see the [release notes](https://gcc.gnu.org/gcc-4.9/changes.html).
 
-<table class="wikitable" align="center">
-
-<tbody>
-
-<tr>
-
-<th>Brand</th>
-
-<th>Group</th>
-
-<th>March</th>
-
-</tr>
-
-<tr>
-
-<td rowspan="10" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">**Intel**</td>
-
-<td>_ck-atom_</td>
-
-<td>bonnell</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-silvermont_</td>
-
-<td>silvermont</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-core2_</td>
-
-<td>core2</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-nehalem_</td>
-
-<td>nehalem</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-sandybridge_</td>
-
-<td>sandybridge</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-ivybridge_</td>
-
-<td>ivybridge</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-haswell_</td>
-
-<td>haswell</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-broadwell_</td>
-
-<td>broadwell</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-p4_</td>
-
-<td>pentium4, prescott, nocona</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-pentm_</td>
-
-<td>pentm, pentium-m</td>
-
-</tr>
-
-<tr>
-
-<td rowspan="5" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">**AMD**</td>
-
-<td>_ck-kx_</td>
-
-<td>athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-k10_</td>
-
-<td>amdfam10</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-bobcat_</td>
-
-<td>btver1</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-bulldozer_</td>
-
-<td>bdver1</td>
-
-</tr>
-
-<tr>
-
-<td>_ck-piledriver_</td>
-
-<td>bdver2</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Brand | Group | March |
+| **Intel** | _ck-atom_ | bonnell |
+| _ck-silvermont_ | silvermont |
+| _ck-core2_ | core2 |
+| _ck-nehalem_ | nehalem |
+| _ck-sandybridge_ | sandybridge |
+| _ck-ivybridge_ | ivybridge |
+| _ck-haswell_ | haswell |
+| _ck-broadwell_ | broadwell |
+| _ck-p4_ | pentium4, prescott, nocona |
+| _ck-pentm_ | pentm, pentium-m |
+| **AMD** | _ck-kx_ | athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3 |
+| _ck-k10_ | amdfam10 |
+| _ck-bobcat_ | btver1 |
+| _ck-bulldozer_ | bdver1 |
+| _ck-piledriver_ | bdver2 |
 
 **Note:** Add additional entries to this table based on experience.
 
@@ -421,11 +158,3 @@ Alternatively, change the [pacman](/index.php/Pacman "Pacman") downloader to [wg
 See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1422475#p1422475) for an explanation of these issues.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Repo-ck&oldid=414104](https://wiki.archlinux.org/index.php?title=Repo-ck&oldid=414104)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

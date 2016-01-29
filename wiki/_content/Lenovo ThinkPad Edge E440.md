@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge E440
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -12,107 +8,16 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 **Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Lenovo ThinkPad Edge E440#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_Edge_E440))
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>linux-uvc</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Not tested</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Not tested</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint scanner</td>
-
-<td style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Not working</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Graphics | Working | xf86-video-intel |
+| Ethernet | Working | r8169 |
+| Wireless | Working | ath9k |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | xf86-input-synaptics |
+| Camera | Working | linux-uvc |
+| Card Reader | Not tested |
+| Bluetooth | Not tested |
+| Fingerprint scanner | Not working |
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
@@ -139,133 +44,18 @@ Lenovo ThinkPad E440 comes with a wide range of available configurations.
 
 **Tip:** Below are the tested configurations at the time.
 
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Feature</th>
-
-<th>Configuration</th>
-
-<th>Configuration</th>
-
-</tr>
-
-<tr>
-
-<td>System</td>
-
-<td>E440 20C500FBRT</td>
-
-<td>E440 20C5005LRT</td>
-
-</tr>
-
-<tr>
-
-<td>CPU</td>
-
-<td>Intel(R) Core(TM) i3-4000M CPU @ 2.40GHz or i5-4200M @ 2.50 GHz</td>
-
-<td>Intel(R) Pentium(R) CPU 3550M @ 2.30GHz</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td>Intel HD 4600</td>
-
-<td>Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)</td>
-
-</tr>
-
-<tr>
-
-<td>Ram</td>
-
-<td>4GB</td>
-
-<td>4GB</td>
-
-</tr>
-
-<tr>
-
-<td>Disk</td>
-
-<td>500GB 7200 rpm HDD</td>
-
-<td>500GB</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>14" TFT 1366x768</td>
-
-<td>14" TFT</td>
-
-</tr>
-
-<tr>
-
-<td>Wi-Fi</td>
-
-<td>Intel Corporation Wireless 7260</td>
-
-<td>Intel Corporation Wireless 7260 (rev 73)</td>
-
-</tr>
-
-<tr>
-
-<td>Backlit Keyboard</td>
-
-<td>No</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint Scanner</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Cam</td>
-
-<td>Yes</td>
-
-<td>Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | Configuration | Configuration |
+| System | E440 20C500FBRT | E440 20C5005LRT |
+| CPU | Intel(R) Core(TM) i3-4000M CPU @ 2.40GHz or i5-4200M @ 2.50 GHz | Intel(R) Pentium(R) CPU 3550M @ 2.30GHz |
+| Graphics | Intel HD 4600 | Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06) |
+| Ram | 4GB | 4GB |
+| Disk | 500GB 7200 rpm HDD | 500GB |
+| Display | 14" TFT 1366x768 | 14" TFT |
+| Wi-Fi | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 (rev 73) |
+| Backlit Keyboard | No | No |
+| Fingerprint Scanner | Yes | Yes |
+| Bluetooth | Yes | Yes |
+| Cam | Yes | Yes |
 
 ## Configuration
 
@@ -370,11 +160,3 @@ sudo dd if=bios.img of=/dev/sdb bs=1M
 6) FOLLOW ALL INSTRUCTIONS written in the update utility!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E440&oldid=402159](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_E440&oldid=402159)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

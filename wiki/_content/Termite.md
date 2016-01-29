@@ -1,9 +1,5 @@
 # Termite
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Termite](https://www.github.com/thestinger/termite) is a minimal [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators") designed for use with tiling [window managers](/index.php/Window_manager "Window manager"). It is a _modal_ application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and command mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
 
 The configuration file allows to change colors and set some options. Termite supports transparency along with both the 256 color and true color (16 million colors) palettes. It has a similar look and feel to [urxvt](/index.php/Urxvt "Urxvt").
@@ -137,11 +133,3 @@ If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [
 *   [Termite readme](https://github.com/thestinger/termite/blob/master/README.rst)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Termite&oldid=412018](https://wiki.archlinux.org/index.php?title=Termite&oldid=412018)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

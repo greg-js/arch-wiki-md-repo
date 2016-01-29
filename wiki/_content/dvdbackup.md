@@ -1,9 +1,5 @@
 # dvdbackup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
@@ -210,11 +206,3 @@ $ growisofs -dvd-video -udf -Z /dev/dvd ~/_movie_name_
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dvdbackup&oldid=414793](https://wiki.archlinux.org/index.php?title=Dvdbackup&oldid=414793)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

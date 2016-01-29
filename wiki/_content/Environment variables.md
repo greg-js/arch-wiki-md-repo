@@ -1,9 +1,5 @@
 # Environment variables
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 An environment variable is a named object that contains data used by one or more applications. In simple terms, it is a variable with a name and a value. The value of an environmental variable can for example be the location of all executable files in the file system, the default editor that should be used, or the system locale settings. Users new to Linux may often find this way of managing settings a bit unmanageable. However, environment variables provide a simple way to share configuration settings between multiple applications and processes in Linux.
 
 ## Contents
@@ -45,7 +41,7 @@ The following section lists a number of common environment variables used by a L
 
 *   `DE` indicates the _D_esktop _E_nvironment being used. [xdg-open](/index.php/Xdg-open "Xdg-open") will use it to choose more user-friendly file-opener application that desktop environment provides. Some packages need to be installed to use this feature. For [GNOME](/index.php/GNOME "GNOME"), that would be [libgnome](https://www.archlinux.org/packages/?name=libgnome); for [Xfce](/index.php/Xfce "Xfce") this is [exo](https://www.archlinux.org/packages/?name=exo). Recognised values of `DE` variable are: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
 
-The `DE` environment variable needs to be exported before starting the window manager. For example:
+NaN
 
  `~/.xinitrc` 
 
@@ -54,7 +50,7 @@ export DE="xfce"
 exec openbox
 ```
 
-This will make _xdg-open_ use the more user-friendly _exo-open_, because it assumes it is running inside Xfce. Use _exo-preferred-applications_ for configuring.
+NaN
 
 *   `DESKTOP_SESSION` is similar to `DE`, but used in [LXDE](/index.php/LXDE "LXDE") desktop enviroment: when `DESKTOP_SESSION` is set to `LXDE`, _xdg-open_ will use _pcmanfm_ file associations.
 
@@ -184,7 +180,3 @@ $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
 *   [Xdg-open](/index.php/Xdg-open "Xdg-open")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=413568](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=413568)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

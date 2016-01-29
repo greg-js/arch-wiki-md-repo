@@ -1,9 +1,5 @@
 # Acer AO722-BZ454
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page assumes that you will be using it as a reference along with the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). In addition, a discussion of general setup is available from the main article on the [Acer Aspire One](/index.php/Acer_Aspire_One "Acer Aspire One"), although the hardware is quite different. A discussion of various other issues and tweaks is available in the [Ubuntu forums](http://ubuntuforums.org/showthread.php?t=1811178).
 
 ## Contents
@@ -235,7 +231,3 @@ To lower the loudness of the beep when the power cord to an acceptable level, op
 See [Windows and Arch dual boot](/index.php/Windows_and_Arch_dual_boot "Windows and Arch dual boot") for general information. Note that this netbook does **not** come with recovery CDs. If an attempt to set up dual boot goes awry and you can't boot the machine at all, or can't boot into Windows, you can restore the original Windows configuration by booting into /dev/sda1, the recovery partition, as if it were an ordinary Windows installation. The recovery program says it will wipe the whole disk but will only wipe the partition on which Windows resides. (You can install grub from the Arch installation media onto a thumbdrive and take it from there.)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_AO722-BZ454&oldid=383971](https://wiki.archlinux.org/index.php?title=Acer_AO722-BZ454&oldid=383971)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

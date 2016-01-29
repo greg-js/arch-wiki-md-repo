@@ -1,9 +1,5 @@
 # rsnapshot
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Rsnapshot](http://www.rsnapshot.org/) is an open source utility that provides incremental back ups.
 
 ## Contents
@@ -332,8 +328,3 @@ When _rsnapshot daily_ is run, it will rotate all the **daily.X** directories, t
 Remember that if you are using different intervals than the ones in this example, the first interval listed is the one that gets updates directly from the main filesystem. All subsequently listed intervals pull from the previous intervals. For example, if you had weekly, monthly, and yearly intervals defined (in that order), the weekly ones would get updated directly from the filesystem, the monthly ones would get updated from weekly, and the yearly ones would get updated from monthly.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rsnapshot&oldid=416973](https://wiki.archlinux.org/index.php?title=Rsnapshot&oldid=416973)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

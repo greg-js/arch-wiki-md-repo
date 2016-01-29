@@ -1,9 +1,5 @@
 # Ksplice
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Ksplice is an open source extension of the Linux kernel which allows system administrators to apply security patches to a running kernel without having to reboot the operating system.
 
 ## Installation
@@ -51,12 +47,3 @@ See man pages for `ksplice-apply`, `ksplice-create`, `ksplice-view`, and `ksplic
 *   [How to use the Ksplice raw utilities](http://cormander.com/2011/08/how-to-use-the-ksplice-raw-utilities/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ksplice&oldid=392319](https://wiki.archlinux.org/index.php?title=Ksplice&oldid=392319)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

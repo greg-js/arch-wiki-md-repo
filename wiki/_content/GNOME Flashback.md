@@ -1,9 +1,5 @@
 # GNOME Flashback
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
@@ -34,23 +30,23 @@ You can also install the following packages which provide some additional applet
 
 *   **GNOME Applets** — Small applications for the GNOME panel
 
-[https://wiki.gnome.org/Projects/GnomeApplets](https://wiki.gnome.org/Projects/GnomeApplets) || [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets)
+NaN
 
 *   **Byzanz Applet** — Record what's happening on your desktop
 
-[https://git.gnome.org/browse/byzanz/](https://git.gnome.org/browse/byzanz/) || [byzanz](https://aur.archlinux.org/packages/byzanz/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Command Runner Applet** — Applet for GNOME Flashback panel which periodically displays a command output
 
-[https://github.com/porridge/command-runner-applet](https://github.com/porridge/command-runner-applet) || [command-runner-applet](https://aur.archlinux.org/packages/command-runner-applet/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Pomodoro Applet** — GNOME Panel applet for timing the intervals used in the Pomodoro Techinique(tm)
 
-[https://github.com/stump/pomodoro-applet](https://github.com/stump/pomodoro-applet) || [pomodoro-applet](https://aur.archlinux.org/packages/pomodoro-applet/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Sensors Applet** — Applet for GNOME Flashback panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings
 
-[http://sensors-applet.sourceforge.net/](http://sensors-applet.sourceforge.net/) || [sensors-applet](https://www.archlinux.org/packages/?name=sensors-applet)
+NaN
 
 It's recommended to install the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group, which contains applications required for the standard GNOME experience.
 
@@ -108,7 +104,7 @@ Also see [this article](http://makandra.com/notes/1367-running-the-awesome-windo
 
 ### Panel speed settings
 
-Hide/Unhide delay
+NaN
 
 To adjust the amount of time it takes for the panel to disappear or reappear when autohide is enabled, execute the following:
 
@@ -120,7 +116,7 @@ $ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/top
 
 where _panel_ is either _top-panel_ or _bottom-panel_ and _time_ is a value in miliseconds, e.g. 300.
 
-Animation speed
+NaN
 
 To set the speed at which panel animations occur, execute the following:
 
@@ -144,7 +140,3 @@ After making the change, restart GNOME Panel: `gnome-panel --replace`.
 *   [GnomeFlashback - GNOME Wiki](https://wiki.gnome.org/Projects/GnomeFlashback)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Flashback&oldid=409323](https://wiki.archlinux.org/index.php?title=GNOME_Flashback&oldid=409323)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [GNOME](/index.php/Category:GNOME "Category:GNOME")

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T440s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article covers the installation and configuration of Arch Linux on a Lenovo T440s laptop.
 
 ## Contents
@@ -25,53 +21,11 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 
 ### Driver Selection
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Device</th>
-
-<th>Driver Package</th>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-</tr>
-
-<tr>
-
-<td>ClickPad</td>
-
-<td>[libinput](/index.php/Libinput "Libinput")</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless/Bluetooth</td>
-
-<td>iwlwifi*</td>
-
-</tr>
-
-<tr>
-
-<td>Finger Print Reader</td>
-
-<td>[Fprint](/index.php/Fprint "Fprint") since V 0.6.0</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Driver Package |
+| Video | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
+| ClickPad | [libinput](/index.php/Libinput "Libinput") |
+| Wireless/Bluetooth | iwlwifi* |
+| Finger Print Reader | [Fprint](/index.php/Fprint "Fprint") since V 0.6.0 |
 
 Note*: Depending on what you picked when ordering the laptop, you might have a stock ThinkPad wireless card. Check [this page](http://www.thinkwiki.org/wiki/Drivers) for more information.
 
@@ -104,7 +58,3 @@ See [Backlight](/index.php/Backlight "Backlight").
 *   [Good configuration for touchpad](http://rscircus.org/post/72978821261/t440s-clickpad-fix-which-feels-good)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T440s&oldid=412536](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T440s&oldid=412536)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

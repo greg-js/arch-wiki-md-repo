@@ -1,14 +1,10 @@
 # Netbeans
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Netbeans** is an integrated development environment (IDE) for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
 
 From [Wikipedia article](https://en.wikipedia.org/wiki/Netbeans "wikipedia:Netbeans"):
 
-"_The NetBeans IDE is written in Java and can run anywhere a compatible JVM is installed, including Windows, Mac OS, Linux, and Solaris. A JDK is required for Java development functionality, but is not required for development in other programming languages._"
+NaN
 
 ## Contents
 
@@ -116,7 +112,3 @@ $ ln -s /etc/xdg/qtchooser/4.conf ~/.config/qtchooser/default.conf
 See forum discussion [[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1374434#p1374434)]
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Netbeans&oldid=413748](https://wiki.archlinux.org/index.php?title=Netbeans&oldid=413748)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

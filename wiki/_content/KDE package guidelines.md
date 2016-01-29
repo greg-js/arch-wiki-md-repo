@@ -1,9 +1,5 @@
 # KDE package guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *
@@ -158,7 +154,3 @@ update-desktop-database -q
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&oldid=414989](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&oldid=414989)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

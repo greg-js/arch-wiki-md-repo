@@ -1,9 +1,5 @@
 # Digital Cameras
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Jalbum](/index.php/Jalbum "Jalbum")
@@ -93,7 +89,3 @@ For advanced file manipulation, use
 *   [another more detailed list](http://www.teaser.fr/~hfiguiere/linux/digicam.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Digital_Cameras&oldid=382719](https://wiki.archlinux.org/index.php?title=Digital_Cameras&oldid=382719)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Imaging](/index.php/Category:Imaging "Category:Imaging")

@@ -1,9 +1,5 @@
 # TU Meeting
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -38,44 +34,7 @@ Sat Feb  6 13:00:00 UTC 2010
 
 **This site might help if someone is unsure about the time: [GMT clock](http://wwp.greenwichmeantime.com/)**
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="font-weight: bold;padding-right:50px">Nick</td>
-
-<td style="font-weight: bold;padding-right:70px">15-16 Nov</td>
-
-<td style="font-weight: bold;padding-right:70px">22-23 Nov</td>
-
-<td style="font-weight: bold;padding-right:70px;">29-30 Nov</td>
-
-</tr>
-
-<tr>
-
-<td>Name</td>
-
-<td>Time</td>
-
-<td>Time</td>
-
-<td>Time</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Nick | 15-16 Nov | 22-23 Nov | 29-30 Nov |
+| Name | Time | Time | Time |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TU_Meeting&oldid=225319](https://wiki.archlinux.org/index.php?title=TU_Meeting&oldid=225319)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Events](/index.php/Category:Events "Category:Events")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

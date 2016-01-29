@@ -1,9 +1,5 @@
 # isync
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 isync is a command line application which synchronizes mailboxes; currently Maildir and IMAP4 mailboxes are supported. New messages, message deletions and flag changes can be propagated both ways.
 
 Synchronization is based on unique message identifiers (UIDs), so no identification conflicts can occur (as opposed to some other mail synchronizers). Synchronization state is kept in one local text file per mailbox pair; multiple replicas of a mailbox can be maintained.
@@ -178,14 +174,7 @@ WantedBy=timers.target
 
 ```
 
-Once those two files are created, reload systemd, enable and start the timer :
-
-```
-systemctl daemon-reload
-systemctl enable mbsync@`whoami`.timer
-systemctl start mbsync@`whoami`.timer
-
-```
+Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync@_user_.timer`, replacing `_user_` with your username..
 
 ## Troubleshooting
 
@@ -388,12 +377,4 @@ in the IMAPStore config part of the Exchange, this problem did not occur any mor
 *   [backing up gmail with mbsync](http://kevin.deldycke.com/2012/08/gmail-backup-mbsync/)
 *   [How To Verify SSL Certificate From A Shell Prompt](http://www.cyberciti.biz/faq/test-ssl-certificates-diagnosis-ssl-certificate/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Isync&oldid=417541](https://wiki.archlinux.org/index.php?title=Isync&oldid=417541)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Isync&oldid=417804](https://wiki.archlinux.org/index.php?title=Isync&oldid=417804)"

@@ -1,9 +1,5 @@
 # Autostarting
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article links to various methods to launch scripts or applications automatically when some particular event is taking place, like system startup or shutdown, shell login or logout and so on.
 
 ## Contents
@@ -87,7 +83,3 @@ See [Fluxbox#Autostart programs](/index.php/Fluxbox#Autostart_programs "Fluxbox"
 See [Openbox#autostart](/index.php/Openbox#autostart "Openbox").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Autostarting&oldid=400561](https://wiki.archlinux.org/index.php?title=Autostarting&oldid=400561)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")

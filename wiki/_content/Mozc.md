@@ -1,12 +1,8 @@
 # Mozc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](http://code.google.com/p/mozc/):
 
-_Mozc is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux. This open-source project originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/). Detailed differences between Mozc and Google Japanese Input are described in [About Mozc](http://code.google.com/p/mozc/wiki/AboutMozc)_ (In short, Mozc does not have equivalent conversion quality to Google Japanese Input).
+NaN
 
 ## Contents
 
@@ -40,57 +36,11 @@ You can install [mozc](https://aur.archlinux.org/packages/mozc/)<sup><small>AUR<
 
 This package consists as follows:
 
-<table class="wikitable" style="text-align:center;margin:0 2em auto">
-
-<tbody>
-
-<tr>
-
-<th>Package</th>
-
-<th>mozc</th>
-
-<th>description</th>
-
-</tr>
-
-<tr>
-
-<th>Group</th>
-
-<td>mozc-im</td>
-
-</tr>
-
-<tr>
-
-<th rowspan="3">Component</th>
-
-<td>mozc</td>
-
-<td>Server part of the Mozc</td>
-
-</tr>
-
-<tr>
-
-<td>ibus-mozc</td>
-
-<td>IBus engine module</td>
-
-</tr>
-
-<tr>
-
-<td>emacs-mozc</td>
-
-<td>Mozc for Emacs (optional)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Package | mozc | description |
+| Group | mozc-im |
+| Component | mozc | Server part of the Mozc |
+| ibus-mozc | IBus engine module |
+| emacs-mozc | Mozc for Emacs (optional) |
 
 **Tip:** [Unofficial plugins for the other IM frameworks are available](#Variants_on_AUR)
 
@@ -154,101 +104,13 @@ Restart X or IBus to enable use of Mozc.
 
 Each packages consist as follows:
 
-<table class="wikitable" style="text-align:center;margin:0 2em auto">
-
-<tbody>
-
-<tr>
-
-<th>Package</th>
-
-<th>mozc</th>
-
-<th>mozc-svn</th>
-
-<th>mozc-ut</th>
-
-<th>description</th>
-
-</tr>
-
-<tr>
-
-<th>Group</th>
-
-<td>mozc-im</td>
-
-<td>mozc-im-svn</td>
-
-<td>mozc-im</td>
-
-</tr>
-
-<tr>
-
-<th rowspan="6">Component</th>
-
-<td>mozc</td>
-
-<td>mozc-svn</td>
-
-<td>mozc-ut</td>
-
-<td>Server part of the Mozc</td>
-
-</tr>
-
-<tr>
-
-<td>ibus-mozc</td>
-
-<td>ibus-mozc-svn</td>
-
-<td>ibus-mozc-ut</td>
-
-<td>IBus engine module (optional)</td>
-
-</tr>
-
-<tr>
-
-<td>(uim-mozc)</td>
-
-<td>uim-mozc-svn</td>
-
-<td>uim-mozc-ut</td>
-
-<td>uim plugin module (optional)</td>
-
-</tr>
-
-<tr>
-
-<td><small>_N/A_</small></td>
-
-<td>fcitx-mozc-svn</td>
-
-<td><small>_N/A_</small></td>
-
-<td>Fcitx module (optional)</td>
-
-</tr>
-
-<tr>
-
-<td>emacs-mozc</td>
-
-<td>emacs-mozc-svn</td>
-
-<td>emacs-mozc-ut</td>
-
-<td>Mozc for Emacs (optional)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Package | mozc | mozc-svn | mozc-ut | description |
+| Group | mozc-im | mozc-im-svn | mozc-im |
+| Component | mozc | mozc-svn | mozc-ut | Server part of the Mozc |
+| ibus-mozc | ibus-mozc-svn | ibus-mozc-ut | IBus engine module (optional) |
+| (uim-mozc) | uim-mozc-svn | uim-mozc-ut | uim plugin module (optional) |
+| <small>_N/A_</small> | fcitx-mozc-svn | <small>_N/A_</small> | Fcitx module (optional) |
+| emacs-mozc | emacs-mozc-svn | emacs-mozc-ut | Mozc for Emacs (optional) |
 
 #### uim-mozc
 
@@ -314,7 +176,7 @@ Choose your preferring input method as 'Default input method'.
 
 **Note:** Mozc will be not listed in 'Default input method' at first time so you will need to add it into 'Enabled input methods' to use.
 
-**Warning:** You **must** run the following command whenever you upgrade or (re-)install **uim**.  
+**Warning:** You **must** run the following command whenever you upgrade or (re-)install **uim**.
 # uim-module-manager --register mozc
 
 ### Mozc for Emacs
@@ -424,11 +286,3 @@ $ killall mozc_server
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mozc&oldid=392462](https://wiki.archlinux.org/index.php?title=Mozc&oldid=392462)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internationalization](/index.php/Category:Internationalization "Category:Internationalization")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

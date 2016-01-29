@@ -1,9 +1,5 @@
 # Xhost
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Summary](#Summary)
@@ -53,7 +49,3 @@ into your ~/.bashrc file. This way, each time you fire up the terminal, the comm
 **Warning:** This command disables access control, meaning that any user on the system, or on your network if X is listening on the network, has access to your $DISPLAY without any authentication. This opens a security hole on your system that allows other users to launch applications (including key loggers) on your X server.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xhost&oldid=412221](https://wiki.archlinux.org/index.php?title=Xhost&oldid=412221)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

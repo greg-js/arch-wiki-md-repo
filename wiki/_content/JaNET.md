@@ -1,9 +1,5 @@
 # JaNET
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Project jaNET provides a framework that allows various components to communicate, controlled interactively by the user. This procedure aim to act like a digital life assistant (DLA) and it's inspired by Iron Man's JARVIS.
 
 The virtual she-butler comes to life through project jaNET, a platform ready to host multiple creative and innovative pieces of code concerning domestic everyday tasks.
@@ -191,7 +187,3 @@ TODO - Cannot do this currently without htk properly installed.
 *   [http://simon-listens.org/index.php?id=284&L=1](http://simon-listens.org/index.php?id=284&L=1) - Simon home page
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JaNET&oldid=339168](https://wiki.archlinux.org/index.php?title=JaNET&oldid=339168)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

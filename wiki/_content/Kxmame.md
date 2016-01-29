@@ -1,9 +1,5 @@
 # Kxmame
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -30,13 +26,3 @@ Download, build and install the [kxmame-svn](https://aur.archlinux.org/packages/
 You should now be able to start your roms from within kxmame.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kxmame&oldid=392320](https://wiki.archlinux.org/index.php?title=Kxmame&oldid=392320)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

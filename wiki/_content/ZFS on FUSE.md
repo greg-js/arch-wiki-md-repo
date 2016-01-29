@@ -1,9 +1,5 @@
 # ZFS on FUSE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ZFS](/index.php/ZFS "ZFS")
@@ -146,12 +142,3 @@ The exported shares and their options can be listed as follows:
 *   It is possible to use also the regular way of exporting NFS shares via `/etc/exports`, however, do not set it up for the shares, which are exported by ZFS directly!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS_on_FUSE&oldid=412227](https://wiki.archlinux.org/index.php?title=ZFS_on_FUSE&oldid=412227)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

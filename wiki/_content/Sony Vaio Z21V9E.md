@@ -1,9 +1,5 @@
 # Sony Vaio Z21V9E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Installation
 
 The only real hurdle with getting Arch Linux installed is the RAID configuration. There are several alternatives with various advantages and disadvantages. The easiest is to just leave the raid enabled as per factory settings and treat the resulting partition as a single drive.
@@ -43,7 +39,3 @@ As you can see the system contains two separate drives which have been used to c
 Alternatively, just disable the IRST and treat the two SSD drives separately.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_Z21V9E&oldid=349264](https://wiki.archlinux.org/index.php?title=Sony_Vaio_Z21V9E&oldid=349264)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")

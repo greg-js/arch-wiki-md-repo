@@ -1,9 +1,5 @@
 # nftables
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -115,61 +111,12 @@ flush
 
 The purpose of tables is to hold chains. Unlike tables in iptables, there are no built-in tables in nftables. How many tables one uses, or their naming, is largely a matter of style and personal preference. However, each table has a (network) family and and only applies to packets of this family. Tables can have one of five families specified, which unifies the various iptables utilities into one:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>nftables family</th>
-
-<th>iptables utility</th>
-
-</tr>
-
-<tr>
-
-<td>ip</td>
-
-<td>iptables</td>
-
-</tr>
-
-<tr>
-
-<td>ip6</td>
-
-<td>ip6tables</td>
-
-</tr>
-
-<tr>
-
-<td>inet</td>
-
-<td>iptables and ip6tables</td>
-
-</tr>
-
-<tr>
-
-<td>arp</td>
-
-<td>arptables</td>
-
-</tr>
-
-<tr>
-
-<td>bridge</td>
-
-<td>ebtables</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| nftables family | iptables utility |
+| ip | iptables |
+| ip6 | ip6tables |
+| inet | iptables and ip6tables |
+| arp | arptables |
+| bridge | ebtables |
 
 ### Family
 
@@ -766,11 +713,3 @@ If you use a Linux kernel < 3.17, you have to modprobe `xt_LOG` to enable loggin
 *   [The return of nftables](https://lwn.net/Articles/564095/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nftables&oldid=407938](https://wiki.archlinux.org/index.php?title=Nftables&oldid=407938)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

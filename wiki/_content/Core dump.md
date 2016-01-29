@@ -1,9 +1,5 @@
 # Core dump
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 A [core dump](https://en.wikipedia.org/wiki/Core_dump "wikipedia:Core dump") is a file containing a process's address space (memory) when the process terminates unexpectedly. Core dumps may be produced on-demand (such as by a [debugger](#Making_a_core_dump)), or automatically upon termination. Core dumps are triggered by the kernel in response to program crashes, and may be passed to a helper program (such as [systemd-coredump](http://www.freedesktop.org/software/systemd/man/systemd-coredump.html)) for further processing. Core dumps may be useful for developers to debug program crashes, however they are practically useless to the average user, and have been largely obsoleted by modern debuggers.
 
 ## Contents
@@ -137,12 +133,3 @@ When _gdb_ is started, use the `bt` command to print the backtrace:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_dump&oldid=417597](https://wiki.archlinux.org/index.php?title=Core_dump&oldid=417597)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

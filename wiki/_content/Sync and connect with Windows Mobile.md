@@ -1,9 +1,5 @@
 # Sync and connect with Windows Mobile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is a howto for connecting your Windows Mobile device with Archlinux. Afterwards you can sync and install cabs just like you can do with activesync in windows. It uses the kde app synce-kde, but gnome and *box users can relax, the only qt-deps are qscintilla-2.3.2-2 and pyqt-4.4.4-2\. And they are small.
 
 ## Contents
@@ -65,11 +61,3 @@ To mount PocketPC filesystem as ordinal user (non-root), you need to add the fol
  `none /mnt/synce cefs rw,user,noauto,codadev=/dev/cfs0 0 0` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sync_and_connect_with_Windows_Mobile&oldid=392699](https://wiki.archlinux.org/index.php?title=Sync_and_connect_with_Windows_Mobile&oldid=392699)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

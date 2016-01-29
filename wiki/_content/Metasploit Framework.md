@@ -1,9 +1,5 @@
 # Metasploit Framework
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [the official site](http://www.offensive-security.com/metasploit-unleashed/Introduction):
 
-_Consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins. The Metasploit Framework provides a truly impressive work environment. The MSF is far more than just a collection of exploits, it's an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel._
+NaN
 
 Currently, Metasploit requires to setup and configure Postgresql on target system to work. This wiki will show how to get metasploit working with a Postgresql database.
 
@@ -173,109 +169,14 @@ msf > search platform:linux type:exploit name:Novell
 
 To search for specific field, type it's name, followed by column and the phrase. The following search fields are available:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th style="white-space:nowrap">Search field</th>
-
-<th style="white-space:nowrap">Matches</th>
-
-<th style="white-space:nowrap">Possible values</th>
-
-<th style="white-space:nowrap">DB table & column</th>
-
-</tr>
-
-<tr>
-
-<td>`app`</td>
-
-<td style="white-space:nowrap">Passive (client) or Active (server) exploits</td>
-
-<td>`client`, `server`</td>
-
-<td style="white-space:nowrap">`module_details.stance`</td>
-
-</tr>
-
-<tr>
-
-<td>`author`</td>
-
-<td style="white-space:nowrap">Name and email of module Author</td>
-
-<td>Any phrase</td>
-
-<td style="white-space:nowrap">`module_authors.name`</td>
-
-</tr>
-
-<tr>
-
-<td>`type`</td>
-
-<td style="white-space:nowrap">The [module type](#Module_types)</td>
-
-<td>`auxiliary`, `exploit`, `payload`, `post`, `encoder`, `nop`</td>
-
-<td style="white-space:nowrap">`module_details.mtype`</td>
-
-</tr>
-
-<tr>
-
-<td>`name`</td>
-
-<td style="white-space:nowrap">The path (Name) and the short description</td>
-
-<td>Any phrase</td>
-
-<td>`module_details.fullname`, `module_details.name`</td>
-
-</tr>
-
-<tr>
-
-<td>`platform`</td>
-
-<td style="white-space:nowrap">The target hardware or software platform</td>
-
-<td>`bsdi`, `netware`, `linux`, `hpux`, `irix`, `osx`, `bsd`, `platform`, `java`, `javascript`, `unix`, `php`, `firefox`, `nodejs`, `ruby`, `cisco`, `android`, `aix`, `windows`, `python`, `solaris`</td>
-
-<td style="white-space:nowrap">`module_platforms.name`</td>
-
-</tr>
-
-<tr>
-
-<td>`bid`, `cve`, `edb`, `osvdb` or `ref`</td>
-
-<td>The [Bugtraq](http://www.securityfocus.com/), [CVE](http://www.cvedetails.com/), [Exploit-DB](http://www.exploit-db.com/), [OSBDB](http://www.osvdb.org/) ID or any</td>
-
-<td>Exploit database entry ID, or a part of upstream report URL</td>
-
-<td style="white-space:nowrap">`module_refs.name`</td>
-
-</tr>
-
-<tr>
-
-<td>(No field)</td>
-
-<td>All of the above except `app` and `type`</td>
-
-<td>Any phrase</td>
-
-<td>All of the above</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Search field | Matches | Possible values | DB table & column |
+| `app` | Passive (client) or Active (server) exploits | `client`, `server` | `module_details.stance` |
+| `author` | Name and email of module Author | Any phrase | `module_authors.name` |
+| `type` | The [module type](#Module_types) | `auxiliary`, `exploit`, `payload`, `post`, `encoder`, `nop` | `module_details.mtype` |
+| `name` | The path (Name) and the short description | Any phrase | `module_details.fullname`, `module_details.name` |
+| `platform` | The target hardware or software platform | `bsdi`, `netware`, `linux`, `hpux`, `irix`, `osx`, `bsd`, `platform`, `java`, `javascript`, `unix`, `php`, `firefox`, `nodejs`, `ruby`, `cisco`, `android`, `aix`, `windows`, `python`, `solaris` | `module_platforms.name` |
+| `bid`, `cve`, `edb`, `osvdb` or `ref` | The [Bugtraq](http://www.securityfocus.com/), [CVE](http://www.cvedetails.com/), [Exploit-DB](http://www.exploit-db.com/), [OSBDB](http://www.osvdb.org/) ID or any | Exploit database entry ID, or a part of upstream report URL | `module_refs.name` |
+| (No field) | All of the above except `app` and `type` | Any phrase | All of the above |
 
 See [#Searching from the database](#Searching_from_the_database) and [#Database search examples](#Database_search_examples) for more advanced search queries.
 
@@ -396,85 +297,15 @@ $ psql msf
 
 The information about modules is stored in 8 tables:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Table Name</th>
-
-<th>Contents</th>
-
-</tr>
-
-<tr>
-
-<td>`module_details`</td>
-
-<td>The "main" table, describes various details of each module</td>
-
-</tr>
-
-<tr>
-
-<td>`module_actions`</td>
-
-<td>The action names of _auxiliary_ modules</td>
-
-</tr>
-
-<tr>
-
-<td>`module_archs`</td>
-
-<td>The target hardware architecture or software platform</td>
-
-</tr>
-
-<tr>
-
-<td>`module_authors`</td>
-
-<td>Names and emails of module author</td>
-
-</tr>
-
-<tr>
-
-<td>`module_mixins`</td>
-
-<td>Empty (???)</td>
-
-</tr>
-
-<tr>
-
-<td>`module_platforms`</td>
-
-<td>The target operating system. See also [#Popularity of a platform by number of exploits](#Popularity_of_a_platform_by_number_of_exploits)</td>
-
-</tr>
-
-<tr>
-
-<td>`module_refs`</td>
-
-<td>References to various online exploit databases and reports</td>
-
-</tr>
-
-<tr>
-
-<td>`module_targets`</td>
-
-<td>The target program name and version of the _exploit_</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Table Name | Contents |
+| `module_details` | The "main" table, describes various details of each module |
+| `module_actions` | The action names of _auxiliary_ modules |
+| `module_archs` | The target hardware architecture or software platform |
+| `module_authors` | Names and emails of module author |
+| `module_mixins` | Empty (???) |
+| `module_platforms` | The target operating system. See also [#Popularity of a platform by number of exploits](#Popularity_of_a_platform_by_number_of_exploits) |
+| `module_refs` | References to various online exploit databases and reports |
+| `module_targets` | The target program name and version of the _exploit_ |
 
 **Tip:** To see what type of details (columns) a table contains, run `\d+ _table_name_`. For example: `\d+ module_details`.
 
@@ -662,12 +493,3 @@ that probably means that the `postgresql` service is not running.
 *   [The Metasploit Book](http://en.wikibooks.org/wiki/Metasploit)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Metasploit_Framework&oldid=413924](https://wiki.archlinux.org/index.php?title=Metasploit_Framework&oldid=413924)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

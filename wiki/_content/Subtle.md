@@ -1,12 +1,8 @@
 # Subtle
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Subtle project page](http://subforge.org/projects/subtle):
 
-_Subtle is a manual tiling window manager with a rather uncommon approach of tiling: Instead of relying on predefined layouts, Subtle divides the screen into a grid with customizable slots (called gravities)._
+NaN
 
 Subtle is configured with [Ruby](/index.php/Ruby "Ruby") for [Xorg](/index.php/Xorg "Xorg").
 
@@ -105,7 +101,3 @@ It can of course be inserted at a place by your own choice.
 *   [Window manager](/index.php/Window_manager "Window manager")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Subtle&oldid=378531](https://wiki.archlinux.org/index.php?title=Subtle&oldid=378531)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

@@ -1,9 +1,5 @@
 # Cobalt strike
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -34,7 +30,7 @@ sudo pacman -S postgresql metasploit
 
 ## setting up postgres
 
-passwd postgress # set password  
+passwd postgress # set password
 su - postgres -c "initdb -D '/var/lib/postgres/data'" # create db, some people recommended the appending the "--locale en_US.UTF-8 " flag
 
 ## Enable required services
@@ -79,16 +75,8 @@ sudo MSF_DATABASE_CONFIG=/usr/share/metasploit/config/database.yml ./cobaltstrik
 
 ## Troubleshooting
 
-*   if stuck at "progress" popup that says "login failed, your creds may not be correct (make sure they're the same as the msfrpcd creds)  
+*   if stuck at "progress" popup that says "login failed, your creds may not be correct (make sure they're the same as the msfrpcd creds)
 
 *   is /usr/share/metasploit/config/database.yml derived from metasploit? or is it unique?
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cobalt_strike&oldid=370928](https://wiki.archlinux.org/index.php?title=Cobalt_strike&oldid=370928)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

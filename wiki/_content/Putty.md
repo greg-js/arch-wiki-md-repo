@@ -1,9 +1,5 @@
 # Putty
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -38,12 +34,3 @@ for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
 See [256colours](http://www.robmeerman.co.uk/unix/256colours) for details.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Putty&oldid=399113](https://wiki.archlinux.org/index.php?title=Putty&oldid=399113)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

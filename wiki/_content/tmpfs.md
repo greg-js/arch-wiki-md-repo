@@ -1,9 +1,5 @@
 # tmpfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [tmpfs](https://en.wikipedia.org/wiki/Tmpfs "wikipedia:Tmpfs") is a temporary filesystem that resides in memory and/or your swap partition(s), depending on how much you fill it up. Mounting directories as tmpfs can be an effective way of speeding up accesses to their files, or to ensure that their contents are automatically cleared upon reboot.
 
 **Note:** When using [systemd](/index.php/Systemd "Systemd"), temporary files in tmpfs directories can be recreated at boot by using [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd").
@@ -104,7 +100,3 @@ This behaviour can be controlled via `/proc/sys/fs/protected_symlinks` or simply
 *   [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmpfs&oldid=414084](https://wiki.archlinux.org/index.php?title=Tmpfs&oldid=414084)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

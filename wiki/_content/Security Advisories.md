@@ -1,9 +1,5 @@
 # Security Advisories
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team")
@@ -45,6 +41,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### January 2016
 
+*   [29 January 2016] [ASA-201601-33](https://lists.archlinux.org/pipermail/arch-security/2016-January/000539.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) man-in-the-middle
+*   [29 January 2016] [ASA-201601-32](https://lists.archlinux.org/pipermail/arch-security/2016-January/000538.html) [openssl](https://www.archlinux.org/packages/?name=openssl) man-in-the-middle
 *   [27 January 2016] [ASA-201601-31](https://lists.archlinux.org/pipermail/arch-security/2016-January/000536.html) [nginx](https://www.archlinux.org/packages/?name=nginx) denial of service
 *   [25 January 2016] [ASA-201601-30](https://lists.archlinux.org/pipermail/arch-security/2016-January/000535.html) [blueman](https://www.archlinux.org/packages/?name=blueman) privilege escalation
 *   [25 January 2016] [ASA-201601-29](https://lists.archlinux.org/pipermail/arch-security/2016-January/000534.html) [mbedtls](https://www.archlinux.org/packages/?name=mbedtls) man-in-the-middle
@@ -559,9 +557,4 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417516](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417516)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")
-*   [Security](/index.php/Category:Security "Category:Security")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417851](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417851)"

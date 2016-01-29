@@ -1,9 +1,5 @@
 # ASUS F5R
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -186,18 +182,10 @@ Lapsus is a set of programs created to help manage additional laptop features su
 
 ```
 
-<strike>Prerequisites: acpi4asus from CVS (at least a version > 0.41).</strike> In your rc.conf, blacklist the 'acpi_asus' module and add the 'asus_laptop' one in the MODULES array.
+~~Prerequisites: acpi4asus from CVS (at least a version > 0.41).~~ In your rc.conf, blacklist the 'acpi_asus' module and add the 'asus_laptop' one in the MODULES array.
 
 Install the latest lapsus package from [aur](https://aur.archlinux.org/packages.php?do_Details=1&ID=11207). Now start the lapsusd daemon: **/etc/rc.d/lapsusd start**. You can add it into DAEMONS array in **/etc/rc.conf**.
 
 Finally add the lapsus applet to KDE kicker.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_F5R&oldid=376474](https://wiki.archlinux.org/index.php?title=ASUS_F5R&oldid=376474)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

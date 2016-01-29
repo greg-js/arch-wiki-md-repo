@@ -1,9 +1,5 @@
 # Volnoti
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")
@@ -11,7 +7,7 @@ Related articles
 
 [Volnoti](https://github.com/davidbrazdil/volnoti) is, according to its own GitHub page,
 
-"_A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems. It is based on GTK+ and D-Bus and should work with any sensible window manager. The original aim was to create a volume notification daemon for lightweight window managers like LXDE or XMonad. It is known to work with a wide range of WMs, including GNOME, KDE, Xfce, LXDE, XMonad, i3 and many others._"
+NaN
 
 Volnoti can be useful to check volume changes if you are running a lightweight window manager like [Openbox](/index.php/Openbox "Openbox"), which doesn't usually come with a notification daemon, especially in combination with your laptop/keyboard's special keys.
 
@@ -72,8 +68,3 @@ The first two commands will increase or lower the volume when the corresponding 
 Now you can restart Xbindkeys with `kill -1 $(pidof xbindkeys)` (or reboot your PC, after making sure both Volnoti and Xbindkeys are in your autostart file) and test your configuration.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Volnoti&oldid=416980](https://wiki.archlinux.org/index.php?title=Volnoti&oldid=416980)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Sound](/index.php/Category:Sound "Category:Sound")

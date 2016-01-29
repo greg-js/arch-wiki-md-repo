@@ -1,9 +1,5 @@
 # Logitech Unifying Receiver
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless receiver that can connect up to six compatible wireless mice and keyboards to your computer. The input device that comes with the receiver is already paired with it and should work out of the box through plug and play. Logitech officially supports pairing of additional devices just through their Windows and Mac OS X software. Pairing on Linux is supported by [a small program from Benjamin Tissoires](https://lkml.org/lkml/2011/9/22/367). That tool does not provide any feedback though. Other developers have built more complete pairing tools that give feedback and allow unpairing as well.
 
 [ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](http://pwr.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys.
@@ -143,7 +139,3 @@ $ mkinitcpio -p linux
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Unifying_Receiver&oldid=409595](https://wiki.archlinux.org/index.php?title=Logitech_Unifying_Receiver&oldid=409595)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")

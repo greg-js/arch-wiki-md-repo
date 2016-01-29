@@ -1,9 +1,5 @@
 # Tomcat
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Tomcat is an open source Java [Servlet container](http://en.wikipedia.org/wiki/Java_Servlet#Servlet_containers) developed by the Apache Software Foundation. For more information about basic configuration, see:[Tomcat and Apache](https://wiki.archlinux.org/index.php/Tomcat_and_Apache)
 
 **Note:** Tomcat currently exists under three stable branches: [6](http://tomcat.apache.org/download-60.cgi), [7](http://tomcat.apache.org/download-70.cgi) and [8](https://tomcat.apache.org/download-80.cgi). None of these version deprecates the preceding. Instead, [each branch is the implementation of a couple of the "Servlet" and "JSP" Java standards](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions). All versions are officially supported in Arch Linux: [tomcat6](https://www.archlinux.org/packages/?name=tomcat6), [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) and [tomcat8](https://www.archlinux.org/packages/?name=tomcat8). Check the version you need depending on your web applications requirements. If you just want to try out tomcat or just do not want to spend more time figuring out, there are good chances you will want to try tomcat7\. This wiki page refers to tomcat7 but most of its content can be applied to tomcat6 and tomcat8.
@@ -52,69 +48,13 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 
 ### Filesystem hierarchy
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Pathname</th>
-
-<th>Use</th>
-
-</tr>
-
-<tr>
-
-<td>`/usr/share/tomcat7`</td>
-
-<td>Main Tomcat folder containing scripts and links to other directories</td>
-
-</tr>
-
-<tr>
-
-<td>`/usr/share/java/tomcat7`</td>
-
-<td>Tomcat Java libraries (jars)</td>
-
-</tr>
-
-<tr>
-
-<td>`/etc/tomcat7`</td>
-
-<td>Configuration files. Among some: `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file)</td>
-
-</tr>
-
-<tr>
-
-<td>`/var/log/tomcat7`</td>
-
-<td>Log files **not** handled by `systemd` (see [#Logging](#Logging))</td>
-
-</tr>
-
-<tr>
-
-<td>`/var/lib/tomcat7/webapps`</td>
-
-<td>Where Tomcat deploys your web applications</td>
-
-</tr>
-
-<tr>
-
-<td>`/var/tmp/tomcat7`</td>
-
-<td>Where Tomcat store your webapps' data</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Pathname | Use |
+| `/usr/share/tomcat7` | Main Tomcat folder containing scripts and links to other directories |
+| `/usr/share/java/tomcat7` | Tomcat Java libraries (jars) |
+| `/etc/tomcat7` | Configuration files. Among some: `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file) |
+| `/var/log/tomcat7` | Log files **not** handled by `systemd` (see [#Logging](#Logging)) |
+| `/var/lib/tomcat7/webapps` | Where Tomcat deploys your web applications |
+| `/var/tmp/tomcat7` | Where Tomcat store your webapps' data |
 
 ## Initial configuration
 
@@ -340,7 +280,3 @@ Note that this may not be relevant because only root and/or tomcat is supposed t
 *   Always know what you are deploying
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomcat&oldid=412019](https://wiki.archlinux.org/index.php?title=Tomcat&oldid=412019)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

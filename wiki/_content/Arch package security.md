@@ -1,9 +1,5 @@
 # Arch package security
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -33,11 +29,3 @@ Arch Linux has relatively small and educated user base which makes it unlikely t
 See [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_package_security&oldid=198620](https://wiki.archlinux.org/index.php?title=Arch_package_security&oldid=198620)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

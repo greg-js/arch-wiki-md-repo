@@ -1,9 +1,5 @@
 # Courier Email Server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is a small howto on how to install an imap-Server with Courier-Imap, SSL-Encryption and grabbing all the other mail-accounts with fetchmail. Procmail is responsible for delivering the Mails to the different Users.
 
 You can fetch your Mail from this IMAP-Server with every Mail-Client capable of communicating with IMAP.
@@ -111,7 +107,3 @@ Just add the fetchmail -av command to the [users cron-list](/index.php/Cron "Cro
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Courier_Email_Server&oldid=413718](https://wiki.archlinux.org/index.php?title=Courier_Email_Server&oldid=413718)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

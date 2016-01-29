@@ -1,9 +1,5 @@
 # IBM ThinkPad T41
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -264,11 +260,3 @@ The T41 has a built in accelerometer, which can be used to detect when the lapto
 *   [Thinkpad T41 Hardware Maintenance Manual](ftp://ftp.software.ibm.com/pc/pccbbs/mobiles_pdf/13n6243.pdf)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T41&oldid=376419](https://wiki.archlinux.org/index.php?title=IBM_ThinkPad_T41&oldid=376419)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [IBM](/index.php/Category:IBM "Category:IBM")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

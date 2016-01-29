@@ -1,9 +1,5 @@
 # Unified Extensible Firmware Interface
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -30,7 +26,7 @@ Related articles
     *   [4.1 UEFI Variables Support in Linux Kernel](#UEFI_Variables_Support_in_Linux_Kernel)
     *   [4.2 Requirements for UEFI variable support](#Requirements_for_UEFI_variable_support)
         *   [4.2.1 Mount efivarfs](#Mount_efivarfs)
-    *   [4.3 Userspace Tools](#Userspace_Tools)
+    *   [4.3 Userspace tools](#Userspace_tools)
         *   [4.3.1 efibootmgr](#efibootmgr)
 *   [5 EFI System Partition](#EFI_System_Partition)
     *   [5.1 GPT partitioned disks](#GPT_partitioned_disks)
@@ -258,25 +254,29 @@ If EFI Variables support does not work even after the above conditions are satis
 
 #### Mount efivarfs
 
-If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI Variable support to the userspace tools like `efibootmgr` etc.:
+**Warning:** _efivars_ is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting _efivars_ read-only (`-o ro`) as described below, when not making changes with tools such as _efibootmgr_.
+
+If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI variables to [#Userspace tools](#Userspace_tools) like `efibootmgr`:
 
 ```
-# mount -t efivarfs efivarfs /sys/firmware/efi/efivars
-
-```
-
-**Note:** The above command should be run both OUTSIDE (BEFORE) and INSIDE **chroot**, if any.
-
-It is also a good idea to auto-mount `efivarfs` during boot via `/etc/fstab` as follows:
-
- `/etc/fstab` 
-
-```
-efivarfs    /sys/firmware/efi/efivars    efivarfs    defaults    0    0
+# mount -t efivarfs efivarfs /sys/firmware/efi/efivarsb
 
 ```
 
-### Userspace Tools
+**Note:** The above command should be run both **outside** (**before**) and **inside** the [chroot](/index.php/Chroot "Chroot"), if any.
+
+To mount `efivarfs` read-only during boot, add to `/etc/fstab`:
+
+ `/etc/fstab`  `efivarfs    /sys/firmware/efi/efivars    efivarfs    **ro**,nosuid,nodev,noexec,noatime 0 0` 
+
+To remount with write support, run:
+
+```
+# mount -o remount /sys/firmware/efi/efivars -o **rw**,nosuid,nodev,noexec,noatime
+
+```
+
+### Userspace tools
 
 There are few tools that can access/modify the UEFI variables, namely
 
@@ -339,7 +339,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
 
 *   It is recommended to use always GPT for UEFI boot as some UEFI firmwares do not allow UEFI-MBR boot.
 *   In [GNU Parted](/index.php/GNU_Parted "GNU Parted"), `boot` flag (not to be confused with `legacy_boot` flag) has different effect in MBR and GPT disk. In MBR disk, it marks the partition as active. In GPT disk, it changes the type code of the partition to `EFI System Partition` type. [Parted](/index.php/Parted "Parted") has no flag to mark a partition as ESP in MBR disk (this can be done using fdisk though).
-*   According to a Microsoft note[[1]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it's the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
+*   According to a Microsoft note[[3]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it's the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
 *   In case of [EFISTUB](/index.php/EFISTUB "EFISTUB"), the kernels and initramfs files should be stored in the EFI System Partition. For sake of simplicity, you can also use the ESP as the `/boot` partition itself instead of a separate `/boot` partition, for EFISTUB booting.
 
 ### GPT partitioned disks
@@ -543,7 +543,7 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 
 *   This issue can occur either due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") while booting the USB.
 
-*   If the issue is not due to KMS, then it may be due to bug in [EFISTUB](/index.php/EFISTUB "EFISTUB") booting (see [[2]](https://bugs.archlinux.org/task/33745) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=156670) for more information.). Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [Gummiboot](/index.php/Gummiboot "Gummiboot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
+*   If the issue is not due to KMS, then it may be due to bug in [EFISTUB](/index.php/EFISTUB "EFISTUB") booting (see [[4]](https://bugs.archlinux.org/task/33745) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=156670) for more information.). Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [Gummiboot](/index.php/Gummiboot "Gummiboot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
 
 #### Using GRUB
 
@@ -685,12 +685,4 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)
 *   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware - from Clover efiboot](http://dl.dropbox.com/u/17629062/Shell2.zip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=408470](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=408470)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=417876](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=417876)"

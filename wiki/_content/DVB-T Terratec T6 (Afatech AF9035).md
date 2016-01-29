@@ -1,9 +1,5 @@
 # DVB-T Terratec T6 (Afatech AF9035)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The TerraTec T6 is a dual [DVB-T](/index.php/DVB-T "DVB-T") USB-device. The device is supported by the kernel, but requires additional proprietary firmware to be loaded to function.
 
 This tutorial was tested for a Terratec T6 with the [Afatech AF9035](http://www.linuxtv.org/wiki/index.php/Afatech_AF9035) chipset. There is a package in the AUR, but it does not work at this time.
@@ -52,7 +48,3 @@ usb 3-1: DVB: registering adapter 0 frontend 0 (Afatech AF9033 (DVB-T))...
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T_Terratec_T6_(Afatech_AF9035)&oldid=389743](https://wiki.archlinux.org/index.php?title=DVB-T_Terratec_T6_(Afatech_AF9035)&oldid=389743)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

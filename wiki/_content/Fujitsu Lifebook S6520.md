@@ -1,9 +1,5 @@
 # Fujitsu Lifebook S6520
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -253,14 +249,3 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 *   [Lifebook S7020](http://tilos.csl.mech.ntua.gr/~apoikos/s7020.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fujitsu_Lifebook_S6520&oldid=392149](https://wiki.archlinux.org/index.php?title=Fujitsu_Lifebook_S6520&oldid=392149)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

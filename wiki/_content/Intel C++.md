@@ -1,9 +1,5 @@
 # Intel C++
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ABS](/index.php/ABS "ABS")
@@ -136,348 +132,41 @@ Similar to the gcc:
 
 In the following table we report a list of packages from the officials repository that we have tried to compile with the intel C/C++ compiler. The compilation should be done by using the PKGBUILD from ABS.
 
-<table class="wikitable sortable collapsible" border="1">
-
-<tbody>
-
-<tr style="background: #ffdead;">
-
-<th>Application</th>
-
-<th>Compile</th>
-
-<th>Comments</th>
-
-</tr>
-
-<tr>
-
-<td>**xvidcore**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**kdebase**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**conky 1.9.0**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**nginx 1.4.2**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**gzip 1.6**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**xz**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**lz4**</td>
-
-<td style="background: GreenYellow">OK</td>
-
-<td>We must edit the PKGBUILD.</td>
-
-</tr>
-
-<tr>
-
-<td>**minetest**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**opus**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**zlib 1.2.8**</td>
-
-<td style="background: yellow">Not recommended</td>
-
-<td>Works with the [Method 1](#Method_1), but caused bugs in some apps, like tightvnc</td>
-
-</tr>
-
-<tr>
-
-<td>**Gimp 2.8 / 2.9**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**Pacman 4.0.3**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**x264**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**MySql**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**SqlLite**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**lame**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**xaos**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**gegl**</td>
-
-<td style="background: Lime">OK</td>
-
-<td>Works with the [Method 1](#Method_1)</td>
-
-</tr>
-
-<tr>
-
-<td>**VLC**</td>
-
-<td style="background: Tomato">Unsuccessful</td>
-
-<td>There is some problem with the compiler flags</td>
-
-</tr>
-
-<tr>
-
-<td>**bzip2**</td>
-
-<td style="background: Tomato">Unsuccessful</td>
-
-<td>There is some problem with the compiler flags</td>
-
-</tr>
-
-<tr>
-
-<td>**mplayer**</td>
-
-<td style="background: pink">Out of date</td>
-
-<td>It do not recognize the Intel compiler</td>
-
-</tr>
-
-<tr>
-
-<td>**optipng**</td>
-
-<td style="background: GreenYellow">OK</td>
-
-<td>Works with the [Method 1](#Method_1). Comment out LD=xild in makepkg.conf</td>
-
-</tr>
-
-<tr>
-
-<td>**python-numpy**</td>
-
-<td style="background: GreenYellow">OK</td>
-
-<td>We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<td>**python-scipy**</td>
-
-<td style="background: GreenYellow">OK</td>
-
-<td>We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/)<sup><small>AUR</small></sup></td>
-
-</tr>
-
-<tr>
-
-<td>**Qt**</td>
-
-<td style="background: GreenYellow">OK</td>
-
-<td>We must add the option _-platform linux-icc-64 (or 32)_ in the configure command</td>
-
-</tr>
-
-<tr>
-
-<td>**systemd**</td>
-
-<td style="background: red">Fail</td>
-
-<td>undefined reference to `server_dispatch_message'</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Application | Compile | Comments |
+| **xvidcore** | OK | Works with the [Method 1](#Method_1) |
+| **kdebase** | OK | Works with the [Method 1](#Method_1) |
+| **conky 1.9.0** | OK | Works with the [Method 1](#Method_1) |
+| **nginx 1.4.2** | OK | Works with the [Method 1](#Method_1) |
+| **gzip 1.6** | OK | Works with the [Method 1](#Method_1) |
+| **xz** | OK | Works with the [Method 1](#Method_1) |
+| **lz4** | OK | We must edit the PKGBUILD. |
+| **minetest** | OK | Works with the [Method 1](#Method_1) |
+| **opus** | OK | Works with the [Method 1](#Method_1) |
+| **zlib 1.2.8** | Not recommended | Works with the [Method 1](#Method_1), but caused bugs in some apps, like tightvnc |
+| **Gimp 2.8 / 2.9** | OK | Works with the [Method 1](#Method_1) |
+| **Pacman 4.0.3** | OK | Works with the [Method 1](#Method_1) |
+| **x264** | OK | Works with the [Method 1](#Method_1) |
+| **MySql** | OK | Works with the [Method 1](#Method_1) |
+| **SqlLite** | OK | Works with the [Method 1](#Method_1) |
+| **lame** | OK | Works with the [Method 1](#Method_1) |
+| **xaos** | OK | Works with the [Method 1](#Method_1) |
+| **gegl** | OK | Works with the [Method 1](#Method_1) |
+| **VLC** | Unsuccessful | There is some problem with the compiler flags |
+| **bzip2** | Unsuccessful | There is some problem with the compiler flags |
+| **mplayer** | Out of date | It do not recognize the Intel compiler |
+| **optipng** | OK | Works with the [Method 1](#Method_1). Comment out LD=xild in makepkg.conf |
+| **python-numpy** | OK | We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/)<sup><small>AUR</small></sup> |
+| **python-scipy** | OK | We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/)<sup><small>AUR</small></sup> |
+| **Qt** | OK | We must add the option _-platform linux-icc-64 (or 32)_ in the configure command |
+| **systemd** | Fail | undefined reference to `server_dispatch_message' |
 
 **Legend:**
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td style="background: Lime">OK</td>
-
-<td>The compilation with ICC works!</td>
-
-</tr>
-
-<tr>
-
-<td style="background: GreenYellow">OK</td>
-
-<td>The compilation works but is needed an editing of the PKGBUILD</td>
-
-</tr>
-
-<tr>
-
-<td style="background: Tomato">Unsuccessful</td>
-
-<td>The compilation may work, but there are some compilations errors.</td>
-
-</tr>
-
-<tr>
-
-<td style="background: yellow">Not recommended</td>
-
-<td>The compilation works, but is not recommended</td>
-
-</tr>
-
-<tr>
-
-<td style="background: red">Fail</td>
-
-<td>It is impossible to compile the PKG with ICC.</td>
-
-</tr>
-
-<tr>
-
-<td style="background: pink">Out of date</td>
-
-<td>It is unsuccessful or fails with older CFLAGS. You can try compiling it with new [Method 1](#Method_1).(Do not forget to paste your result here!)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| OK | The compilation with ICC works! |
+| OK | The compilation works but is needed an editing of the PKGBUILD |
+| Unsuccessful | The compilation may work, but there are some compilations errors. |
+| Not recommended | The compilation works, but is not recommended |
+| Fail | It is impossible to compile the PKG with ICC. |
+| Out of date | It is unsuccessful or fails with older CFLAGS. You can try compiling it with new [Method 1](#Method_1).(Do not forget to paste your result here!) |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_C%2B%2B&oldid=392271](https://wiki.archlinux.org/index.php?title=Intel_C%2B%2B&oldid=392271)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

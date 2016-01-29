@@ -1,9 +1,5 @@
 # SiS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes how to get [Silicon Integrated Systems (SiS)](http://dri.freedesktop.org/wiki/SiS) chipset graphical adapters working on Arch Linux:
 
 ## Contents
@@ -218,12 +214,3 @@ EndSection
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SiS&oldid=415684](https://wiki.archlinux.org/index.php?title=SiS&oldid=415684)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

@@ -1,9 +1,5 @@
 # SHA password hashes
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Security#Password hashes](/index.php/Security#Password_hashes "Security")
@@ -81,12 +77,3 @@ To verify that your passwords have been re-hashed, check the `/etc/shadow` file 
 Arch Linux is using SHA-512 password hashing by default (since 2011-11-26). The very minimal terminal manager _fgetty_ does not support SHA-512 password hashing by default. Enabling SHA-512 with the default _fgetty_ will cause you to be locked out. A patched version of _fgetty_ is in the [AUR](/index.php/AUR "AUR") named [fgetty-pam](https://aur.archlinux.org/packages/fgetty-pam/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fgetty-pam)]</sup> which adds SHA-512 support.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SHA_password_hashes&oldid=410429](https://wiki.archlinux.org/index.php?title=SHA_password_hashes&oldid=410429)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

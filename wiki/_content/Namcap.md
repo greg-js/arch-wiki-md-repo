@@ -1,9 +1,5 @@
 # Namcap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Namcap is a tool to check binary packages and source PKGBUILDs for common packaging mistakes, which can also be automatically enabled. It was created by [Jason Chu](https://www.archlinux.org/fellows/#jason).
 
 **Changes**: The [NEWS](https://projects.archlinux.org/namcap.git/tree/NEWS) file in the git repository contains the changes from the previous version concisely.
@@ -203,8 +199,3 @@ How it works:
 *   `namcap-report.py` takes the code and prepares the report and RSS feeds, which is then copied to the webserver.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Namcap&oldid=412134](https://wiki.archlinux.org/index.php?title=Namcap&oldid=412134)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-*   [Package development](/index.php/Category:Package_development "Category:Package development")

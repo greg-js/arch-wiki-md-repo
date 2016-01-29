@@ -1,9 +1,5 @@
 # ASUS Zenbook UX51Vz
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook UX51Vz ultrabook.
 
 See the page for its 13" variant [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A") that has mostly orthogonal information to those here (may be only partially applicable to UX51Vz)
@@ -173,7 +169,3 @@ This is output of lspci -nnn -k on the UX51Vz-DB114H. Note that unlike most othe
 *   [http://bertrandbenoit.blogspot.it/2011/07/manage-intel-raid-under-gnulinux-using.html](http://bertrandbenoit.blogspot.it/2011/07/manage-intel-raid-under-gnulinux-using.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX51Vz&oldid=376465](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_UX51Vz&oldid=376465)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

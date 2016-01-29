@@ -1,124 +1,16 @@
 # ASUS Eee PC 1201T
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td style="color:green">**Working**</td>
-
-<td>radeon</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>rtl8192se (kernel)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-<td>usb-storage</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-<td>acpi-eeepc-generic</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend2RAM</td>
-
-<td style="color:green">**Working**</td>
-
-<td>pm-utils</td>
-
-</tr>
-
-<tr>
-
-<td>Hibernate</td>
-
-<td style="color:green">**Working**</td>
-
-<td>pm-utils</td>
-
-</tr>
-
-<tr>
-
-<td>Multi-input touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Graphics | **Working** | radeon |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | rtl8192se (kernel) |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** | usb-storage |
+| Function Keys | **Working** | acpi-eeepc-generic |
+| Suspend2RAM | **Working** | pm-utils |
+| Hibernate | **Working** | pm-utils |
+| Multi-input touchpad | **Working** |
 
 ## Contents
 
@@ -200,7 +92,3 @@ SUSPEND_MODULES="rtl8192se"
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201T&oldid=380443](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1201T&oldid=380443)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

@@ -1,9 +1,5 @@
 # PHPUnit
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Installing
 
 By far the easiest way to install is using the PHP Archive ([PHAR](http://php.net/phar)) package provided by the project. The PHAR package contains all dependencies as well as some of the optional dependencies for PHPUnit. The latest version can be retrieved from the project's site:
@@ -55,7 +51,3 @@ You pass it the class with the test cases and the file where they're defined. Th
 *   [Introduction to Unit Testing with PHPUnit](http://www.slideshare.net/DragonBe/introduction-to-unit-testing-with-phpunit-presentation-705447)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PHPUnit&oldid=414207](https://wiki.archlinux.org/index.php?title=PHPUnit&oldid=414207)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

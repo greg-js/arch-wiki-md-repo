@@ -1,9 +1,5 @@
 # Diskless system
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [NFS](/index.php/NFS "NFS")
@@ -13,7 +9,7 @@ Related articles
 
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
 
-_A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server._
+NaN
 
 ## Contents
 
@@ -343,12 +339,3 @@ You will then need to umount `$root` before you start the client.
 *   [syslinux.org: pxelinux FAQ](http://www.syslinux.org/wiki/index.php/PXELINUX)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Diskless_system&oldid=416272](https://wiki.archlinux.org/index.php?title=Diskless_system&oldid=416272)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

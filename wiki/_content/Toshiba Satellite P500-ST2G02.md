@@ -1,9 +1,5 @@
 # Toshiba Satellite P500-ST2G02
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is a tutorial on how to install and configure Arch Linux on a Toshiba Satellite P500 Laptop.
 
 ## Contents
@@ -187,7 +183,3 @@ options snd-hda-intel model=dell-vostro
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_P500-ST2G02&oldid=400457](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_P500-ST2G02&oldid=400457)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

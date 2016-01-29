@@ -1,9 +1,5 @@
 # PowerDNS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 PowerDNS is a DNS server, written in C++ and licensed under the GPL. PowerDNS features a large number of different backends ranging from simple BIND style zonefiles to relational databases and load balancing/failover algorithms.
 
 ## Contents
@@ -94,11 +90,3 @@ You could also use localhost instead of 127.0.0.1, but this causes PowerDNS to u
 *   [PowerDNS manual](http://doc.powerdns.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=412157](https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=412157)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

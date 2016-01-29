@@ -1,9 +1,5 @@
 # Acer Extensa 5235
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -143,7 +139,3 @@ Another annoyance is the poor fan control of this notebook. The fan is not acces
 You'll need to setup lm-sensors for this, which is working fine using the coretemp module.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Extensa_5235&oldid=376478](https://wiki.archlinux.org/index.php?title=Acer_Extensa_5235&oldid=376478)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

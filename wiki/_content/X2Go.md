@@ -1,9 +1,5 @@
 # X2Go
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [X2Go](http://wiki.x2go.org) enables you to access a graphical desktop of a computer over the network. The transmission is done using the [Secure Shell](/index.php/Secure_Shell "Secure Shell") protocol, so it is encrypted.
 
 **Note:** X2Go isn't compatible with all desktop environments. You can check [X2Go desktop environment compatibility](http://wiki.x2go.org/doku.php/doc:de-compat) first, especially if you want to shadow your current desktop.
@@ -175,11 +171,3 @@ See [[2]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[3]](https://bbs
 *   [Project page](http://x2go.org)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=X2Go&oldid=391799](https://wiki.archlinux.org/index.php?title=X2Go&oldid=391799)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

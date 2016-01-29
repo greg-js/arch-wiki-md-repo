@@ -1,9 +1,5 @@
 # Samsung Galaxy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -38,11 +34,3 @@ reverse out your steps when you unmount.
 **If you have some troubles, install go-mtpfs from** [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository). For more detail, check [go-mtpfs](https://wiki.archlinux.org/index.php/MTP#go-mtpfs).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_Galaxy&oldid=248663](https://wiki.archlinux.org/index.php?title=Samsung_Galaxy&oldid=248663)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

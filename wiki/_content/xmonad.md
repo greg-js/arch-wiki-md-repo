@@ -1,9 +1,5 @@
 # xmonad
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [xmonad](http://xmonad.org/) is a tiling window manager for X. Windows are arranged automatically to tile the screen without gaps or overlap, maximizing screen use. Window manager features are accessible from the keyboard: a mouse is optional.
 
 xmonad is written, configured and extensible in [Haskell](http://haskell.org/). Custom layout algorithms, key bindings and other extensions may be written by the user in configuration files.
@@ -205,11 +201,11 @@ There are number of complementary utilities that work well with xmonad. The most
 
 *   **[xmobar](/index.php/Xmobar "Xmobar")** — A lightweight, text-based, status bar written in Haskell.
 
-[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup>
+NaN
 
 *   **xmonad-log-applet** — [https://github.com/alexkay/xmonad-log-applet](https://github.com/alexkay/xmonad-log-applet)
 
-An applet for the GNOME, MATE or xfce panel. || [xmonad-log-applet-xfce4-git](https://aur.archlinux.org/packages/xmonad-log-applet-xfce4-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-log-applet-xfce4-git)]</sup>, [xmonad-log-applet-gnome-git](https://aur.archlinux.org/packages/xmonad-log-applet-gnome-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-log-applet-gnome-git)]</sup>
+NaN
 
 ### Increase the number of workspaces
 
@@ -598,7 +594,7 @@ A known issue with Virtualbox ([Ticket #6479](https://www.virtualbox.org/ticket/
 
 ### Steam games (Half-Life, Left 4 Dead, …) and xmonad
 
-There seems to be some trouble with Source engine based game (like Half-Life). If they do not start or get stuck with a black screen a workaround it to start them in window mode: right click on the game in your library and choose properties, click on launch options and enter: [[1]](http://steamcommunity.com/app/221410/discussions/0/864960353968561426/)
+There seems to be some trouble with xmonad and Source engine based games like Half-Life. If they do not start or get stuck with a black screen, a workaround is to start them in windowed mode. To do so, right click on the game in your Steam library and choose properties, click on launch options and enter [[1]](http://steamcommunity.com/app/221410/discussions/0/864960353968561426/):
 
 ```
 -windowed
@@ -612,7 +608,7 @@ Another solution is to float the window of the game using the manage hook. For e
 
 ```
 
-This can be also worked around by making XMonad pay attention to EWMH and including its fullscreen hook: [[2]](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-EwmhDesktops.html)
+This can also be worked around by making XMonad pay attention to EWMH hints and including its fullscreen hook [[2]](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-EwmhDesktops.html):
 
 ```
   main = xmonad $ ewmh defaultConfig{ handleEventHook =
@@ -644,14 +640,4 @@ to use the general (QT) UI.
 *   [Share your xmonad desktop!](https://bbs.archlinux.org/viewtopic.php?id=94969)
 *   [xmonad hacking thread](https://bbs.archlinux.org/viewtopic.php?id=40636)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417065](https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417065)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417798](https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417798)"

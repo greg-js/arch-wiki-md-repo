@@ -1,9 +1,5 @@
 # Home and End keys not working
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** This page previously contained some bad advice. Setting the TERM environment variable in your ~/.bashrc is a **BAD** idea. Please do not do it. Follow the advice below.
 
 A frequent problem in command line programs is that keys like Home and End do not work as expected. This is usually because the terminal emulator sends multi-character escape codes when such keys are pressed, which the running program (such as your shell) does not know how to interpret correctly. Usually this problem can be fixed by configuring the offending program to perform the correct action when receiving certain escape codes. Thus the solution varies from program to program.
@@ -202,12 +198,3 @@ or for [xterm](/index.php/Xterm "Xterm") you may have to use different escape co
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Home_and_End_keys_not_working&oldid=409380](https://wiki.archlinux.org/index.php?title=Home_and_End_keys_not_working&oldid=409380)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

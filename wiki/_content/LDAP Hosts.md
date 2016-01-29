@@ -1,9 +1,5 @@
 # LDAP Hosts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
@@ -117,7 +113,3 @@ PING iris (192.168.1.51) 56(84) bytes of data.
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_Hosts&oldid=376858](https://wiki.archlinux.org/index.php?title=LDAP_Hosts&oldid=376858)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

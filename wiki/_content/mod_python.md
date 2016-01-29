@@ -1,9 +1,5 @@
 # mod_python
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** mod_python is [discontinued](http://blog.dscpl.com.au/2010/06/modpython-project-is-now-officially.html) and have multiple security, performance and stability issues. It is strongly recommended to use [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi") instead.
 
 Mod_python is an [Apache](/index.php/Apache "Apache") module that embeds the [Python](http://www.python.org) interpreter within the server. With mod_python you can write web-based applications in Python that will run many times faster than traditional CGI and will have access to advanced features such as ability to retain database connections and other data between hits and access to Apache internals. A more detailed description of what mod_python can do is available in this O'Reilly [article](http://www.onlamp.com/pub/a/python/2003/10/02/mod_python.html).
@@ -88,7 +84,3 @@ With the configuration written above, you can also point your browser to any URL
 *   [mod_python manual](http://www.modpython.org/live/current/doc-html/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_python&oldid=388039](https://wiki.archlinux.org/index.php?title=Mod_python&oldid=388039)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

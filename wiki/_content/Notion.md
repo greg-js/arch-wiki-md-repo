@@ -1,9 +1,5 @@
 # Notion
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Notion](http://notion.sf.net) is a tiling, tabbed [window manager](/index.php/Window_manager "Window manager") for X.
 
 ## Contents
@@ -101,7 +97,3 @@ to
 *   [http://sourceforge.net/apps/mediawiki/notion](http://sourceforge.net/apps/mediawiki/notion) - Notion Wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Notion&oldid=414465](https://wiki.archlinux.org/index.php?title=Notion&oldid=414465)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

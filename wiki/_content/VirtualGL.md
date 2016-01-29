@@ -1,9 +1,5 @@
 # VirtualGL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 VirtualGL redirects an application's _OpenGL/GLX commands_ to a separate X server (that has access to a 3D graphics card), captures the rendered images, and then streams them to the X server that actually handles the application.
 
 The main use-case is to enable server-side hardware-accelerated 3D rendering for _remote desktop_ set-ups where the X server that handles the application is either on the other side of the network _(in the case of X11 forwarding)_, or a "virtual" X server that cannot access the graphics hardware _(in the case of VNC)_.
@@ -154,53 +150,30 @@ $ vglrun glxgears
 
 This has to be executed on the remote computer of course (where the application will run), i.e. inside your SSH or VNC session. The X servers that will be used, are determined from the following two environment variables:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>`<font color="blue">DISPLAY</font>`</td>
-
-<td>_The X server that will handle the application, and render its non-OpenGL parts._
+| `<font color="blue">DISPLAY</font>` | _The X server that will handle the application, and render its non-OpenGL parts._
 
 If using VNC, this refers to the VNC server. In the case of SSH forwarding, it is a virtual X server number on the remote computer that SSH internally maps to the real X server on the client. There is nothing VirtualGL-specific about this variable, and it will already be set to the correct value within your SSH or VNC session.
 
-</td>
-
-</tr>
-
-<tr>
-
-<td>`<font color="red">VGL_DISPLAY</font>`</td>
-
-<td>_The X server to which VirtualGL should redirect OpenGL rendering._
+ |
+| `<font color="red">VGL_DISPLAY</font>` | _The X server to which VirtualGL should redirect OpenGL rendering._
 
 See [Installation and setup](#Installation_and_setup) above. If not set, the value `:0.0` is assumed. Note that the number after the dot can be used to select the graphics card.
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
 
 Many more environment variables and command-line parameters are available to fine-tune `vglrun` - refer to the user manual and `vglrun -help` for reference. VirtualGL's behavior furthermore depends on which of its two main modes of operation is active (which `vglrun` will choose automatically, based on the environment in which it is executed):
 
 *   _"**VGL Transport**" - default when [using X11 forwarding](#Using_VirtualGL_with_X11_forwarding)_
 
-In this mode, a compressed image stream of the rendered OpenGL scenes is sent through a custom network protocol to a `vglclient` instance. By default it uses JPEG compression at 90% quality, but this can be fully customized, e.g.:
+NaN
 
- `$ vglrun -q 30 -samp 4x glxgears              _# use aggressive compression (to reduce bandwidth demand)_` 
+NaN
 
- `$ VGL_QUAL=30 VGL_SUBSAMP=4x vglrun glxgears  _# same as above, using environment variables_` 
-
-There is also a GUI dialog that lets you change the most common VirtualGL rendering/compression options for an application on the fly, after you have already started it with `vglrun` - simply press `Ctrl+Shift+F9` while the application has keyboard focus, to open this dialog.
+NaN
 
 *   _"**X11 Transport**" - default when [using VNC](#Using_VirtualGL_with_VNC)_
 
-In this mode, VirtualGL feeds raw (uncompressed) images through the normal X11 protocol directly to the X server that handles the application - e.g. a VNC server running on the same machine. Many of `vglrun`'s command-line options (e.g. those relating to image stream compression or stereo rendering) are not applicable here, because there is no `vglclient` running on the other end. It is now the VNC server that handles all the image stream optimization/compression, so it is there that you should turn to for fine-tuning.
+NaN
 
 **Tip:** `vglrun` is actually just a shell script that (temporarily) sets some environment variables before running the requested application - most importantly it adds the libraries that provide all the VirtualGL functionality to `LD_PRELOAD`. If it better suits your workflow, you could just set those variables yourself instead. The following command lists all environment variables that vglrun would set for your particular set-up: `comm -1 -3 <(env | sort) <(vglrun env | grep -v '^\[' | sort)` 
 
@@ -247,15 +220,15 @@ This may happen when something blocks VirtualGL from getting preloaded into the 
 
 *   **The application is started through a script that explicitly unsets/overrides LD_PRELOAD**
 
-_Solution:_ Edit the script to comment out or fix the offending line. (You can put the modified script in `/usr/local/bin/` to prevent it from being reverted on the next package upgrade.)
+NaN
 
 *   **The application is started through multiple layers of scripts, and environment variables get lost along the way**
 
-_Solution:_ Modify the final script that actually runs the application, to make it run the application with `vglrun`.
+NaN
 
 *   **The application is started through a loader binary _(possibly itself!)_, in a way that fails to propagate LD_PRELOAD**
 
-_Solution:_ If possible, bypass the loader binary and start the actual OpenGL application directly with `vglrun` - an example is VirtualBox where you need to start your virtual machine session directly with `vglrun VirtualBox -startvm "Name of the VM"` rather then through the VirtualBox main program GUI. If it is a matter of LD_PRELOAD being explicitly unset within the binary, running `vglrun` with the `-ge` command-line switch can prevent that in some cases.
+NaN
 
 See the "Application Recipes" section in the user manual for a list of some applications that are known to require such work-arounds.
 
@@ -273,11 +246,11 @@ ERROR: ld.so: object 'librrfaker.so' from LD_PRELOAD cannot be preloaded: ignore
 
 *   **The VirtualGL libraries for the correct architecture are not installed**
 
-If you are using a 64-bit Arch Linux system and want to run a 32-bit application (like [Wine](/index.php/Wine "Wine")) with VirtualGL, you need to install [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) from the [[multilib]](/index.php/Multilib "Multilib") repository.
+NaN
 
 *   **The application executable has the setuid/setgid flag set**
 
-You can confirm whether this is the case by inspecting the executable's file permissions using `ls -l`: It will show the letter `s` in place of the _user executable_ bit if setuid is set (for example `-rw**s**r-xr-x`), and in place of the _group executable_ bit if setgid is set. For such an application any preloading attempts will fail, unless the libraries to be preloaded have the setuid flag set as well. You can set this flag for the VirtualGL libraries in question by executing the following as root:
+NaN
 
 ```
 $ chmod u+s /usr/lib/lib{rr,dl}faker.so    # for the native-architecture versions provided by [virtualgl](https://www.archlinux.org/packages/?name=virtualgl)
@@ -285,7 +258,7 @@ $ chmod u+s /usr/lib32/lib{rr,dl}faker.so  # for the multilib versions provided 
 
 ```
 
-However, make sure you fully understand the security implications of [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") before deciding to do this in a server environment where security is critical.
+NaN
 
 ### Problem: rendering glitches, unusually poor performance, or application errors
 
@@ -310,12 +283,3 @@ See the "Advanced Configuration" section in the user manual for a proper explana
 *   [VirtualGL Online Documentation](http://www.virtualgl.org/Documentation/Documentation) (you can also find it at `/usr/share/doc/virtualgl/index.html` if you have [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) installed)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VirtualGL&oldid=411220](https://wiki.archlinux.org/index.php?title=VirtualGL&oldid=411220)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

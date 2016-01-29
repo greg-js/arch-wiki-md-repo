@@ -1,9 +1,5 @@
 # Deluge
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [rTorrent](/index.php/RTorrent "RTorrent")
@@ -239,53 +235,11 @@ $ echo "delugeuser:p422WoRd:10" >> $HOME/.config/deluge/auth
 
 The number **10** corresponds to a level of **Admin**. Refer to the following table for additional values:
 
-<table class="wikitable" align="center">
-
-<tbody>
-
-<tr>
-
-<th>Level Name</th>
-
-<th>Level Value</th>
-
-</tr>
-
-<tr>
-
-<td>None</td>
-
-<td>0</td>
-
-</tr>
-
-<tr>
-
-<td>Read Only</td>
-
-<td>1</td>
-
-</tr>
-
-<tr>
-
-<td>Normal</td>
-
-<td>5</td>
-
-</tr>
-
-<tr>
-
-<td>Admin</td>
-
-<td>10</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Level Name | Level Value |
+| None | 0 |
+| Read Only | 1 |
+| Normal | 5 |
+| Admin | 10 |
 
 **Note:** In Deluge 1.35, these values have no effect, but multiuser options are under development.
 
@@ -359,7 +313,3 @@ The port **58846** should be replaced with the port the deluge server is running
 *   [Deluge wiki](http://dev.deluge-torrent.org/wiki)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Deluge&oldid=402494](https://wiki.archlinux.org/index.php?title=Deluge&oldid=402494)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

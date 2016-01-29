@@ -1,9 +1,5 @@
 # Huawei E173s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes how to set up Huawei E173s 3G USB modem on Arch Linux. It involves switching the USB stick from CD-ROM mode to modem mode using usb_modeswitch, making a connection to the network with sakis3g and setting it up to run at system startup.
 
 ## Contents
@@ -169,7 +165,3 @@ Replace <username> with your username.
 *   [http://wiki.sakis3g.org/wiki/index.php?title=Mode_switch](http://wiki.sakis3g.org/wiki/index.php?title=Mode_switch)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Huawei_E173s&oldid=231213](https://wiki.archlinux.org/index.php?title=Huawei_E173s&oldid=231213)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")

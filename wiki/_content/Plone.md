@@ -1,9 +1,5 @@
 # Plone
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Plone](http://http://plone.org/) is a free and open source content management system built on top of the Zope application server written in [Python](/index.php/Python "Python"). Plone can be used for all kinds of websites, including blogs, internet sites, webshops and intranets. The strengths of Plone are its flexible and adaptable workflow, very good security, extensibility, high usability and flexibility.
 
 ## Contents
@@ -119,11 +115,3 @@ For more information on upgrades, especially between major versions of Plone rea
 *   [Plone Wikipedia Article](https://en.wikipedia.org/wiki/Plone_(software) "wikipedia:Plone (software)")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Plone&oldid=412155](https://wiki.archlinux.org/index.php?title=Plone&oldid=412155)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Wiki Monkey
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Wiki Monkey](https://github.com/kynikos/wiki-monkey/wiki) is a MediaWiki-compatible bot and editor assistant that can be used directly within wiki pages in the browser as a user script. Currently it is tested on [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and [Opera](/index.php/Opera "Opera"), but it is very likely to work also on other browsers out of the box or with minor adaptations. Wiki Monkey can also be easily extended through the creation of plugins, exploiting its API.
 
 The project is currently focused on ArchWiki, and as such most plugins address ArchWiki-specific problems.
@@ -102,7 +98,3 @@ _Rollback_ links are hidden by default in [Special:Contributions](/index.php/Spe
 *   [Bug reports, feature requests, questions](https://github.com/kynikos/wiki-monkey/issues)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wiki_Monkey&oldid=414953](https://wiki.archlinux.org/index.php?title=Wiki_Monkey&oldid=414953)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")

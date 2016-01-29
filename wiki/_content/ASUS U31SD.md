@@ -1,9 +1,5 @@
 # ASUS U31SD
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 System specification](#System_specification)
@@ -144,7 +140,3 @@ pcie_aspm=force i915.i915_enable_rc6=1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_U31SD&oldid=390566](https://wiki.archlinux.org/index.php?title=ASUS_U31SD&oldid=390566)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

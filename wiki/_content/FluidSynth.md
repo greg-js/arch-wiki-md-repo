@@ -1,9 +1,5 @@
 # FluidSynth
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [FluidSynth](http://www.fluidsynth.org/) is a real-time software synthesizer based on the SoundFont 2 specifications. It is required by [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), and thus is installed as a dependency of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
 
 ## Contents
@@ -98,7 +94,3 @@ find . -regex '.*[.][mM][iI][dD][iI]?$' -print0 | xargs -0 -n 1 -P $maxjobs bash
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FluidSynth&oldid=389794](https://wiki.archlinux.org/index.php?title=FluidSynth&oldid=389794)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

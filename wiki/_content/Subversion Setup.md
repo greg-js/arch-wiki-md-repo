@@ -1,9 +1,5 @@
 # Subversion Setup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _"[Apache Subversion](http://subversion.apache.org/features.html) is a full-featured version control system originally designed to be a better [CVS](/index.php/CVS "CVS"). Subversion has since expanded beyond its original goal of replacing CVS, but its basic model, design, and interface remain heavily influenced by that goal."_
 
 This article deals with setting up an svn-server on your machine. There are two popular svn-servers, the built in _svnserve_ and the more advanced option, [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") with svn plugins.
@@ -364,8 +360,3 @@ For a list of subversion clients, see the [Wikipedia article](https://en.wikiped
 *   [http://subversion.tigris.org/](http://subversion.tigris.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Subversion_Setup&oldid=414980](https://wiki.archlinux.org/index.php?title=Subversion_Setup&oldid=414980)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

@@ -1,9 +1,5 @@
 # Official repositories web interface
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -119,11 +115,3 @@ Example: [https://www.archlinux.org/packages/search/json/?arch=x86_64&flagged=Fl
 *   [Kittypack: A silly little tool to poke archlinux.org/packages for info](https://github.com/MrElendig/kittypack)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Official_repositories_web_interface&oldid=414371](https://wiki.archlinux.org/index.php?title=Official_repositories_web_interface&oldid=414371)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

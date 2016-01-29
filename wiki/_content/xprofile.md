@@ -1,9 +1,5 @@
 # xprofile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [xinitrc](/index.php/Xinitrc "Xinitrc")
@@ -59,7 +55,3 @@ nm-applet &
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xprofile&oldid=388000](https://wiki.archlinux.org/index.php?title=Xprofile&oldid=388000)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

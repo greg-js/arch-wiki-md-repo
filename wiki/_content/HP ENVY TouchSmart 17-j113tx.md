@@ -1,9 +1,5 @@
 # HP ENVY TouchSmart 17-j113tx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [HP ENVY TouchSmart 17-j113tx](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&lc=en&product=6663757) is a laptop computer model capable of running ArchLinux.
 
 ## Contents
@@ -170,89 +166,14 @@ The integrated numeric keypad is dual-function, and defaults to scrolling action
 
 The integrated Function keys are also dual-function, and default to system control actions rather than assigned Functions (reversed of course by using the [Fn] key in combination). The system control actions are:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Key(s)**</td>
-
-<td>**Default Action**</td>
-
-<td>**Status (with software to process the events)**</td>
-
-</tr>
-
-<tr>
-
-<td>F1</td>
-
-<td>[Meta]+[F1]</td>
-
-<td>Does nothing by default (meant to be a 'Help' key under Windows).</td>
-
-</tr>
-
-<tr>
-
-<td>F2, F3</td>
-
-<td>Monitor Brightness Down/Up</td>
-
-<td>Working for integrated display.</td>
-
-</tr>
-
-<tr>
-
-<td>F4</td>
-
-<td>[Meta]+[P]</td>
-
-<td>Does nothing by default (meant to switch video output under Windows).</td>
-
-</tr>
-
-<tr>
-
-<td>F5</td>
-
-<td>Not captured (activates and deactives the keyboard backlight, which appears to be hardware controlled).</td>
-
-</tr>
-
-<tr>
-
-<td>F6, F7, F8</td>
-
-<td>Volume Mute/Down/Up</td>
-
-<td>Working, including the LED that shows when volume is muted.</td>
-
-</tr>
-
-<tr>
-
-<td>F9, F10, F11</td>
-
-<td>Media Previous/Play/Next</td>
-
-<td>Working.</td>
-
-</tr>
-
-<tr>
-
-<td>F12</td>
-
-<td>Not captured (activates and deactivates Wireless LAN and Bluetooth transceivers, with a LED that changes depending on this state).</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Key(s)** | **Default Action** | **Status (with software to process the events)** |
+| F1 | [Meta]+[F1] | Does nothing by default (meant to be a 'Help' key under Windows). |
+| F2, F3 | Monitor Brightness Down/Up | Working for integrated display. |
+| F4 | [Meta]+[P] | Does nothing by default (meant to switch video output under Windows). |
+| F5 | Not captured (activates and deactives the keyboard backlight, which appears to be hardware controlled). |
+| F6, F7, F8 | Volume Mute/Down/Up | Working, including the LED that shows when volume is muted. |
+| F9, F10, F11 | Media Previous/Play/Next | Working. |
+| F12 | Not captured (activates and deactivates Wireless LAN and Bluetooth transceivers, with a LED that changes depending on this state). |
 
 ### Pointer
 
@@ -298,7 +219,3 @@ Alternatively, it is possible - and has been tested successfully - to reclaim al
 **Warning:** As always, make sure you take a backup of any important data before erasing or resizing any volumes or disks.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_ENVY_TouchSmart_17-j113tx&oldid=409681](https://wiki.archlinux.org/index.php?title=HP_ENVY_TouchSmart_17-j113tx&oldid=409681)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

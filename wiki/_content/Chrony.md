@@ -1,9 +1,5 @@
 # Chrony
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Time](/index.php/Time "Time")
@@ -173,11 +169,3 @@ Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dis
 *   [http://www.akadia.com/services/ntp_synchronize.html](http://www.akadia.com/services/ntp_synchronize.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrony&oldid=414555](https://wiki.archlinux.org/index.php?title=Chrony&oldid=414555)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

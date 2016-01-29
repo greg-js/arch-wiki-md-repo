@@ -1,9 +1,5 @@
 # Oblogout
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Openbox](/index.php/Openbox "Openbox")
@@ -142,7 +138,3 @@ For example, if you have two monitors, and you only want oblogout to appear on t
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Oblogout&oldid=417556](https://wiki.archlinux.org/index.php?title=Oblogout&oldid=417556)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

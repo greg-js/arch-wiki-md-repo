@@ -1,9 +1,5 @@
 # Dungeon & Dragons Online
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This guide will show you how to install and run Dungeons & Dragons Online using [Wine](/index.php/Wine "Wine") on GNU/Linux.
 
 ## Contents
@@ -137,12 +133,3 @@ rm [A-C]* [R-S]*
 *   [Codeweaver Errata](http://www.codeweavers.com/compatibility/browse/name/?app_id=4048;tips=1)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dungeon_%26_Dragons_Online&oldid=392081](https://wiki.archlinux.org/index.php?title=Dungeon_%26_Dragons_Online&oldid=392081)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

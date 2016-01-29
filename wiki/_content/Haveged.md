@@ -1,9 +1,5 @@
 # Haveged
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Rng-tools](/index.php/Rng-tools "Rng-tools")
@@ -58,7 +54,3 @@ The package provides `haveged.service`, see [systemd](/index.php/Systemd "System
 *   [http://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged](http://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Haveged&oldid=408914](https://wiki.archlinux.org/index.php?title=Haveged&oldid=408914)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")

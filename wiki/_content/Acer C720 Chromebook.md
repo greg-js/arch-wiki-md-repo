@@ -1,9 +1,5 @@
 # Acer C720 Chromebook
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices")
@@ -139,7 +135,3 @@ See power saving section at [Improving WLAN and BT performance](#Improving_WLAN_
 *   Unbricking with [flashrom](https://www.archlinux.org/packages/?name=flashrom) [using the Raspberry Pi](http://flashrom.org/RaspberryPi), requires [SOIC clip](http://www.hmcelectronics.com/product/Pomona/5250), See [GPIO matrix](http://elinux.org/Rpi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29) and [pictures](https://drive.google.com/folderview?id=0B9f62MH0umbmRTA2Xzd5WHhjWEU&usp=sharing). also there's a [BeagleBone method](http://www.tnhh.net/2014/08/25/unbricking-chromebook-with-beaglebone.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_C720_Chromebook&oldid=413880](https://wiki.archlinux.org/index.php?title=Acer_C720_Chromebook&oldid=413880)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

@@ -1,9 +1,5 @@
 # TeX Live FAQ
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [TeX Live](/index.php/TeX_Live "TeX Live")
@@ -285,11 +281,3 @@ Last but not least: [PSTricks](http://tug.org/PSTricks/main.cgi/), which gives a
 **A:** The "grandfather" of vector editors - xfig is able to produce some output relevant to tex. I had relatively good experience with [ipe](http://tclab.kaist.ac.kr/ipe/) recently (saves eps/pdf). Inkscape is a good choice too.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TeX_Live_FAQ&oldid=377059](https://wiki.archlinux.org/index.php?title=TeX_Live_FAQ&oldid=377059)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TeX](/index.php/Category:TeX "Category:TeX")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

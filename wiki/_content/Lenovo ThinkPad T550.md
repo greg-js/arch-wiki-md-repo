@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T550
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Laptop](/index.php/Laptop "Laptop")
@@ -64,7 +60,3 @@ The T550 is only able to drive three displays at once. If you are using a one-to
 Enabling "Always-On USB" in the BIOS seems to make the forward-most USB port on the right side of the laptop (the 'Charging Port') unusable in Linux - disabling this feature in BIOS re-enables the port.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T550&oldid=391729](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T550&oldid=391729)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

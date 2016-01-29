@@ -1,9 +1,5 @@
 # MacBook
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
@@ -283,11 +279,7 @@ The easiest way to partition your hard drive, so that all these operating system
 
 So in linux terms your partitions will be something like:
 
-*   sda (disk)
-*   sda1 (Mac boot partition - you cannot see this one in OS X)
-*   sda2 (OS X install in HFS+)
-*   sda3 (Arch install temporarly in HFS)
-*   sda4 (XP install in FAT32)
+NaN
 
 *   Finally, click **apply**. This will create a new partition out of the empty space.
 
@@ -1618,13 +1610,3 @@ I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
     *   [http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html](http://linux-junky.blogspot.com/2011/08/triple-boot-archlinux-windows-7-and-mac.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook&oldid=416227](https://wiki.archlinux.org/index.php?title=MacBook&oldid=416227)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

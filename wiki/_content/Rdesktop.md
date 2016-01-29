@@ -1,9 +1,5 @@
 # Rdesktop
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [xrdp](/index.php/Xrdp "Xrdp")
@@ -52,69 +48,13 @@ $ rdesktop -g 1440x900 -P -z -x l -r sound:off -u windowsuser 98.180.102.33:3389
 
 Reading from left to right:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>`-g 1440x900`</td>
-
-<td>Sets the resolution of the display to 1440x900</td>
-
-</tr>
-
-<tr>
-
-<td>`-P`</td>
-
-<td>Enables bitmap caching/speeds up xfers.</td>
-
-</tr>
-
-<tr>
-
-<td>`-z`</td>
-
-<td>Enables RDP datastream compression</td>
-
-</tr>
-
-<tr>
-
-<td>`-x l`</td>
-
-<td>Uses the "lan" quality experience level, see the man page for additional options</td>
-
-</tr>
-
-<tr>
-
-<td>`-r sound:off`</td>
-
-<td>Redirects sound generated on the server to null</td>
-
-</tr>
-
-<tr>
-
-<td>`-u windowsuser`</td>
-
-<td>This defines the username to use when logging into the Windows box</td>
-
-</tr>
-
-<tr>
-
-<td>`98.180.102.33:3389`</td>
-
-<td>This is the IP address and port number of the target machine</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| `-g 1440x900` | Sets the resolution of the display to 1440x900 |
+| `-P` | Enables bitmap caching/speeds up xfers. |
+| `-z` | Enables RDP datastream compression |
+| `-x l` | Uses the "lan" quality experience level, see the man page for additional options |
+| `-r sound:off` | Redirects sound generated on the server to null |
+| `-u windowsuser` | This defines the username to use when logging into the Windows box |
+| `98.180.102.33:3389` | This is the IP address and port number of the target machine |
 
 ## Tips and tricks
 
@@ -159,7 +99,3 @@ See [Cursor themes#Supplying missing cursors](/index.php/Cursor_themes#Supplying
 *   [freerdp](https://www.archlinux.org/packages/?name=freerdp) a rdesktop fork that supports RDP 7.1 features including network level authentication (NLA). See also [[1]](http://askubuntu.com/a/97932/217269).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rdesktop&oldid=412167](https://wiki.archlinux.org/index.php?title=Rdesktop&oldid=412167)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop")

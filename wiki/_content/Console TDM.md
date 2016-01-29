@@ -1,9 +1,5 @@
 # Console TDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -54,7 +50,3 @@ The use of the program `tdmctl` is much like systemctl, and it's a powerful tool
 You can customize Console TDM by editing `~/.tdm/tdminit`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=414061](https://wiki.archlinux.org/index.php?title=Console_TDM&oldid=414061)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

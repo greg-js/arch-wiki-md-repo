@@ -1,9 +1,5 @@
 # Broadcom wireless
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Wireless](/index.php/Wireless "Wireless")
@@ -39,45 +35,10 @@ In September 2010, Broadcom [released](http://thread.gmane.org/gmane.linux.kerne
 
 The types of available drivers are:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Driver</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>brcm80211</td>
-
-<td>Kernel driver open-source version</td>
-
-</tr>
-
-<tr>
-
-<td>b43</td>
-
-<td>Kernel driver reverse-engineered version</td>
-
-</tr>
-
-<tr>
-
-<td>broadcom-wl</td>
-
-<td>Broadcom driver restricted-license</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Driver | Description |
+| brcm80211 | Kernel driver open-source version |
+| b43 | Kernel driver reverse-engineered version |
+| broadcom-wl | Broadcom driver restricted-license |
 
 ## Driver selection
 
@@ -187,7 +148,3 @@ This device will not display with either `lspci` nor `lsusb`; there is no known 
 If no other approaches help, install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), or use a [previous driver version](/index.php/Downgrading_packages "Downgrading packages").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=416337](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&oldid=416337)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking")

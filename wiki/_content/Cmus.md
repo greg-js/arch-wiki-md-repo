@@ -1,9 +1,5 @@
 # Cmus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [cmus](http://cmus.sourceforge.net/) _(C* MUsic Player)_ is a small, fast and powerful console audio player which supports most major audio formats. Various features include gapless playback, ReplayGain support, MP3 and Ogg streaming, live filtering, instant startup, customizable key-bindings, and vi-style default key-bindings.
 
 ## Contents
@@ -80,11 +76,7 @@ To add music to your cmus library, use the arrow keys to highlight a file or fol
 
 Press `1` to go to the simple library view. Use the `up` and `down` arrow keys (or `k`, `j`) to select an artist and album you would like to hear. Pressing `space` on the artist name will collapse or expand the albums it contains. Switch between list of tracks and artist/album view by pressing `Tab` and press `Enter` to play the selected track. Here is some keys to control the playback:
 
-Press `c` to pause/unpause
-
-Press `right`/`left` (or `h`, `l`) arrow keys to seek by 10 seconds
-
-Press `<`/`>` seek by one minute
+NaN
 
 ### Keybindings
 
@@ -179,7 +171,3 @@ Now when you use the `XF86AudioPlay` key on your keyboard, cmus will open up. If
 *   [Website](https://cmus.github.io/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cmus&oldid=414735](https://wiki.archlinux.org/index.php?title=Cmus&oldid=414735)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

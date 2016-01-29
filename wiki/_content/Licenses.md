@@ -1,9 +1,5 @@
 # Licenses
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The most commonly used licenses covering software packages on an Arch Linux system are found in the `/usr/share/licenses/common` directory. Additional less common licenses for software packages are found in the `/usr/share/licenses` directory, in a subdirectory named for the software package in question. This page provides information about the most common licenses found in Arch Linux.
 
 Additional information and perspectives on free and open source software licenses may be found on the following pages:
@@ -146,7 +142,3 @@ See also: [Category:Licenses](/index.php/Category:Licenses "Category:Licenses");
 *   [Text of Zope Public License, Version 2.1](http://old.zope.org/Resources/ZPL)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Licenses&oldid=365542](https://wiki.archlinux.org/index.php?title=Licenses&oldid=365542)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Licenses](/index.php/Category:Licenses "Category:Licenses")

@@ -1,9 +1,5 @@
 # SugarSync
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [SugarSync](https://www.sugarsync.com/) is a file sync and online backup tool similar to [Dropbox](http://www.dropbox.com/). Unfortunately, there is no native Linux client available. However, it works well through wine.
 
 ## Contents
@@ -53,8 +49,3 @@ Follow the Windows instructions in the official [Quick start guide](http://www.s
 In the case where an update window pops up, you can accept or cancel the installation, as you wish. There is nothing more to do than waiting for the download and update to finish.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SugarSync&oldid=368762](https://wiki.archlinux.org/index.php?title=SugarSync&oldid=368762)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Wine](/index.php/Category:Wine "Category:Wine")

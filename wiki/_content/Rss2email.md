@@ -1,9 +1,5 @@
 # Rss2email
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **rss2email** is a free tool for retrieving content from RSS feeds and mailing it. It is useful for those who do not want yet another program with which to keep up and for people who have a system for e-mail management that they would like to apply to their RSS feeds as well. People with lots of e-mail often have highly customized systems that let them process their mail efficiently; rss2email allows them to easily apply this system to their feeds as well.
 
 ## Contents
@@ -156,7 +152,3 @@ SMTP_PASS = _password_
 *   [http://www.linux.com/archive/feed/50469](http://www.linux.com/archive/feed/50469) - linux.com article.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rss2email&oldid=412168](https://wiki.archlinux.org/index.php?title=Rss2email&oldid=412168)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

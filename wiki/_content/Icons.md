@@ -1,9 +1,5 @@
 # Icons
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
@@ -94,7 +90,3 @@ Not all icon themes provide a complete set of icons for the [Xfce](/index.php/Xf
 *   [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/)<sup><small>AUR</small></sup> - Elementary icons forked from upstream, extended and maintained for Xfce.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Icons&oldid=393546](https://wiki.archlinux.org/index.php?title=Icons&oldid=393546)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

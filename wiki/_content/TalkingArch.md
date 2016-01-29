@@ -1,9 +1,5 @@
 # TalkingArch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes a bootable CD / USB image customized for blind users. The modified version is mostly equivalent to the official "netinstall CD", but the system should start speaking as soon as you boot with it. Speech is provided via the sound card, using the eSpeak software synthesizer and the Speakup screenreader. It is also possible to use a braille display, via brltty. You can obtain the image [from this page](http://talkingarch.tk/).
 
 The image can be used with both the i686 and the x86_64 architecture. Also, it is suitable for either a recordable CD or a USB stick. Just download it and write it to the medium of your choice.
@@ -68,8 +64,3 @@ TalkingArch now has an IRC channel at #talkingarch on irc.netwirc.tk. Feel free 
 This is not an official release. It is not endorsed by anyone other than its maintainers. It is provided solely for the convenience of blind and visually impaired users, and it comes with absolutely no warranty.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TalkingArch&oldid=393501](https://wiki.archlinux.org/index.php?title=TalkingArch&oldid=393501)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
-*   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")

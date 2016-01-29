@@ -1,9 +1,5 @@
 # NTFS-3G
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
@@ -116,21 +112,7 @@ If you are running on a single user machine, you may like to own the file system
 
 For most, the above settings should suffice. Here are a few other options that are general common options for various Linux filesystems. For a complete list, see [this](http://www.tuxera.com/community/ntfs-3g-manual/#6)
 
-[umask](/index.php/Umask "Umask")
-
-umask is a built-in shell command which automatically sets file permissions on newly created files. For Arch Linux, the default umask for root and user is 0022\. With 0022 new folders have the directory permissions of 755 and new files have permissions of 644\. You can read more about umask permissions [here](http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html).
-
-noauto
-
-If `noauto` is set, NTFS entries in `/etc/fstab` do not get mounted automatically at boot.
-
-uid
-
-The user id number. This allows a specific user to have full access to the partition. Your uid can be found with the `id` command.
-
-fmask and dmask
-
-Like `umask` but defining file and directory respectively individually.
+NaN
 
 ### Allowing user to mount
 
@@ -174,15 +156,15 @@ There are a number of bootable CD/USB images avaliable. This list is not exhaust
 
 *   **[GParted](https://en.wikipedia.org/wiki/GParted "wikipedia:GParted")** — Small bootable GNU/Linux distribution for x86 based computers. It enables you to use all the features of the latest versions of the GParted application. Does not include additional packages System Rescue CD may incorporate, and disk encryption schemes may not be supported.
 
-[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) ||
+NaN
 
 *   **[Parted Magic](https://en.wikipedia.org/wiki/Parted_Magic "wikipedia:Parted Magic")** — Very good complete hard disk management solution. With the Partition Editor you can re-size, copy, and move partitions. You can grow or shrink your C: drive. Create space for new operating systems. Attempt data rescue from lost partitions.
 
-[http://partedmagic.com/](http://partedmagic.com/) ||
+NaN
 
 *   **[SystemRescueCD](https://en.wikipedia.org/wiki/SystemRescueCD "wikipedia:SystemRescueCD")** — Good tool to have, and works seamlessly in most cases. Once booted, run GParted and the rest should be fairly obvious.
 
-[http://www.sysresccd.org/](http://www.sysresccd.org/) ||
+NaN
 
 Note that the important programs for resizing NTFS partitions include ntfs-3g and a utility like (G)parted or fdisk, provided by the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. Unless you are an "advanced" user it is advisable to use a tool like GParted to perform any resize operations to minimize the chance of data loss due to user error.
 
@@ -243,7 +225,3 @@ If you cannot mount your NTFS partition even when following this guide, try usin
 *   [Official NTFS-3G manual](http://www.tuxera.com/community/ntfs-3g-manual/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412749](https://wiki.archlinux.org/index.php?title=NTFS-3G&oldid=412749)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

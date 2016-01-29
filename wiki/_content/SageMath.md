@@ -1,9 +1,5 @@
 # SageMath
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Matlab](/index.php/Matlab "Matlab")
@@ -206,7 +202,3 @@ texhash: Done.
 *   [Software Used by SageMath](http://www.sagemath.org/links-components.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SageMath&oldid=417042](https://wiki.archlinux.org/index.php?title=SageMath&oldid=417042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")

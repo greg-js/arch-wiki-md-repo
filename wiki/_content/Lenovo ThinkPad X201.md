@@ -1,98 +1,17 @@
 # Lenovo ThinkPad X201
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The X201 is a 4-core subnotebook produced by Lenovo. See [Thinkwiki](http://www.thinkwiki.org/wiki/Category:X201) for specifications.
 
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>[Intel graphics](/index.php/Intel_graphics "Intel graphics")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Network](/index.php/Network "Network")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Wireless](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[ALSA](/index.php/ALSA "ALSA")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Touchpad](/index.php/Touchpad "Touchpad")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Bluetooth](/index.php/Bluetooth "Bluetooth")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Webcam](/index.php/Webcam "Webcam")</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Card reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes</td>
-
-</tr>
-
-<tr>
-
-<td>[Power management](/index.php/Power_management "Power management")</td>
-
-<td style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Limited</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Working** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Network](/index.php/Network "Network") | Yes |
+| [Wireless](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| [Webcam](/index.php/Webcam "Webcam") | Yes |
+| Card reader | Yes |
+| [Power management](/index.php/Power_management "Power management") | Limited |
 
 ## Contents
 
@@ -175,7 +94,3 @@ After suspension, an EC IRQ may hang in the queue causing all functions keys to 
 Other issues include the yellow USB port not being powered.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X201&oldid=410674](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X201&oldid=410674)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

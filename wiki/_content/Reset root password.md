@@ -1,9 +1,5 @@
 # Reset root password
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This guide will show you how to reset a forgotten root password. Several methods are listed to help you accomplish this.
 
 **Warning:** An attacker could use the methods mentioned below to break into your system. No matter how secure the operating system is or how good passwords are, having physical access amounts to loading an alternate OS and exposing your data, unless you use [disk encryption](/index.php/Disk_encryption "Disk encryption").
@@ -45,8 +41,3 @@ With a LiveCD a couple methods are available: change root and use the `passwd` c
 *   [this guide](http://www.howtoforge.com/how-to-reset-a-forgotten-root-password-with-knoppix-p2) for an example.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Reset_root_password&oldid=397910](https://wiki.archlinux.org/index.php?title=Reset_root_password&oldid=397910)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")
-*   [Security](/index.php/Category:Security "Category:Security")

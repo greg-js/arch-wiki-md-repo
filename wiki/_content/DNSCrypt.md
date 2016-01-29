@@ -1,9 +1,5 @@
 # DNSCrypt
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [DNSCrypt](http://dnscrypt.org/) encrypts and authenticates DNS traffic between user and DNS resolver. While IP traffic itself is unchanged, it prevents local spoofing of DNS queries, ensuring DNS responses are sent by the server of choice. [[1]](https://www.reddit.com/r/sysadmin/comments/2hn435/dnssec_vs_dnscrypt/ckuhcbu)
 
 ## Contents
@@ -267,12 +263,3 @@ systemctl restart unbound
 If successful, your two selected dns providers should be the only ones found when using one of the dns leak test websites.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412765](https://wiki.archlinux.org/index.php?title=DNSCrypt&oldid=412765)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System")
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

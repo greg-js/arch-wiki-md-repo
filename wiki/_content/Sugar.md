@@ -1,9 +1,5 @@
 # Sugar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 A product of the [OLPC](https://en.wikipedia.org/wiki/One_Laptop_per_Child "wikipedia:One Laptop per Child") initiative, [Sugar](https://en.wikipedia.org/wiki/Sugar_(software) "wikipedia:Sugar (software)") is a Desktop Environment akin to [KDE](/index.php/KDE "KDE") and [GNOME](/index.php/GNOME "GNOME"), but geared towards children and education. If you have a young son, daughter, brother, sister, puppy or alien, the best way to introduce them to the world of Arch Linux is by deploying an Arch/Sugar platform and then forgetting about it.
 
 Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name the parts of its system. The graphical interface itself constitute the **Glucose** group. This is the core system can reasonably expect to be present when installing Sugar. But to really use the environment, you need activities (some sort of applications). Base activities are part of **Fructose**. Then, **Sucrose** is constituted by both Glucose and Fructose and represents what should be distributed as a basic sugar desktop environment. Extra activities are part of **Honey**. Note that Ribose (the underlaying operating system) is here replaced by Arch.
@@ -104,11 +100,3 @@ build() {
 *   [Activities for Sugar](http://activities.sugarlabs.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sugar&oldid=392693](https://wiki.archlinux.org/index.php?title=Sugar&oldid=392693)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

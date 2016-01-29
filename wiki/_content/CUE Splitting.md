@@ -1,9 +1,5 @@
 # CUE Splitting
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article describes how to split audio files using CUE metadata.
 
 ## Contents
@@ -100,7 +96,3 @@ _cuetag.sh_ supports id3 tags for _.mp3_ files and vorbis tags for _.ogg_ and _.
 *   [Rip Audio CDs](/index.php/Rip_Audio_CDs "Rip Audio CDs")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CUE_Splitting&oldid=415647](https://wiki.archlinux.org/index.php?title=CUE_Splitting&oldid=415647)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

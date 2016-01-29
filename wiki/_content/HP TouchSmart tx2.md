@@ -1,9 +1,5 @@
 # HP TouchSmart tx2
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is a work in progress to get archlinux to work on the HP tx2z multitouch tablet pc.
 
 Installed using archlinux-2009.08 x86_64\. Few other tips can be seen on Arch's wiki page for [Tablet PC](/index.php/Tablet_PC "Tablet PC")
@@ -246,15 +242,11 @@ not tested
 
 **Ethernet** : RTL8111/8168B PCI Express Gigabit Ethernet controller
 
-module: _r8169_ in kernel
+NaN
 
 **Wifi** : Broadcom Corporation BCM4322 802.11a/b/g/n
 
-Followed setup on [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312")
-
-module(s): _!b43 !ssb !lib80211 lib80211_crypt_tkip wl_
-
-_the module must be reinstalled after each kernel update in order for wifi to work._
+NaN
 
 ### Audio
 
@@ -331,7 +323,3 @@ $ xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode 
 *   [HOW TO: Set up the HP TX2z and Dell XT & XT2 (N-trig digitizer) in Ubuntu](http://ubuntu-ky.ubuntuforums.org/showthread.php?t=1252492%7C)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_TouchSmart_tx2&oldid=368847](https://wiki.archlinux.org/index.php?title=HP_TouchSmart_tx2&oldid=368847)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

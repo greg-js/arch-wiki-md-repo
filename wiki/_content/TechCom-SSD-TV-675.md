@@ -1,9 +1,5 @@
 # TechCom-SSD-TV-675
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 About TechCom SSD-TV-675 INTERNAL TV TUNER](#About_TechCom_SSD-TV-675_INTERNAL_TV_TUNER)
@@ -147,7 +143,3 @@ freq=280.00:alsa:adevice=hw.0,0:audiorate=32000:amode=1:forceaudio:volume=95 buf
 [http://www.linuxtv.org/](http://www.linuxtv.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TechCom-SSD-TV-675&oldid=389741](https://wiki.archlinux.org/index.php?title=TechCom-SSD-TV-675&oldid=389741)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

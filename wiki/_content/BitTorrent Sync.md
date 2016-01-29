@@ -1,9 +1,5 @@
 # BitTorrent Sync
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [BitTorrent Sync](https://www.getsync.com/) (BTSync) is a file sharing system that relies on the [BitTorrent](http://en.wikipedia.org/wiki/Bittorrent) protocol. Instead of having a central server which archives every file, this syncing method uses peer-to-peer connections between the devices themselves therefore there is no limit on data storage and/or transfer speed. The user's data is exclusively stored on the devices with which the user chose to be in sync with, hence it is required to have at least two user devices, or "nodes" to be online. If many devices are connected simultaneously, files are shared between them in a mesh networking topology.
 
 ## Contents
@@ -140,7 +136,7 @@ For further details, please refer to [Ignoring files in Sync (IgnoreList)](http:
 
 ### ARM alignment error
 
-Add the line `w /proc/cpu/alignment - - - - 2` to `/etc/tmpfiles.d/btsync.conf`. (You need to create the file).  
+Add the line `w /proc/cpu/alignment - - - - 2` to `/etc/tmpfiles.d/btsync.conf`. (You need to create the file).
 Note that this may lead to performance degradation.
 
 ## See also
@@ -149,12 +145,3 @@ Note that this may lead to performance degradation.
 *   [Official BitTorrent Sync FAQ](http://www.bittorrent.com/help/faq/sync)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-01-27]</sup>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=BitTorrent_Sync&oldid=417637](https://wiki.archlinux.org/index.php?title=BitTorrent_Sync&oldid=417637)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

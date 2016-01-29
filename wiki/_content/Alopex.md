@@ -1,9 +1,5 @@
 # Alopex
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [dmenu](/index.php/Dmenu "Dmenu")
@@ -55,53 +51,11 @@ Alopex provides three manpages (`alopex.1`, `alopex.config.5` and `alopex.icons.
 
 By Default, Alopex tracks the following four modifier masks:
 
-<table class="wikitable" border="1" style="text-align:center">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Reference</th>
-
-<th scope="col">Key</th>
-
-</tr>
-
-<tr>
-
-<th>`KEY1`</th>
-
-<td>"Super"</td>
-
-</tr>
-
-<tr>
-
-<th>`KEY2`</th>
-
-<td>"Alternate"</td>
-
-</tr>
-
-<tr>
-
-<th>`KEY3`</th>
-
-<td>"Control"</td>
-
-</tr>
-
-<tr>
-
-<th>`KEY4`</th>
-
-<td>"Shift"</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Reference | Key |
+| `KEY1` | "Super" |
+| `KEY2` | "Alternate" |
+| `KEY3` | "Control" |
+| `KEY4` | "Shift" |
 
 ### Launching programs
 
@@ -113,53 +67,11 @@ By Default, Alopex tracks the following four modifier masks:
 
 To move or assign a window to a given tag, the intended window must first be focused. This can be accomplished by using `KEY1` + `j` and/or `KEY1` + `k`.
 
-<table class="wikitable" border="1" style="text-align:center">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Action</th>
-
-<th scope="col">Keybind</th>
-
-</tr>
-
-<tr>
-
-<th>View Tag "x"</th>
-
-<td>`KEY1` + `x`</td>
-
-</tr>
-
-<tr>
-
-<th>Move to Tag "x"</th>
-
-<td>`KEY1` + `KEY2` + `x`</td>
-
-</tr>
-
-<tr>
-
-<th>Assign to Tag "x"</th>
-
-<td>`KEY1` + `KEY3` + `x`</td>
-
-</tr>
-
-<tr>
-
-<th>Toggle Visibility of Tag "x"</th>
-
-<td>`KEY1` + `KEY4` + `x`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Action | Keybind |
+| View Tag "x" | `KEY1` + `x` |
+| Move to Tag "x" | `KEY1` + `KEY2` + `x` |
+| Assign to Tag "x" | `KEY1` + `KEY3` + `x` |
+| Toggle Visibility of Tag "x" | `KEY1` + `KEY4` + `x` |
 
 **Note:** As with [dwm](/index.php/Dwm "Dwm"), Alopex makes a distinction between tags and views (workspaces). By default, Alopex has six tags enabled and two views available. You can switch between the two views using `KEY2` + `Tab`. To better understand the difference and how you can arrange your workflow to utilize the difference, [this article](http://wongdev.com/blog/dwm-tags-are-not-workspaces/) (written for dwm) may be helpful.
 
@@ -169,61 +81,10 @@ To move or assign a window to a given tag, the intended window must first be foc
 
 Alopex has three rule-based layouts complimented by transient fullscreen and floating modes: Vertical and Horizontal Stacking and "Monocle" (Full screen with statusbar tabs). By default, the vertical stacking layout will be used. Cycling through all three layouts can be done by pressing `KEY1` + `space`. You can select each mode more directly with the following shortcuts:
 
-<table class="wikitable" border="1" style="text-align:center">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Mode</th>
-
-<th scope="col">Keybind</th>
-
-<th scope="col">Windows visible</th>
-
-<th scope="col">Arrangement</th>
-
-</tr>
-
-<tr>
-
-<th>V-Stack (rstack)</th>
-
-<td>`KEY1` + `KEY2` + `r`</td>
-
-<td>3</td>
-
-<td>Master on left, stack on right</td>
-
-</tr>
-
-<tr>
-
-<th>H-Stack (bstack)</th>
-
-<td>`KEY1` + `KEY2` + `b`</td>
-
-<td>3</td>
-
-<td>Master on top, stack on bottom</td>
-
-</tr>
-
-<tr>
-
-<th>Monocle</th>
-
-<td>`KEY1` + `KEY2` + `m`</td>
-
-<td>1</td>
-
-<td>Variable sized tabs for each window</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Mode | Keybind | Windows visible | Arrangement |
+| V-Stack (rstack) | `KEY1` + `KEY2` + `r` | 3 | Master on left, stack on right |
+| H-Stack (bstack) | `KEY1` + `KEY2` + `b` | 3 | Master on top, stack on bottom |
+| Monocle | `KEY1` + `KEY2` + `m` | 1 | Variable sized tabs for each window |
 
 Using the `stackcount` option, you can specify how many windows you would like to be visible in the stack. You can also use `KEY1` + `=` and `KEY1` + `-` to dynamically increment and decrement the number of visible windows in the stack (respectively). Furthermore, using `KEY1` + `.` will keep all open windows visible.
 
@@ -359,7 +220,3 @@ You can replace either `"name"` or `"class"` with `NULL` to ignore those values 
 *   The [Interrobang thread](https://bbs.archlinux.org/viewtopic.php?id=160182) on the forums
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Alopex&oldid=414515](https://wiki.archlinux.org/index.php?title=Alopex&oldid=414515)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

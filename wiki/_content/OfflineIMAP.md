@@ -1,9 +1,5 @@
 # OfflineIMAP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [isync](/index.php/Isync "Isync")
@@ -516,17 +512,11 @@ $ offlineimap [ -o ] [ -d <debug_type> ] [ -u <ui> ]
 
 ```
 
--o
+NaN
 
-Disable autorefresh, keepalive, etc.
+NaN
 
--d <debug_type>
-
-Where _<debug_type>_ is one of `imap`, `maildir` or `thread`. Debugging imap and maildir are, by far, the most useful.
-
--u <ui>
-
-Where _<ui>_ is one of `CURSES.BLINKENLIGHTS`, `TTY.TTYUI`, `NONINTERACTIVE.BASIC`, `NONINTERACTIVE.QUIET` or `MACHINE.MACHINEUI`. TTY.TTYUI is sufficient for debugging purposes.
+NaN
 
 **Note:** More recent versions use the following for <ui>: `blinkenlights`, `ttyui`, `basic`, `quiet` or `machineui`.
 
@@ -588,7 +578,3 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 *   [Mutt + Gmail + Offlineimap](http://pbrisbin.com/posts/mutt_gmail_offlineimap/) - An outline of brisbin's simple gmail/mutt setup using cron to keep offlineimap syncing.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OfflineIMAP&oldid=412699](https://wiki.archlinux.org/index.php?title=OfflineIMAP&oldid=412699)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

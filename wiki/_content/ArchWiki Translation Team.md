@@ -1,9 +1,5 @@
 # ArchWiki Translation Team
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ArchWiki Translation Day](/index.php/ArchWiki_Translation_Day "ArchWiki Translation Day")
@@ -40,284 +36,35 @@ Related articles
 
 List here articles that only exist in non-English languages, or that exist in English but are either not fully translated, or are in a worse state than the non-English version. Keep alphabetical order.
 
-<table class="wikitable sortable collapsible" border="1">
-
-<tbody>
-
-<tr>
-
-<th>Page</th>
-
-<th>Language</th>
-
-<th class="unsortable">Notes</th>
-
-</tr>
-
-<tr>
-
-<td>[1C Enterprise (Русский)](/index.php/1C_Enterprise_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "1C Enterprise (Русский)")</td>
-
-<td>Russian</td>
-
-<td>[1C Enterprise](/index.php/1C_Enterprise "1C Enterprise") exists untranslated</td>
-
-</tr>
-
-<tr>
-
-<td>[Asus M50Vm (Русский)](/index.php/Asus_M50Vm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Asus M50Vm (Русский)")</td>
-
-<td>Russian</td>
-
-<td>in Russian only</td>
-
-</tr>
-
-<tr>
-
-<td>[Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)")</td>
-
-<td>Spanish</td>
-
-</tr>
-
-<tr>
-
-<td>[Daemontools and pppoe (Русский)](/index.php?title=Daemontools_and_pppoe_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "Daemontools and pppoe (Русский) (page does not exist)")</td>
-
-<td>Russian</td>
-
-<td>in Russian only</td>
-
-</tr>
-
-<tr>
-
-<td>[DeaDBeeF (正體中文)](/index.php/DeaDBeeF_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "DeaDBeeF (正體中文)")</td>
-
-<td>Chinese (Traditional)</td>
-
-</tr>
-
-<tr>
-
-<td>[Dlua (Русский)](/index.php/Dlua_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dlua (Русский)")</td>
-
-<td>Russian</td>
-
-<td>in Russian only</td>
-
-</tr>
-
-<tr>
-
-<td>[Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)")</td>
-
-<td>Chinese (Simplified)</td>
-
-</tr>
-
-<tr>
-
-<td>[Fujitsu LIFEBOOK UH572 Ultrabook (Русский)](/index.php/Fujitsu_LIFEBOOK_UH572_Ultrabook_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fujitsu LIFEBOOK UH572 Ultrabook (Русский)")</td>
-
-<td>Russian</td>
-
-<td>only in Russian</td>
-
-</tr>
-
-<tr>
-
-<td>[GtkD (Русский)](/index.php/GtkD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GtkD (Русский)")</td>
-
-<td>Russian</td>
-
-</tr>
-
-<tr>
-
-<td>[Hime (正體中文)](/index.php/Hime_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Hime (正體中文)")</td>
-
-<td>Chinese (Traditional)</td>
-
-</tr>
-
-<tr>
-
-<td>[How to repair a local pacman database (Русский)](/index.php?title=How_to_repair_a_local_pacman_database_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "How to repair a local pacman database (Русский) (page does not exist)")</td>
-
-<td>Russian</td>
-
-<td>in Russian only</td>
-
-</tr>
-
-<tr>
-
-<td>[HP Nx7400 (Česky)](/index.php/HP_Nx7400_(%C4%8Cesky) "HP Nx7400 (Česky)")</td>
-
-<td>Czech</td>
-
-</tr>
-
-<tr>
-
-<td>[Huawei E3276 4G modem (Русский)](/index.php/Huawei_E3276_4G_modem_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Huawei E3276 4G modem (Русский)")</td>
-
-<td>Russian</td>
-
-</tr>
-
-<tr>
-
-<td>[IBM T43 (Česky)](/index.php/IBM_T43_(%C4%8Cesky) "IBM T43 (Česky)")</td>
-
-<td>Czech</td>
-
-</tr>
-
-<tr>
-
-<td>[Internet key Momo Design (Italiano)](/index.php/Internet_key_Momo_Design_(Italiano) "Internet key Momo Design (Italiano)")</td>
-
-<td>Italian</td>
-
-</tr>
-
-<tr>
-
-<td>[IPsec-based VPN Server (简体中文)](/index.php/IPsec-based_VPN_Server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IPsec-based VPN Server (简体中文)")</td>
-
-<td>Chinese (Simplified)</td>
-
-<td>See also [strongSwan](/index.php/StrongSwan "StrongSwan") and [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup")</td>
-
-</tr>
-
-<tr>
-
-<td>[Kile and TeX Live (Español)](/index.php/Kile_and_TeX_Live_(Espa%C3%B1ol) "Kile and TeX Live (Español)")</td>
-
-<td>Spanish</td>
-
-</tr>
-
-<tr>
-
-<td>[Media Center (Italiano)](/index.php/Media_Center_(Italiano) "Media Center (Italiano)")</td>
-
-<td>Italian</td>
-
-</tr>
-
-<tr>
-
-<td>[Mounting external storage with correct character encoding in Gnome (Русский)](/index.php/Mounting_external_storage_with_correct_character_encoding_in_Gnome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mounting external storage with correct character encoding in Gnome (Русский)")</td>
-
-<td>Russian</td>
-
-<td>in Russian only</td>
-
-</tr>
-
-<tr>
-
-<td>[MSI GT72 2QD Dominator (Español)](/index.php/MSI_GT72_2QD_Dominator_(Espa%C3%B1ol) "MSI GT72 2QD Dominator (Español)")</td>
-
-<td>Spanish</td>
-
-</tr>
-
-<tr>
-
-<td>[MYTHTV UNDERTHESTAIRS (Dansk)](/index.php/MYTHTV_UNDERTHESTAIRS_(Dansk) "MYTHTV UNDERTHESTAIRS (Dansk)")</td>
-
-<td>Dansk</td>
-
-</tr>
-
-<tr>
-
-<td>[Osiris (Italiano)](/index.php/Osiris_(Italiano) "Osiris (Italiano)")</td>
-
-<td>Italian</td>
-
-</tr>
-
-<tr>
-
-<td>[Palm Pre (Italiano)](/index.php/Palm_Pre_(Italiano) "Palm Pre (Italiano)")</td>
-
-<td>Italian</td>
-
-</tr>
-
-<tr>
-
-<td>[RoverBook Voyager H591 (Русский)](/index.php/RoverBook_Voyager_H591_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RoverBook Voyager H591 (Русский)")</td>
-
-<td>Russian</td>
-
-<td>in Russian only</td>
-
-</tr>
-
-<tr>
-
-<td>[Small Business Server (Italiano)](/index.php/Small_Business_Server_(Italiano) "Small Business Server (Italiano)")</td>
-
-<td>Italian</td>
-
-<td>See also [Category:Small Business Server (Italiano)](/index.php/Category:Small_Business_Server_(Italiano) "Category:Small Business Server (Italiano)")</td>
-
-</tr>
-
-<tr>
-
-<td>[Tavolette Trust Aiptek (Italiano)](/index.php/Tavolette_Trust_Aiptek_(Italiano) "Tavolette Trust Aiptek (Italiano)")</td>
-
-<td>Italian</td>
-
-</tr>
-
-<tr>
-
-<td>[Telegram (简体中文)](/index.php/Telegram_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Telegram (简体中文)")</td>
-
-<td>Chinese (Simplified)</td>
-
-</tr>
-
-<tr>
-
-<td>[Tencent QQ (简体中文)](/index.php/Tencent_QQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tencent QQ (简体中文)")</td>
-
-<td>Chinese (Simplified)</td>
-
-</tr>
-
-<tr>
-
-<td>[Zabbix with NGINX how-to (Русский)](/index.php/Zabbix_with_NGINX_how-to_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix with NGINX how-to (Русский)")</td>
-
-<td>Russian</td>
-
-<td>Content from [Zabbix (Русский)](/index.php/Zabbix_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix (Русский)") before it was synched with English version</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Page | Language | Notes |
+| [1C Enterprise (Русский)](/index.php/1C_Enterprise_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "1C Enterprise (Русский)") | Russian | [1C Enterprise](/index.php/1C_Enterprise "1C Enterprise") exists untranslated |
+| [Asus M50Vm (Русский)](/index.php/Asus_M50Vm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Asus M50Vm (Русский)") | Russian | in Russian only |
+| [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | Spanish |
+| [Daemontools and pppoe (Русский)](/index.php?title=Daemontools_and_pppoe_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "Daemontools and pppoe (Русский) (page does not exist)") | Russian | in Russian only |
+| [DeaDBeeF (正體中文)](/index.php/DeaDBeeF_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "DeaDBeeF (正體中文)") | Chinese (Traditional) |
+| [Dlua (Русский)](/index.php/Dlua_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dlua (Русский)") | Russian | in Russian only |
+| [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)") | Chinese (Simplified) |
+| [Fujitsu LIFEBOOK UH572 Ultrabook (Русский)](/index.php/Fujitsu_LIFEBOOK_UH572_Ultrabook_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fujitsu LIFEBOOK UH572 Ultrabook (Русский)") | Russian | only in Russian |
+| [GtkD (Русский)](/index.php/GtkD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GtkD (Русский)") | Russian |
+| [Hime (正體中文)](/index.php/Hime_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Hime (正體中文)") | Chinese (Traditional) |
+| [How to repair a local pacman database (Русский)](/index.php?title=How_to_repair_a_local_pacman_database_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&action=edit&redlink=1 "How to repair a local pacman database (Русский) (page does not exist)") | Russian | in Russian only |
+| [HP Nx7400 (Česky)](/index.php/HP_Nx7400_(%C4%8Cesky) "HP Nx7400 (Česky)") | Czech |
+| [Huawei E3276 4G modem (Русский)](/index.php/Huawei_E3276_4G_modem_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Huawei E3276 4G modem (Русский)") | Russian |
+| [IBM T43 (Česky)](/index.php/IBM_T43_(%C4%8Cesky) "IBM T43 (Česky)") | Czech |
+| [Internet key Momo Design (Italiano)](/index.php/Internet_key_Momo_Design_(Italiano) "Internet key Momo Design (Italiano)") | Italian |
+| [IPsec-based VPN Server (简体中文)](/index.php/IPsec-based_VPN_Server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IPsec-based VPN Server (简体中文)") | Chinese (Simplified) | See also [strongSwan](/index.php/StrongSwan "StrongSwan") and [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup") |
+| [Kile and TeX Live (Español)](/index.php/Kile_and_TeX_Live_(Espa%C3%B1ol) "Kile and TeX Live (Español)") | Spanish |
+| [Media Center (Italiano)](/index.php/Media_Center_(Italiano) "Media Center (Italiano)") | Italian |
+| [Mounting external storage with correct character encoding in Gnome (Русский)](/index.php/Mounting_external_storage_with_correct_character_encoding_in_Gnome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mounting external storage with correct character encoding in Gnome (Русский)") | Russian | in Russian only |
+| [MSI GT72 2QD Dominator (Español)](/index.php/MSI_GT72_2QD_Dominator_(Espa%C3%B1ol) "MSI GT72 2QD Dominator (Español)") | Spanish |
+| [MYTHTV UNDERTHESTAIRS (Dansk)](/index.php/MYTHTV_UNDERTHESTAIRS_(Dansk) "MYTHTV UNDERTHESTAIRS (Dansk)") | Dansk |
+| [Osiris (Italiano)](/index.php/Osiris_(Italiano) "Osiris (Italiano)") | Italian |
+| [Palm Pre (Italiano)](/index.php/Palm_Pre_(Italiano) "Palm Pre (Italiano)") | Italian |
+| [RoverBook Voyager H591 (Русский)](/index.php/RoverBook_Voyager_H591_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RoverBook Voyager H591 (Русский)") | Russian | in Russian only |
+| [Small Business Server (Italiano)](/index.php/Small_Business_Server_(Italiano) "Small Business Server (Italiano)") | Italian | See also [Category:Small Business Server (Italiano)](/index.php/Category:Small_Business_Server_(Italiano) "Category:Small Business Server (Italiano)") |
+| [Tavolette Trust Aiptek (Italiano)](/index.php/Tavolette_Trust_Aiptek_(Italiano) "Tavolette Trust Aiptek (Italiano)") | Italian |
+| [Telegram (简体中文)](/index.php/Telegram_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Telegram (简体中文)") | Chinese (Simplified) |
+| [Tencent QQ (简体中文)](/index.php/Tencent_QQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tencent QQ (简体中文)") | Chinese (Simplified) |
+| [Zabbix with NGINX how-to (Русский)](/index.php/Zabbix_with_NGINX_how-to_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix with NGINX how-to (Русский)") | Russian | Content from [Zabbix (Русский)](/index.php/Zabbix_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix (Русский)") before it was synched with English version |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team&oldid=416011](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Team&oldid=416011)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,9 +1,5 @@
 # yEd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [yEd](http://www.yworks.com/en/products_yed_about.html) is a powerful graph editor, written in Java, that can be used to generate diagrams. Diagrams can be created manually, or be imported from external data for analysis. An automatic layout algorithm arranges the data sets if needed.
 
 ## Installation
@@ -24,7 +20,3 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd_hrgb'
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=YEd&oldid=412225](https://wiki.archlinux.org/index.php?title=YEd&oldid=412225)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")

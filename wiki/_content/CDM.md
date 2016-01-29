@@ -1,9 +1,5 @@
 # CDM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -85,7 +81,3 @@ If you want to add entries for power operations, like shutdown, reboot etc., you
 *   [GitHub page of an updated fork](https://github.com/pale3/cdm)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CDM&oldid=399009](https://wiki.archlinux.org/index.php?title=CDM&oldid=399009)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Display managers](/index.php/Category:Display_managers "Category:Display managers")

@@ -1,16 +1,12 @@
 # LibreOffice
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Apache OpenOffice](/index.php/Apache_OpenOffice "Apache OpenOffice")
 
 From [Home - LibreOffice](http://www.libreoffice.org/):
 
-_LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)_
+NaN
 
 ## Contents
 
@@ -113,7 +109,7 @@ For more extensions, check the [AUR](/index.php/AUR "AUR"), the built-in LibreOf
 
 For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed; this should be the case for both still and fresh LibreOffice versions. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. Then enable the Writing aids by selecting the check-box in _Tools -> Options -> Language Settings -> Writing Aids -> Hunspell SpellChecker_.
 
-Finnish
+NaN
 
 Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/)<sup><small>AUR</small></sup>, [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/suomi-malaga-voikko)]</sup>, [hfstospell](https://aur.archlinux.org/packages/hfstospell/)<sup><small>AUR</small></sup>, [libvoikko](https://www.archlinux.org/packages/?name=libvoikko) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/)<sup><small>AUR</small></sup>.
 
@@ -133,7 +129,7 @@ After this package has been installed, please make sure you have a [Java](/index
 
 Other grammar tools can also be found on the [LibrePlanet extension page](http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List), on the [official LibreOffice Extensions website](http://extensions.libreoffice.org/) or [OpenOffice's Website](http://lingucomponent.openoffice.org/grammar.html). Please note all OpenOffice extensions are guaranteed to work with LibreOffice.
 
-French
+NaN
 
 French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](http://www.dicollecte.org/grammalecte/telecharger.php) or via this [AUR](/index.php/AUR "AUR") package: [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/)<sup><small>AUR</small></sup>. In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
 
@@ -267,13 +263,3 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412817](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412817)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Deletion](/index.php/Category:Pages_or_sections_flagged_with_Template:Deletion "Category:Pages or sections flagged with Template:Deletion")

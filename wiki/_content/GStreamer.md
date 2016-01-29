@@ -1,9 +1,5 @@
 # GStreamer
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 GStreamer is a pipeline-based multimedia framework written in the C programming language with the type system based on GObject.
 
 GStreamer allows a programmer to create a variety of media-handling components, including simple audio playback, audio and video playback, recording, streaming and editing. The pipeline design serves as a base to create many types of multimedia applications such as video editors, streaming media broadcasters, and media players.
@@ -76,11 +72,3 @@ In case of error `GStreamer-CRITICAL **: gst_mini_object_unref: assertion `mini_
 *   [http://gstreamer.freedesktop.org/](http://gstreamer.freedesktop.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GStreamer&oldid=407188](https://wiki.archlinux.org/index.php?title=GStreamer&oldid=407188)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Toshiba Satellite A300D
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 ACPI and Power Saving](#ACPI_and_Power_Saving)
@@ -86,7 +82,3 @@ Host: scsi0 Channel: 00 Id: 00 Lun: 00
 Tested for reading, ripping, and burning CDs and DVDs. Works fine.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_A300D&oldid=196742](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_A300D&oldid=196742)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

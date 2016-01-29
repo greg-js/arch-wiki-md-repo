@@ -1,9 +1,5 @@
 # HAproxy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [HAProxy](http://www.haproxy.org/) is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers quite a number of the world's most visited ones. Over the years it has become the de-facto standard opensource load balancer, is now shipped with most mainstream Linux distributions, and is often deployed by default in cloud platforms.
 
 ## Contents
@@ -87,7 +83,3 @@ If a large number of backends are declared with the `check` option, HAProxy will
 *   [Configuration guide](http://cbonte.github.io/haproxy-dconv/configuration-1.7.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HAproxy&oldid=414566](https://wiki.archlinux.org/index.php?title=HAproxy&oldid=414566)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

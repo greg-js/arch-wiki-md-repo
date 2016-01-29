@@ -1,9 +1,5 @@
 # xinitrc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -274,8 +270,3 @@ With this method you need to set each application window's geometry through its 
 See also [Display manager#Starting applications without a window manager](/index.php/Display_manager#Starting_applications_without_a_window_manager "Display manager").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xinitrc&oldid=408098](https://wiki.archlinux.org/index.php?title=Xinitrc&oldid=408098)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")
-*   [X server](/index.php/Category:X_server "Category:X server")

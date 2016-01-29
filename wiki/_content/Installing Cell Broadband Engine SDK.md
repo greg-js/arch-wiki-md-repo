@@ -1,9 +1,5 @@
 # Installing Cell Broadband Engine SDK
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The CBE SDK installation only supports the Fedora 9 or RHEL linux distributions. I managed to install it on my Arch Linux system with the help of [a post in the gentoo forum](http://forums.gentoo.org/viewtopic-t-685982.html), and doing some trial/error.
 
 ## Contents
@@ -90,12 +86,3 @@ cd /opt/ibm/systemsim-cell/bin/s
 Since the PKGBUILD does not run the official install script there is bound to be something not setup completely correct... Place a comment on the [cellsdk](https://aur.archlinux.org/packages/cellsdk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cellsdk)]</sup> AUR page.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_Cell_Broadband_Engine_SDK&oldid=392269](https://wiki.archlinux.org/index.php?title=Installing_Cell_Broadband_Engine_SDK&oldid=392269)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

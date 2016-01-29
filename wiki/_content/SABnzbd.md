@@ -1,9 +1,5 @@
 # SABnzbd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 SABnzbd is an Open Source Binary Newsreader written in Python.
 
 _It's totally free, incredibly easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction._
@@ -233,11 +229,3 @@ It should be working great now :).
 *   [SABnzbd wiki](http://wiki.sabnzbd.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SABnzbd&oldid=376226](https://wiki.archlinux.org/index.php?title=SABnzbd&oldid=376226)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

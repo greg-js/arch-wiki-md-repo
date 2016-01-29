@@ -1,9 +1,5 @@
 # Arch Linux User Group
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -21,11 +17,3 @@ There is a ALUG in [Berlin](http://archlinux.berlin/) It's in a process of creat
 The Arch Linux User Group Luxembourg (ALUGL) can officially be found at [ALUGL](https://wiki.c3l.lu/doku.php?id=events:alugl).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_User_Group&oldid=409543](https://wiki.archlinux.org/index.php?title=Arch_Linux_User_Group&oldid=409543)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Events](/index.php/Category:Events "Category:Events")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

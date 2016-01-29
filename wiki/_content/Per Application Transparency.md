@@ -1,9 +1,5 @@
 # Per Application Transparency
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Following [xterm automatic transparency guide](/index.php/Xterm_Automatic_Transparency "Xterm Automatic Transparency") one can get per app transparency with just xcompmgr and transset-df - just replace _xterm_ with your program name:
 
 ```
@@ -119,11 +115,3 @@ devilspie -a &
 Alternatively, [gdevilspie](https://aur.archlinux.org/packages/gdevilspie/)<sup><small>AUR</small></sup> is a GUI configuration editor for devilspie.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Per_Application_Transparency&oldid=392564](https://wiki.archlinux.org/index.php?title=Per_Application_Transparency&oldid=392564)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

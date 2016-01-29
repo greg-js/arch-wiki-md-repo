@@ -1,9 +1,5 @@
 # Zsh
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful shell that operates as both an interactive shell and as a scripting language interpreter. While being compatible with [Bash](/index.php/Bash "Bash") (not by default, only if issuing `emulate sh`), it offers many advantages such as:
 
 *   Efficiency
@@ -84,49 +80,7 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 
 When starting Zsh, it'll source the following files in this order by default:
 
-`/etc/zsh/zshenv`
-
-This file should contain commands to set the global [command search path](#Configuring_.24PATH) and other system-wide [environment variables](/index.php/Environment_variables "Environment variables"); it should not contain commands that produce output or assume the shell is attached to a tty.
-
-`~/.zshenv`
-
-Similar to `/etc/zsh/zshenv` but for per-user configuration. Generally used for setting some useful environment variables.
-
-`/etc/zsh/zprofile`
-
-This is a global configuration file, it'll be sourced at login. Usually used for executing some general commands at login. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`, see [#Global configuration files](#Global_configuration_files) for details.
-
-`/etc/profile`
-
-This file should be sourced by all Bourne-compatible shells upon login: it sets up an environment upon login and application-specific (`/etc/profile.d/*.sh`) settings. Note that on Arch Linux, Zsh will also source this by default.
-
-`~/.zprofile`
-
-This file is generally used for automatic execution of user's scripts at login.
-
-`/etc/zsh/zshrc`
-
-Global configuration file, will be sourced when starting as a interactive shell.
-
-`~/.zshrc`
-
-Main user configuration file, will be sourced when starting as a interactive shell.
-
-`/etc/zsh/zlogin`
-
-A global configuration file, will be sourced at the ending of initial progress when starting as a login shell.
-
-`~/.zlogin`
-
-Same as `/etc/zsh/zlogin` but for per-user configuration.
-
-`/etc/zsh/zlogout`
-
-A global configuration file, will be sourced when a login shell exits.
-
-`~/.zlogout`
-
-Same as `/etc/zsh/zlogout` but for per-user configuration.
+NaN
 
 **Note:**
 
@@ -197,9 +151,7 @@ And move `~/.ssh/known_hosts` somewhere else so that ssh creates a new one with 
 
 For autocompletion with an arrow-key driven interface, add the following to:
 
- `~/.zshrc`  `zstyle ':completion:*' menu select` 
-
-_To activate the menu, press tab twice._
+ `~/.zshrc`  `zstyle ':completion:*' menu select` NaN
 
 For autocompletion of command line switches for aliases, add the following to:
 
@@ -347,107 +299,18 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 
 `$fg[color]` will set the text color (red, green, blue, etc. - defaults to whatever format set prior to text)
 
-<table class="wikitable">
+| Command | Description |
+| `%F{color} [...] %f` | effectively the same as the previous, but with less typing. Can also prefix F with a number instead. |
+| `$fg_no_bold[color]` | will set text to non-bold and set the text color |
+| `$fg_bold[color]` | will set the text to bold and set the text color |
+| `$reset_color` | will reset the text color to the default color. Does not reset bold. use `%b` to reset bold. Saves typing if it's just `%f` though. |
+| `%K{color} [...] %k` | will set the background color. Same color as non-bold text color. Prefixing with any single-digit number makes the bg black. |
 
-<tbody>
-
-<tr>
-
-<th>Command</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>`%F{color} [...] %f`</td>
-
-<td>effectively the same as the previous, but with less typing. Can also prefix F with a number instead.</td>
-
-</tr>
-
-<tr>
-
-<td>`$fg_no_bold[color]`</td>
-
-<td>will set text to non-bold and set the text color</td>
-
-</tr>
-
-<tr>
-
-<td>`$fg_bold[color]`</td>
-
-<td>will set the text to bold and set the text color</td>
-
-</tr>
-
-<tr>
-
-<td>`$reset_color`</td>
-
-<td>will reset the text color to the default color. Does not reset bold. use `%b` to reset bold. Saves typing if it's just `%f` though.</td>
-
-</tr>
-
-<tr>
-
-<td>`%K{color} [...] %k`</td>
-
-<td>will set the background color. Same color as non-bold text color. Prefixing with any single-digit number makes the bg black.</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th colspan="2">Possible color values</th>
-
-</tr>
-
-<tr>
-
-<td>`black` or `0`</td>
-
-<td>`red` or `1`</td>
-
-</tr>
-
-<tr>
-
-<td>`green` or `2`</td>
-
-<td>`yellow` or `3`</td>
-
-</tr>
-
-<tr>
-
-<td>`blue` or `4`</td>
-
-<td>`magenta` or `5`</td>
-
-</tr>
-
-<tr>
-
-<td>`cyan` or `6`</td>
-
-<td>`white` or `7`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Possible color values |
+| `black` or `0` | `red` or `1` |
+| `green` or `2` | `yellow` or `3` |
+| `blue` or `4` | `magenta` or `5` |
+| `cyan` or `6` | `white` or `7` |
 
 **Note:** Bold text does not necessarily use the same colors as normal text. For example, `$fg['yellow']` looks brown or a very dark yellow, while `$fg_bold['yellow']` looks like bright or regular yellow.
 
@@ -504,6 +367,8 @@ dirs -v
 ```
 
 to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autocompletion after the dash. This proves very handy if using the autocompletion menu.
+
+N.B. this will not work if you have more than one `zsh` session open, and attempt to `cd`, due to a conflict in both sessions writing to the same file.
 
 ### Help command
 
@@ -607,8 +472,4 @@ _username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
 *   [Gentoo Wiki: Zsh/HOWTO](https://wiki.gentoo.org/wiki/Zsh/HOWTO)
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=411931](https://wiki.archlinux.org/index.php?title=Zsh&oldid=411931)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=417799](https://wiki.archlinux.org/index.php?title=Zsh&oldid=417799)"

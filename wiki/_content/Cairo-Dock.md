@@ -1,9 +1,5 @@
 # Cairo-Dock
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Cairo-Dock is a highly customizable dock written in C.
 
 ## Contents
@@ -152,8 +148,3 @@ And to get the permission to read the full output of the iwconfig as a normal us
 *   [launchpad](https://launchpad.net/cairo-dock/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cairo-Dock&oldid=407891](https://wiki.archlinux.org/index.php?title=Cairo-Dock&oldid=407891)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")

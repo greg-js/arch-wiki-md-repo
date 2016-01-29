@@ -1,9 +1,5 @@
 # SSMTP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 SSMTP is a program which delivers email from a local computer to a configured mailhost (mailhub). It is not a mail server (like feature-rich mail server [sendmail](/index.php/Sendmail "Sendmail")) and does not receive mail, expand aliases or manage a queue. One of its primary uses is for forwarding automated email (like system alerts) off your machine and to an external email address.
 
 ## Contents
@@ -188,7 +184,3 @@ $ uuencode file.txt file.txt | mail user@domain.com
 *   [GMail Support - Configuring other mail clients](http://mail.google.com/support/bin/answer.py?answer=78799)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SSMTP&oldid=410868](https://wiki.archlinux.org/index.php?title=SSMTP&oldid=410868)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

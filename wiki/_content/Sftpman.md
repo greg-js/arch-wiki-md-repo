@@ -1,9 +1,5 @@
 # Sftpman
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 You can use sftpman (an [sshfs](/index.php/Sshfs "Sshfs") helper) to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder.
 
 sftpman offers both a command-line tool (_sftpman_) and a GTK frontend (_sftpman-gtk_, see [screenshot](https://github.com/spantaleev/sftpman-gtk/raw/master/sftpman-gui.png)), each packaged separately.
@@ -138,7 +134,3 @@ Also see [Sshfs#Troubleshooting](/index.php/Sshfs#Troubleshooting "Sshfs").
 *   [sshfs](/index.php/Sshfs "Sshfs")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sftpman&oldid=377038](https://wiki.archlinux.org/index.php?title=Sftpman&oldid=377038)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")

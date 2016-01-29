@@ -1,9 +1,5 @@
 # systemd-networkd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
@@ -649,13 +645,3 @@ Gateway=192.168.1.254
 *   [How to set up systemd-networkd with wpa_supplicant](https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759) (WonderWoofy's walkthrough on Arch forums)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=415979](https://wiki.archlinux.org/index.php?title=Systemd-networkd&oldid=415979)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

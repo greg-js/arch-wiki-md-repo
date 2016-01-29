@@ -1,9 +1,5 @@
 # xrandr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -411,7 +407,3 @@ About the numbers: DELL on the left and Samsung on the right. So the virtual wid
 *   [FAQVideoModes - more information about modelines](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xrandr&oldid=410547](https://wiki.archlinux.org/index.php?title=Xrandr&oldid=410547)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

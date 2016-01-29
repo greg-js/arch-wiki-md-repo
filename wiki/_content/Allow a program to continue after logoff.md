@@ -1,9 +1,5 @@
 # Allow a program to continue after logoff
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -88,12 +84,3 @@ Read the [Xpra](/index.php/Xpra "Xpra") article for more information.
 Detaching programs is very useful in shared systems, you can easily leave the machine to someone else while your programs continue to run. At the moment, however, it is still easier to do this with console applications. Since in the Linux world almost every task has its console the only application it is a good idea use it with screen. In the above example using **transmission** and screen is actually easier than ktorrent and xmove.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Allow_a_program_to_continue_after_logoff&oldid=275017](https://wiki.archlinux.org/index.php?title=Allow_a_program_to_continue_after_logoff&oldid=275017)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

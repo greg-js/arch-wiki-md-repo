@@ -1,9 +1,5 @@
 # Xterm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **xterm** is the standard [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") for the [X Window System](/index.php/X_Window_System "X Window System"). It is highly configurable and has many useful and some unusual features.
 
 ## Contents
@@ -105,19 +101,15 @@ The scrollbar operates differently from what you may be accustomed to using.
 
 *   To scroll down:
 
-– Click on the scrollbar with the left mouse button.
-
-– Click on the scrollbar below the _thumb_ with the middle mouse button.
+NaN
 
 *   To scroll up:
 
-– Click on the scrollbar with the right mouse button.
-
-– Click on the scrollbar above the _thumb_ with the middle mouse button.
+NaN
 
 *   To position text, moving in either direction:
 
-– Grab the _thumb_ and use "click-and-drag" with the middle mouse button.
+NaN
 
 ### Menus
 
@@ -423,11 +415,3 @@ See [Xterm modifications](https://bbs.archlinux.org/viewtopic.php?id=146023) for
 *   [Commented XTerm resources](http://www.in-ulm.de/~mascheck/X11/XTerm)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xterm&oldid=408922](https://wiki.archlinux.org/index.php?title=Xterm&oldid=408922)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

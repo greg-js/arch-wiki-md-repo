@@ -1,9 +1,5 @@
 # Dolphin emulator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Dolphin is a Nintendo Gamecube, Wii and Triforce emulator, currently supporting the x86, AMD64 and ARM architectures. Dolphin is available for Linux, MacOSX (intel-based), MS Windows and Android. It is a free and open source, community-developed project. Dolphin was the first Gamecube and Wii emulator, and currently the only one capable of playing commercial games.
 
 ## Contents
@@ -27,11 +23,11 @@ Install one of the following:
 
 *   **[Dolphin emu](/index.php/Dolphin_emu "Dolphin emu")** — A Gamecube / Wii / Triforce emulator
 
-[https://dolphin-emu.org/](https://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
+NaN
 
 *   **Dolphin emu (git)** — A Gamecube / Wii / Triforce emulator (development version)
 
-[https://github.com/dolphin-emu/dolphin](https://github.com/dolphin-emu/dolphin) || [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)<sup><small>AUR</small></sup>
+NaN
 
 **Tip:**
 
@@ -74,97 +70,19 @@ On the "General" tab, choose OpenGL from the backend drop-down list. Set the "Di
 
 On the "Enhancements" tab are the options that can improve graphics. While they result to great output, they can slow the emulation down to the point of making games unplayable. Choose the best settings possible, as long as speed remains 100%.
 
-<table class="wikitable"><caption>Comparison of options</caption>
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Performance</th>
-
-<th>Quality</th>
-
-</tr>
-
-<tr>
-
-<td>**Internal resolution**</td>
-
-<td>1x Native</td>
-
-<td>Auto (Window size)</td>
-
-</tr>
-
-<tr>
-
-<td>**Anti-aliasing**</td>
-
-<td>None</td>
-
-<td>at least 2x</td>
-
-</tr>
-
-<tr>
-
-<td>**Anisotropic filtering**</td>
-
-<td>1x</td>
-
-<td>at least 2x</td>
-
-</tr>
-
-<tr>
-
-<td>**Post-Processing Effect**</td>
-
-<td>(off)</td>
-
-<td>your choice  
-(see tip below)</td>
-
-</tr>
-
-<tr>
-
-<td>**Scaled EFB copy**</td>
-
-<td>unchecked</td>
-
-<td>checked</td>
-
-</tr>
-
-<tr>
-
-<td>**Per-Pixel Lightning**</td>
-
-<td>unchecked</td>
-
-<td>checked</td>
-
-</tr>
-
-<tr>
-
-<td>**Force texture filtering,  
-Widescreen Hack,  
-Disable fog**</td>
-
-<td>off</td>
-
-<td>your option  
-(recommended: off)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Comparison of options</caption>
+| Option | Performance | Quality |
+| **Internal resolution** | 1x Native | Auto (Window size) |
+| **Anti-aliasing** | None | at least 2x |
+| **Anisotropic filtering** | 1x | at least 2x |
+| **Post-Processing Effect** | (off) | your choice
+(see tip below) |
+| **Scaled EFB copy** | unchecked | checked |
+| **Per-Pixel Lightning** | unchecked | checked |
+| **Force texture filtering,
+Widescreen Hack,
+Disable fog** | off | your option
+(recommended: off) |
 
 **Tip:** Dolphin is able to render games that were developed for 2D in anaglyph 3D. To enable this, set _Post-Processing Effect_ to _stereoscopic_ (default, for red-cyan mode) or _stereoscopic2_ (blue-yellow). It is also **necessary** to uncheck "_Fast Depth Calculation_" on the _Hacks_ tab (_see below_).
 
@@ -172,110 +90,20 @@ Disable fog**</td>
 
 Unless sure, the _Hacks_ tab is best left untouched.
 
-<table class="wikitable"><caption>Defaults</caption>
-
-<tbody>
-
-<tr>
-
-<th>Option</th>
-
-<th>Value</th>
-
-</tr>
-
-<tr>
-
-<td>Skip EFB access from CPU</td>
-
-<td>unchecked</td>
-
-</tr>
-
-<tr>
-
-<td>Ignore format changes</td>
-
-<td>checked</td>
-
-</tr>
-
-<tr>
-
-<td>EFB copies</td>
-
-<td>texture</td>
-
-</tr>
-
-<tr>
-
-<td>Texture cache/ Accuracy</td>
-
-<td>Fast</td>
-
-</tr>
-
-<tr>
-
-<td>External frame buffer</td>
-
-<td>disable</td>
-
-</tr>
-
-<tr>
-
-<td>Cache display lists</td>
-
-<td>unchecked</td>
-
-</tr>
-
-<tr>
-
-<td>Disable destination alpha</td>
-
-<td>unchecked</td>
-
-</tr>
-
-<tr>
-
-<td>OpenCL texture decoder</td>
-
-<td>unchecked</td>
-
-</tr>
-
-<tr>
-
-<td>OpenMP texture decoder</td>
-
-<td>unchecked</td>
-
-</tr>
-
-<tr>
-
-<td>Fast depth calculation</td>
-
-<td>checked  
-(Should uncheck for anaglyph 3D)</td>
-
-</tr>
-
-<tr>
-
-<td>Vertex streaming hack</td>
-
-<td>unchecked</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Defaults</caption>
+| Option | Value |
+| Skip EFB access from CPU | unchecked |
+| Ignore format changes | checked |
+| EFB copies | texture |
+| Texture cache/ Accuracy | Fast |
+| External frame buffer | disable |
+| Cache display lists | unchecked |
+| Disable destination alpha | unchecked |
+| OpenCL texture decoder | unchecked |
+| OpenMP texture decoder | unchecked |
+| Fast depth calculation | checked
+(Should uncheck for anaglyph 3D) |
+| Vertex streaming hack | unchecked |
 
 Similarly, unless sure, leave **everything** in the _Advanced_ tab unchecked.
 
@@ -337,12 +165,3 @@ _See also: [Maximizing performance](/index.php/Maximizing_performance "Maximizin
 *   [Dolphin's wiki entry for legally obtaining game dumps.](https://wiki.dolphin-emu.org/index.php?title=Ripping_Game_Discs)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dolphin_emulator&oldid=393045](https://wiki.archlinux.org/index.php?title=Dolphin_emulator&oldid=393045)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

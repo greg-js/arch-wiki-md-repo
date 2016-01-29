@@ -1,9 +1,5 @@
 # Haiku
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Haiku](http://www.haiku-os.org/) is a free and open source operating system compatible with [BeOS](http://en.wikipedia.org/wiki/BeOS). It is in active development.
 
 ## Contents
@@ -134,7 +130,3 @@ Please keep in mind that, even though a lot of software is listed on Haiku Ports
 *   [OsDrawer](http://dev.osdrawer.net/), a development hosting site specifically for native Haiku software.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Haiku&oldid=409548](https://wiki.archlinux.org/index.php?title=Haiku&oldid=409548)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

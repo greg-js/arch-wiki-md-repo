@@ -1,9 +1,5 @@
 # Xcompmgr
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Compiz](/index.php/Compiz "Compiz")
@@ -53,11 +49,11 @@ There are some forks available, with various bugfixes:
 
 *   **xcompmgr-dana** — One of the first forks of Xcompmgr.
 
-[http://oliwer.net/xcompmgr-dana/](http://oliwer.net/xcompmgr-dana/) || [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcompmgr-dana)]</sup>
+NaN
 
 *   **[Compton](/index.php/Compton "Compton")** — A fork of Xcompmgr that contains most of the previous fixes as well as many others.
 
-[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton-git](https://aur.archlinux.org/packages/compton-git/)<sup><small>AUR</small></sup>
+NaN
 
 ## Configuration
 
@@ -216,12 +212,3 @@ hsetroot -solid "#000066"
 (you can replace _#000066_ with your color of choice).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xcompmgr&oldid=410109](https://wiki.archlinux.org/index.php?title=Xcompmgr&oldid=410109)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

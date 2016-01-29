@@ -1,9 +1,5 @@
 # Cgroups
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
@@ -238,8 +234,3 @@ Make sure to use the right path to the executable.
 For commands and configuration files, see relevant man pages, e.g. `man cgcreate` or `man cgrules.conf`
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cgroups&oldid=375995](https://wiki.archlinux.org/index.php?title=Cgroups&oldid=375995)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")

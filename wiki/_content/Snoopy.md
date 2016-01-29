@@ -1,9 +1,5 @@
 # Snoopy
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Snoopy is a program similar to Warcraft III Banlist, aimed at improving the experience of Warcraft III players on Battle.net. Though focused on hosting, snoopy can be useful for any users as it allows for pinging, location checks, friends list following, and more. Snoopy is a native program built to use with [WarCraft III](/index.php/WarCraft_III "WarCraft III") on [Wine](/index.php/Wine "Wine").
 
 ## Contents
@@ -105,11 +101,3 @@ Add a line like the following. %wheel can be replaced with specific usernames i
 *   [Snoopy website](http://snoopy.tuxfamily.org)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Snoopy&oldid=392668](https://wiki.archlinux.org/index.php?title=Snoopy&oldid=392668)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

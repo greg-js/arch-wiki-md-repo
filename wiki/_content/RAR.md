@@ -1,9 +1,5 @@
 # RAR
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 RAR (and UNRAR) is the Linux port of the commandline-only version of [WinRAR](http://www.rarlab.com/download.htm) available in both the i686 and x86-64 flavors.
 
 ## Contents
@@ -80,45 +76,10 @@ $ rar a -r -rr10 /media/data/darkhorse-backup.rar /home/darkhorse
 
 *   Explained:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Switch</td>
-
-<td>Action</td>
-
-</tr>
-
-<tr>
-
-<td>a</td>
-
-<td>**a**dds files to archives.</td>
-
-</tr>
-
-<tr>
-
-<td>-r</td>
-
-<td>**r**ecurse subdirectories (includes all dirs/files under the parent directory).</td>
-
-</tr>
-
-<tr>
-
-<td>-rr10</td>
-
-<td>adds **r**ecovery **r**ecords to the archive. This way up to 10% of the compressed archive can become corrupt or unusable, and it will be able to recover the data through parity.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Switch | Action |
+| a | **a**dds files to archives. |
+| -r | **r**ecurse subdirectories (includes all dirs/files under the parent directory). |
+| -rr10 | adds **r**ecovery **r**ecords to the archive. This way up to 10% of the compressed archive can become corrupt or unusable, and it will be able to recover the data through parity. |
 
 ### Mixed-mode archives
 
@@ -133,61 +94,12 @@ $ rar a -r -rr10 -s -m5 -msjpg;mp3;tar /media/data/darkhorse-backup.rar /home/da
 
 *   Explained:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Switch</td>
-
-<td>Action</td>
-
-</tr>
-
-<tr>
-
-<td>a</td>
-
-<td>**a**dds files to archives.</td>
-
-</tr>
-
-<tr>
-
-<td>-r</td>
-
-<td>**r**ecurse subdirectories (includes all dirs/files under the parent directory).</td>
-
-</tr>
-
-<tr>
-
-<td>-rr10</td>
-
-<td>adds **r**ecovery **r**ecords to the archive. This way up to 10% of the compressed archive can become corrupt or unusable, and it will be able to recover the data through parity.</td>
-
-</tr>
-
-<tr>
-
-<td>-m5</td>
-
-<td>Use the highest level of compression (m0 = store ... m3 = default ... m5 = maximal level of compression.</td>
-
-</tr>
-
-<tr>
-
-<td>-msjpg;mp3;tar</td>
-
-<td>ignore the compression option and store all .jpg and .mp3 and .tar files.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Switch | Action |
+| a | **a**dds files to archives. |
+| -r | **r**ecurse subdirectories (includes all dirs/files under the parent directory). |
+| -rr10 | adds **r**ecovery **r**ecords to the archive. This way up to 10% of the compressed archive can become corrupt or unusable, and it will be able to recover the data through parity. |
+| -m5 | Use the highest level of compression (m0 = store ... m3 = default ... m5 = maximal level of compression. |
+| -msjpg;mp3;tar | ignore the compression option and store all .jpg and .mp3 and .tar files. |
 
 ### Recursively compress many directory structures using a list
 
@@ -238,7 +150,3 @@ $ unrar x homes-backup.part1.rar homes-backup/
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RAR&oldid=383247](https://wiki.archlinux.org/index.php?title=RAR&oldid=383247)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")

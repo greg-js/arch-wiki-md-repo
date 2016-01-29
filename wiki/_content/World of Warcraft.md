@@ -1,9 +1,5 @@
 # World of Warcraft
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -409,12 +405,3 @@ This is a temporary fix (it does not set deadline permanently), but you may gain
 *   [Patch Mirrors](http://www.wowpedia.org/Patch_mirrors)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=World_of_Warcraft&oldid=414015](https://wiki.archlinux.org/index.php?title=World_of_Warcraft&oldid=414015)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Wine](/index.php/Category:Wine "Category:Wine")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

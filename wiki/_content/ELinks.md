@@ -1,9 +1,5 @@
 # ELinks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [ELinks](http://elinks.or.cz/) is an advanced and well-established feature-rich text mode web (HTTP/FTP/...) browser. ELinks can render both frames and tables, is highly customizable and can be extended via Lua or Guile scripts. It features tabs and some support for CSS.
 
 ## Contents
@@ -195,11 +191,3 @@ alias elinks="elinks -no-connect"
 *   [Howto: Use elinks like a pro](http://kmandla.wordpress.com/2007/05/06/howto-use-elinks-like-a-pro/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ELinks&oldid=405790](https://wiki.archlinux.org/index.php?title=ELinks&oldid=405790)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

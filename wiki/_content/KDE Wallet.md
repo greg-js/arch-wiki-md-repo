@@ -1,9 +1,5 @@
 # KDE Wallet
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) is a tool to manage the passwords on your KDE Plasma system. By using the KWallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with KWallet.
 
 ## Contents
@@ -194,12 +190,3 @@ Chromium has built in wallet integration. To enable it, run Chromium with the `-
 *   [Unlocking KWallet with PAM](https://www.dennogumi.org/2014/04/unlocking-kwallet-with-pam/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=415459](https://wiki.archlinux.org/index.php?title=KDE_Wallet&oldid=415459)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [KDE](/index.php/Category:KDE "Category:KDE")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

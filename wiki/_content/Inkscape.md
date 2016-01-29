@@ -1,9 +1,5 @@
 # Inkscape
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Inkscape](http://inkscape.org/) is a vector graphics editor application. It is distributed under a free software license, the GNU GPL. Its stated goal is to become a powerful graphics tool while being fully compliant with the XML, SVG, and CSS standards.[[1]](https://en.wikipedia.org/wiki/Inkscape)
 
 ## Contents
@@ -53,7 +49,3 @@ There is a problem with qtcurve-gtk2 1.8.18-3 that makes inkscape segfault short
 *   [Inkscape at Wikipedia](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Inkscape&oldid=407774](https://wiki.archlinux.org/index.php?title=Inkscape&oldid=407774)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation")

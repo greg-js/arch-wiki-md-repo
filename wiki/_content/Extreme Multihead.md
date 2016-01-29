@@ -1,9 +1,5 @@
 # Extreme Multihead
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -224,12 +220,3 @@ At present either Xdmx itself or the current state of window managers do not wor
 [xrandr](/index.php/Xrandr "Xrandr")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Extreme_Multihead&oldid=392111](https://wiki.archlinux.org/index.php?title=Extreme_Multihead&oldid=392111)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

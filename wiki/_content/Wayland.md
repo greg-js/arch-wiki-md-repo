@@ -1,9 +1,5 @@
 # Wayland
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [KMS](/index.php/KMS "KMS")
@@ -60,125 +56,21 @@ As Wayland is only a library, it is useless on its own. To replace X Server, you
 
 ### Usage
 
-<table class="wikitable" style="float: right; width: 200px;"><caption>_**Keyboard Shortcuts** (super = windows key - can be changed, see weston.ini)_ `Ctrl-b`</caption>
-
-<tbody>
-
-<tr>
-
-<th>Cmd</th>
-
-<th>Action</th>
-
-</tr>
-
-<tr>
-
-<td>Ctrl + Alt + Backspace</td>
-
-<td>Quit Weston</td>
-
-</tr>
-
-<tr>
-
-<td>Super + Scroll (or PageUp/PageDown)</td>
-
-<td>Zoom in/out of desktop</td>
-
-</tr>
-
-<tr>
-
-<td>Super + Tab</td>
-
-<td>Switch windows</td>
-
-</tr>
-
-<tr>
-
-<td>Super + LMB</td>
-
-<td>Move Window</td>
-
-</tr>
-
-<tr>
-
-<td>Super + MMB</td>
-
-<td>Resize Window</td>
-
-</tr>
-
-<tr>
-
-<td>Super + RMB</td>
-
-<td>Rotate Window !</td>
-
-</tr>
-
-<tr>
-
-<td>Super + Alt + Scroll</td>
-
-<td>Change window opacity</td>
-
-</tr>
-
-<tr>
-
-<td>Super + K</td>
-
-<td>Force Kill Active Window</td>
-
-</tr>
-
-<tr>
-
-<td>Super + KeyUp/KeyDown</td>
-
-<td>Switch Prev/Next Workspace</td>
-
-</tr>
-
-<tr>
-
-<td>Super + Shift + KeyUp/KeyDown</td>
-
-<td>Grab Current Window and Switch Workspace</td>
-
-</tr>
-
-<tr>
-
-<td>Super + F_**n**_</td>
-
-<td>Switch to Workspace _**n**_</td>
-
-</tr>
-
-<tr>
-
-<td>Super + S</td>
-
-<td>Take a screenshot</td>
-
-</tr>
-
-<tr>
-
-<td>Super + R</td>
-
-<td>Record a screencast.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>_**Keyboard Shortcuts** (super = windows key - can be changed, see weston.ini)_ `Ctrl-b`</caption>
+| Cmd | Action |
+| Ctrl + Alt + Backspace | Quit Weston |
+| Super + Scroll (or PageUp/PageDown) | Zoom in/out of desktop |
+| Super + Tab | Switch windows |
+| Super + LMB | Move Window |
+| Super + MMB | Resize Window |
+| Super + RMB | Rotate Window ! |
+| Super + Alt + Scroll | Change window opacity |
+| Super + K | Force Kill Active Window |
+| Super + KeyUp/KeyDown | Switch Prev/Next Workspace |
+| Super + Shift + KeyUp/KeyDown | Grab Current Window and Switch Workspace |
+| Super + F_**n**_ | Switch to Workspace _**n**_ |
+| Super + S | Take a screenshot |
+| Super + R | Record a screencast. |
 
 Now that Wayland and its requirements are installed you should be ready to test it out.
 
@@ -414,133 +306,18 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 ## Window managers and desktop shells
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Name</th>
-
-<th>Type</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>GNOME</td>
-
-<td>Compositing</td>
-
-<td>See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME").</td>
-
-</tr>
-
-<tr>
-
-<td>Hawaii</td>
-
-<td>_(Unclear)_</td>
-
-<td>See [Hawaii](/index.php/Hawaii "Hawaii").</td>
-
-</tr>
-
-<tr>
-
-<td>sway</td>
-
-<td>Tiling</td>
-
-<td>[Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [Github](https://github.com/SirCmpwn/sway)</td>
-
-</tr>
-
-<tr>
-
-<td>Enlightenment</td>
-
-<td>_(Unclear)_</td>
-
-<td>Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland)</td>
-
-</tr>
-
-<tr>
-
-<td>KDE</td>
-
-<td>Compositing</td>
-
-<td>[KDE](/index.php/KDE "KDE") 4.11 added support for [KWin under Wayland system compositor](http://blog.martin-graesslin.com/blog/2013/06/starting-a-full-kde-plasma-session-in-wayland/). With [KDE Plasma 5.4](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland), the first technology preview of a Wayland session is released but it is currently targeted for the mobile platform and does not yet allow to use it as a full replacement for Xorg based desktop.</td>
-
-</tr>
-
-<tr>
-
-<td>Orbment</td>
-
-<td>Tiling</td>
-
-<td>[orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland.</td>
-
-</tr>
-
-<tr>
-
-<td>Velox</td>
-
-<td>Tiling</td>
-
-<td>[velox](https://github.com/michaelforney/velox) is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad").</td>
-
-</tr>
-
-<tr>
-
-<td>Orbital</td>
-
-<td>Compositing</td>
-
-<td>[Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox").</td>
-
-</tr>
-
-<tr>
-
-<td>Papyros Shell</td>
-
-<td>_(Unclear)_</td>
-
-<td>[Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](/index.php/Papyros "Papyros"), built using QtQuick and QtCompositor as a compositor for Wayland.</td>
-
-</tr>
-
-<tr>
-
-<td>Maynard</td>
-
-<td>_(Unclear)_</td>
-
-<td>[Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti.</td>
-
-</tr>
-
-<tr>
-
-<td>Motorcar</td>
-
-<td>_(Unclear)_</td>
-
-<td>[Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name | Type | Description |
+| GNOME | Compositing | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
+| Hawaii | _(Unclear)_ | See [Hawaii](/index.php/Hawaii "Hawaii"). |
+| sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [Github](https://github.com/SirCmpwn/sway) |
+| Enlightenment | _(Unclear)_ | Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland) |
+| KDE | Compositing | [KDE](/index.php/KDE "KDE") 4.11 added support for [KWin under Wayland system compositor](http://blog.martin-graesslin.com/blog/2013/06/starting-a-full-kde-plasma-session-in-wayland/). With [KDE Plasma 5.4](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland), the first technology preview of a Wayland session is released but it is currently targeted for the mobile platform and does not yet allow to use it as a full replacement for Xorg based desktop. |
+| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
+| Velox | Tiling | [velox](https://github.com/michaelforney/velox) is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
+| Orbital | Compositing | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
+| Papyros Shell | _(Unclear)_ | [Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](/index.php/Papyros "Papyros"), built using QtQuick and QtCompositor as a compositor for Wayland. |
+| Maynard | _(Unclear)_ | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
+| Motorcar | _(Unclear)_ | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing. |
 
 Some of installed wayland desktop clients might store information in `/usr/share/wayland-sessions/*.desktop` files about how to start them in wayland.
 
@@ -588,7 +365,3 @@ modules=xwayland.so
 *   [Wayland documentation online](http://wayland.freedesktop.org/docs/html/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wayland&oldid=414293](https://wiki.archlinux.org/index.php?title=Wayland&oldid=414293)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")

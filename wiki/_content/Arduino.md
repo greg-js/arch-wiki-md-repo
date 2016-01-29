@@ -1,9 +1,5 @@
 # Arduino
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It is intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments. More information is available on the [Arduino HomePage](http://www.arduino.cc/).
 
 ## Contents
@@ -377,8 +373,3 @@ see [Java#Applications not resizing with WM, menus immediately closing](/index.p
 *   [http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/](http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arduino&oldid=411459](https://wiki.archlinux.org/index.php?title=Arduino&oldid=411459)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")

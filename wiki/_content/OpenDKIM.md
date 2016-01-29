@@ -1,9 +1,5 @@
 # OpenDKIM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 DomainKeys Identified Mail is a digital email signing/verification technology, which is already supported by some common mail providers (for example yahoo, google, etc).
 
 ## Contents
@@ -31,16 +27,11 @@ For more info see [RFC 6376](http://tools.ietf.org/html/rfc6376)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [opendkim](https://www.archlinux.org/packages/?name=opendkim) from the [Official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can build and install the [opendkim-opendbx](https://aur.archlinux.org/packages/opendkim-opendbx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opendkim-opendbx)]</sup> package from the [AUR](/index.php/AUR "AUR") which adds opendbx support for communicating with several databases, including [mariadb](https://www.archlinux.org/packages/?name=mariadb), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [sqlite](https://www.archlinux.org/packages/?name=sqlite) and Firebird.
+[Install](/index.php/Install "Install") the package [opendkim](https://www.archlinux.org/packages/?name=opendkim) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Basic configuration
 
-*   To generate a secret signing key, you need to specify the domain used to send mails and a selector which is used to refer to the key. You may choose anything you like, see the RFC for details, but alpha-numeric strings should be OK:
-
-```
-opendkim-genkey -r -s myselector -d example.com
-
-```
+Main configuration file is `/etc/opendkim.conf`
 
 *   Copy/move the sample configuration file `/etc/opendkim/opendkim.conf.sample` to `/etc/opendkim/opendkim.conf` and change the following options:
 
@@ -52,6 +43,13 @@ KeyFile                 /path/to/keys/server1.private
 Selector                myselector
 Socket                  inet:8891@localhost
 UserID                  opendkim
+
+```
+
+*   To generate a secret signing key, you need to specify the domain used to send mails and a selector which is used to refer to the key. You may choose anything you like, see the RFC for details, but alpha-numeric strings should be OK:
+
+```
+opendkim-genkey -r -s myselector -d example.com
 
 ```
 
@@ -69,7 +67,7 @@ host -t TXT myselector._domainkey.example.com
 
 ```
 
-You may also check that your DKIM DNS record is properly formated using one of the DKIM Key checker available on the web.
+You may also check that your DKIM DNS record is properly formated using one of the [DKIM Key checker](http://dkimcore.org/tools/) available on the web.
 
 *   Enable and start the `opendkim.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information.
 
@@ -198,7 +196,7 @@ BaseDirectory           /var/lib/opendkim
 Domain                  example.com
 KeyFile                 /etc/opendkim/myselector.private
 Selector                myselector
-Socket                  local:/run/opendkim/socket
+Socket                  local:/run/opendkim/opendkim.sock
 Syslog                  Yes
 TemporaryDirectory      /run/opendkim
 UMask                   002
@@ -223,16 +221,18 @@ WantedBy=multi-user.target
 
 ```
 
+Edit `/etc/postfix/main.cf` accordingly to make Postfix listen to this unix socket:
+
+ `/etc/postfix/main.cf` 
+
+```
+smtpd_milters = unix:/run/opendkim/opendkim.sock
+non_smtpd_milters = unix:/run/opendkim/opendkim.sock
+
+```
+
 ## Notes
 
 While you're about to fight spam and increase people's trust in your server, you might want to take a look at [Sender Policy Framework](http://en.wikipedia.org/wiki/Sender_Policy_Framework), which basically means adding a DNS Record stating which servers are authorized to send email for your domain.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=412143](https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=412143)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=417854](https://wiki.archlinux.org/index.php?title=OpenDKIM&oldid=417854)"

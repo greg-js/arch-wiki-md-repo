@@ -1,9 +1,5 @@
 # NBSMTP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Introduction
 
 From nbSMTP manpage: nbSMTP is a lightweight SMTP client. It simply takes a message from STDIN and sends it to a relayhost. A relayhost is meant to be a full SMTP server and it will really send the message.
@@ -50,8 +46,3 @@ and then run:
 Enjoy
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=NBSMTP&oldid=400304](https://wiki.archlinux.org/index.php?title=NBSMTP&oldid=400304)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-*   [Mail server](/index.php/Category:Mail_server "Category:Mail server")

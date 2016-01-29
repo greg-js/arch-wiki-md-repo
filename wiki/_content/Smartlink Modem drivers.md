@@ -1,9 +1,5 @@
 # Smartlink Modem drivers
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 How to install Smartlink Modem drivers](#How_to_install_Smartlink_Modem_drivers)
@@ -67,8 +63,8 @@ In /etc/rc.conf:
 
 /etc/conf.d/slmodem:
 
-*   Modify to your needs especially  
-    /dev/slamr0 #(depends on your chipset slamr' or 'slusb')  
+*   Modify to your needs especially
+    /dev/slamr0 #(depends on your chipset slamr' or 'slusb')
     --country=USA #(See output of 'slmodemd --countrylist')
 
 ##### Configuration of "Alsa Modems" (Alsa Mode)
@@ -80,7 +76,7 @@ In /etc/rc.conf:
 
 /etc/conf.d/slmodem-alsa:
 
-*   Modify to your needs especially  
+*   Modify to your needs especially
 
 --country=USA #(See output of 'slmodemd --countrylist')
 
@@ -92,8 +88,8 @@ devices with a description.
 
 ```
 
-*   add one of the following: hw:0,hw:1,modem:0 or modem:1  
-    to /etc/conf.d/slmodem-alsa at the end of the SLMODEM_ARGS line!  
+*   add one of the following: hw:0,hw:1,modem:0 or modem:1
+    to /etc/conf.d/slmodem-alsa at the end of the SLMODEM_ARGS line!
     eg.: SLMODEM_ARGS`"--country=`USA --alsa hw:1"
 
 The modem device is called /dev/ttySL0 and is symlinked to /dev/modem if you use udev.
@@ -107,11 +103,3 @@ If you do not want to set the permissions of your modem you "can" set /usr/bin/p
 If you have comments on the package please post it [here](https://bbs.archlinux.org/viewtopic.php?t=6441)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Smartlink_Modem_drivers&oldid=392665](https://wiki.archlinux.org/index.php?title=Smartlink_Modem_drivers&oldid=392665)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

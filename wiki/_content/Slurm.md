@@ -1,9 +1,5 @@
 # Slurm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [distcc](/index.php/Distcc "Distcc")
@@ -60,7 +56,3 @@ To complete an entrerprise like solution you may want to start/enable `slurmdbd.
 *   [Running Jobs](https://rc.fas.harvard.edu/resources/running-jobs/) - How slurm is used at harvard university.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Slurm&oldid=415006](https://wiki.archlinux.org/index.php?title=Slurm&oldid=415006)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing")

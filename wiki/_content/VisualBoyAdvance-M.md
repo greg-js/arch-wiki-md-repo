@@ -1,9 +1,5 @@
 # VisualBoyAdvance-M
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **VisualBoyAdvance-M** (commonly abbreviated as **VBA-M**) is a cross-platform emulator for the (Super-) Game Boy/Colour/Advance portable game consoles.
 
 It is a fork of VisualBoyAdvance, a now closed project. VBA-M combines features from several other VBA forks. It is licensed under the GPLv2, and is available in the Community repository.
@@ -20,23 +16,23 @@ It is a fork of VisualBoyAdvance, a now closed project. VBA-M combines features 
 
 *   **VBA-M (GTK)** — Nintendo GameBoy Advance emulator - GTK version
 
-[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk](https://www.archlinux.org/packages/?name=vbam-gtk)
+NaN
 
 *   **VBA-M (wx)** — Nintendo GameBoy Advance emulator - wx version
 
-[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
+NaN
 
 *   **VBA-M (SDL)** — Nintendo GameBoy Advance emulator - SDL version
 
-[http://vba-m.com/](http://vba-m.com/) || [vbam-sdl](https://www.archlinux.org/packages/?name=vbam-sdl)
+NaN
 
 *   **VBA-M (GTK) (development version)** — Gameboy Advance Emulator combining features of all VBA forks - GTK GUI - SVN version
 
-[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk-svn](https://aur.archlinux.org/packages/vbam-gtk-svn/)<sup><small>AUR</small></sup>
+NaN
 
 *   **VBA-M (wx) (development version)** — Improved (Super) Game Boy Color/Advance emulator - wxWidgets GUI, SVN version
 
-[http://vba-m.com/](http://vba-m.com/) || [vbam-wx-svn](https://aur.archlinux.org/packages/vbam-wx-svn/)<sup><small>AUR</small></sup>
+NaN
 
 ## Usage
 
@@ -44,117 +40,20 @@ For VBA-M, execute `gvbam ~/path/to/foo.*` or `gvbam` to load the ROM from the i
 
 **Tip:** File extensions differ between emulated platforms. VBA-M also supports compressed ROMs.
 
-<table class="wikitable"><caption>Default controls</caption>
-
-<tbody>
-
-<tr>
-
-<th>Emulated</th>
-
-<th>Real</th>
-
-</tr>
-
-<tr>
-
-<td>Left</td>
-
-<td>Left Arrow (0114)</td>
-
-</tr>
-
-<tr>
-
-<td>Right</td>
-
-<td>Right Arrow (0113)</td>
-
-</tr>
-
-<tr>
-
-<td>Up</td>
-
-<td>Up Arrow (0111)</td>
-
-</tr>
-
-<tr>
-
-<td>Down</td>
-
-<td>Down Arrow (0112)</td>
-
-</tr>
-
-<tr>
-
-<td>A</td>
-
-<td>Z (007a)</td>
-
-</tr>
-
-<tr>
-
-<td>B</td>
-
-<td>X (0078)</td>
-
-</tr>
-
-<tr>
-
-<td>L</td>
-
-<td>A (0061)</td>
-
-</tr>
-
-<tr>
-
-<td>R</td>
-
-<td>S (0073)</td>
-
-</tr>
-
-<tr>
-
-<td>Start</td>
-
-<td>Enter (000d)</td>
-
-</tr>
-
-<tr>
-
-<td>Select</td>
-
-<td>Backspace (0008)</td>
-
-</tr>
-
-<tr>
-
-<td>Speed up</td>
-
-<td>Space (0020)</td>
-
-</tr>
-
-<tr>
-
-<td>Capture</td>
-
-<td>F12 (0125)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Default controls</caption>
+| Emulated | Real |
+| Left | Left Arrow (0114) |
+| Right | Right Arrow (0113) |
+| Up | Up Arrow (0111) |
+| Down | Down Arrow (0112) |
+| A | Z (007a) |
+| B | X (0078) |
+| L | A (0061) |
+| R | S (0073) |
+| Start | Enter (000d) |
+| Select | Backspace (0008) |
+| Speed up | Space (0020) |
+| Capture | F12 (0125) |
 
 ## Troubleshooting
 
@@ -190,12 +89,3 @@ captures=
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VisualBoyAdvance-M&oldid=377161](https://wiki.archlinux.org/index.php?title=VisualBoyAdvance-M&oldid=377161)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

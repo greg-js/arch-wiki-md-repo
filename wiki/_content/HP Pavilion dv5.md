@@ -1,9 +1,5 @@
 # HP Pavilion dv5
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page will try to guide you how to configure Arch Linux distribution on HP Pavillion dv5-1000 series laptop. The main purpose of this howto is the post installation configuration and installing additional pakages to make the basic installation useful. If you have something to add please contribute to this page.
 
 ## Contents
@@ -346,7 +342,3 @@ alsactl store
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv5&oldid=340128](https://wiki.archlinux.org/index.php?title=HP_Pavilion_dv5&oldid=340128)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

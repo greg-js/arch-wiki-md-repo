@@ -1,9 +1,5 @@
 # Mobile Phone
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -27,12 +23,3 @@ Right now there is no easy way to use CDMA phones. The best option is Bitpim.
 You can use the latest version of [bitpim-release](https://aur.archlinux.org/packages/bitpim-release/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bitpim-release)]</sup> for these phones. Make sure you run Bitpim as root and everything should work.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mobile_Phone&oldid=392455](https://wiki.archlinux.org/index.php?title=Mobile_Phone&oldid=392455)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

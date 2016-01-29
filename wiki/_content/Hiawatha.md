@@ -1,9 +1,5 @@
 # Hiawatha
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Hiawatha](https://www.hiawatha-webserver.org/) is "an open source [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") with security, easy to use and lightweight as the three key features. It supports among others [(Fast)](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI")[CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), IPv6, URL rewriting and reverse proxy and has security features no other webserver has, like blocking [SQL injections](https://en.wikipedia.org/wiki/SQL_injection "wikipedia:SQL injection"), [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting "wikipedia:Cross-site scripting"), [CSRF](https://en.wikipedia.org/wiki/Cross-site_scripting "wikipedia:Cross-site scripting") and exploit attempts."
 
 ## Contents
@@ -216,11 +212,3 @@ For further details see the official [FAQ](https://www.hiawatha-webserver.org/fa
 *   [Hiawatha Support page](https://www.hiawatha-webserver.org/support)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hiawatha&oldid=416252](https://wiki.archlinux.org/index.php?title=Hiawatha&oldid=416252)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

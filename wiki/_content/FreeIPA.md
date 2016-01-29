@@ -1,9 +1,5 @@
 # FreeIPA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 FreeIPA is an open-source Identity, Policy and Audit (IPA) suite, sponsored by RedHat, which provides services similar to Microsoft's Active Directory
 
 ## Configure as IPA client
@@ -81,8 +77,3 @@ $ scp user@controller.domain.com:/tmp/client1.keytab krb5.keytab
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=FreeIPA&oldid=407102](https://wiki.archlinux.org/index.php?title=FreeIPA&oldid=407102)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Security](/index.php/Category:Security "Category:Security")

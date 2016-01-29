@@ -1,9 +1,5 @@
 # Hard Drive Active Protection System
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **H**ard **D**rive **A**ctive **P**rotection **S**ystem (**HDAPS**) protects your hard drive from sudden shocks (such as dropping or banging your laptop on a desk). It does this by parking the disk heads, so that shocks do not cause them to crash into the drive's platters. Hopefully, this will prevent catastrophic failure.
 
 **Note:** [SSD](/index.php/SSD "SSD") drives do not need HDAPS as they lack any mechanical components.
@@ -119,12 +115,3 @@ Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to 
 *   [HDAPS at ThinkWiki](http://www.thinkwiki.org/wiki/HDAPS)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&oldid=411992](https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&oldid=411992)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

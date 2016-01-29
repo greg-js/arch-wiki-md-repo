@@ -1,9 +1,5 @@
 # GLC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 GLC is an ALSA & OpenGL capture tool for Linux. It consists of a generic video capture, playback and processing library and a set of tools built around that library. GLC should be able to capture any application that uses ALSA for sound and OpenGL for drawing. It is similar to Fraps on Windows.
 
 ## Contents
@@ -148,11 +144,3 @@ Two graphical interfaces are available for glc to try and simplify it's usage, w
 *   [https://github.com/darkimmortal/glc](https://github.com/darkimmortal/glc) - An alternative version with support for 32-bit float audio (many Windows games via [wine](/index.php/Wine "Wine") use this)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=GLC&oldid=392151](https://wiki.archlinux.org/index.php?title=GLC&oldid=392151)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

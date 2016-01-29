@@ -1,9 +1,5 @@
 # Dell Mini 10v
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
@@ -29,31 +25,17 @@ This article is intended to assist users with the specifics of installing Arch L
 
 Dell Mini 10v hardware may vary, however the following list of hardware has been assumed in this article:
 
-Audio
+NaN
 
-Intel Corporation 82801G card
+NaN
 
-Realtek ALC272 Chip (from alsamixer)
+NaN
 
-Video
+NaN
 
-Intel Corporation Mobile 945GME
+NaN
 
-Wired NIC
-
-Realtek RTL8101E/RTL8102E
-
-Wireless NIC
-
-Broadcom Corporation BCM4312 802.11b/g
-
-Bluetooth
-
-Dell 365 Bluetooth 2.1+EDR
-
-Webcam
-
-Syntek Integrated Webcam
+NaN
 
 To list hardware, issue this command:
 
@@ -131,7 +113,3 @@ For utilities to monitor the battery status, see the [Laptop](/index.php/Laptop 
 See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Mini_10v&oldid=398949](https://wiki.archlinux.org/index.php?title=Dell_Mini_10v&oldid=398949)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

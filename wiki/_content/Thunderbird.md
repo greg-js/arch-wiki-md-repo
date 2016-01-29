@@ -1,9 +1,5 @@
 # Thunderbird
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Firefox](/index.php/Firefox "Firefox")
@@ -46,15 +42,15 @@ Other versions include:
 
 *   **Thunderbird Beta** — Cutting edge features with relatively-good stability.
 
-[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Thunderbird Earlybird** — Experience the newest innovations as they're developed (equivalent to an alpha and Firefox Aurora releases).
 
-[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Thunderbird Nightly** — Experience the newest innovations with nightly releases (for those that want to work with breakages).
 
-[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)<sup><small>AUR</small></sup>
+NaN
 
 A version overview, both past and future, can be read on the [Mozilla wiki](https://wiki.mozilla.org/Releases).
 
@@ -186,7 +182,7 @@ Remember to run `fc-cache -fv` to update system font cache. See [Font configurat
 
 ### Webmail with Thunderbird
 
-_See upstream Wiki: [Using webmail with your email client](http://kb.mozillazine.org/Using_webmail_with_your_email_client)._
+NaN
 
 ### Migrate profile to another system
 
@@ -295,11 +291,3 @@ $ pacman -S thunderbird
 8\. Import all your data.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=416872](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=416872)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

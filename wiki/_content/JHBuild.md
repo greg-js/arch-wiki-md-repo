@@ -1,9 +1,5 @@
 # JHBuild
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 JHBuild is a tool that allows you to automatically download and compile "modules" (i.e. source code packages). It can pull modules from a variety of sources (CVS, Subversion, Git, Bazaar, tarballs, etc.) and handle dependencies. You can also choose which specific modules you want to build, instead of building the whole project.
 
 JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), but has since been extended to be usable with other projects.
@@ -287,11 +283,3 @@ This list includes modules transitively depending on broken modules (i.e. some o
 [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=JHBuild&oldid=412109](https://wiki.archlinux.org/index.php?title=JHBuild&oldid=412109)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

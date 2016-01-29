@@ -1,9 +1,5 @@
 # 3G and GPRS modems with pppd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** 3G and GPRS modems with pppd alone
 
 Why not to use a pppd wrapper (like wvdial or similar)?. I particularly switched to direct pppd because my previous software sometimes silently exited instead of reconnecting, as it was configured to do, requiring me to travel to manually perform the reconnection.
@@ -448,16 +444,8 @@ To let the device decide which operator to use issue AT+COPS=0 command.
 
 ## Related Articles
 
-[Dialup without a dialer HOWTO](/index.php/Dialup_without_a_dialer_HOWTO "Dialup without a dialer HOWTO")  
-[Huawei E220](/index.php/Huawei_E220 "Huawei E220")  
-[USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")  
+[Dialup without a dialer HOWTO](/index.php/Dialup_without_a_dialer_HOWTO "Dialup without a dialer HOWTO")
+[Huawei E220](/index.php/Huawei_E220 "Huawei E220")
+[USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=3G_and_GPRS_modems_with_pppd&oldid=394812](https://wiki.archlinux.org/index.php?title=3G_and_GPRS_modems_with_pppd&oldid=394812)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # PCTV PicoStick 74e
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 How to use a PCTV PicoStick 74e DVB-T tuner with Archlinux.
 
 ## Download firmware
@@ -45,7 +41,3 @@ As you can see, it tells us that both firmware files were loaded successfully an
 Have fun !
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PCTV_PicoStick_74e&oldid=389742](https://wiki.archlinux.org/index.php?title=PCTV_PicoStick_74e&oldid=389742)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")

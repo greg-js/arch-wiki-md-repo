@@ -1,9 +1,5 @@
 # Compiz
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Compiz configuration](/index.php/Compiz_configuration "Compiz configuration")
@@ -14,7 +10,7 @@ Related articles
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
 
-_Compiz is a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") for the [X Window System](/index.php/X_Window_System "X Window System"), using 3D graphics hardware to create fast compositing desktop effects for window management. Effects, such as a minimization animation or a cube workspace, are implemented as loadable plugins._
+NaN
 
 ## Contents
 
@@ -75,21 +71,21 @@ Required:
 
 *   **Compiz** — OpenGL compositing window manager with CCSM, Plugins and GTK Window Decorator.
 
-[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)<sup><small>AUR</small></sup>
+NaN
 
 Optional:
 
 *   **Emerald** — A standalone window decorator for Compiz.
 
-[http://www.compiz.org/](http://www.compiz.org/) || [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Emerald Themes** — Extra themes for the Emerald window decorator.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
 
-[https://github.com/kozec/fusion-icon-gtk3](https://github.com/kozec/fusion-icon-gtk3) || [fusion-icon0.9](https://aur.archlinux.org/packages/fusion-icon0.9/)<sup><small>AUR</small></sup>
+NaN
 
 ### Installing the 0.8 series
 
@@ -99,39 +95,39 @@ Required:
 
 *   **Compiz Core** — OpenGL compositing window manager.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/)<sup><small>AUR</small></sup>, [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/)<sup><small>AUR</small></sup>
+NaN
 
 Highly recommended:
 
 *   **CompizConfig Settings Manager** — Graphical settings manager for Compiz.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [ccsm](https://aur.archlinux.org/packages/ccsm/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Compiz Fusion Plugins Main** — Main plugins collection for Compiz.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-main](https://aur.archlinux.org/packages/compiz-fusion-plugins-main/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Compiz Fusion Plugins Extra** — Extra plugins collection for Compiz.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-extra](https://aur.archlinux.org/packages/compiz-fusion-plugins-extra/)<sup><small>AUR</small></sup>
+NaN
 
 Optional:
 
 *   **Compiz Fusion Plugins Unsupported** — Unsupported Compiz plugins.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-unsupported](https://aur.archlinux.org/packages/compiz-fusion-plugins-unsupported/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Emerald** — A standalone window decorator for Compiz.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald](https://aur.archlinux.org/packages/emerald/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Emerald Themes** — Extra themes for the Emerald window decorator.
 
-[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)<sup><small>AUR</small></sup>
+NaN
 
 *   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
 
-[http://www.compiz.org/](http://www.compiz.org/) || [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/)<sup><small>AUR</small></sup>
+NaN
 
 ## Starting Compiz
 
@@ -161,7 +157,7 @@ To be able to switch to different [viewports](/index.php/Compiz_configuration#Wo
 
 The window decorator is the program which provides windows with borders. Unlike window managers such as Kwin or [Xfwm](/index.php/Xfwm "Xfwm") which provide just one decorator, users of Compiz have a choice of three: GTK Window Decorator, KDE Window Decorator and Emerald. The GTK Window Decorator and the KDE Window Decorator are included in the Compiz source and can be optionally compiled whilst building Compiz. Emerald, on the other hand, is a separate, standalone decorator. The _Window Decoration_ plugin in CCSM must be ticked otherwise no window decorator will be started.
 
-Choosing the decorator
+NaN
 
 In most versions of Compiz, the decorator is started with the _compiz-decorator_ script. This will first try to detect a GNOME or KDE session and start the appropriate decorator for that session and then, if this fails, it will search for the _emerald_, _gtk-window-decorator_ and _kde4-window-decorator_ executables in that order and start the first decorator it finds. For this reason, it should not usually be necessary to change the decorator command. However, in cases where the _compiz-decorator_ script is not available, not being used or is not starting the desired decorator, the decorator command can be changed under CCSM -> _Effects_ -> _Window Decoration_ -> _Command_. If just specifying the decorator executable does not cause the decorator to be started, use the `--replace` switch as well.
 
@@ -195,15 +191,15 @@ To ensure that _fusion-icon_ then starts Compiz, right click on the icon in the 
 
 Refer to your desktop environment's article for instructions on replacing the default window manager. Links are provided below.
 
-GNOME
+NaN
 
 Compiz cannot be used with [GNOME](/index.php/GNOME "GNOME") Shell however [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") provides a Compiz session.
 
-Cinnamon
+NaN
 
 Compiz cannot be used with [Cinnamon](/index.php/Cinnamon "Cinnamon").
 
-Other desktop environments
+NaN
 
 *   KDE - See [KDE#Using an alternative window manager](/index.php/KDE#Using_an_alternative_window_manager "KDE").
 
@@ -270,11 +266,11 @@ using _kwin_, _metacity_ or _xfwm4_ for example instead of _wm_name_.
 
 ### Enabling the Alt+F2 run dialog
 
-GNOME Panel
+NaN
 
 Enable the _Gnome Compatibility_ plugin in CCSM.
 
-MATE Panel
+NaN
 
 There are two ways to enable MATE Panel's run dialog in Compiz. You can either:
 
@@ -286,7 +282,7 @@ mate-panel --run-dialog
 
 ```
 
-LXDE Panel
+NaN
 
 Map the command below to the `Alt+F2` key combination using the _Commands_ plugin in CCSM.
 
@@ -295,11 +291,11 @@ lxpanelctl run
 
 ```
 
-Xfce Appfinder
+NaN
 
 When Compiz is used in an Xfce session, the run dialog (provided by [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)) should work without intervention. If you are using Xfce Appfinder in a standalone Compiz session, map the command to the `Alt+F2` key combination using the _Commands_ plugin in CCSM.
 
-Other run dialogs
+NaN
 
 Map the command for a [run dialog](/index.php/List_of_applications#Application_launchers "List of applications") of choice to the `Alt+F2` key combination using the _Commands_ plugin in CCSM.
 
@@ -509,8 +505,3 @@ When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use
 *   [Troubleshooting - Compiz Wiki](http://wiki.compiz.org/Troubleshooting), (wiki is unmaintained)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz&oldid=411952](https://wiki.archlinux.org/index.php?title=Compiz&oldid=411952)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

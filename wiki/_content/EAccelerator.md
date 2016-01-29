@@ -1,9 +1,5 @@
 # EAccelerator
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 eAccelerator is a free open-source PHP accelerator & optimizer. It increases the performance of PHP scripts by caching them in their compiled state, so that the overhead of compiling is almost completely eliminated. It also optimizes scripts to speed up their execution. eAccelerator typically reduces server load and increases the speed of your PHP code by 1-10 times.
 
 ## Contents
@@ -96,11 +92,3 @@ Then uninstall eAccelerator (I did a pacman -Rcsun eaccelerator), rebuild it fro
 *   [Module 'eAccelerator' already loaded](http://www.sitepoint.com/forums/server-management-97/module-eaccelerator-already-loaded-644487.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=EAccelerator&oldid=392096](https://wiki.archlinux.org/index.php?title=EAccelerator&oldid=392096)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

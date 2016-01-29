@@ -1,106 +1,14 @@
 # Dell Latitude D600
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Video</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>radeon</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Works after installing firmware</td>
-
-<td>b43legacy/ipw2200</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>tg3</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_ac97_codec</td>
-
-</tr>
-
-<tr>
-
-<td>Trackpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>PCMCIA</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>pcmcia-cs</td>
-
-</tr>
-
-<tr>
-
-<td>Modem</td>
-
-<td style="text-align:center;">Untested, probably works</td>
-
-<td>hsfmodem</td>
-
-</tr>
-
-<tr>
-
-<td>IRDA</td>
-
-<td style="text-align:center;">Untested</td>
-
-<td> ?</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Video | Working | radeon |
+| Wireless | Works after installing firmware | b43legacy/ipw2200 |
+| Ethernet | Working | tg3 |
+| Audio | Working | snd_ac97_codec |
+| Trackpad | Working | xf86-input-synaptics |
+| PCMCIA | Working | pcmcia-cs |
+| Modem | Untested, probably works | hsfmodem |
+| IRDA | Untested |  ? |
 
 The Dell Latitude D600 was released on 3/12/2003\. Despite its age, it can prove to be quite a capable machine. With a couple exceptions, Linux support for the D600 is outstanding. Most of its components work automatically with Arch.
 
@@ -137,7 +45,7 @@ The b43legacy driver is included in the kernel, but unlike with the Intel card, 
 
 You'll need to download the following two firmware files:
 
-*   [http://mirror2.openwrt.org/sources/broadcom-wl-4.150.10.5.tar.bz2](http://mirror2.openwrt.org/sources/broadcom-wl-4.150.10.5.tar.bz2)  
+*   [http://mirror2.openwrt.org/sources/broadcom-wl-4.150.10.5.tar.bz2](http://mirror2.openwrt.org/sources/broadcom-wl-4.150.10.5.tar.bz2)
 
 *   [http://downloads.openwrt.org/sources/wl_apsta-3.130.20.0.o](http://downloads.openwrt.org/sources/wl_apsta-3.130.20.0.o)
 
@@ -218,7 +126,3 @@ There is a serious problem with KMS in the radeon driver that prevents normal re
 *   [Dell specifications brochure](http://www.dell.com/downloads/us/products/latit/d600_spec.pdf) (PDF)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_D600&oldid=379403](https://wiki.archlinux.org/index.php?title=Dell_Latitude_D600&oldid=379403)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

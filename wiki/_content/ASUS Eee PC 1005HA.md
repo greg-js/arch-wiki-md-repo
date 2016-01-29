@@ -1,88 +1,13 @@
 # ASUS Eee PC 1005HA
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float:right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel 945GME</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel 945GME | **Working** | xf86-video-intel |
+| Ethernet | **Working** |
+| Wireless | **Working** |
+| Audio | **Working** | snd_hda_intel |
+| Camera | **Working** | uvcvideo |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
 
 ## Contents
 
@@ -114,11 +39,11 @@ For an in-depth guide on the installation see the [Beginners' guide](/index.php/
 
 Boot Booster is a feature that caches the result of the POST check to the hard drive. It can save several seconds off your boot time once activated.
 
-To continue using Boot Booster, create a partition on the disk:
+To continue using Boot Booster, create a [partition](/index.php/Partitioning "Partitioning") on the disk:
 
 *   It must be a primary partition.
-*   Must be 16MB minimum, see also the article on [partition alignments](/index.php/Partitioning#Partition_alignment "Partitioning").
-*   Must be type 0xef (EFI (FAT-12/16/32). This can be set with [fdisk](/index.php/Fdisk "Fdisk").
+*   It must be 16MB minimum, pay attention to [partition alignments](/index.php/Partitioning#Partition_alignment "Partitioning").
+*   It must be type <tt>0xEF</tt> (<tt>EFI (FAT-12/16/32)</tt> in [Fdisk](/index.php/Fdisk "Fdisk"), <tt>esp</tt> in [GNU_Parted](/index.php/GNU_Parted "GNU Parted")).
 
 After install is complete, enable Boot Booster in the BIOS. On the second boot after enabling, Boot Booster will be fully activated. Boot Booster must be disabled in the BIOS to boot from other devices again.
 
@@ -373,12 +298,4 @@ Note that this is the 1005HA-M version.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417622](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417622)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417797](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417797)"

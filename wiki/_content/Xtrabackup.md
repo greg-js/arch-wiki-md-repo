@@ -1,9 +1,5 @@
 # Xtrabackup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Percona XtraBackup is an high performance, low-profile and non-blocking open-source backup utility for InnoDB and XtraDB databases.
 
 Currently is the only open-source tool that performs backups on 'MySQL-based' servers ([MySQL](/index.php/MySQL "MySQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [Percona Server](http://www.percona.com/docs/wiki/percona-server:start)) that doesn't lock your database during it. Backups are online, and queries and transactions continue to run without interruption ('hot backups').
@@ -31,17 +27,7 @@ Install the [xtrabackup](https://www.archlinux.org/packages/?name=xtrabackup) fr
 
 XtraBackup is really a set of three tools:
 
-xtrabackup
-
-A compiled C binary, which copies only InnoDB and XtraDB data
-
-innobackupex
-
-A wrapper script that provides functionality to backup a whole MySQL database instance with MyISAM, InnoDB, and XtraDB tables.
-
-tar4ibd
-
-A patched version of [tar](/index.php/Tar "Tar") for handling InnoDB data safely.
+NaN
 
 In all of the below examples, the following is assumed:
 
@@ -186,8 +172,3 @@ mysql> STOP SLAVE;
 *   [Xtrabackup's Home page](http://www.percona.com/software/percona-xtrabackup/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Xtrabackup&oldid=308636](https://wiki.archlinux.org/index.php?title=Xtrabackup&oldid=308636)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

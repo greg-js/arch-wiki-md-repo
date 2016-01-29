@@ -1,9 +1,5 @@
 # Lenovo S20-30
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Touchpad](/index.php/Touchpad "Touchpad")
@@ -169,11 +165,3 @@ The fan mode can be changed with `echo 'X'>/sys/bus/platform/drivers/ideapad_acp
 In fan cooling mode 2, the fan starts, if the CPU temperature reaches 35°C and stops after the temperature is lower than 31°C.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=413854](https://wiki.archlinux.org/index.php?title=Lenovo_S20-30&oldid=413854)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # S.M.A.R.T.
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) is a supplementary component built into many modern storage devices through which devices monitor, store, and analyze the health of their operation. Statistics are collected (temperature, number of reallocated sectors, seek errors...) which software can use to measure the health of a device, predict possible device failure, and provide notifications on unsafe values.
 
 ## Contents
@@ -231,7 +227,7 @@ Putting together all of the above gives the following example configuration:
 
 *   **Gsmartcontrol** — A GNOME frontend for the smartctl hard disk drive health inspection tool
 
-[http://gsmartcontrol.sourceforge.net](http://gsmartcontrol.sourceforge.net) || [gsmartcontrol](https://www.archlinux.org/packages/?name=gsmartcontrol) or [gsmartcontrol-svn](https://aur.archlinux.org/packages/gsmartcontrol-svn/)<sup><small>AUR</small></sup>
+NaN
 
 ## Resources
 
@@ -239,7 +235,3 @@ Putting together all of the above gives the following example configuration:
 *   [Smartmontools on Ubuntu Wiki](https://help.ubuntu.com/community/Smartmontools)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=S.M.A.R.T.&oldid=379086](https://wiki.archlinux.org/index.php?title=S.M.A.R.T.&oldid=379086)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")

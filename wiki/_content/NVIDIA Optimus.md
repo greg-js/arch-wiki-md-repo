@@ -1,9 +1,5 @@
 # NVIDIA Optimus
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee")
@@ -306,9 +302,9 @@ Add `rcutree.rcu_idle_gp_delay=1` to the kernel parameters. Original topic can b
 
 ### Resolution, screen scan wrong. EDID errors in Xorg.log
 
-This is due to the nVidia driver not detecting the EDID for the display. You need to manually specify the path to an EDID file or provide the same information in a similar way.
+This is due to the NVIDIA driver not detecting the EDID for the display. You need to manually specify the path to an EDID file or provide the same information in a similar way.
 
-To provide the path to the EDID file edit the Device Section for the nvidia card in Xorg.conf, adding these lines and changing parts to reflect your own system:
+To provide the path to the EDID file edit the Device Section for the NVIDIA card in Xorg.conf, adding these lines and changing parts to reflect your own system:
 
  `/etc/X11/xorg.conf` 
 
@@ -328,7 +324,7 @@ Alternatively you can generate your edid with tools like [read-edid](https://www
 
 ### Steam, dmenu, lightdm not working with xorg-server-1.18
 
-[FS#47151](https://bugs.archlinux.org/task/47151) explains how to downgrade Xorg to work around issues with nvidia proprietary driver and Xorg 1.18\. If you do not have the needed packages in your pacman cache, you may download them from the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
+[FS#47151](https://bugs.archlinux.org/task/47151) explains how to downgrade Xorg to work around issues with NVIDIA proprietary driver and Xorg 1.18\. If you do not have the needed packages in your pacman cache, you may download them from the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
 
 ## Using nouveau
 
@@ -338,8 +334,4 @@ The open-source [nouveau](/index.php/Nouveau "Nouveau") driver ([xf86-video-nouv
 
 If you wish to use Bumblebee, which will implement powersaving and some other useful features, see the wiki article on [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=412654](https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=412654)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=417920](https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus&oldid=417920)"

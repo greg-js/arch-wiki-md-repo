@@ -1,9 +1,5 @@
 # Firefox on RAM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Assuming that there is memory to spare, placing [Firefox](/index.php/Firefox "Firefox")'s cache or complete profile to RAM offers significant advantages. Even though opting for the partial route is an improvement by itself, the latter can make Firefox even more responsive compared to its stock configuration. Benefits include, among others:
 
 *   reduced drive read/writes;
@@ -155,7 +151,3 @@ $ echo '_~/bin/firefox-sync_' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
 *   [Fstab#tmpfs](/index.php/Fstab#tmpfs "Fstab")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_on_RAM&oldid=414101](https://wiki.archlinux.org/index.php?title=Firefox_on_RAM&oldid=414101)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web browser](/index.php/Category:Web_browser "Category:Web browser")

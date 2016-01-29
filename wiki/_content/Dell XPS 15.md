@@ -1,9 +1,5 @@
 # Dell XPS 15
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page is a work in progress! More info coming soon.
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -14,117 +10,19 @@ This page is a work in progress! More info coming soon.
 
 **Reason:** Headers messed up, useless shell dumps (Discuss in [Talk:Dell XPS 15#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_15))
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th width="160" style="border-bottom: 2px solid;">Device</th>
-
-<th width="120" style="border-bottom: 2px solid">Status</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Network</th>
-
-<th style="background: #228B22; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Wireless</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Sound</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Bluetooth</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Touchpad</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Graphics</th>
-
-<th style="background: #FF4F00; border-bottom: 1px solid">Modify</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">USB 3.0</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Webcam</th>
-
-<th style="background: green; border-bottom: 1px solid">Works</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">System info</th>
-
-<th style="background: #FFFFFF; border-bottom: 1px solid">Not tested</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Power management</th>
-
-<th style="background: yellow; border-bottom: 1px solid">Buggy</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">WiDi</th>
-
-<th style="background: red; border-bottom: 1px solid">Not working</th>
-
-</tr>
-
-<tr>
-
-<th style="border-bottom: 1px solid; border-right: 1px solid">Touchpad gestures</th>
-
-<th style="background: red; border-bottom: 1px solid">Not working</th>
-
-</tr>
-
-</tbody>
-
-</table>
+| Device | Status |
+| Network | Works |
+| Wireless | Works |
+| Sound | Works |
+| Bluetooth | Works |
+| Touchpad | Works |
+| Graphics | Modify |
+| USB 3.0 | Works |
+| Webcam | Works |
+| System info | Not tested |
+| Power management | Buggy |
+| WiDi | Not working |
+| Touchpad gestures | Not working |
 
 *   Works - Works out-of-the-box
 *   Modify - Works with modifications
@@ -633,61 +531,13 @@ SUBSYSTEM=="input", KERNEL=="event0", RUN+="keymap $name dell-xps-l502x"
 
 For L502X model: there are additional Fn+<Key> (sequences) that are not marked at all on the keyboard but underlying hardware generates them anyway. Here they are (if you find more add them to the table below):
 
-<table class="wikitable"><caption>Hidden Fn Keys</caption>
-
-<tbody>
-
-<tr>
-
-<th>Fn+<Key></th>
-
-<th>Resulting key (sequence)</th>
-
-</tr>
-
-<tr>
-
-<td>Fn+Esc</td>
-
-<td>Sleep</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+Super_L</td>
-
-<td>Super_R</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+Ins</td>
-
-<td>Pause/Break</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+Del</td>
-
-<td>Ctrl + Pause/Break</td>
-
-</tr>
-
-<tr>
-
-<td>Fn+PrntScr</td>
-
-<td>Alt + PrtSc/SysRq</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>Hidden Fn Keys</caption>
+| Fn+<Key> | Resulting key (sequence) |
+| Fn+Esc | Sleep |
+| Fn+Super_L | Super_R |
+| Fn+Ins | Pause/Break |
+| Fn+Del | Ctrl + Pause/Break |
+| Fn+PrntScr | Alt + PrtSc/SysRq |
 
 ### Notes
 
@@ -700,11 +550,3 @@ For L502X model: there are additional Fn+<Key> (sequences) that are not marked a
 *   [A fairly comprehensive writeup of running Arch Linux on an XPS 15.](http://drwho.virtadpt.net/archive/2015/01/05/linux-on-the-dell-xps-15-9530)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_15&oldid=414842](https://wiki.archlinux.org/index.php?title=Dell_XPS_15&oldid=414842)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

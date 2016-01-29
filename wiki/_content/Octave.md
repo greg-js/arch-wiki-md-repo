@@ -1,9 +1,5 @@
 # Octave
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Matlab](/index.php/Matlab "Matlab")
@@ -12,7 +8,7 @@ Related articles
 
 From the [official website](http://www.gnu.org/software/octave/):
 
-_GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable._
+NaN
 
 ## Contents
 
@@ -98,11 +94,11 @@ Octave has two official plotting backends:
 
 *   **[Gnuplot](https://en.wikipedia.org/wiki/Gnuplot "wikipedia:Gnuplot")** — A classic Linux plotting utility.
 
-[http://www.gnuplot.info/](http://www.gnuplot.info/) || [gnuplot](https://www.archlinux.org/packages/?name=gnuplot)
+NaN
 
 *   **FLTK Backend** — A new experimental OpenGL backend based on the [FLTK](https://en.wikipedia.org/wiki/FLTK "wikipedia:FLTK") GUI toolkit.
 
-[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
+NaN
 
 **Note:** To enable the FLTK backend, you need to install the [fltk](https://www.archlinux.org/packages/?name=fltk) package. This package now comes as a dependency of octave.
 
@@ -123,11 +119,11 @@ The following GUIs are unofficial.
 
 *   **Cantor** — A graphical user interface that delegates its mathematical operations to one of several back ends (Scilab, Maxima, Octave and others).
 
-[http://edu.kde.org/cantor/](http://edu.kde.org/cantor/) || [cantor](https://www.archlinux.org/packages/?name=cantor)
+NaN
 
 *   **QtOctave** — A Qt frontend for Octave.
 
-[https://forja.rediris.es/projects/csl-qtoctave/](https://forja.rediris.es/projects/csl-qtoctave/) || [qtoctave](https://aur.archlinux.org/packages/qtoctave/)<sup><small>AUR</small></sup>
+NaN
 
 ### Bug in Documentation tab
 
@@ -189,7 +185,7 @@ Since [octave-io](https://aur.archlinux.org/packages/octave-io/)<sup><small>AUR<
 
 The steps necessary to make it work are:
 
-1\. [Install](/index.php/Install "Install") [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+NaN
 
 **Note:** A common problem is that Octave cannot find the JDK path. To fix this execute the following commands in your shell:
 
@@ -200,7 +196,7 @@ $ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
 You may also want to add this to your `~/.bashrc` and append it to your `PATH`.
 
-2\. Install a Java XLS library for `xlsread`. There are more such libraries available, a comparison can be found at [here](http://octave.org/wiki/index.php?title=IO_package#Comparison_of_interfaces_.26_usage). The recommended library is [apache-poi](https://aur.archlinux.org/packages/apache-poi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/apache-poi)]</sup>, available in the [AUR](/index.php/AUR "AUR").
+NaN
 
 To check if Java is working correctly in Octave, see the output of:
 
@@ -263,12 +259,3 @@ undecodable token: b(hex)[23m
 when printing, install [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) and relogin.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=416116](https://wiki.archlinux.org/index.php?title=Octave&oldid=416116)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

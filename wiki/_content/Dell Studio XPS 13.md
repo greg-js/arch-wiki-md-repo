@@ -1,9 +1,5 @@
 # Dell Studio XPS 13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 I have just bought a new Dell Studio XPS 13\. I have not been able to find any information for installing Arch Linux on this machine. It is a very nice looking laptop, and runs fast and smooth. I have had a successful install (32-bit only, 64-bit). I still have a few things to get working, like the Bluetooth, and media buttons.
 
 System Specs:
@@ -112,7 +108,3 @@ This should suspend your laptop to RAM when the lid is closed.
 The touchpad does not work completely out of the box. By default only the mouse buttons are working. To get the touchpad working, especially the area to move the mouse, follow the instructions described on the wiki page [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics"). Just installing the package and an X restart should do the trick.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Studio_XPS_13&oldid=399593](https://wiki.archlinux.org/index.php?title=Dell_Studio_XPS_13&oldid=399593)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

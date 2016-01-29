@@ -1,9 +1,5 @@
 # Microcode
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Processor manufacturers release stability and security updates to the processor [microcode](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode"). While microcode can be updated through the BIOS, the Linux kernel is also able to apply these updates during boot. These updates provide bug fixes that can be critical to the stability of your system. Without these updates, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
 
 Users of CPUs belonging to the Intel Haswell and Broadwell processor families in particular must install these microcode updates to ensure system stability. But all Intel users should install the updates as a matter of course.
@@ -171,7 +167,7 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
 
-(extract microcode image and search it for your cpuid)
+NaN
 
 *   If an update is available, it should show up below _selected microcodes_
 *   The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
@@ -196,7 +192,3 @@ CONFIG_MICROCODE_EARLY=y
 *   [Erratum found in Haswell/Broadwell](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Microcode&oldid=415538](https://wiki.archlinux.org/index.php?title=Microcode&oldid=415538)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [CPU](/index.php/Category:CPU "Category:CPU")

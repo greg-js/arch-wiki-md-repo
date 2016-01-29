@@ -1,9 +1,5 @@
 # Touchpad Synaptics
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
@@ -104,57 +100,7 @@ EndSection
 
 ```
 
-**TapButton1**
-
-(integer) configures which mouse-button is reported on a non-corner, one finger tap.
-
-**TapButton2**
-
-(integer) configures which mouse-button is reported on a non-corner, two finger tap
-
-**TapButton3**
-
-(integer) configures which mouse-button is reported on a non-corner, three finger tap
-
-**RBCornerButton**
-
-(integer) configures which mouse-button is reported on a right bottom corner, one finger tap (use `Option "RBCornerButton" "3"` to achieve Ubuntu style tap behaviour for right mouse button in lower right corner)
-
-**RTCornerButton**
-
-(integer) as above, but for top right corner, one finger tap.
-
-**VertEdgeScroll**
-
-(boolean) enables vertical scrolling while dragging across the right edge of the touch pad.
-
-**HorizEdgeScroll**
-
-(boolean) enables horizontal scrolling while dragging across the bottom edge of the touch pad.
-
-**VertTwoFingerScroll**
-
-(boolean) enables vertical scrolling using two fingers.
-
-**HorizTwoFingerScroll**
-
-(boolean) enables horizontal scrolling using two fingers.
-
-**EmulateTwoFingerMinZ/W**
-
-(integer) play with this value to set the precision of two finger scroll.
-
-**FingerLow**
-
-(integer) when finger pressure drops below this value, the driver counts it as a release.
-
-**FingerHigh**
-
-(integer) when finger pressure goes above this value, the driver counts it as a touch.
-
-**VertScrollDelta** and **HorizScrollDelta**
-
-(integer) configures the speed of scrolling, it is a bit counter-intuitive because higher values produce greater precision and thus slower scrolling. Negative values cause natural scrolling like in OS X.
+NaN
 
 **Note:**
 
@@ -172,21 +118,21 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 *   **[Synclient](#Synclient) (Recommended)** — command line utility to configure and query Synaptics driver settings on a live system, the tool is developed by the synaptics driver maintainers and is provided with the synaptics driver
 
-[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
+NaN
 
 *   **[xinput](#Using_xinput_to_determine_touchpad_capabilities)** — small general-purpose CLI tool to configure devices
 
-[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput)
+NaN
 
 #### Graphical tools
 
 *   **GPointing Device Settings** — provides graphical on the fly configuration for several pointing devices connected to the system, including your synaptics touch pad. This application replaces GSynaptics as the preferred tool for graphical touchpad configuration through the synaptics driver
 
-[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
+NaN
 
 *   **kcm-touchpad** — A new touchpad configuration tool for [KDE](/index.php/KDE "KDE"), provides a module under input devices in system settings. Released in February 2014, works under KDE SC 4.12+. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/synaptiks)]</sup> and [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_touchpad)]</sup>.
 
-[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup>
+NaN
 
 ### GNOME/Cinnamon
 
@@ -968,14 +914,3 @@ On newer laptops such as the HP Envy 15 x360 a `ButtonRelease` event is not sent
 *   [Synaptics manual on x.org](http://www.x.org/archive/X11R7.5/doc/man/man4/synaptics.4.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=412831](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&oldid=412831)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

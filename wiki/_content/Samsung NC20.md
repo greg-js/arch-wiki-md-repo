@@ -1,9 +1,5 @@
 # Samsung NC20
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Samsung NC20** is a laptop with 12.1" display with resolution 1280x800\. It have 160GB hard drive, 3 USB ports, Memory Card reader (3-in-1 propably), VGA-output, Webcam and microphone. It have 1GB RAM and the computer is delivered with Windows XP license.
 
 ## Contents
@@ -253,7 +249,3 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_NC20&oldid=264773](https://wiki.archlinux.org/index.php?title=Samsung_NC20&oldid=264773)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")

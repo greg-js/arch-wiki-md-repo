@@ -1,14 +1,8 @@
 # mod_gnutls
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [mod_gnutls wiki](https://mod.gnutls.org/wiki):
 
-mod_gnutls is an extension for ​Apache's httpd uses the ​GnuTLS library to provide HTTPS.
-
-It is similar to ​mod_ssl in purpose, but it supports some features and protocols that mod_ssl does not, and it does not use ​OpenSSL.
+NaN
 
 ## Installation
 
@@ -72,11 +66,3 @@ Additional documentation of configuration directives is on the [outoforder.cc mo
 You can test or verify your https configuration via [SSL Labs analyze tool](https://www.ssllabs.com/ssltest/analyze.html).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_gnutls&oldid=392458](https://wiki.archlinux.org/index.php?title=Mod_gnutls&oldid=392458)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

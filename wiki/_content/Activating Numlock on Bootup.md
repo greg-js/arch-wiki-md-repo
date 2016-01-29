@@ -1,9 +1,5 @@
 # Activating Numlock on Bootup
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Console](#Console)
@@ -29,7 +25,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 ### Using a separate service
 
-*   [Install](/index.php/Install "Install") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").  
+*   [Install](/index.php/Install "Install") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
     Then [enable](/index.php/Enable "Enable") the `numLockOnTty` service.
 
 *   Alternatively, if you do not want to install an aur package to implement this, you can simply create a service file in `/etc/systemd/system` like:
@@ -183,37 +179,9 @@ $ gnome-session-properties
 
 The above command opens the **Startup Applications Preferences** applet. Click _**Add**_ and enter the following:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>Name:</td>
-
-<td>_Numlockx_</td>
-
-</tr>
-
-<tr>
-
-<td>Command:</td>
-
-<td>_/usr/bin/numlockx on_</td>
-
-</tr>
-
-<tr>
-
-<td>Comment:</td>
-
-<td>_Turns on numlock._</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Name: | _Numlockx_ |
+| Command: | _/usr/bin/numlockx on_ |
+| Comment: | _Turns on numlock._ |
 
 **Note:** This is not a system-wide change, repeat these steps for each user wishing to activate NumLock after logging in.
 
@@ -278,8 +246,3 @@ numlock=1
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&oldid=412030](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&oldid=412030)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot process](/index.php/Category:Boot_process "Category:Boot process")
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

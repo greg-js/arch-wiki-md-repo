@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X250
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Lenovo ThinkPad X250 is the successor to the [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240"). Major differences include the physical TrackPoint buttons above the touchpad mouse as well as the Broadwell line of Intel CPUs.
 
 ## Contents
@@ -20,133 +16,21 @@ The Lenovo ThinkPad X250 is the successor to the [Lenovo ThinkPad X240](/index.p
 
 **Tip:** Below were the tested configurations at the current time.
 
-<table class="wikitable sortable">
-
-<tbody>
-
-<tr>
-
-<th>Feature</th>
-
-<th>Configuration</th>
-
-</tr>
-
-<tr>
-
-<td>System</td>
-
-<td>X250</td>
-
-</tr>
-
-<tr>
-
-<td>CPU</td>
-
-<td>Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz</td>
-
-</tr>
-
-<tr>
-
-<td>Graphics</td>
-
-<td>Intel HD 5400 - Broadwell</td>
-
-</tr>
-
-<tr>
-
-<td>Ram</td>
-
-<td>8 GB</td>
-
-</tr>
-
-<tr>
-
-<td>Disk</td>
-
-<td>180 GB Solid State Drive Opal 2.0 - XCapable</td>
-
-</tr>
-
-<tr>
-
-<td>Display</td>
-
-<td>12.5" IPS FHD (1920x1080) non-touch</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td>Intel Corporation Wireless 7265</td>
-
-</tr>
-
-<tr>
-
-<td>Built-in Battery</td>
-
-<td>9 Cell</td>
-
-</tr>
-
-<tr>
-
-<td>Additional Pluggable Battery</td>
-
-<td>6 Cell 19+</td>
-
-</tr>
-
-<tr>
-
-<td>Backlight Keyboard</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>ThinkLight</td>
-
-<td>No</td>
-
-</tr>
-
-<tr>
-
-<td>Fingerprint Scanner</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td>Yes</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td>Yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | Configuration |
+| System | X250 |
+| CPU | Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz |
+| Graphics | Intel HD 5400 - Broadwell |
+| Ram | 8 GB |
+| Disk | 180 GB Solid State Drive Opal 2.0 - XCapable |
+| Display | 12.5" IPS FHD (1920x1080) non-touch |
+| Wireless | Intel Corporation Wireless 7265 |
+| Built-in Battery | 9 Cell |
+| Additional Pluggable Battery | 6 Cell 19+ |
+| Backlight Keyboard | Yes |
+| ThinkLight | No |
+| Fingerprint Scanner | Yes |
+| Bluetooth | Yes |
+| Camera | Yes |
 
 ### System Configuration
 
@@ -209,7 +93,3 @@ action=amixer -c 1 sset Mic toggle -q
 Bluetooth was not tested.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=416006](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=416006)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

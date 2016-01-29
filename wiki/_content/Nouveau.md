@@ -1,9 +1,5 @@
 # Nouveau
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
@@ -274,12 +270,3 @@ Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_c
 Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with _dmesg_. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nouveau&oldid=412140](https://wiki.archlinux.org/index.php?title=Nouveau&oldid=412140)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

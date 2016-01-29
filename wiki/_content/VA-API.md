@@ -1,9 +1,5 @@
 # VA-API
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [VDPAU](/index.php/VDPAU "VDPAU")
@@ -42,167 +38,50 @@ Related articles
 
 ### Supported formats
 
-<table class="wikitable" style="width: 100%">
-
-<tbody>
-
-<tr>
-
-<th colspan="3">Open source</th>
-
-<th colspan="2">Proprietary</th>
-
-</tr>
-
-<tr>
-
-<th>AMD</th>
-
-<th>Intel</th>
-
-<th>Nvidia</th>
-
-<th>AMD</th>
-
-<th>Nvidia</th>
-
-</tr>
-
-<tr>
-
-<td>MPEG2 decoding</td>
-
-<td>Radeon 9500 and newer</td>
-
-<td>GMA 4500 and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>MPEG4 decoding</td>
-
-<td>Radeon HD 6000 and newer</td>
-
-<td>
+ Open source | Proprietary |
+ AMD | Intel | Nvidia | AMD | Nvidia |
+| MPEG2 decoding | Radeon 9500 and newer | GMA 4500 and newer | GeForce 8 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
+| MPEG4 decoding | Radeon HD 6000 and newer | 
 
 <center>—</center>
 
-</td>
-
-<td>GeForce 200 and newer</td>
-
-<td>Radeon HD 6000 and newer</td>
-
-<td>GeForce 200 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>H264 decoding</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>GMA 4500<sup>1</sup>, Ironlake Graphics and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>VC1 decoding</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>Sandy Bridge Graphics and newer</td>
-
-<td>GeForce 8200, 8300, 8400, 9300, 200 and newer</td>
-
-<td>Radeon HD 4000 and newer</td>
-
-<td>GeForce 8 and newer</td>
-
-</tr>
-
-<tr>
-
-<td>MPEG2 encoding</td>
-
-<td>
+ | GeForce 200 and newer | Radeon HD 6000 and newer | GeForce 200 and newer |
+| H264 decoding | Radeon HD 4000 and newer | GMA 4500<sup>1</sup>, Ironlake Graphics and newer | GeForce 8 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
+| VC1 decoding | Radeon HD 4000 and newer | Sandy Bridge Graphics and newer | GeForce 8200, 8300, 8400, 9300, 200 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
+| MPEG2 encoding | 
 
 <center>—</center>
 
-</td>
-
-<td>Ivy Bridge Graphics and newer</td>
-
-<td>
+ | Ivy Bridge Graphics and newer | 
 
 <center>—</center>
 
-</td>
-
-<td>
+ | 
 
 <center>—</center>
 
-</td>
-
-<td>
+ | 
 
 <center>—</center>
 
-</td>
-
-</tr>
-
-<tr>
-
-<td>H264 encoding</td>
-
-<td>
+ |
+| H264 encoding | 
 
 <center>—</center>
 
-</td>
-
-<td>Sandy Bridge Graphics and newer</td>
-
-<td>
+ | Sandy Bridge Graphics and newer | 
 
 <center>—</center>
 
-</td>
-
-<td>
+ | 
 
 <center>—</center>
 
-</td>
-
-<td>
+ | 
 
 <center>—</center>
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+ |
 
 <sup>1</sup>Supported by the [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/)<sup><small>AUR</small></sup> package. See [H.264 decoding on GMA 4500](/index.php/Intel_graphics#H.264_decoding_on_GMA_4500 "Intel graphics") for instructions and caveats.
 
@@ -259,19 +138,10 @@ _VAEntrypointVLD_ means that your card is capable to decode this format, _VAEntr
 
 *   [GStreamer](/index.php/GStreamer "GStreamer") based players - VA-API is used automatically, if supported format found.
 
-See more at [http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding](http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding).
+NaN
 
 *   VLC media player: see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player").
 *   Mpv: see [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv").
 *   MPlayer: see [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VA-API&oldid=413762](https://wiki.archlinux.org/index.php?title=VA-API&oldid=413762)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

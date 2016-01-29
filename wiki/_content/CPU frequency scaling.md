@@ -1,9 +1,5 @@
 # CPU frequency scaling
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Power saving](/index.php/Power_saving "Power saving")
@@ -65,70 +61,14 @@ The configuration file for _cpupower_ is located in `/etc/default/cpupower`. Thi
 
 _cpupower_ requires modules to know the limits of the native CPU:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Module</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>intel_pstate</td>
-
-<td>This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors.</td>
-
-</tr>
-
-<tr>
-
-<td>acpi-cpufreq</td>
-
-<td>CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module).</td>
-
-</tr>
-
-<tr>
-
-<td>speedstep-lib</td>
-
-<td>CPUFreq drive for Intel speedstep enabled processors (mostly atoms and older pentiums (< 3))</td>
-
-</tr>
-
-<tr>
-
-<td>powernow-k8</td>
-
-<td>CPUFreq driver for K8/K10 Athlon64/Opteron/Phenom processors. Since linux 3.7 'acpi-cpufreq' will automaticly be used for more modern CPUs from this family.</td>
-
-</tr>
-
-<tr>
-
-<td>pcc-cpufreq</td>
-
-<td>This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some Proliant servers.</td>
-
-</tr>
-
-<tr>
-
-<td>p4-clockmod</td>
-
-<td>CPUFreq driver for Intel Pentium 4 / Xeon / Celeron processors. When enabled it will lower CPU temperature by skipping clocks.  
-You probably want to use a Speedstep driver instead.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Module | Description |
+| intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors. |
+| acpi-cpufreq | CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module). |
+| speedstep-lib | CPUFreq drive for Intel speedstep enabled processors (mostly atoms and older pentiums (< 3)) |
+| powernow-k8 | CPUFreq driver for K8/K10 Athlon64/Opteron/Phenom processors. Since linux 3.7 'acpi-cpufreq' will automaticly be used for more modern CPUs from this family. |
+| pcc-cpufreq | This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some Proliant servers. |
+| p4-clockmod | CPUFreq driver for Intel Pentium 4 / Xeon / Celeron processors. When enabled it will lower CPU temperature by skipping clocks.
+You probably want to use a Speedstep driver instead. |
 
 To see a full list of available modules, run:
 
@@ -178,61 +118,12 @@ To set the CPU to run at a specified frequency:
 
 Governors (see table below) are power schemes for the CPU. Only one may be active at a time. For details, see the [kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) in the kernel source.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Governor</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>ondemand</td>
-
-<td>Dynamically switch between CPU(s) available if at 95% cpu load</td>
-
-</tr>
-
-<tr>
-
-<td>performance</td>
-
-<td>Run the cpu at max frequency</td>
-
-</tr>
-
-<tr>
-
-<td>conservative</td>
-
-<td>Dynamically switch between CPU(s) available if at 75% load</td>
-
-</tr>
-
-<tr>
-
-<td>powersave</td>
-
-<td>Run the cpu at the minimum frequency</td>
-
-</tr>
-
-<tr>
-
-<td>userspace</td>
-
-<td>Run the cpu at user specified frequencies</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Governor | Description |
+| ondemand | Dynamically switch between CPU(s) available if at 95% cpu load |
+| performance | Run the cpu at max frequency |
+| conservative | Dynamically switch between CPU(s) available if at 75% load |
+| powersave | Run the cpu at the minimum frequency |
+| userspace | Run the cpu at user specified frequencies |
 
 Depending on the scaling driver, one of these governors will be loaded by default:
 
@@ -429,13 +320,3 @@ options processor ignore_ppc=1
 *   [Comprehensive explanation of pstate](http://www.reddit.com/r/linux/comments/1hdogn/acpi_cpufreq_or_intel_pstates/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&oldid=415266](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&oldid=415266)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-*   [CPU](/index.php/Category:CPU "Category:CPU")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

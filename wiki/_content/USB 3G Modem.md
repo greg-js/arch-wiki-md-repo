@@ -1,9 +1,5 @@
 # USB 3G Modem
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [wvdial](/index.php/Wvdial "Wvdial")
@@ -225,11 +221,3 @@ systemctl start tinyproxy
 Configure your browser to use localhost:8888 as a proxy server and you are all done. This is especially useful if you are using, for example, Google Chrome which, unlike Firefox, does not allow you to modify the Pragma and Cache-Control headers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_3G_Modem&oldid=412194](https://wiki.archlinux.org/index.php?title=USB_3G_Modem&oldid=412194)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Modems](/index.php/Category:Modems "Category:Modems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

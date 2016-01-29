@@ -1,9 +1,5 @@
 # Canon CAPT
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [CUPS](/index.php/CUPS "CUPS")
@@ -155,7 +151,3 @@ Match Group capt
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Canon_CAPT&oldid=409716](https://wiki.archlinux.org/index.php?title=Canon_CAPT&oldid=409716)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Printers](/index.php/Category:Printers "Category:Printers")

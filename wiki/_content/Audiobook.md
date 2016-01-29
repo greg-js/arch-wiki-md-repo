@@ -1,9 +1,5 @@
 # Audiobook
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [iPod](/index.php/IPod "IPod")
@@ -40,7 +36,7 @@ Multiple tools are available to help create audiobook files.
 
 *   [m4baker](https://aur.archlinux.org/packages/m4baker/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/m4baker)]</sup> — GUI program to combine numerous AAC-encoded audio files into a single m4b file with a chapter index
 
-m4baker usage is straightforward and detailed on the [project wiki](http://code.google.com/p/m4baker/w/list) — its usage will not be covered here.
+NaN
 
 *   [faac](https://www.archlinux.org/packages/?name=faac) — open source AAC encoder
 *   [neroaacenc](https://aur.archlinux.org/packages/neroaacenc/)<sup><small>AUR</small></sup> — proprietary AAC encoder
@@ -277,11 +273,3 @@ The resulting file will have chapter headers intact.
 *   [RipIT](https://aur.archlinux.org/packages/RipIT/)<sup><small>AUR</small></sup> — thorough DAE with the ability to create chapter indexes with the `--book` option.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Audiobook&oldid=417071](https://wiki.archlinux.org/index.php?title=Audiobook&oldid=417071)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

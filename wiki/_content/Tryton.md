@@ -1,9 +1,5 @@
 # Tryton
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -33,11 +29,3 @@ Now you can launch trytond and the tryton client.
 Run /etc/rc.d/trytond start as root, and then launch tryton as a regular user.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tryton&oldid=388062](https://wiki.archlinux.org/index.php?title=Tryton&oldid=388062)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

@@ -1,9 +1,5 @@
 # RetroShare
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -59,11 +55,3 @@ First, you have to create new profile. Then you need to explicitly add friends t
 *   [RetroShare Wikipedia entry](http://en.wikipedia.org/wiki/RetroShare)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RetroShare&oldid=397111](https://wiki.archlinux.org/index.php?title=RetroShare&oldid=397111)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

@@ -1,16 +1,12 @@
 # ODROID-U3
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 
 From [Arch Linux ARM ODROID-U3 Page](http://archlinuxarm.org/platforms/armv7/samsung/odroid-u3):
 
-"_The ODROID-U3 is a very low cost and high performance development platform based on an Exynos 4412 ARM Cortex-A9 Quad Core 1.7GHz CPU. It has 3 USB 2.0 ports and micro HDMI._"
+NaN
 
 **Note:** Support for the ARM architecture is provided on [http://archlinuxarm.org](http://archlinuxarm.org) not through posts to the official Arch Linux Forum. Any posts related to ARM specific issues will be promptly closed per the [Arch Linux Distribution Support ONLY](https://wiki.archlinux.org/index.php/Forum_etiquette#Arch_Linux_distribution_support_ONLY) policy.
 
@@ -80,7 +76,3 @@ Values range from 0 (0%) to 255 (100%)
 *   [[2]](http://www.hardkernel.com/main/products/prdt_info.php?g_code=g138745696275) - ODROID-U3 Hardkernel Product Page
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ODROID-U3&oldid=370330](https://wiki.archlinux.org/index.php?title=ODROID-U3&oldid=370330)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture")

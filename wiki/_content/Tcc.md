@@ -1,9 +1,5 @@
 # Tcc
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Tcc](http://bellard.org/tcc/) is a small and fast C compiler.
 
 ## Installation
@@ -32,7 +28,3 @@ You can make a C source file executed by _tcc_ by adding a shebang:
 *   [Clang](/index.php/Clang "Clang")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tcc&oldid=330885](https://wiki.archlinux.org/index.php?title=Tcc&oldid=330885)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")

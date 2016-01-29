@@ -1,9 +1,5 @@
 # Audacious
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Audacious** is a free and advanced audio player based on GTK+. It's focused on audio quality and supports a wide variety of audio codecs, and is easily extensible through third-party plugins.
 
 ## Contents
@@ -68,7 +64,3 @@ Install [mpg123](https://www.archlinux.org/packages/?name=mpg123).
 *   [Audacious official site](http://audacious-media-player.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Audacious&oldid=403797](https://wiki.archlinux.org/index.php?title=Audacious&oldid=403797)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players")

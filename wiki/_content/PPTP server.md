@@ -1,9 +1,5 @@
 # PPTP server
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [PPTP VPN client setup with pptpclient](/index.php/PPTP_VPN_client_setup_with_pptpclient "PPTP VPN client setup with pptpclient")
@@ -236,7 +232,3 @@ Make the script executable:
 See also: [[2]](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=330973)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PPTP_server&oldid=408921](https://wiki.archlinux.org/index.php?title=PPTP_server&oldid=408921)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

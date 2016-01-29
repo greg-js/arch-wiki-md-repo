@@ -1,9 +1,5 @@
 # Acer Cloudbook
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -99,7 +95,3 @@ in the **/etc/default/grub** configuration file.
 If Gnome/GDM is installed and started, the login page will flicker up-to the point that it becomes nonfunctional. See [GDM#Use_Xorg_backend](/index.php/GDM#Use_Xorg_backend "GDM").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413980](https://wiki.archlinux.org/index.php?title=Acer_Cloudbook&oldid=413980)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

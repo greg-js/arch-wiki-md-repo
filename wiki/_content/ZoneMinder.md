@@ -1,9 +1,5 @@
 # ZoneMinder
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ZoneMinder is an integrated set of applications which provide a complete surveillance solution allowing capture, analysis, recording and monitoring of any CCTV or security cameras attached to a Linux based machine. It is designed to run on distributions which support the Video For Linux (V4L) interface and has been tested with video cameras attached to BTTV cards, various USB cameras and also supports most IP network cameras.
 
 ## Contents
@@ -194,7 +190,3 @@ options uvcvideo nodrop=1 quirks=128
 *   [http://www.zoneminder.com/wiki/index.php/Arch_Linux](http://www.zoneminder.com/wiki/index.php/Arch_Linux) — Upstream project page.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ZoneMinder&oldid=414824](https://wiki.archlinux.org/index.php?title=ZoneMinder&oldid=414824)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

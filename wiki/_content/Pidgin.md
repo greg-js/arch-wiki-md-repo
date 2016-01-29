@@ -1,12 +1,8 @@
 # Pidgin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From the project [home page](http://www.pidgin.im/):
 
-_Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once._
+NaN
 
 ## Contents
 
@@ -40,7 +36,7 @@ _Pidgin is an easy to use and free chat client used by millions. Connect to AIM,
 
 *   **Pidgin Light** — Light Pidgin version without GStreamer, Tcl/Tk, XScreenSaver, video/voice support.
 
-[http://pidgin.im/](http://pidgin.im/) || [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)<sup><small>AUR</small></sup>
+NaN
 
 You may also want to install additional plugins from the [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack).
 
@@ -396,12 +392,3 @@ chmod +x ~/bin/history_import_kopete2pidgin.sh
 *   [History import Kopete to Pidgin](http://lukav.com/wordpress/2008/03/30/history-import-kopete-to-pidgin)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pidgin&oldid=412742](https://wiki.archlinux.org/index.php?title=Pidgin&oldid=412742)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications")
-*   [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

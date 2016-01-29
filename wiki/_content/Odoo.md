@@ -1,9 +1,5 @@
 # Odoo
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -144,13 +140,3 @@ The OpenERP Community is centered upon the [Open Object website](http://openobje
 Open Object is the Python-based [Rapid Application Development framework](http://openobject.com/index.php?option=com_content&view=article&id=46&Itemid=53) for developing OpenERP modules. It allows developers and businesses to customize OpenERP for specific needs. Open Object RAD development work is centered upon the [Open Object Launchpad page](https://launchpad.net/openobject). Developer news and blogs are published on [Open Object Planet](http://openobject.com/planet/). There are pages for [software downloads](http://www.openerp.com/index.php?option=com_content&view=article&id=18&Itemid=28), [OpenERP module downloads](http://doc.openerp.com/modindex.html)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2011-09-06]</sup>, and [development source code downloads](http://openobject.com/index.php?option=com_content&view=article&id=53&Itemid=61).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Odoo&oldid=392511](https://wiki.archlinux.org/index.php?title=Odoo&oldid=392511)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Office](/index.php/Category:Office "Category:Office")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

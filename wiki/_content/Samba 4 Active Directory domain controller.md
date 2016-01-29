@@ -1,9 +1,5 @@
 # Samba 4 Active Directory domain controller
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
@@ -63,39 +59,23 @@ The first step to creating an Active Directory domain is provisioning. If this i
 
 ### Argument explanations
 
---use-rfc2307
+NaN
 
-this argument adds POSIX attributes (UID/GID) to the AD Schema. This will be necessary if you intend to authenticate Linux, BSD, or OS X clients (including the local machine) in addition to Microsoft Windows.
+NaN
 
---use-xattrs=yes
-
-this argument enables the use of unix extended attributes (ACLs) for files hosted on this server. If you intend not have file shares on the domain controller, you can omit this switch (but this is not recommended). You should also ensure that any filesystems that will host Samba shares are mounted with support for ACLs.
-
---interactive
-
-this parameter forces the provision script to run interactively. Alternately, you can review the help for the provision step by running `samba-tool domain provision --help`.
+NaN
 
 ### Interactive provision explanations
 
-Realm
+NaN
 
-**INTERNAL.DOMAIN.COM** - This should be the same as the DNS domain in all caps. It is common to use an internal-only sub-domain to separate your internal domain from your external DNS domains, but it is not required.
+NaN
 
-Domain
+NaN
 
-**INTERNAL** - This will be the NetBIOS domain name, usually the leftmost DNS sub-domain but can be anything you like. For example, the name INTERNAL would not be very descriptive. Perhaps company name or initials would be appropriate. This should be entered in all caps, and should have a 15 character maximum length for compatibility with older clients.
+NaN
 
-Server Role
-
-**dc** - This article assumes that your are installing the first DC in a new domain. If you select anything different, the rest of this article will likely be useless to you.
-
-DNS Backend
-
-**BIND9_DLZ** or **SAMBA_INTERNAL** - This is down to personal preference of the server admin. Again, if you are hosting DNS for external domains, you are strongly encouraged to use the **BIND9_DLZ** backend so that flat zone files can continue to be used and existing transfer rules can co-exist with the internal DNS server. If unsure, use the **SAMBA_INTERNAL** backend.
-
-Administrator password
-
-**xxxxxxxx** - You must select a _strong_ password for the administrator account. The minimum requirements are one upper case letter, one number, and at least eight characters. If you attempt to use a password that does not meet the complexity requirements, provisioning will fail.
+NaN
 
 ## Configuring daemons
 
@@ -566,7 +546,3 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 Finally, enable and start (or restart) the `dhcpd4` service.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413977](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413977)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

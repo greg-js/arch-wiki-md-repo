@@ -1,9 +1,5 @@
 # PPTP VPN client setup with pptpclient
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 pptpclient is a program implementing the Microsoft PPTP protocol. As such, it can be used to connect to a Microsoft VPN network (or any PPTP-based VPN) provided by a school or workplace.
 
 ## Contents
@@ -346,11 +342,3 @@ You can find more information about configuring pptpclient at their website: [pp
 [PPTP server](/index.php/PPTP_server "PPTP server")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PPTP_VPN_client_setup_with_pptpclient&oldid=374812](https://wiki.archlinux.org/index.php?title=PPTP_VPN_client_setup_with_pptpclient&oldid=374812)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

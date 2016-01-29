@@ -1,9 +1,5 @@
 # Toshiba Satellite L775D S7340
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -167,7 +163,3 @@ sudo chmod 755 /etc/pm/sleep.d/20_custom-ehci_hcd
 Step 3: Enjoy. The screen still flickers, but the laptop goes into proper sleep.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_L775D_S7340&oldid=207187](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_L775D_S7340&oldid=207187)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

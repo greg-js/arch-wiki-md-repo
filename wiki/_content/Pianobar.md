@@ -1,9 +1,5 @@
 # Pianobar
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [List of Applications/Multimedia](/index.php/List_of_Applications/Multimedia "List of Applications/Multimedia")
@@ -91,7 +87,3 @@ If you are experiencing sound/quality issues when running pianobar, and you are 
 *   [http://ketan.lithiumfox.com/doku.php/pianobar](http://ketan.lithiumfox.com/doku.php/pianobar)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pianobar&oldid=389812](https://wiki.archlinux.org/index.php?title=Pianobar&oldid=389812)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

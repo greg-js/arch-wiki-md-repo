@@ -1,9 +1,5 @@
 # Dell Inspiron Mini 1010
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 BIOS upgrade is highly recommended before installing Arch Linux.
 
 ## Quirks
@@ -51,7 +47,3 @@ It may also be possible to fix the suspend problem by updating the BIOS. This fi
 *   [blank screen on sleep and overflowing box on dell mini 1012](http://ubuntuforums.org/showpost.php?p=10244075&postcount=21)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_Mini_1010&oldid=207345](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_Mini_1010&oldid=207345)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

@@ -1,12 +1,8 @@
 # spectrwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [spectrwm website](http://spectrwm.org/):
 
-_spectrwm is a small dynamic tiling window manager for [Xorg](/index.php/Xorg "Xorg"). It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and does not require one to learn a language to do any configuration. It was written by hackers for hackers and it strives to be small, compact and fast._
+NaN
 
 Spectrwm is written in C and configured with a text configuration file. It was previously known as scrotwm.
 
@@ -328,7 +324,3 @@ Currently the PID of window is used to determine the desktop for new windows. To
 *   [The scrotwm thread](https://bbs.archlinux.org/viewtopic.php?id=64645)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Spectrwm&oldid=415872](https://wiki.archlinux.org/index.php?title=Spectrwm&oldid=415872)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs")

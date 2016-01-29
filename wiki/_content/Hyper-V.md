@@ -1,9 +1,5 @@
 # Hyper-V
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Hyper-V is a hypervisor that is included with some versions of Microsoft Windows. It is capable of running an Arch Linux virtual machine. Hyper-V is generally oriented toward enterprise rather than desktop use, and doesn't provide as convenient and simple of an interface as consumer VM programs like [VirtualBox](https://www.virtualbox.org/), [Parallels](https://www.parallels.com/), or [VMWare](http://www.vmware.com/). Nevertheless, it is a convenient, native way to run Arch Linux on top of Windows.
 
 ## Contents
@@ -140,7 +136,3 @@ More ways to mount shared folders, including automatic mounting on startup, are 
 Graphical programs can easily be run via Xorg via the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package. Simply install it and the window manager or desktop environment you wish to use, and you should be able to start X without issue.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hyper-V&oldid=367708](https://wiki.archlinux.org/index.php?title=Hyper-V&oldid=367708)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")

@@ -1,146 +1,19 @@
 # ASUS N82JV
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia</td>
-
-<td style="color:orange">**Partially Working**</td>
-
-<td>nouveau</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-<td>atl1c</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ath9k</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xhci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>USB 2.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ehci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>eSATA</td>
-
-<td style="color:orange">**Untested**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:orange">**Partially Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Suspend to RAM</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel |
+| Nvidia | **Partially Working** | nouveau |
+| Ethernet | **Working** | atl1c |
+| Wireless | **Working** | ath9k |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** |
+| Camera | **Working** | uvcvideo |
+| USB 3.0 | **Working** | xhci-hcd |
+| USB 2.0 | **Working** | ehci-hcd |
+| eSATA | **Untested** |
+| Card Reader | **Working** |
+| Function Keys | **Partially Working** |
+| Suspend to RAM | **Working** |
 
 ## Contents
 
@@ -429,7 +302,3 @@ Bus 002 Device 003: ID 04f2:b1bb Chicony Electronics Co., Ltd
 Most of them do work. Exceptions are the multimedia player commands (fn+arrows), fn+c, fn+v and fn+F9 (which should disable the touchpad). It should be possible to have them all working by following [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N82JV&oldid=383289](https://wiki.archlinux.org/index.php?title=ASUS_N82JV&oldid=383289)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

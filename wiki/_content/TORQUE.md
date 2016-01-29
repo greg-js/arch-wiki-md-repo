@@ -1,9 +1,5 @@
 # TORQUE
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [distcc](/index.php/Distcc "Distcc")
@@ -323,11 +319,3 @@ localhost.localdomain:
 *   [TORQUE users mailing list archives](http://www.clusterresources.com/pipermail/torqueusers/) - Searchable archive of TORQUE-users.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=TORQUE&oldid=412187](https://wiki.archlinux.org/index.php?title=TORQUE&oldid=412187)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

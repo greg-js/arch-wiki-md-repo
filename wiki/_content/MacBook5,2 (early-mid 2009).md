@@ -1,9 +1,5 @@
 # MacBook5,2 (early-mid 2009)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Installing Archlinux on the Macbook5,2 (Polycarbonate, Mid-2009) has several pitfalls as of right now. I have written them into this article for people having trouble installing Archlinux on their 5,2 Macbook. This guide assumes you are also going to follow the [MacBook](/index.php/MacBook "MacBook") install guide, and will point out a few modifications to get it working on this Macbook. Review these suggestions and then follow the guide. This guide also assumes you have rEFIt installed before hand.
 
 ## Contents
@@ -110,7 +106,3 @@ In `/etc/modprobe.d/modprobe.conf`. This seems to work consistently across all M
 [Ubuntu Guide For MacBook5,2](https://help.ubuntu.com/community/MacBook5-2/Karmic)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MacBook5,2_(early-mid_2009)&oldid=376907](https://wiki.archlinux.org/index.php?title=MacBook5,2_(early-mid_2009)&oldid=376907)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Apple](/index.php/Category:Apple "Category:Apple")

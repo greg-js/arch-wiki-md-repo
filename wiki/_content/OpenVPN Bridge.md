@@ -1,9 +1,5 @@
 # OpenVPN Bridge
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes how to create a network bridge on Arch Linux and host an OpenVPN server using a IP layer-2 based Ethernet bridge (TAP) rather than a IP layer-3 based IP tunnel (TUN). The general [OpenVPN](/index.php/OpenVPN "OpenVPN") page describes setting up PAM authentication or OpenSSL security certificates in more detail.
 
 ## Contents
@@ -223,7 +219,3 @@ Any additions, clarifications, reorganizations, feedback etc. etc. are more than
 * * *
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVPN_Bridge&oldid=412146](https://wiki.archlinux.org/index.php?title=OpenVPN_Bridge&oldid=412146)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

@@ -1,9 +1,5 @@
 # Oracle client
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document will explain how to install the Oracle database client under Arch Linux. The client is used to connect to Oracle databases running on other machines. If you want to host Oracle databases for others to use, see the instructions for [setting up an Oracle database server](/index.php/Oracle "Oracle").
 
 ## Contents
@@ -108,7 +104,3 @@ Without this, some programs will complain that they cannot find the Oracle clien
 When using the packages in the AUR, the TNSNAMES file should be saved as `/etc/tnsnames.ora`. `ORACLE_HOME` should be set automatically to `/usr` in any new shells opened after the install, courtesy of `/etc/profile.d/oracle.sh`.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Oracle_client&oldid=399660](https://wiki.archlinux.org/index.php?title=Oracle_client&oldid=399660)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems")

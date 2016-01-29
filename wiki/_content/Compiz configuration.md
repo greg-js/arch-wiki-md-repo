@@ -1,9 +1,5 @@
 # Compiz configuration
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Compiz](/index.php/Compiz "Compiz")
@@ -382,8 +378,3 @@ $ gsettings set org.compiz.core:/org/compiz/profiles/Default/plugins/core/ activ
 *   [Compiz-Themes.org](http://compiz-themes.org/), including Emerald themes, Metacity themes, Kwin themes and more
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz_configuration&oldid=413860](https://wiki.archlinux.org/index.php?title=Compiz_configuration&oldid=413860)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

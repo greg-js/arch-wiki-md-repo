@@ -1,9 +1,5 @@
 # Dell Vostro 5470
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Dell Vostro 5470**
 
 This page deals with setting up Arch Linux on the Dell Vostro 5470 laptop.
@@ -80,7 +76,3 @@ Restart or unload r8169:
 Worked out of the box
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Vostro_5470&oldid=376414](https://wiki.archlinux.org/index.php?title=Dell_Vostro_5470&oldid=376414)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

@@ -1,9 +1,5 @@
 # RecordMyDesktop
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) is screencasting software for X. It can record audio through ALSA, OSS or the JACK audio server. It is able capture through jack and thus is important for pro-audio video tutorials. recordMyDesktop only outputs to Ogg using Theora for video and Vorbis for audio.
 
 recordMyDesktop is a CLI tool but there are two GUI interfaces available, **gtk-recordmydesktop** and **qt-recordmydesktop**.
@@ -100,8 +96,3 @@ $ recordmydesktop --device pulse
 *   [using ffmpeg directly](https://github.com/kaihendry/recordmydesktop2.0)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RecordMyDesktop&oldid=389814](https://wiki.archlinux.org/index.php?title=RecordMyDesktop&oldid=389814)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

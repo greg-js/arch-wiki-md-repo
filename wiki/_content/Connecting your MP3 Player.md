@@ -1,9 +1,5 @@
 # Connecting your MP3 Player
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
@@ -37,7 +33,7 @@ There are different kinds of portable audio players around:
 *   Creative
     *   Creative MuVo
 
-**Note:** For some older MuVo models, deleting `settings.dat` from the device renders it useless. Newer models do not have the file.
+NaN
 
 *   iRiver
     *   All iRiver players with "UMS Mode" firmware are recognized as USB storage
@@ -56,11 +52,3 @@ There are different kinds of portable audio players around:
 You should mount your player, identified as USB storage, to access its contents. See [USB storage devices](/index.php/USB_storage_devices "USB storage devices") for details.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Connecting_your_MP3_Player&oldid=392030](https://wiki.archlinux.org/index.php?title=Connecting_your_MP3_Player&oldid=392030)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

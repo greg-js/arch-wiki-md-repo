@@ -1,9 +1,5 @@
 # EnhanceIO
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [EnhanceIO](https://github.com/stec-inc/EnhanceIO) makes it possible to use an SSD as a caching device for any other type of block device storage (HDD, Network, you name it) with almost zero configuration. Based on [Flashcache](/index.php/Flashcache "Flashcache") is it much simpler to set up. Unlike [Bcache](/index.php/Bcache "Bcache") there is no need to convert file systems.
 
 **Warning:**
@@ -153,7 +149,3 @@ mkinitcpio -p linux
 Reboot and watch your system fly.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=EnhanceIO&oldid=407251](https://wiki.archlinux.org/index.php?title=EnhanceIO&oldid=407251)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

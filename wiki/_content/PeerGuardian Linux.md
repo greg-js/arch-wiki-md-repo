@@ -1,9 +1,5 @@
 # PeerGuardian Linux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [PeerGuardian Linux](http://sourceforge.net/projects/peerguardian/) (_pgl_) is a privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges). _pgl_ is based on the Linux kernel [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") framework and [iptables](/index.php/Iptables "Iptables").
 
 A more native, efficient solution to achieve the same end is to use the [ipset](/index.php/Ipset "Ipset") kernel module in conjunction with the pg2ipset tool and the ipset-update script.
@@ -103,7 +99,3 @@ WantedBy=multi-user.target
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PeerGuardian_Linux&oldid=390551](https://wiki.archlinux.org/index.php?title=PeerGuardian_Linux&oldid=390551)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")

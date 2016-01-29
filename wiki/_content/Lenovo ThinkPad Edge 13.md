@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge 13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Lenovo ThinkPad T61](/index.php/Lenovo_ThinkPad_T61 "Lenovo ThinkPad T61")
@@ -229,7 +225,3 @@ This is because the BIOS settings do not really disable the dedicated video card
 The solution is simple: enable video card switching and use system means (vgaswitcheroo?) to disable dedicated graphics.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_13&oldid=376120](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Edge_13&oldid=376120)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Lenovo](/index.php/Category:Lenovo "Category:Lenovo")

@@ -1,9 +1,5 @@
 # bspwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations")
@@ -240,7 +236,3 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 *   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - smlb's wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bspwm&oldid=414411](https://wiki.archlinux.org/index.php?title=Bspwm&oldid=414411)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

@@ -1,9 +1,5 @@
 # Jinzora
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Jinzora](http://sourceforge.net/projects/jinzora/) is a GPL web based multimedia application. It serves as a streaming server as well as a media management platform. This article will show you how to install and configure Jinzora.
 
 ## Contents
@@ -106,11 +102,3 @@ If you wish to use Jinzora's streaming functionality, simply go back to your web
 *   If when you click on the PLAY button of any song / album you are offered a 'playlist.m3u' download, then you have not changed the 'Playback To' option to 'Music Player Daemon'.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jinzora&oldid=389406](https://wiki.archlinux.org/index.php?title=Jinzora&oldid=389406)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

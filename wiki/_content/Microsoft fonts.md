@@ -1,9 +1,5 @@
 # Microsoft fonts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Fonts](/index.php/Fonts "Fonts")
@@ -84,7 +80,7 @@ Then regenerate the fontconfig cache:
 *   [Lucida Sans](https://en.wikipedia.org/wiki/Lucida_Sans "wikipedia:Lucida Sans")
 *   [Lucida Console](https://en.wikipedia.org/wiki/Lucida_Console "wikipedia:Lucida Console")
 *   [Microsoft Sans Serif](https://en.wikipedia.org/wiki/Microsoft_Sans_Serif "wikipedia:Microsoft Sans Serif")
-*   <s>[Symbol](https://en.wikipedia.org/wiki/Symbol_(typeface) "wikipedia:Symbol (typeface)")</s>
+*   ~~[Symbol](https://en.wikipedia.org/wiki/Symbol_(typeface) "wikipedia:Symbol (typeface)")~~
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman")
 *   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS")
 *   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana")
@@ -166,7 +162,3 @@ You need the files listed in the `source=()` array. Place them in the same direc
 Fonts are best viewed with [Infinality](/index.php/Infinality "Infinality"). Infinality offers great font rendering and customization.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Microsoft_fonts&oldid=400901](https://wiki.archlinux.org/index.php?title=Microsoft_fonts&oldid=400901)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Fonts](/index.php/Category:Fonts "Category:Fonts")

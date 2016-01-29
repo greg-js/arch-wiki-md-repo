@@ -1,9 +1,5 @@
 # Timidity
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_synthesizer "wikipedia:software synthesizer") that can play MIDI files without a hardware synthesizer. It can either render to the sound card in real time, or it can save the result to a file, such as a PCM .wav file.
 
 ## Contents
@@ -310,11 +306,3 @@ Restart DOSBox within a terminal so you can see its debug messages, by no accide
 *   [USB MIDI keyboards](/index.php/USB_MIDI_keyboards "USB MIDI keyboards")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Timidity&oldid=414705](https://wiki.archlinux.org/index.php?title=Timidity&oldid=414705)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Create a Public Key Infrastructure Using the easy-rsa Scripts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The first step when setting up OpenVPN is to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure"). The PKI consists of:
 
 *   A public master [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate and a private key.
@@ -292,7 +288,3 @@ Some software (such as Android) will only read VPN certificates that are stored 
  `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Create_a_Public_Key_Infrastructure_Using_the_easy-rsa_Scripts&oldid=399415](https://wiki.archlinux.org/index.php?title=Create_a_Public_Key_Infrastructure_Using_the_easy-rsa_Scripts&oldid=399415)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network")

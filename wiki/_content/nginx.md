@@ -1,9 +1,5 @@
 # nginx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [nginx](https://en.wikipedia.org/wiki/nginx "wikipedia:nginx") (pronounced "engine X"), is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server, written by Igor Sysoev in 2005\. According to Netcraft's [April 2015 Web Server Survey](http://news.netcraft.com/archives/2015/04/20/april-2015-web-server-survey.html), nginx now hosts 14.48% of all domains worldwide, while [Apache](/index.php/Apache "Apache") hosts about 38.39%. nginx is now well known for its stability, rich feature set, simple configuration, and low resource consumption.
 
 ## Contents
@@ -895,11 +891,3 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=416135](https://wiki.archlinux.org/index.php?title=Nginx&oldid=416135)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

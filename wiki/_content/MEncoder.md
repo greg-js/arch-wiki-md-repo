@@ -1,9 +1,5 @@
 # MEncoder
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [DVD Ripping](/index.php/DVD_Ripping "DVD Ripping")
@@ -311,44 +307,20 @@ mencoder original_video.avi -oac copy -ovc x264 -x264encopts pass=2:preset=ultra
 
 The official MPlayer homepage has a comprehensive list of available front-ends [here](http://www.mplayerhq.hu/design7/projects.html#mencoder_frontends).
 
-*   [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)
+*   [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)NaN
 
-    OGMRip is an application and a set of libraries for ripping and encoding DVD into AVI, OGM, MP4, or Matroska files using a wide variety of codecs. It relies on mplayer, mencoder, ogmtools, mkvtoolnix, mp4box, oggenc, lame, and faac to perform its tasks.
+*   [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)<sup><small>AUR</small></sup>NaN
 
-*   [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)<sup><small>AUR</small></sup>
+*   [hypervc-qt4](https://aur.archlinux.org/packages/hypervc-qt4/)<sup><small>AUR</small></sup>NaN
 
-    Hybrid is a multi platform (Linux/Mac OS X/Windows) Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an avi/mp4/m2ts/mkv/webm container, a BluRay or an AVCHD structure.
+*   [iriverter](https://aur.archlinux.org/packages/iriverter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/iriverter)]</sup>NaN
 
-*   [hypervc-qt4](https://aur.archlinux.org/packages/hypervc-qt4/)<sup><small>AUR</small></sup>
+*   [kmenc15](https://aur.archlinux.org/packages/kmenc15/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kmenc15)]</sup>NaN
 
-    Hyper Video Converter is a frontend for various cli videoencoder tools I have made because I wanted something, that let's me quickly convert videos from konqueror without typing 3-line-commands in the console.
+*   [kvideoencoder](https://aur.archlinux.org/packages/kvideoencoder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kvideoencoder)]</sup>NaN
 
-*   [iriverter](https://aur.archlinux.org/packages/iriverter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/iriverter)]</sup>
+*   [qvideoconverter](https://aur.archlinux.org/packages/qvideoconverter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qvideoconverter)]</sup>NaN
 
-    iriverter is a cross-platform frontend to mencoder designed to facilitate the conversion of almost any video format to one that is playable on various multimedia players.
-
-*   [kmenc15](https://aur.archlinux.org/packages/kmenc15/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kmenc15)]</sup>
-
-    Kmenc15 is an advanced Qt/KDE MEncoder frontend, generally designed to be a VirtualDub replacement for Linux. It is most useful for editing and encoding large high quality AVIs capped from TV. It allows cutting and merging at exact frames, applying any MPlayer/MEncoder filter, with preview. It's a little outdated now (was built on Qt 3, so needs PKGBUILD update at least).
-
-*   [kvideoencoder](https://aur.archlinux.org/packages/kvideoencoder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kvideoencoder)]</sup>
-
-    KVideoEncoder is a GUI for the mencoder and transcode.
-
-*   [qvideoconverter](https://aur.archlinux.org/packages/qvideoconverter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qvideoconverter)]</sup>
-
-    QVideoConverter is an GUI for mencoder and provides an simple way to convert files/dvds to DivX videos.
-
-*   [jmencode](https://aur.archlinux.org/packages/jmencode/)<sup><small>AUR</small></sup>
-
-    This program is a simple java front-end for the free and very useful MPlayer software, for the purpose of encoding video. Initially the focus is on converting DVD into MPEG-4.
+*   [jmencode](https://aur.archlinux.org/packages/jmencode/)<sup><small>AUR</small></sup>NaN
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412959](https://wiki.archlinux.org/index.php?title=MEncoder&oldid=412959)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

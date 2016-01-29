@@ -1,9 +1,5 @@
 # OpenSSL
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:**
 
 *   A serious vulnerability was discovered affecting some of the OpenSSL 1.0.1 releases in April 2014\. The vulnerability leaves private keys compromised and it is advisable to regenerate these and the corresponding certificates if an affected version of OpenSSL was deployed. Cf. [http://heartbleed.com/](http://heartbleed.com/) and [FS#39775](https://bugs.archlinux.org/task/39775).
@@ -401,8 +397,3 @@ make revoke item=**cert.pem**
 *   [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=414787](https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=414787)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")

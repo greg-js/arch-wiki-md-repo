@@ -1,9 +1,5 @@
 # Stata
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 STATA is a general-purpose statistical software package for *nix, Windows and Mac. In the following you'll be presented with how to install STATA and the needed libraries.
 
 ## Contents
@@ -91,12 +87,3 @@ PATH=$PATH:/usr/local/stata12/
 Stata 12 and 13 at least were built on older versions of libpng and zlib. Thus, icons will be missing when launching Xstata, the graphical interface. The workaround is **NOT** to downgrade your system's libraries, but rather to follow the advice given by StataCorp's technical department [here](http://www.statalist.org/forums/forum/general-stata-discussion/general/2199-linux-stata-bug-libpng-on-newer-opensuse-possibly-other-distributions). It involves compiling the older versions of libpng and zlib and putting them in a folder that your system will not interact with. Then a wrapper for Stata needs to be made to reference these libraries. These steps have been automated by a script on bitbucket, located [here](https://bitbucket.org/vilhuberl/stata-png-fix).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Stata&oldid=402167](https://wiki.archlinux.org/index.php?title=Stata&oldid=402167)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

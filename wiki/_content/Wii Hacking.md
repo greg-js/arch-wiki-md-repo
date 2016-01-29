@@ -1,9 +1,5 @@
 # Wii Hacking
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 A few starting packages for hacking the Wii on Arch Linux. Also see [Wiibrew.org](http://wiibrew.org/) for a guide to getting homebrew setup on the Wii.
 
 ## Contents
@@ -42,11 +38,3 @@ A few starting packages for hacking the Wii on Arch Linux. Also see [Wiibrew.org
 *   [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)<sup><small>AUR</small></sup> - development version
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Wii_Hacking&oldid=392813](https://wiki.archlinux.org/index.php?title=Wii_Hacking&oldid=392813)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

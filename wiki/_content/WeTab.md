@@ -1,9 +1,5 @@
 # WeTab
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -59,12 +55,3 @@ tiitoo-hdmi-daemon
 *   The graphics card in the WeTab is only capable of cloning the output of the internal screen to the HDMI-port, with the same resolution. Because of that, the driver doesn't need a running Xorg to function properly.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=WeTab&oldid=392806](https://wiki.archlinux.org/index.php?title=WeTab&oldid=392806)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden categories:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

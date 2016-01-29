@@ -1,9 +1,5 @@
 # OpenLDAP
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
@@ -327,7 +323,3 @@ to allow slapd write access to its data directory as the user "ldap".
 *   [apachedirectorystudio](https://aur.archlinux.org/packages/apachedirectorystudio/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is an Eclipse-based LDAP viewer. Works perfect with OpenLDAP installations.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=413876](https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=413876)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

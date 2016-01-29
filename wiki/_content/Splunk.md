@@ -1,14 +1,8 @@
 # Splunk
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Splunk is a proprietary data mining product. [From Wikipedia](https://en.wikipedia.org/wiki/Splunk "wikipedia:Splunk"):
 
-Splunk is software to search, monitor and analyze machine-generated data by applications, systems and IT infrastructure at scale via a web-style interface. Splunk captures, indexes and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards and visualizations.
-
-Splunk aims to make machine data accessible across an organization and identifies data patterns, provides metrics, diagnoses problems and provides intelligence for business operation. Splunk is a horizontal technology used for application management, security and compliance, as well as business and web analytics.
+NaN
 
 Splunk is licensed based on MB of data indexed per day. The free license allows up to 500 MB of data per day, but it is missing a few features such as access control, alerts / monitoring and PDF generation
 
@@ -184,7 +178,3 @@ The source for splunk.Intersplunk shows that it essentially parses the entire se
 The library is easy to replace. The data passed in from Splunk contains several header lines with `key`:`value` pairs, followed by a newline, followed by a header row and the data proper. In Python, read in the header rows and store or discard them then use a `csv.Reader` or `csv.DictReader` object - to handle the data a row at a time, with a `csv.Writer` or `csv.DictWriter` to push resulting rows back into the Splunk search pipeline.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Splunk&oldid=413992](https://wiki.archlinux.org/index.php?title=Splunk&oldid=413992)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")

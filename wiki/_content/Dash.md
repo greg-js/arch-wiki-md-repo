@@ -1,9 +1,5 @@
 # Dash
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Dash](http://en.wikipedia.org/wiki/Debian_Almquist_shell) is a minimalist POSIX-compliant shell. It can be much faster than Bash, and takes up less memory when in use. Most POSIX compliant scripts specify `/bin/sh` at the first line of the script, which means it will run `/bin/sh` as the shell, which by default in Arch is a symlink to `/bin/bash`.
 
 ## Contents
@@ -72,11 +68,3 @@ NoExtract   = usr/bin/sh
 *   [https://wiki.ubuntu.com/DashAsBinSh](https://wiki.ubuntu.com/DashAsBinSh)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dash&oldid=412057](https://wiki.archlinux.org/index.php?title=Dash&oldid=412057)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

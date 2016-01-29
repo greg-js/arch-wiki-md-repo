@@ -1,9 +1,5 @@
 # Gamepad
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Joysticks can be a bit of a hassle to get working in Linux. Not because they are poorly supported, but simply because you need to determine which modules to load to get your joystick working, and it's not always very obvious!
 
 ## Contents
@@ -640,14 +636,3 @@ And add your user to that group.
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=416212](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=416212)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Input devices](/index.php/Category:Input_devices "Category:Input devices")
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

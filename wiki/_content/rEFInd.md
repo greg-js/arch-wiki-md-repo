@@ -1,9 +1,5 @@
 # rEFInd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
@@ -43,22 +39,22 @@ rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-
 
 [Install](/index.php/Install "Install") [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-**Warning:** kernel and initramfs need to reside on a file system which rEFInd can read.
+**Warning:** Your kernel and initramfs need to reside on a file system which rEFInd can read.
 
-rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, NTFS. Additionally rEFInd can use drivers from the UEFI firmware, i.e. FAT driver (or HFS+ on Macs or ISO-9660 on some systems).
+rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally rEFInd can use drivers from the UEFI firmware i.e. FAT (or HFS+ on Macs or ISO-9660 on some systems).
 
 To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
 
 ### Scripted installation
 
-rEFInd package includes the `/usr/bin/refind-install` script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, but for many systems it should be sufficient to simply run
+The rEFInd package includes the `/usr/bin/refind-install` script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, but for many systems it should be sufficient to simply run
 
 ```
 # refind-install
 
 ```
 
-This will attempt to find and mount your [ESP](/index.php/UEFI#EFI_System_Partition "UEFI"), copy rEFInd's files to `/EFI/refind/` on the ESP, and add `rEFInd Boot Manager` as the default EFI boot entry using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+This will attempt to find and mount your [ESP](/index.php/UEFI#EFI_System_Partition "UEFI"), copy rEFInd's files to `/EFI/refind/` on the ESP, and use `efibootmgr` to make rEFInd the default EFI boot application.
 
 Alternatively you can install rEFInd to the default/fallback boot path `/EFI/BOOT/BOOT*.EFI`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by efibootmgr:
 
@@ -184,9 +180,7 @@ Then [enable](/index.php/Enable "Enable") `refind_update.path`.
 
 ## Configuration
 
-rEFInd configuration is in `$esp/EFI/refind/redind.conf` (or `$esp/EFI/BOOT/refind.conf` if rEFInd is installed to default/fallback path.)
-
-`refind.conf` contains comments explaining all its options.
+The rEFInd configuration `refind.conf` is located in the same directory as the rEFInd EFI application (usually `$esp/EFI/refind` or `$esp/EFI/BOOT`). The default config contains extensive comments explaining all its options.
 
 ### Passing kernel parameters
 
@@ -247,9 +241,17 @@ It is likely that you will need to change `volume` to match either a filesystem'
 
 **Note:** The usual caveats of [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") apply.
 
-rEFInd is compatible with the EFI system partition created by a UEFI Windows installation, so there is no need to create or format another FAT32 partition when installing Arch alongside Windows. Simply mount existing ESP and install rEFInd as usual. By default, rEFInd's autodetection feature should recognize any existing Windows/recovery bootloaders.
+rEFInd is compatible with the EFI system partition created by a UEFI Windows installation, so there is no need to create or format another FAT32 partition when installing Arch alongside Windows. Simply mount the existing ESP and install rEFInd as usual. By default, rEFInd's autodetection feature should recognize any existing Windows/recovery bootloaders.
 
 ## Tools
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
+
+**This article or section is a candidate for moving to [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface").**
+
+**Notes:** Although rEFInd has a special interface for these common tools, they are not a feature of rEFInd. (Discuss in [Talk:REFInd#](https://wiki.archlinux.org/index.php/Talk:REFInd))
 
 rEFInd supports running various 3rd-party tools. Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
 
@@ -266,7 +268,7 @@ showtools **shell**, **memtest**, **gdisk**, **netboot**, ...
 
 See [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
 
-Copy `shellx64.efi` to the root of [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface")
+Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface")
 
 ### Memtest86
 
@@ -279,16 +281,9 @@ Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/)<sup><
 
 ### GPT fdisk (gdisk)
 
-There is no package for EFI version of gdisk, but you can download a prebuild binary from gdisk author.
+There is no package for the EFI version of gdisk, but you can download a binary from gdisk's author.
 
-Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/).
-
-Extract the archive and copy `gdisk_x64.efi` to to `$esp/EFI/tools/`.
-
-```
-# cp gdisk_x64.efi $esp/EFI/tools/
-
-```
+Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `$esp/EFI/tools`.
 
 ### iPXE
 
@@ -357,8 +352,4 @@ Currently, VirtualBox will only boot the default `/EFI/BOOT/BOOT*.EFI` path, so 
 *   [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/) by Roderick W. Smith.
 *   `/usr/share/refind/docs/README.txt`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=REFInd&oldid=417462](https://wiki.archlinux.org/index.php?title=REFInd&oldid=417462)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=REFInd&oldid=417735](https://wiki.archlinux.org/index.php?title=REFInd&oldid=417735)"

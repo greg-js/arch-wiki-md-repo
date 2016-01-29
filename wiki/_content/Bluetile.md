@@ -1,9 +1,5 @@
 # Bluetile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Bluetile is a tiling window manager designed to integrate with the [GNOME](/index.php/GNOME "GNOME") [desktop environment](/index.php/Desktop_environment "Desktop environment"). Why choose Bluetile? Because none of the other tiling [window managers](/index.php/Window_managers "Window managers") were built with the thought in mind that time is the most limited resource among the majority of users. It is good if you can configure a software in every respect. It is better if you do not have to.
 
 The Bluetile project is really just another [xmonad](/index.php/Xmonad "Xmonad") configuration. A configuration that focuses on making the tiling paradigm easily accessible to users coming from traditional window managers.
@@ -134,7 +130,3 @@ Once that is finished:
 [http://www.haskell.org/haskellwiki/Bluetile](http://www.haskell.org/haskellwiki/Bluetile) - Wiki
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetile&oldid=412045](https://wiki.archlinux.org/index.php?title=Bluetile&oldid=412045)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs")

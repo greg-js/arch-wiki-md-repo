@@ -1,9 +1,5 @@
 # ProjectM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [ProjectM](http://projectm.sourceforge.net/) is an open source music visualizer based on the Milkdrop plugin for Windows/Winamp. It now has a Qt GUI that can visualize your audio output through either JACK or PulseAudio, in addition to a [libvisual](https://www.archlinux.org/packages/?name=libvisual) component. This wiki currently focuses on the PulseAudio standalone GUI.
 
 ## Installation
@@ -55,7 +51,3 @@ Some information on usage and configuration can be found in the [ProjectM FAQ](h
 Otherwise a good place to ask question are the projectM [help forums on Sourceforge](http://sourceforge.net/projects/projectm/forums/forum/358774/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ProjectM&oldid=413655](https://wiki.archlinux.org/index.php?title=ProjectM&oldid=413655)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")

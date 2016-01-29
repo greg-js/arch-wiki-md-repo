@@ -1,9 +1,5 @@
 # LightScribe
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [lightscribe.com](http://www.lightscribe.com/):
 
-_LightScribe is an innovative technology that uses a special disc drive, special media, and label-making software to burn labels directly onto CDs and DVDs._
+NaN
 
 Labels burnt using LightScribe are monochromatic, as it works by making a chemical in the media react with the laser beam and change color.
 
@@ -52,11 +48,3 @@ To adjust the contrast which is often too light, run:
 then hit 1 to use the enhanced contrast setting or 2 to reset it. Note that some programs (like LaCie 4L) have this option built-in and it can be changed at runtime.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LightScribe&oldid=411647](https://wiki.archlinux.org/index.php?title=LightScribe&oldid=411647)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Optical](/index.php/Category:Optical "Category:Optical")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

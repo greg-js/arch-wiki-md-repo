@@ -1,9 +1,5 @@
 # Powernowd
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Powernowd](http://www.deater.net/john/powernowd.html) is a very simple [daemon](/index.php/Daemon "Daemon") that will adjust the speed of your CPU depending on system load.
 
 **Warning:** This software, while may still work fine on modern kernels, **is no longer in active development** and likely less efficent than using cpufreq's ondemand governor. Using the cpufreq-ondemand kernel module is preferable over powernowd. See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") for more information on using the cpufreq-ondemand kernel module.
@@ -107,11 +103,3 @@ Available Options:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Powernowd&oldid=392580](https://wiki.archlinux.org/index.php?title=Powernowd&oldid=392580)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

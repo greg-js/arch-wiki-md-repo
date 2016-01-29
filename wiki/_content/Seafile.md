@@ -1,9 +1,5 @@
 # Seafile
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -212,37 +208,37 @@ $ sudo -u seafile -s
 
 Repeat the following for each seafile server instance:
 
-Change directory to the server instance's 'seafile-server' subdirectory:
+NaN
 
 ```
 $ cd /srv/seafile/example.org/seafile-server
 
 ```
 
-Run the preupgrade script (Or do the steps by hand, see [the Seafile wiki](https://github.com/haiwen/seafile/wiki/Build-and-deploy-seafile-server-from-source)):
+NaN
 
 ```
 $ seahub-preupgrade
 
 ```
 
-Run the appropriate seafile/seahub upgrade script from the upgrade subdirectory:
+NaN
 
-For a minor upgrade (x.y.a to x.y.b with a < b):
+NaN
 
 ```
 $ ./upgrade/minor-upgrade.sh
 
 ```
 
-For a major upgrade (x.y.a to z.w.b with x < z || y < w):
+NaN
 
 ```
 $ ./upgrade/upgrade_x.y_z.w.sh
 
 ```
 
-Repeat the steps for language mentioned in the installation guide
+NaN
 
 Lastly, start each of your seafile server instances again (repeat for example.org, foo.bar, etc.) as root:
 
@@ -278,11 +274,3 @@ If the output looks okay, proceed to run the same command without the --dry-run 
 *   [http://manual.seafile.com/maintain/seafile_gc.html](http://manual.seafile.com/maintain/seafile_gc.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Seafile&oldid=400844](https://wiki.archlinux.org/index.php?title=Seafile&oldid=400844)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

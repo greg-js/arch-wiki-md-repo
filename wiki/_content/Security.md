@@ -1,9 +1,5 @@
 # Security
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")
@@ -189,85 +185,12 @@ Relevant mount options are:
 
 Data partitions should always be mounted with `nodev`, `nosuid`, `noexec`. Potential usage is presented in the table below.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td align="center">**Partition**</td>
-
-<td align="center">`nodev`</td>
-
-<td align="center">`nosuid`</td>
-
-<td align="center">`noexec`</td>
-
-</tr>
-
-<tr>
-
-<td>`/var`</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-<td>yes <sup>[1]</sup></td>
-
-</tr>
-
-<tr>
-
-<td>`/home`</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-<td>yes, if you do not code, use wine or steam</td>
-
-</tr>
-
-<tr>
-
-<td>`/dev/shm`</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`/tmp`</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-<td>maybe, breaks compiling packages and various other things</td>
-
-</tr>
-
-<tr>
-
-<td>`/boot`</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-<td>yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Partition** | `nodev` | `nosuid` | `noexec` |
+| `/var` | yes | yes | yes <sup>[1]</sup> |
+| `/home` | yes | yes | yes, if you do not code, use wine or steam |
+| `/dev/shm` | yes | yes | yes |
+| `/tmp` | yes | yes | maybe, breaks compiling packages and various other things |
+| `/boot` | yes | yes | yes |
 
 <sup>[1]</sup> Note that some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
 
@@ -597,14 +520,3 @@ Note that this will not work if there is some command running in the shell (eg.:
 *   [privacytools.io](https://www.privacytools.io/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=416130](https://wiki.archlinux.org/index.php?title=Security&oldid=416130)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

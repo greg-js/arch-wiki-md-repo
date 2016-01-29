@@ -1,9 +1,5 @@
 # Floppy disks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Floppy_disk "wikipedia:Floppy disk"):
 
-A floppy disk, also called a diskette, is a disk storage medium composed of a disk of thin and flexible magnetic storage medium, sealed in a rectangular plastic carrier lined with fabric that removes dust particles. Floppy disks are read and written by a floppy disk drive (FDD).
+NaN
 
 Common tasks with floppy disks are described bellow, with available tools to accomplish them.
 
@@ -94,12 +90,3 @@ In such case, is probably that the diskette is physically damaged.
 *   recovering a "dead" floppy
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Floppy_disks&oldid=364996](https://wiki.archlinux.org/index.php?title=Floppy_disks&oldid=364996)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Storage](/index.php/Category:Storage "Category:Storage")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

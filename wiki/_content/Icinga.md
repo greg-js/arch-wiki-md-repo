@@ -1,9 +1,5 @@
 # Icinga
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Icinga](http://www.icinga.org/) is an open source host, service and network monitoring program. It monitors specified hosts and services, alerting you to any developing issues, errors or improvements. This article describes the installation and configuration of Icinga.
 
 ## Contents
@@ -261,7 +257,3 @@ Commands to upgrade with these scripts are:
 *   [NagiosExchange](http://www.nagiosexchange.org) - Overview of plugins, addons, mailing lists for Icinga
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Icinga&oldid=400976](https://wiki.archlinux.org/index.php?title=Icinga&oldid=400976)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

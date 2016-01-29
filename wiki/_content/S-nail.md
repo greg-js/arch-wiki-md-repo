@@ -1,22 +1,12 @@
 # S-nail
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 S-nail is a mail processing system with a command syntax reminiscent of ed with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
 
 This overview page was updated for version **v14.8.6** of S-nail. Excerpt of latest _NEWS_: bug fixes. _NEWS_ of older **v14.8.x** releases: [RFC 2231](//tools.ietf.org/html/rfc2231) support, mailing-list support (_followup-to_, _followup-to-honour_, _reply-to-honour_, **Lreply**, **mlist**, **mlsubscribe**), simple builtin HTML viewer, freely configurable spam-checker hooks, command line and addressee hardening (new **-.** option, _expandargv_ and _expandaddr_ variables), improved -t support, _expandaddr_ fine-tuning, new _smime-sign-message-digest_ variable, _-d_ / _debug_ offers real dry-run send tests, extended **@** message specification, new **source_if** command, many bug fixes and small improvements.
 
 S-nail is a direct descendant of the BSD Mail program that was introduced in 1978 (itself superseding the simpler UNIX mail program) and used to introduce itself (in the Mail reference manual) as follows:
 
-_Mail provides a simple and friendly environment for sending and receiving mail._
-
-_It divides incoming mail into its constituent messages and allows the user to deal with them in any order._
-
-_In addition, it provides a set of ed‐like commands for manipulating messages and sending mail._
-
-_Mail offers the user simple editing capabilities to ease the composition of outgoing messages, as well as providing the ability to define and send to names which address groups of users._
+NaN
 
 S-nail is thus the _user side_ of the Unix mail system, whereas the _system side_ was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the _system side_. (Note however that S-nail does not (yet) include a mail-queue mechanism and thus simply tries to send the message over SMTP, directly and immediately.)
 
@@ -434,7 +424,3 @@ shortcut myimap "**imaps://USER:PASS@server:port"**
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=S-nail&oldid=414439](https://wiki.archlinux.org/index.php?title=S-nail&oldid=414439)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Email clients](/index.php/Category:Email_clients "Category:Email clients")

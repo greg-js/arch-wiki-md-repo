@@ -1,9 +1,5 @@
 # Apache, suEXEC and Virtual Hosts
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes how to use Apache's suEXEC module in order to have virtual hosts running as a unprivileged user. Generally it's good practice not to let any kind of webspace have superuser privileges like this rather brutal PHP example shows:
 
 ```
@@ -107,7 +103,3 @@ Every time you change default configuration parameters you need to [restart](/in
 *   same about VirtualHosts: [http://httpd.apache.org/docs/vhosts/index.html](http://httpd.apache.org/docs/vhosts/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache,_suEXEC_and_Virtual_Hosts&oldid=388013](https://wiki.archlinux.org/index.php?title=Apache,_suEXEC_and_Virtual_Hosts&oldid=388013)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

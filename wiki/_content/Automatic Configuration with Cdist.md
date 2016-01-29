@@ -1,9 +1,5 @@
 # Automatic Configuration with Cdist
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This page describes how to automatically configure archlinux using [cdist](http://www.nico.schottelius.org/software/cdist).
 
 ## Contents
@@ -97,7 +93,3 @@ Features:
 This type allows the user to manage the network using wicd. Included are the cli and gui versions.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Automatic_Configuration_with_Cdist&oldid=371592](https://wiki.archlinux.org/index.php?title=Automatic_Configuration_with_Cdist&oldid=371592)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

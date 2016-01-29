@@ -1,12 +1,8 @@
 # Ooolatex
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [- OOoLatex](http://ooolatex.sourceforge.net/):
 
-_OOoLatex is a set of macros designed to bring the power of LaTeX into OpenOffice. It contains two main modules: the first one, Equation, allows to insert LaTeX equations into Writer and Impress documents as png or emf images while the second one, Expand, can be used for simpler equations to expand LaTeX code into appropriated symbol characters and insert them as regular text._
+NaN
 
 The macros are especially useful for the preparation of presentations with a lot of mathematical formulæ. Instead of using beamer class in LaTeX, one can enjoy the flexibility of Impress in organizing texts and graphs while at the same time harnessing the power of LaTeX in typesetting and inserting equations.
 
@@ -91,8 +87,3 @@ For more information on how to use the macro, consult the [project's website](ht
 *   [project's website](http://ooolatex.sourceforge.net/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=415270](https://wiki.archlinux.org/index.php?title=Ooolatex&oldid=415270)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science")
-*   [TeX](/index.php/Category:TeX "Category:TeX")

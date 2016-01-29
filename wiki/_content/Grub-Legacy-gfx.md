@@ -1,9 +1,5 @@
 # Grub-Legacy-gfx
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Note:** [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") has been deprecated and replaced by [GRUB](/index.php/GRUB "GRUB") in Arch Linux. See the news [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). GRUB also offers enhanced graphical capabilities, such as background images and bitmap fonts. Users are recommended to switch to [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") instead.
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -93,13 +89,3 @@ You should still be able to select an OS and boot from this screen. Once you are
 [Collection of GRUB splashes](http://www.schultz-net.dk/grub.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Grub-Legacy-gfx&oldid=397865](https://wiki.archlinux.org/index.php?title=Grub-Legacy-gfx&oldid=397865)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
-*   [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

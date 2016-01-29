@@ -1,9 +1,5 @@
 # Digitenne
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -1238,12 +1234,3 @@ The best way is just to record everything you want to see, and then watch the re
 Sat4All: [http://www.sat4all.com/forums/ubbthreads.php/topics/1967886/digitenne_kijken_via_oscam_en_#Post1967886](http://www.sat4all.com/forums/ubbthreads.php/topics/1967886/digitenne_kijken_via_oscam_en_#Post1967886) (Dutch link)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Digitenne&oldid=389858](https://wiki.archlinux.org/index.php?title=Digitenne&oldid=389858)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-*   [TV cards](/index.php/Category:TV_cards "Category:TV cards")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

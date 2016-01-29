@@ -1,9 +1,5 @@
 # Gapless Audio CD Creation from MP3s
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -96,11 +92,3 @@ cdrdao write --speed 8 toc
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gapless_Audio_CD_Creation_from_MP3s&oldid=389799](https://wiki.archlinux.org/index.php?title=Gapless_Audio_CD_Creation_from_MP3s&oldid=389799)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

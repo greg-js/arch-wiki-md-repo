@@ -1,9 +1,5 @@
 # PrBoom
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [PrBoom](http://prboom.sourceforge.net/) is a cross-platform version of the classic 3D first person shooter [Doom](https://en.wikipedia.org/wiki/Doom_(video_game) "wikipedia:Doom (video game)") from id Software. Originally written for Microsoft Windows, PrBoom has since been ported to Linux and many other platforms. It offers a number of enhancements over the original game, including OpenGL rendering and high video resolutions, while attempting to remain true to the original Doom in terms of play. You will need the original Doom data, unless you install the FreeDoom package (see below).
 
 ## Contents
@@ -78,7 +74,3 @@ If you do not have the original Doom data available to play PrBoom, you can inst
 This will place the data in the correct directory, so you can just start PrBoom and frag away!
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PrBoom&oldid=353070](https://wiki.archlinux.org/index.php?title=PrBoom&oldid=353070)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

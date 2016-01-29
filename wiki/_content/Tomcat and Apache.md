@@ -1,9 +1,5 @@
 # Tomcat and Apache
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
 
 [![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
@@ -102,7 +98,7 @@ This is all that is needed to run Tomcat as a stand-alone server. You can add ne
 
 You can also place symbolic links within the webapps directory.
 
-If you wish tomcat to start on bootup:  
+If you wish tomcat to start on bootup:
 Edit `/opt/tomcat/bin/catalina.sh` and add this line at the top:
 
 ```
@@ -110,7 +106,7 @@ JAVA_HOME=/opt/java
 
 ```
 
-This is needed because JAVA_HOME is not set when the daemons are started  
+This is needed because JAVA_HOME is not set when the daemons are started
 Edit `/etc/rc.conf`:
 
 ```
@@ -156,7 +152,7 @@ There are two ways to install mod_jk: from [AUR](https://aur.archlinux.org/packa
 
 ```
 
-Edit `/etc/httpd/conf/httpd.conf`  
+Edit `/etc/httpd/conf/httpd.conf`
 Add this line to the end of the LoadModule section:
 
 ```
@@ -233,7 +229,7 @@ Start MySQL if it isn't already running (as root):
 
 ```
 
-Test that the driver can be loaded:  
+Test that the driver can be loaded:
 Save this as `~TestMysql.java`
 
 ```
@@ -270,13 +266,3 @@ It will output "The driver was loaded" if the driver is available, otherwise "Th
 You should be able to use the driver using DriverManager.getConnection() in Java programs now. It should also automatically be available to Tomcat servlets and JSPs. See The Mysql Connector/J documentation for more information.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tomcat_and_Apache&oldid=388061](https://wiki.archlinux.org/index.php?title=Tomcat_and_Apache&oldid=388061)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

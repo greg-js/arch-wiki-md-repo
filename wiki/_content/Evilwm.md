@@ -1,9 +1,5 @@
 # Evilwm
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [evilwm](http://www.6809.org.uk/evilwm/) is a minimalist window manager for the X Window system. It's minimalist in that it omits unnecessary stuff like window decorations and icons. But it's very usable in that it provides good keyboard control with repositioning and maximize toggles, solid window drags, snap-to-border support, and virtual desktops. Its installed binary size is only 0.07 MB.
 
 ## Contents
@@ -179,7 +175,3 @@ When you run evilwm, xorg presents error messages in the log file and/or on the 
 *   [evilwm](http://www.6809.org.uk/evilwm/) - the official website of evilwm
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Evilwm&oldid=378498](https://wiki.archlinux.org/index.php?title=Evilwm&oldid=378498)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs")

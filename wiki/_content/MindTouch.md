@@ -1,9 +1,5 @@
 # MindTouch
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 MindTouch is an enterprise wiki and collaborative portal. For more information, see the [Wikipedia article](https://en.wikipedia.org/wiki/MindTouch_Core "wikipedia:MindTouch Core"), and the [SourceForge project](https://sourceforge.net/projects/dekiwiki/).
 
 ## Installation
@@ -114,11 +110,3 @@ MindTouch can be configured to start using Prince if it's installed after the Mi
 *   [MindTouch Community Portal](http://developer.mindtouch.com)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=MindTouch&oldid=392452](https://wiki.archlinux.org/index.php?title=MindTouch&oldid=392452)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

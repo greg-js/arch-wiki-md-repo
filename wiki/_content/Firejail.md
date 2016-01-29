@@ -1,9 +1,5 @@
 # Firejail
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Firejail](https://firejail.wordpress.com/) is an easy to use SUID sandbox program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces, seccomp-bpf and Linux capabilities. Used alone or combined with [Grsecurity](/index.php/Grsecurity "Grsecurity") or other kernel hardening systems can further increase the security provided. Firejail is ideal for use with browsers, desktop applications, and daemons/servers alike.
 
 ## Contents
@@ -69,8 +65,3 @@ Other configurations exist; it is suggested you check out the man page for firej
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/)<sup><small>AUR</small></sup>.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=415391](https://wiki.archlinux.org/index.php?title=Firejail&oldid=415391)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [Security](/index.php/Category:Security "Category:Security")

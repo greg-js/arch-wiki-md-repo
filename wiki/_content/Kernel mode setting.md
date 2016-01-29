@@ -1,9 +1,5 @@
 # Kernel mode setting
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [ATI](/index.php/ATI "ATI")
@@ -136,61 +132,12 @@ drm_kms_helper.edid_firmware=VGA-1:edid/your_edid.bin
 
 For the four built-in resolutions, see table below for the name to specify:
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<td>**Resolution**</td>
-
-<td>**Name to specify**</td>
-
-</tr>
-
-<tr>
-
-<td>1024x768</td>
-
-<td>edid/1024x768.bin</td>
-
-</tr>
-
-<tr>
-
-<td>1280x1024</td>
-
-<td>edid/1280x1024.bin</td>
-
-</tr>
-
-<tr>
-
-<td>1600x1200 (kernel 3.10 or higher)</td>
-
-<td>edid/1600x1200.bin</td>
-
-</tr>
-
-<tr>
-
-<td>1680x1050</td>
-
-<td>edid/1680x1050.bin</td>
-
-</tr>
-
-<tr>
-
-<td>1920x1080</td>
-
-<td>edid/1920x1080.bin</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Resolution** | **Name to specify** |
+| 1024x768 | edid/1024x768.bin |
+| 1280x1024 | edid/1280x1024.bin |
+| 1600x1200 (kernel 3.10 or higher) | edid/1600x1200.bin |
+| 1680x1050 | edid/1680x1050.bin |
+| 1920x1080 | edid/1920x1080.bin |
 
 If you are doing early KMS, you must include the custom EDID file in the [initramfs](#Early_KMS_start) or you will run into problems.
 
@@ -252,14 +199,3 @@ Along with `nomodeset` kernel parameter, for Intel graphics card you need to add
 **Note:** Some [Xorg](/index.php/Xorg "Xorg") drivers will not work with KMS disabled. See the wiki page on your specific driver for details.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_mode_setting&oldid=410188](https://wiki.archlinux.org/index.php?title=Kernel_mode_setting&oldid=410188)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Graphics](/index.php/Category:Graphics "Category:Graphics")
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-*   [X server](/index.php/Category:X_server "Category:X server")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

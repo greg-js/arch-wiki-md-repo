@@ -1,9 +1,5 @@
 # Arch based distributions (inactive)
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Arch based distributions (active)](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)")
@@ -286,7 +282,3 @@ Underground Desktop was a GNU/Linux distribution targeted at the desktop user. I
 *   Homepage at Rollback Machine: [http://www.datavibe.net/~essiene/ale/](https://web.archive.org/web/20090327055005/http://www.datavibe.net/~essiene/ale/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(inactive)&oldid=394851](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(inactive)&oldid=394851)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")

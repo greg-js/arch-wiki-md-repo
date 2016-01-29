@@ -1,9 +1,5 @@
 # Sony VAIO SVF15216
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This wiki entry describes some tips of Installation of ArchLinux on a Sony VAIO SVF15216 laptop.
 
 ## Wifi
@@ -19,7 +15,3 @@ You can control the fan speed by using the **vaiofand** daemon that you can find
 You can automatically turn of some device like the bluetooth, the firewire port, the cd/dvd drive or the audio card by using the **vaiopower** daemon that you can find on this address : [http://vaio-utils.org/power/](http://vaio-utils.org/power/) There is also a PKGBUILD available in [AUR](https://aur.archlinux.org/packages/vaiopower/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_VAIO_SVF15216&oldid=409246](https://wiki.archlinux.org/index.php?title=Sony_VAIO_SVF15216&oldid=409246)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")

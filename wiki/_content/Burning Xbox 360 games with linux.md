@@ -1,9 +1,5 @@
 # Burning Xbox 360 games with linux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** The legality of this process may be questionable. Refer to the copyright laws in your country for clarification. Playing backup games online may result in your Xbox 360 console being banned from Xbox Live. Follow this guide at your own risk!
 
 **Tip:** Backups may only be played on an Xbox 360 with a flashed firmware.
@@ -140,7 +136,3 @@ So for example command becomes:
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Burning_Xbox_360_games_with_linux&oldid=376514](https://wiki.archlinux.org/index.php?title=Burning_Xbox_360_games_with_linux&oldid=376514)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")

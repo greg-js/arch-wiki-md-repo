@@ -1,9 +1,5 @@
 # Dell Latitude D620
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -205,7 +201,3 @@ To bind the the volume keys and powerbuttons directly use the following bindings
 **Note:** These keycodes have only been tested on a late-2007 model D620 and may differ on other models.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Latitude_D620&oldid=243042](https://wiki.archlinux.org/index.php?title=Dell_Latitude_D620&oldid=243042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

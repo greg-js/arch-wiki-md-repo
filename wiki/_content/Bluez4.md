@@ -1,9 +1,5 @@
 # Bluez4
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
@@ -607,13 +603,3 @@ fail (DBusException(dbus.String(u'Stream setup failed'),),)
 *   [Bluetooth pairing and applications for synchronizing phone numbers, SMS-messages, phone call entries, your calendar and time; tethering](http://www.elstel.org/MobilePhone.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluez4&oldid=391972](https://wiki.archlinux.org/index.php?title=Bluez4&oldid=391972)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

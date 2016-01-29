@@ -1,9 +1,5 @@
 # Minetest
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -26,11 +22,3 @@ A dedicated server package for the game engine is provided in [minetest-server](
 *   [Official Minetest wiki](http://wiki.minetest.net/Main_Page)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Minetest&oldid=417070](https://wiki.archlinux.org/index.php?title=Minetest&oldid=417070)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Gaming](/index.php/Category:Gaming "Category:Gaming")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

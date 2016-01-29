@@ -1,9 +1,5 @@
 # Dell Inspiron 5547
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is an install and configuration guide for the Dell Inspiron 15 000 Series (Model 5547) laptop, testing with the manjaro 4.1.15-2-MANJARO kernel.
 
 See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for information on other Dell laptops.
@@ -102,7 +98,3 @@ Wireless worked out of the box.
 Not tested.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_5547&oldid=417205](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_5547&oldid=417205)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")

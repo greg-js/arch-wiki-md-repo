@@ -1,9 +1,5 @@
 # ASUS Zenbook Prime UX31A
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -62,217 +58,23 @@ Make sure to boot the USB in EFI-Mode, to easily install the bootloader later.
 
 This table shows the function keys, their intended function, what keycode (if any) X recognizes and whether the function key operates at the BIOS level or if it needs a shortcut.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Keys</th>
-
-<th>Function</th>
-
-<th>X sees</th>
-
-<th>shortcut needed</th>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F1`</td>
-
-<td>Sleep</td>
-
-<td>XF86Sleep</td>
-
-<td>no</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F2`</td>
-
-<td>Turn off WLAN and Bluetooth</td>
-
-<td>XF86WLAN & XF86Bluetooth</td>
-
-<td>no</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F3`</td>
-
-<td>Dim keyboard backlight</td>
-
-<td>XF86KbdBrightnessDown</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F4`</td>
-
-<td>Brighten keyboard backlight</td>
-
-<td>XF86KbdBrightnessUp</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F5`</td>
-
-<td>Dim LCD backlight</td>
-
-<td>XF86MonBrightnessDown</td>
-
-<td>no</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F6`</td>
-
-<td>Brighten LCD backlight</td>
-
-<td>XF86MonBrightnessUp</td>
-
-<td>no</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F7`</td>
-
-<td>Turn off LCD</td>
-
-<td>No named key</td>
-
-<td>no</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F8`</td>
-
-<td>Toggle display</td>
-
-<td>XF86Display</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F9`</td>
-
-<td>Toggle touchpad</td>
-
-<td>XF86TouchpadToggle</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F10`</td>
-
-<td>Audio mute/unmute</td>
-
-<td>XF86AudioMute</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F11`</td>
-
-<td>Audio volume down</td>
-
-<td>XF86AudioLowerVolume</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+F12`</td>
-
-<td>Audio volume up</td>
-
-<td>XF86AudioRaiseVolume</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+a`</td>
-
-<td>Ambient light sensor</td>
-
-<td>m:0x0 + c:248</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+c`</td>
-
-<td>Switch display profiles</td>
-
-<td>XF86Launch1</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+v`</td>
-
-<td>Webcam</td>
-
-<td>XF86WebCam</td>
-
-<td>yes</td>
-
-</tr>
-
-<tr>
-
-<td>`Fn+space`</td>
-
-<td>Switch power profiles</td>
-
-<td>XF86Launch6</td>
-
-<td>yes</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Keys | Function | X sees | shortcut needed |
+| `Fn+F1` | Sleep | XF86Sleep | no |
+| `Fn+F2` | Turn off WLAN and Bluetooth | XF86WLAN & XF86Bluetooth | no |
+| `Fn+F3` | Dim keyboard backlight | XF86KbdBrightnessDown | yes |
+| `Fn+F4` | Brighten keyboard backlight | XF86KbdBrightnessUp | yes |
+| `Fn+F5` | Dim LCD backlight | XF86MonBrightnessDown | no |
+| `Fn+F6` | Brighten LCD backlight | XF86MonBrightnessUp | no |
+| `Fn+F7` | Turn off LCD | No named key | no |
+| `Fn+F8` | Toggle display | XF86Display | yes |
+| `Fn+F9` | Toggle touchpad | XF86TouchpadToggle | yes |
+| `Fn+F10` | Audio mute/unmute | XF86AudioMute | yes |
+| `Fn+F11` | Audio volume down | XF86AudioLowerVolume | yes |
+| `Fn+F12` | Audio volume up | XF86AudioRaiseVolume | yes |
+| `Fn+a` | Ambient light sensor | m:0x0 + c:248 | yes |
+| `Fn+c` | Switch display profiles | XF86Launch1 | yes |
+| `Fn+v` | Webcam | XF86WebCam | yes |
+| `Fn+space` | Switch power profiles | XF86Launch6 | yes |
 
 ### Screen backlight
 
@@ -521,203 +323,25 @@ To configure some power saving options and tools, see [Power saving](/index.php/
 
 #### Devices
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Description</th>
-
-<th>Device Id</th>
-
-<th>Driver/Module</th>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 3rd Gen Core processor DRAM Controller</td>
-
-<td>8086:0154</td>
-
-<td>ivb_uncore</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 3rd Gen Core processor Graphics Controller</td>
-
-<td>8086:0166</td>
-
-<td>i915</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Device</td>
-
-<td>8086:0153</td>
-
-<td>none</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller</td>
-
-<td>8086:1e31</td>
-
-<td>xhci_hcd</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family MEI Controller #1</td>
-
-<td>8086:1e3a</td>
-
-<td>mei_me</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #2</td>
-
-<td>8086:1e2d</td>
-
-<td>ehci_hcd</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family High Definition Audio Controller</td>
-
-<td>8086:1e20</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 1</td>
-
-<td>8086:1e10</td>
-
-<td>pcieport</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 2</td>
-
-<td>8086:1e12</td>
-
-<td>pcieport</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #1</td>
-
-<td>8086:1e26</td>
-
-<td>ehci_hcd</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation HM76 Express Chipset LPC Controller</td>
-
-<td>8086:1e59</td>
-
-<td>lpc_ich</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series Chipset Family 6-port SATA Controller</td>
-
-<td>8086:1e03</td>
-
-<td>ahci</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family SMBus Controller</td>
-
-<td>8086:1e22]</td>
-
-<td>i2c_i801</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation 7 Series/C210 Series Chipset Family Thermal Management Controller</td>
-
-<td>8086:1e24</td>
-
-<td>none</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation Centrino Advanced-N 6235</td>
-
-<td>8086:088e</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Chicony Electronics Co., Ltd Asus 720p CMOS webcam</td>
-
-<td>04f2:b330</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Intel Corporation [Bluetooth Device]</td>
-
-<td>8087:07da</td>
-
-<td>btusb</td>
-
-</tr>
-
-<tr>
-
-<td>Realtek Semiconductor Corp. RTS5139 Card Reader Controller</td>
-
-<td>0bda:0139</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Description | Device Id | Driver/Module |
+| Intel Corporation 3rd Gen Core processor DRAM Controller | 8086:0154 | ivb_uncore |
+| Intel Corporation 3rd Gen Core processor Graphics Controller | 8086:0166 | i915 |
+| Intel Corporation Device | 8086:0153 | none |
+| Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller | 8086:1e31 | xhci_hcd |
+| Intel Corporation 7 Series/C210 Series Chipset Family MEI Controller #1 | 8086:1e3a | mei_me |
+| Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #2 | 8086:1e2d | ehci_hcd |
+| Intel Corporation 7 Series/C210 Series Chipset Family High Definition Audio Controller | 8086:1e20 | snd_hda_intel |
+| Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 1 | 8086:1e10 | pcieport |
+| Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 2 | 8086:1e12 | pcieport |
+| Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #1 | 8086:1e26 | ehci_hcd |
+| Intel Corporation HM76 Express Chipset LPC Controller | 8086:1e59 | lpc_ich |
+| Intel Corporation 7 Series Chipset Family 6-port SATA Controller | 8086:1e03 | ahci |
+| Intel Corporation 7 Series/C210 Series Chipset Family SMBus Controller | 8086:1e22] | i2c_i801 |
+| Intel Corporation 7 Series/C210 Series Chipset Family Thermal Management Controller | 8086:1e24 | none |
+| Intel Corporation Centrino Advanced-N 6235 | 8086:088e | iwlwifi |
+| Chicony Electronics Co., Ltd Asus 720p CMOS webcam | 04f2:b330 | uvcvideo |
+| Intel Corporation [Bluetooth Device] | 8087:07da | btusb |
+| Realtek Semiconductor Corp. RTS5139 Card Reader Controller | 0bda:0139 | rtsx_usb |
 
 #### Other Devices and Drivers
 
@@ -785,11 +409,3 @@ This is just a warning that the ACPI has reserved some memory regions for other 
 *   [Wikipedia:Zenbook#UX32.2C UX42 and UX52](https://en.wikipedia.org/wiki/Zenbook#UX32.2C_UX42_and_UX52 "wikipedia:Zenbook")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_Prime_UX31A&oldid=400947](https://wiki.archlinux.org/index.php?title=ASUS_Zenbook_Prime_UX31A&oldid=400947)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

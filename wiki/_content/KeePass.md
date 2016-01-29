@@ -1,9 +1,5 @@
 # KeePass
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 KeePass is an offline encrypted password database format. It is an alternative to popular online password managers and is supported on all major distributions and other OS platforms.
 
 Currently, there are two variants of the database formats: _KeePass 1.x (Classic)_ and _KeePass 2.x_
@@ -23,25 +19,25 @@ There are two major implementations of KeePass, both of which are included in of
 
 *   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — An easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices. It also has optional autotype and clipboard support respectively when `xdotool` and `xsel` are installed. Supports importing from [many formats](http://keepass.info/help/base/importexport.html).
 
-[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
+NaN
 
 *   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application _Keepass Password Safe (v1.x)_. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases. While KeepassX does not support plugins on its master branch, the KeepassX-HTTP branch supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
 
-[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassx-http](https://aur.archlinux.org/packages/keepassx-http/)<sup><small>AUR</small></sup>
+NaN
 
 Other lesser known implementations are found in the AUR:
 
 *   **keepassc** — A curses-based password manager compatible to KeePass v.1.x and KeePassX. It also uses `xsel` for clipboard functions.
 
-[https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)<sup><small>AUR</small></sup>
+NaN
 
 *   **kpcli** — A command line browser of KeePassX database files `*.kdb`.
 
-[http://sourceforge.net/projects/kpcli/](http://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)<sup><small>AUR</small></sup>
+NaN
 
 *   **keeweb** — A desktop webapp compatible to KeePass 2.x.
 
-[https://github.com/antelle/keeweb](https://github.com/antelle/keeweb) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/)<sup><small>AUR</small></sup>
+NaN
 
 ## Integration
 
@@ -86,11 +82,3 @@ Extension allowing Google Chrome and Chromium to form-fill passwords stored in K
 *   [Pass](/index.php/Pass "Pass")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=KeePass&oldid=417241](https://wiki.archlinux.org/index.php?title=KeePass&oldid=417241)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

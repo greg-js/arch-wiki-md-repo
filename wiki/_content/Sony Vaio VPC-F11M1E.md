@@ -1,9 +1,5 @@
 # Sony Vaio VPC-F11M1E
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 -
 
 ## Contents
@@ -204,11 +200,3 @@ Put channels to the highest number of **channels** supported by the combination 
 [https://wiki.archlinux.org/index.php/Map_scancodes_to_keycodes](https://wiki.archlinux.org/index.php/Map_scancodes_to_keycodes)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPC-F11M1E&oldid=392672](https://wiki.archlinux.org/index.php?title=Sony_Vaio_VPC-F11M1E&oldid=392672)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Sony](/index.php/Category:Sony "Category:Sony")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

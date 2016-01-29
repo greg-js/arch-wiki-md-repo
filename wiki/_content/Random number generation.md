@@ -1,12 +1,8 @@
 # Random number generation
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [wikipedia:Random number generation](https://en.wikipedia.org/wiki/Random_number_generation "wikipedia:Random number generation"):
 
-A random number generator (RNG) is a computational or physical device designed to generate a sequence of numbers or symbols that lack any pattern, i.e. appear random.
+NaN
 
 Generation of random data is crucial for several applications like making cryptographic keys (e.g. for [Disk encryption](/index.php/Disk_encryption "Disk encryption")), [securely wiping disks](/index.php/Securely_wipe_disk "Securely wipe disk"), running encrypted [Software access points](/index.php/Software_access_point "Software access point").
 
@@ -72,7 +68,3 @@ There are also [cryptographically secure pseudorandom number generators](https:/
 *   [DIY HRNG](http://www.codeproject.com/Articles/795845/Arduino-Hardware-Random-Sequence-Generator-with-Ja) - One example of a low-cost, DIY Arduino HRNG
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Random_number_generation&oldid=410093](https://wiki.archlinux.org/index.php?title=Random_number_generation&oldid=410093)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Encryption](/index.php/Category:Encryption "Category:Encryption")

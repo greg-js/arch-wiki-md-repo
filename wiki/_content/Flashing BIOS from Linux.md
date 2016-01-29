@@ -1,9 +1,5 @@
 # Flashing BIOS from Linux
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article aims on providing information on flashing your system BIOS under Linux. Most manufacturers provide a Windows executable or a BIOS executable that can only be run under Windows. However, there are a few utilities, that allow you to upgrade your system BIOS under Linux.
 
 **Warning:** Flashing motherboard BIOS is a dangerous activity that can render your motherboard inoperable! While the author of this article has successfully run this procedure many times, your mileage may vary. Be careful! You may want to consider updating [microcode](/index.php/Microcode "Microcode") instead if it is supported by your system.
@@ -298,11 +294,3 @@ Copy the image to the usb thumbdrive:
 Reboot and boot from the USB drive, follow vendor directions.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_Linux&oldid=411855](https://wiki.archlinux.org/index.php?title=Flashing_BIOS_from_Linux&oldid=411855)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

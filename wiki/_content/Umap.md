@@ -1,9 +1,5 @@
 # Umap
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Umap](https://bitbucket.org/yohanboniface/umap) is an open-source web application based on the [Python](/index.php/Python "Python") framework [Django](/index.php/Django "Django"). It offers you to create OpenStreetMap-based maps where you can add own information and notes with a convenient web editor.
 
 ## Contents
@@ -79,11 +75,3 @@ Initialize uMap installation:
 *   [Official documentation](https://bitbucket.org/yohanboniface/umap)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Umap&oldid=392756](https://wiki.archlinux.org/index.php?title=Umap&oldid=392756)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

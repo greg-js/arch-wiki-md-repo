@@ -1,9 +1,5 @@
 # Sshfs
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). Using sshfs instead of shfs is generally preferred as a new version of shfs has not been released since 2004.
 
 ## Contents
@@ -329,9 +325,3 @@ Then enable the service: `systemctl enable killsshfs.service`
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Sshfs&oldid=412177](https://wiki.archlinux.org/index.php?title=Sshfs&oldid=412177)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-*   [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing")

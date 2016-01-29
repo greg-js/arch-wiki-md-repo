@@ -1,9 +1,5 @@
 # phpLDAPadmin
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [phpLDAPadmin](http://phpldapadmin.sourceforge.net/) is an web-based [LDAP](/index.php/LDAP "LDAP") adminstration interface.
 
 ## Contents
@@ -94,7 +90,3 @@ Your phpLDAPadmin installation is now complete. Before start using it you need t
 You can access your phpLDAPadmin installation by going to [http://localhost/phpldapadmin/](http://localhost/phpldapadmin/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpLDAPadmin&oldid=412779](https://wiki.archlinux.org/index.php?title=PhpLDAPadmin&oldid=412779)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

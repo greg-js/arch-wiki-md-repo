@@ -1,9 +1,5 @@
 # Extra keyboard keys
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
@@ -201,7 +197,3 @@ The Win-Lock Key completely disables the Super (Windows) keys. Simply press the 
 *   [Multimedia Keys](http://www.gentoo-wiki.info/HOWTO_Use_Multimedia_Keys) on [Gentoo Wiki Archives](http://www.gentoo-wiki.info/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys&oldid=406206](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys&oldid=406206)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

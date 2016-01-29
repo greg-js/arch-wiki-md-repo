@@ -1,9 +1,5 @@
 # Vim
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [List of applications/Documents#Vi_text_editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
@@ -150,9 +146,7 @@ You can use the global `:g/` command to search for patterns and then execute a c
 
 Command Outcome
 
-g/^#/d Delete all lines that begins with #
-
-g/^$/d Delete all lines that are empty
+NaN
 
 ### Saving, quitting, and opening
 
@@ -234,85 +228,15 @@ See [Vim/.vimrc](/index.php/Vim/.vimrc "Vim/.vimrc").
 
 Vim includes a diff editor (a program that shows differences between two or more files and aids to conveniently merge them). Use _vimdiff_ to run the diff editor — just specify some couple of files to it: `vimdiff _file1_ _file2_`. Here is the list of _vimdiff_-specific commands. For basic `vim` editing, read the tutorial in the [#Usage](#Usage) section.
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Action</th>
-
-<th>Shortcut</th>
-
-</tr>
-
-<tr>
-
-<td>next change</td>
-
-<td>`]c`</td>
-
-</tr>
-
-<tr>
-
-<td>previous change</td>
-
-<td>`[c`</td>
-
-</tr>
-
-<tr>
-
-<td>diff obtain</td>
-
-<td>`do`</td>
-
-</tr>
-
-<tr>
-
-<td>diff put</td>
-
-<td>`dp`</td>
-
-</tr>
-
-<tr>
-
-<td>fold open</td>
-
-<td>`zo`</td>
-
-</tr>
-
-<tr>
-
-<td>fold close</td>
-
-<td>`zc`</td>
-
-</tr>
-
-<tr>
-
-<td>rescan files</td>
-
-<td>`:diffupdate`</td>
-
-</tr>
-
-<tr>
-
-<td>switch windows</td>
-
-<td>`Ctrl+w+w`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Action | Shortcut |
+| next change | `]c` |
+| previous change | `[c` |
+| diff obtain | `do` |
+| diff put | `dp` |
+| fold open | `zo` |
+| fold close | `zc` |
+| rescan files | `:diffupdate` |
+| switch windows | `Ctrl+w+w` |
 
 ## Tips and recommendations
 
@@ -337,85 +261,15 @@ set spell
 
 By default, only English language dictionaries are installed. More dictionaries can be found in the [official repositories](/index.php/Official_repositories "Official repositories") by searching for `vim-spell`. Additional dictionaries can be found in the [Vim's FTP archive](http://ftp.vim.org/vim/runtime/spell/). Additional dictionaries can be put in the folder `~/.vim/spell/` and enabled with the command: `:setlocal spell spelllang=_en_us_` (replacing the `_en_us_` with the name of the needed dictionary).
 
-<table class="wikitable">
-
-<tbody>
-
-<tr>
-
-<th>Action</th>
-
-<th>Shortcut</th>
-
-</tr>
-
-<tr>
-
-<td>next spelling</td>
-
-<td>`]s`</td>
-
-</tr>
-
-<tr>
-
-<td>previous spelling</td>
-
-<td>`[s`</td>
-
-</tr>
-
-<tr>
-
-<td>spelling suggestions</td>
-
-<td>`z=`</td>
-
-</tr>
-
-<tr>
-
-<td>spelling good, add</td>
-
-<td>`zg`</td>
-
-</tr>
-
-<tr>
-
-<td>spelling good, session</td>
-
-<td>`zG`</td>
-
-</tr>
-
-<tr>
-
-<td>spelling wrong, add</td>
-
-<td>`zw`</td>
-
-</tr>
-
-<tr>
-
-<td>spelling wrong, session</td>
-
-<td>`zW`</td>
-
-</tr>
-
-<tr>
-
-<td>spelling repeat all in file</td>
-
-<td>`:spellr`</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Action | Shortcut |
+| next spelling | `]s` |
+| previous spelling | `[s` |
+| spelling suggestions | `z=` |
+| spelling good, add | `zg` |
+| spelling good, session | `zG` |
+| spelling wrong, add | `zw` |
+| spelling wrong, session | `zW` |
+| spelling repeat all in file | `:spellr` |
 
 **Tip:**
 
@@ -614,12 +468,3 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Vim colorscheme tailoring](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — override installed colorscheme to try-out or permanently alter.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=417505](https://wiki.archlinux.org/index.php?title=Vim&oldid=417505)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Development](/index.php/Category:Development "Category:Development")
-*   [Text editors](/index.php/Category:Text_editors "Category:Text editors")
-
-Hidden category:
-
-*   [Pages with dead links](/index.php/Category:Pages_with_dead_links "Category:Pages with dead links")

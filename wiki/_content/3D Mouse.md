@@ -1,9 +1,5 @@
 # 3D Mouse
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 _Also known as bats, flying mice, or wands, these devices generally function through ultrasound and provide at least three degrees of freedom. Probably the best known example would be 3DConnexion/Logitech's SpaceMouse from the early 1990s._ - Wikipedia
 
 For more information: [http://www.3dconnexion.com/products/what-is-a-3d-mouse.html](http://www.3dconnexion.com/products/what-is-a-3d-mouse.html)
@@ -239,11 +235,3 @@ ndof: using SpaceNavigator
 *   [Community Wiki about Spacemice](http://spacemice.wikidot.com/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=3D_Mouse&oldid=390572](https://wiki.archlinux.org/index.php?title=3D_Mouse&oldid=390572)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Mice](/index.php/Category:Mice "Category:Mice")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

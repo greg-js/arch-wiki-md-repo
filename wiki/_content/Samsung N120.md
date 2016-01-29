@@ -1,9 +1,5 @@
 # Samsung N120
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article aims on providing the informations on installing and setting up Arch Linux on the Samsung N120\. Basically I used information from [Samsung NC10](/index.php/Samsung_NC10 "Samsung NC10") netbook wiki.
 
 A lot of the information is derived from the [NC10 Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=58117) and [N120 Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=77218) and several hints scattered around in the ArchWiki.
@@ -267,7 +263,3 @@ For example the brightness controls (Fn+Up/Down) should now work as expected.
 See [power saving](/index.php/Power_saving "Power saving").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_N120&oldid=331666](https://wiki.archlinux.org/index.php?title=Samsung_N120&oldid=331666)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Samsung](/index.php/Category:Samsung "Category:Samsung")

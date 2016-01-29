@@ -1,9 +1,5 @@
 # ASUS N56vj
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
 
 [![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
@@ -95,11 +91,3 @@ As Arch Linux is all about [The Arch Way](/index.php/The_Arch_Way "The Arch Way"
 In development
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N56vj&oldid=376393](https://wiki.archlinux.org/index.php?title=ASUS_N56vj&oldid=376393)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")
-
-Hidden category:
-
-*   [Pages flagged with Template:Stub](/index.php/Category:Pages_flagged_with_Template:Stub "Category:Pages flagged with Template:Stub")

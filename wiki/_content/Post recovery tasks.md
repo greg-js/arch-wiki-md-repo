@@ -1,9 +1,5 @@
 # Post recovery tasks
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File recovery](/index.php/File_recovery "File recovery")
@@ -190,7 +186,3 @@ If it is not so many files with the same extension then it will be enough to use
 **Note:** The photorec utility stores up to 500 recovered files in a single folder.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Post_recovery_tasks&oldid=401677](https://wiki.archlinux.org/index.php?title=Post_recovery_tasks&oldid=401677)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

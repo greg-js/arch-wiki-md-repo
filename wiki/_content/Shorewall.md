@@ -1,9 +1,5 @@
 # Shorewall
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [The Shoreline Firewall](http://www.shorewall.net/), more commonly known as "Shorewall", is high-level tool for configuring Netfilter.
 
 You describe your firewall/gateway requirements using entries in a set of configuration files. Shorewall reads those configuration files and with the help of the iptables utility, Shorewall configures Netfilter to match your requirements.
@@ -20,7 +16,8 @@ Shorewall can be used on a dedicated firewall system, a multi-function gateway/r
     *   [2.4 /etc/shorewall/masq](#.2Fetc.2Fshorewall.2Fmasq)
         *   [2.4.1 SSH](#SSH)
         *   [2.4.2 Port forwarding (DNAT)](#Port_forwarding_.28DNAT.29)
-    *   [2.5 /etc/shorewall/shorewall.conf](#.2Fetc.2Fshorewall.2Fshorewall.conf)
+    *   [2.5 /etc/shorewall/stoppedrules](#.2Fetc.2Fshorewall.2Fstoppedrules)
+    *   [2.6 /etc/shorewall/shorewall.conf](#.2Fetc.2Fshorewall.2Fshorewall.conf)
 *   [3 Start](#Start)
 
 ## Installation
@@ -113,7 +110,7 @@ eth0        192.168.1.0/24
 
 #### SSH
 
-**OPTIONAL:** You can **add** these lines if you want to be able to SSH into the router from computers on the Internet
+**OPTIONAL:** You can **add** these lines to /etc/shorewall/rules if you want to be able to SSH into the router from computers on the Internet
 
 ```
 #       Accept SSH connections from the internet for administration
@@ -130,6 +127,10 @@ SSH(ACCEPT)     net             $FW         TCP      <SSH port used>
 DNAT        net        loc:10.0.0.85:80        tcp        5000
 
 ```
+
+### /etc/shorewall/stoppedrules
+
+If you have a network name other than eth1 for the network interface in /etc/shorewall/interfaces, you need to update stoppedrules with the correct name.
 
 ### /etc/shorewall/shorewall.conf
 
@@ -155,8 +156,4 @@ See [man page](http://shorewall.net/manpages/shorewall.conf.html) for more info.
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shorewall.service`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shorewall&oldid=415175](https://wiki.archlinux.org/index.php?title=Shorewall&oldid=415175)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shorewall&oldid=417892](https://wiki.archlinux.org/index.php?title=Shorewall&oldid=417892)"

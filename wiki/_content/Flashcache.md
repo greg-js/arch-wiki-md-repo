@@ -1,9 +1,5 @@
 # Flashcache
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Tip:** A much easier approach to setting up Flashcache is using [EnhanceIO](/index.php/EnhanceIO "EnhanceIO")
 
 ## Contents
@@ -297,7 +293,3 @@ dev.flashcache.fallow_delay = 0
 *   Github source - [https://github.com/facebook/flashcache](https://github.com/facebook/flashcache)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Flashcache&oldid=414571](https://wiki.archlinux.org/index.php?title=Flashcache&oldid=414571)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

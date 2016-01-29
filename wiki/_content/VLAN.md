@@ -1,9 +1,5 @@
 # VLAN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Network Configuration](/index.php/Network_Configuration "Network Configuration")
@@ -178,7 +174,3 @@ SUBSYSTEM=="net", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="eth0", DRIVERS=="?*"
 A reboot should mean that VLANs configure correctly with the names assigned to them.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VLAN&oldid=383952](https://wiki.archlinux.org/index.php?title=VLAN&oldid=383952)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")

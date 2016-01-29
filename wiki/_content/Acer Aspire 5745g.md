@@ -1,9 +1,5 @@
 # Acer Aspire 5745g
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -93,7 +89,3 @@ If you want to use your mouse without xorg, you can use [GPM](/index.php/GPM "GP
 Volume up/down & mute can be mapped with [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Acer_Aspire_5745g&oldid=368775](https://wiki.archlinux.org/index.php?title=Acer_Aspire_5745g&oldid=368775)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Acer](/index.php/Category:Acer "Category:Acer")

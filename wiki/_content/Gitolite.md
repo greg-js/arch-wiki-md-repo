@@ -1,9 +1,5 @@
 # Gitolite
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Gitolite](https://github.com/sitaramc/gitolite/wiki/) allows you to host Git repositories for multiple users easily and securely.
 
 ## Contents
@@ -209,7 +205,3 @@ $user =~ s/\.pub$//;              # baz@home.pub -> baz@home
 [http://sitaramc.github.com/gitolite/index.html](http://sitaramc.github.com/gitolite/index.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitolite&oldid=393601](https://wiki.archlinux.org/index.php?title=Gitolite&oldid=393601)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")

@@ -1,9 +1,5 @@
 # LIRC
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [LIRC Device Examples](/index.php/LIRC_Device_Examples "LIRC Device Examples")
@@ -221,11 +217,3 @@ install ir_sanyo_decoder /bin/false
 *   [Linux Streamzap config files](https://github.com/graysky2/streamzap)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LIRC&oldid=409132](https://wiki.archlinux.org/index.php?title=LIRC&oldid=409132)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Merge](/index.php/Category:Pages_or_sections_flagged_with_Template:Merge "Category:Pages or sections flagged with Template:Merge")

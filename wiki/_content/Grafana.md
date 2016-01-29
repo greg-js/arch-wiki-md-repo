@@ -1,9 +1,5 @@
 # Grafana
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Zabbix](/index.php/Zabbix "Zabbix")
@@ -68,7 +64,3 @@ curl -i -XPOST '[http://localhost:8086/write?db=example'](http://localhost:8086/
 *   [Official homepage](http://grafana.org/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Grafana&oldid=398243](https://wiki.archlinux.org/index.php?title=Grafana&oldid=398243)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring")

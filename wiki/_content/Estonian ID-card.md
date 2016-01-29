@@ -1,9 +1,5 @@
 # Estonian ID-card
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
 
 [![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
@@ -37,11 +33,3 @@ The ID-card utility packages are [qesteidutil](https://aur.archlinux.org/package
 These applications will automatically appear in your application menus. You can also start from command line with <tt>qdigidocclient</tt> and <tt>qesteidutil</tt>.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Estonian_ID-card&oldid=411309](https://wiki.archlinux.org/index.php?title=Estonian_ID-card&oldid=411309)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Move](/index.php/Category:Pages_or_sections_flagged_with_Template:Move "Category:Pages or sections flagged with Template:Move")

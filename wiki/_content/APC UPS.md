@@ -1,9 +1,5 @@
 # APC UPS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This document describes how to install the APC UPS daemon. The main advantage of using an APC UPS (for me) is that it can communicate with your Linux box through either a RS-232 or USB serial connection. In the event of a prolonged power outage, should the APC UPS lose most of its battery capacity, it can tell the Linux box to perform a safe shutdown.
 
 ## Contents
@@ -225,7 +221,3 @@ For example, the default KDE setting is to put the computer in sleep if it has b
 *   [apcupsd manual](http://www.apcupsd.com/manual/manual.html#the-shutdown-sequence-and-its-discontents)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=APC_UPS&oldid=412028](https://wiki.archlinux.org/index.php?title=APC_UPS&oldid=412028)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")

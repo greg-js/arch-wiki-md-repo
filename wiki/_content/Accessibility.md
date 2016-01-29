@@ -1,9 +1,5 @@
 # Accessibility
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 There are many different methods of providing accessibility to users that suffer from a physical or visual handicap. However, unless a [desktop environment](/index.php/Desktop_environment "Desktop environment") is used, the configuration might require some tinkering until one gets it right.
 
 ## Contents
@@ -199,7 +195,3 @@ See [Text to speech](/index.php/Text_to_speech "Text to speech").
 *   Configuration of input devices is not recognized by software that circumvents the software layer, e.g. [wine](/index.php/Wine "Wine"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), and [QEMU](/index.php/QEMU "QEMU").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Accessibility&oldid=376531](https://wiki.archlinux.org/index.php?title=Accessibility&oldid=376531)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Accessibility](/index.php/Category:Accessibility "Category:Accessibility")

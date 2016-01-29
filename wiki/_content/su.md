@@ -1,9 +1,5 @@
 # su
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Users and groups](/index.php/Users_and_groups "Users and groups")
@@ -98,7 +94,3 @@ auth required pam_wheel.so use_uid
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Su&oldid=414382](https://wiki.archlinux.org/index.php?title=Su&oldid=414382)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

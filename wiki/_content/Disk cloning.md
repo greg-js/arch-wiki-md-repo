@@ -1,9 +1,5 @@
 # Disk cloning
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Disk cloning is the process of making an image of a partition or of an entire hard drive. This can be useful for copying the drive to other computers and for [backup](/index.php/Backup "Backup") and [recovery](/index.php/File_recovery "File recovery") purposes.
 
 ## Contents
@@ -187,8 +183,3 @@ If you wish to backup or propagate your Arch install root, you are probably bett
 *   [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?id=4329)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Disk_cloning&oldid=417537](https://wiki.archlinux.org/index.php?title=Disk_cloning&oldid=417537)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving")
-*   [System recovery](/index.php/Category:System_recovery "Category:System recovery")

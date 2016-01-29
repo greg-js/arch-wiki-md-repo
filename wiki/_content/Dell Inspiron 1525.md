@@ -1,9 +1,5 @@
 # Dell Inspiron 1525
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This is an install and configuration guide for the Dell Inspiron 1525 laptop, testing with the 2010.05 installer snapshot.
 
 ## Contents
@@ -72,11 +68,3 @@ All work out of the box.
 Not tested.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1525&oldid=392051](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1525&oldid=392051)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Dell](/index.php/Category:Dell "Category:Dell")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

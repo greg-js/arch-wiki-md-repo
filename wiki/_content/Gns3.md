@@ -1,9 +1,5 @@
 # Gns3
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -14,7 +10,7 @@ Jump to: [navigation](#column-one), [search](#searchInput)
 
 [GNS3](http://www.gns3.net/) is a **G**raphical **N**etwork **S**imulator. It allows you to simulate a network on your computer. From the webpage:
 
-_GNS3 is an open source software that simulate complex networks while being as close as possible to the way real networks perform. All of this without having dedicated network hardware such as routers and switches._
+NaN
 
 ## Contents
 
@@ -102,14 +98,3 @@ Instructions taken (and ported) from [GNS3 forums](http://forum.gns3.net/topic11
 When devices have been added to your topology you will need to connect them. Select the link-icon (the bottom icon in the left sidebar, looks sort of like a mouse or ethernet-port+rj45 connector), click on a device (like a switch). Next, click on the device (like a VM) you want to connect to the switch. You will be promted to select the NIC which should be used. When you have created all the links you want, click the link-icon in the left sidebar to deselect it, otherwise GNS3 will still be in 'create link'-mode.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Gns3&oldid=392208](https://wiki.archlinux.org/index.php?title=Gns3&oldid=392208)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Networking](/index.php/Category:Networking "Category:Networking")
-*   [Emulators](/index.php/Category:Emulators "Category:Emulators")
-*   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

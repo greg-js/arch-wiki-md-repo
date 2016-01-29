@@ -1,9 +1,5 @@
 # Logitech G13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Logitech Gaming Keyboards](/index.php/Logitech_Gaming_Keyboards "Logitech Gaming Keyboards")
@@ -116,7 +112,3 @@ Joystick:
 **Tip:** As a jumping off point, you can use [default.bind](https://github.com/zekesonxx/g13-profiles/blob/master/default.bind), which has the same bindings as the default profile when using the official software, along with a purple backlight.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_G13&oldid=399090](https://wiki.archlinux.org/index.php?title=Logitech_G13&oldid=399090)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")

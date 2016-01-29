@@ -1,9 +1,5 @@
 # SpaceFM
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
@@ -120,7 +116,3 @@ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc spacefm
 See [[4]](http://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-gtkthemes) for details.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SpaceFM&oldid=402487](https://wiki.archlinux.org/index.php?title=SpaceFM&oldid=402487)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File managers](/index.php/Category:File_managers "Category:File managers")

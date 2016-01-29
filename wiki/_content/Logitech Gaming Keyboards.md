@@ -1,9 +1,5 @@
 # Logitech Gaming Keyboards
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The options are the python based [Gnome15 project](http://www.gnome15.org) and the C based [g15daemon project](http://sourceforge.net/projects/g15daemon/).
 
 ## Install
@@ -93,11 +89,3 @@ sudo g15daemon && sleep 3 && g15stats
 And congratulations! you have a working G510 keyboard on Linux :) With a few issues of course (known issues are in the forum thread linked to at the start of this section)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_Gaming_Keyboards&oldid=412317](https://wiki.archlinux.org/index.php?title=Logitech_Gaming_Keyboards&oldid=412317)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

@@ -1,9 +1,5 @@
 # Bus pirate
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The [Bus Pirate](http://code.google.com/p/the-bus-pirate/) is a versatile tool for communicating with various hardware.
 
 Interfacing a new microchip can be a hassle. Breadboarding a circuit, writing code, hauling out the programmer, or maybe even prototyping a PCB. We never seem to get it right on the first try.
@@ -115,7 +111,3 @@ To communicate with the device, you can use any of the following, to name a few:
 Type '?' and press enter and the device should reply with a list of possible commands.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bus_pirate&oldid=352378](https://wiki.archlinux.org/index.php?title=Bus_pirate&oldid=352378)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting")

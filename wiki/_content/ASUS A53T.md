@@ -1,9 +1,5 @@
 # ASUS A53T
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Summary](#Summary)
@@ -118,7 +114,3 @@ Working fine, no workarounds required.
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_A53T&oldid=213883](https://wiki.archlinux.org/index.php?title=ASUS_A53T&oldid=213883)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

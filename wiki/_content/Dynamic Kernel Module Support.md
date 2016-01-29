@@ -1,12 +1,8 @@
 # Dynamic Kernel Module Support
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wikipedia:Dynamic Kernel Module Support"):
 
-**Dynamic Kernel Module Support** (**DKMS**) is a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. The concept is to have DKMS modules automatically rebuilt when a new kernel is installed.
+NaN
 
 ## Contents
 
@@ -283,11 +279,3 @@ pre_remove() {
 *   [Linux Journal: Exploring Dynamic Kernel Module Support](http://www.linuxjournal.com/article/6896)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&oldid=407892](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&oldid=407892)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")

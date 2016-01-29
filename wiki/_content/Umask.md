@@ -1,9 +1,5 @@
 # Umask
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
@@ -43,103 +39,16 @@ For example, let us assume that the file-creation mode mask is 027\. Here the bi
 
 With the information provided by the table below this means that for a newly created file, for example owned by `User1` user and `Group1` group, `User1` has all the possible permissions (octal value 7) for the newly created file, other users of the `Group1` group do not have write permissions (octal value 5), and any other user does not have any permissions (octal value 0) to the newly created file. So with the 027 mask taken for this example, files will be created with 750 permissions.
 
-<table class="wikitable"><caption></caption>
-
-<tbody>
-
-<tr>
-
-<th>Octal</th>
-
-<th>Binary</th>
-
-<th>Meaning</th>
-
-</tr>
-
-<tr>
-
-<td>0</td>
-
-<td>000</td>
-
-<td>no permissions</td>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>001</td>
-
-<td>execute only</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>010</td>
-
-<td>write only</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>011</td>
-
-<td>write and execute</td>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>100</td>
-
-<td>read only</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>101</td>
-
-<td>read and execute</td>
-
-</tr>
-
-<tr>
-
-<td>6</td>
-
-<td>110</td>
-
-<td>read and write</td>
-
-</tr>
-
-<tr>
-
-<td>7</td>
-
-<td>111</td>
-
-<td>read, write and execute</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption></caption>
+| Octal | Binary | Meaning |
+| 0 | 000 | no permissions |
+| 1 | 001 | execute only |
+| 2 | 010 | write only |
+| 3 | 011 | write and execute |
+| 4 | 100 | read only |
+| 5 | 101 | read and execute |
+| 6 | 110 | read and write |
+| 7 | 111 | read, write and execute |
 
 ## Display the current mask value
 
@@ -170,8 +79,3 @@ If you need to set a different value, you can either directly edit such file, th
 *   [027 umask: a compromise](https://blogs.gentoo.org/mgorny/2011/10/18/027-umask-a-compromise-between-security-and-simplicity/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Umask&oldid=406731](https://wiki.archlinux.org/index.php?title=Umask&oldid=406731)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")
-*   [File systems](/index.php/Category:File_systems "Category:File systems")

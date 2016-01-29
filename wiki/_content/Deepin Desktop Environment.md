@@ -1,9 +1,5 @@
 # Deepin Desktop Environment
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [DDE](http://www.deepin.org/?language=en) (Deepin Desktop Environment) is the default desktop environment originally created for the linux Deepin distribution.
 
 ## Contents
@@ -60,7 +56,3 @@ Execute `startx` or `xinit` to start DDE.
 Any upstream or arch packaging related bugs should be reported [here](https://github.com/fasheng/arch-deepin/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&oldid=415876](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&oldid=415876)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")

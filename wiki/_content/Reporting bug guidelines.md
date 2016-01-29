@@ -1,9 +1,5 @@
 # Reporting bug guidelines
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
@@ -79,13 +75,7 @@ If a bug/feature is not under Arch's responsibility, report it upstream. See als
 
 ### Bug or feature?
 
-bug
-
-something that should work but does not work, contrary to the developer's intentions.
-
-feature
-
-something which software does or would do if somebody coded it.
+NaN
 
 #### Reasons for not being a bug
 
@@ -250,7 +240,3 @@ Some people (developers, TUs...) are responsible for dispatching the bugs and ch
 *   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Reporting_bug_guidelines&oldid=411903](https://wiki.archlinux.org/index.php?title=Reporting_bug_guidelines&oldid=411903)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Arch development](/index.php/Category:Arch_development "Category:Arch development")

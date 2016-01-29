@@ -1,9 +1,5 @@
 # Bluetooth keyboard
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 This article describes how to set up a Bluetooth HID keyboard with Arch Linux, bluez version 5.
 
 ## Contents
@@ -250,12 +246,3 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 Device should be added as `/dev/input/event*` and your Xorg should add it automatically if you did not disable such feature.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_keyboard&oldid=383061](https://wiki.archlinux.org/index.php?title=Bluetooth_keyboard&oldid=383061)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth")
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

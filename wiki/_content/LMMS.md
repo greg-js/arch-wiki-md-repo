@@ -1,9 +1,5 @@
 # LMMS
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
 
 [![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
@@ -37,13 +33,3 @@ Then, you will need to edit the FluidSynth configuration file as mentioned in th
 When LMMS starts, it will prompt you with the settings. Go to the audio settings, choose the same interface that you set for FluidSynth, and restart LMMS if you made a switch.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=LMMS&oldid=389803](https://wiki.archlinux.org/index.php?title=LMMS&oldid=389803)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Applications](/index.php/Category:Applications "Category:Applications")
-*   [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
-
-Hidden categories:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

@@ -1,9 +1,5 @@
 # Jruby
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Installation
 
 A [jruby](https://www.archlinux.org/packages/?name=jruby) package can be found on [AUR](/index.php/AUR "AUR").
@@ -29,7 +25,3 @@ jruby 1.2.0 (ruby 1.8.6 patchlevel 287) (2009-03-16 rev 9419) [i386-java]
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Jruby&oldid=388116](https://wiki.archlinux.org/index.php?title=Jruby&oldid=388116)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages")

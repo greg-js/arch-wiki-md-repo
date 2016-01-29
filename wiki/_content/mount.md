@@ -1,9 +1,5 @@
 # mount
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [fstab](/index.php/Fstab "Fstab")
@@ -200,11 +196,3 @@ You can add more actions for when an external storage device, such as a USB driv
 *   Creating and using disk images mini-howto: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mount&oldid=413579](https://wiki.archlinux.org/index.php?title=Mount&oldid=413579)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [File systems](/index.php/Category:File_systems "Category:File systems")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

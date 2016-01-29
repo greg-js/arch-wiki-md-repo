@@ -1,9 +1,5 @@
 # Mirrors
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [pacman](/index.php/Pacman "Pacman")
@@ -293,8 +289,3 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=417009](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=417009)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [About Arch](/index.php/Category:About_Arch "Category:About Arch")
-*   [Package management](/index.php/Category:Package_management "Category:Package management")

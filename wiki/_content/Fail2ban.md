@@ -1,9 +1,5 @@
 # Fail2ban
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
 [Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) scans various textual log files and bans IP that makes too many password failures by updating firewall rules to reject the IP address, similar to [Sshguard](/index.php/Sshguard "Sshguard").
@@ -117,11 +113,3 @@ in your `/etc/ssh/sshd_config`. Else, password failures are not logged correctly
 *   [sshguard](/index.php/Sshguard "Sshguard")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=411989](https://wiki.archlinux.org/index.php?title=Fail2ban&oldid=411989)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

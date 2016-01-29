@@ -1,116 +1,15 @@
 # ASUS N550JX
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table class="wikitable" style="float: right;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Module**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Nvidia</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>nvidia</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>r8169</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>iwlwifi</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>xf86-input-synaptics</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>rtsx_usb</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Working</td>
-
-<td>bluetooth</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Module** |
+| Intel | Working | xf86-video-intel |
+| Nvidia | Working | nvidia |
+| Ethernet | Working | r8169 |
+| Wireless | Working | iwlwifi |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | xf86-input-synaptics |
+| Camera | Working | uvcvideo |
+| Card Reader | Working | rtsx_usb |
+| Bluetooth | Working | bluetooth |
 
 ## Contents
 
@@ -175,7 +74,3 @@ Installation media sometimes produces a lot of error messages during boot. This 
  `/etc/modprobe.d/blacklist-nouveau.conf`  `blacklist nouveau` 
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_N550JX&oldid=413665](https://wiki.archlinux.org/index.php?title=ASUS_N550JX&oldid=413665)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

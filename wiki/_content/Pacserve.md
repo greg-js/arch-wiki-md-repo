@@ -1,9 +1,5 @@
 # Pacserve
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [Pacserve](http://xyne.archlinux.ca/projects/pacserve/) allows to easily share pacman packages between computers. This is very useful, if you have a slow internet connection, but multiple machines running Arch Linux.
 
 ## Contents
@@ -68,8 +64,3 @@ XferCommand = /usr/bin/wget --timeout=6 --passive-ftp -c -O '%o' '%u'
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacserve&oldid=408558](https://wiki.archlinux.org/index.php?title=Pacserve&oldid=408558)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [Package management](/index.php/Category:Package_management "Category:Package management")
-*   [Networking](/index.php/Category:Networking "Category:Networking")

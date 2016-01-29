@@ -1,9 +1,5 @@
 # Beginners' guide
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
@@ -100,7 +96,7 @@ If certain characters appear as white squares or other symbols, change the [cons
 
 ### Connect to the Internet
 
-Wired
+NaN
 
 The [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon is enabled on boot for wired devices, and will attempt to start a connection. To access captive portal login forms, use the [ELinks](/index.php/ELinks "ELinks") browser.
 
@@ -113,7 +109,7 @@ Verify a connection was established, for example with _ping_. If none is availab
 
 [Interfaces](/index.php/Network_configuration#Device_names "Network configuration") can be listed using `ip link`, or `iw dev` for wireless devices. They are prefixed with `en` (ethernet), `wl` (WLAN), or `ww` (WWAN).
 
-Wireless
+NaN
 
 List [available networks](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration"), and make a connection for a specified interface:
 
@@ -124,7 +120,7 @@ List [available networks](/index.php/Wireless_network_configuration#Getting_some
 
 The resulting configuration file is stored in `/etc/netctl`. For networks which require both a username and password, see [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise").
 
-Other
+NaN
 
 Several example profiles, such as for configuring a [static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"), are available. Copy the required one to `/etc/netctl`, for example `ethernet-static`:
 
@@ -294,7 +290,7 @@ The following command will be used to create partitions:
 *   `_part-type_` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
 *   `_fs-type_` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#File systems and swap](#File_systems_and_swap). The _mkpart_ command does not actually create the file system: the `_fs-type_` parameter will simply be used by _parted_ to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
 
-**Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an _ext4_-formatted partition.
+NaN
 
 *   `_start_` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1M` means start at 1MiB.
 *   `_end_` is the end of the partition from the start of the device (_not_ from the `_start_` value). It has the same syntax as `_start_`, for example `100%` means end at the end of the device (use all the remaining space).
@@ -655,7 +651,3 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=416622](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=416622)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")

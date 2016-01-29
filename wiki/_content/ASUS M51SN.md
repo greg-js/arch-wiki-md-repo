@@ -1,9 +1,5 @@
 # ASUS M51SN
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Configuration](#Configuration)
@@ -66,7 +62,3 @@ Works out of the box.
 Works out of the box.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_M51SN&oldid=297833](https://wiki.archlinux.org/index.php?title=ASUS_M51SN&oldid=297833)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [ASUS](/index.php/Category:ASUS "Category:ASUS")

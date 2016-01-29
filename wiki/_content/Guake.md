@@ -1,9 +1,5 @@
 # Guake
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
@@ -154,7 +150,3 @@ for_window [class="Main.py"] floating enable
 *   [man guake(1)](http://linux.die.net/man/1/guake) on die.net
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Guake&oldid=412246](https://wiki.archlinux.org/index.php?title=Guake&oldid=412246)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators")

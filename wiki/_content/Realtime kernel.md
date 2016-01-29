@@ -1,9 +1,5 @@
 # Realtime kernel
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
 
 [![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
@@ -146,11 +142,3 @@ The result shows 16 NMIs detected that exceeded the 15 usecs threshold specified
 *   A problem with the powernow-k8 module causing a hang at boot on some AMD CPUs.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Realtime_kernel&oldid=367042](https://wiki.archlinux.org/index.php?title=Realtime_kernel&oldid=367042)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Kernel](/index.php/Category:Kernel "Category:Kernel")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

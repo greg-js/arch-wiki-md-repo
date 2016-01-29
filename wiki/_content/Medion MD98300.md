@@ -1,9 +1,5 @@
 # Medion MD98300
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -353,7 +349,3 @@ man ionice
 On [this page](/index.php/Touchpad_Synaptics "Touchpad Synaptics") are a few cool tweaks like circular scrolling.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Medion_MD98300&oldid=298147](https://wiki.archlinux.org/index.php?title=Medion_MD98300&oldid=298147)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Laptops](/index.php/Category:Laptops "Category:Laptops")

@@ -1,9 +1,5 @@
 # SCM Example Trac
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
 
 [![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
@@ -36,25 +32,11 @@ Updated for Trac 0.11
 
 ## Basic Environment
 
-Network
+NaN
 
-URL: [http://scm.example.com](http://scm.example.com)
+NaN
 
-Subversion URL: [http://scm.example.com/svn/MY_PROJECT](http://scm.example.com/svn/MY_PROJECT)
-
-Trac URL: [http://scm.example.com/trac/MY_PROJECT](http://scm.example.com/trac/MY_PROJECT)
-
-Database
-
-PostgreSQL, with trust authentication method
-
-Filesystem
-
-Configuration files are in `/mnt/rpo/conf`
-
-Subversion repositories is in `/mnt/rpo/svn`
-
-Trac project files is in `/mnt/rpo/trac`
+NaN
 
 ## Preparation
 
@@ -202,9 +184,7 @@ Just execute one line:
 
 ```
 
-Database connection string: `postgres://trac:password@localhost/trac?schema=MY_PROJECT`
-
-(each project must be given an unique schema; no need to create the schemas first)
+NaN
 
 *   Grant admin permission to all logon users:
 
@@ -217,7 +197,7 @@ Database connection string: `postgres://trac:password@localhost/trac?schema=MY_P
 
 *   Change **repository_type** to **svn**
 *   Change **repository_path** to **/mnt/rpo/svn/MY_PROJECT**
-*   Change **default_charset** to **utf-8** or other encodings.  
+*   Change **default_charset** to **utf-8** or other encodings.
 
 *   Allow web admin ([http://scm.example.com/trac/MY_PROJECT/admin](http://scm.example.com/trac/MY_PROJECT/admin)):
 
@@ -227,11 +207,3 @@ echo -e "[components]\nwebadmin.* = enabled" >> /mnt/rpo/trac/MY_PROJECT/conf/tr
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SCM_Example_Trac&oldid=397602](https://wiki.archlinux.org/index.php?title=SCM_Example_Trac&oldid=397602)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Out of date](/index.php/Category:Pages_or_sections_flagged_with_Template:Out_of_date "Category:Pages or sections flagged with Template:Out of date")

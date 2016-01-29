@@ -1,9 +1,5 @@
 # fish
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 **fish** (the **friendly interactive shell**) is a user friendly command line shell intended mostly for interactive use.
 
 ## Contents
@@ -261,11 +257,3 @@ end
 *   [http://fishshell.com/docs/2.1/index.html](http://fishshell.com/docs/2.1/index.html) - Documentation
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fish&oldid=416007](https://wiki.archlinux.org/index.php?title=Fish&oldid=416007)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Command shells](/index.php/Category:Command_shells "Category:Command shells")
-
-Hidden category:
-
-*   [Pages or sections flagged with Template:Accuracy](/index.php/Category:Pages_or_sections_flagged_with_Template:Accuracy "Category:Pages or sections flagged with Template:Accuracy")

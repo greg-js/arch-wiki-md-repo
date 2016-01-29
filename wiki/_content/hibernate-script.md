@@ -1,9 +1,5 @@
 # hibernate-script
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [pm-utils](/index.php/Pm-utils "Pm-utils")
@@ -209,7 +205,7 @@ ProcSetting extra_pages_allowance 20000
 
 ### Dropping disk caches
 
-<small>_From: [drop_caches introduction](http://www.linuxinsight.com/proc_sys_vm_drop_caches.html)_</small>
+NaN
 
 As a way to speed up suspending, you can free the memory used for disk caches so there will be less to write to the disk. Just add something like this to the `common.conf`:
 
@@ -561,12 +557,3 @@ echo " LID" > /proc/acpi/wakeup
 ```
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Hibernate-script&oldid=392232](https://wiki.archlinux.org/index.php?title=Hibernate-script&oldid=392232)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Power management](/index.php/Category:Power_management "Category:Power management")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Style](/index.php/Category:Pages_or_sections_flagged_with_Template:Style "Category:Pages or sections flagged with Template:Style")

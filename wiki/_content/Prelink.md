@@ -1,9 +1,5 @@
 # Prelink
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Most programs require libraries to function. Libraries can be integrated into a program once, by a linker, when it is compiled (static linking) or they can be integrated when the program is run by a loader, (dynamic linking). Dynamic linking has advantages in code size and management, but every time a program is run, the loader needs to find the relevant libraries. Because the libraries can move around in memory, this causes a performance penalty, and the more libraries that need to be resolved, the greater the penalty. Prelink reduces this penalty by using the system's dynamic linker to reversibly perform this linking in advance ("prelinking" the executable file) by relocating. Afterward, the program only needs to spend time finding the relevant libraries on being run if, for some reason (perhaps an upgrade), the libraries have changed since being prelinked.
 
 **Warning:** There are some arguments against using Prelink presented in [Fedora bug #1183](https://fedorahosted.org/fesco/ticket/1183). As summed up in the linked [LWN article](http://lwn.net/Articles/341244/): "overall, pre-linking is a bit of a hack, and it is far from clear that its benefits are substantial enough to overcome that".
@@ -126,7 +122,3 @@ and give it the necessary ownership and permissions:
 *   [ELF Prelinking and what it can do for you](http://crast.us/james/articles/prelink.php)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Prelink&oldid=407989](https://wiki.archlinux.org/index.php?title=Prelink&oldid=407989)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [System administration](/index.php/Category:System_administration "Category:System administration")

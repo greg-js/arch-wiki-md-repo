@@ -1,9 +1,5 @@
 # Streaming using twitch.tv
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol "wikipedia:Real Time Messaging Protocol") based streaming services offered. As [Steam](/index.php/Steam "Steam") has a Linux client available, some people may be in search of solutions to stream their games or Linux desktop. As there are no well known Linux broadcasting programs just yet, most solutions at this point are CLI based. The info included here should serve as a list of such solutions.
 
 ## Contents
@@ -90,176 +86,26 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
 
 ```
 
-<table class="wikitable"><caption>**Ffmpeg Parameter breakdown**</caption>
-
-<tbody>
-
-<tr>
-
-<th>Parameter</th>
-
-<th>Description</th>
-
-</tr>
-
-<tr>
-
-<td>ffmpeg</td>
-
-<td>The converter</td>
-
-</tr>
-
-<tr>
-
-<td>-f x11grab</td>
-
-<td>-f forces input to be from x11grab</td>
-
-</tr>
-
-<tr>
-
-<td>-s $INRES</td>
-
-<td>-s sets a specific image size, relying on the variable $INRES</td>
-
-</tr>
-
-<tr>
-
-<td>-r $FPS</td>
-
-<td>-r sets framerate to be the value equal to $FPS</td>
-
-</tr>
-
-<tr>
-
-<td>-i :0.0</td>
-
-<td>-i gets input, in this case its pulling in screen :0.0 from x11\. Can be adjusted, e.g. -i :0.0+500,100 to start at screenpos 500/100</td>
-
-</tr>
-
-<tr>
-
-<td>-b:v $CBR</td>
-
-<td>-b:v specifies that the video bitrate is to be changed. the value of the bitrate is set by $CBR</td>
-
-</tr>
-
-<tr>
-
-<td>-ab 96k</td>
-
-<td>-ab sets audio bitrate to 96k. **-b:a** is the alternate form of this command</td>
-
-</tr>
-
-<tr>
-
-<td>-f alsa</td>
-
-<td>forces input(?) to be from alsa</td>
-
-</tr>
-
-<tr>
-
-<td>-ac 2</td>
-
-<td>sets audio channels to 2</td>
-
-</tr>
-
-<tr>
-
-<td>-i pulse</td>
-
-<td>gets input from pulse</td>
-
-</tr>
-
-<tr>
-
-<td>-vcodec libx264</td>
-
-<td>sets video codec to libx264</td>
-
-</tr>
-
-<tr>
-
-<td>-crf 23</td>
-
-<td>sets the ffmpeg constant rate factor to 23</td>
-
-</tr>
-
-<tr>
-
-<td>-preset "$QUAL"</td>
-
-<td>sets the preset compression quality and speed</td>
-
-</tr>
-
-<tr>
-
-<td>-s "1280x720"</td>
-
-<td>specifies size of image to be 720p</td>
-
-</tr>
-
-<tr>
-
-<td>-acodec libmp3lame</td>
-
-<td>sets audio codec to use libmp3lame</td>
-
-</tr>
-
-<tr>
-
-<td>-ar 44100</td>
-
-<td>sets audio rate to 44100 hz</td>
-
-</tr>
-
-<tr>
-
-<td>-threads 0</td>
-
-<td>sets cpu threads to start, 0 autostarts threads based on cpu cores</td>
-
-</tr>
-
-<tr>
-
-<td>-pix_fmt yuv420p</td>
-
-<td>sets pixel format to Y'UV420p. Otherwise by default Y'UV444 is used and is incompatible with twitch</td>
-
-</tr>
-
-<tr>
-
-<td>-f flv "$URL"</td>
-
-<td>forces format to flv, and outputs to the twitch RTMP url</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<caption>**Ffmpeg Parameter breakdown**</caption>
+| Parameter | Description |
+| ffmpeg | The converter |
+| -f x11grab | -f forces input to be from x11grab |
+| -s $INRES | -s sets a specific image size, relying on the variable $INRES |
+| -r $FPS | -r sets framerate to be the value equal to $FPS |
+| -i :0.0 | -i gets input, in this case its pulling in screen :0.0 from x11\. Can be adjusted, e.g. -i :0.0+500,100 to start at screenpos 500/100 |
+| -b:v $CBR | -b:v specifies that the video bitrate is to be changed. the value of the bitrate is set by $CBR |
+| -ab 96k | -ab sets audio bitrate to 96k. **-b:a** is the alternate form of this command |
+| -f alsa | forces input(?) to be from alsa |
+| -ac 2 | sets audio channels to 2 |
+| -i pulse | gets input from pulse |
+| -vcodec libx264 | sets video codec to libx264 |
+| -crf 23 | sets the ffmpeg constant rate factor to 23 |
+| -preset "$QUAL" | sets the preset compression quality and speed |
+| -s "1280x720" | specifies size of image to be 720p |
+| -acodec libmp3lame | sets audio codec to use libmp3lame |
+| -ar 44100 | sets audio rate to 44100 hz |
+| -threads 0 | sets cpu threads to start, 0 autostarts threads based on cpu cores |
+| -pix_fmt yuv420p | sets pixel format to Y'UV420p. Otherwise by default Y'UV444 is used and is incompatible with twitch |
+| -f flv "$URL" | forces format to flv, and outputs to the twitch RTMP url |
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Streaming_using_twitch.tv&oldid=365348](https://wiki.archlinux.org/index.php?title=Streaming_using_twitch.tv&oldid=365348)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Streaming](/index.php/Category:Streaming "Category:Streaming")

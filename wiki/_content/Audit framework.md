@@ -1,9 +1,5 @@
 # Audit framework
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 The Linux audit framework provides a CAPP-compliant (Controlled Access Protection Profiles) auditing system that reliably collects information about any security-relevant (or non-security-relevant) event on a system. It can help you track actions performed on a system.
 
 Linux audit helps make your system more secure by providing you with a means to analyze what is happening on your system in great detail. It does not, however, provide additional security itself—it does not protect your system from code malfunctions or any kind of exploits. Instead, Audit is useful for tracking these issues and helps you take additional security measures, to prevent them.
@@ -208,7 +204,3 @@ tcp_client_max_idle = 0
 Now you can view the logs of **all** configured hosts in the logfiles of the recieving auditd.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Audit_framework&oldid=417227](https://wiki.archlinux.org/index.php?title=Audit_framework&oldid=417227)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Security](/index.php/Category:Security "Category:Security")

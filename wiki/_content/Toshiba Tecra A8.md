@@ -1,9 +1,5 @@
 # Toshiba Tecra A8
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 ## Contents
 
 *   [1 Reference Information](#Reference_Information)
@@ -136,7 +132,3 @@ EndSection
 Do not enable circular scrolling as it will freaze the pointer in the center of the screen.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_A8&oldid=225302](https://wiki.archlinux.org/index.php?title=Toshiba_Tecra_A8&oldid=225302)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Toshiba](/index.php/Category:Toshiba "Category:Toshiba")

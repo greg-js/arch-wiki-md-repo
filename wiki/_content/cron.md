@@ -1,9 +1,5 @@
 # cron
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 Related articles
 
 *   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
@@ -221,13 +217,7 @@ smtpmsg='421 … Error: timeout exceeded' errormsg='the server did not accept th
 
 To solve this problem you can use the command chronic or sponge from [moreutils](https://www.archlinux.org/packages/?name=moreutils). From their respective man page:
 
-chronic
-
-chronic runs a command, and arranges for its standard out and standard error to only be displayed if the command fails (exits nonzero or crashes). If the command succeeds, any extraneous output will be hidden.
-
-sponge
-
-sponge reads standard input and writes it out to the specified file. Unlike a shell redirect, sponge soaks up all its input before opening the output file… If no output file is specified, sponge outputs to stdout.
+NaN
 
 Even if it's not said chronic buffer the command output before opening its standard output (like sponge does).
 
@@ -523,12 +513,3 @@ See the crontab [man page](/index.php/Man_page "Man page") for further informati
 *   [Gentoo Linux Cron Guide](http://www.gentoo.org/doc/en/cron-guide.xml)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Cron&oldid=413896](https://wiki.archlinux.org/index.php?title=Cron&oldid=413896)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")
-
-Hidden categories:
-
-*   [Pages with broken package links](/index.php/Category:Pages_with_broken_package_links "Category:Pages with broken package links")
-*   [Pages or sections flagged with Template:Expansion](/index.php/Category:Pages_or_sections_flagged_with_Template:Expansion "Category:Pages or sections flagged with Template:Expansion")

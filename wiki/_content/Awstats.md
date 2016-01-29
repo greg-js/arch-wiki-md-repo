@@ -1,12 +1,8 @@
 # Awstats
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 From [AWStats - Free log file analyzer for advanced statistics](http://awstats.sourceforge.net/):
 
-_AWStats is a free powerful and featureful tool that generates advanced web, streaming, ftp or mail server statistics, graphically. This log analyzer works as a CGI or from command line and shows you all possible information your log contains, in few graphical web pages. It uses a partial information file to be able to process large log files, often and quickly. It can analyze log files from all major server tools like Apache log files (NCSA combined/XLF/ELF log format or common/CLF log format), WebStar, IIS (W3C log format) and a lot of other web, proxy, wap, streaming servers, mail servers and some ftp servers._
+NaN
 
 ## Contents
 
@@ -237,7 +233,3 @@ LoadPlugin="geoip GEOIP_STANDARD /usr/share/GeoIP/GeoIP.dat"
 *   [mod_perl](/index.php/Mod_perl "Mod perl") Apache + Perl
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Awstats&oldid=388014](https://wiki.archlinux.org/index.php?title=Awstats&oldid=388014)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [Web server](/index.php/Category:Web_server "Category:Web server")

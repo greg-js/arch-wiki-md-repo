@@ -1,148 +1,19 @@
 # HP Folio 13
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
-<table style="float:right; border: 1px solid #000;">
-
-<tbody>
-
-<tr>
-
-<td>**Device**</td>
-
-<td>**Status**</td>
-
-<td>**Modules**</td>
-
-</tr>
-
-<tr>
-
-<td>Intel</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>HDMI</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-video-intel</td>
-
-</tr>
-
-<tr>
-
-<td>Ethernet</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Wireless</td>
-
-<td style="color:green">**Working**</td>
-
-<td>broadcom-wl (brcmsmac not working)</td>
-
-</tr>
-
-<tr>
-
-<td>Bluetooth</td>
-
-<td style="color:green">**Working**</td>
-
-<td>btusb (needs tweaking to work)</td>
-
-</tr>
-
-<tr>
-
-<td>Audio</td>
-
-<td style="color:green">**Working**</td>
-
-<td>snd_hda_intel</td>
-
-</tr>
-
-<tr>
-
-<td>Touchpad</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xf86-input-synaptics-led</td>
-
-</tr>
-
-<tr>
-
-<td>Camera</td>
-
-<td style="color:green">**Working**</td>
-
-<td>uvcvideo</td>
-
-</tr>
-
-<tr>
-
-<td>USB 3.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>xhci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>USB 2.0</td>
-
-<td style="color:green">**Working**</td>
-
-<td>ehci-hcd</td>
-
-</tr>
-
-<tr>
-
-<td>eSATA</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Card Reader</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-<tr>
-
-<td>Function Keys</td>
-
-<td style="color:green">**Working**</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| **Device** | **Status** | **Modules** |
+| Intel | **Working** | xf86-video-intel |
+| HDMI | **Working** | xf86-video-intel |
+| Ethernet | **Working** |
+| Wireless | **Working** | broadcom-wl (brcmsmac not working) |
+| Bluetooth | **Working** | btusb (needs tweaking to work) |
+| Audio | **Working** | snd_hda_intel |
+| Touchpad | **Working** | xf86-input-synaptics-led |
+| Camera | **Working** | uvcvideo |
+| USB 3.0 | **Working** | xhci-hcd |
+| USB 2.0 | **Working** | ehci-hcd |
+| eSATA | **Working** |
+| Card Reader | **Working** |
+| Function Keys | **Working** |
 
 ## Contents
 
@@ -302,7 +173,3 @@ Your particular model may use an Intel Centrino Wireless-N 1030, which uses the 
 As of kernel 3.16, the native kernel "brcmsmac" driver fixed the above problem of a weak wireless signal.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=HP_Folio_13&oldid=400975](https://wiki.archlinux.org/index.php?title=HP_Folio_13&oldid=400975)"
-
-[Category](/index.php/Special:Categories "Special:Categories"):
-
-*   [HP](/index.php/Category:HP "Category:HP")

@@ -1,9 +1,5 @@
 # X KeyBoard extension
 
-From ArchWiki
-
-Jump to: [navigation](#column-one), [search](#searchInput)
-
 X KeyBoard extension, or XKB, defines the way keyboards codes are handled in X, and provides access to internal translation tables. It is the basic mechanism that allows using multiple keyboard layouts in X.
 
 Learning about XKB can be hard without some hands-on experience. This page is intended to help users to start with XKB by doing some changes to their keymaps. It is not meant as a complete guide to all XKB features. Instead, it skips over gritty details and focuses on the most practical things first.
@@ -1052,8 +1048,3 @@ Using [rules](#Using_rules) instead of static keymap configuration will give you
 *   [XKB protocol specification](http://www.x.org/releases/current/doc/kbproto/xkbproto.pdf). Comprehensive description of all XKB features. Extremely useful for understating how XKB works, includes a good description of virtual modifiers among other things. Some practice with xkbcomp is strongly recommended though, because the features are described on protocol level.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=X_KeyBoard_extension&oldid=415762](https://wiki.archlinux.org/index.php?title=X_KeyBoard_extension&oldid=415762)"
-
-[Categories](/index.php/Special:Categories "Special:Categories"):
-
-*   [X server](/index.php/Category:X_server "Category:X server")
-*   [Keyboards](/index.php/Category:Keyboards "Category:Keyboards")
