@@ -11,7 +11,7 @@
 
 ## Installation
 
-Install [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> package. Alternatively, it is also available [touchegg-svn](https://aur.archlinux.org/packages/touchegg-svn/)<sup><small>AUR</small></sup>.
+Install [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> package. Alternatively, it is also available [touchegg-git](https://aur.archlinux.org/packages/touchegg-git/)<sup><small>AUR</small></sup>.
 
 You can also install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/)<sup><small>AUR</small></sup> - [Touchegg-GCE](https://github.com/Raffarti/Touchegg-gce) (GUI configuration editor).
 
@@ -59,4 +59,4 @@ Alternatively, you can modify your [.xprofile](/index.php/.xprofile ".xprofile")
 
  `~/.xprofile`  `touchegg &` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchegg&oldid=409576](https://wiki.archlinux.org/index.php?title=Touchegg&oldid=409576)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Touchegg&oldid=418366](https://wiki.archlinux.org/index.php?title=Touchegg&oldid=418366)"

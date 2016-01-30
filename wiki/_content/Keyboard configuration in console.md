@@ -86,7 +86,7 @@ $ localectl set-keymap --no-convert _keymap_
 
 ```
 
-The `--no-convert` option can be used to prevent `localectl` to automatically change the [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") to the nearest match. See `man localectl` for more information.
+The `--no-convert` option can be used to prevent `localectl` from automatically changing the [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") to the nearest match. See `man localectl` for more information.
 
 ### Temporary configuration
 
@@ -153,4 +153,4 @@ $ systemctl start kbdrate.service
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&oldid=400875](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&oldid=400875)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&oldid=418198](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&oldid=418198)"

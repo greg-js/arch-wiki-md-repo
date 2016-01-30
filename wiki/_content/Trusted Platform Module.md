@@ -127,4 +127,4 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 *   [Embedded Security Subsystem on Thinkwiki](http://www.thinkwiki.org/wiki/Embedded_Security_Subsystem)
 *   [TPM Fundamentals (PDF)](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Trusted_Platform_Module&oldid=416502](https://wiki.archlinux.org/index.php?title=Trusted_Platform_Module&oldid=416502)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Trusted_Platform_Module&oldid=418409](https://wiki.archlinux.org/index.php?title=Trusted_Platform_Module&oldid=418409)"

@@ -109,7 +109,7 @@ This should allow you to set qemu user and group to something a little safer tha
 
 ## Isolating the GPU
 
-Find your target card's PCI location:
+Find your target card's PCI locations and device IDs:
 
  `lspci -nn|grep -iP "NVIDIA|Radeon"` 
 
@@ -119,7 +119,7 @@ Find your target card's PCI location:
 04:00.0 VGA compatible controller [0300]: NVIDIA Corporation G73 [GeForce 7600 GS] [10de:0392] (rev a1)
 ```
 
-In this case, the three locations we're after are `1002:6719 1002:aa80 10de:0392`. Make note of any locations you intend to pass through to the VM.
+In this case, the three PCI device IDs we're after are `1002:6719 1002:aa80 10de:0392`, and their locations are `01:00.0 01:00.1 04:00.0`. Make note of any locations and device IDs you intend to pass through to the VM.
 
 To allow the VM access to your passthrough'd devices, you'll need to claim it before the host drivers do. This can be achieved with either one of two kernel modules, `vfio-pci` or `pci-stub`.
 
@@ -130,7 +130,7 @@ $ modprobe vfio-pci
 
 ```
 
-If there is no output, you're good to go. If instead you recieve `modprobe: FATAL: Module vfio-pci not found`, use the guide further down for `pci-stub` instead.
+If there is no output, you're good to go. If instead you receive `modprobe: FATAL: Module vfio-pci not found`, use the guide further down for `pci-stub` instead.
 
 ### vfio-pci
 
@@ -204,7 +204,7 @@ $ echo "pci-stub" > sude tee /etc/modules-load.d/vfio.conf
 
 ```
 
-Add the relevant PCI locations to the kernel command line:
+Add the relevant PCI device IDs to the kernel command line:
 
  `/etc/mkinitcpio.conf` 
 
@@ -373,7 +373,7 @@ qemu-system-x86_64 \
 
 `-vga none` - disables the built in graphics card emulation.
 
-`-device vfio-pci,host=01:00.0 \` - graphics card(s) you are using for VGA passthrough.
+`-device vfio-pci,host=01:00.0 \` - PCI location of graphics card(s) you are using for VGA passthrough.
 
 `-drive if=flash,format=raw,readonly,file=/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd` BIOS location.
 
@@ -607,4 +607,4 @@ options kvm ignore_msrs=1
 *   [Example script from https://www.youtube.com/watch?v=37D2bRsthfI](http://pastebin.com/rcnUZCv7)
 *   [Complete tutorial for PCI passthrough](http://vfio.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=412150](https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=412150)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=418209](https://wiki.archlinux.org/index.php?title=PCI_passthrough_via_OVMF&oldid=418209)"

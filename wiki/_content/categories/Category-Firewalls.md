@@ -37,4 +37,4 @@ The following 10 pages are in this category, out of 10 total.
 
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Firewalls&oldid=385178](https://wiki.archlinux.org/index.php?title=Category:Firewalls&oldid=385178)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Firewalls&oldid=418253](https://wiki.archlinux.org/index.php?title=Category:Firewalls&oldid=418253)"

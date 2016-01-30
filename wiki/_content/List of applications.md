@@ -1065,7 +1065,7 @@ NaN
 
 ###### Multi-protocol
 
-*   **[SFLPhone](https://en.wikipedia.org/wiki/SFLphone "wikipedia:SFLphone")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support.
+*   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
 NaN
 
@@ -3756,6 +3756,10 @@ NaN
 NaN
 
 *   **[Textadept](/index.php/Textadept "Textadept")** — Lua-extensible feature rich text editor based on Scintilla and written in C.
+
+NaN
+
+*   **[Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code "wikipedia:Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
 NaN
 

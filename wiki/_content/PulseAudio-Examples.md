@@ -286,19 +286,20 @@ Create a script to switch to the desired audio profile if an HDMI cable is plugg
  `/usr/local/bin/hdmi_sound_toggle.sh` 
 
 ```
-#!/bin/sh
-USER_NAME=`who | grep "(:0)" | cut -f 1 -d ' '`
-USER_ID=`id -u $USER_NAME`
-HDMI_STATUS=`cat /sys/class/drm/card0/*HDMI*/status`
+#!/bin/bash
+USER_NAME=$(w -hs | awk -v vt=tty$(fgconsole) '$0 ~ vt {print $1}')
+USER_ID=$(id -u "$USER_NAME")
+HDMI_STATUS=$(</sys/class/drm/card0/*HDMI*/status)
 
 export PULSE_SERVER="unix:/run/user/"$USER_ID"/pulse/native"
 
-if [ $HDMI_STATUS = "connected" ]
+if [[ $HDMI_STATUS == connected ]]
 then
-   sudo -u $USER_NAME pactl --server $PULSE_SERVER set-card-profile 0 output:hdmi-stereo+input:analog-stereo
+   sudo -u "$USER_NAME" pactl --server "$PULSE_SERVER" set-card-profile 0 output:hdmi-stereo+input:analog-stereo
 else
-   sudo -u $USER_NAME pactl --server $PULSE_SERVER set-card-profile 0 output:analog-stereo+input:analog-stereo
+   sudo -u "$USER_NAME" pactl --server "$PULSE_SERVER" set-card-profile 0 output:analog-stereo+input:analog-stereo
 fi
+
 ```
 
 Make the script executable:
@@ -887,4 +888,4 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=417103](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=417103)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=418200](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=418200)"

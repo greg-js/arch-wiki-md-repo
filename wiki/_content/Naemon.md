@@ -13,6 +13,8 @@
 
 Install [naemon-core](https://aur.archlinux.org/packages/naemon-core/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Note that the [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/)<sup><small>AUR</small></sup> and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/)<sup><small>AUR</small></sup> packages will also be built.
 
+Install the plugins from [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) as well as [fping](https://www.archlinux.org/packages/?name=fping).
+
 ## Web interface
 
 Install [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/)<sup><small>AUR</small></sup> and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/)<sup><small>AUR</small></sup>, then uncomment:
@@ -57,4 +59,4 @@ The default username and password is admin, admin.
 *   [op5 on Naemon, Nagios and the future](http://www.op5.com/blog/news/op5-naemon-nagios-future/)
 *   [Andreas Ericsson: The future of Nagios](http://www.youtube.com/watch?v=YgbbyyNIiHc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Naemon&oldid=370477](https://wiki.archlinux.org/index.php?title=Naemon&oldid=370477)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Naemon&oldid=418383](https://wiki.archlinux.org/index.php?title=Naemon&oldid=418383)"

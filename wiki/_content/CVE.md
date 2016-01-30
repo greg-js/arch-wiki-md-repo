@@ -60,6 +60,7 @@ The response time is the time taken to get a fixed package to the stable reposit
 
 | **TRACKED CVE's** |
 | CVE-ID | Package | Disclosure date | Affected versions | Fixed in Arch Linux package version | Arch Linux response time | Status (and related bug reports) | ASA-ID |
+| [CVE-2016-2090](https://access.redhat.com/security/cve/CVE-2016-2090) | [libbsd](https://www.archlinux.org/packages/?name=libbsd) | 2016-01-27 | <= 0.8.1-1 | Vulnerable |
 | [CVE-2015-3197](https://access.redhat.com/security/cve/CVE-2015-3197) [CVE-2015-4000](https://access.redhat.com/security/cve/CVE-2015-4000) [CVE-2016-0701](https://access.redhat.com/security/cve/CVE-2016-0701) [[1]](https://openssl.org/news/secadv/20160128.txt) | [openssl](https://www.archlinux.org/packages/?name=openssl) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) | 2016-01-28 | <= 1.0.2.e-1 | 1.0.2.f-1 | 1d | Fixed | [ASA-201601-32](https://lists.archlinux.org/pipermail/arch-security/2016-January/000538.html) [ASA-201601-33](https://lists.archlinux.org/pipermail/arch-security/2016-January/000539.html) |
 | [CVE-2016-0755](https://access.redhat.com/security/cve/CVE-2016-0755) [[2]](http://curl.haxx.se/docs/adv_20160127A.html) | [curl](https://www.archlinux.org/packages/?name=curl) [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) | 2016-01-27 | <= 7.46.0-1 | **Vulnerable** |
 | [CVE-2016-0742](https://access.redhat.com/security/cve/CVE-2016-0742) [CVE-2016-0746](https://access.redhat.com/security/cve/CVE-2016-0746) [CVE-2016-0747](https://access.redhat.com/security/cve/CVE-2016-0747) [[3]](http://mailman.nginx.org/pipermail/nginx-announce/2016/000168.html) | [nginx](https://www.archlinux.org/packages/?name=nginx) | 2016-01-26 | <= 1.8.0-2 | 1.8.1-1 | <1d | Fixed | [ASA-201601-31](https://lists.archlinux.org/pipermail/arch-security/2016-January/000536.html) |
@@ -487,4 +488,4 @@ The response time is the time taken to get a fixed package to the stable reposit
 | [CVE-2014-1235](https://access.redhat.com/security/cve/CVE-2014-1235) | [graphviz](https://www.archlinux.org/packages/?name=graphviz) | 2014-01-07 |  ? |  ? | 3d | Fixed ([FS#38441](https://bugs.archlinux.org/task/38441)) |
 | [CVE-2014-0978](https://access.redhat.com/security/cve/CVE-2014-0978) | [freerdp](https://www.archlinux.org/packages/?name=freerdp) | 2014-01-10 | <1.0.2 | 1.0.2-5 | 67d | Fixed ([FS#38802](https://bugs.archlinux.org/task/38802)) |
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=417852](https://wiki.archlinux.org/index.php?title=CVE&oldid=417852)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CVE&oldid=418393](https://wiki.archlinux.org/index.php?title=CVE&oldid=418393)"

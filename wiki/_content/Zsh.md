@@ -368,7 +368,7 @@ dirs -v
 
 to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autocompletion after the dash. This proves very handy if using the autocompletion menu.
 
-N.B. this will not work if you have more than one `zsh` session open, and attempt to `cd`, due to a conflict in both sessions writing to the same file.
+**Note:** This will not work if you have more than one _zsh_ session open, and attempt to `cd`, due to a conflict in both sessions writing to the same file.
 
 ### Help command
 
@@ -472,4 +472,4 @@ _username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
 *   [Gentoo Wiki: Zsh/HOWTO](https://wiki.gentoo.org/wiki/Zsh/HOWTO)
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=417799](https://wiki.archlinux.org/index.php?title=Zsh&oldid=417799)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=418208](https://wiki.archlinux.org/index.php?title=Zsh&oldid=418208)"

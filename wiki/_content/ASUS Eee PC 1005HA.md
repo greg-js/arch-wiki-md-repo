@@ -69,7 +69,7 @@ According to Powertop the 1005HA uses around 7-10 Watts on maximum powersave (us
 
 To further save power it is possible to use gmabooster to force a lower clock on the GPU when entering powersave and to overclock when on AC power.
 
-Install [gmabooster](https://aur.archlinux.org/packages/gmabooster/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gmabooster)]</sup> and then trigger the different clock levels with:
+Install [gmabooster](https://aur.archlinux.org/packages/gmabooster/)<sup><small>AUR</small></sup> and then trigger the different clock levels with:
 
 ```
 echo "foo" | gmabooster
@@ -298,4 +298,4 @@ Note that this is the 1005HA-M version.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417797](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=417797)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=418330](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=418330)"

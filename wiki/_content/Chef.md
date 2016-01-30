@@ -34,7 +34,7 @@ A monolithic package that provides Chef.
 
 ### Installation by Package
 
-Install the [omnibus-chef](https://aur.archlinux.org/packages/omnibus-chef/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/omnibus-chef)]</sup> package from AUR. If not using an AUR helper, first install the needed dependency, [ruby-bundler](https://aur.archlinux.org/packages/ruby-bundler/)<sup><small>AUR</small></sup>.
+Install the [omnibus-chef](https://aur.archlinux.org/packages/omnibus-chef/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/omnibus-chef)]</sup> package from AUR. If not using an AUR helper, first install the needed dependency, [ruby-bundler](https://www.archlinux.org/packages/?name=ruby-bundler).
 
 This package builds and installs an omnibus Makeself installer for Chef. If you choose not to run the installer upon installation of the package, you can run it any time:
 
@@ -123,4 +123,4 @@ Next, install the Chef RubyGem:
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chef&oldid=412525](https://wiki.archlinux.org/index.php?title=Chef&oldid=412525)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chef&oldid=418331](https://wiki.archlinux.org/index.php?title=Chef&oldid=418331)"

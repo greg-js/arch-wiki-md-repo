@@ -149,7 +149,9 @@ To actually use your encrypted folder, you will have to mount it - see [#Mountin
 
 #### Encrypting a home directory
 
-The following wrapper script will set up an encrypted `$HOME` directory for a user and take care of migrating any existing files they have in their not yet encrypted home directory. Ensure that the user in question _owns no processes_ and is _logged out_. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) installed. Once the prerequisites have been met, run:
+The wrapper script `ecryptfs-migrate-home` will set up an encrypted home directory for a user and take care of migrating any existing files they have in their not yet encrypted home directory.
+
+To run it, the user in question must be logged out and own no processes. The best way to achieve this is to log the user out, log into to a tty console (e.g. Ctrl+Alt+F2) as the root user, and check that `ps -ef | grep _username_` returns no output. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) installed. Once the prerequisites have been met, run:
 
 ```
 # ecryptfs-migrate-home -u _username_
@@ -157,6 +159,8 @@ The following wrapper script will set up an encrypted `$HOME` directory for a us
 ```
 
 and follow the instructions. After the wrapper script is complete, follow the instructions for auto-mounting - see [#Auto-mounting](#Auto-mounting) below. It is imperative that the user logs in _before_ the next reboot, to complete the process.
+
+Once everything is working, the unencrypted backup of the user's home directory, which is saved to `/home/_username_._random_characters_`, can and should be deleted.
 
 #### Mounting
 
@@ -626,4 +630,4 @@ Further points to note:
 *   [Chromium data protection](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data) (November 2009) - Design document detailing encryption options for Chromium OS, including explanation on its eCryptfs usage
 *   [eCryptfs design](http://ecryptfs.sourceforge.net/ecryptfs.pdf) by Michael Halcrow (May 2005) - Original design document detailing and discussing eCryptfs
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=411741](https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=411741)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=418202](https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=418202)"

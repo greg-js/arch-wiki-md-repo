@@ -194,7 +194,7 @@ The previous section outlined how to access other systems usually not close to y
 
 ### Synergy
 
-Using a tool called `synergy` it is possible for a single keyboard and mouse to access several systems as though all their monitors were a single desktop. [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/quicksynergy)]</sup> provides a convenient wrapper for the application.
+Using a tool called `synergy` it is possible for a single keyboard and mouse to access several systems as though all their monitors were a single desktop. [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/)<sup><small>AUR</small></sup> provides a convenient wrapper for the application.
 
 ### Xdmx
 
@@ -219,4 +219,4 @@ At present either Xdmx itself or the current state of window managers do not wor
 
 [xrandr](/index.php/Xrandr "Xrandr")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Extreme_Multihead&oldid=392111](https://wiki.archlinux.org/index.php?title=Extreme_Multihead&oldid=392111)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Extreme_Multihead&oldid=418335](https://wiki.archlinux.org/index.php?title=Extreme_Multihead&oldid=418335)"

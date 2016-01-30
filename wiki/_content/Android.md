@@ -228,6 +228,8 @@ and select the path where the SDK is installed (/opt/android-sdk by default). Th
 
 **Tip:** For some devices, you may have to enable MTP on the device, before ADB will work. Some other devices require enable PTP mode to work.
 
+**Tip:** Many devices' udev rules are included in [libmtp](https://www.archlinux.org/packages/?name=libmtp), so if you have this installed, the following steps may not be necessary.
+
 #### Connect device
 
 To connect to a real device or phone via ADB under Arch, you must:
@@ -643,4 +645,4 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=417219](https://wiki.archlinux.org/index.php?title=Android&oldid=417219)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=418203](https://wiki.archlinux.org/index.php?title=Android&oldid=418203)"

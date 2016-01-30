@@ -175,4 +175,4 @@ The following 70 pages are in this category, out of 70 total.
 
 *   [ZoneMinder](/index.php/ZoneMinder "ZoneMinder")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Security&oldid=394475](https://wiki.archlinux.org/index.php?title=Category:Security&oldid=394475)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Security&oldid=418284](https://wiki.archlinux.org/index.php?title=Category:Security&oldid=418284)"

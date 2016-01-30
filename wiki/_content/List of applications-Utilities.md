@@ -1063,4 +1063,4 @@ NaN
 
 NaN
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=417374](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=417374)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418367](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418367)"

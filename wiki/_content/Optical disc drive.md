@@ -56,6 +56,7 @@ NaN
     *   [4.8 GUI program log indicates problems with backend program](#GUI_program_log_indicates_problems_with_backend_program)
         *   [4.8.1 Special case: medium error / write error](#Special_case:_medium_error_.2F_write_error)
     *   [4.9 AHCI](#AHCI)
+    *   [4.10 BD-R DL 50GB errors on trying to burn second layer](#BD-R_DL_50GB_errors_on_trying_to_burn_second_layer)
 *   [5 See also](#See_also)
 
 ## Burning
@@ -872,10 +873,39 @@ Rebuild the kernel image so that it includes the newly added module:
 
 ```
 
+### BD-R DL 50GB errors on trying to burn second layer
+
+Using _wodim_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and/or _growisofs_ from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) for burning 50GB BD-R DL discs might result in a fatal error and damaged media, such as:
+
+```
+$ growisofs -Z /dev/sr0 -J -R -V "label" files
+Executing 'mkisofs -J -R -V label files | builtin_dd of=/dev/sr0 obs=32k seek=0'
+I: -input-charset not specified, using utf-8 (detected in locale settings)
+  0.03% done, estimate finish Fri Jan 29 19:50:36 2016
+  0.05% done, estimate finish Fri Jan 29 19:50:36 2016
+  0.08% done, estimate finish Fri Jan 29 19:50:36 2016
+/dev/sr0: pre-formatting blank BD-R for 49.8GB...
+/dev/sr0: "Current Write Speed" is 8.2x4390KBps.
+  0.11% done, estimate finish Sat Jan 30 03:29:13 2016
+  0.13% done, estimate finish Sat Jan 30 02:10:01 2016
+...
+ 63.20% done, estimate finish Fri Jan 29 20:43:45 2016
+:-[ WRITE@LBA=b6d820h failed with SK=3h/WRITE ERROR]: Input/output error
+:-( write failed: Input/output error
+/dev/sr0: flushing cache
+/dev/sr0: closing track
+/dev/sr0: closing session
+:-[ CLOSE SESSION failed with SK=5h/INVALID FIELD IN CDB]: Input/output error
+/dev/sr0: reloading tray
+
+```
+
+This happened at the 25GB boundary when starting to write the second layer. Using _cdrecord_ from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) works with no problems. Tested with a 'HL-DT-ST BD-RE WH16NS40' LG burner, and Verbatim BD-R DL 6x discs (#96911).
+
 ## See also
 
 *   In the United States, backup of physically obtained media is allowed under these conditions: [About Piracy - RIAA](https://www.riaa.com/resources-learning/about-piracy/).
 *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 *   [Main page of the project Libburnia](http://libburnia-project.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=417399](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=417399)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=418221](https://wiki.archlinux.org/index.php?title=Optical_disc_drive&oldid=418221)"

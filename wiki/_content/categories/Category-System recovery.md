@@ -14,7 +14,6 @@ The following 36 pages are in this category, out of 36 total.
 
 *   [Back In Time](/index.php/Back_In_Time "Back In Time")
 *   [Backup programs](/index.php/Backup_programs "Backup programs")
-*   [Backup with hdup](/index.php/Backup_with_hdup "Backup with hdup")
 *   [BackupPC](/index.php/BackupPC "BackupPC")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 
@@ -44,6 +43,10 @@ The following 36 pages are in this category, out of 36 total.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
 *   [GParted](/index.php/GParted "GParted")
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
+
+### H
+
+*   [Hdup](/index.php/Hdup "Hdup")
 
 ### K
 

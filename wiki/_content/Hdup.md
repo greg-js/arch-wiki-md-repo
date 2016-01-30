@@ -1,10 +1,14 @@
-# Backup with hdup
+# Hdup
+
+Related articles
+
+*   [Backup programs](/index.php/Backup_programs "Backup programs")
+
+This wiki page contains a guide on how to set up [hdup](http://www.miek.nl/projects/hdup2/hdup.html), "The little, spiffy, backup tool". (Don't be discouraged by the fact that on its website it says "Unmaintained!". It is a mature program, and that warning means only that its author, Miek Gieben, develops and uses a similar program ([rdup](http://www.miek.nl/projects/rdup/index.html)), which is a bit more difficult to use.) Although `hdup` is a command line program, it's easy to set up, so do not be afraid.
 
 ## Contents
 
-*   [1 Intro](#Intro)
-    *   [1.1 Features](#Features)
-    *   [1.2 Other backup programs](#Other_backup_programs)
+*   [1 Features](#Features)
 *   [2 Installing/running/restoring](#Installing.2Frunning.2Frestoring)
     *   [2.1 Installing and setting hdup up](#Installing_and_setting_hdup_up)
     *   [2.2 Running hdup](#Running_hdup)
@@ -14,26 +18,18 @@
     *   [2.5 Tips](#Tips)
 *   [3 Troubleshooting](#Troubleshooting)
 
-## Intro
-
-This wiki page contains a guide on how to set up [hdup](http://www.miek.nl/projects/hdup2/hdup.html), "The little, spiffy, backup tool". (Don't be discouraged by the fact that on its website it says "Unmaintained!". It is a mature program, and that warning means only that its author, Miek Gieben, develops and uses a similar program ([rdup](http://www.miek.nl/projects/rdup/index.html)), which is a bit more difficult to use.) Although `hdup` is a command line program, it's easy to set up, so do not be afraid.
-
-### Features
+## Features
 
 *   archives are tar.bz2 (or tar.gz)
 *   incremental backups (monthly-weekly-daily scheme)
 *   backups over ssh
 *   encrypted backups (mcrypt, gpg)
 
-### Other backup programs
-
-See the general wiki article about [backup programs](/index.php/Backup_programs "Backup programs").
-
 ## Installing/running/restoring
 
 ### Installing and setting hdup up
 
-*   hdup is in the [AUR](https://aur.archlinux.org/packages.php?ID=43255).
+*   [Install](/index.php/Install "Install") the [hdup](https://aur.archlinux.org/packages/hdup/)<sup><small>AUR</small></sup> package.
 
 *   We need to edit the configuration file **/etc/hdup/hdup.conf**. There's one supplied, so you can just edit that one; or you can use the minimal one listed here:
 
@@ -229,4 +225,4 @@ On Debian Etch, I had to add the _-P_ option when running _hdup_. This solved th
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_with_hdup&oldid=398170](https://wiki.archlinux.org/index.php?title=Backup_with_hdup&oldid=398170)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hdup&oldid=418233](https://wiki.archlinux.org/index.php?title=Hdup&oldid=418233)"

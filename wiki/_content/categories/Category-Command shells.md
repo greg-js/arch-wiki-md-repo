@@ -4,13 +4,14 @@
 
 ## Pages in category "Command shells"
 
-The following 14 pages are in this category, out of 14 total.
+The following 15 pages are in this category, out of 15 total.
 
 ### B
 
 *   [Base2heirloom](/index.php/Base2heirloom "Base2heirloom")
 *   [Bash](/index.php/Bash "Bash")
 *   [Bash/Functions](/index.php/Bash/Functions "Bash/Functions")
+*   [Bash/Functions (Русский)](/index.php/Bash/Functions_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash/Functions (Русский)")
 
 ### C
 

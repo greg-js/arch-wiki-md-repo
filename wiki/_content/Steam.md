@@ -357,6 +357,8 @@ $ ./steam.sh --reset
 
 If it doesn't, try to delete the `~/.local/share/Steam/` directory and launch steam again, telling it to reinstall itself.
 
+This error message can also occur due to a bug in steam which occurs when your `$HOME` directory ends in a slash ([https://github.com/ValveSoftware/steam-for-linux/issues/3730](https://github.com/ValveSoftware/steam-for-linux/issues/3730)). This can be fixed by editing `/etc/passwd` and changing `/home/username/` to `home/username`.
+
 ### VERSION_ID: unbound variable
 
 When you launch steam via terminal, you can see the following line:
@@ -593,4 +595,4 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=417713](https://wiki.archlinux.org/index.php?title=Steam&oldid=417713)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=418408](https://wiki.archlinux.org/index.php?title=Steam&oldid=418408)"

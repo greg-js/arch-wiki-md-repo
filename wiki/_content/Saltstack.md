@@ -88,7 +88,7 @@ Or you can accept all keys at once with :
 
 ### Salt Cloud
 
-Salt can also be used to provision cloud servers on most major cloud providers. In order to connect to these providers, additional dependencies may be required. [apache-libcloud](https://www.archlinux.org/packages/?name=apache-libcloud)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [python-apache-libcloud](https://www.archlinux.org/packages/?name=python-apache-libcloud)]</sup> is required for many popular providers such as Rackspace and Amazon, and can be found in the community repositories. Further details for configuring your cloud provider can be found at the official wiki: [http://docs.saltstack.com/en/latest/topics/cloud/](http://docs.saltstack.com/en/latest/topics/cloud/)
+Salt can also be used to provision cloud servers on most major cloud providers. In order to connect to these providers, additional dependencies may be required. [apache-libcloud](https://www.archlinux.org/packages/?name=apache-libcloud)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [python2-apache-libcloud](https://www.archlinux.org/packages/?name=python2-apache-libcloud)]</sup> is required for many popular providers such as Rackspace and Amazon, and can be found in the community repositories. Further details for configuring your cloud provider can be found at the official wiki: [http://docs.saltstack.com/en/latest/topics/cloud/](http://docs.saltstack.com/en/latest/topics/cloud/)
 
 ## Salt commands
 
@@ -114,4 +114,4 @@ for more commands see documentation or run:
 
 *   [http://docs.saltstack.com/](http://docs.saltstack.com/) - Official documentation
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Saltstack&oldid=412505](https://wiki.archlinux.org/index.php?title=Saltstack&oldid=412505)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Saltstack&oldid=418355](https://wiki.archlinux.org/index.php?title=Saltstack&oldid=418355)"

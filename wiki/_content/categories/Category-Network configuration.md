@@ -35,4 +35,4 @@ The following 11 pages are in this category, out of 11 total.
 *   [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")
 *   [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Network_configuration&oldid=397826](https://wiki.archlinux.org/index.php?title=Category:Network_configuration&oldid=397826)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Network_configuration&oldid=418281](https://wiki.archlinux.org/index.php?title=Category:Network_configuration&oldid=418281)"

@@ -479,6 +479,10 @@ NaN
 
 NaN
 
+*   **[Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code "wikipedia:Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
+
+NaN
+
 *   **XEdit** — Simple text editor for the X Window System.
 
 NaN
@@ -857,4 +861,4 @@ NaN
 
 NaN
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=415943](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=415943)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418227](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418227)"

@@ -664,11 +664,11 @@ If you want _netctl-auto_ to automatically unblock your wireless card to connect
 
 ### RTNETLINK answers: File exists (with multiple NICs)
 
-This is a very misleading response, it really means that you have assigned a default gateway in an earlier netctl control file. When netctl starts up the nth NIC and goes to set it's local route, it fails because there's already a default route from n-1.
+This is a very misleading response, it really means that you have assigned a default gateway in an earlier netctl control file. When netctl starts up the n-th NIC and goes to set its local route, it fails because there is already a default route from n-1.
 
-Remove it and everything works, except you no longer have a default route and so can't access things such as the internet. ExecUpPost doesn't work as it gets executed for each network card.
+Remove it and everything works, except you no longer have a default route and so cannot access things such as the internet. `ExecUpPost` does not work as it gets executed for each network card.
 
-What I did was create a new service, defaultrouter.service and here is the .service file:
+A possible solution is creating a new service:
 
  `/etc/system/system/defaultrouter.service` 
 
@@ -691,4 +691,4 @@ ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=417748](https://wiki.archlinux.org/index.php?title=Netctl&oldid=417748)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=418210](https://wiki.archlinux.org/index.php?title=Netctl&oldid=418210)"

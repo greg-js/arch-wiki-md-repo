@@ -119,7 +119,7 @@ done
 
 ### udiskie
 
-[udiskie](https://github.com/coldfix/udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the [udiskie wiki](https://github.com/coldfix/udiskie/wiki) for [usage](https://github.com/coldfix/udiskie/wiki/Usage) details.
+[udiskie](https://github.com/coldfix/udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage).
 
 ## Tips and tricks
 
@@ -224,4 +224,4 @@ Run as a workaround:
 *   [gentoo wiki: udisks](http://wiki.gentoo.org/wiki/Udisks)
 *   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=415918](https://wiki.archlinux.org/index.php?title=Udisks&oldid=415918)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=418390](https://wiki.archlinux.org/index.php?title=Udisks&oldid=418390)"

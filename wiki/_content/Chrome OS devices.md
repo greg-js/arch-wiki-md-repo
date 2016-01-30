@@ -346,7 +346,7 @@ Now you can also [set SeaBIOS as default](#Boot_to_SeaBIOS_by_default) (or even 
 
 It is recommended to use the official [linux](https://www.archlinux.org/packages/?name=linux) package for most Chrome OS devices with the exception being newer devices which might need patched kernel support such as the Chromebook Pixel 2015.
 
-[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> provides patches for the Chromebook Pixel 2015 to fix touchpad, touchscreen, and sound functionality which has not been merged into upstream linux yet. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
+[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> provides patches for the Chromebook Pixel 2015 to fix touchpad, touchscreen, and sound functionality which has not been merged into upstream linux yet. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
 
 If your devices requires a patched kernel, it is advised to review the list of patches and decide if the patch list is getting decidedly small enough that you no longer require a patched kernel and instead you can use the official [linux](https://www.archlinux.org/packages/?name=linux) package instead.
 
@@ -373,7 +373,7 @@ Since kernel 3.17 all the related patches merged into the upstream sources, mean
     *   The Linux kernel sources for Chromium OS are at [[9]](https://chromium.googlesource.com/chromiumos/third_party/kernel).
     *   Each kernel source for the latest Chromium OS release has its own branch, name convention: `release-R*-*-chromeos-KERNELVER`, where `R*-*` is the Chromium OS release and `KERNELVER` is the kernel version.
     *   Review the git log of `drivers/platform`, `drivers/i2c/busses` and `drivers/input/touchscreen`.
-*   [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> includes touchpad and touchscreen support for the Chromebook Pixel 2015\. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
+*   [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> includes touchpad and touchscreen support for the Chromebook Pixel 2015\. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
 
 #### Touchpad configuration
 
@@ -537,7 +537,7 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 #### Chromebook Pixel 2015
 
-[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> includes a patch for Broadwell SoC sound devices. [Its GitHub page](https://github.com/raphael/linux-samus) includes additional instructions for initializing the sound device.
+[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> includes a patch for Broadwell SoC sound devices. [Its GitHub page](https://github.com/raphael/linux-samus) includes additional instructions for initializing the sound device.
 
 ### Hotkeys
 
@@ -619,4 +619,4 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=417398](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=417398)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=418332](https://wiki.archlinux.org/index.php?title=Chrome_OS_devices&oldid=418332)"

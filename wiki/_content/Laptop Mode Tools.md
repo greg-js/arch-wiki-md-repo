@@ -355,11 +355,11 @@ AUTOSUSPEND_DEVID_BLACKLIST="046d:c534"
 
 Multiple IDs can be seperated with spaces.
 
-**Note:** Don't forget to [restart](/index.php/Restart "Restart") the laptop-tools module.
+**Note:** Don't forget to [restart](/index.php/Restart "Restart") the laptop-mode service. You might also need to reconnect the USB device.
 
 ## See also
 
 *   [Laptop Mode Tools](http://samwel.tk/laptop_mode/)
 *   [Mailing List Archives](http://mailman.samwel.tk/pipermail/laptop-mode/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&oldid=398270](https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&oldid=398270)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&oldid=418381](https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&oldid=418381)"

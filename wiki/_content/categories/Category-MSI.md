@@ -15,4 +15,4 @@ The following 2 pages are in this category, out of 2 total.
 *   [MSI Wind U100](/index.php/MSI_Wind_U100 "MSI Wind U100")
 *   [MSI Wind U120](/index.php/MSI_Wind_U120 "MSI Wind U120")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:MSI&oldid=364148](https://wiki.archlinux.org/index.php?title=Category:MSI&oldid=364148)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:MSI&oldid=418279](https://wiki.archlinux.org/index.php?title=Category:MSI&oldid=418279)"

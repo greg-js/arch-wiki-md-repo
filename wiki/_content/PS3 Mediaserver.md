@@ -21,7 +21,7 @@ Server implemented in java. Has very good default transcoding profiles for sever
 
 ## Installation
 
-**Note:** Because of the dependency [tsmuxer](https://aur.archlinux.org/packages/tsmuxer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tsmuxer)]</sup> having extra 32-bit dependencies, you will need to enable the [multilib](/index.php/Multilib "Multilib") repository if you have a 64-bit system.
+**Note:** Because of the dependency [tsmuxer](https://aur.archlinux.org/packages/tsmuxer/)<sup><small>AUR</small></sup> having extra 32-bit dependencies, you will need to enable the [multilib](/index.php/Multilib "Multilib") repository if you have a 64-bit system.
 
 Install [pms](https://aur.archlinux.org/packages/pms/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
 
@@ -172,4 +172,4 @@ This should be done automagically upon starting the service, but if it does not,
 *   Use your web browser to go to: http://<ip-address-of-your-server>:5001/console/home and click on 'index files and folders'
 *   After the indexing has ended, you are done.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PS3_Mediaserver&oldid=392544](https://wiki.archlinux.org/index.php?title=PS3_Mediaserver&oldid=392544)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PS3_Mediaserver&oldid=418352](https://wiki.archlinux.org/index.php?title=PS3_Mediaserver&oldid=418352)"

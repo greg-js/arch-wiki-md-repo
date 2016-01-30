@@ -271,7 +271,7 @@ Air Brawl seems to require some fonts that are missing, installing the package [
 
 ### Dependencies
 
-*   [lib32-libtheora](https://aur.archlinux.org/packages/lib32-libtheora/)<sup><small>AUR</small></sup>
+*   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora)
 *   [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libjpeg6)]</sup>
 *   [lib32-libtiff4](https://aur.archlinux.org/packages/lib32-libtiff4/)<sup><small>AUR</small></sup>
 *   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)<sup><small>AUR</small></sup>
@@ -1598,4 +1598,4 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=417072](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=417072)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=418356](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=418356)"

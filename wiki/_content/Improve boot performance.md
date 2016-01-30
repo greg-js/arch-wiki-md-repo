@@ -88,7 +88,7 @@ See the [manpage](http://www.freedesktop.org/software/systemd/man/systemd-bootch
 
 **Notes:** different instructions from the main page (Discuss in [Talk:Improve boot performance#](https://wiki.archlinux.org/index.php/Talk:Improve_boot_performance))
 
-You could also use a version of bootchart to visualize the boot sequence. Since you are not able to put a second init into the kernel command line you won't be able to use any of the standard bootchart setups. However the [bootchart2-git](https://aur.archlinux.org/packages/bootchart2-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bootchart2-git)]</sup> package from [AUR](/index.php/AUR "AUR") comes with an undocumented **systemd** service. After you've installed bootchart2 do:
+You could also use a version of bootchart to visualize the boot sequence. Since you are not able to put a second init into the kernel command line you won't be able to use any of the standard bootchart setups. However the [bootchart2-git](https://aur.archlinux.org/packages/bootchart2-git/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") comes with an undocumented **systemd** service. After you've installed bootchart2 do:
 
 ```
 # systemctl enable bootchart2
@@ -174,4 +174,4 @@ Change `verbose` to `quiet` on the bootloader's kernel line. For some systems, p
 
 The best way to reduce boot time is not booting at all. Consider [suspending your system to RAM](/index.php/Suspend_and_hibernate#Suspend_to_RAM "Suspend and hibernate") instead.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=401019](https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=401019)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=418339](https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=418339)"

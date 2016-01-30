@@ -9,8 +9,9 @@ NaN
 *   [1 Installation](#Installation)
 *   [2 Testing the installation](#Testing_the_installation)
 *   [3 Considerations](#Considerations)
-*   [4 Useful libraries and bindings](#Useful_libraries_and_bindings)
-*   [5 See Also](#See_Also)
+*   [4 hardening-wrapper](#hardening-wrapper)
+*   [5 Useful libraries and bindings](#Useful_libraries_and_bindings)
+*   [6 See Also](#See_Also)
 
 ## Installation
 
@@ -59,6 +60,58 @@ There are however possible choices regarding the compiler you choose. The standa
 
 The main difference is that the dmd's back end is not FOSS (licensed from Symantec), while the others compilers are completely FOSS. All 3 compilers share same front-end code and thus have almost identical support for language features (assuming same front-end version).
 
+## hardening-wrapper
+
+In Arch Linux [dmd](https://www.archlinux.org/packages/?name=dmd) and [libphobos](https://www.archlinux.org/packages/?name=libphobos) packages are built without PIC support. Using [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper) forces building executables with PIC support which results in:
+
+```
+dmd app.d
+/usr/bin/ld: app.o: relocation R_X86_64_32 against  `__dmd_personality_v0' can not be used when making a shared object;  recompile with -fPIC
+app.o: error adding symbols: Bad value
+collect2: error: ld returned 1 exit status
+--- errorlevel 1
+
+```
+
+There are few possible workarounds:
+
+*   uninstall [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper)
+*   use [gdc](https://www.archlinux.org/packages/?name=gdc) compiler which is compiled with PIC support
+
+```
+gdc app.d 
+
+```
+
+or for [dub](https://www.archlinux.org/packages/?name=dub)
+
+```
+dub --compiler=gdc
+
+```
+
+*   recompile [dmd](https://www.archlinux.org/packages/?name=dmd) and [libphobos](https://www.archlinux.org/packages/?name=libphobos) with -fPIC flags using [abs](/index.php/Abs "Abs") or manually
+*   use clang linker
+
+```
+CC=/usr/bin/clang dmd app.d
+
+```
+
+if using dub
+
+```
+CC=/usr/bin/clang dub
+
+```
+
+more information
+
+*   [https://issues.dlang.org/show_bug.cgi?id=15054](https://issues.dlang.org/show_bug.cgi?id=15054)
+*   [https://bugs.archlinux.org/task/34983](https://bugs.archlinux.org/task/34983)
+*   [https://bugs.archlinux.org/task/46260](https://bugs.archlinux.org/task/46260)
+*   [http://wiki.dlang.org/Installing_LDC_on_Gentoo#Hardened_Gentoo](http://wiki.dlang.org/Installing_LDC_on_Gentoo#Hardened_Gentoo)
+
 ## Useful libraries and bindings
 
 *   [DDT](https://code.google.com/p/ddt/) - Eclipse plugin for project and code management in D
@@ -74,4 +127,4 @@ The main difference is that the dmd's back end is not FOSS (licensed from Symant
 *   [The D Programming Language](http://dlang.org/) - The official home of D
 *   [Planet D](http://planet.dsource.org/) - A collection of blogs about D
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=410005](https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=410005)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=418370](https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=418370)"

@@ -229,20 +229,28 @@ The OpenBSD project produces a free, multi-platform 4.4BSD-based UNIX-like opera
 
 ### OS X
 
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
+
+**This article or section is being considered for deletion.**
+
+**Reason:** Not a BSD variant, not open source, not installable on systems other than Apple Macintosh (Discuss in [Talk:Arch compared to other distributions#OS X](https://wiki.archlinux.org/index.php/Talk:Arch_compared_to_other_distributions#OS_X))
+
 Apple's OS X is UNIX-based, and its similarities with Arch end there.
 
-*   Arch is a distribution of Linux, but OS X is based from Unix TSS (Which derives all code from the original BSD) and FreeBSD.
+*   Arch is a distribution of Linux, but OS X is based from Unix TSS (which derives all code from the original BSD) and FreeBSD.
 
-*   OS X is "Baby-proofed", and assumes that all users are not technically competent. All folders in the root directory, except for /Applications (For "Applications", which are bundles of binaries and related files), /Library (For Shared OS X Libraries), /System (For System Library Files), and /Users (Equivalent to Arch's /home), are hidden by default, and /usr is write-only, even as the root user. It also stores all binaries and files related to programs that it expects users to run in /Applications, removing the need for novice users to access /bin.
+*   Arch is [user-centric](/index.php/Arch_Linux#User_centrality "Arch Linux"). OS X is "baby-proofed", and assumes that all users are not technically competent. All folders in the root directory, except for /Applications (for "applications", which are bundles of binaries and related files), /Library (for shared OS X libraries), /System (for system library files), and /Users (equivalent to Arch's /home), are hidden by default, and /usr is read-only by default, even as the root user. It also stores all binaries and files related to programs that it expects users to run in /Applications, removing the need for novice users to access /bin.
 
-*   OS X does not come with a command-line package manager. Apple expects users to install packages from the "Mac App Store", and by default, doesn't let any third-party programs from other sources run. For extra command-line utilities, it is recommended to install another package manager, such as [Homebrew](http://brew.sh/).
+*   Arch's packages are administered with [pacman](/index.php/Pacman "Pacman"). OS X does not come with a command-line package manager. Apple expects users to install packages from the "Mac App Store", and by default, does not let any third-party programs from other sources run.
 
-*   "Aqua", a desktop environment and theme build for Mac OS X, is pre-installed with OS X, and not removable.
+*   Many [desktop environments](/index.php/Desktop_environments "Desktop environments") can be used on Arch, or none, at user's discretion. "Aqua", a desktop environment and theme build for Mac OS X, is pre-installed with OS X, and not removable.
 
-*   Arch is freely distributable. OS X has a license which restricts the user in many ways (Explaination [here](http://robb.weblaws.org/2015/10/17/os-x-el-capitan-license-in-plain-english/)).
+*   Arch is freely distributable. OS X has a license which [restricts](http://robb.weblaws.org/2015/10/17/os-x-el-capitan-license-in-plain-english/) the user in many ways.
 
 ## See also
 
 *   [DistroWatch](http://distrowatch.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=417741](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=417741)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=418226](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=418226)"

@@ -53,4 +53,4 @@ remmina -i
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=387938](https://wiki.archlinux.org/index.php?title=Remmina&oldid=387938)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=418312](https://wiki.archlinux.org/index.php?title=Remmina&oldid=418312)"

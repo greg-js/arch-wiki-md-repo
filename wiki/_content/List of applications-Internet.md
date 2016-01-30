@@ -875,7 +875,7 @@ NaN
 
 ###### Multi-protocol
 
-*   **[SFLPhone](https://en.wikipedia.org/wiki/SFLphone "wikipedia:SFLphone")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support.
+*   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
 NaN
 
@@ -1219,4 +1219,4 @@ NaN
 
 NaN
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=417339](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=417339)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418382](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418382)"

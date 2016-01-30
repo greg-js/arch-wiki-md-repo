@@ -56,7 +56,7 @@ The following table lists basic shell commands every Linux user should be famili
 | rmdir | Remove empty directory | rmdir ~/emptyfolder |
 | rm | Remove a file | rm ~/file.txt |
 | rm -r | Remove directory and contents | rm -r ~/.cache |
-| ls | List files | ls *.avi |
+| ls | List files | ls *.mkv |
 | ls -a | List hidden files | ls -a /home/archie |
 | ls -al | List hidden files and file properties |
 | mv | Move a file | mv ~/compressed.zip ~/archive/compressed2.zip |
@@ -484,4 +484,4 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)")
 *   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
 *   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=416598](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=416598)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=418385](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=418385)"

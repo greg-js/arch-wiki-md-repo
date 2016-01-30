@@ -224,4 +224,4 @@ ipif() {
 
 **Note:** Bash is limited to extended regular expressions; this example uses perl regular expressions with _grep_. [[1]](http://unix.stackexchange.com/questions/84477/forcing-bash-to-use-perl-regex-engine)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash/Functions&oldid=410009](https://wiki.archlinux.org/index.php?title=Bash/Functions&oldid=410009)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash/Functions&oldid=418365](https://wiki.archlinux.org/index.php?title=Bash/Functions&oldid=418365)"

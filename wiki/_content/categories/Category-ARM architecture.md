@@ -39,4 +39,4 @@ The following 6 pages are in this category, out of 6 total.
 
 *   [USB Armory](/index.php/USB_Armory "USB Armory")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:ARM_architecture&oldid=387883](https://wiki.archlinux.org/index.php?title=Category:ARM_architecture&oldid=387883)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:ARM_architecture&oldid=418249](https://wiki.archlinux.org/index.php?title=Category:ARM_architecture&oldid=418249)"

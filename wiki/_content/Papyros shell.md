@@ -71,4 +71,4 @@ NaN
 *   [Official homepage](http://papyros.io)
 *   [Papyros development](https://github.com/papyros)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=414364](https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=414364)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=418353](https://wiki.archlinux.org/index.php?title=Papyros_shell&oldid=418353)"

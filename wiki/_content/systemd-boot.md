@@ -291,4 +291,4 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=416510](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=416510)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=418315](https://wiki.archlinux.org/index.php?title=Systemd-boot&oldid=418315)"
