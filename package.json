@@ -1,6 +1,6 @@
 {
   "name": "arch-wiki-md-repo",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "All arch-wiki articles in markdown format, updated every two days.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
