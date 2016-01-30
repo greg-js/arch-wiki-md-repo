@@ -15,31 +15,32 @@ _Conky_ is a system monitor software for the X Window System. It is available fo
 *   [1 Installation and configuration](#Installation_and_configuration)
     *   [1.1 AUR packages](#AUR_packages)
 *   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Enable real transparency in KDE4 and Xfce4](#Enable_real_transparency_in_KDE4_and_Xfce4)
-    *   [2.2 Autostart with Xfce4](#Autostart_with_Xfce4)
-    *   [2.3 Prevent flickering](#Prevent_flickering)
-    *   [2.4 Custom colors](#Custom_colors)
-    *   [2.5 Dual Screen](#Dual_Screen)
-    *   [2.6 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
-    *   [2.7 Integrate with GNOME](#Integrate_with_GNOME)
-    *   [2.8 Integrate with KDE 4](#Integrate_with_KDE_4)
-    *   [2.9 Integrate with Razor-qt](#Integrate_with_Razor-qt)
-    *   [2.10 Display package update information](#Display_package_update_information)
-    *   [2.11 Display weather forecast](#Display_weather_forecast)
-    *   [2.12 Display a countdown timer](#Display_a_countdown_timer)
-    *   [2.13 Display RSS feeds](#Display_RSS_feeds)
-    *   [2.14 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [2.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [2.16 Display number of new emails](#Display_number_of_new_emails)
-        *   [2.16.1 Gmail](#Gmail)
-            *   [2.16.1.1 method 1](#method_1)
-            *   [2.16.1.2 method 2](#method_2)
-            *   [2.16.1.3 method 3](#method_3)
-            *   [2.16.1.4 method 4](#method_4)
-        *   [2.16.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
-        *   [2.16.3 IMAP using PHP](#IMAP_using_PHP)
-    *   [2.17 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-    *   [2.18 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
+    *   [2.1 Configuration notice](#Configuration_notice)
+    *   [2.2 Enable real transparency in KDE4 and Xfce4](#Enable_real_transparency_in_KDE4_and_Xfce4)
+    *   [2.3 Autostart with Xfce4](#Autostart_with_Xfce4)
+    *   [2.4 Prevent flickering](#Prevent_flickering)
+    *   [2.5 Custom colors](#Custom_colors)
+    *   [2.6 Dual Screen](#Dual_Screen)
+    *   [2.7 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
+    *   [2.8 Integrate with GNOME](#Integrate_with_GNOME)
+    *   [2.9 Integrate with KDE 4](#Integrate_with_KDE_4)
+    *   [2.10 Integrate with Razor-qt](#Integrate_with_Razor-qt)
+    *   [2.11 Display package update information](#Display_package_update_information)
+    *   [2.12 Display weather forecast](#Display_weather_forecast)
+    *   [2.13 Display a countdown timer](#Display_a_countdown_timer)
+    *   [2.14 Display RSS feeds](#Display_RSS_feeds)
+    *   [2.15 Display rTorrent stats](#Display_rTorrent_stats)
+    *   [2.16 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+    *   [2.17 Display number of new emails](#Display_number_of_new_emails)
+        *   [2.17.1 Gmail](#Gmail)
+            *   [2.17.1.1 method 1](#method_1)
+            *   [2.17.1.2 method 2](#method_2)
+            *   [2.17.1.3 method 3](#method_3)
+            *   [2.17.1.4 method 4](#method_4)
+        *   [2.17.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [2.17.3 IMAP using PHP](#IMAP_using_PHP)
+    *   [2.18 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+    *   [2.19 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
 *   [3 User-contributed configuration examples](#User-contributed_configuration_examples)
     *   [3.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
 *   [4 A note about symbolic fonts](#A_note_about_symbolic_fonts)
@@ -91,6 +92,14 @@ NaN
 NaN
 
 ## Tips and tricks
+
+### Configuration notice
+
+Take note that settings bellow say something like setting_x yes | no. however, if you copy the default config from system folder, you will see that syntax there is different.
+
+Instead of writing setting_x y, do " setting_x = true | false | 'string' "
+
+For example: own_window_transparent = true.
 
 ### Enable real transparency in KDE4 and Xfce4
 
@@ -641,4 +650,4 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=413358](https://wiki.archlinux.org/index.php?title=Conky&oldid=413358)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=418112](https://wiki.archlinux.org/index.php?title=Conky&oldid=418112)"

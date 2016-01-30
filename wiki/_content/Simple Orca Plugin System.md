@@ -115,7 +115,7 @@ Only a few combinations of modifiers are valid. Those are predefined by Orca. Va
 *   `alt` i.e. `description__-__alt__+__key_y.sh`
 *   `control` i.e. `description__-__control__+__key_b.sh`
 *   `shift` i.e. `description__-__shift__+__key_c.sh`
-*   `control + alt` i.e. `description__-__control__+__alt+key_w.py`
+*   `control + alt` i.e. `description__-__control__+__alt__+__key_w.py`
 *   `shift + alt` i.e. `description__-__shift__+__alt__+__key_y.sh`
 
 As `key_<key>` you can use every alphanumerical key.
@@ -189,4 +189,4 @@ You can also host plug-ins, making them available for installation via the plug-
 
 The default online resource is: [https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=418039](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=418039)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=418040](https://wiki.archlinux.org/index.php?title=Simple_Orca_Plugin_System&oldid=418040)"

@@ -4,12 +4,13 @@
 
 ## Pages in category "Remote desktop"
 
-The following 8 pages are in this category, out of 8 total.
+The following 9 pages are in this category, out of 9 total.
 
 ### R
 
 *   [Rdesktop](/index.php/Rdesktop "Rdesktop")
 *   [Remmina](/index.php/Remmina "Remmina")
+*   [Remmina (Русский)](/index.php/Remmina_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Remmina (Русский)")
 
 ### T
 

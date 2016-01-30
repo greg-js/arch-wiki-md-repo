@@ -40,7 +40,7 @@ Two kinds of directives are required in this personal keymap. First of all, the 
 
 ```
 
-Most keysyms are them are intuitive. For example, to set key 112 to output an 'e', the directive will be:
+Most keysyms are intuitive. For example, to set key 112 to output an 'e', the directive will be:
 
 ```
 keycode 112  = e
@@ -118,4 +118,4 @@ $ loadkeys /usr/local/share/kbd/keymaps/personal.map
 
 However this keymap only active for the current session. In order to load the keymap at boot, specify the full path to the file in `KEYMAP` variable in `/etc/vconsole.conf`. The file does not have to be gzipped as the official keymaps provided by [kbd](https://www.archlinux.org/packages/?name=kbd).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_console&oldid=393580](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_console&oldid=393580)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_console&oldid=418130](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_console&oldid=418130)"

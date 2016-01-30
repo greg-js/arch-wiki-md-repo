@@ -7,7 +7,7 @@ Related articles
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [UEFI/Hardware](/index.php/UEFI/Hardware "UEFI/Hardware")
 
-**Warning:** While the choice to install in EFI mode is forward looking, early vendor UEFI implementations carried more bugs than their BIOS counterparts. It is advised to do a search relating your particular mainboard model before proceeding.
+**Warning:** While the choice to install in EFI mode is forward looking, early vendor UEFI implementations may carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
 
 **Unified Extensible Firmware Interface** (or UEFI for short) is a new type of firmware. It introduces new ways of booting an OS that is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process") for their differences. This page explains **What is UEFI** and **UEFI support in Linux kernel**. To set up UEFI Boot Loaders, see [Boot loaders](/index.php/Boot_loaders "Boot loaders").
 
@@ -685,4 +685,4 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)
 *   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware - from Clover efiboot](http://dl.dropbox.com/u/17629062/Shell2.zip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=417876](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=417876)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418188](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418188)"
