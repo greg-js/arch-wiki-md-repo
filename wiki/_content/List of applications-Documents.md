@@ -395,7 +395,7 @@ NaN
 
 NaN
 
-*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim.
+*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim, this package also provides the `vim` command.
 
 NaN
 
@@ -861,4 +861,4 @@ NaN
 
 NaN
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418227](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418227)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418630](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418630)"

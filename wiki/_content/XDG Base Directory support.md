@@ -269,6 +269,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [stack](https://www.stackage.org/) | `~/.stack` | [[52]](https://github.com/commercialhaskell/stack/issues/342) | `$ export STACK_ROOT="$XDG_DATA_HOME"/stack` |
 | [subversion](/index.php/Subversion "Subversion") | `~/.subversion` | [[53]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[54]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e) | `$ svn --config-dir "$XDG_CONFIG_HOME"/subversion` |
 | [ltrace](http://ltrace.org/) | `~/.ltrace.conf` | `$ ltrace -F "$XDG_CONFIG_HOME"/ltrace/ltrace.conf` |
+| [dict](http://sourceforge.net/projects/dict/) | `~/.dictrc` | `$ dict -c "$XDG_CONFIG_HOME"/dict/dictrc` |
 
 ## Hardcoded
 
@@ -344,4 +345,4 @@ NaN
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=414395](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=414395)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=418513](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory_support&oldid=418513)"

@@ -710,7 +710,7 @@ Server = http://direct.$repo.systems.:2/repository/arch/$arch
 [openrc-eudev]
 Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
 Server = ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
-Server = https://pub.projectarch.tk/mirror/archopenrc/openrc-eudev/$repo/$arch
+Server = https://pub.projectarch.tk/mirror/archopenrc/$repo/$arch
 
 ```
 
@@ -1564,4 +1564,4 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=416936](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=416936)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=418459](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=418459)"

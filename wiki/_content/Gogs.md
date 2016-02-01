@@ -48,6 +48,8 @@ Also before installing the Gogs package from the [AUR](/index.php/AUR "AUR"), yo
 *   PostgreSQL: [postgresql](https://www.archlinux.org/packages/?name=postgresql) - Read [PostgreSQL#Installing PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL") to set it up and start the [daemon](/index.php/Daemon "Daemon") and for configuration of Gogs with PostgreSQL see [#PostgreSQL](#PostgreSQL).
 *   MariaDB: [mariadb](https://www.archlinux.org/packages/?name=mariadb) - Read [MariaDB#Installation](/index.php/MariaDB#Installation "MariaDB") to set it up and start the [daemon](/index.php/Daemon "Daemon") and for configuration of Gogs with MariaDB see [#MariaDB](#MariaDB).
 
+If you plan to use SSH to interact with your repositories, make sure to add the `gogs` user to the `AllowUsers` entry in `/etc/ssh/sshd_config`.
+
 ## First start
 
 After starting of the Gogs service (`systemctl start gogs.service`), you can access the running service over the url `http://[server]:3000`. At the first execute, you will redirect to the installation page. Here you can configure some minor configuration options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
@@ -86,4 +88,4 @@ The current package (gogs-git* and gogs>=0.4.2) support custom themes. The locat
 
 *   [Official Documentation](http://gogs.io/docs/intro/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gogs&oldid=411950](https://wiki.archlinux.org/index.php?title=Gogs&oldid=411950)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gogs&oldid=418424](https://wiki.archlinux.org/index.php?title=Gogs&oldid=418424)"

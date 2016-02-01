@@ -9,7 +9,9 @@
 *   [3 Extended usage](#Extended_usage)
     *   [3.1 Patches & additional features](#Patches_.26_additional_features)
     *   [3.2 Tabbed browsing](#Tabbed_browsing)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Fuzzy font in Github](#Fuzzy_font_in_Github)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -57,10 +59,29 @@ $ tabbed -c surf -e
 
 See the man page for tabbed for more details and possibilities.
 
+## Troubleshooting
+
+### Fuzzy font in Github
+
+Install [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) or add this in your `~/.config/fontconfig/fonts.conf` inside the fontconfig-tags:
+
+```
+ <selectfont>
+   <rejectfont>
+     <pattern>
+       <patelt name="family">
+         <string>Clean</string>
+       </patelt>
+     </pattern>
+   </rejectfont>
+ </selectfont>
+
+```
+
 ## See also
 
 *   [surf's official website](http://surf.suckless.org/)
 *   [dmenu](/index.php/Dmenu "Dmenu") - Simple application launcher from the developers of dwm
 *   [Hacking surf thread](https://bbs.archlinux.org/viewtopic.php?id=167804/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Surf&oldid=401849](https://wiki.archlinux.org/index.php?title=Surf&oldid=401849)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Surf&oldid=418650](https://wiki.archlinux.org/index.php?title=Surf&oldid=418650)"

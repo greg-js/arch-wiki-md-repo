@@ -193,11 +193,15 @@ Part Number                                     OCZ3G1600LV2G
 
 There are a variety of front-ends for sensors data.
 
-*   [xsensors](https://www.archlinux.org/packages/?name=xsensors) - X11 interface to lm_sensors
-*   [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) - A lm_sensors plugin for the [Xfce](/index.php/Xfce "Xfce") panel
 *   [conky](/index.php/Conky "Conky") - Conky is an advanced, highly configurable system monitor for X based on torsmo
-*   [kdeutils-superkaramba](https://www.archlinux.org/packages/?name=kdeutils-superkaramba)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> - Superkaramba is a tool which gives posibility to create different widgets for KDE desktop. Check the [karamba section on kde-look.org](http://www.kde-look.org/index.php?xcontentmode=38) for examples of making karamba front-ends for sensors data.
+*   [xsensors](https://www.archlinux.org/packages/?name=xsensors) - X11 interface to lm_sensors
+
+For specific [Desktop environments](/index.php/Desktop_environments "Desktop environments"):
+
 *   [sensors-applet](https://www.archlinux.org/packages/?name=sensors-applet) - applet for the [GNOME](/index.php/GNOME "GNOME") Panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings.
+*   [plasma5-applets-thermal-monitor-git](https://aur.archlinux.org/packages/plasma5-applets-thermal-monitor-git/)<sup><small>AUR</small></sup> - Is an example of the [widgets](/index.php/KDE#Widgets "KDE") available for [KDE](/index.php/KDE "KDE") desktop.
+*   [sensors-lxpanel-plugin](https://aur.archlinux.org/packages/sensors-lxpanel-plugin/)<sup><small>AUR</small></sup> -- A lm_sensors plugin for the [LXDE](/index.php/LXDE "LXDE") panel. lxpanel also includes a simple 'Temperature Monitor' plugin.
+*   [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) - A lm_sensors plugin for the [Xfce](/index.php/Xfce "Xfce") panel
 
 ### sensord
 
@@ -527,4 +531,4 @@ Now you can also use [fancontrol](/index.php/Fancontrol "Fancontrol") to control
 
 This is caused by lm-sensors messing with the Vcom values of the screen while probing for sensors. It has been discussed and solved at the forums already: [https://bbs.archlinux.org/viewtopic.php?id=193048](https://bbs.archlinux.org/viewtopic.php?id=193048) However, make sure to read through the thread carefully before running any of the suggested commands.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lm_sensors&oldid=413343](https://wiki.archlinux.org/index.php?title=Lm_sensors&oldid=413343)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lm_sensors&oldid=418626](https://wiki.archlinux.org/index.php?title=Lm_sensors&oldid=418626)"

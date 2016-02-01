@@ -109,7 +109,11 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 NaN
 
-*   **GNOME Software** — Gnome Software App.
+*   **GNOME packagekit** — GTK based package management tool
+
+NaN
+
+*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
 
 NaN
 
@@ -755,6 +759,14 @@ Pacman preserves the installation reason by default.
 
 ### Restore pacman's local database
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** _testdb_ has been removed in pacman 5.0 [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Pacman/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Pacman/Tips_and_tricks))
+
 Signs that pacman needs a local database restoration:
 
 *   `pacman -Q` gives absolutely no output, and `pacman -Syu` erroneously reports that the system is up to date.
@@ -1008,4 +1020,4 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=416582](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=416582)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=418647](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&oldid=418647)"

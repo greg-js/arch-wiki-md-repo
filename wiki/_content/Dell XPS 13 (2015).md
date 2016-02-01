@@ -86,7 +86,7 @@ The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode"
 
 #### HDA mode
 
-With BIOS A02+, the kernel will automatically use the sound card in HDA mode.
+With BIOS A02+ and Arch kernel 4.3 or older, the sound card will be initialized in HDA mode.
 
 Microphone support was finally fixed in the mainline kernel in 4.1.3\. All older kernel versions require patches to fix it. To fix it on kernels 4.1.0-4.1.2, apply the patch [available here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=831bfdf9520e389357cfeee42a6174a73ce7bdb7). To fix it on kernels older than 4.1, apply this patchset: [1](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit?id=e1e62b98ebddc3234f3259019d3236f66fc667f8), [2](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit?id=f3b703326541d0c1ce85f5e570f6d2b6bd4296ec).
 
@@ -94,13 +94,15 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 #### I2S mode
 
-I2S support in Linux is still quite nascent, and some important features, notably jack detection, are not due to land until kernel 4.2 or later. [[1]](http://www.spinics.net/lists/linux-acpi/msg57126.html) As a result, I2S support is currently disabled in favor of HDA mode. An ACPI REV quirk mode was merged in for 4.2 that will force HDA mode on until I2S support is ready. [[2]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[3]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039)
+With BIOS A02+ and Arch kernel 4.4 or newer, the sound card will be initialized in I2S mode.
+
+I2S support in Linux is quite nascent and wasn't up to par with HDA support until recently, so a quirk flag was enabled in the mainline kernel that would force HDA mode on.[[1]](http://thread.gmane.org/gmane.linux.acpi.devel/75464/focus=75466)[[2]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=18d78b64fddc11eb336f01e46ad3303a3f55d039) This flag has been disabled in the stock Arch kernel as of 4.4.[[3]](https://bugs.archlinux.org/task/47710) Also note that I2S support is known to be broken with older versions of alsalib.[[4]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 
 In I2S mode, the dual-boot workaround is not necessary.
 
 #### ALSA configuration
 
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). In the current case, both cards use the `snd_hda_intel` module. To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
@@ -211,4 +213,4 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=417665](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=417665)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418421](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418421)"

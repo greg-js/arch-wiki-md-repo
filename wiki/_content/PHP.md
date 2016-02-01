@@ -77,6 +77,13 @@ display_errors=On
 
 **Tip:** Prior to 22 November 2015, [php-composer](https://www.archlinux.org/packages/?name=php-composer) kept its settings in a separate file in `/usr/share/php-composer/php.ini`
 
+*   The [open_basedir](http://php.net/open-basedir) directive limits the paths that can be accessed by PHP, thus increasing security at the expense of potentially interfering with normal program execution. Starting with PHP 7.0, it is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to more closely match upstream so users who wish to use it must configure it manually. Example:
+
+```
+open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/
+
+```
+
 ## Extensions
 
 A number of commonly used PHP extensions can also be found in the official repositories:
@@ -305,4 +312,4 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdate
 
 *   [PHP Official Website](http://www.php.net/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=417470](https://wiki.archlinux.org/index.php?title=PHP&oldid=417470)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PHP&oldid=418644](https://wiki.archlinux.org/index.php?title=PHP&oldid=418644)"

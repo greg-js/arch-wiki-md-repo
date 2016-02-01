@@ -109,6 +109,14 @@ xmessage -timeout 3 "${STARTit}"' * '"${ENDit}" & disown
 
 See also: [How to show a message box from a bash script in Linux](http://stackoverflow.com/questions/7035/how-to-show-a-message-box-from-a-bash-script-in-linux).
 
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
+
+**This article or section is out of date.**
+
+**Reason:** _testdb_ has been removed in pacman 5.0 [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Update packages from crontab#](https://wiki.archlinux.org/index.php/Talk:Update_packages_from_crontab))
+
 Before running `pacman` you can also add integrity of database check:
 
 ```
@@ -144,7 +152,7 @@ Good to download updates after few hours of idle and limit it only to a day time
 Steps for downloading process
 
 1.  Check if stop mark after download exist, e.g. `if [ ! -f /tmp/.downloaded_yes ];then echo Is OK to download;else echo Already downloaded;fi`
-2.  Check if computer is idle and how long time. Utilities [xprintidle](https://aur.archlinux.org/packages/xprintidle/)<sup><small>AUR</small></sup>[[1]](http://www.ruddwire.com/handy-code/date-to-millisecond-calculators/) for X and command `w` for tty.
+2.  Check if computer is idle and how long time. Utilities [xprintidle](https://aur.archlinux.org/packages/xprintidle/)<sup><small>AUR</small></sup>[[2]](http://www.ruddwire.com/handy-code/date-to-millisecond-calculators/) for X and command `w` for tty.
 3.  Check if computer is connected with cable or how much battery is charged. You will need to install [upower](https://www.archlinux.org/packages/?name=upower).
 
     ```
@@ -297,4 +305,4 @@ done
 
 See also: [What to do if pacman-mirrorlist is not installed](/index.php/Mirrors#Official_mirrors "Mirrors").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Update_packages_from_crontab&oldid=410839](https://wiki.archlinux.org/index.php?title=Update_packages_from_crontab&oldid=410839)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Update_packages_from_crontab&oldid=418633](https://wiki.archlinux.org/index.php?title=Update_packages_from_crontab&oldid=418633)"

@@ -37,6 +37,7 @@ NaN
     *   [3.16 Claims of missing 32-bit libc.so.6 even though lib32-glibc is installed](#Claims_of_missing_32-bit_libc.so.6_even_though_lib32-glibc_is_installed)
     *   [3.17 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
     *   [3.18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+    *   [3.19 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
 *   [4 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands.2C_such_as_Bumblebee.2FPrimus)
 *   [5 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [6 Using native runtime](#Using_native_runtime)
@@ -357,7 +358,7 @@ $ ./steam.sh --reset
 
 If it doesn't, try to delete the `~/.local/share/Steam/` directory and launch steam again, telling it to reinstall itself.
 
-This error message can also occur due to a bug in steam which occurs when your `$HOME` directory ends in a slash ([https://github.com/ValveSoftware/steam-for-linux/issues/3730](https://github.com/ValveSoftware/steam-for-linux/issues/3730)). This can be fixed by editing `/etc/passwd` and changing `/home/username/` to `home/username`.
+This error message can also occur due to a bug in steam which occurs when your `$HOME` directory ends in a slash (Valve GitHub [issue 3730](https://github.com/ValveSoftware/steam-for-linux/issues/3730)). This can be fixed by editing `/etc/passwd` and changing `/home/<username>/` to `home/<username>`, then logging out and in again. Afterwards, steam should repair itself automatically.
 
 ### VERSION_ID: unbound variable
 
@@ -389,6 +390,10 @@ Installing breakpad exception handler for appid(steam)/version(0_client)
 ```
 
 Then nothing else happens. This is likely related to mis-matched `lib32-nvidia-*` packages.
+
+### 'GLBCXX_3.X.XX' not found when using Bumblebee
+
+This error is likely caused because Steam packages its own out of date `libstdc++.so.6`. See [#Steam runtime issues](#Steam_runtime_issues) about working around the bad library. See also GitHub [issue 3773](https://github.com/ValveSoftware/steam-for-linux/issues/3773).
 
 ## Launching games with custom commands, such as Bumblebee/Primus
 
@@ -595,4 +600,4 @@ There is another file in the same folder as **gameoverlay.style** folder called 
 
 *   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=418408](https://wiki.archlinux.org/index.php?title=Steam&oldid=418408)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam&oldid=418580](https://wiki.archlinux.org/index.php?title=Steam&oldid=418580)"

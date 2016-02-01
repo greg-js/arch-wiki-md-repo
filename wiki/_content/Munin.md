@@ -29,10 +29,14 @@ Simply put, Munin allows you to make graphs about system statistics. You can che
     *   [4.1 Adding](#Adding)
     *   [4.2 Removing](#Removing)
     *   [4.3 Debugging](#Debugging)
-*   [5 Tips and Tricks](#Tips_and_Tricks)
-    *   [5.1 MySQL](#MySQL)
-    *   [5.2 S.M.A.R.T.](#S.M.A.R.T.)
-    *   [5.3 lm_sensors](#lm_sensors)
+*   [5 Apache VirtualHost examples](#Apache_VirtualHost_examples)
+    *   [5.1 Basic static html](#Basic_static_html)
+    *   [5.2 Static html with DynaZoom feature](#Static_html_with_DynaZoom_feature)
+    *   [5.3 Full dynamic](#Full_dynamic)
+*   [6 Tips and Tricks](#Tips_and_Tricks)
+    *   [6.1 MySQL](#MySQL)
+    *   [6.2 S.M.A.R.T.](#S.M.A.R.T.)
+    *   [6.3 lm_sensors](#lm_sensors)
 
 ## Installation
 
@@ -276,6 +280,127 @@ LWP::UserAgent not found at /etc/munin/plugins/apache_accesses line 86.
 
 indicates that a [perl](/index.php?title=Perl&action=edit&redlink=1 "Perl (page does not exist)") function could not be found. To resolve the problem, [install](/index.php/Install "Install") the missing library, in this case, [perl-libwww](https://www.archlinux.org/packages/?name=perl-libwww).
 
+## Apache VirtualHost examples
+
+Based on information found here:
+
+*   [http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/apache-virtualhost.html](http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/apache-virtualhost.html)
+*   [http://munin-monitoring.org/wiki/MuninConfigurationMasterCGI](http://munin-monitoring.org/wiki/MuninConfigurationMasterCGI)
+
+In the next major release of Munin, things will be much simpler. Check it out:
+
+*   [http://guide.munin-monitoring.org/en/latest/example/webserver/apache-virtualhost.html](http://guide.munin-monitoring.org/en/latest/example/webserver/apache-virtualhost.html)
+
+### Basic static html
+
+```
+<VirtualHost *:80>
+    ServerName localhost
+    ServerAdmin  root@localhost
+
+    DocumentRoot /srv/http/munin
+
+    ErrorLog /var/log/httpd/munin-error.log
+    CustomLog /var/log/httpd/munin-access.log combined
+</VirtualHost>
+
+```
+
+### Static html with DynaZoom feature
+
+Install [perl-cgi-fast](https://www.archlinux.org/packages/?name=perl-cgi-fast).
+
+You must enable one of these:
+
+*   **mod_cgid** (or **mod_cgi** if using mpm_prefork_module) by uncommenting the line in httpd.conf.
+*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add "**LoadModule mod_fcgid modules/mod_fcgid.so**" in httpd.conf.
+
+```
+<VirtualHost *:80>
+    ServerName localhost
+    ServerAdmin  root@localhost
+
+    DocumentRoot /srv/http/munin
+
+    ErrorLog /var/log/httpd/munin-error.log
+    CustomLog /var/log/httpd/munin-access.log combined
+
+    # Rewrites
+    RewriteEngine On
+
+    # Images
+    RewriteRule ^/munin-cgi(.*) /usr/share/munin/cgi/$1 [L] 
+
+    # Ensure we can run (fast)cgi scripts
+    <Directory "/usr/share/munin/cgi">
+        Require all granted
+        Options +ExecCGI
+        <IfModule mod_fcgid.c>
+            SetHandler fcgid-script
+        </IfModule>
+        <IfModule !mod_fcgid.c>
+            SetHandler cgi-script
+        </IfModule>
+    </Directory>
+</VirtualHost>
+
+```
+
+### Full dynamic
+
+Use this VirtualHost if you want to set **html_strategy** and **graph_strategy** to "**cgi**". Page loads will take longer because all the HTML and PNG files will be dynamically generated, but the munin-cron run will take less time because it will not execute munin-html and munin-graph. This feature may become necessary for you if your master polls many nodes and the munin-cron risks taking more than 5 minutes.
+
+Install [perl-cgi-fast](https://www.archlinux.org/packages/?name=perl-cgi-fast).
+
+You must enable one of these:
+
+*   **mod_cgid** (or **mod_cgi** if using mpm_prefork_module) by uncommenting the line in httpd.conf.
+*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add "**LoadModule mod_fcgid modules/mod_fcgid.so**" in httpd.conf.
+
+```
+<VirtualHost *:80>
+    ServerName localhost
+    ServerAdmin  root@localhost
+
+    DocumentRoot /srv/http/munin
+
+    ErrorLog /var/log/httpd/munin-error.log
+    CustomLog /var/log/httpd/munin-access.log combined
+
+    # Rewrites
+    RewriteEngine On
+
+    # Static content in /static
+    RewriteRule ^/favicon.ico /etc/munin/static/favicon.ico [L] 
+    RewriteRule ^/static/(.*) /etc/munin/static/$1          [L] 
+
+    # HTML
+    RewriteCond %{REQUEST_URI} .html$ [or]
+    RewriteCond %{REQUEST_URI} =/
+    RewriteRule ^/(.*)          /usr/share/munin/cgi/munin-cgi-html/$1 [L] 
+
+    # Images
+    RewriteRule ^/munin-cgi(.*) /usr/share/munin/cgi/$1 [L] 
+
+    <Directory "/etc/munin/static">
+        Require all granted
+    </Directory>
+
+    # Ensure we can run (fast)cgi scripts
+    <Directory "/usr/share/munin/cgi">
+        Require all granted
+        Options +ExecCGI
+        <IfModule mod_fcgid.c>
+            SetHandler fcgid-script
+        </IfModule>
+        <IfModule !mod_fcgid.c>
+            SetHandler cgi-script
+        </IfModule>
+    </Directory>
+</VirtualHost>
+
+```
+
 ## Tips and Tricks
 
 ### MySQL
@@ -326,4 +451,4 @@ Install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) and co
 # ln -s /usr/lib/munin/plugins/sensors_ /etc/munin/plugins/sensors_volt
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Munin&oldid=417235](https://wiki.archlinux.org/index.php?title=Munin&oldid=417235)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Munin&oldid=418581](https://wiki.archlinux.org/index.php?title=Munin&oldid=418581)"

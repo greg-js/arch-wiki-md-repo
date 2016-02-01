@@ -126,7 +126,7 @@ Edit `/etc/pacman.d/mirrorlist.backup` and uncomment mirrors for testing with `r
 Optionally run the following `sed` line to uncomment every mirror:
 
 ```
-# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+# sed -i 's/^# Server/Server/' /etc/pacman.d/mirrorlist.backup
 
 ```
 
@@ -288,4 +288,4 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=417009](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=417009)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mirrors&oldid=418481](https://wiki.archlinux.org/index.php?title=Mirrors&oldid=418481)"

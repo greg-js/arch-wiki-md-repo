@@ -11,7 +11,7 @@ Related articles
 *   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
 *   [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
-*   [QEMU#Mounting a partition_inside a raw disk image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU")
+*   [QEMU#Mounting a partition inside a raw disk image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU")
 
 _mount_ is an application used to access file systems, partition tables, and shared folders. It can mount file systems supported by the Linux kernel, but can be extended with other drivers or applications, such as [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) for mounting [NTFS](/index.php/NTFS "NTFS") filesystems.
 
@@ -195,4 +195,4 @@ You can add more actions for when an external storage device, such as a USB driv
 *   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
 *   Creating and using disk images mini-howto: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mount&oldid=413579](https://wiki.archlinux.org/index.php?title=Mount&oldid=413579)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mount&oldid=418488](https://wiki.archlinux.org/index.php?title=Mount&oldid=418488)"

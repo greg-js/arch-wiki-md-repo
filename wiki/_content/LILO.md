@@ -112,7 +112,7 @@ Save `lilo.conf`, run `lilo` as root, and reboot and see how it looks!
 
 ### Read write error message whilst booting
 
-This error message is caused by a recent [change](https://projects.archlinux.org/mkinitcpio.git/commit/?id=449b3e543c) in mkinitcpio which was in response to this [Systemd](/index.php/Systemd "Systemd") [commit](http://cgit.freedesktop.org/systemd/systemd/commit/?id=956eaf2b8d6c999). The change causes partitions to be fsck'ed twice when mounted read only. To fix this error edit `/etc/lilo.conf` and change the 'read only' line to 'read write' for both arch entries.
+This error message is caused by a recent [change](https://projects.archlinux.org/mkinitcpio.git/commit/?id=449b3e543c) in mkinitcpio which was in response to this [Systemd](/index.php/Systemd "Systemd") [commit](https://github.com/systemd/systemd/commit/956eaf2b8d6c9999024705ddadc7393bc707de02). The change causes partitions to be fsck'ed twice when mounted read only. To fix this error edit `/etc/lilo.conf` and change the 'read only' line to 'read write' for both arch entries.
 
 See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1303683#p1303683) for more information.
 
@@ -125,4 +125,4 @@ It is possible that running the `lilo` command after a kernel upgrade results in
 *   [List of kernel parameters that can be used at boot time](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt)
 *   [List of kernel paramaters with further explanation and grouped by like options ('Kernel Boot Command-Line Parameter Reference', _Linux Kernel In A Nutshell_)](http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LILO&oldid=397497](https://wiki.archlinux.org/index.php?title=LILO&oldid=397497)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LILO&oldid=418532](https://wiki.archlinux.org/index.php?title=LILO&oldid=418532)"

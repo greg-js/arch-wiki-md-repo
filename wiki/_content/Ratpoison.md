@@ -248,4 +248,4 @@ Many [display managers](/index.php/Display_manager "Display manager") (e.g., [Li
 *   [Collection of scripts for the Ratpoison window manager](https://github.com/jbaber/ratpoison_scripts)
 *   [Stumpwm - a successor to Ratpoison written in Common lisp](http://www.nongnu.org/stumpwm/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=415887](https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=415887)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=418627](https://wiki.archlinux.org/index.php?title=Ratpoison&oldid=418627)"

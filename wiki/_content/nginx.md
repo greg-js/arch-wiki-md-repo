@@ -194,13 +194,13 @@ Reload or restart `nginx` service to enable the new configuration.
 
 #### TLS/SSL
 
-[openssl](https://www.archlinux.org/packages/?name=openssl) provides TLS/SSL support and is installed by default on Arch installations.
+[OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS/SSL support and is installed by default on Arch installations.
 
 **Tip:** You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL
 
 **Tip:** [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A nginx plugin is available by installing [letsencrypt-nginx](https://www.archlinux.org/packages/?name=letsencrypt-nginx) to request valid ssl certificates straight from the command line and automatic configuration.
 
-Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"):
+Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Making_requests "OpenSSL"):
 
 ```
 # mkdir /etc/nginx/ssl
@@ -211,9 +211,9 @@ Create a private key and self-signed certificate. This is adequate for most inst
 
 ```
 
-**Note:** The -days switch is optional and RSA keysize can be as low as 2048 (default).
+**Note:** The `-days` switch is optional and RSA keysize can be as low as 2048 (default).
 
-If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"), follow these keygen instructions instead of the above:
+If you need to create a CSR, follow these instructions instead of the above:
 
 ```
 # mkdir /etc/nginx/ssl
@@ -225,7 +225,7 @@ If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_
 
 ```
 
-**Note:** For more openssl options, read the [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse openssl's [extensive documentation](https://www.openssl.org/docs/).
+**Note:** For more _openssl_ options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
 
 **Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to nginx, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
@@ -286,12 +286,7 @@ FastCGI technology is introduced into nginx to work with many external tools, i.
 
 [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) packages.
 
-The `open_basedir` in `/etc/php/php.ini` has to list base directories which contain PHP files, like `/usr/share/nginx/` and `/usr/share/webapps/`:
-
-```
-open_basedir = /tmp/:/usr/share/nginx/:/usr/share/pear/:/usr/share/webapps/
-
-```
+Make sure [open_basedir](/index.php/PHP#Configuration "PHP") allows the directories containing PHP files to be accessed (starting with PHP 7.0 it is [unset by default](https://www.archlinux.org/news/php-70-packages-released/), so no change is required).
 
 After that let us configure modules you need. For example to use sqlite3 you should install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite). Then enable it in `/etc/php/php.ini` by uncommenting following line:
 
@@ -890,4 +885,4 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=416135](https://wiki.archlinux.org/index.php?title=Nginx&oldid=416135)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Nginx&oldid=418645](https://wiki.archlinux.org/index.php?title=Nginx&oldid=418645)"

@@ -28,8 +28,9 @@ Before downgrading a single or multiple packages, consider why you wish to do so
     *   [1.1 Using the pacman cache](#Using_the_pacman_cache)
     *   [1.2 Downgrading the kernel](#Downgrading_the_kernel)
     *   [1.3 Arch Linux Archive](#Arch_Linux_Archive)
-    *   [1.4 Rebuild the package](#Rebuild_the_package)
-    *   [1.5 Automation](#Automation)
+    *   [1.4 vABS - Versioned Arch Build System](#vABS_-_Versioned_Arch_Build_System)
+    *   [1.5 Rebuild the package](#Rebuild_the_package)
+    *   [1.6 Automation](#Automation)
 *   [2 Return from [testing]](#Return_from_.5Btesting.5D)
 
 ## Return to an earlier package version
@@ -72,6 +73,10 @@ The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") is 
 
 The _ALA_ can be used to install a previous package version, or restore the system to an earlier date.
 
+### vABS - Versioned Arch Build System
+
+[vABS](https://vabs.archlinux-br.org) is an addition to ABS that has as main goal to keep different versions of the official PKGBUILDs. In ABS you have the latest versions of PKGBUILDs, while in vABS you also have old versions (up to 2 years). Select the desired version and download the build files tgz package or individual files and easily build your package with pkgbuild. More information about the service can be found [here](https://www.archlinux-br.org/vabs_en).
+
 ### Rebuild the package
 
 If the package is unavailable, find the correct [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and rebuild it with [makepkg](/index.php/Makepkg "Makepkg").
@@ -84,7 +89,7 @@ Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-m
 
 ### Automation
 
-[downgrader](https://aur.archlinux.org/packages/downgrader/)<sup><small>AUR</small></sup> tool which works with libalpm, supports the pacman log, downgrades packages using ARM and local cache. May be particularly useful to identify problematic packages.
+[downgrader](https://aur.archlinux.org/packages/downgrader/)<sup><small>AUR</small></sup> tool which works with libalpm, supports the pacman log, downgrade packages using Arch Linux Archive, local cache and ARM ([http://repo-arm.archlinuxcn.org](http://repo-arm.archlinuxcn.org)). May be particularly useful to identify problematic packages.
 
 The [downgrade](https://aur.archlinux.org/packages/downgrade/)<sup><small>AUR</small></sup> package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
 
@@ -92,4 +97,4 @@ The [downgrade](https://aur.archlinux.org/packages/downgrade/)<sup><small>AUR</s
 
 See [Official repositories#Disabling testing repositories](/index.php/Official_repositories#Disabling_testing_repositories "Official repositories").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=416583](https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=416583)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=418579](https://wiki.archlinux.org/index.php?title=Downgrading_packages&oldid=418579)"

@@ -11,51 +11,52 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
 NaN
 
-The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [#Apache configuration](#Apache_configuration) and [#Nginx + uwsgi_php configuration](#Nginx_.2B_uwsgi_php_configuration).
+The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [#Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
 
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
-    *   [2.1 Caching](#Caching)
-    *   [2.2 /dev/urandom access](#.2Fdev.2Furandom_access)
-    *   [2.3 Database support](#Database_support)
-    *   [2.4 Exif support](#Exif_support)
+    *   [2.1 Database support](#Database_support)
+    *   [2.2 Caching](#Caching)
+    *   [2.3 Exif support](#Exif_support)
+    *   [2.4 Setting strong permissions](#Setting_strong_permissions)
     *   [2.5 An all-in-one alternative with Docker](#An_all-in-one_alternative_with_Docker)
 *   [3 Apache configuration](#Apache_configuration)
     *   [3.1 WebDAV](#WebDAV)
     *   [3.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
-*   [4 Nginx + php-fpm configuration](#Nginx_.2B_php-fpm_configuration)
-*   [5 Nginx + uwsgi_php configuration](#Nginx_.2B_uwsgi_php_configuration)
-    *   [5.1 Configuration](#Configuration)
-    *   [5.2 Activation](#Activation)
-*   [6 Synchronization](#Synchronization)
-    *   [6.1 Desktop](#Desktop)
-        *   [6.1.1 Calendar](#Calendar)
-        *   [6.1.2 Contacts](#Contacts)
-        *   [6.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
-    *   [6.2 Android](#Android)
-*   [7 Important notes](#Important_notes)
-    *   [7.1 SABnzbd](#SABnzbd)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
-    *   [8.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [8.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
-    *   [8.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
-    *   [8.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
-    *   [8.6 Seeing white page after login](#Seeing_white_page_after_login)
-    *   [8.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [8.8 Server waits forever after creating admin account, before giving a 503 error](#Server_waits_forever_after_creating_admin_account.2C_before_giving_a_503_error)
-    *   [8.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [8.10 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [8.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [8.12 Password not saved](#Password_not_saved)
-*   [9 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
-*   [10 See also](#See_also)
+*   [4 Nginx](#Nginx)
+    *   [4.1 php-fpm configuration](#php-fpm_configuration)
+    *   [4.2 uWSGI configuration](#uWSGI_configuration)
+        *   [4.2.1 Configuration](#Configuration)
+        *   [4.2.2 Activation](#Activation)
+*   [5 Synchronization](#Synchronization)
+    *   [5.1 Desktop](#Desktop)
+        *   [5.1.1 Calendar](#Calendar)
+        *   [5.1.2 Contacts](#Contacts)
+        *   [5.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
+    *   [5.2 Android](#Android)
+*   [6 Important notes](#Important_notes)
+    *   [6.1 SABnzbd](#SABnzbd)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
+    *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
+    *   [7.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
+    *   [7.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
+    *   [7.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
+    *   [7.6 Seeing white page after login](#Seeing_white_page_after_login)
+    *   [7.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
+    *   [7.8 Server waits forever after creating admin account, before giving a 503 error](#Server_waits_forever_after_creating_admin_account.2C_before_giving_a_503_error)
+    *   [7.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
+    *   [7.10 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [7.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [7.12 Password not saved](#Password_not_saved)
+*   [8 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
+*   [9 See also](#See_also)
 
 ## Prerequisites
 
-_ownCloud_ needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://doc.owncloud.org/server/8.1/admin_manual/release_notes.html#recommended-setup-for-running-owncloud).
+_ownCloud_ needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud).
 
 ## Installation
 
@@ -81,6 +82,14 @@ mcrypt.so
 
 ```
 
+#### Database support
+
+Depending on which database backend you are going to use, uncomment the following extensions in `/etc/php/php.ini`:
+
+*   For [MySQL](/index.php/MySQL "MySQL"), uncomment `pdo_mysql.so`.
+*   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), uncomment `pdo_pgsql.so` and `pgsql.so`, and install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql).
+*   For [SQLite](/index.php/SQLite "SQLite"), uncomment `pdo_sqlite.so` and `sqlite3.so`, and install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite).
+
 #### Caching
 
 For enhanced performance, it is recommended to implement PHP caching using APCu, as described in [PHP#APCu](/index.php/PHP#APCu "PHP"). It is also beneficial to enable OPCache, as described in [PHP#OPCache](/index.php/PHP#OPCache "PHP").
@@ -94,38 +103,62 @@ Then, after enabling APCu, add the following directive to `/etc/webapps/owncloud
 
 **Note:** Make sure to add `apc.enable_cli=1` under the `[apc]` portion of your [PHP configuration](/index.php/PHP#Configuration "PHP") and uncomment `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`. As of 2015-07-12, [several](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) [things](https://github.com/owncloud/documentation/issues/1233#issuecomment-120664134) won't work properly without it.
 
-**Note:** As of 2016-01-04 and OwnCloud 8.2.2, the "APCu Backwards Compatibility Module" is still needed and provided by the package php-apcu-bc. You need to add `extension=apc.so` AFTER `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`
+**Note:** As of 2016-01-04 and OwnCloud 8.2.2, the "APCu Backwards Compatibility Module" is still needed and provided by [php-apcu-bc](https://www.archlinux.org/packages/?name=php-apcu-bc). You need to add `extension=apc.so` AFTER `extension=apcu.so` in `/etc/php/conf.d/apcu.ini`
 
 See [the official documentation](https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/config_sample_php_parameters.html#memory-caching-backend-configuration).
-
-#### /dev/urandom access
-
-ownCloud 8.1.0-1 requires `/dev/urandom` access. This must be enabled in `php.ini`.
-
-Append `:/dev/urandom` (no slash at the end) to `open_basedir` in `php.ini`. Example:
-
-```
-open_basedir = /srv/http/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/dev/urandom
-
-```
-
-Alternatively, perhaps with better results, append `:/dev/urandom` to `php_admin_value open_basedir` in `/etc/httpd/conf/extra/owncloud.conf`.
-
-On Nginx + uwsgi_php, the setting above won't take effect , please attach `:/dev/urandom` in uwsgi_php config file instead.
-
- `/etc/uwsgi/owncloud.ini`  ` php-set = open_basedir=%(owncloud_data_dir):/tmp/:/usr/share/pear/:/usr/share/webapps/owncloud:/etc/webapps/owncloud:/dev/urandom ` 
-
-#### Database support
-
-Depending on which database backend you are going to use, uncomment the following extensions in `/etc/php/php.ini`:
-
-*   For [MySQL](/index.php/MySQL "MySQL"), uncomment `pdo_mysql.so`.
-*   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), uncomment `pdo_pgsql.so` and `pgsql.so`, and install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql).
-*   For [SQLite](/index.php/SQLite "SQLite"), uncomment `pdo_sqlite.so` and `sqlite3.so`, and install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite).
 
 #### Exif support
 
 Additionally enable exif support by installing the [exiv2](https://www.archlinux.org/packages/?name=exiv2) package and uncommenting the `exif.so` extension in `php.ini`.
+
+#### Setting strong permissions
+
+From the [official installation manual](https://doc.owncloud.org/server/8.2/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
+
+NaN
+
+ `oc-perms` 
+
+```
+#!/bin/bash
+ocpath='/usr/share/webapps/owncloud'
+htuser='http'
+htgroup='http'
+rootuser='root'
+
+printf "Creating possible missing Directories\n"
+mkdir -p $ocpath/data
+mkdir -p $ocpath/assets
+
+printf "chmod Files and Directories\n"
+find ${ocpath}/ -type f -print0 | xargs -0 chmod 0640
+find ${ocpath}/ -type d -print0 | xargs -0 chmod 0750
+
+printf "chown Directories\n"
+chown -R ${rootuser}:${htgroup} ${ocpath}/
+chown -R ${htuser}:${htgroup} ${ocpath}/apps/
+chown -R ${htuser}:${htgroup} ${ocpath}/config/
+chown -R ${htuser}:${htgroup} ${ocpath}/data/
+chown -R ${htuser}:${htgroup} ${ocpath}/themes/
+chown -R ${htuser}:${htgroup} ${ocpath}/assets/
+
+chmod +x ${ocpath}/occ
+
+printf "chmod/chown .htaccess\n"
+if [ -f ${ocpath}/.htaccess ]
+ then
+  chmod 0644 ${ocpath}/.htaccess
+  chown ${rootuser}:${htgroup} ${ocpath}/.htaccess
+fi
+if [ -f ${ocpath}/data/.htaccess ]
+ then
+  chmod 0644 ${ocpath}/data/.htaccess
+  chown ${rootuser}:${htgroup} ${ocpath}/data/.htaccess
+fi
+
+```
+
+If you have customized your ownCloud installation and your filepaths are different than the standard installation, then modify this script accordingly.
 
 ### An all-in-one alternative with Docker
 
@@ -151,27 +184,6 @@ Include conf/extra/owncloud.conf
 
 ```
 
-For security purposes, review and set the prescribed directory permissions from the [ownCloud installation manual](https://doc.owncloud.org/server/8.0/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
-
-```
-#!/bin/bash
-ocpath='/usr/share/webapps/owncloud'
-htuser='http'
-htgroup='http'
-find ${ocpath}/ -type f -print0 | xargs -0 chmod 0640
-find ${ocpath}/ -type d -print0 | xargs -0 chmod 0750
-chown -R root:${htuser} ${ocpath}/
-chown -R ${htuser}:${htgroup} ${ocpath}/apps/
-chown -R ${htuser}:${htgroup} ${ocpath}/config/
-chown -R ${htuser}:${htgroup} ${ocpath}/data/
-chown -R ${htuser}:${htgroup} ${ocpath}/themes/
-chown root:${htuser} ${ocpath}/.htaccess
-chown root:${htuser} ${ocpath}/data/.htaccess
-chmod 0644 ${ocpath}/.htaccess
-chmod 0644 ${ocpath}/data/.htaccess
-
-```
-
 Now restart Apache (`httpd.service`).
 
 Open [http://localhost/owncloud](http://localhost/owncloud) in your browser. You should now be able to create a user account and follow the installation wizard.
@@ -186,257 +198,246 @@ By including the default `owncloud.conf` in `httpd.conf`, ownCloud will take con
 
 If you would like to have ownCloud run in a subdirectory, then edit the `/etc/httpd/conf/extra/owncloud.conf` you included and comment out the `<VirtualHost *:80> ... </VirtualHost>` part of the include file.
 
-## Nginx + php-fpm configuration
+## Nginx
 
-The official documentation for Owncloud uses php-fpm for PHP, and as such is the best supported configuration. The following just a slight alteration from the [reccomended server configuration](https://doc.owncloud.org/server/8.1/admin_manual/installation/nginx_configuration.html), adjusted to run on Arch Linux. You will need [php-fpm](https://www.archlinux.org/packages/?name=php-fpm), and an SSL certificate.
+### php-fpm configuration
+
+_ownCloud_ official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP_implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up _php-fpm_ and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
+
+By default, the only things you need to change from the [recommended server configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/nginx_configuration.html) for ownCloud to run on Arch Linux are the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `root` and `fastcgi_pass` directives:
+
+ `/etc/nginx/nginx.conf` 
 
 ```
-user http;
-worker_processes auto;
-
-events {
-	worker_connections 1024;
+server {
+  listen 80;
+  server_name cloud.example.com;
+  # enforce https
+  return 301 https://$server_name$request_uri;
 }
 
-http {
+server {
+  listen 443 ssl;
+  server_name cloud.example.com;
 
-	#sendfile	on; # Appears to cause problems with webdav.
-	#tcp_nopush	on;
+  ssl_certificate /path/to/domain-cert.crt;
+  ssl_certificate_key /path/to/private-key.key;
 
-	server {
-		listen 80;
-		server_name owncloud.example.com;
-		# enforce https
-		return 301 https://$server_name$request_uri;
-	}
+  # Add headers to serve security related headers
+  add_header Strict-Transport-Security "max-age=15768000; includeSubDomains; preload;";
+  add_header X-Content-Type-Options nosniff;
+  add_header X-Frame-Options "SAMEORIGIN";
+  add_header X-XSS-Protection "1; mode=block";
+  add_header X-Robots-Tag none;
 
-	server {
-		include	mime.types;
-		default_type application/octet-stream;
+  # Path to the root of your installation
+  root /usr/share/webapps/owncloud/;
+  # set max upload size
+  client_max_body_size 10G;
+  fastcgi_buffers 64 4K;
 
-		listen 443 ssl;
-		server_name owncloud.example.com;
+  # Disable gzip to avoid the removal of the ETag header
+  gzip off;
 
-		ssl_certificate /etc/ssl/server.crt;
-		ssl_certificate_key /etc/ssl/server.key;
+  # Uncomment if your server is build with the ngx_pagespeed module
+  # This module is currently not supported.
+  #pagespeed off;
 
-		# Add headers to serve security related headers
-		add_header Strict-Transport-Security "max-age=15768000; includeSubDomains; preload;";
-		add_header X-Content-Type-Options nosniff;
-		add_header X-Frame-Options "SAMEORIGIN";
-		add_header X-XSS-Protection "1; mode=block";
-		add_header X-Robots-Tag none;
+  index index.php;
+  error_page 403 /core/templates/403.php;
+  error_page 404 /core/templates/404.php;
 
-		# Path to the root of your installation
-		root /usr/share/webapps/owncloud;
-		# set max upload size
-		client_max_body_size 10G;
-		fastcgi_buffers 64 4K;
+  rewrite ^/.well-known/carddav /remote.php/carddav/ permanent;
+  rewrite ^/.well-known/caldav /remote.php/caldav/ permanent;
 
-		# Disable gzip to avoid the removal of the ETag header
-		gzip off;
+  # The following 2 rules are only needed for the user_webfinger app.
+  # Uncomment it if you're planning to use this app.
+  #rewrite ^/.well-known/host-meta /public.php?service=host-meta last;
+  #rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json last;
 
-		# Uncomment if your server is build with the ngx_pagespeed module
-		# This module is currently not supported.
-		#pagespeed off;
+  location = /robots.txt {
+    allow all;
+    log_not_found off;
+    access_log off;
+  }
 
-		rewrite ^/caldav(.*)$ /remote.php/caldav$1 redirect;
-		rewrite ^/carddav(.*)$ /remote.php/carddav$1 redirect;
-		rewrite ^/webdav(.*)$ /remote.php/webdav$1 redirect;
+  location ~ ^/(build|tests|config|lib|3rdparty|templates|data)/ {
+    deny all;
+  }
 
-		index index.php;
-		error_page 403 /core/templates/403.php;
-		error_page 404 /core/templates/404.php;
+  location ~ ^/(?:\.|autotest|occ|issue|indie|db_|console) {
+    deny all;
+  }
 
-		location = /robots.txt {
-			allow all;
-			log_not_found off;
-			access_log off;
-		}
+  location / {
+    rewrite ^/remote/(.*) /remote.php last;
+    rewrite ^(/core/doc/[^\/]+/)$ $1/index.html;
+    try_files $uri $uri/ =404;
+  }
 
-		location ~ ^/(?:\.htaccess|data|config|db_structure\.xml|README){
-			deny all;
-		}
+  location ~ \.php(?:$|/) {
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param PATH_INFO $fastcgi_path_info;
+    fastcgi_param HTTPS on;
+    fastcgi_param modHeadersAvailable true; #Avoid sending the security headers twice
+    fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+    fastcgi_intercept_errors on;
+  }
 
-		location / {
-			# The following 2 rules are only needed with webfinger
-			rewrite ^/.well-known/host-meta /public.php?service=host-meta last;
-			rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json last;
+  # Adding the cache control header for js and css files
+  # Make sure it is BELOW the location ~ \.php(?:$|/) { block
+  location ~* \.(?:css|js)$ {
+    add_header Cache-Control "public, max-age=7200";
+    # Add headers to serve security related headers
+    add_header Strict-Transport-Security "max-age=15768000; includeSubDomains; preload;";
+    add_header X-Content-Type-Options nosniff;
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Robots-Tag none;
+    # Optional: Don't log access to assets
+    access_log off;
+  }
 
-			rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;
-			rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;
-
-			rewrite ^(/core/doc/[^\/]+/)$ $1/index.html;
-
-			try_files $uri $uri/ /index.php;
-		}
-
-		location ~ \.php(?:$|/) {
-			fastcgi_split_path_info ^(.+\.php)(/.+)$;
-			include fastcgi_params;
-			fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-			fastcgi_param PATH_INFO $fastcgi_path_info;
-			fastcgi_param HTTPS on;
-			fastcgi_param modHeadersAvailable true; #Avoid sending the security headers twice
-			# Unix domain sockets are faster than TCP sockets
-			fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-		}
-
-		# Optional: set long EXPIRES header on static assets
-		location ~* \.(?:jpg|jpeg|gif|bmp|ico|png|css|js|swf)$ {
-			expires 30d;
-			# Optional: Don't log access to assets
-			access_log off;
-		}
-
-	}
+  # Optional: Don't log access to other assets
+  location ~* \.(?:jpg|jpeg|gif|bmp|ico|png|swf)$ {
+    access_log off;
+  }
 }
 
 ```
 
-[php-fpm](https://www.archlinux.org/packages/?name=php-fpm) is already configured to run as the user http, so assuming you are using the permissions described above, it should function fine. It is not reccomended to manually copy the `config.example.php` in the Owncloud configuration, and instead let it be automatically generated on first run. You need to create the owncloud data directory in `/usr/share/webapps/owncloud/data` and give it root:http ownership for the automatic configuration to work.
+_php-fpm_ is already configured to run as the user `http`, so assuming you are using the permissions described above it should function fine. It is not recommended to manually copy the `config.example.php` in the ownCloud configuration, and instead let it be automatically generated on first run.
 
-## Nginx + uwsgi_php configuration
+**Note:** Automatic configuration relies on the `data/` directory creation, as done in [#Setting strong permissions](#Setting_strong_permissions).
 
-You can avoid the use of Apache, and run ownCloud in its own process by using the [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php) application server. uWSGI itself has a wealth of features to limit the resource use, and to harden the security of the application, and by being a separate process it can run under its own user. (See [specific owncloud version configuration](https://doc.owncloud.org/server/8.1/admin_manual/installation/nginx_configuration.html). Adjust the owncloud version number in the linked URL.)
+### uWSGI configuration
 
-### Configuration
+You can run _ownCloud_ in its own process and service by using the [uWSGI](/index.php/Uwsgi "Uwsgi") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. _uWSGI_ itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
 
-*   First of all you should set up your Nginx server. See the [Nginx](/index.php/Nginx "Nginx") page for further information.
-*   Set a server with the following lines in the http section of your `/etc/nginx/nginx.conf` file:
+#### Configuration
+
+The only part that differs from [#php-fpm_configuration](#php-fpm_configuration) is the `location ~ \.php(?:$|/) {}` block:
 
 ```
-# your nginx-server configs
-# ...
-
-# uncomment to run as user and group http
-#user http;
-
-http {
-    # more configs
-    # ...
-    server {
-        listen       80;
-        #listen       443 ssl;
-        server_name  localhost;
-
-        #ssl_certificate      cert.pem;
-        #ssl_certificate_key  key.pem;
-
-        #ssl_session_cache    shared:SSL:1m;
-        #ssl_session_timeout  5m;
-
-        #ssl_ciphers  HIGH:!aNULL:!MD5;
-        #ssl_prefer_server_ciphers  on;
-
-        #this is to avoid Request Entity Too Large error
-        client_max_body_size 1000M;
-        # deny access to some special files
-        location ~ ^/(data|config|\.ht|db_structure\.xml|README) {
-            deny all;
-        }
-        # pass all .php or .php/path urls to uWSGI
-        location ~ ^(.+\.php)(.*)$ {
-            include uwsgi_params;
-            uwsgi_modifier1 14;
-            #Uncomment line below if you get connection refused error. Remember to comment out line with "uwsgi_pass 127.0.0.1:3001;" below
-            #uwsgi_pass unix:/run/uwsgi/owncloud.sock;
-            uwsgi_pass 127.0.0.1:3001;
-        }
-        # everything else goes to the filesystem,
-        # but / will be mapped to index.php and run through uwsgi
-        location / {
-            root /usr/share/webapps/owncloud;
-            index index.php;
-            rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;
-            rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;
-        }
+  location ~ \.php(?:$|/) {
+    include uwsgi_params;
+    uwsgi_modifier1 14;
+    # Avoid duplicate headers confusing OC checks
+    uwsgi_hide_header X-Frame-Options;
+    uwsgi_hide_header X-XSS-Protection;
+    uwsgi_hide_header X-Content-Type-Options;
+    uwsgi_hide_header X-Robots-Tag;
+    uwsgi_hide_header X-Frame-Options;
+    uwsgi_pass unix:/run/uwsgi/owncloud.sock;
     }
-}
 
 ```
 
-*   Then create a [uWSGI](/index.php/Uwsgi "Uwsgi") config file. `/etc/uwsgi/owncloud.ini` could be a good choice:
+Then create a config file for _uWSGI_:
+
+ `/etc/uwsgi/owncloud.ini` 
 
 ```
 [uwsgi]
-master = true
-socket = 127.0.0.1:3001
-
-# Change this to where you want ownlcoud data to be stored (maybe /home/owncloud)
-owncloud_data_dir = /usr/share/webapps/owncloud/data/
-chdir             = %(owncloud_data_dir)
-
+; load the required plugins
 plugins = php
-php-docroot     = /usr/share/webapps/owncloud
-php-index       = index.php
+; force the sapi name to 'apache', this will enable the opcode cache  
+php-sapi-name = apache
 
-# only allow these php files, I do not want to inadvertently run something else
-php-allowed-ext = /index.php
-php-allowed-ext = /public.php
-php-allowed-ext = /remote.php
-php-allowed-ext = /cron.php
-php-allowed-ext = /status.php
-php-allowed-ext = /settings/apps.php
-php-allowed-ext = /core/ajax/update.php
-php-allowed-ext = /core/ajax/share.php
-php-allowed-ext = /core/ajax/requesttoken.php
-php-allowed-ext = /core/ajax/translations.php
-php-allowed-ext = /search/ajax/search.php
-php-allowed-ext = /search/templates/part.results.php
-php-allowed-ext = /settings/admin.php
-php-allowed-ext = /settings/users.php
-php-allowed-ext = /settings/personal.php
-php-allowed-ext = /settings/help.php
-php-allowed-ext = /settings/ajax/getlog.php
-php-allowed-ext = /settings/ajax/setlanguage.php
-php-allowed-ext = /settings/ajax/setquota.php
-php-allowed-ext = /settings/ajax/userlist.php
-php-allowed-ext = /settings/ajax/createuser.php
-php-allowed-ext = /settings/ajax/removeuser.php
-php-allowed-ext = /settings/ajax/enableapp.php
-php-allowed-ext = /core/ajax/appconfig.php
-php-allowed-ext = /settings/ajax/setloglevel.php
-php-allowed-ext = /ocs/v1.php
+; set master process name and socket
+; '%n' refers to the name of this configuration file without extension
+procname-master = uwsgi %n
+master = true
+socket = /run/uwsgi/%n.sock
 
-# set php configuration for this instance of php, no need to edit global php.ini
+; drop privileges
+uid    = http
+gid    = http
+umask  = 027
+
+; run with at least 1 process but increase up to 4 when needed
+processes = 4
+cheaper = 1
+
+; reload whenever this config file changes
+; %p is the full path of the current config file
+touch-reload = %p
+
+; enforce a DOCUMENT_ROOT
+php-docroot     = /usr/share/webapps/%n
+; limit allowed extensions
+php-allowed-ext = .php
+; and search for index.php if required
+php-index = index.php
+
+; set php configuration for this instance of php, no need to edit global php.ini
 php-set = date.timezone=Etc/UTC
-php-set = open_basedir=%(owncloud_data_dir):/tmp/:/usr/share/pear/:/usr/share/webapps/owncloud:/etc/webapps/owncloud:/dev/urandom
-php-set = session.save_path=/tmp
-php-set = post_max_size=1000M
-php-set = upload_max_filesize=1000M
+php-set = open_basedir=/tmp/:/usr/share/webapps/owncloud:/etc/webapps/owncloud:/dev/urandom
+php-set = expose_php=false
+; avoid security risk of leaving sessions in world-readable /tmp
+php-set = session.save_path=/usr/share/webapps/owncloud/data
+
+; port of php directives set upstream in /usr/share/webapps/owncloud/.user.ini for use with PHP-FPM
+php-set = upload_max_filesize=513M
+php-set = post_max_size=513M
+php-set = memory_limit=512M
+php-set = mbstring.func_overload=0
 php-set = always_populate_raw_post_data=-1
+php-set = default_charset='UTF-8'
+php-set = output_buffering=off
 
-# load all extensions only in this instance of php, no need to edit global php.ini
-php-set = extension=bz2.so
-php-set = extension=curl.so
-php-set = extension=intl.so
-php-set = extension=pdo_sqlite.so
-php-set = extension=exif.so
+; load all extensions only in this instance of php, no need to edit global php.ini
+;; required core modules
 php-set = extension=gd.so
-php-set = extension=imagick.so
-php-set = extension=gmp.so
 php-set = extension=iconv.so
+;php-set = extension=zip.so     # enabled by default in global php.ini
+
+;; database connectors
+;; uncomment your selected driver
+;php-set = extension=pdo_sqlite.so
+;php-set = extension=pdo_mysql.so
+;php-set = extension=pdo_pgsql.so
+
+;; recommended extensions
+;php-set = extension=curl.so    # enabled by default in global php.ini
+php-set = extension=bz2.so
+php-set = extension=intl.so
 php-set = extension=mcrypt.so
-php-set = extension=sockets.so
-php-set = extension=sqlite3.so
-php-set = extension=xmlrpc.so
-php-set = extension=xsl.so
-php-set = extension=zip.so
-# uncomment following 2 lines to use mysql-backend
-#php-set = extension=pdo_mysql.so
 
-processes = 10
-cheaper = 2
+;; required for specific apps
+;php-set = extension=ldap.so    # for LDAP integration
+;php-set = extension=ftp.so     # for FTP storage / external user authentication
+;php-set = extension=imap.so    # for external user authentication, requires php-imap
+
+;; recommended for specific apps
+;php-set = extension=exif.so    # for image rotation in pictures app, requires exiv2
+;php-set = extension=gmp.so     # for SFTP storage
+
+;; for preview generation
+;; provided by packages in AUR
+; php-set = extension=imagick.so
+
+; opcache
+php-set = zend_extension=opcache.so
+
+; user cache
+; provided by php-acpu, to be enabled **either** here **or** in /etc/php/conf.d/apcu.ini
+php-set = extension=apcu.so
+; provided by php-apcu-bc
+php-set = extension=apc.so
+; per https://github.com/krakjoe/apcu/blob/simplify/INSTALL
+php-set = apc.ttl=7200
+php-set = apc.enable_cli=1
+
 cron = -3 -1 -1 -1 -1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php 1>/dev/null
-
-# Uncomment line below and replace http with a specific user/group name which you want uwsgi to run with.
-#uid = http
-#gid = http
 
 ```
 
-### Activation
+**Note:** Do not forget to uncomment the required database connector.
+
+#### Activation
 
 [uWSGI](/index.php/Uwsgi "Uwsgi") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example:
 
@@ -819,4 +820,4 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=415403](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=415403)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418643](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418643)"

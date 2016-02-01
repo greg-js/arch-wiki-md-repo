@@ -14,7 +14,8 @@ Backups are granularly incremental, meaning that only changes in files (since th
     *   [2.2 Restoring files from backup](#Restoring_files_from_backup)
     *   [2.3 Repository inspection and house-keeping](#Repository_inspection_and_house-keeping)
     *   [2.4 Example backup script](#Example_backup_script)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -132,6 +133,12 @@ gpg_start
 
 ```
 
+## Troubleshooting
+
+If you get gpg errors revolving around “inappropriate ioctl for device” it most likely has to do with changes to the gpg agent behavior from gpg version 2.1 up. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=190301) for more information. Generally speaking one needs to explicitly allow programs to provide the passphrase to gpg agent instead of prompting the user.
+
+The steps to remediate this issue are outlined in [GnuPG#Unattended_passphrase](/index.php/GnuPG#Unattended_passphrase "GnuPG").
+
 ## See also
 
 *   [Backup programs](/index.php/Backup_programs "Backup programs")
@@ -139,4 +146,4 @@ gpg_start
 *   [Wikipedia:Duplicity (software)](https://en.wikipedia.org/wiki/Duplicity_(software) "wikipedia:Duplicity (software)")
 *   [Déjà Dup home page](https://launchpad.net/deja-dup)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Duplicity&oldid=412067](https://wiki.archlinux.org/index.php?title=Duplicity&oldid=412067)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Duplicity&oldid=418577](https://wiki.archlinux.org/index.php?title=Duplicity&oldid=418577)"

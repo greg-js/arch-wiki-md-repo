@@ -21,4 +21,4 @@ Related articles
 
 *   [http://jasonwryan.com/blog/2013/12/28/hostsblock/](http://jasonwryan.com/blog/2013/12/28/hostsblock/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=306128](https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=306128)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=418641](https://wiki.archlinux.org/index.php?title=Hostsblock&oldid=418641)"

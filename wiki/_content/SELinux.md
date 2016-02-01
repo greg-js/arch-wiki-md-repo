@@ -20,14 +20,16 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
         *   [3.1.3 SELinux policy packages](#SELinux_policy_packages)
         *   [3.1.4 Other SELinux tools](#Other_SELinux_tools)
     *   [3.2 Installation](#Installation)
-        *   [3.2.1 Via Unofficial Repository](#Via_Unofficial_Repository)
-        *   [3.2.2 Via AUR](#Via_AUR)
-    *   [3.3 Changing boot loader configuration](#Changing_boot_loader_configuration)
-        *   [3.3.1 GRUB](#GRUB)
-        *   [3.3.2 Syslinux](#Syslinux)
-        *   [3.3.3 Gummiboot](#Gummiboot)
-    *   [3.4 Checking PAM](#Checking_PAM)
-    *   [3.5 Installing a policy](#Installing_a_policy)
+    *   [3.3 Preparing the Kernel](#Preparing_the_Kernel)
+        *   [3.3.1 Via AUR](#Via_AUR)
+        *   [3.3.2 Using the GitHub repository](#Using_the_GitHub_repository)
+    *   [3.4 Changing boot loader configuration](#Changing_boot_loader_configuration)
+        *   [3.4.1 GRUB](#GRUB)
+        *   [3.4.2 Syslinux](#Syslinux)
+        *   [3.4.3 Gummiboot](#Gummiboot)
+    *   [3.5 Checking PAM](#Checking_PAM)
+    *   [3.6 Installing a policy](#Installing_a_policy)
+    *   [3.7 Testing in a Vagrant virtual machine](#Testing_in_a_Vagrant_virtual_machine)
 *   [4 Post-installation steps](#Post-installation_steps)
     *   [4.1 Swapfiles](#Swapfiles)
 *   [5 Working with SELinux](#Working_with_SELinux)
@@ -42,24 +44,27 @@ Current status of those elements in Arch Linux:
 
 | Name | Status | Available at |
 | SELinux enabled kernel | Implemented | Removed since the 3.14 official Arch kernel: The main complaint was the lack of Kconfig option to disable audit by default. Available in the AUR. |
-| SELinux Userspace tools and libraries | Work in progress: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux) | Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) |
-| SELinux Policy | Work in progress, will probably be named selinux-policy-arch | No working repository for now. |
+| SELinux Userspace tools and libraries | Implemented in AUR: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux) | Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) |
+| SELinux Policy | Work in progress, using [Reference Policy](https://github.com/TresysTechnology/refpolicy) as upstream | Work in progress at [https://github.com/archlinuxhardened/selinux-policy-arch/](https://github.com/archlinuxhardened/selinux-policy-arch/) |
 
 Summary of changes in AUR as compared to official core packages:
 
 | Name | Status and comments |
 | linux | Need a rebuild with some KConfig options enabled |
-| coreutils | Need a rebuild to link with libselinux |
+| coreutils | Need a rebuild with `--with-selinux` flag to link with libselinux |
 | cronie | Need a rebuild with `--with-selinux` flag |
-| findutils | Need SELinux patch, already upstream |
+| dbus | Need a rebuild with `--enable-libaudit` and `--enable-selinux` flags |
+| findutils | Need SELinux patch for 4.4.2, already upstream |
+| iproute2 | Need a rebuild with `--with-selinux` flag |
+| logrotate | Need a rebuild with `--with-selinux` flag |
 | openssh | Need a rebuild with `--with-selinux` flag |
-| pam | Need a rebuild with `--enable-selinux` flag for Linux-PAM ; Need a patch for pam_unix2, which only removes a function already implemented in a library elsewhere |
-| pambase | Configuration changes to add pam_selinux.so |
-| psmisc | Need a patch, already upstream. Will be in version 22.21 |
-| shadow | Need a rebuild with `-lselinux` and `--with-selinux` flags |
-| sudo | Need a rebuild with `--enable-selinux` flag |
-| systemd | Need a rebuild with `--enable-selinux` flag |
-| util-linux | Need a rebuild with `--enable-selinux` flag |
+| pam | Need a rebuild with `--enable-selinux` flag for Linux-PAM ; Need a patch for pam_unix2, which only removes a function already implemented in a recent versions of libselinux |
+| pambase | Configuration changes to add pam_selinux.so to `/etc/pam.d/system-login` |
+| psmisc | Need a rebuild with `--with-selinux` flag |
+| shadow | --with-selinux}} flags |
+| sudo | Need a rebuild with `--with-selinux` flag |
+| systemd | Need a rebuild with `--enable-audit` and `--enable-selinux` flags |
+| util-linux | Need a rebuild with `--with-selinux` flag |
 
 All of the other SELinux-related packages may be included without changes nor risks.
 
@@ -75,7 +80,7 @@ Another set of examples are the traditional (-rwxr-xr-x) type permissions given 
 
 As you may imagine, this is particularly useful for processes which have the potential to be compromised, i.e. web servers and the like. If DACs are used, then there is a particularly good chance of havoc being wreaked by a compromised program which has access to privilege escalation.
 
-For further information, do visit the [MAC Wikipedia page](https://en.wikipedia.org/wiki/Mandatory_access_control).
+For further information, visit [wikipedia:Mandatory access control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control").
 
 ## Installing SELinux
 
@@ -84,6 +89,10 @@ For further information, do visit the [MAC Wikipedia page](https://en.wikipedia.
 All SELinux related packages belong to the _selinux_ group in the AUR as well as in [Siosm's unofficial repository](/index.php/Unofficial_user_repositories#siosm-selinux "Unofficial user repositories").
 
 #### SELinux aware system utilities
+
+NaN
+
+NaN
 
 NaN
 
@@ -129,61 +138,74 @@ NaN
 
 NaN
 
-NaN
-
-**Note:** The _selinux-refpolicy-arch_ package was last updated in 2011, hence it seems doubtful that it is useful any longer.
-
 #### Other SELinux tools
 
 NaN
 
 ### Installation
 
-Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. Since the 3.13 kernel update, the options required for SELinux to work on any system are enabled in the default kernel configuration, hence there should be no problems by default. If you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](http://wiki.debian.org/SELinux/Setup#kernel))
+### Preparing the Kernel
+
+Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. By default, the Arch Kernel does not have the SELinux LSM enabled. If you are using Arch Linux packaged kernel ([linux](https://www.archlinux.org/packages/?name=linux)), there is an AUR package which adds the configuration options for SELinux, [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/)<sup><small>AUR</small></sup>. Otherwise, when you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](http://wiki.debian.org/SELinux/Setup#kernel))
+
+Here is the complete list of options which need to be enabled on Linux 4.3.3 to use SELinux :
+
+ `config.selinux-custom` 
+
+```
+CONFIG_AUDIT=y
+CONFIG_AUDITSYSCALL=y
+CONFIG_AUDIT_WATCH=y
+CONFIG_AUDIT_TREE=y
+CONFIG_NETLABEL=y
+CONFIG_IP_NF_SECURITY=m
+CONFIG_IP6_NF_SECURITY=m
+CONFIG_NETFILTER_XT_TARGET_AUDIT=m
+CONFIG_FANOTIFY_ACCESS_PERMISSIONS=y
+CONFIG_NFSD_V4_SECURITY_LABEL=y
+CONFIG_SECURITY=y
+CONFIG_SECURITY_NETWORK=y
+CONFIG_SECURITY_PATH=y
+CONFIG_LSM_MMAP_MIN_ADDR=65536
+CONFIG_SECURITY_SELINUX=y
+CONFIG_SECURITY_SELINUX_BOOTPARAM=y
+CONFIG_SECURITY_SELINUX_DISABLE=y
+CONFIG_SECURITY_SELINUX_DEVELOP=y
+CONFIG_SECURITY_SELINUX_BOOTPARAM_VALUE=1
+CONFIG_SECURITY_SELINUX_CHECKREQPROT_VALUE=1
+CONFIG_SECURITY_SELINUX_ENABLE_SECMARK_DEFAULT=y
+CONFIG_SECURITY_SELINUX_AVC_STATS=y
+CONFIG_DEFAULT_SECURITY_SELINUX=y
+```
 
 **Note:** If using proprietary drivers, such as [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics drivers, you may need to [rebuild them](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA") for custom kernels.
 
 There are two methods to install the requisite SELinux packages.
 
-#### Via Unofficial Repository
-
-Add the [siosm-selinux](/index.php/Unofficial_user_repositories#siosm-selinux "Unofficial user repositories") repository into `pacman.conf` and [add](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") Siosm's key.
-
-Then install the following packages by either using the `su -` command or by logging in as root:
-
-*   _pambase-selinux_
-*   _pam-selinux_
-*   _coreutils-selinux_
-*   _libsemanage_
-*   _shadow-selinux_
-*   _libcgroup_
-*   _policycoreutils_
-*   _cronie-selinux_
-*   _findutils-selinux_
-*   _selinux-flex_
-*   _selinux-logrotate_
-*   _openssh-selinux_
-*   _psmisc-selinux_
-*   _python2-ipy_
-*   _setools_
-*   _systemd-selinux_
-
-**Warning:** Do not use the _sudo_ command to install these packages. This is because [pam](https://www.archlinux.org/packages/?name=pam), which is used for _sudo_ authentication, is being replaced.
-
 #### Via AUR
 
-The first install needs to be of [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup> and [pam-selinux](https://aur.archlinux.org/packages/pam-selinux/)<sup><small>AUR</small></sup>.
+*   First, install SELinux userspace tools and libraries, in this order (because of the dependencies): [libsepol](https://aur.archlinux.org/packages/libsepol/)<sup><small>AUR</small></sup>, [libselinux](https://aur.archlinux.org/packages/libselinux/)<sup><small>AUR</small></sup>, [checkpolicy](https://aur.archlinux.org/packages/checkpolicy/)<sup><small>AUR</small></sup>, [setools](https://aur.archlinux.org/packages/setools/)<sup><small>AUR</small></sup>, [ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/)<sup><small>AUR</small></sup>, [libsemanage](https://aur.archlinux.org/packages/libsemanage/)<sup><small>AUR</small></sup> (which needs [python2-ipy](https://www.archlinux.org/packages/?name=python2-ipy) from the _community_ repository) and [sepolgen](https://aur.archlinux.org/packages/sepolgen/)<sup><small>AUR</small></sup>.
+*   Then install [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup> and [pam-selinux](https://aur.archlinux.org/packages/pam-selinux/)<sup><small>AUR</small></sup> and make sure you can login again after the installation completed , because files in `/etc/pam.d/` got removed and created when [pambase](https://www.archlinux.org/packages/?name=pambase) got replaced with [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup>.
+*   Next you can install [libcgroup](https://aur.archlinux.org/packages/libcgroup/)<sup><small>AUR</small></sup> and [policycoreutils](https://aur.archlinux.org/packages/policycoreutils/)<sup><small>AUR</small></sup>, before recompiling some core packages by installing: [coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/)<sup><small>AUR</small></sup>, [findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/)<sup><small>AUR</small></sup>, [iproute2-selinux](https://aur.archlinux.org/packages/iproute2-selinux/)<sup><small>AUR</small></sup>, [logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)<sup><small>AUR</small></sup>, [openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)<sup><small>AUR</small></sup>, [psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)<sup><small>AUR</small></sup>, [shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/)<sup><small>AUR</small></sup>, [cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)<sup><small>AUR</small></sup>
+*   Next, backup your `/etc/sudoers` file. Install [sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/)<sup><small>AUR</small></sup> and restore your `/etc/sudoers` (it is overridden when this package is installed as a replacement of [sudo](https://www.archlinux.org/packages/?name=sudo)).
+*   Next come util-linux and systemd. Because of a cyclic makedepends between these two packages which will not be fixed ([FS#39767](https://bugs.archlinux.org/task/39767)), you need to build the source package [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>, install [libsystemd-selinux](https://aur.archlinux.org/packages/libsystemd-selinux/)<sup><small>AUR</small></sup>, build and install [util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)<sup><small>AUR</small></sup> (with [libutil-linux-selinux](https://aur.archlinux.org/packages/libutil-linux-selinux/)<sup><small>AUR</small></sup>) and rebuild and install [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>.
+*   Next, install [dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/)<sup><small>AUR</small></sup>.
 
-Next, you need to build and install [coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/)<sup><small>AUR</small></sup>, [libsemanage](https://aur.archlinux.org/packages/libsemanage/)<sup><small>AUR</small></sup>, [shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/)<sup><small>AUR</small></sup>, [libcgroup](https://aur.archlinux.org/packages/libcgroup/)<sup><small>AUR</small></sup>, [policycoreutils](https://aur.archlinux.org/packages/policycoreutils/)<sup><small>AUR</small></sup>, [cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)<sup><small>AUR</small></sup>, [findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/)<sup><small>AUR</small></sup>, [selinux-flex](https://aur.archlinux.org/packages/selinux-flex/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/selinux-flex)]</sup>, [logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)<sup><small>AUR</small></sup>, [openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)<sup><small>AUR</small></sup> and [psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)<sup><small>AUR</small></sup> from the AUR and [python2-ipy](https://www.archlinux.org/packages/?name=python2-ipy) from the _community_ repository.
+After all these steps, you can install a SELinux kernel (like [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/)<sup><small>AUR</small></sup>) and a policy (like [selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup>).
 
-Now comes the [setools](https://aur.archlinux.org/packages/setools/)<sup><small>AUR</small></sup> package. For this, do make sure that you have the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package installed, in order for the `JAVA_HOME` variable to be set properly. If it still is not even after installing the package, run:
+#### Using the GitHub repository
+
+All packages are maintained at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) . This repository also contains a script named `build_and_install_all.sh` which builds and installs (or updates) all packages in the needed order. Here is an example of a way this script can be used in a user shell to install all packages (with downloading the GPG keys which are used to verify the source tarballs of the package):
 
 ```
-$ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+ git clone [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux)
+ cd selinux
+ ./recv_gpg_keys.sh
+ ./build_and_install_all.sh
 
 ```
 
-Next, backup your `/etc/sudoers` file. Install [sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/)<sup><small>AUR</small></sup>, [dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/)<sup><small>AUR</small></sup> and [checkpolicy](https://aur.archlinux.org/packages/checkpolicy/)<sup><small>AUR</small></sup>. Finally, install [util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)<sup><small>AUR</small></sup> and [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>. Because of cyclic makedepends between these two packages which will not be fixed ([FS#39767](https://bugs.archlinux.org/task/39767)), you need to build the source package [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>, install [libsystemd-selinux](https://aur.archlinux.org/packages/libsystemd-selinux/)<sup><small>AUR</small></sup>, build and install [util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)<sup><small>AUR</small></sup> (with [libutil-linux-selinux](https://aur.archlinux.org/packages/libutil-linux-selinux/)<sup><small>AUR</small></sup>) and rebuild and install the source package [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>.
+Of course, it is possible to modify the content of `build_and_install_all.sh` before running it, for example if you already have SELinux support in your kernel.
 
 ### Changing boot loader configuration
 
@@ -342,6 +364,18 @@ and run the following commands:
 
 This is required to remove a few messages from `/var/log/audit/audit.log` which are a nuisance to deal with in the reference policy. This is an ugly hack and it should be made very clear that the policy so installed simply patches the reference policy in order to hide the effects of incorrect labelling.
 
+### Testing in a Vagrant virtual machine
+
+It is possible to use [Vagrant](/index.php/Vagrant "Vagrant") to provision a virtual Arch Linux machine with SELinux configured. This is a convenient way to test an Arch Linux system running SELinux without modifying a current system. Here are commands which can be used to achieve this:
+
+```
+ git clone [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux)
+ cd selinux/_vagrant
+ vagrant up
+ vagrant ssh
+
+```
+
 ## Post-installation steps
 
 You can check that SELinux is working with `sestatus`. You should get something like:
@@ -430,7 +464,7 @@ Please report issues on GitHub: [https://github.com/archlinuxhardened/selinux/is
 
 ## See also
 
-*   [Security Enhanced Linux](http://en.wikipedia.org/wiki/Security-Enhanced_Linux)
+*   [Security Enhanced Linux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux "wikipedia:Security-Enhanced Linux")
 *   [Gentoo SELinux Handbook](http://www.gentoo.org/proj/en/hardened/selinux/selinux-handbook.xml)
 *   [Fedora Project's SELinux Wiki](http://fedoraproject.org/wiki/SELinux)
 *   [NSA's Official SELinux Homepage](http://www.nsa.gov/research/selinux/index.shtml)
@@ -439,4 +473,4 @@ Please report issues on GitHub: [https://github.com/archlinuxhardened/selinux/is
 *   [SETools Homepage](http://oss.tresys.com/projects/setools)
 *   [ArchLinux, SELinux and You (archived)](https://web.archive.org/web/20140816115906/http://jamesthebard.net/archlinux-selinux-and-you-a-trip-down-the-rabbit-hole/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682](https://wiki.archlinux.org/index.php?title=SELinux&oldid=415682)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SELinux&oldid=418612](https://wiki.archlinux.org/index.php?title=SELinux&oldid=418612)"

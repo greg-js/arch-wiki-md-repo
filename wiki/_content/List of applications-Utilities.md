@@ -1029,6 +1029,14 @@ NaN
 
 ### File synchronization
 
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
+
+**This article or section is a candidate for merging with [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synchronization "Backup programs").**
+
+**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:List of applications/Utilities#](https://wiki.archlinux.org/index.php/Talk:List_of_applications/Utilities))
+
 *   **[rsync](/index.php/Rsync "Rsync")** — An incremental transfer and synchronization program.
 
 NaN
@@ -1063,4 +1071,4 @@ NaN
 
 NaN
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418367](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418367)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418628](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418628)"

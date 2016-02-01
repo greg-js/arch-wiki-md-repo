@@ -60,7 +60,7 @@ It's also worth mentioning that there is also a xorg driver `xf86-input-joystick
 
 Unless you're using very old joystick that uses gameport or proprietary USB protocol, you will need just the generic USB human interface device (HID) modules.
 
-For an extensive overview of all joystick related modules in Linux, you will need access to the Linux kernel sources -- specifically the Documentation section. Unfortunately, pacman kernel packages do not include what we need. If you have the kernel sources downloaded, have a look at `Documentation/input/joystick.txt`. You can browse the kernel source tree at [kernel.org](https://kernel.org/) by clicking the "cgit" (git frontend) link for the kernel that you're using, then clicking the "tree" link near the top. Here's a link to the [Documentation from kernel 3.12.6](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/Documentation/input/joystick.txt?id=refs/tags/v3.12.6).
+For an extensive overview of all joystick related modules in Linux, you will need access to the Linux kernel sources -- specifically the Documentation section. Unfortunately, pacman kernel packages do not include what we need. If you have the kernel sources downloaded, have a look at `Documentation/input/joystick.txt`. You can browse the kernel source tree at [kernel.org](https://kernel.org/) by clicking the "browse" (cgit - the git frontend) link for the kernel that you're using, then clicking the "tree" link near the top. Here's a link to the [documentation from the latest kernel](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/Documentation/input/joystick.txt).
 
 Some joysticks need specific modules, such as the Microsoft Sidewinder controllers (`sidewinder`), or the Logitech digital controllers (`adi`). Many older joysticks will work with the simple `analog` module. If your joystick is plugging in to a gameport provided by your soundcard, you will need your soundcard drivers loaded - however, some cards, like the Soundblaster Live, have a specific gameport driver (`emu10k1-gp`). Older ISA soundcards may need the `ns558` module, which is a standard gameport module.
 
@@ -635,4 +635,4 @@ And add your user to that group.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=416212](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=416212)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418482](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418482)"

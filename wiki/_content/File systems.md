@@ -2,8 +2,13 @@
 
 Related articles
 
+*   [fstab](/index.php/Fstab "Fstab")
 *   [Mount](/index.php/Mount "Mount")
 *   [Partitioning](/index.php/Partitioning "Partitioning")
+*   [tmpfs](/index.php/Tmpfs "Tmpfs")
+*   [NFS](/index.php/NFS "NFS")
+*   [Samba](/index.php/Samba "Samba")
+*   [Backup programs#Distributed file systems](/index.php/Backup_programs#Distributed_file_systems "Backup programs")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
@@ -197,4 +202,4 @@ Alternatively, you can use `mkfs` which is just a unified front-end for the diff
 
 *   [wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_systems&oldid=414016](https://wiki.archlinux.org/index.php?title=File_systems&oldid=414016)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_systems&oldid=418619](https://wiki.archlinux.org/index.php?title=File_systems&oldid=418619)"

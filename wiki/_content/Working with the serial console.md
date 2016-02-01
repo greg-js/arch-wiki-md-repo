@@ -192,7 +192,7 @@ Press Enter to exit the menus (pressing Esc will not save changes). Remove the m
 [picocom](https://www.archlinux.org/packages/?name=picocom) is a tiny dumb-terminal emulation program that is very like minicom, but instead of _mini_, it is _pico_. The following example connect to `ttyS0` at 9600 bps:
 
 ```
-$ picocom -b 9600 ttyS0
+$ picocom -b 9600 /dev/ttyS0
 
 ```
 
@@ -304,4 +304,4 @@ rsz() {
 }
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416847](https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=416847)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=418583](https://wiki.archlinux.org/index.php?title=Working_with_the_serial_console&oldid=418583)"

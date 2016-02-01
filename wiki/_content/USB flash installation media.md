@@ -172,9 +172,9 @@ $ diskutil unmountDisk /dev/disk1
 
 ```
 
-Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1m`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1m` indicates a 1 MB block size).
+Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1M`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1M` indicates a 1 MB block size).
 
- `# dd if=image.iso of=/dev/rdisk1 bs=1m` 
+ `# dd if=image.iso of=/dev/rdisk1 bs=1M` 
 
 ```
 20480+0 records in
@@ -486,4 +486,4 @@ syslinux.exe -m -a -d /Boot/Settings X:
 *   [Fedora wiki - How to create and use Live USB](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB)
 *   [openSUSE wiki - SDB:Live USB stick](http://en.opensuse.org/SDB:Live_USB_stick)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=416855](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=416855)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=418452](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&oldid=418452)"

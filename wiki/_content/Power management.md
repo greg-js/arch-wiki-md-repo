@@ -350,7 +350,16 @@ See `man 7 systemd.special` and `man 8 systemd-sleep` for more details.
 
 #### Delayed lid switch action
 
-When performing lid switches in short succession, _logind_ will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay will be configurable with systemd v220\. [[2]](http://cgit.freedesktop.org/systemd/systemd/commit/?id=9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
+When performing lid switches in short succession, _logind_ will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
+
+ `/etc/systemd/logind.conf` 
+
+```
+...
+HoldoffTimeoutSec=30s
+...
+
+```
 
 #### Suspend from corresponding laptop Fn key not working
 
@@ -714,4 +723,4 @@ done
 *   [ThinkWiki:How to reduce power consumption](http://www.thinkwiki.org/wiki/How_to_reduce_power_consumption)
 *   [Ubuntu Wiki's Power Saving Tweaks](https://wiki.ubuntu.com/Kernel/PowerManagement/PowerSavingTweaks)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management&oldid=412937](https://wiki.archlinux.org/index.php?title=Power_management&oldid=412937)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Power_management&oldid=418479](https://wiki.archlinux.org/index.php?title=Power_management&oldid=418479)"

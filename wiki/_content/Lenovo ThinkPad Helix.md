@@ -21,8 +21,9 @@
         *   [2.2.3 Touchscreen / Wacom Tips & Tricks](#Touchscreen_.2F_Wacom_Tips_.26_Tricks)
             *   [2.2.3.1 thinkpad-helix-utils: Toggle Touch](#thinkpad-helix-utils:_Toggle_Touch)
             *   [2.2.3.2 xnohands](#xnohands)
-    *   [2.3 Screen Rotation](#Screen_Rotation)
-    *   [2.4 Enable SSD TRIM](#Enable_SSD_TRIM)
+    *   [2.3 Sensors](#Sensors)
+    *   [2.4 Screen Rotation](#Screen_Rotation)
+    *   [2.5 Enable SSD TRIM](#Enable_SSD_TRIM)
 *   [3 BIOS/Firmware Updates](#BIOS.2FFirmware_Updates)
 
 ## Installation
@@ -42,8 +43,7 @@ To fully support all hardware in X, one needs to ensure that the following drive
 *   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (for the clickpad)
 *   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitizers)
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (for the GPU)
-
-Nearly everything works fine with no special configuration. The sensors (accelerometer, gyroscope, magnetometer, ambient light sensor) don't seem to be recognized yet.
+*   [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> (accelerometer/gyroscope, ambient light sensor, digital campass)
 
 ### Bluetooth
 
@@ -141,9 +141,20 @@ $ cp xnohands.desktop ~/.config/autostart/
 
 Please note that you can have both the thinkpad-helix-utils **Toggle Touch** and **xnohands** installed; but, do not use both at the same time. **xnohands** will "re-activate" the touchscreen as soon as you pull the pen away from the screen, defeating the purpose of **Toggle Touch** to keep touch disabled at all times.
 
+### Sensors
+
+For X11 to utilize, install the AUR package [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> to expose the dbus events. For example, [Gnome](https://www.archlinux.org/packages/?name=Gnome) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> package to:
+
+*   Adjust the display brightness when moving from dark to bright lighting
+*   Automatically rotate the display based on orientation.
+
+See the upstream source for more information about [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> and how to configure/test its functionality.
+
 ### Screen Rotation
 
-If you have both digitizers configured through the xf86-input-wacom driver, they will automatically rotate with the display and you can use a simple command like `xrandr --output eDP1 --rotate left` to rotate the screen with ease.
+If you have both digitizers configured through the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver and the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> package, they will automatically rotate with the display.
+
+Alternatively, you can use a simple command like `xrandr --output eDP1 --rotate left` to rotate the screen with ease.
 
 If you want to use the bezel buttons (or some other hotkey) to cycle through orientations (or toggle between two specific ones), `helix-rotate`, also from from [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup>, provides an easy-to-bind command that may serve your needs well.
 
@@ -169,4 +180,4 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416940](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=416940)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418585](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418585)"

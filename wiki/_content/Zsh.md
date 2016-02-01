@@ -333,7 +333,7 @@ username@host ~ %                                                         [0]
 
 ### Dirstack
 
-Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This can then be used to _cd_ them very quickly. You need to add some lines to you configuration file:
+Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This can then be used to _cd_ them very quickly. You need to add some lines to your configuration file:
 
  `.zshrc` 
 
@@ -472,4 +472,4 @@ _username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
 *   [Gentoo Wiki: Zsh/HOWTO](https://wiki.gentoo.org/wiki/Zsh/HOWTO)
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=418208](https://wiki.archlinux.org/index.php?title=Zsh&oldid=418208)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=418615](https://wiki.archlinux.org/index.php?title=Zsh&oldid=418615)"

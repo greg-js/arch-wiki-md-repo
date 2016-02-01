@@ -13,23 +13,24 @@
 
 *   [1 Installation](#Installation)
 *   [2 Boot Booster](#Boot_Booster)
-*   [3 Display and input settings](#Display_and_input_settings)
-*   [4 Powersaving and ACPI](#Powersaving_and_ACPI)
-    *   [4.1 laptop-mode-tools](#laptop-mode-tools)
-    *   [4.2 Gmabooster](#Gmabooster)
-    *   [4.3 CPU frequency scaling](#CPU_frequency_scaling)
-    *   [4.4 Hotkeys](#Hotkeys)
-        *   [4.4.1 Wifi toggle](#Wifi_toggle)
-        *   [4.4.2 Sound volume hotkeys](#Sound_volume_hotkeys)
-        *   [4.4.3 Sleep](#Sleep)
-    *   [4.5 Display settings](#Display_settings)
-*   [5 Hardware](#Hardware)
-    *   [5.1 Ethernet](#Ethernet)
-    *   [5.2 WiFi](#WiFi)
-    *   [5.3 Camera](#Camera)
-    *   [5.4 Microphone](#Microphone)
-*   [6 Hardware Info](#Hardware_Info)
-    *   [6.1 lspci](#lspci)
+*   [3 Wireless/rfkill](#Wireless.2Frfkill)
+*   [4 Display and input settings](#Display_and_input_settings)
+*   [5 Powersaving and ACPI](#Powersaving_and_ACPI)
+    *   [5.1 laptop-mode-tools](#laptop-mode-tools)
+    *   [5.2 Gmabooster](#Gmabooster)
+    *   [5.3 CPU frequency scaling](#CPU_frequency_scaling)
+    *   [5.4 Hotkeys](#Hotkeys)
+        *   [5.4.1 Wifi toggle](#Wifi_toggle)
+        *   [5.4.2 Sound volume hotkeys](#Sound_volume_hotkeys)
+        *   [5.4.3 Sleep](#Sleep)
+    *   [5.5 Display settings](#Display_settings)
+*   [6 Hardware](#Hardware)
+    *   [6.1 Ethernet](#Ethernet)
+    *   [6.2 WiFi](#WiFi)
+    *   [6.3 Camera](#Camera)
+    *   [6.4 Microphone](#Microphone)
+*   [7 Hardware Info](#Hardware_Info)
+    *   [7.1 lspci](#lspci)
 
 # Installation
 
@@ -46,6 +47,10 @@ To continue using Boot Booster, create a [partition](/index.php/Partitioning "Pa
 *   It must be type <tt>0xEF</tt> (<tt>EFI (FAT-12/16/32)</tt> in [Fdisk](/index.php/Fdisk "Fdisk"), <tt>esp</tt> in [GNU_Parted](/index.php/GNU_Parted "GNU Parted")).
 
 After install is complete, enable Boot Booster in the BIOS. On the second boot after enabling, Boot Booster will be fully activated. Boot Booster must be disabled in the BIOS to boot from other devices again.
+
+# Wireless/rfkill
+
+The wireless interface may become soft blocked shortly after booting after installation. Install [rfkill](https://www.archlinux.org/packages/?name=rfkill) as part of the installation and see the [rfkill caveat](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
 
 # Display and input settings
 
@@ -298,4 +303,4 @@ Note that this is the 1005HA-M version.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=418330](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=418330)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=418445](https://wiki.archlinux.org/index.php?title=ASUS_Eee_PC_1005HA&oldid=418445)"

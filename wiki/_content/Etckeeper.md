@@ -7,11 +7,12 @@ Etckeeper lets you keep `/etc` under version control.
 *   [1 Install](#Install)
 *   [2 Configure](#Configure)
 *   [3 Usage](#Usage)
-    *   [3.1 systemd](#systemd)
-    *   [3.2 Cron](#Cron)
-    *   [3.3 Wrapper script](#Wrapper_script)
-    *   [3.4 Incron](#Incron)
-    *   [3.5 Automatic push to remote repo](#Automatic_push_to_remote_repo)
+    *   [3.1 Pacman hooks](#Pacman_hooks)
+    *   [3.2 systemd](#systemd)
+    *   [3.3 Cron](#Cron)
+    *   [3.4 Wrapper script](#Wrapper_script)
+    *   [3.5 Incron](#Incron)
+    *   [3.6 Automatic push to remote repo](#Automatic_push_to_remote_repo)
 
 ## Install
 
@@ -31,6 +32,53 @@ Once you've set your preferred VCS (the default is git), you can initialize the 
 ## Usage
 
 Etckeeper supports using pacman as a `LOWLEVEL_PACKAGE_MANAGER` in `etckeeper.conf`. Support for using pacman as a `HIGHLEVEL_PACKAGER_MANAGER` is not possible since pacman does not have hook capability, so you'll need to either commit changes manually or use one of the stopgap solutions below.
+
+### Pacman hooks
+
+With [pacman](https://www.archlinux.org/packages/?name=pacman) >= 5.0.0, support for hooks was added to [pacman](/index.php/Pacman "Pacman") [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). To automatically run etckeeper's pre- and post-transaction, create the two hooks files below. You may need to create the hooks directory first:
+
+```
+mkdir -p /etc/pacman.d/hooks
+
+```
+
+`/etc/pacman.d/hooks/etckeeper-pre.hook`
+
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Etckeeper Pre-install
+Depends = etckeeper
+When = PreTransaction
+Exec = /usr/bin/etckeeper pre-install
+
+```
+
+`/etc/pacman.d/hooks/etckeeper-post.hook`
+
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Etckeeper Post-install
+Depends = etckeeper
+When = PostTransaction
+Exec = /usr/bin/etckeeper post-install
+
+```
+
+For details on pacman hooks, see `man alpm-hooks`.
 
 ### systemd
 
@@ -117,4 +165,4 @@ Change to `etc/.git` and add your remote Github repository:
 
 Now each time you run your wrapper script or alias from above, changes will be automatically commited to your Github repo.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=411988](https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=411988)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=418648](https://wiki.archlinux.org/index.php?title=Etckeeper&oldid=418648)"

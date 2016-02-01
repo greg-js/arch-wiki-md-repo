@@ -35,39 +35,9 @@ _udisksd_ ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and _udi
 
 ## Configuration
 
-Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If your [session](/index.php/Session "Session") is not activated or present (for example, when controlling udisks from [systemd/User](/index.php/Systemd/User "Systemd/User")), configure policykit manually. The following file sets common udisks permissions for the `storage` group. [[2]](https://github.com/coldfix/udiskie/wiki/Permissions)
+Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If your [session](/index.php/Session "Session") is not activated or present, for example, when controlling udisks from [systemd/User](/index.php/Systemd/User "Systemd/User"), configure policykit manually.
 
- `/etc/polkit-1/rules.d/50-udisks.rules` 
-
-```
-polkit.addRule(function(action, subject) {
-  var YES = polkit.Result.YES;
-  var permission = {
-    // only required for udisks1:
-    "org.freedesktop.udisks.filesystem-mount": YES,
-    "org.freedesktop.udisks.filesystem-mount-system-internal": YES,
-    "org.freedesktop.udisks.luks-unlock": YES,
-    "org.freedesktop.udisks.drive-eject": YES,
-    "org.freedesktop.udisks.drive-detach": YES,
-    // only required for udisks2:
-    "org.freedesktop.udisks2.filesystem-mount": YES,
-    "org.freedesktop.udisks2.filesystem-mount-system": YES,
-    "org.freedesktop.udisks2.encrypted-unlock": YES,
-    "org.freedesktop.udisks2.eject-media": YES,
-    "org.freedesktop.udisks2.power-off-drive": YES,
-    // required for udisks2 if using udiskie from another seat (e.g. systemd):
-    "org.freedesktop.udisks2.filesystem-mount-other-seat": YES,
-    "org.freedesktop.udisks2.encrypted-unlock-other-seat": YES,
-    "org.freedesktop.udisks2.eject-media-other-seat": YES,
-    "org.freedesktop.udisks2.power-off-drive-other-seat": YES
-  };
-  if (subject.isInGroup("storage")) {
-    return permission[action.id];
-  }
-});
-```
-
-See [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example.
+See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks permissions for the `storage` group, and [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example.
 
 ## Mount helpers
 
@@ -204,7 +174,7 @@ See `man udisks` for more information.
 
 ### Devices no longer mounted after physical removal
 
-This may happen when both udisks and [systemd](/index.php/Systemd "Systemd") try to unmount a device that is no longer present. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1588027#p1588027) [[5]](https://github.com/systemd/systemd/issues/1741) If you see messages such as:
+This may happen when both udisks and [systemd](/index.php/Systemd "Systemd") try to unmount a device that is no longer present. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1588027#p1588027) [[5]](https://github.com/systemd/systemd/issues/1741) Example error messages:
 
 ```
 Jan 16 18:46:04 thinkpad systemd[1]: media-ASMT_2105.mount: Unit is bound to inactive unit dev-sdc2.device. Stopping, too.
@@ -212,7 +182,7 @@ Jan 16 18:46:04 thinkpad systemd[1]: Unmounting /media/ASMT_2105...
 
 ```
 
-Run as a workaround:
+To reset the state of the mount unit, run:
 
 ```
 # systemctl reset-failed
@@ -224,4 +194,4 @@ Run as a workaround:
 *   [gentoo wiki: udisks](http://wiki.gentoo.org/wiki/Udisks)
 *   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=418390](https://wiki.archlinux.org/index.php?title=Udisks&oldid=418390)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Udisks&oldid=418419](https://wiki.archlinux.org/index.php?title=Udisks&oldid=418419)"

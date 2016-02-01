@@ -14,11 +14,12 @@ Compton in particular is notable for fixing numerous bugs found in its predecess
         *   [2.3.1 Disable conky shadowing](#Disable_conky_shadowing)
 *   [3 Multihead](#Multihead)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Slock](#Slock)
-    *   [4.2 Dual shadow on some GTK3 applications](#Dual_shadow_on_some_GTK3_applications)
-    *   [4.3 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.4 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.5 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
+    *   [4.1 slock](#slock)
+    *   [4.2 dwm & dmenu](#dwm_.26_dmenu)
+    *   [4.3 Dual shadow on some GTK3 applications](#Dual_shadow_on_some_GTK3_applications)
+    *   [4.4 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.5 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.6 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -125,14 +126,12 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
 
-### Slock
+### slock
 
-**Note:** Use of the `--focus-exclude` argument may be a cleaner solution.
-
-Where inactive window transparency has been enabled (the `-i` argument when running as a command), this may provide troublesome results when also using [slock](/index.php/Slock "Slock"). The solution is to amend the transparency to `0.2`. For example, where running compton arguments as a command:
+Where inactive window transparency has been enabled (the `-i` argument when running as a command), this may provide troublesome results when also using [slock](/index.php/Slock "Slock"). One solution is to amend the transparency to `0.2`. For example, where running compton arguments as a command:
 
 ```
-compton <any other arguments> -i 0.2
+$ compton <any other arguments> -i 0.2
 
 ```
 
@@ -142,6 +141,56 @@ Otherwise, where using a configuration file:
 inactive-dim = 0.2;
 
 ```
+
+Alternatively, you may try to exclude slock by its window id.
+
+**Note:** Some programs change their id for every new instance, but slock's appears to be static. Someone more knowledgeable will have to confirm that slock's id is in fact static- until then, use at your own risk.
+
+Find your slock's window id by running the command:
+
+```
+$ xwininfo & slock
+
+```
+
+Quickly click anywhere on the screen (before slock exits), then type your password to unlock. You should see the window id in the output:
+
+```
+xwininfo: Window id: 0x1800001 (has no name)
+
+```
+
+Take the window id and exclude it from compton with:
+
+```
+$ compton <any other arguments> --focus-exclude 'id = 0x1800001'
+
+```
+
+Otherwise, where using a configuration file:
+
+```
+focus-exclude = "id = 0x1800001";
+
+```
+
+### dwm & dmenu
+
+dwm's statusbar is not detected by any of compton's functions to automatically exclude window manager elements. Neither dwm statusbar nor dmenu have a static window id. If you want to exclude it from inactive window transparency (or other), you'll have to either patch a window class into the source code of each, or exclude by less precise attributes. I have dmenu and dwm's status on top, which allows me to write a resolution independent location exclusion.
+
+```
+$ compton <any other arguments> --focus-exclude "x = 0 && y = 0 && override_redirect = true"
+
+```
+
+Otherwise, where using a configuration file:
+
+```
+focus-exclude = "x = 0 && y = 0 && override_redirect = true";
+
+```
+
+The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
 
 ### Dual shadow on some GTK3 applications
 
@@ -192,4 +241,4 @@ When facing high CPU use with `--backend glx` or tearing with `--vsync` enabled,
 
 *   [Howto: Using Compton for tear-free compositing on XFCE or LXDE](http://ubuntuforums.org/showthread.php?t=2144468&p=12644745#post12644745)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Compton&oldid=400530](https://wiki.archlinux.org/index.php?title=Compton&oldid=400530)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Compton&oldid=418415](https://wiki.archlinux.org/index.php?title=Compton&oldid=418415)"

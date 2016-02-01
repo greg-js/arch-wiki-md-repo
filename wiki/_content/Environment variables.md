@@ -39,6 +39,8 @@ Each process stores their environment in the `/proc/$PID/environ` file. This fil
 
 The following section lists a number of common environment variables used by a Linux system and describes their values.
 
+**Note:** Environment variables should be set in your shell's profile. For bash, this would typically be `~/.bash_profile` or `.profile`. See the initialisation section of the wiki page for your shell to determine the correct location. X-specific variables can be set i `~/.xinitrc`, but it is preferable to set them in your shell profile.
+
 *   `DE` indicates the _D_esktop _E_nvironment being used. [xdg-open](/index.php/Xdg-open "Xdg-open") will use it to choose more user-friendly file-opener application that desktop environment provides. Some packages need to be installed to use this feature. For [GNOME](/index.php/GNOME "GNOME"), that would be [libgnome](https://www.archlinux.org/packages/?name=libgnome); for [Xfce](/index.php/Xfce "Xfce") this is [exo](https://www.archlinux.org/packages/?name=exo). Recognised values of `DE` variable are: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
 
 NaN
@@ -179,4 +181,4 @@ $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
 *   [Default applications](/index.php/Default_applications "Default applications")
 *   [Xdg-open](/index.php/Xdg-open "Xdg-open")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=413568](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=413568)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=418582](https://wiki.archlinux.org/index.php?title=Environment_variables&oldid=418582)"

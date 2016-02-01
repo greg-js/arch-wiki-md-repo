@@ -20,7 +20,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
         *   [5.1.1 Adding a new drive](#Adding_a_new_drive)
         *   [5.1.2 Extending the logical volume](#Extending_the_logical_volume)
     *   [5.2 Modifying the encrypt hook for multiple partitions](#Modifying_the_encrypt_hook_for_multiple_partitions)
-        *   [5.2.1 Multiple root partitions](#Multiple_root_partitions)
+        *   [5.2.1 Root filesystem spanning multiple partitions](#Root_filesystem_spanning_multiple_partitions)
         *   [5.2.2 Multiple non-root partitions](#Multiple_non-root_partitions)
     *   [5.3 Encrypted system using a remote LUKS header](#Encrypted_system_using_a_remote_LUKS_header)
         *   [5.3.1 Using systemd hook](#Using_systemd_hook)
@@ -399,25 +399,19 @@ and now includes the span to the new disk. Note that the `cryptsetup resize` act
 
 ### Modifying the encrypt hook for multiple partitions
 
-#### Multiple root partitions
+#### Root filesystem spanning multiple partitions
 
-It is possible to modify the encrypt hook to allow multiple hard drive decrypt root (`/`) at boot. One way according to an Arch user (benke):
+It is possible to modify the encrypt hook to allow multiple hard drive decrypt root (`/`) at boot. One way:
 
 ```
-# cp /usr/lib/initcpio/hooks/encrypt  /usr/lib/initcpio/hooks/encrypt2
 # cp /usr/lib/initcpio/install/encrypt /usr/lib/initcpio/install/encrypt2
-# nano /usr/lib/initcpio/hooks/encrypt2
+# cp /usr/lib/initcpio/hooks/encrypt  /usr/lib/initcpio/hooks/encrypt2
+# sed -i "s/cryptdevice/cryptdevice2/" /usr/lib/initcpio/hooks/encrypt2
+# sed -i "s/cryptkey/cryptkey2/" /usr/lib/initcpio/hooks/encrypt2
 
 ```
 
-Change `$cryptkey` to `$cryptkey2`, and `$cryptdevice` to `$cryptdevice2`. Add `cryptdevice2=` (e.g. `cryptdevice2=/dev/sdb:hdd2`) to your boot options (and `cryptkey2=` if needed).
-
-Change the `/etc/fstab` flag for root:
-
-```
-/dev/sdb     /mnt    btrfs    device=/dev/sda,device=/dev/sdb, ...    0 0
-
-```
+Add `cryptdevice2=` to your boot options (and `cryptkey2=` if needed), see [Dm-crypt/System_configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration")
 
 #### Multiple non-root partitions
 
@@ -571,4 +565,4 @@ To finish, following [Dm-crypt/Encrypting an entire system#Post-installation](/i
 
 **Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `name`. But you can still have a consistent mapping using the disk id under `/dev/disk/by-id/`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=417273](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=417273)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=418423](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=418423)"

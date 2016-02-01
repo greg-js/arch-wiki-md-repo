@@ -291,7 +291,7 @@ $ openssl genpkey -aes-256-cbc -algorithm RSA -out private/key.pem -pkeyopt rsa_
 
 ## Making requests
 
-To obtain a certificate from a CA, whether it be a public one such as [CAcert.org](http://www.cacert.org), or a locally managed solution, a request file must be delivered to the CA, and these are conventionally called `csr` files.
+To obtain a certificate from a CA, whether a public one such as [CAcert.org](http://www.cacert.org) or a locally managed solution, a request file must be submitted which is known as a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") or CSR.
 
 Make a new request and sign it with a previously [generated key](#Generating_keys):
 
@@ -396,4 +396,4 @@ make revoke item=**cert.pem**
 *   [Step-by-step guide to create a signed SSL certificate](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=414787](https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=414787)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=418601](https://wiki.archlinux.org/index.php?title=OpenSSL&oldid=418601)"

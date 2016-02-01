@@ -23,7 +23,7 @@ Related articles
 
 ## FAQ
 
-For an up-to-date list of known issues, look at the upstream [TODO](http://cgit.freedesktop.org/systemd/systemd/tree/TODO).
+For an up-to-date list of known issues, look at the upstream [TODO](https://github.com/systemd/systemd/blob/master/TODO).
 
 ### Why do I get log messages on my console?
 
@@ -149,4 +149,4 @@ This happens when using `systemctl enable` and the symlink it tries to create in
 
 To solve this problem, either first disable the relevant display manager before enabling the new one, or use `systemctl -f enable` to overwrite an existing symlink.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=412016](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=412016)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=418529](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&oldid=418529)"

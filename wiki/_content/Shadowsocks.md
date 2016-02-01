@@ -139,4 +139,4 @@ To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20) or _ChaCha20_ cyphers, i
 *   [GitHub wiki](https://github.com/shadowsocks/shadowsocks/wiki)
 *   [Backup GitHub project](https://github.com/shadowsocks-backup/shadowsocks) (the original project has been "removed according to regulations" in August 2015)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shadowsocks&oldid=398354](https://wiki.archlinux.org/index.php?title=Shadowsocks&oldid=398354)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shadowsocks&oldid=418638](https://wiki.archlinux.org/index.php?title=Shadowsocks&oldid=418638)"

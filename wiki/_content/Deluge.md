@@ -232,6 +232,7 @@ $ echo "delugeuser:p422WoRd:10" >> $HOME/.config/deluge/auth
 
 *   The user/password created does not have to match any system users, and to maintain good security practices it should **not**!
 *   The user/password in this file are not hashed or salted like in the web client config.
+*   The user/password must match the user/password found in /srv/deluge/.config/deluge/auth otherwise the authentication fails.
 
 The number **10** corresponds to a level of **Admin**. Refer to the following table for additional values:
 
@@ -312,4 +313,4 @@ The port **58846** should be replaced with the port the deluge server is running
 *   [Deluge homepage](http://deluge-torrent.org/)
 *   [Deluge wiki](http://dev.deluge-torrent.org/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Deluge&oldid=402494](https://wiki.archlinux.org/index.php?title=Deluge&oldid=402494)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Deluge&oldid=418593](https://wiki.archlinux.org/index.php?title=Deluge&oldid=418593)"

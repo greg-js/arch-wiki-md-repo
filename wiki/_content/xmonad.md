@@ -60,7 +60,7 @@ Select _Xmonad_ from the session menu in a [display manager](/index.php/Display_
 
 Alternatively, append `exec xmonad` to the `~/.xinitrc` file and then start the session by executing _startx_.
 
-**Note:** By default, xmonad does not set an X cursor, therefore the "cross" cursor is usually displayed. To set the expected left-pointer, add the following to your `~/.xinitrc` (or `~/.xprofile` if you are using a display manager): `xsetroot -cursor_name left_ptr`
+**Note:** By default, xmonad does not set an X cursor, therefore the "cross" cursor is usually displayed. To set the expected left-pointer, see [Cursor themes#Change X shaped default cursor](/index.php/Cursor_themes#Change_X_shaped_default_cursor "Cursor themes").
 
 ## Configuration
 
@@ -640,4 +640,4 @@ to use the general (QT) UI.
 *   [Share your xmonad desktop!](https://bbs.archlinux.org/viewtopic.php?id=94969)
 *   [xmonad hacking thread](https://bbs.archlinux.org/viewtopic.php?id=40636)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417798](https://wiki.archlinux.org/index.php?title=Xmonad&oldid=417798)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xmonad&oldid=418637](https://wiki.archlinux.org/index.php?title=Xmonad&oldid=418637)"

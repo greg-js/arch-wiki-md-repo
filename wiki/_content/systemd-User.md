@@ -71,7 +71,7 @@ One variable you may want to set is `PATH`.
 
 #### DISPLAY and XAUTHORITY
 
-`DISPLAY` is used by any X application to know which display to use and `XAUTHORITY` to provide a path to the user's `.Xauthority` file and thus the cookie needed to access the X server. If you plan on launching X applications from systemd units, these variables need to be set. Since [version 219](http://cgit.freedesktop.org/systemd/systemd/tree/NEWS?id=v219#n194), systemd provides a script in `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` to import those variables into the systemd user session on X launch. So unless you start X in a nonstandard way, user services should be aware of the `DISPLAY` and `XAUTHORITY`.
+`DISPLAY` is used by any X application to know which display to use and `XAUTHORITY` to provide a path to the user's `.Xauthority` file and thus the cookie needed to access the X server. If you plan on launching X applications from systemd units, these variables need to be set. Since [version 219](https://github.com/systemd/systemd/blob/v219/NEWS#L194), systemd provides a script in `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` to import those variables into the systemd user session on X launch. So unless you start X in a nonstandard way, user services should be aware of the `DISPLAY` and `XAUTHORITY`.
 
 #### PATH
 
@@ -334,4 +334,4 @@ WantedBy=wm.target
 *   [Collection of useful systemd user units](https://github.com/grawity/systemd-user-units)
 *   [Arch forum thread about changes in systemd 206 user instances](https://bbs.archlinux.org/viewtopic.php?id=167115)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=416204](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=416204)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418531](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418531)"

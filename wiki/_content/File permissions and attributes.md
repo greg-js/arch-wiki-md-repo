@@ -83,7 +83,7 @@ The first column is the type of each file:
 *   **p** denotes a named pipe (aka FIFO).
 *   **l** denotes a symbolic link.
 
-The letters after that are the permissions, this first column is what we will be most interested in. The second one is how many links there are in a file, we can safely ignore it. The third column has two values/names: The first one (in my example 'ben') is the name of the user that owns the file. The second value ('users' in the example) is the **group** that the owner belongs to (Read more about [groups](/index.php/Groups "Groups")).
+The letters after that are the permissions, this first column is what we will be most interested in. The second column is how many [hard links](https://en.wikipedia.org/wiki/Hard_link "wikipedia:Hard link") there are to the file. The third column has two values/names: The first one (in my example 'ben') is the name of the user that owns the file. The second value ('users' in the example) is the **group** that owns the file (Read more about [groups](/index.php/Groups "Groups")).
 
 The next column is the size of the file or directory in bytes and information after that are the dates and times the file or directory was last modified, and of course the name of the file or directory.
 
@@ -524,4 +524,4 @@ user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 *   [Extended attributes: the good, the not so good, the bad.](http://www.lesbonscomptes.com/pages/extattrs.html)
 *   [Backup and restore file permissions in Linux](http://www.concrete5.org/documentation/how-tos/designers/backup-and-restore-file-permissions-in-linux/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&oldid=406729](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&oldid=406729)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&oldid=418623](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&oldid=418623)"

@@ -68,6 +68,14 @@ _pacman_ is written in the C programming language and uses the _.pkg.tar.xz_ pac
 
 ## Usage
 
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
+
+**This article or section needs expansion.**
+
+**Reason:** pacman 5.0 added some new operations: `-F` and `-D` [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Pacman#](https://wiki.archlinux.org/index.php/Talk:Pacman))
+
 What follows is just a small sample of the operations that _pacman_ can perform. To read more examples, refer to [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
 
 **Tip:** For those who have used other Linux distributions before, there is a helpful [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") article.
@@ -510,7 +518,7 @@ _pacman_ 4 supports package signatures, which add an extra layer of security to 
 
 ### "Failed to commit transaction (conflicting files)" error
 
-If you see the following error: [[1]](https://bbs.archlinux.org/viewtopic.php?id=56373)
+If you see the following error: [[2]](https://bbs.archlinux.org/viewtopic.php?id=56373)
 
 ```
 error: could not prepare transaction
@@ -598,7 +606,7 @@ In the case that _pacman_ crashes with a "database write" error while removing p
 
 ### pacman crashes the official installation media
 
-The official installation media (ISO) before version 10.2015 are not setup to be updated itself at runtime. Running `pacman -Syu` from a booted install media console may crash unexpectedly any time, as soon as memory is depleted. This happens because the install media image build reports an arbitrary capacity (of 32GB) to pacman, regardless of available free memory.[[2]](https://bugs.archlinux.org/task/45618#comment137346) At the same time the ISO reserves only a low static memory allotment for operations (`/run/archiso/cowspace` of `256MB` RAM) of the live system, in order to allow installation on machines with low resources. If the machine has more RAM available, you can override the allotment by setting the `cow_spacesize=` kernel option for the ISO manually, e.g. `cow_spacesize=2GB`.
+The official installation media (ISO) before version 10.2015 are not setup to be updated itself at runtime. Running `pacman -Syu` from a booted install media console may crash unexpectedly any time, as soon as memory is depleted. This happens because the install media image build reports an arbitrary capacity (of 32GB) to pacman, regardless of available free memory.[[3]](https://bugs.archlinux.org/task/45618#comment137346) At the same time the ISO reserves only a low static memory allotment for operations (`/run/archiso/cowspace` of `256MB` RAM) of the live system, in order to allow installation on machines with low resources. If the machine has more RAM available, you can override the allotment by setting the `cow_spacesize=` kernel option for the ISO manually, e.g. `cow_spacesize=2GB`.
 
 If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade).
 
@@ -687,7 +695,7 @@ That's it. Update the rest of the system.
 
 ### Freeze of package downloads
 
-Some issues have been reported regarding network problems that prevent _pacman_ from updating/synchronizing repositories. [[3]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[4]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default _pacman_ file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using _Host interface_ instead of _NAT_ in the machine properties.
+Some issues have been reported regarding network problems that prevent _pacman_ from updating/synchronizing repositories. [[4]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[5]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default _pacman_ file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using _Host interface_ instead of _NAT_ in the machine properties.
 
 ### Failed retrieving file 'core.db' from mirror
 
@@ -701,4 +709,4 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=416208](https://wiki.archlinux.org/index.php?title=Pacman&oldid=416208)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=418634](https://wiki.archlinux.org/index.php?title=Pacman&oldid=418634)"

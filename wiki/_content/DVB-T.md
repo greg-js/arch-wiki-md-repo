@@ -153,7 +153,7 @@ fi;
 
 ```
 
-**Note:**  
+**Note:**
 
 *   It is assumed that the `channels.conf` file has been created with: `w_scan -ft -c _country_code_ -C UTF-8 -M -E 0 -O 0 > ~/.mplayer/channels.conf`
 *   If the list of channels is too long then you can use something like `lstv | less` and search for channels name by pressing `/` and writing its name. When found press `q` for exiting of [less](http://unixhelp.ed.ac.uk/CGI/man-cgi?less) and use the channel associated number with [lstv](https://aur.archlinux.org/packages/lstv/)<sup><small>AUR</small></sup>.
@@ -217,4 +217,4 @@ If you bump into problems, try these tools to help debug:
 *   [dvbsnoop](https://aur.archlinux.org/packages/dvbsnoop/)<sup><small>AUR</small></sup> is an advanced tool that can show all the necessary data regarding the bandwidth, signal, frontend, etc.
 *   `femon -H` shows signal statistics
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=418394](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=418394)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=418466](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=418466)"

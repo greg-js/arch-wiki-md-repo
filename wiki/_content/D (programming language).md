@@ -108,8 +108,8 @@ CC=/usr/bin/clang dub
 more information
 
 *   [https://issues.dlang.org/show_bug.cgi?id=15054](https://issues.dlang.org/show_bug.cgi?id=15054)
-*   [https://bugs.archlinux.org/task/34983](https://bugs.archlinux.org/task/34983)
-*   [https://bugs.archlinux.org/task/46260](https://bugs.archlinux.org/task/46260)
+*   [FS#34983](https://bugs.archlinux.org/task/34983)
+*   [FS#46260](https://bugs.archlinux.org/task/46260)
 *   [http://wiki.dlang.org/Installing_LDC_on_Gentoo#Hardened_Gentoo](http://wiki.dlang.org/Installing_LDC_on_Gentoo#Hardened_Gentoo)
 
 ## Useful libraries and bindings
@@ -127,4 +127,4 @@ more information
 *   [The D Programming Language](http://dlang.org/) - The official home of D
 *   [Planet D](http://planet.dsource.org/) - A collection of blogs about D
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=418370](https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=418370)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=418467](https://wiki.archlinux.org/index.php?title=D_(programming_language)&oldid=418467)"

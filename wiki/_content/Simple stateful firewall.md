@@ -493,7 +493,7 @@ The above will reject with the default return error of `--reject-with icmp6-port
 In the next step make sure the protocol and extension are changed to be IPv6 appropriate for the rule regarding all new incoming ICMP echo requests (pings):
 
 ```
-# ip6tables -A INPUT -p icmpv6 --icmpv6-type 128 -m conntrack --ctstate NEW -j ACCEPT
+# ip6tables -A INPUT -p ipv6-icmp --icmpv6-type 128 -m conntrack --ctstate NEW -j ACCEPT
 
 ```
 
@@ -639,4 +639,4 @@ and make sure your rules are loaded when you boot enabling the **iptables** [dae
 *   [20 Iptables Examples For New SysAdmins](http://linuxconfig.org/collection-of-basic-linux-firewall-iptables-rules)
 *   [25 Most Frequently Used Linux IPTables Rules Examples](http://www.thegeekstuff.com/2011/06/iptables-rules-examples/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&oldid=409969](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&oldid=409969)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&oldid=418422](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&oldid=418422)"

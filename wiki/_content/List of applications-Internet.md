@@ -175,6 +175,10 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 NaN
 
+*   **Brave** — Web browser that blocks ads and trackers by default.
+
+NaN
+
 *   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with _vi_-like shortcuts and tiling layouts. As of October 2014 _dwb_ is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
 NaN
@@ -240,10 +244,6 @@ NaN
 NaN
 
 *   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as _xxxterm_)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
-
-NaN
-
-*   **Brave** — At Brave, our goal is to block everything on the web that can cramp your style and compromise your privacy. Annoying ads are yesterday's news, and cookies stay in your jar where they belong. An open source browser created by the co-founder of Mozilla. Find more at [https://www.brave.com/](https://www.brave.com/)
 
 NaN
 
@@ -313,7 +313,7 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 
 ##### FTP servers
 
-*   **bftpd** — Small, easy-to-configure FTP server
+*   **[bftpd](/index.php/Bftpd "Bftpd")** — Small, easy-to-configure FTP server
 
 NaN
 
@@ -1219,4 +1219,4 @@ NaN
 
 NaN
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418382](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418382)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418508](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418508)"

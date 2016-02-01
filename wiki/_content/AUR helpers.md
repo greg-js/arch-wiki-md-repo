@@ -95,7 +95,7 @@ NaN
 
 NaN
 
-*   **[yaourt](/index.php/Yaourt "Yaourt")** — A wrapper for the AUR and regular packages.
+*   **yaourt** — A wrapper for the AUR and regular packages.
 
 NaN
 
@@ -105,7 +105,7 @@ NaN
 
 NaN
 
-*   **pkgbuildup** — Help AUR package maintainers automatically update PKGBUILD files. Supports a simple template variable syntax
+*   **pkgbuildup** — Helps AUR package maintainers automatically update PKGBUILD files. Supports a template variable syntax.
 
 NaN
 
@@ -119,7 +119,7 @@ NaN
 
 ## Libraries
 
-*   **haskell-archlinux** — library to programmatically access the AUR and package metadata from the Haskell programming language
+*   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language
 
 NaN
 
@@ -169,10 +169,10 @@ NaN
 | trizen | Perl | No | Yes | Yes | No | Yes | No | - |
 | wrapaur | Bash | Yes | Yes | No | No | Yes | No | Mirror updates, print news and AUR comments |
 | yaah | Bash | Optional | N/A | No | Yes (bash) | Yes | No | No automatic build support |
-| [yaourt](/index.php/Yaourt "Yaourt") | Bash/C | Optional | No [[2]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | Yes | Yes (bash/zsh/fish) | Yes | Yes | Handles backups, ABS support |
+| yaourt | Bash/C | Optional | No [[2]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | Yes | Yes (bash/zsh/fish) | Yes | Yes | Handles backups, ABS support |
 
 ## See also
 
 *   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=417243](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=417243)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=418451](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=418451)"

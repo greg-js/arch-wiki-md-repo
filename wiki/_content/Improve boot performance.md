@@ -156,9 +156,12 @@ If btrfs is in use for the root filesystem, there is no need for a fsck on every
 
 You can also remove API filesystems from `/etc/fstab`, as systemd will mount them itself (see `pacman -Ql systemd | grep '\.mount$'` for a list). It is not uncommon for users to have a /tmp entry carried over from sysvinit, but you may have noticed from the command above that systemd already takes care of this. Ergo, it may be safely removed.
 
-Other filesystems like `/home` can be mounted with custom mount units. Adding `noauto,x-systemd.automount` will buffer all access to that partition, and will fsck and mount it on first access, reducing the number of filesystems it must fsck/mount during the boot process.
+Other filesystems like `/home` can be mounted with custom mount units. Adding `noauto,x-systemd.automount` to mount options will buffer all access to that partition, and will fsck and mount it on first access, reducing the number of filesystems it must fsck/mount during the boot process.
 
-**Note:** this will make your `/home` filesystem type `autofs`, which is ignored by [mlocate](/index.php/Mlocate "Mlocate") by default. The speedup of automounting `/home` may not be more than a second or two, depending on your system, so this trick may not be worth it.
+**Note:**
+
+*   This will make your `/home` filesystem type `autofs`, which is ignored by [mlocate](/index.php/Mlocate "Mlocate") by default. The speedup of automounting `/home` may not be more than a second or two, depending on your system, so this trick may not be worth it.
+*   If the system is installed into a [Btrfs](/index.php/Btrfs "Btrfs") subvolume (specifically: the root directory `/` itself is a subvolume) and `/home` is a separate file system, you may also want to prevent the creation of a `/home` subvolume. Mask the `home.conf` tmpfile: `ln -s /dev/null /etc/tmpfiles.d/home.conf`.
 
 ## Initramfs
 
@@ -174,4 +177,4 @@ Change `verbose` to `quiet` on the bootloader's kernel line. For some systems, p
 
 The best way to reduce boot time is not booting at all. Consider [suspending your system to RAM](/index.php/Suspend_and_hibernate#Suspend_to_RAM "Suspend and hibernate") instead.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=418339](https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=418339)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=418652](https://wiki.archlinux.org/index.php?title=Improve_boot_performance&oldid=418652)"
