@@ -1,11 +1,5 @@
 # Cgroups
 
-Related articles
-
-*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-*   [Docker](/index.php/Docker "Docker")
-
 **cgroups** (aka **control groups**) is a Linux kernel feature to limit, police and account the resource usage of certain processes (actually process groups). Compared to other approaches like the 'nice' command or `/etc/security/limits.conf`, cgroups are more flexible.
 
 Control groups can be used in multiple ways:
@@ -27,7 +21,7 @@ Control groups can be used in multiple ways:
 
 ## Installing
 
-First, install the utilities for managing cgroups; you need to install the [libcgroup](https://aur.archlinux.org/packages/libcgroup/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR") and [cgmanager](https://www.archlinux.org/packages/?name=cgmanager).
+First, install the utilities for managing cgroups; you need to install the [libcgroup](https://aur.archlinux.org/packages/libcgroup/) package from the [AUR](/index.php/AUR "AUR") and [cgmanager](https://www.archlinux.org/packages/?name=cgmanager).
 
 If you wish to use the client script `cgm`, you will need to start the `cgmanager` daemon.
 

@@ -1,10 +1,5 @@
 # Steam/Wine
 
-Related articles
-
-*   [Steam](/index.php/Steam "Steam")
-*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
-
 This article covers running Steam in Wine, in order to play games not available through the native Linux [Steam](/index.php/Steam "Steam").
 
 ## Contents
@@ -24,9 +19,9 @@ This article covers running Steam in Wine, in order to play games not available 
 
 Install Wine as described in [Wine](/index.php/Wine "Wine").
 
-Install the required Microsoft fonts: [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/)<sup><small>AUR</small></sup> and [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). You can also install these fonts through [Winetricks](/index.php/Wine#Winetricks "Wine"): `winetricks corefonts`.
+Install the required Microsoft fonts: [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/) and [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) from the [AUR](/index.php/AUR "AUR"). You can also install these fonts through [Winetricks](/index.php/Wine#Winetricks "Wine"): `winetricks corefonts`.
 
-**Note:** If you have access to Windows discs, you may want to install [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/)<sup><small>AUR</small></sup> or [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/)<sup><small>AUR</small></sup> instead.
+**Note:** If you have access to Windows discs, you may want to install [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/) or [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/) instead.
 
 Download and run the Steam installer from [steampowered.com](http://store.steampowered.com/about/). It is a `.msi` file so you have to start it with `msiexec`:
 
@@ -149,7 +144,7 @@ exec wine "c:\\program files\\steam\\steam.exe" "$@"
 
 ```
 
-*   Install [mimeo](https://aur.archlinux.org/packages/mimeo/)<sup><small>AUR</small></sup> and [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/)<sup><small>AUR</small></sup> from AUR. You will need to replace the existing [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) if installed. In XFCE, you will also need [xorg-utils](https://www.archlinux.org/packages/?name=xorg-utils).
+*   Install [mimeo](https://aur.archlinux.org/packages/mimeo/) and [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) from AUR. You will need to replace the existing [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) if installed. In XFCE, you will also need [xorg-utils](https://www.archlinux.org/packages/?name=xorg-utils).
 
 *   Create `~/.config/mimeo/associations.txt` with your favorite editor and paste:
 

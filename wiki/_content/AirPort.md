@@ -1,9 +1,5 @@
 # AirPort
 
-Related articles
-
-*   [Shairport](/index.php/Shairport "Shairport")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/AirPort "wikipedia:AirPort"):
 
 	"_AirPort is the name given to a series of Apple products using the (Wi-Fi) protocols (802.11b, 802.11g, 802.11n and 802.11ac). These products comprise a number of wireless routers and wireless cards. The AirPort Extreme name was originally intended to signify the addition of the 802.11g protocol to these products._"

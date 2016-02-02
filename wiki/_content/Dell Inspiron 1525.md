@@ -52,7 +52,7 @@ See [Wireless network configuration](/index.php/Wireless_network_configuration "
 
 ### Modem
 
-You need [hsfmodem](https://aur.archlinux.org/packages/hsfmodem/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hsfmodem)]</sup> package from AUR in order to get modem working. After you install that package you need to:
+You need [hsfmodem](https://aur.archlinux.org/packages/hsfmodem/) package from AUR in order to get modem working. After you install that package you need to:
 
 1.  Run `hsfconfig` as root to build the module and initialize the modem. A reboot is required before the modem can be initialized. Run `hsfconfig` again after reboot.
 2.  The modules are automatically loaded and a `/dev/modem` symlink is setup for use with the modem. Now use wvdial or other dialer programs to connect to the internet.

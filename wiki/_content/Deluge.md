@@ -1,13 +1,5 @@
 # Deluge
 
-Related articles
-
-*   [rTorrent](/index.php/RTorrent "RTorrent")
-*   [systemd](/index.php/Systemd "Systemd")
-*   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [iptables](/index.php/Iptables "Iptables")
-*   [OpenSSL](/index.php/OpenSSL "OpenSSL")
-
 [Deluge](http://deluge-torrent.org/) is a lightweight but full-featured BitTorrent application written in Python 2\. It has a variety of features, including but not limited to: a client/server model, DHT support, magnet links, a plugin system, UPnP support, full-stream encryption, proxy support, and three different client applications. When the server daemon is running, users can connect to it via a console client, a GTK+-based GUI, or a Web-based UI. A full list of features can be viewed [here](http://dev.deluge-torrent.org/wiki/About).
 
 ## Contents

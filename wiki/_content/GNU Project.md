@@ -1,10 +1,5 @@
 # GNU Project
 
-Related articles
-
-*   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
-*   [Core Utilities](/index.php/Core_Utilities "Core Utilities")
-
 From [http://www.gnu.org/](http://www.gnu.org/)
 
 	_The GNU Project was launched in 1984 to develop the GNU operating system, a complete Unix-like operating system which is free software—software which respects your freedom._

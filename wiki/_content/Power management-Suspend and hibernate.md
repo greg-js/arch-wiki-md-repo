@@ -1,14 +1,5 @@
 # Power management/Suspend and hibernate
 
-Related articles
-
-*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
-*   [systemd](/index.php/Systemd "Systemd")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
-*   [Power management](/index.php/Power_management "Power management")
-
 Currently there are three methods of suspending available: **suspend to RAM** (usually called just **suspend**), **suspend to disk** (usually known as **hibernate**), and **hybrid suspend** (sometimes aptly called **suspend to both**):
 
 *   **Suspend to RAM** method cuts power to most parts of the machine aside from the RAM, which is required to restore the machine's state. Because of the large power savings, it is advisable for laptops to automatically enter this mode when the computer is running on batteries and the lid is closed (or the user is inactive for some time).
@@ -125,7 +116,7 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 In the example the value of `_swap_file_offset_` is `38912`.
 
-**Tip:** The value of `_swap_file_offset_` can also be obtained by running `swap-offset _swap_file_`. The _swap-offset_ binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)<sup><small>AUR</small></sup>.
+**Tip:** The value of `_swap_file_offset_` can also be obtained by running `swap-offset _swap_file_`. The _swap-offset_ binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
 
 **Note:**
 

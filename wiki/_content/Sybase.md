@@ -31,7 +31,7 @@ After installing freetds you should edit the config file as root:
 
 ## Install command line client tool
 
-[sqsh](https://aur.archlinux.org/packages/sqsh/)<sup><small>AUR</small></sup> is in the [AUR](/index.php/AUR "AUR").
+[sqsh](https://aur.archlinux.org/packages/sqsh/) is in the [AUR](/index.php/AUR "AUR").
 
 ## Install Sybase Server
 

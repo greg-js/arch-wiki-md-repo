@@ -25,7 +25,7 @@ This article only explains the required steps configuring Sendmail; after that, 
 
 ## Installation
 
-Install the package [sendmail](https://aur.archlinux.org/packages/sendmail/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"), and the packages [procmail](https://www.archlinux.org/packages/?name=procmail) and [m4](https://www.archlinux.org/packages/?name=m4) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the package [sendmail](https://aur.archlinux.org/packages/sendmail/) from the [AUR](/index.php/AUR "AUR"), and the packages [procmail](https://www.archlinux.org/packages/?name=procmail) and [m4](https://www.archlinux.org/packages/?name=m4) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## DNS Records
 

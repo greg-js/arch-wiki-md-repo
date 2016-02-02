@@ -2,7 +2,7 @@
 
 [Spotify](http://www.spotify.com/) is a digital music service that gives you access to millions of songs.
 
-This Internet music service allows you to select any song in its database and stream for free. The service was recently introduced to the United States after previously being exclusive to Europe. The Linux client is only officially packaged for Debian and Fedora distributions, but is also available in the AUR: [spotify](https://aur.archlinux.org/packages/spotify/)<sup><small>AUR</small></sup>. Officially, they recommend that Linux users run the windows client under Wine. There are also the occasional voice ads in between songs for users who do not wish to subscribe.
+This Internet music service allows you to select any song in its database and stream for free. The service was recently introduced to the United States after previously being exclusive to Europe. The Linux client is only officially packaged for Debian and Fedora distributions, but is also available in the AUR: [spotify](https://aur.archlinux.org/packages/spotify/). Officially, they recommend that Linux users run the windows client under Wine. There are also the occasional voice ads in between songs for users who do not wish to subscribe.
 
 Spotify also offers free users the ability to create playlist which can be shuffled, and set to repeat tracks. Content provided by Spotify comes in explicit versions as well as censored.
 
@@ -40,11 +40,11 @@ Spotify also offers free users the ability to create playlist which can be shuff
 
 ## Client installation
 
-Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do NOT need to install both. Some opensource clients exist, such as [mopidy](https://www.archlinux.org/packages/?name=mopidy) + [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/)<sup><small>AUR</small></sup> or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)<sup><small>AUR</small></sup>, most of which work only with premium accounts. There is also the online player (requires flash) on [https://play.spotify.com/](https://play.spotify.com/).
+Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do NOT need to install both. Some opensource clients exist, such as [mopidy](https://www.archlinux.org/packages/?name=mopidy) + [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/), most of which work only with premium accounts. There is also the online player (requires flash) on [https://play.spotify.com/](https://play.spotify.com/).
 
 ### Linux
 
-[spotify](https://aur.archlinux.org/packages/spotify/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg-compat](https://www.archlinux.org/packages/?name=ffmpeg-compat) as well.
+[spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg-compat](https://www.archlinux.org/packages/?name=ffmpeg-compat) as well.
 
 ### Windows (Wine)
 
@@ -85,7 +85,7 @@ Spotify has support for media keys like `XF86AudioPlay`, but out of the box they
 
 #### Playerctl
 
-The [playerctl](https://aur.archlinux.org/packages/playerctl/)<sup><small>AUR</small></sup> utility provides a command line tool to send commands to the Spotify process. The only commands you will likely need to bind globally are `play-pause`, `next` and `previous`
+The [playerctl](https://aur.archlinux.org/packages/playerctl/) utility provides a command line tool to send commands to the Spotify process. The only commands you will likely need to bind globally are `play-pause`, `next` and `previous`
 
 ```
 $ playerctl play-pause
@@ -183,13 +183,13 @@ If the above commands do not work, try setting the dbus address:
 
 ### Windows
 
-If you prefer the wine-version of Spotify, you can use [spotifycmd](https://aur.archlinux.org/packages/spotifycmd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/spotifycmd)]</sup> to send actions to Spotify. [Here](https://github.com/Tarrasch/dotfiles/compare/0149505f%5E...19ede1f6) is a sample setup of xmonad bindings using spotifycmd.
+If you prefer the wine-version of Spotify, you can use [spotifycmd](https://aur.archlinux.org/packages/spotifycmd/) to send actions to Spotify. [Here](https://github.com/Tarrasch/dotfiles/compare/0149505f%5E...19ede1f6) is a sample setup of xmonad bindings using spotifycmd.
 
 ## Tips & Tricks
 
 ### Disable track notifications
 
-**Note:** It is worth noting that if you have a [SpotCommander](https://aur.archlinux.org/packages/SpotCommander/)<sup><small>AUR</small></sup> [Server](http://olejon.github.io/spotcommander/) running alongside Spotify, and you disable track notifications by following the instructions below, the [SpotCommander Client](https://play.google.com/store/apps/details?id=net.olejon.spotcommander&hl=en) running on your mobile device will display that “No Music is Playing” and will [fail to display track info](http://askubuntu.com/questions/472325/remove-spotify-pop-up-notification-when-a-song-starts/472329#472329) such as title, artist, album art, etc. Apart from that, the mobile client still works fine though, and is still able to skip, play, pause, control volume, etc.
+**Note:** It is worth noting that if you have a [SpotCommander](https://aur.archlinux.org/packages/SpotCommander/) [Server](http://olejon.github.io/spotcommander/) running alongside Spotify, and you disable track notifications by following the instructions below, the [SpotCommander Client](https://play.google.com/store/apps/details?id=net.olejon.spotcommander&hl=en) running on your mobile device will display that “No Music is Playing” and will [fail to display track info](http://askubuntu.com/questions/472325/remove-spotify-pop-up-notification-when-a-song-starts/472329#472329) such as title, artist, album art, etc. Apart from that, the mobile client still works fine though, and is still able to skip, play, pause, control volume, etc.
 
 After version 0.9.10, track change notifications were enabled by default. They can be quite intrusive. To disable them, add the following line to `~/.config/spotify/Users/<spotifylogin>-user/prefs`
 
@@ -202,7 +202,7 @@ It is also possible to launch spotify with the `--ui.track_notifications_enabled
 
 ### Show track notifications
 
-[playerctl](https://aur.archlinux.org/packages/playerctl/)<sup><small>AUR</small></sup> provides a library you can use with [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) and a notification daemon such as [dunst](https://www.archlinux.org/packages/?name=dunst) to show the artist and title in a notification when the track changes.
+[playerctl](https://aur.archlinux.org/packages/playerctl/) provides a library you can use with [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) and a notification daemon such as [dunst](https://www.archlinux.org/packages/?name=dunst) to show the artist and title in a notification when the track changes.
 
 ```
 #!/usr/bin/env python3
@@ -224,7 +224,7 @@ GLib.MainLoop().run()
 
 ### Skip overplayed radio tracks
 
-Another use of the [playerctl](https://aur.archlinux.org/packages/playerctl/)<sup><small>AUR</small></sup> library is to skip tracks that are played too much on radio when you do not necessarily want to downvote these tracks because you may want to hear them again later on that station.
+Another use of the [playerctl](https://aur.archlinux.org/packages/playerctl/) library is to skip tracks that are played too much on radio when you do not necessarily want to downvote these tracks because you may want to hear them again later on that station.
 
 ```
 #!/usr/bin/env python3
@@ -247,7 +247,7 @@ GLib.MainLoop().run()
 
 ### Mute commercials
 
-With [blockify](https://github.com/mikar/blockify) you can mute commercials. It is available in the [AUR](/index.php/AUR "AUR") as [blockify](https://aur.archlinux.org/packages/blockify/)<sup><small>AUR</small></sup>.
+With [blockify](https://github.com/mikar/blockify) you can mute commercials. It is available in the [AUR](/index.php/AUR "AUR") as [blockify](https://aur.archlinux.org/packages/blockify/).
 
 To have this start and run in the background every time Spotify starts you will need to automate this yourself:
 

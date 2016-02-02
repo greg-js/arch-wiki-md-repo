@@ -1,10 +1,5 @@
 # KDM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [KDE](/index.php/KDE "KDE")
-
 KDM (KDE Display Manager) is the login manager of [KDE](/index.php/KDE "KDE"). It supports themes, auto-logging, session type choice, and numerous other features.
 
 **Note:** **KDM** is not available anymore in Plasma 5\. Using [SDDM](/index.php/SDDM "SDDM") as DM is recommended, as it provides better integration with the Plasma 5 theme.
@@ -28,7 +23,7 @@ KDM (KDE Display Manager) is the login manager of [KDE](/index.php/KDE "KDE"). I
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/).
 
 Then follow [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager") to start KDM at boot.
 

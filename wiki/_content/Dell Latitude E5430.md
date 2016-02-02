@@ -73,7 +73,7 @@ You can follow the [Installation guide](/index.php/Installation_guide "Installat
 
 ### Broadcom BCM5761
 
-This card requires the proprietary [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> driver, available in AUR (alternatively, you can use its dkms version, [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup>).
+This card requires the proprietary [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver, available in AUR (alternatively, you can use its dkms version, [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)).
 
 ## Graphic Interface Configuration
 

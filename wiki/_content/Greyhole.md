@@ -1,9 +1,5 @@
 # Greyhole
 
-Related articles
-
-*   [Samba](/index.php/Samba "Samba")
-
 [Greyhole](http://www.greyhole.net/) is an application that uses [Samba](/index.php/Samba "Samba") to create a storage pool of all your available hard drives (whatever their size, however they are connected), and allows you to create redundant copies of the files you store, in order to prevent data loss when part of your hardware fails.
 
 ## Contents
@@ -17,7 +13,7 @@ Related articles
 
 ### Install from AUR
 
-Install [greyhole](https://aur.archlinux.org/packages/greyhole/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/greyhole)]</sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [greyhole](https://aur.archlinux.org/packages/greyhole/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### Manual Installation
 

@@ -1,11 +1,5 @@
 # NVIDIA Optimus
 
-Related articles
-
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
-*   [Nouveau](/index.php/Nouveau "Nouveau")
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-
 NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. Getting Optimus graphics to work on Arch Linux requires a few somewhat complicated steps, explained below. There are several methods available:
 
 *   disabling one of the devices in BIOS, which may result in improved battery life if the NVIDIA device is disabled, but may not be available with all BIOSes and does not allow GPU switching

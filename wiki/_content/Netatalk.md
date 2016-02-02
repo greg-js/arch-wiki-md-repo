@@ -16,16 +16,16 @@ Netatalk is a free, open-source implementation of the Apple Filing Protocol (AFP
 
 ## Installation
 
-Netatalk v3 is availabe as [netatalk](https://aur.archlinux.org/packages/netatalk/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+Netatalk v3 is availabe as [netatalk](https://aur.archlinux.org/packages/netatalk/) in the [AUR](/index.php/AUR "AUR").
 
-The older version of netatalk, v2, is distributed as [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/netatalk-ddp)]</sup> and supports the Apple Macintosh network protocols, including AppleTalk (ATalk), Apple Filing Protocol (AFP), and Printer Access Protocol (PAP).
+The older version of netatalk, v2, is distributed as [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/) and supports the Apple Macintosh network protocols, including AppleTalk (ATalk), Apple Filing Protocol (AFP), and Printer Access Protocol (PAP).
 
 ### Choosing Features
 
-With the deprecation of DDP (and therefore ATalk, PAP, timelord, and a2boot), netatalk also dropped these features in netatalk>=3.0\. The legacy 2.x branch with DDP support is still available in the [AUR](/index.php/AUR "AUR") as [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/netatalk-ddp)]</sup>. DDP is only necessary to support Mac OS <= 9, but OS X <= 10.3 will also benefit from the integration of SLP since it does not fully support Bonjour/Zeroconf. DDP would network older Macs which ran on AppleTalk instead of TCP/IP, and timelord and a2boot were for time-synchronization and Apple II booting. PAP may still be necessary for users with LaserWriter printers without TCP/IP support.
+With the deprecation of DDP (and therefore ATalk, PAP, timelord, and a2boot), netatalk also dropped these features in netatalk>=3.0\. The legacy 2.x branch with DDP support is still available in the [AUR](/index.php/AUR "AUR") as [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/). DDP is only necessary to support Mac OS <= 9, but OS X <= 10.3 will also benefit from the integration of SLP since it does not fully support Bonjour/Zeroconf. DDP would network older Macs which ran on AppleTalk instead of TCP/IP, and timelord and a2boot were for time-synchronization and Apple II booting. PAP may still be necessary for users with LaserWriter printers without TCP/IP support.
 
-*   Install [netatalk](https://aur.archlinux.org/packages/netatalk/)<sup><small>AUR</small></sup> if you only need the "modern" features cnid_metad and afpd, with Bonjour/Zeroconf support only.
-*   Install [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/netatalk-ddp)]</sup> to build the full complement of legacy features with SLP support.
+*   Install [netatalk](https://aur.archlinux.org/packages/netatalk/) if you only need the "modern" features cnid_metad and afpd, with Bonjour/Zeroconf support only.
+*   Install [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/) to build the full complement of legacy features with SLP support.
 
 ## Configuration
 

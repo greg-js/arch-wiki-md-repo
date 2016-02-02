@@ -1,13 +1,5 @@
 # nmh
 
-Related articles
-
-*   [S-nail](/index.php/S-nail "S-nail")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-*   [Mutt](/index.php/Mutt "Mutt")
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Notmuch](/index.php/Notmuch "Notmuch")
-
 **nmh** (new message handler), is a powerful electronic mail handling system. Following the Unix Philosophy, nmh is made up by a collection of simple programs each of which has a single purpose. This architecture allows the user to intersperse nmh with other commands at the shell prompt and to write scripts tailored to their needs.
 
 ## Contents
@@ -22,7 +14,7 @@ Related articles
 
 ## Installing
 
-Install [nmh](https://aur.archlinux.org/packages/nmh/)<sup><small>AUR</small></sup> or [nmh-git](https://aur.archlinux.org/packages/nmh-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [nmh](https://aur.archlinux.org/packages/nmh/) or [nmh-git](https://aur.archlinux.org/packages/nmh-git/) from the [AUR](/index.php/AUR "AUR").
 
 Optionally install a utility to handle IMAP or POP, for example [fdm](https://www.archlinux.org/packages/?name=fdm), [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) or [getmail](https://www.archlinux.org/packages/?name=getmail).
 

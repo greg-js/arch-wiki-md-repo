@@ -1,12 +1,5 @@
 # Unified Extensible Firmware Interface
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
-*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
-*   [UEFI/Hardware](/index.php/UEFI/Hardware "UEFI/Hardware")
-
 **Warning:** While the choice to install in EFI mode is forward looking, early vendor UEFI implementations may carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
 
 **Unified Extensible Firmware Interface** (or UEFI for short) is a new type of firmware. It introduces new ways of booting an OS that is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process") for their differences. This page explains **What is UEFI** and **UEFI support in Linux kernel**. To set up UEFI Boot Loaders, see [Boot loaders](/index.php/Boot_loaders "Boot loaders").
@@ -254,7 +247,7 @@ If EFI Variables support does not work even after the above conditions are satis
 
 #### Mount efivarfs
 
-**Warning:** _efivars_ is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting _efivars_ read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as _efibootmgr_ and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware` work.
+**Warning:** _efivars_ is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting _efivars_ read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as _efibootmgr_ and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware-setup` work.
 
 If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI variables to [#Userspace tools](#Userspace_tools) like `efibootmgr`:
 
@@ -280,11 +273,11 @@ To remount with write support, run:
 
 There are few tools that can access/modify the UEFI variables, namely
 
-1.  **efivar** - Library and Tool to manipulate UEFI Variables (used by efibootmgr) - [https://github.com/vathpela/efivar](https://github.com/vathpela/efivar) - [efivar](https://www.archlinux.org/packages/?name=efivar) or [efivar-git](https://aur.archlinux.org/packages/efivar-git/)<sup><small>AUR</small></sup>
-2.  **efibootmgr** - Tool to manipulate UEFI Firmware Boot Manager Settings - [https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) - [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)<sup><small>AUR</small></sup>
-3.  **uefivars** - Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally) - [https://github.com/fpmurphy/Various/tree/master/uefivars-2.0](https://github.com/fpmurphy/Various/tree/master/uefivars-2.0) supports only efivarfs and [https://github.com/fpmurphy/Various/tree/master/uefivars-1.0](https://github.com/fpmurphy/Various/tree/master/uefivars-1.0) supports only sysfs-efivars . AUR package [uefivars-git](https://aur.archlinux.org/packages/uefivars-git/)<sup><small>AUR</small></sup>
-4.  **efitools** - Tools to Create and Setup own UEFI Secure Boot Certificates, Keys and Signed Binaries (requires efivarfs) - [efitools-git](https://aur.archlinux.org/packages/efitools-git/)<sup><small>AUR</small></sup>
-5.  **Ubuntu's Firmware Test Suite** - [https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) - [fwts](https://aur.archlinux.org/packages/fwts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fwts)]</sup> (along with [fwts-efi-runtime-dkms](https://aur.archlinux.org/packages/fwts-efi-runtime-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fwts-efi-runtime-dkms)]</sup>) or [fwts-git](https://aur.archlinux.org/packages/fwts-git/)<sup><small>AUR</small></sup>
+1.  **efivar** - Library and Tool to manipulate UEFI Variables (used by efibootmgr) - [https://github.com/vathpela/efivar](https://github.com/vathpela/efivar) - [efivar](https://www.archlinux.org/packages/?name=efivar) or [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
+2.  **efibootmgr** - Tool to manipulate UEFI Firmware Boot Manager Settings - [https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) - [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)
+3.  **uefivars** - Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally) - [https://github.com/fpmurphy/Various/tree/master/uefivars-2.0](https://github.com/fpmurphy/Various/tree/master/uefivars-2.0) supports only efivarfs and [https://github.com/fpmurphy/Various/tree/master/uefivars-1.0](https://github.com/fpmurphy/Various/tree/master/uefivars-1.0) supports only sysfs-efivars . AUR package [uefivars-git](https://aur.archlinux.org/packages/uefivars-git/)
+4.  **efitools** - Tools to Create and Setup own UEFI Secure Boot Certificates, Keys and Signed Binaries (requires efivarfs) - [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
+5.  **Ubuntu's Firmware Test Suite** - [https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) - [fwts](https://aur.archlinux.org/packages/fwts/) (along with [fwts-efi-runtime-dkms](https://aur.archlinux.org/packages/fwts-efi-runtime-dkms/)) or [fwts-git](https://aur.archlinux.org/packages/fwts-git/)
 
 #### efibootmgr
 
@@ -368,7 +361,7 @@ The UEFI Shell is a shell/terminal for the firmware which allows launching uefi 
 
 You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 Sourceforge.net project:
 
-*   [AUR](/index.php/AUR "AUR") package [uefi-shell-svn](https://aur.archlinux.org/packages/uefi-shell-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/uefi-shell-svn)]</sup> (recommended) - provides x86_64 Shell in x86_64 system and IA32 Shell in i686 system - compiled directly from latest Tianocore EDK2 SVN source
+*   [AUR](/index.php/AUR "AUR") package [uefi-shell-svn](https://aur.archlinux.org/packages/uefi-shell-svn/) (recommended) - provides x86_64 Shell in x86_64 system and IA32 Shell in i686 system - compiled directly from latest Tianocore EDK2 SVN source
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
 *   [Precompiled x86_64 UEFI Shell v2 binary](https://github.com/tianocore/edk2-ShellBinPkg/blob/master/UefiShell/X64/Shell.efi?raw=true) (may not be up-to-date)
 *   [Precompiled x86_64 UEFI Shell v1 binary](https://github.com/tianocore/edk2-EdkShellBinPkg/blob/master/FullShell/X64/Shell_Full.efi?raw=true) (not updated anymore upstream)
@@ -506,7 +499,7 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 [OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware for QEMU.
 
-You can build OVMF (with Secure Boot support) from AUR [ovmf-svn](https://aur.archlinux.org/packages/ovmf-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ovmf-svn)]</sup> and run it as follows:
+You can build OVMF (with Secure Boot support) from AUR [ovmf-svn](https://aur.archlinux.org/packages/ovmf-svn/) and run it as follows:
 
 ```
 $ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/x86_64/bios.bin,format=raw,if=pflash,readonly
@@ -685,4 +678,4 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)
 *   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware - from Clover efiboot](http://dl.dropbox.com/u/17629062/Shell2.zip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418665](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418665)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418812](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418812)"

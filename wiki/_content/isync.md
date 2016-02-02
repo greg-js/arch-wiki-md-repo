@@ -32,7 +32,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 
 ## Installing
 
-Install [isync](https://www.archlinux.org/packages/?name=isync) from the [official repositories](/index.php/Official_repositories "Official repositories") or [isync-git](https://aur.archlinux.org/packages/isync-git/)<sup><small>AUR</small></sup> can be installed from the [AUR](/index.php/AUR "AUR").
+Install [isync](https://www.archlinux.org/packages/?name=isync) from the [official repositories](/index.php/Official_repositories "Official repositories") or [isync-git](https://aur.archlinux.org/packages/isync-git/) can be installed from the [AUR](/index.php/AUR "AUR").
 
 ## Configuring
 

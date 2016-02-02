@@ -6,7 +6,7 @@ VeryNice is a daemon, available in the [AUR](/index.php/AUR "AUR"), for dynamica
 
 **Note:** VeryNice hasn't been updated since 2014 and the official homepage is down.
 
-Install [verynice](https://aur.archlinux.org/packages/verynice/)<sup><small>AUR</small></sup>.
+Install [verynice](https://aur.archlinux.org/packages/verynice/).
 
 To start verynice:
 

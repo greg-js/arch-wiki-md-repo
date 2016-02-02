@@ -1,9 +1,5 @@
 # LIRC
 
-Related articles
-
-*   [LIRC Device Examples](/index.php/LIRC_Device_Examples "LIRC Device Examples")
-
 This article covers setup and usage of [LIRC](http://lirc.org/) "Linux Infrared Remote Control" with serial or USB infrared devices.
 
 LIRC is a daemon that can translate key presses on a supported remote into program specific commands. In this context, the term, "program specific" means that a key press can do different things depending on which program is running and taking commands from LIRC.

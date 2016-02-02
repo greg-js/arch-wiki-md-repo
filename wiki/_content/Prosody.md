@@ -42,12 +42,12 @@ _Requires:_ [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
 	MySQL/Postgresql Backend
 
 	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
-_Requires:_ [luadbi](https://aur.archlinux.org/packages/luadbi/)<sup><small>AUR</small></sup>
+_Requires:_ [luadbi](https://aur.archlinux.org/packages/luadbi/)
 
 	Better Connection Scaling (Recommended)
 
 	Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.
-_Requires:_ [lua51-event](https://aur.archlinux.org/packages/lua51-event/)<sup><small>AUR</small></sup>
+_Requires:_ [lua51-event](https://aur.archlinux.org/packages/lua51-event/)
 
 **Warning:** Due to an open issue, when enabled luaevent, all s2s functionality breaks. A fix is expected in v0.10 [[1]](https://prosody.im/issues/issue/555)
 
@@ -59,7 +59,7 @@ _Requires:_ [lua51-zlib](https://www.archlinux.org/packages/?name=lua51-zlib)
 	Cyrus SASL Support
 
 	Allow Prosody to use the [Cyrus SASL](http://asg.web.cmu.edu/sasl/sasl-library.html) library to provide authentication.
-_Requires:_ [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lua-cyrussasl)]</sup>
+_Requires:_ [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)
 
 ## Configuration
 
@@ -240,7 +240,7 @@ If you are unable to resolve your issue yourself there are a variety of resource
 
 ## Development
 
-Two development packages are maintained for Prosody in the AUR, [prosody-devel](https://aur.archlinux.org/packages/prosody-devel/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/prosody-devel)]</sup> and [prosody-hg](https://aur.archlinux.org/packages/prosody-hg/)<sup><small>AUR</small></sup>. `prosody-devel` tracks the latest source release of a development version (alpha, beta, release candidate) and will actually be behind the stable version if a final version of the development version is released. `prosody-hg` tracks the [Mercurial](http://www.selenic.com/mercurial/wiki/) repository tip for Prosody and will always contain the latest code as it is checked in. Both packages are built similarly to the stable package.
+Two development packages are maintained for Prosody in the AUR, [prosody-devel](https://aur.archlinux.org/packages/prosody-devel/) and [prosody-hg](https://aur.archlinux.org/packages/prosody-hg/). `prosody-devel` tracks the latest source release of a development version (alpha, beta, release candidate) and will actually be behind the stable version if a final version of the development version is released. `prosody-hg` tracks the [Mercurial](http://www.selenic.com/mercurial/wiki/) repository tip for Prosody and will always contain the latest code as it is checked in. Both packages are built similarly to the stable package.
 
 ## Communication
 

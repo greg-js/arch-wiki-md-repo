@@ -1,9 +1,5 @@
 # Using LPROF to profile monitors
 
-Related articles
-
-*   [CMYK support in The GIMP](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP")
-
 This article will explain the concept of monitor calibration and profiling. It explains the building of lprof color profiler from the provided PKGBUILD, and its use in profiling your monitor.
 
 ## Contents
@@ -74,7 +70,7 @@ The phosphors, or _primaries_ as they are often called, are three sets of values
 
 ## Building lprof
 
-Install [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup>, which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [lprof](https://aur.archlinux.org/packages/lprof/), which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Calibrating the monitor
 

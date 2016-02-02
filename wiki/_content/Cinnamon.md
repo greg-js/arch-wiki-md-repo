@@ -1,13 +1,5 @@
 # Cinnamon
 
-Related articles
-
-*   [Nemo](/index.php/Nemo "Nemo")
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [MATE](/index.php/MATE "MATE")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-
 [Cinnamon](http://cinnamon.linuxmint.com/) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") which combines a traditional desktop layout with modern graphical effects. The underlying technology was forked from the [GNOME](/index.php/GNOME "GNOME") desktop. As of version 2.0, Cinnamon is a complete desktop environment and not merely a frontend for GNOME like GNOME Shell and Unity.
 
 ## Contents
@@ -115,7 +107,7 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 **Note:** The language module was removed from the Cinnamon Control Panel with the release of Cinnamon 2.2\. [[1]](http://segfault.linuxmint.com/2014/04/cinnamon-2-2/)
 
 *   To add/remove languages: see [Locale](/index.php/Locale "Locale").
-*   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/)<sup><small>AUR</small></sup> package.
+*   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/) package.
 
 ## Tips and tricks
 
@@ -161,9 +153,9 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### Themes and icons
 
-Linux Mint styled themes and icons can be installed from AUR using packages [mint-themes](https://aur.archlinux.org/packages/mint-themes/)<sup><small>AUR</small></sup> and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/)<sup><small>AUR</small></sup>. The themes can be edited in `Settings → Themes → Other settings`.
+Linux Mint styled themes and icons can be installed from AUR using packages [mint-themes](https://aur.archlinux.org/packages/mint-themes/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/). The themes can be edited in `Settings → Themes → Other settings`.
 
-Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/)<sup><small>AUR</small></sup> package.
+Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/) package.
 
 ### Resize windows by mouse
 

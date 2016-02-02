@@ -1,11 +1,5 @@
 # dhcpcd
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [dhcpd](/index.php/Dhcpd "Dhcpd")
-
 _dhcpcd_ is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
 
 **Note:** _dhcpcd_ (DHCP **client** daemon) is not the same as _dhcpd_ (DHCP **(server)** daemon).
@@ -37,7 +31,7 @@ _dhcpcd_ is a DHCP and DHCPv6 client. It is currently the most feature-rich open
 
 The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is available to be [installed](/index.php/Install "Install"). It is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
 
-You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/)<sup><small>AUR</small></sup>, which is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the _dhcpcd_ daemon (and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
+You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/), which is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the _dhcpcd_ daemon (and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
 
 ## Running
 

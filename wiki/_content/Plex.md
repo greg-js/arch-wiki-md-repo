@@ -26,7 +26,7 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
 
 ### Installation
 
-Install the [plex-media-server](https://aur.archlinux.org/packages/plex-media-server/)<sup><small>AUR</small></sup> package, or the [plex-media-server-plexpass](https://aur.archlinux.org/packages/plex-media-server-plexpass/)<sup><small>AUR</small></sup> package if you have a Plex Pass.
+Install the [plex-media-server](https://aur.archlinux.org/packages/plex-media-server/) package, or the [plex-media-server-plexpass](https://aur.archlinux.org/packages/plex-media-server-plexpass/) package if you have a Plex Pass.
 
 ### Setup
 
@@ -136,7 +136,7 @@ export LD_LIBRARY_PATH=/opt/plexmediaserver
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [openpht](https://aur.archlinux.org/packages/openpht/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [openpht](https://aur.archlinux.org/packages/openpht/) package.
 
 Plex Home Theater can be launched by running `plexhometheater.sh` from your terminal.
 

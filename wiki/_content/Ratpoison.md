@@ -22,7 +22,7 @@
 
 ## Installation
 
-Ratpoison can be [installed](/index.php/Installed "Installed") with package [ratpoison](https://www.archlinux.org/packages/?name=ratpoison) or [ratpoison-git](https://aur.archlinux.org/packages/ratpoison-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ratpoison-git)]</sup> for the development version.
+Ratpoison can be [installed](/index.php/Installed "Installed") with package [ratpoison](https://www.archlinux.org/packages/?name=ratpoison) or [ratpoison-git](https://aur.archlinux.org/packages/ratpoison-git/) for the development version.
 
 ## Configuration
 
@@ -140,7 +140,7 @@ Urxvt and xterm, as they are installed by default, send resize hints to the wind
 
 #### Install a Patched URxvt
 
-If you use URxvt, the [rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel](https://aur.archlinux.org/packages/rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel/)<sup><small>AUR</small></sup> package, among other improvements, sends no resize hints to the window manager. If you install this version of URxvt rather than the default, URxvt will resize properly within ratpoison.
+If you use URxvt, the [rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel](https://aur.archlinux.org/packages/rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel/) package, among other improvements, sends no resize hints to the window manager. If you install this version of URxvt rather than the default, URxvt will resize properly within ratpoison.
 
 #### Adjust the Border
 

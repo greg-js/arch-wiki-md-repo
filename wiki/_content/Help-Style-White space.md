@@ -2,10 +2,6 @@
 
 < [Help:Style](/index.php/Help:Style "Help:Style")
 
-Related articles
-
-*   [Help:Editing#Line breaks](/index.php/Help:Editing#Line_breaks "Help:Editing")
-
 This article defines the standards for the use of whitespace characters in the source code of articles. The style used in the examples is to be considered an integral part of the rules.
 
 ## Contents

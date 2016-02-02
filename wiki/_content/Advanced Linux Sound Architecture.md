@@ -1,14 +1,5 @@
 # Advanced Linux Sound Architecture
 
-Related articles
-
-*   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")
-*   [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting")
-*   [Sound system](/index.php/Sound_system "Sound system")
-*   [Disable PC Speaker Beep](/index.php/Disable_PC_Speaker_Beep "Disable PC Speaker Beep")
-*   [PulseAudio](/index.php/PulseAudio "PulseAudio")
-*   [Open Sound System](/index.php/Open_Sound_System "Open Sound System")
-
 The [Advanced Linux Sound Architecture](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (**ALSA**) provides kernel driven sound card drivers. It replaces the original Open Sound System (OSS).
 
 Besides the sound device drivers, ALSA also bundles a user space driven library for application developers. They can then use those ALSA drivers for high level API development. This enables direct (kernel) interaction with sound devices through ALSA libraries.
@@ -426,7 +417,7 @@ Now you can select the sound card when starting programs by just changing the en
 
 #### Alternative method
 
-**Tip:** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/)<sup><small>AUR</small></sup>.
+**Tip:** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/).
 
 First you will have to find out the card and device id that you want to set as the default:
 
@@ -588,7 +579,7 @@ $ amixer scontrols
 
 #### Using ALSAEqual (provides UI)
 
-Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/)<sup><small>AUR</small></sup> package.
+Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package.
 
 **Note:** If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work. You have to disable alsaequal or build alsaequal for 32bit.
 
@@ -640,7 +631,7 @@ or for example, you can make a symlink to your `.alsaequal.bin` in his home...
 
 ##### Managing ALSAEqual states
 
-Install the [alsaequal-mgr](https://aur.archlinux.org/packages/alsaequal-mgr/)<sup><small>AUR</small></sup> package.
+Install the [alsaequal-mgr](https://aur.archlinux.org/packages/alsaequal-mgr/) package.
 
 Configure the equalizer as usual with
 

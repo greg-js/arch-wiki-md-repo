@@ -26,7 +26,7 @@
 
 ### Installation
 
-Install the [chef-dk](https://aur.archlinux.org/packages/chef-dk/)<sup><small>AUR</small></sup> package from AUR. This is the recommend installation method to get `chef-client`, `chef-solo`, `chef-zero`, `chef-apply` and `chef-shell` (typically for use on workstations).
+Install the [chef-dk](https://aur.archlinux.org/packages/chef-dk/) package from AUR. This is the recommend installation method to get `chef-client`, `chef-solo`, `chef-zero`, `chef-apply` and `chef-shell` (typically for use on workstations).
 
 ## Omnibus Chef Installer
 
@@ -34,7 +34,7 @@ A monolithic package that provides Chef.
 
 ### Installation by Package
 
-Install the [omnibus-chef](https://aur.archlinux.org/packages/omnibus-chef/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/omnibus-chef)]</sup> package from AUR. If not using an AUR helper, first install the needed dependency, [ruby-bundler](https://www.archlinux.org/packages/?name=ruby-bundler).
+Install the [omnibus-chef](https://aur.archlinux.org/packages/omnibus-chef/) package from AUR. If not using an AUR helper, first install the needed dependency, [ruby-bundler](https://www.archlinux.org/packages/?name=ruby-bundler).
 
 This package builds and installs an omnibus Makeself installer for Chef. If you choose not to run the installer upon installation of the package, you can run it any time:
 
@@ -108,7 +108,7 @@ You can also ensure the omnibus cache is removed:
 
 ### By Package
 
-Install the [ruby-chef](https://aur.archlinux.org/packages/ruby-chef/)<sup><small>AUR</small></sup> package from AUR.
+Install the [ruby-chef](https://aur.archlinux.org/packages/ruby-chef/) package from AUR.
 
 ### By RubyGem
 

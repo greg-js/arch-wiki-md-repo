@@ -200,7 +200,7 @@ If this is the case, you can try to fix / replace / install the needed hardware 
 
 ## Sensors / Hardware info
 
-Install i8k packages: [i8kmonitor](https://aur.archlinux.org/packages/i8kmonitor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/i8kmonitor)]</sup> and [i8kutils](https://aur.archlinux.org/packages/i8kutils/)<sup><small>AUR</small></sup>.
+Install i8k packages: [i8kmonitor](https://aur.archlinux.org/packages/i8kmonitor/) and [i8kutils](https://aur.archlinux.org/packages/i8kutils/).
 
 This will provide many useful information (temperature, fan speed, BIOS...) and utilities (fan monitor, BIOS update...). For CPU temps, use [lm_sensors](/index.php/Lm_sensors "Lm sensors").
 
@@ -212,7 +212,7 @@ See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
 
 **Note:** Updating your BIOS is always a dangerous operation (even if it is safer on a laptop with a battery). **Perform it at your own risks.**
 
-You can perform BIOS updates under GNU/Linux! Just install [i8kutils](https://aur.archlinux.org/packages/i8kutils/)<sup><small>AUR</small></sup>!
+You can perform BIOS updates under GNU/Linux! Just install [i8kutils](https://aur.archlinux.org/packages/i8kutils/)!
 
 Download latest BIOS (A15) [here (.hdr file)](http://linux.dell.com/repo/firmware/bios-hdrs/system_bios_ven_0x1028_dev_0x0209_version_a15/bios.hdr). This BIOS is for device ID 0x0209\. You can check your device ID by installing [libsmbios](https://www.archlinux.org/packages/?name=libsmbios) and then running:
 

@@ -1,13 +1,5 @@
 # xmodmap
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-*   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
-*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
-*   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
-
 **Note:** _xmodmap_ settings are reset by _setxkbmap_, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
 
 _xmodmap_ is a utility for modifying keymaps and pointer button mappings in [Xorg](/index.php/Xorg "Xorg").

@@ -19,9 +19,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the package [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-Install [st-git-zsh](https://aur.archlinux.org/packages/st-git-zsh/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/st-git-zsh)]</sup> package for a _zsh_ preconfigured _st_.
+Install [st-git-zsh](https://aur.archlinux.org/packages/st-git-zsh/) package for a _zsh_ preconfigured _st_.
 
 ## Configuration
 

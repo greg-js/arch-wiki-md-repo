@@ -1,9 +1,5 @@
 # init Rosetta
 
-Related articles
-
-*   [init](/index.php/Init "Init")
-
 This article draws a parallel between [systemd](/index.php/Systemd "Systemd") and other [init](/index.php/Init "Init") systems.
 
 You can omit the `.service` and `.target` extensions, especially if temporarily editing the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").

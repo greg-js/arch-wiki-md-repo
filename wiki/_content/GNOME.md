@@ -1,21 +1,5 @@
 # GNOME
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [GDM](/index.php/GDM "GDM")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-*   [Gedit](/index.php/Gedit "Gedit")
-*   [GNOME Web](/index.php/GNOME_Web "GNOME Web")
-*   [Evolution](/index.php/Evolution "Evolution")
-*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
-*   [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring")
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
-*   [MATE](/index.php/MATE "MATE")
-
 GNOME (pronounced _gah-nohm_ or _nohm_) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project").
 
 ## Contents
@@ -370,9 +354,9 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ###### Hide titlebar when maximized
 
-*   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/)<sup><small>AUR</small></sup>. It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
+*   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
 
-*   [Install](/index.php/Install "Install") [maximus](https://aur.archlinux.org/packages/maximus/)<sup><small>AUR</small></sup>. To start the application, execute _maximus_ from a terminal. When running, the daemon will automatically maximize windows. It will undecorate maximized windows and redecorate them when they are unmaximized. If you do not want all windows to start maximized, run `maximus -m` instead. Note that this will only work with windows decorated by the window manager; applications that use client-side decoration such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") will not be undecorated when maximized.
+*   [Install](/index.php/Install "Install") [maximus](https://aur.archlinux.org/packages/maximus/). To start the application, execute _maximus_ from a terminal. When running, the daemon will automatically maximize windows. It will undecorate maximized windows and redecorate them when they are unmaximized. If you do not want all windows to start maximized, run `maximus -m` instead. Note that this will only work with windows decorated by the window manager; applications that use client-side decoration such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") will not be undecorated when maximized.
 
 ##### GNOME Shell themes
 
@@ -444,7 +428,7 @@ The same effect can be achieved using the Tweak Tool.
 
 **Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
-**Note:** The _gnome-session-properties_ dialog was removed as of GNOME 3.12\. It can be added back by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/)<sup><small>AUR</small></sup> package.
+**Note:** The _gnome-session-properties_ dialog was removed as of GNOME 3.12\. It can be added back by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
 
 #### Power
 
@@ -479,7 +463,7 @@ The System Settings panel only allows the user to choose between _Suspend_ or _H
 
 #### Sort applications into application (app) folders
 
-**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)<sup><small>AUR</small></sup>) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
+**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
 
 In the **dconf-editor** navigate to `org.gnome.desktop.app-folders` and set the value of `folder-children` to an array of comma separated folder names:
 
@@ -766,11 +750,11 @@ Alternatively, a number of tools are available to automate the process:
 
 *   **[Wallpapoz](/index.php/Wallpapoz "Wallpapoz")** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
 
-	[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wallpapoz)]</sup>
+	[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)
 
 *   **CreBS** — A Python/GTK application used to create and set desktop wallpaper slideshows for GNOME.
 
-	[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/crebs)]</sup>
+	[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)
 
 For setting the XML file as the default background, see [#Lock screen and background](#Lock_screen_and_background).
 
@@ -827,7 +811,7 @@ $ xdg-mime default evince.desktop application/pdf
 
 For other applications, default handler settings are detailed on the following page: [Default applications](/index.php/Default_applications "Default applications").
 
-Optionally, you can [install](/index.php/Install "Install") [gnome-defaults-list](https://aur.archlinux.org/packages/gnome-defaults-list/)<sup><small>AUR</small></sup>. It will place your configuration file at `/etc/gnome/defaults.list`.
+Optionally, you can [install](/index.php/Install "Install") [gnome-defaults-list](https://aur.archlinux.org/packages/gnome-defaults-list/). It will place your configuration file at `/etc/gnome/defaults.list`.
 
 ### Tracker & Documents do not list any local files
 

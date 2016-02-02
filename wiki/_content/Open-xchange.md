@@ -1,10 +1,5 @@
 # Open-xchange
 
-Related articles
-
-*   [Citadel groupware](/index.php/Citadel_groupware "Citadel groupware")
-*   [Kolab](/index.php/Kolab "Kolab")
-
 [Open-Xchange](http://ox.io) is a groupware solution providing Mail facilities, Calendaring, shared Contacts and Google-Docs-like text editing.
 
 ## Contents
@@ -42,13 +37,13 @@ Related articles
 
 ## Prerequisites
 
-In order to use Open-Xchange, you need an empty, configured [MySQL](/index.php/MySQL "MySQL") installation as well as a configured instance of [Postfix](/index.php/Postfix "Postfix"), [Dovecot](/index.php/Dovecot "Dovecot") and [Apache](/index.php/Apache "Apache"). Additionally, Open-Xchange does currently not work with OpenJDK. You will need oracles [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+In order to use Open-Xchange, you need an empty, configured [MySQL](/index.php/MySQL "MySQL") installation as well as a configured instance of [Postfix](/index.php/Postfix "Postfix"), [Dovecot](/index.php/Dovecot "Dovecot") and [Apache](/index.php/Apache "Apache"). Additionally, Open-Xchange does currently not work with OpenJDK. You will need oracles [jre](https://aur.archlinux.org/packages/jre/) from the [AUR](/index.php/AUR "AUR").
 
 ## Installation
 
 Open-Xchange is available in the [AUR](/index.php/AUR "AUR"). Right now, no meta-package exists. Alternatively, it can be installed from the custom repository of the current maintainer. Taking the AUR approach is highly recommended. Package names are the same as upstream, and the same between the custom repo and the AUR.
 
-[Install](/index.php/Install "Install") the following packages: [open-xchange](https://aur.archlinux.org/packages/open-xchange/)<sup><small>AUR</small></sup> [open-xchange-authentication-database](https://aur.archlinux.org/packages/open-xchange-authentication-database/)<sup><small>AUR</small></sup> [open-xchange-grizzly](https://aur.archlinux.org/packages/open-xchange-grizzly/)<sup><small>AUR</small></sup> [open-xchange-admin](https://aur.archlinux.org/packages/open-xchange-admin/)<sup><small>AUR</small></sup> [open-xchange-appsuite](https://aur.archlinux.org/packages/open-xchange-appsuite/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> [open-xchange-appsuite-backend](https://aur.archlinux.org/packages/open-xchange-appsuite-backend/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> [open-xchange-appsuite-manifest](https://aur.archlinux.org/packages/open-xchange-appsuite-manifest/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+[Install](/index.php/Install "Install") the following packages: [open-xchange](https://aur.archlinux.org/packages/open-xchange/) [open-xchange-authentication-database](https://aur.archlinux.org/packages/open-xchange-authentication-database/) [open-xchange-grizzly](https://aur.archlinux.org/packages/open-xchange-grizzly/) [open-xchange-admin](https://aur.archlinux.org/packages/open-xchange-admin/) [open-xchange-appsuite](https://aur.archlinux.org/packages/open-xchange-appsuite/) [open-xchange-appsuite-backend](https://aur.archlinux.org/packages/open-xchange-appsuite-backend/) [open-xchange-appsuite-manifest](https://aur.archlinux.org/packages/open-xchange-appsuite-manifest/)
 
 ### From the custom repository
 
@@ -357,7 +352,7 @@ Navigate your Browser to http://your.domain.tld Log in with the credentials of t
 
 If you have [Sieve](/index.php/Dovecot#Sieve "Dovecot") configured, you can add the [b]mailfilter[/b] module to edit your sieve rules from within Open-Xchange.
 
-Install [open-xchange-mailfilter](https://aur.archlinux.org/packages/open-xchange-mailfilter/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> and edit /opt/open-xchange/eetc/mailfilter.properties from
+Install [open-xchange-mailfilter](https://aur.archlinux.org/packages/open-xchange-mailfilter/) and edit /opt/open-xchange/eetc/mailfilter.properties from
 
  `/opt/open-xchange/etc/mailfilter.properties`  `SIEVE_CREDSRC=session` 
 
@@ -379,7 +374,7 @@ Afterwards, restart Open-Xchange:
 
 ### Caldav/Carddav
 
-Install [open-xchange-dav](https://aur.archlinux.org/packages/open-xchange-dav/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") or from the unofficial repository.
+Install [open-xchange-dav](https://aur.archlinux.org/packages/open-xchange-dav/) from the [AUR](/index.php/AUR "AUR") or from the unofficial repository.
 
 Edit /opt/open-xchange/etc/caldav.properties:
 
@@ -424,7 +419,7 @@ Restart open-xchange:
 
 ### Text/Spreadsheet
 
-Get the following packages from the [AUR](/index.php/AUR "AUR") or from the custom repository: [open-xchange-documents-backend](https://aur.archlinux.org/packages/open-xchange-documents-backend/)<sup><small>AUR</small></sup> [open-xchange-documents-ui](https://aur.archlinux.org/packages/open-xchange-documents-ui/)<sup><small>AUR</small></sup> [open-xchange-documents-ui-static](https://aur.archlinux.org/packages/open-xchange-documents-ui-static/)<sup><small>AUR</small></sup> [open-xchange-documents-ui-common](https://aur.archlinux.org/packages/open-xchange-documents-ui-common/)<sup><small>AUR</small></sup> [open-xchange-documents-ui-editors](https://aur.archlinux.org/packages/open-xchange-documents-ui-editors/)<sup><small>AUR</small></sup> [calcengine](https://aur.archlinux.org/packages/calcengine/)<sup><small>AUR</small></sup>
+Get the following packages from the [AUR](/index.php/AUR "AUR") or from the custom repository: [open-xchange-documents-backend](https://aur.archlinux.org/packages/open-xchange-documents-backend/) [open-xchange-documents-ui](https://aur.archlinux.org/packages/open-xchange-documents-ui/) [open-xchange-documents-ui-static](https://aur.archlinux.org/packages/open-xchange-documents-ui-static/) [open-xchange-documents-ui-common](https://aur.archlinux.org/packages/open-xchange-documents-ui-common/) [open-xchange-documents-ui-editors](https://aur.archlinux.org/packages/open-xchange-documents-ui-editors/) [calcengine](https://aur.archlinux.org/packages/calcengine/)
 
 Edit /opt/open-xchange/etc/documents.properties:
 
@@ -464,7 +459,7 @@ You will need [hunspell](https://www.archlinux.org/packages/?name=hunspell) and 
 
 ### Document templates
 
-Install [open-xchange-documents-templates](https://aur.archlinux.org/packages/open-xchange-documents-templates/)<sup><small>AUR</small></sup> fromt he [AUR](/index.php/AUR "AUR")
+Install [open-xchange-documents-templates](https://aur.archlinux.org/packages/open-xchange-documents-templates/) fromt he [AUR](/index.php/AUR "AUR")
 
 Restart open-xchange:
 

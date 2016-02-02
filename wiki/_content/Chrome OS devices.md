@@ -1,13 +1,5 @@
 # Chrome OS devices
 
-Related articles
-
-*   [Chrome OS devices/Chromebook](/index.php/Chrome_OS_devices/Chromebook "Chrome OS devices/Chromebook")
-*   [Chrome OS devices/Custom firmware](/index.php/Chrome_OS_devices/Custom_firmware "Chrome OS devices/Custom firmware")
-*   [Beginner's guide](/index.php/Beginner%27s_guide "Beginner's guide")
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Laptop](/index.php/Laptop "Laptop")
-
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 This article was created to provide information on how to get Arch installed on the series of Chrome OS devices built by Acer, HP, Samsung, Toshiba, and Google. Currently this page is being overhauled, and more model specific pages are being built with some of the information listed below.
@@ -330,7 +322,7 @@ Now you can also [set SeaBIOS as default](#Boot_to_SeaBIOS_by_default) (or even 
 
 It is recommended to use the official [linux](https://www.archlinux.org/packages/?name=linux) package for most Chrome OS devices with the exception being newer devices which might need patched kernel support such as the Chromebook Pixel 2015.
 
-[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> provides patches for the Chromebook Pixel 2015 to fix touchpad, touchscreen, and sound functionality which has not been merged into upstream linux yet. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
+[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) provides patches for the Chromebook Pixel 2015 to fix touchpad, touchscreen, and sound functionality which has not been merged into upstream linux yet. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
 
 If your devices requires a patched kernel, it is advised to review the list of patches and decide if the patch list is getting decidedly small enough that you no longer require a patched kernel and instead you can use the official [linux](https://www.archlinux.org/packages/?name=linux) package instead.
 
@@ -350,25 +342,25 @@ Since kernel 3.17 all the related patches merged into the upstream sources, mean
 
 ##### What to do if your touchpad or touchscreen is not supported?
 
-*   Review the list of patches in [linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-chromebook)]</sup>, if a related patch for your Chromebook model exist then [install this package](#Patched_kernels).
+*   Review the list of patches in [linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/), if a related patch for your Chromebook model exist then [install this package](#Patched_kernels).
 *   If there is no such patch do not worry as the developers should be able to add it by request as the Chromium OS sources includes the related changes.
 *   You can also try to find the related commits by yourself and create a proper patch, some hints:
     *   Dig into your Chrome OS system, look at the obvious suspects like boot log, `/proc/bus/input/devices` and `/sys/devices`.
     *   The Linux kernel sources for Chromium OS are at [[9]](https://chromium.googlesource.com/chromiumos/third_party/kernel).
     *   Each kernel source for the latest Chromium OS release has its own branch, name convention: `release-R*-*-chromeos-KERNELVER`, where `R*-*` is the Chromium OS release and `KERNELVER` is the kernel version.
     *   Review the git log of `drivers/platform`, `drivers/i2c/busses` and `drivers/input/touchscreen`.
-*   [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> includes touchpad and touchscreen support for the Chromebook Pixel 2015\. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
+*   [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) includes touchpad and touchscreen support for the Chromebook Pixel 2015\. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
 
 #### Touchpad configuration
 
 There are few options how to set the touchpad:
 
 *   Visit the ArchWiki page for your Chromebook model (see [Chromebook models](#Chromebook_Models)) for touchpad xorg.conf.d file.
-*   Use a [touchpad configuration tool](/index.php/Touchpad_Synaptics#Configuration_on_the_fly "Touchpad Synaptics") like [Synaptics](/index.php/Touchpad_Synaptics#Graphical_tools "Touchpad Synaptics") for [KDE](/index.php/KDE "KDE"), although it is said to be currently unmaintained and seems to crash under KDE 4.11, it works well with KDE 4.12.2\. Another utility, [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_touchpad)]</sup>, does not work at all.
+*   Use a [touchpad configuration tool](/index.php/Touchpad_Synaptics#Configuration_on_the_fly "Touchpad Synaptics") like [Synaptics](/index.php/Touchpad_Synaptics#Graphical_tools "Touchpad Synaptics") for [KDE](/index.php/KDE "KDE"), although it is said to be currently unmaintained and seems to crash under KDE 4.11, it works well with KDE 4.12.2\. Another utility, [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/), does not work at all.
 
 #### Chromium OS input drivers
 
-[xf86-input-cmt](https://aur.archlinux.org/packages/xf86-input-cmt/)<sup><small>AUR</small></sup> offers a port of the Chromium OS input driver: [xf86-input-cmt](https://github.com/hugegreenbug/xf86-input-cmt) as an alternative for the [Synaptics input driver](/index.php/Synaptics "Synaptics"). It provides tweaked configuration files for most devices, and provides functionality that the [Synaptics input driver](/index.php/Synaptics "Synaptics") does not such as palm rejection. Additionally, it enables functionality not enabled by default in the Chromium OS input driver such as tap-to-drag.
+[xf86-input-cmt](https://aur.archlinux.org/packages/xf86-input-cmt/) offers a port of the Chromium OS input driver: [xf86-input-cmt](https://github.com/hugegreenbug/xf86-input-cmt) as an alternative for the [Synaptics input driver](/index.php/Synaptics "Synaptics"). It provides tweaked configuration files for most devices, and provides functionality that the [Synaptics input driver](/index.php/Synaptics "Synaptics") does not such as palm rejection. Additionally, it enables functionality not enabled by default in the Chromium OS input driver such as tap-to-drag.
 
 Please note, the input driver does not work under [some circumstances](https://github.com/hugegreenbug/xf86-input-cmt/issues/5) where you have insufficient permissions to access `/dev/input/event` This will affect you if you use [startx](https://wiki.archlinux.org/index.php/Xinitrc) to load a DE/WM session. If this is the case or if the driver does not load for any other cases, you should run:
 
@@ -521,7 +513,7 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 #### Chromebook Pixel 2015
 
-[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> includes a patch for Broadwell SoC sound devices. [Its GitHub page](https://github.com/raphael/linux-samus) includes additional instructions for initializing the sound device.
+[linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) includes a patch for Broadwell SoC sound devices. [Its GitHub page](https://github.com/raphael/linux-samus) includes additional instructions for initializing the sound device.
 
 ### Hotkeys
 
@@ -560,7 +552,7 @@ See [[17]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching
 
 #### Patch xkeyboard-config
 
-Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/)<sup><small>AUR</small></sup>, for more details visit [[18]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
+Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[18]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
 
 #### Mapping in Gnome with gsettings set
 

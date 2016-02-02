@@ -41,7 +41,7 @@ To make sure all of these are installed:
 
 ### Get ISOs and build the SDK
 
-You will have to download the two 3.1 SDK ISOs (Developer, Extra) for Fedora 9 manually from [IBMs website](https://www14.software.ibm.com/webapp/iwm/web/reg/download.do?source=cellsdk&S_PKG=fedora&S_TACT=105AGX16&S_CMP=LP&lang=en_US&cp=UTF-8), which requires free registration. Place them in a build folder for the [cellsdk](https://aur.archlinux.org/packages/cellsdk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cellsdk)]</sup> AUR package. Now the SDK is ready to be build, but you will have to do it as root because the PKGBUILD uses mount of loop-devices to extract packages from the ISOs. Build the SDK by running:
+You will have to download the two 3.1 SDK ISOs (Developer, Extra) for Fedora 9 manually from [IBMs website](https://www14.software.ibm.com/webapp/iwm/web/reg/download.do?source=cellsdk&S_PKG=fedora&S_TACT=105AGX16&S_CMP=LP&lang=en_US&cp=UTF-8), which requires free registration. Place them in a build folder for the [cellsdk](https://aur.archlinux.org/packages/cellsdk/) AUR package. Now the SDK is ready to be build, but you will have to do it as root because the PKGBUILD uses mount of loop-devices to extract packages from the ISOs. Build the SDK by running:
 
 ```
 sudo makepkg --asroot
@@ -75,6 +75,6 @@ cd /opt/ibm/systemsim-cell/bin/s
 
 ### Other...
 
-Since the PKGBUILD does not run the official install script there is bound to be something not setup completely correct... Place a comment on the [cellsdk](https://aur.archlinux.org/packages/cellsdk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cellsdk)]</sup> AUR page.
+Since the PKGBUILD does not run the official install script there is bound to be something not setup completely correct... Place a comment on the [cellsdk](https://aur.archlinux.org/packages/cellsdk/) AUR page.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Installing_Cell_Broadband_Engine_SDK&oldid=392269](https://wiki.archlinux.org/index.php?title=Installing_Cell_Broadband_Engine_SDK&oldid=392269)"

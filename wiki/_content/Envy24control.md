@@ -44,7 +44,7 @@ envy24control's user interface is loosely based on the Delta Control Panel softw
 
 envy24control is included with the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package.
 
-**Note:** [mudita24-svn](https://aur.archlinux.org/packages/mudita24-svn/)<sup><small>AUR</small></sup> is an alternative to envy24control available in the [AUR](/index.php/AUR "AUR"). It is identical to envy24control, except that it has some clearer UI labels, peak meter indicators, and a few other bells and whistles.
+**Note:** [mudita24-svn](https://aur.archlinux.org/packages/mudita24-svn/) is an alternative to envy24control available in the [AUR](/index.php/AUR "AUR"). It is identical to envy24control, except that it has some clearer UI labels, peak meter indicators, and a few other bells and whistles.
 
 ## Supported cards
 

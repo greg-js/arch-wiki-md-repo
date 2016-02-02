@@ -199,7 +199,7 @@ The run command:
 
 ## USSD Requests
 
-Use [huawei-ussd](https://aur.archlinux.org/packages/huawei-ussd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/huawei-ussd)]</sup> package. Or use [ussd.php](https://github.com/gnomeby/ussd) tool.
+Use [huawei-ussd](https://aur.archlinux.org/packages/huawei-ussd/) package. Or use [ussd.php](https://github.com/gnomeby/ussd) tool.
 
 ## Success Stories
 

@@ -920,7 +920,7 @@ SRCEXT='.src.tar.gz'
 ## Wireless
 
 *   [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter)
-*   [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup>
+*   [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)
 
 modprobe -a b43 ssb
 

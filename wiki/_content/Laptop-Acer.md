@@ -25,7 +25,7 @@ Battery: Yes
 CPU frequency scaling: Yes | untested | Hot keys: untested
 FireWire (Texas Instruments) TSB43AB23: OK(?) | FireWire detects well but I haven't tested it yet |
 | Aspire 5024 | 0.7.2 | ATI Radeon X700
-Runs Compiz on both fglrx ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) >= 8.02 and radeon driver | AC97: OK | Realtek: OK | Broadcom 4318
+Runs Compiz on both fglrx ([catalyst](https://aur.archlinux.org/packages/catalyst/)) >= 8.02 and radeon driver | AC97: OK | Realtek: OK | Broadcom 4318
 Needs _acer_apci_ + firmware or ndiswrapper driver | N/A | Battery: Yes
 Suspend: Video and Wi-Fi problems
 CPU frequency scaling: powernow-k8 driver | untested | KeyTouch works for hot keys

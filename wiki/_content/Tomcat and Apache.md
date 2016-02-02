@@ -15,7 +15,7 @@ This document describes the steps needed to install Apache Tomcat. It also optio
 
 ## Installation
 
-Install and configure Apache as in the [LAMP](/index.php/LAMP "LAMP") tutorial. You may install PHP and MySQL at this time if you want them. [Install](/index.php/Install "Install") [tomcat](https://www.archlinux.org/packages/?name=tomcat)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>.
+Install and configure Apache as in the [LAMP](/index.php/LAMP "LAMP") tutorial. You may install PHP and MySQL at this time if you want them. [Install](/index.php/Install "Install") [tomcat](https://www.archlinux.org/packages/?name=tomcat).
 
 ## Configuring Tomcat
 

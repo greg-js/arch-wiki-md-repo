@@ -43,8 +43,8 @@ Relocate the browser profile to [tmpfs](/index.php/Tmpfs "Tmpfs") so as to globa
 
 Use an active management script for maximal reliability and ease of use. Several are available from the AUR.
 
-*   [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)<sup><small>AUR</small></sup> - refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for additional info on it;
-*   [firefox-sync](https://aur.archlinux.org/packages/firefox-sync/)<sup><small>AUR</small></sup>
+*   [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) - refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for additional info on it;
+*   [firefox-sync](https://aur.archlinux.org/packages/firefox-sync/)
 
 ## Place profile in RAM manually
 

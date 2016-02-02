@@ -405,7 +405,7 @@ You must enable one of these:
 
 ### MySQL
 
-The MySQL plugin has extra dependencies available in the AUR: [perl-dbi](https://www.archlinux.org/packages/?name=perl-dbi), [perl-cache-cache](https://aur.archlinux.org/packages/perl-cache-cache/)<sup><small>AUR</small></sup>, and [perl-ipc-sharelite](https://aur.archlinux.org/packages/perl-ipc-sharelite/)<sup><small>AUR</small></sup>
+The MySQL plugin has extra dependencies available in the AUR: [perl-dbi](https://www.archlinux.org/packages/?name=perl-dbi), [perl-cache-cache](https://aur.archlinux.org/packages/perl-cache-cache/), and [perl-ipc-sharelite](https://aur.archlinux.org/packages/perl-ipc-sharelite/)
 
 Additionally it is recommended to access the database through a separate [MySQL](/index.php/MySQL "MySQL") user. To make another user via the following MySQL commands:
 

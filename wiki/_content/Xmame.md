@@ -4,7 +4,7 @@
 
 ## Installation & Configuration
 
-[Install](/index.php/Install "Install") the [xmame-x11](https://aur.archlinux.org/packages/xmame-x11/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmame-x11)]</sup> package.
+[Install](/index.php/Install "Install") the [xmame-x11](https://aur.archlinux.org/packages/xmame-x11/) package.
 
 **su** to local user and generate the configuration file:
 

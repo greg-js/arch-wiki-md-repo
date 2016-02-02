@@ -1,9 +1,5 @@
 # syslog-ng
 
-Related articles
-
-*   [rsyslog](/index.php/Rsyslog "Rsyslog")
-
 **Note:** After upgrading to systemd, syslog-ng is unnecessary for users who can be satisfied by journalctl and can be uninstalled for those.
 
 ## Contents

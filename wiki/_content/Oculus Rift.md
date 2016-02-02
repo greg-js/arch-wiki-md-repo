@@ -27,7 +27,7 @@ The Oculus Rift is a virtual reality head-mounted display developed by [Oculus V
 
 ### Hardware
 
-The Oculus Rift device connects via HDMI as a secondary display to your graphics card, as well as by USB in order to perform as a sensor. The [oculus-udev](https://aur.archlinux.org/packages/oculus-udev/)<sup><small>AUR</small></sup> package will setup proper [udev](/index.php/Udev "Udev") rules.
+The Oculus Rift device connects via HDMI as a secondary display to your graphics card, as well as by USB in order to perform as a sensor. The [oculus-udev](https://aur.archlinux.org/packages/oculus-udev/) package will setup proper [udev](/index.php/Udev "Udev") rules.
 
 You also need to be in the `input` and `video` groups to have full permission, `plugdev` is no longer neccesary (as the mode is set to 0666).
 
@@ -35,7 +35,7 @@ You also need to be in the `input` and `video` groups to have full permission, `
 
 #### Package
 
-The official Oculus Rift SDK is available on the AUR as [oculus-rift-sdk](https://aur.archlinux.org/packages/oculus-rift-sdk/)<sup><small>AUR</small></sup>, or a modified version with CMake build support and other features is available as [oculus-rift-sdk-jherico-git](https://aur.archlinux.org/packages/oculus-rift-sdk-jherico-git/)<sup><small>AUR</small></sup>.
+The official Oculus Rift SDK is available on the AUR as [oculus-rift-sdk](https://aur.archlinux.org/packages/oculus-rift-sdk/), or a modified version with CMake build support and other features is available as [oculus-rift-sdk-jherico-git](https://aur.archlinux.org/packages/oculus-rift-sdk-jherico-git/).
 
 This package will set up the `oculusd` daemon to run when you start an X session, so it should be running in the background after you've installed it and restarted X (or started it manually).
 
@@ -63,7 +63,7 @@ The Rift itself needs to be the primary monitor, or synchronization will not wor
 
 #### xrandrift
 
-A package exists on the AUR called [riftutilities-git](https://aur.archlinux.org/packages/riftutilities-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/riftutilities-git)]</sup> which contains (currently only) a script called `xrandrift`. It uses `xrandr` to determine suitable video modes (based on arguments passed) to run your rift, as well as trying to record your current video mode, and then switches back after the program exits.
+A package exists on the AUR called [riftutilities-git](https://aur.archlinux.org/packages/riftutilities-git/) which contains (currently only) a script called `xrandrift`. It uses `xrandr` to determine suitable video modes (based on arguments passed) to run your rift, as well as trying to record your current video mode, and then switches back after the program exits.
 
 For best latency (for applications which support it), run the programs like so:
 
@@ -117,17 +117,17 @@ Currently there are a handful of apps which work well on the Rift and Linux, wit
 
 ### Dolphin VR (Gamecube Emulator)
 
-[dolphin-emu-vr-git](https://aur.archlinux.org/packages/dolphin-emu-vr-git/)<sup><small>AUR</small></sup> is an emulator for Gamecube, with patches to allow it to have full headtracking stereoscopic rendering, as well as a number of customizations to make games work well out of the box in VR (for example, disabling culling functions to let you view the entire world).
+[dolphin-emu-vr-git](https://aur.archlinux.org/packages/dolphin-emu-vr-git/) is an emulator for Gamecube, with patches to allow it to have full headtracking stereoscopic rendering, as well as a number of customizations to make games work well out of the box in VR (for example, disabling culling functions to let you view the entire world).
 
 **Note:** This application works correctly with Portrait (Direct) Mode, and should be run with the Rift un-rotated.
 
 ### Oculus-wine-wrapper
 
-[oculus-wine-wrapper-git](https://aur.archlinux.org/packages/oculus-wine-wrapper-git/)<sup><small>AUR</small></sup> is a utility to patch up the differences between the Linux and Windows versions of the SDK when running Wine. It creates a shared memory context for the Wine application to use, letting the app access the native Oculus SDK. No installation of the SDK to the wineprefix appears to be neccesary.
+[oculus-wine-wrapper-git](https://aur.archlinux.org/packages/oculus-wine-wrapper-git/) is a utility to patch up the differences between the Linux and Windows versions of the SDK when running Wine. It creates a shared memory context for the Wine application to use, letting the app access the native Oculus SDK. No installation of the SDK to the wineprefix appears to be neccesary.
 
 ### Unity games (in wine)
 
-To get the best performance in Unity based games, ideally you should force them into OpenGL mode with the `-force-opengl`. However this is not currently possible with an unpatched wine, as the WGL context it tries to force has some differences from a typical GLX context, [as described here](http://wiki.unity3d.com/index.php/Running_Unity_on_Linux_through_Wine#.22-force-opengl.22_option_crashing_Unity_.28Experimental_fix.29). Using the [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/)<sup><small>AUR</small></sup> package will allow you to run these games with native OpenGL, wrapped in the oculus-wine-wrapper layer, allowing you to play them with decent performance on your machine. Unfortunately they often try to change the video mode or mess with other settings, so supplying default screen settings may be neccesary. Additionally, since it's using native OpenGL, nvidia's __GL_THREADED_OPTIMIZATIONS may be Overall, your command should look something like
+To get the best performance in Unity based games, ideally you should force them into OpenGL mode with the `-force-opengl`. However this is not currently possible with an unpatched wine, as the WGL context it tries to force has some differences from a typical GLX context, [as described here](http://wiki.unity3d.com/index.php/Running_Unity_on_Linux_through_Wine#.22-force-opengl.22_option_crashing_Unity_.28Experimental_fix.29). Using the [wine-unity3d-git](https://aur.archlinux.org/packages/wine-unity3d-git/) package will allow you to run these games with native OpenGL, wrapped in the oculus-wine-wrapper layer, allowing you to play them with decent performance on your machine. Unfortunately they often try to change the video mode or mess with other settings, so supplying default screen settings may be neccesary. Additionally, since it's using native OpenGL, nvidia's __GL_THREADED_OPTIMIZATIONS may be Overall, your command should look something like
 
 ```
    env __GL_THREADED_OPTIMIZATIONS=1 oculus-wine-wrapper UnityGame.exe -screen-height 1080 -screen-width 1920 -popupwindow -force-opengl
@@ -144,7 +144,7 @@ Additionally, many users have reported much better performance with JRE8, rather
 
 ### JanusVR
 
-"janusVR: an immersive, collaborative, multi-dimensional internet." JanusVR is an application that lets you explore 3D websites in a multiplayer experience. An AUR package is available: [janus-vr-browser-bin](https://aur.archlinux.org/packages/janus-vr-browser-bin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/janus-vr-browser-bin)]</sup>
+"janusVR: an immersive, collaborative, multi-dimensional internet." JanusVR is an application that lets you explore 3D websites in a multiplayer experience. An AUR package is available: [janus-vr-browser-bin](https://aur.archlinux.org/packages/janus-vr-browser-bin/)
 
 The AUR package does not automatically update when JanusVR does, but the application will tell you when a new version is available. Simply re-build the package when this happens.
 

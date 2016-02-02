@@ -4,7 +4,7 @@ This document describes how to install the CyberPower UPS daemon. The main advan
 
 ## Installation
 
-Install powerpanel ([powerpanel](https://aur.archlinux.org/packages/powerpanel/)<sup><small>AUR</small></sup>) from [AUR](/index.php/AUR "AUR").
+Install powerpanel ([powerpanel](https://aur.archlinux.org/packages/powerpanel/)) from [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

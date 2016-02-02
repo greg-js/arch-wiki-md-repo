@@ -1,11 +1,5 @@
 # Python (한국어)
 
-Related articles
-
-*   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
-*   [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv")
-*   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC "wikipedia:파이썬"):
 
 	_파이썬(Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum) 이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다._
@@ -81,14 +75,14 @@ readline.parse_and_bind("tab: complete")
 
 호기심에 오래된 Python 버전을 사용해 보고 싶다던가, 오래된 프로그램이 현재 Python 버전에서 동작하지 않는다던가, 혹은 오래된 Python 버전이 설치된 배포판 (RHEL 5.x 에는 Python 2.4 버전이 설치 되어있고, Ubuntu 12.04 에는 Python 3.1 버전이 설치 되어있다.) 을 대상으로 하여 프로그램을 테스트 해보고 싶은 경우가 있다면, [AUR](/index.php/AUR "AUR") 을 통하여 오래된 Python 버전들을 사용 가능하다.
 
-*   [python15](https://aur.archlinux.org/packages/python15/)<sup><small>AUR</small></sup>: Python 1.5.2
-*   [python24](https://aur.archlinux.org/packages/python24/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python24)]</sup>: Python 2.4.6
-*   [python25](https://aur.archlinux.org/packages/python25/)<sup><small>AUR</small></sup>: Python 2.5.6
-*   [python26](https://aur.archlinux.org/packages/python26/)<sup><small>AUR</small></sup>: Python 2.6.9
-*   [python30](https://aur.archlinux.org/packages/python30/)<sup><small>AUR</small></sup>: Python 3.0.1
-*   [python31](https://aur.archlinux.org/packages/python31/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python31)]</sup>: Python 3.1.5
-*   [python32](https://aur.archlinux.org/packages/python32/)<sup><small>AUR</small></sup>: Python 3.2.5
-*   [python33](https://aur.archlinux.org/packages/python33/)<sup><small>AUR</small></sup>: Python 3.3.5
+*   [python15](https://aur.archlinux.org/packages/python15/): Python 1.5.2
+*   [python24](https://aur.archlinux.org/packages/python24/): Python 2.4.6
+*   [python25](https://aur.archlinux.org/packages/python25/): Python 2.5.6
+*   [python26](https://aur.archlinux.org/packages/python26/): Python 2.6.9
+*   [python30](https://aur.archlinux.org/packages/python30/): Python 3.0.1
+*   [python31](https://aur.archlinux.org/packages/python31/): Python 3.1.5
+*   [python32](https://aur.archlinux.org/packages/python32/): Python 3.2.5
+*   [python33](https://aur.archlinux.org/packages/python33/): Python 3.3.5
 
 2014 년 7 월 당시 Python 2.7, 3.2, 3.3, 그리고 3.4 버전들만 보안 패치를 지원하고 있다. 오래된 버전의 Python 으로 인터넷 통신을 하는 프로그램이나 믿을 수 없는 코드를 실행시키는 것은 위험하다.
 

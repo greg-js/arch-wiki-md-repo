@@ -16,7 +16,7 @@ Here is a compiled list of the community-made screenshot information tools. Thes
 *   Creator: [wolfcore](https://bbs.archlinux.org/profile.php?id=57898)
 *   Language: Bash
 *   More Info: [thread](https://bbs.archlinux.org/viewtopic.php?id=138303), [github](https://github.com/wolfcore/envee)
-*   AUR: [envee-git](https://aur.archlinux.org/packages/envee-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/envee-git)]</sup>
+*   AUR: [envee-git](https://aur.archlinux.org/packages/envee-git/)
 
 ## screenFetch
 
@@ -30,7 +30,7 @@ Here is a compiled list of the community-made screenshot information tools. Thes
 *   Creator: [melik](https://bbs.archlinux.org/profile.php?id=29831)
 *   Language: Python
 *   More Info: [Archey](https://bbs.archlinux.org/viewtopic.php?id=87610), [github](https://github.com/djmelik/archey)
-*   AUR: [archey](https://aur.archlinux.org/packages/archey/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/archey)]</sup>
+*   AUR: [archey](https://aur.archlinux.org/packages/archey/)
 
 ## archey3 (Python3)
 
@@ -41,13 +41,13 @@ Here is a compiled list of the community-made screenshot information tools. Thes
 *   Creator: [dmz](https://bbs.archlinux.org/profile.php?id=18705)
 *   Language: Perl
 *   More Information: [screenfo](https://bbs.archlinux.org/viewtopic.php?pid=816258#p816258)
-*   AUR: [screenfo-git](https://aur.archlinux.org/packages/screenfo-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/screenfo-git)]</sup>
+*   AUR: [screenfo-git](https://aur.archlinux.org/packages/screenfo-git/)
 
 ## Fetch
 
 *   Creator: [dylan](https://github.com/dylanaraps)
 *   Language: Bash
 *   More Information: [fetch](https://github.com/dylanaraps/fetch)
-*   AUR: [fetch-git](https://aur.archlinux.org/packages/fetch-git/)<sup><small>AUR</small></sup>
+*   AUR: [fetch-git](https://aur.archlinux.org/packages/fetch-git/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Screenshot_Information_Tools&oldid=416002](https://wiki.archlinux.org/index.php?title=Screenshot_Information_Tools&oldid=416002)"

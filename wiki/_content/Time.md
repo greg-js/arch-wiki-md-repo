@@ -212,7 +212,7 @@ If the hardware clock keeps losing or gaining time in large increments, it is po
 The software clock is very accurate but like most clocks is not perfectly accurate and will drift as well. Though rarely, the system clock can lose accuracy if the kernel skips interrupts. There are some tools to improve software clock accuracy:
 
 *   See [#Time synchronization](#Time_synchronization).
-*   [adjtimex](https://aur.archlinux.org/packages/adjtimex/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/adjtimex)]</sup> in the [AUR](/index.php/AUR "AUR") can adjust kernel time variables like interrupt frequency to help improve the system clock time drift.
+*   [adjtimex](https://aur.archlinux.org/packages/adjtimex/) in the [AUR](/index.php/AUR "AUR") can adjust kernel time variables like interrupt frequency to help improve the system clock time drift.
 
 ## Time synchronization
 
@@ -262,7 +262,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 
 [alarm-fake-hwclock](https://github.com/xanmanning/alarm-fake-hwclock) designed especially for system without battery backed up RTC, it includes a systemd service which on shutdown saves the current time and on startup restores the saved time, thus avoiding strange time travel errors.
 
-[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") [fake-hwclock-git](https://aur.archlinux.org/packages/fake-hwclock-git/)<sup><small>AUR</small></sup>, [start and enable](/index.php/Systemd#Using_units "Systemd") the service `fake-hwclock.service`.
+[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") [fake-hwclock-git](https://aur.archlinux.org/packages/fake-hwclock-git/), [start and enable](/index.php/Systemd#Using_units "Systemd") the service `fake-hwclock.service`.
 
 ## See also
 

@@ -1,11 +1,5 @@
 # Poulsbo
 
-Related articles
-
-*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [MPlayer](/index.php/MPlayer "MPlayer")
-
 The **Intel GMA 500** series, also known by it's codename **Poulsbo** or **[Intel System Controller Hub US15W](http://ark.intel.com/Product.aspx?id=35444)**, is a family of integrated video adapters based on the PowerVR SGX 535 graphics core. It is typically found on boards for the Atom Z processor series. Features include hardware decoding capability of up to 720p/1080i video content in various state-of-the-art codecs, e.g. H.264.
 
 As the PowerVR SGX 535 graphics core was developed by Imagination Technologies and then licensed by Intel, the standard opensource [Intel](/index.php/Intel "Intel") drivers do not work with this hardware.
@@ -56,7 +50,7 @@ i2c_core               16653  5 drm,drm_kms_helper,i2c_algo_bit,gma500_gfx,video
 
 ## Modesetting driver and dual monitor Setup
 
-To setup different resolution for external monitor using [xrandr](https://wiki.archlinux.org/index.php/Xrandr), xf86-video-modesetting provided by package [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) from official repo is needed. If you choose to use the git package ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-modesetting-git)]</sup>), remember to recompile it after a new version of [Xorg](/index.php/Xorg "Xorg"). After installing, an [Xorg](/index.php/Xorg "Xorg") file is needed to setup the driver. Use this for device section:
+To setup different resolution for external monitor using [xrandr](https://wiki.archlinux.org/index.php/Xrandr), xf86-video-modesetting provided by package [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) from official repo is needed. If you choose to use the git package ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), remember to recompile it after a new version of [Xorg](/index.php/Xorg "Xorg"). After installing, an [Xorg](/index.php/Xorg "Xorg") file is needed to setup the driver. Use this for device section:
 
  `/etc/X11/xorg.conf.d/20-gpudriver.conf` 
 
@@ -78,11 +72,11 @@ To setup different resolution for external monitor using [xrandr](https://wiki.a
 If you have problems playing 720p and 1080i videos, yes, that's normal while there are not accelerated XV drivers. But you can improve it up to the point of going well and smoothly for most videos (even HD ones) with these tricks:
 
 1.  add `pm-powersave false` to `/etc/rc.local`. `man pm-powersave` for more info.
-2.  use [xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-modesetting-git)]</sup> as indicated above.
+2.  use [xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/) as indicated above.
 3.  always use [MPlayer](/index.php/MPlayer "MPlayer") or any variant/gui. [VLC](/index.php/VLC "VLC") and others are usually much more slower.
 4.  When possible, Use multithreaded decoding with mplayer (Many Atom CPUs can) & framedropping `mplayer -lavdopts threads=4 -framedrop yourvideofile.avi`
-5.  substitute the normal mplayer with [mplayer-minimal-svn](https://aur.archlinux.org/packages/mplayer-minimal-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer-minimal-svn)]</sup>, and compile with aggressive optimizations: `-march=native -fomit-frame-pointer -O3 -ffast-math'`. ([About makepkg](/index.php/Makepkg "Makepkg"))
-6.  use [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)<sup><small>AUR</small></sup> as it is a very good performance kernel. Edit PKGBUILD so you can do `menuconfig` and make sure you select your processor and remove generic optimizations for other processors. ([About kernels](/index.php/Kernel "Kernel"))
+5.  substitute the normal mplayer with [mplayer-minimal-svn](https://aur.archlinux.org/packages/mplayer-minimal-svn/), and compile with aggressive optimizations: `-march=native -fomit-frame-pointer -O3 -ffast-math'`. ([About makepkg](/index.php/Makepkg "Makepkg"))
+6.  use [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/) as it is a very good performance kernel. Edit PKGBUILD so you can do `menuconfig` and make sure you select your processor and remove generic optimizations for other processors. ([About kernels](/index.php/Kernel "Kernel"))
 
 ### Fix suspend
 

@@ -4,9 +4,9 @@ Tryton is a three-tiers high-level general purpose application platform under th
 
 ## Installation
 
-Install the server application, [trytond](https://aur.archlinux.org/packages/trytond/)<sup><small>AUR</small></sup>, from the [AUR](/index.php/AUR "AUR").
+Install the server application, [trytond](https://aur.archlinux.org/packages/trytond/), from the [AUR](/index.php/AUR "AUR").
 
-Once trydond is installed, install the client application, [tryton](https://aur.archlinux.org/packages/tryton/)<sup><small>AUR</small></sup>, from the [AUR](/index.php/AUR "AUR").
+Once trydond is installed, install the client application, [tryton](https://aur.archlinux.org/packages/tryton/), from the [AUR](/index.php/AUR "AUR").
 
 ## Configuring
 

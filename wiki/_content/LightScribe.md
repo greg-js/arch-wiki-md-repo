@@ -12,19 +12,19 @@ To use LightScribe, regardless of which operating system you're using, you need 
 
 On Arch, the LightScribe System Software is available from the [AUR](/index.php/AUR "AUR"):
 
-*   **i686**: [lightscribe](https://aur.archlinux.org/packages/lightscribe/)<sup><small>AUR</small></sup>
-*   **x86_64**: [bin32-lightscribe](https://aur.archlinux.org/packages/bin32-lightscribe/)<sup><small>AUR</small></sup>
+*   **i686**: [lightscribe](https://aur.archlinux.org/packages/lightscribe/)
+*   **x86_64**: [bin32-lightscribe](https://aur.archlinux.org/packages/bin32-lightscribe/)
 
 ## Labelers
 
 In the [AUR](/index.php/AUR "AUR") you can find:
 
 *   **LightScribe Simple Labeler**: official tool to make simple thin labels. You can only type text and use the provided templates as separators. Useful to make good looking labels quickly (it takes only 3 minutes, as opposed to a full-disk label which takes around 30 minutes)
-    *   **i686**: [lightscribe-labeler](https://aur.archlinux.org/packages/lightscribe-labeler/)<sup><small>AUR</small></sup>
-    *   **x86_64**: [bin32-lightscribe-labeler](https://aur.archlinux.org/packages/bin32-lightscribe-labeler/)<sup><small>AUR</small></sup>
+    *   **i686**: [lightscribe-labeler](https://aur.archlinux.org/packages/lightscribe-labeler/)
+    *   **x86_64**: [bin32-lightscribe-labeler](https://aur.archlinux.org/packages/bin32-lightscribe-labeler/)
 *   **LaCie 4L LightScribe Labeler for Linux**: tool from LaCie that allows to create a full-disk label using a picture.
-    *   **i686**: [4l](https://aur.archlinux.org/packages/4l/)<sup><small>AUR</small></sup>
-    *   **x86_64**: [bin32-4l](https://aur.archlinux.org/packages/bin32-4l/)<sup><small>AUR</small></sup>
+    *   **i686**: [4l](https://aur.archlinux.org/packages/4l/)
+    *   **x86_64**: [bin32-4l](https://aur.archlinux.org/packages/bin32-4l/)
 
 Additionally, [searching for lightscribe in the AUR](https://aur.archlinux.org/packages.php?K=lightscribe) will create a list of related software.
 

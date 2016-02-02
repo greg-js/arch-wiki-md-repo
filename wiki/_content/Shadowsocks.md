@@ -88,7 +88,7 @@ For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable
 
 #### GUI client
 
-Install [shadowsocks-qt5](https://aur.archlinux.org/packages/shadowsocks-qt5/)<sup><small>AUR</small></sup>.
+Install [shadowsocks-qt5](https://aur.archlinux.org/packages/shadowsocks-qt5/).
 
 ### Server
 

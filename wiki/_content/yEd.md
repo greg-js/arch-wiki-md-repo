@@ -4,7 +4,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [yed](https://aur.archlinux.org/packages/yed/)<sup><small>AUR</small></sup>, which is available in the [AUR](/index.php/AUR "AUR"). It requires an installed Java runtime environment, such as [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [yed](https://aur.archlinux.org/packages/yed/), which is available in the [AUR](/index.php/AUR "AUR"). It requires an installed Java runtime environment, such as [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre](https://aur.archlinux.org/packages/jre/).
 
 Once installed, yEd can be run using the `yed` command.
 
@@ -12,7 +12,7 @@ Once installed, yEd can be run using the `yed` command.
 
 ### Font issues
 
-If you encounter font issues, such as [glitchy fonts](http://i.imgur.com/mcvU014.png), try using the proprietary [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup> instead of OpenJDK and add the following line to your shell's rc file:
+If you encounter font issues, such as [glitchy fonts](http://i.imgur.com/mcvU014.png), try using the proprietary [jre](https://aur.archlinux.org/packages/jre/) instead of OpenJDK and add the following line to your shell's rc file:
 
 ```
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd_hrgb'

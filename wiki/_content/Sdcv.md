@@ -30,10 +30,10 @@ This gives you a 'shell-like' command-line from which you can query the database
 
 There are various places on the web where you can download StarDict dictionaries. Here are some links to get you started:
 
-*   [http://abloz.com/huzheng/stardict-dic/dict.org](http://abloz.com/huzheng/stardict-dic/dict.org)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-06-21]</sup>
-*   [http://abloz.com/huzheng/stardict-dic/freedict.de](http://abloz.com/huzheng/stardict-dic/freedict.de)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-06-21]</sup>
-*   [http://abloz.com/huzheng/stardict-dic/mova.org](http://abloz.com/huzheng/stardict-dic/mova.org)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-06-21]</sup>
-*   [http://abloz.com/huzheng/stardict-dic](http://abloz.com/huzheng/stardict-dic)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-06-21]</sup>
+*   [http://abloz.com/huzheng/stardict-dic/dict.org](http://abloz.com/huzheng/stardict-dic/dict.org)
+*   [http://abloz.com/huzheng/stardict-dic/freedict.de](http://abloz.com/huzheng/stardict-dic/freedict.de)
+*   [http://abloz.com/huzheng/stardict-dic/mova.org](http://abloz.com/huzheng/stardict-dic/mova.org)
+*   [http://abloz.com/huzheng/stardict-dic](http://abloz.com/huzheng/stardict-dic)
 
 Then you can extract the files into `/usr/share/stardict/dic`.
 

@@ -17,7 +17,7 @@ This guide shows you how to install carddavmate to use with davical
 
 ## Installation
 
-Install the [carddavmate](https://aur.archlinux.org/packages/carddavmate/)<sup><small>AUR</small></sup> package.
+Install the [carddavmate](https://aur.archlinux.org/packages/carddavmate/) package.
 
 After that, `config.js` needs to be configured, as well as `httpd-carddavmate.conf`. Then, `httpd-carddavmate.conf` needs to be included in the [Apache](/index.php/Apache "Apache") configuration, and Apache needs to be restarted.
 

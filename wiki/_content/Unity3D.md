@@ -26,7 +26,7 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 
 **Warning:** The Unity package is **huge**. For a successful installation you'll need about 8GiB of free space for the package building, and another 2.5GiB for it to install.
 
-Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/)<sup><small>AUR</small></sup>.
+Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/).
 
 ## Android Remote
 
@@ -38,7 +38,7 @@ Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://au
 
 [Install](/index.php/Install "Install") the [android-udev](https://www.archlinux.org/packages/?name=android-udev) package, which will ensure you have correct [udev](/index.php/Udev "Udev") rules for your device.
 
-Install the [android-sdk](https://aur.archlinux.org/packages/android-sdk/)<sup><small>AUR</small></sup> package and one of the packages from the [java-environment](https://www.archlinux.org/packages/?name=java-environment)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> group, preferably JDK7, though it's reported to (and should) work with OpenJDK too.
+Install the [android-sdk](https://aur.archlinux.org/packages/android-sdk/) package and one of the packages from the [java-environment](https://www.archlinux.org/packages/?name=java-environment) group, preferably JDK7, though it's reported to (and should) work with OpenJDK too.
 
 #### Configure the Editor
 

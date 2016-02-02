@@ -4,7 +4,7 @@ This page describes how to install Valves _HLDS_ (Half-Life Dedicated Server) fo
 
 ## Installation
 
-First, install [hlds](https://aur.archlinux.org/packages/hlds/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hlds)]</sup> from the [AUR](/index.php/AUR "AUR").
+First, install [hlds](https://aur.archlinux.org/packages/hlds/) from the [AUR](/index.php/AUR "AUR").
 
 Now we begin download the game files, in this example for _Counter-Strike 1.6_, by executing this command (where username and password is your steam one):
 

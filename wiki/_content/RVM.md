@@ -1,11 +1,5 @@
 # RVM
 
-Related articles
-
-*   [Rbenv](/index.php/Rbenv "Rbenv")
-*   [Chruby](/index.php/Chruby "Chruby")
-*   [Ruby](/index.php/Ruby "Ruby")
-
 [RVM](http://rvm.io/) (Ruby Version Manager) is a command line tool which allows us to easily install, manage and work with multiple [Ruby](/index.php/Ruby "Ruby") environments from interpreters to sets of gems.
 
 There exists a similar application that you may also want to consider: [rbenv](/index.php/Rbenv "Rbenv").

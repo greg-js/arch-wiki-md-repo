@@ -45,10 +45,10 @@
         *   [https://www.dnssec-tools.org/wiki/index.php/Applications](https://www.dnssec-tools.org/wiki/index.php/Applications)
     *   **libval-shim** LD_PRELOAD library to enable DNSSEC for lots of DNSSEC unaware programs [http://www.dnssec-tools.org/docs/tool-description/libval_shim.html](http://www.dnssec-tools.org/docs/tool-description/libval_shim.html)
     *   PERL API
-*   [sshfp](https://aur.archlinux.org/packages/sshfp/)<sup><small>AUR</small></sup>
+*   [sshfp](https://aur.archlinux.org/packages/sshfp/)
     *   Generates DNS SSHFP-type records from SSH public keys from public keys from a known_hosts file or from scanning the host's sshd daemon.
     *   not directly related to DNSSEC, but i guess this will become very popular because of DNSSEC
-*   [opendnssec](https://aur.archlinux.org/packages/opendnssec/)<sup><small>AUR</small></sup>
+*   [opendnssec](https://aur.archlinux.org/packages/opendnssec/)
     *   Signs DNS zones to be later published by a DNS server (bind, nsd, etc.)
     *   Automates refreshing signatures, key rollovers
 

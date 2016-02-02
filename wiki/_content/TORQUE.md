@@ -1,10 +1,5 @@
 # TORQUE
 
-Related articles
-
-*   [distcc](/index.php/Distcc "Distcc")
-*   [Slurm](/index.php/Slurm "Slurm")
-
 **TORQUE** is an open source resource manager providing control over batch jobs and distributed compute nodes. Basically, one can setup a home or small office Linux cluster and queue jobs with this software. A cluster consists of one head node and many compute nodes. The head node runs the **torque-server** daemon and the compute nodes run the **torque-client** daemon. The head node also runs a scheduler daemon.
 
 ## Contents
@@ -28,7 +23,7 @@ Related articles
 
 **Note:** Although TORQUE is a very powerful queuing system, if the goal of the cluster is solely to increase compilation throughput, [distcc](/index.php/Distcc "Distcc") is a much easier and elegant solution.
 
-[Install](/index.php/Install "Install") the [torque](https://aur.archlinux.org/packages/torque/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/torque)]</sup> package found in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [torque](https://aur.archlinux.org/packages/torque/) package found in the [AUR](/index.php/AUR "AUR").
 
 ## Must haves
 

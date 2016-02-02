@@ -77,7 +77,7 @@ gcm-calibrate --device "_xrandr-Lenovo Group Limited_"
 
 ### LPROF ICC Profiler
 
-[LPROF](http://lprof.sourceforge.net/) is an ICC profiler with a graphical user interface listed under [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+[LPROF](http://lprof.sourceforge.net/) is an ICC profiler with a graphical user interface listed under [lprof](https://aur.archlinux.org/packages/lprof/) in the [AUR](/index.php/AUR "AUR").
 
 **Note:** The following walkthrough has been modified from the ArchWiki article [Using LPROF to profile monitors](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors").
 
@@ -137,7 +137,7 @@ See [color profiles](http://www.thinkwiki.org/wiki/Colour_profile) for IBM/Lenov
 
 ## Loading ICC Profiles
 
-ICC profiles are loaded either by the session daemon or by a dedicated ICC loader. Both Gnome and KDE have daemons capable of loading ICC profiles from [colord](https://www.archlinux.org/packages/?name=colord). If you use colord in combination with either [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon) or [colord-kde](https://aur.archlinux.org/packages/colord-kde/)<sup><small>AUR</small></sup>, the profile will be loaded automatically. If you're not using neither Gnome nor KDE, you may install an independent daemon, [xiccd](https://github.com/agalakhov/xiccd), which does the same but does not depend on your desktop environment. Do not start two ICC-capable daemons (e.g. gnome-settiongs-daemon and xiccd) at the same time.
+ICC profiles are loaded either by the session daemon or by a dedicated ICC loader. Both Gnome and KDE have daemons capable of loading ICC profiles from [colord](https://www.archlinux.org/packages/?name=colord). If you use colord in combination with either [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon) or [colord-kde](https://aur.archlinux.org/packages/colord-kde/), the profile will be loaded automatically. If you're not using neither Gnome nor KDE, you may install an independent daemon, [xiccd](https://github.com/agalakhov/xiccd), which does the same but does not depend on your desktop environment. Do not start two ICC-capable daemons (e.g. gnome-settiongs-daemon and xiccd) at the same time.
 
 If you're not using any ICC-capable session daemon, make sure you use only one ICC loader - either xcalib, dispwin, dispcalGUI-apply-profiles or others, otherwise you easily end up with uncontrolled environment. (The most recently run loader set the calibration, and the earlier loaded calibration is overwritten.)
 
@@ -145,7 +145,7 @@ Before using a particular ICC loader, you should understand that some tools set 
 
 ### xcalib
 
-*   [xcalib](http://xcalib.sourceforge.net/) is a lightweight monitor calibration loader which can load an ICC monitor profile to be shared across desktop applications. [xcalib](https://aur.archlinux.org/packages/xcalib/)<sup><small>AUR</small></sup> is part of the Arch User Repository (AUR).
+*   [xcalib](http://xcalib.sourceforge.net/) is a lightweight monitor calibration loader which can load an ICC monitor profile to be shared across desktop applications. [xcalib](https://aur.archlinux.org/packages/xcalib/) is part of the Arch User Repository (AUR).
 
 #### Xinitrc Example
 

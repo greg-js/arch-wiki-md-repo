@@ -20,7 +20,7 @@ Understand if you have permission from Cisco Systems to use this software. If yo
 
 ### 32-bit systems
 
-See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
+See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/) from the [AUR](/index.php/AUR "AUR")
 
 You will need to have access to the file `Cisco Packet Tracer 6.0.1 for Linux (with tutorials)` to continue with the installation. For your convenience, the sha1sum and md5sum of this file is provided below.
 
@@ -40,7 +40,7 @@ Finally, please read the EULA at `/usr/share/licenses/packettracer/eula.txt` and
 
 ### 64-bit systems
 
-See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
+See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/) from the [AUR](/index.php/AUR "AUR")
 
 You will need to enable the [Multilib](/index.php/Multilib "Multilib") repository to continue. Ensure to update the package list and upgrade with `pacman -Syu`
 

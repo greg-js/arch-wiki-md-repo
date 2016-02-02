@@ -1,10 +1,5 @@
 # pm-utils
 
-Related articles
-
-*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
-
 **Warning:** Hibernating with Pm-utils and then updating systemd is reported to corrupt files: [https://bbs.archlinux.org/viewtopic.php?pid=1423442](https://bbs.archlinux.org/viewtopic.php?pid=1423442)
 
 **pm-utils** is a suspend and powerstate setting framework. It is designed to replace such scripts as those provided by the `powersave` package.
@@ -79,8 +74,8 @@ pacman -Ql pm-utils | grep module.d
 
 Suspend backend is specified by the `SLEEP_MODULE` configuration variable in `/etc/pm/config.d` and defaults to the `kernel` backend. To use the alternative suspend backends the respective packages need to be installed. Both of these are available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"):
 
-*   uswsusp - [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)<sup><small>AUR</small></sup>
-*   tuxonice - [linux-ice](https://aur.archlinux.org/packages/linux-ice/)<sup><small>AUR</small></sup> / [linux-pf](/index.php/Linux-pf "Linux-pf")
+*   uswsusp - [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)
+*   tuxonice - [linux-ice](https://aur.archlinux.org/packages/linux-ice/) / [linux-pf](/index.php/Linux-pf "Linux-pf")
 
 Furthermore, [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) ships with its own video quirks database in `/usr/lib/pm-utils/video-quirks/`.
 

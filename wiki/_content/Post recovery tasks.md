@@ -1,10 +1,5 @@
 # Post recovery tasks
 
-Related articles
-
-*   [File recovery](/index.php/File_recovery "File recovery")
-*   [Sort images by resolution](/index.php/Sort_images_by_resolution "Sort images by resolution")
-
 **Note:** To speed up access to the recovered or restored files you can use [shake](https://www.archlinux.org/packages/?name=shake) utility to defragment them.
 
 ## Contents
@@ -46,7 +41,7 @@ f851733136_WindowMaker_Dockapps.pdf|WindowMaker_Dockapps.pdf|./f851733136_Window
 
 ```
 
-See also [crctk-git](https://aur.archlinux.org/packages/crctk-git/)<sup><small>AUR</small></sup> for working with CRC32 checksums.
+See also [crctk-git](https://aur.archlinux.org/packages/crctk-git/) for working with CRC32 checksums.
 
 ### Clean up and sort file names
 

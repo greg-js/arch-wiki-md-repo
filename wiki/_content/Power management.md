@@ -1,15 +1,5 @@
 # Power management
 
-Related articles
-
-*   [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")
-*   [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
-*   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")
-*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   [sysctl](/index.php/Sysctl "Sysctl")
-*   [udev](/index.php/Udev "Udev")
-
 The purpose of this page is to provide general overview of power management in Arch Linux. Power management consists of two main parts:
 
 1.  Configuration of the Linux kernel, which interacts with hardware.
@@ -65,7 +55,7 @@ These are the more popular scripts and tools designed to help power saving:
 
 *   **aclidswitch** — Simple Power Management tool to define custom lid, brightness and low battery actions depending on the laptop's AC state.
 
-	[https://github.com/orschiro/aclidswitch](https://github.com/orschiro/aclidswitch) || [aclidswitch-git](https://aur.archlinux.org/packages/aclidswitch-git/)<sup><small>AUR</small></sup>
+	[https://github.com/orschiro/aclidswitch](https://github.com/orschiro/aclidswitch) || [aclidswitch-git](https://aur.archlinux.org/packages/aclidswitch-git/)
 
 *   **[acpid](/index.php/Acpid "Acpid")** — A daemon for delivering ACPI power management events with netlink support.
 
@@ -73,7 +63,7 @@ These are the more popular scripts and tools designed to help power saving:
 
 *   **[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")** — Utility to configure laptop power saving settings, considered by many to be the de facto utility for power saving though may take a bit of configuration.
 
-	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup>
+	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)
 
 *   **[pm-utils](/index.php/Pm-utils "Pm-utils")** — Suspend and powerstate setting framework (largely undeveloped now).
 
@@ -115,7 +105,7 @@ Note that if the power manager does not inhibit _systemd_ for the appropriate ev
 
 #### xss-lock
 
-[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/)<sup><small>AUR</small></sup> subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). _xss-lock_ also reacts to the [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") and runs or kills the locker in response to the x-server signals.
+[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). _xss-lock_ also reacts to the [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") and runs or kills the locker in response to the x-server signals.
 
 Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for example
 
@@ -630,7 +620,7 @@ SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/path/to/your/script false"
 
 Examples of powersave scripts:
 
-*   [ftw](https://github.com/supplantr/ftw), package: [ftw-git](https://aur.archlinux.org/packages/ftw-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ftw-git)]</sup>
+*   [ftw](https://github.com/supplantr/ftw), package: [ftw-git](https://aur.archlinux.org/packages/ftw-git/)
 *   [powersave](https://github.com/Unia/powersave)
 
 The above udev rule should work as expected, but if your power settings are not updated after a suspend or hibernate cycle, you should add a script in `/usr/lib/systemd/system-sleep/` with the following contents:

@@ -1,17 +1,12 @@
 # Cairo Compmgr
 
-Related articles
-
-*   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr")
-*   [Xorg](/index.php/Xorg "Xorg")
-
 Cairo Composite Manager is a versatile and extensible [composite manager](http://en.wikipedia.org/wiki/Compositing_window_manager) which uses cairo for rendering. Plugins can be used to add some cool effects to your desktop. It's capable of, but not limited to, rendering of drop shadows, setting window transparency, menu and window animations, and applying decorations.
 
 Like [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"), it does not replace an existing window manager, which makes it ideal for users of lightweight window managers, like [Openbox](/index.php/Openbox "Openbox") and [Fluxbox](/index.php/Fluxbox "Fluxbox"), who seek a more elegant desktop.
 
 ## Installation
 
-Install either [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/)<sup><small>AUR</small></sup> or [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)<sup><small>AUR</small></sup> (for the development version).
+Install either [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/) or [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/) (for the development version).
 
 Note that the dependency on [gconf](https://www.archlinux.org/packages/?name=gconf) can be safely removed however the dependency on [vala](https://www.archlinux.org/packages/?name=vala) cannot be removed. If you do remove the [gconf](https://www.archlinux.org/packages/?name=gconf) dependency, you also need to remove the last three lines from the `package()` function in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 

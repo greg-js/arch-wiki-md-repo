@@ -11,7 +11,7 @@
 
 ## Installation and Setup
 
-You can install [freenet](https://aur.archlinux.org/packages/freenet/)<sup><small>AUR</small></sup> from the the [AUR](/index.php/AUR "AUR") or from unofficial [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") repository.
+You can install [freenet](https://aur.archlinux.org/packages/freenet/) from the the [AUR](/index.php/AUR "AUR") or from unofficial [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") repository.
 
 Then, add freenet to the list of services activated at boot:
 

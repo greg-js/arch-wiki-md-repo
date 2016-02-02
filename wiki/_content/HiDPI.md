@@ -1,9 +1,5 @@
 # HiDPI
 
-Related articles
-
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-
 HiDPI (High Dots Per Inch) displays, also known by Apple's "[Retina Display](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display")" marketing name, are screens with a high resolution in a relatively small format. They are mostly found in high-end laptops and monitors.
 
 Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant.
@@ -187,7 +183,7 @@ From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be take
 
 #### Chromium / Google Chrome
 
-Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
+Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
 
  `chromium --force-device-scale-factor=2` 
 
@@ -258,11 +254,11 @@ Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icon
 
 ### VLC
 
-As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/)<sup><small>AUR</small></sup> seems to solve some of the problems.
+As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve some of the problems.
 
 ### Unsupported applications
 
-One approach is to run the application full screen and without decoration in its own VNC desktop. Then scale the viewer. With Vncdesk ([vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")) you can set up a desktop per application, then start server and client with a simple command such as `vncdesk 2`.
+One approach is to run the application full screen and without decoration in its own VNC desktop. Then scale the viewer. With Vncdesk ([vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/) from the [AUR](/index.php/AUR "AUR")) you can set up a desktop per application, then start server and client with a simple command such as `vncdesk 2`.
 
 [x11vnc](/index.php/X11vnc "X11vnc") has an experimental option `-appshare`, which opens one viewer per application window. Perhaps something could be hacked up with that.
 

@@ -37,7 +37,7 @@ To get basic support, install [linuxconsole](https://www.archlinux.org/packages/
 
  `inputattach -w8001 /dev/ttyS0` 
 
-To handle it at boot, install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup>.
+To handle it at boot, install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/).
 
 ### Rotation
 

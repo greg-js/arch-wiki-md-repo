@@ -1,11 +1,5 @@
 # Uswsusp
 
-Related articles
-
-*   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
-*   [Pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
-
 [uswsusp](http://suspend.sourceforge.net/) (userspace software suspend) is a set of user space tools used for hibernation (suspend-to-disk) and suspend (suspend-to-RAM or standby) on Linux systems. It consists of:
 
 *   **s2ram** - a wrapper around the kernel's suspend-to-RAM mechanism allowing the user to perform some graphics adapter manipulations from the user land before suspending and after resuming that may help to bring the graphics (and the entire system) back to life after the resume. Incorporates the functionality of vbetool and radeontool as well as some tricks of its own. Includes a list of working hardware configurations along with the appropriate sets of operations to be performed to resume them successfully. This is accomplished by a hardware whitelist maintained by HAL - **s2ram** translates the HAL database options into **s2ram** parameters.
@@ -35,7 +29,7 @@ Related articles
 
 ## Installation
 
-uswsusp is available in the [AUR](/index.php/AUR "AUR") under the name [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)<sup><small>AUR</small></sup>.
+uswsusp is available in the [AUR](/index.php/AUR "AUR") under the name [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
 
 ## Configuration
 

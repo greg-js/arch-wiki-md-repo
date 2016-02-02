@@ -1,11 +1,5 @@
 # Unity
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [Compiz](/index.php/Compiz "Compiz")
-
 [Unity](http://unity.ubuntu.com/) is a desktop shell for the [GNOME](/index.php/GNOME "GNOME") desktop environment developed by [Canonical Ltd](http://www.canonical.com/about) for [Ubuntu](http://www.ubuntu.com). Unity is implemented as a plugin of the [Compiz](/index.php/Compiz "Compiz") [window manager](/index.php/Window_manager "Window manager").
 
 ## Contents
@@ -37,13 +31,13 @@ Unity can be installed on Arch Linux from an unofficial repository or alternativ
 
 ### From the unofficial repository
 
-[Add](/index.php/Pacman#Repositories "Pacman") the [Unity-for-Arch](/index.php/Unofficial_user_repositories#Unity-for-Arch "Unofficial user repositories") repository. Available packages are listed on [GitHub](https://github.com/chenxiaolong/Unity-for-Arch/blob/master/README.md#compiling-from-source). It is recommended to [install](/index.php/Install "Install") the [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/)<sup><small>AUR</small></sup> package.
+[Add](/index.php/Pacman#Repositories "Pacman") the [Unity-for-Arch](/index.php/Unofficial_user_repositories#Unity-for-Arch "Unofficial user repositories") repository. Available packages are listed on [GitHub](https://github.com/chenxiaolong/Unity-for-Arch/blob/master/README.md#compiling-from-source). It is recommended to [install](/index.php/Install "Install") the [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/) package.
 
 Additional packages are available from [Unity-for-Arch-Extra](/index.php/Unofficial_user_repositories#Unity-for-Arch-Extra "Unofficial user repositories") - see [GitHub](https://github.com/chenxiaolong/Unity-for-Arch-Extra/blob/master/README.md#compiling-from-source) for available packages.
 
 ### From source
 
-All of the PKGBUILDs can be browsed on the [GitHub repository](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/)<sup><small>AUR</small></sup> ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/)<sup><small>AUR</small></sup>, _unity-tweak-tool_ (a popular Unity configuration tool) and more.
+All of the PKGBUILDs can be browsed on the [GitHub repository](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), _unity-tweak-tool_ (a popular Unity configuration tool) and more.
 
 [Install](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) and navigate to a directory in which the sources can be built, then do:
 
@@ -60,7 +54,7 @@ $ makepkg -sci
 
 ```
 
-**Tip:** To use [LightDM](/index.php/LightDM "LightDM"), follow the same steps mentioned above to install [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/)<sup><small>AUR</small></sup> and [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/)<sup><small>AUR</small></sup> from the [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) repository.
+**Tip:** To use [LightDM](/index.php/LightDM "LightDM"), follow the same steps mentioned above to install [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) and [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) from the [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) repository.
 
 #### Updating
 
@@ -87,9 +81,9 @@ The following section lists packages that, whilst not required for the Unity she
 | Functionality | Package(s) |
 | Notifications | [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) |
 | Screen locking | _gnome-screensaver-ubuntu_ |
-| Online accounts | [signon-keyring-extension](https://aur.archlinux.org/packages/signon-keyring-extension/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/signon-keyring-extension)]</sup>, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
+| Online accounts | [signon-keyring-extension](https://aur.archlinux.org/packages/signon-keyring-extension/), [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
 | SSH | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) |
-| HUD & menubar integration | [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/appmenu-qt)]</sup>, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/)<sup><small>AUR</small></sup>, [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/)<sup><small>AUR</small></sup> |
+| HUD & menubar integration | [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt), [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/), [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/) |
 | File and Folder lens | _zeitgeist-ubuntu_ |
 | Configuration | [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), _unity-tweak-tool_ |
 | Pidgin integration | _pidgin-indicator_ |

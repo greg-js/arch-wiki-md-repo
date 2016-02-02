@@ -1,16 +1,5 @@
 # Help:Editing
 
-Related articles
-
-*   [ArchWiki:About](/index.php/ArchWiki:About "ArchWiki:About")
-*   [Help:Cheatsheet](/index.php/Help:Cheatsheet "Help:Cheatsheet")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-*   [Help:Reading](/index.php/Help:Reading "Help:Reading")
-*   [Help:Template](/index.php/Help:Template "Help:Template")
-*   [Help:Discussion](/index.php/Help:Discussion "Help:Discussion")
-*   [ArchWiki:Sandbox](/index.php/ArchWiki:Sandbox "ArchWiki:Sandbox")
-*   [Wiki Monkey](/index.php/Wiki_Monkey "Wiki Monkey")
-
 ArchWiki is powered by [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki), a free software wiki package written in PHP, originally designed for use on Wikipedia. More in-depth help can be found at [Help:Contents on MediaWiki](https://www.mediawiki.org/wiki/Help:Contents) and [Help:Contents on Wikipedia](https://en.wikipedia.org/wiki/Help:Contents "wikipedia:Help:Contents").
 
 This is a short tutorial about editing the [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"). Before editing or creating pages, users are encouraged to familiarize themselves with the general tone, layout, and style of existing articles. An effort should be made to maintain a level of consistency throughout the wiki. See [Help:Reading](/index.php/Help:Reading "Help:Reading") for an overview of common stylistic conventions. See [Help:Style](/index.php/Help:Style "Help:Style") for more detail.

@@ -1,9 +1,5 @@
 # Lenovo ThinkPad Edge 13
 
-Related articles
-
-*   [Lenovo ThinkPad T61](/index.php/Lenovo_ThinkPad_T61 "Lenovo ThinkPad T61")
-
 How to setup archlinux on Lenovo ThinkPad Edge 13\. This guide has been written aside the ThinkPad Edge AMD version with ATI-graphics.
 
 This article was written to assist you with getting archlinux run on the Lenovo ThinkPad Edge 13\. It is meant to be help you with some tricky points aside to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"): A guide through the whole process of installing and configuring Arch Linux; written for new or inexperienced users.

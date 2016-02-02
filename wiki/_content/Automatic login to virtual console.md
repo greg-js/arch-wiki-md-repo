@@ -1,11 +1,5 @@
 # Automatic login to virtual console
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Silent boot](/index.php/Silent_boot "Silent boot")
-*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
-
 This article describes how to automatically log in to a [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") at the end of the [boot process](/index.php/Boot_process "Boot process"). This article only covers console log-ins; see [Start X at login](/index.php/Start_X_at_login "Start X at login") for information about automatic login into [Xorg](/index.php/Xorg "Xorg").
 
 ## Contents

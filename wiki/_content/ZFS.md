@@ -1,12 +1,5 @@
 # ZFS
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
-*   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
-*   [ZFS on FUSE](/index.php/ZFS_on_FUSE "ZFS on FUSE")
-
 [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") is an advanced filesystem created by [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems "wikipedia:Sun Microsystems") (now owned by Oracle) and released for OpenSolaris in November 2005\.
 
 Features of ZFS include: pooled storage (integrated volume management – zpool), [Copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [snapshots](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), data integrity verification and automatic repair (scrubbing), [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"), a maximum [16 Exabyte](https://en.wikipedia.org/wiki/Exabyte "wikipedia:Exabyte") file size, and a maximum 256 Quadrillion [Zettabyte's](https://en.wikipedia.org/wiki/Zettabyte "wikipedia:Zettabyte") storage with no limit on number of filesystem's (datasets) or file's[[1]](http://docs.oracle.com/cd/E19253-01/819-5461/zfsover-2/index.html). ZFS is licensed under the [Common Development and Distribution License](https://en.wikipedia.org/wiki/CDDL "wikipedia:CDDL") (CDDL).
@@ -68,11 +61,11 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
 
 ### General
 
-Install [zfs-git](https://aur.archlinux.org/packages/zfs-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository. This package has [zfs-utils-git](https://aur.archlinux.org/packages/zfs-utils-git/)<sup><small>AUR</small></sup> and [spl-git](https://aur.archlinux.org/packages/spl-git/)<sup><small>AUR</small></sup> as a dependency, which in turn has [spl-utils-git](https://aur.archlinux.org/packages/spl-utils-git/)<sup><small>AUR</small></sup> as dependency. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
+Install [zfs-git](https://aur.archlinux.org/packages/zfs-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository. This package has [zfs-utils-git](https://aur.archlinux.org/packages/zfs-utils-git/) and [spl-git](https://aur.archlinux.org/packages/spl-git/) as a dependency, which in turn has [spl-utils-git](https://aur.archlinux.org/packages/spl-utils-git/) as dependency. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
 **Note:** The zfs-git package replaces the original zfs package from [AUR](/index.php/AUR "AUR"). ZFSonLinux.org is slow to make stable releases and kernel API changes broke stable builds of ZFSonLinux for Arch. Changes submitted to the master branch of the ZFSonLinux repository are regression tested and therefore considered stable.
 
-For users that desire ZFS builds from stable releases, [zfs-lts](https://aur.archlinux.org/packages/zfs-lts/)<sup><small>AUR</small></sup> is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository. A script to build ZFS and its dependencies automatically can be found [here](#Automated_build_script).
+For users that desire ZFS builds from stable releases, [zfs-lts](https://aur.archlinux.org/packages/zfs-lts/) is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository. A script to build ZFS and its dependencies automatically can be found [here](#Automated_build_script).
 
 **Warning:** The ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository.
 
@@ -82,7 +75,7 @@ Test the installation by issuing `zpool status` on the command line. If an "insm
 
 ### Root on ZFS
 
-When performing an Arch install on ZFS, [zfs-git](https://aur.archlinux.org/packages/zfs-git/)<sup><small>AUR</small></sup> and its dependencies can be installed in the archiso environment as outlined in the previous section.
+When performing an Arch install on ZFS, [zfs-git](https://aur.archlinux.org/packages/zfs-git/) and its dependencies can be installed in the archiso environment as outlined in the previous section.
 
 It may be useful to prepare a [customized archiso](#Embed_the_archzfs_packages_into_an_archiso) with ZFS support builtin. For a much more detailed guide on installing Arch with ZFS as its root file system, see [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS").
 
@@ -92,7 +85,7 @@ Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Ke
 
 Read the [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") wiki entry for a general understanding of the initial ramdisk environment, and adding the dkms hook [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
 
-Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/)<sup><small>AUR</small></sup> or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/)<sup><small>AUR</small></sup> and apply the post-install instructions given by these packages.
+Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) and apply the post-install instructions given by these packages.
 
 **Tip:** Add an `IgnorePkg` entry to [pacman.conf](/index.php/Pacman.conf "Pacman.conf") to prevent these packages from upgrading when doing a regular update.
 
@@ -262,7 +255,7 @@ By default, _zpool_ will enable all features on a pool. If `/boot` resides on ZF
 
 ```
 
-**Tip:** As of September 2015, GRUB's development tree supports `extensible_dataset`, `hole_birth`, `embedded_data`, and `large_blocks`, making it viable to use a pool with all features enabled, either at create time or by using `zpool upgrade <pool_name>`, if [grub-git](https://aur.archlinux.org/packages/grub-git/)<sup><small>AUR</small></sup> is installed.
+**Tip:** As of September 2015, GRUB's development tree supports `extensible_dataset`, `hole_birth`, `embedded_data`, and `large_blocks`, making it viable to use a pool with all features enabled, either at create time or by using `zpool upgrade <pool_name>`, if [grub-git](https://aur.archlinux.org/packages/grub-git/) is installed.
 
 ### Importing a pool created by id
 
@@ -546,13 +539,13 @@ Make sure to unmount all ZFS filesystems before rebooting the machine, otherwise
 
 #### ZFS Automatic Snapshot Service for Linux
 
-The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot-git/)<sup><small>AUR</small></sup> package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a shell script to automate the management of snapshots, with each named by date and label (hourly, daily, etc), giving quick and convenient snapshotting of all ZFS datasets. The package also installs cron tasks for quarter-hourly, hourly, daily, weekly, and monthly snapshots. Optionally adjust the --keep parameter from the defaults depending on how far back the snapshots are to go (the monthly script by default keeps data for up to a year).
+The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot-git/) package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a shell script to automate the management of snapshots, with each named by date and label (hourly, daily, etc), giving quick and convenient snapshotting of all ZFS datasets. The package also installs cron tasks for quarter-hourly, hourly, daily, weekly, and monthly snapshots. Optionally adjust the --keep parameter from the defaults depending on how far back the snapshots are to go (the monthly script by default keeps data for up to a year).
 
 To prevent a dataset from being snapshotted at all, set `com.sun:auto-snapshot=false` on it. Likewise, set more fine-grained control as well by label, if, for example, no monthlies are to be kept on a snapshot, for example, set `com.sun:auto-snapshot:monthly=false`.
 
 #### ZFS Snapshot Manager
 
-The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/)<sup><small>AUR</small></sup> package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a python service that takes daily snapshots from a configurable set of ZFS datasets and cleans them out in a ["Grandfather-father-son"](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son "wikipedia:Backup rotation scheme") scheme. It can be configured to e.g. keep 7 daily, 5 weekly, 3 monthly and 2 yearly snapshots.
+The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/) package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a python service that takes daily snapshots from a configurable set of ZFS datasets and cleans them out in a ["Grandfather-father-son"](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son "wikipedia:Backup rotation scheme") scheme. It can be configured to e.g. keep 7 daily, 5 weekly, 3 monthly and 2 yearly snapshots.
 
 The package also supports configurable replication to other machines running ZFS by means of `zfs send` and `zfs receive`. If the destination machine runs this package as well, it could be configured to keep these replicated snapshots for a longer time. This allows a setup where a source machine has only a few daily snapshots locally stored, while on a remote storage server a much longer retention is available.
 

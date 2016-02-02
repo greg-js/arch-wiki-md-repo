@@ -21,7 +21,7 @@ Bitmessage may be used independently or with TOR. Using it with TOR has addition
 
 ## Installation
 
-Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/)<sup><small>AUR</small></sup> or [pybitmessage-git](https://aur.archlinux.org/packages/pybitmessage-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pybitmessage-git)]</sup>from the [AUR](/index.php/AUR "AUR"). In order to use it with TOR, install [tor](https://www.archlinux.org/packages/?name=tor) from the official repositories. If you wish to use bitmessage with Thunderbird, install [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bmwrapper-git)]</sup> from the AUR. For using the given python script to create magnet links, install the package [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python2-bencode)]</sup>.
+Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pybitmessage-git](https://aur.archlinux.org/packages/pybitmessage-git/)from the [AUR](/index.php/AUR "AUR"). In order to use it with TOR, install [tor](https://www.archlinux.org/packages/?name=tor) from the official repositories. If you wish to use bitmessage with Thunderbird, install [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/) from the AUR. For using the given python script to create magnet links, install the package [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/).
 
 ## Set up
 
@@ -103,7 +103,7 @@ magneturi = 'magnet:?%s' % paramstr
 print(magneturi)
 ```
 
-You need to have [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python2-bencode)]</sup> installed in order to make this script work. The magnet link can be shared with the intended recipient without using _base64_.
+You need to have [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/) installed in order to make this script work. The magnet link can be shared with the intended recipient without using _base64_.
 
 ### Using bitmessage with Thunderbird
 
@@ -120,7 +120,7 @@ apipassword = <any password>
 
 ```
 
-You will need the [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bmwrapper-git)]</sup> package from the AUR. Run `bmwrapper` from the terminal. The script operates by running a POP server on _localhost:12344_, and an SMTP server on _localhost:12345_.
+You will need the [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/) package from the AUR. Run `bmwrapper` from the terminal. The script operates by running a POP server on _localhost:12344_, and an SMTP server on _localhost:12345_.
 
 When you set up Thunderbird to use your bitmessage address, you will need to use the following settings:
 

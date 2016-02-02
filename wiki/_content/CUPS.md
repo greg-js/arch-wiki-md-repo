@@ -1,13 +1,5 @@
 # CUPS
 
-Related articles
-
-*   [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing")
-*   [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems")
-*   [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting")
-*   [Samba](/index.php/Samba "Samba")
-*   [LPRng](/index.php/LPRng "LPRng")
-
 [CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS") is the standards-based, open source printing system developed by Apple Inc. for OS X® and other UNIX®-like operating systems.
 
 ## Contents
@@ -268,7 +260,7 @@ This should avoid the error: 426 - Upgrade Required when using the CUPS web inte
 
 *   **gtklp** — GTK+ interface to CUPS.
 
-	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)<sup><small>AUR</small></sup>
+	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
 
 If your user does not have sufficient privileges to administer the cups scheduler, system-config-printer will request the root password when it starts. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
 

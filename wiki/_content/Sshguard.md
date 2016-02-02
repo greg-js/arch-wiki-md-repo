@@ -1,10 +1,5 @@
 # Sshguard
 
-Related articles
-
-*   [fail2ban](/index.php/Fail2ban "Fail2ban")
-*   [ssh](/index.php/Ssh "Ssh")
-
 **Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
 [sshguard](http://www.sshguard.net) is a daemon that protects [SSH](/index.php/SSH "SSH") and other services against brute-force attacks, similar to [fail2ban](/index.php/Fail2ban "Fail2ban").
@@ -42,7 +37,7 @@ You must configure a firewall to be used with sshguard in order for blocking to 
 
 #### UFW
 
-**Warning:** Currently, ufw-033-3 in [community] is not compatible with the method shown below. Users must use [ufw-bzr](https://aur.archlinux.org/packages/ufw-bzr/)<sup><small>AUR</small></sup> from the AUR.
+**Warning:** Currently, ufw-033-3 in [community] is not compatible with the method shown below. Users must use [ufw-bzr](https://aur.archlinux.org/packages/ufw-bzr/) from the AUR.
 
 If UFW is installed and enabled, it must be given the ability to pass along DROP control to sshguard. This is accomplished by modifying `/etc/ufw/before.rules` to contain the following lines which should be inserted just after the section for loopback devices.
 

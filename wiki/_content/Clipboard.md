@@ -27,7 +27,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Anamnesis** — Clipboard manager that stores all the clipboard history and offers an interface to do a full-text search. It has both a command line and GUI mode available.
 
-	[http://anamnesis.sourceforge.net/](http://anamnesis.sourceforge.net/) || [anamnesis](https://aur.archlinux.org/packages/anamnesis/)<sup><small>AUR</small></sup>
+	[http://anamnesis.sourceforge.net/](http://anamnesis.sourceforge.net/) || [anamnesis](https://aur.archlinux.org/packages/anamnesis/)
 
 *   **Autocutsel** — Command line and daemon interfaces to synchronize PRIMARY, `CLIPBOARD` and cut buffer selections.
 
@@ -47,7 +47,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Clipmenu** — Dmenu based clipboard manager
 
-	[https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://aur.archlinux.org/packages/clipmenu/)<sup><small>AUR</small></sup>
+	[https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://aur.archlinux.org/packages/clipmenu/)
 
 *   **Clipster** — A lightweight, command-line-driven clipboard manager, written in Python.
 
@@ -55,11 +55,11 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **CopyQ** — Clever clipboard manager with searchable and editable history, custom actions on items and command line support.
 
-	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)<sup><small>AUR</small></sup>
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Clipboard manager for the GNOME desktop with many features and plugin support.
 
-	[https://launchpad.net/glipper](https://launchpad.net/glipper) || [glipper](https://aur.archlinux.org/packages/glipper/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/glipper](https://launchpad.net/glipper) || [glipper](https://aur.archlinux.org/packages/glipper/)
 
 *   **GPaste** — Clipboard management system that aims at being a new generation Parcellite, with a modular structure split in a couple of libraries and a daemon for adaptability. Offers a GNOME Shell extension and a CLI interface.
 
@@ -71,7 +71,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Full featured clipboard manager for the KDE desktop.
 
-	[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
+	[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
 *   **Parcellite** — Lightweight yet feature-rich clipboard manager.
 
@@ -79,19 +79,19 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Pasteall** — Clipboard monitor simple and functional.
 
-	[https://github.com/LaraCraft93/Pasteall](https://github.com/LaraCraft93/Pasteall) || [pasteall](https://aur.archlinux.org/packages/pasteall/)<sup><small>AUR</small></sup>
+	[https://github.com/LaraCraft93/Pasteall](https://github.com/LaraCraft93/Pasteall) || [pasteall](https://aur.archlinux.org/packages/pasteall/)
 
 *   **Qlipper** — Lightweight and cross-platform clipboard history applet based on Qt.
 
-	[https://code.google.com/p/qlipper/](https://code.google.com/p/qlipper/) || [qlipper](https://aur.archlinux.org/packages/qlipper/)<sup><small>AUR</small></sup>
+	[https://code.google.com/p/qlipper/](https://code.google.com/p/qlipper/) || [qlipper](https://aur.archlinux.org/packages/qlipper/)
 
 *   **Xclip** — A lightweight, command-line based interface to the clipboard.
 
-	[http://sourceforge.net/projects/xclip/](http://sourceforge.net/projects/xclip/) || [xclip](https://www.archlinux.org/packages/?name=xclip) or [xclip-svn](https://aur.archlinux.org/packages/xclip-svn/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/xclip/](http://sourceforge.net/projects/xclip/) || [xclip](https://www.archlinux.org/packages/?name=xclip) or [xclip-svn](https://aur.archlinux.org/packages/xclip-svn/)
 
 *   **xcmenu** — Clipboard synchronizer developed for window manager users.
 
-	[https://github.com/Cloudef/xcmenu](https://github.com/Cloudef/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcmenu-git)]</sup>
+	[https://github.com/Cloudef/xcmenu](https://github.com/Cloudef/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)
 
 *   **xsel** — Command-line program for getting and setting the contents of the X selection.
 

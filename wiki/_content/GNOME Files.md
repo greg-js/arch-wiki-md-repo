@@ -1,13 +1,5 @@
 # GNOME Files
 
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [Nemo](/index.php/Nemo "Nemo")
-*   [Thunar](/index.php/Thunar "Thunar")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-
 Files is the default file manager for [GNOME](https://live.gnome.org/). Files attempts to provide a streamlined method to manage both files and applications.
 
 **Note:** Files was known as [Nautilus](http://live.gnome.org/Nautilus) prior to version 3.6\. The application was given new descriptive names, one for each supported language. The name _Nautilus_ is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
@@ -35,7 +27,7 @@ Files is the default file manager for [GNOME](https://live.gnome.org/). Files at
 **Note:** Files does not depend on the [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) package, only requiring [gnome-desktop](https://www.archlinux.org/packages/?name=gnome-desktop).
 
 *   [Install](/index.php/Install "Install") package [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) for Windows network shares.
-*   [Install](/index.php/Install "Install") package [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [gvfs](https://www.archlinux.org/packages/?name=gvfs)]</sup> and [avahi](https://www.archlinux.org/packages/?name=avahi) for accessing apple network shares. In addition to installing [Avahi](/index.php/Avahi "Avahi"), it must be [enabled](/index.php/Enable "Enable") too.
+*   [Install](/index.php/Install "Install") package [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp) and [avahi](https://www.archlinux.org/packages/?name=avahi) for accessing apple network shares. In addition to installing [Avahi](/index.php/Avahi "Avahi"), it must be [enabled](/index.php/Enable "Enable") too.
 
 ### Plugins
 
@@ -43,14 +35,14 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 *   **Eiciel** — Include extension which add graphical [ACL](/index.php/ACL "ACL") editor into the file properties window.
 
-	[http://rofi.roger-ferrer.org/eiciel/](http://rofi.roger-ferrer.org/eiciel/) || [eiciel](https://aur.archlinux.org/packages/eiciel/)<sup><small>AUR</small></sup>
+	[http://rofi.roger-ferrer.org/eiciel/](http://rofi.roger-ferrer.org/eiciel/) || [eiciel](https://aur.archlinux.org/packages/eiciel/)
 
 *   **Folder Color** — Change the color of each icon separately then you are easily notice the right folder!
 
-	[http://foldercolor.tuxfamily.org/](http://foldercolor.tuxfamily.org/) || [folder-color-nautilus-bzr](https://aur.archlinux.org/packages/folder-color-nautilus-bzr/)<sup><small>AUR</small></sup>
+	[http://foldercolor.tuxfamily.org/](http://foldercolor.tuxfamily.org/) || [folder-color-nautilus-bzr](https://aur.archlinux.org/packages/folder-color-nautilus-bzr/)
 
 **Tip:** This extension works only with these icon-themes which contain additional colored icons, eg:
-[numix-icon-theme-git](https://aur.archlinux.org/packages/numix-icon-theme-git/)<sup><small>AUR</small></sup>, [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/)<sup><small>AUR</small></sup>, [vivacious-folder-colors-addon](https://aur.archlinux.org/packages/vivacious-folder-colors-addon/)<sup><small>AUR</small></sup>, [humanitycolors-icon-theme](https://aur.archlinux.org/packages/humanitycolors-icon-theme/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/humanitycolors-icon-theme)]</sup>
+[numix-icon-theme-git](https://aur.archlinux.org/packages/numix-icon-theme-git/), [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/), [vivacious-folder-colors-addon](https://aur.archlinux.org/packages/vivacious-folder-colors-addon/), [humanitycolors-icon-theme](https://aur.archlinux.org/packages/humanitycolors-icon-theme/)
 
 *   **Nautilus Actions** — Configures programs to be launched when files are selected in Files
 
@@ -58,7 +50,7 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 *   **Nautilus Admin** — Add to menu: "Open as administrator" or "Edit as administrator"
 
-	[https://bitbucket.org/brunonova/nautilus-admin](https://bitbucket.org/brunonova/nautilus-admin) || [nautilus-admin](https://aur.archlinux.org/packages/nautilus-admin/)<sup><small>AUR</small></sup>
+	[https://bitbucket.org/brunonova/nautilus-admin](https://bitbucket.org/brunonova/nautilus-admin) || [nautilus-admin](https://aur.archlinux.org/packages/nautilus-admin/)
 
 *   **Nautilus Terminal** — Terminal embedded in Files. It is always open in the current folder, and follows the navigation.
 

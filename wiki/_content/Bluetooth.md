@@ -1,12 +1,5 @@
 # Bluetooth
 
-Related articles
-
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
-*   [Bluetooth mouse](/index.php/Bluetooth_mouse "Bluetooth mouse")
-*   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
-*   [Blueman](/index.php/Blueman "Blueman")
-
 [Bluetooth](http://www.bluetooth.org/) is a standard for the short-range wireless interconnection of cellular phones, computers, and other electronic devices. In Linux, the canonical implementation of the Bluetooth protocol stack is [BlueZ](http://www.bluez.org/).
 
 ## Contents
@@ -491,7 +484,7 @@ Once you have the _.hcd_ file, copy it into `/lib/firmware/brcm/BCM.hcd` - this 
 
 ```
 
-In some cases (with older kernels?), you have to flash the _.hcd_ file with the _brcm_patchram_plus_ utility, provided by [brcm_patchram_plus-git](https://aur.archlinux.org/packages/brcm_patchram_plus-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/brcm_patchram_plus-git)]</sup>. First, make sure in _dmesg_ that the device is recognized by _btusb_ as a bluetooth device. Then, run the following (replace _04ca 2006_ with your vendor product pair):
+In some cases (with older kernels?), you have to flash the _.hcd_ file with the _brcm_patchram_plus_ utility, provided by [brcm_patchram_plus-git](https://aur.archlinux.org/packages/brcm_patchram_plus-git/). First, make sure in _dmesg_ that the device is recognized by _btusb_ as a bluetooth device. Then, run the following (replace _04ca 2006_ with your vendor product pair):
 
 ```
 # echo '04ca 2006' > /sys/bus/usb/drivers/btusb/new_id

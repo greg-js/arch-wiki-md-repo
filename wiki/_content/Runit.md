@@ -1,9 +1,5 @@
 # Runit
 
-Related articles
-
-*   [init](/index.php/Init "Init")
-
 Runit is a process supervisor. It includes `runit-init`, which can replace sysv's init as pid1, or can be run from inittab or your init system of choice. Runit's simple collection of tools can be used to build flexible dependency structures and distributed systems, or blazing fast parallel runlevel changes (including the initial boot).
 
 See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description, but follow the installation instructions below for your Arch system.
@@ -29,19 +25,19 @@ See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description
 To replace init with runit-init
 
 *   install sysvinit-tools and sysvinit (say Yes to replacing systemd-sysvcompat)
-*   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runit-musl)]</sup> and [runit-run](https://aur.archlinux.org/packages/runit-run/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runit-run)]</sup> from the [AUR](/index.php/AUR "AUR")
+*   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/) and [runit-run](https://aur.archlinux.org/packages/runit-run/) from the [AUR](/index.php/AUR "AUR")
 *   choose/create a default runlevel (see Run Levels)
 *   add init=/sbin/runit-init to your bootloader's kernel command line
 *   reboot
 
 If you just want to get your feet wet and not replace init just yet, runit-musl can be installed side-by-side with the regular Arch systemd PID1, providing just process supervision of those services you put in `/var/service`.
 
-*   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runit-musl)]</sup> and [runit-services](https://aur.archlinux.org/packages/runit-services/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runit-services)]</sup> from the [AUR](/index.php/AUR "AUR")
+*   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/) and [runit-services](https://aur.archlinux.org/packages/runit-services/) from the [AUR](/index.php/AUR "AUR")
 *   start runsvdir /var/service using your current init scheme (inittab/rc.local/systemd, whatever)
 
-The [runit-services](https://aur.archlinux.org/packages/runit-services/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runit-services)]</sup> package puts services in `/etc/sv` and uses `/usr/bin/rsvlog` as a logger (it's a shell script, take a look and modify to taste, improvements welcome).
+The [runit-services](https://aur.archlinux.org/packages/runit-services/) package puts services in `/etc/sv` and uses `/usr/bin/rsvlog` as a logger (it's a shell script, take a look and modify to taste, improvements welcome).
 
-[runit-scripts](https://aur.archlinux.org/packages/runit-scripts/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/runit-scripts)]</sup> puts many new runlevels and symlinks them to the service directories it creates in `/etc/runit/runsvdir/all`, and uses its own `/usr/bin/nsvlog` script for logging.
+[runit-scripts](https://aur.archlinux.org/packages/runit-scripts/) puts many new runlevels and symlinks them to the service directories it creates in `/etc/runit/runsvdir/all`, and uses its own `/usr/bin/nsvlog` script for logging.
 
 ## Using runit
 

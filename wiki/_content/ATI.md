@@ -1,11 +1,6 @@
 # ATI
 
-Related articles
-
-*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
-*   [Xorg](/index.php/Xorg "Xorg")
-
-Owners of **AMD** (previously **ATI**) video cards have a choice between AMD's [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) and the open source driver ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the open source driver.
+Owners of **AMD** (previously **ATI**) video cards have a choice between AMD's [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source driver ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the open source driver.
 
 The open source driver is _on par_ performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.
 
@@ -366,15 +361,15 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 
 *   **Radeon-tray** — A small program to control the power profiles of your Radeon card via systray icon. It is written in PyQt4 and is suitable for non-Gnome users.
 
-	[https://github.com/StuntsPT/Radeon-tray](https://github.com/StuntsPT/Radeon-tray) || [radeon-tray](https://aur.archlinux.org/packages/radeon-tray/)<sup><small>AUR</small></sup>
+	[https://github.com/StuntsPT/Radeon-tray](https://github.com/StuntsPT/Radeon-tray) || [radeon-tray](https://aur.archlinux.org/packages/radeon-tray/)
 
 *   **power-play-switcher** — A gui for changing powerplay setting of the open source driver for ati radeon video cards.
 
-	[https://code.google.com/p/power-play-switcher/](https://code.google.com/p/power-play-switcher/) || [power-play-switcher](https://aur.archlinux.org/packages/power-play-switcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/power-play-switcher)]</sup>
+	[https://code.google.com/p/power-play-switcher/](https://code.google.com/p/power-play-switcher/) || [power-play-switcher](https://aur.archlinux.org/packages/power-play-switcher/)
 
 *   **Gnome-shell-extension-Radeon-Power-Profile-Manager** — A small extension for Gnome-shell that will allow you to change the power profile of your radeon card when using the open source drivers.
 
-	[https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager](https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager) || [gnome-shell-extension-radeon-ppm](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-ppm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-shell-extension-radeon-ppm)]</sup> [gnome-shell-extension-radeon-power-profile-manager-git](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-power-profile-manager-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-shell-extension-radeon-power-profile-manager-git)]</sup>
+	[https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager](https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager) || [gnome-shell-extension-radeon-ppm](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-ppm/) [gnome-shell-extension-radeon-power-profile-manager-git](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-power-profile-manager-git/)
 
 ### Other notes
 
@@ -419,7 +414,7 @@ Then set your desired fan speed from 0 to 255, which corresponds to 0-100% fan s
 
 For persistence, use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") as shown above by the example with power profiles.
 
-If a fixed value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input), preferably with hystereses. There is also a gui solution: [http://github.com/marazmista/radeon-profile](http://github.com/marazmista/radeon-profile)[radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/)<sup><small>AUR</small></sup>.
+If a fixed value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input), preferably with hystereses. There is also a gui solution: [http://github.com/marazmista/radeon-profile](http://github.com/marazmista/radeon-profile)[radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/).
 
 ## TV out
 
@@ -485,7 +480,7 @@ xvattr -a XV_CRTC -v 1
 
 ```
 
-**Note:** you need to install [xvattr](https://aur.archlinux.org/packages/xvattr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xvattr)]</sup> to execute this command.
+**Note:** you need to install [xvattr](https://aur.archlinux.org/packages/xvattr/) to execute this command.
 
 To switch back to the monitor, I change this to `0`. `-1` is used for automatic switching in dualhead setups.
 

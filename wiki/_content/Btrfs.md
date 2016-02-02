@@ -1,12 +1,5 @@
 # Btrfs
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Btrfs - Tips and tricks](/index.php/Btrfs_-_Tips_and_tricks "Btrfs - Tips and tricks")
-*   [Mkinitcpio-btrfs](/index.php/Mkinitcpio-btrfs "Mkinitcpio-btrfs")
-*   [Snapper](/index.php/Snapper "Snapper")
-
 From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")
 
 	_Btrfs (B-tree file system, variously pronounced: "Butter F S", "Better F S", "B-tree F S", or simply "Bee Tee Arr Eff Ess") is a GPL-licensed experimental copy-on-write file system for Linux. Development began at Oracle Corporation in 2007._
@@ -70,7 +63,7 @@ The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and
 ### Additional packages
 
 *   [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) includes _btrfsck_, a tool that can fix errors on Btrfs filesystems.
-*   [btrfs-progs-git](https://aur.archlinux.org/packages/btrfs-progs-git/)<sup><small>AUR</small></sup> for nightly
+*   [btrfs-progs-git](https://aur.archlinux.org/packages/btrfs-progs-git/) for nightly
 
 **Tip:** See [Btrfs Wiki Getting Started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for suggestions regarding running Btrfs effectively.
 

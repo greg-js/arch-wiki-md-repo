@@ -1,15 +1,10 @@
 # Apache Cassandra
 
-Related articles
-
-*   [Apache Spark](/index.php/Apache_Spark "Apache Spark")
-*   [Apache Mesos](/index.php/Apache_Mesos "Apache Mesos")
-
 Apache Cassandra is a NoSQL database with linear scalability. For more information, see the [official documentation](http://docs.datastax.com/en/cassandra/2.0/cassandra/gettingStartedCassandraIntro.html).
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [cassandra](https://aur.archlinux.org/packages/cassandra/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [cassandra](https://aur.archlinux.org/packages/cassandra/) package.
 
 ## Python API
 

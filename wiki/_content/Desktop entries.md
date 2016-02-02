@@ -184,7 +184,7 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 ### lsdsk
 
-The [lsdsk](https://aur.archlinux.org/packages/lsdsk/)<sup><small>AUR</small></sup> bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name". It's main purpose to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows coloured existing base path defined in "DskPath" array.
+The [lsdsk](https://aur.archlinux.org/packages/lsdsk/) bash script searching for content in "Categories" or "Exec", if "Categories" doesn't exist then it uses content of "Name". It's main purpose to get a quick overview in console of the available programs with their command lines and categories in *.desktop. It shows coloured existing base path defined in "DskPath" array.
 
 Examples
 
@@ -197,7 +197,7 @@ Examples
 
 ### fbrokendesktop
 
-The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/)<sup><small>AUR</small></sup> bash script using command "which" to detect broken Exec that points to not existing path. Without any parameters it uses preset folders in "DskPath" array. It shows only broken *.desktop with full path and filename that is missing.
+The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command "which" to detect broken Exec that points to not existing path. Without any parameters it uses preset folders in "DskPath" array. It shows only broken *.desktop with full path and filename that is missing.
 
 Examples
 
@@ -241,7 +241,7 @@ Users can override system-wide `*.desktop` files by copying them into the user-s
 
 For an explanation of the desktop file standard refer to [Desktop Entry Specification](http://standards.freedesktop.org/desktop-entry-spec/latest/). For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
 
-**Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/)<sup><small>AUR</small></sup>, [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/)<sup><small>AUR</small></sup> can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
+**Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
 
 ## See also
 

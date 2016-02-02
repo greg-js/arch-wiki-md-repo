@@ -18,7 +18,7 @@
 
 First you need a working DirectFB. I'm recommending [Uvesafb](/index.php/Uvesafb "Uvesafb") but if you have some graphical issues with it use vesafb. Qingy may not work with [KMS](/index.php/KMS "KMS").
 
-[Install](/index.php/Install "Install") the [qingy](https://aur.archlinux.org/packages/qingy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy)]</sup> package. Several extra themes are available in the [qingy-themes](https://aur.archlinux.org/packages/qingy-themes/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy-themes)]</sup> package. [qingy-theme-arch](https://aur.archlinux.org/packages/qingy-theme-arch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy-theme-arch)]</sup> is an Arch specific theme.
+[Install](/index.php/Install "Install") the [qingy](https://aur.archlinux.org/packages/qingy/) package. Several extra themes are available in the [qingy-themes](https://aur.archlinux.org/packages/qingy-themes/) package. [qingy-theme-arch](https://aur.archlinux.org/packages/qingy-theme-arch/) is an Arch specific theme.
 
 ## Replace *getty with qingy
 

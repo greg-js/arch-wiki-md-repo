@@ -18,7 +18,7 @@ Gitosis provides installation instructions in its [README](http://eagain.net/git
 
 ## Installation and setup
 
-Install the [gitosis-git](https://aur.archlinux.org/packages/gitosis-git/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"). This will create three things:
+Install the [gitosis-git](https://aur.archlinux.org/packages/gitosis-git/) package from the [AUR](/index.php/AUR "AUR"). This will create three things:
 
 *   the `git` user
 *   the `git` group to which this user belongs

@@ -1,20 +1,5 @@
 # MacBook
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [MacBook4,2 (late 2008)](/index.php/MacBook4,2_(late_2008) "MacBook4,2 (late 2008)")
-*   [MacBook5,2 (early-mid 2009)](/index.php/MacBook5,2_(early-mid_2009) "MacBook5,2 (early-mid 2009)")
-*   [MacBookPro7,1](/index.php/MacBookPro7,1 "MacBookPro7,1")
-*   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
-*   [MacBookPro9,2 (Mid-2012)](/index.php/MacBookPro9,2_(Mid-2012) "MacBookPro9,2 (Mid-2012)")
-*   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
-*   [MacBookPro11,x](/index.php/MacBookPro11,x "MacBookPro11,x")
-*   [iMac Aluminum](/index.php/IMac_Aluminum "IMac Aluminum")
-*   [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive")
-
 Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
 ## Contents
@@ -164,7 +149,7 @@ The only special consideration is the MacBook firmware boot sound. To ensure tha
 
 *   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap#Swap_file "Swap"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") your machine in future.
 *   For more information on partitioning, see [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
-*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gummiboot)]</sup>) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
+*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [gummiboot](https://www.archlinux.org/packages/?name=gummiboot)) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
 
 Simple example (no LVM, crypto):
 
@@ -471,25 +456,25 @@ $ lspci | grep VGA
 
 **Tip:** If you have installed OS in EFI mode and NVIDIA binary drivers are working only in BIOS mode (e.g. you get black screen on EFI boot), try this approach: [http://askubuntu.com/a/613573/492886](http://askubuntu.com/a/613573/492886)
 
-For MacBooks with NVIDIA graphics, for the backlight to work properly you may need the [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/)<sup><small>AUR</small></sup> package.
+For MacBooks with NVIDIA graphics, for the backlight to work properly you may need the [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) package.
 
 **Tip:**
 
 *   If backlight control does not work after installing nvidia-bl, you should [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") apple_bl kernel module.
 *   If backlight control does not work even this way, try setting module parameters, e.g. `options nvidiabl screen_type=3 min=0 max=44000` in `/etc/modprobe.conf` in case of MacBook Air 3.2
-*   Alternatively, you can choose to use the [pommed-light](https://aur.archlinux.org/packages/pommed-light/)<sup><small>AUR</small></sup> package. If you do so, you may wish to change the step settings in `/etc/pommed.conf.mactel` to something around 5000-10000 depending on how many levels of brightness you desire. The max brightness is around 80000, so take that into account.
+*   Alternatively, you can choose to use the [pommed-light](https://aur.archlinux.org/packages/pommed-light/) package. If you do so, you may wish to change the step settings in `/etc/pommed.conf.mactel` to something around 5000-10000 depending on how many levels of brightness you desire. The max brightness is around 80000, so take that into account.
 
 ##### MacBookPro5,5, NVIDIA and secondary display
 
-As of January 1 2011, the latest NVIDIA drivers (290.10) might not work properly when a secondary display is used (tested with TwinView), NVIDIA's current [long-live supported](http://www.nvnews.net/vbulletin/showthread.php?t=122606) 275xx drivers seem to work fine. Install [nvidia-275xx](https://aur.archlinux.org/packages/nvidia-275xx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nvidia-275xx)]</sup> and [nvidia-utils-275xx](https://aur.archlinux.org/packages/nvidia-utils-275xx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nvidia-utils-275xx)]</sup>, and possibly [lib32-nvidia-utils-275xx](https://aur.archlinux.org/packages/lib32-nvidia-utils-275xx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-nvidia-utils-275xx)]</sup> if you are on x86_64 system and want 32-bits support.
+As of January 1 2011, the latest NVIDIA drivers (290.10) might not work properly when a secondary display is used (tested with TwinView), NVIDIA's current [long-live supported](http://www.nvnews.net/vbulletin/showthread.php?t=122606) 275xx drivers seem to work fine. Install [nvidia-275xx](https://aur.archlinux.org/packages/nvidia-275xx/) and [nvidia-utils-275xx](https://aur.archlinux.org/packages/nvidia-utils-275xx/), and possibly [lib32-nvidia-utils-275xx](https://aur.archlinux.org/packages/lib32-nvidia-utils-275xx/) if you are on x86_64 system and want 32-bits support.
 
 MacBookPro5,5 has an NVIDIA 9400m graphics card. This problem might apply to other devices as well.
 
 #### Touchpad
 
-The touchpad should have basic functionality by default. A true multitouch driver which behaves very similarly to native OS X is included in the [xf86-input-multitouch-git](https://aur.archlinux.org/packages/xf86-input-multitouch-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-multitouch-git)]</sup> package. It supports 1, 2 and 3 finger gestures, including differentiation between horizontal and vertical 3 finger swipe. Additional details are available at [the driver's project page](http://bitmath.org/code/multitouch/).
+The touchpad should have basic functionality by default. A true multitouch driver which behaves very similarly to native OS X is included in the [xf86-input-multitouch-git](https://aur.archlinux.org/packages/xf86-input-multitouch-git/) package. It supports 1, 2 and 3 finger gestures, including differentiation between horizontal and vertical 3 finger swipe. Additional details are available at [the driver's project page](http://bitmath.org/code/multitouch/).
 
-xf86-input-multitouch-git does not support any sort of configuration without editing the driver's source. Some users are also experiencing issues with false clicks from palm touches. There is now a much more configurable fork available as [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/)<sup><small>AUR</small></sup>. Configuration options are documented in the [readme](https://github.com/BlueDragonX/xf86-input-mtrack).
+xf86-input-multitouch-git does not support any sort of configuration without editing the driver's source. Some users are also experiencing issues with false clicks from palm touches. There is now a much more configurable fork available as [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/). Configuration options are documented in the [readme](https://github.com/BlueDragonX/xf86-input-mtrack).
 
 The following mtrack options work well on a MacBook7,1:
 
@@ -517,7 +502,7 @@ To disable tap-to-click (that is, to press down to click) by default, add the fo
 
 **Natural scrolling:** To configure natural two finger scrolling similar to [OS X](http://www.apple.com/au/osx/what-is/gestures.html#gallery-gestures-scroll), refer to [Touchpad Synaptics#Natural scrolling](/index.php/Touchpad_Synaptics#Natural_scrolling "Touchpad Synaptics"). If you are using GNOME, it will override these settings - in this case refer to [GNOME#Natural_scrolling_touchpad](/index.php/GNOME#Natural_scrolling_touchpad "GNOME").
 
-If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/)<sup><small>AUR</small></sup>, you can simply swap the scroll up and scroll down buttons (along with the scroll left and scroll right):
+If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/), you can simply swap the scroll up and scroll down buttons (along with the scroll left and scroll right):
 
  `/etc/X11/xorg.conf.d/10-mtrack.conf` 
 
@@ -561,7 +546,7 @@ If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86
 
 MacBook keyboards work by default. For swaping fn keys with Fx keys see [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard").
 
-To enable it you can map with right application like **xbindkeys** or through DE preferences; but another very good way, that we recommend, is to install the [pommed](https://aur.archlinux.org/packages/pommed/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pommed)]</sup> package.
+To enable it you can map with right application like **xbindkeys** or through DE preferences; but another very good way, that we recommend, is to install the [pommed](https://aur.archlinux.org/packages/pommed/) package.
 
 ```
 Edit the `/etc/pommed.conf` according to your hardware on MacBook, building
@@ -585,11 +570,11 @@ systemctl start pommed
 
 The keyboard backlight is controlled by `/sys/class/leds/smc::kbd_backlight`. Write the desired value to `brightness` in that directory.
 
-You may also use [kbdlight](https://aur.archlinux.org/packages/kbdlight/)<sup><small>AUR</small></sup> to control keyboard backlight though scripts or by running it via [sxhkd](/index.php/Sxhkd "Sxhkd"). It has the advantage of allowing keyboard light-level changes without being root.
+You may also use [kbdlight](https://aur.archlinux.org/packages/kbdlight/) to control keyboard backlight though scripts or by running it via [sxhkd](/index.php/Sxhkd "Sxhkd"). It has the advantage of allowing keyboard light-level changes without being root.
 
 ###### NVIDIA note
 
-If the brightness does not function correctly through pommed, make sure you have installed the [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/)<sup><small>AUR</small></sup> package and insert
+If the brightness does not function correctly through pommed, make sure you have installed the [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) package and insert
 
 ```
 find . -name "*" -exec sed -i 's/mbp_backlight/nvidia_backlight/' '{}' \;
@@ -758,7 +743,7 @@ Bluetooth should work out-of-the box. See the article on [Bluetooth](/index.php/
 
 iSight webcams on MacBooks or pre 6,2 MacBook Pros (6,2 came out around 2010) require the Apple's proprietary firmware that cannot be redistributed. It must be extracted from OS X and loaded onto Arch.
 
-You will need to install [isight-firmware-tools](https://aur.archlinux.org/packages/isight-firmware-tools/)<sup><small>AUR</small></sup> to extract the firmware. This package also includes a udev rule and ELF binary that are necessary, even once you have extracted the firmware file into `/lib/firmware/isight.fw`, for the file to be loaded every time you boot your computer (namely `/etc/udev/rules.d/isight.rules` which uses `/usr/lib/udev/ift-load`).
+You will need to install [isight-firmware-tools](https://aur.archlinux.org/packages/isight-firmware-tools/) to extract the firmware. This package also includes a udev rule and ELF binary that are necessary, even once you have extracted the firmware file into `/lib/firmware/isight.fw`, for the file to be loaded every time you boot your computer (namely `/etc/udev/rules.d/isight.rules` which uses `/usr/lib/udev/ift-load`).
 
 Instructions:
 
@@ -774,7 +759,7 @@ To mount the OS X drive if multi-booting:
 
 ```
 
-Then, install the [isight-firmware-tools](https://aur.archlinux.org/packages/isight-firmware-tools/)<sup><small>AUR</small></sup> package.
+Then, install the [isight-firmware-tools](https://aur.archlinux.org/packages/isight-firmware-tools/) package.
 
 Locate the `AppleUSBVideoSupport` file in the OS X directory listed above. Either copy it over to your Arch system (Any OS X installation should do, such as an iMac, not just one specific to your system) or, if multi-booting, mount the OS X drive and navigate to the directory. (On 10.7 (Lion) the directory is `/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/MacOS`.) In that directory you can go ahead and extract the driver:
 
@@ -830,7 +815,7 @@ For reading temperature just install [lm_sensors](https://www.archlinux.org/pack
 
 We can use color profiles from OS X.
 
-First, install the [xcalib](https://aur.archlinux.org/packages/xcalib/)<sup><small>AUR</small></sup> package.
+First, install the [xcalib](https://aur.archlinux.org/packages/xcalib/) package.
 
 Second copy pre-saved color profiles placed in `/Library/ColorSync/Profiles/Displays/` on OS X partition to `~/colorprofiles/` for example.
 
@@ -1156,7 +1141,7 @@ wget [http://ftp.us.debian.org/debian/pool/main/r/refit/gptsync_0.14-2_i386.deb]
 
 ```
 
-since they are .deb packages you will need the program [deb2targz](https://aur.archlinux.org/packages/deb2targz/)<sup><small>AUR</small></sup>.
+since they are .deb packages you will need the program [deb2targz](https://aur.archlinux.org/packages/deb2targz/).
 
 #### Mavericks upgrade breaks Arch boot option
 
@@ -1225,7 +1210,7 @@ First prepare your harddisc according to your wishes. In this scenario it was a 
 
 ```
 
-The [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/)<sup><small>AUR</small></sup> package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
+The [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
 
 The mount points are:
 
@@ -1250,7 +1235,7 @@ cp -v /usr/share/refind/refind_linux.conf-sample /boot/refind_linux.conf
 
 **Note:** I'm using the 32bit version of Arch and refind, since the EFI of the old MacBooks is 32bit. I'm not sure about 32bit rEFInd booting a 64bit Arch...
 
-The pitfall here is, that the system bootet in BIOS compatibility mode and not in EFI mode. You cannot therefore use `efibootmgr`, because the EFI variables (even with 'modprobe efivars') are not available. While installing the system get [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/)<sup><small>AUR</small></sup>. The `hfs-bless` utility comes in handy, when blessing the EFI bootloader. This is done by calling:
+The pitfall here is, that the system bootet in BIOS compatibility mode and not in EFI mode. You cannot therefore use `efibootmgr`, because the EFI variables (even with 'modprobe efivars') are not available. While installing the system get [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/). The `hfs-bless` utility comes in handy, when blessing the EFI bootloader. This is done by calling:
 
 ```
 hfs-bless /boot/EFI/refind/refind_ia32.efi
@@ -1353,7 +1338,7 @@ This is almost the same as the 2013 version, where the only known difference is 
 
 It works excellently after following the instructions for the MBA 2013 13" here and in the forum thread. Bluetooth, which has been reported not working for some people with the 2013 version, works without trouble for the 2014 version, although it should be excactly the same.
 
-**Note:** Unless you have a local repository on a USB disk, you need a USB to ethernet adaptor or a USB wireless adaptor supported natively by the kernel to easily install Arch Linux, since you have to install the [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> package to make the internal wireless adaptor work.
+**Note:** Unless you have a local repository on a USB disk, you need a USB to ethernet adaptor or a USB wireless adaptor supported natively by the kernel to easily install Arch Linux, since you have to install the [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) package to make the internal wireless adaptor work.
 
 Unresolved issues:
 
@@ -1483,11 +1468,11 @@ There are more steps on how to resolve this issue in [this thread on the Arch fo
 
 ##### Suspend/Resume
 
-Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/)<sup><small>AUR</small></sup>. Patjak's github is at [[4]](https://github.com/patjak/mba6x_bl).
+Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[4]](https://github.com/patjak/mba6x_bl).
 
 ##### WiFi
 
-WiFi does not work out of the box. Install [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> to connect to a network.
+WiFi does not work out of the box. Install [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) to connect to a network.
 
 ##### Touchpad
 
@@ -1510,7 +1495,7 @@ Kernel panics using default boot media under arch kernel 3.5\. Adding `intremap=
 
 #### Mid 2012 11.5" — Version 5,1
 
-If you have issues with waking from sleep while in X11 such as a black screen or showing the console with a frozen mouse cursor then remove [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and install [mtrack-git](https://aur.archlinux.org/packages/mtrack-git/)<sup><small>AUR</small></sup>. This fixed errors such as
+If you have issues with waking from sleep while in X11 such as a black screen or showing the console with a frozen mouse cursor then remove [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and install [mtrack-git](https://aur.archlinux.org/packages/mtrack-git/). This fixed errors such as
 
 ```
  (EE) [dix] bcm5974: unable to find touch point 0
@@ -1563,7 +1548,7 @@ Works out-of-the-box since kernel 3.2\. It is recommended to use [Archboot](/ind
 
 #### Early 2008 — version 1,1
 
-Everything works out of the box though you will need [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter) (or simply [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup>) for the wireless adapter to work.
+Everything works out of the box though you will need [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter) (or simply [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)) for the wireless adapter to work.
 
 Since this model has only one USB port, you may find it easiest to install Arch with a powered USB hub. Plug a USB network adapter (wireless or ethernet adapter to plug into a USB port) and your Arch installation media into the USB hub.
 

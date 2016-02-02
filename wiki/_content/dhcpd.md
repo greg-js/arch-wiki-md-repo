@@ -1,9 +1,5 @@
 # dhcpd
 
-Related articles
-
-*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd")
-
 dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) DHCP Server. It is useful for instance on a machine acting as a router on a LAN.
 
 ## Contents

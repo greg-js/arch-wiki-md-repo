@@ -1,12 +1,5 @@
 # rEFInd
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-*   [EFISTUB](/index.php/EFISTUB "EFISTUB")
-
 rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
 **Note:** In the entire article `$esp` denotes the mountpoint of the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") aka ESP.
@@ -264,7 +257,7 @@ Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/Unified
 
 ### Memtest86
 
-Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/)<sup><small>AUR</small></sup> and copy it to `$esp/EFI/tools/`.
+Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) and copy it to `$esp/EFI/tools/`.
 
 ```
 # cp /usr/share/memtest86-efi/bootx64.efi $esp/EFI/tools/memtest86.efi
@@ -328,7 +321,7 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### Apple Macs
 
-[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/)<sup><small>AUR</small></sup> is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry. Assuming your UEFISYS partition is mounted at `/mnt/efi` within OSX, do:
+[mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) is an experimental "bless" utility for Linux. If that does not work, use "bless" from within OSX to set rEFInd as the default boot entry. Assuming your UEFISYS partition is mounted at `/mnt/efi` within OSX, do:
 
 ```
 # bless --setBoot --folder /mnt/efi/EFI/refind --file /mnt/efi/EFI/refind/refind_x64.efi

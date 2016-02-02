@@ -1,19 +1,5 @@
 # pacman
 
-Related articles
-
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
-*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
-*   [pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")
-*   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
-*   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
-*   [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ")
-*   [System maintenance](/index.php/System_maintenance "System maintenance")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-
 The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of _pacman_ is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
 
 _pacman_ keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
@@ -200,7 +186,7 @@ _pacman_ is a powerful package management tool, but it does not attempt to handl
 **Tip:**
 
 *   Remember that _pacman'_s output is logged in `/var/log/pacman.log`.
-*   You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/)<sup><small>AUR</small></sup> to search the pacman logs.
+*   You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/) to search the pacman logs.
 
 If one encounters problems that cannot be solved by these instructions, make sure to search the forum. It is likely that others have encountered the same problem and have posted instructions for solving it.
 
@@ -301,7 +287,7 @@ $ pactree _package_name_
 
 ```
 
-To list all the packages recursively depending on an _installed_ package, use _whoneeds_ from [pkgtools](https://aur.archlinux.org/packages/pkgtools/)<sup><small>AUR</small></sup>:
+To list all the packages recursively depending on an _installed_ package, use _whoneeds_ from [pkgtools](https://aur.archlinux.org/packages/pkgtools/):
 
 ```
 $ whoneeds _package_name_
@@ -365,7 +351,7 @@ Used this way, it will _not_ check whether a package is still installed or not, 
 
 See `paccache -h` for more options.
 
-[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/)<sup><small>AUR</small></sup> and [pacleaner](https://aur.archlinux.org/packages/pacleaner/)<sup><small>AUR</small></sup> are two further alternatives.
+[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) and [pacleaner](https://aur.archlinux.org/packages/pacleaner/) are two further alternatives.
 
 ### Additional commands
 
@@ -457,7 +443,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ```
 
-Or as a preemptive alternative to [localepurge](https://aur.archlinux.org/packages/localepurge/)<sup><small>AUR</small></sup>, to avoid installing non-English localizations:
+Or as a preemptive alternative to [localepurge](https://aur.archlinux.org/packages/localepurge/), to avoid installing non-English localizations:
 
 ```
 NoExtract = usr/share/help/* !usr/share/help/en*

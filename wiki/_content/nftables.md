@@ -1,15 +1,10 @@
 # nftables
 
-Related articles
-
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [iptables](/index.php/Iptables "Iptables")
-
 [nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing ip-, ip6-, arp-, and ebtables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for ip- and ip6tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
 
 You can also visit the [official nftables wiki page](http://wiki.nftables.org) for more information.
 
-The first release is available in Linux 3.13, which is in the _core_ repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the _extra_ repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/)<sup><small>AUR</small></sup>.
+The first release is available in Linux 3.13, which is in the _core_ repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the _extra_ repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
 ## Contents
 

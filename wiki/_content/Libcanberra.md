@@ -1,10 +1,5 @@
 # Libcanberra
 
-Related articles
-
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
-
 **Libcanberra** is a simple abstract interface for playing event sounds. It implements the [XDG Sound Theme and Naming Specifications](http://freedesktop.org/wiki/Specifications/sound-theme-spec) for generating event sounds on free desktops, such as GNOME. Further description [here](http://0pointer.de/lennart/projects/libcanberra/)
 
 ## Contents
@@ -29,7 +24,7 @@ You have to choose a backend to play sounds:
 Also, you have to install a sound theme in order to hear any event sound:
 
 *   The default sound theme is 'freedesktop', which can be installed with the package [sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
-*   Alternatively, you can install [ubuntu-sounds](https://aur.archlinux.org/packages/ubuntu-sounds/)<sup><small>AUR</small></sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   Alternatively, you can install [ubuntu-sounds](https://aur.archlinux.org/packages/ubuntu-sounds/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 

@@ -1,9 +1,5 @@
 # Tmux
 
-Related articles
-
-*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
-
 [Tmux](http://tmux.github.io/) is a "terminal multiplexer: it enables a number of terminals (or windows), each running a separate program, to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached."
 
 Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ).
@@ -121,7 +117,7 @@ Esc
 
 ### Browsing URLs
 
-To browse URLs inside tmux you must have [urlview](https://aur.archlinux.org/packages/urlview/)<sup><small>AUR</small></sup> installed and configured.
+To browse URLs inside tmux you must have [urlview](https://aur.archlinux.org/packages/urlview/) installed and configured.
 
 Inside a new terminal:
 
@@ -449,7 +445,7 @@ While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while j
 
 ### Start tmux with default session layout
 
-To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"). Test your installation with
+To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
 
 ```
 tmuxinator doctor

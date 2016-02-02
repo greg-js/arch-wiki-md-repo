@@ -1,9 +1,5 @@
 # ASUS N56vj
 
-Related articles
-
-*   [ASUS N56jr](/index.php/ASUS_N56jr "ASUS N56jr")
-
 This page is a set of instructions, known issues, tips and workarounds for installing and configuring Arch Linux on the ASUS N56-VJ/VZ and ASUS N76-VJ/VZ Laptops
 
 ## Contents

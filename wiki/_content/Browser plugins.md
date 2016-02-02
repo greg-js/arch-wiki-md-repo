@@ -1,11 +1,5 @@
 # Browser plugins
 
-Related articles
-
-*   [Opera](/index.php/Opera "Opera")
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Chromium](/index.php/Chromium "Chromium")
-
 There are two types of browser plugins, based on the plugin API they use:
 
 *   Netscape plugin API (NPAPI): these plugins work in [Firefox](/index.php/Firefox "Firefox") and most other browsers (**not** in Chromium and Opera).
@@ -70,8 +64,8 @@ The package you will need to install depends on the browser you use.
 
 **Note:**
 
-*   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> package in order to properly render text.
-*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/)<sup><small>AUR</small></sup> package provides an _experimental_ adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)<sup><small>AUR</small></sup> with NPAPI based browsers like Firefox.
+*   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package in order to properly render text.
+*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) package provides an _experimental_ adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox.
 
 #### Upgrade
 
@@ -99,7 +93,7 @@ OverrideGPUValidation = 1
 
 #### Disable the "Press ESC to exit full screen mode" message
 
-There is no solution other than patching the Flash plugin. Please note only the NPAPI plugin is supported. Install [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flash-fullscreen-patcher)]</sup> which provides wine as a required dependency since the patch has been initially made for Windows.
+There is no solution other than patching the Flash plugin. Please note only the NPAPI plugin is supported. Install [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/) which provides wine as a required dependency since the patch has been initially made for Windows.
 
 After the package has been installed, backup `libflashplayer.so`:
 
@@ -127,7 +121,7 @@ Unfortunately, this behavior is hard coded into the binary. In order to change t
 
 Fixing this issue only works for the NPAPI plugin and this issue can be fixed via 3 ways.
 
-*   Using [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flash-fullscreen-patcher)]</sup> which providess wine as a required dependency since the patch has been initially made for Windows.
+*   Using [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/) which providess wine as a required dependency since the patch has been initially made for Windows.
 
 	After the package has been installed, backup `libflashplayer.so`:
 
@@ -137,7 +131,7 @@ Fixing this issue only works for the NPAPI plugin and this issue can be fixed vi
 
 	 `# flash-fullscreen-patcher.sh -i /usr/lib/mozilla/plugins/libflashplayer.so` 
 
-*   Using the [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/)<sup><small>AUR</small></sup>.
+*   Using the [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/).
 
 *   [Patching manually](http://www.webupd8.org/2012/10/ubuntu-multi-monitor-tweaks-full-screen.html):
 
@@ -171,7 +165,7 @@ See also [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash"
 
 [GNU Gnash](http://www.gnu.org/software/gnash/) is a free (libre) alternative to Adobe Flash Player. It is available both as a standalone player for desktop computers and embedded devices, as well as a browser plugin, and supports the SWF format up to version 7 (with versions 8 and 9 under development) and about 80% of ActionScript 2.0.
 
-There are multiple packages available: [gnash](https://aur.archlinux.org/packages/gnash/)<sup><small>AUR</small></sup>, [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnash-kde4)]</sup>, [gnash-git](https://aur.archlinux.org/packages/gnash-git/)<sup><small>AUR</small></sup>.
+There are multiple packages available: [gnash](https://aur.archlinux.org/packages/gnash/), [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/), [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
 
 **Note:** If you find that Gnash does not work properly right out of the box, then you may also need to [install](/index.php/Install "Install") the [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) package.
 
@@ -179,7 +173,7 @@ There are multiple packages available: [gnash](https://aur.archlinux.org/package
 
 [Lightspark](http://lightspark.github.com/) is another attempt to provide a free alternative to Adobe Flash aimed at supporting newer Flash formats. Lightspark has the ability to fall back on Gnash for old content, which enables users to install both and enjoy wider coverage. Although it is still very much in development, it supports some [popular sites](https://github.com/lightspark/lightspark/wiki/Site-Support).
 
-Lightspark can be [installed](/index.php/Install "Install") with the [lightspark](https://aur.archlinux.org/packages/lightspark/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lightspark)]</sup> or [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/)<sup><small>AUR</small></sup> package.
+Lightspark can be [installed](/index.php/Install "Install") with the [lightspark](https://aur.archlinux.org/packages/lightspark/) or [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/) package.
 
 ### Video players workarounds
 
@@ -230,7 +224,7 @@ Restart and it should work like a charm!
 
 Due to licensing restrictions, Adobe Reader is only available in the [AUR](/index.php/AUR "AUR").
 
-Adobe Acrobat Reader is only available as a 32-bit binary. It can be installed with the [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup> package. This package installs the Acrobat Reader application as well as the NPAPI plugin.
+Adobe Acrobat Reader is only available as a 32-bit binary. It can be installed with the [acroread](https://aur.archlinux.org/packages/acroread/) package. This package installs the Acrobat Reader application as well as the NPAPI plugin.
 
 Also, there are [localizations](https://aur.archlinux.org/packages.php?O=0&K=acroread-&do_Search=Go) available in many languages.
 
@@ -240,7 +234,7 @@ There is no 64-bit version of Adobe Reader available. To use it in a 64-bit envi
 
 *   Follow [this guide](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") originally posted in the forums. It involves creating a chrooted environment that could be reused for other 32-bit only applications.
 
-*   Install the [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup> package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used _directly_ with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
+*   Install the [acroread](https://aur.archlinux.org/packages/acroread/) package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used _directly_ with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
 
 ```
 $ nspluginwrapper -v -a -i
@@ -261,7 +255,7 @@ To enable [Java](/index.php/Java "Java") support in your browser, you have two o
 
 To use OpenJDK, you have to install the [IcedTea](http://icedtea.classpath.org/wiki/Main_Page) browser plugin, [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web).
 
-If you want to use Oracle's JRE, install the [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup> package.
+If you want to use Oracle's JRE, install the [jre](https://aur.archlinux.org/packages/jre/) package.
 
 See [Java#OpenJDK](/index.php/Java#OpenJDK "Java") for additional details and references.
 
@@ -287,21 +281,21 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 *   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
 
-	[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)<sup><small>AUR</small></sup>
+	[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)
 
 *   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
 
-	[http://git.videolan.org/?p=npapi-vlc.git;a=summary](http://git.videolan.org/?p=npapi-vlc.git;a=summary) || [npapi-vlc-git](https://aur.archlinux.org/packages/npapi-vlc-git/)<sup><small>AUR</small></sup>
+	[http://git.videolan.org/?p=npapi-vlc.git;a=summary](http://git.videolan.org/?p=npapi-vlc.git;a=summary) || [npapi-vlc-git](https://aur.archlinux.org/packages/npapi-vlc-git/)
 
 ## Other
 
 ### Hangouts
 
-Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/)<sup><small>AUR</small></sup> package . It is a messenger by Google, that allows you to do many things. For example, it is possible to do the following: watching YouTube, making diagrams, editing documents, playing games. It is possible to make video call between 15 people simultaneously.
+Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package . It is a messenger by Google, that allows you to do many things. For example, it is possible to do the following: watching YouTube, making diagrams, editing documents, playing games. It is possible to make video call between 15 people simultaneously.
 
 ### MozPlugger
 
-MozPlugger can be installed with the [mozplugger](https://aur.archlinux.org/packages/mozplugger/)<sup><small>AUR</small></sup> package.
+MozPlugger can be installed with the [mozplugger](https://aur.archlinux.org/packages/mozplugger/) package.
 
 [MozPlugger](http://mozplugger.mozdev.org/) is a Mozilla plugin which can show many types of multimedia inside your browser. To accomplish this, it uses external programs such as MPlayer, xine, Evince, OpenOffice, TiMidity, etc. To modify or add applications to be used by MozPlugger just modify the `/etc/mozpluggerrc` file.
 
@@ -460,7 +454,7 @@ The Flash plugin has a known bug where the full screen mode does not really work
 
 To fix this, you can use the "hack" described [here](http://al.robotfuzz.com/content/workaround-fullscreen-flash-linux-multiheaded-desktops). Simply download the source from the link given on the page, and follow the instructions in the README.
 
-**Tip:** The hack is available and can be installed with the [fullscreenhack](https://aur.archlinux.org/packages/fullscreenhack/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fullscreenhack)]</sup> package.
+**Tip:** The hack is available and can be installed with the [fullscreenhack](https://aur.archlinux.org/packages/fullscreenhack/) package.
 
 **Note:** While the author mentions using NVDIA's TwinView, the hack should work for any multi-monitor setup.
 
@@ -481,11 +475,11 @@ $ grep sse2 /proc/cpuinfo
 
 ```
 
-If no results are returned, then you need to install an older version of Flash (for example 10.3, or 11.1). Older versions possibly will have vulnerabilities. You should then consider sandboxing Firefox using the [sandfox](https://aur.archlinux.org/packages/sandfox/)<sup><small>AUR</small></sup> package See the [sandfox homepage](https://igurublog.wordpress.com/downloads/script-sandfox/) for usage information.
+If no results are returned, then you need to install an older version of Flash (for example 10.3, or 11.1). Older versions possibly will have vulnerabilities. You should then consider sandboxing Firefox using the [sandfox](https://aur.archlinux.org/packages/sandfox/) package See the [sandfox homepage](https://igurublog.wordpress.com/downloads/script-sandfox/) for usage information.
 
 Older versions of Flash are available here: [https://www.adobe.com/products/flashplayer/distribution3.html](https://www.adobe.com/products/flashplayer/distribution3.html) You need to copy `libflashplayer.so` to the folder `/usr/lib/mozilla/plugins/`
 
-Older [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) packages can be downloaded from the [AUR](/index.php/AUR "AUR") e.g. [flashplugin-10](https://aur.archlinux.org/packages/flashplugin-10/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flashplugin-10)]</sup>.
+Older [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) packages can be downloaded from the [AUR](/index.php/AUR "AUR") e.g. [flashplugin-10](https://aur.archlinux.org/packages/flashplugin-10/).
 
 The most recent package without SSE2 is `flashplugin-11.1.102.63-1-i686.pkg.tar.xz`. If you use the packaged version, you have to add `IgnorePkg = flashplugin` to `/etc/pacman.conf`.
 

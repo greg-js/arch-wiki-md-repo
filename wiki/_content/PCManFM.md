@@ -1,14 +1,5 @@
 # PCManFM
 
-Related articles
-
-*   [LXDE](/index.php/LXDE "LXDE")
-*   [Openbox](/index.php/Openbox "Openbox")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [Thunar](/index.php/Thunar "Thunar")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-*   [Nemo](/index.php/Nemo "Nemo")
-
 From the project [home page](http://wiki.lxde.org/en/PCManFM):
 
 	_PCMan File Manager (PCManFM) is a file manager application developed by Hong Jen Yee from Taiwan which is meant to be a replacement for Nautilus, Konqueror and Thunar. Released under the GNU General Public License, PCManFM is free software. PCManFM is the standard file manager in [LXDE](/index.php/LXDE "LXDE"), which is also developed by the same author in conjunction with other developers._
@@ -39,9 +30,9 @@ From the project [home page](http://wiki.lxde.org/en/PCManFM):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) package, or [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/)<sup><small>AUR</small></sup> for the development version. [gvfs](https://www.archlinux.org/packages/?name=gvfs) is recommended for trash support, mounting with [udisks](/index.php/Udisks "Udisks") and remote filesystems.
+[Install](/index.php/Install "Install") the [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) package, or [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/) for the development version. [gvfs](https://www.archlinux.org/packages/?name=gvfs) is recommended for trash support, mounting with [udisks](/index.php/Udisks "Udisks") and remote filesystems.
 
-[Qt](/index.php/Qt "Qt") variants are available through [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) and [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/)<sup><small>AUR</small></sup>.
+[Qt](/index.php/Qt "Qt") variants are available through [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) and [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/).
 
 ## Desktop management
 

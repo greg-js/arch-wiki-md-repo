@@ -21,7 +21,7 @@ _It's totally free, incredibly easy to use, and works practically everywhere. SA
 
 ## Installation
 
-Install [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 

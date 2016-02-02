@@ -17,7 +17,7 @@ When an application tries to acces $HOME/.foobar, the call is redirected to XDG_
 
 ## Installation
 
-[libetc](https://aur.archlinux.org/packages/libetc/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR"), so use your favorite method to install it.
+[libetc](https://aur.archlinux.org/packages/libetc/) is available in the [AUR](/index.php/AUR "AUR"), so use your favorite method to install it.
 
 ## Configuration
 

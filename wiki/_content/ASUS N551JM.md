@@ -54,7 +54,7 @@ It might happen that display brightness adjustment will not work even when the k
 
 Install [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-To enable the internal microphone and the external subwoofer support, install [asus-n551-hda-fix](https://aur.archlinux.org/packages/asus-n551-hda-fix/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). This package installs the [pincfg patch](https://bugs.launchpad.net/ubuntu/+source/alsa-tools/+bug/1405691), and also enables the internal microphone by adding the _asus-mode8_ to the HDA driver options.
+To enable the internal microphone and the external subwoofer support, install [asus-n551-hda-fix](https://aur.archlinux.org/packages/asus-n551-hda-fix/) from the [AUR](/index.php/AUR "AUR"). This package installs the [pincfg patch](https://bugs.launchpad.net/ubuntu/+source/alsa-tools/+bug/1405691), and also enables the internal microphone by adding the _asus-mode8_ to the HDA driver options.
 
 After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to _Build-in Audio Analog Stereo_ with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
 
@@ -71,7 +71,7 @@ Keyboard support is provided out of the box.
 
 #### Brightness
 
-In some cases, `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"), so install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Load the module to control hotkeys:
+In some cases, `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"), so install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/) from the [AUR](/index.php/AUR "AUR"). Load the module to control hotkeys:
 
 ```
 # modprobe asus-nb-wmi

@@ -1,9 +1,5 @@
 # AurJson
 
-Related articles
-
-*   [Official repositories web interface](/index.php/Official_repositories_web_interface "Official repositories web interface")
-
 The **AurJson** interface is a lightweight remote interface for the [AUR](/index.php/AUR "AUR"). It utilizes http GET queries as the request format, and [json](http://www.json.org/) as the response data exchange format.
 
 ## Contents
@@ -273,6 +269,6 @@ Sometimes things are easier to understand with examples. A few reference impleme
 
 ## Associated code
 
-The unofficial [python3-aur](http://xyne.archlinux.ca/projects/python3-aur/) provides Python 3 modules for interacting with the remote AUR JSON interface, among other AUR services. The package is available in [Xyne's repos](http://xyne.archlinux.ca/repos/) and the AUR as [python3-aur](https://aur.archlinux.org/packages/python3-aur/)<sup><small>AUR</small></sup>.
+The unofficial [python3-aur](http://xyne.archlinux.ca/projects/python3-aur/) provides Python 3 modules for interacting with the remote AUR JSON interface, among other AUR services. The package is available in [Xyne's repos](http://xyne.archlinux.ca/repos/) and the AUR as [python3-aur](https://aur.archlinux.org/packages/python3-aur/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=AurJson&oldid=414370](https://wiki.archlinux.org/index.php?title=AurJson&oldid=414370)"

@@ -1,10 +1,5 @@
 # Create root filesystem snapshots with LVM
 
-Related articles
-
-*   [LVM](/index.php/LVM "LVM")
-*   [Full System Backup with tar](/index.php/Full_System_Backup_with_tar "Full System Backup with tar")
-
 This article describes how to set up root filesystem LVM snapshot creation during system start. Such snapshots can be used for [full system backups](/index.php/Full_System_Backup_with_tar "Full System Backup with tar") with minimal downtime or testing system updates with the option to revert them.
 
 ## Contents

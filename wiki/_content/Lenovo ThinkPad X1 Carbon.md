@@ -1,10 +1,5 @@
 # Lenovo ThinkPad X1 Carbon
 
-Related articles
-
-*   [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)")
-*   [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)")
-
 ## Contents
 
 *   [1 Model description](#Model_description)
@@ -220,7 +215,7 @@ Works out of the box. Tested with guvcview
 
 Works out of the box with [Fprint](/index.php/Fprint "Fprint").
 
-For a GUI [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") is already patched to work with the X1's newer fingerprint reader. To get the gui's dropdown to recognize your device, you will have to add your user to the `plugdev` group:
+For a GUI [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/) from the [AUR](/index.php/AUR "AUR") is already patched to work with the X1's newer fingerprint reader. To get the gui's dropdown to recognize your device, you will have to add your user to the `plugdev` group:
 
 ```
 $ gpasswd -a <username> plugdev
@@ -271,7 +266,7 @@ Run `sudo gpsd -b -N /dev/gps0`
 
 To test it `xgps`
 
-Or use e.g. [foxtrotgps](https://aur.archlinux.org/packages/foxtrotgps/)<sup><small>AUR</small></sup> in [AUR](/index.php/AUR "AUR").
+Or use e.g. [foxtrotgps](https://aur.archlinux.org/packages/foxtrotgps/) in [AUR](/index.php/AUR "AUR").
 
 See [this link](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) for more info.
 

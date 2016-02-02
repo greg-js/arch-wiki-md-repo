@@ -16,7 +16,7 @@
 
 ## Installation
 
-The [twister-core-git](https://aur.archlinux.org/packages/twister-core-git/)<sup><small>AUR</small></sup> package and the [twister-html-git](https://aur.archlinux.org/packages/twister-html-git/)<sup><small>AUR</small></sup> html interface are available in the AUR.
+The [twister-core-git](https://aur.archlinux.org/packages/twister-core-git/) package and the [twister-html-git](https://aur.archlinux.org/packages/twister-html-git/) html interface are available in the AUR.
 
 ## First Time Setup
 

@@ -1,9 +1,5 @@
 # Umask
 
-Related articles
-
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
-
 The _umask_ utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because _umask_ affects the current shell execution environment, it is usually implemented as built-in command of a shell.
 
 ## Contents

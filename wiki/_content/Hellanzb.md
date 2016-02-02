@@ -22,7 +22,7 @@ Hellanzb is a console based usenet binary downloader written in python. It can b
 
 ## Installing
 
-Hellanzb is available in the [AUR](/index.php/AUR "AUR") package [hellanzb](https://aur.archlinux.org/packages/hellanzb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hellanzb)]</sup>.
+Hellanzb is available in the [AUR](/index.php/AUR "AUR") package [hellanzb](https://aur.archlinux.org/packages/hellanzb/).
 
 ## Configuration
 

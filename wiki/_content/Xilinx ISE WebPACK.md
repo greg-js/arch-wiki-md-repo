@@ -181,11 +181,11 @@ Then, repeat this process in the `/opt/Xilinx/14.7/ISE_DS/common/lib/lin64` dire
 
 To use Digilent Adept USB-JTAG adapters (e.g. the onboard JTAG adapter on the [ZedBoard](http://www.zedboard.org)) from within the Xilinx design tools, you need to install the Digilent [Adept Runtime](http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2) and [Plugin](http://www.digilentinc.com/Products/Detail.cfm?Prod=DIGILENT-PLUGIN).
 
-Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") .
+Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") .
 
-To install the Digilent Adept Runtime, it is recommended to install [digilent.adept.runtime](https://aur.archlinux.org/packages/digilent.adept.runtime/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+To install the Digilent Adept Runtime, it is recommended to install [digilent.adept.runtime](https://aur.archlinux.org/packages/digilent.adept.runtime/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-In addition, installing [digilent.adept.utilities](https://aur.archlinux.org/packages/digilent.adept.utilities/)<sup><small>AUR</small></sup> may do good to configuring your board.
+In addition, installing [digilent.adept.utilities](https://aur.archlinux.org/packages/digilent.adept.utilities/) may do good to configuring your board.
 
 To install the Digilent plugin, you have to copy two files to the ISE plugin directory. Run the following commands as root:
 
@@ -217,7 +217,7 @@ If it still doesn't work, you can make further reading in [Xilinx_JTAG_Linux](ht
 
 ### Xilinx Platform Cable USB-JTAG Drivers
 
-Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") . We need to build driver from source (git and some make stuff need to be installed, make will say what programs or libraries are missed):
+Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") . We need to build driver from source (git and some make stuff need to be installed, make will say what programs or libraries are missed):
 
 ```
 $ cd /opt/Xilinx

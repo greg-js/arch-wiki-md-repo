@@ -22,9 +22,9 @@
 
 ## Packages
 
-*   [gogs](https://aur.archlinux.org/packages/gogs/)<sup><small>AUR</small></sup> - Release package
-*   [gogs-git](https://aur.archlinux.org/packages/gogs-git/)<sup><small>AUR</small></sup> - Git `master` branch package [GitHub master branch](https://github.com/gogits/gogs)
-*   [gogs-git-dev](https://aur.archlinux.org/packages/gogs-git-dev/)<sup><small>AUR</small></sup> - Git `dev` branch package [GitHub dev branch](https://github.com/gogits/gogs/tree/develop)
+*   [gogs](https://aur.archlinux.org/packages/gogs/) - Release package
+*   [gogs-git](https://aur.archlinux.org/packages/gogs-git/) - Git `master` branch package [GitHub master branch](https://github.com/gogits/gogs)
+*   [gogs-git-dev](https://aur.archlinux.org/packages/gogs-git-dev/) - Git `dev` branch package [GitHub dev branch](https://github.com/gogits/gogs/tree/develop)
 
 In all three package is sqlite, redis and memcache activate for compile. To use it, you need to edit the configuration file `app.ini` (see [#Configuration](#Configuration)).
 

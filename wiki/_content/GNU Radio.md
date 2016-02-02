@@ -1,10 +1,5 @@
 # GNU Radio
 
-Related articles
-
-*   [DVB-T](/index.php/DVB-T "DVB-T")
-*   [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")
-
 [GNU Radio](http://gnuradio.org/redmine/projects/gnuradio/wiki) is a free & open-source software development toolkit that provides signal processing blocks to implement software radios. It can be used with readily-available low-cost external RF hardware to create software-defined radios, or without hardware in a simulation-like environment. It is widely used in hobbyist, academic and commercial environments to support both wireless communications research and real-world radio systems.
 
 ## Contents
@@ -16,7 +11,7 @@ Related articles
 
 ## Packages
 
-The latest stable GNU Radio version can be installed with [gnuradio](https://www.archlinux.org/packages/?name=gnuradio) from the [official repositories](/index.php/Official_repositories "Official repositories"). Bleeding edge is on [gnuradio-git](https://aur.archlinux.org/packages/gnuradio-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+The latest stable GNU Radio version can be installed with [gnuradio](https://www.archlinux.org/packages/?name=gnuradio) from the [official repositories](/index.php/Official_repositories "Official repositories"). Bleeding edge is on [gnuradio-git](https://aur.archlinux.org/packages/gnuradio-git/) in the [AUR](/index.php/AUR "AUR").
 
 If you want `gnuradio-companion`, just install the [gnuradio-companion](https://www.archlinux.org/packages/?name=gnuradio-companion) package which will install GNU Radio, as well as some additional required packages.
 

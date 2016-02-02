@@ -1,10 +1,5 @@
 # Ext4
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Ext3](/index.php/Ext3 "Ext3")
-
 Ext4 is the evolution of the most used Linux filesystem, Ext3\. In many ways, Ext4 is a deeper improvement over Ext3 than Ext3 was over Ext2\. Ext3 was mostly about adding journaling to Ext2, but Ext4 modifies important data structures of the filesystem such as the ones destined to store the file data. The result is a filesystem with an improved design, better performance, reliability, and features.
 
 Source: [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4)
@@ -79,7 +74,7 @@ This ratio can also be set directly via the `-i` option: _e.g._ use `-i 2097152`
 
 **Tip:** Conversely, if you are setting up a partition dedicated to host millions of small files like emails or newsgroup items, you can use smaller _usage-type_ values such as `news` (one inode for every 4096 bytes) or `small` (same plus smaller inode and block sizes).
 
-**Warning:** If you make a heavy use of symbolic or hard links, _e.g._ you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup>...), you may want to keep your inode number high enough because while not taking more space, every new hardlink consumes one new inode and therefore inode use may grow dramatically.
+**Warning:** If you make a heavy use of symbolic or hard links, _e.g._ you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)...), you may want to keep your inode number high enough because while not taking more space, every new hardlink consumes one new inode and therefore inode use may grow dramatically.
 
 ### Reserved blocks
 
@@ -183,7 +178,7 @@ Linux 4.1 comes with a new Ext4 feature to encrypt directories of a filesystem.[
 
 Encryption keys are stored in the keyring. To get started, make sure you have enabled `CONFIG_KEYS` and `CONFIG_EXT4_ENCRYPTION` kernel options and you have kernel 4.1 or higher. Note the Arch default [linux](https://www.archlinux.org/packages/?name=linux) does not have `CONFIG_EXT4_ENCRYPTION` set yet.
 
-First of all, you need to update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43, which is a work in progress as of July 2015\. Package [e2fsprogs-git](https://aur.archlinux.org/packages/e2fsprogs-git/)<sup><small>AUR</small></sup> is available to install the latest git version.
+First of all, you need to update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43, which is a work in progress as of July 2015\. Package [e2fsprogs-git](https://aur.archlinux.org/packages/e2fsprogs-git/) is available to install the latest git version.
 
 e4crypt source has disabled a relevant section in its source code, enable it:
 

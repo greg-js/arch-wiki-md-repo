@@ -4,7 +4,7 @@ Ksplice is an open source extension of the Linux kernel which allows system admi
 
 ## Installation
 
-Install the [ksplice-git](https://aur.archlinux.org/packages/ksplice-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ksplice-git)]</sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install the [ksplice-git](https://aur.archlinux.org/packages/ksplice-git/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Usage
 

@@ -1,12 +1,5 @@
 # Installing with Fake RAID
 
-Related articles
-
-*   [Installing with Software RAID or LVM](/index.php/Installing_with_Software_RAID_or_LVM "Installing with Software RAID or LVM")
-*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-
 The purpose of this guide is to enable use of a RAID set created by the on-board BIOS RAID controller and thereby allow dual-booting of Linux and Windows from partitions **inside** the RAID set using GRUB. When using so-called "fake RAID" or "host RAID", the disc sets are reached from `/dev/mapper/chipsetName_randomName` and not `/dev/sdX`.
 
 ## Contents

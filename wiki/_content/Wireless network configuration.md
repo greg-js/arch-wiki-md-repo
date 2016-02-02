@@ -1,12 +1,5 @@
 # Wireless network configuration
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Software access point](/index.php/Software_access_point "Software access point")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
 
 ## Contents
@@ -721,16 +714,16 @@ A list of devices supported by the modules is available at the project's [homepa
 	Additional notes
 
 *   Since kernel 3.0, rt2x00 includes also these drivers: `rt2800pci`, `rt2800usb`.
-*   Since kernel 3.0, the staging drivers `rt2860sta` and `rt2870sta` are replaced by the mainline drivers `rt2800pci` and `rt2800usb`<sup>[[3]](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=fefecc6989b4b24276797270c0e229c07be02ad3)</sup>.
+*   Since kernel 3.0, the staging drivers `rt2860sta` and `rt2870sta` are replaced by the mainline drivers `rt2800pci` and `rt2800usb`.
 *   Some devices have a wide range of options that can be configured with `iwpriv`. These are documented in the [source tarballs](http://web.ralinktech.com/ralink/Home/Support/Linux.html) available from Ralink.
 
 #### rt3090
 
 For devices which are using the rt3090 chipset it should be possible to use `rt2800pci` driver, however, is not working with this chipset very well (e.g. sometimes it is not possible to use higher rate than 2Mb/s).
 
-The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rt3090-dkms)]</sup> driver. Make sure to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Loading "Kernel modules") at boot.
+The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) driver. Make sure to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Loading "Kernel modules") at boot.
 
-**Note:** This driver also works with rt3062 chipsets. Also the [rt3090](https://aur.archlinux.org/packages/rt3090/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rt3090)]</sup> package is not supported by the latest kernel and has been orphaned; [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rt3090-dkms)]</sup> should be used instead.
+**Note:** This driver also works with rt3062 chipsets. Also the [rt3090](https://aur.archlinux.org/packages/rt3090/) package is not supported by the latest kernel and has been orphaned; [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) should be used instead.
 
 #### rt3290
 
@@ -750,7 +743,7 @@ New chipset as of 2012 with support for 5 Ghz bands. It may require proprietary 
 
 The driver is now in the kernel, but many users have reported being unable to make a connection although scanning for networks does work.
 
-[8192cu-dkms](https://aur.archlinux.org/packages/8192cu-dkms/)<sup><small>AUR</small></sup> includes many patches, try this if it does not work fine with the driver in kernel.
+[8192cu-dkms](https://aur.archlinux.org/packages/8192cu-dkms/) includes many patches, try this if it does not work fine with the driver in kernel.
 
 #### rtl8192e
 
@@ -780,7 +773,7 @@ and reload the module (after a pause):
 
 #### rtl8188eu
 
-Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In Linux 3.12 the driver [has been moved](http://lwn.net/Articles/564798/) to kernel staging source tree. For older kernels use out-of-tree driver sources built with [dkms](/index.php/Dkms "Dkms") - install [8188eu-dkms](https://aur.archlinux.org/packages/8188eu-dkms/)<sup><small>AUR</small></sup>. At the times of 3.15 kernel rtl8188eu driver is buggy and has many stability issues.
+Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In Linux 3.12 the driver [has been moved](http://lwn.net/Articles/564798/) to kernel staging source tree. For older kernels use out-of-tree driver sources built with [dkms](/index.php/Dkms "Dkms") - install [8188eu-dkms](https://aur.archlinux.org/packages/8188eu-dkms/). At the times of 3.15 kernel rtl8188eu driver is buggy and has many stability issues.
 
 #### rtl8723ae/rtl8723be
 
@@ -798,7 +791,7 @@ or
 
 The [MadWifi team](http://madwifi-project.org/) currently maintains three different drivers for devices with Atheros chipset:
 
-*   `madwifi` is an old, obsolete driver. Not present in Arch kernel since 2.6.39.1<sup>[[4]](https://mailman.archlinux.org/pipermail/arch-dev-public/2011-June/020669.html)</sup>.
+*   `madwifi` is an old, obsolete driver. Not present in Arch kernel since 2.6.39.1.
 *   `ath5k` is newer driver, which replaces the `madwifi` driver. Currently a better choice for some chipsets, but not all chipsets are supported (see below)
 *   `ath9k` is the newest of these three drivers, it is intended for newer Atheros chipsets. All of the chips with 802.11n capabilities are supported.
 
@@ -839,7 +832,7 @@ options ath9k nohwcrypt=1
 
 **Note:** Check with the command lsmod what module(-name) is in use and change it if named otherwise (e.g. ath9k_htc).
 
-In the unlikely event that you have stability issues that trouble you, you could try using the [backports-patched](https://aur.archlinux.org/packages/backports-patched/)<sup><small>AUR</small></sup> package. An [ath9k mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
+In the unlikely event that you have stability issues that trouble you, you could try using the [backports-patched](https://aur.archlinux.org/packages/backports-patched/) package. An [ath9k mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
 
 ##### Power saving
 
@@ -1029,9 +1022,9 @@ and _wlan0_ should now exist. If you have problems, some help is available at: [
 
 ### compat-drivers-patched
 
-Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/compat-drivers-patched)]</sup> package.
+Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) package.
 
-[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/compat-drivers-patched)]</sup> does not conflict with any other package and the modules built reside in `/usr/lib/modules/_your_kernel_version_/updates`.
+[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/_your_kernel_version_/updates`.
 
 These patched drivers come from the [Linux Wireless project](http://wireless.kernel.org/) and support many of the above mentioned chips such as:
 

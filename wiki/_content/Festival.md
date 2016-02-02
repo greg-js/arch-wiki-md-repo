@@ -39,7 +39,7 @@ If you do not hear anything, see the [Troubleshooting](#Troubleshooting) section
 
 ### Using German IMS festival extension with mbrola
 
-The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/)<sup><small>AUR</small></sup>. To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified -- use [abs](https://www.archlinux.org/packages/?name=abs) to get it and the patches necessary to install festival under arch linux.
+The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/). To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified -- use [abs](https://www.archlinux.org/packages/?name=abs) to get it and the patches necessary to install festival under arch linux.
 
 Add these two files downloaded from the IMS (do NOT use the third file, _ims_german_1.3-os.fix.tgz_)
 
@@ -62,7 +62,7 @@ with their md5sums to the _source_ variable and place them in the same folder as
 
 ```
 
-This should install support for the german voices de1 through de4\. Install at least one of these voices, e.g. [mbrola-voices-de2](https://aur.archlinux.org/packages/mbrola-voices-de2/)<sup><small>AUR</small></sup>, and then use it in festival by selecting the voice via
+This should install support for the german voices de1 through de4\. Install at least one of these voices, e.g. [mbrola-voices-de2](https://aur.archlinux.org/packages/mbrola-voices-de2/), and then use it in festival by selecting the voice via
 
 ```
  (voice_german_de2_os)
@@ -167,7 +167,7 @@ You cannot set the voice with festival.scm; to set voices globally, set order of
 
 Some say that HTS voices for Festival are the best ones freely available. Sadly they are not compatible with Festival >2.1 without patching it (and the new voice versions are not made available for downloading).
 
-You can install the patched version from [AUR](/index.php/AUR "AUR"): [festival-patched-hts](https://aur.archlinux.org/packages/festival-patched-hts/)<sup><small>AUR</small></sup> and [festival-hts-voices-patched](https://aur.archlinux.org/packages/festival-hts-voices-patched/)<sup><small>AUR</small></sup>
+You can install the patched version from [AUR](/index.php/AUR "AUR"): [festival-patched-hts](https://aur.archlinux.org/packages/festival-patched-hts/) and [festival-hts-voices-patched](https://aur.archlinux.org/packages/festival-hts-voices-patched/)
 
 #### Manual Voice Installs
 

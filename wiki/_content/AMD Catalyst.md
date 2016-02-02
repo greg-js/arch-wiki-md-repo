@@ -1,11 +1,6 @@
 # AMD Catalyst
 
-Related articles
-
-*   [ATI](/index.php/ATI "ATI")
-*   [Xorg](/index.php/Xorg "Xorg")
-
-Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) and the [open source driver](/index.php/ATI "ATI") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the proprietary driver.
+Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the [open source driver](/index.php/ATI "ATI") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the proprietary driver.
 
 AMD's Linux driver package _catalyst_ was previously named _fglrx_ (**F**ire**GL** and **R**adeon **X**). Only the package name has changed, while the kernel module retains its original _fglrx.ko_ filename. Therefore, any mention of fglrx below is specifically in reference to the _kernel module_, **not the package**.
 
@@ -134,19 +129,19 @@ The second way to install Catalyst is from the [AUR](/index.php/AUR "AUR"). If y
 
 All packages mentioned above in Vi0L0's unofficial repository are also available on the [AUR](/index.php/AUR "AUR"):
 
-*   [catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>
-*   [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/)<sup><small>AUR</small></sup>
-*   [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/)<sup><small>AUR</small></sup>
-*   [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)<sup><small>AUR</small></sup>
-*   [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup>
+*   [catalyst](https://aur.archlinux.org/packages/catalyst/)
+*   [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/)
+*   [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/)
+*   [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)
+*   [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)
 
 The AUR also holds some packages that are **not** found in any of the repositories. These packages contain the so-called _Catalyst-total_ packages and the beta versions:
 
-*   [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/)<sup><small>AUR</small></sup>
-*   [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/)<sup><small>AUR</small></sup>
-*   [catalyst-test](https://aur.archlinux.org/packages/catalyst-test/)<sup><small>AUR</small></sup>
+*   [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/)
+*   [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/)
+*   [catalyst-test](https://aur.archlinux.org/packages/catalyst-test/)
 
-The [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/)<sup><small>AUR</small></sup> packages are made to make the lives of AUR users easier. It builds the driver, the kernel utilities and the 32 bit kernel utilities. It also builds the [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/)<sup><small>AUR</small></sup> package, which is described in [#Tools](#Tools).
+The [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/) packages are made to make the lives of AUR users easier. It builds the driver, the kernel utilities and the 32 bit kernel utilities. It also builds the [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/) package, which is described in [#Tools](#Tools).
 
 ### Configuring the driver
 
@@ -296,8 +291,8 @@ To install catalyst for a custom kernel, you will need to build your own `cataly
 
 **Note:**
 
-*   If you run multiple kernels, you have to install the [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)<sup><small>AUR</small></sup> packages for all kernels. They will not conflict with one another.
-*   [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/)<sup><small>AUR</small></sup> is able to build `catalyst-{kernver}` packages for you so you do not actually need to perform all those steps manually. For more information, see [Tools section](#Tools).
+*   If you run multiple kernels, you have to install the [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) packages for all kernels. They will not conflict with one another.
+*   [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/) is able to build `catalyst-{kernver}` packages for you so you do not actually need to perform all those steps manually. For more information, see [Tools section](#Tools).
 
 ### PowerXpress support
 
@@ -305,7 +300,7 @@ PowerXpress technology allows switching notebooks with dual-graphic capability f
 
 To use such functionality on Arch you will have to:
 
-*   Get and build [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/)<sup><small>AUR</small></sup> / [catalyst-test](https://aur.archlinux.org/packages/catalyst-test/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"), or
+*   Get and build [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/) / [catalyst-test](https://aur.archlinux.org/packages/catalyst-test/) package from the [AUR](/index.php/AUR "AUR"), or
 *   Install **catalyst-libgl** alongside with **catalyst-utils** packages from the [catalyst] repository.
 
 To perform a switch into Intel's IGP you will also have to install the [mesa](https://www.archlinux.org/packages/?name=mesa) package and Intel's drivers: [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
@@ -449,7 +444,7 @@ Server = http://catalyst.wirephire.com/repo/xorg112/$arch
 
 ### Catalyst-hook
 
-[Catalyst-hook](https://aur.archlinux.org/packages/Catalyst-hook/)<sup><small>AUR</small></sup> is a [systemd](/index.php/Systemd "Systemd") service that will automatically rebuild the `fglrx` modules while the system shuts down or reboots, but only if it is necessary (e.g. after an update).
+[Catalyst-hook](https://aur.archlinux.org/packages/Catalyst-hook/) is a [systemd](/index.php/Systemd "Systemd") service that will automatically rebuild the `fglrx` modules while the system shuts down or reboots, but only if it is necessary (e.g. after an update).
 
 Before using this package make sure that both the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group and the [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) package (the one specific to the kernel you use) are installed.
 
@@ -488,7 +483,7 @@ The check is checking the whole `/usr/lib/modules/` directory and building modul
 
 ### Catalyst-generator
 
-[catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/)<sup><small>AUR</small></sup> is a package that is able to build and install the `fglrx` module packed into pacman compliant `catalyst-${kernver}` packages. The basic difference from [#Catalyst-hook](#Catalyst-hook) is that you will have to trigger this command manually, whereas Catalyst-hook will do this automatically at boot when a new kernel got installed.
+[catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/) is a package that is able to build and install the `fglrx` module packed into pacman compliant `catalyst-${kernver}` packages. The basic difference from [#Catalyst-hook](#Catalyst-hook) is that you will have to trigger this command manually, whereas Catalyst-hook will do this automatically at boot when a new kernel got installed.
 
 It creates `catalyst-${kernver}` packages using [makepkg](/index.php/Makepkg "Makepkg") and installs them with [pacman](/index.php/Pacman "Pacman"). `${kernver}` is the kernel version for which each package was built (e.g. catalyst-2.6.35-ARCH package was built for 2.6.35-ARCH kernel).
 
@@ -531,9 +526,9 @@ Now under the banner of **"Heterogeneous Computing"** AMD is providing even more
 
 In the AUR and the [catalyst] repositories you will find packages that represent the most important work from AMD, namely:
 
-*   [amdapp-aparapi](https://aur.archlinux.org/packages/amdapp-aparapi/)<sup><small>AUR</small></sup>
-*   [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/)<sup><small>AUR</small></sup>
-*   [amdapp-codexl](https://aur.archlinux.org/packages/amdapp-codexl/)<sup><small>AUR</small></sup>
+*   [amdapp-aparapi](https://aur.archlinux.org/packages/amdapp-aparapi/)
+*   [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/)
+*   [amdapp-codexl](https://aur.archlinux.org/packages/amdapp-codexl/)
 
 APP shortcut stands for Accelerated Parallel Processing.
 
@@ -547,7 +542,7 @@ You can find more information about Aparapi [here](http://developer.amd.com/tool
 
 The AMD APP Software Development Kit (SDK) is a complete development platform created by AMD to allow you to quickly and easily develop applications accelerated by AMD APP technology. The SDK provides samples, documentation and other materials to quickly get you started leveraging accelerated compute using OpenCL, Bolt, or C++ AMP in your C/C++ application.
 
-Since version 2.8 amdapp-sdk is providing aparapiUtil as well as aparapi's samples. A package is available on the [catalyst] repository; it depends on the [amdapp-aparapi](https://aur.archlinux.org/packages/amdapp-aparapi/)<sup><small>AUR</small></sup> package. The AUR's package will let you decide whether you want aparapi's additions or not.
+Since version 2.8 amdapp-sdk is providing aparapiUtil as well as aparapi's samples. A package is available on the [catalyst] repository; it depends on the [amdapp-aparapi](https://aur.archlinux.org/packages/amdapp-aparapi/) package. The AUR's package will let you decide whether you want aparapi's additions or not.
 
 Version 2.8 does not provide Profiler functionality, it has been moved to CodeXL.
 
@@ -585,11 +580,11 @@ To disable, again use `amdcccle` or run:
 
 **[Video Acceleration API](https://en.wikipedia.org/wiki/Video_Acceleration_API "wikipedia:Video Acceleration API") (VA API)** is an open source software library (libVA) and API specification which provides GPU acceleration for video processing on Linux/UNIX based operating systems. The process works by enabling hardware accelerated video decode at various entry-points (VLD, IDCT, Motion Compensation, deblocking) for common encoding standards (MPEG-2, MPEG-4 ASP/H.263, MPEG-4 AVC/H.264, and VC-1/WMV3).
 
-VA-API gained a proprietary backend (in November 2009) called [xvba-video](https://aur.archlinux.org/packages/xvba-video/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xvba-video)]</sup>, that allows VA-API programmed applications to take advantage of AMD Radeons UVD2 chipsets via the [XvBA (X-Video Bitstream Acceleration API designed by AMD)](https://en.wikipedia.org/wiki/XvBA "wikipedia:XvBA") library.
+VA-API gained a proprietary backend (in November 2009) called [xvba-video](https://aur.archlinux.org/packages/xvba-video/), that allows VA-API programmed applications to take advantage of AMD Radeons UVD2 chipsets via the [XvBA (X-Video Bitstream Acceleration API designed by AMD)](https://en.wikipedia.org/wiki/XvBA "wikipedia:XvBA") library.
 
-**Note:** No need to install the [xvba-video](https://aur.archlinux.org/packages/xvba-video/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xvba-video)]</sup> package when using `catalyst-test` or `catalyst-total`, because a symlink is being used instead.
+**Note:** No need to install the [xvba-video](https://aur.archlinux.org/packages/xvba-video/) package when using `catalyst-test` or `catalyst-total`, because a symlink is being used instead.
 
-XvBA support and xvba-video is still under development, however it is **working very well in most cases**. Build (or install from Vi0L0's repo) the proprietary [xvba-video](https://aur.archlinux.org/packages/xvba-video/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xvba-video)]</sup> package, or if you have problems with that version, install [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/)<sup><small>AUR</small></sup>; and also install [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)<sup><small>AUR</small></sup> and [libva](https://www.archlinux.org/packages/?name=libva). Then just set your video player to use vaapi:gl as video output:
+XvBA support and xvba-video is still under development, however it is **working very well in most cases**. Build (or install from Vi0L0's repo) the proprietary [xvba-video](https://aur.archlinux.org/packages/xvba-video/) package, or if you have problems with that version, install [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/); and also install [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) and [libva](https://www.archlinux.org/packages/?name=libva). Then just set your video player to use vaapi:gl as video output:
 
 ```
 $ mplayer -vo vaapi:gl movie.avi
@@ -650,7 +645,7 @@ To set the fanspeed with: `$ aticonfig --pplib-cmd "set fanspeed 0 50"` Query In
 
 To overclock and/or underclock it is easier to use a GUI, like **ATi Overclocking Utility**, which is very simple and requires qt to work. It might be out of date/old, but you can get it [here](http://kde-apps.org/content/show.php/ATI+Overclock?content=47796).
 
-Another, more complex utility to perform such operations is **AMDOverdriveCtrl**. Its homepage is [here](http://sourceforge.net/projects/amdovdrvctrl) and you can build [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/)<sup><small>AUR</small></sup> from the AUR or from Vi0L0's unofficial repositories.
+Another, more complex utility to perform such operations is **AMDOverdriveCtrl**. Its homepage is [here](http://sourceforge.net/projects/amdovdrvctrl) and you can build [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) from the AUR or from Vi0L0's unofficial repositories.
 
 ### Double Screen (Dual Head / Dual Screen / Xinerama)
 
@@ -719,11 +714,11 @@ Before you restart X, do not hesitate to verify your new `xorg.conf` file. At th
 
 ## Uninstallation
 
-If for any reason this driver is not working for you or if you simply want to try out the open source driver, remove the `catalyst` and `catalyst-utils` packages. Also you should remove [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/)<sup><small>AUR</small></sup>, [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/)<sup><small>AUR</small></sup> and [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup> packages if they have been installed on your system.
+If for any reason this driver is not working for you or if you simply want to try out the open source driver, remove the `catalyst` and `catalyst-utils` packages. Also you should remove [catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/), [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/) and [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/) packages if they have been installed on your system.
 
 **Warning:**
 
-*   You may need to use `# pacman -Rdd` to remove [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)<sup><small>AUR</small></sup> (and/or [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup>) because that package contains _gl_ related files and many of your installed packages depend on them. These dependencies will be satisfied again when you install [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
+*   You may need to use `# pacman -Rdd` to remove [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) (and/or [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)) because that package contains _gl_ related files and many of your installed packages depend on them. These dependencies will be satisfied again when you install [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
 *   You may need to remove `/etc/profile.d/ati-flgrx.sh` and `/etc/profile.d/lib32-catalyst` (if it exists on your system), otherwise `r600_dri.so` will fail to load and you would not have 3D support.
 
 **Note:** You should remove unofficial repositories from your `/etc/pacman.conf` and run `# pacman -Syu`, because those repositories include out-dated Xorg packages to allow use of `catalyst` and the [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) package needs up-to-date Xorg packages from the [Official repositories](/index.php/Official_repositories "Official repositories").
@@ -733,7 +728,7 @@ Also follow these steps:
 *   If you have the `/etc/modprobe.d/blacklist-radeon.conf` file remove it or comment the line `blacklist radeon` in that file.
 *   If you have a file in `/etc/modules-load.d` to load the `fglrx` module on boot, remove it or comment the line containing `fglrx`.
 *   Make sure to remove or backup `/etc/X11/xorg.conf`.
-*   If you have installed the [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/)<sup><small>AUR</small></sup> package, make sure to disable the systemd service.
+*   If you have installed the [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/) package, make sure to disable the systemd service.
 *   If you used the `nomodeset` option in your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and plan to use KMS, remove it.
 *   **Reboot** before installing another driver.
 
@@ -863,7 +858,7 @@ libGL error: unable to find driver: fglrx_dri.so
 
 *   Something has not been installed correctly. If the paths in the error message are `/usr/X11R6/lib/modules/dri/fglrx_dri.so`, then ensure you have logged completely out of your system, then back in. If you are using a graphical login manager (gdm, kdm, xdm), ensure that `/etc/profile` is sourced every time you log in. This is usually accomplished by adding `source /etc/profile` into `~/.xsession` or `~/.xinitrc`, but this may vary between login managers.
 
-*   If the paths above in your error message _are_ `/usr/lib/xorg/modules/dri/fglrx_dri.so`, then something has not been correctly installed. Try reinstalling the [catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup> package.
+*   If the paths above in your error message _are_ `/usr/lib/xorg/modules/dri/fglrx_dri.so`, then something has not been correctly installed. Try reinstalling the [catalyst](https://aur.archlinux.org/packages/catalyst/) package.
 
 Errors such as:
 

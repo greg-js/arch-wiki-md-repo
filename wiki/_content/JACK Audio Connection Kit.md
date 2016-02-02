@@ -264,7 +264,7 @@ ctl.!default {
 *   Reboot.
 *   After logging in, you will see QjackCtl in your system tray. Left-click on it.
 *   Start tweaking in the QjackCtl GUI. The info embedded in the shell-script setup above may be of some help :-) As may be the info in [this article](http://www.linuxjournal.com/article/8354). Just remember that you have to get your latency down to less than 5ms for live tone production or filtration of any sort, or the delay will be obvious to player and listener alike.
-*   From the [AUR](/index.php/AUR "AUR"), install [non-daw](https://aur.archlinux.org/packages/non-daw/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/non-daw)]</sup>. One of the components of this package is called non-session-manager; it has the function of setting up "sessions": sets of other audio software items which Jack (through the QjackCtl patchbay or not!) will wire together. NSM can handle as many different sessions as you wish to set up; and as a result, it's all GUI, apart from the one rc.local edit in the beginning.
+*   From the [AUR](/index.php/AUR "AUR"), install [non-daw](https://aur.archlinux.org/packages/non-daw/). One of the components of this package is called non-session-manager; it has the function of setting up "sessions": sets of other audio software items which Jack (through the QjackCtl patchbay or not!) will wire together. NSM can handle as many different sessions as you wish to set up; and as a result, it's all GUI, apart from the one rc.local edit in the beginning.
 
 ### More
 
@@ -365,7 +365,7 @@ They will be visible in QjackCtl under the _MIDI_ tab labelled "a2j" client. You
 *   **Q:** What is the difference between JACK-MIDI and ALSA-MIDI?
 *   **A:** The former has improved timing and sample accurate MIDI event alignment. It extends or may even replace the latter but at this point they both co-exist.
 
-To install some M-Audio MIDI keyboards, you will need the firmware package [midisport-firmware](https://aur.archlinux.org/packages/midisport-firmware/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR"). Also, the snd_usb_audio module has to be available. For more information about specific USB MIDI devices, see [http://alsa.opensrc.org/USBMidiDevices](http://alsa.opensrc.org/USBMidiDevices).
+To install some M-Audio MIDI keyboards, you will need the firmware package [midisport-firmware](https://aur.archlinux.org/packages/midisport-firmware/) in the [AUR](/index.php/AUR "AUR"). Also, the snd_usb_audio module has to be available. For more information about specific USB MIDI devices, see [http://alsa.opensrc.org/USBMidiDevices](http://alsa.opensrc.org/USBMidiDevices).
 
 ## Troubleshooting
 

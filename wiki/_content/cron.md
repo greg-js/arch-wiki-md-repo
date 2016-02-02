@@ -1,10 +1,5 @@
 # cron
 
-Related articles
-
-*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
-*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
 _**cron** is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration._
@@ -44,10 +39,10 @@ Packages available:
 
 *   [cronie](https://www.archlinux.org/packages/?name=cronie)
 *   [fcron](https://www.archlinux.org/packages/?name=fcron)
-*   [bcron](https://aur.archlinux.org/packages/bcron/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bcron)]</sup>
-*   [dcron](https://aur.archlinux.org/packages/dcron/)<sup><small>AUR</small></sup>
-*   [vixie-cron](https://aur.archlinux.org/packages/vixie-cron/)<sup><small>AUR</small></sup>
-*   [scron-git](https://aur.archlinux.org/packages/scron-git/)<sup><small>AUR</small></sup>
+*   [bcron](https://aur.archlinux.org/packages/bcron/)
+*   [dcron](https://aur.archlinux.org/packages/dcron/)
+*   [vixie-cron](https://aur.archlinux.org/packages/vixie-cron/)
+*   [scron-git](https://aur.archlinux.org/packages/scron-git/)
 
 ## Configuration
 
@@ -359,7 +354,7 @@ cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.
 
 ## Running X.org server-based applications
 
-Cron does not run under the X.org server therefore it cannot know the environmental variable necessary to be able to start an X.org server application so they will have to be defined. One can use a program like [xuserrun](https://aur.archlinux.org/packages/xuserrun/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xuserrun)]</sup> to do it:
+Cron does not run under the X.org server therefore it cannot know the environmental variable necessary to be able to start an X.org server application so they will have to be defined. One can use a program like [xuserrun](https://aur.archlinux.org/packages/xuserrun/) to do it:
 
 ```
 17 02 * ... /usr/bin/xuserrun /usr/bin/xclock
@@ -392,7 +387,7 @@ Cronie contains the standard UNIX daemon crond that runs specified programs at s
 
 ### Dcron
 
-Vanilla [dcron](https://aur.archlinux.org/packages/dcron/)<sup><small>AUR</small></sup> supports asynchronous job processing. Just put it with @hourly, @daily, @weekly or @monthly with a jobname, like this:
+Vanilla [dcron](https://aur.archlinux.org/packages/dcron/) supports asynchronous job processing. Just put it with @hourly, @daily, @weekly or @monthly with a jobname, like this:
 
 ```
 @hourly         ID=greatest_ever_job      echo This job is very useful.
@@ -401,7 +396,7 @@ Vanilla [dcron](https://aur.archlinux.org/packages/dcron/)<sup><small>AUR</small
 
 ### Cronwhip
 
-[cronwhip](https://aur.archlinux.org/packages/cronwhip/)<sup><small>AUR</small></sup> is a script to automatically run missed cron jobs; it works with the former default cron implementation, _dcron_. See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=57973).
+[cronwhip](https://aur.archlinux.org/packages/cronwhip/) is a script to automatically run missed cron jobs; it works with the former default cron implementation, _dcron_. See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=57973).
 
 ### Anacron
 

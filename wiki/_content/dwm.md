@@ -1,10 +1,5 @@
 # dwm
 
-Related articles
-
-*   [dmenu](/index.php/Dmenu "Dmenu")
-*   [wmii](/index.php/Wmii "Wmii")
-
 [dwm](http://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of [optional patches](#Patches). Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
 
 ## Contents
@@ -43,7 +38,7 @@ Related articles
 
 **Note:** If dwm is not compiled from source, opportunities for customization are lost since dwm's configuration is performed by editing its source code. See [#Configuration](#Configuration) for more information.
 
-[Install](/index.php/Install "Install") the [dwm](https://www.archlinux.org/packages/?name=dwm) package. Alternatively, compile dwm from source using [ABS](/index.php/ABS "ABS") or the [dwm-git](https://aur.archlinux.org/packages/dwm-git/)<sup><small>AUR</small></sup> package (for the development version), making changes to the source code as desired. You may also want to install [dmenu](/index.php/Dmenu "Dmenu"), a fast and lightweight dynamic menu for [Xorg](/index.php/Xorg "Xorg").
+[Install](/index.php/Install "Install") the [dwm](https://www.archlinux.org/packages/?name=dwm) package. Alternatively, compile dwm from source using [ABS](/index.php/ABS "ABS") or the [dwm-git](https://aur.archlinux.org/packages/dwm-git/) package (for the development version), making changes to the source code as desired. You may also want to install [dmenu](/index.php/Dmenu "Dmenu"), a fast and lightweight dynamic menu for [Xorg](/index.php/Xorg "Xorg").
 
 ## Starting dwm
 

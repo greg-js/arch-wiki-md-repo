@@ -18,7 +18,7 @@ You can setup ufsd with or without dkms. The advantage of using dkms is that you
 
 ### Without dkms
 
-*   Download the [ufsd-module](https://aur.archlinux.org/packages/ufsd-module/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ufsd-module)]</sup> tarball from the [AUR](/index.php/AUR "AUR").
+*   Download the [ufsd-module](https://aur.archlinux.org/packages/ufsd-module/) tarball from the [AUR](/index.php/AUR "AUR").
 *   Untar the tarball
 *   Visit [http://www.paragon-software.com/home/ntfs-linux-per/download.html](http://www.paragon-software.com/home/ntfs-linux-per/download.html) and fill in the request form. You should receive an email with a download link shortly. Download the .tbz file and move it to the package folder.
 *   Build and install the package
@@ -41,7 +41,7 @@ $ makepkg -si
 
 ```
 
-*   Download the [ufsd-module-dkms](https://aur.archlinux.org/packages/ufsd-module-dkms/)<sup><small>AUR</small></sup> tarball from the [AUR](/index.php/AUR "AUR").
+*   Download the [ufsd-module-dkms](https://aur.archlinux.org/packages/ufsd-module-dkms/) tarball from the [AUR](/index.php/AUR "AUR").
 *   Untar the tarball
 *   Visit [http://www.paragon-software.com/home/ntfs-linux-per/download.html](http://www.paragon-software.com/home/ntfs-linux-per/download.html) and fill in the request form. You should receive an email with a download link shortly. Download the .tbz file and move it to the package folder.
 *   Build and install the package

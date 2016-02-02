@@ -41,7 +41,7 @@ Next [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_
 
 You can also build EDE yourself. Fortunately on Arch there are two [AUR](/index.php/AUR "AUR")-[PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files available that allow you to build it without much hassle.
 
-The first one is [edelib](https://aur.archlinux.org/packages/edelib/)<sup><small>AUR</small></sup> which is a dependency for EDE, the other one [ede](https://aur.archlinux.org/packages/ede/)<sup><small>AUR</small></sup> the actual DE.
+The first one is [edelib](https://aur.archlinux.org/packages/edelib/) which is a dependency for EDE, the other one [ede](https://aur.archlinux.org/packages/ede/) the actual DE.
 
 ## Starting the DE
 

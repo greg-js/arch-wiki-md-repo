@@ -51,7 +51,7 @@ The rated battery life for this laptop is 9hrs and with configuration [5.5 hrs i
 
 Install [acpi](https://www.archlinux.org/packages/?name=acpi).
 
-Install [thermald](https://aur.archlinux.org/packages/thermald/)<sup><small>AUR</small></sup>
+Install [thermald](https://aur.archlinux.org/packages/thermald/)
 
 ```
 # systemctl enable thermald.service

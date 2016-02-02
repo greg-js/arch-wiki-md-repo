@@ -1,9 +1,5 @@
 # SLiM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-
 **Warning:** The SliM project has been abandoned (the [project homepage](http://slim.berlios.de/) is down, leaving a [github mirror](https://github.com/data-modul/slim)), and is not fully compatible with [systemd](/index.php/Systemd "Systemd"), including _logind_ sessions. Consider using a different [Display manager](/index.php/Display_manager "Display manager") or [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
 [SLiM](http://sourceforge.net/projects/slim.berlios/) is an acronym for **S**imple **L**og**i**n **M**anager. Lightweight and easily configurable, SLiM requires minimal dependencies, and none from the [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") desktop environments. It therefore contributes towards a lightweight system for users that also like to use lightweight desktops such as [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), and [Fluxbox](/index.php/Fluxbox "Fluxbox").

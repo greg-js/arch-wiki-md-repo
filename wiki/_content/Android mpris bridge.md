@@ -1,6 +1,6 @@
 # Android mpris bridge
 
-[android_mpris_bridge-git](https://aur.archlinux.org/packages/android_mpris_bridge-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android_mpris_bridge-git)]</sup> is available in the [AUR](/index.php/AUR "AUR"). It enables you to control (pause/play/change volume) media players which support the [MPRIS D-Bus interface](http://www.freedesktop.org/wiki/Specifications/mpris-spec/) (such as [vlc](https://www.archlinux.org/packages/?name=vlc) and [dragon](https://www.archlinux.org/packages/?name=dragon)) from your Android device.
+[android_mpris_bridge-git](https://aur.archlinux.org/packages/android_mpris_bridge-git/) is available in the [AUR](/index.php/AUR "AUR"). It enables you to control (pause/play/change volume) media players which support the [MPRIS D-Bus interface](http://www.freedesktop.org/wiki/Specifications/mpris-spec/) (such as [vlc](https://www.archlinux.org/packages/?name=vlc) and [dragon](https://www.archlinux.org/packages/?name=dragon)) from your Android device.
 
 ## Running the application
 

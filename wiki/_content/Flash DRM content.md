@@ -16,9 +16,9 @@ To deliver DRM-protected content, Flash calls several functions provided by the 
 
 ## Using the HAL package
 
-Install the [hal](https://aur.archlinux.org/packages/hal/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"). You will need to install [hal-info](https://aur.archlinux.org/packages/hal-info/)<sup><small>AUR</small></sup> first as it is a dependency for [hal](https://aur.archlinux.org/packages/hal/)<sup><small>AUR</small></sup>.
+Install the [hal](https://aur.archlinux.org/packages/hal/) package from the [AUR](/index.php/AUR "AUR"). You will need to install [hal-info](https://aur.archlinux.org/packages/hal-info/) first as it is a dependency for [hal](https://aur.archlinux.org/packages/hal/).
 
-**Note:** The HAL libraries only work with [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)<sup><small>AUR</small></sup> does not support DRM.
+**Note:** The HAL libraries only work with [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) does not support DRM.
 
 ### Running the HAL daemon
 
@@ -71,7 +71,7 @@ As an alternative to installing all of HAL, you can install a modified version o
 
 ### Installing UDisks and hal-flash
 
-You will need to install [hal-flash](https://aur.archlinux.org/packages/hal-flash/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"), which relies on [Udisks](/index.php/Udisks "Udisks").
+You will need to install [hal-flash](https://aur.archlinux.org/packages/hal-flash/) from the [AUR](/index.php/AUR "AUR"), which relies on [Udisks](/index.php/Udisks "Udisks").
 
 ### Running UDisks
 

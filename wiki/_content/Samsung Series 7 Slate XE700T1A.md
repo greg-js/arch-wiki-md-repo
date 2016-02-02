@@ -155,11 +155,11 @@ Then add. You can now set a shortcut by clicking on it, and pressing the keys yo
 
 ### Multitouch
 
-8 point multitouch now seems to work without [xf86-input-evdev-multitouch-git](https://aur.archlinux.org/packages/xf86-input-evdev-multitouch-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-evdev-multitouch-git)]</sup> and [mtdev](https://www.archlinux.org/packages/?name=mtdev) is a dependancy of [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev). Out of the box with Gnome 3.14, some apps, such as Eye of Gnome (Gnome Image Viewer) supported multitouch actions such as pinch-to-zoom.
+8 point multitouch now seems to work without [xf86-input-evdev-multitouch-git](https://aur.archlinux.org/packages/xf86-input-evdev-multitouch-git/) and [mtdev](https://www.archlinux.org/packages/?name=mtdev) is a dependancy of [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev). Out of the box with Gnome 3.14, some apps, such as Eye of Gnome (Gnome Image Viewer) supported multitouch actions such as pinch-to-zoom.
 
-I also installed [ginn](https://aur.archlinux.org/packages/ginn/)<sup><small>AUR</small></sup> and all Ubuntu's uTouch (dependencies of ginn). The default setup gave me 2 finger scrolling in all the apps I tested.
+I also installed [ginn](https://aur.archlinux.org/packages/ginn/) and all Ubuntu's uTouch (dependencies of ginn). The default setup gave me 2 finger scrolling in all the apps I tested.
 
-You can test multitouch by running [mtview-git](https://aur.archlinux.org/packages/mtview-git/)<sup><small>AUR</small></sup>:
+You can test multitouch by running [mtview-git](https://aur.archlinux.org/packages/mtview-git/):
 
 ```
 # mtview /dev/input/event##

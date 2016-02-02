@@ -1,12 +1,5 @@
 # Qt
 
-Related articles
-
-*   [KDE](/index.php/KDE "KDE")
-*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [Qt for Android](/index.php/Qt_for_Android "Qt for Android")
-
 [Qt](http://qt-project.org/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), or _moc_) together with several macros to enrich the language. Some of its more important features include:
 
 *   Running on the major desktop platforms and some of the mobile platforms.
@@ -52,8 +45,8 @@ The Qt framework is emerging as a major development platform and is the basis of
 Two versions of Qt are currently available in the [official repositories](/index.php/Official_repositories "Official repositories"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
 
 *   **Qt 5.x** is available in the [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) package, with documentation in the [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc) package.
-*   **Qt 4.x** is available in the [qt4](https://www.archlinux.org/packages/?name=qt4) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/)<sup><small>AUR</small></sup> package.
-*   **Qt 3.x** is available from the AUR in the [qt3](https://aur.archlinux.org/packages/qt3/)<sup><small>AUR</small></sup> package, with documentation on AUR in the [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/)<sup><small>AUR</small></sup> package.
+*   **Qt 4.x** is available in the [qt4](https://www.archlinux.org/packages/?name=qt4) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/) package.
+*   **Qt 3.x** is available from the AUR in the [qt3](https://aur.archlinux.org/packages/qt3/) package, with documentation on AUR in the [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/) package.
 
 **Warning:** Qt packages do not provide the usual bins (e.g. _qmake_) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications. To install usual bins, see [#Default Qt toolkit](#Default_Qt_toolkit) section.
 
@@ -130,7 +123,7 @@ The following styles are included in Qt4: _CDE_, _Cleanlooks_, _GTK+_, _Motif_, 
 
 *   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
-	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)<sup><small>AUR</small></sup>
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)
 
 ### Qt5
 
@@ -158,7 +151,7 @@ The following styles are included in Qt5: _GTK+_, _Fusion_, _Windows_. Others ca
 
 *   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
-	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)<sup><small>AUR</small></sup>
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
 
 Like with `qtconfig-qt4` for Qt4 apps, [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) can be used to customize the look and feel of Qt5 apps.
 
@@ -368,7 +361,7 @@ sys.exit(app.exec_())
 
 #### C#
 
-*   Package: [kdebindings-qyoto](https://aur.archlinux.org/packages/kdebindings-qyoto/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdebindings-qyoto)]</sup>
+*   Package: [kdebindings-qyoto](https://aur.archlinux.org/packages/kdebindings-qyoto/)
 *   Website: [http://techbase.kde.org/Development/Languages/Qyoto](http://techbase.kde.org/Development/Languages/Qyoto)
 *   Build with: `mcs -pkg:qyoto hello.cs`
 *   Run with: `mono hello.exe`
@@ -392,7 +385,7 @@ public class Hello {
 
 #### Ruby
 
-*   Package: [kdebindings-qtruby](https://aur.archlinux.org/packages/kdebindings-qtruby/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdebindings-qtruby)]</sup>
+*   Package: [kdebindings-qtruby](https://aur.archlinux.org/packages/kdebindings-qtruby/)
 *   Website: [http://rubyforge.org/projects/korundum/](http://rubyforge.org/projects/korundum/)
 *   Run with: `ruby hello.rb`
 
@@ -411,7 +404,7 @@ app.exec
 
 #### Java
 
-*   Package: [qtjambi](https://aur.archlinux.org/packages/qtjambi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtjambi)]</sup> or [qtjambi-beta](https://aur.archlinux.org/packages/qtjambi-beta/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtjambi-beta)]</sup>.
+*   Package: [qtjambi](https://aur.archlinux.org/packages/qtjambi/) or [qtjambi-beta](https://aur.archlinux.org/packages/qtjambi-beta/).
 *   Website: [http://qt-jambi.org/](http://qt-jambi.org/)
 *   Build with: `javac Hello.java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar`.
 *   Run with: `java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar:. Hello`.
@@ -439,7 +432,7 @@ public class Hello
 
 #### Perl
 
-*   Package: [kdebindings-perlqt](https://aur.archlinux.org/packages/kdebindings-perlqt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdebindings-perlqt)]</sup>
+*   Package: [kdebindings-perlqt](https://aur.archlinux.org/packages/kdebindings-perlqt/)
 *   Website: [http://code.google.com/p/perlqt4/](http://code.google.com/p/perlqt4/)
 *   Run with: `perl hello.pl`
 
@@ -458,7 +451,7 @@ exit $a->exec;
 
 #### Lua
 
-*   Package: [libqtlua](https://aur.archlinux.org/packages/libqtlua/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libqtlua)]</sup>
+*   Package: [libqtlua](https://aur.archlinux.org/packages/libqtlua/)
 *   Website: [http://www.nongnu.org/libqtlua/](http://www.nongnu.org/libqtlua/)
 *   Run with: `qtlua hello.lua`
 

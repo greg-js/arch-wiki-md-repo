@@ -1,10 +1,5 @@
 # KVM
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [Libvirt](/index.php/Libvirt "Libvirt")
-
 **KVM**, Kernel-based Virtual Machine, is a [hypervisor](https://en.wikipedia.org/wiki/hypervisor "wikipedia:hypervisor") built into the Linux kernel. It is similar to [Xen](/index.php/Xen "Xen") in purpose but much simpler to get running. Unlike native [QEMU](/index.php/QEMU "QEMU"), which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions ([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")) for virtualization via a kernel module.
 
 Using KVM, one can run multiple virtual machines running unmodified GNU/Linux, Windows, or any other operating system. (See [Guest Support Status](http://www.linux-kvm.org/page/Guest_Support_Status) for more information.) Each virtual machine has private virtualized hardware: a network card, disk, graphics card, etc.

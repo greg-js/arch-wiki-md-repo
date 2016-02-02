@@ -18,9 +18,9 @@ HDMI out works.
 
 [Bumblebee](/index.php/Bumblebee "Bumblebee") (3.1-6 and later) works with primus.
 
-[bbswitch](/index.php/Bumblebee#Default_power_state_of_NVIDIA_card_using_bbswitch "Bumblebee") ([bbswitch-dkms-git](https://aur.archlinux.org/packages/bbswitch-dkms-git/)<sup><small>AUR</small></sup> from the AUR, Dec 2013) works. The GT 650M powers down despite ACPI saying otherwise in dmesg.
+[bbswitch](/index.php/Bumblebee#Default_power_state_of_NVIDIA_card_using_bbswitch "Bumblebee") ([bbswitch-dkms-git](https://aur.archlinux.org/packages/bbswitch-dkms-git/) from the AUR, Dec 2013) works. The GT 650M powers down despite ACPI saying otherwise in dmesg.
 
-nvidia binary driver works only sporadically with the default kernel ("GPU has fallen off the bus" in dmesg since [linux](https://www.archlinux.org/packages/?name=linux) 3.10). However, nvidia 331.20 does load and work properly with [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup> kernel (linux-ck-ivybridge 3.12.5-1 from [repo-ck](/index.php/Repo-ck "Repo-ck")) if boot parameter `rcutree.rcu_idle_gp_delay=2` is given. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1357590).
+nvidia binary driver works only sporadically with the default kernel ("GPU has fallen off the bus" in dmesg since [linux](https://www.archlinux.org/packages/?name=linux) 3.10). However, nvidia 331.20 does load and work properly with [linux-ck](https://aur.archlinux.org/packages/linux-ck/) kernel (linux-ck-ivybridge 3.12.5-1 from [repo-ck](/index.php/Repo-ck "Repo-ck")) if boot parameter `rcutree.rcu_idle_gp_delay=2` is given. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1357590).
 
  | ALSA (snd_hda_intel) with [PulseAudio](/index.php/PulseAudio "PulseAudio")
 

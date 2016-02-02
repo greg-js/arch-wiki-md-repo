@@ -1,12 +1,5 @@
 # Downgrading packages
 
-Related articles
-
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
-
 Before downgrading a single or multiple packages, consider why you wish to do so. If it is due to a bug, search the [Bugtracker](https://bugs.archlinux.org/) for existing tasks. If there is none, add a new task; it is better to correct bugs, or at least warn other users of possible issues.
 
 **Warning:**
@@ -81,9 +74,9 @@ Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-m
 
 ### Automation
 
-[downgrader](https://aur.archlinux.org/packages/downgrader/)<sup><small>AUR</small></sup> tool which works with libalpm, supports the pacman log, downgrade packages using Arch Linux Archive, local cache and ARM ([http://repo-arm.archlinuxcn.org](http://repo-arm.archlinuxcn.org)). May be particularly useful to identify problematic packages.
+[downgrader](https://aur.archlinux.org/packages/downgrader/) tool which works with libalpm, supports the pacman log, downgrade packages using Arch Linux Archive, local cache and ARM ([http://repo-arm.archlinuxcn.org](http://repo-arm.archlinuxcn.org)). May be particularly useful to identify problematic packages.
 
-The [downgrade](https://aur.archlinux.org/packages/downgrade/)<sup><small>AUR</small></sup> package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
+The [downgrade](https://aur.archlinux.org/packages/downgrade/) package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
 
 ## Return from [testing]
 

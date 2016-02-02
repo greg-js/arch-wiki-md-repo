@@ -1,11 +1,5 @@
 # Snapper
 
-Related articles
-
-*   [Btrfs](/index.php/Btrfs "Btrfs")
-*   [mkinitcpio-btrfs](/index.php/Mkinitcpio-btrfs "Mkinitcpio-btrfs")
-*   [Btrfs - Tips and tricks](/index.php/Btrfs_-_Tips_and_tricks "Btrfs - Tips and tricks")
-
 [Snapper](http://snapper.io) is a tool created by openSUSE's Arvin Schnell that helps with managing snapshots of [Btrfs](/index.php/Btrfs "Btrfs") subvolumes and [LVM](/index.php/LVM "LVM") volumes. It can create and compare snapshots, revert between snapshots, and supports automatic snapshots timelines.
 
 **Warning:**
@@ -39,7 +33,7 @@ In kernels 3.17 and 3.17-1, snapper in combination with [Btrfs](/index.php/Btrfs
 
 The stable version [snapper](https://www.archlinux.org/packages/?name=snapper) can be installed from the [official repositories](https://wiki.archlinux.org/index.php/Official_repositories).
 
-The development version [snapper-git](https://aur.archlinux.org/packages/snapper-git/)<sup><small>AUR</small></sup> is also available.
+The development version [snapper-git](https://aur.archlinux.org/packages/snapper-git/) is also available.
 
 ## Create a new configuration
 
@@ -193,7 +187,7 @@ $ sysupgrade
 
 ### Wrapping upgrades in pre-post snapshots
 
-[Pacupg](https://aur.archlinux.org/packages/Pacupg/)<sup><small>AUR</small></sup> is a script specifically designed to wrap a system upgrade in snapshots. In contrast with the above solution, it downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`. If [pacaur](https://aur.archlinux.org/packages/pacaur/)<sup><small>AUR</small></sup> is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/)<sup><small>AUR</small></sup>. If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
+[Pacupg](https://aur.archlinux.org/packages/Pacupg/) is a script specifically designed to wrap a system upgrade in snapshots. In contrast with the above solution, it downloads the packages first (`pacman -Syuw`) and then only wraps the upgrade (`pacman -Su`) in snapshots so as to keep the differences between the pre and post snapshots to a minimum. It also detects if the user's `/boot` directory is on a separate partition and automatically makes a copy of it when it detects an upgrade to the Linux kernel. Additionally, it will avoid taking snapshots if there is nothing to upgrade and log all upgraded packages (with changed version numbers) to `/var/local/log/pacupg`. If [pacaur](https://aur.archlinux.org/packages/pacaur/) is installed, the script can also upgrade AUR packages. It builds them first, then takes a snapshot when they are ready to be installed thus keeping the pre-post snapshot differences minimal. As with regular packages, it logs all upgraded packages and will avoid taking snapshots if no packages are available to upgrade. The script now integrates with [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/). If it is installed, `pacupg` will automatically regenerate your grub.cfg after every upgrade to include your snapshots as boot options.
 
 As of version 0.0.9 snapper can run commands wrapped in pre-post-snapshots:
 
@@ -206,7 +200,7 @@ See also the "How do I add pre and post hooks (like YaST)?" section in the offic
 
 #### Easing the rollback process
 
-The [pacupg](https://aur.archlinux.org/packages/pacupg/)<sup><small>AUR</small></sup> script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
+The [pacupg](https://aur.archlinux.org/packages/pacupg/) script also allows for the easy rollback of snapshots. Running `pacupg -r` will bring up a menu that allows the user to rollback both pre-post snapshots (upgrades) or single snapshots (timeline snapshots).
 
 ### Suggested Filesystem Layout
 

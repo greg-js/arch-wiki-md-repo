@@ -1,10 +1,5 @@
 # NTFS-3G
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Mount](/index.php/Mount "Mount")
-
 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) is an open source implementation of Microsoft's NTFS file system that includes read and write support. NTFS-3G developers use the FUSE file system to facilitate development and to help with portability.
 
 ## Contents
@@ -148,7 +143,7 @@ You also need access to the mountpoint you want to use. Since we're going to mou
 
 ```
 
-Second, you need a NTFS-3G driver compiled with integrated FUSE support. The ntfs-3g package from the official repositories does not have this support, but [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/)<sup><small>AUR</small></sup> does.
+Second, you need a NTFS-3G driver compiled with integrated FUSE support. The ntfs-3g package from the official repositories does not have this support, but [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/) does.
 
 You should now be able to mount your NTFS partition without root rights.
 
@@ -156,7 +151,7 @@ You should now be able to mount your NTFS partition without root rights.
 
 ### ntfs-config
 
-[ntfs-config](https://aur.archlinux.org/packages/ntfs-config/)<sup><small>AUR</small></sup> is a program that may be able to help configure your NTFS partition(s) if other methods do not work.
+[ntfs-config](https://aur.archlinux.org/packages/ntfs-config/) is a program that may be able to help configure your NTFS partition(s) if other methods do not work.
 
 ## Resizing NTFS partition
 

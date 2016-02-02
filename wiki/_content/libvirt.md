@@ -1,9 +1,5 @@
 # libvirt
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-
 Libvirt is collection of software that provides a convenient way to manage virtual machines and other virtualization functionality, such as storage and network interface management. These software pieces include a long term stable C API, a daemon (libvirtd), and a command line utility (virsh). A primary goal of libvirt is to provide a single way to manage multiple different virtualization providers/hypervisors, such as the [KVM/QEMU](/index.php/QEMU "QEMU"), [Xen](/index.php/Xen "Xen"), [LXC](/index.php/LXC "LXC"), [OpenVZ](http://openvz.org) or [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") ([among others](http://libvirt.org/drivers.html)).
 
 Some of the major libvirt features are:
@@ -77,8 +73,8 @@ The client is the user interface that will be used to manage and access the virt
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) is a graphical user interface for managing virtual machines.
 *   [virtviewer](https://www.archlinux.org/packages/?name=virtviewer) is a lightweight interface for interacting with the graphical display of virtualized guest OS.
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) is a simple GNOME 3 application to access remote or virtual systems.
-*   [virt-manager-qt4](https://aur.archlinux.org/packages/virt-manager-qt4/)<sup><small>AUR</small></sup> and [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)<sup><small>AUR</small></sup>
-*   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/)<sup><small>AUR</small></sup> is an application sandbox toolkit.
+*   [virt-manager-qt4](https://aur.archlinux.org/packages/virt-manager-qt4/) and [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)
+*   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/) is an application sandbox toolkit.
 
 A list of libvirt-compatible software can be found [here](http://libvirt.org/apps.html).
 
@@ -191,7 +187,7 @@ $ virsh -c qemu:///session
 
 ## Management
 
-Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)<sup><small>AUR</small></sup>).
+Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)).
 
 ### virsh
 
@@ -366,7 +362,7 @@ $ virt-install \
 
 ```
 
-**Tip:** Run `osinfo-query --fields=name,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/_os_.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/)<sup><small>AUR</small></sup>. These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
+**Tip:** Run `osinfo-query --fields=name,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/_os_.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
 
 Import existing volume:
 

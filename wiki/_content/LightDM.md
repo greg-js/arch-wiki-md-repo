@@ -1,12 +1,5 @@
 # LightDM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [GDM](/index.php/GDM "GDM")
-*   [KDM](/index.php/KDM "KDM")
-*   [LXDM](/index.php/LXDM "LXDM")
-
 [LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager") that aims to be the standard display manager for the X server. Its key features are:
 
 *   A lightweight codebase
@@ -51,7 +44,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 ## Installation
 
-[Install](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm). Note that stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/)<sup><small>AUR</small></sup>. Also available is [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm). Note that stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/).
 
 ### Greeter
 
@@ -61,9 +54,9 @@ The official repositories contains other alternative greeters. Other greeters ca
 
 *   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): A greeter used with KDE4.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") project.
-*   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/)<sup><small>AUR</small></sup>: A greeter that uses Webkit for theming.
-*   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/)<sup><small>AUR</small></sup>: The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
-*   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/)<sup><small>AUR</small></sup>: A greeter from the elementary OS project.
+*   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/): A greeter that uses Webkit for theming.
+*   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
+*   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 
 You can set the default greeter by changing the `[Seat:*]` section of the LightDM configuration file, like so:
 
@@ -158,7 +151,7 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 
 #### Unity greeter
 
-Users using the [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/)<sup><small>AUR</small></sup> must edit the `/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml` file and then execute:
+Users using the [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) must edit the `/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml` file and then execute:
 
 ```
 # glib-compile-schemas /usr/share/glib-2.0/schemas/
@@ -205,14 +198,14 @@ Icon=/var/lib/AccountsService/icons/_username_
 
 ### Sources of Arch-centric 64x64 icons
 
-The [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR") contains some nice examples that install to `/usr/share/archlinux/icons` and that can be copied to `/usr/share/icons/hicolor/64x64/devices` as follows:
+The [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) package from the [AUR](/index.php/AUR "AUR") contains some nice examples that install to `/usr/share/archlinux/icons` and that can be copied to `/usr/share/icons/hicolor/64x64/devices` as follows:
 
 ```
 # find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;
 
 ```
 
-After copying, the [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/)<sup><small>AUR</small></sup> package can be removed.
+After copying, the [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) package can be removed.
 
 ### Enabling autologin
 

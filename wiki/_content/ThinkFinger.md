@@ -1,10 +1,5 @@
 # ThinkFinger
 
-Related articles
-
-*   [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui")
-*   [Fprint](/index.php/Fprint "Fprint")
-
 ThinkFinger is a driver for the SGS Thomson Microelectronics fingerprint reader found in older IBM/Lenovo ThinkPads.
 
 ThinkWiki has a [list of various fingerprint readers](http://www.thinkwiki.org/wiki/Integrated_Fingerprint_Reader) found in ThinkPads. Newer models using different readers might not work with ThinkFinger.

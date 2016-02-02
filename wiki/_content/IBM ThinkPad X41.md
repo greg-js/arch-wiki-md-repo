@@ -36,7 +36,7 @@ Some useful packages for your IBM/Lenovo ThinkPad X41:
 *   [acpi](https://www.archlinux.org/packages/?name=acpi) - provides /proc/acpi, interesting things like lid state, temperatures, volume, brightness etc.
 *   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) - Driver supporting Wacom tablet screen.
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Xorg driver for the Intel 915GM graphics chip.
-*   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) - Adds support for SMAPI functions (battery discharge control, battery information, hdaps acceloremeter support). If you're using [Linux-ck](/index.php/Linux-ck "Linux-ck") try [tp_smapi-dkms](https://aur.archlinux.org/packages/tp_smapi-dkms/)<sup><small>AUR</small></sup> (AUR).
+*   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) - Adds support for SMAPI functions (battery discharge control, battery information, hdaps acceloremeter support). If you're using [Linux-ck](/index.php/Linux-ck "Linux-ck") try [tp_smapi-dkms](https://aur.archlinux.org/packages/tp_smapi-dkms/) (AUR).
 *   [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) - Driver for fingerprint reader.
 
 The IBM X41 comes with a "ipw2915" wireless Centrino (A, B and G) or ipw2200 wireless Centrino (B and G) module, the kernel provides support for these two devices. [netctl](https://www.archlinux.org/packages/?name=netctl) has been tested and works flawlessly with the "ipw2915". See [Wireless network configuration#ipw2100 and ipw2200](/index.php/Wireless_network_configuration#ipw2100_and_ipw2200 "Wireless network configuration")
@@ -48,7 +48,7 @@ The IBM X41 comes with a "ipw2915" wireless Centrino (A, B and G) or ipw2200 wir
 
 **Note:** Thinkfan seems to fail due to thinkpad_acpi not having a fan_control function
 
-*   [thinkfan](https://aur.archlinux.org/packages/thinkfan/)<sup><small>AUR</small></sup> - Control the utilisation of the fan.
+*   [thinkfan](https://aur.archlinux.org/packages/thinkfan/) - Control the utilisation of the fan.
 *   [gpm](https://www.archlinux.org/packages/?name=gpm) - Linux console mouse server.
 
 ## General Tweaks
@@ -113,7 +113,7 @@ echo "kernel.nmi_watchdog=0" | sudo tee /etc/sysctl.d/nmi_watchdog.conf
 
 ### PHC
 
-[PHC](/index.php/PHC "PHC") - Processor Hardware Control. [phc-intel](https://aur.archlinux.org/packages/phc-intel/)<sup><small>AUR</small></sup> supports the Mobile Centrino line of processors and hence the X41, this program allows you to undervolt your CPU. Undervolting reduces the voltage(V) the processor runs at, because P=IV this will reduce your power consumption, this has no effect on performance, any excess voltage will be dissipated as heat, your laptop will run cooler and the fan will activate less frequently.
+[PHC](/index.php/PHC "PHC") - Processor Hardware Control. [phc-intel](https://aur.archlinux.org/packages/phc-intel/) supports the Mobile Centrino line of processors and hence the X41, this program allows you to undervolt your CPU. Undervolting reduces the voltage(V) the processor runs at, because P=IV this will reduce your power consumption, this has no effect on performance, any excess voltage will be dissipated as heat, your laptop will run cooler and the fan will activate less frequently.
 
 ## Tablet support
 

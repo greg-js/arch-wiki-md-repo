@@ -1,11 +1,5 @@
 # Help:Template
 
-Related articles
-
-*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
-*   [Help:Reading](/index.php/Help:Reading "Help:Reading")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-
 A template is a piece of predefined [wikitext](https://en.wikipedia.org/wiki/Wikitext "wikipedia:Wikitext") that can be inserted into an article. Templates are primarily used to aid in formatting content.
 
 ## Contents

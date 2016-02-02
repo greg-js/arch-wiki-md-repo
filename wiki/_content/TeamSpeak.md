@@ -25,7 +25,7 @@ From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:Te
 
 ### Server
 
-Install the [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-server/)<sup><small>AUR</small></sup> package.
+Install the [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-server/) package.
 
 ## Configuration and startup
 

@@ -33,7 +33,7 @@ Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch
 
 ## Installation from AUR
 
-RetroShare is available in the [retroshare-git](https://aur.archlinux.org/packages/retroshare-git/)<sup><small>AUR</small></sup> package providing compilation from source.
+RetroShare is available in the [retroshare-git](https://aur.archlinux.org/packages/retroshare-git/) package providing compilation from source.
 
 Note: this is unstable package! This package may not work!
 

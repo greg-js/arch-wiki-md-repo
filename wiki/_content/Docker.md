@@ -1,12 +1,5 @@
 # Docker
 
-Related articles
-
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
-*   [Vagrant](/index.php/Vagrant "Vagrant")
-
 [Docker](http://www.docker.io) is a utility to pack, ship and run any application as a lightweight container.
 
 ## Contents
@@ -36,7 +29,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the i686 architecture, the [docker-git](https://aur.archlinux.org/packages/docker-git/)<sup><small>AUR</small></sup> package. Next [start](/index.php/Start "Start") `docker.service` and verify operation:
+[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the i686 architecture, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. Next [start](/index.php/Start "Start") `docker.service` and verify operation:
 
 ```
 # docker info
@@ -168,7 +161,7 @@ $ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
 
 ### Debian
 
-Build Debian image with [debootstrap](https://aur.archlinux.org/packages/debootstrap/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"):
+Build Debian image with [debootstrap](https://aur.archlinux.org/packages/debootstrap/) from the [AUR](/index.php/AUR "AUR"):
 
 ```
 # mkdir wheezy-chroot

@@ -1,9 +1,5 @@
 # dotfiles
 
-Related articles
-
-*   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
-
 This article collects user repositories with custom configuration files, commonly known as _dotfiles_.
 
 ## Contents
@@ -46,11 +42,11 @@ $ git commit -a
 
 *   **vcsh** — Allows separating differents modules (e.g., Emacs config vs. zsh config) into individual repositories which can be maintained separately, as opposed to keeping all dotfiles in a single repository. Works with git only.
 
-	[https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)<sup><small>AUR</small></sup>
+	[https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)
 
 *   **yadm** — Manages files across systems using a single Git repository. Provides a way to use alternate files on a specific OS or host. Supplies a method of encrypting confidential data so it can safely be stored in your repository.
 
-	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)<sup><small>AUR</small></sup>
+	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)
 
 *   **etckeeper** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade; for pacman, these hooks currently have to be triggered manually.
 
@@ -117,7 +113,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 *   [Dotfiles - Greg's Wiki](http://mywiki.wooledge.org/DotFiles)
 *   [XMonad Config Archive](http://wiki.haskell.org/Xmonad/Config_archive)
 *   [dotshare.it](http://dotshare.it)
-*   [dotfiles.org](http://dotfiles.org)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-16]</sup> - [Copy of contents](http://techie.cat/all-contents-from-dotfiles-org/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-16]</sup>
+*   [dotfiles.org](http://dotfiles.org) - [Copy of contents](http://techie.cat/all-contents-from-dotfiles-org/)
 *   [dotfiles.github.io](https://dotfiles.github.io/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dotfiles&oldid=417127](https://wiki.archlinux.org/index.php?title=Dotfiles&oldid=417127)"

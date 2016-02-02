@@ -11,7 +11,7 @@
 
 ## Install
 
-There are three versions of Vimprobable in the [AUR](/index.php/AUR "AUR"): [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)<sup><small>AUR</small></sup>, [vimprobable2-git](https://aur.archlinux.org/packages/vimprobable2-git/)<sup><small>AUR</small></sup>, and [vimprobable2](https://aur.archlinux.org/packages/vimprobable2/)<sup><small>AUR</small></sup> (latest release). Now that Vimprobable2 is at version 1.0, it is considered the primary branch; development of Vimprobable1 will still recieve bugfixes, but active development will be restricted to Vimprobable2\.
+There are three versions of Vimprobable in the [AUR](/index.php/AUR "AUR"): [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/), [vimprobable2-git](https://aur.archlinux.org/packages/vimprobable2-git/), and [vimprobable2](https://aur.archlinux.org/packages/vimprobable2/) (latest release). Now that Vimprobable2 is at version 1.0, it is considered the primary branch; development of Vimprobable1 will still recieve bugfixes, but active development will be restricted to Vimprobable2\.
 
 The first version can only be customised by editing `config.h` before compilation. It is pretty stable and very usable. Version 2, while also stable, is under more active development - it aims at allowing more customisation, for example through `:set` and `:map` commands.
 

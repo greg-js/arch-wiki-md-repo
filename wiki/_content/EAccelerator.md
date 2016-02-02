@@ -12,7 +12,7 @@ eAccelerator is a free open-source PHP accelerator & optimizer. It increases the
 
 ## Installation
 
-Download the tarball from [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eaccelerator)]</sup> or use your favorite tool for AUR.
+Download the tarball from [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/) or use your favorite tool for AUR.
 
 IMPORTANT: If you are having problems with open_basedir, you need to edit the PKGBUILD, change the ./configure line to
 

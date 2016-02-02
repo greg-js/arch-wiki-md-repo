@@ -1,11 +1,5 @@
 # NetworkManager
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 [NetworkManager](http://projects.gnome.org/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to network. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
 
 **Warning:** By default, Wi-Fi passwords are stored in clear text. See section [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
@@ -89,7 +83,7 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 *   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
 *   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
 *   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
-*   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)<sup><small>AUR</small></sup>
+*   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350) [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=758772) [FS#47535](https://bugs.archlinux.org/task/47535)
 
@@ -136,7 +130,7 @@ code 1.
 
 If `nm-applet` is not prompting for a password when connecting to new wifi networks, and is just disconnecting immediately, you may need to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
 
-Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/)<sup><small>AUR</small></sup> package. [[3]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
+Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/) package. [[3]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
 
 ### Openbox
 
@@ -192,7 +186,7 @@ For usage information, see `man nmtui`.
 
 #### nmcli-dmenu
 
-Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/)<sup><small>AUR</small></sup> which is a small script to manage NetworkManager connections with _dmenu_ instead of `nm-applet`. It provides all essential features such as connect to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch _nm-connection-editor_ GUI.
+Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) which is a small script to manage NetworkManager connections with _dmenu_ instead of `nm-applet`. It provides all essential features such as connect to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch _nm-connection-editor_ GUI.
 
 ## Configuration
 
@@ -394,7 +388,7 @@ See also [NFS#NetworkManager dispatcher](/index.php/NFS#NetworkManager_dispatche
 
 ### Proxy settings
 
-NetworkManager does not directly handle proxy settings, but if you are using GNOME or KDE, you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) wich handles proxy settings using NetworkManager's informations. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/)<sup><small>AUR</small></sup>.
+NetworkManager does not directly handle proxy settings, but if you are using GNOME or KDE, you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) wich handles proxy settings using NetworkManager's informations. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
 In order for _proxydriver_ to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (System -> Preferences -> Startup Applications):
 
@@ -436,7 +430,7 @@ When trying to connect to a secured Wi-Fi network, no prompt for a password is s
 
 PPTP connection logins successfully; you see a ppp0 interface with the correct VPN IP address, but you cannot even ping the remote IP address. It is due to lack of MPPE (Microsoft Point-to-Point Encryption) support in stock Arch pppd. It is recommended to first try with the stock Arch [ppp](https://www.archlinux.org/packages/?name=ppp) as it may work as intended.
 
-To solve the problem it should be sufficient to install the [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ppp-mppe)]</sup> package.
+To solve the problem it should be sufficient to install the [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/) package.
 
 See also [WPA2 Enterprise#MS-CHAPv2](/index.php/WPA2_Enterprise#MS-CHAPv2 "WPA2 Enterprise").
 
@@ -451,7 +445,7 @@ When NetworkManager shuts down but the pid (state) file is not removed, you will
 
 ### Customizing resolv.conf
 
-See the main page: [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). If you use [dhclient](https://www.archlinux.org/packages/?name=dhclient), you may try the [networkmanager-dispatch-resolv](https://aur.archlinux.org/packages/networkmanager-dispatch-resolv/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/networkmanager-dispatch-resolv)]</sup> package.
+See the main page: [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). If you use [dhclient](https://www.archlinux.org/packages/?name=dhclient), you may try the [networkmanager-dispatch-resolv](https://aur.archlinux.org/packages/networkmanager-dispatch-resolv/) package.
 
 ### DHCP problems with dhclient
 
@@ -624,7 +618,7 @@ NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-w
 
 ```
 
-There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/)<sup><small>AUR</small></sup>.
+There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
 
 ## Tips and tricks
 
@@ -641,7 +635,7 @@ The passwords are accessible to the root user in the filesystem and to users wit
 
 If it is preferable to save the passwords in encrypted form instead of clear text, this can be achieved by storing them in a keyring which NetworkManager then queries for the passwords. A suggested keyring daemon is [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") or (for KDE specifically) [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet"). The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
 
-Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`. Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-plasma-nm)]</sup>, click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
+Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`. Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm), click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
 
 If the option was selected previously and you un-tick it, you may have to use the `reset` option first to make the password disappear from the file. Alternatively, delete the connection first and set it up again.
 
@@ -735,11 +729,11 @@ See [SLiM#SLiM and Gnome Keyring](/index.php/SLiM#SLiM_and_Gnome_Keyring "SLiM")
 
 ### KDE and OpenConnect VPN with password authentication
 
-[kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-plasma-nm)]</sup> now supports configuring username and password for OpenConnect VPN connections. Open your VPN connection, accept the certificate, and connection fields will appear. If not, see the instructions below. Now enter the correct username and password.
+[kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) now supports configuring username and password for OpenConnect VPN connections. Open your VPN connection, accept the certificate, and connection fields will appear. If not, see the instructions below. Now enter the correct username and password.
 
 #### Troubleshooting
 
-While you may type both values at connection time, [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-plasma-nm)]</sup> 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
+While you may type both values at connection time, [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
 
 Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace _username_ and _password_ accordingly):
 

@@ -6,7 +6,7 @@ Gamin re-implements the [FAM](/index.php/FAM "FAM") specification with [inotify]
 
 ## Installation
 
-If FAM is installed, first [disable](/index.php/Disable "Disable") `fam.service`; then remove the [fam](https://aur.archlinux.org/packages/fam/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fam)]</sup> package, ignoring any reverse dependencies:
+If FAM is installed, first [disable](/index.php/Disable "Disable") `fam.service`; then remove the [fam](https://aur.archlinux.org/packages/fam/) package, ignoring any reverse dependencies:
 
 ```
 # pacman -Rdd fam

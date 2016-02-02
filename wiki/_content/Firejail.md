@@ -17,7 +17,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [firejail](https://aur.archlinux.org/packages/firejail/)<sup><small>AUR</small></sup> or [firejail-git](https://aur.archlinux.org/packages/firejail-git/)<sup><small>AUR</small></sup> package which provide all of the requirements out of the box.
+[Install](/index.php/Install "Install") the [firejail](https://aur.archlinux.org/packages/firejail/) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
 
 ## Configuration
 
@@ -25,7 +25,7 @@ Firejail uses profiles for the applications executed inside of it - you can find
 
 ### Paths With Spaces
 
-If you need to reference, whitelist, or blacklist a directory within a custom profile, such as with [palemoon](https://aur.archlinux.org/packages/palemoon/)<sup><small>AUR</small></sup>, you must do so using the absolute path, without encapsulation or escapes:
+If you need to reference, whitelist, or blacklist a directory within a custom profile, such as with [palemoon](https://aur.archlinux.org/packages/palemoon/), you must do so using the absolute path, without encapsulation or escapes:
 
 ```
    /home/user/.moonchild productions
@@ -72,6 +72,6 @@ Other configurations exist; it is suggested you check out the man page for firej
 
 ## Firetools
 
-A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/)<sup><small>AUR</small></sup>.
+A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Firejail&oldid=418225](https://wiki.archlinux.org/index.php?title=Firejail&oldid=418225)"

@@ -1,12 +1,5 @@
 # Samba 4 Active Directory domain controller
 
-Related articles
-
-*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
-*   [OpenChange server](/index.php/OpenChange_server "OpenChange server")
-*   [Samba](/index.php/Samba "Samba")
-*   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
-
 This article explains how to setup a new Active Directory Domain Controller. It is assumed that all configuration files are in their unmodified, post-installation state. This article was written and tested on a fresh installation, with no modifications other than setting up a static IPv4 network connection, and adding openssh and vim (which should have no effect on the Samba configuration). Finally, most of the commands below will require elevated privileges. Despite conventional wisdom, it may be easier to run these short few commands from a root session as opposed to obtaining rights on an as needed basis.
 
 ## Contents
@@ -445,7 +438,7 @@ Computer Configuration
           Register PTR Records = Disabled
 ```
 
-[Install](/index.php/Install "Install") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package and the [samba-dhcpd-update](https://aur.archlinux.org/packages/samba-dhcpd-update/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package and the [samba-dhcpd-update](https://aur.archlinux.org/packages/samba-dhcpd-update/) package.
 
 Create an unprivileged user in AD for performing the updates. When prompted for password, use a secure password. 63 random, mixed case, alpha-numeric characters is sufficient. Optionally samba-tool also takes a random argument:
 

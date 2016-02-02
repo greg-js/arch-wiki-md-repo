@@ -1,16 +1,5 @@
 # Internet sharing
 
-Related articles
-
-*   [Android tethering](/index.php/Android_tethering "Android tethering")
-*   [Software access point](/index.php/Software_access_point "Software access point")
-*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-*   [Sharing PPP Connection](/index.php/Sharing_PPP_Connection "Sharing PPP Connection")
-*   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
-*   [Router](/index.php/Router "Router")
-*   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
-
 This article explains how to share the internet connection from one machine to other(s).
 
 ## Contents

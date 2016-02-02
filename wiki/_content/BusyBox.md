@@ -30,7 +30,7 @@ Busybox commands are symbolic links to `/usr/bin/busybox` and thus take very lit
 
 ## coreutils
 
-[busybox-coreutils](https://aur.archlinux.org/packages/busybox-coreutils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busybox-coreutils)]</sup> is the busybox equivalent to GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). Some commands lack options present in the corresponding coreutils binaries.
+[busybox-coreutils](https://aur.archlinux.org/packages/busybox-coreutils/) is the busybox equivalent to GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). Some commands lack options present in the corresponding coreutils binaries.
 
 Space gain: 13.1 MB installed (coreutils)
 
@@ -69,7 +69,7 @@ readlink: missing option [-e, -m, -q or -s]
 
 ## util-linux
 
-[busybox-util-linux](https://aur.archlinux.org/packages/busybox-util-linux/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busybox-util-linux)]</sup> is the busybox equivalent to GNU [util-linux](https://www.archlinux.org/packages/?name=util-linux).
+[busybox-util-linux](https://aur.archlinux.org/packages/busybox-util-linux/) is the busybox equivalent to GNU [util-linux](https://www.archlinux.org/packages/?name=util-linux).
 
 Space gain: 7.5 MB installed (util-linux)
 
@@ -92,7 +92,7 @@ addpart delpart ldattach partx tunelp uuidd
 
 ## findutils
 
-[busybox-findutils](https://aur.archlinux.org/packages/busybox-findutils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busybox-findutils)]</sup> is the busybox equivalent to GNU [findutils](https://www.archlinux.org/packages/?name=findutils).
+[busybox-findutils](https://aur.archlinux.org/packages/busybox-findutils/) is the busybox equivalent to GNU [findutils](https://www.archlinux.org/packages/?name=findutils).
 
 ### Missing utilities
 
@@ -103,7 +103,7 @@ oldfind
 
 ## diffutils
 
-[busybox-diffutils](https://aur.archlinux.org/packages/busybox-diffutils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busybox-diffutils)]</sup> from the AUR offers functionality corresponding to the binaries found in GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils).
+[busybox-diffutils](https://aur.archlinux.org/packages/busybox-diffutils/) from the AUR offers functionality corresponding to the binaries found in GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils).
 
 Space gain: 1.4 MB installed (diffutils)
 

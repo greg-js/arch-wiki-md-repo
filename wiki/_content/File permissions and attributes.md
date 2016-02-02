@@ -1,12 +1,5 @@
 # File permissions and attributes
 
-Related articles
-
-*   [Users and groups](/index.php/Users_and_groups "Users and groups")
-*   [umask](/index.php/Umask "Umask")
-*   [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists")
-*   [Capabilities](/index.php/Capabilities "Capabilities")
-
 ## Contents
 
 *   [1 Viewing permissions](#Viewing_permissions)

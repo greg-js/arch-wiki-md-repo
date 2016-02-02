@@ -1,9 +1,5 @@
 # EncFS
 
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-
 **EncFS** is a userspace stackable cryptographic file-system similar to [eCryptfs](/index.php/ECryptfs "ECryptfs"), and aims to secure data with the minimum hassle. It uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") to mount an encrypted directory onto another directory specified by the user. It does not use a loopback system like some other comparable systems such as [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 EncFS is definitely the simplest software if you want to try disk encryption on Linux.
@@ -78,7 +74,7 @@ To remount the file-system, issue the first command, and enter the key used to e
 
 The [Gnome Encfs Manager](http://libertyzero.com/GEncfsM/) is an easy to use manager and mounter for encfs stashes featuring per-stash configuration, Gnome Keyring support, a tray menu inspired by Cryptkeeper but using the AppIndicator API and lots of unique features.
 
-The author has created a [repository](/index.php/Unofficial_user_repositories#gnome-encfs-manager "Unofficial user repositories") that tends to be slightly more up to date than the [gnome-encfs-manager](https://aur.archlinux.org/packages/gnome-encfs-manager/)<sup><small>AUR</small></sup> package.
+The author has created a [repository](/index.php/Unofficial_user_repositories#gnome-encfs-manager "Unofficial user repositories") that tends to be slightly more up to date than the [gnome-encfs-manager](https://aur.archlinux.org/packages/gnome-encfs-manager/) package.
 
 ### Mount using gnome-encfs
 
@@ -86,11 +82,11 @@ gnome-encfs integrates EncFS folders into the GNOME desktop by storing their pas
 
 ### Mount using CryptKeeper trayicon
 
-Quite simple app, just [install](/index.php/Install "Install") [cryptkeeper](https://aur.archlinux.org/packages/cryptkeeper/)<sup><small>AUR</small></sup> and add it to your X session.
+Quite simple app, just [install](/index.php/Install "Install") [cryptkeeper](https://aur.archlinux.org/packages/cryptkeeper/) and add it to your X session.
 
 ### Mount at login using pam_encfs
 
-Install [pam_encfs](https://aur.archlinux.org/packages/pam_encfs/)<sup><small>AUR</small></sup>. See also:
+Install [pam_encfs](https://aur.archlinux.org/packages/pam_encfs/). See also:
 
 *   [http://pam-encfs.googlecode.com/svn/trunk/README](http://pam-encfs.googlecode.com/svn/trunk/README)
 *   [http://pam-encfs.googlecode.com/svn/trunk/pam_encfs.conf](http://pam-encfs.googlecode.com/svn/trunk/pam_encfs.conf)
@@ -215,7 +211,7 @@ To test your config, open a new virtual terminal (e.g. `Ctrl+Alt+F4`) and login.
 
 ### Mount when USB drive with EncFS folders is inserted using fsniper
 
-Simple method to automount (asking for password) encfs when USB drive with EncFS one or more folders in root is inserted. We will use [fsniper](https://aur.archlinux.org/packages/fsniper/)<sup><small>AUR</small></sup> (filesystem watching daemon using inotify) and [git](https://www.archlinux.org/packages/?name=git) (for askpass binary).
+Simple method to automount (asking for password) encfs when USB drive with EncFS one or more folders in root is inserted. We will use [fsniper](https://aur.archlinux.org/packages/fsniper/) (filesystem watching daemon using inotify) and [git](https://www.archlinux.org/packages/?name=git) (for askpass binary).
 
 See more at [https://github.com/Harvie/Programs/tree/master/bash/encfs/automount](https://github.com/Harvie/Programs/tree/master/bash/encfs/automount) (latest version of files used in the [How to](#How_to)).
 

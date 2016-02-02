@@ -17,7 +17,7 @@
 
 ## Installation
 
-llpp can be installed from the [AUR](/index.php/AUR "AUR") using the stable [llpp](https://aur.archlinux.org/packages/llpp/)<sup><small>AUR</small></sup>, or the latest repo version [llpp-git](https://aur.archlinux.org/packages/llpp-git/)<sup><small>AUR</small></sup>.
+llpp can be installed from the [AUR](/index.php/AUR "AUR") using the stable [llpp](https://aur.archlinux.org/packages/llpp/), or the latest repo version [llpp-git](https://aur.archlinux.org/packages/llpp-git/).
 
 ## Usage
 

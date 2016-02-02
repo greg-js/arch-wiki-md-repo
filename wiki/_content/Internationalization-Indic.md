@@ -1,9 +1,5 @@
 # Internationalization/Indic
 
-Related articles
-
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-
 This page explains how setup your Arch installation in order to input Indic languages.
 
 ## Fonts
@@ -11,7 +7,7 @@ This page explains how setup your Arch installation in order to input Indic lang
 The following packages provide fonts for a variety of Indic scripts,
 
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf)
-*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/)<sup><small>AUR</small></sup>
+*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/)
 
 ## Locale
 

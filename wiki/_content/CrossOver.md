@@ -1,14 +1,10 @@
 # CrossOver
 
-Related articles
-
-*   [Wine](/index.php/Wine "Wine")
-
 [CrossOver](http://www.codeweavers.com/) is the paid, commercialized version of Wine which provides more comprehensive end-user support. It includes scripts, patches, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface "wikipedia:Graphical user interface"), and third-party software which may never be accepted in the Wine Project. This combination makes running Windows programs considerably easier for those aren't so tech-savvy.
 
 ## Installation
 
-In this article it is suggested that you want install trial verison of crossover. [Install](/index.php/Install "Install") [crossover](https://aur.archlinux.org/packages/crossover/)<sup><small>AUR</small></sup> package.
+In this article it is suggested that you want install trial verison of crossover. [Install](/index.php/Install "Install") [crossover](https://aur.archlinux.org/packages/crossover/) package.
 
 ## Using CrossOver
 

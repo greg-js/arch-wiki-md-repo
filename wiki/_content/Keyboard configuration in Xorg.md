@@ -1,12 +1,5 @@
 # Keyboard configuration in Xorg
 
-Related articles
-
-*   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
-
 This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
 
 ## Contents
@@ -73,11 +66,11 @@ xkb_keymap {
 
 There are some "unofficial" utilities which allow to print specific information about the currently used keyboard layout.
 
-*   [xkb-switch-git](https://aur.archlinux.org/packages/xkb-switch-git/)<sup><small>AUR</small></sup>:
+*   [xkb-switch-git](https://aur.archlinux.org/packages/xkb-switch-git/):
 
  `$ xkb-switch`  `us` 
 
-*   [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xkblayout-state)]</sup>:
+*   [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/):
 
  `$ xkblayout-state print "%s"`  `de` 
 

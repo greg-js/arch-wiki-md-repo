@@ -1,9 +1,5 @@
 # Hadoop
 
-Related articles
-
-*   [Apache spark](/index.php/Apache_spark "Apache spark")
-
 [Apache Hadoop](http://hadoop.apache.org) is a framework for running applications on large cluster built of commodity hardware. The Hadoop framework transparently provides applications both reliability and data motion. Hadoop implements a computational paradigm named Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or re-executed on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both MapReduce and the Hadoop Distributed File System are designed so that node failures are automatically handled by the framework.
 
 ## Contents
@@ -18,7 +14,7 @@ Related articles
 
 ## Installation
 
-Install the [hadoop](https://aur.archlinux.org/packages/hadoop/)<sup><small>AUR</small></sup> package which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install the [hadoop](https://aur.archlinux.org/packages/hadoop/) package which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 

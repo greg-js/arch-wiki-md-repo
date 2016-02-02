@@ -1,14 +1,5 @@
 # Intel graphics
 
-Related articles
-
-*   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
-*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
-*   [Xrandr](/index.php/Xrandr "Xrandr")
-*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
-
 Since Intel provides and supports open source drivers, Intel graphics are now essentially plug-and-play.
 
 For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
@@ -244,7 +235,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1.
 
 ### H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/)<sup><small>AUR</small></sup> package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[2]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[3]](http://www.emmolution.org/?p=192&cpage=1#comment-12292).
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[2]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[3]](http://www.emmolution.org/?p=192&cpage=1#comment-12292).
 
 ### Setting brightness and gamma
 

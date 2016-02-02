@@ -153,7 +153,7 @@ And you have redialed the connection.
 
 **Note:** If you are not running your computer always on (running 24/7) then you can skip this step.
 
-If you use a flat-rate always-on connection on a computer, some providers restart your connection after 24h. That makes sure that the IP is rotated every 24h. To compensate, you can use an dynamic DNS service in combination with [inadyn](https://aur.archlinux.org/packages/inadyn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/inadyn)]</sup> to compensate for the rotating IP address. But to avoid disconnects when you do not need it, you might try to restart the connection using a cron job or [systemd](/index.php/Systemd#Timers "Systemd") timer at a time of day you know no one will be using the connection (e.g. at 4 AM).
+If you use a flat-rate always-on connection on a computer, some providers restart your connection after 24h. That makes sure that the IP is rotated every 24h. To compensate, you can use an dynamic DNS service in combination with [inadyn](https://aur.archlinux.org/packages/inadyn/) to compensate for the rotating IP address. But to avoid disconnects when you do not need it, you might try to restart the connection using a cron job or [systemd](/index.php/Systemd#Timers "Systemd") timer at a time of day you know no one will be using the connection (e.g. at 4 AM).
 
 #### Using cron
 

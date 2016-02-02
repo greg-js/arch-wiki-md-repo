@@ -1,11 +1,6 @@
 # PaX
 
-Related articles
-
-*   [grsecurity](/index.php/Grsecurity "Grsecurity")
-*   [Security](/index.php/Security "Security")
-
-[PaX](https://en.wikipedia.org/wiki/PaX "wikipedia:PaX") is developed as a subset of the [grsecurity](/index.php/Grsecurity "Grsecurity") patches, and is included in the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package in the official repositories. It is also available in the standalone [linux-pax](https://aur.archlinux.org/packages/linux-pax/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR").
+[PaX](https://en.wikipedia.org/wiki/PaX "wikipedia:PaX") is developed as a subset of the [grsecurity](/index.php/Grsecurity "Grsecurity") patches, and is included in the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package in the official repositories. It is also available in the standalone [linux-pax](https://aur.archlinux.org/packages/linux-pax/) package in the [AUR](/index.php/AUR "AUR").
 
 PaX contains most of the [grsecurity](/index.php/Grsecurity "Grsecurity") mitigations against memory corruption exploits. It hardens the kernel and userspace processes in many ways, including improved [address space layout randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization"), strengthing the separation between kernel and userspace code / data and wiping out various classes of information leaks. The kernel hardening features have no user-facing impact, but the MPROTECT / RANDMMAP mitigations require making exceptions for some applications.
 

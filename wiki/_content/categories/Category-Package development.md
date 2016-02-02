@@ -8,7 +8,7 @@
 
 ## Pages in category "Package development"
 
-The following 53 pages are in this category, out of 53 total.
+The following 54 pages are in this category, out of 54 total.
 
 ### A
 
@@ -64,6 +64,7 @@ The following 53 pages are in this category, out of 53 total.
 ### H
 
 *   [Haskell package guidelines](/index.php/Haskell_package_guidelines "Haskell package guidelines")
+*   [User:Horo](/index.php/User:Horo "User:Horo")
 
 ### J
 

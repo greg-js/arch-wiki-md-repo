@@ -1,11 +1,5 @@
 # Nouveau
 
-Related articles
-
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
-
 This article covers installing and configuring the [Nouveau](http://nouveau.freedesktop.org/) open-source driver for NVIDIA graphic cards. For information about the official proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
@@ -118,10 +112,10 @@ $ dmesg
 
 You may install the latest -git packages, through AUR:
 
-*   You can use [mesa-git](https://aur.archlinux.org/packages/mesa-git/)<sup><small>AUR</small></sup> which will allow the installation of the latest Mesa (including the latest DRI driver).
-*   You can use [xf86-video-nouveau-git](https://aur.archlinux.org/packages/xf86-video-nouveau-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-nouveau-git)]</sup> which will allow the installation of the latest DDX driver.
-*   You can also try installing a newer kernel version, through packages like [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> in which the Nouveau DRM code would allow better performance.
-*   To get the latest Nouveau improvements, you should use the [linux-git](https://aur.archlinux.org/packages/linux-git/)<sup><small>AUR</small></sup> package from the AUR, edit the PKGBUILD and use Nouveau's own kernel repository, which is currently located at [git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau](git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau).
+*   You can use [mesa-git](https://aur.archlinux.org/packages/mesa-git/) which will allow the installation of the latest Mesa (including the latest DRI driver).
+*   You can use [xf86-video-nouveau-git](https://aur.archlinux.org/packages/xf86-video-nouveau-git/) which will allow the installation of the latest DDX driver.
+*   You can also try installing a newer kernel version, through packages like [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) in which the Nouveau DRM code would allow better performance.
+*   To get the latest Nouveau improvements, you should use the [linux-git](https://aur.archlinux.org/packages/linux-git/) package from the AUR, edit the PKGBUILD and use Nouveau's own kernel repository, which is currently located at [git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau](git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau).
 
 Upstream driver sources can be found at the [Nouveau Source page](http://nouveau.freedesktop.org/wiki/Source).
 

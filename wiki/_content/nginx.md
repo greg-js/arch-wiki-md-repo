@@ -442,9 +442,9 @@ This implementation is needed for CGI applications.
 
 ###### Multiple worker threads
 
-If you want to spawn multiple worker threads, it is recommended that you use [multiwatch](https://aur.archlinux.org/packages/multiwatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/multiwatch)]</sup>, which will take care of restarting crashed children. You will need to use `spawn-fcgi` to create the unix socket, as multiwatch seems unable to handle the systemd-created socket, even though fcgiwrap itself does not have any trouble if invoked directly in the unit file.
+If you want to spawn multiple worker threads, it is recommended that you use [multiwatch](https://aur.archlinux.org/packages/multiwatch/), which will take care of restarting crashed children. You will need to use `spawn-fcgi` to create the unix socket, as multiwatch seems unable to handle the systemd-created socket, even though fcgiwrap itself does not have any trouble if invoked directly in the unit file.
 
-Copy the unit file from `/usr/lib/systemd/system/fcgiwrap.service` to `/etc/systemd/system/fcgiwrap.service` (and the `fcgiwrap.socket` unit, if present), and modify the `ExecStart` line to suit your needs. Here is a unit file that uses [multiwatch](https://aur.archlinux.org/packages/multiwatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/multiwatch)]</sup>. Make sure `fcgiwrap.socket` is not started or enabled, because it will conflict with this unit:
+Copy the unit file from `/usr/lib/systemd/system/fcgiwrap.service` to `/etc/systemd/system/fcgiwrap.service` (and the `fcgiwrap.socket` unit, if present), and modify the `ExecStart` line to suit your needs. Here is a unit file that uses [multiwatch](https://aur.archlinux.org/packages/multiwatch/). Make sure `fcgiwrap.socket` is not started or enabled, because it will conflict with this unit:
 
  `/etc/systemd/system/fcgiwrap.service` 
 

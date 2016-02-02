@@ -12,7 +12,7 @@
 
 ## Installation
 
-You can install [hpfall-git](https://aur.archlinux.org/packages/hpfall-git/)<sup><small>AUR</small></sup>, which is available in the [AUR](/index.php/AUR "AUR").
+You can install [hpfall-git](https://aur.archlinux.org/packages/hpfall-git/), which is available in the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

@@ -1,10 +1,5 @@
 # Ipset
 
-Related articles
-
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Iptables](/index.php/Iptables "Iptables")
-
 [ipset](http://ipset.netfilter.org/) is a companion application for the [iptables](/index.php/Iptables "Iptables") Linux [firewall](/index.php/Firewall "Firewall"). It allows you to setup rules to quickly and easily block a set of IP addresses, among other things.
 
 ## Contents
@@ -62,7 +57,7 @@ Then [enable](/index.php/Enable "Enable") `ipset.service`, which works similarly
 
 ### Blocking With PeerGuardian and Other Blocklists
 
-The [pg2ipset](https://aur.archlinux.org/packages/pg2ipset/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> tool by the author of maeyanie.com, coupled with the [ipset-update.sh](https://github.com/ilikenwf/pg2ipset/blob/master/ipset-update.sh) script can be used with cron to automatically update various blocklists. Currently, by default country blocking, tor exit node blocking, and pg2 list blocking from Bluetack are implemented.
+The [pg2ipset](https://aur.archlinux.org/packages/pg2ipset/) tool by the author of maeyanie.com, coupled with the [ipset-update.sh](https://github.com/ilikenwf/pg2ipset/blob/master/ipset-update.sh) script can be used with cron to automatically update various blocklists. Currently, by default country blocking, tor exit node blocking, and pg2 list blocking from Bluetack are implemented.
 
 ## Other Commands
 

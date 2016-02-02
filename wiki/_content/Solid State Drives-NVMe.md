@@ -1,9 +1,5 @@
 # Solid State Drives/NVMe
 
-Related articles
-
-*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
-
 NVM Express (NVMe) is a specification for accessing SSDs attached through the PCI Express bus. As a logical device interface, NVM Express has been designed from the ground up, capitalizing on the low latency and parallelism of PCI Express SSDs, and mirroring the parallelism of contemporary CPUs, platforms and applications.
 
 ## Contents
@@ -22,7 +18,7 @@ NVM Express (NVMe) is a specification for accessing SSDs attached through the PC
 
 The Linux NVMe driver is natively included in the kernel since version 3.3\. NVMe devices should show up under `/dev/nvme*`.
 
-Extra userspace NVMe tools can be found in [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/)<sup><small>AUR</small></sup>
+Extra userspace NVMe tools can be found in [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/)
 
 ### Limitations
 

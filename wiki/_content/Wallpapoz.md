@@ -12,7 +12,7 @@ Wallpapoz is a tool that provides dynamic wallpapers for the [GNOME](/index.php/
 
 ## Installation
 
-Install [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wallpapoz)]</sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### Configuration
 

@@ -1,15 +1,5 @@
 # Disk encryption
 
-Related articles
-
-*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
-*   [eCryptfs](/index.php/ECryptfs "ECryptfs")
-*   [EncFS](/index.php/EncFS "EncFS")
-*   [Tomb](/index.php/Tomb "Tomb")
-*   [tcplay](/index.php/Tcplay "Tcplay")
-*   [GnuPG](/index.php/GnuPG "GnuPG")
-
 This article discusses common techniques available in Arch Linux for cryptographically protecting a logical part of a storage disk (folder, partition, whole disk, ...), so that all data that is written to it is automatically encrypted, and decrypted on-the-fly when read again.
 
 "Storage disks" in this context can be your computer's hard drive(s), external devices like USB flash drives or DVD's, as well as _virtual_ storage disks like loop-back devices or cloud storage _(as long as Arch Linux can address it as a block device or filesystem)_.
@@ -547,7 +537,7 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 
 1.  [^](#summary) see [http://www.truecrypt.org/legal/license](http://www.truecrypt.org/legal/license)
 2.  [^](#practical_implications) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
-3.  [^](#compatibility_.26_prevalence) [CrossCrypt](http://www.scherrer.cc/crypt) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-01-20]</sup> - Open Source AES and TwoFish Linux compatible on the fly encryption for Windows XP and Windows 2000
+3.  [^](#compatibility_.26_prevalence) [CrossCrypt](http://www.scherrer.cc/crypt)  - Open Source AES and TwoFish Linux compatible on the fly encryption for Windows XP and Windows 2000
 4.  [^](#compatibility_.26_prevalence) (1) [FreeOTFE (on sf.net)](http://sourceforge.net/projects/freeotfe.mirror/) (2) [FreeOTFE (archived)](http://web.archive.org/web/20130531062457/http://freeotfe.org/) - supports Windows 2000 and later (for PC), and Windows Mobile 2003 and later (for PDA)
 5.  [^](#compatibility_.26_prevalence) see [EncFs build instructions for Mac](http://www.arg0.net/encfs-mac-build)
 6.  [^](#compatibility_.26_prevalence) see [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)

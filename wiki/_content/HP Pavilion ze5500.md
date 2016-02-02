@@ -36,11 +36,11 @@ Everything pretty much works with little or no configuration. The wireless netwo
 
 ## Multimedia keys
 
-Install [omnibook-git](https://aur.archlinux.org/packages/omnibook-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for support of model specific hot-keys.
+Install [omnibook-git](https://aur.archlinux.org/packages/omnibook-git/) from the [AUR](/index.php/AUR "AUR") for support of model specific hot-keys.
 
 ## Network
 
-Ethernet card works just fine out of the box, however to get wireless working you'll need to install Broadcoms' firmware ([b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/)<sup><small>AUR</small></sup>).
+Ethernet card works just fine out of the box, however to get wireless working you'll need to install Broadcoms' firmware ([b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/)).
 
 ## Touchpad
 

@@ -11,7 +11,7 @@ ATA over Ethernet (AoE) is a network protocol developed by the Brantley Coile Co
 
 ## Prequisites to AOE
 
-To use AOE you need the [AUR](/index.php/AUR "AUR") packages [vblade](https://aur.archlinux.org/packages/vblade/)<sup><small>AUR</small></sup> and [aoetools](https://aur.archlinux.org/packages/aoetools/)<sup><small>AUR</small></sup>.
+To use AOE you need the [AUR](/index.php/AUR "AUR") packages [vblade](https://aur.archlinux.org/packages/vblade/) and [aoetools](https://aur.archlinux.org/packages/aoetools/).
 
 ```
 # ip set link eth0 up

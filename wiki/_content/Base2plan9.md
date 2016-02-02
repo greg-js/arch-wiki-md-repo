@@ -16,13 +16,13 @@ In contrast to the [base2busybox](https://wiki.archlinux.org/index.php/Base2busy
 
 ## Supporting binary sources
 
-Currently, the gnu2plan9 packages need support to offer a drop-in replacement of GNU coreutils. This is at the moment provided by busybox and the [gnu2ucb](https://wiki.archlinux.org/index.php/Base2heirloom) Heirloom profile. Ideally, missing functionality should be patched up with projects more closely aligned to Plan9, like [inferno-os](https://aur.archlinux.org/packages/inferno-os/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/inferno-os)]</sup> and [goblin-git](https://aur.archlinux.org/packages/goblin-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/goblin-git)]</sup>. The aim is to make the different "base2foo" projects as independent of eachother as possible since the whole point of the projects is to increase choice and diversity. For the base2plan9 project, the first priority is to cover missing functionality and second priority to try to reduce (or ideally remove) the busybox dependency.
+Currently, the gnu2plan9 packages need support to offer a drop-in replacement of GNU coreutils. This is at the moment provided by busybox and the [gnu2ucb](https://wiki.archlinux.org/index.php/Base2heirloom) Heirloom profile. Ideally, missing functionality should be patched up with projects more closely aligned to Plan9, like [inferno-os](https://aur.archlinux.org/packages/inferno-os/) and [goblin-git](https://aur.archlinux.org/packages/goblin-git/). The aim is to make the different "base2foo" projects as independent of eachother as possible since the whole point of the projects is to increase choice and diversity. For the base2plan9 project, the first priority is to cover missing functionality and second priority to try to reduce (or ideally remove) the busybox dependency.
 
 * * *
 
 ## gnu2plan9-coreutils
 
-Package is available in the AUR: [gnu2plan9-coreutils](https://aur.archlinux.org/packages/gnu2plan9-coreutils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnu2plan9-coreutils)]</sup>.
+Package is available in the AUR: [gnu2plan9-coreutils](https://aur.archlinux.org/packages/gnu2plan9-coreutils/).
 
 Below is a list of the origin of different utilities in this package.
 
@@ -63,7 +63,7 @@ The following missing functionalities are implemented as [rc](http://plan9.bell-
 
 ```
 
-the sha*sum scripts point to the [perl-digest-sha](https://aur.archlinux.org/packages/perl-digest-sha/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/perl-digest-sha)]</sup>. Ideally as few external dependencies possible would be nice. Can we use plan9port [sha1sum](http://swtch.com/plan9port/man/man1/sum.html) for the other sums too? Ideas welcome.
+the sha*sum scripts point to the [perl-digest-sha](https://aur.archlinux.org/packages/perl-digest-sha/). Ideally as few external dependencies possible would be nice. Can we use plan9port [sha1sum](http://swtch.com/plan9port/man/man1/sum.html) for the other sums too? Ideas welcome.
 
 **Heirloom**
 

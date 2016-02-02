@@ -916,7 +916,7 @@ E: [pulseaudio] main.c: Failed to acquire autospawn lock
 
 Known programs that changes permissions for `/run/user/_user id_/pulse` when using [Polkit](/index.php/Polkit "Polkit") for root elevation:
 
-*   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)<sup><small>AUR</small></sup>
+*   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)
 
 As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) or [kdesu](https://www.archlinux.org/packages/?name=kdesu) in a [desktop entry](/index.php/Desktop_entry "Desktop entry"), or add `_username_ ALL=NOPASSWD: /usr/bin/_program_name_` to [sudoers](/index.php/Sudoers "Sudoers") to run it with [sudo](https://www.archlinux.org/packages/?name=sudo) or `gksudo` without a password.
 
@@ -1119,7 +1119,7 @@ Afterwards, you need to add your user to the `pulse-rt` group:
 
 PulseAudio does not have a true default device. Instead it uses a ["fallback"](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/DefaultDevice/), which only applies to new sound streams. This means previously run applications are not affected by the newly set fallback device.
 
-[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) and [paswitch](https://aur.archlinux.org/packages/paswitch/)<sup><small>AUR</small></sup> handle this gracefully. Alternatively:
+[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) and [paswitch](https://aur.archlinux.org/packages/paswitch/) handle this gracefully. Alternatively:
 
 1\. Move the old streams in [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) manually to the new sound card.
 

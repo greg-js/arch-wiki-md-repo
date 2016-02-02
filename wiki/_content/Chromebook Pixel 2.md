@@ -63,13 +63,13 @@ See [Chrome OS devices#Alternative installation, Install Arch Linux in addition 
 
 ### Linux 4.1
 
-[Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup> package for Linux 4.1 support. You will need to regenerate your GRUB configuration after installing linux-samus4\. See [[2]](https://github.com/raphael/linux-4.1-samus) for information on how to enable audio and microphone support.
+[Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) package for Linux 4.1 support. You will need to regenerate your GRUB configuration after installing linux-samus4\. See [[2]](https://github.com/raphael/linux-4.1-samus) for information on how to enable audio and microphone support.
 
 If the `linux-samus4` kernel hangs after `Loading initial ramdisk...` and you have an encrypted disk then try adding `i915` to `MODULES` in `/etc/mkinitcpio.conf` according to [Intel graphics](/index.php/Intel_graphics "Intel graphics") and then run `mkinitcpio -p linux-samus4` to regenerate the image.
 
 ### Linux 3.19
 
-[Install](/index.php/Install "Install") the [linux-samus](https://aur.archlinux.org/packages/linux-samus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-samus)]</sup> package. You will need to import 2 kernel signing keys using gpg. Support for the Pixel 2 should be added in Linux 4.1\. You will need to regenerate your GRUB configuration after installing linux-samus.
+[Install](/index.php/Install "Install") the [linux-samus](https://aur.archlinux.org/packages/linux-samus/) package. You will need to import 2 kernel signing keys using gpg. Support for the Pixel 2 should be added in Linux 4.1\. You will need to regenerate your GRUB configuration after installing linux-samus.
 
 To fix the touchpad, add the file `/etc/X11/xorg.conf.d/25-touchpad.conf` with the following contents. You will also need to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
@@ -87,7 +87,7 @@ For audio, see [[3]](https://github.com/tsowell/linux-samus).
 
 ## Backlight control
 
-The screen backlight can be controlled via <tt>/sys/class/backlight/intel_backlight/</tt>; see the [brightness](https://raw.githubusercontent.com/raphael/linux-samus/master/build/brightness) script from [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/)<sup><small>AUR</small></sup>.
+The screen backlight can be controlled via <tt>/sys/class/backlight/intel_backlight/</tt>; see the [brightness](https://raw.githubusercontent.com/raphael/linux-samus/master/build/brightness) script from [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/).
 
 The keyboard backlight can be controlled via <tt>/sys/class/leds/chromeos::kbd_backlight/</tt>; see the [keyboard-brightness.sh](https://gist.githubusercontent.com/strayArch/5c862648f261122d9e4e/raw/d0b800f13b8d792445f32e0317efd57e7f4439a1/keyboard-brightness.sh) script.
 

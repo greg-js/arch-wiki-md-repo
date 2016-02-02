@@ -1,11 +1,5 @@
 # tcplay
 
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
-*   [Tomb](/index.php/Tomb "Tomb")
-
 _tcplay_ is a free, fully featured and stable TrueCrypt implementation including multiple keyfiles and cipher cascades.
 
 Source: [github project home](https://github.com/bwalex/tc-play)
@@ -20,7 +14,7 @@ Source: [github project home](https://github.com/bwalex/tc-play)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [tcplay](https://www.archlinux.org/packages/?name=tcplay) or [tcplay-git](https://aur.archlinux.org/packages/tcplay-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tcplay-git)]</sup>.
+[Install](/index.php/Install "Install") [tcplay](https://www.archlinux.org/packages/?name=tcplay) or [tcplay-git](https://aur.archlinux.org/packages/tcplay-git/).
 
 ## Encrypting a file as a virtual volume
 
@@ -97,7 +91,7 @@ To reverse them:
 
 ## Using tcplay-helper
 
-The [tcplay-helper-git](https://aur.archlinux.org/packages/tcplay-helper-git/)<sup><small>AUR</small></sup> tool simplifies the process of creating, mounting and unmounting tc-play containers. The tool is still a work-in-progress, but should work fine for most users wanting to work with simple secure tc-play containers.
+The [tcplay-helper-git](https://aur.archlinux.org/packages/tcplay-helper-git/) tool simplifies the process of creating, mounting and unmounting tc-play containers. The tool is still a work-in-progress, but should work fine for most users wanting to work with simple secure tc-play containers.
 
 The following command creates a 3Mb container called foo.tc.
 

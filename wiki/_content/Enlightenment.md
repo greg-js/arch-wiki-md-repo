@@ -1,11 +1,5 @@
 # Enlightenment
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 ## Contents
 
 *   [1 Enlightenment](#Enlightenment)
@@ -51,30 +45,30 @@ You might also want to install [terminology](https://www.archlinux.org/packages/
 
 **Warning:** Some of these PKGBUILDs use unstable development code. Use them at your own risk.
 
-Development PKGBUILDs which download and install the very latest development code are available as [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/)<sup><small>AUR</small></sup> and its dependencies.
+Development PKGBUILDs which download and install the very latest development code are available as [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/) and its dependencies.
 
 The following are EFL-based applications, most in an early stage of development and not yet released:
 
-*   [econcentration-git](https://aur.archlinux.org/packages/econcentration-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/econcentration-git)]</sup> – Econcentration card game
-*   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/)<sup><small>AUR</small></sup> – Ecrire text editor
-*   [elbow-git](https://aur.archlinux.org/packages/elbow-git/)<sup><small>AUR</small></sup> – Elbow web browser
-*   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/)<sup><small>AUR</small></sup> – Eluminance photo browser
-*   [emprint-git](https://aur.archlinux.org/packages/emprint-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/emprint-git)]</sup> – Emprint screenshot tool
-*   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/)<sup><small>AUR</small></sup> – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) music player
-*   [epad](https://aur.archlinux.org/packages/epad/)<sup><small>AUR</small></sup> – ePad text editor
-*   [eperiodique](https://aur.archlinux.org/packages/eperiodique/)<sup><small>AUR</small></sup> – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
-*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/)<sup><small>AUR</small></sup> – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) picture viewer
-*   [epour](https://aur.archlinux.org/packages/epour/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epour)]</sup> and [epour-git](https://aur.archlinux.org/packages/epour-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/epour-git)]</sup> – Epour Bittorrent client
-*   [epymc-git](https://aur.archlinux.org/packages/epymc-git/)<sup><small>AUR</small></sup> – E Python Media Center
-*   [equate-git](https://aur.archlinux.org/packages/equate-git/)<sup><small>AUR</small></sup> – Equate calculator
-*   [eruler-git](https://aur.archlinux.org/packages/eruler-git/)<sup><small>AUR</small></sup> – Eruler on-screen ruler and measurement tools
-*   [efbb-git](https://aur.archlinux.org/packages/efbb-git/)<sup><small>AUR</small></sup> – Escape from Booty Bay angry birds style game
-*   [elemines-git](https://aur.archlinux.org/packages/elemines-git/)<sup><small>AUR</small></sup> – [Elemines](http://elemines.sourceforge.net/) minesweeper style game
-*   [espionage-git](https://aur.archlinux.org/packages/espionage-git/)<sup><small>AUR</small></sup> – Espionage D-Bus inspector
-*   [ev-git](https://aur.archlinux.org/packages/ev-git/)<sup><small>AUR</small></sup> – ev simple picture viewer
-*   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e_cho-git)]</sup> – E_Cho simon style game
-*   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e_jeweled-git)]</sup> – E_Jeweled bejeweled style game
-*   [rage](https://aur.archlinux.org/packages/rage/)<sup><small>AUR</small></sup> and [rage-git](https://aur.archlinux.org/packages/rage-git/)<sup><small>AUR</small></sup> – Rage video player
+*   [econcentration-git](https://aur.archlinux.org/packages/econcentration-git/) – Econcentration card game
+*   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire text editor
+*   [elbow-git](https://aur.archlinux.org/packages/elbow-git/) – Elbow web browser
+*   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance photo browser
+*   [emprint-git](https://aur.archlinux.org/packages/emprint-git/) – Emprint screenshot tool
+*   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) music player
+*   [epad](https://aur.archlinux.org/packages/epad/) – ePad text editor
+*   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
+*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) picture viewer
+*   [epour](https://aur.archlinux.org/packages/epour/) and [epour-git](https://aur.archlinux.org/packages/epour-git/) – Epour Bittorrent client
+*   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – E Python Media Center
+*   [equate-git](https://aur.archlinux.org/packages/equate-git/) – Equate calculator
+*   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler on-screen ruler and measurement tools
+*   [efbb-git](https://aur.archlinux.org/packages/efbb-git/) – Escape from Booty Bay angry birds style game
+*   [elemines-git](https://aur.archlinux.org/packages/elemines-git/) – [Elemines](http://elemines.sourceforge.net/) minesweeper style game
+*   [espionage-git](https://aur.archlinux.org/packages/espionage-git/) – Espionage D-Bus inspector
+*   [ev-git](https://aur.archlinux.org/packages/ev-git/) – ev simple picture viewer
+*   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/) – E_Cho simon style game
+*   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/) – E_Jeweled bejeweled style game
+*   [rage](https://aur.archlinux.org/packages/rage/) and [rage-git](https://aur.archlinux.org/packages/rage-git/) – Rage video player
 
 ### Starting Enlightenment
 
@@ -84,7 +78,7 @@ Simply choose _Enlightenment_ session from your favourite [display manager](/ind
 
 **Warning:** Entrance is highly experimental, and does not have proper systemd support. Use it at your own risk.
 
-Enlightenment has a new display manager called Entrance, which is provided by the [entrance-git](https://aur.archlinux.org/packages/entrance-git/)<sup><small>AUR</small></sup> package. Entrance is quite sophisticated and its configuration is controlled by `/etc/entrance.conf`. It can be used by enabling `entrance.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+Enlightenment has a new display manager called Entrance, which is provided by the [entrance-git](https://aur.archlinux.org/packages/entrance-git/) package. Entrance is quite sophisticated and its configuration is controlled by `/etc/entrance.conf`. It can be used by enabling `entrance.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 #### Starting Enlightenment manually
 
@@ -109,7 +103,7 @@ Enlightenment has a sophisticated configuration system that can be accessed from
 
 Enlightenment's preferred network manager is [ConnMan](/index.php/Connman "Connman") which can be installed from the [connman](https://www.archlinux.org/packages/?name=connman) package. Follow the instructions on [Connman](/index.php/Connman "Connman") to do the configuration.
 
-For extended configuration, you may also install EConnman (available in AUR as [econnman](https://aur.archlinux.org/packages/econnman/)<sup><small>AUR</small></sup> or [econnman-git](https://aur.archlinux.org/packages/econnman-git/)<sup><small>AUR</small></sup>) and its associated dependencies.
+For extended configuration, you may also install EConnman (available in AUR as [econnman](https://aur.archlinux.org/packages/econnman/) or [econnman-git](https://aur.archlinux.org/packages/econnman-git/)) and its associated dependencies.
 
 **NetworkManager**
 
@@ -121,7 +115,7 @@ Whilst network connectivity will work, the applet itself will not be visible unl
 
 #### Polkit agent
 
-Enlightenment does not ship with a [graphical polkit authentication agent](/index.php/Polkit#Authentication_agents "Polkit"). If you want to access some privileged actions (e.g. mount a filesystem on a system device), you have to install one and autostart it. For that you should go to _Settings Panel > Apps > Startup Applications > System_ and activate it. There is an EFL based authentication agent available in the AUR, [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)<sup><small>AUR</small></sup>.
+Enlightenment does not ship with a [graphical polkit authentication agent](/index.php/Polkit#Authentication_agents "Polkit"). If you want to access some privileged actions (e.g. mount a filesystem on a system device), you have to install one and autostart it. For that you should go to _Settings Panel > Apps > Startup Applications > System_ and activate it. There is an EFL based authentication agent available in the AUR, [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/).
 
 #### GNOME Keyring integration
 
@@ -189,13 +183,13 @@ Many Modules provide Gadgets that can be added to your desktop or on a shelf. So
 
 **Warning:** These are 3rd party modules and not officially supported by the Enlightenment developers. They are also pulled directly from git, so they are development code that may or may not work at any time. Use at your own risk.
 
-Beyond the modules described here, more "extra" modules are available from [e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/)<sup><small>AUR</small></sup>.
+Beyond the modules described here, more "extra" modules are available from [e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/).
 
 **Places**
 
 Places is a gadget that will help you browse files on various devices you might plug into your computer, like phones, cameras, or other various storage devices you might plug into the usb port.
 
-Available from [places-git](https://aur.archlinux.org/packages/places-git/)<sup><small>AUR</small></sup>.
+Available from [places-git](https://aur.archlinux.org/packages/places-git/).
 
 **Note:** This module is no longer required for auto-mounting external devices in Enlightenment
 
@@ -207,7 +201,7 @@ Some people like to change the standard window selection key binding `ALT + Tab`
 
 To replace the window selection key binding functionality with Scale Windows, scroll through the left panel until you find the _ALT_ section and then find and select `ALT + Tab`. Then, scroll through the right panel looking for the "Scale Windows" section and choose either _Select Next_ or _Select Next (All)_ depending on whether you would like to see windows from only the current desktop or from all desktops and click _Apply_ to save the binding.
 
-Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/comp-scale-git)]</sup>.
+Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/).
 
 ### Troubleshooting
 
@@ -251,7 +245,7 @@ E16 can be quite different from the other WM's out there, read `/usr/share/doc/e
 
 Most everything in E16 resides in `~/.e16` and is text-based, editable at will. That includes the Menus too.
 
-Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project, or from the [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e16keyedit)]</sup> package.
+Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project, or from the [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) package.
 
 #### Background images
 

@@ -74,7 +74,7 @@ According to Powertop the 1005HA uses around 7-10 Watts on maximum powersave (us
 
 To further save power it is possible to use gmabooster to force a lower clock on the GPU when entering powersave and to overclock when on AC power.
 
-Install [gmabooster](https://aur.archlinux.org/packages/gmabooster/)<sup><small>AUR</small></sup> and then trigger the different clock levels with:
+Install [gmabooster](https://aur.archlinux.org/packages/gmabooster/) and then trigger the different clock levels with:
 
 ```
 echo "foo" | gmabooster
@@ -105,7 +105,7 @@ See [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils").
 
 ## Hotkeys
 
-To get the hotkeys working (fn+F1 etc, touchpad lock, powerbutton shutdown, Super hybrid engine toggle), install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup> package from AUR. Configuration is done in the file /etc/conf.d/acpi-eeepc-generic.conf.
+To get the hotkeys working (fn+F1 etc, touchpad lock, powerbutton shutdown, Super hybrid engine toggle), install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) package from AUR. Configuration is done in the file /etc/conf.d/acpi-eeepc-generic.conf.
 
 acpi-eeepc-generic needs the eeepc_wmi kernel module to be loaded to work. Check with:
 

@@ -1,11 +1,5 @@
 # USB flash installation media
 
-Related articles
-
-*   [CD Burning](/index.php/CD_Burning "CD Burning")
-*   [Archiso](/index.php/Archiso "Archiso")
-*   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
-
 This page discusses various multi-platform methods on how to create an Arch Linux Installer USB drive (also referred to as _"flash drive", "USB stick", "USB key"_, etc) for booting in BIOS and UEFI systems. The result will be a LiveUSB (LiveCD-like) system that can be used for installing Arch Linux, system maintenance or for recovery purposes, and that, because of the nature of [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS"), will discard all changes once the computer shuts down.
 
 If you would like to run a full install of Arch Linux from a USB drive (i.e. with persistent settings), see [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). If you would like to use your bootable Arch Linux USB stick as a rescue USB, see [Change root](/index.php/Change_root "Change root").
@@ -408,7 +402,7 @@ If under Vista or Win7, you should open the console as administrator, or else fl
 
 This method uses [Syslinux](/index.php/Syslinux "Syslinux") and a [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) to load the entire Arch Linux ISO image into RAM. Since this will be running entirely from system memory, you will need to make sure the system you will be installing this on has an adequate amount. A minimum amount of RAM between 500 MB and 1 GB should suffice for a MEMDISK based, Arch Linux install.
 
-For more information on Arch Linux system requirements as well as those for MEMDISK see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [here](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-01]</sup>. For reference, here is the [preceding forum thread](https://bbs.archlinux.org/viewtopic.php?id=135266).
+For more information on Arch Linux system requirements as well as those for MEMDISK see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [here](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). For reference, here is the [preceding forum thread](https://bbs.archlinux.org/viewtopic.php?id=135266).
 
 **Tip:** Once the installer has completed loading you can simply remove the USB stick and even use it on a different machine to start the process all over again. Utilizing MEMDISK also allows booting and installing Arch Linux to and from the same USB flash drive.
 

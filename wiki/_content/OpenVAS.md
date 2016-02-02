@@ -102,7 +102,7 @@ Point your web browser to [http://127.0.0.1](http://127.0.0.1) and login with yo
 
 ## Systemd
 
-Redhat based systemd units are in an AUR package named [openvas-systemd](https://aur.archlinux.org/packages/openvas-systemd/)<sup><small>AUR</small></sup>. The contain a few tweaks such as better TLS settings.
+Redhat based systemd units are in an AUR package named [openvas-systemd](https://aur.archlinux.org/packages/openvas-systemd/). The contain a few tweaks such as better TLS settings.
 
 At the time of writing, there are no service files provided with the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) that will maintain `openvasmd` or `gsad`. Until they are added, consider using and customizing the following service files to ease the deployment of a streamlined OpenVAS system:
 

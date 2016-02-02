@@ -15,7 +15,7 @@ JDownloader is a Download Manager written in Java. JDownloader can download norm
 
 ## Installation
 
-Install [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/) from the [AUR](/index.php/AUR "AUR").
 
 For running JDownloader you need Java installed. OpenJDK is recommended, it works flawlessly with jDownloader.
 
@@ -41,15 +41,15 @@ Choose User Interface and then switch the style to Light(GTK). (If you're using 
 
 ## Alternatives
 
-[Tucan Manager](http://tucaneando.com/index.html) available in the AUR through the [tucan](https://aur.archlinux.org/packages/tucan/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tucan)]</sup> package.
+[Tucan Manager](http://tucaneando.com/index.html) available in the AUR through the [tucan](https://aur.archlinux.org/packages/tucan/) package.
 
 [uGet](http://ugetdm.com/) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [uget](https://www.archlinux.org/packages/?name=uget) package (GTK).
 
-[pyLoad](/index.php/PyLoad "PyLoad") available in AUR: [pyload](https://aur.archlinux.org/packages/pyload/)<sup><small>AUR</small></sup>.
+[pyLoad](/index.php/PyLoad "PyLoad") available in AUR: [pyload](https://aur.archlinux.org/packages/pyload/).
 
-[plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)<sup><small>AUR</small></sup> (CLI).
+[plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
 
-[FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/)<sup><small>AUR</small></sup> (Java).
+[FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/) (Java).
 
 ## Troubleshooting
 

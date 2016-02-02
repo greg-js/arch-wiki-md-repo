@@ -66,7 +66,7 @@ Software recommended for this machine is the same recommended for most netbooks:
 *   [wmii](/index.php/Wmii "Wmii") or [awesome](/index.php/Awesome "Awesome") are very nice for managing windows. You can combine them both with xfce4 or run alone.
 *   [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") can run, but not smoothly with 3D effects, so it is better to avoid composition.
 *   [NetworkManager](/index.php/NetworkManager "NetworkManager") is the best to manage the modem and the wifi. Specially, nm-applet can show 3G signal strength in real time.
-*   [firestarter](https://aur.archlinux.org/packages/firestarter/)<sup><small>AUR</small></sup> is a very good firewall because it can start and stop when you use the modem, and can share connection by wifi.
+*   [firestarter](https://aur.archlinux.org/packages/firestarter/) is a very good firewall because it can start and stop when you use the modem, and can share connection by wifi.
 *   [Chromium](/index.php/Chromium "Chromium") is preferred over [firefox](/index.php/Firefox "Firefox") because it feels much faster on Atom procesors.
 
 In general, try to keep simple and avoid bogus applications. Remember that you're running a 1Gb-RAM system with no 3D acceleration with an Atom processor.

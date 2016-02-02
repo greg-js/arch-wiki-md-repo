@@ -1,12 +1,5 @@
 # Frequently asked questions
 
-Related articles
-
-*   [Arch Terminology](/index.php/Arch_Terminology "Arch Terminology")
-*   [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ")
-*   [Arch User Repository#FAQ](/index.php/Arch_User_Repository#FAQ "Arch User Repository")
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-
 Besides the questions covered below, you may find [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux") helpful. Both articles contain a good deal of information about Arch Linux.
 
 ## Contents
@@ -224,7 +217,7 @@ If `foobaz` is a package that you built yourself and installed from AUR, you sho
 
 ### Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?
 
-No, it is not possible. Major kernel updates (e.g. _linux 3.5.0-1_ to _linux 3.6.0-1_) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>, then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
+No, it is not possible. Major kernel updates (e.g. _linux 3.5.0-1_ to _linux 3.6.0-1_) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
 
 ### Does Arch use package signing?
 

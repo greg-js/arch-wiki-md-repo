@@ -247,7 +247,7 @@ m, c : Compose new message
 
 To solve this you have to compile Xapian with the flag `--disable-sse`.
 
-1\. Looking at the `PKGBUILD` for [ruby-xapian-ruby](https://aur.archlinux.org/packages/ruby-xapian-ruby/)<sup><small>AUR</small></sup> you can see that it downloads a gem from [https://rubygems.org/gems/xapian-ruby](https://rubygems.org/gems/xapian-ruby). Download the gem.
+1\. Looking at the `PKGBUILD` for [ruby-xapian-ruby](https://aur.archlinux.org/packages/ruby-xapian-ruby/) you can see that it downloads a gem from [https://rubygems.org/gems/xapian-ruby](https://rubygems.org/gems/xapian-ruby). Download the gem.
 
 2\. run these commands
 

@@ -1,11 +1,5 @@
 # systemd FAQ
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
-
 ## Contents
 
 *   [1 FAQ](#FAQ)

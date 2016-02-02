@@ -36,7 +36,7 @@ To scrobble your songs to [Last.fm](http://www.last.fm) or [Libre.fm](http://lib
 
 [mpdas](http://50hz.ws/mpdas/) is an AudioScrobbler client for MPD written in C++. It uses [curl](https://www.archlinux.org/packages/?name=curl) and [libmpd](https://www.archlinux.org/packages/?name=libmpd). mpdas supports the latest AudioScrobbler protocol (2.0) and will also cache unscrobbled plays in ~/.mpdascache if there's no network connectivity.
 
-[mpdas](https://aur.archlinux.org/packages/mpdas/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[mpdas](https://aur.archlinux.org/packages/mpdas/) is available in the [AUR](/index.php/AUR "AUR").
 
 Configuration of mpdas is very simple, see the official [README](https://github.com/hrkfdn/mpdas/blob/master/README). A very basic example of `/etc/mpdasrc` is also available as `/etc/mpdasrc`.
 
@@ -75,7 +75,7 @@ WantedBy=default.target
 
 [mpdcron](http://alip.github.io/mpdcron/) is a cron-like daemon for MPD that listens for events and executes user defined actions. It can be extended via modules to show notifications, submit songs to Last.fm or Libre.fm (_scrobbling_), or to collect statistics about played songs.
 
-[mpdcron-git](https://aur.archlinux.org/packages/mpdcron-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[mpdcron-git](https://aur.archlinux.org/packages/mpdcron-git/) is available in the [AUR](/index.php/AUR "AUR").
 
 See the official page for information about configuration and modules.
 
@@ -88,7 +88,7 @@ To autostart _mpdcron_ along with _mpd_, add an entry for it into the file in wh
 
 ### mpdscribble
 
-[mpdscribble](https://aur.archlinux.org/packages/mpdscribble/)<sup><small>AUR</small></sup> is a daemon available in the [AUR](/index.php/AUR "AUR") (if you prefer, [mpdscribble-git](https://aur.archlinux.org/packages/mpdscribble-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mpdscribble-git)]</sup> is also available). This is arguably the best alternative, because it is the semi-official MPD scrobbler and uses the new "idle" feature in MPD for more accurate scrobbling. Also, you do not need root access to configure it, because it does not need any changes to `/etc` at all. Visit [the official website](http://mpd.wikia.com/wiki/Client:Mpdscribble) for more information.
+[mpdscribble](https://aur.archlinux.org/packages/mpdscribble/) is a daemon available in the [AUR](/index.php/AUR "AUR") (if you prefer, [mpdscribble-git](https://aur.archlinux.org/packages/mpdscribble-git/) is also available). This is arguably the best alternative, because it is the semi-official MPD scrobbler and uses the new "idle" feature in MPD for more accurate scrobbling. Also, you do not need root access to configure it, because it does not need any changes to `/etc` at all. Visit [the official website](http://mpd.wikia.com/wiki/Client:Mpdscribble) for more information.
 
 Example configuration:
 
@@ -391,7 +391,7 @@ mpc add [http://192.168.1.2:8000](http://192.168.1.2:8000)
 
 ## MPRIS2 Support
 
-Install the [mpDris2](https://aur.archlinux.org/packages/mpDris2/)<sup><small>AUR</small></sup> package. It runs in the user session and monitors the mpd server.
+Install the [mpDris2](https://aur.archlinux.org/packages/mpDris2/) package. It runs in the user session and monitors the mpd server.
 
 Copy the default configuration file from `/usr/share/doc/mpdris2/mpDris2.conf` to `~/.config/mpDris2/mpDris2.conf`. Edit it as needed.
 

@@ -1,10 +1,5 @@
 # msmtp
 
-Related articles
-
-*   [mutt](/index.php/Mutt "Mutt")
-*   [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")
-
 [msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
 
 ## Contents
@@ -181,7 +176,7 @@ Mutt will execute this when it starts, gpg-agent will cache your password, msmtp
 
 **Note:** If you do this, you will have to restart mutt after gpg-agent clears the password to start sending emails again
 
-If you cannot use a keyring tool for any reason, you may want to use the password directly. There is a patched version [msmtp-pwpatched](https://aur.archlinux.org/packages/msmtp-pwpatched/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/msmtp-pwpatched)]</sup> in the AUR that provides the `--password` parameter. Note that it is a **huge security flaw**, since any user connected to you machine can see the parameter of any command (in the /proc filesystem for example).
+If you cannot use a keyring tool for any reason, you may want to use the password directly. There is a patched version [msmtp-pwpatched](https://aur.archlinux.org/packages/msmtp-pwpatched/) in the AUR that provides the `--password` parameter. Note that it is a **huge security flaw**, since any user connected to you machine can see the parameter of any command (in the /proc filesystem for example).
 
 If this is not desired, an alternative is to place passwords in `~/.netrc`, a file that can act as a common pool for msmtp, [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), and associated tools.
 

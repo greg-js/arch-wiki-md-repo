@@ -1,17 +1,5 @@
 # systemd
 
-Related articles
-
-*   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
-*   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
-*   [init](/index.php/Init "Init")
-*   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
-*   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
-*   [udev](/index.php/Udev "Udev")
-*   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
-*   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
-
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 	_systemd_ is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.
@@ -65,7 +53,7 @@ The main command used to introspect and control _systemd_ is _systemctl_. Some o
 **Tip:**
 
 *   You can use all of the following _systemctl_ commands with the `-H _user_@_host_` switch to control a _systemd_ instance on a remote machine. This will use [SSH](/index.php/SSH "SSH") to connect to the remote _systemd_ instance.
-*   _systemadm_ is the official graphical frontend for _systemctl_. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/systemd-ui-git)]</sup> from the [AUR](/index.php/AUR "AUR") for the development version.
+*   _systemadm_ is the official graphical frontend for _systemctl_. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) from the [AUR](/index.php/AUR "AUR") for the development version.
 *   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm) as a graphical fronted for _systemctl_. After installing the module will be added under _System administration_.
 
 ### Analyzing the system state

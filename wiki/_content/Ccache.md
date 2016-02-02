@@ -1,10 +1,5 @@
 # Ccache
 
-Related articles
-
-*   [Makepkg](/index.php/Makepkg "Makepkg")
-*   [Distcc](/index.php/Distcc "Distcc")
-
 There is a wonderful tool for `gcc` called `ccache`. You can read about it at their [home page](http://ccache.samba.org).
 
 If you are always compiling the same programs over and over again — such as trying out several kernel patches, or testing your own development — then `ccache` is perfect. While it may take a few seconds longer to compile a program the first time with `ccache`, subsequent compiles will be much, much faster.

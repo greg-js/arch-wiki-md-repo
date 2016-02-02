@@ -49,13 +49,13 @@ This guide was started for _USB_ based Wacom tablets, so much of the info in her
 
 After plugging in the tablet (in case of a USB device) check `lsusb` and/or `dmesg | grep -i wacom` to see if the kernel recognizes your tablet. It should also be listed in `/proc/bus/input/devices`.
 
-In case it is not recognized, it might happen for new devices not to be supported by the current kernel. Sometimes the tablet has already support by a more recent driver than the one that comes with the kernel. In that case you may try to install [input-wacom-dkms](https://aur.archlinux.org/packages/input-wacom-dkms/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+In case it is not recognized, it might happen for new devices not to be supported by the current kernel. Sometimes the tablet has already support by a more recent driver than the one that comes with the kernel. In that case you may try to install [input-wacom-dkms](https://aur.archlinux.org/packages/input-wacom-dkms/) from the [AUR](/index.php/AUR "AUR").
 
 ### Install Wacom drivers
 
 Thanks to [The Linux Wacom Project](http://linuxwacom.sourceforge.net), you only need to install the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package, which contains everything needed to use a Wacom tablet on Linux.
 
-**Note:** There is also [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/)<sup><small>AUR</small></sup> in AUR which provides git version of _xf86-input-wacom_, but you might encounter some troubles. For me the buttons for example did only work with the stable release, not with the git version. So it is recommended to try _xf86-input-wacom_ first.
+**Note:** There is also [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/) in AUR which provides git version of _xf86-input-wacom_, but you might encounter some troubles. For me the buttons for example did only work with the stable release, not with the git version. So it is recommended to try _xf86-input-wacom_ first.
 
 ### Automatic setup
 
@@ -82,7 +82,7 @@ For this to work you do not need any `xorg.conf` file, any configurations are ma
 
 With the arrival of Xorg 1.8 support for HAL was dropped in favor of [udev](/index.php/Udev "Udev") which might break auto-detection for some tablets as fitting udev rules might not exist yet, so you may need to write your own.
 
-If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libwacom-fedora)]</sup> remove those packages first. They are known to cause problems with newer version of X. _xf86-input-wacom_ is the only package you need to install the X11 drivers.
+If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/) remove those packages first. They are known to cause problems with newer version of X. _xf86-input-wacom_ is the only package you need to install the X11 drivers.
 
 ### Manual setup
 
@@ -92,7 +92,7 @@ A manual configuration is done in `/etc/X11/xorg.conf` or in a separate file in 
 
 **Note:** In AUR there is wacom-udev package, which includes udev-rules-file. You might skip this part and move on to the `xorg.conf` configuration if you are using the wacom-udev package from AUR.
 
-Assuming _udev_ is already installed you simply need to install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Assuming _udev_ is already installed you simply need to install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) from the [AUR](/index.php/AUR "AUR").
 
 ##### USB-devices
 
@@ -122,7 +122,7 @@ The files of further interest for the _Xorg_ configuration are `/dev/input/wacom
 
 ##### Serial devices
 
-The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup> should also include support for serial devices. Users of serial tablets might be also interested in the inputattach tool from [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) package. The inputattach command allows to bind serial device into /dev/input tree, for example with:
+The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) should also include support for serial devices. Users of serial tablets might be also interested in the inputattach tool from [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) package. The inputattach command allows to bind serial device into /dev/input tree, for example with:
 
 ```
  # inputattach --w8001 /dev/ttyS0
@@ -591,7 +591,7 @@ Here is how to do the same in the xorg configuration file:
 
 ### Using kcm-wacomtablet
 
-The KDE configuration module [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)<sup><small>AUR</small></sup> (or if you're on Plasma 5, [kcm-wacomtablet-frameworks-git](https://aur.archlinux.org/packages/kcm-wacomtablet-frameworks-git/)<sup><small>AUR</small></sup>) supports easy configuration of the tablet through a graphical user interface, allowing for different profiles and proper hotplugging support. It will auto-detect the type of your tablet, and load your configuration profile automatically when the tablet is plugged in.
+The KDE configuration module [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/) (or if you're on Plasma 5, [kcm-wacomtablet-frameworks-git](https://aur.archlinux.org/packages/kcm-wacomtablet-frameworks-git/)) supports easy configuration of the tablet through a graphical user interface, allowing for different profiles and proper hotplugging support. It will auto-detect the type of your tablet, and load your configuration profile automatically when the tablet is plugged in.
 
 ## Application-specific configuration
 

@@ -1,11 +1,5 @@
 # Keyboard configuration in console
 
-Related articles
-
-*   [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-*   [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")
-
 **Note:** This article covers only basic configuration without modifying layouts, mapping extra keys etc. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for these advanced topics.
 
 Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), console fonts and console maps are provided by the [kbd](https://www.archlinux.org/packages/?name=kbd) package (a dependency of [systemd](/index.php/Systemd "Systemd")), which also provides many low-level tools for managing virtual console. In addition, _systemd_ also provides the _localectl_ tool, which can control both the system [locale](/index.php/Locale "Locale") and keyboard layout settings for both the virtual console and Xorg.

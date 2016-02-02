@@ -1,9 +1,5 @@
 # Proxy settings
 
-Related articles
-
-*   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
-
 A proxy is "an interface for a service, especially for one that is remote, resource-intensive, or otherwise difficult to use directly". Source: [Proxy - Wiktionary](http://en.wiktionary.org/wiki/proxy).
 
 ## Contents
@@ -220,13 +216,13 @@ gsettings set org.gnome.system.proxy ignore-hosts "['localhost', '127.0.0.0/8', 
 
 ```
 
-This configuration can also be set to automatically execute when [Network Manager](/index.php/NetworkManager#Proxy_settings "NetworkManager") connects to specific networks , by using the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
+This configuration can also be set to automatically execute when [Network Manager](/index.php/NetworkManager#Proxy_settings "NetworkManager") connects to specific networks , by using the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/) from the [AUR](/index.php/AUR "AUR")
 
 ## Microsoft NTLM proxy
 
 In a Windows network, NT LAN Manager (NTLM) is a suite of Microsoft security protocols which provides authentication, integrity, and confidentiality to users.
 
-[cntlm](https://aur.archlinux.org/packages/cntlm/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") stands between your applications and the NTLM proxy, adding NTLM authentication on-the-fly. You can specify several "parent" proxies and Cntlm will try one after another until one works. All authenticated connections are cached and reused to achieve high efficiency.
+[cntlm](https://aur.archlinux.org/packages/cntlm/) from the [AUR](/index.php/AUR "AUR") stands between your applications and the NTLM proxy, adding NTLM authentication on-the-fly. You can specify several "parent" proxies and Cntlm will try one after another until one works. All authenticated connections are cached and reused to achieve high efficiency.
 
 ```
 (NTLM PROXY IP:PORT + CREDENTIALS + OTHER INFO) -----> **(127.0.0.1:PORT)**

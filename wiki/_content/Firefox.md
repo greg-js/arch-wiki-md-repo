@@ -1,12 +1,5 @@
 # Firefox
 
-Related articles
-
-*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
-*   [Chromium](/index.php/Chromium "Chromium")
-*   [Opera](/index.php/Opera "Opera")
-
 [Firefox](http://www.firefox.com) is a popular open-source graphical web browser from [Mozilla](http://www.mozilla.com).
 
 ## Contents
@@ -49,23 +42,23 @@ Other alternatives include:
 
 *   **Firefox Extended Support Release** — long-term supported version
 
-	[https://www.mozilla.org/en-US/firefox/organizations/](https://www.mozilla.org/en-US/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)<sup><small>AUR</small></sup>
+	[https://www.mozilla.org/en-US/firefox/organizations/](https://www.mozilla.org/en-US/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
 
 *   **Firefox Beta** — cutting-edge version
 
-	[https://www.mozilla.org/en-US/firefox/channel](https://www.mozilla.org/en-US/firefox/channel) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)<sup><small>AUR</small></sup>
+	[https://www.mozilla.org/en-US/firefox/channel](https://www.mozilla.org/en-US/firefox/channel) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
 *   **Firefox Aurora/Developer edition** — for developers
 
-	[https://www.mozilla.org/en-US/firefox/aurora/](https://www.mozilla.org/en-US/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)<sup><small>AUR</small></sup>
+	[https://www.mozilla.org/en-US/firefox/aurora/](https://www.mozilla.org/en-US/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
 
 *   **Firefox Nightly** — nightly builds for testing
 
-	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)<sup><small>AUR</small></sup>
+	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
 *   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better KDE integration than is possible through simple Firefox plugins.
 
-	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)<sup><small>AUR</small></sup>
+	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
@@ -133,7 +126,7 @@ in the Firefox address bar or go to the _Add-ons_ entry in the Firefox Menu and 
 
 ### GNOME Keyring integration
 
-Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome-keyring/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/firefox-gnome-keyring)]</sup> or [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/)<sup><small>AUR</small></sup> (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
+Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome-keyring/) or [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
 ### KDE integration
 
@@ -141,7 +134,7 @@ Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome
 
 *   To use KDE's KPart technology with Firefox, by embedding different KDE file viewers into the browser, you can install [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
 
-*   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)<sup><small>AUR</small></sup> variant from AUR with OpenSUSE’s patches applied.
+*   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
 *   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/en-US/firefox/addon/kde-wallet-password-integratio/) and [Plasma notifications](https://addons.mozilla.org/en-US/firefox/addon/plasmanotify/).
 

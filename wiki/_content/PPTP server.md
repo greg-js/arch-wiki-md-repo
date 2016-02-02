@@ -1,9 +1,5 @@
 # PPTP server
 
-Related articles
-
-*   [PPTP VPN client setup with pptpclient](/index.php/PPTP_VPN_client_setup_with_pptpclient "PPTP VPN client setup with pptpclient")
-
 [Point-to-Point Tunneling Protocol](https://en.wikipedia.org/wiki/PPTP "wikipedia:PPTP") (PPTP) is a method for implementing virtual private networks. PPTP uses a control channel over TCP and a GRE tunnel operating to encapsulate PPP packets.
 
 This entry will show you on how to create a PPTP server in Arch.

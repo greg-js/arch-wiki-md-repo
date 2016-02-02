@@ -15,7 +15,7 @@
 
 ## Installation
 
-[surf](https://www.archlinux.org/packages/?name=surf) can be [installed](/index.php/Pacman "Pacman") from the [official repositories](/index.php/Official_repositories "Official repositories"). There is also [surf-git](https://aur.archlinux.org/packages/surf-git/)<sup><small>AUR</small></sup> and [surf-xdg-config-hg](https://aur.archlinux.org/packages/surf-xdg-config-hg/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/surf-xdg-config-hg)]</sup> in the [AUR](/index.php/AUR "AUR").
+[surf](https://www.archlinux.org/packages/?name=surf) can be [installed](/index.php/Pacman "Pacman") from the [official repositories](/index.php/Official_repositories "Official repositories"). There is also [surf-git](https://aur.archlinux.org/packages/surf-git/) and [surf-xdg-config-hg](https://aur.archlinux.org/packages/surf-xdg-config-hg/) in the [AUR](/index.php/AUR "AUR").
 
 Optional:
 

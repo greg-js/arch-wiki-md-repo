@@ -349,16 +349,16 @@ Mailman can be also managed by command-line. Example for list creation:
 
 Mailman 3 was designed in a modular fashion:
 
-*   [mailman-core](https://aur.archlinux.org/packages/mailman-core/)<sup><small>AUR</small></sup> or [mailman-core-git](https://aur.archlinux.org/packages/mailman-core-git/)<sup><small>AUR</small></sup> provides the core component of mailman.
+*   [mailman-core](https://aur.archlinux.org/packages/mailman-core/) or [mailman-core-git](https://aur.archlinux.org/packages/mailman-core-git/) provides the core component of mailman.
 
     **Note:** As of December 2015 _mailman-core_ only supports Python 3.4 and crashes using Python 3.5\. Use _mailman-core-git_ until Python 3.5 support is added in version 3.1.
 
-*   [python2-django-postorius](https://aur.archlinux.org/packages/python2-django-postorius/)<sup><small>AUR</small></sup> or [python2-django-postorius-git](https://aur.archlinux.org/packages/python2-django-postorius-git/)<sup><small>AUR</small></sup> provides a management interface for Mailman.
-*   [python2-django-hyperkitty](https://aur.archlinux.org/packages/python2-django-hyperkitty/)<sup><small>AUR</small></sup> [python2-django-hyperkitty-git](https://aur.archlinux.org/packages/python2-django-hyperkitty-git/)<sup><small>AUR</small></sup> is the interface to the mailing lists' archives.
-*   [python-mailmanclient](https://aur.archlinux.org/packages/python-mailmanclient/)<sup><small>AUR</small></sup> and [python2-mailmanclient](https://aur.archlinux.org/packages/python2-mailmanclient/)<sup><small>AUR</small></sup> provide python bindings to Mailman's REST API.
-*   [python-mailman-hyperkitty-plugin](https://aur.archlinux.org/packages/python-mailman-hyperkitty-plugin/)<sup><small>AUR</small></sup> is a plugin that is used to forward emails to hyperkitty.
+*   [python2-django-postorius](https://aur.archlinux.org/packages/python2-django-postorius/) or [python2-django-postorius-git](https://aur.archlinux.org/packages/python2-django-postorius-git/) provides a management interface for Mailman.
+*   [python2-django-hyperkitty](https://aur.archlinux.org/packages/python2-django-hyperkitty/) [python2-django-hyperkitty-git](https://aur.archlinux.org/packages/python2-django-hyperkitty-git/) is the interface to the mailing lists' archives.
+*   [python-mailmanclient](https://aur.archlinux.org/packages/python-mailmanclient/) and [python2-mailmanclient](https://aur.archlinux.org/packages/python2-mailmanclient/) provide python bindings to Mailman's REST API.
+*   [python-mailman-hyperkitty-plugin](https://aur.archlinux.org/packages/python-mailman-hyperkitty-plugin/) is a plugin that is used to forward emails to hyperkitty.
 
-In order to deploy postorius and/or hyperkitty django is needed. [mailman-suite-git](https://aur.archlinux.org/packages/mailman-suite-git/)<sup><small>AUR</small></sup> provides a django project skeleton that can be used to deploy them. It also includes a README.md with instructions on how to deploy postorius and/or hyperkitty.
+In order to deploy postorius and/or hyperkitty django is needed. [mailman-suite-git](https://aur.archlinux.org/packages/mailman-suite-git/) provides a django project skeleton that can be used to deploy them. It also includes a README.md with instructions on how to deploy postorius and/or hyperkitty.
 
 mailman-core can be configured using `/var/lib/mailman/var/etc/mailman.cfg` and started using:
 

@@ -1,11 +1,5 @@
 # Change root
 
-Related articles
-
-*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
-*   [proot](/index.php/Proot "Proot")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-
 [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") is an operation that changes the apparent root directory for the current running process and their children. A program that is run in such a modified environment cannot access files and commands outside that environmental directory tree. This modified environment is called a _chroot jail_.
 
 ## Contents

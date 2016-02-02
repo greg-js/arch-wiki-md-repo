@@ -1,16 +1,10 @@
 # AgenDAV
 
-Related articles
-
-*   [DAViCal](/index.php/DAViCal "DAViCal")
-*   [Kcaldav](/index.php/Kcaldav "Kcaldav")
-*   [Radicale](/index.php/Radicale "Radicale")
-
 From [[1]](http://agendav.org/): "AgenDAV is an open source multilanguage CalDAV web client which features a rich AJAX interface with shared calendars support".
 
 ## Installation
 
-Install the AgenDAV package [agendav](https://aur.archlinux.org/packages/agendav/)<sup><small>AUR</small></sup> (AUR).
+Install the AgenDAV package [agendav](https://aur.archlinux.org/packages/agendav/) (AUR).
 
 ### Database
 

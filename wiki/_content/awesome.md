@@ -47,7 +47,7 @@ From the [awesome website](https://awesome.naquadah.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [awesome](https://www.archlinux.org/packages/?name=awesome). The development version is [awesome-git](https://aur.archlinux.org/packages/awesome-git/)<sup><small>AUR</small></sup>, which is considered unstable and may have a different configuration syntax.
+[Install](/index.php/Install "Install") [awesome](https://www.archlinux.org/packages/?name=awesome). The development version is [awesome-git](https://aur.archlinux.org/packages/awesome-git/), which is considered unstable and may have a different configuration syntax.
 
 To run awesome from [Xinitrc](/index.php/Xinitrc "Xinitrc"), add `exec awesome` to `~/.xinitrc`. To use the included [xsession](/index.php/Xsession "Xsession") file, see [Display manager](/index.php/Display_manager "Display manager").
 
@@ -385,7 +385,7 @@ The advantage of this approach is that if you introduce bugs you do not break yo
 
 #### awmtt
 
-[awmtt](https://aur.archlinux.org/packages/awmtt/)<sup><small>AUR</small></sup> (Awesome WM Testing Tool) is an easy to use wrapper script around Xephyr. By default, it will use ~/.config/awesome/rc.lua.test. If it cannot find that test file, it will use your actual rc.lua. You can also specify the location of the configuration file you want to test:
+[awmtt](https://aur.archlinux.org/packages/awmtt/) (Awesome WM Testing Tool) is an easy to use wrapper script around Xephyr. By default, it will use ~/.config/awesome/rc.lua.test. If it cannot find that test file, it will use your actual rc.lua. You can also specify the location of the configuration file you want to test:
 
 ```
 $ awmtt start -C ~/.config/awesome/rc.lua.new

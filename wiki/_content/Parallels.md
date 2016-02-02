@@ -1,10 +1,5 @@
 # Parallels
 
-Related articles
-
-*   [VMware](/index.php/VMware "VMware")
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
-
 [Parallels](http://www.parallels.com/products/desktop) Desktop is a hypervisor for Mac OSX which allows users to install a variety of operating systems as "virtual machines" (guests) on the host system, reducing the need for managing multiple physical machines. A more complete description on virtualization can be found at [Wikipedia](http://en.wikipedia.org/wiki/Hardware_virtualization).
 
 ## Contents

@@ -27,7 +27,7 @@ With the Simple Orca Plugin System (SOPS) you can extend the functionality of th
 
 ## Installation
 
-Just [Install](/index.php/Install "Install") the package [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Just [Install](/index.php/Install "Install") the package [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/) from the [AUR](/index.php/AUR "AUR").
 
 ## Setup
 

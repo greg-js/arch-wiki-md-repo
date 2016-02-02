@@ -1,9 +1,5 @@
 # R
 
-Related articles
-
-*   [Intel C++](/index.php/Intel_C%2B%2B "Intel C++")
-
 _R is a free software environment for statistical computing and graphics_ ([http://www.r-project.org/](http://www.r-project.org/)).
 
 ## Contents
@@ -136,7 +132,7 @@ Or when you also need to rebuild packages which were built for an older version:
 
 #### Within a shell
 
-First, [Install](/index.php/Install "Install") [littler](https://aur.archlinux.org/packages/littler/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). This package allows direct execution of **R** commands and can be seen as a scripting front-end. Then, visit [dirk.eddelbuettel](http://dirk.eddelbuettel.com/code/littler.examples.html) webiste about **littler**. Below is the script to run packages updates:
+First, [Install](/index.php/Install "Install") [littler](https://aur.archlinux.org/packages/littler/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). This package allows direct execution of **R** commands and can be seen as a scripting front-end. Then, visit [dirk.eddelbuettel](http://dirk.eddelbuettel.com/code/littler.examples.html) webiste about **littler**. Below is the script to run packages updates:
 
 ```
 #!/usr/bin/env r 
@@ -227,13 +223,13 @@ You can then start R Commander from within R using the library command:
 
 ### RKWard frontend
 
-RKWard is an open-source frontend which allows for data import and browsing as well as running common statistical tests and plots. You can install [rkward](https://aur.archlinux.org/packages/rkward/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+RKWard is an open-source frontend which allows for data import and browsing as well as running common statistical tests and plots. You can install [rkward](https://aur.archlinux.org/packages/rkward/) from [AUR](/index.php/AUR "AUR").
 
 ### Rstudio IDE
 
 RStudio an open-source R IDE. It includes many modern conveniences such as parentheses matching, tab-completion, tool-tip help popups, and a spreadsheet-like data viewer.
 
-Install [rstudio-desktop-bin](https://aur.archlinux.org/packages/rstudio-desktop-bin/)<sup><small>AUR</small></sup> (binary version from the Rstudio project website) or [rstudio-desktop-git](https://aur.archlinux.org/packages/rstudio-desktop-git/)<sup><small>AUR</small></sup> (development version) from [AUR](/index.php/AUR "AUR").
+Install [rstudio-desktop-bin](https://aur.archlinux.org/packages/rstudio-desktop-bin/) (binary version from the Rstudio project website) or [rstudio-desktop-git](https://aur.archlinux.org/packages/rstudio-desktop-git/) (development version) from [AUR](/index.php/AUR "AUR").
 
 The R library path is often configured with the R_LIBS environment variable. RStudio ignores this, so the user must set R_LIBS_USER in `~/.Renviron`, as documented above.
 
@@ -241,17 +237,17 @@ The R library path is often configured with the R_LIBS environment variable. RSt
 
 RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server.
 
-Install [rstudio-server-git](https://aur.archlinux.org/packages/rstudio-server-git/)<sup><small>AUR</small></sup>. The two main configuration files are `/etc/rstudio/rserver.conf` and `/etc/rstudio/rsession.conf`. They are not created during the install, so you will need to _create_ and _edit_ them. For information about configure options, please refer to [rstudio getting started](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started) documentation.
+Install [rstudio-server-git](https://aur.archlinux.org/packages/rstudio-server-git/). The two main configuration files are `/etc/rstudio/rserver.conf` and `/etc/rstudio/rsession.conf`. They are not created during the install, so you will need to _create_ and _edit_ them. For information about configure options, please refer to [rstudio getting started](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started) documentation.
 
 To start the server, please [enable and start](/index.php/Systemd#Using_units "Systemd") the `rstudio-server.service` unit file provided with the package.
 
 ### Emacs Speaks Statistics
 
-[emacs](https://www.archlinux.org/packages/?name=emacs) users can interact with R via the [emacs-ess](https://aur.archlinux.org/packages/emacs-ess/)<sup><small>AUR</small></sup> package.
+[emacs](https://www.archlinux.org/packages/?name=emacs) users can interact with R via the [emacs-ess](https://aur.archlinux.org/packages/emacs-ess/) package.
 
 ### Vim-R
 
-The [vim-r](https://aur.archlinux.org/packages/vim-r/)<sup><small>AUR</small></sup> package allows [vim](https://www.archlinux.org/packages/?name=vim) users to code in R, including editing and rendering of R markdown (Rmd) files, execution of R code in a separate pane, inspection of variables, and integrated help panes.
+The [vim-r](https://aur.archlinux.org/packages/vim-r/) package allows [vim](https://www.archlinux.org/packages/?name=vim) users to code in R, including editing and rendering of R markdown (Rmd) files, execution of R code in a separate pane, inspection of variables, and integrated help panes.
 
 ## Optimized packages
 
@@ -259,17 +255,17 @@ The numerical libraries that comes with the R (generic [blas](https://www.archli
 
 ### OpenBLAS
 
-[openblas](https://aur.archlinux.org/packages/openblas/)<sup><small>AUR</small></sup> can be installed from the [AUR](/index.php/AUR "AUR"), replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) from extra. If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
+[openblas](https://aur.archlinux.org/packages/openblas/) can be installed from the [AUR](/index.php/AUR "AUR"), replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) from extra. If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
 
 ### Intel MKL
 
 **If your processors are Intel**, it is strongly advised to use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors, with performance far superior to traditional libraries.
 
-Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/)<sup><small>AUR</small></sup> package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/)<sup><small>AUR</small></sup> package.
+Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/) package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/) package.
 
 **Note:**
 
-*   if you install the [r-mkl](https://aur.archlinux.org/packages/r-mkl/)<sup><small>AUR</small></sup> with **R** already installed, you will be prompted to remove **R**. Once **r-mkl** is installed, please run on **R** console the following command :
+*   if you install the [r-mkl](https://aur.archlinux.org/packages/r-mkl/) with **R** already installed, you will be prompted to remove **R**. Once **r-mkl** is installed, please run on **R** console the following command :
 
 `> update.packages(checkBuilt=TRUE)`
 
@@ -279,7 +275,7 @@ Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur
 
 [intel-advisor](http://software.intel.com/en-us/intel-advisor-xe) delivers top application performance with C, C++ and Fortran compilers, libraries and analysis tools.
 
-Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-xe/)<sup><small>AUR</small></sup> package.
+Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-xe/) package.
 
 ## See also
 

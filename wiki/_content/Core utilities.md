@@ -1,17 +1,5 @@
 # Core utilities
 
-Related articles
-
-*   [Bash](/index.php/Bash "Bash")
-*   [Zsh](/index.php/Zsh "Zsh")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [GNU Project](/index.php/GNU_Project "GNU Project")
-*   [sudo](/index.php/Sudo "Sudo")
-*   [cron](/index.php/Cron "Cron")
-*   [man page](/index.php/Man_page "Man page")
-*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
-
 This article deals with so-called _core_ utilities on a GNU/Linux system, such as _less_, _ls_, and _grep_. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
 
 ## Contents
@@ -115,7 +103,7 @@ Other _dd_-like programs feature periodical status output, e.g. a simple progres
 
 	dcfldd 
 
-	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.<sup>[[1]](http://dcfldd.sourceforge.net/)</sup>
+	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.
 
 	ddrescue 
 
@@ -337,7 +325,7 @@ In case that the program does not provide any similar option, it is possible to 
 
 *   **stdoutisatty** — A small program which catches the `isatty` function call.
 
-	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)<sup><small>AUR</small></sup>
+	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)
 
 	Example: `stdoutisatty _program_ | less`
 

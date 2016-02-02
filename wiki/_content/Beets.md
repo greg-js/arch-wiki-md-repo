@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [beets](https://www.archlinux.org/packages/?name=beets) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [beets-git](https://aur.archlinux.org/packages/beets-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [beets](https://www.archlinux.org/packages/?name=beets) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [beets-git](https://aur.archlinux.org/packages/beets-git/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

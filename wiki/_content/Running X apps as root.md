@@ -34,7 +34,7 @@ $ sudo _name-of-app_
 
 ```
 
-*   [sux](https://aur.archlinux.org/packages/sux/)<sup><small>AUR</small></sup> (wrapper around su which will transfer your X credentials)
+*   [sux](https://aur.archlinux.org/packages/sux/) (wrapper around su which will transfer your X credentials)
 
 ```
 $ sux root _name-of-app_

@@ -32,7 +32,7 @@
 
 ## Installation
 
-**Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you don't trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/)<sup><small>AUR</small></sup>. Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
+**Tip:** There is also a web version of Skype [available](https://web.skype.com), which you might want to use if you don't trust the proprietary Skype client. You can also use it as an unofficial app: [skype-desktop-bin](https://aur.archlinux.org/packages/skype-desktop-bin/). Audio/video is currently not supported because the required browser plugin is only available for OS X and Windows.
 
 [Install](/index.php/Install "Install") [skype](https://www.archlinux.org/packages/?name=skype) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository first as Skype is 32-bit only.
 
@@ -42,7 +42,7 @@ Running Skype is just as easy. Type `skype` into a terminal or double-click the 
 
 Since version 4.3, Skype requires [PulseAudio](/index.php/PulseAudio "PulseAudio") for voice communication (and no longer supports plain [ALSA](/index.php/ALSA "ALSA")).
 
-Alternatively, if you do not want to use PulseAudio, you can install [apulse](https://aur.archlinux.org/packages/apulse/)<sup><small>AUR</small></sup> (and [lib32-apulse](https://aur.archlinux.org/packages/lib32-apulse/)<sup><small>AUR</small></sup> for x86_64 users) from the [AUR](/index.php/AUR "AUR"), which emulates PulseAudio. Then execute Skype with:
+Alternatively, if you do not want to use PulseAudio, you can install [apulse](https://aur.archlinux.org/packages/apulse/) (and [lib32-apulse](https://aur.archlinux.org/packages/lib32-apulse/) for x86_64 users) from the [AUR](/index.php/AUR "AUR"), which emulates PulseAudio. Then execute Skype with:
 
 ```
 $ apulse skype
@@ -385,7 +385,7 @@ See [[2]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide t
 
 Instead of using AppArmor or TOMOYO, one may prefer to add a special user. This user is only used for running Skype within one's normal environment. This approach restricts Skype to reading only the data of this particular user instead of one's main user. (The new user should not be used for any other thing. Skype only.)
 
-An AUR package, [skype-restricted](https://aur.archlinux.org/packages/skype-restricted/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/skype-restricted)]</sup> exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section. Alternatively, one can use [skype-secure](https://aur.archlinux.org/packages/skype-secure/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/skype-secure)]</sup>, a package that works similarly to skype-restricted, but wraps around already installed Skype binary.
+An AUR package, [skype-restricted](https://aur.archlinux.org/packages/skype-restricted/) exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section. Alternatively, one can use [skype-secure](https://aur.archlinux.org/packages/skype-secure/), a package that works similarly to skype-restricted, but wraps around already installed Skype binary.
 
 Optionally, we first add a default group for the skype user. The security advantage in keeping the _skype_ user in its separate group is that it can be restricted from accessing places other users are allowed in.
 
@@ -687,11 +687,11 @@ $ XLIB_SKIP_ARGB_VISUALS=1 skype
 
 ### Skype does not use a GTK+ theme, even though other Qt apps do
 
-Recent versions of Skype allow you to change the theme via the Options menu. However, selecting the GTK+ option may not work properly. This is probably because you do not have a 32-bit theme engine installed. Try to find the engine your theme uses in the multilib repository or the [AUR](/index.php/AUR "AUR"). If you have no idea which engine your theme is using, the easiest fix is to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/)<sup><small>AUR</small></sup>. This does however contain quite a lot of packages, so the best would be to find and install only the needed package.
+Recent versions of Skype allow you to change the theme via the Options menu. However, selecting the GTK+ option may not work properly. This is probably because you do not have a 32-bit theme engine installed. Try to find the engine your theme uses in the multilib repository or the [AUR](/index.php/AUR "AUR"). If you have no idea which engine your theme is using, the easiest fix is to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). This does however contain quite a lot of packages, so the best would be to find and install only the needed package.
 
-**Note:** You may not have to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/)<sup><small>AUR</small></sup>. First try if the following steps work for you if you only install _lib32-gtk2_ and a GTK+2 theme respectively. See also the [forums](https://bbs.archlinux.org/viewtopic.php?pid=1200975#p1200975).
+**Note:** You may not have to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). First try if the following steps work for you if you only install _lib32-gtk2_ and a GTK+2 theme respectively. See also the [forums](https://bbs.archlinux.org/viewtopic.php?pid=1200975#p1200975).
 
-Once installed, it will still not work unless you have a 32-bit version of GConf installed. You could build and install [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/)<sup><small>AUR</small></sup> if desired, but there is an easier workaround. First, create or edit `~/.gtkrc-2.0` so that it contains the following line:
+Once installed, it will still not work unless you have a 32-bit version of GConf installed. You could build and install [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) if desired, but there is an easier workaround. First, create or edit `~/.gtkrc-2.0` so that it contains the following line:
 
 ```
 $ gtk-theme-name = "_My theme_"
@@ -833,7 +833,7 @@ where type=68 and body_xml not like '<file%';
 
 Now you can upgrade Skype. [[3]](http://community.skype.com/t5/Linux/Skype-4-3-crashes-with-old-chat-history/td-p/3220410/page/2)
 
-Note that Skype 4.3 requires a processor with SSE2 support. Otherwise Skype will crash with an 'Aborted' message. In that case use [skype42](https://aur.archlinux.org/packages/skype42/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/skype42)]</sup> instead.
+Note that Skype 4.3 requires a processor with SSE2 support. Otherwise Skype will crash with an 'Aborted' message. In that case use [skype42](https://aur.archlinux.org/packages/skype42/) instead.
 
 ### You are already signed in on this computer
 

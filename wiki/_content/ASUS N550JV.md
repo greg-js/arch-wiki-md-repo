@@ -65,7 +65,7 @@ $ alsamixer -c PCH
 
 #### Brightness
 
-In some cases, `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"), so install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Load the module to control hotkeys:
+In some cases, `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"), so install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/) from the [AUR](/index.php/AUR "AUR"). Load the module to control hotkeys:
 
 ```
 # modprobe asus-nb-wmi

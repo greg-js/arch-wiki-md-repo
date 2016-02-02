@@ -1,12 +1,5 @@
 # Chrony
 
-Related articles
-
-*   [Time](/index.php/Time "Time")
-*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
-*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
-*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
-
 This article describes how to set up and run Chrony, an alternative NTP client and server that is roaming friendly and designed specifically for systems that are not online all the time.
 
 ## Contents
@@ -146,11 +139,11 @@ You can either use _chronyc_ to notify _chrony_ that your network configuration 
 
 ### NetworkManager
 
-_chronyd_ can be go into online/offline mode along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install [networkmanager-dispatcher-chrony](https://aur.archlinux.org/packages/networkmanager-dispatcher-chrony/)<sup><small>AUR</small></sup> from the AUR.
+_chronyd_ can be go into online/offline mode along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install [networkmanager-dispatcher-chrony](https://aur.archlinux.org/packages/networkmanager-dispatcher-chrony/) from the AUR.
 
 ### netctl
 
-Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dispatcher-chrony/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/netctl-dispatcher-chrony)]</sup> from the AUR, and add the included scripts to your [netctl](/index.php/Netctl "Netctl") profile:
+Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dispatcher-chrony/) from the AUR, and add the included scripts to your [netctl](/index.php/Netctl "Netctl") profile:
 
 ```
 # echo "ExecUpPost='/usr/share/netctl-dispatcher-chrony/chrony-up.sh'" >> /path/to/netctl/profile

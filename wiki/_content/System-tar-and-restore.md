@@ -11,7 +11,7 @@
 
 ## Installation
 
-Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") or from [archlinuxgr-any](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#archlinuxgr-any) repo.
+Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/) from the [AUR](/index.php/AUR "AUR") or from [archlinuxgr-any](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#archlinuxgr-any) repo.
 
 ## Features
 

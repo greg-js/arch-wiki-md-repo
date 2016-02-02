@@ -128,7 +128,7 @@ WINEPREFIX=~/win32 wine office2007sp3-kb2526086-fullfile-en-us.exe
 
 To install the Office 2007 Fonts, (this probably isn't necessary)
 
-First download [ttf-office-2007-fonts](https://aur.archlinux.org/packages/ttf-office-2007-fonts/)<sup><small>AUR</small></sup> from the AUR
+First download [ttf-office-2007-fonts](https://aur.archlinux.org/packages/ttf-office-2007-fonts/) from the AUR
 
 Change to the directory you will be building the package, then run
 

@@ -21,27 +21,27 @@ More implementations are provided in the [Arch User Repository](/index.php/Arch_
 
 *   **loksh** — A Linux port of OpenBSD's ksh
 
-	[https://github.com/dimkr/loksh](https://github.com/dimkr/loksh) || [loksh](https://aur.archlinux.org/packages/loksh/)<sup><small>AUR</small></sup>
+	[https://github.com/dimkr/loksh](https://github.com/dimkr/loksh) || [loksh](https://aur.archlinux.org/packages/loksh/)
 
 *   **Public Domain Korn Shell** — Clone of the AT&T Korn shell. At the moment, it has most of the ksh88 features, not much of the ksh93 features, and a number of its own features.
 
-	[http://www.cs.mun.ca/~michael/pdksh/](http://www.cs.mun.ca/~michael/pdksh/) || [pdksh](https://aur.archlinux.org/packages/pdksh/)<sup><small>AUR</small></sup>
+	[http://www.cs.mun.ca/~michael/pdksh/](http://www.cs.mun.ca/~michael/pdksh/) || [pdksh](https://aur.archlinux.org/packages/pdksh/)
 
 *   **[AT&T Korn shell](https://en.wikipedia.org/wiki/Korn_shell "wikipedia:Korn shell")** — Official AT&T version.
 
-	[http://www.kornshell.com/](http://www.kornshell.com/) || [ksh](https://aur.archlinux.org/packages/ksh/)<sup><small>AUR</small></sup>
+	[http://www.kornshell.com/](http://www.kornshell.com/) || [ksh](https://aur.archlinux.org/packages/ksh/)
 
 *   **OpenBSDs Korn Shell** — Porting of the OpenBSD version of ksh to GNU/Linux.
 
-	[http://www.connochaetos.org/oksh/](http://www.connochaetos.org/oksh/) || [oksh](https://aur.archlinux.org/packages/oksh/)<sup><small>AUR</small></sup>
+	[http://www.connochaetos.org/oksh/](http://www.connochaetos.org/oksh/) || [oksh](https://aur.archlinux.org/packages/oksh/)
 
 *   **obase** — OpenBSD userland ported to Linux, statically linked.
 
-	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-git](https://aur.archlinux.org/packages/obase-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/obase-git)]</sup>
+	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-git](https://aur.archlinux.org/packages/obase-git/)
 
 *   **obase musl** — OpenBSD userland ported to Linux, statically linked to musl libc.
 
-	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-musl-git](https://aur.archlinux.org/packages/obase-musl-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/obase-musl-git)]</sup>
+	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-musl-git](https://aur.archlinux.org/packages/obase-musl-git/)
 
 ## Making m/ksh your default login shell
 

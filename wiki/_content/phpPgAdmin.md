@@ -1,9 +1,5 @@
 # phpPgAdmin
 
-Related articles
-
-*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
-
 [phpPgAdmin](http://phppgadmin.sourceforge.net/) is a web-based tool to help manage PostgreSQL databases using an PHP frontend.
 
 ## Contents

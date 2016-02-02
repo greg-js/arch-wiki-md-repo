@@ -6,7 +6,7 @@
 
 ProjectM can be [installed](/index.php/Pacman "Pacman") with the [projectm-pulseaudio](https://www.archlinux.org/packages/?name=projectm-pulseaudio) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Support for other sound servers is provided by [projectm-jack](https://www.archlinux.org/packages/?name=projectm-jack) and [projectm-libvisual-alsa](https://aur.archlinux.org/packages/projectm-libvisual-alsa/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Support for other sound servers is provided by [projectm-jack](https://www.archlinux.org/packages/?name=projectm-jack) and [projectm-libvisual-alsa](https://aur.archlinux.org/packages/projectm-libvisual-alsa/) from the [AUR](/index.php/AUR "AUR").
 
 ## Run
 

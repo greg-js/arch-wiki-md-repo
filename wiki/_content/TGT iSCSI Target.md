@@ -1,10 +1,5 @@
 # TGT iSCSI Target
 
-Related articles
-
-*   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
-*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
-
 The [TGT SCSI framework](http://stgt.sourceforge.net) can be used for several storage protocols. This document describes the usage of TGT as iSCSI target.
 
 ## Contents
@@ -32,7 +27,7 @@ As a disadvantage some developers and users have argued that because the target 
 
 ## Installation
 
-Install the [tgt](https://aur.archlinux.org/packages/tgt/)<sup><small>AUR</small></sup> package. If you want to use the direct store, then [sg3_utils](https://www.archlinux.org/packages/?name=sg3_utils) must also be installed.
+Install the [tgt](https://aur.archlinux.org/packages/tgt/) package. If you want to use the direct store, then [sg3_utils](https://www.archlinux.org/packages/?name=sg3_utils) must also be installed.
 
 Using direct-store, the properties of the physical device will be available for the initiator and target.
 

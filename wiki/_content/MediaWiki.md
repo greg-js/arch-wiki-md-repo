@@ -204,7 +204,7 @@ Check that php, apache and mysql uses UTF-8\. Otherwise you may face strange bug
 
 After following [this instruction](https://www.mediawiki.org/wiki/Extension:VisualEditor) on how to install the VisualEditor, you need a backend nodejs application on your server, called [Parsoid](https://www.mediawiki.org/wiki/Parsoid), to get it finally working.
 
-Simply install [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/parsoid-git)]</sup> from the [AUR](/index.php/AUR "AUR") and adjust the path to your MediaWiki in following file:
+Simply install [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/) from the [AUR](/index.php/AUR "AUR") and adjust the path to your MediaWiki in following file:
 
  `/usr/share/webapps/parsoid/api/localsettings.js` 
 

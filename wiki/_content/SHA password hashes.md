@@ -1,9 +1,5 @@
 # SHA password hashes
 
-Related articles
-
-*   [Security#Password hashes](/index.php/Security#Password_hashes "Security")
-
 The Secure Hash Algorithms (SHA) are a set of [hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function "wikipedia:Cryptographic hash function") often used to encrypt passwords. By default Arch uses SHA-512 for passwords, but some systems may still be using the older [MD5](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5") algorithm. This article describes how to increase password security.
 
 ## Contents
@@ -58,6 +54,6 @@ To verify that your passwords have been re-hashed, check the `/etc/shadow` file 
 
 ### fgetty
 
-Arch Linux is using SHA-512 password hashing by default (since 2011-11-26). The very minimal terminal manager _fgetty_ does not support SHA-512 password hashing by default. Enabling SHA-512 with the default _fgetty_ will cause you to be locked out. A patched version of _fgetty_ is in the [AUR](/index.php/AUR "AUR") named [fgetty-pam](https://aur.archlinux.org/packages/fgetty-pam/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fgetty-pam)]</sup> which adds SHA-512 support.
+Arch Linux is using SHA-512 password hashing by default (since 2011-11-26). The very minimal terminal manager _fgetty_ does not support SHA-512 password hashing by default. Enabling SHA-512 with the default _fgetty_ will cause you to be locked out. A patched version of _fgetty_ is in the [AUR](/index.php/AUR "AUR") named [fgetty-pam](https://aur.archlinux.org/packages/fgetty-pam/) which adds SHA-512 support.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=SHA_password_hashes&oldid=410429](https://wiki.archlinux.org/index.php?title=SHA_password_hashes&oldid=410429)"

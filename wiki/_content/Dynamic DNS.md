@@ -33,10 +33,10 @@ Some of the compatible services are listed below, but you can also check the [ex
 | Service | Cost | Available Records | Hostname Limit | Config Notes | Alternative tools |
 | [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free |
 | [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
-| [Duck DNS](https://www.duckdns.org/) | Free | [duckdns](https://aur.archlinux.org/packages/duckdns/)<sup><small>AUR</small></sup> |
-| [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/)<sup><small>AUR</small></sup>, [petrified](https://aur.archlinux.org/packages/petrified/)<sup><small>AUR</small></sup> |
-| [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `dyndns2`, server `dynupdate.noip.com` | [noip](https://aur.archlinux.org/packages/noip/)<sup><small>AUR</small></sup> |
-| [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/)<sup><small>AUR</small></sup> |
+| [Duck DNS](https://www.duckdns.org/) | Free | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
+| [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/), [petrified](https://aur.archlinux.org/packages/petrified/) |
+| [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `dyndns2`, server `dynupdate.noip.com` | [noip](https://aur.archlinux.org/packages/noip/) |
+| [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/) |
 
 #### Starting ddclient after networking is up
 
@@ -66,7 +66,7 @@ ExecStart=/usr/bin/ddclient
 
 ### Other tools
 
-Other DDNS updaters that work with several providers are [inadyn-mt](https://aur.archlinux.org/packages/inadyn-mt/)<sup><small>AUR</small></sup> ([supported providers](http://sourceforge.net/projects/inadyn-mt)) and [ndyndns](https://aur.archlinux.org/packages/ndyndns/)<sup><small>AUR</small></sup> (supports DynDNS and Namecheap).
+Other DDNS updaters that work with several providers are [inadyn-mt](https://aur.archlinux.org/packages/inadyn-mt/) ([supported providers](http://sourceforge.net/projects/inadyn-mt)) and [ndyndns](https://aur.archlinux.org/packages/ndyndns/) (supports DynDNS and Namecheap).
 
 ## Other Providers
 
@@ -74,7 +74,7 @@ The following DDNS providers are not compatible with [ddclient](#ddclient) so up
 
 ### duiadns
 
-[Duiadns.org](https://www.duiadns.net) is a free service which can be automated with [duiadns](https://aur.archlinux.org/packages/duiadns/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/duiadns)]</sup>.
+[Duiadns.org](https://www.duiadns.net) is a free service which can be automated with [duiadns](https://aur.archlinux.org/packages/duiadns/).
 
 ### FreeDns.io
 

@@ -150,14 +150,14 @@ $ aplaymidi filename.mid --port 128:0
 
 Another example is **vkeybd**, a virtual MIDI keyboard for X.
 
-You can [install](/index.php/Install "Install") [vkeybd](https://aur.archlinux.org/packages/vkeybd/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+You can [install](/index.php/Install "Install") [vkeybd](https://aur.archlinux.org/packages/vkeybd/) from the [AUR](/index.php/AUR "AUR").
 
 ```
 $ vkeybd --addr 128:0
 
 ```
 
-Option `--addr 128:0` connects the input (readable) software MIDI port provided by vkeybd to the first output (writable) ALSA port provided by Timidity. Alternatively you can use aconnect, [aconnectgui](https://aur.archlinux.org/packages/aconnectgui/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/aconnectgui)]</sup>, [patchage](https://www.archlinux.org/packages/?name=patchage) or kaconnect. As a result when you play around with the keys on the vkeybd TiMidity++ plays the appropriate notes.
+Option `--addr 128:0` connects the input (readable) software MIDI port provided by vkeybd to the first output (writable) ALSA port provided by Timidity. Alternatively you can use aconnect, [aconnectgui](https://aur.archlinux.org/packages/aconnectgui/), [patchage](https://www.archlinux.org/packages/?name=patchage) or kaconnect. As a result when you play around with the keys on the vkeybd TiMidity++ plays the appropriate notes.
 
 #### Connect to virtual MIDI device
 

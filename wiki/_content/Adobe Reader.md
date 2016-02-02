@@ -6,7 +6,7 @@
 
 Follow the instructions [here](/index.php/TOMOYO_Linux#TOMOYO_Linux_2.x "TOMOYO Linux") to install TOMOYO. Please note that this section describes using TOMOYO 2.5.
 
-Note that the instructions below describe securing [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup>.
+Note that the instructions below describe securing [acroread](https://aur.archlinux.org/packages/acroread/).
 
 *   Open `/etc/tomoyo/exception_policy.conf` file and add these lines:
 

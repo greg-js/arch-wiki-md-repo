@@ -15,7 +15,7 @@ This page goes over how to get a simple setup up and running. My server uses IP 
 
 ## Installation
 
-Install the [honeyd](https://aur.archlinux.org/packages/honeyd/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+Install the [honeyd](https://aur.archlinux.org/packages/honeyd/) package from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

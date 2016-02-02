@@ -18,9 +18,9 @@
 
 [Install](/index.php/Install "Install") [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"). Available variants are:
 
-*   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> — development version.
-*   [xmobar-gmail](https://aur.archlinux.org/packages/xmobar-gmail/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail)]</sup> — GMail monitoring.
-*   [xmobar-gmail-darcs](https://aur.archlinux.org/packages/xmobar-gmail-darcs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmobar-gmail-darcs)]</sup> — GMail monitoring version.
+*   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/) — development version.
+*   [xmobar-gmail](https://aur.archlinux.org/packages/xmobar-gmail/) — GMail monitoring.
+*   [xmobar-gmail-darcs](https://aur.archlinux.org/packages/xmobar-gmail-darcs/) — GMail monitoring version.
 *   _xmobar_ from the unofficial [haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") repository — supports wireless and volume plugin with no additional configuration required; the repository also contains all the required dependencies.
 
 ## Running
@@ -265,7 +265,7 @@ Then add the command to the template
 
 ### MPD integration
 
-Assuming you have [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> installed (with [haskell-libmpd](https://aur.archlinux.org/packages/haskell-libmpd/)<sup><small>AUR</small></sup>), there is a plugin to pull information to display on the status bar about the currently playing song. To add a simple plugin displaying the artist and song of the current track, add this line to your commands list in your `~/.xmobarrc`:
+Assuming you have [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/) installed (with [haskell-libmpd](https://aur.archlinux.org/packages/haskell-libmpd/)), there is a plugin to pull information to display on the status bar about the currently playing song. To add a simple plugin displaying the artist and song of the current track, add this line to your commands list in your `~/.xmobarrc`:
 
 ```
 , Run MPD ["-t", "<state>: <artist> - <track>"] 10
@@ -281,7 +281,7 @@ Finally, you will need to place the plugin some place in your template, as follo
 
 ### Conky-Cli integration
 
-It is possible to utilize the features of [conky-cli](https://aur.archlinux.org/packages/conky-cli/)<sup><small>AUR</small></sup> such as disk space, top and system messages, by piping the information from conky into a text file and read the contents from it. Following is a bash script to use with xmobar for this purpose.
+It is possible to utilize the features of [conky-cli](https://aur.archlinux.org/packages/conky-cli/) such as disk space, top and system messages, by piping the information from conky into a text file and read the contents from it. Following is a bash script to use with xmobar for this purpose.
 
  `~/.xmonad/conkyscript` 
 

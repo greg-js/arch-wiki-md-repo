@@ -1,11 +1,5 @@
 # EFISTUB
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-
 The Linux Kernel ([linux](https://www.archlinux.org/packages/?name=linux)>=3.3) supports EFISTUB (EFI BOOT STUB) booting. This feature allows EFI firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels or can be activated by setting `CONFIG_EFI_STUB=y` in the Kernel configuration (see [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information).
 
 An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly using a [UEFI boot manager](/index.php/Boot_loaders#UEFI-only_boot_loaders "Boot loaders"). The latter is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
@@ -79,7 +73,7 @@ ExecStart=/usr/bin/cp -f /boot/initramfs-linux-fallback.img $esp/EFI/arch/initra
 
 ```
 
-**Tip:** For secure boot (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)<sup><small>AUR</small></sup>): `ExecStart=/usr/bin/sbsign --key <PATH TO DB.key> --cert <PATH TO DB.crt> --output $esp/EFI/arch/vmlinuz-linux $esp/EFI/arch/vmlinuz_linux` 
+**Tip:** For secure boot (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)): `ExecStart=/usr/bin/sbsign --key <PATH TO DB.key> --cert <PATH TO DB.crt> --output $esp/EFI/arch/vmlinuz-linux $esp/EFI/arch/vmlinuz_linux` 
 
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
 

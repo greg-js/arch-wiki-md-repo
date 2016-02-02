@@ -42,7 +42,7 @@ In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 
 	Console
 
-*   [DvorakNG](https://aur.archlinux.org/packages/DvorakNG/)<sup><small>AUR</small></sup>
+*   [DvorakNG](https://aur.archlinux.org/packages/DvorakNG/)
 
 	GUI
 

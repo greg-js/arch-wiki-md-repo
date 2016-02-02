@@ -27,7 +27,7 @@ GNOME's color schemes are editable easily via the ~/.gtkrc-2.0 file, but the GNO
 
 ## Installation
 
-Install [gnome-color-chooser](https://aur.archlinux.org/packages/gnome-color-chooser/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-color-chooser)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install [gnome-color-chooser](https://aur.archlinux.org/packages/gnome-color-chooser/) from the [AUR](/index.php/AUR "AUR").
 
 ## Tips and Tricks
 

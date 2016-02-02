@@ -1,9 +1,5 @@
 # Arch Linux Archive
 
-Related articles
-
-*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
-
 The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollback Machine** (a.k.a **ARM**), stores _official repositories snapshots_, _iso images_ and _bootstrap tarballs_ across time.
 
 **You can use it to**
@@ -183,7 +179,7 @@ The [iso](http://ala.seblu.net/iso) directory contains official ISO images and b
 
 ## agetpkg
 
-[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/)<sup><small>AUR</small></sup> is a command line tool used to quickly list/get/install packages stored in the Archive.
+[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) is a command line tool used to quickly list/get/install packages stored in the Archive.
 
 ##### Download a previous version of ferm package
 

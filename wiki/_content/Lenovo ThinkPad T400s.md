@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T400s
 
-Related articles
-
-*   [Lenovo ThinkPad T400](/index.php/Lenovo_ThinkPad_T400 "Lenovo ThinkPad T400")
-
 Before reading, a good starting point for Arch Linux installation on notebooks is the main [laptop](/index.php/Laptop "Laptop") article.
 
 The article describes the installation of Arch Linux on a ThinkPad T400s.

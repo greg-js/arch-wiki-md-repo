@@ -1,11 +1,5 @@
 # Multiboot USB drive
 
-Related articles
-
-*   [GRUB](/index.php/GRUB "GRUB")
-*   [Syslinux](/index.php/Syslinux "Syslinux")
-*   [Archiso](/index.php/Archiso "Archiso")
-
 A multiboot USB flash drive allows booting multiple ISO files from a single device. The ISO files can be copied to the device and booted directly without unpacking them first. There are multiple methods available, but they may not work for all ISO images.
 
 ## Contents

@@ -32,7 +32,7 @@ and symlinked as
 
 The heirloom development tools provide tools like **yacc**, **lex**, **m4**, **make**, and **SCCS**. This package, together with the Bourne shell, form a dependency foundation for the rest of the Heirloom packages. The classical devtools ensures consistent behavior, independently of changes made to the corresponding GNU tools.
 
-The [heirloom-devtools-cvs](https://aur.archlinux.org/packages/heirloom-devtools-cvs/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package installs the following files:
+The [heirloom-devtools-cvs](https://aur.archlinux.org/packages/heirloom-devtools-cvs/) [AUR](/index.php/AUR "AUR") package installs the following files:
 
  `/usr/heirloom/bin` 
 
@@ -59,7 +59,7 @@ help  lex  libl.a  liby.a  svr4.make  yaccpar
 
 This package contains classical UNIX binaries corresponding to GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils), [diffutils](https://www.archlinux.org/packages/?name=diffutils), tar and more. The binaries are organized according to the different UNIX releases, so that one can choose which generation of UNIX environment to run.
 
-The Heirloom Toolchest is available as an [heirloom-cvs](https://aur.archlinux.org/packages/heirloom-cvs/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package, which installs the following files:
+The Heirloom Toolchest is available as an [heirloom-cvs](https://aur.archlinux.org/packages/heirloom-cvs/) [AUR](/index.php/AUR "AUR") package, which installs the following files:
 
  `/usr/heirloom/bin` 
 
@@ -116,10 +116,10 @@ users   whatis
 
 ## [Heirloom Documentation tools](http://heirloom.sourceforge.net/doctools.html)
 
-The Heirloom Documentation tools provides an alternative to **groff** with powerful capabilities, like open document compatibility etc. Building this package, which is avaliable as an [heirloom-doctools-cvs](https://aur.archlinux.org/packages/heirloom-doctools-cvs/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package, requires the Heirloom shell, devtools and toolchest.
+The Heirloom Documentation tools provides an alternative to **groff** with powerful capabilities, like open document compatibility etc. Building this package, which is avaliable as an [heirloom-doctools-cvs](https://aur.archlinux.org/packages/heirloom-doctools-cvs/) [AUR](/index.php/AUR "AUR") package, requires the Heirloom shell, devtools and toolchest.
 
 ## [The Heirloom Packaging tools](http://heirloom.sourceforge.net/pkgtools.html)
 
-The Heirloom packaging tools are a port of Sun SVR4's package management system, which was released as open source with opensolaris. This package requires the Heirloom shell, devtools and toolchest and is available as an [heirloom-pkgtools-cvs](https://aur.archlinux.org/packages/heirloom-pkgtools-cvs/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package.
+The Heirloom packaging tools are a port of Sun SVR4's package management system, which was released as open source with opensolaris. This package requires the Heirloom shell, devtools and toolchest and is available as an [heirloom-pkgtools-cvs](https://aur.archlinux.org/packages/heirloom-pkgtools-cvs/) [AUR](/index.php/AUR "AUR") package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Heirloom&oldid=409682](https://wiki.archlinux.org/index.php?title=Heirloom&oldid=409682)"

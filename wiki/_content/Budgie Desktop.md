@@ -1,20 +1,12 @@
 # Budgie Desktop
 
-Related articles
-
-*   [Wayland](/index.php/Wayland "Wayland")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Gtk](/index.php/Gtk "Gtk")
-
 Budgie is the default desktop of Solus Operating System, written from scratch. Besides a more modern design, Budgie can emulate the look and feel of the GNOME 2 desktop.
 
 At this time Budgie is heavily under development, so you can expect minor bugs and new features to be added as time goes on.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup> package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)<sup><small>AUR</small></sup> for current git master.
+[Install](/index.php/Install "Install") the [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) for current git master.
 
 For additional settings, install [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 

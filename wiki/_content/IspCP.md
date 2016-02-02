@@ -21,7 +21,7 @@ ispCP-Omega is the current release of the ispCP project which is a bridge betwee
 
 ### Installation
 
-ispCP-Omega is now in the [AUR](/index.php/AUR "AUR"): [ispcp-omega](https://aur.archlinux.org/packages/ispcp-omega/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ispcp-omega)]</sup>. Download the PKGBUILD and then makepkg to install or use any of the aur wrapper to makepkg and install automatically.
+ispCP-Omega is now in the [AUR](/index.php/AUR "AUR"): [ispcp-omega](https://aur.archlinux.org/packages/ispcp-omega/). Download the PKGBUILD and then makepkg to install or use any of the aur wrapper to makepkg and install automatically.
 
 ispCP setup script need MySQL server running.
 

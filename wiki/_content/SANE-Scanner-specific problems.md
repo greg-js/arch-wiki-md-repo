@@ -45,9 +45,9 @@ In order to install a Brother scanner or printer/scanner combo you need the righ
 
 Then, install the appropriate package:
 
-*   [brscan2](https://aur.archlinux.org/packages/brscan2/)<sup><small>AUR</small></sup>
-*   [brscan3](https://aur.archlinux.org/packages/brscan3/)<sup><small>AUR</small></sup>
-*   [brscan4](https://aur.archlinux.org/packages/brscan4/)<sup><small>AUR</small></sup>
+*   [brscan2](https://aur.archlinux.org/packages/brscan2/)
+*   [brscan3](https://aur.archlinux.org/packages/brscan3/)
+*   [brscan4](https://aur.archlinux.org/packages/brscan4/)
 
 Now, the scanner should be recognized by SANE.
 
@@ -67,9 +67,9 @@ Example:
 
 ### Scan-key-tool
 
-Brother has released a tool to enable scanning to be triggered by user interaction with the scanner itself (e.g. by selecting one of "Scan to email", "Scan to image", etc. on the scanner keypad) rather than by an attached computer. This can be set up by installing the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/)<sup><small>AUR</small></sup> package and starting `brscan-skey.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Note that by default this service runs as the **brscan-skey** user which is created by the package, whose home directory is located at `/srv/brscan-skey`.
+Brother has released a tool to enable scanning to be triggered by user interaction with the scanner itself (e.g. by selecting one of "Scan to email", "Scan to image", etc. on the scanner keypad) rather than by an attached computer. This can be set up by installing the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/) package and starting `brscan-skey.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Note that by default this service runs as the **brscan-skey** user which is created by the package, whose home directory is located at `/srv/brscan-skey`.
 
-Brother supplies some default scripts that are executed when a scan type is selected on the keypad. These may require the installation of some optional dependencies of the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/)<sup><small>AUR</small></sup> package. For all options apart from "Scan to email" the resulting output can be found inside `$HOME/brscan`, with `$HOME` the home directory of the user running this tool (so `/srv/brscan-skey` if started via systemd as a systemwide process).
+Brother supplies some default scripts that are executed when a scan type is selected on the keypad. These may require the installation of some optional dependencies of the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/) package. For all options apart from "Scan to email" the resulting output can be found inside `$HOME/brscan`, with `$HOME` the home directory of the user running this tool (so `/srv/brscan-skey` if started via systemd as a systemwide process).
 
 It is possible to change what action takes place when a given type of scan is selected on the keypad. This is done by editing `/opt/brother/scanner/brscan-skey/brscan-skey-0.2.4-0.cfg`. For each variable `SCAN_COMMAND` in `IMAGE`, `OCR`, `EMAIL`, `FILE`, the command
 
@@ -102,18 +102,18 @@ Cannot read scanner make & model: bjnp://
 
 ```
 
-and the scanner refuses to connect, then it may be because you have a newer scanner using the mfnp, and not the bjnp protocol. Unfortunately, this scanner may not be supported (yet) by the current sane version. However, you can install [sane-git](https://aur.archlinux.org/packages/sane-git/)<sup><small>AUR</small></sup> to get a version supporting mfnp reasonably well. (And make sure that the scanner is in "remote" scanning mode - otherwise it will not communicate it's scanning capabilities over the network at all)
+and the scanner refuses to connect, then it may be because you have a newer scanner using the mfnp, and not the bjnp protocol. Unfortunately, this scanner may not be supported (yet) by the current sane version. However, you can install [sane-git](https://aur.archlinux.org/packages/sane-git/) to get a version supporting mfnp reasonably well. (And make sure that the scanner is in "remote" scanning mode - otherwise it will not communicate it's scanning capabilities over the network at all)
 
 ## Epson
 
 With Epson scanners, you can use "Image Scan! for Linux".
 
 *   Install the [iscan](https://www.archlinux.org/packages/?name=iscan) package
-*   Install the appropriate iscan-plugin package for your scanner (for example, [iscan-plugin-gt-x820](https://aur.archlinux.org/packages/iscan-plugin-gt-x820/)<sup><small>AUR</small></sup> for the Epson Perfection Photo V600)
+*   Install the appropriate iscan-plugin package for your scanner (for example, [iscan-plugin-gt-x820](https://aur.archlinux.org/packages/iscan-plugin-gt-x820/) for the Epson Perfection Photo V600)
 *   Add your user to the "scanner" group
 *   Reboot, so that udev will recognize the device as a scanner and apply appropriate permissions
 
-For network (including Wi-Fi) scanners, install [iscan](https://www.archlinux.org/packages/?name=iscan) and [iscan-plugin-network](https://aur.archlinux.org/packages/iscan-plugin-network/)<sup><small>AUR</small></sup>, then edit `/etc/sane.d/epkowa.conf` and add the line:
+For network (including Wi-Fi) scanners, install [iscan](https://www.archlinux.org/packages/?name=iscan) and [iscan-plugin-network](https://aur.archlinux.org/packages/iscan-plugin-network/), then edit `/etc/sane.d/epkowa.conf` and add the line:
 
 ```
 net {IP_OF_SCANNER}
@@ -167,7 +167,7 @@ For the operation of the scanner S300M a firmware file `/usr/share/sane/epjitsu/
 
 ## HP
 
-For HP hardware you may also need to [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package (see [hplib supported devices](http://hplipopensource.com/hplip-web/supported_devices/index.html)) and/or [hpoj](https://aur.archlinux.org/packages/hpoj/)<sup><small>AUR</small></sup> (see [hpoj supported devices](http://hpoj.sourceforge.net/suplist.shtml)).
+For HP hardware you may also need to [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package (see [hplib supported devices](http://hplipopensource.com/hplip-web/supported_devices/index.html)) and/or [hpoj](https://aur.archlinux.org/packages/hpoj/) (see [hpoj supported devices](http://hpoj.sourceforge.net/suplist.shtml)).
 
 *   Uncomment or add `hpaio` and `hpoj` to a new line in `/etc/sane.d/dll.conf`.
 *   Running `hp-setup` as root may help you add your device.

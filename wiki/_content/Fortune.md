@@ -38,7 +38,7 @@ command fortune
 
 **Tip:**
 
-You can use [wikiquote-fortune](https://aur.archlinux.org/packages/wikiquote-fortune/)<sup><small>AUR</small></sup> to generate fortune files from [wikiquote](http://en.wikiquote.org) pages, using the syntax `wikiquote-fortune X`, where X is the page's name. To use these files, run `$ fortune /path/to/quote`. You can find fortune files made this way on the [AUR](/index.php/AUR "AUR"). For example, [fortune-mod-archlinux](https://aur.archlinux.org/packages/fortune-mod-archlinux/)<sup><small>AUR</small></sup> contains Arch related quotes.
+You can use [wikiquote-fortune](https://aur.archlinux.org/packages/wikiquote-fortune/) to generate fortune files from [wikiquote](http://en.wikiquote.org) pages, using the syntax `wikiquote-fortune X`, where X is the page's name. To use these files, run `$ fortune /path/to/quote`. You can find fortune files made this way on the [AUR](/index.php/AUR "AUR"). For example, [fortune-mod-archlinux](https://aur.archlinux.org/packages/fortune-mod-archlinux/) contains Arch related quotes.
 
 These two features can be combined, using the program [cowsay](https://www.archlinux.org/packages/?name=cowsay):
 
@@ -119,7 +119,7 @@ This can produce some nice eye candy, and the commands used can be more complex.
 
 **Note:**
 
-For full 256-colored cowsay-like art use [ponysay](https://www.archlinux.org/packages/?name=ponysay) (version 3.0 has 422 ponies). The syntax is the same, meaning `$ ponysay _message_` to say something and `ponysay -l` for a complete list of ponies. To select a pony to display, run `$ ponysay --pony x "message"`, where x is a pony. To create more ponies use [util-say-git](https://aur.archlinux.org/packages/util-say-git/)<sup><small>AUR</small></sup> and store them in `~/.local/share/ponysay/ponies` and `~/.local/share/ponysay/ttyponies/` for desktop and TTY, respectively.
+For full 256-colored cowsay-like art use [ponysay](https://www.archlinux.org/packages/?name=ponysay) (version 3.0 has 422 ponies). The syntax is the same, meaning `$ ponysay _message_` to say something and `ponysay -l` for a complete list of ponies. To select a pony to display, run `$ ponysay --pony x "message"`, where x is a pony. To create more ponies use [util-say-git](https://aur.archlinux.org/packages/util-say-git/) and store them in `~/.local/share/ponysay/ponies` and `~/.local/share/ponysay/ttyponies/` for desktop and TTY, respectively.
 
 ## Random Cow with fortune
 

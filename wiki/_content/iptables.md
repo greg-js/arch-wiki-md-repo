@@ -1,14 +1,5 @@
 # iptables
 
-Related articles
-
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
-*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
-*   [Sshguard](/index.php/Sshguard "Sshguard")
-*   [Fail2ban](/index.php/Fail2ban "Fail2ban")
-*   [Nftables](/index.php/Nftables "Nftables")
-
 _iptables_ is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term _iptables_ is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](/index.php/Firewalls#Console_frontends "Firewalls") and [GUIs](/index.php/Firewalls#Graphic_frontends "Firewalls"). iptables is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and _ip6tables_ is used for [IPv6](/index.php/IPv6 "IPv6").
 
 [nftables](/index.php/Nftables "Nftables") was released in [release with Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), and will one day replace iptables as the main Linux firewall utility.

@@ -1,10 +1,5 @@
 # hibernate-script
 
-Related articles
-
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [Laptop](/index.php/Laptop "Laptop")
-
 "Hibernating" or suspending to disk writes all the running processes to the disk (typically to the swap partition), then completely powers down the machine. This resembles suspending to RAM, but while a machine suspended to RAM still requires a small charge from a battery or power source, a hibernated machine does not and can remain hibernated indefinitely. This advantage comes at the cost of additional time needed to hibernate and to resume, since disks (especially HDD swap partitions) write and read slower than RAM.
 
 This guide focuses on hibernate-script (see the [pm-utils](/index.php/Pm-utils "Pm-utils") page for the alternative), a frontend used with the [uswsusp](/index.php/Uswsusp "Uswsusp") ("userspace suspension") and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") (formerly known as suspend2) hibernate backends. Uswsusp generally works without requiring a patched kernel but should be used with initrd/initramfs. Tuxonice requires a modified kernel, but works without initrd/initramfs and also allows suspending to a swap file if a user does not have, or does not want to use, a swap partition.
@@ -34,7 +29,7 @@ This guide focuses on hibernate-script (see the [pm-utils](/index.php/Pm-utils "
 
 ## Installation
 
-You can install [hibernate-script](https://aur.archlinux.org/packages/hibernate-script/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hibernate-script)]</sup> from the [AUR](/index.php/AUR "AUR").
+You can install [hibernate-script](https://aur.archlinux.org/packages/hibernate-script/) from the [AUR](/index.php/AUR "AUR").
 
 ## Backend setup
 
@@ -288,7 +283,7 @@ event=button/lid
 
 ```
 
-You can also install [lidsleep](https://aur.archlinux.org/packages/lidsleep/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lidsleep)]</sup> which includes the file altered to use pm-utils and suspend to RAM.
+You can also install [lidsleep](https://aur.archlinux.org/packages/lidsleep/) which includes the file altered to use pm-utils and suspend to RAM.
 
 Alternatively you can edit `/etc/acpi/actions/lm_lid.sh` this is the file that is executed when the lid state is changed
 

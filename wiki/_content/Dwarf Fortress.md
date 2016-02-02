@@ -20,12 +20,12 @@ The game is played with keyboard only, though there exist [mods](http://dwarffor
 
 Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bitmap tilesets:
 
-*   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)<sup><small>AUR</small></sup>
-*   [dwarffortress-mayday](https://aur.archlinux.org/packages/dwarffortress-mayday/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwarffortress-mayday)]</sup>
-*   [dwarffortress-myne](https://aur.archlinux.org/packages/dwarffortress-myne/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwarffortress-myne)]</sup>
-*   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/)<sup><small>AUR</small></sup>
-*   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwarffortress-phoebus)]</sup>
-*   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/)<sup><small>AUR</small></sup>
+*   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)
+*   [dwarffortress-mayday](https://aur.archlinux.org/packages/dwarffortress-mayday/)
+*   [dwarffortress-myne](https://aur.archlinux.org/packages/dwarffortress-myne/)
+*   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/)
+*   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/)
+*   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/)
 
 **Note:** Enabling [multilib](/index.php/Multilib "Multilib") repositories on x86_64 systems is required due to 32bit dependencies.
 
@@ -44,7 +44,7 @@ If you get an error stating 'The file "index" must be in the "data" folder' then
 
 ### Dwarf Therapist
 
-[Dwarf Therapist](http://dwarffortresswiki.org/index.php/DF2014:Utilities#Dwarf_Therapist) ([dwarftherapist-git](https://aur.archlinux.org/packages/dwarftherapist-git/)<sup><small>AUR</small></sup> in [AUR](/index.php/AUR "AUR")) is an almost essential mod to tune dwarvish behaviour (makes life a lot easier). For it to work on current kernels you will need to disable a kernel security feature, since dwarf therapist directly accesses and modifies the memory of a running dwarf fortress instance. This setting is called `kernel.yama.ptrace_scope` and defaults to `1`. You need to set it to `0` for dwarf therapist to work:
+[Dwarf Therapist](http://dwarffortresswiki.org/index.php/DF2014:Utilities#Dwarf_Therapist) ([dwarftherapist-git](https://aur.archlinux.org/packages/dwarftherapist-git/) in [AUR](/index.php/AUR "AUR")) is an almost essential mod to tune dwarvish behaviour (makes life a lot easier). For it to work on current kernels you will need to disable a kernel security feature, since dwarf therapist directly accesses and modifies the memory of a running dwarf fortress instance. This setting is called `kernel.yama.ptrace_scope` and defaults to `1`. You need to set it to `0` for dwarf therapist to work:
 
 ```
 # sysctl -w kernel.yama.ptrace_scope=0
@@ -73,23 +73,23 @@ Alternatively, you can just give that permission to dwarftherapist:
 
 ### SoundSense
 
-[SoundSense](http://dwarffortresswiki.org/index.php/DF2014:Utilities#SoundSense) ([soundsense](https://aur.archlinux.org/packages/soundsense/)<sup><small>AUR</small></sup> in [AUR](/index.php/AUR "AUR")) adds various sound effects and music via analysing the gamelog.txt.
+[SoundSense](http://dwarffortresswiki.org/index.php/DF2014:Utilities#SoundSense) ([soundsense](https://aur.archlinux.org/packages/soundsense/) in [AUR](/index.php/AUR "AUR")) adds various sound effects and music via analysing the gamelog.txt.
 
 ### quickfort
 
 Quickfort is a utility for Dwarf Fortress that helps you build fortresses from "blueprint" .CSV, .XLS, and .XLSX files.
 
-*   [quickfort](https://aur.archlinux.org/packages/quickfort/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/quickfort)]</sup>
-*   [quickfort-git](https://aur.archlinux.org/packages/quickfort-git/)<sup><small>AUR</small></sup>
+*   [quickfort](https://aur.archlinux.org/packages/quickfort/)
+*   [quickfort-git](https://aur.archlinux.org/packages/quickfort-git/)
 
 ### StoneSense
 
-StoneSense is an isometric world visualizer for Dwarf Fortress, and can be installed with the [dfhack](https://aur.archlinux.org/packages/dfhack/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package.
+StoneSense is an isometric world visualizer for Dwarf Fortress, and can be installed with the [dfhack](https://aur.archlinux.org/packages/dfhack/) [AUR](/index.php/AUR "AUR") package.
 
 If you choose to install StoneSense manually instead of using the AUR package, you'll need the following dependencies:
 
-*   [lib32-libjpeg6-turbo](https://aur.archlinux.org/packages/lib32-libjpeg6-turbo/)<sup><small>AUR</small></sup>
-*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)<sup><small>AUR</small></sup>
-*   [lib-32-allegro](https://aur.archlinux.org/packages/lib-32-allegro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+*   [lib32-libjpeg6-turbo](https://aur.archlinux.org/packages/lib32-libjpeg6-turbo/)
+*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
+*   [lib-32-allegro](https://aur.archlinux.org/packages/lib-32-allegro/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=413316](https://wiki.archlinux.org/index.php?title=Dwarf_Fortress&oldid=413316)"

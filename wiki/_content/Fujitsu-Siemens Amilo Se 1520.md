@@ -1,9 +1,5 @@
 # Fujitsu-Siemens Amilo Se 1520
 
-Related articles
-
-*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
-
 This info may be helpful in addition to the Arch Linux Installation guide.
 
 ## Contents

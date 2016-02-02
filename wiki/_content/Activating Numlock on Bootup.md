@@ -25,7 +25,7 @@
 
 ### Using a separate service
 
-*   [Install](/index.php/Install "Install") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+*   [Install](/index.php/Install "Install") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) from the [AUR](/index.php/AUR "AUR").
     Then [enable](/index.php/Enable "Enable") the `numLockOnTty` service.
 
 *   Alternatively, if you do not want to install an aur package to implement this, you can simply create a service file in `/etc/systemd/system` like:

@@ -1,14 +1,5 @@
 # Postfix
 
-Related articles
-
-*   [PostFix Howto With SASL](/index.php/PostFix_Howto_With_SASL "PostFix Howto With SASL")
-*   [Amavis](/index.php/Amavis "Amavis")
-*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
-*   [Courier MTA](/index.php/Courier_MTA "Courier MTA")
-*   [Exim](/index.php/Exim "Exim")
-*   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
-
 From [Postfix's site](http://www.postfix.org/):
 
 	_Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different._

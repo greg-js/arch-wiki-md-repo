@@ -1,10 +1,5 @@
 # Distcc
 
-Related articles
-
-*   [TORQUE](/index.php/TORQUE "TORQUE")
-*   [Slurm](/index.php/Slurm "Slurm")
-
 Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network. distcc should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. The cool part is one can use it together with pacman/srcpac.
 
 ## Contents
@@ -356,7 +351,7 @@ DISTCC_ARGS="--allow 192.168.0.0/24 --log-level error --log-file /tmp/distccd.lo
 
 ### Failure work with CMake or other tools
 
-CMake sometimes pass ["response file"](http://gcc.gnu.org/wiki/Response_Files) to gcc, but the distcc cannot deal with it. There is a [patch file](http://code.google.com/p/distcc/issues/detail?id=85&q=response), but it has not been applied to upstream code. Users encountering this problem, can source this file or use the [distcc-rsp](https://aur.archlinux.org/packages/distcc-rsp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/distcc-rsp)]</sup> package.
+CMake sometimes pass ["response file"](http://gcc.gnu.org/wiki/Response_Files) to gcc, but the distcc cannot deal with it. There is a [patch file](http://code.google.com/p/distcc/issues/detail?id=85&q=response), but it has not been applied to upstream code. Users encountering this problem, can source this file or use the [distcc-rsp](https://aur.archlinux.org/packages/distcc-rsp/) package.
 
 ### Limit HDD/SSD usage
 

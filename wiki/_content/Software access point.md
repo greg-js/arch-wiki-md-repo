@@ -1,12 +1,5 @@
 # Software access point
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-
 A software access point is used when you want your computer to act as a Wi-Fi access point for the local network. It saves you the trouble of getting a separate wireless router.
 
 ## Contents
@@ -130,7 +123,7 @@ For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `ho
 
 **Warning:** The wireless channels allowed for access point operation differ according to geography. Depending on the wireless firmware, you may have to set the region correctly to use legal channels. **Do not** choose another region, as you may be illegally disturbing network traffic, affecting wireless functionality of your own device and others within its reach! To set the region see [Wireless network configuration#Respecting the regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration").
 
-**Note:** If you have a card based on RTL8192CU chipset, install [hostapd-8192cu](https://aur.archlinux.org/packages/hostapd-8192cu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hostapd-8192cu)]</sup> in the [AUR](/index.php/AUR "AUR") and replace `driver=nl80211` with `driver=rtl871xdrv` in the `hostapd.conf` file.
+**Note:** If you have a card based on RTL8192CU chipset, install [hostapd-8192cu](https://aur.archlinux.org/packages/hostapd-8192cu/) in the [AUR](/index.php/AUR "AUR") and replace `driver=nl80211` with `driver=rtl871xdrv` in the `hostapd.conf` file.
 
 ## Network configuration
 
@@ -163,7 +156,7 @@ On that article, the device connected to the LAN is `net0`. That device would be
 
 ### create_ap
 
-The [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) script combines [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") to create a Bridged/NATed Access Point (available in the [AUR](/index.php/AUR "AUR") [create_ap](https://aur.archlinux.org/packages/create_ap/)<sup><small>AUR</small></sup>).
+The [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) script combines [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") to create a Bridged/NATed Access Point (available in the [AUR](/index.php/AUR "AUR") [create_ap](https://aur.archlinux.org/packages/create_ap/)).
 
 ### RADIUS
 

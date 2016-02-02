@@ -1,9 +1,5 @@
 # Fan speed control
 
-Related articles
-
-*   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
-
 Fancontrol, part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), can be used to control the speed and sound of CPU/case fans. This article covers configuration/setup of the utility.
 
 ## Contents
@@ -141,7 +137,7 @@ Try to run _fancontrol_:
 
 A properly configured setup will not error out and will take control of system fans. Users should hear system fans slowing shortly after executing this command.
 
-**Note:** For Dell Latitude/Inspiron laptops, [i8kutils](https://aur.archlinux.org/packages/i8kutils/)<sup><small>AUR</small></sup> is available. The `i8k` kernel module is known to have issues on several models.
+**Note:** For Dell Latitude/Inspiron laptops, [i8kutils](https://aur.archlinux.org/packages/i8kutils/) is available. The `i8k` kernel module is known to have issues on several models.
 
 To make _fancontrol_ start automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
 

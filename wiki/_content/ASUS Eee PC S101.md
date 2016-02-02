@@ -55,7 +55,7 @@ It is automatic detected by **hal**.
 
 # ACPI
 
-big_gie created a acpi package to support the acpi events: [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup>. This package was inspired by many others.
+big_gie created a acpi package to support the acpi events: [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/). This package was inspired by many others.
 
 ## Touchpad toggle - Silver Button
 

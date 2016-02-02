@@ -161,10 +161,10 @@ CPU throttling works out of box. Use /etc/systemd/logind.conf to change behaviou
 
 ### Backlight
 
-Works fine with [backlight-control](https://aur.archlinux.org/packages/backlight-control/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/backlight-control)]</sup>, use xbindkeys. FN+keys only seem to work for audio levels with Xorg.
+Works fine with [backlight-control](https://aur.archlinux.org/packages/backlight-control/), use xbindkeys. FN+keys only seem to work for audio levels with Xorg.
 
 ### Cardreader
 
-Works with [dkms-rts_bpp](https://aur.archlinux.org/packages/dkms-rts_bpp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dkms-rts_bpp)]</sup> from aur, remember to blacklist existing mmc modules.
+Works with [dkms-rts_bpp](https://aur.archlinux.org/packages/dkms-rts_bpp/) from aur, remember to blacklist existing mmc modules.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=ASUS_A55VJ&oldid=391872](https://wiki.archlinux.org/index.php?title=ASUS_A55VJ&oldid=391872)"

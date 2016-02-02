@@ -1,10 +1,5 @@
 # Uniform look for Qt and GTK applications
 
-Related articles
-
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [Qt](/index.php/Qt "Qt")
-
 [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") based programs both use a different widget toolkit to render the graphical user interface. Each come with different themes, styles and icon sets by default, among other things, so the "look and feel" differ significantly. This article will help you make your Qt and GTK+ applications look similar for a more streamlined and integrated desktop experience.
 
 ## Contents
@@ -79,7 +74,7 @@ Once installed, you can use one of the many [GTK+ configuration tools](/index.ph
 
 ### Adwaita
 
-Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is an unofficial Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)<sup><small>AUR</small></sup> package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)<sup><small>AUR</small></sup> for the Qt 4 version.
+Adwaita is the default GNOME theme. It can be installed with the [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) package, which contains the GTK+ 2 and 3 themes. [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is an unofficial Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimic the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) package for the Qt5 version, and [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) for the Qt 4 version.
 
 ### Qt Appearance
 
@@ -91,7 +86,7 @@ To set a style as default, you can use [qt5ct](https://www.archlinux.org/package
 
 **Warning:** Some GTK+ applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash (e.g. [Firefox](/index.php/Firefox "Firefox")) and even other applications like [KDM](/index.php/KDM "KDM") (when used with e.g. [Thunderbird](/index.php/Thunderbird "Thunderbird")).
 
-[kgtk](https://aur.archlinux.org/packages/kgtk/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") is a wrapper script which uses `LD_PRELOAD` to force KDE file dialogs in GTK+ 2.x apps. Once installed you can run GTK+ 2.x applications with `kgtk-wrapper` in two ways (using [Gimp](/index.php/Gimp "Gimp") in the examples):
+[kgtk](https://aur.archlinux.org/packages/kgtk/) from the [AUR](/index.php/AUR "AUR") is a wrapper script which uses `LD_PRELOAD` to force KDE file dialogs in GTK+ 2.x apps. Once installed you can run GTK+ 2.x applications with `kgtk-wrapper` in two ways (using [Gimp](/index.php/Gimp "Gimp") in the examples):
 
 *   Calling `kgtk-wrapper` directly and using the GTK+ 2.x binary as an argument:
 
@@ -214,6 +209,6 @@ $ export | grep gtk
 
 Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~/.gtkrc2.0-kde` for GTK+ 2.x.
 
-Newer versions of [gtk-qt-engine](https://aur.archlinux.org/packages/gtk-qt-engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtk-qt-engine)]</sup> use `~/.gtkrc2.0-kde` and set the export variable in `~/.kde/env/gtk-qt-engine.rc.sh`. If you recently removed **gtk-qt-engine** and are trying to set a GTK+ theme then you must also remove `~/.kde/env/gtk-qt-engine.rc.sh` and reboot. Doing this will ensure that GTK+ looks for its settings in the standard `~/.gtkrc2.0` instead of the `~/.gtkrc2.0-kde` file.
+Newer versions of [gtk-qt-engine](https://aur.archlinux.org/packages/gtk-qt-engine/) use `~/.gtkrc2.0-kde` and set the export variable in `~/.kde/env/gtk-qt-engine.rc.sh`. If you recently removed **gtk-qt-engine** and are trying to set a GTK+ theme then you must also remove `~/.kde/env/gtk-qt-engine.rc.sh` and reboot. Doing this will ensure that GTK+ looks for its settings in the standard `~/.gtkrc2.0` instead of the `~/.gtkrc2.0-kde` file.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=415955](https://wiki.archlinux.org/index.php?title=Uniform_look_for_Qt_and_GTK_applications&oldid=415955)"

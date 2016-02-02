@@ -1,11 +1,5 @@
 # Uvesafb
 
-Related articles
-
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
-*   [sysctl](/index.php/Sysctl "Sysctl")
-
 In contrast with other framebuffer drivers, uvesafb needs a userspace virtualizing daemon, called v86d. It may seem foolish to emulate x86 code on a x86, but this is important if one wants to use the framebuffer code on other architectures (notably non-x86 ones). A new framebuffer driver has been added to kernel 2.6.24\. It has many more features than the standard vesafb, including:
 
 1.  Proper blanking and hardware suspension after delay
@@ -37,7 +31,7 @@ It should support as much hardware as vesafb.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [v86d](https://aur.archlinux.org/packages/v86d/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [v86d](https://aur.archlinux.org/packages/v86d/) from [AUR](/index.php/AUR "AUR").
 
 ## Prepare the system
 
@@ -157,7 +151,7 @@ In the following, we address a more complex scenario. Many intel video chipsets 
 
 ### 915resolution-static
 
-In this scenario, 915resolution needs to be compiled statically (since it is going to be in an initramfs, it can not be linked to external libraries). Thus you CAN NOT use the 915resolution package in the [community] repo. Look instead for [915resolution-static](https://aur.archlinux.org/packages/915resolution-static/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/915resolution-static)]</sup> in the AUR. It compiles 915 resolution statically and provides a 915 resolution hook, so you can run 915resolution before loading uvesafb and get the patched resolution. So install 915resolution-static via makepkg and [pacman](/index.php/Pacman "Pacman").
+In this scenario, 915resolution needs to be compiled statically (since it is going to be in an initramfs, it can not be linked to external libraries). Thus you CAN NOT use the 915resolution package in the [community] repo. Look instead for [915resolution-static](https://aur.archlinux.org/packages/915resolution-static/) in the AUR. It compiles 915 resolution statically and provides a 915 resolution hook, so you can run 915resolution before loading uvesafb and get the patched resolution. So install 915resolution-static via makepkg and [pacman](/index.php/Pacman "Pacman").
 
 ### The resolution
 

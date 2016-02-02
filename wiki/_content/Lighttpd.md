@@ -219,9 +219,9 @@ fastcgi.server = (
 
 ##### eAccelerator
 
-**Note:** As of November 2014, [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eaccelerator)]</sup> cannot be compiled.
+**Note:** As of November 2014, [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/) cannot be compiled.
 
-Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eaccelerator)]</sup>.
+Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/).
 
 Add own config file for eaccelerator:
 
@@ -269,7 +269,7 @@ Then eaccelerator is happily caching your php scripts to help speed things up.
 
 Install and configure FastCGI (see [#FastCGI](#FastCGI) above).
 
-Install [ruby](/index.php/Ruby "Ruby") from [official repositories](/index.php/Official_repositories "Official repositories") and [ruby-fcgi](https://aur.archlinux.org/packages/ruby-fcgi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ruby-fcgi)]</sup> from [AUR](/index.php/AUR "AUR").
+Install [ruby](/index.php/Ruby "Ruby") from [official repositories](/index.php/Official_repositories "Official repositories") and [ruby-fcgi](https://aur.archlinux.org/packages/ruby-fcgi/) from [AUR](/index.php/AUR "AUR").
 
 Follow instructions on [RubyOnRails](/index.php/RubyOnRails "RubyOnRails").
 

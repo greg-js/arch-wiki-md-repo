@@ -15,7 +15,7 @@ Scissy is a standalone and minimal git hosting service.
 
 **Warning:** Scissy is still in early and active development.
 
-[Install](/index.php/Install "Install") the [scissy](https://aur.archlinux.org/packages/scissy/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [scissy](https://aur.archlinux.org/packages/scissy/) package.
 
 ### Create certificate
 

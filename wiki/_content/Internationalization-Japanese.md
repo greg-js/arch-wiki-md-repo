@@ -1,10 +1,5 @@
 # Internationalization/Japanese
 
-Related articles
-
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-*   [Input Japanese using uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")
-
 This document provides instructions on how to set up a Japanese language environment on an Arch linux installation. This document will not cover setting up Japanese input on the console.
 
 ## Contents
@@ -44,8 +39,8 @@ Recommended Japanese fonts are as follows.
 
 If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art) properly, use one of the following fonts:
 
-*   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-ipa-mona)]</sup>)
-*   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/)<sup><small>AUR</small></sup>)
+*   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/))
+*   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/))
 
 ## Locale
 
@@ -79,7 +74,7 @@ _See [Mozc](/index.php/Mozc "Mozc")_
 
 [Mozc](http://code.google.com/p/mozc/) is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
 
-Custom package [mozc-ut](https://aur.archlinux.org/packages/mozc-ut/)<sup><small>AUR</small></sup> comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
+Custom package [mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
 
 #### libkkc
 

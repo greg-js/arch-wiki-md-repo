@@ -11,7 +11,7 @@ jabberd2 is an [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") serve
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [jabberd2](https://aur.archlinux.org/packages/jabberd2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jabberd2)]</sup> package from the [AUR](/index.php/AUR "AUR"),
+[Install](/index.php/Install "Install") the [jabberd2](https://aur.archlinux.org/packages/jabberd2/) package from the [AUR](/index.php/AUR "AUR"),
 
 ## Configuration
 

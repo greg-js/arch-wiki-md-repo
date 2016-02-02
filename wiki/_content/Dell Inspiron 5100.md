@@ -102,7 +102,7 @@ MODULES=(!usbserial !ide-scsi p4_clockmod _**i8k**_ evdev)
 
 ```
 
-You'll probably also want to run the i8kmon daemon since the bios doesn't turn the cooling fan on until the cpu is about 70°C. [Install](/index.php/Install "Install") the [i8kmon](https://www.archlinux.org/packages/?name=i8kmon)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> package. Then add i8kmon to your daemons array to start it at boot.
+You'll probably also want to run the i8kmon daemon since the bios doesn't turn the cooling fan on until the cpu is about 70°C. [Install](/index.php/Install "Install") the [i8kmon](https://www.archlinux.org/packages/?name=i8kmon) package. Then add i8kmon to your daemons array to start it at boot.
 
 ```
 DAEMONS=(syslog-ng network portmap !netfs crond alsa acpid cupsd cpufreq _**i8kmon**_)

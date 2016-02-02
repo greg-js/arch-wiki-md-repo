@@ -1,10 +1,5 @@
 # Citadel groupware
 
-Related articles
-
-*   [Simple Virtual User Mail System](/index.php/Simple_Virtual_User_Mail_System "Simple Virtual User Mail System")
-*   [Postfix](/index.php/Postfix "Postfix")
-
 [Citadel](http://www.citadel.org/) is a groupware and collaboration suit that offers some of the following features (among many more)
 
 *   full email server

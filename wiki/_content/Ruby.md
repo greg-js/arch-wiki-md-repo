@@ -23,9 +23,9 @@ For the latest version of Ruby, [install](/index.php/Install "Install") the [rub
 
 ### Older versions
 
-*   For Ruby 2.2, install the [ruby2.2](https://aur.archlinux.org/packages/ruby2.2/)<sup><small>AUR</small></sup> package.
-*   For Ruby 2.1, install the [ruby2.1](https://aur.archlinux.org/packages/ruby2.1/)<sup><small>AUR</small></sup> package.
-*   For Ruby 2.0, install the [ruby2.0](https://aur.archlinux.org/packages/ruby2.0/)<sup><small>AUR</small></sup> package.
+*   For Ruby 2.2, install the [ruby2.2](https://aur.archlinux.org/packages/ruby2.2/) package.
+*   For Ruby 2.1, install the [ruby2.1](https://aur.archlinux.org/packages/ruby2.1/) package.
+*   For Ruby 2.0, install the [ruby2.0](https://aur.archlinux.org/packages/ruby2.0/) package.
 
 ### Multiple versions
 
@@ -195,7 +195,7 @@ Instead of managing gems with `gem`, you can use `pacman`, or some [AUR](/index.
 *   Gems are updated along with the rest of your system. As a result, you never need to run `gem update`: `# pacman -Syu` suffices.
 *   Installed gems are available system-wide, instead of being available only to the user who installed them.
 
-If a gem is not available in AUR, you can use [gem2arch](https://aur.archlinux.org/packages/gem2arch/)<sup><small>AUR</small></sup> or [pacgem](https://aur.archlinux.org/packages/pacgem/)<sup><small>AUR</small></sup> to automatically create a package, which can then be installed by pacman.
+If a gem is not available in AUR, you can use [gem2arch](https://aur.archlinux.org/packages/gem2arch/) or [pacgem](https://aur.archlinux.org/packages/pacgem/) to automatically create a package, which can then be installed by pacman.
 
 #### Quarry
 

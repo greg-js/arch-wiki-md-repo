@@ -61,7 +61,7 @@ Then update the bootloader.
 
 ```
 
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
 
 ### Note on Mount Options
 
@@ -113,7 +113,7 @@ After reboot, the firmware should be available for your Bluetooth interface.
 
 **Note:** some hardware only needs `i915`
 
-Works with kernel parameter `i915.preliminary_hw_support=1` [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). For kernels 4.3+ ([linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup>) the parameter is unnecessary, but you may face blank screen problem after booting - adding `i915` and `intel_agp` to the kernel modules fixes the problem, see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")
+Works with kernel parameter `i915.preliminary_hw_support=1` [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). For kernels 4.3+ ([linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)) the parameter is unnecessary, but you may face blank screen problem after booting - adding `i915` and `intel_agp` to the kernel modules fixes the problem, see [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics")
 
 ```
    # nano /etc/mkinitcpio.conf
@@ -130,7 +130,7 @@ Then update the bootloader.
 
 ```
 
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
 
 ## Touchpad
 
@@ -161,7 +161,7 @@ Then update the bootloader.
 
 ```
 
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup> then change that to `linux-mainline`.
+where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
 
 ## Sound
 
@@ -225,7 +225,7 @@ For ALSA, increase "Digital" channel for microphone to work.
 
 ## Kernel specific notes
 
-The [linux](https://www.archlinux.org/packages/?name=linux) kernel in the core repository (4.3) does not support wifi. It is recommended to install the patch kernel from [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/)<sup><small>AUR</small></sup> or use the kernel from the testing repository.
+The [linux](https://www.archlinux.org/packages/?name=linux) kernel in the core repository (4.3) does not support wifi. It is recommended to install the patch kernel from [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) or use the kernel from the testing repository.
 
 The linux kernel in testing repository (4.4) supports wifi out-of-the-box, see [#Wireless](#Wireless).
 

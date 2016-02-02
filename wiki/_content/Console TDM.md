@@ -1,15 +1,10 @@
 # Console TDM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [CDM](/index.php/CDM "CDM")
-
 [Console TDM](http://code.google.com/p/t-display-manager/) is an extension for xorg-xinit written in pure bash. It is inspired by CDM, which aimed to be a replacement of display managers such as GDM.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup> package ([console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)<sup><small>AUR</small></sup> package for the development version).
+[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/) package ([console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/) package for the development version).
 
 Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
 

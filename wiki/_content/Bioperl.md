@@ -12,7 +12,7 @@
 
 ## Installation
 
-Install [bioperl](https://aur.archlinux.org/packages/bioperl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bioperl)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install [bioperl](https://aur.archlinux.org/packages/bioperl/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

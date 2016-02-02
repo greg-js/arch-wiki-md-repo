@@ -1,10 +1,5 @@
 # SELinux
 
-Related articles
-
-*   [Security](/index.php/Security "Security")
-*   [AppArmor](/index.php/AppArmor "AppArmor")
-
 Security-Enhanced Linux (SELinux) is a Linux feature that provides a variety of security policies, including U.S. Department of Defense style mandatory access controls (MAC), through the use of Linux Security Modules (LSM) in the Linux kernel. It is not a Linux distribution, but rather a set of modifications that can be applied to Unix-like operating systems, such as Linux and BSD.
 
 Running SELinux under a Linux distribution requires three things: An SELinux enabled kernel, SELinux Userspace tools and libraries, and SELinux Policies (mostly based on the Reference Policy). Some common Linux programs will also need to be patched/compiled with SELinux features.
@@ -90,101 +85,101 @@ All SELinux related packages belong to the _selinux_ group in the AUR as well as
 
 #### SELinux aware system utilities
 
-	[coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/)<sup><small>AUR</small></sup>
+	[coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/)
 
 	Modified coreutils package compiled with SELinux support enabled. It replaces the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package
 
-	[ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/)<sup><small>AUR</small></sup>
+	[ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/)
 
-	Patched ustr package needed only to build [libsemanage](https://aur.archlinux.org/packages/libsemanage/)<sup><small>AUR</small></sup>. It replaces the [ustr](https://www.archlinux.org/packages/?name=ustr) package, which does not work with recent gcc ([FS#46445](https://bugs.archlinux.org/task/46445)).
+	Patched ustr package needed only to build [libsemanage](https://aur.archlinux.org/packages/libsemanage/). It replaces the [ustr](https://www.archlinux.org/packages/?name=ustr) package, which does not work with recent gcc ([FS#46445](https://bugs.archlinux.org/task/46445)).
 
-	[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/)<sup><small>AUR</small></sup> and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup>
+	[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)
 
 	PAM package with pam_selinux.so. and the underlying base package. They replace the [pam](https://www.archlinux.org/packages/?name=pam) and [pambase](https://www.archlinux.org/packages/?name=pambase) packages respectively.
 
-	[util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)<sup><small>AUR</small></sup>
+	[util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)
 
 	Modified util-linux package compiled with SELinux support enabled. It replaces the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 
-	[systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>
+	[systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)
 
 	An SELinux aware version of [Systemd](/index.php/Systemd "Systemd"). It replaces the [systemd](https://www.archlinux.org/packages/?name=systemd) package.
 
-	[dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/)<sup><small>AUR</small></sup>
+	[dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/)
 
 	An SELinux aware version of [D-Bus](/index.php/D-Bus "D-Bus"). It replaces the [dbus](https://www.archlinux.org/packages/?name=dbus) package.
 
-	[findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/)<sup><small>AUR</small></sup>
+	[findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/)
 
 	Patched findutils package compiled with SELinux support to make searching of files with specified security context possible. It replaces the [findutils](https://www.archlinux.org/packages/?name=findutils) package.
 
-	[iproute2-selinux](https://aur.archlinux.org/packages/iproute2-selinux/)<sup><small>AUR</small></sup>
+	[iproute2-selinux](https://aur.archlinux.org/packages/iproute2-selinux/)
 
 	iproute2 package compiled with SELinux support; for example, it adds the `-Z` option to `ss`. It replaces the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
-	[psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)<sup><small>AUR</small></sup>
+	[psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)
 
 	Psmisc package compiled with SELinux support; for example, it adds the `-Z` option to `killall`. It replaces the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package.
 
-	[shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/)<sup><small>AUR</small></sup>
+	[shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/)
 
 	Shadow package compiled with SELinux support; contains a modified `/etc/pam.d/login` file to set correct security context for user after login. It replaces the [shadow](https://www.archlinux.org/packages/?name=shadow) package.
 
-	[sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/)<sup><small>AUR</small></sup>
+	[sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/)
 
 	Modified [sudo](/index.php/Sudo "Sudo") package compiled with SELinux support which sets the security context correctly. It replaces the [sudo](https://www.archlinux.org/packages/?name=sudo) package.
 
-	[cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)<sup><small>AUR</small></sup>
+	[cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)
 
 	Fedora fork of Vixie cron with SELinux enabled. It replaces the [cronie](https://www.archlinux.org/packages/?name=cronie) package.
 
-	[logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)<sup><small>AUR</small></sup>
+	[logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)
 
 	Logrotate package compiled with SELinux support. It replaces the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package.
 
-	[openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)<sup><small>AUR</small></sup>
+	[openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)
 
 	[OpenSSH](/index.php/OpenSSH "OpenSSH") package compiled with SELinux support to set security context for user sessions. It replaces the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
 
 #### SELinux userspace utilities
 
-	[checkpolicy](https://aur.archlinux.org/packages/checkpolicy/)<sup><small>AUR</small></sup>
+	[checkpolicy](https://aur.archlinux.org/packages/checkpolicy/)
 
 	Tools to build SELinux policy
 
-	[libselinux](https://aur.archlinux.org/packages/libselinux/)<sup><small>AUR</small></sup>
+	[libselinux](https://aur.archlinux.org/packages/libselinux/)
 
 	Library for security-aware applications. Python bindings needed for _semanage_ and _setools_ now included.
 
-	[libsemanage](https://aur.archlinux.org/packages/libsemanage/)<sup><small>AUR</small></sup>
+	[libsemanage](https://aur.archlinux.org/packages/libsemanage/)
 
 	Library for policy management. Python bindings needed for _semanage_ and _setools_ now included.
 
-	[libsepol](https://aur.archlinux.org/packages/libsepol/)<sup><small>AUR</small></sup>
+	[libsepol](https://aur.archlinux.org/packages/libsepol/)
 
 	Library for binary policy manipulation.
 
-	[policycoreutils](https://aur.archlinux.org/packages/policycoreutils/)<sup><small>AUR</small></sup>
+	[policycoreutils](https://aur.archlinux.org/packages/policycoreutils/)
 
 	SELinux core utils such as newrole, setfiles, etc.
 
-	[sepolgen](https://aur.archlinux.org/packages/sepolgen/)<sup><small>AUR</small></sup>
+	[sepolgen](https://aur.archlinux.org/packages/sepolgen/)
 
 	A Python library for parsing and modifying policy source.
 
 #### SELinux policy packages
 
-	[selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/)<sup><small>AUR</small></sup>
+	[selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/)
 
 	Reference policy sources
 
-	[selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup>
+	[selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)
 
-	Precompiled modular Reference policy with headers and documentation but without sources. Development Arch Linux Refpolicy patches included, which fixes issues related to path labeling and systemd support. These patches are also sent to Reference Policy maintainers and their inclusion in [selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup> is mainly a way to perform updates between Refpolicy releases.
+	Precompiled modular Reference policy with headers and documentation but without sources. Development Arch Linux Refpolicy patches included, which fixes issues related to path labeling and systemd support. These patches are also sent to Reference Policy maintainers and their inclusion in [selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/) is mainly a way to perform updates between Refpolicy releases.
 
 #### Other SELinux tools
 
-	[setools](https://aur.archlinux.org/packages/setools/)<sup><small>AUR</small></sup>
+	[setools](https://aur.archlinux.org/packages/setools/)
 
 	CLI and GUI tools to manage SELinux
 
@@ -192,7 +187,7 @@ All SELinux related packages belong to the _selinux_ group in the AUR as well as
 
 ### Preparing the Kernel
 
-Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. By default, the Arch Kernel does not have the SELinux LSM enabled. If you are using Arch Linux packaged kernel ([linux](https://www.archlinux.org/packages/?name=linux)), there is an AUR package which adds the configuration options for SELinux, [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/)<sup><small>AUR</small></sup>. Otherwise, when you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](http://wiki.debian.org/SELinux/Setup#kernel))
+Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. By default, the Arch Kernel does not have the SELinux LSM enabled. If you are using Arch Linux packaged kernel ([linux](https://www.archlinux.org/packages/?name=linux)), there is an AUR package which adds the configuration options for SELinux, [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/). Otherwise, when you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](http://wiki.debian.org/SELinux/Setup#kernel))
 
 Here is the complete list of options which need to be enabled on Linux 4.3.3 to use SELinux :
 
@@ -230,14 +225,14 @@ There are two methods to install the requisite SELinux packages.
 
 #### Via AUR
 
-*   First, install SELinux userspace tools and libraries, in this order (because of the dependencies): [libsepol](https://aur.archlinux.org/packages/libsepol/)<sup><small>AUR</small></sup>, [libselinux](https://aur.archlinux.org/packages/libselinux/)<sup><small>AUR</small></sup>, [checkpolicy](https://aur.archlinux.org/packages/checkpolicy/)<sup><small>AUR</small></sup>, [setools](https://aur.archlinux.org/packages/setools/)<sup><small>AUR</small></sup>, [ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/)<sup><small>AUR</small></sup>, [libsemanage](https://aur.archlinux.org/packages/libsemanage/)<sup><small>AUR</small></sup> (which needs [python2-ipy](https://www.archlinux.org/packages/?name=python2-ipy) from the _community_ repository) and [sepolgen](https://aur.archlinux.org/packages/sepolgen/)<sup><small>AUR</small></sup>.
-*   Then install [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup> and [pam-selinux](https://aur.archlinux.org/packages/pam-selinux/)<sup><small>AUR</small></sup> and make sure you can login again after the installation completed , because files in `/etc/pam.d/` got removed and created when [pambase](https://www.archlinux.org/packages/?name=pambase) got replaced with [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)<sup><small>AUR</small></sup>.
-*   Next you can install [libcgroup](https://aur.archlinux.org/packages/libcgroup/)<sup><small>AUR</small></sup> and [policycoreutils](https://aur.archlinux.org/packages/policycoreutils/)<sup><small>AUR</small></sup>, before recompiling some core packages by installing: [coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/)<sup><small>AUR</small></sup>, [findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/)<sup><small>AUR</small></sup>, [iproute2-selinux](https://aur.archlinux.org/packages/iproute2-selinux/)<sup><small>AUR</small></sup>, [logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/)<sup><small>AUR</small></sup>, [openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/)<sup><small>AUR</small></sup>, [psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/)<sup><small>AUR</small></sup>, [shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/)<sup><small>AUR</small></sup>, [cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)<sup><small>AUR</small></sup>
-*   Next, backup your `/etc/sudoers` file. Install [sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/)<sup><small>AUR</small></sup> and restore your `/etc/sudoers` (it is overridden when this package is installed as a replacement of [sudo](https://www.archlinux.org/packages/?name=sudo)).
-*   Next come util-linux and systemd. Because of a cyclic makedepends between these two packages which will not be fixed ([FS#39767](https://bugs.archlinux.org/task/39767)), you need to build the source package [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>, install [libsystemd-selinux](https://aur.archlinux.org/packages/libsystemd-selinux/)<sup><small>AUR</small></sup>, build and install [util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/)<sup><small>AUR</small></sup> (with [libutil-linux-selinux](https://aur.archlinux.org/packages/libutil-linux-selinux/)<sup><small>AUR</small></sup>) and rebuild and install [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/)<sup><small>AUR</small></sup>.
-*   Next, install [dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/)<sup><small>AUR</small></sup>.
+*   First, install SELinux userspace tools and libraries, in this order (because of the dependencies): [libsepol](https://aur.archlinux.org/packages/libsepol/), [libselinux](https://aur.archlinux.org/packages/libselinux/), [checkpolicy](https://aur.archlinux.org/packages/checkpolicy/), [setools](https://aur.archlinux.org/packages/setools/), [ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/), [libsemanage](https://aur.archlinux.org/packages/libsemanage/) (which needs [python2-ipy](https://www.archlinux.org/packages/?name=python2-ipy) from the _community_ repository) and [sepolgen](https://aur.archlinux.org/packages/sepolgen/).
+*   Then install [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/) and [pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and make sure you can login again after the installation completed , because files in `/etc/pam.d/` got removed and created when [pambase](https://www.archlinux.org/packages/?name=pambase) got replaced with [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/).
+*   Next you can install [libcgroup](https://aur.archlinux.org/packages/libcgroup/) and [policycoreutils](https://aur.archlinux.org/packages/policycoreutils/), before recompiling some core packages by installing: [coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/), [findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/), [iproute2-selinux](https://aur.archlinux.org/packages/iproute2-selinux/), [logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/), [openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/), [psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/), [shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/), [cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)
+*   Next, backup your `/etc/sudoers` file. Install [sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/) and restore your `/etc/sudoers` (it is overridden when this package is installed as a replacement of [sudo](https://www.archlinux.org/packages/?name=sudo)).
+*   Next come util-linux and systemd. Because of a cyclic makedepends between these two packages which will not be fixed ([FS#39767](https://bugs.archlinux.org/task/39767)), you need to build the source package [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/), install [libsystemd-selinux](https://aur.archlinux.org/packages/libsystemd-selinux/), build and install [util-linux-selinux](https://aur.archlinux.org/packages/util-linux-selinux/) (with [libutil-linux-selinux](https://aur.archlinux.org/packages/libutil-linux-selinux/)) and rebuild and install [systemd-selinux](https://aur.archlinux.org/packages/systemd-selinux/).
+*   Next, install [dbus-selinux](https://aur.archlinux.org/packages/dbus-selinux/).
 
-After all these steps, you can install a SELinux kernel (like [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/)<sup><small>AUR</small></sup>) and a policy (like [selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)<sup><small>AUR</small></sup>).
+After all these steps, you can install a SELinux kernel (like [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/)) and a policy (like [selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)).
 
 #### Using the GitHub repository
 
@@ -315,7 +310,7 @@ session         required        pam_selinux.so open
 *   `/lib` and `/usr/lib` are considered different (and also `/bin`, `/sbin`, `/usr/bin` and `/usr/sbin`). This introduces some instability when applying labels to the whole system, as files in these folders may be seen with 2 (or 4) different labels.
 *   systemd is not yet supported (C. PeBenito, main developer of the refpolicy, announced its willingness to work on it in its github repository in October 2014, [http://oss.tresys.com/pipermail/refpolicy/2014-October/007430.html](http://oss.tresys.com/pipermail/refpolicy/2014-October/007430.html))
 
-Policies are the mainstay of SELinux. They are what govern its behaviour. The only policy currently available in the AUR is the Reference Policy. In order to install it, you should use the source files, which may be got from the package [selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/)<sup><small>AUR</small></sup> or by downloading the latest release on [https://github.com/TresysTechnology/refpolicy/wiki/DownloadRelease#current-release](https://github.com/TresysTechnology/refpolicy/wiki/DownloadRelease#current-release). When using the AUR package, navigate to `/etc/selinux/refpolicy/src/policy` and run the following commands:
+Policies are the mainstay of SELinux. They are what govern its behaviour. The only policy currently available in the AUR is the Reference Policy. In order to install it, you should use the source files, which may be got from the package [selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/) or by downloading the latest release on [https://github.com/TresysTechnology/refpolicy/wiki/DownloadRelease#current-release](https://github.com/TresysTechnology/refpolicy/wiki/DownloadRelease#current-release). When using the AUR package, navigate to `/etc/selinux/refpolicy/src/policy` and run the following commands:
 
 ```
 # make bare

@@ -31,7 +31,7 @@ It is safe to run wvdialconf if a configuration file already exists. In that cas
 
 **Note:** Wvdialconf does not automatically fill in your login information. You need to edit `/etc/wvdial.conf` and specify the phone number, login name, and password of your internet account in order for WvDial to work.
 
-After you have filled in your login information, wvdial ought to work. You can move to the next section. However for providers of USB modems that require a specific Init string and user/password combination, [mkwvconf-git](https://aur.archlinux.org/packages/mkwvconf-git/)<sup><small>AUR</small></sup> can help generate a wvdial configuration (based on the [mobile-broadband-provider-info-git](https://aur.archlinux.org/packages/mobile-broadband-provider-info-git/)<sup><small>AUR</small></sup> package).
+After you have filled in your login information, wvdial ought to work. You can move to the next section. However for providers of USB modems that require a specific Init string and user/password combination, [mkwvconf-git](https://aur.archlinux.org/packages/mkwvconf-git/) can help generate a wvdial configuration (based on the [mobile-broadband-provider-info-git](https://aur.archlinux.org/packages/mobile-broadband-provider-info-git/) package).
 
 A typical `/etc/wvdial.conf` looks like this after manual configuration:
 

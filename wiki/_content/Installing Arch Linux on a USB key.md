@@ -1,12 +1,5 @@
 # Installing Arch Linux on a USB key
 
-Related articles
-
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-
 This page explains how to perform a regular Arch installation onto a USB key (or "flash drive"). In contrast to having a LiveUSB as covered in [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"), the result will be a persistent installation identical to normal installation to HDD, but on a USB flash drive.
 
 ## Contents
@@ -181,7 +174,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the _eatmydata_ command from [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/)<sup><small>AUR</small></sup> to avoid such system calls:
+*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the _eatmydata_ command from [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) to avoid such system calls:
 
 ```
 $ eatmydata firefox

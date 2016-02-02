@@ -11,7 +11,7 @@ The most simple way is to install [VLC](/index.php/VLC "VLC"), which plays .rmvb
 
 ```
 
-Or you can install [realplayer](https://aur.archlinux.org/packages/realplayer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/realplayer)]</sup> from the [AUR](/index.php/AUR "AUR").
+Or you can install [realplayer](https://aur.archlinux.org/packages/realplayer/) from the [AUR](/index.php/AUR "AUR").
 
 Next, start it with:
 

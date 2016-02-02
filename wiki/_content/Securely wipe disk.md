@@ -1,14 +1,5 @@
 # Securely wipe disk
 
-Related articles
-
-*   [Securely wipe disk/Tips and tricks](/index.php/Securely_wipe_disk/Tips_and_tricks "Securely wipe disk/Tips and tricks")
-*   [File recovery](/index.php/File_recovery "File recovery")
-*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
-*   [Frandom](/index.php/Frandom "Frandom")
-*   [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption")
-*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-
 Wiping a disk is done by writing new data over every single bit.
 
 **Note:** References to "disks" in this article also apply to loopback devices.
@@ -408,7 +399,7 @@ For detailed instructions on using ATA Secure Erase, see the [Linux ATA wiki](ht
 
 ### secure-delete
 
-The [secure-delete](https://aur.archlinux.org/packages/secure-delete/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") provides several utilites for secure erasion, including `sfill`, which deletes only free space in a specified mount. For example:
+The [secure-delete](https://aur.archlinux.org/packages/secure-delete/) package from [AUR](/index.php/AUR "AUR") provides several utilites for secure erasion, including `sfill`, which deletes only free space in a specified mount. For example:
 
 ```
 # sfill -v /

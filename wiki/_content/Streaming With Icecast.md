@@ -32,7 +32,7 @@ This refers to a mount point called "mpd".
 
 ## Setting up Icecast
 
-*   [Install](/index.php/Install "Install") [icecast](https://www.archlinux.org/packages/?name=icecast). Alternatively, you can build and install the [icecast-kh](https://aur.archlinux.org/packages/icecast-kh/)<sup><small>AUR</small></sup> package. Icecast-kh (Karl Heyes) extends on the official release with features that may be (if found to be working out well) merged into next official releases.
+*   [Install](/index.php/Install "Install") [icecast](https://www.archlinux.org/packages/?name=icecast). Alternatively, you can build and install the [icecast-kh](https://aur.archlinux.org/packages/icecast-kh/) package. Icecast-kh (Karl Heyes) extends on the official release with features that may be (if found to be working out well) merged into next official releases.
 *   Edit the configuration file.
 
 Open up /etc/icecast.xml in your text editor. The main section you want to pay attention to is <authentication>. Inside the <authentication> block there are all the passwords that icecast use. **It is strongly recommended** that you change them. Icecast defaults to listening on port 8000, and you may also change that if you wish.
@@ -228,7 +228,7 @@ $ mpc play
 
 If you want to stream a single track, for example, you can use this method instead of changing your mpd setup.
 
-*   Install ffmpeg2theora from community and [oggfwd](https://aur.archlinux.org/packages/oggfwd/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+*   Install ffmpeg2theora from community and [oggfwd](https://aur.archlinux.org/packages/oggfwd/) from the [AUR](/index.php/AUR "AUR").
 
 ```
 # pacman -S ffmpeg2theora

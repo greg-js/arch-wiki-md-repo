@@ -1,13 +1,5 @@
 # Dovecot
 
-Related articles
-
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Courier MTA](/index.php/Courier_MTA "Courier MTA")
-*   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
-*   [Fail2ban](/index.php/Fail2ban "Fail2ban")
-*   [Virtual_user_mail_system](/index.php/Virtual_user_mail_system "Virtual user mail system")
-
 This article describes how to set up a mail server suitable for personal or small office use.
 
 [Dovecot](http://www.dovecot.org/) is an open source [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") and [POP3](https://en.wikipedia.org/wiki/POP3 "wikipedia:POP3") server for Linux/UNIX-like systems, written primarily with security in mind. Developed by Timo Sirainen, Dovecot was first released in July 2002\. Dovecot primarily aims to be a lightweight, fast and easy to set up open source mailserver. For more detailed information, please see the official [Dovecot Wiki](http://wiki2.dovecot.org/).

@@ -1,12 +1,5 @@
 # Mutt
 
-Related articles
-
-*   [fdm](/index.php/Fdm "Fdm")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-*   [offlineimap](/index.php/Offlineimap "Offlineimap")
-*   [isync](/index.php/Isync "Isync")
-
 **Mutt** is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users. Unfortunately, a default Mutt install is plagued by complex keybindings along with a daunting amount of documentation. This guide will help the average user get Mutt up and running, and begin customizing it to their particular needs.
 
 ## Contents
@@ -246,7 +239,7 @@ set mail_check = 120
 
 While IMAP support is built into Mutt, it does not download mail for offline use. It is possible to use an external application such as [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") or [isync](/index.php/Isync "Isync") to download your emails to a local folder which can then be processed by Mutt.
 
-Consider using applications such as [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) or [imapfilter](https://aur.archlinux.org/packages/imapfilter/)<sup><small>AUR</small></sup> to sort mail.
+Consider using applications such as [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) or [imapfilter](https://aur.archlinux.org/packages/imapfilter/) to sort mail.
 
 ### POP3
 
@@ -592,7 +585,7 @@ The first compatible charset starting from the left will be used. Since UTF-8 is
 
 ### Printing
 
-You can install [muttprint](https://aur.archlinux.org/packages/muttprint/)<sup><small>AUR</small></sup> for fancier printing quality. In your muttrc file, insert:
+You can install [muttprint](https://aur.archlinux.org/packages/muttprint/) for fancier printing quality. In your muttrc file, insert:
 
 ```
 set print_command="/usr/bin/muttprint %s -p {PrinterName}"
@@ -682,7 +675,7 @@ Your should start by creating a .mutt directory in $HOME if not done yet. There,
 
 ```
 
-Then install the [urlview](https://aur.archlinux.org/packages/urlview/)<sup><small>AUR</small></sup> package.
+Then install the [urlview](https://aur.archlinux.org/packages/urlview/) package.
 
 Create a .urlview in $HOME and insert the following:
 
@@ -703,7 +696,7 @@ COMMAND luakit -n %s 2>/dev/null
 
 The `2>/dev/null` is to make it quiet, i.e. to prevent useless message printing where you do not want them to.
 
-**Note:** urlview has a few deficiencies (e.g. the inability to handle certain email encodings) and is fairly feature-bare (e.g. it does not provide context for links it finds). There are a couple alternatives that do better. One, which can handle all email encodings and provides link context, is [extract_url.pl](http://www.memoryhole.net/~kyle/extract_url/). Another, which can also provide link context but cannot handle all email encodings, is [urlscan-git](https://aur.archlinux.org/packages/urlscan-git/)<sup><small>AUR</small></sup>. Both are drop-in replacements for urlview, though extract_url has features which benefit from additional configuration changes.
+**Note:** urlview has a few deficiencies (e.g. the inability to handle certain email encodings) and is fairly feature-bare (e.g. it does not provide context for links it finds). There are a couple alternatives that do better. One, which can handle all email encodings and provides link context, is [extract_url.pl](http://www.memoryhole.net/~kyle/extract_url/). Another, which can also provide link context but cannot handle all email encodings, is [urlscan-git](https://aur.archlinux.org/packages/urlscan-git/). Both are drop-in replacements for urlview, though extract_url has features which benefit from additional configuration changes.
 
 ### Viewing HTML
 
@@ -744,7 +737,7 @@ auto_view text/html
 
 ```
 
-The beauty of this is, instead of seeing an html body as source or being opened by a separate program, in this case lynx, you see the formatted content directly, and any url links within the email can be displayed with `Ctrl+b`, assuming you have [urlview](https://aur.archlinux.org/packages/urlview/)<sup><small>AUR</small></sup> installed.
+The beauty of this is, instead of seeing an html body as source or being opened by a separate program, in this case lynx, you see the formatted content directly, and any url links within the email can be displayed with `Ctrl+b`, assuming you have [urlview](https://aur.archlinux.org/packages/urlview/) installed.
 
 If you receive many emails with multiple or alternate encodings Mutt may default to treating every email as html. To avoid this, add the following variable to your ~/.muttrc to have Mutt default to text when available and use w3m/lynx only when no text version is availble in the email:
 
@@ -1074,7 +1067,7 @@ See the man pages `abook` and `abookrc` for more details and a full configuratio
 
 #### Goobook
 
-Goobook allows you to search your Google contacts from the command line or from within Mutt and can be installed with the [goobook-git](https://aur.archlinux.org/packages/goobook-git/)<sup><small>AUR</small></sup> package.
+Goobook allows you to search your Google contacts from the command line or from within Mutt and can be installed with the [goobook-git](https://aur.archlinux.org/packages/goobook-git/) package.
 
 Before using goobook you must configure `~/.goobookrc`. To generate the default template:
 
@@ -1103,7 +1096,7 @@ When composing an email message within mutt, `Tab` will now search your Google c
 
 ### Manage multiple sender accounts
 
-If you use multiple sender accounts, you can automatically associate a specific sender account with a recipient. [mutt-vid](https://aur.archlinux.org/packages/mutt-vid/)<sup><small>AUR</small></sup> scans sent emails for the most recent "From" details associated with specific recipients, saving these in a file for mutt to source. The next time you email this recipient, mutt will automatically invoke a send-hook with the same email address and real name that you used previously. See mutt-vid's [homepage](https://github.com/protist/mutt-vid) for more details.
+If you use multiple sender accounts, you can automatically associate a specific sender account with a recipient. [mutt-vid](https://aur.archlinux.org/packages/mutt-vid/) scans sent emails for the most recent "From" details associated with specific recipients, saving these in a file for mutt to source. The next time you email this recipient, mutt will automatically invoke a send-hook with the same email address and real name that you used previously. See mutt-vid's [homepage](https://github.com/protist/mutt-vid) for more details.
 
 ### Request IMAP mail retrieval manually
 
@@ -1201,7 +1194,7 @@ macro index \' "<tag-pattern>~R !~D !~F<enter>\
 
 ### Mutt-Sidebar
 
-The vanilla Mutt does not feature a sidebar unlike most MUAs. If you miss it, you can install [mutt-sidebar](https://aur.archlinux.org/packages/mutt-sidebar/)<sup><small>AUR</small></sup> or [mutt-sidebar-hg](https://aur.archlinux.org/packages/mutt-sidebar-hg/)<sup><small>AUR</small></sup> which add a list of folders on the left side of the Mutt window.
+The vanilla Mutt does not feature a sidebar unlike most MUAs. If you miss it, you can install [mutt-sidebar](https://aur.archlinux.org/packages/mutt-sidebar/) or [mutt-sidebar-hg](https://aur.archlinux.org/packages/mutt-sidebar-hg/) which add a list of folders on the left side of the Mutt window.
 
 For a while there has been several different patches for the sidebar. Since the late 2000's, it seems like the main patch is maintained at [Lunar Linux](http://www.lunar-linux.org/mutt-sidebar/). See the documentation there. Note that the patch also updates the `muttrc` man page, so have a look at the `sidebar_*` sections.
 

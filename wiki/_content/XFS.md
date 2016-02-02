@@ -1,9 +1,5 @@
 # XFS
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-
 XFS is a high-performance journaling file system created by Silicon Graphics, Inc. XFS is particularly proficient at parallel IO due to its allocation group based design. This enables extreme scalability of IO threads, filesystem bandwidth, file and filesystem size when spanning multiple storage devices.
 
 ## Contents
@@ -24,7 +20,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
 
 ## Installation
 
-**Warning:** XFS version 5 has problems with GRUB. Use a separate boot partition or install [grub-git](https://aur.archlinux.org/packages/grub-git/)<sup><small>AUR</small></sup> instead as a workaround.
+**Warning:** XFS version 5 has problems with GRUB. Use a separate boot partition or install [grub-git](https://aur.archlinux.org/packages/grub-git/) instead as a workaround.
 
 The tools to manage XFS partions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package from the [official repositories](/index.php/Official_repositories "Official repositories"), which is included in the default base installation.
 

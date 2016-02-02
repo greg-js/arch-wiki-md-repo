@@ -1,10 +1,5 @@
 # Volnoti
 
-Related articles
-
-*   [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")
-*   [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
-
 [Volnoti](https://github.com/davidbrazdil/volnoti) is, according to its own GitHub page,
 
 	"_A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems. It is based on GTK+ and D-Bus and should work with any sensible window manager. The original aim was to create a volume notification daemon for lightweight window managers like LXDE or XMonad. It is known to work with a wide range of WMs, including GNOME, KDE, Xfce, LXDE, XMonad, i3 and many others._"
@@ -20,7 +15,7 @@ Volnoti can be useful to check volume changes if you are running a lightweight w
 
 ## Installation
 
-Install the [volnoti](https://aur.archlinux.org/packages/volnoti/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+Install the [volnoti](https://aur.archlinux.org/packages/volnoti/) package from [AUR](/index.php/AUR "AUR").
 
 ## Usage and configuration
 

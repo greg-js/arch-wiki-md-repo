@@ -1,12 +1,5 @@
 # WPA2 Enterprise
 
-Related articles
-
-*   [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration")
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Software access point](/index.php/Software_access_point "Software access point")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-
 **WPA2 Enterprise** is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than _WPA2 Personal_, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
 
 The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.
@@ -87,7 +80,7 @@ Passphrase=_password_
 
 #### Wicd
 
-The [wicd-eduroam](https://aur.archlinux.org/packages/wicd-eduroam/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wicd-eduroam)]</sup> package contains configuration templates which will appear to wicd as _eduroam_.
+The [wicd-eduroam](https://aur.archlinux.org/packages/wicd-eduroam/) package contains configuration templates which will appear to wicd as _eduroam_.
 
 Alternatively, see [[2]](https://gist.githubusercontent.com/anonymous/0fa3b2c2b2a34c68a6f1/raw/9b8fdb7301182d18b6cd5068a7dbdfc57e5ba430/gistfile1.txt) for an example of a **TTLS** profile. To activate the profile, run:
 
@@ -100,7 +93,7 @@ Open _wicd_, choose _TTLS for Wireless_ and enter the appropriate settings. The 
 
 #### netctl
 
-The [netctl-eduroam](https://aur.archlinux.org/packages/netctl-eduroam/)<sup><small>AUR</small></sup> package provides a template for easy configuration. Once installed, copy the template from `/etc/netctl/examples/eduroam` to `/etc/netctl/eduroam` and modify it according to your credentials.
+The [netctl-eduroam](https://aur.archlinux.org/packages/netctl-eduroam/) package provides a template for easy configuration. Once installed, copy the template from `/etc/netctl/examples/eduroam` to `/etc/netctl/eduroam` and modify it according to your credentials.
 
 Alternatively, adapt an example configuration from [[3]](https://gist.githubusercontent.com/anonymous/ed16e3b191cf627814b3/raw/d476e0dddbc8920b855702737ff69c287e620c7b/eduroam-netctl) (plain) or [[4]](https://gist.githubusercontent.com/anonymous/3fd8f8808a22b3a96feb/raw/d9537016a8c9852561630e676c4cbf98553a1a48/eduroam-ttls-netctl) (TTLS and certified universities).
 

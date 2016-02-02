@@ -14,7 +14,7 @@ Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports m
 
 ## Installation
 
-Install [cocos2d-x-src](https://aur.archlinux.org/packages/cocos2d-x-src/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [cocos2d-x-src](https://aur.archlinux.org/packages/cocos2d-x-src/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 
@@ -38,7 +38,7 @@ export PATH=/usr/local/bin:${PATH}
 
 ### Cross Compiling for Android
 
-Install [android-ndk](https://aur.archlinux.org/packages/android-ndk/)<sup><small>AUR</small></sup>, [android-sdk](https://aur.archlinux.org/packages/android-sdk/)<sup><small>AUR</small></sup> and [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)<sup><small>AUR</small></sup>, and also add the following to your shell configuration file:
+Install [android-ndk](https://aur.archlinux.org/packages/android-ndk/), [android-sdk](https://aur.archlinux.org/packages/android-sdk/) and [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/), and also add the following to your shell configuration file:
 
 ```
 export NDK_ROOT=/opt/android-ndk

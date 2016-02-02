@@ -58,7 +58,7 @@ To enable some modems you may need the [usb_modeswitch](https://www.archlinux.or
 
 ## Configuration
 
-The following files are also available as [netcfg-ppp-mobile-git](https://aur.archlinux.org/packages/netcfg-ppp-mobile-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/netcfg-ppp-mobile-git)]</sup> in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+The following files are also available as [netcfg-ppp-mobile-git](https://aur.archlinux.org/packages/netcfg-ppp-mobile-git/) in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### /etc/ppp/options-mobile
 

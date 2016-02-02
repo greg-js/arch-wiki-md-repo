@@ -1,15 +1,5 @@
 # Linux Containers
 
-Related articles
-
-*   [AirVPN](/index.php/AirVPN "AirVPN")
-*   [Cgroups](/index.php/Cgroups "Cgroups")
-*   [Docker](/index.php/Docker "Docker")
-*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
-*   [OpenVPN in Linux containers](/index.php/OpenVPN_in_Linux_containers "OpenVPN in Linux containers")
-*   [PeerGuardian_Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-
 **LinuX Containers** (**LXC**) is an operating system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space. This is provided by [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
 
 ## Contents
@@ -118,8 +108,8 @@ The remaining steps are similar, except for one thing: for the container, the ga
 
 Select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
 
-*   Debian-based: [debootstrap](https://aur.archlinux.org/packages/debootstrap/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
-*   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+*   Debian-based: [debootstrap](https://aur.archlinux.org/packages/debootstrap/) from [AUR](/index.php/AUR "AUR").
+*   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/) from [AUR](/index.php/AUR "AUR").
 
 Run `lxc-create` to create the container, which installs the root filesystem of the LXC to `/var/lib/lxc/CONTAINER_NAME/rootfs` by default. Example creating an Arch Linux LXC named "playtime":
 

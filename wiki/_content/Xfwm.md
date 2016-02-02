@@ -1,12 +1,5 @@
 # Xfwm
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Xfce](/index.php/Xfce "Xfce")
-*   [Xorg](/index.php/Xorg "Xorg")
-
 **xfwm** is the window manager for the [Xfce](/index.php/Xfce "Xfce") environment.
 
 ## Contents
@@ -101,7 +94,7 @@ The themes installed will be shown in the `xfwm4-settings` window.
 
 Go to `Accessibility` and check `Hide title of windows when maximized`.
 
-**Note:** It's recommend to install [xfce4-windowck-plugin](https://aur.archlinux.org/packages/xfce4-windowck-plugin/)<sup><small>AUR</small></sup> if you want to put the titlebar of current maximized window on you panel.
+**Note:** It's recommend to install [xfce4-windowck-plugin](https://aur.archlinux.org/packages/xfce4-windowck-plugin/) if you want to put the titlebar of current maximized window on you panel.
 
 ## Troubleshooting
 

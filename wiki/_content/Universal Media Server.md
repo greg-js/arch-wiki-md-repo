@@ -6,7 +6,7 @@ Because it is written in Java, Universal Media Server supports all major operati
 
 ## Installation
 
-Universal Media Server is available in the [AUR](/index.php/AUR "AUR") via [ums](https://aur.archlinux.org/packages/ums/)<sup><small>AUR</small></sup>.
+Universal Media Server is available in the [AUR](/index.php/AUR "AUR") via [ums](https://aur.archlinux.org/packages/ums/).
 
 ## Configuration
 

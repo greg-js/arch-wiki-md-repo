@@ -1,12 +1,5 @@
 # netctl
 
-Related articles
-
-*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 [netctl](https://projects.archlinux.org/netctl.git/) is a CLI-based tool used to configure and manage network connections via profiles.
 
 ## Contents
@@ -264,7 +257,7 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 
 ### Using an Experimental GUI
 
-If you want a graphical user interface to manage _netctl_ and your connections and you are not afraid of highly experimental unofficial packages you can install [netgui](https://aur.archlinux.org/packages/netgui/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/netgui)]</sup> from [AUR](/index.php/AUR "AUR"). Note, however, that _netgui_ is still in beta status and you should be familiar with the general _netctl_ syntax to debug possible issues. Another GUI alternative is [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/)<sup><small>AUR</small></sup> which provides a Qt-based graphical interface, DBus daemon and KDE widget. A third alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/)<sup><small>AUR</small></sup>, which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
+If you want a graphical user interface to manage _netctl_ and your connections and you are not afraid of highly experimental unofficial packages you can install [netgui](https://aur.archlinux.org/packages/netgui/) from [AUR](/index.php/AUR "AUR"). Note, however, that _netgui_ is still in beta status and you should be familiar with the general _netctl_ syntax to debug possible issues. Another GUI alternative is [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) which provides a Qt-based graphical interface, DBus daemon and KDE widget. A third alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
 
 ### Eduroam
 
@@ -673,6 +666,6 @@ ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
 *   [Initial mailing list announcement](https://lists.archlinux.org/pipermail/arch-projects/2012-December/003473.html)
 *   [Official announcement thread](https://bbs.archlinux.org/viewtopic.php?id=157670)
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
-*   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cinnamon-applet-netctl-systray-menu)]</sup>
+*   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=418210](https://wiki.archlinux.org/index.php?title=Netctl&oldid=418210)"

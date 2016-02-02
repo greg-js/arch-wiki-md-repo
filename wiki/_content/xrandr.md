@@ -1,10 +1,5 @@
 # xrandr
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Multihead](/index.php/Multihead "Multihead")
-
 _xrandr_ is an official configuration utility to the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension. It can be used to set the size, orientation or reflection of the outputs for a screen. For configuring multiple monitors see the [Multihead](/index.php/Multihead "Multihead") page.
 
 ## Contents
@@ -192,7 +187,7 @@ echo -e "\n$(xrandr)"
 
 This script iterates over all xrandr outputs. If anything is connected it tries to figure out the best possible resolution places that right-of the previous display.
 
-I am using it with [srandrd](https://aur.archlinux.org/packages/srandrd/)<sup><small>AUR</small></sup> in my [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) like so ([#Example 3](#Example_3) didn't work for me for some reason or other):
+I am using it with [srandrd](https://aur.archlinux.org/packages/srandrd/) in my [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) like so ([#Example 3](#Example_3) didn't work for me for some reason or other):
 
  `~/.xprofile` 
 

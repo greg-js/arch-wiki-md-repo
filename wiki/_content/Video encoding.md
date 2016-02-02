@@ -23,9 +23,9 @@ Several graphical user interfaces exist to assist with the conversion of video t
 
 ## Scripted Conversions
 
-**[xvidenc](https://aur.archlinux.org/packages/xvidenc/)<sup><small>AUR</small></sup>** is a script available in the [AUR](/index.php/AUR "AUR"). It uses [MEncoder](/index.php/MEncoder "MEncoder") and might be a good fit, if want to convert some videos but lack most of the knowledge: While there are (probably?) even easier scripts out there, this one still gives you a lot of choices (most of which you can ignore by pressing enter to use a decent default settings).
+**[xvidenc](https://aur.archlinux.org/packages/xvidenc/)** is a script available in the [AUR](/index.php/AUR "AUR"). It uses [MEncoder](/index.php/MEncoder "MEncoder") and might be a good fit, if want to convert some videos but lack most of the knowledge: While there are (probably?) even easier scripts out there, this one still gives you a lot of choices (most of which you can ignore by pressing enter to use a decent default settings).
 
-**[h264enc](https://aur.archlinux.org/packages/h264enc/)<sup><small>AUR</small></sup>** is an advanced shell script for encoding DVDs or video files to the H.264 format using the encoding utility MEncoder from MPlayer.
+**[h264enc](https://aur.archlinux.org/packages/h264enc/)** is an advanced shell script for encoding DVDs or video files to the H.264 format using the encoding utility MEncoder from MPlayer.
 
 ## Specific Commands
 

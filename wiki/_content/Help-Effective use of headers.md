@@ -1,12 +1,5 @@
 # Help:Effective use of headers
 
-Related articles
-
-*   [Help:Article naming guidelines](/index.php/Help:Article_naming_guidelines "Help:Article naming guidelines")
-*   [Help:Writing article introductions](/index.php/Help:Writing_article_introductions "Help:Writing article introductions")
-*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-
 This article was written to assist wiki writers and editors in creating effective articles and expand the ArchWiki readers' experience.
 
 You are not required to know how to edit a wiki page in order to follow this article. This page is a more general style guide, rather than a [technical editing HOWTO](/index.php/Help:Editing "Help:Editing").

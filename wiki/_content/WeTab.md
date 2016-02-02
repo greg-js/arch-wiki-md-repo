@@ -27,7 +27,7 @@ The text file in the zip describes how to boot the USB Stick, this one is a non-
 
 There's a very hacky solution for getting the HDMI-slot to work in Archlinux.
 
-You first have to install [chrontel-wetab-rpm](https://aur.archlinux.org/packages/chrontel-wetab-rpm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/chrontel-wetab-rpm)]</sup> from [AUR](/index.php/AUR "AUR").
+You first have to install [chrontel-wetab-rpm](https://aur.archlinux.org/packages/chrontel-wetab-rpm/) from [AUR](/index.php/AUR "AUR").
 
 Then execute the following commands as root:
 

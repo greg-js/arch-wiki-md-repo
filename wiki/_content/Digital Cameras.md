@@ -1,9 +1,5 @@
 # Digital Cameras
 
-Related articles
-
-*   [Jalbum](/index.php/Jalbum "Jalbum")
-
 This article documents the configuration of `libgphoto2` to access digital cameras. Some digital cameras will mount as normal [USB storage devices](/index.php/USB_storage_devices "USB storage devices") and may not require the use of libgphoto2.
 
 **Note:** As of libgphoto2 version 2.14.13, users do not need to be part of the `camera` group.

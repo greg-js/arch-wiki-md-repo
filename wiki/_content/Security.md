@@ -1,10 +1,5 @@
 # Security
 
-Related articles
-
-*   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")
-*   [Category:Security](/index.php/Category:Security "Category:Security")
-
 This article contains recommendations and best practices for hardening an Arch Linux system.
 
 ## Contents
@@ -170,13 +165,13 @@ Relevant mount options are:
 Data partitions should always be mounted with `nodev`, `nosuid`, `noexec`. Potential usage is presented in the table below.
 
 | **Partition** | `nodev` | `nosuid` | `noexec` |
-| `/var` | yes | yes | yes <sup>[1]</sup> |
+| `/var` | yes | yes | yes  |
 | `/home` | yes | yes | yes, if you do not code, use wine or steam |
 | `/dev/shm` | yes | yes | yes |
 | `/tmp` | yes | yes | maybe, breaks compiling packages and various other things |
 | `/boot` | yes | yes | yes |
 
-<sup>[1]</sup> Note that some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
+ Note that some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
 
 ### File access permissions
 

@@ -1,11 +1,5 @@
 # xdg-open
 
-Related articles
-
-*   [Default applications](/index.php/Default_applications "Default applications")
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
-*   [Desktop entries](/index.php/Desktop_entries "Desktop entries")
-
 **xdg-open** is a desktop-independent tool for configuring the [default applications](/index.php/Default_applications "Default applications") of a user. Many applications invoke the `xdg-open` command internally.
 
 Inside a [desktop environment](/index.php/Desktop_environment "Desktop environment") (like [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), or [Xfce](/index.php/Xfce "Xfce")), _xdg-open_ simply passes the arguments to those desktop environment's file-opener application (eg. _gvfs-open_, _kde-open_, or _exo-open_). which means that the associations are left up to the desktop environment.
@@ -28,7 +22,7 @@ When no desktop environment is detected (for example when one runs a standalone 
 
 _xdg-open_ is part of the [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package available in the [official repositories](/index.php/Official_repositories "Official repositories"). It is for use inside a desktop session only, and should not be run as root.
 
-If you run _xdg-open_ without a desktop environment, you should also install [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), or [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/)<sup><small>AUR</small></sup> and [mimeo](https://aur.archlinux.org/packages/mimeo/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for a faster alternative.
+If you run _xdg-open_ without a desktop environment, you should also install [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), or [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) and [mimeo](https://aur.archlinux.org/packages/mimeo/) from the [AUR](/index.php/AUR "AUR") for a faster alternative.
 
 ## Configuration
 
@@ -138,16 +132,16 @@ Your answer becomes the default handler for that type of file. Mimeopen is insta
 ### xdg-open replacements
 
 | Name/Package | Method | Based on | Configuration file |
-| [busking-git](https://aur.archlinux.org/packages/busking-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busking-git)]</sup> | Regular expressions | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | custom |
-| [linopen](https://aur.archlinux.org/packages/linopen/)<sup><small>AUR</small></sup> | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [mimeo](https://aur.archlinux.org/packages/mimeo/)<sup><small>AUR</small></sup> | MIME-type, regular expressions | [file](https://www.archlinux.org/packages/?name=file) | `mimeapps.list`, `defaults.list`; custom is optional |
-| [mimi-git](https://aur.archlinux.org/packages/mimi-git/)<sup><small>AUR</small></sup> | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [whippet](https://aur.archlinux.org/packages/whippet/)<sup><small>AUR</small></sup> | MIME-type, name, regular expressions | SQLite database or [file](https://www.archlinux.org/packages/?name=file), [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | custom SQLite database or `mimeapps.list` |
-| [ayr](https://aur.archlinux.org/packages/ayr/)<sup><small>AUR</small></sup> | MIME-type, name, regular expressions | [file](https://www.archlinux.org/packages/?name=file) or [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | `mimeapps.list`, `defaults.list` |
-| [sx-open](https://aur.archlinux.org/packages/sx-open/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sx-open)]</sup> | Regular expressions | [file](https://www.archlinux.org/packages/?name=file), bash regex | custom |
+| [busking-git](https://aur.archlinux.org/packages/busking-git/) | Regular expressions | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | custom |
+| [linopen](https://aur.archlinux.org/packages/linopen/) | [file](https://www.archlinux.org/packages/?name=file) | custom |
+| [mimeo](https://aur.archlinux.org/packages/mimeo/) | MIME-type, regular expressions | [file](https://www.archlinux.org/packages/?name=file) | `mimeapps.list`, `defaults.list`; custom is optional |
+| [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | [file](https://www.archlinux.org/packages/?name=file) | custom |
+| [whippet](https://aur.archlinux.org/packages/whippet/) | MIME-type, name, regular expressions | SQLite database or [file](https://www.archlinux.org/packages/?name=file), [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | custom SQLite database or `mimeapps.list` |
+| [ayr](https://aur.archlinux.org/packages/ayr/) | MIME-type, name, regular expressions | [file](https://www.archlinux.org/packages/?name=file) or [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | `mimeapps.list`, `defaults.list` |
+| [sx-open](https://aur.archlinux.org/packages/sx-open/) | Regular expressions | [file](https://www.archlinux.org/packages/?name=file), bash regex | custom |
 | [ranger](https://www.archlinux.org/packages/?name=ranger) (rifle command) | MIME-type, name, regular expressions | custom |
 
-**Note:** Some of the above packages replace `xdg-utils`. Those that do not can be symbolically linked to _xdg-open_ in the user's `$PATH` above `/usr/bin`, but some applications hard-code the absolute path `/usr/bin/xdg-open`. In this case, install [xdg-utils-no-open](https://aur.archlinux.org/packages/xdg-utils-no-open/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and copy the replacement to `/usr/bin/xdg-open`.
+**Note:** Some of the above packages replace `xdg-utils`. Those that do not can be symbolically linked to _xdg-open_ in the user's `$PATH` above `/usr/bin`, but some applications hard-code the absolute path `/usr/bin/xdg-open`. In this case, install [xdg-utils-no-open](https://aur.archlinux.org/packages/xdg-utils-no-open/) from the [AUR](/index.php/AUR "AUR") and copy the replacement to `/usr/bin/xdg-open`.
 
 ### mailcap
 

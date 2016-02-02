@@ -1,9 +1,5 @@
 # MediaTomb
 
-Related articles
-
-*   [Streaming media](/index.php/Streaming_media "Streaming media")
-
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
 
 	_MediaTomb is an open source (GPL) UPnP MediaServer with a nice web user interface, it allows you to stream your digital media through your home network and listen to/watch it on a variety of UPnP compatible devices._
@@ -26,9 +22,9 @@ MediaTomb enables users to stream digital media to UPnP compatible devices like 
 
 ## Installation
 
-MediaTomb is available in the [AUR](/index.php/AUR "AUR") via [mediatomb](https://aur.archlinux.org/packages/mediatomb/)<sup><small>AUR</small></sup>.
+MediaTomb is available in the [AUR](/index.php/AUR "AUR") via [mediatomb](https://aur.archlinux.org/packages/mediatomb/).
 
-The latest development version is also available in the [AUR](/index.php/AUR "AUR") via [mediatomb-git](https://aur.archlinux.org/packages/mediatomb-git/)<sup><small>AUR</small></sup>.
+The latest development version is also available in the [AUR](/index.php/AUR "AUR") via [mediatomb-git](https://aur.archlinux.org/packages/mediatomb-git/).
 
 Mediatomb can use its own database, or your local [MariaDB](/index.php/MariaDB "MariaDB") server. For more information about the [MariaDB](/index.php/MariaDB "MariaDB") integration visit the [Documentation](http://mediatomb.cc/pages/documentation#id2855459).
 
@@ -203,7 +199,7 @@ After configuring MediaTomb to your liking, restart the server by running
 
 ## Samsung TV Support
 
-For Samsung TV support users should install [mediatomb-samsung-tv](https://aur.archlinux.org/packages/mediatomb-samsung-tv/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"), which it's the same as the [mediatomb](https://aur.archlinux.org/packages/mediatomb/)<sup><small>AUR</small></sup> package with a few more patches. Note that the TV must have [DLNA](http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance) support. Also the server and the TV should be connected to the same network.
+For Samsung TV support users should install [mediatomb-samsung-tv](https://aur.archlinux.org/packages/mediatomb-samsung-tv/) from the [AUR](/index.php/AUR "AUR"), which it's the same as the [mediatomb](https://aur.archlinux.org/packages/mediatomb/) package with a few more patches. Note that the TV must have [DLNA](http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance) support. Also the server and the TV should be connected to the same network.
 
 The following note assume MediaTomb is running as a system-wide daemon. For a per-user install, the locations of the configuration file will be different (see above).
 

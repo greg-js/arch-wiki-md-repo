@@ -1,9 +1,5 @@
 # echinus
 
-Related articles
-
-*   [dmenu](/index.php/Dmenu "Dmenu")
-
 [echinus](http://plhk.ru/) is a simple and lightweight tiling and floating window manager for X11\. Started as a [dwm](/index.php/Dwm "Dwm") fork with easier configuration, echinus became a full-featured reparenting window manager with [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) support.
 
 Unlike dwm, echinus does not need to be re-compiled after changes have been made to the config. It supports [Xft](http://www.freedesktop.org/wiki/Software/Xft) (freetype) out of the box and has the option of configurable titlebars.
@@ -21,7 +17,7 @@ Unlike dwm, echinus does not need to be re-compiled after changes have been made
 
 ## Installing
 
-[Install](/index.php/Install "Install") [echinus](https://aur.archlinux.org/packages/echinus/)<sup><small>AUR</small></sup>. You might also want to install [ourico](https://aur.archlinux.org/packages/ourico/)<sup><small>AUR</small></sup>, a lightweight EWMH taskbar, originally designed for echinus (also in AUR), and [dmenu](http://tools.suckless.org/dmenu/).
+[Install](/index.php/Install "Install") [echinus](https://aur.archlinux.org/packages/echinus/). You might also want to install [ourico](https://aur.archlinux.org/packages/ourico/), a lightweight EWMH taskbar, originally designed for echinus (also in AUR), and [dmenu](http://tools.suckless.org/dmenu/).
 
 After successfully installing, copy all files from `/etc/xdg/echinus` to `~/.echinus`(for user).
 
@@ -82,7 +78,7 @@ echinus supports some parts of EWMH - the following are known to work:
 *   [tint2](/index.php/Tint2 "Tint2")
 *   [fbpanel](http://fbpanel.sourceforge.net/)
 *   [ipager](http://useperl.ru/ipager/index.en.html)
-*   [ourico](https://aur.archlinux.org/packages/ourico/)<sup><small>AUR</small></sup>
+*   [ourico](https://aur.archlinux.org/packages/ourico/)
 
 ## Resources
 

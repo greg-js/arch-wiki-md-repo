@@ -1,10 +1,5 @@
 # Fingerprint-gui
 
-Related articles
-
-*   [Fprint](/index.php/Fprint "Fprint")
-*   [ThinkFinger](/index.php/ThinkFinger "ThinkFinger")
-
 [Fingerprint-gui](http://www.ullrich-online.cc/fingerprint/) is a program that provides an interface and drivers for fingerprint readers. The package includes drivers from the open-source project [fprint](/index.php/Fprint "Fprint") as well as proprietary drivers not included in fprint.
 
 ## Contents
@@ -18,7 +13,7 @@ Related articles
 
 ## Installation
 
-Install [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"). The package includes an installation guide in html format at `/usr/share/doc/fingerprint-gui/Manual_en.html`.
+Install [fingerprint-gui](https://aur.archlinux.org/packages/fingerprint-gui/) from [AUR](/index.php/AUR "AUR"). The package includes an installation guide in html format at `/usr/share/doc/fingerprint-gui/Manual_en.html`.
 
 If you are using [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") follow the instructions pacman gives and remove the following files:
 

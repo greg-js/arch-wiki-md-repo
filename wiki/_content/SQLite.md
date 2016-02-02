@@ -46,6 +46,7 @@ Related packages are:
 *   [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) - sqlite3 module for PHP (do not forget to enable it in `/etc/php/php.ini`)
 *   [gambas3-gb-db-sqlite3](https://www.archlinux.org/packages/?name=gambas3-gb-db-sqlite3) - Gambas2 Sqlite3 database access component
 *   [sqliteman](https://www.archlinux.org/packages/?name=sqliteman) - Developer and/or admin GUI tool for Sqlite3
+*   [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser) - DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
 
 ## Using sqlite3 command line shell
 
@@ -95,4 +96,4 @@ See forum [post](https://bbs.archlinux.org/viewtopic.php?id=109802).
 *   [Using SQLite - Oreilly Book](http://oreilly.com/catalog/9780596521196)
 *   [SQLite - Apress Book](http://www.amazon.com/Definitive-Guide-SQLite-Mike-Owens/dp/1590596730)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=SQLite&oldid=411287](https://wiki.archlinux.org/index.php?title=SQLite&oldid=411287)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=SQLite&oldid=418820](https://wiki.archlinux.org/index.php?title=SQLite&oldid=418820)"

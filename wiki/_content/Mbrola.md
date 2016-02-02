@@ -12,7 +12,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [mbrola](https://aur.archlinux.org/packages/mbrola/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [mbrola](https://aur.archlinux.org/packages/mbrola/).
 
 ### Add voices
 
@@ -57,7 +57,7 @@ To obtain a full TTS system we need a text-to-phonemes program compatible with m
 
 [LLiaPhon](http://gna.org/projects/lliaphon) is a TTS program which uses mbrola.
 
-[Install](/index.php/Install "Install") [lliaphon](https://aur.archlinux.org/packages/lliaphon/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lliaphon)]</sup>.
+[Install](/index.php/Install "Install") [lliaphon](https://aur.archlinux.org/packages/lliaphon/).
 
 Once you installed both, try this command:
 

@@ -1,10 +1,5 @@
 # LILO
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-
 The _LI_nux _LO_ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out thanks to the advent of [GRUB](/index.php/GRUB "GRUB"), an alternative boot loader offering easier configuration and less chance of rendering systems unbootable. LILO is no longer actively developed.
 
 ## Contents
@@ -20,7 +15,7 @@ The _LI_nux _LO_ader, or **LILO** for short, is a legacy multi-boot loader for L
 
 ## Installation
 
-LILO is available as [lilo](https://aur.archlinux.org/packages/lilo/)<sup><small>AUR</small></sup> and [lilo-git](https://aur.archlinux.org/packages/lilo-git/)<sup><small>AUR</small></sup> (the development version). LILO only works on BIOS systems. ELILO is a version of LILO for UEFI systems and it can be installed from the [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/)<sup><small>AUR</small></sup> package.
+LILO is available as [lilo](https://aur.archlinux.org/packages/lilo/) and [lilo-git](https://aur.archlinux.org/packages/lilo-git/) (the development version). LILO only works on BIOS systems. ELILO is a version of LILO for UEFI systems and it can be installed from the [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/) package.
 
 Running the command `lilo` (as root) will install LILO to the MBR. Before running the lilo command you should edit `/etc/lilo.conf` to ensure that the root entry points towards the root partition. If your root partition is on /dev/sda1 then the root entry should look like this: `root=/dev/sda1`. Remember to change the root line for both the 'arch' and the 'arch-fallback' entries.
 

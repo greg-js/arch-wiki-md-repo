@@ -6,7 +6,7 @@ Unlike cron jobs or bash scripts, fsniper uses [inotify](https://en.wikipedia.or
 
 ## Installation
 
-[fsniper](https://aur.archlinux.org/packages/fsniper/)<sup><small>AUR</small></sup> is available from the [AUR](/index.php/AUR "AUR").
+[fsniper](https://aur.archlinux.org/packages/fsniper/) is available from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

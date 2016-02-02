@@ -172,14 +172,14 @@ options ov51x-jpeg forceblock=1
 
 The Ricoh webcam is built into most new Sony laptops.
 
-Install [r5u87x-hg](https://aur.archlinux.org/packages/r5u87x-hg/)<sup><small>AUR</small></sup> (provides firmware too) and run the `loader` command.
+Install [r5u87x-hg](https://aur.archlinux.org/packages/r5u87x-hg/) (provides firmware too) and run the `loader` command.
 
 ### stk11xx (Syntek)
 
 *   Integrated camera in lot of Asus laptops
 *   Asus A8J, F3S, F5R, F5GL, F9E, VX2S, V1S, A6T
 
-Just install [stk11xx-svn](https://aur.archlinux.org/packages/stk11xx-svn/)<sup><small>AUR</small></sup>. It contains the right kernel module.
+Just install [stk11xx-svn](https://aur.archlinux.org/packages/stk11xx-svn/). It contains the right kernel module.
 
 ## Make sure the module is loaded for your webcam
 
@@ -287,7 +287,7 @@ Kopete is the [KDE](/index.php/KDE "KDE") instant messaging (IM) client. As of K
 Application to take pictures and videos out of your webcam for KDE.
 
 *   KDE4: [kamoso](https://www.archlinux.org/packages/?name=kamoso)
-*   KDE Plasma 5: [kamoso-git](https://aur.archlinux.org/packages/kamoso-git/)<sup><small>AUR</small></sup>
+*   KDE Plasma 5: [kamoso-git](https://aur.archlinux.org/packages/kamoso-git/)
 
 ### xawtv
 
@@ -370,7 +370,7 @@ This is very similar to Microsoft NetMeeting. Install the [ekiga](https://www.ar
 
 ### Sonic-snap
 
-[sonic-snap](https://aur.archlinux.org/packages/sonic-snap/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sonic-snap)]</sup> [[2]](http://www.stolk.org/sonic-snap/) is a viewer/grabber for sn9c102-based webcams **only**.
+[sonic-snap](https://aur.archlinux.org/packages/sonic-snap/) [[2]](http://www.stolk.org/sonic-snap/) is a viewer/grabber for sn9c102-based webcams **only**.
 
 ### Skype
 

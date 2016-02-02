@@ -1,10 +1,5 @@
 # LDAP authentication
 
-Related articles
-
-*   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
-*   [LDAP Hosts](/index.php/LDAP_Hosts "LDAP Hosts")
-
 ## Contents
 
 *   [1 Introduction and Concepts](#Introduction_and_Concepts)
@@ -390,7 +385,7 @@ The first step is to edit `/etc/pam.d/system-auth` as follows.
 ```
 #%PAM-1.0
 
-auth sufficient pam_sss.so
+auth sufficient pam_sss.so forward_pass
 auth required pam_unix.so try_first_pass nullok
 auth optional pam_permit.so
 auth required pam_env.so
@@ -453,4 +448,4 @@ Once you have logged in with a user the credentials will be cached and you will 
 *   [Discussion on suse's mailing lists about nss-pam-ldapd](http://readlist.com/lists/suse.com/suse-linux-e/36/182642.html)
 *   [Fedora's SSSD User Guide](https://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/chap-SSSD_User_Guide-Introduction.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=417815](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=417815)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=418819](https://wiki.archlinux.org/index.php?title=LDAP_authentication&oldid=418819)"

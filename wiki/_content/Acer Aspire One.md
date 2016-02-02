@@ -295,7 +295,7 @@ Now you have to select the modules you need to get the hardware working. Please 
 
 #### Tweaks
 
-Put `zramswap` in the DAEMONS array in /etc/rc.conf to use the zram module that may improve performance. This requires [zramswap](https://aur.archlinux.org/packages/zramswap/)<sup><small>AUR</small></sup> and a recent kernel.
+Put `zramswap` in the DAEMONS array in /etc/rc.conf to use the zram module that may improve performance. This requires [zramswap](https://aur.archlinux.org/packages/zramswap/) and a recent kernel.
 
 ### Network
 
@@ -655,7 +655,7 @@ It is common to use customized kernels in these machines to avoid the extra load
 
 The [kernel-netbook](https://aur.archlinux.org/packages.php?ID=34625) package in the AUR provides a custom kernel supporting most netbooks with Intel Atom N270/N280/N450/N550 processors.
 
-There is also a A110L specific kernel package [linux-one](https://aur.archlinux.org/packages/linux-one/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-one)]</sup> on AUR with all necessary modules compiled in kernel. Refer to the [Forum](https://bbs.archlinux.org/viewtopic.php?id=51796) for help on this. There may also be binaries of the latest version on the Forum but since these are user submitted packages you should *always* pick the sources and PKGBUILD, inspect them and build them yourself.
+There is also a A110L specific kernel package [linux-one](https://aur.archlinux.org/packages/linux-one/) on AUR with all necessary modules compiled in kernel. Refer to the [Forum](https://bbs.archlinux.org/viewtopic.php?id=51796) for help on this. There may also be binaries of the latest version on the Forum but since these are user submitted packages you should *always* pick the sources and PKGBUILD, inspect them and build them yourself.
 
 There is also [linux-one-dev](https://aur.archlinux.org/packages.php?ID=51296).
 
@@ -759,7 +759,7 @@ Letting the BIOS regulate the cpu fan results in a noisy monster of a netbook. Y
 
 The acerhdf kernel module regulates the fan in a performant and secure way.
 
-From kernel 2.6.31 on the acerhdf module is provided inside the kernel tree. Therefore it comes precompiled with the linux, linux-one and linux-one-dev packages. If you use a kernel version <= 2.6.30 there is a package in AUR called [acerhdf](https://aur.archlinux.org/packages/acerhdf/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acerhdf)]</sup>, which you will have to build and install.
+From kernel 2.6.31 on the acerhdf module is provided inside the kernel tree. Therefore it comes precompiled with the linux, linux-one and linux-one-dev packages. If you use a kernel version <= 2.6.30 there is a package in AUR called [acerhdf](https://aur.archlinux.org/packages/acerhdf/), which you will have to build and install.
 
 Up to acerhdf version 0.5.18:
 

@@ -157,7 +157,7 @@ There is also a separate kernel driver based on asusoled: [Asus_OLED](http://lap
 
 You may simply want to display a digital clock with the date in the asusoled area. To do this :
 
-1.  install [asus_oled-clock-svn](https://aur.archlinux.org/packages/asus_oled-clock-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/asus_oled-clock-svn)]</sup> from the [AUR](/index.php/AUR "AUR").
+1.  install [asus_oled-clock-svn](https://aur.archlinux.org/packages/asus_oled-clock-svn/) from the [AUR](/index.php/AUR "AUR").
 2.  add 'asusoled-clock' in the daemons array of your rc.conf
 
 There are also some interesting utilities available to control and utilize the OLED display over here: [https://bitbucket.org/SysGhost/asus-oled-command-line-utility.git](https://bitbucket.org/SysGhost/asus-oled-command-line-utility.git)

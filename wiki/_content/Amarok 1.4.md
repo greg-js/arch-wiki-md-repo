@@ -1,9 +1,5 @@
 # Amarok 1.4
 
-Related articles
-
-*   [Amarok 2](/index.php/Amarok_2 "Amarok 2")
-
 Amarok is a music player and organizer for Linux with an intuitive interface. Version 1.4 is the most recent one released for KDE3 (although does run under KDE4 and Gnome as explained below). With KDE4 came [Amarok 2.x](/index.php/Amarok_2.x "Amarok 2.x"). However, you might still be interested in running this obsolete (until forked) version, because the developers have not yet and/or do not want to port all the 1.4 features to 2.0, they see it as an entirely different program.[[1]](http://amarok.kde.org/blog/archives/809-Missing-features-in-Amarok-2.html)
 
 On the other hand, if you have never used Amarok 1.4 before, you may find [Amarok 2.x](/index.php/Amarok_2.x "Amarok 2.x") sufficient.

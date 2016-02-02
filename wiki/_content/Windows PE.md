@@ -41,7 +41,7 @@ Download the Windows Automated Installation Kit (WAIK) from [Microsoft's website
 
 [Install](/index.php/Install "Install") [fuse](https://www.archlinux.org/packages/?name=fuse), [cdrkit](https://www.archlinux.org/packages/?name=cdrkit), and [cabextract](https://www.archlinux.org/packages/?name=cabextract) from [official repositories](/index.php/Official_repositories "Official repositories").
 
-Install [wimlib](https://aur.archlinux.org/packages/wimlib/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [wimlib](https://aur.archlinux.org/packages/wimlib/) from the [AUR](/index.php/AUR "AUR").
 
 Mount the WAIK ISO:
 
@@ -51,7 +51,7 @@ Mount the WAIK ISO:
 
 ```
 
-Use the `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/)<sup><small>AUR</small></sup> to create a bootable Windows PE ISO `winpe.iso`:
+Use the `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/) to create a bootable Windows PE ISO `winpe.iso`:
 
 ```
 $ mkwinpeimg --iso --waik-dir=/media/waik winpe.iso
@@ -134,7 +134,7 @@ TFTP is not designed to be used to transfer large files, such as `winpe.iso`, wh
 
 ## Customizing Windows PE
 
-The `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/)<sup><small>AUR</small></sup> supports making modifications to Windows PE using the `--start-script` or `--overlay` options. See the manual page for `mkwinpeimg` for more information.
+The `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/) supports making modifications to Windows PE using the `--start-script` or `--overlay` options. See the manual page for `mkwinpeimg` for more information.
 
 You may want to do this to add additional Windows applications that you want to run in Windows PE, or to add any additional drivers that Windows PE needs (drivers can be loaded using the `drvload` command within Windows PE).
 

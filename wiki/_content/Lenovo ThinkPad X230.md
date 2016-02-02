@@ -1,11 +1,5 @@
 # Lenovo ThinkPad X230
 
-Related articles
-
-*   [fprint](/index.php/Fprint "Fprint")
-*   [TrackPoint](/index.php/TrackPoint "TrackPoint")
-*   [HiDPI](/index.php/HiDPI "HiDPI")
-
 [Lenovo ThinkPad X230](http://www.lenovo.com/hk/en/productcatalog/pdf/X230-datasheet.pdf)
 
 ## Contents

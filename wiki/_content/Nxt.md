@@ -6,7 +6,7 @@ From [nxt.org](http://nxt.org/):
 
 ## Installation
 
-NXT is available with the [nxt-git](https://aur.archlinux.org/packages/nxt-git/)<sup><small>AUR</small></sup> package providing compilation from the latest source.
+NXT is available with the [nxt-git](https://aur.archlinux.org/packages/nxt-git/) package providing compilation from the latest source.
 
 ## Usage
 

@@ -83,23 +83,23 @@ Utilities exist to monitor hdapsd's status so you know what is going on while yo
 
 ### gnome-hdaps-applet
 
-This is a GNOME panel applet (Note: XFCE can use GNOME panel applets) that represents the current status of your hard drive. The package is available in [AUR](/index.php/AUR "AUR"): [gnome-hdaps-applet](https://aur.archlinux.org/packages/gnome-hdaps-applet/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-hdaps-applet)]</sup>. If you do not want to monitor sda or hda by default, edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") before compiling.
+This is a GNOME panel applet (Note: XFCE can use GNOME panel applets) that represents the current status of your hard drive. The package is available in [AUR](/index.php/AUR "AUR"): [gnome-hdaps-applet](https://aur.archlinux.org/packages/gnome-hdaps-applet/). If you do not want to monitor sda or hda by default, edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") before compiling.
 
 ### kdeplasma-applets-hdaps-monitor
 
-For KDE4 there is a plasmoid for HDAPS monitoring [HDAPS monitor](http://kde-look.org/content/show.php/HDAPS+monitor?content=103481). The package [kdeplasma-applets-hdaps-monitor](https://aur.archlinux.org/packages/kdeplasma-applets-hdaps-monitor/)<sup><small>AUR</small></sup> is available in [AUR](/index.php/AUR "AUR").
+For KDE4 there is a plasmoid for HDAPS monitoring [HDAPS monitor](http://kde-look.org/content/show.php/HDAPS+monitor?content=103481). The package [kdeplasma-applets-hdaps-monitor](https://aur.archlinux.org/packages/kdeplasma-applets-hdaps-monitor/) is available in [AUR](/index.php/AUR "AUR").
 
 ### xfce4-hdaps
 
-This is a Xfce4 panel applet that can represents the current status of your hard drive. Available in [AUR](/index.php/AUR "AUR"): [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/)<sup><small>AUR</small></sup>. After install, add this applet to a panel.
+This is a Xfce4 panel applet that can represents the current status of your hard drive. Available in [AUR](/index.php/AUR "AUR"): [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/). After install, add this applet to a panel.
 
 ### HDAPSicon
 
-HDAPSicon, formerly thinkhdaps, is a standalone GTK applet for HDAPS disk protection status. While running will show applet icon in the notification area. Available in AUR: [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/)<sup><small>AUR</small></sup>.
+HDAPSicon, formerly thinkhdaps, is a standalone GTK applet for HDAPS disk protection status. While running will show applet icon in the notification area. Available in AUR: [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/).
 
 ### hdaps-gl
 
-Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to the apllication Lenovo distributes with Windows. [hdaps-gl](https://aur.archlinux.org/packages/hdaps-gl/)<sup><small>AUR</small></sup> is available in AUR.
+Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to the apllication Lenovo distributes with Windows. [hdaps-gl](https://aur.archlinux.org/packages/hdaps-gl/) is available in AUR.
 
 ## See also
 

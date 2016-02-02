@@ -40,6 +40,7 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [3.6 Repeating keys issue](#Repeating_keys_issue)
     *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
+    *   [3.8 Sound doesn't work after upgrading to kernel 4.4](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -56,11 +57,11 @@ There are no exclusive hardware differences between the Developer Edition and th
 
 ### WiFi
 
-Most configurations feature the Dell DW1560 802.11ac adapter (Broadcom BCM4352), which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
+Most configurations feature the Dell DW1560 802.11ac adapter (Broadcom BCM4352), which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
 
 Some higher-end models do not use the Dell-branded adapter but instead use an Intel Wireless 7265, which is supported by the mainline kernel. This card is generally available as an aftermarket purchase for those wishing to replace the Broadcom wireless in their laptop. Compared to the Broadcom card, the Intel card has a 2-3 times wider reception range and way higher throughput, making it an worthwhile upgrade should you decide to do so. Note that the Intel 7265 card exists as both a WLAN standalone and WLAN/Bluetooth combo card; both work, so it's your decision if you are willing to pay extra to get Bluetooth support or not.
 
-**Tip:** **Intel users:** Intel Linux driver maintainer Emmanuel Grumbach maintains a [fork of the linux-firmware repository](https://git.kernel.org/cgit/linux/kernel/git/iwlwifi/linux-firmware.git) which contains bleeding edge firmware that provides improved throughput and connection stability for the Intel 7265 card, see [linux-firmware-git-iwlwifi](https://aur.archlinux.org/packages/linux-firmware-git-iwlwifi/)<sup><small>AUR</small></sup>.
+**Tip:** **Intel users:** Intel Linux driver maintainer Emmanuel Grumbach maintains a [fork of the linux-firmware repository](https://git.kernel.org/cgit/linux/kernel/git/iwlwifi/linux-firmware.git) which contains bleeding edge firmware that provides improved throughput and connection stability for the Intel 7265 card, see [linux-firmware-git-iwlwifi](https://aur.archlinux.org/packages/linux-firmware-git-iwlwifi/).
 
 ### Bluetooth
 
@@ -192,6 +193,10 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 
 ```
 
+### Sound doesn't work after upgrading to kernel 4.4
+
+You need to do two cold boots (_don't_ reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode. See the Audio section above for more information.
+
 ## See also
 
 General:
@@ -205,4 +210,4 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418421](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418421)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418831](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418831)"

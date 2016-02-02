@@ -1,12 +1,5 @@
 # WeeChat
 
-Related articles
-
-*   [IRC channels](/index.php/IRC_channels "IRC channels")
-*   [IRC](/index.php/IRC "IRC")
-*   [irssi](/index.php/Irssi "Irssi")
-*   [HexChat](/index.php/HexChat "HexChat")
-
 **WeeChat** is a highly extendable and feature rich IRC Client currently under heavy development.
 
 ## Contents
@@ -38,7 +31,7 @@ Related articles
 
 ## Installing
 
-[Install](/index.php/Install "Install") [weechat](https://www.archlinux.org/packages/?name=weechat) from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version [weechat-git](https://aur.archlinux.org/packages/weechat-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [weechat](https://www.archlinux.org/packages/?name=weechat) from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version [weechat-git](https://aur.archlinux.org/packages/weechat-git/) is available in the [AUR](/index.php/AUR "AUR").
 
 ## Running WeeChat
 
@@ -248,7 +241,7 @@ Or have a look at [Mosh](http://mosh.mit.edu/).
 
 ### OTR
 
-Install [python2-potr](https://aur.archlinux.org/packages/python2-potr/)<sup><small>AUR</small></sup> and enable the script **otr.py**. Then:
+Install [python2-potr](https://aur.archlinux.org/packages/python2-potr/) and enable the script **otr.py**. Then:
 
 ```
 /query <nick>

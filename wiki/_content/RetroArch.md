@@ -18,15 +18,15 @@ RetroArch is a modular, command-line driven, multi-system emulator that is desig
 
 **RetroArch** — Stable version.
 
-	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://aur.archlinux.org/packages/retroarch/)<sup><small>AUR</small></sup>
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://aur.archlinux.org/packages/retroarch/)
 
 **RetroArch (git)** — Development version.
 
-	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)<sup><small>AUR</small></sup>
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)
 
 **RetroArch-Phoenix (git)** — GTK+ front-end, development version.
 
-	[https://github.com/Themaister/RetroArch-Phoenix](https://github.com/Themaister/RetroArch-Phoenix) || [retroarch-phoenix-git](https://aur.archlinux.org/packages/retroarch-phoenix-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/retroarch-phoenix-git)]</sup>, or [retroarch-phoenix-qt-git](https://aur.archlinux.org/packages/retroarch-phoenix-qt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/retroarch-phoenix-qt-git)]</sup> (qt build)
+	[https://github.com/Themaister/RetroArch-Phoenix](https://github.com/Themaister/RetroArch-Phoenix) || [retroarch-phoenix-git](https://aur.archlinux.org/packages/retroarch-phoenix-git/), or [retroarch-phoenix-qt-git](https://aur.archlinux.org/packages/retroarch-phoenix-qt-git/) (qt build)
 
 ## Usage
 
@@ -55,7 +55,7 @@ It supports split configuration files using the `#include "foo.cfg"` directive w
 
 **Tip:** RetroArch is capable of loading _[bsnes xml filters](https://gitorious.org/bsnes/xml-shaders)_ and _[cg shaders](https://github.com/libretro/common-shaders)_ that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
 
-**Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)<sup><small>AUR</small></sup> requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the _cg shaders_.
+**Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the _cg shaders_.
 
 **Warning:** When using _[ALSA](/index.php/ALSA "ALSA")_ it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually 48000.
 

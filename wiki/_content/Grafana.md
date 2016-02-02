@@ -1,10 +1,5 @@
 # Grafana
 
-Related articles
-
-*   [Zabbix](/index.php/Zabbix "Zabbix")
-*   [Munin](/index.php/Munin "Munin")
-
 Grafana is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports graphite, influxdb or opentsdb as backends.
 
 ## Contents
@@ -18,7 +13,7 @@ Grafana is an open-source, general purpose dashboard and graph composer, which r
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [grafana](https://aur.archlinux.org/packages/grafana/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [grafana](https://aur.archlinux.org/packages/grafana/) package from the [AUR](/index.php/AUR "AUR").
 
 After that you can [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `grafana` service and access the application on localhost, e.g.: [http://127.0.0.1:3000](http://127.0.0.1:3000) . The default username is `admin` and password `admin` to access the web frontend.
 
@@ -26,7 +21,7 @@ After that you can [Enable](/index.php/Enable "Enable") and [start](/index.php/S
 
 ### Influxdb installation
 
-One often used backend is [influxdb](https://aur.archlinux.org/packages/influxdb/)<sup><small>AUR</small></sup> which can be also obtained from the AUR. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service. The web interface is available at [http://localhost:8083/](http://localhost:8083/)
+One often used backend is [influxdb](https://aur.archlinux.org/packages/influxdb/) which can be also obtained from the AUR. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service. The web interface is available at [http://localhost:8083/](http://localhost:8083/)
 
 ### Aggregate data
 

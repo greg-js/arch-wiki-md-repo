@@ -81,4 +81,4 @@ You could also use localhost instead of 127.0.0.1, but this causes PowerDNS to u
 
 *   [PowerDNS manual](http://doc.powerdns.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=412157](https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=412157)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=418800](https://wiki.archlinux.org/index.php?title=PowerDNS&oldid=418800)"

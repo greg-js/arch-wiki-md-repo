@@ -1,10 +1,5 @@
 # XvMC
 
-Related articles
-
-*   [VA-API](/index.php/VA-API "VA-API")
-*   [VDPAU](/index.php/VDPAU "VDPAU")
-
 **X-Video Motion Compensation (XvMC)** is an extension for the X.Org Server. The XvMC API allows video programs to offload portions of the video decoding process to the GPU video-hardware. Particularly, features that have the tendency of heavily depending on the processor. Since XvMC acceleration takes the load off the CPU, thereby reducing processor requirements for video playback, it is an ideal solution for HDTV video playback scenarios.
 
 **Note:** XvMC is obsoleted by [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") nowadays, which have better support for recent GPUs.
@@ -23,11 +18,11 @@ Related articles
 Only MPEG-1 and MPEG-2 videos are supported by all driver.
 
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 6 and GeForce 7 series cards are supported by the proprietary [nvidia-304xx-utils](https://www.archlinux.org/packages/?name=nvidia-304xx-utils) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
-*   NVIDIA GeForce 5 FX series cards are supported by the proprietary [nvidia-173xx-utils](https://aur.archlinux.org/packages/nvidia-173xx-utils/)<sup><small>AUR</small></sup> package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   NVIDIA GeForce4 series cards are supported by the proprietary [nvidia-96xx-utils](https://aur.archlinux.org/packages/nvidia-96xx-utils/)<sup><small>AUR</small></sup> package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   NVIDIA GeForce 5 FX series cards are supported by the proprietary [nvidia-173xx-utils](https://aur.archlinux.org/packages/nvidia-173xx-utils/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   NVIDIA GeForce4 series cards are supported by the proprietary [nvidia-96xx-utils](https://aur.archlinux.org/packages/nvidia-96xx-utils/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 *   [Intel](/index.php/Intel "Intel") 810, GMA 950, GMA 3100, GMA 3000, GMA 4500 series and Ironlake GPUs are supported by the open source [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
-*   [AMD](/index.php/ATI_Catalyst "ATI Catalyst") Radeon HD 5000 series and newer GPUs are supported by the proprietary [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)<sup><small>AUR</small></sup> package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   AMD Radeon HD 4000 series GPUs are supported by the proprietary [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/)<sup><small>AUR</small></sup> package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   [AMD](/index.php/ATI_Catalyst "ATI Catalyst") Radeon HD 5000 series and newer GPUs are supported by the proprietary [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   AMD Radeon HD 4000 series GPUs are supported by the proprietary [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 *   [S3 Graphics](/index.php/Via_Unichrome "Via Unichrome") UniChrome GPUs are supported by the open source [xf86-video-openchrome](https://www.archlinux.org/packages/?name=xf86-video-openchrome) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Configuration

@@ -34,7 +34,7 @@ Use only the PKGBUILD prototypes provided in the [pacman](https://www.archlinux.
 
 *   `--holdver` can be used to prevent [makepkg](/index.php/Makepkg "Makepkg") from updating the `pkgver` (see: [makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html))
 
-*   Include what the package conflicts with and provides (e.g. for [fluxbox-git](https://aur.archlinux.org/packages/fluxbox-git/)<sup><small>AUR</small></sup>: `conflicts=('fluxbox')` and `provides=('fluxbox')`).
+*   Include what the package conflicts with and provides (e.g. for [fluxbox-git](https://aur.archlinux.org/packages/fluxbox-git/): `conflicts=('fluxbox')` and `provides=('fluxbox')`).
 
 *   `replaces=()` generally causes unnecessary problems and should be avoided.
 

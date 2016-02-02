@@ -32,7 +32,7 @@ From the project [home page](http://www.videolan.org/vlc/):
 
 Notable variants are:
 
-*   [vlc-git](https://aur.archlinux.org/packages/vlc-git/)<sup><small>AUR</small></sup> - Development branch.
+*   [vlc-git](https://aur.archlinux.org/packages/vlc-git/) - Development branch.
 
 If you want to play audio CDs, you should also install [libcddb](https://www.archlinux.org/packages/?name=libcddb).
 

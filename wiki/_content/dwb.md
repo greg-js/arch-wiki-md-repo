@@ -36,7 +36,7 @@
 
 ## Installation
 
-The [dwb](https://www.archlinux.org/packages/?name=dwb) package can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and can be installed with [pacman](/index.php/Pacman "Pacman"). There are also other versions in the [AUR](/index.php/AUR "AUR"): [dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup>, [dwb-gtk3](https://aur.archlinux.org/packages/dwb-gtk3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwb-gtk3)]</sup>, and [dwb-gtk3-git](https://aur.archlinux.org/packages/dwb-gtk3-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dwb-gtk3-git)]</sup>.
+The [dwb](https://www.archlinux.org/packages/?name=dwb) package can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and can be installed with [pacman](/index.php/Pacman "Pacman"). There are also other versions in the [AUR](/index.php/AUR "AUR"): [dwb-git](https://aur.archlinux.org/packages/dwb-git/), [dwb-gtk3](https://aur.archlinux.org/packages/dwb-gtk3/), and [dwb-gtk3-git](https://aur.archlinux.org/packages/dwb-gtk3-git/).
 
 ## Basic usage
 
@@ -391,7 +391,7 @@ See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_
 
 ## dwb-git
 
-[dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup> offers many improvements over the stable version, the most notable of which are listed below.
+[dwb-git](https://aur.archlinux.org/packages/dwb-git/) offers many improvements over the stable version, the most notable of which are listed below.
 
 **Note:** As of May 4th, 2015, the official [dwb](https://www.archlinux.org/packages/?name=dwb) package should contain all those features, and more.
 
@@ -401,14 +401,14 @@ Browser Plugins can be enabled and disabled through the new [dwb:plugins dwb:plu
 
 #### Flash Support
 
-[dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup> has built in support for the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). Dwb should auto-detect and enabled the plugin after it is installed. Alternatively, you can install [gnash-gtk](https://aur.archlinux.org/packages/gnash-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> and it will be detected as well.
+[dwb-git](https://aur.archlinux.org/packages/dwb-git/) has built in support for the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). Dwb should auto-detect and enabled the plugin after it is installed. Alternatively, you can install [gnash-gtk](https://aur.archlinux.org/packages/gnash-gtk/) and it will be detected as well.
 
 #### Java Support
 
-[dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup> has built in support for the [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web). Dwb should auto-detect and enable the plugin after it is installed.
+[dwb-git](https://aur.archlinux.org/packages/dwb-git/) has built in support for the [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web). Dwb should auto-detect and enable the plugin after it is installed.
 
 ### Improved Ability to Display Websites
 
-If you are having problems with they layout of websites not loading correctly then give [dwb-git](https://aur.archlinux.org/packages/dwb-git/)<sup><small>AUR</small></sup> a shot.
+If you are having problems with they layout of websites not loading correctly then give [dwb-git](https://aur.archlinux.org/packages/dwb-git/) a shot.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dwb&oldid=413447](https://wiki.archlinux.org/index.php?title=Dwb&oldid=413447)"

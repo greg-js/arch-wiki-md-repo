@@ -39,7 +39,7 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   **Arno's firewall** — Secure firewall for both single and multi-homed machines. Very easy to configure, handy to manage and highly customizable. Supports: NAT and SNAT, port forwarding, ADSL ethernet modems with both static and dynamically assigned IPs, MAC address filtering, stealth port scan detection, DMZ and DMZ-2-LAN forwarding, protection against SYN/ICMP flooding, extensive user definable logging with rate limiting to prevent log flooding, all IP protocols and VPNs such as IPsec, plugin support to add extra features.
 
-	[http://rocky.eld.leidenuniv.nl/](http://rocky.eld.leidenuniv.nl/) || [arno-iptables-firewall](https://aur.archlinux.org/packages/arno-iptables-firewall/)<sup><small>AUR</small></sup>
+	[http://rocky.eld.leidenuniv.nl/](http://rocky.eld.leidenuniv.nl/) || [arno-iptables-firewall](https://aur.archlinux.org/packages/arno-iptables-firewall/)
 
 *   **ferm** — Tool to maintain complex firewalls, without having the trouble to rewrite the complex rules over and over again. It allows the entire firewall rule set to be stored in a separate file, and to be loaded with one command. The firewall configuration resembles structured programming-like language, which can contain levels and lists.
 
@@ -47,11 +47,11 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   **Firehol** — Language to express firewalling rules, not just a script that produces some kind of a firewall. It makes building even sophisticated firewalls easy - the way you want it.
 
-	[http://firehol.sourceforge.net/](http://firehol.sourceforge.net/) || [firehol](https://aur.archlinux.org/packages/firehol/)<sup><small>AUR</small></sup>
+	[http://firehol.sourceforge.net/](http://firehol.sourceforge.net/) || [firehol](https://aur.archlinux.org/packages/firehol/)
 
 *   **Firetable** — Firewall with "human readable" syntax.
 
-	[http://projects.leisink.net/Firetable](http://projects.leisink.net/Firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)<sup><small>AUR</small></sup>
+	[http://projects.leisink.net/Firetable](http://projects.leisink.net/Firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)
 
 *   **[Shorewall](/index.php/Shorewall "Shorewall")** — High-level tool for configuring Netfilter. You describe your firewall/gateway requirements using entries in a set of configuration files.
 
@@ -63,17 +63,17 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
-	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)
 
 *   **Vuurmuur** — Powerful firewall manager. It has a simple and easy to learn configuration that allows both simple and complex configurations. The configuration can be fully configured through an [ncurses](https://www.archlinux.org/packages/?name=ncurses) GUI, which allows secure remote administration through SSH or on the console. Vuurmuur supports traffic shaping, has powerful monitoring features, which allow the administrator to look at the logs, connections and bandwidth usage in realtime.
 
-	[http://www.vuurmuur.org/](http://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)<sup><small>AUR</small></sup>
+	[http://www.vuurmuur.org/](http://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)
 
 ### Graphic frontends
 
 *   **Firestarter** — Good GUI for iptables writen on GTK2, it has the ability to use both white and black lists for regulating traffic, it is very simple and easy to use, with good documentation available on their website.
 
-	[http://www.fs-security.com/](http://www.fs-security.com/) || [Firestarter](https://aur.archlinux.org/packages/Firestarter/)<sup><small>AUR</small></sup>
+	[http://www.fs-security.com/](http://www.fs-security.com/) || [Firestarter](https://aur.archlinux.org/packages/Firestarter/)
 
 *   **Firewall Builder** — GUI firewall configuration and management tool that supports iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) and Cisco routers extended access lists. The program runs on Linux, FreeBSD, OpenBSD, Windows and Mac OS X and can manage both local and remote firewalls.
 
@@ -89,15 +89,15 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 *   **KMyFirewall** — KDE3 GUI for iptables. Firewall editing capabilities are simple enough to use to be suitable for beginners, but also allow for sophisticated tweaking of the firewall settings.
 
-	[http://kmyfirewall.sourceforge.net/](http://kmyfirewall.sourceforge.net/) || [kmyfirewall](https://aur.archlinux.org/packages/kmyfirewall/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kmyfirewall)]</sup>
+	[http://kmyfirewall.sourceforge.net/](http://kmyfirewall.sourceforge.net/) || [kmyfirewall](https://aur.archlinux.org/packages/kmyfirewall/)
 
 *   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
-	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
 
 *   **[kcm-ufw](/index.php/Uncomplicated_Firewall#kcm-ufw "Uncomplicated Firewall")** — KDE alternative to Gufw.
 
-	[http://kde-apps.org/content/show.php?content=137789](http://kde-apps.org/content/show.php?content=137789) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)<sup><small>AUR</small></sup>
+	[http://kde-apps.org/content/show.php?content=137789](http://kde-apps.org/content/show.php?content=137789) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
 
 ## nftables
 

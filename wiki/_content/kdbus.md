@@ -4,7 +4,7 @@ kdbus is an alternative in-kernel implementation of [D-Bus](/index.php/D-Bus "D-
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kdbus](https://aur.archlinux.org/packages/kdbus/)<sup><small>AUR</small></sup> package, then add `kdbus=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+[Install](/index.php/Install "Install") the [kdbus](https://aur.archlinux.org/packages/kdbus/) package, then add `kdbus=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 After rebooting, you can verify a working _kdbus_ installation with:
 

@@ -4,7 +4,7 @@
 
 It works by preloading its own socket library wrappers, that limit traffic by delaying data.
 
-Trickle runs entirely in userspace. [[1]](http://monkey.org/~marius/pages/?page=trickle) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-28]</sup>
+Trickle runs entirely in userspace. [[1]](http://monkey.org/~marius/pages/?page=trickle) 
 
 ## Contents
 

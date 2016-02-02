@@ -1,13 +1,5 @@
 # Help:Writing article introductions
 
-Related articles
-
-*   [ArchWiki:About](/index.php/ArchWiki:About "ArchWiki:About")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
-*   [Help:Article naming guidelines](/index.php/Help:Article_naming_guidelines "Help:Article naming guidelines")
-*   [Help:Effective use of headers](/index.php/Help:Effective_use_of_headers "Help:Effective use of headers")
-
 This article was written to assist wiki writers and editors in creating effective articles and expand the ArchWiki readers' experience.
 
 You are not required to know how to edit a wiki page in order to follow this article. This page is a more general style guide, rather than a [technical editing HOWTO](/index.php/Help:Editing "Help:Editing").

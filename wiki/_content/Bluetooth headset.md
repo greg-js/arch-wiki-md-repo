@@ -1,10 +1,5 @@
 # Bluetooth headset
 
-Related articles
-
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
-
 Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio playback with the default installation.
 
 **Note:** Bluez5 is only supported by [PulseAudio](/index.php/PulseAudio "PulseAudio") and not by [ALSA](/index.php/ALSA "ALSA"). If you do not want to use PulseAudio, you need to install an older Bluez version from the AUR.
@@ -247,7 +242,7 @@ It is much easier to set up your bluetooth headset today, with bluez >= 3.16\. Y
 
 You need your headset's bdaddr. It is of the form _12:34:56:78:9A:BC_. Either find it in the documentation of your headset, on the headset itself or with the **hcitool scan** command.
 
-Install [btsco](https://aur.archlinux.org/packages/btsco/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/btsco)]</sup>.
+Install [btsco](https://aur.archlinux.org/packages/btsco/).
 
 To load the kernel module, type:
 
@@ -671,8 +666,8 @@ If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM
 | **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[2]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
 | **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
 | **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine. | Limited |
-| **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/)<sup><small>AUR</small></sup> | Both A2DP & HSP/HFP work fine. | Yes |
-| **SoundBot SB220** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/)<sup><small>AUR</small></sup> | Yes |
+| **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Both A2DP & HSP/HFP work fine. | Yes |
+| **SoundBot SB220** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Yes |
 | **Auna Air 300** | bluez5, pulseaudio-git | For some reason, a few restarts were required, and eventually it just started working. | Limited |
 | **Sennheiser MM 400-X** | bluez5, pulseaudio 4.0-6 | Yes |
 | **Sennheiser MM 550-X Travel** | bluez 5.27-1, pulseaudio 5.0-1 | Next/Previous buttons work out-of-the-box, Play/Pause does not | Yes |

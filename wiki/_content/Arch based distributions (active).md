@@ -1,9 +1,5 @@
 # Arch based distributions (active)
 
-Related articles
-
-*   [Arch based distributions (inactive)](/index.php/Arch_based_distributions_(inactive) "Arch based distributions (inactive)")
-
 ## Contents
 
 *   [1 Specialty distributions](#Specialty_distributions)

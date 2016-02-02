@@ -1,11 +1,5 @@
 # Dolphin
 
-Related articles
-
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [KDE](/index.php/KDE "KDE")
-*   [udisks](/index.php/Udisks "Udisks")
-
 This article is about **Dolphin**, the default [file manager](/index.php/Category:File_managers "Category:File managers") of the [K Desktop Environment](/index.php/K_Desktop_Environment "K Desktop Environment"). For the game emulator, see [Dolphin emu](/index.php/Dolphin_emu "Dolphin emu").
 
 ## Contents
@@ -34,10 +28,10 @@ For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install
 *   [kdesdk-thumbnailers](https://www.archlinux.org/packages/?name=kdesdk-thumbnailers): Plugins for the thumbnailing system
 *   [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs): Video files
 *   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
-*   [audiothumbs](https://aur.archlinux.org/packages/audiothumbs/)<sup><small>AUR</small></sup>: Audio files
-*   [kde-thumbnailer-apk](https://aur.archlinux.org/packages/kde-thumbnailer-apk/)<sup><small>AUR</small></sup>: **A**ndroid **a**pplication **p**ackage files
-*   [kde-thumbnailer-blender](https://aur.archlinux.org/packages/kde-thumbnailer-blender/)<sup><small>AUR</small></sup>: Blender application files
-*   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/)<sup><small>AUR</small></sup>: Electronic book files
+*   [audiothumbs](https://aur.archlinux.org/packages/audiothumbs/): Audio files
+*   [kde-thumbnailer-apk](https://aur.archlinux.org/packages/kde-thumbnailer-apk/): **A**ndroid **a**pplication **p**ackage files
+*   [kde-thumbnailer-blender](https://aur.archlinux.org/packages/kde-thumbnailer-blender/): Blender application files
+*   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/): Electronic book files
 
 ## Usage
 

@@ -59,7 +59,7 @@
 
 [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is available in the [official repositories](/index.php/Official_repositories "Official repositories") and includes 256 color support.
 
-[rxvt-unicode-patched](https://aur.archlinux.org/packages/rxvt-unicode-patched/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR") and includes a fix for the font width bug.
+[rxvt-unicode-patched](https://aur.archlinux.org/packages/rxvt-unicode-patched/) is available in the [AUR](/index.php/AUR "AUR") and includes a fix for the font width bug.
 
 ## Configuration
 
@@ -182,7 +182,7 @@ URxvt.secondaryScroll: 0
 
 ```
 
-The above configuration works as expected except when scrolling with a mouse wheel. When you scroll a pager in the _secondary screen_ with the mouse wheel - and there has been something in the scrollback buffer, instead of the pager itself - the scrollback buffer will be scrolled by the mouse wheel. To solve this issue, it is necessary to introduce a new option into rxvt-unicode[[1]](https://bbs.archlinux.org/viewtopic.php?id=132150). A patched rxvt-unicode is available in AUR as [rxvt-unicode-better-wheel-scrolling](https://aur.archlinux.org/packages/rxvt-unicode-better-wheel-scrolling/)<sup><small>AUR</small></sup>. After installing it, add the following to the configuration file:
+The above configuration works as expected except when scrolling with a mouse wheel. When you scroll a pager in the _secondary screen_ with the mouse wheel - and there has been something in the scrollback buffer, instead of the pager itself - the scrollback buffer will be scrolled by the mouse wheel. To solve this issue, it is necessary to introduce a new option into rxvt-unicode[[1]](https://bbs.archlinux.org/viewtopic.php?id=132150). A patched rxvt-unicode is available in AUR as [rxvt-unicode-better-wheel-scrolling](https://aur.archlinux.org/packages/rxvt-unicode-better-wheel-scrolling/). After installing it, add the following to the configuration file:
 
 ```
 URxvt.secondaryWheel: 1
@@ -249,7 +249,7 @@ $ printf '\e]710;%s\007' "xft:Terminus:pixelsize=12"
 
 ### Set icon
 
-**Note:** Because of a bug report[FS#34862](https://bugs.archlinux.org/task/34862) complaining that the rxvt-unicode package had too many dependencies, you must now install the AUR package [rxvt-unicode-pixbuf](https://aur.archlinux.org/packages/rxvt-unicode-pixbuf/)<sup><small>AUR</small></sup> in order to use the icon option.
+**Note:** Because of a bug report[FS#34862](https://bugs.archlinux.org/task/34862) complaining that the rxvt-unicode package had too many dependencies, you must now install the AUR package [rxvt-unicode-pixbuf](https://aur.archlinux.org/packages/rxvt-unicode-pixbuf/) in order to use the icon option.
 
 By default URxvt does not feature a taskbar icon. However, this can be easily changed by adding the following line to `~/.Xresources` and pointing to the desired icon:
 
@@ -389,7 +389,7 @@ URxvt.tabbed.tab-bg: 0
 
 ### Advanced tab management
 
-Install the [urxvt-tabbedex](https://aur.archlinux.org/packages/urxvt-tabbedex/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR"), then add the `tabbedex` value to the `URxvt.perl-ext-common` X resource in your `~/.Xresources`:
+Install the [urxvt-tabbedex](https://aur.archlinux.org/packages/urxvt-tabbedex/) package from [AUR](/index.php/AUR "AUR"), then add the `tabbedex` value to the `URxvt.perl-ext-common` X resource in your `~/.Xresources`:
 
 ```
 URxvt.perl-ext-common: ...,tabbedex,...
@@ -439,7 +439,7 @@ URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
 
 ```
 
-**Note:** Redefining the keys used for the user commands will not disable the default mappings, you have to set the X resource `no-tabbedex-keys` for that. However, currently it is not included in [urxvt-tabbedex](https://aur.archlinux.org/packages/urxvt-tabbedex/)<sup><small>AUR</small></sup> package. Consider using [urxvt-tabbedex-git](https://aur.archlinux.org/packages/urxvt-tabbedex-git/)<sup><small>AUR</small></sup> package instead:
+**Note:** Redefining the keys used for the user commands will not disable the default mappings, you have to set the X resource `no-tabbedex-keys` for that. However, currently it is not included in [urxvt-tabbedex](https://aur.archlinux.org/packages/urxvt-tabbedex/) package. Consider using [urxvt-tabbedex-git](https://aur.archlinux.org/packages/urxvt-tabbedex-git/) package instead:
 
 ```
 URxvt.tabbed.no-tabbedex-keys: true
@@ -448,7 +448,7 @@ URxvt.tabbed.no-tabbedex-keys: true
 
 ### Fullscreen
 
-You can install the [AUR](/index.php/AUR "AUR") package [urxvt-fullscreen](https://aur.archlinux.org/packages/urxvt-fullscreen/)<sup><small>AUR</small></sup>, and then set a key binding to put urxvt fullscreen.
+You can install the [AUR](/index.php/AUR "AUR") package [urxvt-fullscreen](https://aur.archlinux.org/packages/urxvt-fullscreen/), and then set a key binding to put urxvt fullscreen.
 
  `~/.Xresources` 
 
@@ -462,7 +462,7 @@ URxvt.keysym.F11: perl:fullscreen:switch
 
 ### Scrollwheel support
 
-Install [urxvt-vtwheel](https://aur.archlinux.org/packages/urxvt-vtwheel/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and add it to your Perl extensions within `~/.Xresources`:
+Install [urxvt-vtwheel](https://aur.archlinux.org/packages/urxvt-vtwheel/) from the [AUR](/index.php/AUR "AUR") and add it to your Perl extensions within `~/.Xresources`:
 
 ```
  URxvt.perl-ext-common:  ...,vtwheel,...
@@ -471,7 +471,7 @@ Install [urxvt-vtwheel](https://aur.archlinux.org/packages/urxvt-vtwheel/)<sup><
 
 ### Changing font size on the fly
 
-Install [urxvt-resize-font-git](https://aur.archlinux.org/packages/urxvt-resize-font-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"), add it to your Perl extensions within `~/.Xresources`
+Install [urxvt-resize-font-git](https://aur.archlinux.org/packages/urxvt-resize-font-git/) from the [AUR](/index.php/AUR "AUR"), add it to your Perl extensions within `~/.Xresources`
 
 ```
  URxvt.perl-ext-common:  ...,resize-font,...
@@ -565,7 +565,7 @@ and finally restart `urxvt`.
 ## Improving performance
 
 *   Avoid the use of Xft fonts. If Xft fonts must be used, append `:antialias=false` to the setting value.[[2]](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Can_I_speed_up_Xft_rendering_somehow)
-*   Build rxvt-unicode with disabled support for unnecessary features, `--disable-xft` and `--disable-unicode3` in particular.<sup>[[3]](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Rxvt_unicode_uses_gobs_of_memory_how)</sup>
+*   Build rxvt-unicode with disabled support for unnecessary features, `--disable-xft` and `--disable-unicode3` in particular.
 *   Limit the number of `saveLines` (option `-sl`) in the scrollback buffer to reduce memory usage. [[4]](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Isn_t_rxvt_unicode_supposed_to_be_sm)
     *   Use tmux for scrollback buffer and set saveLines to 0
 *   [Disable perl](#Disabling_Perl_extensions)
@@ -704,7 +704,7 @@ sub on_sel_grab {
 
 ```
 
-Xyne has also created his own variation of Skottish's script named [urxvt-clipboard](https://aur.archlinux.org/packages/urxvt-clipboard/)<sup><small>AUR</small></sup> which is available in the [AUR](/index.php/AUR "AUR") that allows the user to paste the selection with `Ctrl+V` instead of only with a middle mouse click:
+Xyne has also created his own variation of Skottish's script named [urxvt-clipboard](https://aur.archlinux.org/packages/urxvt-clipboard/) which is available in the [AUR](/index.php/AUR "AUR") that allows the user to paste the selection with `Ctrl+V` instead of only with a middle mouse click:
 
 ```
 #! /usr/bin/perl
@@ -729,7 +729,7 @@ URxvt.perl-ext-common: default,clipboard
 
 ```
 
-The [AUR](/index.php/AUR "AUR") package [urxvt-perls-git](https://aur.archlinux.org/packages/urxvt-perls-git/)<sup><small>AUR</small></sup> is another option one can use. [urxvt-perls-git](https://aur.archlinux.org/packages/urxvt-perls-git/)<sup><small>AUR</small></sup> includes the same functionality as [urxvt-clipboard](https://aur.archlinux.org/packages/urxvt-clipboard/)<sup><small>AUR</small></sup>, in addition to the keyboard-select and url-select Perl extensions.
+The [AUR](/index.php/AUR "AUR") package [urxvt-perls-git](https://aur.archlinux.org/packages/urxvt-perls-git/) is another option one can use. [urxvt-perls-git](https://aur.archlinux.org/packages/urxvt-perls-git/) includes the same functionality as [urxvt-clipboard](https://aur.archlinux.org/packages/urxvt-clipboard/), in addition to the keyboard-select and url-select Perl extensions.
 
 ## Improved Kuake-like behavior in Openbox
 

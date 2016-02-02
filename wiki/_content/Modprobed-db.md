@@ -1,11 +1,6 @@
 # Modprobed-db
 
-Related articles
-
-*   [Kernels](/index.php/Kernels "Kernels")
-*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
-
-[modprobed-db](https://aur.archlinux.org/packages/modprobed-db/)<sup><small>AUR</small></sup> keeps a running list of ALL modules ever probed on a system and allow for easy recall. This is very useful for users wishing to build a minimal kernel via a `make localmodconfig` which simply takes every module currently probed and switches everything BUT them off in the `.config` for a kernel resulting in smaller kernel packages and reduced compilation times.
+[modprobed-db](https://aur.archlinux.org/packages/modprobed-db/) keeps a running list of ALL modules ever probed on a system and allow for easy recall. This is very useful for users wishing to build a minimal kernel via a `make localmodconfig` which simply takes every module currently probed and switches everything BUT them off in the `.config` for a kernel resulting in smaller kernel packages and reduced compilation times.
 
 ## Contents
 
@@ -22,7 +17,7 @@ Related articles
 
 ## Installation and Setup
 
-The [modprobed-db](https://aur.archlinux.org/packages/modprobed-db/)<sup><small>AUR</small></sup> package is available from the [AUR](/index.php/AUR "AUR").
+The [modprobed-db](https://aur.archlinux.org/packages/modprobed-db/) package is available from the [AUR](/index.php/AUR "AUR").
 
 1.  Run `modprobed-db` which will create `$XDG_CONFIG_HOME/modprobed-db.conf` if one does not already exist.
 2.  Run `modprobed-db store` to store the current loaded modules.
@@ -95,18 +90,18 @@ The official Arch kernel's PKGBUILD does not have native support for this, but i
 
 Several kernel packages in the AUR have native support for modprobed-db in their PKGBUILD files. For example:
 
-*   [linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-bfs)]</sup>
-*   [linux-bridge-pl](https://aur.archlinux.org/packages/linux-bridge-pl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-bridge-pl)]</sup>
-*   [linux-ck-fbcondecor](https://aur.archlinux.org/packages/linux-ck-fbcondecor/)<sup><small>AUR</small></sup>
-*   [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup>
-*   [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)<sup><small>AUR</small></sup>
-*   [linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)<sup><small>AUR</small></sup>
-*   [linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)<sup><small>AUR</small></sup>
-*   [linux-lts-ck](https://aur.archlinux.org/packages/linux-lts-ck/)<sup><small>AUR</small></sup>
-*   [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup>
-*   [linux-uksm-ck](https://aur.archlinux.org/packages/linux-uksm-ck/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-uksm-ck)]</sup>
-*   [linux-ice](https://aur.archlinux.org/packages/linux-ice/)<sup><small>AUR</small></sup>
-*   [linux-uksm](https://aur.archlinux.org/packages/linux-uksm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-uksm)]</sup>
+*   [linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)
+*   [linux-bridge-pl](https://aur.archlinux.org/packages/linux-bridge-pl/)
+*   [linux-ck-fbcondecor](https://aur.archlinux.org/packages/linux-ck-fbcondecor/)
+*   [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
+*   [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
+*   [linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
+*   [linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)
+*   [linux-lts-ck](https://aur.archlinux.org/packages/linux-lts-ck/)
+*   [linux-pf](https://aur.archlinux.org/packages/linux-pf/)
+*   [linux-uksm-ck](https://aur.archlinux.org/packages/linux-uksm-ck/)
+*   [linux-ice](https://aur.archlinux.org/packages/linux-ice/)
+*   [linux-uksm](https://aur.archlinux.org/packages/linux-uksm/)
 
 Find which other packages use it:
 
@@ -128,7 +123,7 @@ It is recommended that users install the package and then "use" the system for a
 *   Insert every kind of removable media (USB, DVD, CD, etc.)
 *   Use every device on the machine (wifi, network, USB stuff like cameras, ipods, etc.)
 *   Mount every kind of filesystem one might typically use including ext2/3/4, fat, vfat, CIFS shares, NFS shares, etc.
-*   Use as many applications (that one would normally use) as possible in order to capture modules on which they depend. For example, IP blocking/filtering software like [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)<sup><small>AUR</small></sup>.
+*   Use as many applications (that one would normally use) as possible in order to capture modules on which they depend. For example, IP blocking/filtering software like [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/).
 *   Users who plan to mount iso image file should do so (this will make sure to capture the **loop** and **isofs** modules).
 *   Users requiring encryption software such as [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) should make sure to load it, and mount some encrypted containers to ensure that the needed crypto modules are in the db.
 *   Try-out different Linux-kernels; they may include modules not enabled in the default/other kernel(s)

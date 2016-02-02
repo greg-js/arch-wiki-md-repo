@@ -1,10 +1,5 @@
 # ACPI modules
 
-Related articles
-
-*   [acpid](/index.php/Acpid "Acpid")
-*   [DSDT](/index.php/DSDT "DSDT")
-
 From [ACPI site](http://www.acpi.info/):
 
 	_ACPI (Advanced Configuration and Power Interface) is an open industry specification co-developed by Hewlett-Packard, Intel, Microsoft, Phoenix, and Toshiba._

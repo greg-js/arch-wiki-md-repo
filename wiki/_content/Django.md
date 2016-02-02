@@ -6,7 +6,7 @@
 
 Two packages of Django are currently available in the [official repositories](/index.php/Official_repositories "Official repositories"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
 
-*   [python-django](https://www.archlinux.org/packages/?name=python-django) - Latest python support, with documentation in the [django-docs](https://aur.archlinux.org/packages/django-docs/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+*   [python-django](https://www.archlinux.org/packages/?name=python-django) - Latest python support, with documentation in the [django-docs](https://aur.archlinux.org/packages/django-docs/) package from [AUR](/index.php/AUR "AUR").
 *   [python2-django](https://www.archlinux.org/packages/?name=python2-django) - Python 2 legacy support
 
 ## Usage

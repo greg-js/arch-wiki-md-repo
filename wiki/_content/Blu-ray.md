@@ -1,9 +1,5 @@
 # Blu-ray
 
-Related articles
-
-*   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
-
 This article is designed to help Linux users to play the Blu-ray discs they have legally purchased on their computers. Since no official Blu-ray player software is available on their system, Linux users have to use open-source libraries capable of handling the DRM schemes that protect these disc contents. This is legal in most countries where interoperability allows this.
 
 ## Contents
@@ -69,7 +65,7 @@ There have been several efforts to compile VUKs from various sources. Early atte
 
 #### BD+
 
-BD+ is an additional but optional component of the Blu-ray DRM. In December 2013, VideoLAN released the long awaited [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> which provides experimental support for BD+ decryption. The library does not provide keys or certificates required for BD+ decryption, you need to retrieve and install them separately, as explained at [[9]](http://www.labdv.com/aacs/) and [[10]](http://www.labdv.com/aacs/advanced-users.php).
+BD+ is an additional but optional component of the Blu-ray DRM. In December 2013, VideoLAN released the long awaited [libbdplus](https://aur.archlinux.org/packages/libbdplus/) which provides experimental support for BD+ decryption. The library does not provide keys or certificates required for BD+ decryption, you need to retrieve and install them separately, as explained at [[9]](http://www.labdv.com/aacs/) and [[10]](http://www.labdv.com/aacs/advanced-users.php).
 
 ## Playback
 
@@ -115,7 +111,7 @@ If this method is successful, after you play the disc, libaacs will store the VU
 
 #### BD+ support
 
-These pages [[12]](http://www.labdv.com/aacs/) and [[13]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/)<sup><small>AUR</small></sup> provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/)<sup><small>AUR</small></sup> or [DVDFab](#See_also) (under Wine).
+These pages [[12]](http://www.labdv.com/aacs/) and [[13]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/) provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/) or [DVDFab](#See_also) (under Wine).
 
 ### Media players
 
@@ -186,7 +182,7 @@ $ mplayer -vc ffmpeg12vdpau br:///</bluray/mount/dir>
 
 #### VLC
 
-Since version 2.0.0, vlc has had experimental Blu-ray playback support. Blu-ray menus can be used if you install [libbluray-git](https://aur.archlinux.org/packages/libbluray-git/)<sup><small>AUR</small></sup> instead of [libbluray](https://www.archlinux.org/packages/?name=libbluray).
+Since version 2.0.0, vlc has had experimental Blu-ray playback support. Blu-ray menus can be used if you install [libbluray-git](https://aur.archlinux.org/packages/libbluray-git/) instead of [libbluray](https://www.archlinux.org/packages/?name=libbluray).
 
 Start playback with:
 
@@ -212,7 +208,7 @@ If a valid VUK is found in `~/.cache/aacs/vuk`, then libaacs does not need to us
 
 #### Revoked Host key/certificate
 
-Unfortunately, what may happen when trying to play a newer Blu-ray disc is the revocation of host key/certificates (which are keys of licensed software players) by your drive. When this happens, [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup> will return this message:
+Unfortunately, what may happen when trying to play a newer Blu-ray disc is the revocation of host key/certificates (which are keys of licensed software players) by your drive. When this happens, [aacskeys](https://aur.archlinux.org/packages/aacskeys/) will return this message:
 
 ```
  The given Host Certficate / Private Key has been revoked by your drive.
@@ -228,7 +224,7 @@ When a disc (using mplayer or vlc) is succesfully decrypted, libaacs will store 
 
 #### Using aacskeys
 
-Install [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup>. You need to run [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup> from a directory that contains valid host key/certificate and processing keys:
+Install [aacskeys](https://aur.archlinux.org/packages/aacskeys/). You need to run [aacskeys](https://aur.archlinux.org/packages/aacskeys/) from a directory that contains valid host key/certificate and processing keys:
 
  `cd /usr/share/aacskeys` and run: `aacskeys </bluray/mount/dir>` eg: `cd /usr/share/aacskeys && aacskeys /media/blurays` 
 
@@ -246,9 +242,9 @@ Try to generate the VolumeID with [DumpVID](http://forum.doom9.org/showthread.ph
 
 For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) package supplies the needed decryption libs. Below are some options for Blu-ray/HD-DVD decryption. Users can employ to backup a commercial Blu-ray movie under Fair Use guidelines:
 
-*   [aacskeys](https://aur.archlinux.org/packages/aacskeys/)<sup><small>AUR</small></sup> - Opensource
-*   [dumphd](https://aur.archlinux.org/packages/dumphd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dumphd)]</sup> - Opensource
-*   [makemkv](https://aur.archlinux.org/packages/makemkv/)<sup><small>AUR</small></sup> - Closed source/limited free beta
+*   [aacskeys](https://aur.archlinux.org/packages/aacskeys/) - Opensource
+*   [dumphd](https://aur.archlinux.org/packages/dumphd/) - Opensource
+*   [makemkv](https://aur.archlinux.org/packages/makemkv/) - Closed source/limited free beta
 
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").

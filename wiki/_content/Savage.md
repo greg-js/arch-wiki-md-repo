@@ -1,9 +1,5 @@
 # Savage
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-
 Savage is a video chipset that was manufactured by S3 and VIA. This driver supports Savage, ProSavage and Twister chipsets.
 
 ## Contents

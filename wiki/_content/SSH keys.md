@@ -397,7 +397,7 @@ See [the below notes on using x11-ssh-askpass with ssh-add](#Calling_x11-ssh-ask
 
 The [GnuPG](/index.php/GnuPG "GnuPG") agent, distributed with the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package, available in the [official repositories](/index.php/Official_repositories "Official repositories"), has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your SSH keys. Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
 
-**Note:** If you are using KDE and have [kde-agent](https://www.archlinux.org/packages/?name=kde-agent)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> installed you only need to set `enable-ssh-support` into `~/.gnupg/gpg-agent.conf`! Otherwise, continue reading.
+**Note:** If you are using KDE and have [kde-agent](https://www.archlinux.org/packages/?name=kde-agent) installed you only need to set `enable-ssh-support` into `~/.gnupg/gpg-agent.conf`! Otherwise, continue reading.
 
 To start using GnuPG agent for your SSH keys, you should enable `enable-ssh-support` in the `~/.gnupg/gpg-agent.conf` file.
 
@@ -511,7 +511,7 @@ Because Keychain reuses the same _ssh-agent_ process on successive logins, you s
 
 ### envoy
 
-An alternative to keychain is [envoy](https://github.com/vodik/envoy). Envoy is available as [envoy](https://www.archlinux.org/packages/?name=envoy) , or the Git version as [envoy-git](https://aur.archlinux.org/packages/envoy-git/)<sup><small>AUR</small></sup>.
+An alternative to keychain is [envoy](https://github.com/vodik/envoy). Envoy is available as [envoy](https://www.archlinux.org/packages/?name=envoy) , or the Git version as [envoy-git](https://aur.archlinux.org/packages/envoy-git/).
 
 After installing it, set up the envoy socket by [enabling](/index.php/Enabling "Enabling") `envoy@ssh-agent.socket`.
 
@@ -537,7 +537,7 @@ If the key is `~/.ssh/id_rsa`, `~/.ssh/id_dsa`, `~/.ssh/id_ecdsa`, or `~/.ssh/id
 
 If you have long passphrases for your SSH keys, remembering them can be a pain. So let us tell kwallet to store them! Along with [envoy](https://www.archlinux.org/packages/?name=envoy), install [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) and [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) from the [official repositories](/index.php/Official_repositories "Official repositories"). Next, enable the envoy socket in systemd (see above).
 
-**Note:** As of April 30, 2015, if after installation [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) keeps asking for access to your wallet even after having submitted the password, you might have [[this](https://bbs.archlinux.org/viewtopic.php?id=192862)] problem. The proposed solution is to install [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/)<sup><small>AUR</small></sup>, though this might break your login.
+**Note:** As of April 30, 2015, if after installation [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) keeps asking for access to your wallet even after having submitted the password, you might have [[this](https://bbs.archlinux.org/viewtopic.php?id=192862)] problem. The proposed solution is to install [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/), though this might break your login.
 
 First, you will add this script to `~/.kde4/Autostart/ssh-agent.sh`:
 
@@ -606,7 +606,7 @@ Doing it this way works well with [the above method on using _ssh-agent_ as a wr
 
 #### Theming
 
-The appearance of the _x11-ssh-askpass_ dialog can be customized by setting its associated [X resources](/index.php/X_resources "X resources"). The _x11-ssh-askpass_ [home page](http://www.jmknoble.net/software/x11-ssh-askpass/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-04-01]</sup> presents some [example themes](http://www.jmknoble.net/software/x11-ssh-askpass/screenshots.html)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-04-01]</sup>. See the _x11-ssh-askpass_ manual page for full details.
+The appearance of the _x11-ssh-askpass_ dialog can be customized by setting its associated [X resources](/index.php/X_resources "X resources"). The _x11-ssh-askpass_ [home page](http://www.jmknoble.net/software/x11-ssh-askpass/) presents some [example themes](http://www.jmknoble.net/software/x11-ssh-askpass/screenshots.html). See the _x11-ssh-askpass_ manual page for full details.
 
 #### Alternative passphrase dialogs
 
@@ -620,7 +620,7 @@ There are other passphrase dialog programs which can be used instead of _x11-ssh
 
 The [pam_ssh](http://pam-ssh.sourceforge.net/) project exists to provide a [Pluggable Authentication Module](https://en.wikipedia.org/wiki/Pluggable_authentication_module "wikipedia:Pluggable authentication module") (PAM) for SSH private keys. This module can provide single sign-on behavior for your SSH connections. On login, your SSH private key passphrase can be entered in place of, or in addition to, your traditional system password. Once you have been authenticated, the pam_ssh module spawns ssh-agent to store your decrypted private key for the duration of the session.
 
-To enable single sign-on behavior at the tty login prompt, install the unofficial [pam_ssh](https://aur.archlinux.org/packages/pam_ssh/)<sup><small>AUR</small></sup> package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+To enable single sign-on behavior at the tty login prompt, install the unofficial [pam_ssh](https://aur.archlinux.org/packages/pam_ssh/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 **Note:** pam_ssh 2.0 now requires that all private keys used in the authentication process be located under `~/.ssh/login-keys.d/`.
 
@@ -709,7 +709,7 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 *   Supports both PuTTY and OpenSSH private key formats.
 *   Works with native SSH agent on Linux/Mac and with PuTTY on Windows.
 
-See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://aur.archlinux.org/packages/keepass-plugin-keeagent/)<sup><small>AUR</small></sup> package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/)<sup><small>AUR</small></sup>.
+See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://aur.archlinux.org/packages/keepass-plugin-keeagent/) package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/).
 
 ## Troubleshooting
 

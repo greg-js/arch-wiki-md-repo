@@ -1,9 +1,5 @@
 # ArchMap
 
-Related articles
-
-*   [Google Earth](/index.php/Google_Earth "Google Earth")
-
 The **ArchMap** project creates a map of Arch Linux users all over the world.
 
 ## Contents

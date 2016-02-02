@@ -2,7 +2,7 @@
 
 ## Installing psyBNC
 
-[psybnc](https://aur.archlinux.org/packages/psybnc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/psybnc)]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[psybnc](https://aur.archlinux.org/packages/psybnc/) is available in the [AUR](/index.php/AUR "AUR").
 
 ## Post-Install
 

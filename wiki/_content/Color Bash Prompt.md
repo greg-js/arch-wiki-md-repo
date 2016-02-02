@@ -1,10 +1,5 @@
 # Color Bash Prompt
 
-Related articles
-
-*   [Bash](/index.php/Bash "Bash")
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
-
 You can add colors and additional information to the [Bash](/index.php/Bash "Bash")'s prompt (PS1) to increase productivity and make the prompt stand out.
 
 This article shows how to _customize the personal prompt of a regular user_.
@@ -694,7 +689,7 @@ and use `__git_ps1` inside `PS1` or `PROMPT_COMMAND`. See [Don't Reinvent the Wh
 ## See also
 
 *   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
-*   The original _not modified_ Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-08-05]</sup>. See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/)<sup><small>AUR</small></sup>.
+*   The original _not modified_ Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0). See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/).
 *   tput(1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)
     *   [Colours and Cursor Movement With tput](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html)

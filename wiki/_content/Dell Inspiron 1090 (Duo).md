@@ -149,7 +149,7 @@ Uses `snd-hda-intel` module, see [Kernel modules](/index.php/Kernel_modules "Ker
 
 ### HD video playback
 
-Install [crystalhd-git](https://aur.archlinux.org/packages/crystalhd-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/crystalhd-git)]</sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). The new module is located in
+Install [crystalhd-git](https://aur.archlinux.org/packages/crystalhd-git/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). The new module is located in
 
 ```
 /lib/modules/$(uname -r)/kernel/drivers/video/broadcom/crystalhd.ko
@@ -193,7 +193,7 @@ setkeycodes e074 149
 
 ### Transparent cursor
 
-Install [xcursor-transparent-theme](https://aur.archlinux.org/packages/xcursor-transparent-theme/)<sup><small>AUR</small></sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [xcursor-transparent-theme](https://aur.archlinux.org/packages/xcursor-transparent-theme/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 #### Hide mouse pointer in Gnome 3.x
 
@@ -219,7 +219,7 @@ Inherits=xcursor-transparent
 
 #### Generic
 
-Install [florence](https://aur.archlinux.org/packages/florence/)<sup><small>AUR</small></sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [florence](https://aur.archlinux.org/packages/florence/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 #### Gnome 3.2.x
 
@@ -227,7 +227,7 @@ Install [florence](https://aur.archlinux.org/packages/florence/)<sup><small>AUR<
 
 ### Gesture recognition
 
-Install [easystroke-mt](https://aur.archlinux.org/packages/easystroke-mt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/easystroke-mt)]</sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). It has multitouch support.
+Install [easystroke-mt](https://aur.archlinux.org/packages/easystroke-mt/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). It has multitouch support.
 
 **Note:** [easystroke](https://www.archlinux.org/packages/?name=easystroke) (also available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") does not work properly with multitouch. When the screen is touched with two fingers it is interpreted at a gesture given by the line defined between the two points of contact.
 
@@ -323,14 +323,14 @@ exit 0
 
 **Tip:** For an improved user experience you can:
 
-*   Associate this script to a gesture using [easystroke-mt](https://aur.archlinux.org/packages/easystroke-mt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/easystroke-mt)]</sup>, see [#Gesture recognition](#Gesture_recognition).
+*   Associate this script to a gesture using [easystroke-mt](https://aur.archlinux.org/packages/easystroke-mt/), see [#Gesture recognition](#Gesture_recognition).
 *   Create a desktop launcher/system tray icon to run this script.
 
 ### Script for toggling tablet mode ON and OFF (Gnome 3.x)
 
 The following shell script hides the mouse pointer and activates Gnome 3.x's on-screen keyboard, [caribou](https://www.archlinux.org/packages/?name=caribou), when the netbook is fold into a tablet. It detects the current mode based on the current cursor theme (if the cursor is hidden, then the computer is in tablet mode). When you unfold the computer, it returns the screen to the default orientation.
 
-**Note:** It assumes [xcursor-transparent-theme](https://aur.archlinux.org/packages/xcursor-transparent-theme/)<sup><small>AUR</small></sup> and [caribou](https://www.archlinux.org/packages/?name=caribou) are installed, see [#Transparent cursor](#Transparent_cursor) and [#On-screen keyboard](#On-screen_keyboard); and that `Adwaita`, Gnome 3.x's default cursor theme is in use. See also [#Screen rotation](#Screen_rotation).
+**Note:** It assumes [xcursor-transparent-theme](https://aur.archlinux.org/packages/xcursor-transparent-theme/) and [caribou](https://www.archlinux.org/packages/?name=caribou) are installed, see [#Transparent cursor](#Transparent_cursor) and [#On-screen keyboard](#On-screen_keyboard); and that `Adwaita`, Gnome 3.x's default cursor theme is in use. See also [#Screen rotation](#Screen_rotation).
 
  `~/toggle_tabletmode.sh` 
 

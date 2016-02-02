@@ -5,7 +5,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Fixing Problems in xrdp<sup>AUR</sup>](#Fixing_Problems_in_xrdpAUR)
+    *   [1.1 Fixing Problems in xrdp](#Fixing_Problems_in_xrdpAUR)
     *   [1.2 Autoboot at Startup](#Autoboot_at_Startup)
     *   [1.3 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
 *   [2 Usage](#Usage)
@@ -13,11 +13,11 @@
 
 ## Installation
 
-Users can find install xrdp from the AUR : [xrdp](https://aur.archlinux.org/packages/xrdp/)<sup><small>AUR</small></sup>.
+Users can find install xrdp from the AUR : [xrdp](https://aur.archlinux.org/packages/xrdp/).
 
-### Fixing Problems in [xrdp](https://aur.archlinux.org/packages/xrdp/)<sup><small>AUR</small></sup>
+### Fixing Problems in [xrdp](https://aur.archlinux.org/packages/xrdp/)
 
-You won't have these problems when you use [xrdp-git](https://aur.archlinux.org/packages/xrdp-git/)<sup><small>AUR</small></sup> so you can skip this section when you chose the git version.
+You won't have these problems when you use [xrdp-git](https://aur.archlinux.org/packages/xrdp-git/) so you can skip this section when you chose the git version.
 
 If Xvnc (tightvnc) fails with
 

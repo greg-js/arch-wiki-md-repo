@@ -1,11 +1,5 @@
 # GNU Parted
 
-Related articles
-
-*   [GParted](/index.php/GParted "GParted")
-*   [fdisk](/index.php/Fdisk "Fdisk")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-
 GNU Parted is a program for creating and manipulating partition tables. [GParted](/index.php/GParted "GParted") is a GUI frontend.
 
 ## Contents

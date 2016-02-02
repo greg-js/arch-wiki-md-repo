@@ -59,7 +59,7 @@ Store and mark [[2]](https://gist.githubusercontent.com/anonymous/b5728d68bb8808
 
 ### eGalax
 
-The driver for eGalax touchscreens is available from the [eGalax website](http://home.eeti.com.tw/drivers_Linux.html). Also, it is availbale as [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+The driver for eGalax touchscreens is available from the [eGalax website](http://home.eeti.com.tw/drivers_Linux.html). Also, it is availbale as [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 #### Invert Y-axis
 
@@ -77,6 +77,6 @@ Orientation 0
 
 ## Gestures
 
-If you want gestures in your window manager, install [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and read its [docs](https://code.google.com/p/touchegg/wiki/Main).
+If you want gestures in your window manager, install [touchegg](https://aur.archlinux.org/packages/touchegg/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and read its [docs](https://code.google.com/p/touchegg/wiki/Main).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Multitouch_Displays&oldid=409605](https://wiki.archlinux.org/index.php?title=Multitouch_Displays&oldid=409605)"

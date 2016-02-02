@@ -12,7 +12,7 @@
 
 ## Installation
 
-Install [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"). Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/)<sup><small>AUR</small></sup>.
+Install [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) package from the [AUR](/index.php/AUR "AUR"). Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
 
 Run the following command to complete the installation:
 

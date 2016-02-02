@@ -117,7 +117,7 @@ Some projects provide only 32bit applications which may require 32bit libraries 
 
 	To show graphics (e.g. Several projects of WCG, Climateprediction)
 
-	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxdamage](https://www.archlinux.org/packages/?name=lib32-libxdamage), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl), [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libjpeg6)]</sup> (AUR), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
+	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxdamage](https://www.archlinux.org/packages/?name=lib32-libxdamage), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl), [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/) (AUR), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
 
 ## Troubleshooting
 

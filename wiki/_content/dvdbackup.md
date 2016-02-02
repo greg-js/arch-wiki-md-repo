@@ -1,9 +1,5 @@
 # dvdbackup
 
-Related articles
-
-*   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
-
 There are several ways to backup DVD videos; see [DVD Ripping](/index.php/DVD_Ripping "DVD Ripping"). Many methods are slow, and require several steps to accomplish. [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup) provides a simpler method (with some help from [dvdauthor](https://www.archlinux.org/packages/?name=dvdauthor)). The `dvdbackup` program is elegant because it does not demux/remux/transcode/reformat the movie. This means the backup process is done in one step.
 
 ## Contents

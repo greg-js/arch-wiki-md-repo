@@ -1,10 +1,5 @@
 # Courier MTA
 
-Related articles
-
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
-
 [Courier MTA](http://www.courier-mta.org/) is an SMTP and POP3/IMAP4 Server with courier.
 
 The advantages of Courier-MTA are:
@@ -50,7 +45,7 @@ The following text describes a setup for two local domains on one physical machi
 
 ## Installing
 
-[Install](/index.php/Install "Install") the [courier-mta](https://aur.archlinux.org/packages/courier-mta/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [courier-mta](https://aur.archlinux.org/packages/courier-mta/) package.
 
 Any other mail transfer agents (like cyrus) or smtp servers (sendmail, postfix, etc) must be uninstalled for this, so answer 'yes' when prompted to do so.
 

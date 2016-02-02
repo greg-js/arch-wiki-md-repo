@@ -2,7 +2,7 @@
 
 Bcache allows one to use an SSD as a read/write cache (in writeback mode) or read cache (writethrough or writearound) for another blockdevice (generally a rotating HDD or array). This article will show how to install arch using Bcache as the root partition. For an intro to bcache itself, see [the bcache homepage](http://bcache.evilpiepirate.org/). Be sure to read and reference [the bcache manual](http://atlas.evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt). Bcache is in the mainline kernel since 3.10\. The kernel on the arch install disk includes the bcache module since 2013.08.01.
 
-An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO"). Another alternative - [btier-dkms](https://aur.archlinux.org/packages/btier-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/btier-dkms)]</sup>.
+An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO"). Another alternative - [btier-dkms](https://aur.archlinux.org/packages/btier-dkms/).
 
 Bcache needs the backing device to be formatted as a bcache block device. In most cases, [blocks to-bcache](https://github.com/g2p/blocks) can do an in-place conversion.
 
@@ -32,7 +32,7 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
 
 ## Setting up a bcache device on an existing system
 
-1\. Install the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+1\. Install the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from [AUR](/index.php/AUR "AUR").
 
 2\. Create a backing device (This will typically be your mechanical drive). The backing device can be a whole device, a partition or any other standard block device. This will create /dev/bcache0
 
@@ -149,7 +149,7 @@ In the above example, the _writethrough_ mode is enabled.
 
 With `blocks`, you can add a Bcache layer on a device with an existing filesystem or layer (normal partition, LUKS partition, logical volume).
 
-First, install the [blocks-git](https://aur.archlinux.org/packages/blocks-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/blocks-git)]</sup> package from [AUR](/index.php/AUR "AUR").
+First, install the [blocks-git](https://aur.archlinux.org/packages/blocks-git/) package from [AUR](/index.php/AUR "AUR").
 
 _blocks_ needs to add the **bcache** metadata at the start of the targeted partition, here `/dev/sdz4`; to be able to do so, it will resize the partition just before the targeted one (`/dev/sdz3`) to make necessary room, typically 2048 bits (2k). It will ask for your passphrase if the partition(`/dev/sdz3`) is an LUKS partition. Then it will recreate another partition with the start just lower of 2048 bits and run _make-bcache_, so you do not need to run it yourself.
 
@@ -177,7 +177,7 @@ If `blocks` complains complains about _overlapping metadata_ when running `block
 
 1\. Boot on the install disk (2013.08.01 minimum).
 
-2\. Install the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+2\. Install the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from [AUR](/index.php/AUR "AUR").
 
 3\. Partition your hdd
 
@@ -256,7 +256,7 @@ Format the SSD as a caching device and link it to the backing device
 
 Before you edit `/etc/mkinitcpio.conf` and run `mkinitcpio -p linux`:
 
-*   install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+*   install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from the [AUR](/index.php/AUR "AUR").
 *   Edit `/etc/mkinitcpio.conf`:
     *   add the "bcache" module
     *   add the "bcache" hook between block and filesystem hooks

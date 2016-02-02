@@ -13,7 +13,7 @@ rtGui is a web based front end for rTorrent - the Linux command line BitTorrent 
 
 ## Set up
 
-First [install](/index.php/Install "Install") dependencies: [rtorrent](https://www.archlinux.org/packages/?name=rtorrent), [apache](https://www.archlinux.org/packages/?name=apache), [php](https://www.archlinux.org/packages/?name=php), [php-apache](https://www.archlinux.org/packages/?name=php-apache) and [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/)<sup><small>AUR</small></sup>.
+First [install](/index.php/Install "Install") dependencies: [rtorrent](https://www.archlinux.org/packages/?name=rtorrent), [apache](https://www.archlinux.org/packages/?name=apache), [php](https://www.archlinux.org/packages/?name=php), [php-apache](https://www.archlinux.org/packages/?name=php-apache) and [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/).
 
 ### Apache configuration
 

@@ -269,7 +269,7 @@ You will have to change the xx to the values you will see for your device with h
 
 ## Web cam
 
-It works perfectly with the driver available in aur for syntek webcams: [stk11xx](https://aur.archlinux.org/packages/stk11xx/)<sup><small>AUR</small></sup>
+It works perfectly with the driver available in aur for syntek webcams: [stk11xx](https://aur.archlinux.org/packages/stk11xx/)
 
 ## Card reader and fingerprint reader
 

@@ -16,9 +16,9 @@
 
 To [install](/index.php/Install "Install") the latest stable version of Rust, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package.
 
-If you would like to build the stable or Beta from source, visit [Rust Downloads](http://www.rust-lang.org/install.html). You may also obtain [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/)<sup><small>AUR</small></sup> via the [AUR](/index.php/AUR "AUR") for the latest development snapshot (provides Cargo).
+If you would like to build the stable or Beta from source, visit [Rust Downloads](http://www.rust-lang.org/install.html). You may also obtain [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) via the [AUR](/index.php/AUR "AUR") for the latest development snapshot (provides Cargo).
 
-An alternative is to use [multirust](https://aur.archlinux.org/packages/multirust/)<sup><small>AUR</small></sup>, a tool that allows to install and manage multiple rust installations (stable, beta, nightly), and easily switch between them.
+An alternative is to use [multirust](https://aur.archlinux.org/packages/multirust/), a tool that allows to install and manage multiple rust installations (stable, beta, nightly), and easily switch between them.
 
 ### Test your installation
 
@@ -49,8 +49,8 @@ Hello, World!
 In this section, `$ARCH` is the target architecture (either `x86_64` or `i686`).
 
 1.  [Install](/index.php/Install "Install") [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) and [wine](https://www.archlinux.org/packages/?name=wine)
-2.  Add a binfmt definition for windows executables either manually or by installing [binfmt-wine](https://aur.archlinux.org/packages/binfmt-wine/)<sup><small>AUR</small></sup>.
-3.  Install a copy of rust's standard library for windows in your rustlib directory (`/usr/local/lib/rustlib` if you're using [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/)<sup><small>AUR</small></sup> and `/usr/lib/rustlib` if you're using the official [rust](https://www.archlinux.org/packages/?name=rust) package). The easiest way to do this is to download the rust installer for windows for your target architecture, install it under wine (`wine start my-rust-installer.msi`) and copy `$INSTALL_DIR/bin/rustlib/$ARCH-pc-windows-gnu` into your rustlib directory.
+2.  Add a binfmt definition for windows executables either manually or by installing [binfmt-wine](https://aur.archlinux.org/packages/binfmt-wine/).
+3.  Install a copy of rust's standard library for windows in your rustlib directory (`/usr/local/lib/rustlib` if you're using [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) and `/usr/lib/rustlib` if you're using the official [rust](https://www.archlinux.org/packages/?name=rust) package). The easiest way to do this is to download the rust installer for windows for your target architecture, install it under wine (`wine start my-rust-installer.msi`) and copy `$INSTALL_DIR/bin/rustlib/$ARCH-pc-windows-gnu` into your rustlib directory.
 4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your `~/.cargo/config`:
 
  `~/.cargo/config` 
@@ -74,7 +74,7 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ## Cargo
 
-[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/)<sup><small>AUR</small></sup>. If you use [multirust](https://aur.archlinux.org/packages/multirust/)<sup><small>AUR</small></sup>, it already includes cargo.
+[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/). If you use [multirust](https://aur.archlinux.org/packages/multirust/), it already includes cargo.
 
 Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build. You're encouraged to read the [official guide](http://doc.crates.io/guide.html).
 

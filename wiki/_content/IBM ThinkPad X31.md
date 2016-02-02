@@ -26,11 +26,11 @@ A basic Arch Linux installation will do just fine for about everything, so I won
 
 *   [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) and [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) for wireless
 *   [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) for direct rendering (see above)
-*   [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)<sup><small>AUR</small></sup> for hibernation (see above)
+*   [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/) for hibernation (see above)
 
 The following useful packages are in the [AUR](/index.php/AUR "AUR").
 
-*   [rovclock](https://aur.archlinux.org/packages/rovclock/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rovclock)]</sup> for boosting direct rendering (see above)
+*   [rovclock](https://aur.archlinux.org/packages/rovclock/) for boosting direct rendering (see above)
 
 ## Hibernation
 

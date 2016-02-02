@@ -1,10 +1,5 @@
 # mkinitcpio
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-
 **mkinitcpio** is the next generation of [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") creation.
 
 ## Contents
@@ -46,7 +41,7 @@ Traditionally, the kernel was responsible for all hardware detection and initial
 
 Nowadays, the root file system may be on a wide range of hardware, from SCSI to SATA to USB drives, controlled by a variety of drive controllers from different manufacturers. Additionally, the root file system may be encrypted or compressed; within a software RAID array or a logical volume group. The simple way to handle that complexity is to pass management into userspace: an initial ramdisk.
 
-See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2016-01-16]</sup>
+See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/) 
 
 mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods; these advantages include:
 

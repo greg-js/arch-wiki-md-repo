@@ -1,10 +1,5 @@
 # Xen
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
-
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
 	_Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances._
@@ -65,7 +60,7 @@ The Xen hypervisor relies on a full install of the base operating system. Before
 
 ### Installation of the Xen hypervisor
 
-To install the Xen hypervisor install either the current stable [xen](https://aur.archlinux.org/packages/xen/)<sup><small>AUR</small></sup> or the bleeding edge unstable [xen-git](https://aur.archlinux.org/packages/xen-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xen-git)]</sup> packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Both packages provide the Xen hypervisor, current xl interface and all configuration and support files, including systemd services. The [multilib](/index.php/Multilib "Multilib") repository needs to be enabled and the [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/) package group installed to compile Xen. Install the [xen-docs](https://aur.archlinux.org/packages/xen-docs/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the man pages and documentation.
+To install the Xen hypervisor install either the current stable [xen](https://aur.archlinux.org/packages/xen/) or the bleeding edge unstable [xen-git](https://aur.archlinux.org/packages/xen-git/) packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Both packages provide the Xen hypervisor, current xl interface and all configuration and support files, including systemd services. The [multilib](/index.php/Multilib "Multilib") repository needs to be enabled and the [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/) package group installed to compile Xen. Install the [xen-docs](https://aur.archlinux.org/packages/xen-docs/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the man pages and documentation.
 
 #### With UEFI support
 

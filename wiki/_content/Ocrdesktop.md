@@ -30,7 +30,7 @@ It takes an image of the current window or workspace, prepares it for better res
 
 ## Installation
 
-Just [Install](/index.php/Install "Install") the package [ocrdesktop](https://aur.archlinux.org/packages/ocrdesktop/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Make sure that you have the corresponding tesseract-data-<languagecode> package for your language installed.
+Just [Install](/index.php/Install "Install") the package [ocrdesktop](https://aur.archlinux.org/packages/ocrdesktop/) from the [AUR](/index.php/AUR "AUR"). Make sure that you have the corresponding tesseract-data-<languagecode> package for your language installed.
 
 ## Setup
 

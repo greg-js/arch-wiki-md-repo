@@ -51,7 +51,7 @@ The two major players in text-to-speech applications are Festival and eSpeak. Co
 
 *   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages.
 
-	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)<sup><small>AUR</small></sup>
+	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
 
 *   **Speech Dispatcher** — Common interface to speech synthesis. It has backends for eSpeak, Festival, and a few other speech synthesizers.
 
@@ -65,7 +65,7 @@ The two major players in text-to-speech applications are Festival and eSpeak. Co
 
 ### Gnome-Voice-Control
 
-[gnome-voice-control](https://aur.archlinux.org/packages/gnome-voice-control/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-voice-control)]</sup> is a dialogue system to control the GNOME Desktop. It is developed on Google Summer of Code 2007.
+[gnome-voice-control](https://aur.archlinux.org/packages/gnome-voice-control/) is a dialogue system to control the GNOME Desktop. It is developed on Google Summer of Code 2007.
 
 ### VEDICS
 

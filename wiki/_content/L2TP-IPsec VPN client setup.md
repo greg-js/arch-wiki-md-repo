@@ -1,9 +1,5 @@
 # L2TP/IPsec VPN client setup
 
-Related articles
-
-*   [strongSwan](/index.php/StrongSwan "StrongSwan")
-
 L2TP/IPsec is a secure Virtual Private Network solution that is well supported on many different platforms.
 
 This article aims to describe how to configure and use a L2TP/IPsec client on Arch Linux. This article will cover the installation and setup of several needed software packages. One of the packages is only available in the [AUR](/index.php/AUR "AUR"), so knowledge of how to build and install [AUR](/index.php/AUR "AUR") packages on your system is required.
@@ -27,7 +23,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 
 ## Installation
 
-Install [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR").
 
 Make sure that the openswan service is running with `systemctl start openswan.service`, or you may get an error message about a missing pluto_ctl `connect(pluto_ctl) failed: No such file or directory`.
 
@@ -356,6 +352,6 @@ exit 0
 
 *   [http://openswan.org/](http://openswan.org/)
 *   [http://www.xelerance.com/software/xl2tpd/](http://www.xelerance.com/software/xl2tpd/)
-*   [http://strongvpn.com/forum/viewtopic.php?pid=1844/](http://strongvpn.com/forum/viewtopic.php?pid=1844/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-29]</sup> — The main source used to write the initial revisions of this article.
+*   [http://strongvpn.com/forum/viewtopic.php?pid=1844/](http://strongvpn.com/forum/viewtopic.php?pid=1844/) — The main source used to write the initial revisions of this article.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=416587](https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=416587)"

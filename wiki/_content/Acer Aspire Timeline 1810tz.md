@@ -56,9 +56,9 @@ xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Pressure" 2
 
 Trying to get it to work:
 
-*   Multithreaded mplayer [mplayer-mt-lite-git](https://aur.archlinux.org/packages/mplayer-mt-lite-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer-mt-lite-git)]</sup> does improve the situation but not solve the problem.
+*   Multithreaded mplayer [mplayer-mt-lite-git](https://aur.archlinux.org/packages/mplayer-mt-lite-git/) does improve the situation but not solve the problem.
     *   mplayer -lavdopts threads=4 -vo gl2
-*   [mplayer-coreavc-svn](https://aur.archlinux.org/packages/mplayer-coreavc-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer-coreavc-svn)]</sup> tries to install wine so I didn't test it
+*   [mplayer-coreavc-svn](https://aur.archlinux.org/packages/mplayer-coreavc-svn/) tries to install wine so I didn't test it
 *   VA-API GPU Acceleration coming for GM45 around Q3 2010 [[3]](http://www.phoronix.com/forums/showthread.php?p=135745).
     *   using aur/mplayer-vaapi mplayer -vo vaapi file should play the content with out a problem as soon as support arrives.
 

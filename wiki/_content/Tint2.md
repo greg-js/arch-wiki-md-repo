@@ -103,7 +103,7 @@ See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on crea
 
 Tint2 does not come with a volume control applet. VolWheel is a simple one that sits in the tray. Install it with [volwheel](https://www.archlinux.org/packages/?name=volwheel) and show it by running `volwheel`.
 
-Another option is [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) or [volumeicon-gtk2](https://aur.archlinux.org/packages/volumeicon-gtk2/)<sup><small>AUR</small></sup>.
+Another option is [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) or [volumeicon-gtk2](https://aur.archlinux.org/packages/volumeicon-gtk2/).
 
 ## Running tint2
 
@@ -148,7 +148,7 @@ tint2 -c <path_to_second_config_file>
 
 To make tint2 look its best, some form of compositing is required. If your tint2 has a large black rectangular box behind it you are either using a window manager without native compositing (like Openbox) or it is not enabled.
 
-To enable compositing under Openbox you can install [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr"), the packages are [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), respectively [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/)<sup><small>AUR</small></sup>.
+To enable compositing under Openbox you can install [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr"), the packages are [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), respectively [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/).
 
 Xcompmgr can be started like this:
 

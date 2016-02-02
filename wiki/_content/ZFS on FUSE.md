@@ -1,11 +1,5 @@
 # ZFS on FUSE
 
-Related articles
-
-*   [ZFS](/index.php/ZFS "ZFS")
-*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
-*   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
-
 ZFS on FUSE/Linux is a project bringing the ZFS file system to Linux. Due to incompatible license with GPL it is argued that it cannot exist as a direct kernel module, however, this does not apply for implementation as a FUSE file system.
 
 Some of the capabilities of version 0.7.0 (as of Feb 2012) are limited compared to original implementation (incomplete list):
@@ -23,7 +17,7 @@ Some of the capabilities of version 0.7.0 (as of Feb 2012) are limited compared 
 
 ## Installation
 
-[Install](/index.php/Install "Install") [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfs-fuse)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/) from the [AUR](/index.php/AUR "AUR").
 
 Read the messages after installation and be sure to edit the configuration files as per your needs.
 

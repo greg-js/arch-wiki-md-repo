@@ -1,12 +1,5 @@
 # OpenChange server
 
-Related articles
-
-*   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
-*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
-*   [Samba](/index.php/Samba "Samba")
-*   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
-
 This article explains how to setup a mail server using OpenChange server following on from the [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller") article. Postfix is used for the MTA, Dovecot for the IMAP/POP server, and SOGo for the backend with all users stored in Samba's Active Directory (normal Exchange attributes are used throughout).
 
 ## Contents
@@ -56,7 +49,7 @@ This article explains how to setup a mail server using OpenChange server followi
 
 [Install](/index.php/Install "Install") the needed prerequisite packages [dovecot](https://www.archlinux.org/packages/?name=dovecot), [mariadb](https://www.archlinux.org/packages/?name=mariadb), [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole), [postfix](https://www.archlinux.org/packages/?name=postfix), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [mysql-python](https://www.archlinux.org/packages/?name=mysql-python) and either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-[Install](/index.php/Install "Install") [openchange](https://aur.archlinux.org/packages/openchange/)<sup><small>AUR</small></sup>, [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/)<sup><small>AUR</small></sup>, [sogo](https://aur.archlinux.org/packages/sogo/)<sup><small>AUR</small></sup>, [sogo-openchange](https://aur.archlinux.org/packages/sogo-openchange/)<sup><small>AUR</small></sup>, and [sope](https://aur.archlinux.org/packages/sope/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [openchange](https://aur.archlinux.org/packages/openchange/), [python2-sievelib](https://aur.archlinux.org/packages/python2-sievelib/), [sogo](https://aur.archlinux.org/packages/sogo/), [sogo-openchange](https://aur.archlinux.org/packages/sogo-openchange/), and [sope](https://aur.archlinux.org/packages/sope/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

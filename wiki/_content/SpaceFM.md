@@ -1,11 +1,5 @@
 # SpaceFM
 
-Related articles
-
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 Forked from [PCManFM](/index.php/PCManFM "PCManFM"), SpaceFM is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration. More information can be found at the [official SpaceFM website](http://ignorantguru.github.io/spacefm/).
 
 ## Contents
@@ -26,7 +20,7 @@ Forked from [PCManFM](/index.php/PCManFM "PCManFM"), SpaceFM is a lightweight, h
 
 [Install](/index.php/Install "Install") [spacefm](https://www.archlinux.org/packages/?name=spacefm) package.
 
-Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/)<sup><small>AUR</small></sup> package if you need a GTK+ 2 version.
+Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/) package if you need a GTK+ 2 version.
 
 ## Usage
 

@@ -28,7 +28,7 @@ This article aims on providing information on flashing your system BIOS under Li
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [biosdisk-git](https://aur.archlinux.org/packages/biosdisk-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [biosdisk-git](https://aur.archlinux.org/packages/biosdisk-git/) package.
 
 ### Usage
 
@@ -68,7 +68,7 @@ To use the biosdisk utility to create a BIOS flash image, first download the lat
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [flashrom](https://www.archlinux.org/packages/?name=flashrom) or [flashrom-svn](https://aur.archlinux.org/packages/flashrom-svn/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [flashrom](https://www.archlinux.org/packages/?name=flashrom) or [flashrom-svn](https://aur.archlinux.org/packages/flashrom-svn/) package.
 
 ### Usage
 
@@ -115,7 +115,7 @@ If you want to flash other flash chips on your mainboard, you will find all opti
 
 By far the easiest way to make a bootable FreeDOS USB Stick is using [unetbootin](https://www.archlinux.org/packages/?name=unetbootin), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-You should format a pendrive with FAT16 and flag it as "boot" (you may do this through a GUI with [gparted](https://www.archlinux.org/packages/?name=gparted), [qtparted](https://aur.archlinux.org/packages/qtparted/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtparted)]</sup> or [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)). Then, after mounting the flash drive, select under distribution **FreeDOS** and your mounted stick. The app will automatically download the image for you and copy it to the drive. Finally, you may copy everything you want to flash there (BIOS, firmwares, etc).
+You should format a pendrive with FAT16 and flag it as "boot" (you may do this through a GUI with [gparted](https://www.archlinux.org/packages/?name=gparted), [qtparted](https://aur.archlinux.org/packages/qtparted/) or [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)). Then, after mounting the flash drive, select under distribution **FreeDOS** and your mounted stick. The app will automatically download the image for you and copy it to the drive. Finally, you may copy everything you want to flash there (BIOS, firmwares, etc).
 
 **Warning:** Unetbootin may not function properly on some Lenovo systems. It may be necessary to create the bootable stick on a different device. See [here](http://reboot.pro/topic/9849-blinking-cursor-at-boot/).
 
@@ -273,7 +273,7 @@ This perl script will extract the El Torito boot image. It has worked on Lenovo 
 
 ### Installation
 
-Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/)<sup><small>AUR</small></sup> package.
+Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) package.
 
 ### Usage
 

@@ -54,7 +54,7 @@ See [Thinkpad Fan Control](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control
 
 Start `tpfan-admin`, and adjust the settings by clicking on the sensor's graph. Split the graph (via context menu), and set the fan to **full-speed** when the sensor reaches, say, 65 °C. You may also edit the config file directly.
 
-Alternatively, use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/)<sup><small>AUR</small></sup> configuration [[3]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
+Alternatively, use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/) configuration [[3]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
 
  `/etc/thinkfan.conf` 
 

@@ -15,7 +15,7 @@ GNU Wget is a free software package for retrieving files using HTTP, HTTPS and F
 
 ## Installing
 
-wget is normally installed as part of the base setup. If not present, install the [wget](https://www.archlinux.org/packages/?name=wget) package using [pacman](/index.php/Pacman "Pacman"). The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/)<sup><small>AUR</small></sup>.
+wget is normally installed as part of the base setup. If not present, install the [wget](https://www.archlinux.org/packages/?name=wget) package using [pacman](/index.php/Pacman "Pacman"). The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
 
 ## Configuring
 

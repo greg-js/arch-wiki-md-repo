@@ -73,7 +73,7 @@ $ chmod a+x ~/.xsession
 
 **Note:** If you do not create `~/.xsession`, then `~/.xinitrc` will be used, but you might want different settings depending on if you use `startx` or XDM. Remember to make `~/.xinitrc` executable, or XDM won't start, if you use that method.
 
-**Tip:** For a nice simple Arch themed xdm, try [xdm-arch-theme](https://aur.archlinux.org/packages/xdm-arch-theme/)<sup><small>AUR</small></sup>.
+**Tip:** For a nice simple Arch themed xdm, try [xdm-arch-theme](https://aur.archlinux.org/packages/xdm-arch-theme/).
 
 ### Starting spectrwm with KDM
 

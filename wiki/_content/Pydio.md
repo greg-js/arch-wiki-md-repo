@@ -4,7 +4,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pydio](https://aur.archlinux.org/packages/pydio/)<sup><small>AUR</small></sup> package. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")), a web server ([Apache](/index.php/Apache "Apache"), [Lighttpd](/index.php/Lighttpd "Lighttpd") or [Nginx](/index.php/Nginx "Nginx")) with [PHP](/index.php/PHP "PHP")-support. You may refer following sites:
+[Install](/index.php/Install "Install") the [pydio](https://aur.archlinux.org/packages/pydio/) package. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")), a web server ([Apache](/index.php/Apache "Apache"), [Lighttpd](/index.php/Lighttpd "Lighttpd") or [Nginx](/index.php/Nginx "Nginx")) with [PHP](/index.php/PHP "PHP")-support. You may refer following sites:
 
 ## Configuration
 

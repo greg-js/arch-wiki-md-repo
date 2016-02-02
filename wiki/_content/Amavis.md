@@ -1,11 +1,5 @@
 # Amavis
 
-Related articles
-
-*   [ClamAV](/index.php/ClamAV "ClamAV")
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Dovecot](/index.php/Dovecot "Dovecot")
-
 From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
 	_amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay._
@@ -25,7 +19,7 @@ From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
 In this setup it is assumed that you are using [ClamAV](/index.php/ClamAV "ClamAV") as anti-virus scanner.
 
-*   Install [amavisd-new](https://aur.archlinux.org/packages/amavisd-new/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). You would be wise to also install optdepends such as [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [unrar](https://www.archlinux.org/packages/?name=unrar) so your filters can actually see inside compressed files.
+*   Install [amavisd-new](https://aur.archlinux.org/packages/amavisd-new/) from the [AUR](/index.php/AUR "AUR"). You would be wise to also install optdepends such as [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [unrar](https://www.archlinux.org/packages/?name=unrar) so your filters can actually see inside compressed files.
 *   Install [clamav](https://www.archlinux.org/packages/?name=clamav) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Basic Configuration

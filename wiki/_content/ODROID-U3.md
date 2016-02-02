@@ -1,9 +1,5 @@
 # ODROID-U3
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-
 From [Arch Linux ARM ODROID-U3 Page](http://archlinuxarm.org/platforms/armv7/samsung/odroid-u3):
 
 	"_The ODROID-U3 is a very low cost and high performance development platform based on an Exynos 4412 ARM Cortex-A9 Quad Core 1.7GHz CPU. It has 3 USB 2.0 ports and micro HDMI._"

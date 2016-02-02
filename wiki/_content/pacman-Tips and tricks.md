@@ -1,11 +1,5 @@
 # pacman/Tips and tricks
 
-Related articles
-
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Mirrors](/index.php/Mirrors "Mirrors")
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
 For general methods to improve the flexibility of the provided tips or pacman itself, see [Core utilities](/index.php/Core_utilities "Core utilities") and [Bash](/index.php/Bash "Bash").
@@ -115,13 +109,13 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 *   **tkPacman** — GUI front-end for pacman. Depends on Tcl/Tk and X11 but neither on GTK+, nor on QT. It only interacts with the package database via the CLI of 'pacman'. So, installing and removing packages with tkPacman or with pacman leads to exactly the same result.
 
-	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
 
 ### Utilities
 
 *   **Lostfiles** — Script for detecting orphaned files.
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)<sup><small>AUR</small></sup>
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
 
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 
@@ -133,7 +127,7 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 *   **[pkgtools](/index.php/Pkgtools "Pkgtools")** — Collection of scripts for Arch Linux packages.
 
-	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)<sup><small>AUR</small></sup>
+	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
 
 *   **srcpac** — Simple tool that automates rebuilding packages from source.
 
@@ -241,7 +235,7 @@ If your system has stray files not owned by any package (a common case if you do
 
 This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
 
-The [lostfiles](https://aur.archlinux.org/packages/lostfiles/)<sup><small>AUR</small></sup> script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
+The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
 
 ### Removing unused packages
 
@@ -364,7 +358,7 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 
 [systemd](/index.php/Systemd "Systemd") can take snapshots of the pacman local database, each time it is modified.
 
-**Tip:** For a more configurable version, use: [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/)<sup><small>AUR</small></sup>
+**Tip:** For a more configurable version, use: [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/)
 
 Use the following scripts, changing the value of `$pakbak` for the backup location accordingly. The `pakbak.service` can also automaticall be [enabled](/index.php/Enable "Enable") on boot:
 
@@ -405,7 +399,7 @@ WantedBy=multi-user.target
 
 ### Check changelogs easily
 
-When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [paclog](https://aur.archlinux.org/packages/paclog/)<sup><small>AUR</small></sup>. This utility lists recent commit messages for packages from the official repositories or the AUR, by using `paclog package`.
+When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [paclog](https://aur.archlinux.org/packages/paclog/). This utility lists recent commit messages for packages from the official repositories or the AUR, by using `paclog package`.
 
 ## Installation and recovery
 
@@ -619,7 +613,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 [BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") is a new way of synchronizing folder via network (it works in LAN and over the internet). It is peer-to-peer so you do not need to set up a server: follow the link for more information. How to share a pacman cache using BitTorrent Sync:
 
-*   First install the [btsync](https://aur.archlinux.org/packages/btsync/)<sup><small>AUR</small></sup> package from the AUR on the machines you want to sync
+*   First install the [btsync](https://aur.archlinux.org/packages/btsync/) package from the AUR on the machines you want to sync
 *   Follow the installation instructions of the AUR package or on the [BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") wiki page
     *   set up BitTorrent Sync to work for the root account. This process requires read/write to the pacman package cache.
     *   make sure to set a good password on btsync's web UI
@@ -646,11 +640,11 @@ To recreate a package from the file system, use _bacman_ (included with pacman).
 
 **Tip:** _bacman_ honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for _xz_.
 
-An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/)<sup><small>AUR</small></sup>. It supports parallelization and can handle multiple input packages in one command, which _bacman_ both does not support.
+An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which _bacman_ both does not support.
 
 ### Backing up and retrieving a list of installed packages
 
-**Tip:** You may want to use [pacbackup](https://aur.archlinux.org/packages/pacbackup/)<sup><small>AUR</small></sup> or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
+**Tip:** You may want to use [pacbackup](https://aur.archlinux.org/packages/pacbackup/) or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
 
 It is good practice to keep periodic backups of all pacman-installed packages. In the event of a system crash which is unrecoverable by other means, pacman can then easily reinstall the very same packages onto a new installation.
 

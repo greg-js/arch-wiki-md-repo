@@ -36,7 +36,7 @@ Reading battery state can be done in multiple ways. Classical method is some dae
 Battery state can be read using ACPI utilities from the terminal. ACPI command line utilities are provided via the [acpi](https://www.archlinux.org/packages/?name=acpi) package. See [ACPI modules](/index.php/ACPI_modules "ACPI modules") for more information.
 
 *   [cbatticon](https://www.archlinux.org/packages/?name=cbatticon) is a lightweight and fast battery icon that sits in the system tray.
-*   [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/)<sup><small>AUR</small></sup> is a simple battery monitor that sits in the system tray, similar to batti.
+*   [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/) is a simple battery monitor that sits in the system tray, similar to batti.
 
 #### hibernate on low battery level
 

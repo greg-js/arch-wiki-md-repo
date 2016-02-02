@@ -1,15 +1,5 @@
 # Boot debugging
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Netconsole](/index.php/Netconsole "Netconsole")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [Kernel Mode Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting")
-*   [systemd](/index.php/Systemd "Systemd")
-
 A lot happens during the boot process, so it is a common time for errors to manifest. There are many methods for diagnosing and fixing boot problems, but most involve changing the kernel parameters and rebooting the system. Ensure that you are familiar with how to change your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). For common issues, see [General troubleshooting#Boot problems](/index.php/General_troubleshooting#Boot_problems "General troubleshooting").
 
 ## Contents

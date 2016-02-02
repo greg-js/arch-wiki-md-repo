@@ -9,7 +9,7 @@ They can do many operations, including:
 *   setting DPI, antialiasing, hinting and other X font settings
 *   changing the Xcursor theme
 *   theming xscreensaver
-*   altering preferences on low-level X applications (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://aur.archlinux.org/packages/xpdf/)<sup><small>AUR</small></sup>, [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), etc.)
+*   altering preferences on low-level X applications (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://aur.archlinux.org/packages/xpdf/), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), etc.)
 
 **Note:** Using `~/.Xdefaults` is deprecated, so this article will only refer to resources loaded with xrdb
 
@@ -334,7 +334,7 @@ aterm*geometry:                 80x25
 
 ### Xpdf resources
 
-Following are some basic resources for [xpdf](https://aur.archlinux.org/packages/xpdf/)<sup><small>AUR</small></sup>, a lightweight PDF viewer:
+Following are some basic resources for [xpdf](https://aur.archlinux.org/packages/xpdf/), a lightweight PDF viewer:
 
 ```
 ! xpdf -----------------------------------------------------------------------
@@ -601,8 +601,8 @@ echo
 
 ```
 #!/usr/bin/bash
-# Original: [http://frexx.de/xterm-256-notes/](http://frexx.de/xterm-256-notes/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-11-21]</sup>
-#           [http://frexx.de/xterm-256-notes/data/colortable16.sh](http://frexx.de/xterm-256-notes/data/colortable16.sh) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-11-21]</sup>
+# Original: [http://frexx.de/xterm-256-notes/](http://frexx.de/xterm-256-notes/) 
+#           [http://frexx.de/xterm-256-notes/data/colortable16.sh](http://frexx.de/xterm-256-notes/data/colortable16.sh) 
 # Modified by Aaron Griffin
 # and further by Kazuo Teramoto
 FGNAMES=(' black ' '  red  ' ' green ' ' yellow' '  blue ' 'magenta' '  cyan ' ' white ')
@@ -638,8 +638,8 @@ echo "     └──────────────────────
 
 ```
 #!/usr/bin/bash
-# Original: [http://frexx.de/xterm-256-notes/](http://frexx.de/xterm-256-notes/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-11-21]</sup>
-#           [http://frexx.de/xterm-256-notes/data/colortable16.sh](http://frexx.de/xterm-256-notes/data/colortable16.sh) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-11-21]</sup>
+# Original: [http://frexx.de/xterm-256-notes/](http://frexx.de/xterm-256-notes/) 
+#           [http://frexx.de/xterm-256-notes/data/colortable16.sh](http://frexx.de/xterm-256-notes/data/colortable16.sh) 
 # Modified by Aaron Griffin
 # and further by Kazuo Teramoto
 

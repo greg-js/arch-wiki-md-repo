@@ -1,11 +1,5 @@
 # Gaming
 
-Related articles
-
-*   [List of games](/index.php/List_of_games "List of games")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [NVIDIA#Gaming using TwinView](/index.php/NVIDIA#Gaming_using_TwinView "NVIDIA")
-
 This page only contains information about running games and related system configuration tips. For lists of popular games for GNU/Linux see [List of games](/index.php/List_of_games "List of games").
 
 ## Contents
@@ -70,7 +64,7 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform featuring indie games. It can be considered good source of games (if you do not care about security and bugs too much).
 
-	[http://www.desura.com/](http://www.desura.com/) || [desura](https://aur.archlinux.org/packages/desura/)<sup><small>AUR</small></sup>
+	[http://www.desura.com/](http://www.desura.com/) || [desura](https://aur.archlinux.org/packages/desura/)
 
 *   **[Steam](/index.php/Steam "Steam")** — Famous digital distribution and communications platform developed by Valve. It has a large library with over 1000 Linux games. These include popular titles like Dota 2, Counter Strike: Global Offensive, Team Fortress 2, several AAA games, and lots of indie titles.
 
@@ -82,11 +76,11 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   The [Humble Store](https://www.humblebundle.com/store)
 
-*   [itch.io](https://itch.io/)|[itch](https://aur.archlinux.org/packages/itch/)<sup><small>AUR</small></sup>
+*   [itch.io](https://itch.io/)|[itch](https://aur.archlinux.org/packages/itch/)
 
 *   [GOG.com](http://www.gog.com/games/linux)
 
-*   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/)<sup><small>AUR</small></sup> package can be used to download GOG titles from the command line.
+*   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) package can be used to download GOG titles from the command line.
 *   GOG.com only officially supports Ubuntu and Linux Mint. Bear this in mind if requesting support from them; you will not get a refund if you are having trouble running games on Arch.
 *   Many GOG.com titles come pre-packaged with DOSBox, ScummVM or Wine.
 
@@ -127,7 +121,7 @@ Many games grab the keyboard, noticeably preventing you from switching windows (
 
 Some SDL games (e.g. Guacamelee) let you disable grabbing by pressing `Ctrl-g`.
 
-You can also download [sdl-nokeyboardgrab](https://aur.archlinux.org/packages/sdl-nokeyboardgrab/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sdl-nokeyboardgrab)]</sup> to gain the ability to use keyboard commands while in SDL games. If you wish to turn it up to 11, you can disable keyboard grabbing at X11 level using [libx11-nokeyboardgrab](https://aur.archlinux.org/packages/libx11-nokeyboardgrab/)<sup><small>AUR</small></sup>, or with more fine-grained control with [libx11-ldpreloadnograb](https://aur.archlinux.org/packages/libx11-ldpreloadnograb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libx11-ldpreloadnograb)]</sup> using the `LD_PRELOAD` environment variable to run applications with particular grab prevention. Wine/lib32 users should also look at the respective lib32 libraries.
+You can also download [sdl-nokeyboardgrab](https://aur.archlinux.org/packages/sdl-nokeyboardgrab/) to gain the ability to use keyboard commands while in SDL games. If you wish to turn it up to 11, you can disable keyboard grabbing at X11 level using [libx11-nokeyboardgrab](https://aur.archlinux.org/packages/libx11-nokeyboardgrab/), or with more fine-grained control with [libx11-ldpreloadnograb](https://aur.archlinux.org/packages/libx11-ldpreloadnograb/) using the `LD_PRELOAD` environment variable to run applications with particular grab prevention. Wine/lib32 users should also look at the respective lib32 libraries.
 
 **Note:** SDL is known to sometimes not be able to grab the input system. In such a case, it may succeed in grabbing it after a few seconds of waiting.
 
@@ -194,7 +188,7 @@ echo "hrtf = true" >> ~/.alsoftrc
 
 ```
 
-Alternatively, install [openal-hrtf](https://aur.archlinux.org/packages/openal-hrtf/)<sup><small>AUR</small></sup> from the AUR, and edit the options in /etc/openal/alsoftrc.conf
+Alternatively, install [openal-hrtf](https://aur.archlinux.org/packages/openal-hrtf/) from the AUR, and edit the options in /etc/openal/alsoftrc.conf
 
 For Source games, the ingame setting `dsp_slow_cpu` must be set to `1` to enable HRTF, otherwise the game will enable its own processing instead. You will also either need to set up Steam to use native runtime, or link its copy of openal.so to your own local copy. For completeness, also use the following options:
 
@@ -252,11 +246,11 @@ Most every game can benefit if given the correct scheduling policies for the ker
 
 ### For Wine programs
 
-[wine-rt](https://aur.archlinux.org/packages/wine-rt/)<sup><small>AUR</small></sup> is a patched version of Wine that implements scheduling policies on a per-thread basis, using the equivalent of what the Windows developers had intended the threads to be run at. The default patch is more oriented towards professional audio users, and tends to be too heavy-handed of an approach for gaming. You may instead wish to use [this patch](http://pastebin.com/D9GBzBBv), which also includes nice levels and uses more than one policy decision. Be warned that it uses `SCHED_ISO`, which is only properly implemented on [Linux-ck](/index.php/Linux-ck "Linux-ck"), and will simply renice `THREAD_PRIORITY_ABOVE_NORMAL` threads if your system does not support it.
+[wine-rt](https://aur.archlinux.org/packages/wine-rt/) is a patched version of Wine that implements scheduling policies on a per-thread basis, using the equivalent of what the Windows developers had intended the threads to be run at. The default patch is more oriented towards professional audio users, and tends to be too heavy-handed of an approach for gaming. You may instead wish to use [this patch](http://pastebin.com/D9GBzBBv), which also includes nice levels and uses more than one policy decision. Be warned that it uses `SCHED_ISO`, which is only properly implemented on [Linux-ck](/index.php/Linux-ck "Linux-ck"), and will simply renice `THREAD_PRIORITY_ABOVE_NORMAL` threads if your system does not support it.
 
 ### For everything else
 
-For programs which do not implement scheduling policies on their own, one tool known as **schedtool**, and its associated daemon [schedtoold](https://aur.archlinux.org/packages/schedtoold/)<sup><small>AUR</small></sup> can handle many of these tasks automatically. To edit what programs relieve what policies, simply edit `/etc/schedtoold.conf` and add the program followed by the _schedtool_ arguments desired.
+For programs which do not implement scheduling policies on their own, one tool known as **schedtool**, and its associated daemon [schedtoold](https://aur.archlinux.org/packages/schedtoold/) can handle many of these tasks automatically. To edit what programs relieve what policies, simply edit `/etc/schedtoold.conf` and add the program followed by the _schedtool_ arguments desired.
 
 #### Policies
 

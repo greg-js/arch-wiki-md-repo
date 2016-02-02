@@ -1,10 +1,5 @@
 # PulseAudio
 
-Related articles
-
-*   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
-*   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
-
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") serves as a proxy to sound applications using existing kernel sound components like [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). Since ALSA is included in Arch Linux by default, the most common deployment scenarios include PulseAudio with ALSA.
 
 ## Contents
@@ -71,11 +66,11 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 There is a number of front-ends available for controlling the PulseAudio daemon:
 
 *   GTK GUIs: [paprefs](https://www.archlinux.org/packages/?name=paprefs) and [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
-*   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)<sup><small>AUR</small></sup>
+*   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)
 *   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer](https://www.archlinux.org/packages/?name=pamixer)
-*   Console (curses) mixer: [pulsemixer-git](https://aur.archlinux.org/packages/pulsemixer-git/)<sup><small>AUR</small></sup>
+*   Console (curses) mixer: [pulsemixer-git](https://aur.archlinux.org/packages/pulsemixer-git/)
 *   Web volume control: [PaWebControl](https://github.com/Siot/PaWebControl)
-*   System tray icon: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)<sup><small>AUR</small></sup>
+*   System tray icon: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
 *   KF5 plasma applet: [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
 *   If you want to use Bluetooth Headsets or other Bluetooth Audio Devices together with PulseAudio see the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") Article.
 
@@ -350,7 +345,7 @@ To use e.g. `ac97` driver for the guest use the `-soundhw ac97` commnad with QEM
 
 ### AlsaMixer.app
 
-Make [alsamixer.app](https://aur.archlinux.org/packages/alsamixer.app/)<sup><small>AUR</small></sup> dockapp for the [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) use pulseaudio, e.g.
+Make [alsamixer.app](https://aur.archlinux.org/packages/alsamixer.app/) dockapp for the [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) use pulseaudio, e.g.
 
 ```
 $ AlsaMixer.app --device pulse

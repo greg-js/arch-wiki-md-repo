@@ -1,15 +1,6 @@
 # Mkinitcpio-btrfs
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [Btrfs](/index.php/Btrfs "Btrfs")
-*   [GRUB](/index.php/GRUB "GRUB")
-*   [Syslinux](/index.php/Syslinux "Syslinux")
-
-Some of Btrfs's neat features like non-volatile rollback or automatic mounting of degraded Btrfs multi-device ([RAID](/index.php/RAID "RAID")) volumes need a special package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") called [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup>. The package integrates some helpers in the boot process, to handle these features correctly.
+Some of Btrfs's neat features like non-volatile rollback or automatic mounting of degraded Btrfs multi-device ([RAID](/index.php/RAID "RAID")) volumes need a special package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") called [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/). The package integrates some helpers in the boot process, to handle these features correctly.
 
 **Note:**
 
@@ -30,7 +21,7 @@ Some of Btrfs's neat features like non-volatile rollback or automatic mounting o
 **Warning:**
 
 *   Be aware of the differences between _partitions_ and _sub-volumes_.
-*   Having a separate _/boot_ **partition** is not supported by [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup>
+*   Having a separate _/boot_ **partition** is not supported by [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)
 *   kexec is used to reload the kernel from the root partition to make sure it is rolled back also.
 *   _/boot_ **can** be on a sub-volume within your `__active` sub-volume.
 
@@ -52,7 +43,7 @@ To use the rollback features of Btrfs, create a `__snapshot` directory for snaps
 
 **Note:**
 
-*   The sub-volume and folder names are chosen for compatibility with [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup>.
+*   The sub-volume and folder names are chosen for compatibility with [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/).
 *   Different names can be used if later specified in `/etc/default/btrfs_advanced` later.
 
 You can create separate sub-volumes for important directories. This would additionally enable the ability to monitor and adjust the size allocations for each sub-volume using `btrfs quota`.
@@ -61,7 +52,7 @@ See [Btrfs#Sub-volumes](/index.php/Btrfs#Sub-volumes "Btrfs")
 
 **Note:** For mkinitcpio-btrfs compatibility, set the default sub-volume to `__active`.
 
-**Warning:** [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup> may not handle sub-volumes correctly. See [here](https://github.com/xtfxme/mkinitcpio-btrfs/issues/6).
+**Warning:** [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/) may not handle sub-volumes correctly. See [here](https://github.com/xtfxme/mkinitcpio-btrfs/issues/6).
 
 Next, mount the root sub-volume. See [Btrfs#Mount options](/index.php/Btrfs#Mount_options "Btrfs").
 
@@ -82,7 +73,7 @@ Create a place where you mount the Btrfs root subvolume to create snapshots late
 
 ## Installation
 
-Install [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Modify `/etc/default/btrfs_advanced` as needed and add `btrfs_advanced` to the `HOOKS` section in `/etc/mkinitcpio.conf`.
 
@@ -107,13 +98,13 @@ root=UUID=fd88d586-bb4c-4fc7-81a6-f675e2829581
 
 **Warning:** If you've set the default subvolume you **MUST NOT** add `subvol=__active` to your `rootflags`.
 
-**Note:** Having boot on a different partition in not supported with [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup> >= 0.4.
+**Note:** Having boot on a different partition in not supported with [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/) >= 0.4.
 
 ### Syslinux EFI
 
 To boot from Btrfs using syslinux EFI, you need to setup up a dedicated EFI partition in `/boot/efi`. This partition needs to be formated as FAT32 (or HPFS on MacBooks). You need to set up your Syslinux directories on that special partition as described in [Syslinux](/index.php/Syslinux "Syslinux").
 
-**Warning:** The downside of this setup is, that you need to store a working kernel image and its initrd on the EFI partition, because Syslinux can not access Btrfs filesystems directly. [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup> will then mount your Btrfs root and reload the kernel from your Btrfs `/boot` directory.
+**Warning:** The downside of this setup is, that you need to store a working kernel image and its initrd on the EFI partition, because Syslinux can not access Btrfs filesystems directly. [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/) will then mount your Btrfs root and reload the kernel from your Btrfs `/boot` directory.
 
 In `/boot/efi/EFI/syslinux/syslinux.cfg` make sure your Btrfs root is correctly added to the `APPEND` line.
 

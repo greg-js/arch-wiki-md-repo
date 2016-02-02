@@ -1,9 +1,5 @@
 # MTP
 
-Related articles
-
-*   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
-
 [MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol"), or the _Media Transfer Protocol_, is a USB device class which is used by many mobile phones (e.g. Samsung Galaxy S4) and media players (e.g. Creative Zen).
 
 ## Contents
@@ -37,10 +33,10 @@ Linux MTP support is provided by [installing](/index.php/Installing "Installing"
 These packages to choose from all implement a [Wikipedia:Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace"):
 
 *   [mtpfs](https://www.archlinux.org/packages/?name=mtpfs)
-*   [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/)<sup><small>AUR</small></sup> - is reported to work well for newer Android 4+ devices
-*   [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/)<sup><small>AUR</small></sup> - is reported to work well for newer Android 3+ devices
-*   [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/)<sup><small>AUR</small></sup>
-*   [android-file-transfer](https://aur.archlinux.org/packages/android-file-transfer/)<sup><small>AUR</small></sup> - MTP client with minimalistic UI
+*   [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) - is reported to work well for newer Android 4+ devices
+*   [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/) - is reported to work well for newer Android 3+ devices
+*   [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/)
+*   [android-file-transfer](https://aur.archlinux.org/packages/android-file-transfer/) - MTP client with minimalistic UI
 
 All of them aim at better functionality and performance over `libmtp`. Since there are a lot of different USB devices, you might want to research first which one looks most suitable for yours.
 

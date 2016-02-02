@@ -321,7 +321,7 @@ Start, enable, and restart the `avahi-daemon` service.
 
 #### Out-of-date plugin
 
-This error can also indicate that the plugin is out of date (version is mismatched). If you have installed [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/)<sup><small>AUR</small></sup>, you will need to update the package.
+This error can also indicate that the plugin is out of date (version is mismatched). If you have installed [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/), you will need to update the package.
 
 ### CUPS prints only an empty and an error-message page on HP LaserJet
 

@@ -1,13 +1,5 @@
 # GDM
 
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [LightDM](/index.php/LightDM "LightDM")
-*   [LXDM](/index.php/LXDM "LXDM")
-
 From [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 	_The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins._
@@ -51,13 +43,13 @@ From [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 GDM can be [installed](/index.php/Installed "Installed") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. To start GDM at boot time [enable](/index.php/Enable "Enable") `gdm.service`.
 
-If you would prefer to use legacy GDM which was used in GNOME 2 and has its own configuration utility, install the [gdm-old](https://aur.archlinux.org/packages/gdm-old/)<sup><small>AUR</small></sup> package. Note that the rest of this article discusses current GDM, not legacy GDM, unless indicated otherwise.
+If you would prefer to use legacy GDM which was used in GNOME 2 and has its own configuration utility, install the [gdm-old](https://aur.archlinux.org/packages/gdm-old/) package. Note that the rest of this article discusses current GDM, not legacy GDM, unless indicated otherwise.
 
 You might also wish to install the following:
 
 *   **gdm3setup** — An interface to configure GDM3, autologin options and change Shell theme
 
-	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)<sup><small>AUR</small></sup>
+	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)
 
 ## Configuration
 

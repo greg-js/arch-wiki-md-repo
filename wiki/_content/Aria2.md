@@ -116,7 +116,7 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 
 	`file-allocation=none`
 
-	Do not pre-allocate disk space before downloading begins. (Default: prealloc) **<sup>1</sup>**
+	Do not pre-allocate disk space before downloading begins. (Default: prealloc) 
 
 	`input-file=${HOME}/.aria2/input.conf`
 
@@ -163,7 +163,7 @@ http://aria2.net/files/stable/aria2-1.10.0/aria2-1.10.0.tar.bz2
 
 #### Additional notes
 
-	<sup>1</sup> `--file-allocation=falloc`
+	 `--file-allocation=falloc`
 
 	Recommended for newer file systems such as ext4 (with extents support), btrfs or xfs as it allocates large files (GB) almost instantly. Do not use falloc with legacy file systems such as ext3 as prealloc consumes approximately the same amount of time as standard allocation would while locking the aria2 process from proceeding to download.
 
@@ -225,7 +225,7 @@ summary-interval=120
 
 	`summary-interval=120`
 
-	Output download progress summary every 120 seconds. (Default: 60) **<sup>3</sup>**
+	Output download progress summary every 120 seconds. (Default: 60) 
 
 #### Additional notes
 
@@ -240,7 +240,7 @@ total 128M
 
 ```
 
-	**<sup>3</sup>** `summary-interval=0`
+	 `summary-interval=0`
 
 	Supresses download progress summary output and may improve overall performance. Logs will continue to be output according to the value specified in the `log-level` option.
 
@@ -316,11 +316,11 @@ rpc-passwd=rpcpass
 
 *   **YaaW** — Yet Another Aria2 Web Frontend in pure HTML/CSS/Javascirpt.
 
-	[https://github.com/binux/yaaw](https://github.com/binux/yaaw) || [yaaw-git](https://aur.archlinux.org/packages/yaaw-git/)<sup><small>AUR</small></sup>
+	[https://github.com/binux/yaaw](https://github.com/binux/yaaw) || [yaaw-git](https://aur.archlinux.org/packages/yaaw-git/)
 
 *   **Webui** — Html frontend for aria2.
 
-	[https://github.com/ziahamza/webui-aria2](https://github.com/ziahamza/webui-aria2) || [webui-aria2](https://aur.archlinux.org/packages/webui-aria2/)<sup><small>AUR</small></sup>
+	[https://github.com/ziahamza/webui-aria2](https://github.com/ziahamza/webui-aria2) || [webui-aria2](https://aur.archlinux.org/packages/webui-aria2/)
 
 *   **aria2rpc** — Command line tool for connecting to a remote instance of `aria2c`. If `aria2c` is installed it can be found under `/usr/share/doc/aria2/xmlrpc/aria2rpc`.
 
@@ -332,23 +332,23 @@ rpc-passwd=rpcpass
 
 *   **aria2fe** — A GUI for the CLI-based aria2 download utility.
 
-	[http://sourceforge.net/projects/aria2fe/](http://sourceforge.net/projects/aria2fe/) || [aria2fe](https://aur.archlinux.org/packages/aria2fe/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/aria2fe/](http://sourceforge.net/projects/aria2fe/) || [aria2fe](https://aur.archlinux.org/packages/aria2fe/)
 
 *   **Diana** — Command line tool for aria2
 
-	[https://github.com/baskerville/diana](https://github.com/baskerville/diana) || [diana-git](https://aur.archlinux.org/packages/diana-git/)<sup><small>AUR</small></sup>
+	[https://github.com/baskerville/diana](https://github.com/baskerville/diana) || [diana-git](https://aur.archlinux.org/packages/diana-git/)
 
 *   **downloadm** — A download accelerator/manager which uses aria2c as a backend.
 
-	[http://sourceforge.net/projects/downloadm/](http://sourceforge.net/projects/downloadm/) || [downloadm](https://aur.archlinux.org/packages/downloadm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/downloadm)]</sup>
+	[http://sourceforge.net/projects/downloadm/](http://sourceforge.net/projects/downloadm/) || [downloadm](https://aur.archlinux.org/packages/downloadm/)
 
 *   **eatmonkey** — Download manager for Xfce that works with aria2.
 
-	[http://goodies.xfce.org/projects/applications/eatmonkey](http://goodies.xfce.org/projects/applications/eatmonkey) || [eatmonkey](https://aur.archlinux.org/packages/eatmonkey/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eatmonkey)]</sup>
+	[http://goodies.xfce.org/projects/applications/eatmonkey](http://goodies.xfce.org/projects/applications/eatmonkey) || [eatmonkey](https://aur.archlinux.org/packages/eatmonkey/)
 
 *   **karia2** — QT4 interface for aria2 download mananger.
 
-	[http://sourceforge.net/projects/karia2/](http://sourceforge.net/projects/karia2/) || [karia2-svn](https://aur.archlinux.org/packages/karia2-svn/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/karia2/](http://sourceforge.net/projects/karia2/) || [karia2-svn](https://aur.archlinux.org/packages/karia2-svn/)
 
 *   **uGet** — Feature-rich GTK+/CLI download manager which can use aria2 as a back-end by enabling a built-in plugin.
 
@@ -356,7 +356,7 @@ rpc-passwd=rpcpass
 
 *   **yaner** — GTK+ interface for aria2 download mananger.
 
-	[http://iven.github.com/Yaner](http://iven.github.com/Yaner) || [yaner-git](https://aur.archlinux.org/packages/yaner-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/yaner-git)]</sup>
+	[http://iven.github.com/Yaner](http://iven.github.com/Yaner) || [yaner-git](https://aur.archlinux.org/packages/yaner-git/)
 
 It is convenient to append a monitor function based on diana in your shell configuration file:
 

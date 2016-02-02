@@ -44,7 +44,7 @@ And the following as stable but missing minor features:
 
 ### Installation
 
-Download and install [razercfg](https://aur.archlinux.org/packages/razercfg/)<sup><small>AUR</small></sup> or [razercfg-git](https://aur.archlinux.org/packages/razercfg-git/)<sup><small>AUR</small></sup> for bleeding edge git releases from the [AUR](/index.php/AUR "AUR").
+Download and install [razercfg](https://aur.archlinux.org/packages/razercfg/) or [razercfg-git](https://aur.archlinux.org/packages/razercfg-git/) for bleeding edge git releases from the [AUR](/index.php/AUR "AUR").
 
 You also need to edit your `/etc/X11/xorg.conf` file to disable the current mouse settings by commenting them out as in the following example, where also some defaults are set as suggested by the author:
 
@@ -139,12 +139,12 @@ Feature still not working: pinch to zoom, 3rd mouse button
 
 There are currently two Python scripts available to enable macro keys under Linux:
 
-*   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)<sup><small>AUR</small></sup>
+*   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)
     *   Should work with regular BlackWidow and might work with BlackWidow Ultimate / 2013
     *   uses Python 3
     *   does not bundle any scripts to create macros (use hot key configuration tool from your desktop environment)
     *   allows to controls the status of the LED
-*   [razer-blackwidow-macro-scripts](https://aur.archlinux.org/packages/razer-blackwidow-macro-scripts/)<sup><small>AUR</small></sup>
+*   [razer-blackwidow-macro-scripts](https://aur.archlinux.org/packages/razer-blackwidow-macro-scripts/)
     *   Should work with BlackWidow Ultimate 2013
     *   uses Python 2
     *   also bundles scripts to create and execute macros

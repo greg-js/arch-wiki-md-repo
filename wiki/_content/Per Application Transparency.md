@@ -40,7 +40,7 @@ $ xcompmgr &
 
 ```
 
-**Note:** You do not need to pass any arguments to it, but if you would like some other effects, check out the [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") page. Xcompmgr has also been forked as [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcompmgr-dana)]</sup> (dcompmgr) which has also been forked as [compton-git](https://aur.archlinux.org/packages/compton-git/)<sup><small>AUR</small></sup>. Some users find these forked projects provide a greater stability.
+**Note:** You do not need to pass any arguments to it, but if you would like some other effects, check out the [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") page. Xcompmgr has also been forked as [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/) (dcompmgr) which has also been forked as [compton-git](https://aur.archlinux.org/packages/compton-git/). Some users find these forked projects provide a greater stability.
 
 ## Configuration
 
@@ -112,6 +112,6 @@ devilspie -a &
 
 [Comprehensive documentation of the devilspie configuration file](http://foosel.org/linux/devilspie).
 
-Alternatively, [gdevilspie](https://aur.archlinux.org/packages/gdevilspie/)<sup><small>AUR</small></sup> is a GUI configuration editor for devilspie.
+Alternatively, [gdevilspie](https://aur.archlinux.org/packages/gdevilspie/) is a GUI configuration editor for devilspie.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Per_Application_Transparency&oldid=392564](https://wiki.archlinux.org/index.php?title=Per_Application_Transparency&oldid=392564)"

@@ -20,11 +20,11 @@
 
 ### Fbsplash
 
-[Install](/index.php/Install "Install") the [fbsplash](https://aur.archlinux.org/packages/fbsplash/)<sup><small>AUR</small></sup> package. For console backgrounds (discussed later in this article) you should install a kernel patched with fbcondecor such as [linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the [fbsplash](https://aur.archlinux.org/packages/fbsplash/) package. For console backgrounds (discussed later in this article) you should install a kernel patched with fbcondecor such as [linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/).
 
 ### Scripts
 
-The fbsplash package provides the scripts for basic functionality. If you want more bells and whistles, like smooth progress, filesystem-check progress messages, support for boot-services/'daemons'-icons and theme hook scripts, you may also install the [fbsplash-extras](https://aur.archlinux.org/packages/fbsplash-extras/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fbsplash-extras)]</sup> package.
+The fbsplash package provides the scripts for basic functionality. If you want more bells and whistles, like smooth progress, filesystem-check progress messages, support for boot-services/'daemons'-icons and theme hook scripts, you may also install the [fbsplash-extras](https://aur.archlinux.org/packages/fbsplash-extras/) package.
 
 ### Themes
 
@@ -34,7 +34,7 @@ Themes can be found by searching the AUR for [fbsplash-theme](https://aur.archli
 
 ### Suspend to Disk
 
-If you want suspend to disk with [Uswsusp](/index.php/Uswsusp "Uswsusp") using Fbsplash, [install](/index.php/Install "Install") the [uswsusp-fbsplash](https://aur.archlinux.org/packages/uswsusp-fbsplash/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/uswsusp-fbsplash)]</sup> package. Additionally there is limited support for using Fbsplash in the [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/)<sup><small>AUR</small></sup> package for those using a kernel with the [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") patch.
+If you want suspend to disk with [Uswsusp](/index.php/Uswsusp "Uswsusp") using Fbsplash, [install](/index.php/Install "Install") the [uswsusp-fbsplash](https://aur.archlinux.org/packages/uswsusp-fbsplash/) package. Additionally there is limited support for using Fbsplash in the [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/) package for those using a kernel with the [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") patch.
 
 ## Configuration
 
@@ -73,9 +73,9 @@ If you have trouble getting fbsplash to work and your machine uses KMS (Kernel M
 
 ## Console backgrounds
 
-If you have a kernel that supports Fbcondecor (eg. [linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)<sup><small>AUR</small></sup>), you can get nice graphical console backgrounds beside the splash screen.
+If you have a kernel that supports Fbcondecor (eg. [linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)), you can get nice graphical console backgrounds beside the splash screen.
 
-Currently(2015) the [fbsplash](https://aur.archlinux.org/packages/fbsplash/)<sup><small>AUR</small></sup> package provides a deprecated daemon script to set up console backgrounds. However, the programs that actually handle console backgrounds are still working fine! Just look for /usr/bin/splash_manager or /usr/bin/fbcondecor_ctl and set up console backgrounds manually, or use them as a basis to [write](/index.php/Systemd#Writing_unit_files "Systemd") your own systemd unit.
+Currently(2015) the [fbsplash](https://aur.archlinux.org/packages/fbsplash/) package provides a deprecated daemon script to set up console backgrounds. However, the programs that actually handle console backgrounds are still working fine! Just look for /usr/bin/splash_manager or /usr/bin/fbcondecor_ctl and set up console backgrounds manually, or use them as a basis to [write](/index.php/Systemd#Writing_unit_files "Systemd") your own systemd unit.
 
 Even if you have no interest in a splash screen, you will still need splash themes for your console background. Either get an existing one from the AUR [fbsplash-theme](https://aur.archlinux.org/packages.php?O=0&K=fbsplash-theme&do_Search=Go) or create one yourself in `/etc/splash/`. The only parameter in the theme .cfg file needed to enable console backgrounds is `pic`.
 
@@ -88,8 +88,8 @@ quiet console=tty1 splash=verbose,theme:arch-banner-icons
 
 ## Links
 
-*   [http://fbsplash.alanhaggai.org](http://fbsplash.alanhaggai.org) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-05-01]</sup>
-*   [http://dev.gentoo.org/~spock/projects/fbcondecor/](http://dev.gentoo.org/~spock/projects/fbcondecor/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-05-01]</sup>
+*   [http://fbsplash.alanhaggai.org](http://fbsplash.alanhaggai.org) 
+*   [http://dev.gentoo.org/~spock/projects/fbcondecor/](http://dev.gentoo.org/~spock/projects/fbcondecor/) 
 *   [http://www.mepiscommunity.org/fbcondecor](http://www.mepiscommunity.org/fbcondecor)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Fbsplash&oldid=407795](https://wiki.archlinux.org/index.php?title=Fbsplash&oldid=407795)"

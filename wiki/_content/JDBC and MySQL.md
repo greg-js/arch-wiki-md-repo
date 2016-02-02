@@ -31,8 +31,8 @@ Finally start _mysql_ [service](/index.php/Daemon "Daemon") up.
 
 Install a JDBC driver according to your MySQL variant:
 
-*   [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/)<sup><small>AUR</small></sup> - For the Arch Linux endorsed server.
-*   [mysql-jdbc](https://aur.archlinux.org/packages/mysql-jdbc/)<sup><small>AUR</small></sup> - For the Oracle variant.
+*   [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/) - For the Arch Linux endorsed server.
+*   [mysql-jdbc](https://aur.archlinux.org/packages/mysql-jdbc/) - For the Oracle variant.
 
 You can also download the latter from [http://www.mysql.com/products/connector-j/](http://www.mysql.com/products/connector-j/) and
 

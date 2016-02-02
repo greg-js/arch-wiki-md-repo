@@ -14,9 +14,9 @@ GLC is an ALSA & OpenGL capture tool for Linux. It consists of a generic video c
 
 ## Installation
 
-To install GLC, simply install the [glc](https://aur.archlinux.org/packages/glc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/glc)]</sup> package from AUR.
+To install GLC, simply install the [glc](https://aur.archlinux.org/packages/glc/) package from AUR.
 
-If you want to record 32 bit programs such as Wine on a 64 bit system, you will also need to install [lib32-glc](https://aur.archlinux.org/packages/lib32-glc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-glc)]</sup>.
+If you want to record 32 bit programs such as Wine on a 64 bit system, you will also need to install [lib32-glc](https://aur.archlinux.org/packages/lib32-glc/).
 
 NOTE: GLC will only work with ALSA. If you use Pulseaudio, install the [glc-pulseaudio*](https://aur.archlinux.org/packages.php?O=0&K=glc-pulseaudio&do_Search=Pesquisar) packages instead. If you use OSS, you will probably need to record the audio separately.
 
@@ -135,8 +135,8 @@ Once you get a single **.wav** file with audio as you want, encode and mux norma
 
 Two graphical interfaces are available for glc to try and simplify it's usage, with both of them being avalible from the [AUR](/index.php/AUR "AUR").
 
-*   [soulcapture](https://aur.archlinux.org/packages/soulcapture/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/soulcapture)]</sup> is a graphical front-end made in [Gambas](/index.php/Gambas "Gambas") that utilizes [FFmpeg](/index.php/FFmpeg "FFmpeg") for encoding.
-*   [gamecaster](https://aur.archlinux.org/packages/gamecaster/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gamecaster)]</sup> is a graphical front-end made in [Python](/index.php/Python "Python") that utilizes [FFmpeg](/index.php/FFmpeg "FFmpeg") for encoding; optimized for Ubuntu.
+*   [soulcapture](https://aur.archlinux.org/packages/soulcapture/) is a graphical front-end made in [Gambas](/index.php/Gambas "Gambas") that utilizes [FFmpeg](/index.php/FFmpeg "FFmpeg") for encoding.
+*   [gamecaster](https://aur.archlinux.org/packages/gamecaster/) is a graphical front-end made in [Python](/index.php/Python "Python") that utilizes [FFmpeg](/index.php/FFmpeg "FFmpeg") for encoding; optimized for Ubuntu.
 
 ## See also
 

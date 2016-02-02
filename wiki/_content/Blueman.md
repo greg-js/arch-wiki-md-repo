@@ -1,10 +1,5 @@
 # Blueman
 
-Related articles
-
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
-
 [Blueman](https://github.com/blueman-project/blueman) is a full featured Bluetooth manager written in [GTK+](/index.php/GTK%2B "GTK+"). Blueman versions 1.23 and below were developed on [launchpad.net](https://launchpad.net) and used the, now unmaintained, [Bluez4](/index.php/Bluez4 "Bluez4") bluetooth stack. In November 2013, Blueman development moved to [Github](https://github.com/blueman-project/blueman). As of version 2.0, Blueman has full support for the Bluez5 Bluetooth stack.
 
 ## Contents
@@ -25,7 +20,7 @@ Related articles
 
 ## Installation
 
-Install either [blueman](https://www.archlinux.org/packages/?name=blueman) or [blueman-git](https://aur.archlinux.org/packages/blueman-git/)<sup><small>AUR</small></sup> (the development version).
+Install either [blueman](https://www.archlinux.org/packages/?name=blueman) or [blueman-git](https://aur.archlinux.org/packages/blueman-git/) (the development version).
 
 Be sure to enable the [Bluetooth](/index.php/Bluetooth "Bluetooth") daemon and start Blueman with `blueman-applet`. A graphical settings panel can be launched with `blueman-manager`.
 

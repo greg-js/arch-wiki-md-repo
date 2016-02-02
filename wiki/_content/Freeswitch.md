@@ -12,7 +12,7 @@ The [FreeSWITCH](http://www.freeswitch.org) telephony engine is a powerful syste
 
 ## Installing
 
-The 'release' version [freeswitch](https://aur.archlinux.org/packages/freeswitch/)<sup><small>AUR</small></sup> and the git version [freeswitch-git](https://aur.archlinux.org/packages/freeswitch-git/)<sup><small>AUR</small></sup> are available in the [AUR](/index.php/AUR "AUR"). The following instructions assume you are using the freeswitch-git package.
+The 'release' version [freeswitch](https://aur.archlinux.org/packages/freeswitch/) and the git version [freeswitch-git](https://aur.archlinux.org/packages/freeswitch-git/) are available in the [AUR](/index.php/AUR "AUR"). The following instructions assume you are using the freeswitch-git package.
 
 Also, you may wish to configure FreeSWITCH build options. Edit the PKGBUILD and change any BUILD CONFIGURATION options to suit your desired usage.
 

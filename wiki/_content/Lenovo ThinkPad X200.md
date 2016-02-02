@@ -67,7 +67,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux"
 
 ### Screen calibration
 
-If the stylus happens to be working very imprecisely, the screen may be in need of calibration. Installing [xinput_calibrator](https://aur.archlinux.org/packages/xinput_calibrator/)<sup><small>AUR</small></sup> and running the following command will begin the calibration process.
+If the stylus happens to be working very imprecisely, the screen may be in need of calibration. Installing [xinput_calibrator](https://aur.archlinux.org/packages/xinput_calibrator/) and running the following command will begin the calibration process.
 
 ```
 # xinput_calibrator --device "Serial Wacom Tablet WACf004 stylus"
@@ -78,7 +78,7 @@ To save the calibration settings, create a config file at `/etc/X11/xorg.conf.d/
 
 ### Loading the correct ICC colour profile
 
-Download [x200.icc](https://github.com/yuvadm/dotfiles/raw/x200s/.color/icc/x200.icc) and move it to `~/.color/icc`. Load the profile with [xcalib](https://aur.archlinux.org/packages/xcalib/)<sup><small>AUR</small></sup> as follows:
+Download [x200.icc](https://github.com/yuvadm/dotfiles/raw/x200s/.color/icc/x200.icc) and move it to `~/.color/icc`. Load the profile with [xcalib](https://aur.archlinux.org/packages/xcalib/) as follows:
 
 ```
 $ /usr/bin/xcalib -d :0 ~/.color/icc/x200.icc
@@ -214,9 +214,9 @@ This script may be executed during startup to further automate the screen rotati
 
 To set up an efficient power saving environment, install the [tlp](https://www.archlinux.org/packages/?name=tlp) package. A detailed guide how to implement a simplistic power saving environment based upon TLP can be found [here](http://www.robert.orzanna.de/simplistic-powersaving-with-systemd-service-files-and-udev-rules/).
 
-Fan-control software can be used to further reduce power consumption. The [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfanco-svn)]</sup> package from AUR provides a simplistic GTK GUI for setting up fan activation thresholds based upon the X200's multiple hardware sensors.
+Fan-control software can be used to further reduce power consumption. The [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/) package from AUR provides a simplistic GTK GUI for setting up fan activation thresholds based upon the X200's multiple hardware sensors.
 
-Investigate [Powertop](/index.php/Powertop "Powertop") and the [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/)<sup><small>AUR</small></sup> package from AUR for more information on measuring actual power consumption.
+Investigate [Powertop](/index.php/Powertop "Powertop") and the [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/) package from AUR for more information on measuring actual power consumption.
 
 See [Power saving](/index.php/Power_saving "Power saving") for additional tips.
 

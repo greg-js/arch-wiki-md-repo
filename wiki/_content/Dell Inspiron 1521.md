@@ -87,7 +87,7 @@ Works out of the box.
 
 #### Broadcom Corporation BCM4311
 
-Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR").
 
 For getting the network up automatically, I copied the file `/etc/network.d/examples/wpa.example` (take the example file for your use case) into the directory `/etc/network.d/` and renamed it (e.g. `wlan_profile`) and edited it. Then I added the following line to `/etc/rc.conf`:
 

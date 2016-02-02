@@ -1,16 +1,5 @@
 # LXDE
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Openbox](/index.php/Openbox "Openbox")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-*   [LXDM](/index.php/LXDM "LXDM")
-*   [LXQt](/index.php/LXQt "LXQt")
-*   [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality")
-
 From project [home page](http://lxde.org/):
 
 	_The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers._
@@ -70,7 +59,7 @@ See also [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ### Application menu editing
 
-The application menu works by resolving the `.desktop` files located in `/usr/share/applications`. Many desktop environments run programs that supersede these settings to allow customization of the menu. LXDE has yet to create an application menu editor but you can manually build them yourself if you are so inclined. Third party menu editor can be found in [AUR](/index.php/AUR "AUR") - [lxmed](https://aur.archlinux.org/packages/lxmed/)<sup><small>AUR</small></sup>
+The application menu works by resolving the `.desktop` files located in `/usr/share/applications`. Many desktop environments run programs that supersede these settings to allow customization of the menu. LXDE has yet to create an application menu editor but you can manually build them yourself if you are so inclined. Third party menu editor can be found in [AUR](/index.php/AUR "AUR") - [lxmed](https://aur.archlinux.org/packages/lxmed/)
 
 To add or edit a menu item, create or link to the `.desktop` file in `/usr/share/applications`, `/usr/local/share/applications`, or `~/.local/share/applications`. (The latter two have the advantage of putting your application outside of directories governed by `pacman`.) Consult [the desktop entry specification](http://standards.freedesktop.org/desktop-entry-spec/latest/) on freedesktop.org for structures of `.desktop` files.
 
@@ -99,7 +88,7 @@ Applications can be automatically started in several ways.
 
 #### Desktop files
 
-**Tip:** `.desktop` files can be manipulated with the [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lxsession-edit)]</sup> package.
+**Tip:** `.desktop` files can be manipulated with the [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/) package.
 
 See [Desktop entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries").
 
@@ -125,7 +114,7 @@ There is also a global autostart file at `/etc/xdg/lxsession/LXDE/autostart`.
 
 Mouse and key bindings (i.e. keyboard shortcuts) are implemented with Openbox. LXDE users should follow the [Openbox wiki](http://openbox.org/wiki/Help:Bindings) to edit `~/.config/openbox/lxde-rc.xml`.
 
-An optional GUI for editing the key bindings is provided by the [obkey](https://aur.archlinux.org/packages/obkey/)<sup><small>AUR</small></sup> package. Whle it edits `rc.xml` by default, you can direct it to the LXDE configuration as follows:
+An optional GUI for editing the key bindings is provided by the [obkey](https://aur.archlinux.org/packages/obkey/) package. Whle it edits `rc.xml` by default, you can direct it to the LXDE configuration as follows:
 
 ```
 $ obkey ~/.config/openbox/lxde-rc.xml
@@ -241,7 +230,7 @@ And then make it executable:
 
 ### lxpanel crashes with some themes or browsing particular web pages
 
-With some gtk themes ([AUR](/index.php/AUR "AUR") - [gtk-theme-greybird](https://aur.archlinux.org/packages/gtk-theme-greybird/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtk-theme-greybird)]</sup>), launch lxpanel will get errors below.
+With some gtk themes ([AUR](/index.php/AUR "AUR") - [gtk-theme-greybird](https://aur.archlinux.org/packages/gtk-theme-greybird/)), launch lxpanel will get errors below.
 
 ```
 lxpanel: cairo-scaled-font.c:459: _cairo_scaled_glyph_page_destroy: Assertion `!scaled_font->cache_frozen' failed.

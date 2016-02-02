@@ -1,12 +1,5 @@
 # Irssi
 
-Related articles
-
-*   [IRC channels](/index.php/IRC_channels "IRC channels")
-*   [IRC](/index.php/IRC "IRC")
-*   [WeeChat](/index.php/WeeChat "WeeChat")
-*   [HexChat](/index.php/HexChat "HexChat")
-
 [irssi](http://www.irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) "wikipedia:SILC (protocol)") and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
 
 ## Contents
@@ -72,7 +65,7 @@ Personal configuration file should be located at `~/.irssi/config`; there is a t
 
 ### Authenticating with SASL
 
-[Install](/index.php/Install "Install") the [irssi-script-sasl](https://aur.archlinux.org/packages/irssi-script-sasl/)<sup><small>AUR</small></sup> package. Load the script with each start of irssi:
+[Install](/index.php/Install "Install") the [irssi-script-sasl](https://aur.archlinux.org/packages/irssi-script-sasl/) package. Load the script with each start of irssi:
 
 ```
 $ mkdir -p ~/.irssi/scripts/autorun

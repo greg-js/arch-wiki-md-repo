@@ -1,9 +1,5 @@
 # NFS/Troubleshooting
 
-Related articles
-
-*   [NFS](/index.php/NFS "NFS")
-
 Dedicated article for common problems and solutions.
 
 ## Contents

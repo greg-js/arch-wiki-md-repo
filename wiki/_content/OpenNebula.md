@@ -14,7 +14,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [opennebula](https://aur.archlinux.org/packages/opennebula/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennebula)]</sup> package from the [AUR](/index.php/AUR "AUR"). For those interested in running the latest bleeding edge version of OpenNebula, install the [opennebula-unstable](https://aur.archlinux.org/packages/opennebula-unstable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/opennebula-unstable)]</sup> package, also in the AUR.
+[Install](/index.php/Install "Install") the [opennebula](https://aur.archlinux.org/packages/opennebula/) package from the [AUR](/index.php/AUR "AUR"). For those interested in running the latest bleeding edge version of OpenNebula, install the [opennebula-unstable](https://aur.archlinux.org/packages/opennebula-unstable/) package, also in the AUR.
 
 ## Configuration
 

@@ -1,13 +1,5 @@
 # Nemo
 
-Related articles
-
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-*   [Thunar](/index.php/Thunar "Thunar")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-
 [Nemo](https://github.com/linuxmint/nemo) is a fork of [GNOME Files](/index.php/GNOME_Files "GNOME Files"). It is also the default file manager of the [Cinnamon](/index.php/Cinnamon "Cinnamon") desktop. Nemo is based on the Files 3.4 code. It was created as a response to the changes in Files 3.6 which saw features such as type ahead find and split pane view removed.
 
 ## Contents
@@ -38,7 +30,7 @@ Some programs can add extra functionality to Nemo. Here are a few packages that 
 
 *   **Nemo Compare** — An utility which compares two files using [meld](https://www.archlinux.org/packages/?name=meld).
 
-	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-compare](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-compare) || [nemo-compare](https://aur.archlinux.org/packages/nemo-compare/)<sup><small>AUR</small></sup>
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-compare](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-compare) || [nemo-compare](https://aur.archlinux.org/packages/nemo-compare/)
 
 *   **Nemo Preview** — GtkClutter and Javascript-based quick previewer for Nemo.
 
@@ -54,7 +46,7 @@ Some programs can add extra functionality to Nemo. Here are a few packages that 
 
 *   **RabbitVCS Nemo** — Integrate RabbitVCS into Nemo.
 
-	[http://www.rabbitvcs.org/](http://www.rabbitvcs.org/) || [rabbitvcs-nemo](https://aur.archlinux.org/packages/rabbitvcs-nemo/)<sup><small>AUR</small></sup>
+	[http://www.rabbitvcs.org/](http://www.rabbitvcs.org/) || [rabbitvcs-nemo](https://aur.archlinux.org/packages/rabbitvcs-nemo/)
 
 See [nemo-extensions github repo](https://github.com/linuxmint/nemo-extensions) for all extensions.
 

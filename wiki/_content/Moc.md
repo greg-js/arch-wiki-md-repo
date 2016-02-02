@@ -19,7 +19,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/).
 
 ## Configuration
 
@@ -69,7 +69,7 @@ $ mocp -x
 
 ### mocp-scrobbler
 
-[mocp-scrobbler](https://aur.archlinux.org/packages/mocp-scrobbler/)<sup><small>AUR</small></sup> is a Last.fm/Libre.fm scrobbler for MOC with support for now-playing notifications, daemonization and cache. It only depends on [Python](/index.php/Python "Python") 3.
+[mocp-scrobbler](https://aur.archlinux.org/packages/mocp-scrobbler/) is a Last.fm/Libre.fm scrobbler for MOC with support for now-playing notifications, daemonization and cache. It only depends on [Python](/index.php/Python "Python") 3.
 
 Copy the example file to your user config directory:
 
@@ -92,11 +92,11 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 *   **dmenu_mocp** — Dmenu frontend to MOC
 
-	[https://github.com/mutantturkey/mocicon](https://github.com/mutantturkey/mocicon) || [dmenu_mocp](https://aur.archlinux.org/packages/dmenu_mocp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu_mocp)]</sup>
+	[https://github.com/mutantturkey/mocicon](https://github.com/mutantturkey/mocicon) || [dmenu_mocp](https://aur.archlinux.org/packages/dmenu_mocp/)
 
 *   **mocicon** — GTK panel applet to control MOC
 
-	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)<sup><small>AUR</small></sup>
+	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
 
 *   **moc-tray** — Quick and easy access to mocp basic functions
 

@@ -1,10 +1,5 @@
 # SDDM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [KDE](/index.php/KDE "KDE")
-
 The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop. From Wikipedia:
 
 	_Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11\. SDDM was written from scratch in C++11 and supports theming via QML. It is the successor of the KDE Display Manager and is used in conjunction with KDE Frameworks 5, KDE Plasma 5 and KDE Applications 5._
@@ -76,7 +71,7 @@ Theme settings can be changed in the `[Theme]` section.
 
 Set to `breeze` for the default Plasma theme.
 
-Some themes are available in the [AUR](/index.php/AUR "AUR"), for example [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/)<sup><small>AUR</small></sup>.
+Some themes are available in the [AUR](/index.php/AUR "AUR"), for example [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/).
 
 #### Main theme
 
@@ -114,7 +109,7 @@ If you want to enforce Numlock to be enabled, set `Numlock=on` in the `[General]
 ### Configuration GUI
 
 *   KDE Frameworks' System Settings contains an SDDM configuration module. Install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package to use it.
-*   There is a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/)<sup><small>AUR</small></sup> in the AUR.
+*   There is a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) in the AUR.
 
 ## Troubleshooting
 

@@ -1,17 +1,12 @@
 # Full system backup with rsync
 
-Related articles
-
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
-*   [rsync](/index.php/Rsync "Rsync")
-
 This article is about using [rsync](/index.php/Rsync "Rsync") to transfer a copy of your "/" tree, excluding a few select folders. This approach is considered to be better than [disk cloning](/index.php/Disk_cloning "Disk cloning") with `dd` since it allows for a different size, partition table and filesystem to be used, and better than copying with `cp -a` as well, because it allows greater control over file permissions, attributes, Access Control Lists (ACLs) and extended attributes. [[1]](http://www.bestbits.at/acl/about.html)
 
 Either method will work even while the system is running. Since it's going to take a while, you may freely browse the web during this time. Worst case scenario you will not get the same opened tabs when you restore the backup (or boot from it) because they were not saved. Not a big deal.
 
 ## Contents
 
-*   [1 Wth a single command](#Wth_a_single_command)
+*   [1 With a single command](#With_a_single_command)
 *   [2 Automated](#Automated)
 *   [3 Boot requirements](#Boot_requirements)
     *   [3.1 Update the fstab](#Update_the_fstab)
@@ -19,7 +14,7 @@ Either method will work even while the system is running. Since it's going to ta
 *   [4 First boot](#First_boot)
 *   [5 See also](#See_also)
 
-## Wth a single command
+## With a single command
 
 This command depends on brace expansion available in both the [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) and [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion) shells. When using a different [shell](/index.php/Shell "Shell"), `--exclude` patterns should be repeated manually.
 
@@ -138,4 +133,4 @@ If you transferred the data from HDD to SSD (solid state drive), do not forget t
 
 *   [Howto – local and remote snapshot backup using rsync with hard links](http://blog.pointsoftware.ch/index.php/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) Includes file deduplication with hard-links, MD5 integrity signature, 'chattr' protection, filter rules, disk quota, retention policy with exponential distribution (backups rotation while saving more recent backups than older)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=415559](https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=415559)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=418818](https://wiki.archlinux.org/index.php?title=Full_system_backup_with_rsync&oldid=418818)"

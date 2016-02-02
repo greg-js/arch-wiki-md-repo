@@ -1,9 +1,5 @@
 # GNUnet
 
-Related articles
-
-*   [Tor](/index.php/Tor "Tor")
-
 [GNUnet](https://gnunet.org/) is a framework for secure peer-to-peer networking that does not use any centralized or otherwise trusted services. Currently, the service implemented on the framework serves to perform censorship-resistant file-sharing.
 
 See also [GNUnet](https://en.wikipedia.org/wiki/GNUnet "wikipedia:GNUnet").

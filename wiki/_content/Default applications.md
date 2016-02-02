@@ -1,10 +1,5 @@
 # Default applications
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 Default applications can be set for use with particular file types (e.g. the [Firefox](/index.php/Firefox "Firefox") web browser for `HTML` files). Where undertaken, files may be opened and/or edited with the desired application much faster and more conveniently. There are also numerous methods to configure default applications in Linux. This page will explain the most common methods: File Managers, MIME types, and environment variables.
 
 ## Contents
@@ -88,7 +83,7 @@ If it is installed, run `gnome-control-center`, open `System` > `Details` > `Def
 
 ### gnome-defaults-list
 
-[gnome-defaults-list](https://aur.archlinux.org/packages/gnome-defaults-list/)<sup><small>AUR</small></sup> is available from the [AUR](/index.php/AUR "AUR"), and contains a list of file-types and programs specific to the GNOME desktop. The list is installed to `/etc/gnome/defaults.list`.
+[gnome-defaults-list](https://aur.archlinux.org/packages/gnome-defaults-list/) is available from the [AUR](/index.php/AUR "AUR"), and contains a list of file-types and programs specific to the GNOME desktop. The list is installed to `/etc/gnome/defaults.list`.
 
 Open this file with a text editor. Here you can replace a given application with the name of the program of your choice. For example, the media-player `totem` can be replaced with another, such as `vlc`. Save the file to `~/.local/share/applications/defaults.list`.
 

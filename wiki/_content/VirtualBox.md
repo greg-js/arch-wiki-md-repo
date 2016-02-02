@@ -1,11 +1,5 @@
 # VirtualBox
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
-*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
-
 [VirtualBox](https://www.virtualbox.org) is a [hypervisor](https://en.wikipedia.org/wiki/Hypervisor "wikipedia:Hypervisor") used to run operating systems in a special environment, called a virtual machine, on top of the existing operating system. VirtualBox is in constant development and new features are implemented continuously. It comes with a [Qt](/index.php/Qt "Qt") GUI interface, as well as headless and [SDL](https://en.wikipedia.org/wiki/Simple_DirectMedia_Layer "wikipedia:Simple DirectMedia Layer") command-line tools for managing and running virtual machines.
 
 In order to integrate functions of the host system to the guests, including shared folders and clipboard, video acceleration and a seamless window integration mode, _guest additions_ are provided for some guest operating systems.
@@ -129,14 +123,14 @@ Therefore, if you are using a kernel from the [official repositories](/index.php
 
 *   If you are using the [linux](https://www.archlinux.org/packages/?name=linux) kernel, make sure the [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package is still installed. The latter has been installed when you installed the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package.
 *   If you are using the LTS version of the kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), you need to install the [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts) package. [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) can now be removed if you want.
-*   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup> kernel, build the [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/)<sup><small>AUR</small></sup> package.
-*   If you are using the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel, build the [virtualbox-zen-host-modules](https://aur.archlinux.org/packages/virtualbox-zen-host-modules/)<sup><small>AUR</small></sup> package.
+*   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/) kernel, build the [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/) package.
+*   If you are using the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel, build the [virtualbox-zen-host-modules](https://aur.archlinux.org/packages/virtualbox-zen-host-modules/) package.
 
 #### Hosts running a custom kernel
 
 If you use or intend to use a self-compiled kernel from sources, you have to know that VirtualBox does not require any virtualization modules (e.g. virtuo, kvm,...). The VirtualBox kernel modules provide all the necessary for VirtualBox to work properly. You can thus disable in your kernel _.config_ file these virtualization modules if you do not use other hypervisors like Xen, KVM or QEMU.
 
-The [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package works fine with custom kernels of the same version of the Arch Linux stock kernel such as [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup>. If you do not use such kernel, see [#DKMS Install](#DKMS_Install) instead.
+The [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package works fine with custom kernels of the same version of the Arch Linux stock kernel such as [linux-ck](https://aur.archlinux.org/packages/linux-ck/). If you do not use such kernel, see [#DKMS Install](#DKMS_Install) instead.
 
 ##### DKMS Install
 
@@ -195,7 +189,7 @@ It is also recommended to install the [virtualbox-guest-iso](https://www.archlin
 
 ### Extension pack
 
-Since VirtualBox 4.0, non-GPL components have been split from the rest of the application. Despite being released under a non-free license and **being only available for personal use**, you might be interested in installing the Oracle Extension Pack which provides [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing). To avoid manual manipulation, the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/)<sup><small>AUR</small></sup> package is available, and a prebuilt version can be found in the [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories") repository.
+Since VirtualBox 4.0, non-GPL components have been split from the rest of the application. Despite being released under a non-free license and **being only available for personal use**, you might be interested in installing the Oracle Extension Pack which provides [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing). To avoid manual manipulation, the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) package is available, and a prebuilt version can be found in the [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories") repository.
 
 If you prefer to use the traditional and manual way: download the extension manually and install it via the GUI (_File > Preferences > Extensions_) or via `VBoxManage extpack install <.vbox-extpack>`, make sure you have a toolkit (like [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) to grant privileged access to VirtualBox. The installation of this extension [requires root access](https://www.virtualbox.org/ticket/8473).
 
@@ -258,11 +252,11 @@ Don't forget to reboot.
 
 *   If you are using the [linux](https://www.archlinux.org/packages/?name=linux) kernel, make sure the [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) package is still installed. The latter has been installed when you installed the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package.
 *   If you are using the LTS version of the kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), you need to install the [virtualbox-guest-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-lts) package. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) can now be removed if you want.
-*   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup>, kernel, build the [virtualbox-ck-guest-modules](https://aur.archlinux.org/packages/virtualbox-ck-guest-modules/)<sup><small>AUR</small></sup> package. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) can now be removed in this case too, if you want.
+*   If you are using the [linux-ck](https://aur.archlinux.org/packages/linux-ck/), kernel, build the [virtualbox-ck-guest-modules](https://aur.archlinux.org/packages/virtualbox-ck-guest-modules/) package. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) can now be removed in this case too, if you want.
 
 #### Guests running a custom kernel
 
-As this installation step is quite similar to the Virtualbox kernel modules section for the host described above, please refer to [that section](#Install_the_VirtualBox_kernel_modules) for more information and replace all [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules), [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) and [vboxhost-hook](https://aur.archlinux.org/packages/vboxhost-hook/)<sup><small>AUR</small></sup> statements by [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules), [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) and [vboxguest-hook](https://aur.archlinux.org/packages/vboxguest-hook/)<sup><small>AUR</small></sup> respectively.
+As this installation step is quite similar to the Virtualbox kernel modules section for the host described above, please refer to [that section](#Install_the_VirtualBox_kernel_modules) for more information and replace all [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules), [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) and [vboxhost-hook](https://aur.archlinux.org/packages/vboxhost-hook/) statements by [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules), [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) and [vboxguest-hook](https://aur.archlinux.org/packages/vboxguest-hook/) respectively.
 
 #### After kernel update
 

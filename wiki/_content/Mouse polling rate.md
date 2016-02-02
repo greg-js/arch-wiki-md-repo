@@ -52,7 +52,7 @@ Then unplug and replug your mouse.
 
 A tool exists (named _evhz_) that can display the current mouse refresh rate -- useful when checking that your customized polling settings have been applied.
 
-You can install it from [AUR](/index.php/AUR "AUR") [evhz-git](https://aur.archlinux.org/packages/evhz-git/)<sup><small>AUR</small></sup> or compile it yourself:
+You can install it from [AUR](/index.php/AUR "AUR") [evhz-git](https://aur.archlinux.org/packages/evhz-git/) or compile it yourself:
 
 Save [evhz.c](https://github.com/ian-kelling/evhz/raw/master/evhz.c) ([its github page](https://github.com/ian-kelling/evhz))
 

@@ -11,7 +11,7 @@
 
 ## Enabling Perl + Apache
 
-Install [mod_perl](https://aur.archlinux.org/packages/mod_perl/)<sup><small>AUR</small></sup>.
+Install [mod_perl](https://aur.archlinux.org/packages/mod_perl/).
 
 Add this to `httpd.conf`:
 

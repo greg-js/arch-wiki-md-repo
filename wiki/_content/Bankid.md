@@ -4,11 +4,11 @@ This page is about the digital id software [Bankid](http://www.bankid.com/en/Wha
 
 ## Installation
 
-Install the [nexuspersonal](https://aur.archlinux.org/packages/nexuspersonal/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nexuspersonal)]</sup> package from the [AUR](/index.php/AUR "AUR").
+Install the [nexuspersonal](https://aur.archlinux.org/packages/nexuspersonal/) package from the [AUR](/index.php/AUR "AUR").
 
 ## Open source alternatives
 
-The open source program Fribid is available in the [AUR](/index.php/AUR "AUR"): [fribid](https://aur.archlinux.org/packages/fribid/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fribid)]</sup>.
+The open source program Fribid is available in the [AUR](/index.php/AUR "AUR"): [fribid](https://aur.archlinux.org/packages/fribid/).
 
 ## Running Bankid in a virtual machine running Windows
 

@@ -8,10 +8,11 @@ For content organization and general references, please see the note in [Categor
 
 ## Pages in category "MSI"
 
-The following 2 pages are in this category, out of 2 total.
+The following 3 pages are in this category, out of 3 total.
 
 ### M
 
+*   [MSI GT72-6QE](/index.php/MSI_GT72-6QE "MSI GT72-6QE")
 *   [MSI Wind U100](/index.php/MSI_Wind_U100 "MSI Wind U100")
 *   [MSI Wind U120](/index.php/MSI_Wind_U120 "MSI Wind U120")
 

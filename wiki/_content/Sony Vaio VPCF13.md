@@ -46,9 +46,9 @@ Previously mentioned additions/packages that may be useful, but are not up-to-da
 
 ```
 
-The patched linux-sony kernel is available in the AUR: [linux-sony](https://aur.archlinux.org/packages/linux-sony/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-sony)]</sup>
+The patched linux-sony kernel is available in the AUR: [linux-sony](https://aur.archlinux.org/packages/linux-sony/)
 
-The sony-acpid daemon is also available in the AUR: [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sony-acpid-git)]</sup>
+The sony-acpid daemon is also available in the AUR: [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/)
 
 ## Suspend to RAM
 

@@ -1,12 +1,5 @@
 # Master Boot Record
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-
 The Master Boot Record (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table.
 
 **Note:** As a newer partitioning scheme, the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification) can be used also on BIOS systems via a [protective MBR](https://en.wikipedia.org/wiki/GUID_Partition_Table#Legacy_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table"). GPT solves some legacy problems with MBR but also may have compatibility problems. Read more on [GUID Partition Table#About the Master Boot Record](/index.php/GUID_Partition_Table#About_the_Master_Boot_Record "GUID Partition Table").
@@ -66,7 +59,7 @@ By convention (and for ease of installation), Windows is usually installed on th
 
 If you wish to revert back to using Windows, you can use the `FIXBOOT` command which chains from the MBR to the boot sector of the first partition to restore normal, automatic loading of the Windows operating system.
 
-Of note, there is a Linux utility called `ms-sys` (package [ms-sys](https://aur.archlinux.org/packages/ms-sys/)<sup><small>AUR</small></sup> in AUR) that can install MBR's. However, this utility is only currently capable of writing new MBRs (all OS's and file systems supported) and boot sectors (a.k.a. boot record; equivalent to using `FIXBOOT`) for FAT file systems. Most LiveCDs do not have this utility by default, so it will need to be installed first, or you can look at a rescue CD that does have it, such as [Parted Magic](http://partedmagic.com/).
+Of note, there is a Linux utility called `ms-sys` (package [ms-sys](https://aur.archlinux.org/packages/ms-sys/) in AUR) that can install MBR's. However, this utility is only currently capable of writing new MBRs (all OS's and file systems supported) and boot sectors (a.k.a. boot record; equivalent to using `FIXBOOT`) for FAT file systems. Most LiveCDs do not have this utility by default, so it will need to be installed first, or you can look at a rescue CD that does have it, such as [Parted Magic](http://partedmagic.com/).
 
 First, write the partition info (table) again by:
 

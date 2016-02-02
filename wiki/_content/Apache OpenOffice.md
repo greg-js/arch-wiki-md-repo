@@ -32,7 +32,7 @@ From [Why Apache OpenOffice](http://why.openoffice.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [openoffice](https://aur.archlinux.org/packages/openoffice/)<sup><small>AUR</small></sup> package. It is recommended to also install [Java](/index.php/Java "Java").
+[Install](/index.php/Install "Install") the [openoffice](https://aur.archlinux.org/packages/openoffice/) package. It is recommended to also install [Java](/index.php/Java "Java").
 
 ### Microsoft fonts
 
@@ -215,7 +215,7 @@ Older OpenOffice/LibreOffice versions would start in _High Contrast Mode_ if you
 
 #### Older OpenOffice versions (< 3.2.x)
 
-*   For a quick fix, see [openoffice-dark-gtk-fix](https://aur.archlinux.org/packages/openoffice-dark-gtk-fix/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openoffice-dark-gtk-fix)]</sup>. This also sets `OOO_FORCE_DESKTOP=gnome`.
+*   For a quick fix, see [openoffice-dark-gtk-fix](https://aur.archlinux.org/packages/openoffice-dark-gtk-fix/). This also sets `OOO_FORCE_DESKTOP=gnome`.
 *   Another fix is to export `SAL_USE_VCLPLUGIN=gen` (generic X11). See [for more info](http://user.services.openoffice.org/en/forum/viewtopic.php?f=16&t=27216#p123942).
 
 #### Newer OpenOffice / LibreOffice versions

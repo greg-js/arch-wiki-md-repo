@@ -35,7 +35,7 @@ There seems to be some bug that prevents you from switching back to any consoles
 
 ## WWAN
 
-To get the optional UMTS modem get working you can refer to [Gobi Broadband Modems](/index.php/Gobi_Broadband_Modems "Gobi Broadband Modems"). You probably want to install [gobi-loader](https://aur.archlinux.org/packages/gobi-loader/)<sup><small>AUR</small></sup>. In order to get the appropriate firmware you can either use the package [gobi-firmware](https://aur.archlinux.org/packages/gobi-firmware/)<sup><small>AUR</small></sup> or get it off from a Windows installation. Further information can be found at the [ThinkWiki](http://www.thinkwiki.org/wiki/Qualcomm_Gobi_2000) as they seem to use the same hardware for some of their devices. The device ID for Sony seems to be "05c6:9224" before the firmware is loaded and "05c6:9225" when the firmware is actually loaded.
+To get the optional UMTS modem get working you can refer to [Gobi Broadband Modems](/index.php/Gobi_Broadband_Modems "Gobi Broadband Modems"). You probably want to install [gobi-loader](https://aur.archlinux.org/packages/gobi-loader/). In order to get the appropriate firmware you can either use the package [gobi-firmware](https://aur.archlinux.org/packages/gobi-firmware/) or get it off from a Windows installation. Further information can be found at the [ThinkWiki](http://www.thinkwiki.org/wiki/Qualcomm_Gobi_2000) as they seem to use the same hardware for some of their devices. The device ID for Sony seems to be "05c6:9224" before the firmware is loaded and "05c6:9225" when the firmware is actually loaded.
 
 ## See also
 

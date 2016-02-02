@@ -1,12 +1,5 @@
 # General recommendations
 
-Related articles
-
-*   [FAQ](/index.php/FAQ "FAQ")
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [List of applications](/index.php/List_of_applications "List of applications")
-
 This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is _required_ for following the other sections of this page and the other articles in the wiki.
 
 ## Contents
@@ -333,7 +326,7 @@ A list of miscellaneous Bash settings, including completion enhancements, histor
 
 ### Colored output
 
-Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/)<sup><small>AUR</small></sup> package. The [acoc](https://aur.archlinux.org/packages/acoc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acoc)]</sup> package provides a similar application.
+Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/) package. The [acoc](https://aur.archlinux.org/packages/acoc/) package provides a similar application.
 
 Colorizing the output of specific core utilities such as `grep` and `ls` is covered in the [Core utilities](/index.php/Core_utilities "Core utilities") article.
 

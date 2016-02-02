@@ -11,7 +11,7 @@ The OpenSync project provides a stable release, currently version 0.22, and a un
 Generally a mixture of different version numbers should be avoided especially between the stable and experimental releases. A version 0.22 plugin insists on a version 0.22 libopensync and a version 0.39 plugin should joined with the corresponding unstable library version. Since not every version step provides all available plugins, your chosen version of libopensync may depend on your plugin needs.
 
 | branch | stable | unstable |
-| libopensync version | [libopensync-stable](https://aur.archlinux.org/packages/libopensync-stable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libopensync-stable)]</sup>-0.22 | 0.33 - 0.38 | 0.39 |
+| libopensync version | [libopensync-stable](https://aur.archlinux.org/packages/libopensync-stable/)-0.22 | 0.33 - 0.38 | 0.39 |
 | available plugins | 
 
 *   evolution2
@@ -37,15 +37,15 @@ see [http://opensync.org/download/releases/](http://opensync.org/download/releas
 
  | 
 
-*   [libopensync-plugin-evolution2](https://aur.archlinux.org/packages/libopensync-plugin-evolution2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libopensync-plugin-evolution2)]</sup>
-*   [libopensync-plugin-file-unstable](https://aur.archlinux.org/packages/libopensync-plugin-file-unstable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libopensync-plugin-file-unstable)]</sup>
-*   [libopensync-plugin-syncml](https://aur.archlinux.org/packages/libopensync-plugin-syncml/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libopensync-plugin-syncml)]</sup>
-*   [libopensync-plugin-vformat](https://aur.archlinux.org/packages/libopensync-plugin-vformat/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libopensync-plugin-vformat)]</sup>
-*   [libopensync-plugin-xmlformat](https://aur.archlinux.org/packages/libopensync-plugin-xmlformat/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libopensync-plugin-xmlformat)]</sup>
+*   [libopensync-plugin-evolution2](https://aur.archlinux.org/packages/libopensync-plugin-evolution2/)
+*   [libopensync-plugin-file-unstable](https://aur.archlinux.org/packages/libopensync-plugin-file-unstable/)
+*   [libopensync-plugin-syncml](https://aur.archlinux.org/packages/libopensync-plugin-syncml/)
+*   [libopensync-plugin-vformat](https://aur.archlinux.org/packages/libopensync-plugin-vformat/)
+*   [libopensync-plugin-xmlformat](https://aur.archlinux.org/packages/libopensync-plugin-xmlformat/)
 
  |
-| cli interface | [msynctool-stable](https://aur.archlinux.org/packages/msynctool-stable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/msynctool-stable)]</sup> | msynctool with corresponding version (?) | [osynctool](https://aur.archlinux.org/packages/osynctool/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/osynctool)]</sup> |
-| gui | [multisync-gui](https://aur.archlinux.org/packages/multisync-gui/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/multisync-gui)]</sup> | n.a. |
+| cli interface | [msynctool-stable](https://aur.archlinux.org/packages/msynctool-stable/) | msynctool with corresponding version (?) | [osynctool](https://aur.archlinux.org/packages/osynctool/) |
+| gui | [multisync-gui](https://aur.archlinux.org/packages/multisync-gui/) | n.a. |
 
 The kdepim plugin in the stable branch is useless in KDE 4, since PIM data is managed by akonadi. A suitable plugin is proposed as a part of the oncoming version 0.40\. A user who wants to synchronize a syncml-capable mobile phone with evolution might be satisfied with the latest unstable version. Other users might prefer the old but stable branch. Since the _community_ repository provides the latest unstable version of libopensync a manual downgrading is necessary. For i686, there is a unofficial user repository:
 

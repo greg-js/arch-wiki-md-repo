@@ -1,10 +1,5 @@
 # Xbindkeys
 
-Related articles
-
-*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
-*   [Sxhkd](/index.php/Sxhkd "Sxhkd")
-
 Xbindkeys is a program that allows to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is window manager / DE independent, so if you switch much, xbindkeys is very handy.
 
 ## Contents
@@ -22,7 +17,7 @@ Xbindkeys is a program that allows to bind commands to certain keys or key combi
 
 [Install](/index.php/Install "Install") Xbindkeys with the package [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-For those who prefer a GUI, there is the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR").
+For those who prefer a GUI, there is the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) package in the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -99,7 +94,7 @@ amixer -c 1 set Master toggle
 
 ### GUI method
 
-If you installed the [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xbindkeys_config)]</sup> package, just run:
+If you installed the [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/) package, just run:
 
 ```
 $ xbindkeys_config
@@ -149,7 +144,7 @@ The XF86Audio* and other multimedia keys [[1]](http://wiki.linuxquestions.org/wi
 
 ```
 
-However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/)<sup><small>AUR</small></sup> (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on _xmacro_ and _xmodmap_ from the [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
+However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on _xmacro_ and _xmodmap_ from the [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
 
 ```
 #!/bin/sh

@@ -10,9 +10,9 @@ CDemu can be [installed](/index.php/Pacman "Pacman") with the package [cdemu-cli
 
 There are several GUIs available in the [AUR](/index.php/AUR "AUR").
 
-*   GTK/Gnome: [gcdemu](https://aur.archlinux.org/packages/gcdemu/)<sup><small>AUR</small></sup> is the official GTK version, which also provides a GNOME panel applet.
-*   KDE: [kde-cdemu-manager](https://aur.archlinux.org/packages/kde-cdemu-manager/)<sup><small>AUR</small></sup> is the KDE equivalent which also integrates with Dolphin's Actions menu when right clicking an image file.
-*   Plasma 5 : [kde-cdemu-manager-kf5](https://aur.archlinux.org/packages/kde-cdemu-manager-kf5/)<sup><small>AUR</small></sup> is the KF5 port of [kde-cdemu-manager](https://aur.archlinux.org/packages/kde-cdemu-manager/)<sup><small>AUR</small></sup> .
+*   GTK/Gnome: [gcdemu](https://aur.archlinux.org/packages/gcdemu/) is the official GTK version, which also provides a GNOME panel applet.
+*   KDE: [kde-cdemu-manager](https://aur.archlinux.org/packages/kde-cdemu-manager/) is the KDE equivalent which also integrates with Dolphin's Actions menu when right clicking an image file.
+*   Plasma 5 : [kde-cdemu-manager-kf5](https://aur.archlinux.org/packages/kde-cdemu-manager-kf5/) is the KF5 port of [kde-cdemu-manager](https://aur.archlinux.org/packages/kde-cdemu-manager/) .
 
 ## Examples
 

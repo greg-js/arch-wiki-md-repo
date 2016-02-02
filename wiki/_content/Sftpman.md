@@ -26,7 +26,7 @@ In order to use _sftpman_ or it's GTK frontend _sftpman-gtk_, you'll first need 
 
 ## Installation
 
-The [sftpman](https://aur.archlinux.org/packages/sftpman/)<sup><small>AUR</small></sup> and [sftpman-gtk](https://aur.archlinux.org/packages/sftpman-gtk/)<sup><small>AUR</small></sup> packages are available in the [AUR](/index.php/AUR "AUR").
+The [sftpman](https://aur.archlinux.org/packages/sftpman/) and [sftpman-gtk](https://aur.archlinux.org/packages/sftpman-gtk/) packages are available in the [AUR](/index.php/AUR "AUR").
 
 _sftpman_ provides the base library and the command-line application _sftpman_.
 

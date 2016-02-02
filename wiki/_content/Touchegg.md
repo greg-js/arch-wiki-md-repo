@@ -11,9 +11,9 @@
 
 ## Installation
 
-Install [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> package. Alternatively, it is also available [touchegg-git](https://aur.archlinux.org/packages/touchegg-git/)<sup><small>AUR</small></sup>.
+Install [touchegg](https://aur.archlinux.org/packages/touchegg/) package. Alternatively, it is also available [touchegg-git](https://aur.archlinux.org/packages/touchegg-git/).
 
-You can also install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/)<sup><small>AUR</small></sup> - [Touchegg-GCE](https://github.com/Raffarti/Touchegg-gce) (GUI configuration editor).
+You can also install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/) - [Touchegg-GCE](https://github.com/Raffarti/Touchegg-gce) (GUI configuration editor).
 
 ## Configuration
 
@@ -53,7 +53,7 @@ and then edit this entry:
 4.  in the box labeled "Command" type `touchegg`. Fill in "Name" and "Label" as you choose;
 5.  hit `OK`.
 
-**Note:** `gnome-session-properties` has been removed from `gnome 3.12`. Currently, you can install [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). See more details [[here](https://bbs.archlinux.org/viewtopic.php?id=180282)]
+**Note:** `gnome-session-properties` has been removed from `gnome 3.12`. Currently, you can install [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) from the [AUR](/index.php/AUR "AUR"). See more details [[here](https://bbs.archlinux.org/viewtopic.php?id=180282)]
 
 Alternatively, you can modify your [.xprofile](/index.php/.xprofile ".xprofile"):
 

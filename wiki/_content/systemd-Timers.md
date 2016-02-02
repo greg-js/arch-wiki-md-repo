@@ -1,12 +1,5 @@
 # systemd/Timers
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
-*   [cron](/index.php/Cron "Cron")
-
 Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in `.timer` that control `.service` files or events. Timers have the ability to be an alternative to [cron](/index.php/Cron "Cron") (read [#As a cron replacement](#As_a_cron_replacement)). Timers have built-in support for calendar time events, monotonic time events, and have the ability to run asynchronously.
 
 ## Contents
@@ -119,9 +112,6 @@ Some things that are easy to do with cron are difficult or impossible to do with
 
 *   Complexity: to set up a timed job with _systemd_ you create two files and run a couple `systemctl` commands. Compare that to adding a single line to a crontab.
 *   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up an equivalent using `OnFailure=`.
-*   Random delay: there is no built-in equivalent to cron's `RANDOM_DELAY` for randomly spreading timers out across a given interval (see [bug report](https://bugs.freedesktop.org/show_bug.cgi?id=82084), [test results](https://wiki.archlinux.org/index.php?title=Talk:Systemd/Timers&oldid=356408#Parallelization_section_is_confusing)). Services which you do not want to run concurrently must have their timers manually set to minimize overlap.
-
-**Note:** The `AccuracySec` option is **not** useful for randomly staggering timers since it "is synchronized between all local timers units" (`systemd.timer(5)`). In other words, `AccuracySec` shifts all timer activation times by the same amount. For example, all `OnCalendar=daily` timer units with `AccuracySec=15m` will trigger the associated services at the same point in time between 00:00 and 00:15.
 
 ### MAILTO
 
@@ -169,7 +159,7 @@ Then simply add `OnFailure=status-email-user1@%n.service` to the `[Unit]` sectio
 
 ### Using a crontab
 
-Several of the caveats can be worked around by installing a package that parses a traditional crontab to configure the timers. [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/)<sup><small>AUR</small></sup> and [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)<sup><small>AUR</small></sup> are two such packages. These can provide the missing `MAILTO` and `RANDOM_DELAY` features.
+Several of the caveats can be worked around by installing a package that parses a traditional crontab to configure the timers. [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/) and [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) are two such packages. These can provide the missing `MAILTO` and `RANDOM_DELAY` features.
 
 If you like crontabs just because they provide a unified view of all scheduled jobs, `systemctl` can provide this. See [#Management](#Management).
 
@@ -180,10 +170,10 @@ If you like crontabs just because they provide a unified view of all scheduled j
 *   [Gentoo wiki section](https://wiki.gentoo.org/wiki/Systemd#Timer_services) on _systemd_ timer services
 *   **systemd-crontab-generator** — tool to generate timers/services from crontab and anacrontab files
 
-	[https://github.com/kstep/systemd-crontab-generator](https://github.com/kstep/systemd-crontab-generator) || [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/)<sup><small>AUR</small></sup>
+	[https://github.com/kstep/systemd-crontab-generator](https://github.com/kstep/systemd-crontab-generator) || [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/)
 
 *   **systemd-cron** — provides systemd units to run cron scripts; using _systemd-crontab-generator_ to convert crontabs
 
-	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)<sup><small>AUR</small></sup>
+	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=410718](https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=410718)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=418832](https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=418832)"

@@ -1,34 +1,29 @@
 # Security Advisories
 
-Related articles
-
-*   [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team")
-*   [CVE](/index.php/CVE "CVE")
-*   [Security Advisories/Examples](/index.php/Security_Advisories/Examples "Security Advisories/Examples")
-
 Security Advisories are published by the community driven [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") to the public [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list. All published advisories can be found below, however if you want to be up-to-date its recommended to subscribe to the [list](https://mailman.archlinux.org/mailman/listinfo/arch-security). All assigned CVE's are tracked at the relevant CVE page [CVE](/index.php/CVE "CVE"), by the [ACMT](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team").
 
 ## Contents
 
 *   [1 Scheduled Advisories](#Scheduled_Advisories)
 *   [2 Recent Advisories](#Recent_Advisories)
-    *   [2.1 January 2016](#January_2016)
-    *   [2.2 December 2015](#December_2015)
-    *   [2.3 November 2015](#November_2015)
-    *   [2.4 October 2015](#October_2015)
-    *   [2.5 September 2015](#September_2015)
-    *   [2.6 August 2015](#August_2015)
-    *   [2.7 July 2015](#July_2015)
-    *   [2.8 June 2015](#June_2015)
-    *   [2.9 May 2015](#May_2015)
-    *   [2.10 Apr 2015](#Apr_2015)
-    *   [2.11 Mar 2015](#Mar_2015)
-    *   [2.12 Feb 2015](#Feb_2015)
-    *   [2.13 Jan 2015](#Jan_2015)
-    *   [2.14 Dec 2014](#Dec_2014)
-    *   [2.15 Nov 2014](#Nov_2014)
-    *   [2.16 Oct 2014](#Oct_2014)
-    *   [2.17 Sep 2014](#Sep_2014)
+    *   [2.1 February 2016](#February_2016)
+    *   [2.2 January 2016](#January_2016)
+    *   [2.3 December 2015](#December_2015)
+    *   [2.4 November 2015](#November_2015)
+    *   [2.5 October 2015](#October_2015)
+    *   [2.6 September 2015](#September_2015)
+    *   [2.7 August 2015](#August_2015)
+    *   [2.8 July 2015](#July_2015)
+    *   [2.9 June 2015](#June_2015)
+    *   [2.10 May 2015](#May_2015)
+    *   [2.11 Apr 2015](#Apr_2015)
+    *   [2.12 Mar 2015](#Mar_2015)
+    *   [2.13 Feb 2015](#Feb_2015)
+    *   [2.14 Jan 2015](#Jan_2015)
+    *   [2.15 Dec 2014](#Dec_2014)
+    *   [2.16 Nov 2014](#Nov_2014)
+    *   [2.17 Oct 2014](#Oct_2014)
+    *   [2.18 Sep 2014](#Sep_2014)
 *   [3 Publishing a new advisory](#Publishing_a_new_advisory)
     *   [3.1 Templates](#Templates)
     *   [3.2 Vim-Snippet](#Vim-Snippet)
@@ -38,6 +33,13 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
+
+### February 2016
+
+*   [2 February 2016] [ASA-201602-4](https://lists.archlinux.org/pipermail/arch-security/2016-February/000544.html) [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) man-in-the-middle
+*   [2 February 2016] [ASA-201602-3](https://lists.archlinux.org/pipermail/arch-security/2016-February/000543.html) [curl](https://www.archlinux.org/packages/?name=curl) man-in-the-middle
+*   [2 February 2016] [ASA-201602-2](https://lists.archlinux.org/pipermail/arch-security/2016-February/000542.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) permission bypass
+*   [2 February 2016] [ASA-201602-1](https://lists.archlinux.org/pipermail/arch-security/2016-February/000540.html) [python-django](https://www.archlinux.org/packages/?name=python-django) permission bypass
 
 ### January 2016
 
@@ -557,4 +559,4 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417851](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=417851)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=418815](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=418815)"

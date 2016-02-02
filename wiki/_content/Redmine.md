@@ -1,13 +1,5 @@
 # Redmine
 
-Related articles
-
-*   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
-*   [RVM](/index.php/RVM "RVM")
-*   [MariaDB](/index.php/MariaDB "MariaDB")
-*   [Apache](/index.php/Apache "Apache")
-*   [Nginx](/index.php/Nginx "Nginx")
-
 **Redmine** is a [free and open source](https://en.wikipedia.org/wiki/free_and_open_source_software "wikipedia:free and open source software"), web-based [project management](https://en.wikipedia.org/wiki/project_management "wikipedia:project management") and [issue tracking](https://en.wikipedia.org/wiki/Issue_tracking_system "wikipedia:Issue tracking system") tool. It handles multiple projects and subprojects. It [features](http://www.redmine.org/projects/redmine/wiki/Features) per project wikis and forums, time tracking, and flexible role based access control. It includes a [calendar](https://en.wikipedia.org/wiki/calendar "wikipedia:calendar") and [Gantt charts](https://en.wikipedia.org/wiki/Gantt_chart "wikipedia:Gantt chart") to aid visual representation of projects and their [deadlines](https://en.wikipedia.org/wiki/time_limit "wikipedia:time limit"). Redmine integrates with various [version control](https://en.wikipedia.org/wiki/version_control "wikipedia:version control") systems and includes a repository browser and diff viewer.
 
 Redmine is written using the [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails") framework. It is cross-platform and cross-[database](https://en.wikipedia.org/wiki/database "wikipedia:database") and supports 34 languages.
@@ -70,17 +62,17 @@ Although this guide will go through the entire installation process, this is not
 ### Ruby
 
 | Redmine version | Supported Ruby Versions | Rails version used |
-| 3.0.2 | **ruby** 1.9.3<sup>3</sup>, 2.0.0<sup>2</sup>, 2.1, 2.2<sup>1</sup> | **Rails** 4.2<sup>0</sup> |
+| 3.0.2 | **ruby** 1.9.3, 2.0.0, 2.1, 2.2 | **Rails** 4.2 |
 
 There are two simple ways to install Ruby: installing the [ruby](https://www.archlinux.org/packages/?name=ruby) package as described in [ruby](/index.php/Ruby "Ruby") or installing RVM as described in [RVM](/index.php/RVM "RVM") **(recommended)**.
 
-**Note:** <sup>0</sup> Rails 4.2.1 has non ASCII URL issue on MinGW Ruby ([Windows-based installer](http://rubyinstaller.org/)) thin and puma ([#19321](http://www.redmine.org/issues/19321), [#19374](http://www.redmine.org/issues/19374))
+**Note:**  Rails 4.2.1 has non ASCII URL issue on MinGW Ruby ([Windows-based installer](http://rubyinstaller.org/)) thin and puma ([#19321](http://www.redmine.org/issues/19321), [#19374](http://www.redmine.org/issues/19374))
 
-**Note:** <sup>1</sup> MinGW Ruby 2.2 has nokogiri issue ([#19419](http://www.redmine.org/issues/19419)).
+**Note:**  MinGW Ruby 2.2 has nokogiri issue ([#19419](http://www.redmine.org/issues/19419)).
 
-**Note:** <sup>2</sup> As of 2013-03-19, SQL Server support is reported broken with **ruby 2.0.0 under Windows** because of a [database adapter gem incompatibility](https://github.com/rails-sqlserver/tiny_tds/issues/110)
+**Note:**  As of 2013-03-19, SQL Server support is reported broken with **ruby 2.0.0 under Windows** because of a [database adapter gem incompatibility](https://github.com/rails-sqlserver/tiny_tds/issues/110)
 
-**Note:** <sup>3</sup> MRI 1.9.3p327 contains a [bug](http://bugs.ruby-lang.org/issues/7374) breaking plugin loading under Windows which 1.9.3p194 or 1.9.3p392 haven't.
+**Note:**  MRI 1.9.3p327 contains a [bug](http://bugs.ruby-lang.org/issues/7374) breaking plugin loading under Windows which 1.9.3p194 or 1.9.3p392 haven't.
 
 **Warning:** If you use RVM, pay attention to the single and multiple user differences! If you are not creating a hosting service, the multiple user (available for all users on the machine) should be the choice for simpler debuging.
 
@@ -98,7 +90,7 @@ To install [mariadb](https://www.archlinux.org/packages/?name=mariadb) simply re
 
 [Oracle MySQL was dropped](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) to the [AUR](/index.php/AUR "AUR").
 
-[mysql](https://aur.archlinux.org/packages/mysql/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+[mysql](https://aur.archlinux.org/packages/mysql/) in the [AUR](/index.php/AUR "AUR").
 
 #### PostgreSQL 8.2 or higher
 
@@ -126,7 +118,7 @@ To install [apache](https://www.archlinux.org/packages/?name=apache) simply refe
 
 #### Mongrel
 
-To install Mongrel server (ruby gem) simply refer to [Ruby on Rails#Mongrel](/index.php/Ruby_on_Rails#Mongrel "Ruby on Rails")<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-02-05]</sup>.
+To install Mongrel server (ruby gem) simply refer to [Ruby on Rails#Mongrel](/index.php/Ruby_on_Rails#Mongrel "Ruby on Rails").
 
 #### Unicorn
 
@@ -178,7 +170,7 @@ To enable [OpenID](http://janrain.com/openid-enabled) support, is required a ver
 
 ### Build and Installation
 
-Download, build and install the [redmine](https://aur.archlinux.org/packages/redmine/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+Download, build and install the [redmine](https://aur.archlinux.org/packages/redmine/) package from the [AUR](/index.php/AUR "AUR").
 
 **Note:** Detailed build instructions are in [Build the package](/index.php/Arch_User_Repository#Build_the_package "Arch User Repository"). It is **HIGHLY** recommended to read the [AUR](/index.php/AUR "AUR") page to understand what are you doing.
 

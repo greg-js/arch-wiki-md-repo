@@ -86,7 +86,7 @@ The following table lists all languages encountered on the wiki along with relat
 | English name | Localized name | Subtag | Root category | External wiki |
 | Arabic | العربية | ar | [Category:العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية") |
 | Bulgarian | Български | bg | [Category:Български](/index.php/Category:%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8 "Category:Български") |
-| Catalan | Català | _not supported_ <sup>1</sup> | [Category:Català](/index.php/Category:Catal%C3%A0 "Category:Català") |
+| Catalan | Català | _not supported_  | [Category:Català](/index.php/Category:Catal%C3%A0 "Category:Català") |
 | Chinese (Simplified) | 简体中文 | zh-cn | [Category:简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") |
 | Chinese (Traditional) | 正體中文 | zh-tw | [Category:正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") |
 | Croatian | Hrvatski | hr | [Category:Hrvatski](/index.php/Category:Hrvatski "Category:Hrvatski") |
@@ -94,7 +94,7 @@ The following table lists all languages encountered on the wiki along with relat
 | Danish | Dansk | da | [Category:Dansk](/index.php/Category:Dansk "Category:Dansk") |
 | Dutch | Nederlands | nl | [Category:Nederlands](/index.php/Category:Nederlands "Category:Nederlands") |
 | English | English | en | [Category:English](/index.php/Category:English "Category:English") |
-| Esperanto | Esperanto | _not supported_ <sup>1</sup> | [Category:Esperanto](/index.php/Category:Esperanto "Category:Esperanto") |
+| Esperanto | Esperanto | _not supported_  | [Category:Esperanto](/index.php/Category:Esperanto "Category:Esperanto") |
 | Finnish | Suomi | fi | [Category:Suomi](/index.php/Category:Suomi "Category:Suomi") | [http://www.archlinux.fi/wiki/](http://www.archlinux.fi/wiki/) |
 | French | Français | fr | — | [http://wiki.archlinux.fr/](http://wiki.archlinux.fr/) |
 | German | Deutsch | de | — | [https://wiki.archlinux.de/](https://wiki.archlinux.de/) |
@@ -106,7 +106,7 @@ The following table lists all languages encountered on the wiki along with relat
 | Japanese | 日本語 | ja | — | [https://wiki.archlinuxjp.org/](https://wiki.archlinuxjp.org/) |
 | Korean | 한국어 | ko | [Category:한국어](/index.php/Category:%ED%95%9C%EA%B5%AD%EC%96%B4 "Category:한국어") |
 | Lithuanian | Lietuviškai | lt | [Category:Lietuviškai](/index.php/Category:Lietuvi%C5%A1kai "Category:Lietuviškai") |
-| Norwegian (Bokmål) | Norsk Bokmål | _not supported_ <sup>1</sup> | [Category:Norsk Bokmål](/index.php/Category:Norsk_Bokm%C3%A5l "Category:Norsk Bokmål") |
+| Norwegian (Bokmål) | Norsk Bokmål | _not supported_  | [Category:Norsk Bokmål](/index.php/Category:Norsk_Bokm%C3%A5l "Category:Norsk Bokmål") |
 | Persian | فارسی | fa | — | [http://wiki.archusers.ir/](http://wiki.archusers.ir/) |
 | Polish | Polski | pl | [Category:Polski](/index.php/Category:Polski "Category:Polski") |
 | Portuguese | Português | pt | [Category:Português](/index.php/Category:Portugu%C3%AAs "Category:Português") |
@@ -119,9 +119,9 @@ The following table lists all languages encountered on the wiki along with relat
 | Thai | ไทย | th | [Category:ไทย](/index.php/Category:%E0%B9%84%E0%B8%97%E0%B8%A2 "Category:ไทย") |
 | Turkish | Türkçe | tr | — | [http://archtr.org/wiki/](http://archtr.org/wiki/) |
 | Ukrainian | Українська | uk | [Category:Українська](/index.php/Category:%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0 "Category:Українська") |
-| Vietnamese | Tiếng Việt | _not supported_ <sup>1</sup> | — | [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/) |
+| Vietnamese | Tiếng Việt | _not supported_  | — | [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/) |
 
-<sup>1</sup> The _not supported_ note in the "Subtag" field means that interlanguage links for that language are not available. See [#Adding local interlanguage links](#Adding_local_interlanguage_links) and [#Adding external interlanguage links](#Adding_external_interlanguage_links).
+ The _not supported_ note in the "Subtag" field means that interlanguage links for that language are not available. See [#Adding local interlanguage links](#Adding_local_interlanguage_links) and [#Adding external interlanguage links](#Adding_external_interlanguage_links).
 
 Subtags are treated case-insensitively by the MediaWiki backend. By convention, the interlanguage links on ArchWiki should use the lowercase form of the subtag. For information regarding subtags, please see:
 

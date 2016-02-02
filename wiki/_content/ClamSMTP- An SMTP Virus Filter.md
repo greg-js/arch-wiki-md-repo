@@ -24,7 +24,7 @@ See:
 
 Before you install Clamsmtp, install and configure Postfix, create users for your SMTP server, and test if it is working. Install Clamav, and test it too.
 
-If both of your tools work well, [install](/index.php/Install "Install") the [clamsmtp](https://aur.archlinux.org/packages/clamsmtp/)<sup><small>AUR</small></sup>.
+If both of your tools work well, [install](/index.php/Install "Install") the [clamsmtp](https://aur.archlinux.org/packages/clamsmtp/).
 
 ## Configuration
 

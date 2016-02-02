@@ -1,12 +1,5 @@
 # Midori
 
-Related articles
-
-*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
-*   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
-*   [UZBL-Browser](/index.php/UZBL-Browser "UZBL-Browser")
-*   [Dillo](/index.php/Dillo "Dillo")
-
 [Midori](http://midori-browser.org) is a lightweight Webkit-based web browser developed by Christian Dywan. It is part of the [Xfce](/index.php/Xfce "Xfce") Goodies project.
 
 Some of its features are:
@@ -41,8 +34,8 @@ A GTK+2 and GTK+3 versions of Midori can be [installed](/index.php/Pacman "Pacma
 
 Development versions are available in the [AUR](/index.php/AUR "AUR"):
 
-*   [midori-gtk2-bzr](https://aur.archlinux.org/packages/midori-gtk2-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/midori-gtk2-bzr)]</sup> - GTK+ 2 development version.
-*   [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/)<sup><small>AUR</small></sup> - GTK+ 3 and WebKitGTK3-based development version.
+*   [midori-gtk2-bzr](https://aur.archlinux.org/packages/midori-gtk2-bzr/) - GTK+ 2 development version.
+*   [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) - GTK+ 3 and WebKitGTK3-based development version.
 
 ## Extensions
 
@@ -79,7 +72,7 @@ For manual installation, you have to create the folder `~/.local/share/midori/sc
 
 ### Flash plugin
 
-To get the Flash plugin working in Midori you can install the [midori-flash](https://aur.archlinux.org/packages/midori-flash/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") or follow the instructions at [Epiphany#Flash](/index.php/Epiphany#Flash "Epiphany").
+To get the Flash plugin working in Midori you can install the [midori-flash](https://aur.archlinux.org/packages/midori-flash/) package from [AUR](/index.php/AUR "AUR") or follow the instructions at [Epiphany#Flash](/index.php/Epiphany#Flash "Epiphany").
 
 If you're running the i686 architecture, or you don't want to use to the AUR script, then install flashplugin from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your .bashrc, or corresponding shell configuration file.
 

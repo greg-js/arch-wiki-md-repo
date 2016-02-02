@@ -1,10 +1,5 @@
 # ISCSI Initiator
 
-Related articles
-
-*   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
-*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
-
 With [Wikipedia:iSCSI](https://en.wikipedia.org/wiki/iSCSI "wikipedia:iSCSI") you can access storage over an IP-based network.
 
 The exported storage entity is the **[target](/index.php/ISCSI_Target "ISCSI Target")** and the importing entity is the **initiator**.

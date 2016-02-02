@@ -6,7 +6,7 @@ From nbSMTP manpage: nbSMTP is a lightweight SMTP client. It simply takes a mess
 
 ## Installation
 
-Install nbSMTP from the [AUR](/index.php/AUR "AUR"): [nbsmtp](https://aur.archlinux.org/packages/nbsmtp/)<sup><small>AUR</small></sup>.
+Install nbSMTP from the [AUR](/index.php/AUR "AUR"): [nbsmtp](https://aur.archlinux.org/packages/nbsmtp/).
 
 ## Forward to a Gmail Mail Server
 

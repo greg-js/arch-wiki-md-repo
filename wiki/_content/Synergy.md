@@ -83,7 +83,7 @@ In synergy, the computer with keyboard and mouse you want to share is called ser
 
 The configuration file for Arch Linux is `/etc/synergy.conf`. If it does not exist, create it using `/etc/synergy.conf.example`, whose comments should give you enough information for a basic configuration; if you need further reference, read the guide mentioned above.
 
-**Tip:** You may also use [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") which provide a GUI to simplify the configuration process.
+**Tip:** You may also use [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) from the [AUR](/index.php/AUR "AUR") which provide a GUI to simplify the configuration process.
 
 **Tip:** Make sure the server port is not blocked. By default, synergy uses port 24800.
 

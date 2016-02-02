@@ -1,9 +1,5 @@
 # Install from existing Linux
 
-Related articles
-
-*   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
-
 This document describes the bootstrapping process required to install Arch Linux from a running Linux host system. After bootstrapping, the installation proceeds as described in the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 Installing Arch Linux from a running Linux is useful for:

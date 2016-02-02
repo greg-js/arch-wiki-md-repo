@@ -35,11 +35,11 @@ CherryMusic is available in the [AUR](/index.php/AUR "AUR"). There are two packa
 
 ### Stable version
 
-The latest stable version of [cherrymusic](https://aur.archlinux.org/packages/cherrymusic/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+The latest stable version of [cherrymusic](https://aur.archlinux.org/packages/cherrymusic/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Git version
 
-For a more up-to-date version of CherryMusic with experimental features, install [cherrymusic-devel-git](https://aur.archlinux.org/packages/cherrymusic-devel-git/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+For a more up-to-date version of CherryMusic with experimental features, install [cherrymusic-devel-git](https://aur.archlinux.org/packages/cherrymusic-devel-git/) from [AUR](/index.php/AUR "AUR").
 
 ### Optional dependencies
 

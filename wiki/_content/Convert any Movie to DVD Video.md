@@ -1,11 +1,6 @@
 # Convert any Movie to DVD Video
 
-Related articles
-
-*   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
-*   [MPlayer](/index.php/MPlayer "MPlayer")
-
-MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package. See [MPlayer](/index.php/MPlayer "MPlayer") for details. [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup> [does not include MEncoder](http://www.mplayer2.org/differences/#mencoder-is-no-longer-available).
+MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package. See [MPlayer](/index.php/MPlayer "MPlayer") for details. [mplayer2](https://aur.archlinux.org/packages/mplayer2/) [does not include MEncoder](http://www.mplayer2.org/differences/#mencoder-is-no-longer-available).
 
 	_Why another article about this process?_ There is a plethora of articles, man pages, and blog entries about how to convert any movie to a standard DVD Video viewable on any hardware DVD player. However, most of those pages focus on one aspect of this process. The point of this article is to summarize most of the available knowledge in only one place.
 

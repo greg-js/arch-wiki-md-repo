@@ -1,9 +1,5 @@
 # sxiv
 
-Related articles
-
-*   [feh](/index.php/Feh "Feh")
-
 [sxiv](http://github.com/muennich/sxiv) , Simple [X](/index.php/X "X") Image Viewer is a lightweight and scriptable image viewer written in C.
 
 ## Contents
@@ -59,7 +55,7 @@ $ mkdir ~/.trash
 
 ```
 
-**Tip:** You may want to use a [standards-compliant trashcan](http://freedesktop.org/wiki/Specifications/trash-spec/) (like [trash-cli](https://www.archlinux.org/packages/?name=trash-cli) or [bashtrash](https://aur.archlinux.org/packages/bashtrash/)<sup><small>AUR</small></sup>) rather than `mv "$2" ~/.trash`.
+**Tip:** You may want to use a [standards-compliant trashcan](http://freedesktop.org/wiki/Specifications/trash-spec/) (like [trash-cli](https://www.archlinux.org/packages/?name=trash-cli) or [bashtrash](https://aur.archlinux.org/packages/bashtrash/)) rather than `mv "$2" ~/.trash`.
 
 ## Tips and tricks
 
@@ -72,7 +68,7 @@ $ _scriptname_ a_single_image.jpg
 
 ```
 
-Alternatively you can also install the script as a package from the AUR: [sxiv-rifle](https://aur.archlinux.org/packages/sxiv-rifle/)<sup><small>AUR</small></sup>.
+Alternatively you can also install the script as a package from the AUR: [sxiv-rifle](https://aur.archlinux.org/packages/sxiv-rifle/).
 
 As indicated in the comments of the script, it may be used to have this behavior when opening images from within [ranger](/index.php/Ranger "Ranger").
 

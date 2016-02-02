@@ -8,13 +8,13 @@ Galera is a synchronous multi-master cluster for MySQL/InnoDB databases. For mor
 
 The two components Galera cluster comprised of are Galera plugin itself and a patched version of MySQL server which connect using wsrep API.
 
-Install the [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mysql-wsrep)]</sup> and [galera](https://aur.archlinux.org/packages/galera/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/galera)]</sup> packages from the [AUR](/index.php/AUR "AUR").
+Install the [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/) and [galera](https://aur.archlinux.org/packages/galera/) packages from the [AUR](/index.php/AUR "AUR").
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mysqld.service` daemon.
 
 ## Configuration
 
-Once you have installed the [galera](https://aur.archlinux.org/packages/galera/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/galera)]</sup> and [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mysql-wsrep)]</sup> packages, you need to configure the cluster.
+Once you have installed the [galera](https://aur.archlinux.org/packages/galera/) and [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/) packages, you need to configure the cluster.
 
 On each node edit `/etc/mysql/my.cnf` and update the wsrep_cluster_address variable so it contains the list of all nodes in the cluster:
 

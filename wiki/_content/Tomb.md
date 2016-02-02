@@ -1,12 +1,5 @@
 # Tomb
 
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
-*   [Tcplay](/index.php/Tcplay "Tcplay")
-
 From [the official website](http://tomb.dyne.org/):
 
 	Tomb is 100% free and open source software to make strong encryption easy to use.
@@ -17,7 +10,7 @@ From [the official website](http://tomb.dyne.org/):
 
 Tomb aims to be a really simple to use software to manage "encrypted directories", called tombs. A tomb can only be opened if you both have a keyfile and you know the password. It also has advanced features, like steganography.
 
-You can install [tomb](https://aur.archlinux.org/packages/tomb/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+You can install [tomb](https://aur.archlinux.org/packages/tomb/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Contents
 
@@ -29,7 +22,7 @@ You can install [tomb](https://aur.archlinux.org/packages/tomb/)<sup><small>AUR<
 
 ## Installation
 
-[Install](/index.php/Install "Install") [tomb](https://aur.archlinux.org/packages/tomb/)<sup><small>AUR</small></sup> or [tomb-git](https://aur.archlinux.org/packages/tomb-git/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [tomb](https://aur.archlinux.org/packages/tomb/) or [tomb-git](https://aur.archlinux.org/packages/tomb-git/).
 
 ## Usage
 
@@ -64,7 +57,7 @@ For more information see `tomb -h` and `man tomb`.
 
 ## GUI Usage
 
-To make usage of tomb even easier, you can use a GUI wrapper called gtomb. Find it here: [gtomb-git](https://aur.archlinux.org/packages/gtomb-git/)<sup><small>AUR</small></sup>
+To make usage of tomb even easier, you can use a GUI wrapper called gtomb. Find it here: [gtomb-git](https://aur.archlinux.org/packages/gtomb-git/)
 
 It includes almost all features tomb offers, but is still in active development so use it with caution.
 

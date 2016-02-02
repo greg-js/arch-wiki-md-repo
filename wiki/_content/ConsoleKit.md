@@ -1,10 +1,5 @@
 # ConsoleKit
 
-Related articles
-
-*   [PolicyKit](/index.php/PolicyKit "PolicyKit")
-*   [init](/index.php/Init "Init")
-
 **Warning:** Arch Linux only has official support for _logind_ [[1]](https://www.archlinux.org/news/consolekit-replaced-by-logind/) and [systemd](/index.php/Systemd "Systemd"). When using _ConsoleKit_, please mention so in support requests.
 
 **Note:** While Consolekit is no longer maintained upstream, the fork ConsoleKit2 is under development. [[2]](https://github.com/ConsoleKit2/ConsoleKit2)
@@ -32,7 +27,7 @@ Related articles
 
 ## Installation
 
-Install [consolekit](https://aur.archlinux.org/packages/consolekit/)<sup><small>AUR</small></sup> and [polkit-consolekit](https://aur.archlinux.org/packages/polkit-consolekit/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [consolekit](https://aur.archlinux.org/packages/consolekit/) and [polkit-consolekit](https://aur.archlinux.org/packages/polkit-consolekit/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -64,17 +59,17 @@ If ConsoleKit is not working (`ck-list-sessions` command showing active = FALSE)
 
 #### Xfce
 
-For a login manager, [lxdm-consolekit](https://aur.archlinux.org/packages/lxdm-consolekit/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") or [LightDM](/index.php/LightDM "LightDM") could be used.
+For a login manager, [lxdm-consolekit](https://aur.archlinux.org/packages/lxdm-consolekit/) from the [AUR](/index.php/AUR "AUR") or [LightDM](/index.php/LightDM "LightDM") could be used.
 
 #### Mate
 
-[Install](/index.php/Install "Install") [mate-session-manager-upower](https://aur.archlinux.org/packages/mate-session-manager-upower/)<sup><small>AUR</small></sup> and [mate-power-manager-upower](https://aur.archlinux.org/packages/mate-power-manager-upower/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [mate-session-manager-upower](https://aur.archlinux.org/packages/mate-session-manager-upower/) and [mate-power-manager-upower](https://aur.archlinux.org/packages/mate-power-manager-upower/).
 
-If you use [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)<sup><small>AUR</small></sup> as a login manager and have trouble logging in, edit `/etc/pam.d/mdm`, comment out `session required pam_systemd.so` and restart `mdm`. Additionally append `session optional pam_ck_connector.so nox11` if you have [consolekit](https://aur.archlinux.org/packages/consolekit/)<sup><small>AUR</small></sup> installed.
+If you use [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/) as a login manager and have trouble logging in, edit `/etc/pam.d/mdm`, comment out `session required pam_systemd.so` and restart `mdm`. Additionally append `session optional pam_ck_connector.so nox11` if you have [consolekit](https://aur.archlinux.org/packages/consolekit/) installed.
 
 #### KDE
 
-The kdebase-workspace package needs to be recompiled for use with consolekit ([kdebase-workspace-consolekit](https://aur.archlinux.org/packages/kdebase-workspace-consolekit/)<sup><small>AUR</small></sup> is available from the AUR).
+The kdebase-workspace package needs to be recompiled for use with consolekit ([kdebase-workspace-consolekit](https://aur.archlinux.org/packages/kdebase-workspace-consolekit/) is available from the AUR).
 
 ## Tips and tricks
 

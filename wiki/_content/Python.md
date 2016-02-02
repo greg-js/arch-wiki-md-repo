@@ -1,11 +1,5 @@
 # Python
 
-Related articles
-
-*   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
-*   [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv")
-*   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
 	_Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C. The language provides constructs intended to enable clear programs on both a small and large scale._
@@ -202,15 +196,15 @@ To use these with Python, you may need to install the associated widget kits.
 
 Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version (e.g. RHEL 5.x has Python 2.4, or Ubuntu 12.04 has Python 3.1):
 
-*   [python15](https://aur.archlinux.org/packages/python15/)<sup><small>AUR</small></sup>: Python 1.5.2
-*   [python24](https://aur.archlinux.org/packages/python24/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python24)]</sup>: Python 2.4.6
-*   [python25](https://aur.archlinux.org/packages/python25/)<sup><small>AUR</small></sup>: Python 2.5.6
-*   [python26](https://aur.archlinux.org/packages/python26/)<sup><small>AUR</small></sup>: Python 2.6.9
-*   [python30](https://aur.archlinux.org/packages/python30/)<sup><small>AUR</small></sup>: Python 3.0.1
-*   [python31](https://aur.archlinux.org/packages/python31/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python31)]</sup>: Python 3.1.5
-*   [python32](https://aur.archlinux.org/packages/python32/)<sup><small>AUR</small></sup>: Python 3.2.5
-*   [python33](https://aur.archlinux.org/packages/python33/)<sup><small>AUR</small></sup>: Python 3.3.5
-*   [python34](https://aur.archlinux.org/packages/python34/)<sup><small>AUR</small></sup>: Python 3.4.3
+*   [python15](https://aur.archlinux.org/packages/python15/): Python 1.5.2
+*   [python24](https://aur.archlinux.org/packages/python24/): Python 2.4.6
+*   [python25](https://aur.archlinux.org/packages/python25/): Python 2.5.6
+*   [python26](https://aur.archlinux.org/packages/python26/): Python 2.6.9
+*   [python30](https://aur.archlinux.org/packages/python30/): Python 3.0.1
+*   [python31](https://aur.archlinux.org/packages/python31/): Python 3.1.5
+*   [python32](https://aur.archlinux.org/packages/python32/): Python 3.2.5
+*   [python33](https://aur.archlinux.org/packages/python33/): Python 3.3.5
+*   [python34](https://aur.archlinux.org/packages/python34/): Python 3.4.3
 
 As of July 2014, Python upstream only supports Python 2.7, 3.2, 3.3, and 3.4 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
 

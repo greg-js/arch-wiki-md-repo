@@ -1,13 +1,5 @@
 # Partitioning
 
-Related articles
-
-*   [fstab](/index.php/Fstab "Fstab")
-*   [LVM](/index.php/LVM "LVM")
-*   [Swap](/index.php/Swap "Swap")
-*   [File systems](/index.php/File_systems "File systems")
-*   [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy")
-
 _Partitioning_ a hard drive allows one to logically divide the available space into sections that can be accessed independently of one another.
 
 An entire hard drive may be allocated to a single partition, or one may divide the available storage space across multiple partitions. A number of scenarios require creating multiple partitions: dual- or multi-booting, for example, or maintaining a [swap](/index.php/Swap "Swap") partition. In other cases, partitioning is used as a means of logically separating data, such as creating separate partitions for audio and video files. Common partitioning schemes are discussed in detail below.
@@ -218,7 +210,7 @@ The size of the partitions depends on personal preference, but the following inf
 
 *   **QtParted** — Similar to Partitionmanager, available in [AUR](/index.php/AUR "AUR").
 
-	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtparted)]</sup>
+	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)
 
 ## Partition alignment
 

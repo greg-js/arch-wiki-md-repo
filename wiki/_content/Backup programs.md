@@ -1,13 +1,5 @@
 # Backup programs
 
-Related articles
-
-*   [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")
-*   [Full System Backup with tar](/index.php/Full_System_Backup_with_tar "Full System Backup with tar")
-*   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
-*   [List of applications#File sharing](/index.php/List_of_applications#File_sharing "List of applications")
-*   [Snapper](/index.php/Snapper "Snapper")
-
 This wiki page contains information about various backup programs. It is a good idea to have regular backups of important data, most notably configuration files (`/etc/*`) and the local pacman database (usually `/var/lib/pacman/local/*`).
 
 ## Contents
@@ -42,7 +34,7 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 
 *   **Free File Sync** — Free File Sync helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.
 
-	[http://freefilesync.sourceforge.net/](http://freefilesync.sourceforge.net/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)<sup><small>AUR</small></sup>
+	[http://freefilesync.sourceforge.net/](http://freefilesync.sourceforge.net/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)
 
 *   **git-annex** — Creates a synchronised folder on each of your OSX and Linux computers, Android devices, removable drives, NAS appliances, and cloud services.
 
@@ -86,7 +78,7 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
     *   Restores files.
     *   Cross-platform support.
 
-	[http://synkron.sourceforge.net/](http://synkron.sourceforge.net/) || [synkron](https://aur.archlinux.org/packages/synkron/)<sup><small>AUR</small></sup>
+	[http://synkron.sourceforge.net/](http://synkron.sourceforge.net/) || [synkron](https://aur.archlinux.org/packages/synkron/)
 
 *   **[Unison](/index.php/Unison "Unison")** — A program that synchronizes files between two machines over network (LAN or Inet) using a smart diff method + rsync. Allows the user to interactively choose which changes to push, pull, or merge.
 
@@ -124,46 +116,46 @@ See also [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfile
 *   **Notes**: additional notes.
 
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | FS monitoring | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Notes |
-| [Arch Backup](http://code.google.com/p/archlinux-stuff/) | [arch-backup](https://www.archlinux.org/packages/?name=arch-backup)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> |  ? | configurable | ? | ? | ? | ? | ? | ? | ? | ? | Yes | No |  ? | ? | Multiple backup targets. |
-| [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/)<sup><small>AUR</small></sup> | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | ? | ? | ? | Yes | Yes | GPLv2 | Windows | Yes |
-| [Attic](https://github.com/jborg/attic/) | [attic](https://aur.archlinux.org/packages/attic/)<sup><small>AUR</small></sup> | Python | Yes | AES | Yes | Yes | Yes | No | Yes | Yes | ? | Yes | No | BSD | Yes |
+| [Arch Backup](http://code.google.com/p/archlinux-stuff/) | [arch-backup](https://www.archlinux.org/packages/?name=arch-backup) |  ? | configurable | ? | ? | ? | ? | ? | ? | ? | ? | Yes | No |  ? | ? | Multiple backup targets. |
+| [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/) | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | ? | ? | ? | Yes | Yes | GPLv2 | Windows | Yes |
+| [Attic](https://github.com/jborg/attic/) | [attic](https://aur.archlinux.org/packages/attic/) | Python | Yes | AES | Yes | Yes | Yes | No | Yes | Yes | ? | Yes | No | BSD | Yes |
 | [Back In Time](https://github.com/bit-team/backintime) | [Back In Time](/index.php/Back_In_Time "Back In Time") | python, rsync, diff | No | No | ? | SSH | ? | ? | ? | ? | ? | No | Qt | GPL | Yes |
-| [Backerupper](http://sourceforge.net/projects/backerupper/) | [backerupper](https://aur.archlinux.org/packages/backerupper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/backerupper)]</sup> |  ? | .tar.gz | No | ? | ? | ? | ? | ? | ? | ? | No | Yes | GPLv2 | No |
+| [Backerupper](http://sourceforge.net/projects/backerupper/) | [backerupper](https://aur.archlinux.org/packages/backerupper/) |  ? | .tar.gz | No | ? | ? | ? | ? | ? | ? | ? | No | Yes | GPLv2 | No |
 | [BackupPC](http://backuppc.sourceforge.net/index.html) | [BackupPC](/index.php/BackupPC "BackupPC") | Perl | Yes | ? | No | Yes | Yes | ? | ? | Yes | ? | No | Web | GPLv2 | Any (no client needed) | Yes | High-performance, enterprise-grade system for backing up Unix, Linux, Windows, and Mac OS X desktops and laptops to a remote server. Deduplication: identical files across multiple backups of the same or different PCs are stored only once resulting in substantial savings in disk storage and disk I/O. |
 | [Bacula](http://www.bacula.org) | [bacula-*](https://aur.archlinux.org/packages/?K=bacula-) in [AUR](/index.php/AUR "AUR") | C++ | Yes | Yes | ? | Yes | ? | ? | ? | Yes | ? | Yes | GUI, Web | AGPLv3 | Windows, OS X | Yes |
 | [BorgBackup](http://borgbackup.readthedocs.org/en/stable/) | [borg](https://www.archlinux.org/packages/?name=borg) | Attic | Yes | Yes | Yes | SSH | ? | ? | Yes | ? | ? | Yes | No | BSD | *BSD, OS X | Yes | Local caching of files; quick detection of unmodified files. |
-| [btar](http://viric.name/cgi-bin/btar) | [btar](https://aur.archlinux.org/packages/btar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/btar)]</sup> | C | Yes | Yes | ? | ? | ? | ? | ? | ? | ? | Yes | No | GPLv3 | Yes | Tar-compatible archiver which allows arbitrary compression and ciphering, redundancy, differential backup, indexed extraction, multicore compression, input and output serialisation, and tolerance to partial archive errors. |
-| [bup](https://github.com/bup/bup) | [bup](https://www.archlinux.org/packages/?name=bup) [bup-git](https://aur.archlinux.org/packages/bup-git/)<sup><small>AUR</small></sup> | C, Python, git | No | No | Yes | Yes | ? | ? | ? | ? | ? | Yes | third party | GPLv2 | Windows, OS X, NetBSD, Solaris | Yes |
-| [burp](http://burp.grke.org) | [burp-backup](https://aur.archlinux.org/packages/burp-backup/)<sup><small>AUR</small></sup> | librsync | Yes | Yes | Yes | Yes | ? | ? | ? | ? | ? | Yes | ? | AGPLv3 | Windows | Yes |
-| [ColdStorage](http://gitorious.org/coldstorage) | [coldstorage-git](https://aur.archlinux.org/packages/coldstorage-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/coldstorage-git)]</sup> | git | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | Qt |  ? | ? |
-| [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/)<sup><small>AUR</small></sup> [kdar](https://aur.archlinux.org/packages/kdar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdar)]</sup> (front-end) | C++ | special archive format | Yes | ? | Yes | ? | ? | ? | ? | ? | Yes | DarGUI | GPL | Windows, Solaris, FreeBSD, NetBSD, MacOS X | Yes | Short for Disk ARchive. Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sarab)]</sup>. |
-| [DarGUI](http://dargui.sourceforge.net/) | [dargui](https://aur.archlinux.org/packages/dargui/)<sup><small>AUR</small></sup> | DAR front-end | Yes | Yes | ? | Yes | ? | ? | ? | ? | ? | No | GTK |  ? | Windows | No |
+| [btar](http://viric.name/cgi-bin/btar) | [btar](https://aur.archlinux.org/packages/btar/) | C | Yes | Yes | ? | ? | ? | ? | ? | ? | ? | Yes | No | GPLv3 | Yes | Tar-compatible archiver which allows arbitrary compression and ciphering, redundancy, differential backup, indexed extraction, multicore compression, input and output serialisation, and tolerance to partial archive errors. |
+| [bup](https://github.com/bup/bup) | [bup](https://www.archlinux.org/packages/?name=bup) [bup-git](https://aur.archlinux.org/packages/bup-git/) | C, Python, git | No | No | Yes | Yes | ? | ? | ? | ? | ? | Yes | third party | GPLv2 | Windows, OS X, NetBSD, Solaris | Yes |
+| [burp](http://burp.grke.org) | [burp-backup](https://aur.archlinux.org/packages/burp-backup/) | librsync | Yes | Yes | Yes | Yes | ? | ? | ? | ? | ? | Yes | ? | AGPLv3 | Windows | Yes |
+| [ColdStorage](http://gitorious.org/coldstorage) | [coldstorage-git](https://aur.archlinux.org/packages/coldstorage-git/) | git | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | Qt |  ? | ? |
+| [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/) [kdar](https://aur.archlinux.org/packages/kdar/) (front-end) | C++ | special archive format | Yes | ? | Yes | ? | ? | ? | ? | ? | Yes | DarGUI | GPL | Windows, Solaris, FreeBSD, NetBSD, MacOS X | Yes | Short for Disk ARchive. Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/). |
+| [DarGUI](http://dargui.sourceforge.net/) | [dargui](https://aur.archlinux.org/packages/dargui/) | DAR front-end | Yes | Yes | ? | Yes | ? | ? | ? | ? | ? | No | GTK |  ? | Windows | No |
 | [Déjà Dup](https://launchpad.net/deja-dup) | [Déjà Dup](/index.php/D%C3%A9j%C3%A0_Dup "Déjà Dup") | duplicity | Yes | Yes | ? | Yes | ? | ? | ? | ? | ? | No | GTK+ | GPLv3 | Yes | Integrated into the GNOME Files file manager. |
-| [Duplicati](http://www.duplicati.com/) | [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)<sup><small>AUR</small></sup> | C# | Yes | Yes | ? | Yes | ? | ? | ? | ? | ? | Yes | Yes | LGPL | Windows | Yes |
+| [Duplicati](http://www.duplicati.com/) | [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/) | C# | Yes | Yes | ? | Yes | ? | ? | ? | ? | ? | Yes | Yes | LGPL | Windows | Yes |
 | [Duplicity](http://www.nongnu.org/duplicity/) | [Duplicity](/index.php/Duplicity "Duplicity") | librsync | gzip | gpg | ? | Yes | ? | ? | ? | ? | ? | Yes | Duply | GPL | Yes |
 | [Duply](http://www.duply.net/) | [Duply](/index.php/Duply "Duply") | duplicity front-end | Yes | Yes | ? | Yes | ? | ? | ? | ? | ? | Yes | No | GPLv2 | Yes |
-| [Gibak](https://github.com/pangloss/gibak) | [gibak](https://aur.archlinux.org/packages/gibak/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gibak)]</sup> | git, rsync | Yes | No | Yes | Yes | Yes | ? | ? | ? | ? | Yes | No | GPLv2 | No | Uses all of Git's features (such as `.gitignore` for filtering files). Uses Git's hook system to save information that Git does not (permissions, mtime, empty directories, etc). |
-| [gutbackup](https://github.com/gutenye/gutbackup) | [gutbackup](https://aur.archlinux.org/packages/gutbackup/)<sup><small>AUR</small></sup> | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | MIT | Yes |
+| [Gibak](https://github.com/pangloss/gibak) | [gibak](https://aur.archlinux.org/packages/gibak/) | git, rsync | Yes | No | Yes | Yes | Yes | ? | ? | ? | ? | Yes | No | GPLv2 | No | Uses all of Git's features (such as `.gitignore` for filtering files). Uses Git's hook system to save information that Git does not (permissions, mtime, empty directories, etc). |
+| [gutbackup](https://github.com/gutenye/gutbackup) | [gutbackup](https://aur.archlinux.org/packages/gutbackup/) | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | MIT | Yes |
 | [hdup](http://miek.nl/projects/hdup2/) | [hdup](/index.php/Hdup "Hdup") |  ? | tar.gz, tar.bz2 | gpg | ? | SSH | ? | ? | ? | ? | ? | Yes | No | GPLv2 | No | Multiple backup targets. |
 | [keepconf](https://github.com/rfrail3/keepconf) |  ? | rsync, git | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No |  ? | Yes |
 | [Kup Backup System](http://kde-apps.org/content/show.php/Kup+Backup+System?content=147465) | [kup](https://www.archlinux.org/packages/?name=kup) | rsync, bup front-end | No | No | ? | Yes | ? | ? | ? | ? | ? | No | Qt | GPLv2 | Yes |
-| [Link-Backup](http://www.scottlu.com/Content/Link-Backup.html) | [link-backup](https://aur.archlinux.org/packages/link-backup/)<sup><small>AUR</small></sup> |  ? | No | No | ? | SSH | ? | ? | ? | Yes | Yes | Yes | No | MIT | No | Similar to rsync-based scripts, but which does not use rsync. It copies itself to the server; it does not need to be installed on the server. It can be told to run for an arbitrary number of minutes. |
-| [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/)<sup><small>AUR</small></sup> | C++ | No | No | ? | Yes | ? | ? | ? | ? | ? | limited | Qt | GPLv3 | FreeBSD, Windows, OS X | No |
-| [Manent](http://code.google.com/p/manent/) | [manent](https://aur.archlinux.org/packages/manent/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manent)]</sup> |  ? | ? | Yes | ? | ? | ? | ? | Yes | ? | ? | Yes | No | GPLv3 | Windows | No | Several computers can use the same storage for backup, automatically sharing data. |
-| [obnam](http://liw.fi/obnam/) | [obnam](https://aur.archlinux.org/packages/obnam/)<sup><small>AUR</small></sup> |  ? | Yes | GnuPG | Yes | Yes | ? | ? | ? | ? | ? | Yes | No | GPLv3 | Yes | FUSE-mountable backup repository. |
-| [Packrat](http://www.zeroflux.org/projects) | [packrat](https://aur.archlinux.org/packages/packrat/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/packrat)]</sup> | DAR wrapper | ? | ? | ? | SSH | ? | ? | ? | ? | ? | Yes | No |  ? | No |
+| [Link-Backup](http://www.scottlu.com/Content/Link-Backup.html) | [link-backup](https://aur.archlinux.org/packages/link-backup/) |  ? | No | No | ? | SSH | ? | ? | ? | Yes | Yes | Yes | No | MIT | No | Similar to rsync-based scripts, but which does not use rsync. It copies itself to the server; it does not need to be installed on the server. It can be told to run for an arbitrary number of minutes. |
+| [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/) | C++ | No | No | ? | Yes | ? | ? | ? | ? | ? | limited | Qt | GPLv3 | FreeBSD, Windows, OS X | No |
+| [Manent](http://code.google.com/p/manent/) | [manent](https://aur.archlinux.org/packages/manent/) |  ? | ? | Yes | ? | ? | ? | ? | Yes | ? | ? | Yes | No | GPLv3 | Windows | No | Several computers can use the same storage for backup, automatically sharing data. |
+| [obnam](http://liw.fi/obnam/) | [obnam](https://aur.archlinux.org/packages/obnam/) |  ? | Yes | GnuPG | Yes | Yes | ? | ? | ? | ? | ? | Yes | No | GPLv3 | Yes | FUSE-mountable backup repository. |
+| [Packrat](http://www.zeroflux.org/projects) | [packrat](https://aur.archlinux.org/packages/packrat/) | DAR wrapper | ? | ? | ? | SSH | ? | ? | ? | ? | ? | Yes | No |  ? | No |
 | [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | librsync | No | No | Yes | Yes | ? | ? | ? | ? | ? | Yes | No | GPL | Win32 | No |
-| [rdup](http://miek.nl/projects/rdup) | [rdup](https://aur.archlinux.org/packages/rdup/)<sup><small>AUR</small></sup> | C | tar.gz | gpg, blowfish and others | n/a | n/a | n/a | n/a | n/a | n/a | n/a | Yes | No | GPLv3 | No | Does not backup anything, only prints a list of absolute filenames to standard output. |
+| [rdup](http://miek.nl/projects/rdup) | [rdup](https://aur.archlinux.org/packages/rdup/) | C | tar.gz | gpg, blowfish and others | n/a | n/a | n/a | n/a | n/a | n/a | n/a | Yes | No | GPLv3 | No | Does not backup anything, only prints a list of absolute filenames to standard output. |
 | [rsnapshot](http://www.rsnapshot.org/) | [rsnapshot](/index.php/Rsnapshot "Rsnapshot") | rsync | No | No | No | Yes | ? | ? | ? | ? | ? | Yes | No | GPLv2 | Win32 | Yes | Destination filesystem must support hard links. |
 | [rsync-snapshot.sh](http://blog.pointsoftware.ch/index.php/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) |  ? | rsync | Yes | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No |  ? | ? | Smart rotation (non-linear distribution) of backups, integrity protection, quotas, rules and many more features. |
-| [SafeKeep](http://safekeep.sourceforge.net/) | [safekeep](https://aur.archlinux.org/packages/safekeep/)<sup><small>AUR</small></sup> | rdiff-backup | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | GPL | No | Integrates with Linux LVM and databases to create consistent backups. Bandwidth throttling. |
-| [sbackup](https://launchpad.net/sbackup) | [sbackup](https://aur.archlinux.org/packages/sbackup/)<sup><small>AUR</small></sup> | Python | Yes | ? | ? | ? | ? | ? | ? | ? | ? | No | GTK | GPLv3 | Yes | All configuration is accessable via Gnome interface. File and paths can be included and excluded directly or by regex. |
-| [Snebu](http://www.snebu.com) | [snebu](https://aur.archlinux.org/packages/snebu/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/snebu)]</sup> | C | Yes | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | GPLv3 | ? | Supports arbitrary retention schedules (such as daily/weekly/monthly) which can be individually expired. |
+| [SafeKeep](http://safekeep.sourceforge.net/) | [safekeep](https://aur.archlinux.org/packages/safekeep/) | rdiff-backup | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | GPL | No | Integrates with Linux LVM and databases to create consistent backups. Bandwidth throttling. |
+| [sbackup](https://launchpad.net/sbackup) | [sbackup](https://aur.archlinux.org/packages/sbackup/) | Python | Yes | ? | ? | ? | ? | ? | ? | ? | ? | No | GTK | GPLv3 | Yes | All configuration is accessable via Gnome interface. File and paths can be included and excluded directly or by regex. |
+| [Snebu](http://www.snebu.com) | [snebu](https://aur.archlinux.org/packages/snebu/) | C | Yes | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | GPLv3 | ? | Supports arbitrary retention schedules (such as daily/weekly/monthly) which can be individually expired. |
 | [Synbak](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) | [synbak](https://www.archlinux.org/packages/?name=synbak) | multitool wrapper | Yes | No | ? | Yes | ? | ? | ? | ? | ? | No | Web | GPLv3 | Yes | Meant to unify several backup methods in a single application while supplying a powerful reporting system. |
-| [syncBackup](http://www.darhon.com/syncbackup) | [syncbackup](https://aur.archlinux.org/packages/syncbackup/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/syncbackup)]</sup> | C++, rsync front-end | No | No | ? | Yes | ? | ? | ? | ? | ? | No | Qt | GPL | No |
-| [TimeShift](https://launchpad.net/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/)<sup><small>AUR</small></sup> | rsync | No | No | ? | Yes | ? | ? | ? | ? | ? | No | GTK | GPLv3 | Yes |
-| [trinkup](https://gist.github.com/ei-grad/7610406/) | [trinkup](https://aur.archlinux.org/packages/trinkup/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/trinkup)]</sup> | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | DWTFYWWI | Yes |
-| [ZBackup](http://zbackup.org/) | [zbackup](https://aur.archlinux.org/packages/zbackup/)<sup><small>AUR</small></sup> | C++ | LZMA, LZO | AES | ? | ? | ? | ? | ? | ? | ? | Yes | No | GPLv2 | Yes | Repository consists of immutable files. No existing files are ever modified. |
+| [syncBackup](http://www.darhon.com/syncbackup) | [syncbackup](https://aur.archlinux.org/packages/syncbackup/) | C++, rsync front-end | No | No | ? | Yes | ? | ? | ? | ? | ? | No | Qt | GPL | No |
+| [TimeShift](https://launchpad.net/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/) | rsync | No | No | ? | Yes | ? | ? | ? | ? | ? | No | GTK | GPLv3 | Yes |
+| [trinkup](https://gist.github.com/ei-grad/7610406/) | [trinkup](https://aur.archlinux.org/packages/trinkup/) | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | ? | Yes | No | DWTFYWWI | Yes |
+| [ZBackup](http://zbackup.org/) | [zbackup](https://aur.archlinux.org/packages/zbackup/) | C++ | LZMA, LZO | AES | ? | ? | ? | ? | ? | ? | ? | Yes | No | GPLv2 | Yes | Repository consists of immutable files. No existing files are ever modified. |
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | FS monitoring | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Notes |
 
 ## Cloud storage
@@ -174,7 +166,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
 
-	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://aur.archlinux.org/packages/s3cmd/)<sup><small>AUR</small></sup>
+	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://aur.archlinux.org/packages/s3cmd/)
 
 *   **CloudBacko** — Enterprise-grade cloud backup tool for Linux, Mac and Windows.
     *   Closed source. Free, Lite and Pro versions available.
@@ -194,7 +186,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Almost any platform supported.
     *   Offers AES-256 encryption.
 
-	[https://www.copy.com/home/](https://www.copy.com/home/) || [copy-agent](https://aur.archlinux.org/packages/copy-agent/)<sup><small>AUR</small></sup>
+	[https://www.copy.com/home/](https://www.copy.com/home/) || [copy-agent](https://aur.archlinux.org/packages/copy-agent/)
 
 *   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — An online/offsite backup solution.
     *   Unlimited online space for very reasonable pricing.
@@ -204,7 +196,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Software is free for local use.
     *   Restore prevents simultaneous backing up
 
-	[http://www.crashplan.com/](http://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)<sup><small>AUR</small></sup>
+	[http://www.crashplan.com/](http://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)
 
 *   **[Dropbox](/index.php/Dropbox "Dropbox")** — A popular file-sharing service.
     *   A daemon monitors a specified directory, and uploads incremental changes to dropbox.com.
@@ -214,13 +206,13 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Community written add-ons.
     *   Free accounts have 2GB storage.
 
-	[http://www.dropbox.com](http://www.dropbox.com) || [dropbox](https://aur.archlinux.org/packages/dropbox/)<sup><small>AUR</small></sup> [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/)<sup><small>AUR</small></sup>
+	[http://www.dropbox.com](http://www.dropbox.com) || [dropbox](https://aur.archlinux.org/packages/dropbox/) [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/)
 
 *   **[Google Drive](https://en.wikipedia.org/wiki/Google_Drive "wikipedia:Google Drive")** — A file storage and synchronization service provided by Google.
     *   Provides cloud storage, file sharing and collaborative editing.
     *   Multiple clients are available.
 
-	[https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/)<sup><small>AUR</small></sup> (free), [drive](https://aur.archlinux.org/packages/drive/)<sup><small>AUR</small></sup> (free), [grive](https://aur.archlinux.org/packages/grive/)<sup><small>AUR</small></sup> (free), [insync](/index.php/Insync "Insync") (non-free)
+	[https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/) (free), [drive](https://aur.archlinux.org/packages/drive/) (free), [grive](https://aur.archlinux.org/packages/grive/) (free), [insync](/index.php/Insync "Insync") (non-free)
 
 *   **[iDrive](https://en.wikipedia.org/wiki/IDrive_Inc. "wikipedia:IDrive Inc.")** — Universal Online Backup.
     *   Multiple Device Backup.
@@ -230,33 +222,33 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Remote Manage.
     *   No GUI Front end for Linux, command line based. A wrapper script is available to make it easier to use.
 
-	[https://www.idrive.com/](https://www.idrive.com/) || [idevsutil](https://aur.archlinux.org/packages/idevsutil/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idevsutil)]</sup>, [idrive-wrapper](https://aur.archlinux.org/packages/idrive-wrapper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idrive-wrapper)]</sup>
+	[https://www.idrive.com/](https://www.idrive.com/) || [idevsutil](https://aur.archlinux.org/packages/idevsutil/), [idrive-wrapper](https://aur.archlinux.org/packages/idrive-wrapper/)
 
 *   **[Jungle Disk](https://en.wikipedia.org/wiki/Jungle_Disk "wikipedia:Jungle Disk")** — An online backup tool that stores its data in Amazon S3 or Rackspace Cloud Files.
     *   A GNOME Files extension.
     *   Only paid plans available.
 
-	[http://www.jungledisk.com/](http://www.jungledisk.com/) || [nautilus-jungledisk](https://aur.archlinux.org/packages/nautilus-jungledisk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nautilus-jungledisk)]</sup>
+	[http://www.jungledisk.com/](http://www.jungledisk.com/) || [nautilus-jungledisk](https://aur.archlinux.org/packages/nautilus-jungledisk/)
 
 *   **[MEGA](https://en.wikipedia.org/wiki/Mega_(website) "wikipedia:Mega (website)")** — Successor to the MegaUpload file-sharing service.
     *   Free accounts are 50GB with paid plans available for more space.
     *   Offers encryption and de-duplication.
     *   Usually accessed through its web interface but other tools exist.
 
-	[https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/)<sup><small>AUR</small></sup>, [megasync](https://aur.archlinux.org/packages/megasync/)<sup><small>AUR</small></sup>, [megafuse](https://aur.archlinux.org/packages/megafuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/megafuse)]</sup>
+	[https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/), [megasync](https://aur.archlinux.org/packages/megasync/), [megafuse](https://aur.archlinux.org/packages/megafuse/)
 
 *   **Nutstore** — A cloud service that lets you sync and share files anywhere.
     *   Multiple file folders sync.
     *   Service for Chinese users.
 
-	[http://jianguoyun.com/](http://jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)<sup><small>AUR</small></sup>
+	[http://jianguoyun.com/](http://jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
 
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak")** — An online backup tool for Windows, Mac and Linux users to back up, share, sync, access and store their data.
     *   Free account holds 2GB as a 60-day trial.
     *   Includes file sharing and a public directory.
     *   Incremental backup and sync are both supported.
 
-	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)<sup><small>AUR</small></sup>
+	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
 
 *   **[Storage Made Easy](https://en.wikipedia.org/wiki/Storage_Made_Easy "wikipedia:Storage Made Easy")** — Provides unified access to numerous cloud storage services, as well as its own storage.
     *   Free and paid version available.
@@ -264,7 +256,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Supports local directory via fuse, as well as web access.
     *   Supports many cloud storage services, such as Box, Dropbox, Google Drive, Onedrive, and others.
 
-	[http://storagemadeeasy.com/](http://storagemadeeasy.com/) || [smestorage](https://aur.archlinux.org/packages/smestorage/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/smestorage)]</sup>
+	[http://storagemadeeasy.com/](http://storagemadeeasy.com/) || [smestorage](https://aur.archlinux.org/packages/smestorage/)
 
 *   **[Tarsnap](https://en.wikipedia.org/wiki/Tarsnap "wikipedia:Tarsnap")** — A secure online backup service for BSD, Linux, OS X, Solaris and Windows (through Cygwin).
     *   Compressed encrypted backups to Amazon S3 Servers.
@@ -278,7 +270,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Free cloud storage service created by Yandex.ru that gives you access to your photos, videos and documents from any internet-enabled device.
 
-	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)<sup><small>AUR</small></sup>
+	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
 
 #### Multi-service clients
 
@@ -292,7 +284,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **Duplicati** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It works with Amazon S3, Windows Live SkyDrive, Google Drive (Google Docs), Rackspace Cloud Files or WebDAV, SSH, FTP (and many more). Duplicati is open source and free.
 
-	[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)<sup><small>AUR</small></sup>
+	[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)
 
 *   **[Duplicity](/index.php/Duplicity "Duplicity")** — A simple command-line utility which allows encrypted compressed incremental backup to nearly any storage.
     *   Supports gpg encryption and signing.
@@ -309,11 +301,11 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   executing pre/post scripts;
     *   precondition checking for flawless duplicity operation.
 
-	[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)<sup><small>AUR</small></sup>
+	[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)
 
 *   **rclone** — Rclone is a command line program to sync files and directories to and from Google Drive, Amazon S3, Openstack Swift / Rackspace cloud files / Memset Memstore, Dropbox, Google Cloud Storage and The local filesystem.
 
-	[http://rclone.org/](http://rclone.org/) || [rclone](https://aur.archlinux.org/packages/rclone/)<sup><small>AUR</small></sup>
+	[http://rclone.org/](http://rclone.org/) || [rclone](https://aur.archlinux.org/packages/rclone/)
 
 ### Cooperative
 
@@ -331,13 +323,13 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
     *   Ability to have synchronized folders between nodes (Dropbox-like).
     *   Closed source, using mono. Windows clients available.
 
-	[http://www.symform.com/](http://www.symform.com/) || [symform](https://aur.archlinux.org/packages/symform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/symform)]</sup>
+	[http://www.symform.com/](http://www.symform.com/) || [symform](https://aur.archlinux.org/packages/symform/)
 
 ### Custom infrastructure
 
 *   **Cozy** — A personal cloud you can hack, host and delete.
 
-	[https://cozy.io](https://cozy.io) || [cozy-standalone](https://aur.archlinux.org/packages/cozy-standalone/)<sup><small>AUR</small></sup> [cozy-nginx](https://aur.archlinux.org/packages/cozy-nginx/)<sup><small>AUR</small></sup> [cozy-apache](https://aur.archlinux.org/packages/cozy-apache/)<sup><small>AUR</small></sup>
+	[https://cozy.io](https://cozy.io) || [cozy-standalone](https://aur.archlinux.org/packages/cozy-standalone/) [cozy-nginx](https://aur.archlinux.org/packages/cozy-nginx/) [cozy-apache](https://aur.archlinux.org/packages/cozy-apache/)
 
 *   **[OpenStack](/index.php/OpenStack "OpenStack")** — Controls large pools of compute, storage, and networking resources throughout a datacenter, managed through a dashboard or via the OpenStack API. OpenStack works with popular enterprise and open source technologies making it ideal for heterogeneous infrastructure.
 
@@ -349,11 +341,11 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
 
 *   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
 
-	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)<sup><small>AUR</small></sup>
+	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)
 
 *   **[Seafile](/index.php/Seafile "Seafile")** — Open source cloud storage system, with advanced support for file syncing, privacy protection and teamwork.
 
-	[http://seafile.com/](http://seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)<sup><small>AUR</small></sup> [seafile-client](https://aur.archlinux.org/packages/seafile-client/)<sup><small>AUR</small></sup> [seafile-client-cli](https://aur.archlinux.org/packages/seafile-client-cli/)<sup><small>AUR</small></sup> [seafile-client-qt5](https://aur.archlinux.org/packages/seafile-client-qt5/)<sup><small>AUR</small></sup>
+	[http://seafile.com/](http://seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/) [seafile-client](https://aur.archlinux.org/packages/seafile-client/) [seafile-client-cli](https://aur.archlinux.org/packages/seafile-client-cli/) [seafile-client-qt5](https://aur.archlinux.org/packages/seafile-client-qt5/)
 
 *   **StackSync** — Open-source scalable Personal Cloud that can adapt to the necessities of organizations. It puts a special emphasis on security by encrypting data on the client side before it is sent to the server.
 
@@ -361,7 +353,7 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
 
 *   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
 
-	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)<sup><small>AUR</small></sup>
+	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
 
 ## Distributed file systems
 
@@ -379,7 +371,7 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
 
 *   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
 
-	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)<sup><small>AUR</small></sup>
+	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
 
 ## Data cloning
 
@@ -392,7 +384,7 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
     *   Primarily archive-based (zip), but will do file-based backup as well.
     *   Delta backup supported (stores only changes).
 
-	[http://areca.sourceforge.net/](http://areca.sourceforge.net/) || [areca](https://aur.archlinux.org/packages/areca/)<sup><small>AUR</small></sup>
+	[http://areca.sourceforge.net/](http://areca.sourceforge.net/) || [areca](https://aur.archlinux.org/packages/areca/)
 
 *   **[Clonezilla](https://en.wikipedia.org/wiki/Clonezilla "wikipedia:Clonezilla")** — A disaster recovery, disk cloning, disk imaging and deployment solution.
     *   Boots from live CD, USB flash drive, or PXE server.
@@ -407,9 +399,9 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
     *   Supports splitting backups into more files by size.
     *   Makefile-type config files, some custom scripts are available along with it.
     *   Supports basic encryption.
-    *   Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sarab)]</sup>.
+    *   Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/).
 
-	[http://dar.linux.free.fr/](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/)<sup><small>AUR</small></sup> [kdar](https://aur.archlinux.org/packages/kdar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdar)]</sup> (fontend)
+	[http://dar.linux.free.fr/](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/) [kdar](https://aur.archlinux.org/packages/kdar/) (fontend)
 
 *   **FSArchiver** — A safe and flexible file-system backup and deployment tool
     *   Support for basic file attributes (permissions, owner, ...).
@@ -435,7 +427,7 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
     *   Can backup/restore over NFS, from CDs, tape drives and and other media.
     *   Can verify backups.
 
-	[http://www.mondorescue.org/](http://www.mondorescue.org/) || [mondo](https://aur.archlinux.org/packages/mondo/)<sup><small>AUR</small></sup>
+	[http://www.mondorescue.org/](http://www.mondorescue.org/) || [mondo](https://aur.archlinux.org/packages/mondo/)
 
 *   **[Partclone](/index.php/Partclone "Partclone")** — A tool that can be used to back up and restore a partition while considering only used blocks.
     *   Supports ext2, ext3, hfs+, reiser3.5, reiser3.6, reiser4, ext4 and btrfs.
@@ -457,7 +449,7 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
     *   Create or extract protected archives.
     *   Lessen effort by using archiving profiles and lists.
 
-	[http://k7z.sourceforge.net/](http://k7z.sourceforge.net/) || [q7z](https://aur.archlinux.org/packages/q7z/)<sup><small>AUR</small></sup>
+	[http://k7z.sourceforge.net/](http://k7z.sourceforge.net/) || [q7z](https://aur.archlinux.org/packages/q7z/)
 
 *   **[Redo Backup and Recovery](https://en.wikipedia.org/wiki/Redo_Backup_and_Recovery "wikipedia:Redo Backup and Recovery")** — A backup and disaster recovery application that runs from a bootable Linux CD image.
     *   Is capable of bare-metal backup and recovery of disk partitions.
@@ -473,7 +465,7 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
     *   Uses rsync to transfer a running system
     *   Supports Grub2, Syslinux, EFISTUB/efibootmgr and Systemd/bootctl
 
-	[https://github.com/tritonas00/system-tar-and-restore](https://github.com/tritonas00/system-tar-and-restore) || [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/)<sup><small>AUR</small></sup>
+	[https://github.com/tritonas00/system-tar-and-restore](https://github.com/tritonas00/system-tar-and-restore) || [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/)
 
 ## Version control systems
 

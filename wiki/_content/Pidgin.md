@@ -36,7 +36,7 @@ From the project [home page](http://www.pidgin.im/):
 
 *   **Pidgin Light** — Light Pidgin version without GStreamer, Tcl/Tk, XScreenSaver, video/voice support.
 
-	[http://pidgin.im/](http://pidgin.im/) || [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)<sup><small>AUR</small></sup>
+	[http://pidgin.im/](http://pidgin.im/) || [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)
 
 You may also want to install additional plugins from the [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack).
 
@@ -91,7 +91,7 @@ This example assumes you use [Firefox](/index.php/Firefox "Firefox").
 
 ## QIP encoding bug
 
-There is another bug in character encoding when communicating between Pidgin and QIP, which especially affects Czech language, but there are also other languages affected. There are two possible solutions. The better one is to upgrade from QIP to QIP 2012 or QIP Infium, second solution is to install and enable plugin from [pidgin-qip-decoder](https://aur.archlinux.org/packages/pidgin-qip-decoder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pidgin-qip-decoder)]</sup> package currently available from [AUR](/index.php/AUR "AUR").
+There is another bug in character encoding when communicating between Pidgin and QIP, which especially affects Czech language, but there are also other languages affected. There are two possible solutions. The better one is to upgrade from QIP to QIP 2012 or QIP Infium, second solution is to install and enable plugin from [pidgin-qip-decoder](https://aur.archlinux.org/packages/pidgin-qip-decoder/) package currently available from [AUR](/index.php/AUR "AUR").
 
 ## ICQ
 
@@ -187,14 +187,14 @@ Now you can open conversation window and new icon should appear beside menu. Pre
 
 Pidgin-GPG transparently encrypt conversations using GPG, and taking advantage of all the features of a pre-existing WoT.
 
-The plugin is available on AUR as [pidgin-gpg](https://aur.archlinux.org/packages/pidgin-gpg/)<sup><small>AUR</small></sup>. It can be enabled the same way as the previously mentioned ones.
+The plugin is available on AUR as [pidgin-gpg](https://aur.archlinux.org/packages/pidgin-gpg/). It can be enabled the same way as the previously mentioned ones.
 
 ## Sametime protocol
 
 Sametime support is available by installing two packages from [AUR](/index.php/AUR "AUR"):
 
-*   [meanwhile](https://aur.archlinux.org/packages/meanwhile/)<sup><small>AUR</small></sup>
-*   [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/)<sup><small>AUR</small></sup>
+*   [meanwhile](https://aur.archlinux.org/packages/meanwhile/)
+*   [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/)
 
 Previously it was required to rebuild Pidgin to remove the `--disable-meanwhile` flag from compilation, this is no longer needed. Once these two packages are installed the 'Sametime' protocol will be available when creating an account.
 
@@ -208,12 +208,12 @@ Arch has other Pidgin-related packages. Here are the most popular (for a thoroug
 
 *   [pidgin-libnotify](https://www.archlinux.org/packages/?name=pidgin-libnotify) - Libnotify support, for theme-consistent notifications
 *   [guifications](https://www.archlinux.org/packages/?name=guifications) - Toaster-style popup notifications
-*   [microblog-purple](https://aur.archlinux.org/packages/microblog-purple/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/microblog-purple)]</sup> - Libpurple plug-in supporting microblog services like Twitter
-*   [pidgin-latex](https://aur.archlinux.org/packages/pidgin-latex/)<sup><small>AUR</small></sup> - A small latex plugin for pidgin. Put math between $$ and have it rendered (recepient also needs to have this installed)
+*   [microblog-purple](https://aur.archlinux.org/packages/microblog-purple/) - Libpurple plug-in supporting microblog services like Twitter
+*   [pidgin-latex](https://aur.archlinux.org/packages/pidgin-latex/) - A small latex plugin for pidgin. Put math between $$ and have it rendered (recepient also needs to have this installed)
 
 ## Skype plugin
 
-Install the [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/)<sup><small>AUR</small></sup> or [purple-skypeweb-git](https://aur.archlinux.org/packages/purple-skypeweb-git/)<sup><small>AUR</small></sup> package.
+Install the [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) or [purple-skypeweb-git](https://aur.archlinux.org/packages/purple-skypeweb-git/) package.
 
 ## Auto logout on suspend
 
@@ -264,7 +264,7 @@ esac
 
 ### Installing Pidgin after a Carrier installation
 
-If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/carrier)]</sup> (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps _before_ installing Pidgin:
+If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps _before_ installing Pidgin:
 
 *   Quit Carrier
 *   Delete your `~/.purple` directory.

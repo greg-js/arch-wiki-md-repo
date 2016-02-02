@@ -20,7 +20,7 @@ This category has only the following subcategory.
 
 ## Pages in category "Package management"
 
-The following 29 pages are in this category, out of 29 total.
+The following 30 pages are in this category, out of 30 total.
 
 ### A
 
@@ -38,6 +38,10 @@ The following 29 pages are in this category, out of 29 total.
 
 *   [Deltup](/index.php/Deltup "Deltup")
 *   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
+
+### H
+
+*   [User:Horo](/index.php/User:Horo "User:Horo")
 
 ### L
 

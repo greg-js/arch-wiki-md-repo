@@ -14,7 +14,7 @@
 
 ### Installation
 
-uMap can be [installed](/index.php/Installed "Installed") with the [umap](https://aur.archlinux.org/packages/umap/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/umap)]</sup> package. The preferred database back-end is [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") which is required in combination with the [postgis](https://www.archlinux.org/packages/?name=postgis) package.
+uMap can be [installed](/index.php/Installed "Installed") with the [umap](https://aur.archlinux.org/packages/umap/) package. The preferred database back-end is [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") which is required in combination with the [postgis](https://www.archlinux.org/packages/?name=postgis) package.
 
 ### Configuration
 

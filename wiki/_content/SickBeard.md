@@ -1,9 +1,5 @@
 # SickBeard
 
-Related articles
-
-*   [Dropbox](/index.php/Dropbox "Dropbox")
-
 [Sick Beard](http://sickbeard.com) is a PVR for newsgroup users (with limited torrent support). It watches for new episodes of your favorite shows and when they are posted it downloads them, sorts and renames them, and optionally generates metadata for them. It currently supports NZBs.org, NZBMatrix, NZBs'R'Us, Newzbin, Womble's Index, NZB.su, TVTorrents and EZRSS and retrieves show information from theTVDB.com and TVRage.com.
 
 ## Contents
@@ -15,7 +11,7 @@ Related articles
 
 ## Installation
 
-Install [sickbeard](https://aur.archlinux.org/packages/sickbeard/)<sup><small>AUR</small></sup>, available in the [AUR](/index.php/AUR "AUR"). It contains the application and a systemd service file.
+Install [sickbeard](https://aur.archlinux.org/packages/sickbeard/), available in the [AUR](/index.php/AUR "AUR"). It contains the application and a systemd service file.
 
 ### Running as a systemd service
 

@@ -22,7 +22,7 @@ $> lsusb
 Bus 003 Device 002: ID 046d:c626 Logitech, Inc. 3Dconnexion Space Navigator 3D Mouse
 ```
 
-2\. Install [openmotif](https://www.archlinux.org/packages/?name=openmotif) or if you need [lesstif](https://www.archlinux.org/packages/?name=lesstif) (e.g. for [xpdf](https://aur.archlinux.org/packages/xpdf/)<sup><small>AUR</small></sup>) you can just get the `libXm.so.4` library from it:
+2\. Install [openmotif](https://www.archlinux.org/packages/?name=openmotif) or if you need [lesstif](https://www.archlinux.org/packages/?name=lesstif) (e.g. for [xpdf](https://aur.archlinux.org/packages/xpdf/)) you can just get the `libXm.so.4` library from it:
 
 ```
 $> sudo pacman -Sw openmotif # download openmotif to cache, do not install
@@ -176,7 +176,7 @@ $> grep 3Dconnexion /proc/bus/input/devices
 N: Name="3Dconnexion SpaceNavigator"
 ```
 
-For the second point install [libspnav](https://www.archlinux.org/packages/?name=libspnav) and [spacenavd](https://aur.archlinux.org/packages/spacenavd/)<sup><small>AUR</small></sup> from AUR. For testing it's a good idea to start the daemon on foreground mode. The output should look similar to this:
+For the second point install [libspnav](https://www.archlinux.org/packages/?name=libspnav) and [spacenavd](https://aur.archlinux.org/packages/spacenavd/) from AUR. For testing it's a good idea to start the daemon on foreground mode. The output should look similar to this:
 
 ```
 $> sudo spacenavd -v -d

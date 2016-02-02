@@ -117,7 +117,7 @@ Installing Intel VTune 9.1 on Arch Linux
 *   download VTune
 *   download [patch](http://archlinux-stuff.googlecode.com/files/vtune-linux-9.1-arch.patch.gz)
 *   unpack VTune and patch its scripts
-*   install rpm from [AUR/rpm4](https://aur.archlinux.org/packages.php?ID=24605)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-30]</sup>
+*   install rpm from [AUR/rpm4](https://aur.archlinux.org/packages.php?ID=24605)
 *   do rpm --initdb
 *   run VTune installer
 

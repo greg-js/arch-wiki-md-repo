@@ -38,7 +38,7 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 
 ## Installation
 
-*   Install [arduino](https://aur.archlinux.org/packages/arduino/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+*   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR").
 *   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups"). (More information in the next section: "Accessing serial")
 *   You may need to load the cdc_acm module.
 
@@ -55,7 +55,7 @@ The [Arduino Due](http://arduino.cc/en/Main/arduinoBoardDue) and the [Arduino Yu
 
 ### Pinoccio Scout
 
-[Pinoccio Scouts](https://pinocc.io/) can also be programmed using the Arduino IDE. Instructions can be found [here](https://pinocc.io/solo). Alternative you can install [arduino-pinoccio](https://aur.archlinux.org/packages/arduino-pinoccio/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Pinoccio Scouts](https://pinocc.io/) can also be programmed using the Arduino IDE. Instructions can be found [here](https://pinocc.io/solo). Alternative you can install [arduino-pinoccio](https://aur.archlinux.org/packages/arduino-pinoccio/) from the [AUR](/index.php/AUR "AUR").
 
 ### Intel Galileo
 
@@ -117,11 +117,11 @@ $ cat /dev/ttyACM0
 
 ### ArduIDE
 
-ArduIDE is a Qt-based IDE for Arduino. [arduide-git](https://aur.archlinux.org/packages/arduide-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+ArduIDE is a Qt-based IDE for Arduino. [arduide-git](https://aur.archlinux.org/packages/arduide-git/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### gnoduino
 
-[gnoduino](https://aur.archlinux.org/packages/gnoduino/)<sup><small>AUR</small></sup> is an implementation of original Arduino IDE for GNOME available in the [AUR](/index.php/AUR "AUR"). The original Arduino IDE software is written in Java. This is a Python implementation and it is targeted at GNOME but will work on xfce4 and other WM. Its purpose is to be light, while maintaining compatibility with the original Arduino IDE. The source editor is based on gtksourceview.
+[gnoduino](https://aur.archlinux.org/packages/gnoduino/) is an implementation of original Arduino IDE for GNOME available in the [AUR](/index.php/AUR "AUR"). The original Arduino IDE software is written in Java. This is a Python implementation and it is targeted at GNOME but will work on xfce4 and other WM. Its purpose is to be light, while maintaining compatibility with the original Arduino IDE. The source editor is based on gtksourceview.
 
 If you prefer working from terminal, below there are some other options to choose from.
 
@@ -140,7 +140,7 @@ Requirements:
 
 ### Ino
 
-[Ino](https://github.com/amperka/ino) is a command line toolkit for working with arduino hardware. [ino](https://aur.archlinux.org/packages/ino/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[Ino](https://github.com/amperka/ino) is a command line toolkit for working with arduino hardware. [ino](https://aur.archlinux.org/packages/ino/) is available in the [AUR](/index.php/AUR "AUR").
 
 Note that `Ino` looks for the file `avrdude.conf` in `/etc/avrdude/avrdude.conf`, while [pacman](/index.php/Pacman "Pacman") appears to place this file (upon installation of [avrdude](https://www.archlinux.org/packages/?name=avrdude)) in `/etc/avrdude.conf`. If `Ino` gives you troubles create the directory `/etc/avrdude` and make the symlink:
 
@@ -172,7 +172,7 @@ Now you should be able to `make && make upload` to your board to execute your sk
 
 ### Arduino-mk
 
-[arduino-mk](https://aur.archlinux.org/packages/arduino-mk/)<sup><small>AUR</small></sup> is another alternative Makefile approach. It allows users to have a local Makefile that includes Arduino.mk. See [project page](https://github.com/sudar/Arduino-Makefile) for usage.
+[arduino-mk](https://aur.archlinux.org/packages/arduino-mk/) is another alternative Makefile approach. It allows users to have a local Makefile that includes Arduino.mk. See [project page](https://github.com/sudar/Arduino-Makefile) for usage.
 
 For Arduino 1.5, try the following local Makefile (because Arduino 1.5's library directory structure is slightly different):
 
@@ -252,7 +252,7 @@ $ platformio run
 
 It is possible to configure [Emacs](/index.php/Emacs "Emacs") as IDE.
 
-Install the package [emacs-arduino-mode-git](https://aur.archlinux.org/packages/emacs-arduino-mode-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") in order to enable the `arduino-mode` in emacs.
+Install the package [emacs-arduino-mode-git](https://aur.archlinux.org/packages/emacs-arduino-mode-git/) from the [AUR](/index.php/AUR "AUR") in order to enable the `arduino-mode` in emacs.
 
 Add to the init script:
 
@@ -273,7 +273,7 @@ Main resource: [here](http://www.emacswiki.org/emacs/ArduinoSupport).
 
 ### Version 1.6
 
-As of Oct 5, 2014, most of the 3rd party tools only work for Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)<sup><small>AUR</small></sup>). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://aur.archlinux.org/packages/arduino/)<sup><small>AUR</small></sup>) and after. Check the version if the tools do not work.
+As of Oct 5, 2014, most of the 3rd party tools only work for Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://aur.archlinux.org/packages/arduino/)) and after. Check the version if the tools do not work.
 
 ### Consistent naming of Arduino devices
 

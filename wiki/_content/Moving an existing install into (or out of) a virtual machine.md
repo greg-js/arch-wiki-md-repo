@@ -1,12 +1,5 @@
 # Moving an existing install into (or out of) a virtual machine
 
-Related articles
-
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
-*   [VMware](/index.php/VMware "VMware")
-*   [QEMU](/index.php/QEMU "QEMU")
-*   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
-
 This article describes how to transfer your current Arch Linux installation in or out of a virtual environment (i.e. QEMU, VirtualBox, VMware), and is heavily based on the [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync") article. A virtual machine ("VM", for short) uses different hardware, which needs to be addressed by re-generating the initramfs image and possibly adjusting the fstab – especially if it is an [SSD](/index.php/SSD "SSD").
 
 ## Contents

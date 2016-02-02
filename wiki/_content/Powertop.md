@@ -1,10 +1,5 @@
 # Powertop
 
-Related articles
-
-*   [Power saving](/index.php/Power_saving "Power saving")
-*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-
 **PowerTOP** is a tool provided by Intel to enable various powersaving modes in userspace, kernel and hardware. It is possible to monitor processes and show which of them are utilizing the CPU and wake it from its Idle-States, allowing to identify applications with particular high power demands.
 
 ## Contents

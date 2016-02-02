@@ -59,7 +59,7 @@ _Do not sign when contributing to an article._
 
  | 
 
-[Username](/index.php/Special:MyPage "Special:MyPage"), 21:59, 1 February 2016 (UTC)
+[Username](/index.php/Special:MyPage "Special:MyPage"), 20:57, 2 February 2016 (UTC)
 
  |
 | **Works anywhere in the text (HTML)** |
@@ -97,7 +97,7 @@ _Do not sign when contributing to an article._
 
  | 
 
-<sub>sub</sub> <sup>sup</sup>
+<sub>sub</sub> 
 
  |
 | **Works only at the beginning of lines** |

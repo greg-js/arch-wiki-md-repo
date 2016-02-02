@@ -15,7 +15,7 @@
 
 ### Installation
 
-Install suPHP from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"): [suphp](https://aur.archlinux.org/packages/suphp/)<sup><small>AUR</small></sup>
+Install suPHP from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"): [suphp](https://aur.archlinux.org/packages/suphp/)
 
 ### Configuration
 

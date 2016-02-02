@@ -1,9 +1,5 @@
 # Remastering the Install ISO
 
-Related articles
-
-*   [Archiso](/index.php/Archiso "Archiso")
-
 Remastering the official Arch Linux install ISO image is not necessary for most applications. However, it may be desirable in some cases.
 
 *   Basic hardware is not supported by the core install. (rare)
@@ -276,19 +272,19 @@ The newly created ISO image `arch-custom.iso` is found in the home directory. Yo
 **Note:**
 
 *   As of version 2.6.39, the vanilla kernel no longer supports aufs, making a custom kernel a necessity.
-*   [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)<sup><small>AUR</small></sup> is an AUFS version of the arch kernel, and larch maintains an i686 build, you need not compile anything unless you want 64 bit.
+*   [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/) is an AUFS version of the arch kernel, and larch maintains an i686 build, you need not compile anything unless you want 64 bit.
 
 ## poison-livecd-creator
 
 It is a very simple live CD creator. It uses just a Makefile to build live CD images, and uses pacman to install base and additional packages to the live CD. You can choose your packages and build them into a live CD. Moreover, it uses [GRUB](/index.php/GRUB "GRUB") to boot the live CD in order to add more flexibility. This means that it is much easier to make a live USB stick without formating it. For that, you just need to install GRUB into your USB pen drive and copy the files in the ISO to your root directory in the pen drive. It relies on an Arch Linux host system and [pacman](/index.php/Pacman "Pacman").
 
-[poison-livecd-creator](https://aur.archlinux.org/packages/poison-livecd-creator/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/poison-livecd-creator)]</sup>.
+[poison-livecd-creator](https://aur.archlinux.org/packages/poison-livecd-creator/).
 
 ## Linux-pf
 
 It supports aufs among other things, making it an option for live CDs.
 
-[linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup>.
+[linux-pf](https://aur.archlinux.org/packages/linux-pf/).
 
 **Note:** As of version 2.6.39, the vanilla kernel no longer supports aufs, making a custom kernel a necessity.
 

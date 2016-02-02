@@ -104,7 +104,7 @@ Most WMs/DEs handle the special XF86 keys automatically, but you might need to a
 
 The button `XF86WLAN` automatically toggles the (soft) [rfkill](https://www.archlinux.org/packages/?name=rfkill) block state of the wireless device. Keep this in mind when you set it up to connect/disconnect to your wireless network. You can also unblock wlan without using this key: `rfkill unblock wlan`.
 
-The keyboard doesn't have an LED for `Caps Lock`. If your WM/DE doesn't come with an indicator you can use [indicator-keylock](https://aur.archlinux.org/packages/indicator-keylock/)<sup><small>AUR</small></sup> in the tray.
+The keyboard doesn't have an LED for `Caps Lock`. If your WM/DE doesn't come with an indicator you can use [indicator-keylock](https://aur.archlinux.org/packages/indicator-keylock/) in the tray.
 
 The indicator LED for `XF86AudioMicMute` seems to be broken in some way. According to [this commit](https://github.com/torvalds/linux/commit/420f9739a62cdb027f5580d25c813501ff93aa6f) it should work with `snd-hda-intel` but it doesn't. There is also an [older kernel patch](http://comments.gmane.org/gmane.linux.drivers.platform.x86.devel/1962) available that might or might not help, but probably doesn't work with a current kernel as is.
 

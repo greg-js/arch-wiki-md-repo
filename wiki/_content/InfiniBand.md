@@ -163,7 +163,7 @@ Running the most recent firmware can give significant performance increases, and
 
 #### For Mellanox
 
-*   Install [mstflint](https://aur.archlinux.org/packages/mstflint/)<sup><small>AUR</small></sup>, with prerequisites: [libibumad](https://aur.archlinux.org/packages/libibumad/)<sup><small>AUR</small></sup>; [libibmad](https://aur.archlinux.org/packages/libibmad/)<sup><small>AUR</small></sup>.
+*   Install [mstflint](https://aur.archlinux.org/packages/mstflint/), with prerequisites: [libibumad](https://aur.archlinux.org/packages/libibumad/); [libibmad](https://aur.archlinux.org/packages/libibmad/).
 *   Determine your adapter's PCI device ID (in this example, "05:00.0" is the adapter's PCI device ID)
 
  `$ lspci | grep Mellanox`  `**05:00.0** InfiniBand: Mellanox Technologies MT25418 [ConnectX VPI PCIe 2.0 2.5GT/s - IB DDR / 10GigE] (rev a0)` 
@@ -202,7 +202,7 @@ $ unzip <_firmware .bin.zip file name_>
 
 Recent kernels have InfiniBand modules compiled in, and they just need to be loaded.
 
-*   Install [rdma](https://aur.archlinux.org/packages/rdma/)<sup><small>AUR</small></sup>
+*   Install [rdma](https://aur.archlinux.org/packages/rdma/)
     *   Its `/usr/lib/udev/rules.d/98-rdma.rules` attempts loading hardware kernel modules cxgb*, ib_*, mlx*, iw_*, be2net, and usnic*.
     *   Its `/usr/bin/rdma-init-kernel` (which is what `rdma.service` starts) loads kernel modules requested by `/etc/rdma.conf`.
 
@@ -235,10 +235,10 @@ Each InfiniBand network requires a subnet manager. (It is also possible to set u
 On one system:
 
 *   [Install rdma for loading kernel modules](#Kernel_modules)
-*   Install [opensm](https://aur.archlinux.org/packages/opensm/)<sup><small>AUR</small></sup>, with prerequisite [libibumad](https://aur.archlinux.org/packages/libibumad/)<sup><small>AUR</small></sup>.
+*   Install [opensm](https://aur.archlinux.org/packages/opensm/), with prerequisite [libibumad](https://aur.archlinux.org/packages/libibumad/).
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `opensm.service`.
 
-All of your connected InfiniBand ports should now be in a (port) state of "Active", and a physical state of "LinkUp". You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs) in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/)<sup><small>AUR</small></sup>:
+All of your connected InfiniBand ports should now be in a (port) state of "Active", and a physical state of "LinkUp". You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs) in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/):
 
  `$ ibstat` 
 
@@ -316,7 +316,7 @@ $ ip link show _interface_
 You only need `ipoibmodemtu` if you want to change the default connection mode and/or MTU.
 
 *   [Install and set up TCP/IP over InfiniBand (IPoIB)](#TCP.2FIP_over_InfiniBand_.28IPoIB.29).
-*   Install [ipoibmodemtu](https://aur.archlinux.org/packages/ipoibmodemtu/)<sup><small>AUR</small></sup>
+*   Install [ipoibmodemtu](https://aur.archlinux.org/packages/ipoibmodemtu/)
 *   Configure `ipoibmodemtu` through `/etc/ipoibmodemtu.conf`, which contains instructions on how to do so.
     *   It defaults to setting a single InfiniBand port `ib0` to `connected` mode and MTU `65520`.
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `ipoibmodemtu.service`
@@ -343,7 +343,7 @@ There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI
 *   On all target ("host") and initiator ("guest") systems, [Install TCP/IP over InfiniBand](#TCP.2FIP_over_InfiniBand_.28IPoIB.29)
 
 *   On the target ("host") system:
-    *   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)<sup><small>AUR</small></sup> with prerequisites: [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/)<sup><small>AUR</small></sup>; and [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/)<sup><small>AUR</small></sup>.
+    *   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) with prerequisites: [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/); and [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/).
     *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `target.service`
     *   Setup your iSCSI targets. Run `targetcli`, which acts like a shell that presents its complex and not worth creating by hand `/etc/target/saveconfig.json` as a pseudo-filesystem.
         *   In any pseudo-directory, you can run `help` to see the commands available _in that pseudo-directory_. Or, `help _command_` (like `help create` for more detailed help.
@@ -364,11 +364,11 @@ There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI
                 *   Run: `cd _randomly_generated_target_name_/tpg1/luns`; and `create _storage_object_`. Where `_storage_object_` is a full path to an existing storage object, i.e. /backstores/block/_name_.
             *   Create an acl (Access Control List).
                 *   Run: `cd ../acls`; and `create _wwn_`. Where `_wwn_` is the initiator ("guest") system's iqn (iSCSI Qualified Name), aka its (World Wide Name).
-                    *   Get the `_wwn_` by running on the initiator ("guest") system, **not** this target ("host") system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)<sup><small>AUR</small></sup>) `cat /etc/iscsi/initiatorname.iscsi`.
+                    *   Get the `_wwn_` by running on the initiator ("guest") system, **not** this target ("host") system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)) `cat /etc/iscsi/initiatorname.iscsi`.
         *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
 
 *   On the initiator ("guest") system:
-    *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi), or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)<sup><small>AUR</small></sup>.
+    *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi), or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/).
     *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") open-iscsi.service.
     *   At this point, if you need this initiator system's iqn (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target ("host") system's `luns` in `targetcli`, run: `cat /etc/iscsi/initiatorname.iscsi`.
     *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p _portal_`, where _portal_ is an IP (v4 or v6) address or hostname.
@@ -692,7 +692,7 @@ An InfiniBand subnet can be partitioned for different customers or applications,
 
 ## How can I use libsdp for SDP (Sockets Direct Protocol)? =
 
-Use [librdmacm](https://aur.archlinux.org/packages/librdmacm/)<sup><small>AUR</small></sup> instead. (When it started, it was called rsockets.)
+Use [librdmacm](https://aur.archlinux.org/packages/librdmacm/) instead. (When it started, it was called rsockets.)
 
 librdmacm (and formerly libsdp) use `LD_PRELOAD` to intercept non-Infiniband programs' socket calls, and transparently (to the program) send them over RDMA over InfiniBand. That is, it can dramatically speed up programs built for TCP/IP, more than you can achieve by using them with IPoIB. It avoids the need to change a program's source code to work with InfiniBand, and can even be used on programs without the user having the source code. It does not work on programs that statically linked in socket libraries.
 

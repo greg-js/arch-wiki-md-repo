@@ -1,11 +1,5 @@
 # Users and groups
 
-Related articles
-
-*   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
-*   [polkit](/index.php/Polkit "Polkit")
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
-
 Users and groups are used on GNU/Linux for [access control](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") — that is, to control access to the system's files, directories, and peripherals. Linux offers relatively simple/coarse access control mechanisms by default. For more advanced options, see [ACL](/index.php/ACL "ACL") and [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
 ## Contents
@@ -265,7 +259,7 @@ User accounts may be deleted with the _userdel_ command.
 
 The `-r` option specifies that the user's home directory and mail spool should also be deleted.
 
-**Tip:** The [AUR](/index.php/AUR "AUR") packages [adduser](https://aur.archlinux.org/packages/adduser/)<sup><small>AUR</small></sup>, [adduser-defaults](https://aur.archlinux.org/packages/adduser-defaults/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/adduser-defaults)]</sup> or [adduser-deb](https://aur.archlinux.org/packages/adduser-deb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/adduser-deb)]</sup> provide an _adduser_ script that allows carrying out the jobs of _useradd_, _chfn_ and _passwd_ interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
+**Tip:** The [AUR](/index.php/AUR "AUR") packages [adduser](https://aur.archlinux.org/packages/adduser/), [adduser-defaults](https://aur.archlinux.org/packages/adduser-defaults/) or [adduser-deb](https://aur.archlinux.org/packages/adduser-deb/) provide an _adduser_ script that allows carrying out the jobs of _useradd_, _chfn_ and _passwd_ interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
 
 ### Username change tips
 

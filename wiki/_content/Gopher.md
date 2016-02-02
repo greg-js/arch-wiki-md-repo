@@ -17,7 +17,7 @@ Gopher is a protocol for information transfer over the internet that was very po
 
 ### Installation
 
-Install [gofish](https://aur.archlinux.org/packages/gofish/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [gofish](https://aur.archlinux.org/packages/gofish/) from the [AUR](/index.php/AUR "AUR").
 
 ### Configuration
 

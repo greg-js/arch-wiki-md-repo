@@ -71,6 +71,6 @@ end
 
 ### Idesktool
 
-The [idesk-extras](https://aur.archlinux.org/packages/idesk-extras/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR") provides a graphical configuration tool for Idesk. It can be started by running the `idesktool` command. Users can use Idesktool to create and remove icons, modify settings and restart Idesk.
+The [idesk-extras](https://aur.archlinux.org/packages/idesk-extras/) package in the [AUR](/index.php/AUR "AUR") provides a graphical configuration tool for Idesk. It can be started by running the `idesktool` command. Users can use Idesktool to create and remove icons, modify settings and restart Idesk.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Idesk&oldid=412102](https://wiki.archlinux.org/index.php?title=Idesk&oldid=412102)"

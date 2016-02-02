@@ -1,12 +1,5 @@
 # GUID Partition Table
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-
 GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses a [globally unique identifier](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") for qualifying devices. It is the next generation partitioning scheme designed to succeed the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") partitioning scheme method. It evolved to deal with several shortcomings of the MBR partitioning scheme method and offers additional advantages.
 
 ## Contents

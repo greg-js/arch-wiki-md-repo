@@ -87,7 +87,7 @@ Internal Mic Boost: 51
 | Brand | Type | Driver | [Multilib](/index.php/Multilib "Multilib") Package
 (for 32-bit applications on Arch x86_64) |  Documentation  |
 | ** AMD/ATI ** |  Open source  | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [ATI](/index.php/ATI "ATI") |
-| Proprietary | [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/catalyst-dkms)]</sup> | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup> | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| Proprietary | [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/) | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
 
 ## Touchpad
 
@@ -95,7 +95,7 @@ See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ### Multitouch
 
-It seems that [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> can be used
+It seems that [touchegg](https://aur.archlinux.org/packages/touchegg/) can be used
 
 ## LEDs
 

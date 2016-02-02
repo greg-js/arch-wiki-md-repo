@@ -1,10 +1,5 @@
 # RTL-SDR
 
-Related articles
-
-*   [DVB-T](/index.php/DVB-T "DVB-T")
-*   [GNU Radio](/index.php/GNU_Radio "GNU Radio")
-
 [RTL-SDR](http://sdr.osmocom.org/trac/wiki/rtl-sdr) is a set of tools that enables [DVB-T](/index.php/DVB-T "DVB-T") USB dongles based on the Realtek RTL2832U chipset to be used as cheap software defined radios, given that the chip allows transferring raw I/Q samples from the tuner straight to the host device.
 
 See the [RTL-SDR wiki](http://sdr.osmocom.org/trac/wiki/rtl-sdr) for exact technical specifications.
@@ -13,7 +8,7 @@ See the [RTL-SDR wiki](http://sdr.osmocom.org/trac/wiki/rtl-sdr) for exact techn
 
 The latest stable RTL-SDR version can be installed from [rtl-sdr](https://www.archlinux.org/packages/?name=rtl-sdr) in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Bleeding edge is on [rtl-sdr-git](https://aur.archlinux.org/packages/rtl-sdr-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+Bleeding edge is on [rtl-sdr-git](https://aur.archlinux.org/packages/rtl-sdr-git/) in the [AUR](/index.php/AUR "AUR").
 
 **Note:** RTL-SDR conflicts with existing [DVB-T](/index.php/DVB-T "DVB-T") drivers in the kernel, and upon installation blacklists the relevant drivers as can be seen in `/etc/modprobe.d/rtlsdr.conf`. To use the dongle with the original DVB-T drivers, it is required to manually load them, see [DVB-T#Driver](/index.php/DVB-T#Driver "DVB-T").
 
@@ -46,8 +41,8 @@ $ rtl_fm -f 102.7e6 -M wbfm -s 200000 -r 48000 - | aplay -r 48k -f S16_LE
 
 Some popular applications that use RTL-SDR:
 
-*   [dump1090-git](https://aur.archlinux.org/packages/dump1090-git/)<sup><small>AUR</small></sup> - a lightweight ModeS (1090Mhz) decoder
-*   [multimon-ng-git](https://aur.archlinux.org/packages/multimon-ng-git/)<sup><small>AUR</small></sup> - a decoder for various digital modes
+*   [dump1090-git](https://aur.archlinux.org/packages/dump1090-git/) - a lightweight ModeS (1090Mhz) decoder
+*   [multimon-ng-git](https://aur.archlinux.org/packages/multimon-ng-git/) - a decoder for various digital modes
 *   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux, see [gqrx](/index.php/Gqrx "Gqrx")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=415245](https://wiki.archlinux.org/index.php?title=RTL-SDR&oldid=415245)"

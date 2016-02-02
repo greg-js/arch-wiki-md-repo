@@ -1,14 +1,5 @@
 # systemd-networkd
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-*   [Network bridge](/index.php/Network_bridge "Network bridge")
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 _systemd-networkd_ is a system daemon that manages network configurations. It detects and configures network devices as they appear; it can also create virtual network devices. This service can be especially useful to set up complex network configurations for a container managed by [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") or for virtual machines. It also works fine on simple connections.
 
 ## Contents

@@ -1,5 +1,11 @@
 # ArchWiki:News
 
+## 2016/02/02 Account creation temporarily disabled
+
+Due to maintenance necessities, the creation of new accounts has been temporarily disabled. Trying our best to restore the service to full operation as quickly as possible, we apologize for the inconvenience, and look forward to welcoming new contributors again as it has been continuously for the past 10+ years. See you soon!
+
+— [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) 06:57, 2 February 2016 (UTC)
+
 ## 2015/10/02 - New maintainers
 
 As a result of their long-term commitment and valuable contributions, [Det](/index.php/User:Det "User:Det"), [Kycok](/index.php/User:Kycok "User:Kycok"), [Neitsab](/index.php/User:Neitsab "User:Neitsab") and [Silverhammermba](/index.php/User:Silverhammermba "User:Silverhammermba") (in alphabetical order) have entered the official [ArchWiki:Maintenance Team](/index.php/ArchWiki:Maintenance_Team "ArchWiki:Maintenance Team"). Thank you for your help!
@@ -194,4 +200,4 @@ In our goal to provide the most exhaustive high-quality documentation, Arch is c
 
 — [Misfit138](/index.php/User:Misfit138 "User:Misfit138") 18:03, 21 April 2008 (EDT)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:News&oldid=402878](https://wiki.archlinux.org/index.php?title=ArchWiki:News&oldid=402878)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:News&oldid=418791](https://wiki.archlinux.org/index.php?title=ArchWiki:News&oldid=418791)"

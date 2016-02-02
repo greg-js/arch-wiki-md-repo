@@ -18,14 +18,14 @@ For more information on OpenFOAM and the OpenFOAM Foundation, please see [http:/
 
 ## Basic Installation
 
-If you do not plan on doing development tasks with OpenFOAM, there is an updated version of the program available in the [AUR](/index.php/AUR "AUR") package [openfoam](https://aur.archlinux.org/packages/openfoam/)<sup><small>AUR</small></sup> and git versions [openfoam2.3-git](https://aur.archlinux.org/packages/openfoam2.3-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openfoam2.3-git)]</sup> or [openfoam2.4-git](https://aur.archlinux.org/packages/openfoam2.4-git/)<sup><small>AUR</small></sup>. For most users, this will be everything needed to get an installation up and running.
+If you do not plan on doing development tasks with OpenFOAM, there is an updated version of the program available in the [AUR](/index.php/AUR "AUR") package [openfoam](https://aur.archlinux.org/packages/openfoam/) and git versions [openfoam2.3-git](https://aur.archlinux.org/packages/openfoam2.3-git/) or [openfoam2.4-git](https://aur.archlinux.org/packages/openfoam2.4-git/). For most users, this will be everything needed to get an installation up and running.
 
 ## Prerequisites
 
 *   [openmpi](https://www.archlinux.org/packages/?name=openmpi)
-*   [paraview](https://aur.archlinux.org/packages/paraview/)<sup><small>AUR</small></sup>
-*   [parmetis](https://aur.archlinux.org/packages/parmetis/)<sup><small>AUR</small></sup>
-*   [scotch](https://aur.archlinux.org/packages/scotch/)<sup><small>AUR</small></sup>
+*   [paraview](https://aur.archlinux.org/packages/paraview/)
+*   [parmetis](https://aur.archlinux.org/packages/parmetis/)
+*   [scotch](https://aur.archlinux.org/packages/scotch/)
 *   [boost-libs](https://www.archlinux.org/packages/?name=boost-libs)
 *   [boost](https://www.archlinux.org/packages/?name=boost)
 

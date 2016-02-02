@@ -1,12 +1,5 @@
 # Firefox tweaks
 
-Related articles
-
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM")
-*   [Firefox privacy](/index.php/Firefox_privacy "Firefox privacy")
-
 This page contains advanced Firefox configuration options and performance tweaks.
 
 ## Contents
@@ -178,7 +171,7 @@ Apart from privacy benefits, enabling [tracking protection](http://venturebeat.c
 
 In Firefox 3.0, bookmarks, history, passwords are kept in an SQLite databases. SQLite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve start-up and some other bookmarks and history related tasks is to defragment and trim unused space from these databases.
 
-[profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/)<sup><small>AUR</small></sup> does just this.
+[profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) does just this.
 
 <caption>Sample size differences comparison</caption>
 | SQLite database | Size Before | Size After |  % change |

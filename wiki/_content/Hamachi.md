@@ -16,7 +16,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [logmein-hamachi](https://aur.archlinux.org/packages/logmein-hamachi/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [logmein-hamachi](https://aur.archlinux.org/packages/logmein-hamachi/) package.
 
 ## Configuration
 
@@ -73,7 +73,7 @@ To get a list of all the commands, run: $ hamachi ?
 
 ### Systemd
 
-The [logmein-hamachi](https://aur.archlinux.org/packages/logmein-hamachi/)<sup><small>AUR</small></sup> package also includes a nice little [Systemd](/index.php/Systemd "Systemd") daemon.
+The [logmein-hamachi](https://aur.archlinux.org/packages/logmein-hamachi/) package also includes a nice little [Systemd](/index.php/Systemd "Systemd") daemon.
 
 If you feel like it, you can set Hamachi to start at every boot with Systemd by [enabling](/index.php/Enabling "Enabling") `logmein-hamachi.service`.
 
@@ -81,8 +81,8 @@ If you feel like it, you can set Hamachi to start at every boot with Systemd by 
 
 The following GUI frontends for Hamachi are available in the AUR:
 
-*   [haguichi](https://aur.archlinux.org/packages/haguichi/)<sup><small>AUR</small></sup> (Gtk3, Vala)
-*   [quamachi](https://aur.archlinux.org/packages/quamachi/)<sup><small>AUR</small></sup> (Qt4, Python)
+*   [haguichi](https://aur.archlinux.org/packages/haguichi/) (Gtk3, Vala)
+*   [quamachi](https://aur.archlinux.org/packages/quamachi/) (Qt4, Python)
 
 ## See also
 

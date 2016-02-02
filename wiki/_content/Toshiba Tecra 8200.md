@@ -79,7 +79,7 @@ The modem appears to be working. The drivers for the modem are no longer availab
 
 ## Some tweaking
 
-[Install](/index.php/Install "Install") the [hwd](https://www.archlinux.org/packages/?name=hwd)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hwd)]</sup> package. This is a nice hardware detection script.
+[Install](/index.php/Install "Install") the [hwd](https://www.archlinux.org/packages/?name=hwd) package. This is a nice hardware detection script.
 
 comment or remove in rc.sysinit the last line, it's a screensaver but usually, you have another one
 

@@ -1,9 +1,5 @@
 # eCryptfs
 
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-
 This article describes basic usage of [eCryptfs](https://launchpad.net/ecryptfs). It guides you through the process of creating a private and secure encrypted directory within your `$HOME` directory to store sensitive files and private data.
 
 In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which provides a _block device encryption layer_, while eCryptfs is an actual file-system – a [stacked cryptographic file system](http://en.wikipedia.org/wiki/Cryptographic_filesystems). For comparison of the two you can refer to [this table](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare) and the [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption"). One distinguished feature is that the encryption is stacked on an existing filesystem; eCryptfs can be mounted onto any single existing directory and does not require a separate partition (or size pre-allocation).
@@ -245,7 +241,7 @@ The latter should be automatically unmounted and made unavailable when the user 
 
 ### Using ecryptfs-simple
 
-Use [ecryptfs-simple](http://xyne.archlinux.ca/projects/ecryptfs-simple/) if you just want to use eCryptfs to mount arbitrary directories the way you can with [EncFS](/index.php/EncFS "EncFS"). ecryptfs-simple does not require root privileges or entries in `/etc/fstab`, nor is it limited to hard-coded directories such as `~/.Private`. The package is available to be [installed](/index.php/Installed "Installed") as [ecryptfs-simple](https://aur.archlinux.org/packages/ecryptfs-simple/)<sup><small>AUR</small></sup> and from [Xyne's repos](http://xyne.archlinux.ca/repos/).
+Use [ecryptfs-simple](http://xyne.archlinux.ca/projects/ecryptfs-simple/) if you just want to use eCryptfs to mount arbitrary directories the way you can with [EncFS](/index.php/EncFS "EncFS"). ecryptfs-simple does not require root privileges or entries in `/etc/fstab`, nor is it limited to hard-coded directories such as `~/.Private`. The package is available to be [installed](/index.php/Installed "Installed") as [ecryptfs-simple](https://aur.archlinux.org/packages/ecryptfs-simple/) and from [Xyne's repos](http://xyne.archlinux.ca/repos/).
 
 As the name implies, usage is simple:
 

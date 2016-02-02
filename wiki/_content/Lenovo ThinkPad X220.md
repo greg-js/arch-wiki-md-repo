@@ -18,7 +18,7 @@
 
 ### Battery
 
-Battery functions like charging thresholds can be controlled using the script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/)<sup><small>AUR</small></sup> together with the kernel module [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acpi_call-git)]</sup>. The [TLP](/index.php/TLP "TLP") power saving tool supports using acpi_call as backend for setting the thresholds as well.
+Battery functions like charging thresholds can be controlled using the script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/) together with the kernel module [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/). The [TLP](/index.php/TLP "TLP") power saving tool supports using acpi_call as backend for setting the thresholds as well.
 
 ### Fingerprint reader
 
@@ -115,6 +115,6 @@ in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Mo
 *   [Thinkwiki X220 reference](http://www.thinkwiki.org/wiki/Category:X220)
 *   ["Arch By Hand" UEFI GPT SSD LUKS Install Script](https://bbs.archlinux.org/viewtopic.php?id=129885), built on an x220 tablet with an SSD.
 *   [Power saving options for the X220 - Notebook Review Forum](http://forum.notebookreview.com/lenovo-ibm/575569-linux-x220-29.html#post8075286)
-*   [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/)<sup><small>AUR</small></sup> for ThinkPad X220 Tablet rotation, docking, etc scripts
+*   [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/) for ThinkPad X220 Tablet rotation, docking, etc scripts
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411999](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X220&oldid=411999)"

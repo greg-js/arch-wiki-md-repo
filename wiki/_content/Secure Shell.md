@@ -1,15 +1,5 @@
 # Secure Shell
 
-Related articles
-
-*   [SSH keys](/index.php/SSH_keys "SSH keys")
-*   [Pam abl](/index.php/Pam_abl "Pam abl")
-*   [fail2ban](/index.php/Fail2ban "Fail2ban")
-*   [sshguard](/index.php/Sshguard "Sshguard")
-*   [Sshfs](/index.php/Sshfs "Sshfs")
-*   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng")
-*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
-
 Secure Shell (SSH) is a network protocol that allows data to be exchanged over a secure channel between two computers. Encryption provides confidentiality and integrity of data. SSH uses public-key cryptography to authenticate the remote computer and allow the remote computer to authenticate the user, if necessary.
 
 SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding arbitrary TCP ports and X11 connections; file transfer can be accomplished using the associated SFTP or SCP protocols.
@@ -368,7 +358,7 @@ From the Mosh [website](http://mosh.mit.edu/):
 
 	Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. Mosh is a replacement for SSH. It is more robust and responsive, especially over slow connections such as Wi-Fi, cellular, and long-distance.
 
-[Install](/index.php/Install "Install") the [mosh](https://www.archlinux.org/packages/?name=mosh) package, or [mosh-git](https://aur.archlinux.org/packages/mosh-git/)<sup><small>AUR</small></sup> for the latest revision.
+[Install](/index.php/Install "Install") the [mosh](https://www.archlinux.org/packages/?name=mosh) package, or [mosh-git](https://aur.archlinux.org/packages/mosh-git/) for the latest revision.
 
 Mosh has an undocumented command line option `--predict=experimental` which produces more aggressive echoing of local keystrokes. Users interested in low-latency visual confirmation of keyboard input may prefer this prediction mode.
 
@@ -570,7 +560,7 @@ However, it is likely that port 443 is already in use by a web server serving HT
 
 ### Speeding up SSH
 
-**Note:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/)<sup><small>AUR</small></sup> can significantly increase throughput.[[7]](https://www.psc.edu/index.php/hpn-ssh)
+**Note:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[7]](https://www.psc.edu/index.php/hpn-ssh)
 
 You can make all sessions to the same host use a single connection, which will greatly speed up subsequent logins, by adding these lines under the proper host in `/etc/ssh/ssh_config` or `$HOME/.ssh/config`:
 

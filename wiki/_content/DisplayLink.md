@@ -29,7 +29,7 @@ First, the setup and installation:
 
 ### USB 3.0 DL-5xxx, DL-41xx, DL-3x00 Devices
 
-Install the [displaylink](https://aur.archlinux.org/packages/displaylink/)<sup><small>AUR</small></sup> driver from the AUR. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver. Use systemctl to enable and start `displaylink.service`.
+Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) driver from the AUR. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver. Use systemctl to enable and start `displaylink.service`.
 
 ### Setting up X Displays
 

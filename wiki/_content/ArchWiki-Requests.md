@@ -216,11 +216,11 @@ The article has two types of forum links:
 *   [BBS#30155](https://bbs.archlinux.org/viewtopic.php?id=30155) (intro, as in [Template:Bug](/index.php/Template:Bug "Template:Bug")) and
 *   [https://bbs.archlinux.org/viewtopic.php?id=101010](https://bbs.archlinux.org/viewtopic.php?id=101010) (section [#Kingbash](/index.php/Bash/Functions#Kingbash "Bash/Functions"))
 
-Which one is right again? --**[Det](/index.php/User:Det "User:Det")[<sup><font color="white">talk</font></sup>](/index.php/User_talk:Det "User talk:Det")** 11:44, 24 July 2015 (UTC)
+Which one is right again? --**[Det](/index.php/User:Det "User:Det")[](/index.php/User_talk:Det "User talk:Det")** 11:44, 24 July 2015 (UTC)
 
 	Full URLs should be avoided, see [Help:Style#Hypertext_metaphor](/index.php/Help:Style#Hypertext_metaphor "Help:Style"), otherwise I know of no recommended wording for forum links. -- [Alad](/index.php/User:Alad "User:Alad") ([talk](/index.php/User_talk:Alad "User talk:Alad")) 12:13, 24 July 2015 (UTC)
 
-	That section doesn't actually even talk about external links, while [Help:Editing#External links](/index.php/Help:Editing#External_links "Help:Editing") says _"just type the full URL"_, but also that _"it is often more useful to make the link display something other than the URL"_. --**[Det](/index.php/User:Det "User:Det")[<sup><font color="white">talk</font></sup>](/index.php/User_talk:Det "User talk:Det")** 16:04, 24 July 2015 (UTC)
+	That section doesn't actually even talk about external links, while [Help:Editing#External links](/index.php/Help:Editing#External_links "Help:Editing") says _"just type the full URL"_, but also that _"it is often more useful to make the link display something other than the URL"_. --**[Det](/index.php/User:Det "User:Det")[](/index.php/User_talk:Det "User talk:Det")** 16:04, 24 July 2015 (UTC)
 
 	This was already mentioned somewhere some time ago, I don't remember where nor when, anyway [[2]](https://wiki.archlinux.org/index.php?title=Special%3ALinkSearch&target=https%3A%2F%2Fbbs.archlinux.org%2Fviewtopic.php) would seem to justify the creation of a [Template:BBS](/index.php?title=Template:BBS&action=edit&redlink=1 "Template:BBS (page does not exist)"), just like we have [Template:Bug](/index.php/Template:Bug "Template:Bug"). — [Kynikos](/index.php/User:Kynikos "User:Kynikos") ([talk](/index.php/User_talk:Kynikos "User talk:Kynikos")) 15:18, 25 July 2015 (UTC)
 
@@ -525,7 +525,7 @@ A table of additional properties to follow the discussion more easily:
 (discarded) | Redirect to a page like
 "ArchWiki:Deleted" | Publicize [Special:Undelete](/index.php/Special:Undelete "Special:Undelete") |
 | Type of archive operation | - | delete | move | redirect
-<small>(i.e. modify content, then protect<sup>questioned</sup>)</small> | delete |
+<small>(i.e. modify content, then protect)</small> | delete |
 | Permission to perform archiving |  ??? | admins | depends on [config](https://www.mediawiki.org/wiki/Manual:$wgNamespaceProtection "mw:Manual:$wgNamespaceProtection") | editors | admins |
 | Permission to undo archiving |  ??? | admins | depends on [config](https://www.mediawiki.org/wiki/Manual:$wgNamespaceProtection "mw:Manual:$wgNamespaceProtection") (?)
 <small>(can be forced w/ copy/paste)</small> | editors | admins
@@ -891,7 +891,7 @@ The first problem is that the report page is being noticed only a short time aft
 
 The second problem is that only English pages were consistently updated in the cleanups. No wonder since the events were announced only in English...
 
-I have a proposal to solve the first problem, and partially also the second: instead of creating report pages and organizing cleanups, the broken package links could be marked directly in wiki pages, similarly to the way external links are marked with [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link"). The result could look like this: [pkgname](https://www.archlinux.org/packages/?name=pkgname)<sup>broken link: hint</sup> where "broken link" is a link to a section with detailed instructions to fix the package link and "hint" is a short hint uniquely identifying the problem (given by the bot).
+I have a proposal to solve the first problem, and partially also the second: instead of creating report pages and organizing cleanups, the broken package links could be marked directly in wiki pages, similarly to the way external links are marked with [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link"). The result could look like this: [pkgname](https://www.archlinux.org/packages/?name=pkgname) where "broken link" is a link to a section with detailed instructions to fix the package link and "hint" is a short hint uniquely identifying the problem (given by the bot).
 
 The proposal could be implemented in multiple ways:
 

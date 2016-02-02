@@ -1,11 +1,5 @@
 # GParted
 
-Related articles
-
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
-*   [fdisk](/index.php/Fdisk "Fdisk")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-
 [GParted](http://gparted.sourceforge.net/index.php) is a GTK+ frontend to [GNU Parted](/index.php/GNU_Parted "GNU Parted") and the official GNOME Partition Editor application. Use it to make/delete/resize/check partitions of nearly [any file format](http://gparted.sourceforge.net/features.php). You can also manage drive labels and flags as well as copy/paste entire partitions. GParted is available in the extra repo and also as a [Live CD](http://gparted.sourceforge.net/download.php) if you'd prefer. One reason to actually download the Live CD would be that you need to make modifications to your root filesystem's partition which you cannot do without unmounting it.
 
 **Warning:** Since GParted can read/write to your drive partitions misuse can result in data loss. It is recommended that you back-up affected partitions prior to using GParted.
@@ -41,7 +35,7 @@ The base GParted package doesn't come with support for all filesystems. Here is 
 | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | [F2FS](/index.php/F2FS "F2FS") |
 | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | [JFS](/index.php/JFS "JFS") |
 | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | [NTFS](/index.php/NTFS "NTFS") |
-| [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)<sup><small>AUR</small></sup> | [Reiser4](/index.php/Reiser4 "Reiser4") |
+| [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | [Reiser4](/index.php/Reiser4 "Reiser4") |
 | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Reiser3 |
 | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | [XFS](/index.php/XFS "XFS") |
 

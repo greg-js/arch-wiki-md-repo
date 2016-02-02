@@ -1,10 +1,5 @@
 # Bridge with netctl
 
-Related articles
-
-*   [Network bridge](/index.php/Network_bridge "Network bridge")
-*   [netctl](/index.php/Netctl "Netctl")
-
 Make sure [netctl](/index.php/Netctl "Netctl") is installed.
 
 Copy `/etc/netctl/examples/bridge` to `/etc/netctl/bridge`.

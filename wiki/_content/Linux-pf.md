@@ -21,7 +21,7 @@
 
 ## Installation
 
-Install [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). A long-term support version of linux-pf is available with [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/)<sup><small>AUR</small></sup>.
+Install [linux-pf](https://aur.archlinux.org/packages/linux-pf/) from the [AUR](/index.php/AUR "AUR"). A long-term support version of linux-pf is available with [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/).
 
 ### From the unofficial repository (recommended)
 

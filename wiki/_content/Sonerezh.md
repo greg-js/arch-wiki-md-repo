@@ -4,7 +4,7 @@
 
 ## Installation
 
-Install [sonerezh-git](https://aur.archlinux.org/packages/sonerezh-git/)<sup><small>AUR</small></sup>. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")), a web server (like [Nginx](/index.php/Nginx "Nginx")) with php-support. You may refer following sites:
+Install [sonerezh-git](https://aur.archlinux.org/packages/sonerezh-git/). Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")), a web server (like [Nginx](/index.php/Nginx "Nginx")) with php-support. You may refer following sites:
 
 *   [Apache](/index.php/Apache "Apache")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")

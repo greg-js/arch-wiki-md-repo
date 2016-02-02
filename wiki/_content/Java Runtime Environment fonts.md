@@ -1,12 +1,5 @@
 # Java Runtime Environment fonts
 
-Related articles
-
-*   [Fonts](/index.php/Fonts "Fonts")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
-*   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
-
 Some users may find the default Java fonts or the display mode of fonts in Java applications to be unpleasant. Several methods to improve the font display in the Oracle Java Runtime Environment (JRE) are available. These methods may be used separately, but many users will find they achieve better results by combining them.
 
 TrueType fonts appear to be the best supported format for use with Java.
@@ -67,8 +60,8 @@ Re-login for the changes to take effect.
 
 Even with anti-aliasing enforced through Java options, the resulting anti-aliasing may be inferior to native applications. This can be remedied with a patch to OpenJDK, available in the [AUR](/index.php/AUR "AUR"):
 
-*   Patched **OpenJDK7** is available as [jre7-openjdk-infinality](https://aur.archlinux.org/packages/jre7-openjdk-infinality/)<sup><small>AUR</small></sup>
-*   Patched **OpenJDK8** is available as [jre8-openjdk-infinality](https://aur.archlinux.org/packages/jre8-openjdk-infinality/)<sup><small>AUR</small></sup> (also available from [Infinality unofficial repository](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories"))
+*   Patched **OpenJDK7** is available as [jre7-openjdk-infinality](https://aur.archlinux.org/packages/jre7-openjdk-infinality/)
+*   Patched **OpenJDK8** is available as [jre8-openjdk-infinality](https://aur.archlinux.org/packages/jre8-openjdk-infinality/) (also available from [Infinality unofficial repository](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories"))
 
 The patched version combines well with the [Infinality](/index.php/Infinality "Infinality") patches to fontconfig and freetype.
 

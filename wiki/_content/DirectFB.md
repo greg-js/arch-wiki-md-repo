@@ -8,9 +8,9 @@
 
 ### Directfb with shared application enabled
 
-The directfb package does not enable running multiply applications on the same display. This is of cause necessary for running different windows on this display. For testing install [directfb-multi](https://aur.archlinux.org/packages/directfb-multi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/directfb-multi)]</sup> and [linux-fusion](https://aur.archlinux.org/packages/linux-fusion/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-fusion)]</sup>.
+The directfb package does not enable running multiply applications on the same display. This is of cause necessary for running different windows on this display. For testing install [directfb-multi](https://aur.archlinux.org/packages/directfb-multi/) and [linux-fusion](https://aur.archlinux.org/packages/linux-fusion/).
 
-DirectFB includes an internal window manager. To move a window in the internal window manager, press the `Super` key. Sawman was the original WM but in archlinux [Sawman](https://aur.archlinux.org/packages/Sawman/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sawman)]</sup> is now out of date for quite a long time.
+DirectFB includes an internal window manager. To move a window in the internal window manager, press the `Super` key. Sawman was the original WM but in archlinux [Sawman](https://aur.archlinux.org/packages/Sawman/) is now out of date for quite a long time.
 
 ## See also
 

@@ -11,7 +11,7 @@
 
 ## Installation
 
-Install [textadept](https://aur.archlinux.org/packages/textadept/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). It features 4 different executables:
+Install [textadept](https://aur.archlinux.org/packages/textadept/) from the [AUR](/index.php/AUR "AUR"). It features 4 different executables:
 
 *   _textadept_
 *   _textadept-curses_
@@ -30,8 +30,8 @@ By default, Textadept features modules for its core only, that is ANSI C, Lua an
 
 Some more modules are found in the [AUR](/index.php/AUR "AUR"):
 
-*   [Textredux](https://rgieseke.github.io/textredux/) is available as [textadept-textredux](https://aur.archlinux.org/packages/textadept-textredux/)<sup><small>AUR</small></sup>
-*   [Textadept common](https://rgieseke.github.io/ta-common/) is available as [textadept-common-git](https://aur.archlinux.org/packages/textadept-common-git/)<sup><small>AUR</small></sup>
+*   [Textredux](https://rgieseke.github.io/textredux/) is available as [textadept-textredux](https://aur.archlinux.org/packages/textadept-textredux/)
+*   [Textadept common](https://rgieseke.github.io/ta-common/) is available as [textadept-common-git](https://aur.archlinux.org/packages/textadept-common-git/)
 
 You will need to enable these modules in your `init.lua` file as explained in the upstream documentation.
 

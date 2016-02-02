@@ -1,12 +1,5 @@
 # Wordpress
 
-Related articles
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [PHP](/index.php/PHP "PHP")
-*   [MySQL](/index.php/MySQL "MySQL")
-*   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
-
 [Wordpress](http://wordpress.org) is a free and open source content management system ([CMS](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")) created by [Matt Mullenweg](https://en.wikipedia.org/wiki/Matt_Mullenweg "wikipedia:Matt Mullenweg") and first released in 2003\. Wordpress has a vast and vibrant community that provides tens of thousands of free plugins and themes to allow the user to easily customize the appearance and function of their Wordpress CMS. Wordpress is licensed under the GPLv2.
 
 The biggest feature of Wordpress is its ease in configuration and administration. [Setting up a Wordpress site takes five minutes](http://codex.wordpress.org/Installing_WordPress). The Wordpress administration panel allows users to easily configure almost every aspect of their website including fetching and installing plugins and themes. Wordpress provides effortless automatic updates.

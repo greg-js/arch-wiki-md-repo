@@ -1,10 +1,5 @@
 # QEMU
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [Libvirt](/index.php/Libvirt "Libvirt")
-
 From the [QEMU about page](http://wiki.qemu.org/Main_Page):
 
 	_QEMU is a generic and open source machine emulator and virtualizer._
@@ -103,7 +98,7 @@ Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox 
 
 *   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
 *   [qtemu](https://www.archlinux.org/packages/?name=qtemu)
-*   [aqemu](https://aur.archlinux.org/packages/aqemu/)<sup><small>AUR</small></sup>
+*   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
 Additional front-ends with QEMU support are available for [libvirt](/index.php/Libvirt "Libvirt").
 
@@ -308,7 +303,7 @@ Then, if the device created was `/dev/loop0`, additional devices `/dev/loop0pX` 
 
 #### With kpartx
 
-**kpartx** from the [multipath-tools](https://aur.archlinux.org/packages/multipath-tools/)<sup><small>AUR</small></sup> package can read a partition table on a device and create a new device for each partition. For example:
+**kpartx** from the [multipath-tools](https://aur.archlinux.org/packages/multipath-tools/) package can read a partition table on a device and create a new device for each partition. For example:
 
 ```
 # kpartx -a _disk_image_
@@ -566,7 +561,7 @@ $ qemu-system-i386 -net nic -net bridge,br=_bridge0_ -net nic,vlan=1 -net bridge
 
 The following describes how to bridge a virtual machine to a host interface such as `eth0`, which is probably the most common configuration. This configuration makes it appear that the virtual machine is located directly on the external network, on the same Ethernet segment as the physical host machine.
 
-We will replace the normal Ethernet adapter with a bridge adapter and bind the normal Ethernet adapter to it. See [http://en.gentoo-wiki.com/wiki/KVM#Networking_2](http://en.gentoo-wiki.com/wiki/KVM#Networking_2)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-07-23]</sup>.
+We will replace the normal Ethernet adapter with a bridge adapter and bind the normal Ethernet adapter to it. See [http://en.gentoo-wiki.com/wiki/KVM#Networking_2](http://en.gentoo-wiki.com/wiki/KVM#Networking_2).
 
 *   Install [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), which provides `brctl` to manipulate bridges.
 
@@ -1299,8 +1294,8 @@ $ spicec -h 127.0.0.1 -p 5930
 
 For improved support for multiple monitors, clipboard sharing and more, you have to install additional packages in your _guest_:
 
-*   [spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/)<sup><small>AUR</small></sup>: for [Agent](http://people.freedesktop.org/~teuf/spice-doc/html/ch02s05.html) support. Do not forget to enable the `spice-vdagentd` service.
-*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/)<sup><small>AUR</small></sup>: for the QXL display driver.
+*   [spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/): for [Agent](http://people.freedesktop.org/~teuf/spice-doc/html/ch02s05.html) support. Do not forget to enable the `spice-vdagentd` service.
+*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/): for the QXL display driver.
 *   For other operating systems, see [http://people.freedesktop.org/~teuf/spice-doc/html/ch04.html](http://people.freedesktop.org/~teuf/spice-doc/html/ch04.html)
 
 In addition to the `-spice` option, these options are also needed:
@@ -1327,7 +1322,7 @@ The default VGA memory size for QXL devices is 16M (VRAM size is 64M). This is n
 
 ### Copy and paste
 
-To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/)<sup><small>AUR</small></sup> for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically).
+To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically).
 
 Start QEMU with the following options:
 

@@ -1,10 +1,5 @@
 # MySQL
 
-Related articles
-
-*   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
-*   [Adminer](/index.php/Adminer "Adminer")
-
 MySQL is a widely spread, multi-threaded, multi-user SQL database. For more information about features, see the [official homepage](http://www.mysql.com/).
 
 **Note:** MariaDB is now officially Arch Linux's default implementation of MySQL. It is recommended for all users to [upgrade](#Upgrade_from_Oracle_MySQL_to_MariaDB) to MariaDB. Oracle MySQL was dropped to the [AUR](/index.php/AUR "AUR"). See [the announcement](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).
@@ -47,7 +42,7 @@ Alternative implementations are:
 
 *   **Oracle MySQL** — An implementation by Oracle Corporation.
 
-	[https://www.mysql.com/](https://www.mysql.com/) || [mysql](https://aur.archlinux.org/packages/mysql/)<sup><small>AUR</small></sup>
+	[https://www.mysql.com/](https://www.mysql.com/) || [mysql](https://aur.archlinux.org/packages/mysql/)
 
 *   **Percona Server** — An implementation by Percona LLC.
 
@@ -317,7 +312,7 @@ See also the official `mysqldump` page in the [MySQL](http://dev.mysql.com/doc/r
 
 A python-based software package named [Holland Backup](http://hollandbackup.org/) is available in [AUR](/index.php/AUR "AUR") to automate all of the backup work. It supports direct mysqldump, LVM snapshots to tar files (mysqllvm), LVM snapshots with mysqldump (mysqldump-lvm), and [xtrabackup](https://www.archlinux.org/packages/?name=xtrabackup) methods to extract the data. The Holland framework supports a multitude of options and is highly configurable to address almost any backup situation.
 
-The main [holland](https://aur.archlinux.org/packages/holland/)<sup><small>AUR</small></sup> and [holland-common](https://aur.archlinux.org/packages/holland-common/)<sup><small>AUR</small></sup> packages provide the core framework; one of the sub-packages ([holland-mysqldump](https://aur.archlinux.org/packages/holland-mysqldump/)<sup><small>AUR</small></sup>, [holland-mysqllvm](https://aur.archlinux.org/packages/holland-mysqllvm/)<sup><small>AUR</small></sup> and/or [holland-xtrabackup](https://aur.archlinux.org/packages/holland-xtrabackup/)<sup><small>AUR</small></sup> must be installed for full operation. Example configurations for each method are in the `/usr/share/doc/holland/examples/` directory and can be copied to `/etc/holland/backupsets/`, as well as using the `holland mk-config` command to generate a base config for a named provider.
+The main [holland](https://aur.archlinux.org/packages/holland/) and [holland-common](https://aur.archlinux.org/packages/holland-common/) packages provide the core framework; one of the sub-packages ([holland-mysqldump](https://aur.archlinux.org/packages/holland-mysqldump/), [holland-mysqllvm](https://aur.archlinux.org/packages/holland-mysqllvm/) and/or [holland-xtrabackup](https://aur.archlinux.org/packages/holland-xtrabackup/) must be installed for full operation. Example configurations for each method are in the `/usr/share/doc/holland/examples/` directory and can be copied to `/etc/holland/backupsets/`, as well as using the `holland mk-config` command to generate a base config for a named provider.
 
 ## Troubleshooting
 

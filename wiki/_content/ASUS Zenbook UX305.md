@@ -42,7 +42,7 @@ You can do this on the fly or add these parameters in the config file:
 
 **UX305C:**
 
-Touchpad will only work by default with Linux 4.5.0-rc1 or later. Can currently be used by installing [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>.
+Touchpad will only work by default with Linux 4.5.0-rc1 or later. Can currently be used by installing [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/).
 
 ### Wifi
 

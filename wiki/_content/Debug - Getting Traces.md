@@ -1,11 +1,5 @@
 # Debug - Getting Traces
 
-Related articles
-
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
-*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
-
 This article aims to help in creating a debugging Arch package and using it to provide trace and debug information for reporting software bugs to developers.
 
 ## Contents

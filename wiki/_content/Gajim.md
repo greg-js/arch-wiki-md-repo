@@ -47,7 +47,7 @@ Then [enable](/index.php/Enable "Enable") the service.
 
 [OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](http://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim doesn not support OTR out of the box.
 
-Install the [gajim-plugin-otr](https://aur.archlinux.org/packages/gajim-plugin-otr/)<sup><small>AUR</small></sup> package.
+Install the [gajim-plugin-otr](https://aur.archlinux.org/packages/gajim-plugin-otr/) package.
 
 ### Configuration
 
@@ -64,7 +64,7 @@ At first time, you also need to activate OTR plugin:
 
 [OMEMO Multi-End Message and Object Encryption](http://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone and recently got an experimental [plugin](https://github.com/kalkin/gajim-omemo) for Gajim.
 
-In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/)<sup><small>AUR</small></sup> package which will also install all the required dependencies.
+In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) package which will also install all the required dependencies.
 
 ### Configuration
 

@@ -1,12 +1,5 @@
 # ownCloud
 
-Related articles
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [Nginx](/index.php/Nginx "Nginx")
-*   [OpenSSL](/index.php/OpenSSL "OpenSSL")
-*   [WebDAV](/index.php/WebDAV "WebDAV")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
 	_ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)._
@@ -463,7 +456,7 @@ See also [Uwsgi#Starting service](/index.php/Uwsgi#Starting_service "Uwsgi").
 
 ### Desktop
 
-The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) package. Alternative versions are avaiable in the [AUR](/index.php/AUR "AUR"): [owncloud-client-beta](https://aur.archlinux.org/packages/owncloud-client-beta/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/owncloud-client-beta)]</sup>, [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/)<sup><small>AUR</small></sup> and [owncloud-client-qt5](https://aur.archlinux.org/packages/owncloud-client-qt5/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/owncloud-client-qt5)]</sup>. Its use is described in [this page](http://doc.owncloud.org/server/7.0/user_manual/files/sync.html) of the documentation.
+The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) package. Alternative versions are avaiable in the [AUR](/index.php/AUR "AUR"): [owncloud-client-beta](https://aur.archlinux.org/packages/owncloud-client-beta/), [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/) and [owncloud-client-qt5](https://aur.archlinux.org/packages/owncloud-client-qt5/). Its use is described in [this page](http://doc.owncloud.org/server/7.0/user_manual/files/sync.html) of the documentation.
 
 #### Calendar
 
@@ -662,12 +655,28 @@ The cause is probably a new app that you installed. To fix that, you can either 
 
 ```
 mysql -u root -p owncloud
-MariaDB [owncloud]> **delete from** oc_appconfig **where** appid='<nameOfExtension>' **and** configkey='enabled' **and** configvalue='yes'
+MariaDB [owncloud]> **delete from** oc_appconfig **where** appid='<nameOfExtension>' **and** configkey='enabled' **and** configvalue='yes';
 MariaDB [owncloud]> **insert into** oc_appconfig (appid,configkey,configvalue) **values** ('<nameOfExtension>','enabled','no');
 
 ```
 
 This should delete the relevant configuration from the table and add it again.
+
+Alternatively, you can use the occ command as described [here](https://doc.owncloud.org/server/8.2/admin_manual/configuration_server/occ_command.html). So with
+
+```
+sudo -u http php /usr/share/webapps/owncloud/occ app:list
+
+```
+
+you can list all apps (if you installed owncloud in the standard directory), and with
+
+```
+sudo -u http php /usr/share/webapps/owncloud/occ app:disable <nameOfExtension>
+
+```
+
+you can disable the troubling app.
 
 ### GUI sync client fails to connect
 
@@ -686,7 +695,7 @@ You may see the following error in the ownCloud sync client:
 
 ```
 
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://doc.owncloud.org/server/8.1/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/)<sup><small>AUR</small></sup>, comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` make the following changes:
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://doc.owncloud.org/server/8.1/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` make the following changes:
 
 ```
    'memcache.local' => '\OC\Memcache\Redis',
@@ -812,4 +821,4 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418643](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418643)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418827](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418827)"

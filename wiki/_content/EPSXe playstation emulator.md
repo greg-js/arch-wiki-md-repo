@@ -16,7 +16,7 @@ ePSXe (enhanced PSX emulator) is a PlayStation emulator for x86-based PC hardwar
 
 **Warning:** The installation and use of this emulator requires a Sony PlayStation BIOS file. You may not use such a file to play games in a PSX emulator if you do not own a Sony PlayStation, Sony PSOne or Sony PlayStation 2 console. Owning the BIOS image without owning the actual console is a violation of copyright law. You have been warned.
 
-Install [epsxe](https://aur.archlinux.org/packages/epsxe/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"), along with any [plugins](https://aur.archlinux.org/packages.php?K=epsxe-plugin). Also, you should have a legally obtained BIOS file handy.
+Install [epsxe](https://aur.archlinux.org/packages/epsxe/) from [AUR](/index.php/AUR "AUR"), along with any [plugins](https://aur.archlinux.org/packages.php?K=epsxe-plugin). Also, you should have a legally obtained BIOS file handy.
 
 Add yourself to the `games` group:
 

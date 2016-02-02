@@ -1,10 +1,5 @@
 # Arch CVE Monitoring Team
 
-Related articles
-
-*   [CVE](/index.php/CVE "CVE")
-*   [Security Advisories](/index.php/Security_Advisories "Security Advisories")
-
 This article introduces the Arch CVE Monitoring Team (ACMT) and describes best practices for contributing.
 
 ## Contents

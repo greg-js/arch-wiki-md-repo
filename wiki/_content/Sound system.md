@@ -31,7 +31,7 @@ Default Arch installation already includes kernel sound system, namely [ALSA](/i
 
 *   **[The Open Sound System (OSS)](/index.php/OSS "OSS")** — An alternative sound architecture for Unix-like and POSIX-compatible systems. OSS version 3 was the original sound system for Linux and is in the kernel, but was superceded by ALSA in 2002 when OSS version 4 became proprietary software. OSSv4 became free software again in 2007 when 4Front Technologies released its source code and provided it under the GPL. Does not support as wide a variety of hardware as ALSA, but does better for some.
 
-	[http://www.opensound.com/](http://www.opensound.com/) || [oss](https://aur.archlinux.org/packages/oss/)<sup><small>AUR</small></sup>
+	[http://www.opensound.com/](http://www.opensound.com/) || [oss](https://aur.archlinux.org/packages/oss/)
 
 ## Sound servers
 
@@ -53,7 +53,7 @@ Default Arch installation already includes kernel sound system, namely [ALSA](/i
 
 *   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — This is a sound server supported by some major applications.
 
-	[http://www.radscan.com/nas/nas-links.html](http://www.radscan.com/nas/nas-links.html) || [nas](https://aur.archlinux.org/packages/nas/)<sup><small>AUR</small></sup>
+	[http://www.radscan.com/nas/nas-links.html](http://www.radscan.com/nas/nas-links.html) || [nas](https://aur.archlinux.org/packages/nas/)
 
 ## See also
 

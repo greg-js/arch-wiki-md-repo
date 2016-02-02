@@ -1,11 +1,5 @@
 # Tor
 
-Related articles
-
-*   [GNUnet](/index.php/GNUnet "GNUnet")
-*   [I2P](/index.php/I2P "I2P")
-*   [Freenet](/index.php/Freenet "Freenet")
-
 [Tor](https://www.torproject.org) is an open source implementation of 2nd generation [onion routing](https://en.wikipedia.org/wiki/Onion_routing "wikipedia:Onion routing") that provides free access to an anonymous proxy network. Its primary goal is to enable [online anonymity](https://en.wikipedia.org/wiki/Internet_anonymity "wikipedia:Internet anonymity") by protecting against [traffic analysis](https://en.wikipedia.org/wiki/Traffic_analysis "wikipedia:Traffic analysis") attacks.
 
 ## Contents
@@ -77,7 +71,7 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
 
-Additionally, there is a [Qt](/index.php/Qt "Qt") frontend for Tor in package [vidalia](https://aur.archlinux.org/packages/vidalia/)<sup><small>AUR</small></sup>. In addition to controlling the Tor process, Vidalia allows you to view and configure the status of Tor, monitor bandwidth usage, and view, filter, and search log messages.
+Additionally, there is a [Qt](/index.php/Qt "Qt") frontend for Tor in package [vidalia](https://aur.archlinux.org/packages/vidalia/). In addition to controlling the Tor process, Vidalia allows you to view and configure the status of Tor, monitor bandwidth usage, and view, filter, and search log messages.
 
 **Warning:** As there is no active maintainer for Vidalia, along with a large number of longstanding bugs, [avoid using](https://www.whonix.org/wiki/Tor_Controller#Vidalia_recommended_against) _vidalia_.
 

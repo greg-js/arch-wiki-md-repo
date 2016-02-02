@@ -38,11 +38,11 @@ Extra utilities:
 
 *   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring.
 
-	[http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases](http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases) || [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)<sup><small>AUR</small></sup>
+	[http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases](http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases) || [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)
 
 *   **gkeyring** — Query passwords from the command line, the [Git](/index.php/Git "Git") version can list all passwords without needing to know name or id of the item
 
-	[https://github.com/kparal/gkeyring](https://github.com/kparal/gkeyring) || [gkeyring](https://aur.archlinux.org/packages/gkeyring/)<sup><small>AUR</small></sup>, [gkeyring-git](https://aur.archlinux.org/packages/gkeyring-git/)<sup><small>AUR</small></sup>
+	[https://github.com/kparal/gkeyring](https://github.com/kparal/gkeyring) || [gkeyring](https://aur.archlinux.org/packages/gkeyring/), [gkeyring-git](https://aur.archlinux.org/packages/gkeyring-git/)
 
 ## Manage using GUI
 

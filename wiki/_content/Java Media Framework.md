@@ -17,7 +17,7 @@ From [Sun JMF site](http://java.sun.com/products/java-media/jmf/): "The Java Med
 
 ## Installation
 
-Install [jmf](https://aur.archlinux.org/packages/jmf/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jmf)]</sup> from [AUR](/index.php/AUR "AUR").
+Install [jmf](https://aur.archlinux.org/packages/jmf/) from [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -58,7 +58,7 @@ jmfRegisterMp3Plugin
 
 "[Jffmpeg](http://jffmpeg.sourceforge.net/) is a plugin that allows the playback of a number of common audio and video formats. It is based around a Java port of parts of the FFMPEG project, supporting a number of codecs in pure Java code. Where codecs have not yet been ported, a JNI wrapper allows calls directly into the full FFMPEG code."
 
-Install [jffmpeg](https://aur.archlinux.org/packages/jffmpeg/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jffmpeg)]</sup> from [AUR](/index.php/AUR "AUR").
+Install [jffmpeg](https://aur.archlinux.org/packages/jffmpeg/) from [AUR](/index.php/AUR "AUR").
 
 The install script will register the plugins and associate the mimetypes in the JMF registry and the uninstall script will unregister the plugins from the JMF registry.
 

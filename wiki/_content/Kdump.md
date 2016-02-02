@@ -1,9 +1,5 @@
 # Kdump
 
-Related articles
-
-*   [Kexec](/index.php/Kexec "Kexec")
-
 [Kdump](https://www.kernel.org/doc/Documentation/kdump/kdump.txt) is a standard Linux mechanism to dump machine memory content on kernel crash. Kdump is based on [Kexec](/index.php/Kexec "Kexec"). Kdump utilizes two kernels: system kernel and dump capture kernel. System kernel is a normal kernel that is booted with special kdump-specific flags. We need to tell the system kernel to reserve some amount of physical memory where dump-capture kernel will be loaded. We need to load the dump capture kernel in advance because at the moment crash happens there is no way to read any data from disk because kernel is broken.
 
 Once kernel crash happens the kernel crash handler uses [Kexec](/index.php/Kexec "Kexec") mechanism to boot dump capture kernel. Please note that memory with system kernel is untouched and accessible from dump capture kernel as seen at the moment of crash. Once dump capture kernel is booted, the user can use the file `/proc/vmcore` to get access to memory of crashed system kernel. The dump can be saved to disk or copied over network to some other machine for further investigation.

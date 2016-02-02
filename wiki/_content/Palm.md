@@ -18,9 +18,9 @@ This guide is to help Arch users with Palm(R) devices. While installation in Arc
 
 You will need to [install](/index.php/Install "Install") one of the various Personal Information Management (PIM) software packages:
 
-*   [jpilot](https://aur.archlinux.org/packages/jpilot/)<sup><small>AUR</small></sup>
+*   [jpilot](https://aur.archlinux.org/packages/jpilot/)
 *   [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
-*   [gnome-pilot](https://www.archlinux.org/packages/?name=gnome-pilot)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+*   [gnome-pilot](https://www.archlinux.org/packages/?name=gnome-pilot)
 
 ## Finding your Device
 

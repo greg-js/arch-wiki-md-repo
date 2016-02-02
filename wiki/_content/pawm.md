@@ -132,8 +132,8 @@ As PAWM is minimalistic, the controls are as well.
 
 The following complementary packages can be found in the [AUR](/index.php/AUR "AUR").
 
-*   [xsri](https://aur.archlinux.org/packages/xsri/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xsri)]</sup> A program that can be used for fast image and gradient setting. Good for `~/.xinitrc`
-*   [thinglaunch](https://aur.archlinux.org/packages/thinglaunch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/thinglaunch)]</sup> is a launcher program for X. You can bind it to a key in your favorite window manager. When you want to start a program, just type its name. thinglaunch has a tiny footprint and depends only on Xlib.
-*   [pawmIcons](https://aur.archlinux.org/packages/pawmIcons/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pawmicons)]</sup> A simple python based utility for creating hassle free Launcher icons. It does not support custom icons.
+*   [xsri](https://aur.archlinux.org/packages/xsri/) A program that can be used for fast image and gradient setting. Good for `~/.xinitrc`
+*   [thinglaunch](https://aur.archlinux.org/packages/thinglaunch/) is a launcher program for X. You can bind it to a key in your favorite window manager. When you want to start a program, just type its name. thinglaunch has a tiny footprint and depends only on Xlib.
+*   [pawmIcons](https://aur.archlinux.org/packages/pawmIcons/) A simple python based utility for creating hassle free Launcher icons. It does not support custom icons.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pawm&oldid=415152](https://wiki.archlinux.org/index.php?title=Pawm&oldid=415152)"

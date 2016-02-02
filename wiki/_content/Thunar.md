@@ -1,13 +1,5 @@
 # Thunar
 
-Related articles
-
-*   [Xfce](/index.php/Xfce "Xfce")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-*   [Nemo](/index.php/Nemo "Nemo")
-
 From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 	_Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time._
@@ -58,7 +50,7 @@ Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File mana
 
 *   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)<sup><small>AUR</small></sup>
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 
 *   **[Thunar Volume Manager](#Thunar_Volume_Manager)** — Automatic management of removeable devices in Thunar. Part of [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
@@ -169,7 +161,7 @@ To use this action you need to have [catfish](https://www.archlinux.org/packages
 
 ### Scan for viruses
 
-To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://aur.archlinux.org/packages/clamtk/)<sup><small>AUR</small></sup> installed.
+To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://aur.archlinux.org/packages/clamtk/) installed.
 
 | Name | Command | File patterns | Appears if selection contains |
 | Scan for virus | `clamtk %F` | * | Select all |

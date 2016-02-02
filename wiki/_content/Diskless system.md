@@ -1,12 +1,5 @@
 # Diskless system
 
-Related articles
-
-*   [NFS](/index.php/NFS "NFS")
-*   [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")
-*   [PXE](/index.php/PXE "PXE")
-*   [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")
-
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
 
 	_A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server._
@@ -182,7 +175,7 @@ Next, we [chroot](/index.php/Chroot "Chroot") our installation and run _mkinitcp
 
 #### NBD
 
-The [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/)<sup><small>AUR</small></sup> package needs to be installed on the client. Build it with _makepkg_ and install it:
+The [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/) package needs to be installed on the client. Build it with _makepkg_ and install it:
 
 ```
 # pacman --root "$root" --dbpath "$root/var/lib/pacman" -U mkinitcpio-nbd-0.4-1-any.pkg.tar.xz

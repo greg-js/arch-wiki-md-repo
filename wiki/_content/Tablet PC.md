@@ -150,7 +150,7 @@ See [rotate.py](https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/
 
 ### With systemd
 
-See [iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy). [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/)<sup><small>AUR</small></sup> is available in the AUR.
+See [iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy). [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) is available in the AUR.
 
 ## Tips and tricks
 
@@ -160,7 +160,7 @@ See [iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy). [iio-sensor-
 
 ### Easystroke
 
-[Easystroke](http://easystroke.sourceforge.net/) is a gesture recognition application, recognizing gestures by a variety of input devices, to include pen stylus, mouse, and touch. Gestures can be used to launch programs, enter text, emulate buttons and keys, and scroll. Easystroke is available in the AUR: [easystroke-git](https://aur.archlinux.org/packages/easystroke-git/)<sup><small>AUR</small></sup>.
+[Easystroke](http://easystroke.sourceforge.net/) is a gesture recognition application, recognizing gestures by a variety of input devices, to include pen stylus, mouse, and touch. Gestures can be used to launch programs, enter text, emulate buttons and keys, and scroll. Easystroke is available in the AUR: [easystroke-git](https://aur.archlinux.org/packages/easystroke-git/).
 
 #### Launch CellWriter under pen
 

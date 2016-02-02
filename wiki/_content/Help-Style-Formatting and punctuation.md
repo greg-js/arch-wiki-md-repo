@@ -86,19 +86,19 @@ These general rules always override [#Specific cases](#Specific_cases). For case
 
 ## Cases by formatting/punctuation
 
-Cases marked by <sup>1</sup> are affected by [#First instances](#First_instances). Cases marked by <sup>m</sup> apply to monospaced text.
+Cases marked by  are affected by [#First instances](#First_instances). Cases marked by  apply to monospaced text.
 
 ### Italic
 
 Use the MediaWiki syntax `''italic text''` instead of `<i>` tags.
 
-*   [#Executable/application names](#Executable.2Fapplication_names)<sup>1</sup>
+*   [#Executable/application names](#Executable.2Fapplication_names)
 *   [#File extensions](#File_extensions)
-*   [#Repository names](#Repository_names)<sup>1</sup>
-*   [#Package and group names](#Package_and_group_names)<sup>1</sup>
-*   [#Pseudo-variables in file/command line contents](#Pseudo-variables_in_file.2Fcommand_line_contents)<sup>m</sup>
+*   [#Repository names](#Repository_names)
+*   [#Package and group names](#Package_and_group_names)
+*   [#Pseudo-variables in file/command line contents](#Pseudo-variables_in_file.2Fcommand_line_contents)
 *   [#GUI/TUI text](#GUI.2FTUI_text)
-*   [#Technical terms](#Technical_terms)<sup>1</sup>
+*   [#Technical terms](#Technical_terms)
 *   [#Stressed/strong words or statements](#Stressed.2Fstrong_words_or_statements)
 *   [#Acronym/abbreviation expansions](#Acronym.2Fabbreviation_expansions)
 
@@ -106,7 +106,7 @@ Use the MediaWiki syntax `''italic text''` instead of `<i>` tags.
 
 Use the MediaWiki syntax `'''bold text'''` instead of `<b>` tags.
 
-*   [#Important part of file/command line contents](#Important_part_of_file.2Fcommand_line_contents)<sup>m</sup>
+*   [#Important part of file/command line contents](#Important_part_of_file.2Fcommand_line_contents)
 *   [#Stressed/strong words or statements](#Stressed.2Fstrong_words_or_statements)
 *   [#First instances](#First_instances)
 

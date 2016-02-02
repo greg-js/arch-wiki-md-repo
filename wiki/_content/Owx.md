@@ -4,7 +4,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [owx](https://aur.archlinux.org/packages/owx/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [owx](https://aur.archlinux.org/packages/owx/) package.
 
 ## Tips and Tricks
 

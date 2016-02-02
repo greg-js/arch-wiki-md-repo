@@ -1,10 +1,5 @@
 # Samsung Chromebook (ARM)
 
-Related articles
-
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [Chromebook](/index.php/Chromebook "Chromebook")
-
 The Samsung Chromebook (model XE303C12) is a laptop intended work in the cloud. It provides a powerful Cortex-A15 Dual Core Exynos 5 processor at 1.7 GHz with Mali-T604 GPU, 2 GiB of DDR3, 16 GiB of internal flash storage, WiFi a/b/g/n, SD and USB ports, HDMI connector and a 11.6" display. It is visually like the MacBook Air 11\. With stock firmware it runs a heavily modified Gentoo-Linux, which means that nearly all the source code is [available](https://chromium.googlesource.com/chromiumos) from Google. **It is possible to install ArchLinux ARM (ALARM) on this device**.
 
 More information at dedicated pages by [Google](http://www.google.com/intl/en/chrome/devices/samsung-chromebook.html#ss-cb) and [Samsung](http://www.samsung.com/us/computer/chrome-os-devices/XE303C12-A01US).

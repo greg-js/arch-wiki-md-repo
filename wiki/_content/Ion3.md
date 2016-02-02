@@ -17,7 +17,7 @@
 
 ## Installation
 
-Ion3 is no longer in any of the repositories as mentioned in this news item [[1]](https://www.archlinux.org/news/374/). So you will have to [install](/index.php/Install "Install") it using the package [ion-3](https://aur.archlinux.org/packages/ion-3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ion-3)]</sup>.
+Ion3 is no longer in any of the repositories as mentioned in this news item [[1]](https://www.archlinux.org/news/374/). So you will have to [install](/index.php/Install "Install") it using the package [ion-3](https://aur.archlinux.org/packages/ion-3/).
 
 Copy the configurationfiles to your home directory:
 

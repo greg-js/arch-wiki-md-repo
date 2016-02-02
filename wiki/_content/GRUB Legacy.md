@@ -1,20 +1,12 @@
 # GRUB Legacy
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
-*   [grub-gfx](/index.php/Grub-gfx "Grub-gfx")
-*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
-
 [GRUB Legacy](http://www.gnu.org/software/grub/grub-legacy.html) is a [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) bootloader previously maintained by the [GNU Project](/index.php/GNU_Project "GNU Project"). It was derived from GRUB, the GRand Unified Bootloader, which was originally designed and implemented by Erich Stefan Boleyn.
 
 Briefly, the _bootloader_ is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.
 
 **Warning:** GRUB Legacy is no longer maintained upstream and is not officially supported in Arch (see the news [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/)). Users are recommended to switch to [GRUB](/index.php/GRUB "GRUB")(2) or [Syslinux](/index.php/Syslinux "Syslinux") instead. See [Upgrading to GRUB2](#Upgrading_to_GRUB2).
 
-**Note:** If you have grub-legacy installed as grub-0.97 pkg in your system, it will be updated to [grub](https://www.archlinux.org/packages/?name=grub)-2.xx pkg (GRUB2) during pkg updates. If you want to keep using grub-legacy install [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/)<sup><small>AUR</small></sup> so that pkgname does not conflict. During this update only the files in `/usr/lib/grub/` are updated, and grub-legacy files installed to `/boot/grub` and the `MBR` are not removed. You can boot back into grub-legacy by simply renaming `/boot/grub/menu.lst.pacsave` to `/boot/grub/menu.lst` .
+**Note:** If you have grub-legacy installed as grub-0.97 pkg in your system, it will be updated to [grub](https://www.archlinux.org/packages/?name=grub)-2.xx pkg (GRUB2) during pkg updates. If you want to keep using grub-legacy install [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/) so that pkgname does not conflict. During this update only the files in `/usr/lib/grub/` are updated, and grub-legacy files installed to `/boot/grub` and the `MBR` are not removed. You can boot back into grub-legacy by simply renaming `/boot/grub/menu.lst.pacsave` to `/boot/grub/menu.lst` .
 
 ## Contents
 
@@ -66,7 +58,7 @@ Briefly, the _bootloader_ is the first software program that runs when a compute
 
 ## Installation
 
-GRUB Legacy has been dropped from the [official repositories](/index.php/Official_repositories "Official repositories") in favor of [GRUB version 2.x](/index.php/GRUB "GRUB") but is still available from the [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/)<sup><small>AUR</small></sup> package.
+GRUB Legacy has been dropped from the [official repositories](/index.php/Official_repositories "Official repositories") in favor of [GRUB version 2.x](/index.php/GRUB "GRUB") but is still available from the [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/) package.
 
 Additionally, GRUB must be installed to the boot sector of a drive or partition to serve as a bootloader. This is covered in the [Bootloader installation](#Bootloader_installation) section.
 
@@ -449,7 +441,7 @@ Manually copy the GRUB libs like so:
 GRUB may be installed from a separate medium (e.g. a LiveCD), or directly from a running Arch install. The GRUB bootloader is _seldom_ required to be reinstalled and installation is _not_ necessary when:
 
 *   The configuration file is updated.
-*   The [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/)<sup><small>AUR</small></sup> package is updated.
+*   The [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/) package is updated.
 
 Installation is _necessary_ when:
 
@@ -578,7 +570,7 @@ kernel /vmlinuz-linux root=/dev/sda1 ro **vga=0x0365**
 
 #### vbetest
 
-1.  Install [lrmi](https://aur.archlinux.org/packages/lrmi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lrmi)]</sup> which contains the **vbetest** tool (x86_64 users will need to use [hwinfo](#hwinfo)).
+1.  Install [lrmi](https://aur.archlinux.org/packages/lrmi/) which contains the **vbetest** tool (x86_64 users will need to use [hwinfo](#hwinfo)).
 2.  Run `vbetest` as root
 3.  Then note the number in [ ] corresponding to your desired resolution.
 4.  Press `q` to quit **vbetest** interactive prompt.
@@ -743,7 +735,7 @@ For ease of use, you might to wish to implement the "[Allow users to shutdown](/
 
 If the [LILO](/index.php/LILO "LILO") package is installed on your system, [remove](/index.php/Remove "Remove") it. As some tasks (e.g. kernel compilation using `make all`) will make a LILO call, and LILO will then be installed over GRUB. LILO may have been included in your base system, depending on your installer media version and whether you selected/deselected it during the package selection stage.
 
-**Note:** Removing [lilo](https://aur.archlinux.org/packages/lilo/)<sup><small>AUR</small></sup> will not remove LILO from the MBR if it has been installed there; it will merely remove the [lilo](https://aur.archlinux.org/packages/lilo/)<sup><small>AUR</small></sup> package. The LILO bootloader installed to the MBR will be overwritten when GRUB (or another bootloader) is installed over it.
+**Note:** Removing [lilo](https://aur.archlinux.org/packages/lilo/) will not remove LILO from the MBR if it has been installed there; it will merely remove the [lilo](https://aur.archlinux.org/packages/lilo/) package. The LILO bootloader installed to the MBR will be overwritten when GRUB (or another bootloader) is installed over it.
 
 ### GRUB boot disk
 

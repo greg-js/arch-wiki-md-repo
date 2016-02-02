@@ -45,7 +45,7 @@ After that it is recommended to follow the usual installation procedure describe
 
 Works out of the box with module `r8169`.
 
-If you use Lenovo's Thinkpad OneLink Dock you need [asix-ax88179-dkms](https://aur.archlinux.org/packages/asix-ax88179-dkms/)<sup><small>AUR</small></sup> for it's ThinkPad OneLink GigaLAN adapter. The module `ax88179_178a` delivered with the stock kernel doesn't work.
+If you use Lenovo's Thinkpad OneLink Dock you need [asix-ax88179-dkms](https://aur.archlinux.org/packages/asix-ax88179-dkms/) for it's ThinkPad OneLink GigaLAN adapter. The module `ax88179_178a` delivered with the stock kernel doesn't work.
 
 ### WLAN
 
@@ -98,7 +98,7 @@ Currently the `thinkpad_acpi` module does not support to turn the keyboard backl
 
 ### Fingerprint scanner
 
-To get that working you need [fprintd](https://www.archlinux.org/packages/?name=fprintd) and [libfprint-vfs5011-git](https://aur.archlinux.org/packages/libfprint-vfs5011-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libfprint-vfs5011-git)]</sup>. Follow the [Fprint](/index.php/Fprint "Fprint") guide for the rest.
+To get that working you need [fprintd](https://www.archlinux.org/packages/?name=fprintd) and [libfprint-vfs5011-git](https://aur.archlinux.org/packages/libfprint-vfs5011-git/). Follow the [Fprint](/index.php/Fprint "Fprint") guide for the rest.
 
 ### Suspend
 
@@ -106,6 +106,6 @@ Works flawlessly with with [pm-utils](https://www.archlinux.org/packages/?name=p
 
 ### Power consumption
 
-With [cpupower](https://www.archlinux.org/packages/?name=cpupower), [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup> and [acpid](https://www.archlinux.org/packages/?name=acpid) installed and graphics switched to intel gpu, I get over 9 hours battery life.
+With [cpupower](https://www.archlinux.org/packages/?name=cpupower), [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/) and [acpid](https://www.archlinux.org/packages/?name=acpid) installed and graphics switched to intel gpu, I get over 9 hours battery life.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=412556](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_S440&oldid=412556)"

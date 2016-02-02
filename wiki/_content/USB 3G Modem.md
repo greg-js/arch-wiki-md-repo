@@ -1,12 +1,5 @@
 # USB 3G Modem
 
-Related articles
-
-*   [wvdial](/index.php/Wvdial "Wvdial")
-*   [Direct Modem Connection](/index.php/Direct_Modem_Connection "Direct Modem Connection")
-*   [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd")
-*   [Category:Modems](/index.php/Category:Modems "Category:Modems")
-
 A number of mobile telephone networks around the world offer mobile internet connections over UMTS (or EDGE or GSM) using a portable USB modem device.
 
 ## Contents
@@ -84,7 +77,7 @@ See the [netctl](/index.php/Netctl "Netctl") article for more information.
 
 ### sakis3g
 
-There may be the chance that the modem stick is supported by [sakis3g](http://www.sakis3g.com/) which is an all in one command line script and automates all the steps above. Install [sakis3g](https://aur.archlinux.org/packages/sakis3g/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+There may be the chance that the modem stick is supported by [sakis3g](http://www.sakis3g.com/) which is an all in one command line script and automates all the steps above. Install [sakis3g](https://aur.archlinux.org/packages/sakis3g/) from the [AUR](/index.php/AUR "AUR").
 
 ### Low connection speed
 

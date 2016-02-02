@@ -1,11 +1,5 @@
 # Wayland
 
-Related articles
-
-*   [KMS](/index.php/KMS "KMS")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Mir](/index.php/Mir "Mir")
-
 **Wayland** is a new windowing protocol for Linux. Utilization of Wayland requires changes to and re-installation of parts of your system's software. For more information on Wayland see its [homepage](http://wayland.freedesktop.org/).
 
 ## Contents
@@ -298,7 +292,7 @@ To run a SDL application on Wayland, set `SDL_VIDEODRIVER=wayland`.
 
 ### GLFW
 
-Experimental wayland support is now in GLFW 3.1 and can be enabled with the `-DGLFW_USE_WAYLAND=ON` CMake option at compile time. You can also install the package [glfw-wayland-git](https://aur.archlinux.org/packages/glfw-wayland-git/)<sup><small>AUR</small></sup> from the AUR.
+Experimental wayland support is now in GLFW 3.1 and can be enabled with the `-DGLFW_USE_WAYLAND=ON` CMake option at compile time. You can also install the package [glfw-wayland-git](https://aur.archlinux.org/packages/glfw-wayland-git/) from the AUR.
 
 ### EFL
 

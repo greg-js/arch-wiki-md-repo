@@ -1,17 +1,11 @@
 # VMware
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest")
-*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
-
 This article is about installing VMware in Arch Linux; you may also be interested in [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest").
 
 **Note:**
 
 *   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.
-*   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)<sup><small>AUR</small></sup> package.
+*   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ## Contents
 
@@ -56,7 +50,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 *   [fuse](https://www.archlinux.org/packages/?name=fuse) - the `vmware-vmblock-fuse` service is [favored](https://www.mail-archive.com/open-vm-tools-devel@lists.sourceforge.net/msg00213.html) over the `vmblock` module, and the vmblock module not built anymore without disabling [fuse](http://cateee.net/lkddb/web-lkddb/FUSE_FS.html) in the kernel
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
-*   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> - needed by at least the installer
+*   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by at least the installer
 
 Download the latest [VMware Workstation Pro](https://www.vmware.com/go/tryworkstation) or [Player](https://www.vmware.com/go/downloadplayer) (or a [beta](https://communities.vmware.com/community/vmtn/beta) version, if available).
 
@@ -88,7 +82,7 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 ## Configuration
 
-**Tip:** There is also a package called [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)<sup><small>AUR</small></sup> with the intention of trying to automate this section (it also supports older VMware versions).
+**Tip:** There is also a package called [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) with the intention of trying to automate this section (it also supports older VMware versions).
 
 ### Kernel modules
 
@@ -98,7 +92,7 @@ VMware Workstation 12 supports kernels up to 4.2.
 
 ### systemd services
 
-_(Optional)_ Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [AUR](/index.php/AUR "AUR") as [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/)<sup><small>AUR</small></sup>):
+_(Optional)_ Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [AUR](/index.php/AUR "AUR") as [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/)):
 
  `/etc/systemd/system/vmware.service` 
 
@@ -367,7 +361,7 @@ Install the headers ([linux-headers](https://www.archlinux.org/packages/?name=li
 
 ### USB devices not recognized
 
-**Tip:** Also handled by [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)<sup><small>AUR</small></sup>.
+**Tip:** Also handled by [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/).
 
 If not using the [systemd service](#systemd_services) to automatically handle the services, you need to manually start the `vmware-usbarbitrator` binary as root each time.
 
@@ -414,7 +408,7 @@ And install using the VMware installer:
 
 ```
 
-If the above does not work, try installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup>.
+If the above does not work, try installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
 
 ### Incorrect login/password when trying to access VMware remotely
 

@@ -52,7 +52,7 @@ Recent 'alsa-driver' (>=1.0.6) has also support for NVidia NForce
 
 #### Installation
 
-Install the [slmodem](https://aur.archlinux.org/packages/slmodem/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/slmodem)]</sup> package.
+Install the [slmodem](https://aur.archlinux.org/packages/slmodem/) package.
 
 ##### Configuration of "normal modem"
 

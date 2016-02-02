@@ -23,11 +23,11 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Alternatively, install the [redshift-minimal](https://aur.archlinux.org/packages/redshift-minimal/)<sup><small>AUR</small></sup> package, for a version with minimal dependencies.
+[Install](/index.php/Install "Install") the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Alternatively, install the [redshift-minimal](https://aur.archlinux.org/packages/redshift-minimal/) package, for a version with minimal dependencies.
 
 ### Desktop environments
 
-For desktop environments, the `redshift-gtk` command is installed with the [redshift](https://www.archlinux.org/packages/?name=redshift) package. redshift-gtk provides a system tray icon for controlling redshift. redshift-gtk requires the [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg) packages. [KDE](/index.php/KDE "KDE") users can use the [kdeplasma-applets-redshift](https://aur.archlinux.org/packages/kdeplasma-applets-redshift/)<sup><small>AUR</small></sup>. [plasma](https://www.archlinux.org/groups/x86_64/plasma/) users can use the [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/)<sup><small>AUR</small></sup>.
+For desktop environments, the `redshift-gtk` command is installed with the [redshift](https://www.archlinux.org/packages/?name=redshift) package. redshift-gtk provides a system tray icon for controlling redshift. redshift-gtk requires the [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg) packages. [KDE](/index.php/KDE "KDE") users can use the [kdeplasma-applets-redshift](https://aur.archlinux.org/packages/kdeplasma-applets-redshift/). [plasma](https://www.archlinux.org/groups/x86_64/plasma/) users can use the [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
 
 ### Autostart
 

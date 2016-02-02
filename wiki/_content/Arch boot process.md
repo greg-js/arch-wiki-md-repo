@@ -1,17 +1,5 @@
 # Arch boot process
 
-Related articles
-
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
-*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [init](/index.php/Init "Init")
-*   [systemd](/index.php/Systemd "Systemd")
-*   [fstab](/index.php/Fstab "Fstab")
-*   [Autostarting](/index.php/Autostarting "Autostarting")
-
 In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loader "Boot loader") such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") must be installed to the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") or the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the boot process. The procedure is quite different for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") and [UEFI](/index.php/UEFI "UEFI") systems, the detailed description is given on this or linked pages.
 
 ## Contents

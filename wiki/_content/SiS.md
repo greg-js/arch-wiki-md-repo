@@ -14,7 +14,7 @@ This page describes how to get [Silicon Integrated Systems (SiS)](http://dri.fre
 
 ## Packages
 
-You will need main [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/)<sup><small>AUR</small></sup>. You can also check [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-sis671)]</sup> from [AUR](/index.php/AUR "AUR").
+You will need main [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/). You can also check [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/) from [AUR](/index.php/AUR "AUR").
 
 ## lspci
 

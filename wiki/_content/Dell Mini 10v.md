@@ -1,12 +1,5 @@
 # Dell Mini 10v
 
-Related articles
-
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [Laptop](/index.php/Laptop "Laptop")
-*   [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-
 This articles details the installation and configuration of Arch Linux on the Dell Mini 10v. The Dell Mini 10v is a netbook with 10" display from Dell. This article covers the configuration of the graphics card, wireless card and touchpad.
 
 ## Contents
@@ -114,7 +107,7 @@ Once confirming that it works, you can create a file /etc/modprobe.d/b43.conf wi
 
 permanently.
 
--- other option - use the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> driver from the AUR.
+-- other option - use the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver from the AUR.
 
 ## Power
 

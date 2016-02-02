@@ -1,9 +1,5 @@
 # initscripts/runlevels
 
-Related articles
-
-*   [SysVinit](/index.php/SysVinit "SysVinit")
-
 **Note:** [systemd](/index.php/Systemd "Systemd") is used by default, which uses targets (see `man systemd.target`) rather than runlevels.
 
 From the [init](http://unixhelp.ed.ac.uk/CGI/man-cgi?init+8) man page:

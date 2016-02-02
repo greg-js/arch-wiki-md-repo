@@ -1,10 +1,5 @@
 # VOGL
 
-Related articles
-
-*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
-*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
-
 [VOGL](https://github.com/ValveSoftware/vogl) is a tool created by Valve Software and RAD Game Tools for OpenGL debugging. It is able to capture, replay and inspect OpenGL call tracefiles.
 
 ## Contents
@@ -18,9 +13,9 @@ Related articles
 
 ## Installation
 
-The development version [vogl-git](https://aur.archlinux.org/packages/vogl-git/)<sup><small>AUR</small></sup> is available on the [AUR](/index.php/AUR "AUR").
+The development version [vogl-git](https://aur.archlinux.org/packages/vogl-git/) is available on the [AUR](/index.php/AUR "AUR").
 
-To capture and debug 32-Bit applications you need libvogltrace32.so, voglreplay32 and vogleditor32 from [lib32-vogl-git](https://aur.archlinux.org/packages/lib32-vogl-git/)<sup><small>AUR</small></sup>.
+To capture and debug 32-Bit applications you need libvogltrace32.so, voglreplay32 and vogleditor32 from [lib32-vogl-git](https://aur.archlinux.org/packages/lib32-vogl-git/).
 
 ## Capturing a tracefile
 

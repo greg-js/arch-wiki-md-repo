@@ -1,9 +1,5 @@
 # Polipo
 
-Related articles
-
-*   [Squid](/index.php/Squid "Squid")
-
 From [Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
 	"_Polipo is a small and fast caching web proxy (a web cache, an HTTP proxy, a proxy server). While Polipo was designed to be used by one person or a small group of people, there is nothing that prevents it from being used by a larger group._"
@@ -31,7 +27,7 @@ The following covers installing and setting up Polipo.
 
 Install [polipo](https://www.archlinux.org/packages/?name=polipo), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-Alternatively, install the newer development branch [polipo-git](https://aur.archlinux.org/packages/polipo-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/polipo-git)]</sup> from the [AUR](/index.php/AUR "AUR") instead.
+Alternatively, install the newer development branch [polipo-git](https://aur.archlinux.org/packages/polipo-git/) from the [AUR](/index.php/AUR "AUR") instead.
 
 ## Starting the daemon
 

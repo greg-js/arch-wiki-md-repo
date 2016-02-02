@@ -536,7 +536,7 @@ this will press 5 for about three times. If you want to type a string using this
 
 ### evrouter
 
-Now we need something which will work when Enemy Territory is loaded. Apparently, xbindkeys does not work here, so we need another program: [evrouter](https://aur.archlinux.org/packages/evrouter/)<sup><small>AUR</small></sup> [[3]](http://www.bedroomlan.org/~alexios/coding_evrouter.html).
+Now we need something which will work when Enemy Territory is loaded. Apparently, xbindkeys does not work here, so we need another program: [evrouter](https://aur.archlinux.org/packages/evrouter/) [[3]](http://www.bedroomlan.org/~alexios/coding_evrouter.html).
 
 OK, so now we must have evdev and we can NOT use it in X, so here is how my example `/etc/X11/xorg.conf` mouse section looks like:
 
@@ -688,7 +688,7 @@ And voila, we have got it working immediately after KDE login.
 
 ## User tools
 
-[imwheel](https://aur.archlinux.org/packages/imwheel/)<sup><small>AUR</small></sup> provides configurable mouse wheel and button mapping. It can be configured globally or for individual processes.
+[imwheel](https://aur.archlinux.org/packages/imwheel/) provides configurable mouse wheel and button mapping. It can be configured globally or for individual processes.
 
 Sample `~/.imwheelrc` to enable back/forward thumb buttons for all applications and increased scroll speed in Chromium:
 

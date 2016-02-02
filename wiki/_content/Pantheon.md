@@ -46,52 +46,52 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 Alternatively, all packages provided by the repository are also available in the [AUR](/index.php/AUR "AUR") for those who prefer to build the packages from source.
 
-To get a minimal desktop interface, you may start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)<sup><small>AUR</small></sup>. This will pull the following core components:
+To get a minimal desktop interface, you may start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/). This will pull the following core components:
 
-*   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/)<sup><small>AUR</small></sup>: Watchdog service to keep core Pantheon apps running
-*   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/)<sup><small>AUR</small></sup>: Window Manager
-*   [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/)<sup><small>AUR</small></sup>: Top panel
-*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/)<sup><small>AUR</small></sup>: Application launcher
-*   [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/)<sup><small>AUR</small></sup>: Dock
+*   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/): Watchdog service to keep core Pantheon apps running
+*   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/): Window Manager
+*   [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/): Top panel
+*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/): Application launcher
+*   [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): Dock
 
 However,it is recommended to install the following packages to get a fully working Pantheon Shell:
 
 **Note:** Problems can occur when using (non)-mixed bzr packages! You can install the latest release, by adding -bzr to its install package-name.
 
-*   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/)<sup><small>AUR</small></sup>: Video player
-*   [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/)<sup><small>AUR</small></sup>: Service for sharing data between apps
-*   [dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dexter-contacts-bzr)]</sup>: Contacts manager (does not build)
-*   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/)<sup><small>AUR</small></sup>: Simple screencaster
-*   [elementary-icon-theme-bzr](https://aur.archlinux.org/packages/elementary-icon-theme-bzr/)<sup><small>AUR</small></sup>: elementary icons
-*   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/)<sup><small>AUR</small></sup>: Simple scan utility (does not build)
-*   [elementary-wallpapers-bzr](https://aur.archlinux.org/packages/elementary-wallpapers-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/elementary-wallpapers-bzr)]</sup>: elementary wallpaper collection
-*   [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/)<sup><small>AUR</small></sup>: elementary GTK theme
-*   [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/feedler-bzr)]</sup>: RSS feeds reader (does not build)
-*   [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/)<sup><small>AUR</small></sup>: Note taking app
+*   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/): Video player
+*   [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/): Service for sharing data between apps
+*   [dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/): Contacts manager (does not build)
+*   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
+*   [elementary-icon-theme-bzr](https://aur.archlinux.org/packages/elementary-icon-theme-bzr/): elementary icons
+*   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
+*   [elementary-wallpapers-bzr](https://aur.archlinux.org/packages/elementary-wallpapers-bzr/): elementary wallpaper collection
+*   [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/): elementary GTK theme
+*   [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/): RSS feeds reader (does not build)
+*   [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/): Note taking app
 *   [geary](https://www.archlinux.org/packages/?name=geary): Email client
-*   [indicator-pantheon-session-bzr](https://aur.archlinux.org/packages/indicator-pantheon-session-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-pantheon-session-bzr)]</sup>: Session indicator
-*   [lightdm-pantheon-greeter-bzr](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-bzr/)<sup><small>AUR</small></sup>: LightDM greeter
-*   [maya-calendar-bzr](https://aur.archlinux.org/packages/maya-calendar-bzr/)<sup><small>AUR</small></sup>: Calendar
-*   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/)<sup><small>AUR</small></sup>: Web browser
-*   [noise-bzr](https://aur.archlinux.org/packages/noise-bzr/)<sup><small>AUR</small></sup>: Audio player
-*   [pantheon-backgrounds-bzr](https://aur.archlinux.org/packages/pantheon-backgrounds-bzr/)<sup><small>AUR</small></sup>: Wallpaper collection
-*   [pantheon-calculator-bzr](https://aur.archlinux.org/packages/pantheon-calculator-bzr/)<sup><small>AUR</small></sup>: Calculator
-*   [pantheon-default-settings-bzr](https://aur.archlinux.org/packages/pantheon-default-settings-bzr/)<sup><small>AUR</small></sup>: Pantheon default's settings (appearance, etc.)
-*   [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/)<sup><small>AUR</small></sup>: File explorer
-*   [pantheon-notify-bzr](https://aur.archlinux.org/packages/pantheon-notify-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pantheon-notify-bzr)]</sup>: Notification daemon
-*   [pantheon-print-bzr](https://aur.archlinux.org/packages/pantheon-print-bzr/)<sup><small>AUR</small></sup>: Print settings
-*   [pantheon-terminal-bzr](https://aur.archlinux.org/packages/pantheon-terminal-bzr/)<sup><small>AUR</small></sup>: Terminal emulator
-*   [plank-theme-pantheon-bzr](https://aur.archlinux.org/packages/plank-theme-pantheon-bzr/)<sup><small>AUR</small></sup>: Pantheon theme for plank
-*   [scratch-text-editor-bzr](https://aur.archlinux.org/packages/scratch-text-editor-bzr/)<sup><small>AUR</small></sup>: Text editor
-*   [snap-photobooth-bzr](https://aur.archlinux.org/packages/snap-photobooth-bzr/)<sup><small>AUR</small></sup>: Webcam app
-*   [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/)<sup><small>AUR</small></sup>: Settings manager
+*   [indicator-pantheon-session-bzr](https://aur.archlinux.org/packages/indicator-pantheon-session-bzr/): Session indicator
+*   [lightdm-pantheon-greeter-bzr](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-bzr/): LightDM greeter
+*   [maya-calendar-bzr](https://aur.archlinux.org/packages/maya-calendar-bzr/): Calendar
+*   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser
+*   [noise-bzr](https://aur.archlinux.org/packages/noise-bzr/): Audio player
+*   [pantheon-backgrounds-bzr](https://aur.archlinux.org/packages/pantheon-backgrounds-bzr/): Wallpaper collection
+*   [pantheon-calculator-bzr](https://aur.archlinux.org/packages/pantheon-calculator-bzr/): Calculator
+*   [pantheon-default-settings-bzr](https://aur.archlinux.org/packages/pantheon-default-settings-bzr/): Pantheon default's settings (appearance, etc.)
+*   [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/): File explorer
+*   [pantheon-notify-bzr](https://aur.archlinux.org/packages/pantheon-notify-bzr/): Notification daemon
+*   [pantheon-print-bzr](https://aur.archlinux.org/packages/pantheon-print-bzr/): Print settings
+*   [pantheon-terminal-bzr](https://aur.archlinux.org/packages/pantheon-terminal-bzr/): Terminal emulator
+*   [plank-theme-pantheon-bzr](https://aur.archlinux.org/packages/plank-theme-pantheon-bzr/): Pantheon theme for plank
+*   [scratch-text-editor-bzr](https://aur.archlinux.org/packages/scratch-text-editor-bzr/): Text editor
+*   [snap-photobooth-bzr](https://aur.archlinux.org/packages/snap-photobooth-bzr/): Webcam app
+*   [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/): Settings manager
 
 **Note:** You will also need to install plugs, look for "switchboard-plug-*" in the [AUR](https://aur.archlinux.org/packages/?O=0&K=switchboard-plug) or in [Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
 
 It is also recommended to install the following fonts:
 
-*   [ttf-opensans](https://aur.archlinux.org/packages/ttf-opensans/)<sup><small>AUR</small></sup>: Open Sans Fonts
-*   [ttf-raleway-font-family](https://aur.archlinux.org/packages/ttf-raleway-font-family/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-raleway-font-family)]</sup>: Raleway Font Family
+*   [ttf-opensans](https://aur.archlinux.org/packages/ttf-opensans/): Open Sans Fonts
+*   [ttf-raleway-font-family](https://aur.archlinux.org/packages/ttf-raleway-font-family/): Raleway Font Family
 *   [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu): Font family based on the Bitstream Vera Fonts
 *   [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid): General-purpose fonts released by Google as part of Android
 *   [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont): Set of free outline fonts covering the Unicode character set
@@ -101,13 +101,13 @@ It is also recommended to install the following fonts:
 
 #### Packages based on older evolution-data-server
 
-[dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dexter-contacts-bzr)]</sup> and [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/feedler-bzr)]</sup> do not build because they are based on evolution-data-server 3.2\. Arch Linux provides version 3.10 which uses a different Vala API.
+[dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/) and [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/) do not build because they are based on evolution-data-server 3.2\. Arch Linux provides version 3.10 which uses a different Vala API.
 
 ## Launching Pantheon
 
 ### Via a Display Manager
 
-[pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)<sup><small>AUR</small></sup> provides a session entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
+[pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a session entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 
 **Note:** Either use the bzr version of _cerbere_ or add 'gala' to the monitored processes for this to work.
 
@@ -144,13 +144,13 @@ Pantheon, when launched via `~/.xinitrc`, does not support XDG autostart. Howeve
 
 *   You may add any program to your `~/.xinitrc`, preferably right before the _exec cerbere_ line. This is the better choice for one-shot programs.
 *   Or you may edit the `org.pantheon.cerbere.monitored-processes` key using _dconf-editor_ and add the programs of your choice. This method is best for applications which keep running in the background.
-*   Or you may use a program like [dapper](https://aur.archlinux.org/packages/dapper/)<sup><small>AUR</small></sup>, [dex-git](https://aur.archlinux.org/packages/dex-git/)<sup><small>AUR</small></sup>, or [fbautostart](https://aur.archlinux.org/packages/fbautostart/)<sup><small>AUR</small></sup> to add support for XDG autostart in your `~/.xinitrc`.
+*   Or you may use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to add support for XDG autostart in your `~/.xinitrc`.
 
 **Note:** Keep in mind that applications started via _cerbere_ cannot be terminated, they will keep respawning.
 
 ## Configuration
 
-Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/)<sup><small>AUR</small></sup> and its plugs, most are available in the AUR and the custom repo. All pantheon settings can also be altered via _dconf_, they are located in the `org.pantheon` key. Use _dconf-editor_ for easy editing.
+Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most are available in the AUR and the custom repo. All pantheon settings can also be altered via _dconf_, they are located in the `org.pantheon` key. Use _dconf-editor_ for easy editing.
 
 Part of the configuration is handled by [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) via a dedicated plug, which unfortunately only supports GNOME up to 3.6\. Use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) itself and [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead.
 
@@ -158,7 +158,7 @@ Part of the configuration is handled by [gnome-control-center](https://www.archl
 
 #### Enable context menu entries
 
-If you want to enable context menu entries such as for [file-roller](https://www.archlinux.org/packages/?name=file-roller) to extract/compress archives, then you have to additionally install [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/)<sup><small>AUR</small></sup>.
+If you want to enable context menu entries such as for [file-roller](https://www.archlinux.org/packages/?name=file-roller) to extract/compress archives, then you have to additionally install [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/).
 
 ### Terminal
 
@@ -184,25 +184,25 @@ OnlyShowIn=Unity;XFCE;GNOME;Pantheon;
 
 ### Indicator-session menus not working
 
-*   [indicator-session-bzr](https://aur.archlinux.org/packages/indicator-session-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-session-bzr)]</sup>
+*   [indicator-session-bzr](https://aur.archlinux.org/packages/indicator-session-bzr/)
 
 This version of indicator-session relies on dbus methods native to Unity for most of it's fuctions; it can be made to work by patching out the use of Unity dialogs, such as in [indicator-session-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)
 
-*   [indicator-session](https://aur.archlinux.org/packages/indicator-session/)<sup><small>AUR</small></sup>
+*   [indicator-session](https://aur.archlinux.org/packages/indicator-session/)
 
-This version of indicator-session fails to interact with the session manager somehow; a (crudely hacked) version that uses systemd/logind instead is available [indicator-session-systemd](https://aur.archlinux.org/packages/indicator-session-systemd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-session-systemd)]</sup>
+This version of indicator-session fails to interact with the session manager somehow; a (crudely hacked) version that uses systemd/logind instead is available [indicator-session-systemd](https://aur.archlinux.org/packages/indicator-session-systemd/)
 
-_About This Computer_, _Lock_ and _Sound Settings_ ([indicator-sound](https://aur.archlinux.org/packages/indicator-sound/)<sup><small>AUR</small></sup> or [indicator-sound-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)) rely on gnome components that may not be installed, such as gnome-control-center and gnome-screensaver.
+_About This Computer_, _Lock_ and _Sound Settings_ ([indicator-sound](https://aur.archlinux.org/packages/indicator-sound/) or [indicator-sound-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)) rely on gnome components that may not be installed, such as gnome-control-center and gnome-screensaver.
 
 For _Lock_ functionality (including "Ctrl+L" hotkey), replace gnome-screensaver with [light-locker](/index.php/Light-locker "Light-locker") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [a script that emulates the gnome-screensaver dbus](https://github.com/quequotion/pantheon-bzr-qq/tree/master/EXTRAS/xscreensaver-dbus-screenlock).
 
 ### No transparency in pantheon-terminal
 
-Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentaryOS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/)<sup><small>AUR</small></sup> or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme.
+Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentaryOS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme.
 
 ### White icons in pantheon-files
 
-Currently there seems to be a bug which displays the view icons in the top location in a white colour instead of black. This can be fixed by installing [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/)<sup><small>AUR</small></sup> or adding the following line to `gtk-widgets.css` or `gtk-widgets.css` of your [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/)<sup><small>AUR</small></sup> theme:
+Currently there seems to be a bug which displays the view icons in the top location in a white colour instead of black. This can be fixed by installing [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/) or adding the following line to `gtk-widgets.css` or `gtk-widgets.css` of your [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) theme:
 
 ```
 GtkToolItem { color: @text_color; }
@@ -241,6 +241,6 @@ The 'gala' window manager is most likely not running. [#Via .xinitrc](#Via_.xini
 
 ### Wingpanel is empty except for Applications
 
-The indicators that are displayed in the wingpanel are split into separate packages. [#Installation](#Installation) Install additional indicators such as [indicator-datetime](https://aur.archlinux.org/packages/indicator-datetime/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-datetime)]</sup>, [indicator-power](https://aur.archlinux.org/packages/indicator-power/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/indicator-power)]</sup> or [indicator-sound](https://aur.archlinux.org/packages/indicator-sound/)<sup><small>AUR</small></sup>.
+The indicators that are displayed in the wingpanel are split into separate packages. [#Installation](#Installation) Install additional indicators such as [indicator-datetime](https://aur.archlinux.org/packages/indicator-datetime/), [indicator-power](https://aur.archlinux.org/packages/indicator-power/) or [indicator-sound](https://aur.archlinux.org/packages/indicator-sound/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Pantheon&oldid=404071](https://wiki.archlinux.org/index.php?title=Pantheon&oldid=404071)"

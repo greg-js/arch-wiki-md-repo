@@ -1,9 +1,5 @@
 # Bitcoin
 
-Related articles
-
-*   [List of applications/Internet#Bitcoin](/index.php/List_of_applications/Internet#Bitcoin "List of applications/Internet")
-
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (i.e. '144 BTC'), can also be exchanged for traditional currencies like US dollars.
 
 ## Contents
@@ -102,13 +98,13 @@ There are several Bitcoin miners in the [AUR](/index.php/AUR "AUR"):
 
 *   **CGMiner** — Multi-threaded multi-pool CPU miner.
 
-	[https://github.com/ckolivas/cgminer](https://github.com/ckolivas/cgminer) || [cgminer](https://www.archlinux.org/packages/?name=cgminer) (Note: use [cgminer-gpu](https://aur.archlinux.org/packages/cgminer-gpu/)<sup><small>AUR</small></sup> for GPU mining as its version was the last to support it).
+	[https://github.com/ckolivas/cgminer](https://github.com/ckolivas/cgminer) || [cgminer](https://www.archlinux.org/packages/?name=cgminer) (Note: use [cgminer-gpu](https://aur.archlinux.org/packages/cgminer-gpu/) for GPU mining as its version was the last to support it).
 
-**Tip:** you need corresponding opencl package to enable GPU mining, [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia) for Nvidia, and [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/)<sup><small>AUR</small></sup> in AUR for Intel.
+**Tip:** you need corresponding opencl package to enable GPU mining, [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia) for Nvidia, and [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/) in AUR for Intel.
 
 *   **cpuminer** — Multi-threaded CPU Miner.
 
-	[http://yyz.us/bitcoin/](http://yyz.us/bitcoin/) || [cpuminer-git](https://aur.archlinux.org/packages/cpuminer-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cpuminer-git)]</sup>
+	[http://yyz.us/bitcoin/](http://yyz.us/bitcoin/) || [cpuminer-git](https://aur.archlinux.org/packages/cpuminer-git/)
 
 *   **MiningBeast** — Multi-platform mining software.
 
@@ -116,7 +112,7 @@ There are several Bitcoin miners in the [AUR](/index.php/AUR "AUR"):
 
 *   **Phoenix Miner** — Efficient, fast, modular, python-based, OpenCL GPU miner.
 
-	[https://github.com/jedi95/Phoenix-Miner](https://github.com/jedi95/Phoenix-Miner) || [phoenix-miner-svn](https://aur.archlinux.org/packages/phoenix-miner-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/phoenix-miner-svn)]</sup>
+	[https://github.com/jedi95/Phoenix-Miner](https://github.com/jedi95/Phoenix-Miner) || [phoenix-miner-svn](https://aur.archlinux.org/packages/phoenix-miner-svn/)
 
 ## Sample config file
 

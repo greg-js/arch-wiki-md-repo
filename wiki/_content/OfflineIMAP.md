@@ -1,11 +1,5 @@
 # OfflineIMAP
 
-Related articles
-
-*   [isync](/index.php/Isync "Isync")
-*   [notmuch](/index.php/Notmuch "Notmuch")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-
 [OfflineIMAP](http://offlineimap.org/) is a Python utility to sync mail from IMAP servers. It does not work with the POP3 protocol or mbox, and is usually paired with a MUA such as [Mutt](/index.php/Mutt "Mutt").
 
 ## Contents
@@ -26,7 +20,7 @@ Related articles
         *   [4.4.3 Using pass](#Using_pass)
         *   [4.4.4 Gnome keyring](#Gnome_keyring)
             *   [4.4.4.1 Option 1: using gnomekeyring Python module](#Option_1:_using_gnomekeyring_Python_module)
-            *   [4.4.4.2 Option 2: using gnome-keyring-query<sup>AUR</sup> tool](#Option_2:_using_gnome-keyring-queryAUR_tool)
+            *   [4.4.4.2 Option 2: using gnome-keyring-query tool](#Option_2:_using_gnome-keyring-queryAUR_tool)
         *   [4.4.5 python2-keyring](#python2-keyring)
         *   [4.4.6 Emacs EasyPG](#Emacs_EasyPG)
         *   [4.4.7 KeePass / KeePassX](#KeePass_.2F_KeePassX)
@@ -39,7 +33,7 @@ Related articles
 
 ## Installation
 
-Install [offlineimap](https://www.archlinux.org/packages/?name=offlineimap). For a development version, install [offlineimap-git](https://aur.archlinux.org/packages/offlineimap-git/)<sup><small>AUR</small></sup>.
+Install [offlineimap](https://www.archlinux.org/packages/?name=offlineimap). For a development version, install [offlineimap-git](https://aur.archlinux.org/packages/offlineimap-git/).
 
 ## Configuration
 
@@ -407,7 +401,7 @@ if __name__ == "__main__":
 
 To set the credentials, run this script from a shell.
 
-##### Option 2: using [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)<sup><small>AUR</small></sup> tool
+##### Option 2: using [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/) tool
 
  `~/.offlineimap.py` 
 
@@ -458,7 +452,7 @@ See [http://www.emacswiki.org/emacs/OfflineIMAP#toc2](http://www.emacswiki.org/e
 
 #### KeePass / KeePassX
 
-Install [python2-keepass-git](https://aur.archlinux.org/packages/python2-keepass-git/)<sup><small>AUR</small></sup> from the AUR, then add the following to your offlineimap.py file:
+Install [python2-keepass-git](https://aur.archlinux.org/packages/python2-keepass-git/) from the AUR, then add the following to your offlineimap.py file:
 
 ```
 #! /usr/bin/env python2
@@ -499,7 +493,7 @@ Note that as-is, this does not support KDBs with keyfiles, only KDBs with passwo
 
 ### Kerberos authentication
 
-Install [python2-kerberos](https://aur.archlinux.org/packages/python2-kerberos/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") and do not specify remotepass in your .offlineimaprc. OfflineImap figure out the reset all if have a valid Kerberos TGT. If you have 'maxconnections', it will fail for some connection. Comment 'maxconnections' out will solve this problem.
+Install [python2-kerberos](https://aur.archlinux.org/packages/python2-kerberos/) from [AUR](/index.php/AUR "AUR") and do not specify remotepass in your .offlineimaprc. OfflineImap figure out the reset all if have a valid Kerberos TGT. If you have 'maxconnections', it will fail for some connection. Comment 'maxconnections' out will solve this problem.
 
 ## Troubleshooting
 

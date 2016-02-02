@@ -12,7 +12,7 @@ Brother supplies Linux drivers for its printers, however they are not in an easi
 
 ## Really short overview of CUPS
 
-[CUPS](/index.php/CUPS "CUPS") handles printers using a `.ppd` file and a filter binary. Once those two files are installed, the printer can be [registered](/index.php/CUPS#Local_printers "CUPS") in CUPS. A simple example PKGBUILD that does this is [samsung2010p](https://aur.archlinux.org/packages/samsung2010p/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/samsung2010p)]</sup>.
+[CUPS](/index.php/CUPS "CUPS") handles printers using a `.ppd` file and a filter binary. Once those two files are installed, the printer can be [registered](/index.php/CUPS#Local_printers "CUPS") in CUPS. A simple example PKGBUILD that does this is [samsung2010p](https://aur.archlinux.org/packages/samsung2010p/).
 
 ## About Brother drivers
 
@@ -27,11 +27,11 @@ Unfortunately, Brother's drivers have some issues:
 These issues can be worked around.
 
 *   The lpr driver does not need to be installed, so the PKGBUILD can just extract the files in the lpr driver's RPM package.
-*   The CUPS driver's RPM should contain a single shell script. For instance, for the [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/)<sup><small>AUR</small></sup> package, the PKGBUILD changes three things:
+*   The CUPS driver's RPM should contain a single shell script. For instance, for the [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) package, the PKGBUILD changes three things:
     1.  The paths are changed.
     2.  All commands are disabled except "`cat <<EOF`" or "`echo > ...`" or whatever there is that emits *.ppd or filter to separate file. It was done by wrapping irrelevant instructions by `if false; then ... fi`.
     3.  The target file names for the ppd and filter are changed so they are installed into the same directory as the PKGBUILD. Note that paths to the embedded filter where also changed.
-*   To fix the paths to conform to the [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards"), [sed](https://www.archlinux.org/packages/?name=sed) or similar can be used on all text files unpacked from both the lpr and CUPS drivers. Look at the patch in the [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/)<sup><small>AUR</small></sup> package to check which files are affected.
+*   To fix the paths to conform to the [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards"), [sed](https://www.archlinux.org/packages/?name=sed) or similar can be used on all text files unpacked from both the lpr and CUPS drivers. Look at the patch in the [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) package to check which files are affected.
 
 Effectively after the changes described above the script will just output a ppd and a filter to some known location. The PKGBUILD will then copy them to the proper directories in `$pkgdir`:
 

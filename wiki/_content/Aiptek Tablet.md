@@ -4,7 +4,7 @@ This has been tested with an Aiptek HyperPen 12000U. I have no idea if it works 
 
 ## Installation
 
-You need to install [xf86-input-aiptek](https://www.archlinux.org/packages/?name=xf86-input-aiptek)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> from the [Official repositories](/index.php/Official_repositories "Official repositories").
+You need to install [xf86-input-aiptek](https://www.archlinux.org/packages/?name=xf86-input-aiptek) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 Create `/etc/udev/rules.d/20-aiptek.rules` with the following content:
 

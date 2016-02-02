@@ -11,10 +11,6 @@
 | Card Reader | **Unknown** |
 | Bluetooth | **Unknown** |
 
-Related articles
-
-*   [ASUS N56vj](/index.php/ASUS_N56vj "ASUS N56vj")
-
 ## Contents
 
 *   [1 Hardware](#Hardware)

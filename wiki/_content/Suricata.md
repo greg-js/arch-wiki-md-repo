@@ -15,7 +15,7 @@ From the project [home page](http://suricata-ids.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [suricata](https://aur.archlinux.org/packages/suricata/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [suricata](https://aur.archlinux.org/packages/suricata/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

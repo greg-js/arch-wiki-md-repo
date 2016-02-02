@@ -1,13 +1,5 @@
 # Network configuration
 
-Related articles
-
-*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Network bridge](/index.php/Network_bridge "Network bridge")
-*   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
-
 This page explains how to set up a **wired** connection to a network. If you need to set up **wireless** networking see the [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") page.
 
 ## Contents
@@ -611,7 +603,7 @@ It appears that setting _Integrated Peripherals --> Onboard LAN Boot ROM --> Ena
 
 ### No interface with Atheros chipsets
 
-Users of some Atheros ethernet chips are reporting it does not work out-of-the-box (with installation media of February 2014). The working solution for this is to install [backports-patched](https://aur.archlinux.org/packages/backports-patched/)<sup><small>AUR</small></sup>.
+Users of some Atheros ethernet chips are reporting it does not work out-of-the-box (with installation media of February 2014). The working solution for this is to install [backports-patched](https://aur.archlinux.org/packages/backports-patched/).
 
 ### Broadcom BCM57780
 

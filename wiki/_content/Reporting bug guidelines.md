@@ -1,11 +1,5 @@
 # Reporting bug guidelines
 
-Related articles
-
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
-*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
-
 Opening (and closing) bug reports on the [Arch Linux Bugtracker](https://bugs.archlinux.org/) is one of many possible ways to [help the community](/index.php/Getting_involved "Getting involved"). However, poorly-formed bug reports can be counter-productive. When bugs are incorrectly reported, developers waste time investigating and closing invalid reports. This document will guide anyone wanting to help the community by efficiently reporting and hunting bugs.
 
 See also: [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) by Simon Tatham

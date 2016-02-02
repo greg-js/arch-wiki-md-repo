@@ -1,11 +1,5 @@
 # Bluetooth mouse
 
-Related articles
-
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
-*   [Mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate")
-
 This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetooth") mouse through the command line without relying upon a graphical application.
 
 ## Contents

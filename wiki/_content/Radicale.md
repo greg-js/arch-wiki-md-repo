@@ -1,11 +1,5 @@
 # Radicale
 
-Related articles
-
-*   [DAViCal](/index.php/DAViCal "DAViCal")
-*   [Kcaldav](/index.php/Kcaldav "Kcaldav")
-*   [AgenDAV](/index.php/AgenDAV "AgenDAV")
-
 Radicale is a server designed to support the CalDav and CardDav protocols. It is based on Python 2.6-3.5.
 
 ## Contents
@@ -17,7 +11,7 @@ Radicale is a server designed to support the CalDav and CardDav protocols. It is
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [radicale](https://aur.archlinux.org/packages/radicale/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [radicale](https://aur.archlinux.org/packages/radicale/) package.
 
 ## Configuration
 

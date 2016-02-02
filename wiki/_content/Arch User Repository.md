@@ -1,17 +1,5 @@
 # Arch User Repository
 
-Related articles
-
-*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
-*   [AurJson](/index.php/AurJson "AurJson")
-*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-
 The Arch User Repository (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community](/index.php/Community "Community") repository. This document explains how users can access and utilize the AUR.
 
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the _community_ repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
@@ -336,7 +324,7 @@ The packages on the AUR are merely "build scripts", i.e. recipes to build binari
 
 ### How can I vote for packages in the AUR?
 
-Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/)<sup><small>AUR</small></sup>.
+Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/).
 
 ### What is a Trusted User / TU?
 

@@ -1,10 +1,5 @@
 # Screen Irssi Bitlbee
 
-Related articles
-
-*   [WeeChat](/index.php/WeeChat "WeeChat")
-*   [tmux](/index.php/Tmux "Tmux")
-
 Using GNU Screen, Irssi, Bitlbee, and SSH together allows you to have a persistent connection to IRC servers, AOL Instant Messenger, and MSN Instant Messenger. Via SSH, you can access this persistent chat suite from anywhere. Putting the pieces together is not difficult, and this page will guide you through it.
 
 ## Contents

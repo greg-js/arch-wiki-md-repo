@@ -11,13 +11,13 @@
 
 ## Installation
 
-Install [naemon-core](https://aur.archlinux.org/packages/naemon-core/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Note that the [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/)<sup><small>AUR</small></sup> and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/)<sup><small>AUR</small></sup> packages will also be built.
+Install [naemon-core](https://aur.archlinux.org/packages/naemon-core/) from the [AUR](/index.php/AUR "AUR"). Note that the [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/) and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/) packages will also be built.
 
 Install the plugins from [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) as well as [fping](https://www.archlinux.org/packages/?name=fping).
 
 ## Web interface
 
-Install [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/)<sup><small>AUR</small></sup> and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/)<sup><small>AUR</small></sup>, then uncomment:
+Install [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/) and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/), then uncomment:
 
  `/etc/naemon/naemon.cfg` 
 

@@ -1,16 +1,10 @@
 # Chruby
 
-Related articles
-
-*   [RVM](/index.php/RVM "RVM")
-*   [Rbenv](/index.php/Rbenv "Rbenv")
-*   [Ruby](/index.php/Ruby "Ruby")
-
 [chruby](https://github.com/postmodern/chruby#readme) is a minimal version switcher for Ruby.
 
 ## Installation
 
-You can install [chruby](https://aur.archlinux.org/packages/chruby/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+You can install [chruby](https://aur.archlinux.org/packages/chruby/) from the [AUR](/index.php/AUR "AUR").
 
 ## External links
 

@@ -1,9 +1,5 @@
 # Touchpad Synaptics
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-
 This article details the installation and configuration process of the _**Synaptics input driver**_ for Synaptics (and ALPS) touchpads found on most notebooks.
 
 ## Contents
@@ -180,9 +176,9 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 	[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
 
-*   **kcm-touchpad** — A new touchpad configuration tool for [KDE](/index.php/KDE "KDE"), provides a module under input devices in system settings. Released in February 2014, works under KDE SC 4.12+. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/synaptiks)]</sup> and [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_touchpad)]</sup>.
+*   **kcm-touchpad** — A new touchpad configuration tool for [KDE](/index.php/KDE "KDE"), provides a module under input devices in system settings. Released in February 2014, works under KDE SC 4.12+. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/) and [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/).
 
-	[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup>
+	[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)
 
 ### GNOME/Cinnamon
 
@@ -478,7 +474,7 @@ Furthermore, you should validate that your udev script is running properly! You 
 
 ##### touchpad-state
 
-An AUR package [touchpad-state-git](https://aur.archlinux.org/packages/touchpad-state-git/)<sup><small>AUR</small></sup> has been created around the udev rules above. It includes a udev rule and script:
+An AUR package [touchpad-state-git](https://aur.archlinux.org/packages/touchpad-state-git/) has been created around the udev rules above. It includes a udev rule and script:
 
 ```
 touchpad-state [--off] [--on]
@@ -487,9 +483,9 @@ touchpad-state [--off] [--on]
 
 #### KDE
 
-If using KDE, the package [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup> can be set to disable the touchpad on mouse detection.
+If using KDE, the package [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad) can be set to disable the touchpad on mouse detection.
 
-If using Plasma, the package [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)]</sup> can be used to manage the touchpad.
+If using Plasma, the package [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks) can be used to manage the touchpad.
 
 #### System with multiple X sessions
 
@@ -560,7 +556,7 @@ SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/mous
 
 ### Buttonless touchpads (aka ClickPads)
 
-Ever more laptops have a special kind of touchpad which has a single mouse button as part of the tracking plate, instead of external buttons. For example, the 2015 Dell XPS 13, HP series 4500 ProBooks, ThinkPad X220 and X1 ThinkPad series have this kind of a touchpad. By default, the whole button area is detected as a left button, so right and middle-click functions and click + drag will not work. It is possible to define two and three finger clicks as right and middle button clicks, and/or to define parts of the click pad surface as right and middle buttons. Note that although the driver registers multiple touches, it does not track individual fingers (as of version 1.7.1) which results in confusing behavior when using physical buttons of a clickpad for drag-and-drop and other gestures: you have to click with two or three fingers but then only move one of them while holding the button down with another. You can look into the [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/)<sup><small>AUR</small></sup> driver for better multitouch support.
+Ever more laptops have a special kind of touchpad which has a single mouse button as part of the tracking plate, instead of external buttons. For example, the 2015 Dell XPS 13, HP series 4500 ProBooks, ThinkPad X220 and X1 ThinkPad series have this kind of a touchpad. By default, the whole button area is detected as a left button, so right and middle-click functions and click + drag will not work. It is possible to define two and three finger clicks as right and middle button clicks, and/or to define parts of the click pad surface as right and middle buttons. Note that although the driver registers multiple touches, it does not track individual fingers (as of version 1.7.1) which results in confusing behavior when using physical buttons of a clickpad for drag-and-drop and other gestures: you have to click with two or three fingers but then only move one of them while holding the button down with another. You can look into the [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/) driver for better multitouch support.
 
 Some desktop environments (KDE and GNOME at least) define sane and useful default configurations for clickpads, providing a right button at the bottom right of the pad, recognising two and three-finger clicks anywhere on the pad as right and middle clicks, and providing configuration options to define two and three-finger taps as right and middle clicks. If your desktop does not do this, or if you want more control, you can modify the touchpad section in `/etc/X11/xorg.conf.d/50-synaptics.conf` (or better, of your custom synaptics configuration file prefixed with a higher number). For example:
 
@@ -724,7 +720,7 @@ This can be caused by a number of issues;
 
 #### Elantech touchpads
 
-This can happen with some laptops with an Elantech touchpad, for example the ASUS x53s. In this situation you need [psmouse-alps-driver](https://aur.archlinux.org/packages/psmouse-alps-driver/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/psmouse-alps-driver)]</sup> package from [AUR](/index.php/AUR "AUR").
+This can happen with some laptops with an Elantech touchpad, for example the ASUS x53s. In this situation you need [psmouse-alps-driver](https://aur.archlinux.org/packages/psmouse-alps-driver/) package from [AUR](/index.php/AUR "AUR").
 
 #### Laptops with touchscreen & touchpad
 
@@ -819,7 +815,7 @@ The scrolling issue can be resolved by entering in `xorg.conf`:
 
 Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics[[2]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
 
-There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-synaptics-lg)]</sup>.
+There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 
 To build the package after downloading the tarball and unpacking it, execute:
 
@@ -897,7 +893,7 @@ Certain touchpads (elantech in particular) will fail to be recognized as a devic
 
 ### Trackpoint and Clickpad
 
-Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/)<sup><small>AUR</small></sup> from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
+Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/) from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
 
 ### Clickpad/Forcepad: double-click, click-and-drag
 

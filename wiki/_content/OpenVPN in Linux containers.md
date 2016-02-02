@@ -1,15 +1,5 @@
 # OpenVPN in Linux containers
 
-Related articles
-
-*   [AirVPN](/index.php/AirVPN "AirVPN")
-*   [Docker](/index.php/Docker "Docker")
-*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
-*   [PeerGuardian_Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")
-*   [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-*   [ufw](/index.php/Ufw "Ufw")
-
 This article describes how to setup a [Linux Container](/index.php/Linux_Container "Linux Container") to run OpenVPN with a "kill switch" for secure/private internet use. Doing so offers a distinct advantage over using full-blown virtualization like [VirtualBox](/index.php/VirtualBox "VirtualBox") or [QEMU](/index.php/QEMU "QEMU") in that the resource overhead is minimal by comparison and able to run on low powered devices.
 
 ## Contents

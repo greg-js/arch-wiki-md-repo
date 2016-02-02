@@ -1,9 +1,5 @@
 # MPlayer
 
-Related articles
-
-*   [mpv](/index.php/Mpv "Mpv")
-
 **MPlayer** is a popular movie player for GNU/Linux. It has support for most video and audio formats and is thus highly versatile, even if it is mostly used for viewing videos.
 
 ## Contents
@@ -52,15 +48,15 @@ Notable variants are:
 
 *   **MPlayer-VAAPI** — VAAPI-enabled version
 
-	[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)<sup><small>AUR</small></sup>
+	[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)
 
 *   **MPlayer-svn** — Development version
 
-	|| [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)<sup><small>AUR</small></sup>
+	|| [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)
 
 *   **MPlayer2** — Fork of MPlayer
 
-	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup> [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer2-git)]</sup>
+	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/) [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)
 
 **Note:** _mplayer2_ development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) if you want to use it.
 
@@ -68,7 +64,7 @@ Notable variants are:
 
 *   **Deepin Media Player** — Rich GTK2/Python interface for the Deepin desktop.
 
-	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/deepin-media-player)]</sup>
+	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/)
 
 *   **GNOME MPlayer** — Simple GTK+-based GUI for MPlayer.
 
@@ -76,15 +72,15 @@ Notable variants are:
 
 *   **KPlayer** — Multimedia player for KDE4 using mplayer as a backend.
 
-	[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)<sup><small>AUR</small></sup>
+	[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)
 
 *   **KMPlayer** — Video player plugin for Konqueror and basic MPlayer/Xine/ffmpeg/ffserver/VDR frontend for KDE.
 
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)<sup><small>AUR</small></sup>
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)
 
 *   **Rosa Media Player** — Multimedia player based on SMPlayer with clean and elegant UI.
 
-	[http://www.rosalab.com/](http://www.rosalab.com/) || [rosa-media-player](https://aur.archlinux.org/packages/rosa-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rosa-media-player)]</sup>
+	[http://www.rosalab.com/](http://www.rosalab.com/) || [rosa-media-player](https://aur.archlinux.org/packages/rosa-media-player/)
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.).
 
@@ -92,7 +88,7 @@ Notable variants are:
 
 *   **Xt7-Player** — Graphical user interface for MPlayer written in Gambas, with a huge list of features.
 
-	[http://xt7-player.sourceforge.net/xt7forum/](http://xt7-player.sourceforge.net/xt7forum/) || [xt7-player](https://aur.archlinux.org/packages/xt7-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xt7-player)]</sup>
+	[http://xt7-player.sourceforge.net/xt7forum/](http://xt7-player.sourceforge.net/xt7forum/) || [xt7-player](https://aur.archlinux.org/packages/xt7-player/)
 
 ## Browser integration
 
@@ -106,9 +102,9 @@ A browser plugin is available in the official repositories with the [gecko-media
 
 ### Konqueror
 
-A plugin for Konqueror can be found in the [AUR](/index.php/AUR "AUR") with the [kmplayer](https://aur.archlinux.org/packages/kmplayer/)<sup><small>AUR</small></sup> package.
+A plugin for Konqueror can be found in the [AUR](/index.php/AUR "AUR") with the [kmplayer](https://aur.archlinux.org/packages/kmplayer/) package.
 
-**Note:** [kmplayer](https://aur.archlinux.org/packages/kmplayer/)<sup><small>AUR</small></sup> also provides a complete frontend to MPlayer.
+**Note:** [kmplayer](https://aur.archlinux.org/packages/kmplayer/) also provides a complete frontend to MPlayer.
 
 ### Chromium
 
@@ -136,7 +132,7 @@ See also: [XF86 keyboard symbols](http://wiki.linuxquestions.org/wiki/XF86_keybo
 
 ### Automatic resuming from where you left off
 
-To get this behavior, you can install the [mplayer-resumer](https://aur.archlinux.org/packages/mplayer-resumer/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"). The package contains a Perl wrapper script for MPlayer which will allow you to autoresume playback from the point it was last stopped.
+To get this behavior, you can install the [mplayer-resumer](https://aur.archlinux.org/packages/mplayer-resumer/) package from the [AUR](/index.php/AUR "AUR"). The package contains a Perl wrapper script for MPlayer which will allow you to autoresume playback from the point it was last stopped.
 
 To use it, simply call the wrapper script in place of MPlayer:
 
@@ -153,7 +149,7 @@ If the video file to be played is on a read-only filesystem, or otherwise lives 
 
 For a complete list of NVIDIA VDPAU capable hardware, see [this table](http://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs). Ensure the [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver is installed and consider one of the following two methods to automatically enable VDPAU for playback.
 
-For an Intel or (AMD with [Catalyst](/index.php/Catalyst "Catalyst")) video card, you can use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) — VAAPI backend for VDPAU. For AMD you should also install [xvba-video](https://aur.archlinux.org/packages/xvba-video/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xvba-video)]</sup>. To use it, create:
+For an Intel or (AMD with [Catalyst](/index.php/Catalyst "Catalyst")) video card, you can use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) — VAAPI backend for VDPAU. For AMD you should also install [xvba-video](https://aur.archlinux.org/packages/xvba-video/). To use it, create:
 
  `/etc/profile.d/vdpau_vaapi.sh` 
 
@@ -193,13 +189,13 @@ vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
 
 #### Using a wrapper script
 
-The [AUR](/index.php/AUR "AUR") contains a trivial Bash script called [mplayer-vdpau-auto](https://aur.archlinux.org/packages/mplayer-vdpau-auto/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer-vdpau-auto)]</sup> that detects which video codec to use and when to use VDPAU as the video output.
+The [AUR](/index.php/AUR "AUR") contains a trivial Bash script called [mplayer-vdpau-auto](https://aur.archlinux.org/packages/mplayer-vdpau-auto/) that detects which video codec to use and when to use VDPAU as the video output.
 
-Another simple wrapper is [mplayer-vdpau-shell-git](https://aur.archlinux.org/packages/mplayer-vdpau-shell-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer-vdpau-shell-git)]</sup>, which can recover from a VDPAU FATAL error. This wrapper uses the "-include" option to include a VDPAU configuration, so it will ignore any VDPAU specific settings in your `~/.mplayer/config` file.
+Another simple wrapper is [mplayer-vdpau-shell-git](https://aur.archlinux.org/packages/mplayer-vdpau-shell-git/), which can recover from a VDPAU FATAL error. This wrapper uses the "-include" option to include a VDPAU configuration, so it will ignore any VDPAU specific settings in your `~/.mplayer/config` file.
 
 ### Enabling VA-API
 
-This requires [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)<sup><small>AUR</small></sup> from the AUR.
+This requires [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) from the AUR.
 
  `$ mplayer -vo vaapi -va vaapi _foobar.mpeg_` 
 

@@ -1,12 +1,5 @@
 # CPU frequency scaling
 
-Related articles
-
-*   [Power saving](/index.php/Power_saving "Power saving")
-*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [PHC](/index.php/PHC "PHC")
-
 CPU frequency scaling enables the operating system to scale the CPU frequency up or down in order to save power. CPU frequencies can be scaled automatically depending on the system load, in response to ACPI events, or manually by userspace programs.
 
 CPU frequency scaling is implemented in the Linux kernel, the infrastructure is called _cpufreq_. Since kernel 3.4 the necessary modules are loaded automatically and the recommended [ondemand governor](#Scaling_governors) is enabled by default. However, userspace tools like [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), or GUI tools provided for your desktop environment, may still be used for advanced configuration.
@@ -34,7 +27,7 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
 
 ### thermald
 
-[thermald](https://aur.archlinux.org/packages/thermald/)<sup><small>AUR</small></sup> is a Linux daemon used to prevent the overheating of platforms. This daemon monitors temperature and applies compensation using available cooling methods.
+[thermald](https://aur.archlinux.org/packages/thermald/) is a Linux daemon used to prevent the overheating of platforms. This daemon monitors temperature and applies compensation using available cooling methods.
 
 By default, it monitors CPU temperature using available CPU digital temperature sensors and maintains CPU temperature under control, before HW takes aggressive correction action. If there is a skin temperature sensor in thermal sysfs, then it tries to keep skin temperature under 45C.
 
@@ -42,7 +35,7 @@ By default, it monitors CPU temperature using available CPU digital temperature 
 
 [i7z](https://www.archlinux.org/packages/?name=i7z) is an i7 (and now i3, i5) (CPU) reporting tool for Linux. It can be launched from a Terminal with the command `i7z` or as GUI with `i7z-gui`
 
-**Note:** [i7z](https://www.archlinux.org/packages/?name=i7z)-0.27.2 has been released on September 2012\. It is recommended to use [i7z-git](https://aur.archlinux.org/packages/i7z-git/)<sup><small>AUR</small></sup> instead, particularly with newer hardware.
+**Note:** [i7z](https://www.archlinux.org/packages/?name=i7z)-0.27.2 has been released on September 2012\. It is recommended to use [i7z-git](https://aur.archlinux.org/packages/i7z-git/) instead, particularly with newer hardware.
 
 ### cpupower
 
@@ -57,7 +50,7 @@ The configuration file for _cpupower_ is located in `/etc/default/cpupower`. Thi
 *   As of kernel 3.4, the native CPU module is loaded automatically.
 *   Starting with kernel 3.9, the new `pstate` power scaling driver is used automatically for modern Intel CPUs instead of the other drivers below. This driver takes priority over other drivers and in fact is inbuilt as opposed to being a module. This driver is currently automatically used for Sandy Bridge and Ivy Bridge type CPUs. If you encounter a problem while using this driver, add `intel_pstate=disable` to your kernel line. You can use the same user space utilities with this driver but cannot control it.
 *   Even P State behavior mentioned above can be influenced with `/sys/devices/system/cpu/intel_pstate`, e.g. Intel Turbo Boost can be deactivated with `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` for keeping CPU-Temperatures low.
-*   Additional control for modern Intel CPUs is available with the [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/)<sup><small>AUR</small></sup>), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. thermald can also be used for older Intel CPUs. If the latest drivers are not available, then the daemon will revert to x86 model specific registers and the Linux ‘cpufreq subsystem’ to control system cooling.
+*   Additional control for modern Intel CPUs is available with the [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/)), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. thermald can also be used for older Intel CPUs. If the latest drivers are not available, then the daemon will revert to x86 model specific registers and the Linux ‘cpufreq subsystem’ to control system cooling.
 
 _cpupower_ requires modules to know the limits of the native CPU:
 
@@ -259,7 +252,7 @@ ResultActive=yes
 
 Where the word _user_ is replaced with the username of interest.
 
-The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [group](/index.php/Group "Group") to change the governor.
+The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [group](/index.php/Group "Group") to change the governor.
 
 ## Troubleshooting
 

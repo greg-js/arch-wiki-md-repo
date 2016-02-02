@@ -1,13 +1,5 @@
 # Samba
 
-Related articles
-
-*   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
-*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
-*   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
-*   [OpenChange server](/index.php/OpenChange_server "OpenChange server")
-*   [NFS](/index.php/NFS "NFS")
-
 **Samba** is a re-implementation of the [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol, it facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). Some users say that Samba is easily configured and that operation is very straight-forward. However, many new users run into problems with its complexity and non-intuitive mechanism. This article provides instructions for users on how to setup Samba. It is strongly suggested that the user sticks close to the following directions.
 
 ## Contents

@@ -96,7 +96,7 @@ Another way to do this is to install a specialized package. For example:
 
 *   [unp](https://www.archlinux.org/packages/?name=unp) - package from the official repositories which contains a Perl script
 *   [atool](https://www.archlinux.org/packages/?name=atool)
-*   [dtrx](https://aur.archlinux.org/packages/dtrx/)<sup><small>AUR</small></sup>
+*   [dtrx](https://aur.archlinux.org/packages/dtrx/)
 
 ## cd and ls in one
 
@@ -189,7 +189,7 @@ calc() {
 
 Kingbash - menu driven auto-completion (see [BBS#101010](https://bbs.archlinux.org/viewtopic.php?id=101010)).
 
-Install [kingbash](https://aur.archlinux.org/packages/kingbash/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kingbash)]</sup> from the [AUR](/index.php/AUR "AUR"), then insert the following into your `~/.bashrc`:
+Install [kingbash](https://aur.archlinux.org/packages/kingbash/) from the [AUR](/index.php/AUR "AUR"), then insert the following into your `~/.bashrc`:
 
  `~/.bashrc` 
 

@@ -16,7 +16,7 @@ This HOWTO will try to explain how keytouch is used in Arch Linux. For further d
 
 ## Installation
 
-Keytouch can be installed with the [keytouch](https://aur.archlinux.org/packages/keytouch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/keytouch)]</sup> package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Keytouch can be installed with the [keytouch](https://aur.archlinux.org/packages/keytouch/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Keyboard File
 
@@ -26,7 +26,7 @@ If your model is not included in the keytouch package you will need to create on
 
 ### Creating a Keyboard File
 
-Install the [keytouch-editor](https://aur.archlinux.org/packages/keytouch-editor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/keytouch-editor)]</sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Make sure you have evdev loaded (you should not need to do this if you using the stock kernel)
+Install the [keytouch-editor](https://aur.archlinux.org/packages/keytouch-editor/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Make sure you have evdev loaded (you should not need to do this if you using the stock kernel)
 
 ```
 # modprobe evdev

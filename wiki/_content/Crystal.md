@@ -4,7 +4,7 @@
 
 ## Installation
 
-To install Crystal, [install](/index.php/Install "Install") [crystal](https://www.archlinux.org/packages/?name=crystal). To install the latest development version install [crystal-git](https://aur.archlinux.org/packages/crystal-git/)<sup><small>AUR</small></sup>.
+To install Crystal, [install](/index.php/Install "Install") [crystal](https://www.archlinux.org/packages/?name=crystal). To install the latest development version install [crystal-git](https://aur.archlinux.org/packages/crystal-git/).
 
 ## Usage
 

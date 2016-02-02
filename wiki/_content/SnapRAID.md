@@ -9,7 +9,7 @@ SnapRAID works by storing parity of all folders to another disk. The destination
 **Tip:**
 
 *   If you want to combine folders into a larger one without setting up disk raid, FUSE-based filesystems is the best option. (e.g. MHDDFS, MergerFS, unionfs-fuse ) Overlayfs is another interesting choice and has been merged into kernel since 3.18\. Although it has less features and limitations such as having only one writable path and the need to specify a workdir. Other filesystems such as AUFS often involve kernel patching or unsupported or outdated software.
-*   [mergerfs](https://aur.archlinux.org/packages/mergerfs/)<sup><small>AUR</small></sup> is similar to mhddfs, but more recently updated and has more choices for drive-selection policies. It also has excellent speeds.
+*   [mergerfs](https://aur.archlinux.org/packages/mergerfs/) is similar to mhddfs, but more recently updated and has more choices for drive-selection policies. It also has excellent speeds.
 
 ## Contents
 
@@ -21,7 +21,7 @@ SnapRAID works by storing parity of all folders to another disk. The destination
 
 ## Installation
 
-Install [snapraid](https://aur.archlinux.org/packages/snapraid/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [snapraid](https://aur.archlinux.org/packages/snapraid/) from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 

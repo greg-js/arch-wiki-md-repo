@@ -1,9 +1,5 @@
 # PXE
 
-Related articles
-
-*   [Diskless System](/index.php/Diskless_System "Diskless System")
-
 From [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"):
 
 	_The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems._

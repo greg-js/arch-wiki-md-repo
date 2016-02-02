@@ -24,7 +24,7 @@ This article is about the Nintendo Wii Remote Linux kernel driver. This driver i
 ## Prerequisites
 
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-*   [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/)<sup><small>AUR</small></sup>
+*   [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/)
 *   xwiimote kernel driver
 *   Wii Remote hardware
 
@@ -32,7 +32,7 @@ The most important software required is [Bluetooth](/index.php/Bluetooth "Blueto
 
 **NOTE:** most recent bluez package in Arch Linux includes the wiimote plugin, if you are using an older version please see [Troubleshooting BlueZ](#BlueZ_does_not_include_the_wiimote_plugin).
 
-The user-space utilities are available in [AUR](/index.php/AUR "AUR") [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/)<sup><small>AUR</small></sup> package; there is also a git-package [xwiimote-tools-git](https://aur.archlinux.org/packages/xwiimote-tools-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xwiimote-tools-git)]</sup> if you want the most recent development revision.
+The user-space utilities are available in [AUR](/index.php/AUR "AUR") [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/) package; there is also a git-package [xwiimote-tools-git](https://aur.archlinux.org/packages/xwiimote-tools-git/) if you want the most recent development revision.
 
 The kernel driver (module `hid-wiimote`) is part of upstream Linux since version 3.1 and it's ever since already included in Arch Linux kernel. However, the module could need to be loaded:
 
@@ -71,7 +71,7 @@ $ ls /sys/bus/hid/devices/<devid>/
 
 ```
 
-The default mapping for the input-keys of the Wii Remotes are not very useful. User-space applications exist that re-map the Wii Remote input to more useful keys/actions [[1]](http://github.com/dvdhrm/xwiimote) - available in AUR [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/)<sup><small>AUR</small></sup>. If you installed this package you can test your connected Wii Remotes with the `xwiishow` tool:
+The default mapping for the input-keys of the Wii Remotes are not very useful. User-space applications exist that re-map the Wii Remote input to more useful keys/actions [[1]](http://github.com/dvdhrm/xwiimote) - available in AUR [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/). If you installed this package you can test your connected Wii Remotes with the `xwiishow` tool:
 
 This will list all connected Wii Remotes:
 
@@ -98,7 +98,7 @@ This will display a picture of the Wii Remote and notify you if buttons are pres
 
 ### X.Org Input Driver
 
-There is an X.Org input driver [[2]](http://github.com/dvdhrm/xf86-input-xwiimote) available in AUR [xf86-input-xwiimote](https://aur.archlinux.org/packages/xf86-input-xwiimote/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-xwiimote)]</sup> which automatically provides an input device to your X clients. Install it and read the related man-page for more information:
+There is an X.Org input driver [[2]](http://github.com/dvdhrm/xf86-input-xwiimote) available in AUR [xf86-input-xwiimote](https://aur.archlinux.org/packages/xf86-input-xwiimote/) which automatically provides an input device to your X clients. Install it and read the related man-page for more information:
 
 ```
 $ man xorg-xwiimote

@@ -1,10 +1,5 @@
 # Repo-ck
 
-Related articles
-
-*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
-*   [Linux-ck/Changelog](/index.php/Linux-ck/Changelog "Linux-ck/Changelog")
-
 _Repo-ck_ is an unofficial Arch Linux repository with generic and CPU-optimized kernels and support packages, featuring [BFS](http://ck-hack.blogspot.com) ([Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")) and rest of the `-ck` patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas").
 
 ## Contents

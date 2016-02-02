@@ -1,10 +1,5 @@
 # Sudo
 
-Related articles
-
-*   [Users and groups](/index.php/Users_and_groups "Users and groups")
-*   [su](/index.php/Su "Su")
-
 [sudo](http://www.gratisoft.us/sudo/) ("substitute user do") allows a system administrator to delegate authority to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while providing an audit trail of the commands and their arguments.
 
 Sudo is an alternative to [su](/index.php/Su "Su") for running commands as root. Unlike [su](/index.php/Su "Su"), which launches a root shell that allows all further commands root access, sudo instead grants temporary privilege escalation to a single command. By enabling root privileges only when needed, sudo usage reduces the likelihood that a typo or a bug in an invoked command will ruin the system.
@@ -267,7 +262,7 @@ $ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-comma
 
 ```
 
-Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/)<sup><small>AUR</small></sup>, which has the added advantage of tab-completion for the command following.
+Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/), which has the added advantage of tab-completion for the command following.
 
 ### Harden with Sudo Example
 

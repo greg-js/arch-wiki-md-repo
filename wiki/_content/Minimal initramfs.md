@@ -1,9 +1,5 @@
 # Minimal initramfs
 
-Related articles
-
-*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-
 This article shows how to create a slim, minimal initramfs for a system with a specific, known and static hardware configuration. The procedure is expounded from [this tutorial](http://blog.falconindy.com/articles/optmizing-bootup-with-mkinitcpio.html) by Falconindy (Dave Reisner).
 
 ## Contents

@@ -9,7 +9,7 @@ wget [https://phar.phpunit.de/phpunit.phar](https://phar.phpunit.de/phpunit.phar
 
 ```
 
-**Note:** PHPUnit is also avalible from the [AUR](/index.php/AUR "AUR") as [phpunit](https://aur.archlinux.org/packages/phpunit/)<sup><small>AUR</small></sup>.
+**Note:** PHPUnit is also avalible from the [AUR](/index.php/AUR "AUR") as [phpunit](https://aur.archlinux.org/packages/phpunit/).
 
 You can then run PHPUnit using `php phpunit.phar`. You can also make the PHP Archive executable (`chmod +x phpunit.phar`) and move it to /usr/local/bin or ~/bin or somewhere else you have in your `$PATH`.
 

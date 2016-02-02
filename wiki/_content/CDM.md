@@ -1,9 +1,5 @@
 # CDM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-
 **CDM** is a minimalistic, yet full-featured replacement for login-managers like [SLiM](/index.php/SLiM "SLiM"), [KDM](/index.php/KDM "KDM"), [GDM](/index.php/GDM "GDM") and [qingy](/index.php/Qingy "Qingy") that provides a fast, dialog-based login system without the overhead of the X Window System or the instability of qingy. Written in pure bash, CDM has almost no dependencies, yet supports multiple users/sessions and can start virtually any DE/WM.
 
 ## Contents
@@ -18,7 +14,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [cdm-git](https://aur.archlinux.org/packages/cdm-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [cdm-git](https://aur.archlinux.org/packages/cdm-git/) package.
 
 Now ensure no other display managers get started by disabling their systemd services with `systemctl disable`.
 

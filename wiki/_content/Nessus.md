@@ -12,7 +12,7 @@
 
 ## Installation
 
-Download and extract the [nessus](https://aur.archlinux.org/packages/nessus/)<sup><small>AUR</small></sup> tarball available in the [AUR](/index.php/AUR "AUR").
+Download and extract the [nessus](https://aur.archlinux.org/packages/nessus/) tarball available in the [AUR](/index.php/AUR "AUR").
 
 Go to [http://tenable.com/products/nessus/nessus-download-agreement](http://tenable.com/products/nessus/nessus-download-agreement), agree to the license, and download the package `Nessus-6.5.2-fc20.x86_64.rpm`.
 
@@ -26,7 +26,7 @@ Register your email at [http://www.tenable.com/products/nessus/nessus-plugins/ob
 
 ## Usage
 
-The [nessus](https://aur.archlinux.org/packages/nessus/)<sup><small>AUR</small></sup> package provides a `nessusd.service` unit file, see [systemd#Using units](/index.php/Systemd#Using_units "Systemd") for details.
+The [nessus](https://aur.archlinux.org/packages/nessus/) package provides a `nessusd.service` unit file, see [systemd#Using units](/index.php/Systemd#Using_units "Systemd") for details.
 
 Access the web interface at [https://localhost:8834](https://localhost:8834) and/or use the commandline interface (`/opt/nessus/sbin/nessuscli`). In most browsers, you will need to manually accept the SSL certificate you created for the server.
 

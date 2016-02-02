@@ -29,7 +29,7 @@ Arch's Gnome metapackage does not install evolution by default. If you haven't i
 
 ## Installing the Gnome packages
 
-You now need to install the required Gnome component. [Install](/index.php/Install "Install") [gnome-pilot](https://www.archlinux.org/packages/?name=gnome-pilot)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> and [gnome-pilot-conduits](https://www.archlinux.org/packages/?name=gnome-pilot-conduits)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>.
+You now need to install the required Gnome component. [Install](/index.php/Install "Install") [gnome-pilot](https://www.archlinux.org/packages/?name=gnome-pilot) and [gnome-pilot-conduits](https://www.archlinux.org/packages/?name=gnome-pilot-conduits).
 
 # Setting up the Hardware
 

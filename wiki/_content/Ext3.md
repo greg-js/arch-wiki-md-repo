@@ -1,10 +1,5 @@
 # Ext3
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Ext4](/index.php/Ext4 "Ext4")
-
 There are many strengths to the Third Extended ("ext3") filesystem. Its in-kernel and userspace code has been tried, tested, fixed, and improved upon more than almost every other Linux-compatible filesystem. It is simple, robust, and extensible. This article explains some tips that can improve both the performance and the reliability of the filesystem.
 
 In this document `/dev/hdXY` will be used as a generic partition. You should replace this with the actual device node for your partition, such as `/dev/hdb1` for the first partition of the primary slave disk or `/dev/sda2` for the second partition of your first SCSI or Serial ATA disk.

@@ -18,7 +18,7 @@ Most programs require libraries to function. Libraries can be integrated into a 
 
 ## Installing
 
-Install the [prelink](https://aur.archlinux.org/packages/prelink/)<sup><small>AUR</small></sup> package.
+Install the [prelink](https://aur.archlinux.org/packages/prelink/) package.
 
 ## Configuration
 
@@ -103,7 +103,7 @@ and give it the necessary ownership and permissions:
 
 `# chmod 755 /etc/cron.daily/prelink`
 
-Alternatively, there's a [prelink-systemd](https://aur.archlinux.org/packages/prelink-systemd/)<sup><small>AUR</small></sup> package in the AUR that installs a daily systemd timer unit with the same effect as the above cron script.
+Alternatively, there's a [prelink-systemd](https://aur.archlinux.org/packages/prelink-systemd/) package in the AUR that installs a daily systemd timer unit with the same effect as the above cron script.
 
 ## KDE
 

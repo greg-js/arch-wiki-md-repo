@@ -1,10 +1,5 @@
 # Moodle
 
-Related articles
-
-*   [MySQL](/index.php/MySQL "MySQL")
-*   [LAMP](/index.php/LAMP "LAMP")
-
 From [Wikipedia](http://en.wikipedia.org):
 
 	[Moodle](https://en.wikipedia.org/wiki/Moodle "wikipedia:Moodle") (abbreviation for Modular Object-Oriented Dynamic Learning Environment) is a free source e-learning software platform, also known as a Course Management System, Learning Management System, or Virtual Learning Environment (VLE).
@@ -30,7 +25,7 @@ Follow the instructions to install [LAMP](/index.php/LAMP "LAMP").
 
 ## Download and install Moodle
 
-There is also an AUR package [moodle](https://aur.archlinux.org/packages/moodle/)<sup><small>AUR</small></sup> for the installation. Eighter you can use this way:
+There is also an AUR package [moodle](https://aur.archlinux.org/packages/moodle/) for the installation. Eighter you can use this way:
 
 Download the most current version of Moodle from [http://download.moodle.org/](http://download.moodle.org/) - this installation was done with 2.3.1+, and there may be minor changes to the install routine in later versions.
 

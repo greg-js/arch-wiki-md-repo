@@ -13,7 +13,7 @@
 
 #### Install Package
 
-[icaclient](https://aur.archlinux.org/packages/icaclient/)<sup><small>AUR</small></sup> x86_64
+[icaclient](https://aur.archlinux.org/packages/icaclient/) x86_64
 
 SSL connections are supported by default in this packages. Also Firefox plugin will be installed by default as well as the wfica.desktop file. That way Arch knows how to open ica files.
 

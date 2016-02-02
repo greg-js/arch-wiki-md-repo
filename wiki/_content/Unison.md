@@ -19,7 +19,7 @@
 
 ## Installation
 
-[Installing](/index.php/Installing "Installing") [unison](https://www.archlinux.org/packages/?name=unison) from the [official repositories](/index.php/Official_repositories "Official repositories"), which provides CLI, GTK+ and GTK+ 2.0 interfaces. For offline documentation install [unison-doc](https://aur.archlinux.org/packages/unison-doc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/unison-doc)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Installing](/index.php/Installing "Installing") [unison](https://www.archlinux.org/packages/?name=unison) from the [official repositories](/index.php/Official_repositories "Official repositories"), which provides CLI, GTK+ and GTK+ 2.0 interfaces. For offline documentation install [unison-doc](https://aur.archlinux.org/packages/unison-doc/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -105,7 +105,7 @@ and select the profile. Unison has a nice interface where you can view the progr
 
 For Unison to function properly, the same version _must_ be installed on all clients. If, for example, one computer has version 2.40 and the other has 2.32, they will not be able to sync with each other. This applies to _all_ computers that share a directory to be synchronized across your machines.
 
-Due to the staggered releases with varying Linux distros, you might be stuck with older versions of Unison, while Arch Linux has the latest upstream version in the Extra repository. There are unofficial [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for versions 2.32 ([unison-232](https://aur.archlinux.org/packages/unison-232/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/unison-232)]</sup>) and 2.27 ([unison-227](https://aur.archlinux.org/packages/unison-227/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/unison-227)]</sup>) on the [AUR](/index.php/AUR "AUR") that allow users of multiple distros to continue using Unison with their existing systems.
+Due to the staggered releases with varying Linux distros, you might be stuck with older versions of Unison, while Arch Linux has the latest upstream version in the Extra repository. There are unofficial [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for versions 2.32 ([unison-232](https://aur.archlinux.org/packages/unison-232/)) and 2.27 ([unison-227](https://aur.archlinux.org/packages/unison-227/)) on the [AUR](/index.php/AUR "AUR") that allow users of multiple distros to continue using Unison with their existing systems.
 
 ## Tips and tricks
 

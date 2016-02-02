@@ -1,10 +1,5 @@
 # imwheel
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Mouse_acceleration](/index.php/Mouse_acceleration "Mouse acceleration")
-
 _imwheel_ is a tool for tweaking mouse wheel behavior, on a per-program basis. It can map mousewheel input to keyboard input, increase mousewheel speed, and has support for modifier keys.
 
 ## Contents
@@ -17,7 +12,7 @@ _imwheel_ is a tool for tweaking mouse wheel behavior, on a per-program basis. I
 
 ## Installation
 
-imwheel is available from [AUR](/index.php/AUR "AUR") [imwheel](https://aur.archlinux.org/packages/imwheel/)<sup><small>AUR</small></sup> or directly from [The sourceforge page](http://imwheel.sourceforge.net/).
+imwheel is available from [AUR](/index.php/AUR "AUR") [imwheel](https://aur.archlinux.org/packages/imwheel/) or directly from [The sourceforge page](http://imwheel.sourceforge.net/).
 
 ## Configuration
 

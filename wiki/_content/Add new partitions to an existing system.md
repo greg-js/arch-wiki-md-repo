@@ -1,10 +1,5 @@
 # Add new partitions to an existing system
 
-Related articles
-
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-*   [GParted](/index.php/GParted "GParted")
-
 You may find yourself in the situation where you either want to create a new partition to give yourself more flexibility (for example, for backup operations), or you are forced to use new partition(s) because your original is full and to free up space you need to move data from the full partition to a new one.
 
 As an easy alternative, you can always download a copy of another operating system such as [Ubuntu](http://www.ubuntu.com) and boot into a live media version ([Arch USB Installation Media guide](/index.php/USB_Installation_Media "USB Installation Media")). Newer versions of Ubuntu include [GParted](/index.php/GParted "GParted").

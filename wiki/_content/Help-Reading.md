@@ -1,10 +1,5 @@
 # Help:Reading
 
-Related articles
-
-*   [Help:Searching](/index.php/Help:Searching "Help:Searching")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-
 Because the vast majority of the ArchWiki contains indications that may need clarification for users new to GNU/Linux, this rundown of basic procedures was written both to avoid confusion in the assimilation of the articles and to deter repetition in the content itself.
 
 ## Contents
@@ -120,9 +115,9 @@ The [pacman](/index.php/Pacman "Pacman") article contains detailed explanations 
 
 For packages from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you will read something like:
 
-	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package.
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/) package.
 
-This means that in general you have to follow the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> link, download the PKGBUILD archive, extract it, **verify the content** and finally run, in the same folder:
+This means that in general you have to follow the [foobar](https://aur.archlinux.org/packages/foobar/) link, download the PKGBUILD archive, extract it, **verify the content** and finally run, in the same folder:
 
 ```
 $ makepkg -sri

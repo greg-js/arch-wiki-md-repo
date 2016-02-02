@@ -26,11 +26,11 @@ This article will show you how to configure a simple in house network enabling u
 
 ## Installation
 
-Install the [asterisk](https://aur.archlinux.org/packages/asterisk/)<sup><small>AUR</small></sup> package. You may also want to install [asterisk-addons](https://aur.archlinux.org/packages/asterisk-addons/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/asterisk-addons)]</sup> and [zaptel-svn](https://aur.archlinux.org/packages/zaptel-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zaptel-svn)]</sup>.
+Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package. You may also want to install [asterisk-addons](https://aur.archlinux.org/packages/asterisk-addons/) and [zaptel-svn](https://aur.archlinux.org/packages/zaptel-svn/).
 
 [Start](/index.php/Start "Start") the server with `asterisk.service`.
 
-You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [linphone](http://www.linphone.org/) ([linphone](https://www.archlinux.org/packages/?name=linphone) package) or [x-lite](http://www.xten.net/index.php?menu=X-Series) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)<sup><small>AUR</small></sup> package).
+You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [linphone](http://www.linphone.org/) ([linphone](https://www.archlinux.org/packages/?name=linphone) package) or [x-lite](http://www.xten.net/index.php?menu=X-Series) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
 
 To enable ilbc codec support add the following to the very beginning of the `build` section of the PKGBUILD:
 

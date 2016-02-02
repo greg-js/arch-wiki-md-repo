@@ -172,7 +172,7 @@ Where `_<id>_` is:
 
 ### Lightweight monitoring suite
 
-[monitorix](https://aur.archlinux.org/packages/monitorix/)<sup><small>AUR</small></sup> has specific support for the RPi since v3.2.0\. Screenshots available [here](http://www.monitorix.org/screenshots.html).
+[monitorix](https://aur.archlinux.org/packages/monitorix/) has specific support for the RPi since v3.2.0\. Screenshots available [here](http://www.monitorix.org/screenshots.html).
 
 ## Overclocking/underclocking
 
@@ -356,7 +356,7 @@ To enable the `/dev/spidev*` devices, uncomment the following line:
 
 ### Python
 
-To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install either [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/)<sup><small>AUR</small></sup> or [python2-raspberry-gpio](https://aur.archlinux.org/packages/python2-raspberry-gpio/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python2-raspberry-gpio)]</sup> from the [AUR](/index.php/AUR "AUR").
+To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install either [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) or [python2-raspberry-gpio](https://aur.archlinux.org/packages/python2-raspberry-gpio/) from the [AUR](/index.php/AUR "AUR").
 
 ## I2C
 
@@ -412,7 +412,7 @@ Sometimes it is easier to work directly on a disk image instead of the real Rasp
 
 **Note:** As of January 2016, [make](https://www.archlinux.org/packages/?name=make) won't run in QEMU for ARM so it is not possible to build packages this way. Follow the [guide on the Arch Linux ARM website](http://archlinuxarm.org/developers/distcc-cross-compiling) to build a cross-compiler if building ARM packages is needed.
 
-Install [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/)<sup><small>AUR</small></sup> and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/) and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) from the [AUR](/index.php/AUR "AUR").
 
 Make sure that the ARM to x86 translation is active:
 

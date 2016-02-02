@@ -14,7 +14,7 @@ Unclutter hides your X mouse cursor when you do not need it, to prevent it from 
 
 ## Installation
 
-[Install](/index.php/Install "Install") [unclutter](https://www.archlinux.org/packages/?name=unclutter) from the [official repositories](/index.php/Official_repositories "Official repositories") or the modern rewrite [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [unclutter](https://www.archlinux.org/packages/?name=unclutter) from the [official repositories](/index.php/Official_repositories "Official repositories") or the modern rewrite [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 
@@ -29,7 +29,7 @@ unclutter &
 
 ### Misbehaviour of the mouse cursor
 
-If you experience issues when using unclutter in conjunction with a tiling window manager (such as [xmonad](/index.php/Xmonad "Xmonad") or [i3](/index.php/I3 "I3")), install [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/)<sup><small>AUR</small></sup> instead or use the `-grab` option:
+If you experience issues when using unclutter in conjunction with a tiling window manager (such as [xmonad](/index.php/Xmonad "Xmonad") or [i3](/index.php/I3 "I3")), install [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) instead or use the `-grab` option:
 
 ```
 unclutter -grab &
@@ -46,7 +46,7 @@ There are two known workarounds for this. You can either add `SDL_VIDEO_X11_DGAM
 
 ### unclutter-xfixes
 
-Unclutter is a tool from the early 90s and has not been updated since. It works by creating fake windows or active pointer grabs, both of which often cause problems. By now, the X11 extensions Xinput2 and Xfixes have been released and are commonly found on most user systems. Using those, [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/)<sup><small>AUR</small></sup> can provide the cursor hiding functionality without interfering with any application.
+Unclutter is a tool from the early 90s and has not been updated since. It works by creating fake windows or active pointer grabs, both of which often cause problems. By now, the X11 extensions Xinput2 and Xfixes have been released and are commonly found on most user systems. Using those, [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) can provide the cursor hiding functionality without interfering with any application.
 
 ## See also
 

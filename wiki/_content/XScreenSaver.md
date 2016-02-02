@@ -1,11 +1,5 @@
 # XScreenSaver
 
-Related articles
-
-*   [DPMS](/index.php/DPMS "DPMS")
-*   [Xresources](/index.php/Xresources "Xresources")
-*   [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
-
 XScreenSaver is a screen saver and locker for the X Window System.
 
 ## Contents
@@ -32,7 +26,7 @@ XScreenSaver is a screen saver and locker for the X Window System.
 
 [Install](/index.php/Install "Install") the [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) package.
 
-For an Arch Linux branded experience, install the [xscreensaver-arch-logo](https://aur.archlinux.org/packages/xscreensaver-arch-logo/)<sup><small>AUR</small></sup> package.
+For an Arch Linux branded experience, install the [xscreensaver-arch-logo](https://aur.archlinux.org/packages/xscreensaver-arch-logo/) package.
 
 ## Configuration
 
@@ -134,7 +128,7 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 
 #### Kodi
 
-[Kodi](/index.php/Kodi "Kodi") has no native support to disable XScreenSaver (it uses its own screensaver). [Install](/index.php/Install "Install") the [kodi-prevent-xscreensaver](https://aur.archlinux.org/packages/kodi-prevent-xscreensaver/)<sup><small>AUR</small></sup> package as a workaround.
+[Kodi](/index.php/Kodi "Kodi") has no native support to disable XScreenSaver (it uses its own screensaver). [Install](/index.php/Install "Install") the [kodi-prevent-xscreensaver](https://aur.archlinux.org/packages/kodi-prevent-xscreensaver/) package as a workaround.
 
 #### Flash
 
@@ -151,7 +145,7 @@ $ /usr/lib/xscreensaver/glslideshow -root &
 
 ```
 
-**Note:** If [xcompmgr](/index.php/Xcompmgr "Xcompmgr") causes problems, [install](/index.php/Install "Install") the [shantz-xwinwrap-bzr](https://aur.archlinux.org/packages/shantz-xwinwrap-bzr/)<sup><small>AUR</small></sup> package, and run:
+**Note:** If [xcompmgr](/index.php/Xcompmgr "Xcompmgr") causes problems, [install](/index.php/Install "Install") the [shantz-xwinwrap-bzr](https://aur.archlinux.org/packages/shantz-xwinwrap-bzr/) package, and run:
 
 ```
 $ xwinwrap -b -fs -sp -fs -nf -ov  -- /usr/lib/xscreensaver/glslideshow -root -window-id WID &

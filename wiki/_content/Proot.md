@@ -4,7 +4,7 @@
 
 ## Installation
 
-proot can be installed from the [proot](https://aur.archlinux.org/packages/proot/)<sup><small>AUR</small></sup> package. _pacstrap_ can be used to initialize the directory with an Arch environment before running proot.
+proot can be installed from the [proot](https://aur.archlinux.org/packages/proot/) package. _pacstrap_ can be used to initialize the directory with an Arch environment before running proot.
 
 ## Usage
 

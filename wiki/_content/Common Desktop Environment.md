@@ -17,7 +17,7 @@ The [Common Desktop Environment](https://en.wikipedia.org/wiki/Common_Desktop_En
 
 ## Installation
 
-The base CDE system is installed through the [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)<sup><small>AUR</small></sup> AUR package. After package installation, some modifications are required.
+The base CDE system is installed through the [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/) AUR package. After package installation, some modifications are required.
 
 ### Modifications
 
@@ -36,7 +36,7 @@ This change requires a restart:
 
 ### dtlogin
 
-The [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)<sup><small>AUR</small></sup> package supplies the `dtlogin` service which upon starting will launch the CDE login manager:
+The [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/) package supplies the `dtlogin` service which upon starting will launch the CDE login manager:
 
 ```
 # systemctl start dtlogin

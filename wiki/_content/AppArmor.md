@@ -34,11 +34,11 @@ When compiling the kernel, it needs the following options:
 
 Instead of setting `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE` and `CONFIG_DEFAULT_SECURITY_APPARMOR`, you can also set [kernel boot parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`.
 
-There also is a stock kernel with AppArmor: [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-apparmor)]</sup>. However, as of May 2015, the kernel is outdated.
+There also is a stock kernel with AppArmor: [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/). However, as of May 2015, the kernel is outdated.
 
 ### Userspace Tools
 
-The userspace tools and libraries to control AppArmor are supplied by the [apparmor](https://aur.archlinux.org/packages/apparmor/)<sup><small>AUR</small></sup> package.
+The userspace tools and libraries to control AppArmor are supplied by the [apparmor](https://aur.archlinux.org/packages/apparmor/) package.
 
 The package is a split package which consists of following sub-packages:
 
@@ -50,7 +50,7 @@ The package is a split package which consists of following sub-packages:
 *   apparmor-pam
 *   apparmor-vim
 
-To load all AppArmor profiles on startup, the [apparmor](https://aur.archlinux.org/packages/apparmor/)<sup><small>AUR</small></sup> package includes a systemd unit:
+To load all AppArmor profiles on startup, the [apparmor](https://aur.archlinux.org/packages/apparmor/) package includes a systemd unit:
 
  `# systemctl enable apparmor` 
 
